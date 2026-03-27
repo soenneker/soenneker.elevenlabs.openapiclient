@@ -80,6 +80,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public string SuccessCondition { get; set; }
 #endif
+        /// <summary>&quot;Simulation/preview-side config: tools are identified by IDs, resolved to names at runtime.&quot;</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SimulationToolMockBehaviorConfig? ToolMockConfig { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SimulationToolMockBehaviorConfig ToolMockConfig { get; set; }
+#endif
         /// <summary>The type property</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetSimulationTestResponseModel_type? Type { get; set; }
         /// <summary>
@@ -117,6 +125,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "simulation_max_turns", n => { SimulationMaxTurns = n.GetIntValue(); } },
                 { "simulation_scenario", n => { SimulationScenario = n.GetStringValue(); } },
                 { "success_condition", n => { SuccessCondition = n.GetStringValue(); } },
+                { "tool_mock_config", n => { ToolMockConfig = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SimulationToolMockBehaviorConfig>(global::Soenneker.ElevenLabs.OpenApiClient.Models.SimulationToolMockBehaviorConfig.CreateFromDiscriminatorValue); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetSimulationTestResponseModel_type>(); } },
             };
         }
@@ -136,6 +145,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteIntValue("simulation_max_turns", SimulationMaxTurns);
             writer.WriteStringValue("simulation_scenario", SimulationScenario);
             writer.WriteStringValue("success_condition", SuccessCondition);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SimulationToolMockBehaviorConfig>("tool_mock_config", ToolMockConfig);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetSimulationTestResponseModel_type>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }

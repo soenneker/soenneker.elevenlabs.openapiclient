@@ -41580,6 +41580,9 @@
             "description": "The environment to use when running this simulation test. If not provided, defaults to \u0027production\u0027.",
             "nullable": true
           },
+          "tool_mock_config": {
+            "$ref": "#/components/schemas/SimulationToolMockBehaviorConfig"
+          },
           "name": {
             "title": "Name",
             "type": "string"
@@ -47936,6 +47939,9 @@
             ],
             "description": "The environment to use when running this simulation test. If not provided, defaults to \u0027production\u0027.",
             "nullable": true
+          },
+          "tool_mock_config": {
+            "$ref": "#/components/schemas/SimulationToolMockBehaviorConfig"
           },
           "id": {
             "title": "Id",
@@ -60726,8 +60732,32 @@
             ],
             "description": "The environment to use when running this simulation test. If not provided, defaults to \u0027production\u0027.",
             "nullable": true
+          },
+          "tool_mock_config": {
+            "$ref": "#/components/schemas/SimulationToolMockBehaviorConfig"
           }
         }
+      },
+      "SimulationToolMockBehaviorConfig": {
+        "title": "SimulationToolMockBehaviorConfig",
+        "type": "object",
+        "properties": {
+          "mocking_strategy": {
+            "$ref": "#/components/schemas/MockingStrategy"
+          },
+          "fallback_strategy": {
+            "$ref": "#/components/schemas/MockNoMatchBehavior"
+          },
+          "mocked_tool_ids": {
+            "title": "Mocked Tool Ids",
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Tool IDs to mock. Resolved to tool names before being passed to the orchestrator."
+          }
+        },
+        "description": "\u0022Simulation/preview-side config: tools are identified by IDs, resolved to names at runtime.\u0022"
       },
       "SingleTestRunRequestModel": {
         "title": "SingleTestRunRequestModel",
@@ -66224,6 +66254,9 @@
             ],
             "description": "The environment to use when running this simulation test. If not provided, defaults to \u0027production\u0027.",
             "nullable": true
+          },
+          "tool_mock_config": {
+            "$ref": "#/components/schemas/SimulationToolMockBehaviorConfig"
           },
           "name": {
             "title": "Name",
