@@ -28405,6 +28405,65 @@
         },
         "additionalProperties": false
       },
+      "AssetTranscription": {
+        "title": "AssetTranscription",
+        "required": [
+          "language_code",
+          "text",
+          "words"
+        ],
+        "type": "object",
+        "properties": {
+          "language_code": {
+            "title": "Language Code",
+            "type": "string"
+          },
+          "text": {
+            "title": "Text",
+            "type": "string"
+          },
+          "words": {
+            "title": "Words",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AssetTranscriptionWord"
+            }
+          }
+        }
+      },
+      "AssetTranscriptionWord": {
+        "title": "AssetTranscriptionWord",
+        "required": [
+          "text",
+          "start_ms",
+          "end_ms"
+        ],
+        "type": "object",
+        "properties": {
+          "speaker_id": {
+            "title": "Speaker Id",
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Speaker_Id"
+              }
+            ],
+            "nullable": true
+          },
+          "text": {
+            "title": "Text",
+            "type": "string"
+          },
+          "start_ms": {
+            "title": "Start Ms",
+            "type": "integer"
+          },
+          "end_ms": {
+            "title": "End Ms",
+            "type": "integer"
+          }
+        }
+      },
       "AsyncConversationMetadata": {
         "title": "AsyncConversationMetadata",
         "required": [
@@ -28495,6 +28554,123 @@
               }
             ],
             "nullable": true
+          }
+        }
+      },
+      "AudioAnalysis": {
+        "title": "AudioAnalysis",
+        "required": [
+          "status",
+          "data"
+        ],
+        "type": "object",
+        "properties": {
+          "status": {
+            "title": "Status",
+            "enum": [
+              "processing",
+              "completed",
+              "failed"
+            ],
+            "type": "string",
+            "additionalProperties": false
+          },
+          "data": {
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/AudioAnalysisResult"
+              }
+            ],
+            "nullable": true
+          },
+          "updated_at_ms": {
+            "title": "Updated At Ms",
+            "type": "integer"
+          }
+        }
+      },
+      "AudioAnalysisResult": {
+        "title": "AudioAnalysisResult",
+        "required": [
+          "title",
+          "description"
+        ],
+        "type": "object",
+        "properties": {
+          "title": {
+            "title": "Title",
+            "type": "string"
+          },
+          "description": {
+            "title": "Description",
+            "type": "string"
+          },
+          "content_type": {
+            "title": "Content Type",
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Content_Type"
+              }
+            ],
+            "nullable": true
+          },
+          "overall_pacing": {
+            "title": "Overall Pacing",
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Overall_Pacing"
+              }
+            ],
+            "nullable": true
+          },
+          "segments": {
+            "title": "Segments",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AudioSegment"
+            }
+          },
+          "key_moments": {
+            "title": "Key Moments",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AudioKeyMoment"
+            }
+          },
+          "transcription": {
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/AssetTranscription"
+              }
+            ],
+            "nullable": true
+          }
+        }
+      },
+      "AudioKeyMoment": {
+        "title": "AudioKeyMoment",
+        "required": [
+          "timestamp_ms",
+          "type",
+          "description"
+        ],
+        "type": "object",
+        "properties": {
+          "timestamp_ms": {
+            "title": "Timestamp Ms",
+            "type": "integer"
+          },
+          "type": {
+            "title": "Type",
+            "type": "string"
+          },
+          "description": {
+            "title": "Description",
+            "type": "string"
           }
         }
       },
@@ -28660,6 +28836,59 @@
           "status": "ready",
           "text_color": "#000000",
           "title": "My Project"
+        }
+      },
+      "AudioSegment": {
+        "title": "AudioSegment",
+        "required": [
+          "start_ms",
+          "end_ms",
+          "description"
+        ],
+        "type": "object",
+        "properties": {
+          "start_ms": {
+            "title": "Start Ms",
+            "type": "integer"
+          },
+          "end_ms": {
+            "title": "End Ms",
+            "type": "integer"
+          },
+          "description": {
+            "title": "Description",
+            "type": "string"
+          },
+          "segment_type": {
+            "title": "Segment Type",
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Segment_Type"
+              }
+            ],
+            "nullable": true
+          },
+          "has_speech": {
+            "title": "Has Speech",
+            "type": "boolean",
+            "default": false
+          },
+          "has_music": {
+            "title": "Has Music",
+            "type": "boolean",
+            "default": false
+          },
+          "pacing": {
+            "title": "Pacing",
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Pacing"
+              }
+            ],
+            "nullable": true
+          }
         }
       },
       "AudioWithTimestampsAndVoiceSegmentsResponseModel": {
@@ -49500,6 +49729,17 @@
             ],
             "description": "Deprecation information if this model is deprecated or scheduled for deprecation. Null if the model is not affected.",
             "nullable": true
+          },
+          "model_score": {
+            "title": "Model Score",
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Model_Score"
+              }
+            ],
+            "description": "The model\u0027s benchmark score. Null if no score is available.",
+            "nullable": true
           }
         },
         "example": {
@@ -49507,6 +49747,7 @@
           "llm": "gemini-2.5-flash",
           "max_context_limit": 1048576,
           "max_tokens_limit": 8192,
+          "model_score": 72,
           "supports_document_input": true,
           "supports_image_input": true,
           "supports_parallel_tool_calls": true
@@ -49578,6 +49819,17 @@
             ],
             "description": "Deprecation information if this model is deprecated or scheduled for deprecation. Null if the model is not affected.",
             "nullable": true
+          },
+          "model_score": {
+            "title": "Model Score",
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Model_Score"
+              }
+            ],
+            "description": "The model\u0027s benchmark score. Null if no score is available.",
+            "nullable": true
           }
         },
         "example": {
@@ -49585,6 +49837,7 @@
           "llm": "gemini-2.5-flash",
           "max_context_limit": 1048576,
           "max_tokens_limit": 8192,
+          "model_score": 72,
           "supports_document_input": true,
           "supports_image_input": true,
           "supports_parallel_tool_calls": true
@@ -55794,6 +56047,15 @@
                     "song": "#/components/schemas/SongSourceContext"
                   }
                 }
+              }
+            ],
+            "nullable": true
+          },
+          "analysis": {
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/AudioAnalysis"
               }
             ],
             "nullable": true
@@ -67007,7 +67269,7 @@
             "type": "object",
             "anyOf": [
               {
-                "$ref": "#/components/schemas/VideoTranscription"
+                "$ref": "#/components/schemas/AssetTranscription"
               }
             ],
             "nullable": true
@@ -67132,65 +67394,6 @@
           "description": {
             "title": "Description",
             "type": "string"
-          }
-        }
-      },
-      "VideoTranscription": {
-        "title": "VideoTranscription",
-        "required": [
-          "language_code",
-          "text",
-          "words"
-        ],
-        "type": "object",
-        "properties": {
-          "language_code": {
-            "title": "Language Code",
-            "type": "string"
-          },
-          "text": {
-            "title": "Text",
-            "type": "string"
-          },
-          "words": {
-            "title": "Words",
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/VideoTranscriptionWord"
-            }
-          }
-        }
-      },
-      "VideoTranscriptionWord": {
-        "title": "VideoTranscriptionWord",
-        "required": [
-          "text",
-          "start_ms",
-          "end_ms"
-        ],
-        "type": "object",
-        "properties": {
-          "speaker_id": {
-            "title": "Speaker Id",
-            "type": "object",
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/Speaker_Id"
-              }
-            ],
-            "nullable": true
-          },
-          "text": {
-            "title": "Text",
-            "type": "string"
-          },
-          "start_ms": {
-            "title": "Start Ms",
-            "type": "integer"
-          },
-          "end_ms": {
-            "title": "End Ms",
-            "type": "integer"
           }
         }
       },
@@ -75134,6 +75337,17 @@
           }
         }
       },
+      "Speaker_Id": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string"
+          }
+        }
+      },
       "Delivery_Error": {
         "required": [
           "value"
@@ -75167,6 +75381,28 @@
           }
         }
       },
+      "Content_Type": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string"
+          }
+        }
+      },
+      "Overall_Pacing": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string"
+          }
+        }
+      },
       "Audio_Path": {
         "required": [
           "value"
@@ -75179,6 +75415,28 @@
         }
       },
       "Audio_Url": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string"
+          }
+        }
+      },
+      "Segment_Type": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string"
+          }
+        }
+      },
+      "Pacing": {
         "required": [
           "value"
         ],
@@ -75537,17 +75795,6 @@
             ],
             "type": "string",
             "additionalProperties": false
-          }
-        }
-      },
-      "Content_Type": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "type": "string"
           }
         }
       },
@@ -78431,6 +78678,17 @@
           }
         }
       },
+      "Model_Score": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "number"
+          }
+        }
+      },
       "Enum": {
         "required": [
           "value"
@@ -80051,17 +80309,6 @@
           }
         }
       },
-      "Speaker_Id": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "type": "string"
-          }
-        }
-      },
       "Characters": {
         "required": [
           "value"
@@ -80532,17 +80779,6 @@
           }
         }
       },
-      "Overall_Pacing": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "type": "string"
-          }
-        }
-      },
       "Shot_Type": {
         "required": [
           "value"
@@ -80566,17 +80802,6 @@
         }
       },
       "Transition_In": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "type": "string"
-          }
-        }
-      },
-      "Pacing": {
         "required": [
           "value"
         ],

@@ -9,7 +9,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class VideoTranscriptionWord_speaker_id : IAdditionalDataHolder, IParsable
+    public partial class AssetTranscriptionWord_speaker_id : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -23,21 +23,21 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public string Value { get; set; }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.VideoTranscriptionWord_speaker_id"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.AssetTranscriptionWord_speaker_id"/> and sets the default values.
         /// </summary>
-        public VideoTranscriptionWord_speaker_id()
+        public AssetTranscriptionWord_speaker_id()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.VideoTranscriptionWord_speaker_id"/></returns>
+        /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.AssetTranscriptionWord_speaker_id"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.ElevenLabs.OpenApiClient.Models.VideoTranscriptionWord_speaker_id CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.ElevenLabs.OpenApiClient.Models.AssetTranscriptionWord_speaker_id CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.VideoTranscriptionWord_speaker_id();
+            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.AssetTranscriptionWord_speaker_id();
         }
         /// <summary>
         /// The deserialization information for the current model

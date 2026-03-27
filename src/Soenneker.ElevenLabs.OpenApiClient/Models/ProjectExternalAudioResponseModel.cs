@@ -14,6 +14,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The analysis property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExternalAudioResponseModel_analysis? Analysis { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExternalAudioResponseModel_analysis Analysis { get; set; }
+#endif
         /// <summary>The created_at_ms property</summary>
         public int? CreatedAtMs { get; set; }
         /// <summary>The current_snapshot_id property</summary>
@@ -176,6 +184,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "analysis", n => { Analysis = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExternalAudioResponseModel_analysis>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExternalAudioResponseModel_analysis.CreateFromDiscriminatorValue); } },
                 { "created_at_ms", n => { CreatedAtMs = n.GetIntValue(); } },
                 { "current_snapshot_id", n => { CurrentSnapshotId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExternalAudioResponseModel_current_snapshot_id>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExternalAudioResponseModel_current_snapshot_id.CreateFromDiscriminatorValue); } },
                 { "duration_ms", n => { DurationMs = n.GetIntValue(); } },
@@ -211,6 +220,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExternalAudioResponseModel_analysis>("analysis", Analysis);
             writer.WriteIntValue("created_at_ms", CreatedAtMs);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExternalAudioResponseModel_current_snapshot_id>("current_snapshot_id", CurrentSnapshotId);
             writer.WriteIntValue("duration_ms", DurationMs);

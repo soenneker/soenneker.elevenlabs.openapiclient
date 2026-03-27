@@ -9,7 +9,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class VideoTranscriptionWord : IAdditionalDataHolder, IParsable
+    public partial class AssetTranscriptionWord : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -19,10 +19,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The speaker_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.VideoTranscriptionWord_speaker_id? SpeakerId { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AssetTranscriptionWord_speaker_id? SpeakerId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.VideoTranscriptionWord_speaker_id SpeakerId { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AssetTranscriptionWord_speaker_id SpeakerId { get; set; }
 #endif
         /// <summary>The start_ms property</summary>
         public int? StartMs { get; set; }
@@ -35,21 +35,21 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public string Text { get; set; }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.VideoTranscriptionWord"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.AssetTranscriptionWord"/> and sets the default values.
         /// </summary>
-        public VideoTranscriptionWord()
+        public AssetTranscriptionWord()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.VideoTranscriptionWord"/></returns>
+        /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.AssetTranscriptionWord"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.ElevenLabs.OpenApiClient.Models.VideoTranscriptionWord CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.ElevenLabs.OpenApiClient.Models.AssetTranscriptionWord CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.VideoTranscriptionWord();
+            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.AssetTranscriptionWord();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -60,7 +60,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "end_ms", n => { EndMs = n.GetIntValue(); } },
-                { "speaker_id", n => { SpeakerId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.VideoTranscriptionWord_speaker_id>(global::Soenneker.ElevenLabs.OpenApiClient.Models.VideoTranscriptionWord_speaker_id.CreateFromDiscriminatorValue); } },
+                { "speaker_id", n => { SpeakerId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AssetTranscriptionWord_speaker_id>(global::Soenneker.ElevenLabs.OpenApiClient.Models.AssetTranscriptionWord_speaker_id.CreateFromDiscriminatorValue); } },
                 { "start_ms", n => { StartMs = n.GetIntValue(); } },
                 { "text", n => { Text = n.GetStringValue(); } },
             };
@@ -73,7 +73,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("end_ms", EndMs);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.VideoTranscriptionWord_speaker_id>("speaker_id", SpeakerId);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AssetTranscriptionWord_speaker_id>("speaker_id", SpeakerId);
             writer.WriteIntValue("start_ms", StartMs);
             writer.WriteStringValue("text", Text);
             writer.WriteAdditionalData(AdditionalData);
