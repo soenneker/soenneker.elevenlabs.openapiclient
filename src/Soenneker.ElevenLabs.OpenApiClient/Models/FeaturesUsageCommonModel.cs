@@ -38,6 +38,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel ExternalMcpServers { get; set; }
 #endif
+        /// <summary>The file_input property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel? FileInput { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel FileInput { get; set; }
+#endif
         /// <summary>The is_livekit property</summary>
         public bool? IsLivekit { get; set; }
         /// <summary>The language_detection property</summary>
@@ -136,6 +144,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "agent_testing", n => { AgentTesting = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TestsFeatureUsageCommonModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.TestsFeatureUsageCommonModel.CreateFromDiscriminatorValue); } },
                 { "dtmf_tones", n => { DtmfTones = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel.CreateFromDiscriminatorValue); } },
                 { "external_mcp_servers", n => { ExternalMcpServers = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel.CreateFromDiscriminatorValue); } },
+                { "file_input", n => { FileInput = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel.CreateFromDiscriminatorValue); } },
                 { "is_livekit", n => { IsLivekit = n.GetBoolValue(); } },
                 { "language_detection", n => { LanguageDetection = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel.CreateFromDiscriminatorValue); } },
                 { "multivoice", n => { Multivoice = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel.CreateFromDiscriminatorValue); } },
@@ -159,6 +168,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TestsFeatureUsageCommonModel>("agent_testing", AgentTesting);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel>("dtmf_tones", DtmfTones);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel>("external_mcp_servers", ExternalMcpServers);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel>("file_input", FileInput);
             writer.WriteBoolValue("is_livekit", IsLivekit);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel>("language_detection", LanguageDetection);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel>("multivoice", Multivoice);

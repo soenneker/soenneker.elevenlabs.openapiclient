@@ -9,27 +9,31 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class ApiIntegrationWebhookToolConfig_Input_api_schema_overrides_query_params_schema_properties : IAdditionalDataHolder, IParsable
+    public partial class FileInputConfig : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>When enabled, users may attach images or PDFs in chat when the LLM supports multimodal input.</summary>
+        public bool? Enabled { get; set; }
+        /// <summary>Maximum number of files that can be uploaded per conversation.</summary>
+        public int? MaxFilesPerConversation { get; set; }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ApiIntegrationWebhookToolConfig_Input_api_schema_overrides_query_params_schema_properties"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.FileInputConfig"/> and sets the default values.
         /// </summary>
-        public ApiIntegrationWebhookToolConfig_Input_api_schema_overrides_query_params_schema_properties()
+        public FileInputConfig()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ApiIntegrationWebhookToolConfig_Input_api_schema_overrides_query_params_schema_properties"/></returns>
+        /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.FileInputConfig"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.ElevenLabs.OpenApiClient.Models.ApiIntegrationWebhookToolConfig_Input_api_schema_overrides_query_params_schema_properties CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.ElevenLabs.OpenApiClient.Models.FileInputConfig CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.ApiIntegrationWebhookToolConfig_Input_api_schema_overrides_query_params_schema_properties();
+            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.FileInputConfig();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -39,6 +43,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "enabled", n => { Enabled = n.GetBoolValue(); } },
+                { "max_files_per_conversation", n => { MaxFilesPerConversation = n.GetIntValue(); } },
             };
         }
         /// <summary>
@@ -48,6 +54,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteBoolValue("enabled", Enabled);
+            writer.WriteIntValue("max_files_per_conversation", MaxFilesPerConversation);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -15,30 +15,6 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The path_params_schema property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ApiIntegrationWebhookToolConfig_Input_api_schema_overrides_path_params_schema? PathParamsSchema { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ApiIntegrationWebhookToolConfig_Input_api_schema_overrides_path_params_schema PathParamsSchema { get; set; }
-#endif
-        /// <summary>The query_params_schema property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ApiIntegrationWebhookToolConfig_Input_api_schema_overrides_query_params_schema? QueryParamsSchema { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ApiIntegrationWebhookToolConfig_Input_api_schema_overrides_query_params_schema QueryParamsSchema { get; set; }
-#endif
-        /// <summary>The request_body_schema property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ApiIntegrationWebhookToolConfig_Input_api_schema_overrides_request_body_schema? RequestBodySchema { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ApiIntegrationWebhookToolConfig_Input_api_schema_overrides_request_body_schema RequestBodySchema { get; set; }
-#endif
         /// <summary>The request_headers property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -96,9 +72,6 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "path_params_schema", n => { PathParamsSchema = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ApiIntegrationWebhookToolConfig_Input_api_schema_overrides_path_params_schema>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ApiIntegrationWebhookToolConfig_Input_api_schema_overrides_path_params_schema.CreateFromDiscriminatorValue); } },
-                { "query_params_schema", n => { QueryParamsSchema = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ApiIntegrationWebhookToolConfig_Input_api_schema_overrides_query_params_schema>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ApiIntegrationWebhookToolConfig_Input_api_schema_overrides_query_params_schema.CreateFromDiscriminatorValue); } },
-                { "request_body_schema", n => { RequestBodySchema = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ApiIntegrationWebhookToolConfig_Input_api_schema_overrides_request_body_schema>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ApiIntegrationWebhookToolConfig_Input_api_schema_overrides_request_body_schema.CreateFromDiscriminatorValue); } },
                 { "request_headers", n => { RequestHeaders = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ApiIntegrationWebhookToolConfig_Input_api_schema_overrides_request_headers>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ApiIntegrationWebhookToolConfig_Input_api_schema_overrides_request_headers.CreateFromDiscriminatorValue); } },
                 { "response_filter_mode", n => { ResponseFilterMode = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ApiIntegrationWebhookToolConfig_Input_api_schema_overrides_response_filter_mode>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ApiIntegrationWebhookToolConfig_Input_api_schema_overrides_response_filter_mode.CreateFromDiscriminatorValue); } },
                 { "response_filters", n => { ResponseFilters = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ApiIntegrationWebhookToolConfig_Input_api_schema_overrides_response_filters>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ApiIntegrationWebhookToolConfig_Input_api_schema_overrides_response_filters.CreateFromDiscriminatorValue); } },
@@ -112,9 +85,6 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ApiIntegrationWebhookToolConfig_Input_api_schema_overrides_path_params_schema>("path_params_schema", PathParamsSchema);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ApiIntegrationWebhookToolConfig_Input_api_schema_overrides_query_params_schema>("query_params_schema", QueryParamsSchema);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ApiIntegrationWebhookToolConfig_Input_api_schema_overrides_request_body_schema>("request_body_schema", RequestBodySchema);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ApiIntegrationWebhookToolConfig_Input_api_schema_overrides_request_headers>("request_headers", RequestHeaders);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ApiIntegrationWebhookToolConfig_Input_api_schema_overrides_response_filter_mode>("response_filter_mode", ResponseFilterMode);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ApiIntegrationWebhookToolConfig_Input_api_schema_overrides_response_filters>("response_filters", ResponseFilters);

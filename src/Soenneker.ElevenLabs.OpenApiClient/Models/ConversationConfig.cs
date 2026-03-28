@@ -22,6 +22,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ClientEvent?> ClientEvents { get; set; }
 #endif
+        /// <summary>The file_input property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.FileInputConfig? FileInput { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.FileInputConfig FileInput { get; set; }
+#endif
         /// <summary>The maximum duration of a conversation in seconds</summary>
         public int? MaxDurationSeconds { get; set; }
         /// <summary>Enable real-time monitoring of conversations via WebSocket</summary>
@@ -62,6 +70,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "client_events", n => { ClientEvents = n.GetCollectionOfEnumValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.ClientEvent>()?.AsList(); } },
+                { "file_input", n => { FileInput = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.FileInputConfig>(global::Soenneker.ElevenLabs.OpenApiClient.Models.FileInputConfig.CreateFromDiscriminatorValue); } },
                 { "max_duration_seconds", n => { MaxDurationSeconds = n.GetIntValue(); } },
                 { "monitoring_enabled", n => { MonitoringEnabled = n.GetBoolValue(); } },
                 { "monitoring_events", n => { MonitoringEvents = n.GetCollectionOfEnumValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.ClientEvent>()?.AsList(); } },
@@ -76,6 +85,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfEnumValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.ClientEvent>("client_events", ClientEvents);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.FileInputConfig>("file_input", FileInput);
             writer.WriteIntValue("max_duration_seconds", MaxDurationSeconds);
             writer.WriteBoolValue("monitoring_enabled", MonitoringEnabled);
             writer.WriteCollectionOfEnumValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.ClientEvent>("monitoring_events", MonitoringEvents);

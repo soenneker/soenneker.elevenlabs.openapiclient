@@ -13634,20 +13634,20 @@
         "operationId": "cancel-file-upload-route",
         "parameters": [
           {
-            "name": "conversation_id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "title": "Conversation Id",
-              "type": "string"
-            }
-          },
-          {
             "name": "file_id",
             "in": "path",
             "required": true,
             "schema": {
               "title": "File Id",
+              "type": "string"
+            }
+          },
+          {
+            "name": "conversation_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "title": "Conversation Id",
               "type": "string"
             }
           },
@@ -27869,7 +27869,7 @@
         },
         "description": "Response model for integration-managed OAuth2 Auth Code auth connections"
       },
-      "ApiIntegrationWebhookOverrides_Input": {
+      "ApiIntegrationWebhookOverrides": {
         "title": "ApiIntegrationWebhookOverrides",
         "type": "object",
         "properties": {
@@ -27909,155 +27909,6 @@
                     }
                   }
                 }
-              }
-            ],
-            "nullable": true
-          },
-          "path_params_schema": {
-            "title": "Path Params Schema",
-            "type": "object",
-            "anyOf": [
-              {
-                "type": "object",
-                "additionalProperties": {
-                  "$ref": "#/components/schemas/LiteralOverride"
-                }
-              }
-            ],
-            "nullable": true
-          },
-          "query_params_schema": {
-            "type": "object",
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/QueryOverride"
-              }
-            ],
-            "nullable": true
-          },
-          "request_body_schema": {
-            "type": "object",
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/ObjectOverride_Input"
-              }
-            ],
-            "nullable": true
-          },
-          "request_headers": {
-            "title": "Request Headers",
-            "type": "object",
-            "anyOf": [
-              {
-                "type": "object",
-                "additionalProperties": {
-                  "type": "object",
-                  "anyOf": [
-                    {
-                      "$ref": "#/components/schemas/UnionBranch"
-                    },
-                    {
-                      "$ref": "#/components/schemas/ConvAIDynamicVariable"
-                    }
-                  ]
-                }
-              }
-            ],
-            "nullable": true
-          },
-          "response_filter_mode": {
-            "type": "object",
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/ResponseFilterMode_Wrapper"
-              }
-            ],
-            "nullable": true
-          },
-          "response_filters": {
-            "title": "Response Filters",
-            "type": "object",
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/Response_Filters"
-              }
-            ],
-            "nullable": true
-          }
-        },
-        "description": "A whitelist of fields that can be overridden by users when\nconfiguring an API Integration Webhook Tool."
-      },
-      "ApiIntegrationWebhookOverrides_Output": {
-        "title": "ApiIntegrationWebhookOverrides",
-        "type": "object",
-        "properties": {
-          "schema_overrides": {
-            "title": "Schema Overrides",
-            "type": "object",
-            "anyOf": [
-              {
-                "type": "object",
-                "additionalProperties": {
-                  "required": [
-                    "source"
-                  ],
-                  "type": "object",
-                  "oneOf": [
-                    {
-                      "$ref": "#/components/schemas/ConstantSchemaOverride"
-                    },
-                    {
-                      "$ref": "#/components/schemas/DynamicVariableSchemaOverride"
-                    },
-                    {
-                      "$ref": "#/components/schemas/LLMSchemaOverride"
-                    }
-                  ],
-                  "properties": {
-                    "source": {
-                      "type": "string"
-                    }
-                  },
-                  "discriminator": {
-                    "propertyName": "source",
-                    "mapping": {
-                      "constant": "#/components/schemas/ConstantSchemaOverride",
-                      "dynamic_variable": "#/components/schemas/DynamicVariableSchemaOverride",
-                      "llm": "#/components/schemas/LLMSchemaOverride"
-                    }
-                  }
-                }
-              }
-            ],
-            "nullable": true
-          },
-          "path_params_schema": {
-            "title": "Path Params Schema",
-            "type": "object",
-            "anyOf": [
-              {
-                "type": "object",
-                "additionalProperties": {
-                  "$ref": "#/components/schemas/LiteralOverride"
-                }
-              }
-            ],
-            "nullable": true
-          },
-          "query_params_schema": {
-            "type": "object",
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/QueryOverride"
-              }
-            ],
-            "nullable": true
-          },
-          "request_body_schema": {
-            "type": "object",
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/ObjectOverride_Output"
               }
             ],
             "nullable": true
@@ -28204,7 +28055,7 @@
             "type": "object",
             "anyOf": [
               {
-                "$ref": "#/components/schemas/ApiIntegrationWebhookOverrides_Input"
+                "$ref": "#/components/schemas/ApiIntegrationWebhookOverrides"
               }
             ],
             "description": "User overrides applied on top of the base api_schema",
@@ -28323,7 +28174,7 @@
             "type": "object",
             "anyOf": [
               {
-                "$ref": "#/components/schemas/ApiIntegrationWebhookOverrides_Output"
+                "$ref": "#/components/schemas/ApiIntegrationWebhookOverrides"
               }
             ],
             "description": "User overrides applied on top of the base api_schema",
@@ -37532,6 +37383,9 @@
             },
             "description": "The events that will be sent to the client"
           },
+          "file_input": {
+            "$ref": "#/components/schemas/FileInputConfig"
+          },
           "monitoring_enabled": {
             "title": "Monitoring Enabled",
             "type": "boolean",
@@ -37792,6 +37646,17 @@
             ],
             "description": "The events that will be sent to the client",
             "nullable": true
+          },
+          "file_input": {
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/FileInputConfigWorkflowOverride"
+              }
+            ],
+            "description": "Configuration for file input (image/PDF uploads) during conversations.",
+            "nullable": true,
+            "x-convai-client-override": true
           },
           "monitoring_enabled": {
             "title": "Monitoring Enabled",
@@ -38724,6 +38589,16 @@
               }
             ],
             "nullable": true
+          },
+          "source_event_id": {
+            "title": "Source Event Id",
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Source_Event_Id"
+              }
+            ],
+            "nullable": true
           }
         }
       },
@@ -38870,6 +38745,16 @@
             "anyOf": [
               {
                 "$ref": "#/components/schemas/ChatSourceMedium_Wrapper"
+              }
+            ],
+            "nullable": true
+          },
+          "source_event_id": {
+            "title": "Source Event Id",
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Source_Event_Id"
               }
             ],
             "nullable": true
@@ -39110,6 +38995,16 @@
             "anyOf": [
               {
                 "$ref": "#/components/schemas/ChatSourceMedium_Wrapper"
+              }
+            ],
+            "nullable": true
+          },
+          "source_event_id": {
+            "title": "Source Event Id",
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Source_Event_Id"
               }
             ],
             "nullable": true
@@ -45200,6 +45095,9 @@
           },
           "versioning": {
             "$ref": "#/components/schemas/FeatureStatusCommonModel"
+          },
+          "file_input": {
+            "$ref": "#/components/schemas/FeatureStatusCommonModel"
           }
         }
       },
@@ -45267,6 +45165,54 @@
           "other": false,
           "review_status": "not_reviewed",
           "thumbs_up": true
+        }
+      },
+      "FileInputConfig": {
+        "title": "FileInputConfig",
+        "type": "object",
+        "properties": {
+          "enabled": {
+            "title": "Enabled",
+            "type": "boolean",
+            "description": "When enabled, users may attach images or PDFs in chat when the LLM supports multimodal input.",
+            "default": true
+          },
+          "max_files_per_conversation": {
+            "title": "Max Files Per Conversation",
+            "maximum": 10.0,
+            "minimum": 1.0,
+            "type": "integer",
+            "description": "Maximum number of files that can be uploaded per conversation.",
+            "default": 10
+          }
+        }
+      },
+      "FileInputConfigWorkflowOverride": {
+        "title": "FileInputConfigWorkflowOverride",
+        "type": "object",
+        "properties": {
+          "enabled": {
+            "title": "Enabled",
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Enabled"
+              }
+            ],
+            "description": "When enabled, users may attach images or PDFs in chat when the LLM supports multimodal input.",
+            "nullable": true
+          },
+          "max_files_per_conversation": {
+            "title": "Max Files Per Conversation",
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Max_Files_Per_Conversation"
+              }
+            ],
+            "description": "Maximum number of files that can be uploaded per conversation.",
+            "nullable": true
+          }
         }
       },
       "FineTuningResponseModel": {
@@ -51082,42 +51028,6 @@
           "type": "string"
         }
       },
-      "LiteralOverride": {
-        "title": "LiteralOverride",
-        "type": "object",
-        "properties": {
-          "description": {
-            "title": "Description",
-            "type": "object",
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/Description"
-              }
-            ],
-            "nullable": true
-          },
-          "dynamic_variable": {
-            "title": "Dynamic Variable",
-            "type": "object",
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/Dynamic_Variable"
-              }
-            ],
-            "nullable": true
-          },
-          "constant_value": {
-            "title": "Constant Value",
-            "type": "object",
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/Constant_Value"
-              }
-            ],
-            "nullable": true
-          }
-        }
-      },
       "LivekitStackType": {
         "title": "LivekitStackType",
         "enum": [
@@ -53685,100 +53595,6 @@
           }
         },
         "additionalProperties": false
-      },
-      "ObjectOverride_Input": {
-        "title": "ObjectOverride",
-        "type": "object",
-        "properties": {
-          "description": {
-            "title": "Description",
-            "type": "object",
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/Description"
-              }
-            ],
-            "nullable": true
-          },
-          "properties": {
-            "title": "Properties",
-            "type": "object",
-            "anyOf": [
-              {
-                "type": "object",
-                "additionalProperties": {
-                  "type": "object",
-                  "anyOf": [
-                    {
-                      "$ref": "#/components/schemas/LiteralOverride"
-                    },
-                    {
-                      "$ref": "#/components/schemas/ObjectOverride_Input"
-                    }
-                  ]
-                }
-              }
-            ],
-            "nullable": true
-          },
-          "required": {
-            "title": "Required",
-            "type": "object",
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/Required"
-              }
-            ],
-            "nullable": true
-          }
-        }
-      },
-      "ObjectOverride_Output": {
-        "title": "ObjectOverride",
-        "type": "object",
-        "properties": {
-          "description": {
-            "title": "Description",
-            "type": "object",
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/Description"
-              }
-            ],
-            "nullable": true
-          },
-          "properties": {
-            "title": "Properties",
-            "type": "object",
-            "anyOf": [
-              {
-                "type": "object",
-                "additionalProperties": {
-                  "type": "object",
-                  "anyOf": [
-                    {
-                      "$ref": "#/components/schemas/LiteralOverride"
-                    },
-                    {
-                      "$ref": "#/components/schemas/ObjectOverride_Output"
-                    }
-                  ]
-                }
-              }
-            ],
-            "nullable": true
-          },
-          "required": {
-            "title": "Required",
-            "type": "object",
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/Required"
-              }
-            ],
-            "nullable": true
-          }
-        }
       },
       "OrbAvatar": {
         "title": "OrbAvatar",
@@ -58534,35 +58350,6 @@
           }
         },
         "description": "A locator for other documents to be able to reference a specific dictionary and it\u0027s version.\nThis is a pydantic version of PronunciationDictionaryVersionLocatorDBModel.\nRequired to ensure compat with the rest of the agent data models."
-      },
-      "QueryOverride": {
-        "title": "QueryOverride",
-        "type": "object",
-        "properties": {
-          "properties": {
-            "title": "Properties",
-            "type": "object",
-            "anyOf": [
-              {
-                "type": "object",
-                "additionalProperties": {
-                  "$ref": "#/components/schemas/LiteralOverride"
-                }
-              }
-            ],
-            "nullable": true
-          },
-          "required": {
-            "title": "Required",
-            "type": "object",
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/Required"
-              }
-            ],
-            "nullable": true
-          }
-        }
       },
       "QueryParamsJsonSchema": {
         "title": "QueryParamsJsonSchema",
@@ -77474,6 +77261,17 @@
           }
         }
       },
+      "Source_Event_Id": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "integer"
+          }
+        }
+      },
       "Type": {
         "required": [
           "value"
@@ -78294,6 +78092,28 @@
           }
         }
       },
+      "Enabled": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "boolean"
+          }
+        }
+      },
+      "Max_Files_Per_Conversation": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "integer"
+          }
+        }
+      },
       "Dataset_Duration_Seconds": {
         "required": [
           "value"
@@ -78915,17 +78735,6 @@
           }
         }
       },
-      "Dynamic_Variable": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "type": "string"
-          }
-        }
-      },
       "Url": {
         "required": [
           "value"
@@ -79121,20 +78930,6 @@
         "properties": {
           "value": {
             "type": "string"
-          }
-        }
-      },
-      "Required": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
           }
         }
       },
@@ -79604,17 +79399,6 @@
             "maxLength": 1000,
             "minLength": 1,
             "type": "string"
-          }
-        }
-      },
-      "Enabled": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "type": "boolean"
           }
         }
       },
