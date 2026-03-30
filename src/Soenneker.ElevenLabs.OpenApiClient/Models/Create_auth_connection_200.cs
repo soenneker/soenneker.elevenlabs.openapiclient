@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.ElevenLabs.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ApiIntegrationOAuth2AuthCodeResponse"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.BasicAuthResponse"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.BearerAuthResponse"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomHeaderAuthResponse"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.OAuth2ClientCredsResponse"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.OAuth2JWTResponse"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.PrivateKeyJWTResponse"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppAuthResponse"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ApiIntegrationOAuth2AuthCodeResponse"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.BasicAuthResponse"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.BearerAuthResponse"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomHeaderAuthResponse"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.MTLSAuthResponse"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.OAuth2ClientCredsResponse"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.OAuth2JWTResponse"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.PrivateKeyJWTResponse"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppAuthResponse"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Create_auth_connection_200 : IComposedTypeWrapper, IParsable
@@ -44,6 +44,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #nullable restore
 #else
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomHeaderAuthResponse CustomHeaderAuthResponse { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.MTLSAuthResponse"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.MTLSAuthResponse? MTLSAuthResponse { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.MTLSAuthResponse MTLSAuthResponse { get; set; }
 #endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.OAuth2ClientCredsResponse"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -103,6 +111,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             {
                 result.CustomHeaderAuthResponse = new global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomHeaderAuthResponse();
             }
+            else if("mtls".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.MTLSAuthResponse = new global::Soenneker.ElevenLabs.OpenApiClient.Models.MTLSAuthResponse();
+            }
             else if("OAuth2ClientCredsResponse".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.OAuth2ClientCredsResponse = new global::Soenneker.ElevenLabs.OpenApiClient.Models.OAuth2ClientCredsResponse();
@@ -142,6 +154,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             else if(CustomHeaderAuthResponse != null)
             {
                 return CustomHeaderAuthResponse.GetFieldDeserializers();
+            }
+            else if(MTLSAuthResponse != null)
+            {
+                return MTLSAuthResponse.GetFieldDeserializers();
             }
             else if(OAuth2ClientCredsResponse != null)
             {
@@ -183,6 +199,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             else if(CustomHeaderAuthResponse != null)
             {
                 writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomHeaderAuthResponse>(null, CustomHeaderAuthResponse);
+            }
+            else if(MTLSAuthResponse != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.MTLSAuthResponse>(null, MTLSAuthResponse);
             }
             else if(OAuth2ClientCredsResponse != null)
             {

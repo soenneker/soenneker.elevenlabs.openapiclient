@@ -41108,6 +41108,63 @@
           }
         }
       },
+      "CreateMTLSAuthRequest": {
+        "title": "CreateMTLSAuthRequest",
+        "required": [
+          "name",
+          "provider",
+          "client_certificate",
+          "client_key"
+        ],
+        "type": "object",
+        "properties": {
+          "name": {
+            "title": "Name",
+            "type": "string"
+          },
+          "auth_type": {
+            "title": "Auth Type",
+            "enum": [
+              "mtls"
+            ],
+            "type": "string",
+            "default": "mtls"
+          },
+          "provider": {
+            "title": "Provider",
+            "type": "string"
+          },
+          "client_certificate": {
+            "title": "Client Certificate",
+            "type": "string"
+          },
+          "client_key": {
+            "title": "Client Key",
+            "type": "string"
+          },
+          "ca_certificate": {
+            "title": "Ca Certificate",
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Ca_Certificate"
+              }
+            ],
+            "nullable": true
+          },
+          "key_passphrase": {
+            "title": "Key Passphrase",
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Key_Passphrase"
+              }
+            ],
+            "nullable": true
+          }
+        },
+        "description": "Request model for creating mTLS auth connections."
+      },
       "CreateOAuth2ClientCredsRequest": {
         "title": "CreateOAuth2ClientCredsRequest",
         "required": [
@@ -50676,6 +50733,9 @@
                   "$ref": "#/components/schemas/PrivateKeyJWTResponse"
                 },
                 {
+                  "$ref": "#/components/schemas/MTLSAuthResponse"
+                },
+                {
                   "$ref": "#/components/schemas/CustomHeaderAuthResponse"
                 },
                 {
@@ -50698,6 +50758,7 @@
                   "basic_auth": "#/components/schemas/BasicAuthResponse",
                   "bearer_auth": "#/components/schemas/BearerAuthResponse",
                   "custom_header_auth": "#/components/schemas/CustomHeaderAuthResponse",
+                  "mtls": "#/components/schemas/MTLSAuthResponse",
                   "oauth2_client_credentials": "#/components/schemas/OAuth2ClientCredsResponse",
                   "oauth2_jwt": "#/components/schemas/OAuth2JWTResponse",
                   "private_key_jwt": "#/components/schemas/PrivateKeyJWTResponse",
@@ -52344,6 +52405,47 @@
             "nullable": true
           }
         }
+      },
+      "MTLSAuthResponse": {
+        "title": "MTLSAuthResponse",
+        "required": [
+          "name",
+          "provider",
+          "id"
+        ],
+        "type": "object",
+        "properties": {
+          "name": {
+            "title": "Name",
+            "type": "string"
+          },
+          "auth_type": {
+            "title": "Auth Type",
+            "enum": [
+              "mtls"
+            ],
+            "type": "string",
+            "default": "mtls"
+          },
+          "provider": {
+            "title": "Provider",
+            "type": "string"
+          },
+          "id": {
+            "title": "Id",
+            "type": "string"
+          },
+          "used_by": {
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/AuthConnectionDependencies"
+              }
+            ],
+            "nullable": true
+          }
+        },
+        "description": "Response model for mTLS auth connections."
       },
       "ManualVerificationFileResponseModel": {
         "title": "ManualVerificationFileResponseModel",
@@ -74073,6 +74175,9 @@
           },
           {
             "$ref": "#/components/schemas/CreatePrivateKeyJWTRequest"
+          },
+          {
+            "$ref": "#/components/schemas/CreateMTLSAuthRequest"
           }
         ],
         "properties": {
@@ -74089,7 +74194,8 @@
             "CreateCustomHeaderAuthRequest": "#/components/schemas/CreateCustomHeaderAuthRequest",
             "CreateBasicAuthRequest": "#/components/schemas/CreateBasicAuthRequest",
             "CreateOAuth2JWTRequest": "#/components/schemas/CreateOAuth2JWTRequest",
-            "CreatePrivateKeyJWTRequest": "#/components/schemas/CreatePrivateKeyJWTRequest"
+            "CreatePrivateKeyJWTRequest": "#/components/schemas/CreatePrivateKeyJWTRequest",
+            "CreateMTLSAuthRequest": "#/components/schemas/CreateMTLSAuthRequest"
           }
         }
       },
@@ -74114,6 +74220,9 @@
           },
           {
             "$ref": "#/components/schemas/PrivateKeyJWTResponse"
+          },
+          {
+            "$ref": "#/components/schemas/MTLSAuthResponse"
           },
           {
             "$ref": "#/components/schemas/CustomHeaderAuthResponse"
@@ -74141,6 +74250,7 @@
             "bearer_auth": "#/components/schemas/BearerAuthResponse",
             "oauth2_jwt": "#/components/schemas/OAuth2JWTResponse",
             "private_key_jwt": "#/components/schemas/PrivateKeyJWTResponse",
+            "mtls": "#/components/schemas/MTLSAuthResponse",
             "custom_header_auth": "#/components/schemas/CustomHeaderAuthResponse",
             "api_integration_oauth2_auth_code": "#/components/schemas/ApiIntegrationOAuth2AuthCodeResponse",
             "whatsapp_auth": "#/components/schemas/WhatsAppAuthResponse",
@@ -74149,6 +74259,7 @@
             "BearerAuthResponse": "#/components/schemas/BearerAuthResponse",
             "OAuth2JWTResponse": "#/components/schemas/OAuth2JWTResponse",
             "PrivateKeyJWTResponse": "#/components/schemas/PrivateKeyJWTResponse",
+            "MTLSAuthResponse": "#/components/schemas/MTLSAuthResponse",
             "CustomHeaderAuthResponse": "#/components/schemas/CustomHeaderAuthResponse",
             "ApiIntegrationOAuth2AuthCodeResponse": "#/components/schemas/ApiIntegrationOAuth2AuthCodeResponse",
             "WhatsAppAuthResponse": "#/components/schemas/WhatsAppAuthResponse"
@@ -77459,6 +77570,28 @@
         }
       },
       "Last_Contact_Agent_Name": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string"
+          }
+        }
+      },
+      "Ca_Certificate": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string"
+          }
+        }
+      },
+      "Key_Passphrase": {
         "required": [
           "value"
         ],
