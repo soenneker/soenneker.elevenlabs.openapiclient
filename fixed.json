@@ -18426,6 +18426,67 @@
         }
       }
     },
+    "/v1/convai/conversations/{conversation_id}/analysis/run": {
+      "post": {
+        "tags": [
+          "Agents Workspace Analytics"
+        ],
+        "summary": "Run Conversation Analysis",
+        "description": "Run the analysis for a conversation using the agent\u0027s current evaluation criteria and data collection settings.",
+        "operationId": "run-conversation-analysis",
+        "parameters": [
+          {
+            "name": "conversation_id",
+            "in": "path",
+            "description": "ID of the conversation",
+            "required": true,
+            "schema": {
+              "title": "Conversation Id",
+              "type": "string",
+              "description": "ID of the conversation"
+            }
+          },
+          {
+            "name": "xi-api-key",
+            "in": "header",
+            "description": "Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the \u0027Profile\u0027 tab on the website.",
+            "schema": {
+              "title": "Xi-Api-Key",
+              "type": "object",
+              "anyOf": [
+                {
+                  "type": "string"
+                }
+              ],
+              "description": "Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the \u0027Profile\u0027 tab on the website.",
+              "nullable": true
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetConversationResponseModel"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/v1/convai/environment-variables": {
       "post": {
         "tags": [
@@ -31151,12 +31212,6 @@
             "title": "Text",
             "type": "string",
             "description": "The text to align with the audio. The input text can be in any format, however diarization is not supported at this time."
-          },
-          "enabled_spooled_file": {
-            "title": "Enabled Spooled File",
-            "type": "boolean",
-            "description": "If true, the file will be streamed to the server and processed in chunks. This is useful for large files that cannot be loaded into memory. The default is false.",
-            "default": false
           }
         }
       },
@@ -47333,6 +47388,12 @@
             "type": "boolean",
             "description": "Whether there are more shared voices in subsequent pages."
           },
+          "total_count": {
+            "title": "Total Count",
+            "type": "integer",
+            "description": "The total number of shared voices matching the query.",
+            "default": 0
+          },
           "last_sort_id": {
             "title": "Last Sort Id",
             "type": "object",
@@ -47346,6 +47407,7 @@
         },
         "example": {
           "has_more": false,
+          "total_count": 0,
           "voices": [
             {
               "accent": "american",

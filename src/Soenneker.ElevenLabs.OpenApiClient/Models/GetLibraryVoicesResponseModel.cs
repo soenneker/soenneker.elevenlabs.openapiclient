@@ -24,6 +24,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetLibraryVoicesResponseModel_last_sort_id LastSortId { get; set; }
 #endif
+        /// <summary>The total number of shared voices matching the query.</summary>
+        public int? TotalCount { get; set; }
         /// <summary>The list of shared voices</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -59,6 +61,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             {
                 { "has_more", n => { HasMore = n.GetBoolValue(); } },
                 { "last_sort_id", n => { LastSortId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetLibraryVoicesResponseModel_last_sort_id>(global::Soenneker.ElevenLabs.OpenApiClient.Models.GetLibraryVoicesResponseModel_last_sort_id.CreateFromDiscriminatorValue); } },
+                { "total_count", n => { TotalCount = n.GetIntValue(); } },
                 { "voices", n => { Voices = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.LibraryVoiceResponseModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.LibraryVoiceResponseModel.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
@@ -71,6 +74,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("has_more", HasMore);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetLibraryVoicesResponseModel_last_sort_id>("last_sort_id", LastSortId);
+            writer.WriteIntValue("total_count", TotalCount);
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.LibraryVoiceResponseModel>("voices", Voices);
             writer.WriteAdditionalData(AdditionalData);
         }

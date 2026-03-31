@@ -4,6 +4,7 @@ using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.ElevenLabs.OpenApiClient.Models;
+using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Conversations.Item.Analysis;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Conversations.Item.Audio;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Conversations.Item.Feedback;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Conversations.Item.Files;
@@ -20,6 +21,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Conversations.Item
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WithConversation_ItemRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The analysis property</summary>
+        public global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Conversations.Item.Analysis.AnalysisRequestBuilder Analysis
+        {
+            get => new global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Conversations.Item.Analysis.AnalysisRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The audio property</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Conversations.Item.Audio.AudioRequestBuilder Audio
         {
