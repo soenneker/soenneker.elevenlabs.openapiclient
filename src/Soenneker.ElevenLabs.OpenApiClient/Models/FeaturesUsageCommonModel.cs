@@ -22,6 +22,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.TestsFeatureUsageCommonModel AgentTesting { get; set; }
 #endif
+        /// <summary>The dtmf_input property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel? DtmfInput { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel DtmfInput { get; set; }
+#endif
         /// <summary>The dtmf_tones property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -142,6 +150,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "agent_testing", n => { AgentTesting = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TestsFeatureUsageCommonModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.TestsFeatureUsageCommonModel.CreateFromDiscriminatorValue); } },
+                { "dtmf_input", n => { DtmfInput = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel.CreateFromDiscriminatorValue); } },
                 { "dtmf_tones", n => { DtmfTones = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel.CreateFromDiscriminatorValue); } },
                 { "external_mcp_servers", n => { ExternalMcpServers = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel.CreateFromDiscriminatorValue); } },
                 { "file_input", n => { FileInput = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel.CreateFromDiscriminatorValue); } },
@@ -166,6 +175,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TestsFeatureUsageCommonModel>("agent_testing", AgentTesting);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel>("dtmf_input", DtmfInput);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel>("dtmf_tones", DtmfTones);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel>("external_mcp_servers", ExternalMcpServers);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel>("file_input", FileInput);

@@ -38,14 +38,6 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public int? MaxContextLimit { get; set; }
         /// <summary>Maximum number of output tokens the model can generate.</summary>
         public int? MaxTokensLimit { get; set; }
-        /// <summary>The model&apos;s benchmark score. Null if no score is available.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.LLMInfoModel_Input_model_score? ModelScore { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.LLMInfoModel_Input_model_score ModelScore { get; set; }
-#endif
         /// <summary>Whether the model supports document (PDF) file inputs during conversations.</summary>
         public bool? SupportsDocumentInput { get; set; }
         /// <summary>Whether the model supports image file inputs during conversations.</summary>
@@ -84,7 +76,6 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "llm", n => { Llm = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.LLM>(); } },
                 { "max_context_limit", n => { MaxContextLimit = n.GetIntValue(); } },
                 { "max_tokens_limit", n => { MaxTokensLimit = n.GetIntValue(); } },
-                { "model_score", n => { ModelScore = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.LLMInfoModel_Input_model_score>(global::Soenneker.ElevenLabs.OpenApiClient.Models.LLMInfoModel_Input_model_score.CreateFromDiscriminatorValue); } },
                 { "supports_document_input", n => { SupportsDocumentInput = n.GetBoolValue(); } },
                 { "supports_image_input", n => { SupportsImageInput = n.GetBoolValue(); } },
                 { "supports_parallel_tool_calls", n => { SupportsParallelToolCalls = n.GetBoolValue(); } },
@@ -103,7 +94,6 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.LLM>("llm", Llm);
             writer.WriteIntValue("max_context_limit", MaxContextLimit);
             writer.WriteIntValue("max_tokens_limit", MaxTokensLimit);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.LLMInfoModel_Input_model_score>("model_score", ModelScore);
             writer.WriteBoolValue("supports_document_input", SupportsDocumentInput);
             writer.WriteBoolValue("supports_image_input", SupportsImageInput);
             writer.WriteBoolValue("supports_parallel_tool_calls", SupportsParallelToolCalls);

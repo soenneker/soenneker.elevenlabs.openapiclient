@@ -5,28 +5,20 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public enum ChatSourceMedium
+    public enum VoiceResponseModel_recording_quality_value
     #pragma warning restore CS1591
     {
-        [EnumMember(Value = "audio")]
+        [EnumMember(Value = "studio")]
         #pragma warning disable CS1591
-        Audio,
+        Studio,
         #pragma warning restore CS1591
-        [EnumMember(Value = "dtmf")]
+        [EnumMember(Value = "ok")]
         #pragma warning disable CS1591
-        Dtmf,
+        Ok,
         #pragma warning restore CS1591
-        [EnumMember(Value = "text")]
+        [EnumMember(Value = "bad")]
         #pragma warning disable CS1591
-        Text,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "image")]
-        #pragma warning disable CS1591
-        Image,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "file")]
-        #pragma warning disable CS1591
-        File,
+        Bad,
         #pragma warning restore CS1591
     }
 }

@@ -24,7 +24,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.ExtendedSubscriptionResponseModel_billing_period BillingPeriod { get; set; }
 #endif
-        /// <summary>Whether the user can extend their character limit.</summary>
+        /// <summary>Whether the workspace is entitled to enter overages (usage-based billing).</summary>
         public bool? CanExtendCharacterLimit { get; set; }
         /// <summary>Whether the user can extend their voice limit.</summary>
         public bool? CanExtendVoiceLimit { get; set; }
