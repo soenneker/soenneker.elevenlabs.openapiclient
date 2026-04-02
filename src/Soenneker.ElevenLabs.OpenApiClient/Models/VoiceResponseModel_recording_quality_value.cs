@@ -12,9 +12,17 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         #pragma warning disable CS1591
         Studio,
         #pragma warning restore CS1591
+        [EnumMember(Value = "good")]
+        #pragma warning disable CS1591
+        Good,
+        #pragma warning restore CS1591
         [EnumMember(Value = "ok")]
         #pragma warning disable CS1591
         Ok,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "poor")]
+        #pragma warning disable CS1591
+        Poor,
         #pragma warning restore CS1591
         [EnumMember(Value = "bad")]
         #pragma warning disable CS1591

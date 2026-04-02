@@ -29242,6 +29242,7 @@
             "nullable": true
           },
           "settings": {
+            "title": "Settings",
             "type": "object",
             "anyOf": [
               {
@@ -29330,6 +29331,7 @@
             "nullable": true
           },
           "settings": {
+            "title": "Settings",
             "type": "object",
             "anyOf": [
               {
@@ -30150,6 +30152,7 @@
             "nullable": true
           },
           "settings": {
+            "title": "Settings",
             "type": "object",
             "anyOf": [
               {
@@ -30228,6 +30231,7 @@
             "nullable": true
           },
           "settings": {
+            "title": "Settings",
             "type": "object",
             "anyOf": [
               {
@@ -60324,6 +60328,27 @@
           }
         }
       },
+      "ToDialogueSettingsResponseModel": {
+        "title": "ToDialogueSettingsResponseModel",
+        "type": "object",
+        "properties": {
+          "stability": {
+            "title": "Stability",
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Stability"
+              }
+            ],
+            "description": "Determines how stable the voice is and the randomness between each generation. Lower values introduce broader emotional range for the voice. Higher values can result in a monotonous voice with limited emotion.",
+            "default": 0.5,
+            "nullable": true
+          }
+        },
+        "example": {
+          "stability": 0.5
+        }
+      },
       "TokenResponseModel": {
         "title": "TokenResponseModel",
         "required": [
@@ -76751,7 +76776,9 @@
           "value": {
             "enum": [
               "studio",
+              "good",
               "ok",
+              "poor",
               "bad"
             ],
             "type": "string",
