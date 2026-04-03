@@ -48,11 +48,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Tools.Item
         /// <exception cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.HTTPValidationError">When receiving a 422 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Tools.Item.WithTool_DeleteResponse?> DeleteAsWithTool_DeleteResponseAsync(Action<RequestConfiguration<global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Tools.Item.WithTool_ItemRequestBuilder.WithTool_ItemRequestBuilderDeleteQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Tools.Item.WithTool_DeleteResponse?> DeleteAsync(Action<RequestConfiguration<global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Tools.Item.WithTool_ItemRequestBuilder.WithTool_ItemRequestBuilderDeleteQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Tools.Item.WithTool_DeleteResponse> DeleteAsWithTool_DeleteResponseAsync(Action<RequestConfiguration<global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Tools.Item.WithTool_ItemRequestBuilder.WithTool_ItemRequestBuilderDeleteQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Tools.Item.WithTool_DeleteResponse> DeleteAsync(Action<RequestConfiguration<global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Tools.Item.WithTool_ItemRequestBuilder.WithTool_ItemRequestBuilderDeleteQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
@@ -61,30 +61,6 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Tools.Item
                 { "422", global::Soenneker.ElevenLabs.OpenApiClient.Models.HTTPValidationError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Tools.Item.WithTool_DeleteResponse>(requestInfo, global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Tools.Item.WithTool_DeleteResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Delete tool from the workspace.
-        /// </summary>
-        /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Tools.Item.WithTool_Response"/></returns>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.HTTPValidationError">When receiving a 422 status code</exception>
-        [Obsolete("This method is obsolete. Use DeleteAsWithTool_DeleteResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Tools.Item.WithTool_Response?> DeleteAsync(Action<RequestConfiguration<global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Tools.Item.WithTool_ItemRequestBuilder.WithTool_ItemRequestBuilderDeleteQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Tools.Item.WithTool_Response> DeleteAsync(Action<RequestConfiguration<global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Tools.Item.WithTool_ItemRequestBuilder.WithTool_ItemRequestBuilderDeleteQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            var requestInfo = ToDeleteRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
-            {
-                { "422", global::Soenneker.ElevenLabs.OpenApiClient.Models.HTTPValidationError.CreateFromDiscriminatorValue },
-            };
-            return await RequestAdapter.SendAsync<global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Tools.Item.WithTool_Response>(requestInfo, global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Tools.Item.WithTool_Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get tool that is available in the workspace.
@@ -212,30 +188,6 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Tools.Item
             /// <summary>If set to true, the tool will be deleted regardless of whether it is used by any agents and it will be removed from the dependent agents and branches.</summary>
             [QueryParameter("force")]
             public bool? Force { get; set; }
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class WithTool_ItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Tools.Item.WithTool_ItemRequestBuilder.WithTool_ItemRequestBuilderDeleteQueryParameters>
-        {
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class WithTool_ItemRequestBuilderGetRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
-        {
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class WithTool_ItemRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
-        {
         }
     }
 }

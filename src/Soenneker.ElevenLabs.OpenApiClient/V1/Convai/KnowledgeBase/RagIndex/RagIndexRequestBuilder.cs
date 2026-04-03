@@ -66,11 +66,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.KnowledgeBase.RagIndex
         /// <exception cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.HTTPValidationError">When receiving a 422 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.KnowledgeBase.RagIndex.RagIndexPostResponse?> PostAsRagIndexPostResponseAsync(global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Compute_RAG_indexes_in_batch_v1_convai_knowledge_base_rag_index_post body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.KnowledgeBase.RagIndex.RagIndexPostResponse?> PostAsync(global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Compute_RAG_indexes_in_batch_v1_convai_knowledge_base_rag_index_post body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.KnowledgeBase.RagIndex.RagIndexPostResponse> PostAsRagIndexPostResponseAsync(global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Compute_RAG_indexes_in_batch_v1_convai_knowledge_base_rag_index_post body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.KnowledgeBase.RagIndex.RagIndexPostResponse> PostAsync(global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Compute_RAG_indexes_in_batch_v1_convai_knowledge_base_rag_index_post body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -80,32 +80,6 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.KnowledgeBase.RagIndex
                 { "422", global::Soenneker.ElevenLabs.OpenApiClient.Models.HTTPValidationError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.KnowledgeBase.RagIndex.RagIndexPostResponse>(requestInfo, global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.KnowledgeBase.RagIndex.RagIndexPostResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Retrieves and/or creates RAG indexes for multiple knowledge base documents in a single request. Maximum 100 items per request.
-        /// </summary>
-        /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.KnowledgeBase.RagIndex.RagIndexResponse"/></returns>
-        /// <param name="body">The request body</param>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.HTTPValidationError">When receiving a 422 status code</exception>
-        [Obsolete("This method is obsolete. Use PostAsRagIndexPostResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.KnowledgeBase.RagIndex.RagIndexResponse?> PostAsync(global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Compute_RAG_indexes_in_batch_v1_convai_knowledge_base_rag_index_post body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.KnowledgeBase.RagIndex.RagIndexResponse> PostAsync(global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Compute_RAG_indexes_in_batch_v1_convai_knowledge_base_rag_index_post body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
-            {
-                { "422", global::Soenneker.ElevenLabs.OpenApiClient.Models.HTTPValidationError.CreateFromDiscriminatorValue },
-            };
-            return await RequestAdapter.SendAsync<global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.KnowledgeBase.RagIndex.RagIndexResponse>(requestInfo, global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.KnowledgeBase.RagIndex.RagIndexResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Provides total size and other information of RAG indexes used by knowledgebase documents
@@ -156,22 +130,6 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.KnowledgeBase.RagIndex
         public global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.KnowledgeBase.RagIndex.RagIndexRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.KnowledgeBase.RagIndex.RagIndexRequestBuilder(rawUrl, RequestAdapter);
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class RagIndexRequestBuilderGetRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
-        {
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class RagIndexRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
-        {
         }
     }
 }

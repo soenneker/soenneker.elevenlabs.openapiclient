@@ -40,13 +40,21 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentPlatformSettingsResponseModel_data_collection DataCollection { get; set; }
 #endif
+        /// <summary>Scope per data collection item ID. Missing keys default to conversation scope.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentPlatformSettingsResponseModel_data_collection_scopes? DataCollectionScopes { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentPlatformSettingsResponseModel_data_collection_scopes DataCollectionScopes { get; set; }
+#endif
         /// <summary>Settings to evaluate an agent&apos;s performance.Agents are evaluated against a set of criteria, with success being defined as meeting some combination of those criteria.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.EvaluationSettings? Evaluation { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.EvaluationSettings_Output? Evaluation { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.EvaluationSettings Evaluation { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.EvaluationSettings_Output Evaluation { get; set; }
 #endif
         /// <summary>The guardrails property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -141,7 +149,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "auth", n => { Auth = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AuthSettings>(global::Soenneker.ElevenLabs.OpenApiClient.Models.AuthSettings.CreateFromDiscriminatorValue); } },
                 { "call_limits", n => { CallLimits = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentCallLimits>(global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentCallLimits.CreateFromDiscriminatorValue); } },
                 { "data_collection", n => { DataCollection = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentPlatformSettingsResponseModel_data_collection>(global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentPlatformSettingsResponseModel_data_collection.CreateFromDiscriminatorValue); } },
-                { "evaluation", n => { Evaluation = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.EvaluationSettings>(global::Soenneker.ElevenLabs.OpenApiClient.Models.EvaluationSettings.CreateFromDiscriminatorValue); } },
+                { "data_collection_scopes", n => { DataCollectionScopes = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentPlatformSettingsResponseModel_data_collection_scopes>(global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentPlatformSettingsResponseModel_data_collection_scopes.CreateFromDiscriminatorValue); } },
+                { "evaluation", n => { Evaluation = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.EvaluationSettings_Output>(global::Soenneker.ElevenLabs.OpenApiClient.Models.EvaluationSettings_Output.CreateFromDiscriminatorValue); } },
                 { "guardrails", n => { Guardrails = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GuardrailsV1_Output>(global::Soenneker.ElevenLabs.OpenApiClient.Models.GuardrailsV1_Output.CreateFromDiscriminatorValue); } },
                 { "overrides", n => { Overrides = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationClientDataConfig_Output>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationClientDataConfig_Output.CreateFromDiscriminatorValue); } },
                 { "privacy", n => { Privacy = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PrivacyConfig_Output>(global::Soenneker.ElevenLabs.OpenApiClient.Models.PrivacyConfig_Output.CreateFromDiscriminatorValue); } },
@@ -163,7 +172,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AuthSettings>("auth", Auth);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentCallLimits>("call_limits", CallLimits);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentPlatformSettingsResponseModel_data_collection>("data_collection", DataCollection);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.EvaluationSettings>("evaluation", Evaluation);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentPlatformSettingsResponseModel_data_collection_scopes>("data_collection_scopes", DataCollectionScopes);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.EvaluationSettings_Output>("evaluation", Evaluation);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GuardrailsV1_Output>("guardrails", Guardrails);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationClientDataConfig_Output>("overrides", Overrides);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PrivacyConfig_Output>("privacy", Privacy);

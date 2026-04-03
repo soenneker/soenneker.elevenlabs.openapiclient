@@ -42,11 +42,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Workspace.AuthConnections.Item
         /// <exception cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.HTTPValidationError">When receiving a 422 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.ElevenLabs.OpenApiClient.V1.Workspace.AuthConnections.Item.WithAuth_connection_DeleteResponse?> DeleteAsWithAuth_connection_DeleteResponseAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.ElevenLabs.OpenApiClient.V1.Workspace.AuthConnections.Item.WithAuth_connection_DeleteResponse?> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.ElevenLabs.OpenApiClient.V1.Workspace.AuthConnections.Item.WithAuth_connection_DeleteResponse> DeleteAsWithAuth_connection_DeleteResponseAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.ElevenLabs.OpenApiClient.V1.Workspace.AuthConnections.Item.WithAuth_connection_DeleteResponse> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
@@ -55,30 +55,6 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Workspace.AuthConnections.Item
                 { "422", global::Soenneker.ElevenLabs.OpenApiClient.Models.HTTPValidationError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.ElevenLabs.OpenApiClient.V1.Workspace.AuthConnections.Item.WithAuth_connection_DeleteResponse>(requestInfo, global::Soenneker.ElevenLabs.OpenApiClient.V1.Workspace.AuthConnections.Item.WithAuth_connection_DeleteResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Delete an auth connection
-        /// </summary>
-        /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.V1.Workspace.AuthConnections.Item.WithAuth_connection_Response"/></returns>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.HTTPValidationError">When receiving a 422 status code</exception>
-        [Obsolete("This method is obsolete. Use DeleteAsWithAuth_connection_DeleteResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Soenneker.ElevenLabs.OpenApiClient.V1.Workspace.AuthConnections.Item.WithAuth_connection_Response?> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Soenneker.ElevenLabs.OpenApiClient.V1.Workspace.AuthConnections.Item.WithAuth_connection_Response> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            var requestInfo = ToDeleteRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
-            {
-                { "422", global::Soenneker.ElevenLabs.OpenApiClient.Models.HTTPValidationError.CreateFromDiscriminatorValue },
-            };
-            return await RequestAdapter.SendAsync<global::Soenneker.ElevenLabs.OpenApiClient.V1.Workspace.AuthConnections.Item.WithAuth_connection_Response>(requestInfo, global::Soenneker.ElevenLabs.OpenApiClient.V1.Workspace.AuthConnections.Item.WithAuth_connection_Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete an auth connection
@@ -107,14 +83,6 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Workspace.AuthConnections.Item
         public global::Soenneker.ElevenLabs.OpenApiClient.V1.Workspace.AuthConnections.Item.WithAuth_connection_ItemRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Soenneker.ElevenLabs.OpenApiClient.V1.Workspace.AuthConnections.Item.WithAuth_connection_ItemRequestBuilder(rawUrl, RequestAdapter);
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class WithAuth_connection_ItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
-        {
         }
     }
 }

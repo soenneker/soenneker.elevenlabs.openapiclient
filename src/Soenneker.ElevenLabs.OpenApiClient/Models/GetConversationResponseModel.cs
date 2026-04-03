@@ -110,6 +110,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetConversationResponseModel_version_id VersionId { get; set; }
 #endif
+        /// <summary>The visited_agents property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.VisitedAgentRef>? VisitedAgents { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.VisitedAgentRef> VisitedAgents { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.GetConversationResponseModel"/> and sets the default values.
         /// </summary>
@@ -151,6 +159,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "transcript", n => { Transcript = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptResponseModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptResponseModel.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "user_id", n => { UserId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetConversationResponseModel_user_id>(global::Soenneker.ElevenLabs.OpenApiClient.Models.GetConversationResponseModel_user_id.CreateFromDiscriminatorValue); } },
                 { "version_id", n => { VersionId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetConversationResponseModel_version_id>(global::Soenneker.ElevenLabs.OpenApiClient.Models.GetConversationResponseModel_version_id.CreateFromDiscriminatorValue); } },
+                { "visited_agents", n => { VisitedAgents = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.VisitedAgentRef>(global::Soenneker.ElevenLabs.OpenApiClient.Models.VisitedAgentRef.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -175,6 +184,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptResponseModel>("transcript", Transcript);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetConversationResponseModel_user_id>("user_id", UserId);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetConversationResponseModel_version_id>("version_id", VersionId);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.VisitedAgentRef>("visited_agents", VisitedAgents);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -42,11 +42,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.ServiceAccounts.Item.ApiKeys.Ite
         /// <exception cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.HTTPValidationError">When receiving a 422 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.ElevenLabs.OpenApiClient.V1.ServiceAccounts.Item.ApiKeys.Item.WithApi_key_DeleteResponse?> DeleteAsWithApi_key_DeleteResponseAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.ElevenLabs.OpenApiClient.V1.ServiceAccounts.Item.ApiKeys.Item.WithApi_key_DeleteResponse?> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.ElevenLabs.OpenApiClient.V1.ServiceAccounts.Item.ApiKeys.Item.WithApi_key_DeleteResponse> DeleteAsWithApi_key_DeleteResponseAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.ElevenLabs.OpenApiClient.V1.ServiceAccounts.Item.ApiKeys.Item.WithApi_key_DeleteResponse> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
@@ -55,30 +55,6 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.ServiceAccounts.Item.ApiKeys.Ite
                 { "422", global::Soenneker.ElevenLabs.OpenApiClient.Models.HTTPValidationError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.ElevenLabs.OpenApiClient.V1.ServiceAccounts.Item.ApiKeys.Item.WithApi_key_DeleteResponse>(requestInfo, global::Soenneker.ElevenLabs.OpenApiClient.V1.ServiceAccounts.Item.ApiKeys.Item.WithApi_key_DeleteResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Delete an existing API key for a service account
-        /// </summary>
-        /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.V1.ServiceAccounts.Item.ApiKeys.Item.WithApi_key_Response"/></returns>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.HTTPValidationError">When receiving a 422 status code</exception>
-        [Obsolete("This method is obsolete. Use DeleteAsWithApi_key_DeleteResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Soenneker.ElevenLabs.OpenApiClient.V1.ServiceAccounts.Item.ApiKeys.Item.WithApi_key_Response?> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Soenneker.ElevenLabs.OpenApiClient.V1.ServiceAccounts.Item.ApiKeys.Item.WithApi_key_Response> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            var requestInfo = ToDeleteRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
-            {
-                { "422", global::Soenneker.ElevenLabs.OpenApiClient.Models.HTTPValidationError.CreateFromDiscriminatorValue },
-            };
-            return await RequestAdapter.SendAsync<global::Soenneker.ElevenLabs.OpenApiClient.V1.ServiceAccounts.Item.ApiKeys.Item.WithApi_key_Response>(requestInfo, global::Soenneker.ElevenLabs.OpenApiClient.V1.ServiceAccounts.Item.ApiKeys.Item.WithApi_key_Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update an existing API key for a service account
@@ -90,11 +66,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.ServiceAccounts.Item.ApiKeys.Ite
         /// <exception cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.HTTPValidationError">When receiving a 422 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.ElevenLabs.OpenApiClient.V1.ServiceAccounts.Item.ApiKeys.Item.WithApi_key_PatchResponse?> PatchAsWithApi_key_PatchResponseAsync(global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_edit_service_account_api_key_v1_service_accounts__service_account_user_id__api_keys__api_key_id__patch body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.ElevenLabs.OpenApiClient.V1.ServiceAccounts.Item.ApiKeys.Item.WithApi_key_PatchResponse?> PatchAsync(global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_edit_service_account_api_key_v1_service_accounts__service_account_user_id__api_keys__api_key_id__patch body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.ElevenLabs.OpenApiClient.V1.ServiceAccounts.Item.ApiKeys.Item.WithApi_key_PatchResponse> PatchAsWithApi_key_PatchResponseAsync(global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_edit_service_account_api_key_v1_service_accounts__service_account_user_id__api_keys__api_key_id__patch body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.ElevenLabs.OpenApiClient.V1.ServiceAccounts.Item.ApiKeys.Item.WithApi_key_PatchResponse> PatchAsync(global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_edit_service_account_api_key_v1_service_accounts__service_account_user_id__api_keys__api_key_id__patch body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -104,32 +80,6 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.ServiceAccounts.Item.ApiKeys.Ite
                 { "422", global::Soenneker.ElevenLabs.OpenApiClient.Models.HTTPValidationError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.ElevenLabs.OpenApiClient.V1.ServiceAccounts.Item.ApiKeys.Item.WithApi_key_PatchResponse>(requestInfo, global::Soenneker.ElevenLabs.OpenApiClient.V1.ServiceAccounts.Item.ApiKeys.Item.WithApi_key_PatchResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Update an existing API key for a service account
-        /// </summary>
-        /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.V1.ServiceAccounts.Item.ApiKeys.Item.WithApi_key_Response"/></returns>
-        /// <param name="body">The request body</param>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.HTTPValidationError">When receiving a 422 status code</exception>
-        [Obsolete("This method is obsolete. Use PatchAsWithApi_key_PatchResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Soenneker.ElevenLabs.OpenApiClient.V1.ServiceAccounts.Item.ApiKeys.Item.WithApi_key_Response?> PatchAsync(global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_edit_service_account_api_key_v1_service_accounts__service_account_user_id__api_keys__api_key_id__patch body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Soenneker.ElevenLabs.OpenApiClient.V1.ServiceAccounts.Item.ApiKeys.Item.WithApi_key_Response> PatchAsync(global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_edit_service_account_api_key_v1_service_accounts__service_account_user_id__api_keys__api_key_id__patch body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
-            {
-                { "422", global::Soenneker.ElevenLabs.OpenApiClient.Models.HTTPValidationError.CreateFromDiscriminatorValue },
-            };
-            return await RequestAdapter.SendAsync<global::Soenneker.ElevenLabs.OpenApiClient.V1.ServiceAccounts.Item.ApiKeys.Item.WithApi_key_Response>(requestInfo, global::Soenneker.ElevenLabs.OpenApiClient.V1.ServiceAccounts.Item.ApiKeys.Item.WithApi_key_Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete an existing API key for a service account
@@ -180,22 +130,6 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.ServiceAccounts.Item.ApiKeys.Ite
         public global::Soenneker.ElevenLabs.OpenApiClient.V1.ServiceAccounts.Item.ApiKeys.Item.WithApi_key_ItemRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Soenneker.ElevenLabs.OpenApiClient.V1.ServiceAccounts.Item.ApiKeys.Item.WithApi_key_ItemRequestBuilder(rawUrl, RequestAdapter);
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class WithApi_key_ItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
-        {
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class WithApi_key_ItemRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
-        {
         }
     }
 }

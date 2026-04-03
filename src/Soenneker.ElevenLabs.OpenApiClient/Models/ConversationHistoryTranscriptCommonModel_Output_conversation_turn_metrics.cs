@@ -22,6 +22,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptCommonModel_Output_conversation_turn_metrics_convai_asr_provider ConvaiAsrProvider { get; set; }
 #endif
+        /// <summary>The convai_tts_cascade property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptCommonModel_Output_conversation_turn_metrics_convai_tts_cascade? ConvaiTtsCascade { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptCommonModel_Output_conversation_turn_metrics_convai_tts_cascade ConvaiTtsCascade { get; set; }
+#endif
         /// <summary>The convai_tts_model property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -64,6 +72,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "convai_asr_provider", n => { ConvaiAsrProvider = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptCommonModel_Output_conversation_turn_metrics_convai_asr_provider>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptCommonModel_Output_conversation_turn_metrics_convai_asr_provider.CreateFromDiscriminatorValue); } },
+                { "convai_tts_cascade", n => { ConvaiTtsCascade = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptCommonModel_Output_conversation_turn_metrics_convai_tts_cascade>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptCommonModel_Output_conversation_turn_metrics_convai_tts_cascade.CreateFromDiscriminatorValue); } },
                 { "convai_tts_model", n => { ConvaiTtsModel = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptCommonModel_Output_conversation_turn_metrics_convai_tts_model>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptCommonModel_Output_conversation_turn_metrics_convai_tts_model.CreateFromDiscriminatorValue); } },
                 { "metrics", n => { Metrics = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptCommonModel_Output_conversation_turn_metrics_metrics>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptCommonModel_Output_conversation_turn_metrics_metrics.CreateFromDiscriminatorValue); } },
             };
@@ -76,6 +85,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptCommonModel_Output_conversation_turn_metrics_convai_asr_provider>("convai_asr_provider", ConvaiAsrProvider);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptCommonModel_Output_conversation_turn_metrics_convai_tts_cascade>("convai_tts_cascade", ConvaiTtsCascade);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptCommonModel_Output_conversation_turn_metrics_convai_tts_model>("convai_tts_model", ConvaiTtsModel);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptCommonModel_Output_conversation_turn_metrics_metrics>("metrics", Metrics);
             writer.WriteAdditionalData(AdditionalData);

@@ -50,6 +50,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public bool? EnableAudioMessageResponse { get; set; }
         /// <summary>The enable_messaging property</summary>
         public bool? EnableMessaging { get; set; }
+        /// <summary>The is_token_expired property</summary>
+        public bool? IsTokenExpired { get; set; }
         /// <summary>The phone_number property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -105,6 +107,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "business_account_name", n => { BusinessAccountName = n.GetStringValue(); } },
                 { "enable_audio_message_response", n => { EnableAudioMessageResponse = n.GetBoolValue(); } },
                 { "enable_messaging", n => { EnableMessaging = n.GetBoolValue(); } },
+                { "is_token_expired", n => { IsTokenExpired = n.GetBoolValue(); } },
                 { "phone_number", n => { PhoneNumber = n.GetStringValue(); } },
                 { "phone_number_id", n => { PhoneNumberId = n.GetStringValue(); } },
                 { "phone_number_name", n => { PhoneNumberName = n.GetStringValue(); } },
@@ -123,6 +126,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteStringValue("business_account_name", BusinessAccountName);
             writer.WriteBoolValue("enable_audio_message_response", EnableAudioMessageResponse);
             writer.WriteBoolValue("enable_messaging", EnableMessaging);
+            writer.WriteBoolValue("is_token_expired", IsTokenExpired);
             writer.WriteStringValue("phone_number", PhoneNumber);
             writer.WriteStringValue("phone_number_id", PhoneNumberId);
             writer.WriteStringValue("phone_number_name", PhoneNumberName);

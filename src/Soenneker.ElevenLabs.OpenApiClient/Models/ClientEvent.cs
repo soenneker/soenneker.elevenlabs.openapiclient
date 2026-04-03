@@ -84,6 +84,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         #pragma warning disable CS1591
         Guardrail_triggered,
         #pragma warning restore CS1591
+        [EnumMember(Value = "dtmf_request")]
+        #pragma warning disable CS1591
+        Dtmf_request,
+        #pragma warning restore CS1591
         [EnumMember(Value = "internal_turn_probability")]
         #pragma warning disable CS1591
         Internal_turn_probability,

@@ -42,11 +42,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.WhatsappAccounts.Item
         /// <exception cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.HTTPValidationError">When receiving a 422 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.WhatsappAccounts.Item.WithPhone_number_DeleteResponse?> DeleteAsWithPhone_number_DeleteResponseAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.WhatsappAccounts.Item.WithPhone_number_DeleteResponse?> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.WhatsappAccounts.Item.WithPhone_number_DeleteResponse> DeleteAsWithPhone_number_DeleteResponseAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.WhatsappAccounts.Item.WithPhone_number_DeleteResponse> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
@@ -55,30 +55,6 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.WhatsappAccounts.Item
                 { "422", global::Soenneker.ElevenLabs.OpenApiClient.Models.HTTPValidationError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.WhatsappAccounts.Item.WithPhone_number_DeleteResponse>(requestInfo, global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.WhatsappAccounts.Item.WithPhone_number_DeleteResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Delete a WhatsApp account
-        /// </summary>
-        /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.WhatsappAccounts.Item.WithPhone_number_Response"/></returns>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.HTTPValidationError">When receiving a 422 status code</exception>
-        [Obsolete("This method is obsolete. Use DeleteAsWithPhone_number_DeleteResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.WhatsappAccounts.Item.WithPhone_number_Response?> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.WhatsappAccounts.Item.WithPhone_number_Response> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            var requestInfo = ToDeleteRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
-            {
-                { "422", global::Soenneker.ElevenLabs.OpenApiClient.Models.HTTPValidationError.CreateFromDiscriminatorValue },
-            };
-            return await RequestAdapter.SendAsync<global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.WhatsappAccounts.Item.WithPhone_number_Response>(requestInfo, global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.WhatsappAccounts.Item.WithPhone_number_Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get a WhatsApp account
@@ -113,11 +89,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.WhatsappAccounts.Item
         /// <exception cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.HTTPValidationError">When receiving a 422 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.WhatsappAccounts.Item.WithPhone_number_PatchResponse?> PatchAsWithPhone_number_PatchResponseAsync(global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateWhatsAppAccountRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.WhatsappAccounts.Item.WithPhone_number_PatchResponse?> PatchAsync(global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateWhatsAppAccountRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.WhatsappAccounts.Item.WithPhone_number_PatchResponse> PatchAsWithPhone_number_PatchResponseAsync(global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateWhatsAppAccountRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.WhatsappAccounts.Item.WithPhone_number_PatchResponse> PatchAsync(global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateWhatsAppAccountRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -127,32 +103,6 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.WhatsappAccounts.Item
                 { "422", global::Soenneker.ElevenLabs.OpenApiClient.Models.HTTPValidationError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.WhatsappAccounts.Item.WithPhone_number_PatchResponse>(requestInfo, global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.WhatsappAccounts.Item.WithPhone_number_PatchResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Update a WhatsApp account
-        /// </summary>
-        /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.WhatsappAccounts.Item.WithPhone_number_Response"/></returns>
-        /// <param name="body">The request body</param>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.HTTPValidationError">When receiving a 422 status code</exception>
-        [Obsolete("This method is obsolete. Use PatchAsWithPhone_number_PatchResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.WhatsappAccounts.Item.WithPhone_number_Response?> PatchAsync(global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateWhatsAppAccountRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.WhatsappAccounts.Item.WithPhone_number_Response> PatchAsync(global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateWhatsAppAccountRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
-            {
-                { "422", global::Soenneker.ElevenLabs.OpenApiClient.Models.HTTPValidationError.CreateFromDiscriminatorValue },
-            };
-            return await RequestAdapter.SendAsync<global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.WhatsappAccounts.Item.WithPhone_number_Response>(requestInfo, global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.WhatsappAccounts.Item.WithPhone_number_Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete a WhatsApp account
@@ -222,30 +172,6 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.WhatsappAccounts.Item
         public global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.WhatsappAccounts.Item.WithPhone_number_ItemRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.WhatsappAccounts.Item.WithPhone_number_ItemRequestBuilder(rawUrl, RequestAdapter);
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class WithPhone_number_ItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
-        {
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class WithPhone_number_ItemRequestBuilderGetRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
-        {
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class WithPhone_number_ItemRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
-        {
         }
     }
 }

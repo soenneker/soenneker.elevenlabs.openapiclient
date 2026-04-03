@@ -8,37 +8,37 @@ using System;
 namespace Soenneker.ElevenLabs.OpenApiClient.Models
 {
     /// <summary>
-    /// Settings to evaluate an agent&apos;s performance.Agents are evaluated against a set of criteria, with success being defined as meeting some combination of those criteria.
+    /// The ID of the parent folder. If not provided, the folder will be created at the root level.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class EvaluationSettings : IAdditionalDataHolder, IParsable
+    public partial class Body_Create_agent_test_folder_v1_convai_agent_testing_folders_post_parent_folder_id : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Individual criteria that the agent should be evaluated against</summary>
+        /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptEvaluationCriteria>? Criteria { get; set; }
+        public string? Value { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptEvaluationCriteria> Criteria { get; set; }
+        public string Value { get; set; }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.EvaluationSettings"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Create_agent_test_folder_v1_convai_agent_testing_folders_post_parent_folder_id"/> and sets the default values.
         /// </summary>
-        public EvaluationSettings()
+        public Body_Create_agent_test_folder_v1_convai_agent_testing_folders_post_parent_folder_id()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.EvaluationSettings"/></returns>
+        /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Create_agent_test_folder_v1_convai_agent_testing_folders_post_parent_folder_id"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.ElevenLabs.OpenApiClient.Models.EvaluationSettings CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Create_agent_test_folder_v1_convai_agent_testing_folders_post_parent_folder_id CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.EvaluationSettings();
+            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Create_agent_test_folder_v1_convai_agent_testing_folders_post_parent_folder_id();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -48,7 +48,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "criteria", n => { Criteria = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptEvaluationCriteria>(global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptEvaluationCriteria.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "value", n => { Value = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -58,7 +58,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptEvaluationCriteria>("criteria", Criteria);
+            writer.WriteStringValue("value", Value);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -42,11 +42,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.Drafts
         /// <exception cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.HTTPValidationError">When receiving a 422 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.Drafts.DraftsDeleteResponse?> DeleteAsDraftsDeleteResponseAsync(Action<RequestConfiguration<global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.Drafts.DraftsRequestBuilder.DraftsRequestBuilderDeleteQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.Drafts.DraftsDeleteResponse?> DeleteAsync(Action<RequestConfiguration<global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.Drafts.DraftsRequestBuilder.DraftsRequestBuilderDeleteQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.Drafts.DraftsDeleteResponse> DeleteAsDraftsDeleteResponseAsync(Action<RequestConfiguration<global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.Drafts.DraftsRequestBuilder.DraftsRequestBuilderDeleteQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.Drafts.DraftsDeleteResponse> DeleteAsync(Action<RequestConfiguration<global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.Drafts.DraftsRequestBuilder.DraftsRequestBuilderDeleteQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
@@ -55,30 +55,6 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.Drafts
                 { "422", global::Soenneker.ElevenLabs.OpenApiClient.Models.HTTPValidationError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.Drafts.DraftsDeleteResponse>(requestInfo, global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.Drafts.DraftsDeleteResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Delete a draft for an agent
-        /// </summary>
-        /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.Drafts.DraftsResponse"/></returns>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.HTTPValidationError">When receiving a 422 status code</exception>
-        [Obsolete("This method is obsolete. Use DeleteAsDraftsDeleteResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.Drafts.DraftsResponse?> DeleteAsync(Action<RequestConfiguration<global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.Drafts.DraftsRequestBuilder.DraftsRequestBuilderDeleteQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.Drafts.DraftsResponse> DeleteAsync(Action<RequestConfiguration<global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.Drafts.DraftsRequestBuilder.DraftsRequestBuilderDeleteQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            var requestInfo = ToDeleteRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
-            {
-                { "422", global::Soenneker.ElevenLabs.OpenApiClient.Models.HTTPValidationError.CreateFromDiscriminatorValue },
-            };
-            return await RequestAdapter.SendAsync<global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.Drafts.DraftsResponse>(requestInfo, global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.Drafts.DraftsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create a new draft for an agent
@@ -90,11 +66,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.Drafts
         /// <exception cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.HTTPValidationError">When receiving a 422 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.Drafts.DraftsPostResponse?> PostAsDraftsPostResponseAsync(global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Create_agent_draft_v1_convai_agents__agent_id__drafts_post body, Action<RequestConfiguration<global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.Drafts.DraftsRequestBuilder.DraftsRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.Drafts.DraftsPostResponse?> PostAsync(global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Create_agent_draft_v1_convai_agents__agent_id__drafts_post body, Action<RequestConfiguration<global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.Drafts.DraftsRequestBuilder.DraftsRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.Drafts.DraftsPostResponse> PostAsDraftsPostResponseAsync(global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Create_agent_draft_v1_convai_agents__agent_id__drafts_post body, Action<RequestConfiguration<global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.Drafts.DraftsRequestBuilder.DraftsRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.Drafts.DraftsPostResponse> PostAsync(global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Create_agent_draft_v1_convai_agents__agent_id__drafts_post body, Action<RequestConfiguration<global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.Drafts.DraftsRequestBuilder.DraftsRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -104,32 +80,6 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.Drafts
                 { "422", global::Soenneker.ElevenLabs.OpenApiClient.Models.HTTPValidationError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.Drafts.DraftsPostResponse>(requestInfo, global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.Drafts.DraftsPostResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Create a new draft for an agent
-        /// </summary>
-        /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.Drafts.DraftsResponse"/></returns>
-        /// <param name="body">The request body</param>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.HTTPValidationError">When receiving a 422 status code</exception>
-        [Obsolete("This method is obsolete. Use PostAsDraftsPostResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.Drafts.DraftsResponse?> PostAsync(global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Create_agent_draft_v1_convai_agents__agent_id__drafts_post body, Action<RequestConfiguration<global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.Drafts.DraftsRequestBuilder.DraftsRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.Drafts.DraftsResponse> PostAsync(global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Create_agent_draft_v1_convai_agents__agent_id__drafts_post body, Action<RequestConfiguration<global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.Drafts.DraftsRequestBuilder.DraftsRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
-            {
-                { "422", global::Soenneker.ElevenLabs.OpenApiClient.Models.HTTPValidationError.CreateFromDiscriminatorValue },
-            };
-            return await RequestAdapter.SendAsync<global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.Drafts.DraftsResponse>(requestInfo, global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.Drafts.DraftsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete a draft for an agent
@@ -199,14 +149,6 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.Drafts
 #endif
         }
         /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class DraftsRequestBuilderDeleteRequestConfiguration : RequestConfiguration<global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.Drafts.DraftsRequestBuilder.DraftsRequestBuilderDeleteQueryParameters>
-        {
-        }
-        /// <summary>
         /// Create a new draft for an agent
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
@@ -222,14 +164,6 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.Drafts
             [QueryParameter("branch_id")]
             public string BranchId { get; set; }
 #endif
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class DraftsRequestBuilderPostRequestConfiguration : RequestConfiguration<global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.Drafts.DraftsRequestBuilder.DraftsRequestBuilderPostQueryParameters>
-        {
         }
     }
 }

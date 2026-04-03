@@ -56,6 +56,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryEvaluationCriteriaResultCommonModel> EvaluationCriteriaResultsList { get; set; }
 #endif
+        /// <summary>The scoped property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ScopedAnalysisResult>? Scoped { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ScopedAnalysisResult> Scoped { get; set; }
+#endif
         /// <summary>The transcript_summary property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -95,6 +103,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "data_collection_results_list", n => { DataCollectionResultsList = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.DataCollectionResultCommonModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.DataCollectionResultCommonModel.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "evaluation_criteria_results", n => { EvaluationCriteriaResults = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryAnalysisCommonModel_evaluation_criteria_results>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryAnalysisCommonModel_evaluation_criteria_results.CreateFromDiscriminatorValue); } },
                 { "evaluation_criteria_results_list", n => { EvaluationCriteriaResultsList = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryEvaluationCriteriaResultCommonModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryEvaluationCriteriaResultCommonModel.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "scoped", n => { Scoped = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.ScopedAnalysisResult>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ScopedAnalysisResult.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "transcript_summary", n => { TranscriptSummary = n.GetStringValue(); } },
             };
         }
@@ -111,6 +120,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.DataCollectionResultCommonModel>("data_collection_results_list", DataCollectionResultsList);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryAnalysisCommonModel_evaluation_criteria_results>("evaluation_criteria_results", EvaluationCriteriaResults);
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryEvaluationCriteriaResultCommonModel>("evaluation_criteria_results_list", EvaluationCriteriaResultsList);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.ScopedAnalysisResult>("scoped", Scoped);
             writer.WriteStringValue("transcript_summary", TranscriptSummary);
             writer.WriteAdditionalData(AdditionalData);
         }

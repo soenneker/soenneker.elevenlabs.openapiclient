@@ -11150,6 +11150,313 @@
         }
       }
     },
+    "/v1/convai/agent-testing/folders": {
+      "post": {
+        "tags": [
+          "Agents Platform"
+        ],
+        "summary": "Create Agent Test Folder",
+        "description": "Creates a folder for organizing agent tests.",
+        "operationId": "create-agent-test-folder-route",
+        "parameters": [
+          {
+            "name": "xi-api-key",
+            "in": "header",
+            "description": "Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the \u0027Profile\u0027 tab on the website.",
+            "schema": {
+              "title": "Xi-Api-Key",
+              "type": "object",
+              "anyOf": [
+                {
+                  "type": "string"
+                }
+              ],
+              "description": "Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the \u0027Profile\u0027 tab on the website.",
+              "nullable": true
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Body_Create_agent_test_folder_v1_convai_agent_testing_folders_post"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Folder successfully created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreateAgentTestFolderResponseModel"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/convai/agent-testing/folders/{folder_id}": {
+      "get": {
+        "tags": [
+          "Agents Platform"
+        ],
+        "summary": "Get Agent Test Folder By Id",
+        "description": "Gets an agent test folder by ID, including its folder path.",
+        "operationId": "get-agent-test-folder-route",
+        "parameters": [
+          {
+            "name": "folder_id",
+            "in": "path",
+            "description": "The folder ID.",
+            "required": true,
+            "schema": {
+              "title": "Folder Id",
+              "type": "string",
+              "description": "The folder ID."
+            }
+          },
+          {
+            "name": "xi-api-key",
+            "in": "header",
+            "description": "Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the \u0027Profile\u0027 tab on the website.",
+            "schema": {
+              "title": "Xi-Api-Key",
+              "type": "object",
+              "anyOf": [
+                {
+                  "type": "string"
+                }
+              ],
+              "description": "Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the \u0027Profile\u0027 tab on the website.",
+              "nullable": true
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Folder details retrieved successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetAgentTestFolderResponseModel"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "Agents Platform"
+        ],
+        "summary": "Update Agent Test Folder",
+        "description": "Updates an agent test folder. Currently only supports updating the folder name.",
+        "operationId": "update-agent-test-folder-route",
+        "parameters": [
+          {
+            "name": "folder_id",
+            "in": "path",
+            "description": "The folder ID.",
+            "required": true,
+            "schema": {
+              "title": "Folder Id",
+              "type": "string",
+              "description": "The folder ID."
+            }
+          },
+          {
+            "name": "xi-api-key",
+            "in": "header",
+            "description": "Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the \u0027Profile\u0027 tab on the website.",
+            "schema": {
+              "title": "Xi-Api-Key",
+              "type": "object",
+              "anyOf": [
+                {
+                  "type": "string"
+                }
+              ],
+              "description": "Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the \u0027Profile\u0027 tab on the website.",
+              "nullable": true
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Body_Update_agent_test_folder_v1_convai_agent_testing_folders__folder_id__patch"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Folder successfully updated",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetAgentTestFolderResponseModel"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Agents Platform"
+        ],
+        "summary": "Delete Agent Test Folder",
+        "description": "Deletes an agent test folder by ID. Use force=true to delete a non-empty folder and all its contents.",
+        "operationId": "delete-agent-test-folder-route",
+        "parameters": [
+          {
+            "name": "folder_id",
+            "in": "path",
+            "description": "The folder ID.",
+            "required": true,
+            "schema": {
+              "title": "Folder Id",
+              "type": "string",
+              "description": "The folder ID."
+            }
+          },
+          {
+            "name": "force",
+            "in": "query",
+            "description": "Force delete. Required for deleting non-empty folders.",
+            "schema": {
+              "title": "Force",
+              "type": "boolean",
+              "description": "Force delete. Required for deleting non-empty folders.",
+              "default": false
+            }
+          },
+          {
+            "name": "xi-api-key",
+            "in": "header",
+            "description": "Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the \u0027Profile\u0027 tab on the website.",
+            "schema": {
+              "title": "Xi-Api-Key",
+              "type": "object",
+              "anyOf": [
+                {
+                  "type": "string"
+                }
+              ],
+              "description": "Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the \u0027Profile\u0027 tab on the website.",
+              "nullable": true
+            }
+          }
+        ],
+        "responses": {
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/convai/agent-testing/bulk-move": {
+      "post": {
+        "tags": [
+          "Agents Platform"
+        ],
+        "summary": "Bulk Move Tests To Folder",
+        "description": "Moves multiple tests or folders from one folder to another.",
+        "operationId": "agent-testing-bulk-move-route",
+        "parameters": [
+          {
+            "name": "xi-api-key",
+            "in": "header",
+            "description": "Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the \u0027Profile\u0027 tab on the website.",
+            "schema": {
+              "title": "Xi-Api-Key",
+              "type": "object",
+              "anyOf": [
+                {
+                  "type": "string"
+                }
+              ],
+              "description": "Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the \u0027Profile\u0027 tab on the website.",
+              "nullable": true
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Body_Bulk_move_tests_to_folder_v1_convai_agent_testing_bulk_move_post"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Tests or folders successfully moved to another folder",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/v1/convai/agent-testing/{test_id}": {
       "get": {
         "summary": "Get Agent Response Test By Id",
@@ -22532,7 +22839,7 @@
         "type": "object",
         "properties": {
           "evaluation": {
-            "$ref": "#/components/schemas/EvaluationSettings"
+            "$ref": "#/components/schemas/EvaluationSettings_Input"
           },
           "widget": {
             "$ref": "#/components/schemas/WidgetConfig_Input"
@@ -22544,6 +22851,14 @@
               "$ref": "#/components/schemas/LiteralJsonSchemaProperty"
             },
             "description": "Data collection settings"
+          },
+          "data_collection_scopes": {
+            "title": "Data Collection Scopes",
+            "type": "object",
+            "additionalProperties": {
+              "$ref": "#/components/schemas/AnalysisScope"
+            },
+            "description": "Scope per data collection item ID. Missing keys default to conversation scope."
           },
           "overrides": {
             "$ref": "#/components/schemas/ConversationInitiationClientDataConfig_Input"
@@ -22590,7 +22905,7 @@
         "type": "object",
         "properties": {
           "evaluation": {
-            "$ref": "#/components/schemas/EvaluationSettings"
+            "$ref": "#/components/schemas/EvaluationSettings_Output"
           },
           "widget": {
             "$ref": "#/components/schemas/WidgetConfig_Output"
@@ -22602,6 +22917,14 @@
               "$ref": "#/components/schemas/LiteralJsonSchemaProperty"
             },
             "description": "Data collection settings"
+          },
+          "data_collection_scopes": {
+            "title": "Data Collection Scopes",
+            "type": "object",
+            "additionalProperties": {
+              "$ref": "#/components/schemas/AnalysisScope"
+            },
+            "description": "Scope per data collection item ID. Missing keys default to conversation scope."
           },
           "overrides": {
             "$ref": "#/components/schemas/ConversationInitiationClientDataConfig_Output"
@@ -23559,6 +23882,16 @@
             "description": "The hostname of the allowed origin"
           }
         }
+      },
+      "AnalysisScope": {
+        "title": "AnalysisScope",
+        "enum": [
+          "conversation",
+          "agent"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "default": "conversation"
       },
       "ApiIntegrationOAuth2AuthCodeResponse": {
         "title": "ApiIntegrationOAuth2AuthCodeResponse",
@@ -25991,6 +26324,36 @@
           }
         }
       },
+      "Body_Bulk_move_tests_to_folder_v1_convai_agent_testing_bulk_move_post": {
+        "title": "Body_Bulk_move_tests_to_folder_v1_convai_agent_testing_bulk_move_post",
+        "required": [
+          "entity_ids"
+        ],
+        "type": "object",
+        "properties": {
+          "entity_ids": {
+            "title": "Entity Ids",
+            "minItems": 1,
+            "uniqueItems": true,
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "The IDs of tests or folders to move."
+          },
+          "move_to": {
+            "title": "Move To",
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Move_To"
+              }
+            ],
+            "description": "The folder to move the entities to. If not set, the entities will be moved to the root folder.",
+            "nullable": true
+          }
+        }
+      },
       "Body_Compose_Music_with_a_detailed_response_v1_music_detailed_post": {
         "title": "Body_Compose_Music_with_a_detailed_response_v1_music_detailed_post",
         "type": "object",
@@ -26929,6 +27292,31 @@
             "unrecognizedKeywords": {
               "optional": true
             }
+          }
+        }
+      },
+      "Body_Create_agent_test_folder_v1_convai_agent_testing_folders_post": {
+        "title": "Body_Create_agent_test_folder_v1_convai_agent_testing_folders_post",
+        "required": [
+          "name"
+        ],
+        "type": "object",
+        "properties": {
+          "name": {
+            "title": "Name",
+            "type": "string",
+            "description": "The name of the folder to create"
+          },
+          "parent_folder_id": {
+            "title": "Parent Folder Id",
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Parent_Folder_Id"
+              }
+            ],
+            "description": "The ID of the parent folder. If not provided, the folder will be created at the root level.",
+            "nullable": true
           }
         }
       },
@@ -29673,6 +30061,20 @@
             ],
             "description": "The protection level for the branch",
             "nullable": true
+          }
+        }
+      },
+      "Body_Update_agent_test_folder_v1_convai_agent_testing_folders__folder_id__patch": {
+        "title": "Body_Update_agent_test_folder_v1_convai_agent_testing_folders__folder_id__patch",
+        "required": [
+          "name"
+        ],
+        "type": "object",
+        "properties": {
+          "name": {
+            "title": "Name",
+            "type": "string",
+            "description": "The new name for the folder"
           }
         }
       },
@@ -32423,6 +32825,7 @@
           "agent_chat_response_part",
           "client_error",
           "guardrail_triggered",
+          "dtmf_request",
           "internal_turn_probability",
           "internal_tentative_agent_response"
         ],
@@ -33773,6 +34176,13 @@
               }
             ],
             "nullable": true
+          },
+          "scoped": {
+            "title": "Scoped",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ScopedAnalysisResult"
+            }
           }
         }
       },
@@ -36421,6 +36831,16 @@
               }
             ],
             "nullable": true
+          },
+          "convai_tts_cascade": {
+            "title": "Convai Tts Cascade",
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Convai_Tts_Cascade"
+              }
+            ],
+            "nullable": true
           }
         }
       },
@@ -36896,6 +37316,24 @@
         },
         "example": {
           "agent_id": "J3Pbu5gP6NNKBscdCdwB"
+        }
+      },
+      "CreateAgentTestFolderResponseModel": {
+        "title": "CreateAgentTestFolderResponseModel",
+        "required": [
+          "id",
+          "name"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "title": "Id",
+            "type": "string"
+          },
+          "name": {
+            "title": "Name",
+            "type": "string"
+          }
         }
       },
       "CreateAgentTestResponseModel": {
@@ -40695,7 +41133,22 @@
           }
         }
       },
-      "EvaluationSettings": {
+      "EvaluationSettings_Input": {
+        "title": "EvaluationSettings",
+        "type": "object",
+        "properties": {
+          "criteria": {
+            "title": "Criteria",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PromptEvaluationCriteria"
+            },
+            "description": "Individual criteria that the agent should be evaluated against"
+          }
+        },
+        "description": "Settings to evaluate an agent\u0027s performance.\nAgents are evaluated against a set of criteria, with success being defined as meeting some combination of those criteria."
+      },
+      "EvaluationSettings_Output": {
         "title": "EvaluationSettings",
         "type": "object",
         "properties": {
@@ -42050,6 +42503,38 @@
           }
         }
       },
+      "GetAgentTestFolderResponseModel": {
+        "title": "GetAgentTestFolderResponseModel",
+        "required": [
+          "id",
+          "name"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "title": "Id",
+            "type": "string"
+          },
+          "name": {
+            "title": "Name",
+            "type": "string"
+          },
+          "folder_path": {
+            "title": "Folder Path",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AgentTestFolderPathSegmentResponseModel"
+            },
+            "description": "The path from the root folder to the current folder."
+          },
+          "children_count": {
+            "title": "Children Count",
+            "type": "integer",
+            "description": "The number of direct children (tests and subfolders) in this folder",
+            "default": 0
+          }
+        }
+      },
       "GetAgentsPageResponseModel": {
         "title": "GetAgentsPageResponseModel",
         "required": [
@@ -42372,6 +42857,13 @@
               }
             ],
             "nullable": true
+          },
+          "visited_agents": {
+            "title": "Visited Agents",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/VisitedAgentRef"
+            }
           },
           "conversation_initiation_client_data": {
             "$ref": "#/components/schemas/ConversationInitiationClientDataRequest_Output"
@@ -44778,6 +45270,11 @@
               }
             ],
             "nullable": true
+          },
+          "is_token_expired": {
+            "title": "Is Token Expired",
+            "type": "boolean",
+            "default": false
           }
         }
       },
@@ -54011,6 +54508,9 @@
             "type": "boolean",
             "description": "When evaluating the prompt, should the agent\u0027s knowledge base be used.",
             "default": false
+          },
+          "scope": {
+            "$ref": "#/components/schemas/AnalysisScope"
           }
         },
         "description": "An evaluation using the transcript and a prompt for a yes/no achieved answer",
@@ -54018,6 +54518,7 @@
           "conversation_goal_prompt": "You are a helpful assistant that can answer questions about the topic of the conversation.",
           "id": "1234567890",
           "name": "Customer satisfaction check",
+          "scope": "conversation",
           "use_knowledge_base": false
         }
       },
@@ -56313,6 +56814,52 @@
             "title": "Prompt",
             "type": "string",
             "description": "LLM prompt describing what message should be generated."
+          }
+        }
+      },
+      "ScopedAnalysisResult": {
+        "title": "ScopedAnalysisResult",
+        "required": [
+          "scope",
+          "source_agent_id",
+          "successful"
+        ],
+        "type": "object",
+        "properties": {
+          "scope": {
+            "$ref": "#/components/schemas/AnalysisScope"
+          },
+          "source_agent_id": {
+            "title": "Source Agent Id",
+            "type": "string"
+          },
+          "source_branch_id": {
+            "title": "Source Branch Id",
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Source_Branch_Id"
+              }
+            ],
+            "description": "Branch of the agent for this scoped block; disambiguates repeated agent_id.",
+            "nullable": true
+          },
+          "evaluation_criteria_results": {
+            "title": "Evaluation Criteria Results",
+            "type": "object",
+            "additionalProperties": {
+              "$ref": "#/components/schemas/ConversationHistoryEvaluationCriteriaResultCommonModel"
+            }
+          },
+          "data_collection_results": {
+            "title": "Data Collection Results",
+            "type": "object",
+            "additionalProperties": {
+              "$ref": "#/components/schemas/DataCollectionResultCommonModel"
+            }
+          },
+          "successful": {
+            "$ref": "#/components/schemas/EvaluationSuccessResult"
           }
         }
       },
@@ -60343,6 +60890,16 @@
             "description": "Determines how stable the voice is and the randomness between each generation. Lower values introduce broader emotional range for the voice. Higher values can result in a monotonous voice with limited emotion.",
             "default": 0.5,
             "nullable": true
+          },
+          "speed": {
+            "title": "Speed",
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Speed"
+              }
+            ],
+            "nullable": true
           }
         },
         "example": {
@@ -63274,6 +63831,30 @@
             "type": "string"
           }
         }
+      },
+      "VisitedAgentRef": {
+        "title": "VisitedAgentRef",
+        "required": [
+          "agent_id"
+        ],
+        "type": "object",
+        "properties": {
+          "agent_id": {
+            "title": "Agent Id",
+            "type": "string"
+          },
+          "branch_id": {
+            "title": "Branch Id",
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Branch_Id"
+              }
+            ],
+            "nullable": true
+          }
+        },
+        "description": "An agent (and optional branch) that participated in the call, in first-seen transcript order."
       },
       "VoiceDesignRequestModel": {
         "title": "VoiceDesignRequestModel",
@@ -70262,6 +70843,9 @@
           }
         }
       },
+      "agent_testing_bulk_move_route_200": {
+        "type": "object"
+      },
       "get_agent_response_test_route_200": {
         "title": "Response Get Agent Response Test By Id V1 Convai Agent Testing  Test Id  Get",
         "required": [
@@ -73457,6 +74041,17 @@
           }
         }
       },
+      "Convai_Tts_Cascade": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string"
+          }
+        }
+      },
       "Last_Contact_Agent_Id": {
         "required": [
           "value"
@@ -75778,6 +76373,17 @@
         "properties": {
           "value": {
             "type": "integer"
+          }
+        }
+      },
+      "Source_Branch_Id": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string"
           }
         }
       },

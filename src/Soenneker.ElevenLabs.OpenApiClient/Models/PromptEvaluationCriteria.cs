@@ -39,6 +39,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
+        /// <summary>The scope property</summary>
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AnalysisScope? Scope { get; set; }
         /// <summary>The type of evaluation criteria</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptEvaluationCriteria_type? Type { get; set; }
         /// <summary>When evaluating the prompt, should the agent&apos;s knowledge base be used.</summary>
@@ -49,6 +51,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public PromptEvaluationCriteria()
         {
             AdditionalData = new Dictionary<string, object>();
+            Scope = global::Soenneker.ElevenLabs.OpenApiClient.Models.AnalysisScope.Conversation;
             Type = global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptEvaluationCriteria_type.Prompt;
         }
         /// <summary>
@@ -72,6 +75,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "conversation_goal_prompt", n => { ConversationGoalPrompt = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
+                { "scope", n => { Scope = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AnalysisScope>(); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptEvaluationCriteria_type>(); } },
                 { "use_knowledge_base", n => { UseKnowledgeBase = n.GetBoolValue(); } },
             };
@@ -86,6 +90,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteStringValue("conversation_goal_prompt", ConversationGoalPrompt);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("name", Name);
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AnalysisScope>("scope", Scope);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptEvaluationCriteria_type>("type", Type);
             writer.WriteBoolValue("use_knowledge_base", UseKnowledgeBase);
             writer.WriteAdditionalData(AdditionalData);

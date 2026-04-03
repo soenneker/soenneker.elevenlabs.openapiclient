@@ -1,5 +1,5 @@
 {
-  "descriptionHash": "FCE1685CFFA4F1DADD27A699FFB954EB899A25FAA6CBF2E60616CE3496B06EA8791C39562938585DF54DCB8BCDA67E210BFC9CA7AA61A9992832CD37A45B09BC",
+  "descriptionHash": "DC6A799DF77501A327737FC444CB820E5B433EC06109FA1C98CAAEF12E1686560CBD549585E3BF2545F5D37159A1FC11C40F1C02BCD9FD8EFBA6215A853F7B38",
   "descriptionLocation": "../../fixed.json",
   "lockFileVersion": "1.0.0",
   "kiotaVersion": "1.30.0",
@@ -8,7 +8,7 @@
   "clientNamespaceName": "Soenneker.ElevenLabs.OpenApiClient",
   "language": "CSharp",
   "usesBackingStore": false,
-  "excludeBackwardCompatible": false,
+  "excludeBackwardCompatible": true,
   "includeAdditionalData": true,
   "disableSSLValidation": false,
   "serializers": [

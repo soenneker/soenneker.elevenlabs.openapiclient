@@ -43,11 +43,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Workspace.Resources.Item.Unshare
         /// <exception cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.HTTPValidationError">When receiving a 422 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.ElevenLabs.OpenApiClient.V1.Workspace.Resources.Item.Unshare.UnsharePostResponse?> PostAsUnsharePostResponseAsync(global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Unshare_workspace_resource_v1_workspace_resources__resource_id__unshare_post body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.ElevenLabs.OpenApiClient.V1.Workspace.Resources.Item.Unshare.UnsharePostResponse?> PostAsync(global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Unshare_workspace_resource_v1_workspace_resources__resource_id__unshare_post body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.ElevenLabs.OpenApiClient.V1.Workspace.Resources.Item.Unshare.UnsharePostResponse> PostAsUnsharePostResponseAsync(global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Unshare_workspace_resource_v1_workspace_resources__resource_id__unshare_post body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.ElevenLabs.OpenApiClient.V1.Workspace.Resources.Item.Unshare.UnsharePostResponse> PostAsync(global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Unshare_workspace_resource_v1_workspace_resources__resource_id__unshare_post body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -57,32 +57,6 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Workspace.Resources.Item.Unshare
                 { "422", global::Soenneker.ElevenLabs.OpenApiClient.Models.HTTPValidationError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.ElevenLabs.OpenApiClient.V1.Workspace.Resources.Item.Unshare.UnsharePostResponse>(requestInfo, global::Soenneker.ElevenLabs.OpenApiClient.V1.Workspace.Resources.Item.Unshare.UnsharePostResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Removes any existing role on a workspace resource from a user, service account, group or workspace api key. To target a user or service account, pass only the user email. The user must be in your workspace. To target a group, pass only the group id. To target a workspace api key, pass the api key id. The resource will be unshared from the service account associated with the api key. You must have admin access to the resource to unshare it. You cannot remove permissions from the user who created the resource.
-        /// </summary>
-        /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.V1.Workspace.Resources.Item.Unshare.UnshareResponse"/></returns>
-        /// <param name="body">The request body</param>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.HTTPValidationError">When receiving a 422 status code</exception>
-        [Obsolete("This method is obsolete. Use PostAsUnsharePostResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Soenneker.ElevenLabs.OpenApiClient.V1.Workspace.Resources.Item.Unshare.UnshareResponse?> PostAsync(global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Unshare_workspace_resource_v1_workspace_resources__resource_id__unshare_post body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Soenneker.ElevenLabs.OpenApiClient.V1.Workspace.Resources.Item.Unshare.UnshareResponse> PostAsync(global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Unshare_workspace_resource_v1_workspace_resources__resource_id__unshare_post body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
-            {
-                { "422", global::Soenneker.ElevenLabs.OpenApiClient.Models.HTTPValidationError.CreateFromDiscriminatorValue },
-            };
-            return await RequestAdapter.SendAsync<global::Soenneker.ElevenLabs.OpenApiClient.V1.Workspace.Resources.Item.Unshare.UnshareResponse>(requestInfo, global::Soenneker.ElevenLabs.OpenApiClient.V1.Workspace.Resources.Item.Unshare.UnshareResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Removes any existing role on a workspace resource from a user, service account, group or workspace api key. To target a user or service account, pass only the user email. The user must be in your workspace. To target a group, pass only the group id. To target a workspace api key, pass the api key id. The resource will be unshared from the service account associated with the api key. You must have admin access to the resource to unshare it. You cannot remove permissions from the user who created the resource.
@@ -114,14 +88,6 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Workspace.Resources.Item.Unshare
         public global::Soenneker.ElevenLabs.OpenApiClient.V1.Workspace.Resources.Item.Unshare.UnshareRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Soenneker.ElevenLabs.OpenApiClient.V1.Workspace.Resources.Item.Unshare.UnshareRequestBuilder(rawUrl, RequestAdapter);
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class UnshareRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
-        {
         }
     }
 }

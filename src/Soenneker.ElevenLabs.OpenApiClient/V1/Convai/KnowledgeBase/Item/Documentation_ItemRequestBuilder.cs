@@ -84,11 +84,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.KnowledgeBase.Item
         /// <exception cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.HTTPValidationError">When receiving a 422 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.KnowledgeBase.Item.Documentation_DeleteResponse?> DeleteAsDocumentation_DeleteResponseAsync(Action<RequestConfiguration<global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.KnowledgeBase.Item.Documentation_ItemRequestBuilder.Documentation_ItemRequestBuilderDeleteQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.KnowledgeBase.Item.Documentation_DeleteResponse?> DeleteAsync(Action<RequestConfiguration<global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.KnowledgeBase.Item.Documentation_ItemRequestBuilder.Documentation_ItemRequestBuilderDeleteQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.KnowledgeBase.Item.Documentation_DeleteResponse> DeleteAsDocumentation_DeleteResponseAsync(Action<RequestConfiguration<global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.KnowledgeBase.Item.Documentation_ItemRequestBuilder.Documentation_ItemRequestBuilderDeleteQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.KnowledgeBase.Item.Documentation_DeleteResponse> DeleteAsync(Action<RequestConfiguration<global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.KnowledgeBase.Item.Documentation_ItemRequestBuilder.Documentation_ItemRequestBuilderDeleteQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
@@ -97,30 +97,6 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.KnowledgeBase.Item
                 { "422", global::Soenneker.ElevenLabs.OpenApiClient.Models.HTTPValidationError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.KnowledgeBase.Item.Documentation_DeleteResponse>(requestInfo, global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.KnowledgeBase.Item.Documentation_DeleteResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Delete a document or folder from the knowledge base.
-        /// </summary>
-        /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.KnowledgeBase.Item.Documentation_Response"/></returns>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.HTTPValidationError">When receiving a 422 status code</exception>
-        [Obsolete("This method is obsolete. Use DeleteAsDocumentation_DeleteResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.KnowledgeBase.Item.Documentation_Response?> DeleteAsync(Action<RequestConfiguration<global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.KnowledgeBase.Item.Documentation_ItemRequestBuilder.Documentation_ItemRequestBuilderDeleteQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.KnowledgeBase.Item.Documentation_Response> DeleteAsync(Action<RequestConfiguration<global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.KnowledgeBase.Item.Documentation_ItemRequestBuilder.Documentation_ItemRequestBuilderDeleteQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            var requestInfo = ToDeleteRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
-            {
-                { "422", global::Soenneker.ElevenLabs.OpenApiClient.Models.HTTPValidationError.CreateFromDiscriminatorValue },
-            };
-            return await RequestAdapter.SendAsync<global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.KnowledgeBase.Item.Documentation_Response>(requestInfo, global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.KnowledgeBase.Item.Documentation_Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get details about a specific documentation making up the agent&apos;s knowledge base
@@ -250,14 +226,6 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.KnowledgeBase.Item
             public bool? Force { get; set; }
         }
         /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class Documentation_ItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.KnowledgeBase.Item.Documentation_ItemRequestBuilder.Documentation_ItemRequestBuilderDeleteQueryParameters>
-        {
-        }
-        /// <summary>
         /// Get details about a specific documentation making up the agent&apos;s knowledge base
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
@@ -272,22 +240,6 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.KnowledgeBase.Item
             [QueryParameter("agent_id")]
             public string AgentId { get; set; }
 #endif
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class Documentation_ItemRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.KnowledgeBase.Item.Documentation_ItemRequestBuilder.Documentation_ItemRequestBuilderGetQueryParameters>
-        {
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class Documentation_ItemRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
-        {
         }
     }
 }
