@@ -14,12 +14,16 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Whether to allow overriding the knowledge_base field.</summary>
+        public bool? KnowledgeBase { get; set; }
         /// <summary>Whether to allow overriding the llm field.</summary>
         public bool? Llm { get; set; }
         /// <summary>Whether to allow overriding the native_mcp_server_ids field.</summary>
         public bool? NativeMcpServerIds { get; set; }
         /// <summary>Whether to allow overriding the prompt field.</summary>
         public bool? Prompt { get; set; }
+        /// <summary>Whether to allow overriding the tool_ids field.</summary>
+        public bool? ToolIds { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentAPIModelOverrideConfig"/> and sets the default values.
         /// </summary>
@@ -45,9 +49,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "knowledge_base", n => { KnowledgeBase = n.GetBoolValue(); } },
                 { "llm", n => { Llm = n.GetBoolValue(); } },
                 { "native_mcp_server_ids", n => { NativeMcpServerIds = n.GetBoolValue(); } },
                 { "prompt", n => { Prompt = n.GetBoolValue(); } },
+                { "tool_ids", n => { ToolIds = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -57,9 +63,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteBoolValue("knowledge_base", KnowledgeBase);
             writer.WriteBoolValue("llm", Llm);
             writer.WriteBoolValue("native_mcp_server_ids", NativeMcpServerIds);
             writer.WriteBoolValue("prompt", Prompt);
+            writer.WriteBoolValue("tool_ids", ToolIds);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

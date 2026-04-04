@@ -15,6 +15,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>A list of knowledge bases to be used by the agent</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationConfigClientOverride_Input_agent_prompt_knowledge_base? KnowledgeBase { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationConfigClientOverride_Input_agent_prompt_knowledge_base KnowledgeBase { get; set; }
+#endif
         /// <summary>The LLM to query with the prompt and the chat history. If using data residency, the LLM must be supported in the data residency environment</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -38,6 +46,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #nullable restore
 #else
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationConfigClientOverride_Input_agent_prompt_prompt Prompt { get; set; }
+#endif
+        /// <summary>A list of IDs of tools used by the agent</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationConfigClientOverride_Input_agent_prompt_tool_ids? ToolIds { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationConfigClientOverride_Input_agent_prompt_tool_ids ToolIds { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationConfigClientOverride_Input_agent_prompt"/> and sets the default values.
@@ -64,9 +80,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "knowledge_base", n => { KnowledgeBase = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationConfigClientOverride_Input_agent_prompt_knowledge_base>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationConfigClientOverride_Input_agent_prompt_knowledge_base.CreateFromDiscriminatorValue); } },
                 { "llm", n => { Llm = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationConfigClientOverride_Input_agent_prompt_llm>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationConfigClientOverride_Input_agent_prompt_llm.CreateFromDiscriminatorValue); } },
                 { "native_mcp_server_ids", n => { NativeMcpServerIds = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationConfigClientOverride_Input_agent_prompt_native_mcp_server_ids>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationConfigClientOverride_Input_agent_prompt_native_mcp_server_ids.CreateFromDiscriminatorValue); } },
                 { "prompt", n => { Prompt = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationConfigClientOverride_Input_agent_prompt_prompt>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationConfigClientOverride_Input_agent_prompt_prompt.CreateFromDiscriminatorValue); } },
+                { "tool_ids", n => { ToolIds = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationConfigClientOverride_Input_agent_prompt_tool_ids>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationConfigClientOverride_Input_agent_prompt_tool_ids.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -76,9 +94,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationConfigClientOverride_Input_agent_prompt_knowledge_base>("knowledge_base", KnowledgeBase);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationConfigClientOverride_Input_agent_prompt_llm>("llm", Llm);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationConfigClientOverride_Input_agent_prompt_native_mcp_server_ids>("native_mcp_server_ids", NativeMcpServerIds);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationConfigClientOverride_Input_agent_prompt_prompt>("prompt", Prompt);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationConfigClientOverride_Input_agent_prompt_tool_ids>("tool_ids", ToolIds);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

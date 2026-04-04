@@ -22559,7 +22559,7 @@
             "type": "object",
             "anyOf": [
               {
-                "$ref": "#/components/schemas/PromptAgentAPIModelOverride"
+                "$ref": "#/components/schemas/PromptAgentAPIModelOverride_Input"
               }
             ],
             "description": "The prompt for the agent",
@@ -22570,8 +22570,10 @@
           "first_message": "Hello, how can I help you today?",
           "language": "en",
           "prompt": {
+            "knowledge_base": [],
             "llm": "gemini-2.0-flash-001",
-            "prompt": "You are a helpful assistant that can answer questions about the topic of the conversation."
+            "prompt": "You are a helpful assistant that can answer questions about the topic of the conversation.",
+            "tool_ids": []
           }
         }
       },
@@ -22621,7 +22623,7 @@
             "type": "object",
             "anyOf": [
               {
-                "$ref": "#/components/schemas/PromptAgentAPIModelOverride"
+                "$ref": "#/components/schemas/PromptAgentAPIModelOverride_Output"
               }
             ],
             "description": "The prompt for the agent",
@@ -22632,8 +22634,10 @@
           "first_message": "Hello, how can I help you today?",
           "language": "en",
           "prompt": {
+            "knowledge_base": [],
             "llm": "gemini-2.0-flash-001",
-            "prompt": "You are a helpful assistant that can answer questions about the topic of the conversation."
+            "prompt": "You are a helpful assistant that can answer questions about the topic of the conversation.",
+            "tool_ids": []
           }
         }
       },
@@ -33813,8 +33817,10 @@
             "first_message": "Hello, how can I help you today?",
             "language": "en",
             "prompt": {
+              "knowledge_base": [],
               "llm": "gemini-2.0-flash-001",
-              "prompt": "You are a helpful assistant that can answer questions about the topic of the conversation."
+              "prompt": "You are a helpful assistant that can answer questions about the topic of the conversation.",
+              "tool_ids": []
             }
           },
           "tts": {
@@ -33880,8 +33886,10 @@
             "first_message": "Hello, how can I help you today?",
             "language": "en",
             "prompt": {
+              "knowledge_base": [],
               "llm": "gemini-2.0-flash-001",
-              "prompt": "You are a helpful assistant that can answer questions about the topic of the conversation."
+              "prompt": "You are a helpful assistant that can answer questions about the topic of the conversation.",
+              "tool_ids": []
             }
           },
           "tts": {
@@ -49148,7 +49156,7 @@
         ],
         "type": "string",
         "additionalProperties": false,
-        "default": "call_real_tool"
+        "default": "raise_error"
       },
       "MockingStrategy": {
         "title": "MockingStrategy",
@@ -49486,6 +49494,17 @@
               }
             ],
             "description": "The transcription ID of the response.",
+            "nullable": true
+          },
+          "audio_duration_secs": {
+            "title": "Audio Duration Secs",
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Audio_Duration_Secs"
+              }
+            ],
+            "description": "The duration of the audio that was transcribed across all channels in seconds.",
             "nullable": true
           }
         },
@@ -53579,7 +53598,8 @@
             "items": {
               "type": "string"
             },
-            "description": "A list of IDs of tools used by the agent"
+            "description": "A list of IDs of tools used by the agent",
+            "x-convai-client-override": true
           },
           "built_in_tools": {
             "$ref": "#/components/schemas/BuiltInTools_Input"
@@ -53609,7 +53629,8 @@
             "items": {
               "$ref": "#/components/schemas/KnowledgeBaseLocator"
             },
-            "description": "A list of knowledge bases to be used by the agent"
+            "description": "A list of knowledge bases to be used by the agent",
+            "x-convai-client-override": true
           },
           "custom_llm": {
             "type": "object",
@@ -53799,7 +53820,8 @@
             "items": {
               "type": "string"
             },
-            "description": "A list of IDs of tools used by the agent"
+            "description": "A list of IDs of tools used by the agent",
+            "x-convai-client-override": true
           },
           "built_in_tools": {
             "$ref": "#/components/schemas/BuiltInTools_Output"
@@ -53829,7 +53851,8 @@
             "items": {
               "$ref": "#/components/schemas/KnowledgeBaseLocator"
             },
-            "description": "A list of knowledge bases to be used by the agent"
+            "description": "A list of knowledge bases to be used by the agent",
+            "x-convai-client-override": true
           },
           "custom_llm": {
             "type": "object",
@@ -53967,7 +53990,7 @@
           "tools": []
         }
       },
-      "PromptAgentAPIModelOverride": {
+      "PromptAgentAPIModelOverride_Input": {
         "title": "PromptAgentAPIModelOverride",
         "type": "object",
         "properties": {
@@ -53994,6 +54017,18 @@
             "nullable": true,
             "x-convai-client-override": true
           },
+          "tool_ids": {
+            "title": "Tool Ids",
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Tool_Ids"
+              }
+            ],
+            "description": "A list of IDs of tools used by the agent",
+            "nullable": true,
+            "x-convai-client-override": true
+          },
           "native_mcp_server_ids": {
             "title": "Native Mcp Server Ids",
             "type": "object",
@@ -54005,11 +54040,96 @@
             "description": "A list of Native MCP server ids to be used by the agent",
             "nullable": true,
             "x-convai-client-override": true
+          },
+          "knowledge_base": {
+            "title": "Knowledge Base",
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Knowledge_Base"
+              }
+            ],
+            "description": "A list of knowledge bases to be used by the agent",
+            "nullable": true,
+            "x-convai-client-override": true
           }
         },
         "example": {
+          "knowledge_base": [],
           "llm": "gemini-2.0-flash-001",
-          "prompt": "You are a helpful assistant that can answer questions about the topic of the conversation."
+          "prompt": "You are a helpful assistant that can answer questions about the topic of the conversation.",
+          "tool_ids": []
+        }
+      },
+      "PromptAgentAPIModelOverride_Output": {
+        "title": "PromptAgentAPIModelOverride",
+        "type": "object",
+        "properties": {
+          "prompt": {
+            "title": "Prompt",
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Prompt"
+              }
+            ],
+            "description": "The prompt for the agent",
+            "nullable": true,
+            "x-convai-client-override": true
+          },
+          "llm": {
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/LLM_Wrapper"
+              }
+            ],
+            "description": "The LLM to query with the prompt and the chat history. If using data residency, the LLM must be supported in the data residency environment",
+            "nullable": true,
+            "x-convai-client-override": true
+          },
+          "tool_ids": {
+            "title": "Tool Ids",
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Tool_Ids"
+              }
+            ],
+            "description": "A list of IDs of tools used by the agent",
+            "nullable": true,
+            "x-convai-client-override": true
+          },
+          "native_mcp_server_ids": {
+            "title": "Native Mcp Server Ids",
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Native_Mcp_Server_Ids"
+              }
+            ],
+            "description": "A list of Native MCP server ids to be used by the agent",
+            "nullable": true,
+            "x-convai-client-override": true
+          },
+          "knowledge_base": {
+            "title": "Knowledge Base",
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Knowledge_Base"
+              }
+            ],
+            "description": "A list of knowledge bases to be used by the agent",
+            "nullable": true,
+            "x-convai-client-override": true
+          }
+        },
+        "example": {
+          "knowledge_base": [],
+          "llm": "gemini-2.0-flash-001",
+          "prompt": "You are a helpful assistant that can answer questions about the topic of the conversation.",
+          "tool_ids": []
         }
       },
       "PromptAgentAPIModelOverrideConfig": {
@@ -54028,10 +54148,22 @@
             "description": "Whether to allow overriding the llm field.",
             "default": false
           },
+          "tool_ids": {
+            "title": "Tool Ids",
+            "type": "boolean",
+            "description": "Whether to allow overriding the tool_ids field.",
+            "default": false
+          },
           "native_mcp_server_ids": {
             "title": "Native Mcp Server Ids",
             "type": "boolean",
             "description": "Whether to allow overriding the native_mcp_server_ids field.",
+            "default": false
+          },
+          "knowledge_base": {
+            "title": "Knowledge Base",
+            "type": "boolean",
+            "description": "Whether to allow overriding the knowledge_base field.",
             "default": false
           }
         }
@@ -54115,7 +54247,8 @@
               }
             ],
             "description": "A list of IDs of tools used by the agent",
-            "nullable": true
+            "nullable": true,
+            "x-convai-client-override": true
           },
           "built_in_tools": {
             "type": "object",
@@ -54159,7 +54292,8 @@
               }
             ],
             "description": "A list of knowledge bases to be used by the agent",
-            "nullable": true
+            "nullable": true,
+            "x-convai-client-override": true
           },
           "custom_llm": {
             "type": "object",
@@ -54332,7 +54466,8 @@
               }
             ],
             "description": "A list of IDs of tools used by the agent",
-            "nullable": true
+            "nullable": true,
+            "x-convai-client-override": true
           },
           "built_in_tools": {
             "type": "object",
@@ -54376,7 +54511,8 @@
               }
             ],
             "description": "A list of knowledge bases to be used by the agent",
-            "nullable": true
+            "nullable": true,
+            "x-convai-client-override": true
           },
           "custom_llm": {
             "type": "object",
@@ -58689,6 +58825,17 @@
               }
             ],
             "description": "List of detected entities with their text, type, and character positions in the transcript.",
+            "nullable": true
+          },
+          "audio_duration_secs": {
+            "title": "Audio Duration Secs",
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Audio_Duration_Secs"
+              }
+            ],
+            "description": "The duration of the audio that was transcribed in seconds.",
             "nullable": true
           }
         },
@@ -75516,6 +75663,17 @@
           }
         }
       },
+      "Audio_Duration_Secs": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "number"
+          }
+        }
+      },
       "Bpm": {
         "required": [
           "value"
@@ -75859,31 +76017,6 @@
           }
         }
       },
-      "Native_Mcp_Server_Ids": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          }
-        }
-      },
-      "Max_Tokens": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "type": "integer"
-          }
-        }
-      },
       "Tool_Ids": {
         "required": [
           "value"
@@ -75898,7 +76031,7 @@
           }
         }
       },
-      "Mcp_Server_Ids": {
+      "Native_Mcp_Server_Ids": {
         "required": [
           "value"
         ],
@@ -75922,6 +76055,31 @@
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/KnowledgeBaseLocator"
+            }
+          }
+        }
+      },
+      "Max_Tokens": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "integer"
+          }
+        }
+      },
+      "Mcp_Server_Ids": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "array",
+            "items": {
+              "type": "string"
             }
           }
         }

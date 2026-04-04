@@ -33,7 +33,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public OrchestratorToolMockBehaviorConfig()
         {
             AdditionalData = new Dictionary<string, object>();
-            FallbackStrategy = global::Soenneker.ElevenLabs.OpenApiClient.Models.MockNoMatchBehavior.Call_real_tool;
+            FallbackStrategy = global::Soenneker.ElevenLabs.OpenApiClient.Models.MockNoMatchBehavior.Raise_error;
             MockingStrategy = global::Soenneker.ElevenLabs.OpenApiClient.Models.MockingStrategy.None;
         }
         /// <summary>
