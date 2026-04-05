@@ -56024,7 +56024,8 @@
         "title": "ResponseFilterMode",
         "enum": [
           "all",
-          "allow"
+          "allow",
+          "hide_all"
         ],
         "type": "string",
         "additionalProperties": false,
