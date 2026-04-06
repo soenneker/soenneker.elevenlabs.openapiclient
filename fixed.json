@@ -37326,6 +37326,20 @@
           "agent_id": "J3Pbu5gP6NNKBscdCdwB"
         }
       },
+      "CreateAgentRuleParams": {
+        "title": "CreateAgentRuleParams",
+        "type": "object",
+        "properties": {
+          "smb_tool_type": {
+            "title": "Smb Tool Type",
+            "enum": [
+              "create_agent_rule"
+            ],
+            "type": "string",
+            "default": "create_agent_rule"
+          }
+        }
+      },
       "CreateAgentTestFolderResponseModel": {
         "title": "CreateAgentTestFolderResponseModel",
         "required": [
@@ -37453,6 +37467,20 @@
           }
         }
       },
+      "CreateClientInteractionParams": {
+        "title": "CreateClientInteractionParams",
+        "type": "object",
+        "properties": {
+          "smb_tool_type": {
+            "title": "Smb Tool Type",
+            "enum": [
+              "create_client_interaction"
+            ],
+            "type": "string",
+            "default": "create_client_interaction"
+          }
+        }
+      },
       "CreateClientParams": {
         "title": "CreateClientParams",
         "type": "object",
@@ -37502,6 +37530,20 @@
           "token": {
             "title": "Token",
             "type": "string"
+          }
+        }
+      },
+      "CreateHolidayParams": {
+        "title": "CreateHolidayParams",
+        "type": "object",
+        "properties": {
+          "smb_tool_type": {
+            "title": "Smb Tool Type",
+            "enum": [
+              "create_holiday"
+            ],
+            "type": "string",
+            "default": "create_holiday"
           }
         }
       },
@@ -37886,6 +37928,20 @@
             ],
             "type": "string",
             "default": "create_rental_booking"
+          }
+        }
+      },
+      "CreateRentalServiceParams": {
+        "title": "CreateRentalServiceParams",
+        "type": "object",
+        "properties": {
+          "smb_tool_type": {
+            "title": "Smb Tool Type",
+            "enum": [
+              "create_rental_service"
+            ],
+            "type": "string",
+            "default": "create_rental_service"
           }
         }
       },
@@ -38831,6 +38887,20 @@
           }
         }
       },
+      "DeleteAgentRuleParams": {
+        "title": "DeleteAgentRuleParams",
+        "type": "object",
+        "properties": {
+          "smb_tool_type": {
+            "title": "Smb Tool Type",
+            "enum": [
+              "delete_agent_rule"
+            ],
+            "type": "string",
+            "default": "delete_agent_rule"
+          }
+        }
+      },
       "DeleteAssetParams": {
         "title": "DeleteAssetParams",
         "type": "object",
@@ -38874,6 +38944,20 @@
         },
         "example": {
           "status": "ok"
+        }
+      },
+      "DeleteClientInteractionParams": {
+        "title": "DeleteClientInteractionParams",
+        "type": "object",
+        "properties": {
+          "smb_tool_type": {
+            "title": "Smb Tool Type",
+            "enum": [
+              "delete_client_interaction"
+            ],
+            "type": "string",
+            "default": "delete_client_interaction"
+          }
         }
       },
       "DeleteClientParams": {
@@ -38925,6 +39009,20 @@
           "status": "ok"
         }
       },
+      "DeleteHolidayParams": {
+        "title": "DeleteHolidayParams",
+        "type": "object",
+        "properties": {
+          "smb_tool_type": {
+            "title": "Smb Tool Type",
+            "enum": [
+              "delete_holiday"
+            ],
+            "type": "string",
+            "default": "delete_holiday"
+          }
+        }
+      },
       "DeleteProductParams": {
         "title": "DeleteProductParams",
         "type": "object",
@@ -38954,6 +39052,20 @@
         },
         "example": {
           "status": "ok"
+        }
+      },
+      "DeleteRentalServiceParams": {
+        "title": "DeleteRentalServiceParams",
+        "type": "object",
+        "properties": {
+          "smb_tool_type": {
+            "title": "Smb Tool Type",
+            "enum": [
+              "delete_rental_service"
+            ],
+            "type": "string",
+            "default": "delete_rental_service"
+          }
         }
       },
       "DeleteSampleResponseModel": {
@@ -42600,6 +42712,21 @@
           "next_cursor": "123"
         }
       },
+      "GetAnalyticsSummaryParams": {
+        "title": "GetAnalyticsSummaryParams",
+        "type": "object",
+        "properties": {
+          "smb_tool_type": {
+            "title": "Smb Tool Type",
+            "enum": [
+              "get_analytics_summary"
+            ],
+            "type": "string",
+            "default": "get_analytics_summary"
+          }
+        },
+        "description": "Get a summary of key business analytics for a time period."
+      },
       "GetAudioNativeProjectSettingsResponseModel": {
         "title": "GetAudioNativeProjectSettingsResponseModel",
         "required": [
@@ -42649,6 +42776,34 @@
             "title": "My Project"
           },
           "snapshot_id": "JBFqnCBsd6RMkjVDRZzb"
+        }
+      },
+      "GetBookingPageSettingsParams": {
+        "title": "GetBookingPageSettingsParams",
+        "type": "object",
+        "properties": {
+          "smb_tool_type": {
+            "title": "Smb Tool Type",
+            "enum": [
+              "get_booking_page_settings"
+            ],
+            "type": "string",
+            "default": "get_booking_page_settings"
+          }
+        }
+      },
+      "GetBookingSlugStatusParams": {
+        "title": "GetBookingSlugStatusParams",
+        "type": "object",
+        "properties": {
+          "smb_tool_type": {
+            "title": "Smb Tool Type",
+            "enum": [
+              "get_booking_slug_status"
+            ],
+            "type": "string",
+            "default": "get_booking_slug_status"
+          }
         }
       },
       "GetChaptersResponseModel": {
@@ -44574,6 +44729,20 @@
           "name": {
             "title": "Name",
             "type": "string"
+          }
+        }
+      },
+      "GetScheduleParams": {
+        "title": "GetScheduleParams",
+        "type": "object",
+        "properties": {
+          "smb_tool_type": {
+            "title": "Smb Tool Type",
+            "enum": [
+              "get_schedule"
+            ],
+            "type": "string",
+            "default": "get_schedule"
           }
         }
       },
@@ -47146,6 +47315,20 @@
           "voice_id": "sB1b5zUrxQVAFl2PhZFp"
         }
       },
+      "ListAgentRulesParams": {
+        "title": "ListAgentRulesParams",
+        "type": "object",
+        "properties": {
+          "smb_tool_type": {
+            "title": "Smb Tool Type",
+            "enum": [
+              "list_agent_rules"
+            ],
+            "type": "string",
+            "default": "list_agent_rules"
+          }
+        }
+      },
       "ListAssetsParams": {
         "title": "ListAssetsParams",
         "type": "object",
@@ -47246,6 +47429,20 @@
           }
         }
       },
+      "ListClientInteractionsParams": {
+        "title": "ListClientInteractionsParams",
+        "type": "object",
+        "properties": {
+          "smb_tool_type": {
+            "title": "Smb Tool Type",
+            "enum": [
+              "list_client_interactions"
+            ],
+            "type": "string",
+            "default": "list_client_interactions"
+          }
+        }
+      },
       "ListClientsParams": {
         "title": "ListClientsParams",
         "type": "object",
@@ -47260,6 +47457,20 @@
           }
         },
         "description": "List clients ordered by most recently updated, with an optional limit."
+      },
+      "ListHolidaysParams": {
+        "title": "ListHolidaysParams",
+        "type": "object",
+        "properties": {
+          "smb_tool_type": {
+            "title": "Smb Tool Type",
+            "enum": [
+              "list_holidays"
+            ],
+            "type": "string",
+            "default": "list_holidays"
+          }
+        }
       },
       "ListMCPToolsResponseModel": {
         "title": "ListMCPToolsResponseModel",
@@ -56577,10 +56788,76 @@
                 "$ref": "#/components/schemas/ListRentalServicesParams"
               },
               {
+                "$ref": "#/components/schemas/CreateRentalServiceParams"
+              },
+              {
+                "$ref": "#/components/schemas/UpdateRentalServiceParams"
+              },
+              {
+                "$ref": "#/components/schemas/DeleteRentalServiceParams"
+              },
+              {
                 "$ref": "#/components/schemas/CheckRentalAvailabilityParams"
               },
               {
                 "$ref": "#/components/schemas/CreateRentalBookingParams"
+              },
+              {
+                "$ref": "#/components/schemas/ListAgentRulesParams"
+              },
+              {
+                "$ref": "#/components/schemas/CreateAgentRuleParams"
+              },
+              {
+                "$ref": "#/components/schemas/UpdateAgentRuleParams"
+              },
+              {
+                "$ref": "#/components/schemas/DeleteAgentRuleParams"
+              },
+              {
+                "$ref": "#/components/schemas/ListHolidaysParams"
+              },
+              {
+                "$ref": "#/components/schemas/CreateHolidayParams"
+              },
+              {
+                "$ref": "#/components/schemas/UpdateHolidayParams"
+              },
+              {
+                "$ref": "#/components/schemas/DeleteHolidayParams"
+              },
+              {
+                "$ref": "#/components/schemas/GetScheduleParams"
+              },
+              {
+                "$ref": "#/components/schemas/UpdateBusinessInfoParams"
+              },
+              {
+                "$ref": "#/components/schemas/UpdateCustomerFacingConfigParams"
+              },
+              {
+                "$ref": "#/components/schemas/GetAnalyticsSummaryParams"
+              },
+              {
+                "$ref": "#/components/schemas/GetBookingPageSettingsParams"
+              },
+              {
+                "$ref": "#/components/schemas/UpdateBookingPageSettingsParams"
+              },
+              {
+                "$ref": "#/components/schemas/GetBookingSlugStatusParams"
+              },
+              {
+                "$ref": "#/components/schemas/SetBookingSlugParams"
+              },
+              {
+                "$ref": "#/components/schemas/ListClientInteractionsParams"
+              },
+              {
+                "$ref": "#/components/schemas/CreateClientInteractionParams"
+              },
+              {
+                "$ref": "#/components/schemas/DeleteClientInteractionParams"
               }
             ],
             "properties": {
@@ -56593,33 +56870,55 @@
               "mapping": {
                 "check_rental_availability": "#/components/schemas/CheckRentalAvailabilityParams",
                 "check_service_availability": "#/components/schemas/CheckServiceAvailabilityParams",
+                "create_agent_rule": "#/components/schemas/CreateAgentRuleParams",
                 "create_asset": "#/components/schemas/CreateAssetParams",
                 "create_client": "#/components/schemas/CreateClientParams",
                 "create_client_appointment": "#/components/schemas/CreateClientAppointmentParams",
+                "create_client_interaction": "#/components/schemas/CreateClientInteractionParams",
+                "create_holiday": "#/components/schemas/CreateHolidayParams",
                 "create_product": "#/components/schemas/CreateProductParams",
                 "create_rental_booking": "#/components/schemas/CreateRentalBookingParams",
+                "create_rental_service": "#/components/schemas/CreateRentalServiceParams",
                 "create_service": "#/components/schemas/CreateServiceParams",
                 "create_staff": "#/components/schemas/CreateStaffParams",
+                "delete_agent_rule": "#/components/schemas/DeleteAgentRuleParams",
                 "delete_asset": "#/components/schemas/DeleteAssetParams",
                 "delete_calendar_event": "#/components/schemas/DeleteCalendarEventParams",
                 "delete_client": "#/components/schemas/DeleteClientParams",
+                "delete_client_interaction": "#/components/schemas/DeleteClientInteractionParams",
+                "delete_holiday": "#/components/schemas/DeleteHolidayParams",
                 "delete_product": "#/components/schemas/DeleteProductParams",
+                "delete_rental_service": "#/components/schemas/DeleteRentalServiceParams",
                 "delete_service": "#/components/schemas/DeleteServiceParams",
                 "delete_staff": "#/components/schemas/DeleteStaffParams",
+                "get_analytics_summary": "#/components/schemas/GetAnalyticsSummaryParams",
+                "get_booking_page_settings": "#/components/schemas/GetBookingPageSettingsParams",
+                "get_booking_slug_status": "#/components/schemas/GetBookingSlugStatusParams",
                 "get_client_appointments": "#/components/schemas/GetClientAppointmentsParams",
                 "get_client_by_phone": "#/components/schemas/GetClientByPhoneParams",
+                "get_schedule": "#/components/schemas/GetScheduleParams",
+                "list_agent_rules": "#/components/schemas/ListAgentRulesParams",
                 "list_assets": "#/components/schemas/ListAssetsParams",
                 "list_calendar_events": "#/components/schemas/ListCalendarEventsParams",
+                "list_client_interactions": "#/components/schemas/ListClientInteractionsParams",
                 "list_clients": "#/components/schemas/ListClientsParams",
+                "list_holidays": "#/components/schemas/ListHolidaysParams",
                 "list_products": "#/components/schemas/ListProductsParams",
                 "list_rental_services": "#/components/schemas/ListRentalServicesParams",
                 "list_services": "#/components/schemas/ListServicesParams",
                 "list_staff": "#/components/schemas/ListStaffParams",
                 "search_clients": "#/components/schemas/SearchClientsParams",
+                "set_booking_slug": "#/components/schemas/SetBookingSlugParams",
+                "update_agent_rule": "#/components/schemas/UpdateAgentRuleParams",
                 "update_asset": "#/components/schemas/UpdateAssetParams",
+                "update_booking_page_settings": "#/components/schemas/UpdateBookingPageSettingsParams",
+                "update_business_info": "#/components/schemas/UpdateBusinessInfoParams",
                 "update_calendar_event": "#/components/schemas/UpdateCalendarEventParams",
                 "update_client": "#/components/schemas/UpdateClientParams",
+                "update_customer_facing_config": "#/components/schemas/UpdateCustomerFacingConfigParams",
+                "update_holiday": "#/components/schemas/UpdateHolidayParams",
                 "update_product": "#/components/schemas/UpdateProductParams",
+                "update_rental_service": "#/components/schemas/UpdateRentalServiceParams",
                 "update_service": "#/components/schemas/UpdateServiceParams",
                 "update_staff": "#/components/schemas/UpdateStaffParams"
               }
@@ -57315,6 +57614,20 @@
               }
             ],
             "nullable": true
+          }
+        }
+      },
+      "SetBookingSlugParams": {
+        "title": "SetBookingSlugParams",
+        "type": "object",
+        "properties": {
+          "smb_tool_type": {
+            "title": "Smb Tool Type",
+            "enum": [
+              "set_booking_slug"
+            ],
+            "type": "string",
+            "default": "set_booking_slug"
           }
         }
       },
@@ -62783,6 +63096,20 @@
           }
         }
       },
+      "UpdateAgentRuleParams": {
+        "title": "UpdateAgentRuleParams",
+        "type": "object",
+        "properties": {
+          "smb_tool_type": {
+            "title": "Smb Tool Type",
+            "enum": [
+              "update_agent_rule"
+            ],
+            "type": "string",
+            "default": "update_agent_rule"
+          }
+        }
+      },
       "UpdateAssetParams": {
         "title": "UpdateAssetParams",
         "type": "object",
@@ -62794,6 +63121,34 @@
             ],
             "type": "string",
             "default": "update_asset"
+          }
+        }
+      },
+      "UpdateBookingPageSettingsParams": {
+        "title": "UpdateBookingPageSettingsParams",
+        "type": "object",
+        "properties": {
+          "smb_tool_type": {
+            "title": "Smb Tool Type",
+            "enum": [
+              "update_booking_page_settings"
+            ],
+            "type": "string",
+            "default": "update_booking_page_settings"
+          }
+        }
+      },
+      "UpdateBusinessInfoParams": {
+        "title": "UpdateBusinessInfoParams",
+        "type": "object",
+        "properties": {
+          "smb_tool_type": {
+            "title": "Smb Tool Type",
+            "enum": [
+              "update_business_info"
+            ],
+            "type": "string",
+            "default": "update_business_info"
           }
         }
       },
@@ -62826,6 +63181,20 @@
         },
         "description": "Update an existing client\u0027s information."
       },
+      "UpdateCustomerFacingConfigParams": {
+        "title": "UpdateCustomerFacingConfigParams",
+        "type": "object",
+        "properties": {
+          "smb_tool_type": {
+            "title": "Smb Tool Type",
+            "enum": [
+              "update_customer_facing_config"
+            ],
+            "type": "string",
+            "default": "update_customer_facing_config"
+          }
+        }
+      },
       "UpdateEnvironmentVariableRequest": {
         "title": "UpdateEnvironmentVariableRequest",
         "required": [
@@ -62852,6 +63221,20 @@
               "nullable": true
             },
             "description": "Values to replace. Set to null to remove an environment (except \u0027production\u0027)."
+          }
+        }
+      },
+      "UpdateHolidayParams": {
+        "title": "UpdateHolidayParams",
+        "type": "object",
+        "properties": {
+          "smb_tool_type": {
+            "title": "Smb Tool Type",
+            "enum": [
+              "update_holiday"
+            ],
+            "type": "string",
+            "default": "update_holiday"
           }
         }
       },
@@ -62919,6 +63302,20 @@
             ],
             "type": "string",
             "default": "update_product"
+          }
+        }
+      },
+      "UpdateRentalServiceParams": {
+        "title": "UpdateRentalServiceParams",
+        "type": "object",
+        "properties": {
+          "smb_tool_type": {
+            "title": "Smb Tool Type",
+            "enum": [
+              "update_rental_service"
+            ],
+            "type": "string",
+            "default": "update_rental_service"
           }
         }
       },

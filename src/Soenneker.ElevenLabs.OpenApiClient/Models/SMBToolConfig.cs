@@ -133,7 +133,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteAdditionalData(AdditionalData);
         }
         /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.CheckRentalAvailabilityParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.CheckServiceAvailabilityParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateAssetParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateClientAppointmentParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateClientParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateProductParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateRentalBookingParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateServiceParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateStaffParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.DeleteAssetParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.DeleteCalendarEventParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.DeleteClientParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.DeleteProductParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.DeleteServiceParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.DeleteStaffParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.GetClientAppointmentsParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.GetClientByPhoneParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ListAssetsParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ListCalendarEventsParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ListClientsParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ListProductsParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ListRentalServicesParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ListServicesParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ListStaffParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.SearchClientsParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateAssetParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateCalendarEventParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateClientParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateProductParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateServiceParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateStaffParams"/>
+        /// Composed type wrapper for classes <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.CheckRentalAvailabilityParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.CheckServiceAvailabilityParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateAgentRuleParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateAssetParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateClientAppointmentParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateClientInteractionParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateClientParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateHolidayParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateProductParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateRentalBookingParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateRentalServiceParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateServiceParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateStaffParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.DeleteAgentRuleParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.DeleteAssetParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.DeleteCalendarEventParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.DeleteClientInteractionParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.DeleteClientParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.DeleteHolidayParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.DeleteProductParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.DeleteRentalServiceParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.DeleteServiceParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.DeleteStaffParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.GetAnalyticsSummaryParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.GetBookingPageSettingsParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.GetBookingSlugStatusParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.GetClientAppointmentsParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.GetClientByPhoneParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.GetScheduleParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ListAgentRulesParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ListAssetsParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ListCalendarEventsParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ListClientInteractionsParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ListClientsParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ListHolidaysParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ListProductsParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ListRentalServicesParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ListServicesParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ListStaffParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.SearchClientsParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.SetBookingSlugParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateAgentRuleParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateAssetParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateBookingPageSettingsParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateBusinessInfoParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateCalendarEventParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateClientParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateCustomerFacingConfigParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateHolidayParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateProductParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateRentalServiceParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateServiceParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateStaffParams"/>
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class SMBToolConfig_params : IComposedTypeWrapper, IParsable
@@ -154,6 +154,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
             public global::Soenneker.ElevenLabs.OpenApiClient.Models.CheckServiceAvailabilityParams CheckServiceAvailabilityParams { get; set; }
 #endif
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateAgentRuleParams"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateAgentRuleParams? CreateAgentRuleParams { get; set; }
+#nullable restore
+#else
+            public global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateAgentRuleParams CreateAgentRuleParams { get; set; }
+#endif
             /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateAssetParams"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -170,6 +178,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
             public global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateClientAppointmentParams CreateClientAppointmentParams { get; set; }
 #endif
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateClientInteractionParams"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateClientInteractionParams? CreateClientInteractionParams { get; set; }
+#nullable restore
+#else
+            public global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateClientInteractionParams CreateClientInteractionParams { get; set; }
+#endif
             /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateClientParams"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -177,6 +193,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #nullable restore
 #else
             public global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateClientParams CreateClientParams { get; set; }
+#endif
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateHolidayParams"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateHolidayParams? CreateHolidayParams { get; set; }
+#nullable restore
+#else
+            public global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateHolidayParams CreateHolidayParams { get; set; }
 #endif
             /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateProductParams"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -194,6 +218,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
             public global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateRentalBookingParams CreateRentalBookingParams { get; set; }
 #endif
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateRentalServiceParams"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateRentalServiceParams? CreateRentalServiceParams { get; set; }
+#nullable restore
+#else
+            public global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateRentalServiceParams CreateRentalServiceParams { get; set; }
+#endif
             /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateServiceParams"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -209,6 +241,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #nullable restore
 #else
             public global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateStaffParams CreateStaffParams { get; set; }
+#endif
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.DeleteAgentRuleParams"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::Soenneker.ElevenLabs.OpenApiClient.Models.DeleteAgentRuleParams? DeleteAgentRuleParams { get; set; }
+#nullable restore
+#else
+            public global::Soenneker.ElevenLabs.OpenApiClient.Models.DeleteAgentRuleParams DeleteAgentRuleParams { get; set; }
 #endif
             /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.DeleteAssetParams"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -226,6 +266,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
             public global::Soenneker.ElevenLabs.OpenApiClient.Models.DeleteCalendarEventParams DeleteCalendarEventParams { get; set; }
 #endif
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.DeleteClientInteractionParams"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::Soenneker.ElevenLabs.OpenApiClient.Models.DeleteClientInteractionParams? DeleteClientInteractionParams { get; set; }
+#nullable restore
+#else
+            public global::Soenneker.ElevenLabs.OpenApiClient.Models.DeleteClientInteractionParams DeleteClientInteractionParams { get; set; }
+#endif
             /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.DeleteClientParams"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -234,6 +282,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
             public global::Soenneker.ElevenLabs.OpenApiClient.Models.DeleteClientParams DeleteClientParams { get; set; }
 #endif
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.DeleteHolidayParams"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::Soenneker.ElevenLabs.OpenApiClient.Models.DeleteHolidayParams? DeleteHolidayParams { get; set; }
+#nullable restore
+#else
+            public global::Soenneker.ElevenLabs.OpenApiClient.Models.DeleteHolidayParams DeleteHolidayParams { get; set; }
+#endif
             /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.DeleteProductParams"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -241,6 +297,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #nullable restore
 #else
             public global::Soenneker.ElevenLabs.OpenApiClient.Models.DeleteProductParams DeleteProductParams { get; set; }
+#endif
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.DeleteRentalServiceParams"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::Soenneker.ElevenLabs.OpenApiClient.Models.DeleteRentalServiceParams? DeleteRentalServiceParams { get; set; }
+#nullable restore
+#else
+            public global::Soenneker.ElevenLabs.OpenApiClient.Models.DeleteRentalServiceParams DeleteRentalServiceParams { get; set; }
 #endif
             /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.DeleteServiceParams"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -258,6 +322,30 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
             public global::Soenneker.ElevenLabs.OpenApiClient.Models.DeleteStaffParams DeleteStaffParams { get; set; }
 #endif
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.GetAnalyticsSummaryParams"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetAnalyticsSummaryParams? GetAnalyticsSummaryParams { get; set; }
+#nullable restore
+#else
+            public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetAnalyticsSummaryParams GetAnalyticsSummaryParams { get; set; }
+#endif
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.GetBookingPageSettingsParams"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetBookingPageSettingsParams? GetBookingPageSettingsParams { get; set; }
+#nullable restore
+#else
+            public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetBookingPageSettingsParams GetBookingPageSettingsParams { get; set; }
+#endif
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.GetBookingSlugStatusParams"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetBookingSlugStatusParams? GetBookingSlugStatusParams { get; set; }
+#nullable restore
+#else
+            public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetBookingSlugStatusParams GetBookingSlugStatusParams { get; set; }
+#endif
             /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.GetClientAppointmentsParams"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -273,6 +361,22 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #nullable restore
 #else
             public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetClientByPhoneParams GetClientByPhoneParams { get; set; }
+#endif
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.GetScheduleParams"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetScheduleParams? GetScheduleParams { get; set; }
+#nullable restore
+#else
+            public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetScheduleParams GetScheduleParams { get; set; }
+#endif
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ListAgentRulesParams"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::Soenneker.ElevenLabs.OpenApiClient.Models.ListAgentRulesParams? ListAgentRulesParams { get; set; }
+#nullable restore
+#else
+            public global::Soenneker.ElevenLabs.OpenApiClient.Models.ListAgentRulesParams ListAgentRulesParams { get; set; }
 #endif
             /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ListAssetsParams"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -290,6 +394,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
             public global::Soenneker.ElevenLabs.OpenApiClient.Models.ListCalendarEventsParams ListCalendarEventsParams { get; set; }
 #endif
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ListClientInteractionsParams"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::Soenneker.ElevenLabs.OpenApiClient.Models.ListClientInteractionsParams? ListClientInteractionsParams { get; set; }
+#nullable restore
+#else
+            public global::Soenneker.ElevenLabs.OpenApiClient.Models.ListClientInteractionsParams ListClientInteractionsParams { get; set; }
+#endif
             /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ListClientsParams"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -297,6 +409,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #nullable restore
 #else
             public global::Soenneker.ElevenLabs.OpenApiClient.Models.ListClientsParams ListClientsParams { get; set; }
+#endif
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ListHolidaysParams"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::Soenneker.ElevenLabs.OpenApiClient.Models.ListHolidaysParams? ListHolidaysParams { get; set; }
+#nullable restore
+#else
+            public global::Soenneker.ElevenLabs.OpenApiClient.Models.ListHolidaysParams ListHolidaysParams { get; set; }
 #endif
             /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ListProductsParams"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -338,6 +458,22 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
             public global::Soenneker.ElevenLabs.OpenApiClient.Models.SearchClientsParams SearchClientsParams { get; set; }
 #endif
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.SetBookingSlugParams"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::Soenneker.ElevenLabs.OpenApiClient.Models.SetBookingSlugParams? SetBookingSlugParams { get; set; }
+#nullable restore
+#else
+            public global::Soenneker.ElevenLabs.OpenApiClient.Models.SetBookingSlugParams SetBookingSlugParams { get; set; }
+#endif
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateAgentRuleParams"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateAgentRuleParams? UpdateAgentRuleParams { get; set; }
+#nullable restore
+#else
+            public global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateAgentRuleParams UpdateAgentRuleParams { get; set; }
+#endif
             /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateAssetParams"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -345,6 +481,22 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #nullable restore
 #else
             public global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateAssetParams UpdateAssetParams { get; set; }
+#endif
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateBookingPageSettingsParams"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateBookingPageSettingsParams? UpdateBookingPageSettingsParams { get; set; }
+#nullable restore
+#else
+            public global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateBookingPageSettingsParams UpdateBookingPageSettingsParams { get; set; }
+#endif
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateBusinessInfoParams"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateBusinessInfoParams? UpdateBusinessInfoParams { get; set; }
+#nullable restore
+#else
+            public global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateBusinessInfoParams UpdateBusinessInfoParams { get; set; }
 #endif
             /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateCalendarEventParams"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -362,6 +514,22 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
             public global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateClientParams UpdateClientParams { get; set; }
 #endif
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateCustomerFacingConfigParams"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateCustomerFacingConfigParams? UpdateCustomerFacingConfigParams { get; set; }
+#nullable restore
+#else
+            public global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateCustomerFacingConfigParams UpdateCustomerFacingConfigParams { get; set; }
+#endif
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateHolidayParams"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateHolidayParams? UpdateHolidayParams { get; set; }
+#nullable restore
+#else
+            public global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateHolidayParams UpdateHolidayParams { get; set; }
+#endif
             /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateProductParams"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -369,6 +537,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #nullable restore
 #else
             public global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateProductParams UpdateProductParams { get; set; }
+#endif
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateRentalServiceParams"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateRentalServiceParams? UpdateRentalServiceParams { get; set; }
+#nullable restore
+#else
+            public global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateRentalServiceParams UpdateRentalServiceParams { get; set; }
 #endif
             /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateServiceParams"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -404,6 +580,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 {
                     result.CheckServiceAvailabilityParams = new global::Soenneker.ElevenLabs.OpenApiClient.Models.CheckServiceAvailabilityParams();
                 }
+                else if("create_agent_rule".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                {
+                    result.CreateAgentRuleParams = new global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateAgentRuleParams();
+                }
                 else if("create_asset".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
                     result.CreateAssetParams = new global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateAssetParams();
@@ -412,9 +592,17 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 {
                     result.CreateClientAppointmentParams = new global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateClientAppointmentParams();
                 }
+                else if("create_client_interaction".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                {
+                    result.CreateClientInteractionParams = new global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateClientInteractionParams();
+                }
                 else if("create_client".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
                     result.CreateClientParams = new global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateClientParams();
+                }
+                else if("create_holiday".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                {
+                    result.CreateHolidayParams = new global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateHolidayParams();
                 }
                 else if("create_product".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
@@ -424,6 +612,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 {
                     result.CreateRentalBookingParams = new global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateRentalBookingParams();
                 }
+                else if("create_rental_service".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                {
+                    result.CreateRentalServiceParams = new global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateRentalServiceParams();
+                }
                 else if("create_service".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
                     result.CreateServiceParams = new global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateServiceParams();
@@ -431,6 +623,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 else if("create_staff".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
                     result.CreateStaffParams = new global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateStaffParams();
+                }
+                else if("delete_agent_rule".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                {
+                    result.DeleteAgentRuleParams = new global::Soenneker.ElevenLabs.OpenApiClient.Models.DeleteAgentRuleParams();
                 }
                 else if("delete_asset".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
@@ -440,13 +636,25 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 {
                     result.DeleteCalendarEventParams = new global::Soenneker.ElevenLabs.OpenApiClient.Models.DeleteCalendarEventParams();
                 }
+                else if("delete_client_interaction".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                {
+                    result.DeleteClientInteractionParams = new global::Soenneker.ElevenLabs.OpenApiClient.Models.DeleteClientInteractionParams();
+                }
                 else if("delete_client".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
                     result.DeleteClientParams = new global::Soenneker.ElevenLabs.OpenApiClient.Models.DeleteClientParams();
                 }
+                else if("delete_holiday".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                {
+                    result.DeleteHolidayParams = new global::Soenneker.ElevenLabs.OpenApiClient.Models.DeleteHolidayParams();
+                }
                 else if("delete_product".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
                     result.DeleteProductParams = new global::Soenneker.ElevenLabs.OpenApiClient.Models.DeleteProductParams();
+                }
+                else if("delete_rental_service".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                {
+                    result.DeleteRentalServiceParams = new global::Soenneker.ElevenLabs.OpenApiClient.Models.DeleteRentalServiceParams();
                 }
                 else if("delete_service".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
@@ -456,6 +664,18 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 {
                     result.DeleteStaffParams = new global::Soenneker.ElevenLabs.OpenApiClient.Models.DeleteStaffParams();
                 }
+                else if("get_analytics_summary".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                {
+                    result.GetAnalyticsSummaryParams = new global::Soenneker.ElevenLabs.OpenApiClient.Models.GetAnalyticsSummaryParams();
+                }
+                else if("get_booking_page_settings".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                {
+                    result.GetBookingPageSettingsParams = new global::Soenneker.ElevenLabs.OpenApiClient.Models.GetBookingPageSettingsParams();
+                }
+                else if("get_booking_slug_status".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                {
+                    result.GetBookingSlugStatusParams = new global::Soenneker.ElevenLabs.OpenApiClient.Models.GetBookingSlugStatusParams();
+                }
                 else if("get_client_appointments".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
                     result.GetClientAppointmentsParams = new global::Soenneker.ElevenLabs.OpenApiClient.Models.GetClientAppointmentsParams();
@@ -463,6 +683,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 else if("get_client_by_phone".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
                     result.GetClientByPhoneParams = new global::Soenneker.ElevenLabs.OpenApiClient.Models.GetClientByPhoneParams();
+                }
+                else if("get_schedule".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                {
+                    result.GetScheduleParams = new global::Soenneker.ElevenLabs.OpenApiClient.Models.GetScheduleParams();
+                }
+                else if("list_agent_rules".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                {
+                    result.ListAgentRulesParams = new global::Soenneker.ElevenLabs.OpenApiClient.Models.ListAgentRulesParams();
                 }
                 else if("list_assets".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
@@ -472,9 +700,17 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 {
                     result.ListCalendarEventsParams = new global::Soenneker.ElevenLabs.OpenApiClient.Models.ListCalendarEventsParams();
                 }
+                else if("list_client_interactions".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                {
+                    result.ListClientInteractionsParams = new global::Soenneker.ElevenLabs.OpenApiClient.Models.ListClientInteractionsParams();
+                }
                 else if("list_clients".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
                     result.ListClientsParams = new global::Soenneker.ElevenLabs.OpenApiClient.Models.ListClientsParams();
+                }
+                else if("list_holidays".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                {
+                    result.ListHolidaysParams = new global::Soenneker.ElevenLabs.OpenApiClient.Models.ListHolidaysParams();
                 }
                 else if("list_products".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
@@ -496,9 +732,25 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 {
                     result.SearchClientsParams = new global::Soenneker.ElevenLabs.OpenApiClient.Models.SearchClientsParams();
                 }
+                else if("set_booking_slug".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                {
+                    result.SetBookingSlugParams = new global::Soenneker.ElevenLabs.OpenApiClient.Models.SetBookingSlugParams();
+                }
+                else if("update_agent_rule".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                {
+                    result.UpdateAgentRuleParams = new global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateAgentRuleParams();
+                }
                 else if("update_asset".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
                     result.UpdateAssetParams = new global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateAssetParams();
+                }
+                else if("update_booking_page_settings".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                {
+                    result.UpdateBookingPageSettingsParams = new global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateBookingPageSettingsParams();
+                }
+                else if("update_business_info".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                {
+                    result.UpdateBusinessInfoParams = new global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateBusinessInfoParams();
                 }
                 else if("update_calendar_event".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
@@ -508,9 +760,21 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 {
                     result.UpdateClientParams = new global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateClientParams();
                 }
+                else if("update_customer_facing_config".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                {
+                    result.UpdateCustomerFacingConfigParams = new global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateCustomerFacingConfigParams();
+                }
+                else if("update_holiday".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                {
+                    result.UpdateHolidayParams = new global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateHolidayParams();
+                }
                 else if("update_product".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
                     result.UpdateProductParams = new global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateProductParams();
+                }
+                else if("update_rental_service".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                {
+                    result.UpdateRentalServiceParams = new global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateRentalServiceParams();
                 }
                 else if("update_service".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
@@ -536,6 +800,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 {
                     return CheckServiceAvailabilityParams.GetFieldDeserializers();
                 }
+                else if(CreateAgentRuleParams != null)
+                {
+                    return CreateAgentRuleParams.GetFieldDeserializers();
+                }
                 else if(CreateAssetParams != null)
                 {
                     return CreateAssetParams.GetFieldDeserializers();
@@ -544,9 +812,17 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 {
                     return CreateClientAppointmentParams.GetFieldDeserializers();
                 }
+                else if(CreateClientInteractionParams != null)
+                {
+                    return CreateClientInteractionParams.GetFieldDeserializers();
+                }
                 else if(CreateClientParams != null)
                 {
                     return CreateClientParams.GetFieldDeserializers();
+                }
+                else if(CreateHolidayParams != null)
+                {
+                    return CreateHolidayParams.GetFieldDeserializers();
                 }
                 else if(CreateProductParams != null)
                 {
@@ -556,6 +832,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 {
                     return CreateRentalBookingParams.GetFieldDeserializers();
                 }
+                else if(CreateRentalServiceParams != null)
+                {
+                    return CreateRentalServiceParams.GetFieldDeserializers();
+                }
                 else if(CreateServiceParams != null)
                 {
                     return CreateServiceParams.GetFieldDeserializers();
@@ -563,6 +843,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 else if(CreateStaffParams != null)
                 {
                     return CreateStaffParams.GetFieldDeserializers();
+                }
+                else if(DeleteAgentRuleParams != null)
+                {
+                    return DeleteAgentRuleParams.GetFieldDeserializers();
                 }
                 else if(DeleteAssetParams != null)
                 {
@@ -572,13 +856,25 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 {
                     return DeleteCalendarEventParams.GetFieldDeserializers();
                 }
+                else if(DeleteClientInteractionParams != null)
+                {
+                    return DeleteClientInteractionParams.GetFieldDeserializers();
+                }
                 else if(DeleteClientParams != null)
                 {
                     return DeleteClientParams.GetFieldDeserializers();
                 }
+                else if(DeleteHolidayParams != null)
+                {
+                    return DeleteHolidayParams.GetFieldDeserializers();
+                }
                 else if(DeleteProductParams != null)
                 {
                     return DeleteProductParams.GetFieldDeserializers();
+                }
+                else if(DeleteRentalServiceParams != null)
+                {
+                    return DeleteRentalServiceParams.GetFieldDeserializers();
                 }
                 else if(DeleteServiceParams != null)
                 {
@@ -588,6 +884,18 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 {
                     return DeleteStaffParams.GetFieldDeserializers();
                 }
+                else if(GetAnalyticsSummaryParams != null)
+                {
+                    return GetAnalyticsSummaryParams.GetFieldDeserializers();
+                }
+                else if(GetBookingPageSettingsParams != null)
+                {
+                    return GetBookingPageSettingsParams.GetFieldDeserializers();
+                }
+                else if(GetBookingSlugStatusParams != null)
+                {
+                    return GetBookingSlugStatusParams.GetFieldDeserializers();
+                }
                 else if(GetClientAppointmentsParams != null)
                 {
                     return GetClientAppointmentsParams.GetFieldDeserializers();
@@ -595,6 +903,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 else if(GetClientByPhoneParams != null)
                 {
                     return GetClientByPhoneParams.GetFieldDeserializers();
+                }
+                else if(GetScheduleParams != null)
+                {
+                    return GetScheduleParams.GetFieldDeserializers();
+                }
+                else if(ListAgentRulesParams != null)
+                {
+                    return ListAgentRulesParams.GetFieldDeserializers();
                 }
                 else if(ListAssetsParams != null)
                 {
@@ -604,9 +920,17 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 {
                     return ListCalendarEventsParams.GetFieldDeserializers();
                 }
+                else if(ListClientInteractionsParams != null)
+                {
+                    return ListClientInteractionsParams.GetFieldDeserializers();
+                }
                 else if(ListClientsParams != null)
                 {
                     return ListClientsParams.GetFieldDeserializers();
+                }
+                else if(ListHolidaysParams != null)
+                {
+                    return ListHolidaysParams.GetFieldDeserializers();
                 }
                 else if(ListProductsParams != null)
                 {
@@ -628,9 +952,25 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 {
                     return SearchClientsParams.GetFieldDeserializers();
                 }
+                else if(SetBookingSlugParams != null)
+                {
+                    return SetBookingSlugParams.GetFieldDeserializers();
+                }
+                else if(UpdateAgentRuleParams != null)
+                {
+                    return UpdateAgentRuleParams.GetFieldDeserializers();
+                }
                 else if(UpdateAssetParams != null)
                 {
                     return UpdateAssetParams.GetFieldDeserializers();
+                }
+                else if(UpdateBookingPageSettingsParams != null)
+                {
+                    return UpdateBookingPageSettingsParams.GetFieldDeserializers();
+                }
+                else if(UpdateBusinessInfoParams != null)
+                {
+                    return UpdateBusinessInfoParams.GetFieldDeserializers();
                 }
                 else if(UpdateCalendarEventParams != null)
                 {
@@ -640,9 +980,21 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 {
                     return UpdateClientParams.GetFieldDeserializers();
                 }
+                else if(UpdateCustomerFacingConfigParams != null)
+                {
+                    return UpdateCustomerFacingConfigParams.GetFieldDeserializers();
+                }
+                else if(UpdateHolidayParams != null)
+                {
+                    return UpdateHolidayParams.GetFieldDeserializers();
+                }
                 else if(UpdateProductParams != null)
                 {
                     return UpdateProductParams.GetFieldDeserializers();
+                }
+                else if(UpdateRentalServiceParams != null)
+                {
+                    return UpdateRentalServiceParams.GetFieldDeserializers();
                 }
                 else if(UpdateServiceParams != null)
                 {
@@ -669,6 +1021,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 {
                     writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CheckServiceAvailabilityParams>(null, CheckServiceAvailabilityParams);
                 }
+                else if(CreateAgentRuleParams != null)
+                {
+                    writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateAgentRuleParams>(null, CreateAgentRuleParams);
+                }
                 else if(CreateAssetParams != null)
                 {
                     writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateAssetParams>(null, CreateAssetParams);
@@ -677,9 +1033,17 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 {
                     writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateClientAppointmentParams>(null, CreateClientAppointmentParams);
                 }
+                else if(CreateClientInteractionParams != null)
+                {
+                    writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateClientInteractionParams>(null, CreateClientInteractionParams);
+                }
                 else if(CreateClientParams != null)
                 {
                     writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateClientParams>(null, CreateClientParams);
+                }
+                else if(CreateHolidayParams != null)
+                {
+                    writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateHolidayParams>(null, CreateHolidayParams);
                 }
                 else if(CreateProductParams != null)
                 {
@@ -689,6 +1053,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 {
                     writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateRentalBookingParams>(null, CreateRentalBookingParams);
                 }
+                else if(CreateRentalServiceParams != null)
+                {
+                    writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateRentalServiceParams>(null, CreateRentalServiceParams);
+                }
                 else if(CreateServiceParams != null)
                 {
                     writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateServiceParams>(null, CreateServiceParams);
@@ -696,6 +1064,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 else if(CreateStaffParams != null)
                 {
                     writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateStaffParams>(null, CreateStaffParams);
+                }
+                else if(DeleteAgentRuleParams != null)
+                {
+                    writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DeleteAgentRuleParams>(null, DeleteAgentRuleParams);
                 }
                 else if(DeleteAssetParams != null)
                 {
@@ -705,13 +1077,25 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 {
                     writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DeleteCalendarEventParams>(null, DeleteCalendarEventParams);
                 }
+                else if(DeleteClientInteractionParams != null)
+                {
+                    writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DeleteClientInteractionParams>(null, DeleteClientInteractionParams);
+                }
                 else if(DeleteClientParams != null)
                 {
                     writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DeleteClientParams>(null, DeleteClientParams);
                 }
+                else if(DeleteHolidayParams != null)
+                {
+                    writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DeleteHolidayParams>(null, DeleteHolidayParams);
+                }
                 else if(DeleteProductParams != null)
                 {
                     writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DeleteProductParams>(null, DeleteProductParams);
+                }
+                else if(DeleteRentalServiceParams != null)
+                {
+                    writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DeleteRentalServiceParams>(null, DeleteRentalServiceParams);
                 }
                 else if(DeleteServiceParams != null)
                 {
@@ -721,6 +1105,18 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 {
                     writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DeleteStaffParams>(null, DeleteStaffParams);
                 }
+                else if(GetAnalyticsSummaryParams != null)
+                {
+                    writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetAnalyticsSummaryParams>(null, GetAnalyticsSummaryParams);
+                }
+                else if(GetBookingPageSettingsParams != null)
+                {
+                    writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetBookingPageSettingsParams>(null, GetBookingPageSettingsParams);
+                }
+                else if(GetBookingSlugStatusParams != null)
+                {
+                    writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetBookingSlugStatusParams>(null, GetBookingSlugStatusParams);
+                }
                 else if(GetClientAppointmentsParams != null)
                 {
                     writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetClientAppointmentsParams>(null, GetClientAppointmentsParams);
@@ -728,6 +1124,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 else if(GetClientByPhoneParams != null)
                 {
                     writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetClientByPhoneParams>(null, GetClientByPhoneParams);
+                }
+                else if(GetScheduleParams != null)
+                {
+                    writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetScheduleParams>(null, GetScheduleParams);
+                }
+                else if(ListAgentRulesParams != null)
+                {
+                    writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ListAgentRulesParams>(null, ListAgentRulesParams);
                 }
                 else if(ListAssetsParams != null)
                 {
@@ -737,9 +1141,17 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 {
                     writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ListCalendarEventsParams>(null, ListCalendarEventsParams);
                 }
+                else if(ListClientInteractionsParams != null)
+                {
+                    writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ListClientInteractionsParams>(null, ListClientInteractionsParams);
+                }
                 else if(ListClientsParams != null)
                 {
                     writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ListClientsParams>(null, ListClientsParams);
+                }
+                else if(ListHolidaysParams != null)
+                {
+                    writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ListHolidaysParams>(null, ListHolidaysParams);
                 }
                 else if(ListProductsParams != null)
                 {
@@ -761,9 +1173,25 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 {
                     writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SearchClientsParams>(null, SearchClientsParams);
                 }
+                else if(SetBookingSlugParams != null)
+                {
+                    writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SetBookingSlugParams>(null, SetBookingSlugParams);
+                }
+                else if(UpdateAgentRuleParams != null)
+                {
+                    writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateAgentRuleParams>(null, UpdateAgentRuleParams);
+                }
                 else if(UpdateAssetParams != null)
                 {
                     writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateAssetParams>(null, UpdateAssetParams);
+                }
+                else if(UpdateBookingPageSettingsParams != null)
+                {
+                    writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateBookingPageSettingsParams>(null, UpdateBookingPageSettingsParams);
+                }
+                else if(UpdateBusinessInfoParams != null)
+                {
+                    writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateBusinessInfoParams>(null, UpdateBusinessInfoParams);
                 }
                 else if(UpdateCalendarEventParams != null)
                 {
@@ -773,9 +1201,21 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 {
                     writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateClientParams>(null, UpdateClientParams);
                 }
+                else if(UpdateCustomerFacingConfigParams != null)
+                {
+                    writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateCustomerFacingConfigParams>(null, UpdateCustomerFacingConfigParams);
+                }
+                else if(UpdateHolidayParams != null)
+                {
+                    writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateHolidayParams>(null, UpdateHolidayParams);
+                }
                 else if(UpdateProductParams != null)
                 {
                     writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateProductParams>(null, UpdateProductParams);
+                }
+                else if(UpdateRentalServiceParams != null)
+                {
+                    writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateRentalServiceParams>(null, UpdateRentalServiceParams);
                 }
                 else if(UpdateServiceParams != null)
                 {
