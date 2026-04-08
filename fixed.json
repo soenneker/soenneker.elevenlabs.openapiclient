@@ -15227,6 +15227,112 @@
         }
       }
     },
+    "/v1/convai/knowledge-base/search": {
+      "get": {
+        "tags": [
+          "Agents Platform"
+        ],
+        "summary": "Search Knowledge Base Content",
+        "description": "Fuzzy text search over knowledge base document content",
+        "operationId": "search-knowledge-base-content-route",
+        "parameters": [
+          {
+            "name": "query",
+            "in": "query",
+            "description": "The search query text",
+            "required": true,
+            "schema": {
+              "title": "Query",
+              "type": "string",
+              "description": "The search query text"
+            }
+          },
+          {
+            "name": "page_size",
+            "in": "query",
+            "description": "How many documents to return at maximum. Can not exceed 100, defaults to 30.",
+            "schema": {
+              "title": "Page Size",
+              "maximum": 100,
+              "minimum": 1,
+              "type": "integer",
+              "description": "How many documents to return at maximum. Can not exceed 100, defaults to 30.",
+              "default": 30
+            }
+          },
+          {
+            "name": "types",
+            "in": "query",
+            "description": "If present, the endpoint will return only documents of the given types.",
+            "schema": {
+              "title": "Types",
+              "type": "object",
+              "anyOf": [
+                {
+                  "type": "string"
+                }
+              ],
+              "description": "If present, the endpoint will return only documents of the given types.",
+              "nullable": true
+            }
+          },
+          {
+            "name": "cursor",
+            "in": "query",
+            "description": "Used for fetching next page. Cursor is returned in the response.",
+            "schema": {
+              "title": "Cursor",
+              "type": "object",
+              "anyOf": [
+                {
+                  "type": "string"
+                }
+              ],
+              "description": "Used for fetching next page. Cursor is returned in the response.",
+              "nullable": true
+            }
+          },
+          {
+            "name": "xi-api-key",
+            "in": "header",
+            "description": "Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the \u0027Profile\u0027 tab on the website.",
+            "schema": {
+              "title": "Xi-Api-Key",
+              "type": "object",
+              "anyOf": [
+                {
+                  "type": "string"
+                }
+              ],
+              "description": "Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the \u0027Profile\u0027 tab on the website.",
+              "nullable": true
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/KnowledgeBaseContentSearchResponseModel"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/v1/convai/knowledge-base/{documentation_id}/dependent-agents": {
       "get": {
         "tags": [
@@ -16472,6 +16578,22 @@
             }
           },
           {
+            "name": "dependency_limit",
+            "in": "query",
+            "description": "Maximum number of dependent resources (tools, agents, phone numbers) to return per secret. Can not exceed 100.",
+            "schema": {
+              "title": "Dependency Limit",
+              "type": "object",
+              "anyOf": [
+                {
+                  "type": "string"
+                }
+              ],
+              "description": "Maximum number of dependent resources (tools, agents, phone numbers) to return per secret. Can not exceed 100.",
+              "nullable": true
+            }
+          },
+          {
             "name": "cursor",
             "in": "query",
             "description": "Used for fetching next page. Cursor is returned in the response.",
@@ -16626,6 +16748,102 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/PostWorkspaceSecretResponseModel"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/convai/secrets/{secret_id}/dependencies/{resource_type}": {
+      "get": {
+        "tags": [
+          "Agents Platform"
+        ],
+        "summary": "Get Secret Dependencies By Type",
+        "description": "Get paginated list of resources that depend on a specific secret, filtered by resource type.",
+        "operationId": "get-secret-dependencies-route",
+        "parameters": [
+          {
+            "name": "secret_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "title": "Secret Id",
+              "type": "string"
+            }
+          },
+          {
+            "name": "resource_type",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/SecretDependencyResourceType"
+            }
+          },
+          {
+            "name": "page_size",
+            "in": "query",
+            "description": "How many dependency items to return per page.",
+            "schema": {
+              "title": "Page Size",
+              "maximum": 100,
+              "minimum": 1,
+              "type": "integer",
+              "description": "How many dependency items to return per page.",
+              "default": 20
+            }
+          },
+          {
+            "name": "cursor",
+            "in": "query",
+            "description": "Used for fetching next page. Cursor is returned in the response.",
+            "schema": {
+              "title": "Cursor",
+              "type": "object",
+              "anyOf": [
+                {
+                  "type": "string"
+                }
+              ],
+              "description": "Used for fetching next page. Cursor is returned in the response.",
+              "nullable": true
+            }
+          },
+          {
+            "name": "xi-api-key",
+            "in": "header",
+            "description": "Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the \u0027Profile\u0027 tab on the website.",
+            "schema": {
+              "title": "Xi-Api-Key",
+              "type": "object",
+              "anyOf": [
+                {
+                  "type": "string"
+                }
+              ],
+              "description": "Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the \u0027Profile\u0027 tab on the website.",
+              "nullable": true
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetSecretDependenciesResponseModel"
                 }
               }
             }
@@ -18085,7 +18303,7 @@
           "Agents Platform"
         ],
         "summary": "Create A New Branch",
-        "description": "Create a new branch from a given version of main branch",
+        "description": "Create a new branch from a given version of any branch",
         "operationId": "create-branch-route",
         "parameters": [
           {
@@ -18436,12 +18654,12 @@
           {
             "name": "target_branch_id",
             "in": "query",
-            "description": "The ID of the target branch to merge into (must be the main branch).",
+            "description": "The ID of the target branch to merge into.",
             "required": true,
             "schema": {
               "title": "Target Branch Id",
               "type": "string",
-              "description": "The ID of the target branch to merge into (must be the main branch).",
+              "description": "The ID of the target branch to merge into.",
               "unrecognizedKeywords": {
                 "embed": true
               }
@@ -22166,6 +22384,17 @@
             "description": "Percentage of traffic live on the branch",
             "default": 0.0
           },
+          "parent_branch_id": {
+            "title": "Parent Branch Id",
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Parent_Branch_Id"
+              }
+            ],
+            "description": "ID of the parent branch",
+            "nullable": true
+          },
           "draft_exists": {
             "title": "Draft Exists",
             "type": "boolean",
@@ -23313,6 +23542,16 @@
             "anyOf": [
               {
                 "$ref": "#/components/schemas/Merged_From_Branch_Id"
+              }
+            ],
+            "nullable": true
+          },
+          "merged_from_version_id": {
+            "title": "Merged From Version Id",
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Merged_From_Version_Id"
               }
             ],
             "nullable": true
@@ -28481,6 +28720,12 @@
             "type": "boolean",
             "description": "Whether to archive the source branch after merging",
             "default": true
+          },
+          "force": {
+            "title": "Force",
+            "type": "boolean",
+            "description": "Force source branch changes onto the target, overriding timestamp-based conflict resolution",
+            "default": false
           }
         }
       },
@@ -33506,6 +33751,12 @@
               }
             }
           },
+          "tools_has_more": {
+            "title": "Tools Has More",
+            "type": "boolean",
+            "description": "Whether there are more tool dependents beyond the returned preview",
+            "default": false
+          },
           "agents": {
             "title": "Agents",
             "type": "array",
@@ -33536,18 +33787,60 @@
               }
             }
           },
-          "others": {
-            "title": "Others",
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/SecretDependencyType"
-            }
+          "agents_has_more": {
+            "title": "Agents Has More",
+            "type": "boolean",
+            "description": "Whether there are more agent dependents beyond the returned preview",
+            "default": false
           },
           "phone_numbers": {
             "title": "Phone Numbers",
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/DependentPhoneNumberIdentifier"
+            }
+          },
+          "phone_numbers_has_more": {
+            "title": "Phone Numbers Has More",
+            "type": "boolean",
+            "description": "Whether there are more phone number dependents beyond the returned preview",
+            "default": false
+          },
+          "mcp_servers": {
+            "title": "Mcp Servers",
+            "type": "array",
+            "items": {
+              "required": [
+                "type"
+              ],
+              "type": "object",
+              "oneOf": [
+                {
+                  "$ref": "#/components/schemas/DependentAvailableMCPServerIdentifier"
+                },
+                {
+                  "$ref": "#/components/schemas/DependentUnknownMCPServerIdentifier"
+                }
+              ],
+              "properties": {
+                "type": {
+                  "type": "string"
+                }
+              },
+              "discriminator": {
+                "propertyName": "type",
+                "mapping": {
+                  "available": "#/components/schemas/DependentAvailableMCPServerIdentifier",
+                  "unknown": "#/components/schemas/DependentUnknownMCPServerIdentifier"
+                }
+              }
+            }
+          },
+          "others": {
+            "title": "Others",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SecretDependencyType"
             }
           }
         }
@@ -39418,6 +39711,9 @@
       },
       "DependentUnknownAgentIdentifier": {
         "title": "DependentUnknownAgentIdentifier",
+        "required": [
+          "id"
+        ],
         "type": "object",
         "properties": {
           "referenced_resource_ids": {
@@ -39427,6 +39723,10 @@
               "type": "string"
             },
             "description": "If the agent is a transitive dependent, contains IDs of the resources that the agent depends on directly."
+          },
+          "id": {
+            "title": "Id",
+            "type": "string"
           },
           "type": {
             "title": "Type",
@@ -44746,6 +45046,35 @@
           }
         }
       },
+      "GetSecretDependenciesResponseModel": {
+        "title": "GetSecretDependenciesResponseModel",
+        "required": [
+          "dependencies"
+        ],
+        "type": "object",
+        "properties": {
+          "dependencies": {
+            "title": "Dependencies",
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Dependencies"
+              }
+            ]
+          },
+          "next_cursor": {
+            "title": "Next Cursor",
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Next_Cursor"
+              }
+            ],
+            "description": "Cursor for fetching the next page of dependencies",
+            "nullable": true
+          }
+        }
+      },
       "GetSimulationTestResponseModel": {
         "title": "GetSimulationTestResponseModel",
         "required": [
@@ -45479,12 +45808,6 @@
             ],
             "description": "Cursor for fetching the next page of secrets",
             "nullable": true
-          },
-          "has_more": {
-            "title": "Has More",
-            "type": "boolean",
-            "description": "Whether there are more secrets to fetch",
-            "default": false
           }
         }
       },
@@ -45891,6 +46214,91 @@
           "tax_cents": 100
         }
       },
+      "KnowledgeBaseContentSearchResponseModel": {
+        "title": "KnowledgeBaseContentSearchResponseModel",
+        "required": [
+          "results"
+        ],
+        "type": "object",
+        "properties": {
+          "results": {
+            "title": "Results",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/KnowledgeBaseContentSearchResult"
+            }
+          },
+          "next_cursor": {
+            "title": "Next Cursor",
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Next_Cursor"
+              }
+            ],
+            "nullable": true
+          }
+        }
+      },
+      "KnowledgeBaseContentSearchResult": {
+        "title": "KnowledgeBaseContentSearchResult",
+        "required": [
+          "document",
+          "score"
+        ],
+        "type": "object",
+        "properties": {
+          "document": {
+            "title": "Document",
+            "required": [
+              "type"
+            ],
+            "type": "object",
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/GetKnowledgeBaseSummaryURLResponseModel"
+              },
+              {
+                "$ref": "#/components/schemas/GetKnowledgeBaseSummaryFileResponseModel"
+              },
+              {
+                "$ref": "#/components/schemas/GetKnowledgeBaseSummaryTextResponseModel"
+              },
+              {
+                "$ref": "#/components/schemas/GetKnowledgeBaseSummaryFolderResponseModel"
+              }
+            ],
+            "properties": {
+              "type": {
+                "type": "string"
+              }
+            },
+            "discriminator": {
+              "propertyName": "type",
+              "mapping": {
+                "file": "#/components/schemas/GetKnowledgeBaseSummaryFileResponseModel",
+                "folder": "#/components/schemas/GetKnowledgeBaseSummaryFolderResponseModel",
+                "text": "#/components/schemas/GetKnowledgeBaseSummaryTextResponseModel",
+                "url": "#/components/schemas/GetKnowledgeBaseSummaryURLResponseModel"
+              }
+            }
+          },
+          "search_snippet": {
+            "title": "Search Snippet",
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Search_Snippet"
+              }
+            ],
+            "nullable": true
+          },
+          "score": {
+            "title": "Score",
+            "type": "number"
+          }
+        }
+      },
       "KnowledgeBaseDependentType": {
         "title": "KnowledgeBaseDependentType",
         "enum": [
@@ -46131,6 +46539,7 @@
           "gemini-2.5-flash",
           "gemini-3-pro-preview",
           "gemini-3-flash-preview",
+          "gemini-3.1-pro-preview",
           "gemini-3.1-flash-lite-preview",
           "claude-sonnet-4-5",
           "claude-sonnet-4-6",
@@ -46144,6 +46553,8 @@
           "custom-llm",
           "qwen3-4b",
           "qwen3-30b-a3b",
+          "qwen35-35b-a3b",
+          "qwen35-397b-a17b",
           "gpt-oss-20b",
           "gpt-oss-120b",
           "glm-45-air-fp8",
@@ -57314,6 +57725,24 @@
         },
         "description": "Search for clients by name, phone number, or email."
       },
+      "SearchHighlightSegment": {
+        "title": "SearchHighlightSegment",
+        "required": [
+          "value",
+          "is_hit"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "title": "Value",
+            "type": "string"
+          },
+          "is_hit": {
+            "title": "Is Hit",
+            "type": "boolean"
+          }
+        }
+      },
       "SeatType": {
         "title": "SeatType",
         "enum": [
@@ -57324,6 +57753,16 @@
         "type": "string",
         "additionalProperties": false,
         "description": "Seat types for workspace members.\nLite Member is equivalent to Basic Seat in the web application.\nMember is equivalent to Full Seat in the web application."
+      },
+      "SecretDependencyResourceType": {
+        "title": "SecretDependencyResourceType",
+        "enum": [
+          "tools",
+          "agents",
+          "phone_numbers"
+        ],
+        "type": "string",
+        "additionalProperties": false
       },
       "SecretDependencyType": {
         "title": "SecretDependencyType",
@@ -71985,6 +72424,17 @@
           }
         }
       },
+      "Parent_Branch_Id": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string"
+          }
+        }
+      },
       "First_Message": {
         "required": [
           "value"
@@ -72140,6 +72590,17 @@
         }
       },
       "Merged_From_Branch_Id": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string"
+          }
+        }
+      },
+      "Merged_From_Version_Id": {
         "required": [
           "value"
         ],
@@ -75499,6 +75960,43 @@
           }
         }
       },
+      "Dependencies": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "array",
+            "items": {
+              "required": [
+                "type"
+              ],
+              "type": "object",
+              "oneOf": [
+                {
+                  "$ref": "#/components/schemas/DependentAvailableToolIdentifier"
+                },
+                {
+                  "$ref": "#/components/schemas/DependentUnknownToolIdentifier"
+                }
+              ],
+              "properties": {
+                "type": {
+                  "type": "string"
+                }
+              },
+              "discriminator": {
+                "propertyName": "type",
+                "mapping": {
+                  "available": "#/components/schemas/DependentAvailableToolIdentifier",
+                  "unknown": "#/components/schemas/DependentUnknownToolIdentifier"
+                }
+              }
+            }
+          }
+        }
+      },
       "Last_History_Item_Id": {
         "required": [
           "value"
@@ -75630,6 +76128,20 @@
             ],
             "type": "string",
             "additionalProperties": false
+          }
+        }
+      },
+      "Search_Snippet": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SearchHighlightSegment"
+            }
           }
         }
       },

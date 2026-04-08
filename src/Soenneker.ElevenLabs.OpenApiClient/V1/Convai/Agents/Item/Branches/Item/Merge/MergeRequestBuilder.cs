@@ -95,7 +95,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.Branches.Item
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class MergeRequestBuilderPostQueryParameters 
         {
-            /// <summary>The ID of the target branch to merge into (must be the main branch).</summary>
+            /// <summary>The ID of the target branch to merge into.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("target_branch_id")]

@@ -70,7 +70,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.Branches
             return await RequestAdapter.SendAsync<global::Soenneker.ElevenLabs.OpenApiClient.Models.ListResponse_AgentBranchSummary_>(requestInfo, global::Soenneker.ElevenLabs.OpenApiClient.Models.ListResponse_AgentBranchSummary_.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new branch from a given version of main branch
+        /// Create a new branch from a given version of any branch
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateAgentBranchResponseModel"/></returns>
         /// <param name="body">The request body</param>
@@ -114,7 +114,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.Branches
             return requestInfo;
         }
         /// <summary>
-        /// Create a new branch from a given version of main branch
+        /// Create a new branch from a given version of any branch
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

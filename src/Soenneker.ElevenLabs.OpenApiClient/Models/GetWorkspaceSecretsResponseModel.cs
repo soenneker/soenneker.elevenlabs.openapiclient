@@ -14,8 +14,6 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Whether there are more secrets to fetch</summary>
-        public bool? HasMore { get; set; }
         /// <summary>Cursor for fetching the next page of secrets</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -57,7 +55,6 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "has_more", n => { HasMore = n.GetBoolValue(); } },
                 { "next_cursor", n => { NextCursor = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetWorkspaceSecretsResponseModel_next_cursor>(global::Soenneker.ElevenLabs.OpenApiClient.Models.GetWorkspaceSecretsResponseModel_next_cursor.CreateFromDiscriminatorValue); } },
                 { "secrets", n => { Secrets = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConvAIWorkspaceStoredSecretConfig>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConvAIWorkspaceStoredSecretConfig.CreateFromDiscriminatorValue)?.AsList(); } },
             };
@@ -69,7 +66,6 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteBoolValue("has_more", HasMore);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetWorkspaceSecretsResponseModel_next_cursor>("next_cursor", NextCursor);
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConvAIWorkspaceStoredSecretConfig>("secrets", Secrets);
             writer.WriteAdditionalData(AdditionalData);

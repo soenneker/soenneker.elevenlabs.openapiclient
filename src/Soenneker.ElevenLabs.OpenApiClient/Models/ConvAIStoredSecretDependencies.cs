@@ -22,6 +22,16 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConvAIStoredSecretDependencies.ConvAIStoredSecretDependencies_agents> Agents { get; set; }
 #endif
+        /// <summary>Whether there are more agent dependents beyond the returned preview</summary>
+        public bool? AgentsHasMore { get; set; }
+        /// <summary>The mcp_servers property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConvAIStoredSecretDependencies.ConvAIStoredSecretDependencies_mcp_servers>? McpServers { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConvAIStoredSecretDependencies.ConvAIStoredSecretDependencies_mcp_servers> McpServers { get; set; }
+#endif
         /// <summary>The others property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -38,6 +48,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.DependentPhoneNumberIdentifier> PhoneNumbers { get; set; }
 #endif
+        /// <summary>Whether there are more phone number dependents beyond the returned preview</summary>
+        public bool? PhoneNumbersHasMore { get; set; }
         /// <summary>The tools property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -46,6 +58,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConvAIStoredSecretDependencies.ConvAIStoredSecretDependencies_tools> Tools { get; set; }
 #endif
+        /// <summary>Whether there are more tool dependents beyond the returned preview</summary>
+        public bool? ToolsHasMore { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ConvAIStoredSecretDependencies"/> and sets the default values.
         /// </summary>
@@ -72,9 +86,13 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "agents", n => { Agents = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConvAIStoredSecretDependencies.ConvAIStoredSecretDependencies_agents>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConvAIStoredSecretDependencies.ConvAIStoredSecretDependencies_agents.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "agents_has_more", n => { AgentsHasMore = n.GetBoolValue(); } },
+                { "mcp_servers", n => { McpServers = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConvAIStoredSecretDependencies.ConvAIStoredSecretDependencies_mcp_servers>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConvAIStoredSecretDependencies.ConvAIStoredSecretDependencies_mcp_servers.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "others", n => { Others = n.GetCollectionOfEnumValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.SecretDependencyType>()?.AsList(); } },
                 { "phone_numbers", n => { PhoneNumbers = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.DependentPhoneNumberIdentifier>(global::Soenneker.ElevenLabs.OpenApiClient.Models.DependentPhoneNumberIdentifier.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "phone_numbers_has_more", n => { PhoneNumbersHasMore = n.GetBoolValue(); } },
                 { "tools", n => { Tools = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConvAIStoredSecretDependencies.ConvAIStoredSecretDependencies_tools>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConvAIStoredSecretDependencies.ConvAIStoredSecretDependencies_tools.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "tools_has_more", n => { ToolsHasMore = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -85,9 +103,13 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConvAIStoredSecretDependencies.ConvAIStoredSecretDependencies_agents>("agents", Agents);
+            writer.WriteBoolValue("agents_has_more", AgentsHasMore);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConvAIStoredSecretDependencies.ConvAIStoredSecretDependencies_mcp_servers>("mcp_servers", McpServers);
             writer.WriteCollectionOfEnumValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.SecretDependencyType>("others", Others);
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.DependentPhoneNumberIdentifier>("phone_numbers", PhoneNumbers);
+            writer.WriteBoolValue("phone_numbers_has_more", PhoneNumbersHasMore);
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConvAIStoredSecretDependencies.ConvAIStoredSecretDependencies_tools>("tools", Tools);
+            writer.WriteBoolValue("tools_has_more", ToolsHasMore);
             writer.WriteAdditionalData(AdditionalData);
         }
         /// <summary>
@@ -162,6 +184,81 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 else if(DependentUnknownAgentIdentifier != null)
                 {
                     writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DependentUnknownAgentIdentifier>(null, DependentUnknownAgentIdentifier);
+                }
+            }
+        }
+        /// <summary>
+        /// Composed type wrapper for classes <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.DependentAvailableMCPServerIdentifier"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.DependentUnknownMCPServerIdentifier"/>
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class ConvAIStoredSecretDependencies_mcp_servers : IComposedTypeWrapper, IParsable
+        {
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.DependentAvailableMCPServerIdentifier"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::Soenneker.ElevenLabs.OpenApiClient.Models.DependentAvailableMCPServerIdentifier? DependentAvailableMCPServerIdentifier { get; set; }
+#nullable restore
+#else
+            public global::Soenneker.ElevenLabs.OpenApiClient.Models.DependentAvailableMCPServerIdentifier DependentAvailableMCPServerIdentifier { get; set; }
+#endif
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.DependentUnknownMCPServerIdentifier"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::Soenneker.ElevenLabs.OpenApiClient.Models.DependentUnknownMCPServerIdentifier? DependentUnknownMCPServerIdentifier { get; set; }
+#nullable restore
+#else
+            public global::Soenneker.ElevenLabs.OpenApiClient.Models.DependentUnknownMCPServerIdentifier DependentUnknownMCPServerIdentifier { get; set; }
+#endif
+            /// <summary>
+            /// Creates a new instance of the appropriate class based on discriminator value
+            /// </summary>
+            /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ConvAIStoredSecretDependencies.ConvAIStoredSecretDependencies_mcp_servers"/></returns>
+            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+            public static global::Soenneker.ElevenLabs.OpenApiClient.Models.ConvAIStoredSecretDependencies.ConvAIStoredSecretDependencies_mcp_servers CreateFromDiscriminatorValue(IParseNode parseNode)
+            {
+                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
+                var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
+                var result = new global::Soenneker.ElevenLabs.OpenApiClient.Models.ConvAIStoredSecretDependencies.ConvAIStoredSecretDependencies_mcp_servers();
+                if("available".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                {
+                    result.DependentAvailableMCPServerIdentifier = new global::Soenneker.ElevenLabs.OpenApiClient.Models.DependentAvailableMCPServerIdentifier();
+                }
+                else if("unknown".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                {
+                    result.DependentUnknownMCPServerIdentifier = new global::Soenneker.ElevenLabs.OpenApiClient.Models.DependentUnknownMCPServerIdentifier();
+                }
+                return result;
+            }
+            /// <summary>
+            /// The deserialization information for the current model
+            /// </summary>
+            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
+            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+            {
+                if(DependentAvailableMCPServerIdentifier != null)
+                {
+                    return DependentAvailableMCPServerIdentifier.GetFieldDeserializers();
+                }
+                else if(DependentUnknownMCPServerIdentifier != null)
+                {
+                    return DependentUnknownMCPServerIdentifier.GetFieldDeserializers();
+                }
+                return new Dictionary<string, Action<IParseNode>>();
+            }
+            /// <summary>
+            /// Serializes information the current object
+            /// </summary>
+            /// <param name="writer">Serialization writer to use to serialize this model</param>
+            public virtual void Serialize(ISerializationWriter writer)
+            {
+                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+                if(DependentAvailableMCPServerIdentifier != null)
+                {
+                    writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DependentAvailableMCPServerIdentifier>(null, DependentAvailableMCPServerIdentifier);
+                }
+                else if(DependentUnknownMCPServerIdentifier != null)
+                {
+                    writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DependentUnknownMCPServerIdentifier>(null, DependentUnknownMCPServerIdentifier);
                 }
             }
         }

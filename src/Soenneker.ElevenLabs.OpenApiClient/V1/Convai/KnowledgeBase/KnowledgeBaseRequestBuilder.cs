@@ -9,6 +9,7 @@ using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.KnowledgeBase.FileNamespace;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.KnowledgeBase.Folder;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.KnowledgeBase.Item;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.KnowledgeBase.RagIndex;
+using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.KnowledgeBase.Search;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.KnowledgeBase.Summaries;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.KnowledgeBase.Text;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.KnowledgeBase.Url;
@@ -44,6 +45,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.KnowledgeBase
         public global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.KnowledgeBase.RagIndex.RagIndexRequestBuilder RagIndex
         {
             get => new global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.KnowledgeBase.RagIndex.RagIndexRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The search property</summary>
+        public global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.KnowledgeBase.Search.SearchRequestBuilder Search
+        {
+            get => new global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.KnowledgeBase.Search.SearchRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The summaries property</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.KnowledgeBase.Summaries.SummariesRequestBuilder Summaries

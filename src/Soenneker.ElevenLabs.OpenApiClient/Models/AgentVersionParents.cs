@@ -30,6 +30,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentVersionParents_merged_from_branch_id MergedFromBranchId { get; set; }
 #endif
+        /// <summary>The merged_from_version_id property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentVersionParents_merged_from_version_id? MergedFromVersionId { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentVersionParents_merged_from_version_id MergedFromVersionId { get; set; }
+#endif
         /// <summary>The merged_into_branch_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -73,6 +81,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             {
                 { "in_branch_parent_id", n => { InBranchParentId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentVersionParents_in_branch_parent_id>(global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentVersionParents_in_branch_parent_id.CreateFromDiscriminatorValue); } },
                 { "merged_from_branch_id", n => { MergedFromBranchId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentVersionParents_merged_from_branch_id>(global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentVersionParents_merged_from_branch_id.CreateFromDiscriminatorValue); } },
+                { "merged_from_version_id", n => { MergedFromVersionId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentVersionParents_merged_from_version_id>(global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentVersionParents_merged_from_version_id.CreateFromDiscriminatorValue); } },
                 { "merged_into_branch_id", n => { MergedIntoBranchId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentVersionParents_merged_into_branch_id>(global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentVersionParents_merged_into_branch_id.CreateFromDiscriminatorValue); } },
                 { "out_of_branch_parent_id", n => { OutOfBranchParentId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentVersionParents_out_of_branch_parent_id>(global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentVersionParents_out_of_branch_parent_id.CreateFromDiscriminatorValue); } },
             };
@@ -86,6 +95,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentVersionParents_in_branch_parent_id>("in_branch_parent_id", InBranchParentId);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentVersionParents_merged_from_branch_id>("merged_from_branch_id", MergedFromBranchId);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentVersionParents_merged_from_version_id>("merged_from_version_id", MergedFromVersionId);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentVersionParents_merged_into_branch_id>("merged_into_branch_id", MergedIntoBranchId);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentVersionParents_out_of_branch_parent_id>("out_of_branch_parent_id", OutOfBranchParentId);
             writer.WriteAdditionalData(AdditionalData);
