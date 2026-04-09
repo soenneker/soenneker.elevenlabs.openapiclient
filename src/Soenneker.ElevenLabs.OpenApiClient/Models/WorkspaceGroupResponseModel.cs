@@ -22,6 +22,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceGroupResponseModel_character_count CharacterCount { get; set; }
 #endif
+        /// <summary>The group_pvc_limit property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceGroupResponseModel_group_pvc_limit? GroupPvcLimit { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceGroupResponseModel_group_pvc_limit GroupPvcLimit { get; set; }
+#endif
         /// <summary>The group_usage_limit property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -96,6 +104,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "character_count", n => { CharacterCount = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceGroupResponseModel_character_count>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceGroupResponseModel_character_count.CreateFromDiscriminatorValue); } },
+                { "group_pvc_limit", n => { GroupPvcLimit = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceGroupResponseModel_group_pvc_limit>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceGroupResponseModel_group_pvc_limit.CreateFromDiscriminatorValue); } },
                 { "group_usage_limit", n => { GroupUsageLimit = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceGroupResponseModel_group_usage_limit>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceGroupResponseModel_group_usage_limit.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "members", n => { Members = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
@@ -112,6 +121,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceGroupResponseModel_character_count>("character_count", CharacterCount);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceGroupResponseModel_group_pvc_limit>("group_pvc_limit", GroupPvcLimit);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceGroupResponseModel_group_usage_limit>("group_usage_limit", GroupUsageLimit);
             writer.WriteStringValue("id", Id);
             writer.WriteCollectionOfPrimitiveValues<string>("members", Members);

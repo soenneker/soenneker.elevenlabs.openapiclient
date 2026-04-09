@@ -24,6 +24,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #endif
         /// <summary>The mode property</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.TurnMode? Mode { get; set; }
+        /// <summary>When enabled, if VAD detects no speech, attempts to re-transcribe accumulated audio at turn timeout. Disables silence discount billing for affected turns.</summary>
+        public bool? RetranscribeOnTurnTimeout { get; set; }
         /// <summary>Maximum wait time since the user last spoke before terminating the call</summary>
         public double? SilenceEndCallTimeout { get; set; }
         /// <summary>Configuration for soft timeout functionality during LLM response generation.</summary>
@@ -72,6 +74,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             {
                 { "initial_wait_time", n => { InitialWaitTime = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TurnConfig_initial_wait_time>(global::Soenneker.ElevenLabs.OpenApiClient.Models.TurnConfig_initial_wait_time.CreateFromDiscriminatorValue); } },
                 { "mode", n => { Mode = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TurnMode>(); } },
+                { "retranscribe_on_turn_timeout", n => { RetranscribeOnTurnTimeout = n.GetBoolValue(); } },
                 { "silence_end_call_timeout", n => { SilenceEndCallTimeout = n.GetDoubleValue(); } },
                 { "soft_timeout_config", n => { SoftTimeoutConfig = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SoftTimeoutConfig>(global::Soenneker.ElevenLabs.OpenApiClient.Models.SoftTimeoutConfig.CreateFromDiscriminatorValue); } },
                 { "speculative_turn", n => { SpeculativeTurn = n.GetBoolValue(); } },
@@ -89,6 +92,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TurnConfig_initial_wait_time>("initial_wait_time", InitialWaitTime);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TurnMode>("mode", Mode);
+            writer.WriteBoolValue("retranscribe_on_turn_timeout", RetranscribeOnTurnTimeout);
             writer.WriteDoubleValue("silence_end_call_timeout", SilenceEndCallTimeout);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SoftTimeoutConfig>("soft_timeout_config", SoftTimeoutConfig);
             writer.WriteBoolValue("speculative_turn", SpeculativeTurn);

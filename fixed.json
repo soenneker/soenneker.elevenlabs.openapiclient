@@ -29526,7 +29526,7 @@
           "use_multi_channel": {
             "title": "Use Multi Channel",
             "type": "boolean",
-            "description": "Whether the audio file contains multiple channels where each channel contains a single speaker. When enabled, each channel will be transcribed independently and the results will be combined. Each word in the response will include a \u0027channel_index\u0027 field indicating which channel it was spoken on. A maximum of 5 channels is supported.",
+            "description": "Whether the audio file contains multiple channels where each channel contains a single speaker. When enabled, each channel will be transcribed independently and the results will be combined. Each word in the response will include a \u0027channel_index\u0027 field indicating which channel it was spoken on. A maximum of 5 channels is supported. Each channel is billed independently at the full audio duration, so cost scales linearly with the number of channels.",
             "default": false
           },
           "webhook_metadata": {
@@ -29551,7 +29551,7 @@
                 "$ref": "#/components/schemas/Entity_Detection"
               }
             ],
-            "description": "Detect entities in the transcript. Can be \u0027all\u0027 to detect all entities, a single entity type or category string, or a list of entity types/categories. Categories include \u0027pii\u0027, \u0027phi\u0027, \u0027pci\u0027, \u0027other\u0027, \u0027offensive_language\u0027. When enabled, detected entities will be returned in the \u0027entities\u0027 field with their text, type, and character positions. Usage of this parameter will incur additional costs.",
+            "description": "Detect entities in the transcript. Can be \u0027all\u0027 to detect all entities, a single entity type or category string, or a list of entity types/categories. Categories include \u0027pii\u0027, \u0027phi\u0027, \u0027pci\u0027, \u0027other\u0027, \u0027offensive_language\u0027. When enabled, detected entities will be returned in the \u0027entities\u0027 field with their text, type, and character positions. Usage of this parameter will incur an additional 30% surcharge on the base transcription cost.",
             "nullable": true
           },
           "no_verbatim": {
@@ -29568,7 +29568,7 @@
                 "$ref": "#/components/schemas/Entity_Redaction"
               }
             ],
-            "description": "\u0022Redact entities from the transcript text. Accepts the same format as entity_detection: \u0027all\u0027, a category (\u0027pii\u0027, \u0027phi\u0027), or specific entity types. Must be a subset of entity_detection. When redaction is enabled, the entities field will not be returned.\u0022",
+            "description": "\u0022Redact entities from the transcript text. Accepts the same format as entity_detection: \u0027all\u0027, a category (\u0027pii\u0027, \u0027phi\u0027), or specific entity types. Must be a subset of entity_detection. When redaction is enabled, the entities field will not be returned. Usage of this parameter will incur an additional 30% surcharge on the base transcription cost.\u0022",
             "nullable": true
           },
           "entity_redaction_mode": {
@@ -29583,7 +29583,7 @@
             "items": {
               "type": "string"
             },
-            "description": "A list of keyterms to bias the transcription towards.           The keyterms are words or phrases you want the model to recognise more accurately.           The number of keyterms cannot exceed 1000.           The length of each keyterm must be less than 50 characters.           Keyterms can contain at most 5 words (after normalisation).           For example [\u0022hello\u0022, \u0022world\u0022, \u0022technical term\u0022].           Usage of this parameter will incur additional costs.           When more than 100 keyterms are provided, a minimum billable duration of 20 seconds applies per request.",
+            "description": "A list of keyterms to bias the transcription towards.           The keyterms are words or phrases you want the model to recognise more accurately.           The number of keyterms cannot exceed 1000.           The length of each keyterm must be less than 50 characters.           Keyterms can contain at most 5 words (after normalisation).           For example [\u0022hello\u0022, \u0022world\u0022, \u0022technical term\u0022].           Usage of this parameter will incur an additional 20% surcharge on the base transcription cost.           When more than 100 keyterms are provided, a minimum billable duration of 20 seconds applies per request.",
             "default": []
           }
         }
@@ -37389,6 +37389,7 @@
           },
           "turn": {
             "mode": "turn",
+            "retranscribe_on_turn_timeout": false,
             "silence_end_call_timeout": -1.0,
             "soft_timeout_config": {
               "message": "Hhmmmm...yeah.",
@@ -37532,6 +37533,7 @@
           },
           "turn": {
             "mode": "turn",
+            "retranscribe_on_turn_timeout": false,
             "silence_end_call_timeout": -1.0,
             "soft_timeout_config": {
               "message": "Hhmmmm...yeah.",
@@ -62807,10 +62809,17 @@
             "type": "boolean",
             "description": "When enabled, starts generating LLM responses during silence before full turn confidence is reached, reducing perceived latency. May increase LLM costs.",
             "default": false
+          },
+          "retranscribe_on_turn_timeout": {
+            "title": "Retranscribe On Turn Timeout",
+            "type": "boolean",
+            "description": "When enabled, if VAD detects no speech, attempts to re-transcribe accumulated audio at turn timeout. Disables silence discount billing for affected turns.",
+            "default": false
           }
         },
         "example": {
           "mode": "turn",
+          "retranscribe_on_turn_timeout": false,
           "silence_end_call_timeout": -1.0,
           "soft_timeout_config": {
             "message": "Hhmmmm...yeah.",
@@ -62940,10 +62949,22 @@
             ],
             "description": "When enabled, starts generating LLM responses during silence before full turn confidence is reached, reducing perceived latency. May increase LLM costs.",
             "nullable": true
+          },
+          "retranscribe_on_turn_timeout": {
+            "title": "Retranscribe On Turn Timeout",
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Retranscribe_On_Turn_Timeout"
+              }
+            ],
+            "description": "When enabled, if VAD detects no speech, attempts to re-transcribe accumulated audio at turn timeout. Disables silence discount billing for affected turns.",
+            "nullable": true
           }
         },
         "example": {
           "mode": "turn",
+          "retranscribe_on_turn_timeout": false,
           "silence_end_call_timeout": -1.0,
           "soft_timeout_config": {
             "message": "Hhmmmm...yeah.",
@@ -71219,6 +71240,16 @@
             ],
             "nullable": true
           },
+          "group_pvc_limit": {
+            "title": "Group Pvc Limit",
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Group_Pvc_Limit"
+              }
+            ],
+            "nullable": true
+          },
           "character_count": {
             "title": "Character Count",
             "type": "object",
@@ -78101,6 +78132,17 @@
           }
         }
       },
+      "Retranscribe_On_Turn_Timeout": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "boolean"
+          }
+        }
+      },
       "Callsid": {
         "required": [
           "value"
@@ -79633,6 +79675,17 @@
         }
       },
       "Group_Usage_Limit": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "integer"
+          }
+        }
+      },
+      "Group_Pvc_Limit": {
         "required": [
           "value"
         ],
