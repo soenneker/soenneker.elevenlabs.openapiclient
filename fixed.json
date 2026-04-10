@@ -2512,7 +2512,7 @@
           {
             "name": "voice_type",
             "in": "query",
-            "description": "Type of the voice to filter by. One of \u0027personal\u0027, \u0027community\u0027, \u0027default\u0027, \u0027workspace\u0027, \u0027non-default\u0027, \u0027saved\u0027. \u0027non-default\u0027 is equal to all but \u0027default\u0027. \u0027saved\u0027 is equal to non-default, but includes default voices if they have been added to a collection.",
+            "description": "Type of the voice to filter by. One of \u0027personal\u0027, \u0027community\u0027, \u0027default\u0027, \u0027workspace\u0027, \u0027non-default\u0027, \u0027non-community\u0027, \u0027saved\u0027. \u0027non-default\u0027 is equal to all but \u0027default\u0027. \u0027non-community\u0027 is equal to \u0027personal\u0027 and \u0027workspace\u0027 combined (excludes library copies). \u0027saved\u0027 is equal to non-default, but includes default voices if they have been added to a collection.",
             "schema": {
               "title": "Voice Type",
               "type": "object",
@@ -2521,7 +2521,7 @@
                   "type": "string"
                 }
               ],
-              "description": "Type of the voice to filter by. One of \u0027personal\u0027, \u0027community\u0027, \u0027default\u0027, \u0027workspace\u0027, \u0027non-default\u0027, \u0027saved\u0027. \u0027non-default\u0027 is equal to all but \u0027default\u0027. \u0027saved\u0027 is equal to non-default, but includes default voices if they have been added to a collection.",
+              "description": "Type of the voice to filter by. One of \u0027personal\u0027, \u0027community\u0027, \u0027default\u0027, \u0027workspace\u0027, \u0027non-default\u0027, \u0027non-community\u0027, \u0027saved\u0027. \u0027non-default\u0027 is equal to all but \u0027default\u0027. \u0027non-community\u0027 is equal to \u0027personal\u0027 and \u0027workspace\u0027 combined (excludes library copies). \u0027saved\u0027 is equal to non-default, but includes default voices if they have been added to a collection.",
               "nullable": true
             }
           },
@@ -19591,7 +19591,7 @@
           "music-generation"
         ],
         "summary": "Upload Music",
-        "description": "Upload a music file to be later used for inpainting. Only available to enterprise clients with access to the inpainting feature.",
+        "description": "Upload a music file to be later used for inpainting. Only available to enterprise clients with access to the inpainting feature. Price for uploading is the same as the one for song generation. All uploaded content gets inspected for copyright infringement. If copyrighted content is detected, half of the request cost is still charged.",
         "operationId": "upload-song",
         "parameters": [
           {
@@ -26714,6 +26714,17 @@
             "type": "boolean",
             "description": "Whether to sign the generated song with C2PA. Applicable only for mp3 files.",
             "default": false
+          },
+          "model_style_prefix": {
+            "title": "Model Style Prefix",
+            "enum": [
+              "music",
+              "sfx"
+            ],
+            "type": "string",
+            "additionalProperties": false,
+            "default": "music",
+            "x-fern-ignore": true
           }
         }
       },
@@ -34980,6 +34991,11 @@
             "title": "Is Error",
             "type": "boolean"
           },
+          "is_blocked": {
+            "title": "Is Blocked",
+            "type": "boolean",
+            "default": false
+          },
           "tool_has_been_called": {
             "title": "Tool Has Been Called",
             "type": "boolean"
@@ -35032,6 +35048,7 @@
           "tool_name",
           "result_value",
           "is_error",
+          "is_blocked",
           "tool_has_been_called",
           "tool_latency_secs",
           "error_type",
@@ -35059,6 +35076,11 @@
           "is_error": {
             "title": "Is Error",
             "type": "boolean"
+          },
+          "is_blocked": {
+            "title": "Is Blocked",
+            "type": "boolean",
+            "default": false
           },
           "tool_has_been_called": {
             "title": "Tool Has Been Called",
@@ -35478,6 +35500,11 @@
             "title": "Is Error",
             "type": "boolean"
           },
+          "is_blocked": {
+            "title": "Is Blocked",
+            "type": "boolean",
+            "default": false
+          },
           "tool_has_been_called": {
             "title": "Tool Has Been Called",
             "type": "boolean"
@@ -35710,6 +35737,11 @@
             "title": "Is Error",
             "type": "boolean"
           },
+          "is_blocked": {
+            "title": "Is Blocked",
+            "type": "boolean",
+            "default": false
+          },
           "tool_has_been_called": {
             "title": "Tool Has Been Called",
             "type": "boolean"
@@ -35843,6 +35875,11 @@
           "is_error": {
             "title": "Is Error",
             "type": "boolean"
+          },
+          "is_blocked": {
+            "title": "Is Blocked",
+            "type": "boolean",
+            "default": false
           },
           "tool_has_been_called": {
             "title": "Tool Has Been Called",
@@ -36336,6 +36373,11 @@
             "title": "Is Error",
             "type": "boolean"
           },
+          "is_blocked": {
+            "title": "Is Blocked",
+            "type": "boolean",
+            "default": false
+          },
           "tool_has_been_called": {
             "title": "Tool Has Been Called",
             "type": "boolean"
@@ -36405,6 +36447,11 @@
           "is_error": {
             "title": "Is Error",
             "type": "boolean"
+          },
+          "is_blocked": {
+            "title": "Is Blocked",
+            "type": "boolean",
+            "default": false
           },
           "tool_has_been_called": {
             "title": "Tool Has Been Called",
@@ -49804,10 +49851,17 @@
             "title": "Character Cost Multiplier",
             "type": "number",
             "description": "The cost multiplier for characters."
+          },
+          "cost_discount_multiplier": {
+            "title": "Cost Discount Multiplier",
+            "type": "number",
+            "description": "Discount multiplier applied to cost estimates. Defaults to 1.0 (no discount).",
+            "default": 1.0
           }
         },
         "example": {
-          "character_cost_multiplier": 1.0
+          "character_cost_multiplier": 1.0,
+          "cost_discount_multiplier": 1.0
         }
       },
       "ModelResponseModel": {
@@ -49939,7 +49993,8 @@
           "maximum_text_length_per_request": 1000000,
           "model_id": "eleven_multilingual_v2",
           "model_rates": {
-            "character_cost_multiplier": 1.0
+            "character_cost_multiplier": 1.0,
+            "cost_discount_multiplier": 1.0
           },
           "name": "Eleven Multilingual v2",
           "requires_alpha_access": false,
@@ -75248,12 +75303,13 @@
                 "Dystopia",
                 "Business and Economics",
                 "Technology",
-                "Detective and Crime",
+                "Christian \u0026 Inspirational",
                 "Horror",
                 "Biography and Memoir",
                 "Education and Learning",
                 "History",
                 "Children\u0027s Literature",
+                "Young Adult",
                 "Fairy Tales and Folklore",
                 "Fan Fiction",
                 "General Fiction",
@@ -75270,8 +75326,7 @@
                 "Spirituality and Religion",
                 "Travel",
                 "True Crime",
-                "Other",
-                "Adult Romance"
+                "Other"
               ],
               "type": "string",
               "additionalProperties": false

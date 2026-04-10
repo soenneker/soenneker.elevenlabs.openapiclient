@@ -40,9 +40,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         #pragma warning disable CS1591
         Technology,
         #pragma warning restore CS1591
-        [EnumMember(Value = "Detective and Crime")]
+        [EnumMember(Value = "Christian & Inspirational")]
         #pragma warning disable CS1591
-        DetectiveAndCrime,
+        ChristianInspirational,
         #pragma warning restore CS1591
         [EnumMember(Value = "Horror")]
         #pragma warning disable CS1591
@@ -63,6 +63,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         [EnumMember(Value = "Children's Literature")]
         #pragma warning disable CS1591
         ChildrenSLiterature,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "Young Adult")]
+        #pragma warning disable CS1591
+        YoungAdult,
         #pragma warning restore CS1591
         [EnumMember(Value = "Fairy Tales and Folklore")]
         #pragma warning disable CS1591
@@ -131,10 +135,6 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         [EnumMember(Value = "Other")]
         #pragma warning disable CS1591
         Other,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "Adult Romance")]
-        #pragma warning disable CS1591
-        AdultRomance,
         #pragma warning restore CS1591
     }
 }

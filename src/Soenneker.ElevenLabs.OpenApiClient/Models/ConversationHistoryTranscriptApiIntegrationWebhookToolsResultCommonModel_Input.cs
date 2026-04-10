@@ -54,6 +54,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public string IntegrationId { get; set; }
 #endif
+        /// <summary>The is_blocked property</summary>
+        public bool? IsBlocked { get; set; }
         /// <summary>The is_error property</summary>
         public bool? IsError { get; set; }
         /// <summary>The raw_error_message property</summary>
@@ -124,6 +126,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "error_type", n => { ErrorType = n.GetStringValue(); } },
                 { "integration_connection_id", n => { IntegrationConnectionId = n.GetStringValue(); } },
                 { "integration_id", n => { IntegrationId = n.GetStringValue(); } },
+                { "is_blocked", n => { IsBlocked = n.GetBoolValue(); } },
                 { "is_error", n => { IsError = n.GetBoolValue(); } },
                 { "raw_error_message", n => { RawErrorMessage = n.GetStringValue(); } },
                 { "request_id", n => { RequestId = n.GetStringValue(); } },
@@ -146,6 +149,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteStringValue("error_type", ErrorType);
             writer.WriteStringValue("integration_connection_id", IntegrationConnectionId);
             writer.WriteStringValue("integration_id", IntegrationId);
+            writer.WriteBoolValue("is_blocked", IsBlocked);
             writer.WriteBoolValue("is_error", IsError);
             writer.WriteStringValue("raw_error_message", RawErrorMessage);
             writer.WriteStringValue("request_id", RequestId);

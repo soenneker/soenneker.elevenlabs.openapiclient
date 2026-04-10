@@ -176,7 +176,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V2.Voices
             [QueryParameter("voice_ids")]
             public string VoiceIds { get; set; }
 #endif
-            /// <summary>Type of the voice to filter by. One of &apos;personal&apos;, &apos;community&apos;, &apos;default&apos;, &apos;workspace&apos;, &apos;non-default&apos;, &apos;saved&apos;. &apos;non-default&apos; is equal to all but &apos;default&apos;. &apos;saved&apos; is equal to non-default, but includes default voices if they have been added to a collection.</summary>
+            /// <summary>Type of the voice to filter by. One of &apos;personal&apos;, &apos;community&apos;, &apos;default&apos;, &apos;workspace&apos;, &apos;non-default&apos;, &apos;non-community&apos;, &apos;saved&apos;. &apos;non-default&apos; is equal to all but &apos;default&apos;. &apos;non-community&apos; is equal to &apos;personal&apos; and &apos;workspace&apos; combined (excludes library copies). &apos;saved&apos; is equal to non-default, but includes default voices if they have been added to a collection.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("voice_type")]

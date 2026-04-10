@@ -16,6 +16,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The cost multiplier for characters.</summary>
         public double? CharacterCostMultiplier { get; set; }
+        /// <summary>Discount multiplier applied to cost estimates. Defaults to 1.0 (no discount).</summary>
+        public double? CostDiscountMultiplier { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ModelRatesResponseModel"/> and sets the default values.
         /// </summary>
@@ -42,6 +44,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "character_cost_multiplier", n => { CharacterCostMultiplier = n.GetDoubleValue(); } },
+                { "cost_discount_multiplier", n => { CostDiscountMultiplier = n.GetDoubleValue(); } },
             };
         }
         /// <summary>
@@ -52,6 +55,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDoubleValue("character_cost_multiplier", CharacterCostMultiplier);
+            writer.WriteDoubleValue("cost_discount_multiplier", CostDiscountMultiplier);
             writer.WriteAdditionalData(AdditionalData);
         }
     }
