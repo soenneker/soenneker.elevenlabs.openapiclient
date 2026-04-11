@@ -17,18 +17,18 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The callSid property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.TwilioOutboundCallResponse_callSid? CallSid { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Callsid? CallSid { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.TwilioOutboundCallResponse_callSid CallSid { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Callsid CallSid { get; set; }
 #endif
         /// <summary>The conversation_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.TwilioOutboundCallResponse_conversation_id? ConversationId { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Conversation_Id? ConversationId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.TwilioOutboundCallResponse_conversation_id ConversationId { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Conversation_Id ConversationId { get; set; }
 #endif
         /// <summary>The message property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -65,8 +65,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "callSid", n => { CallSid = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TwilioOutboundCallResponse_callSid>(global::Soenneker.ElevenLabs.OpenApiClient.Models.TwilioOutboundCallResponse_callSid.CreateFromDiscriminatorValue); } },
-                { "conversation_id", n => { ConversationId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TwilioOutboundCallResponse_conversation_id>(global::Soenneker.ElevenLabs.OpenApiClient.Models.TwilioOutboundCallResponse_conversation_id.CreateFromDiscriminatorValue); } },
+                { "callSid", n => { CallSid = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Callsid>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Callsid.CreateFromDiscriminatorValue); } },
+                { "conversation_id", n => { ConversationId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Conversation_Id>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Conversation_Id.CreateFromDiscriminatorValue); } },
                 { "message", n => { Message = n.GetStringValue(); } },
                 { "success", n => { Success = n.GetBoolValue(); } },
             };
@@ -78,8 +78,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TwilioOutboundCallResponse_callSid>("callSid", CallSid);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TwilioOutboundCallResponse_conversation_id>("conversation_id", ConversationId);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Callsid>("callSid", CallSid);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Conversation_Id>("conversation_id", ConversationId);
             writer.WriteStringValue("message", Message);
             writer.WriteBoolValue("success", Success);
             writer.WriteAdditionalData(AdditionalData);

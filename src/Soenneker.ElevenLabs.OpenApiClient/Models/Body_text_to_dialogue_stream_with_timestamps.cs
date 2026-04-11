@@ -27,10 +27,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Language code (ISO 639-1) used to enforce a language for the model and text normalization. If the model does not support provided language code, an error will be returned.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_text_to_dialogue_stream_with_timestamps_language_code? LanguageCode { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Language_Code? LanguageCode { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_text_to_dialogue_stream_with_timestamps_language_code LanguageCode { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Language_Code LanguageCode { get; set; }
 #endif
         /// <summary>Identifier of the model that will be used, you can query them using GET /v1/models. The model needs to have support for text to speech, you can check this using the can_do_text_to_speech property.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -43,26 +43,26 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>A list of pronunciation dictionary locators (id, version_id) to be applied to the text. They will be applied in order. You may have up to 3 locators per request</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_text_to_dialogue_stream_with_timestamps_pronunciation_dictionary_locators? PronunciationDictionaryLocators { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Pronunciation_Dictionary_Locators? PronunciationDictionaryLocators { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_text_to_dialogue_stream_with_timestamps_pronunciation_dictionary_locators PronunciationDictionaryLocators { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Pronunciation_Dictionary_Locators PronunciationDictionaryLocators { get; set; }
 #endif
         /// <summary>If specified, our system will make a best effort to sample deterministically, such that repeated requests with the same seed and parameters should return the same result. Determinism is not guaranteed. Must be integer between 0 and 4294967295.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_text_to_dialogue_stream_with_timestamps_seed? Seed { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Seed? Seed { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_text_to_dialogue_stream_with_timestamps_seed Seed { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Seed Seed { get; set; }
 #endif
         /// <summary>Settings controlling the dialogue generation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_text_to_dialogue_stream_with_timestamps_settings? Settings { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ModelSettingsResponseModel? Settings { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_text_to_dialogue_stream_with_timestamps_settings Settings { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ModelSettingsResponseModel Settings { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_text_to_dialogue_stream_with_timestamps"/> and sets the default values.
@@ -93,11 +93,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             {
                 { "apply_text_normalization", n => { ApplyTextNormalization = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_text_to_dialogue_stream_with_timestamps_apply_text_normalization>(); } },
                 { "inputs", n => { Inputs = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.DialogueInput>(global::Soenneker.ElevenLabs.OpenApiClient.Models.DialogueInput.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "language_code", n => { LanguageCode = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_text_to_dialogue_stream_with_timestamps_language_code>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_text_to_dialogue_stream_with_timestamps_language_code.CreateFromDiscriminatorValue); } },
+                { "language_code", n => { LanguageCode = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Language_Code>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Language_Code.CreateFromDiscriminatorValue); } },
                 { "model_id", n => { ModelId = n.GetStringValue(); } },
-                { "pronunciation_dictionary_locators", n => { PronunciationDictionaryLocators = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_text_to_dialogue_stream_with_timestamps_pronunciation_dictionary_locators>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_text_to_dialogue_stream_with_timestamps_pronunciation_dictionary_locators.CreateFromDiscriminatorValue); } },
-                { "seed", n => { Seed = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_text_to_dialogue_stream_with_timestamps_seed>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_text_to_dialogue_stream_with_timestamps_seed.CreateFromDiscriminatorValue); } },
-                { "settings", n => { Settings = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_text_to_dialogue_stream_with_timestamps_settings>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_text_to_dialogue_stream_with_timestamps_settings.CreateFromDiscriminatorValue); } },
+                { "pronunciation_dictionary_locators", n => { PronunciationDictionaryLocators = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Pronunciation_Dictionary_Locators>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Pronunciation_Dictionary_Locators.CreateFromDiscriminatorValue); } },
+                { "seed", n => { Seed = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Seed>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Seed.CreateFromDiscriminatorValue); } },
+                { "settings", n => { Settings = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ModelSettingsResponseModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ModelSettingsResponseModel.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -109,11 +109,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_text_to_dialogue_stream_with_timestamps_apply_text_normalization>("apply_text_normalization", ApplyTextNormalization);
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.DialogueInput>("inputs", Inputs);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_text_to_dialogue_stream_with_timestamps_language_code>("language_code", LanguageCode);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Language_Code>("language_code", LanguageCode);
             writer.WriteStringValue("model_id", ModelId);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_text_to_dialogue_stream_with_timestamps_pronunciation_dictionary_locators>("pronunciation_dictionary_locators", PronunciationDictionaryLocators);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_text_to_dialogue_stream_with_timestamps_seed>("seed", Seed);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_text_to_dialogue_stream_with_timestamps_settings>("settings", Settings);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Pronunciation_Dictionary_Locators>("pronunciation_dictionary_locators", PronunciationDictionaryLocators);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Seed>("seed", Seed);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ModelSettingsResponseModel>("settings", Settings);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

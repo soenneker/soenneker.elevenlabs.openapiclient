@@ -75,10 +75,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Predefined tool call sound type to play during tool execution for all tools from this MCP server</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.MCPServerConfig_Output_tool_call_sound? ToolCallSound { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolCallSoundType_Wrapper? ToolCallSound { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.MCPServerConfig_Output_tool_call_sound ToolCallSound { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolCallSoundType_Wrapper ToolCallSound { get; set; }
 #endif
         /// <summary>Determines how the tool call sound should be played.</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolCallSoundBehavior? ToolCallSoundBehavior { get; set; }
@@ -140,7 +140,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "request_headers", n => { RequestHeaders = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.MCPServerConfig_Output_request_headers>(global::Soenneker.ElevenLabs.OpenApiClient.Models.MCPServerConfig_Output_request_headers.CreateFromDiscriminatorValue); } },
                 { "secret_token", n => { SecretToken = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.MCPServerConfig_Output.MCPServerConfig_Output_secret_token>(global::Soenneker.ElevenLabs.OpenApiClient.Models.MCPServerConfig_Output.MCPServerConfig_Output_secret_token.CreateFromDiscriminatorValue); } },
                 { "tool_approval_hashes", n => { ToolApprovalHashes = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.MCPToolApprovalHash>(global::Soenneker.ElevenLabs.OpenApiClient.Models.MCPToolApprovalHash.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "tool_call_sound", n => { ToolCallSound = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.MCPServerConfig_Output_tool_call_sound>(global::Soenneker.ElevenLabs.OpenApiClient.Models.MCPServerConfig_Output_tool_call_sound.CreateFromDiscriminatorValue); } },
+                { "tool_call_sound", n => { ToolCallSound = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolCallSoundType_Wrapper>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolCallSoundType_Wrapper.CreateFromDiscriminatorValue); } },
                 { "tool_call_sound_behavior", n => { ToolCallSoundBehavior = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolCallSoundBehavior>(); } },
                 { "tool_config_overrides", n => { ToolConfigOverrides = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.MCPToolConfigOverride>(global::Soenneker.ElevenLabs.OpenApiClient.Models.MCPToolConfigOverride.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "transport", n => { Transport = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.MCPServerTransport>(); } },
@@ -165,7 +165,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.MCPServerConfig_Output_request_headers>("request_headers", RequestHeaders);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.MCPServerConfig_Output.MCPServerConfig_Output_secret_token>("secret_token", SecretToken);
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.MCPToolApprovalHash>("tool_approval_hashes", ToolApprovalHashes);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.MCPServerConfig_Output_tool_call_sound>("tool_call_sound", ToolCallSound);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolCallSoundType_Wrapper>("tool_call_sound", ToolCallSound);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolCallSoundBehavior>("tool_call_sound_behavior", ToolCallSoundBehavior);
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.MCPToolConfigOverride>("tool_config_overrides", ToolConfigOverrides);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.MCPServerTransport>("transport", Transport);

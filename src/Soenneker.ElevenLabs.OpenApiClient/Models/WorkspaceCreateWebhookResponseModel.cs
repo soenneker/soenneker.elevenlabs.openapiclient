@@ -25,10 +25,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The webhook_secret property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceCreateWebhookResponseModel_webhook_secret? WebhookSecret { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Webhook_Secret? WebhookSecret { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceCreateWebhookResponseModel_webhook_secret WebhookSecret { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Webhook_Secret WebhookSecret { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceCreateWebhookResponseModel"/> and sets the default values.
@@ -56,7 +56,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "webhook_id", n => { WebhookId = n.GetStringValue(); } },
-                { "webhook_secret", n => { WebhookSecret = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceCreateWebhookResponseModel_webhook_secret>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceCreateWebhookResponseModel_webhook_secret.CreateFromDiscriminatorValue); } },
+                { "webhook_secret", n => { WebhookSecret = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Webhook_Secret>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Webhook_Secret.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -67,7 +67,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("webhook_id", WebhookId);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceCreateWebhookResponseModel_webhook_secret>("webhook_secret", WebhookSecret);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Webhook_Secret>("webhook_secret", WebhookSecret);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

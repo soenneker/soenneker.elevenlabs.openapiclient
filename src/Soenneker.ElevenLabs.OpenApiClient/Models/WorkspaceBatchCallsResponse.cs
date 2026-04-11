@@ -27,10 +27,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The next document, used to paginate through the batch calls</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceBatchCallsResponse_next_doc? NextDoc { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Next_Doc? NextDoc { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceBatchCallsResponse_next_doc NextDoc { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Next_Doc NextDoc { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceBatchCallsResponse"/> and sets the default values.
@@ -59,7 +59,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             {
                 { "batch_calls", n => { BatchCalls = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.BatchCallResponse>(global::Soenneker.ElevenLabs.OpenApiClient.Models.BatchCallResponse.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "has_more", n => { HasMore = n.GetBoolValue(); } },
-                { "next_doc", n => { NextDoc = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceBatchCallsResponse_next_doc>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceBatchCallsResponse_next_doc.CreateFromDiscriminatorValue); } },
+                { "next_doc", n => { NextDoc = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Next_Doc>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Next_Doc.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -71,7 +71,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.BatchCallResponse>("batch_calls", BatchCalls);
             writer.WriteBoolValue("has_more", HasMore);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceBatchCallsResponse_next_doc>("next_doc", NextDoc);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Next_Doc>("next_doc", NextDoc);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

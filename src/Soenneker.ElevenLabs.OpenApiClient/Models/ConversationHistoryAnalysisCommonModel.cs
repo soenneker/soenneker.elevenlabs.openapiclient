@@ -19,10 +19,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The call_summary_title property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryAnalysisCommonModel_call_summary_title? CallSummaryTitle { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Call_Summary_Title? CallSummaryTitle { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryAnalysisCommonModel_call_summary_title CallSummaryTitle { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Call_Summary_Title CallSummaryTitle { get; set; }
 #endif
         /// <summary>The data_collection_results property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -98,7 +98,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "call_successful", n => { CallSuccessful = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.EvaluationSuccessResult>(); } },
-                { "call_summary_title", n => { CallSummaryTitle = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryAnalysisCommonModel_call_summary_title>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryAnalysisCommonModel_call_summary_title.CreateFromDiscriminatorValue); } },
+                { "call_summary_title", n => { CallSummaryTitle = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Call_Summary_Title>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Call_Summary_Title.CreateFromDiscriminatorValue); } },
                 { "data_collection_results", n => { DataCollectionResults = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryAnalysisCommonModel_data_collection_results>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryAnalysisCommonModel_data_collection_results.CreateFromDiscriminatorValue); } },
                 { "data_collection_results_list", n => { DataCollectionResultsList = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.DataCollectionResultCommonModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.DataCollectionResultCommonModel.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "evaluation_criteria_results", n => { EvaluationCriteriaResults = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryAnalysisCommonModel_evaluation_criteria_results>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryAnalysisCommonModel_evaluation_criteria_results.CreateFromDiscriminatorValue); } },
@@ -115,7 +115,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.EvaluationSuccessResult>("call_successful", CallSuccessful);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryAnalysisCommonModel_call_summary_title>("call_summary_title", CallSummaryTitle);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Call_Summary_Title>("call_summary_title", CallSummaryTitle);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryAnalysisCommonModel_data_collection_results>("data_collection_results", DataCollectionResults);
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.DataCollectionResultCommonModel>("data_collection_results_list", DataCollectionResultsList);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryAnalysisCommonModel_evaluation_criteria_results>("evaluation_criteria_results", EvaluationCriteriaResults);

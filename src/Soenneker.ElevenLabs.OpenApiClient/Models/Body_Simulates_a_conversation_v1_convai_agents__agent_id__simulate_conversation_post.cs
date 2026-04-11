@@ -17,10 +17,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>A list of evaluation criteria to test</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Simulates_a_conversation_v1_convai_agents__agent_id__simulate_conversation_post_extra_evaluation_criteria? ExtraEvaluationCriteria { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Extra_Evaluation_Criteria? ExtraEvaluationCriteria { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Simulates_a_conversation_v1_convai_agents__agent_id__simulate_conversation_post_extra_evaluation_criteria ExtraEvaluationCriteria { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Extra_Evaluation_Criteria ExtraEvaluationCriteria { get; set; }
 #endif
         /// <summary>Maximum number of new turns to generate in the conversation simulation</summary>
         public int? NewTurnsLimit { get; set; }
@@ -57,7 +57,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "extra_evaluation_criteria", n => { ExtraEvaluationCriteria = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Simulates_a_conversation_v1_convai_agents__agent_id__simulate_conversation_post_extra_evaluation_criteria>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Simulates_a_conversation_v1_convai_agents__agent_id__simulate_conversation_post_extra_evaluation_criteria.CreateFromDiscriminatorValue); } },
+                { "extra_evaluation_criteria", n => { ExtraEvaluationCriteria = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Extra_Evaluation_Criteria>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Extra_Evaluation_Criteria.CreateFromDiscriminatorValue); } },
                 { "new_turns_limit", n => { NewTurnsLimit = n.GetIntValue(); } },
                 { "simulation_specification", n => { SimulationSpecification = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationSimulationSpecification>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationSimulationSpecification.CreateFromDiscriminatorValue); } },
             };
@@ -69,7 +69,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Simulates_a_conversation_v1_convai_agents__agent_id__simulate_conversation_post_extra_evaluation_criteria>("extra_evaluation_criteria", ExtraEvaluationCriteria);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Extra_Evaluation_Criteria>("extra_evaluation_criteria", ExtraEvaluationCriteria);
             writer.WriteIntValue("new_turns_limit", NewTurnsLimit);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationSimulationSpecification>("simulation_specification", SimulationSpecification);
             writer.WriteAdditionalData(AdditionalData);

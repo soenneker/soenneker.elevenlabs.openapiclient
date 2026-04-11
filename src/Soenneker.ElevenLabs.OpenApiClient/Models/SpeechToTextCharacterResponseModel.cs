@@ -17,18 +17,18 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The end time of the character in seconds.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechToTextCharacterResponseModel_end? End { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.End? End { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechToTextCharacterResponseModel_end End { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.End End { get; set; }
 #endif
         /// <summary>The start time of the character in seconds.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechToTextCharacterResponseModel_start? Start { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Start? Start { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechToTextCharacterResponseModel_start Start { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Start Start { get; set; }
 #endif
         /// <summary>The character that was transcribed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -63,8 +63,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "end", n => { End = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechToTextCharacterResponseModel_end>(global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechToTextCharacterResponseModel_end.CreateFromDiscriminatorValue); } },
-                { "start", n => { Start = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechToTextCharacterResponseModel_start>(global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechToTextCharacterResponseModel_start.CreateFromDiscriminatorValue); } },
+                { "end", n => { End = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.End>(global::Soenneker.ElevenLabs.OpenApiClient.Models.End.CreateFromDiscriminatorValue); } },
+                { "start", n => { Start = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Start>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Start.CreateFromDiscriminatorValue); } },
                 { "text", n => { Text = n.GetStringValue(); } },
             };
         }
@@ -75,8 +75,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechToTextCharacterResponseModel_end>("end", End);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechToTextCharacterResponseModel_start>("start", Start);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.End>("end", End);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Start>("start", Start);
             writer.WriteStringValue("text", Text);
             writer.WriteAdditionalData(AdditionalData);
         }

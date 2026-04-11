@@ -25,10 +25,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The conversation_initiation_client_data property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Register_a_Twilio_call_and_return_TwiML_v1_convai_twilio_register_call_post_conversation_initiation_client_data? ConversationInitiationClientData { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationClientDataRequest_Input? ConversationInitiationClientData { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Register_a_Twilio_call_and_return_TwiML_v1_convai_twilio_register_call_post_conversation_initiation_client_data ConversationInitiationClientData { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationClientDataRequest_Input ConversationInitiationClientData { get; set; }
 #endif
         /// <summary>The direction property</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.TelephonyDirection? Direction { get; set; }
@@ -75,7 +75,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "agent_id", n => { AgentId = n.GetStringValue(); } },
-                { "conversation_initiation_client_data", n => { ConversationInitiationClientData = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Register_a_Twilio_call_and_return_TwiML_v1_convai_twilio_register_call_post_conversation_initiation_client_data>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Register_a_Twilio_call_and_return_TwiML_v1_convai_twilio_register_call_post_conversation_initiation_client_data.CreateFromDiscriminatorValue); } },
+                { "conversation_initiation_client_data", n => { ConversationInitiationClientData = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationClientDataRequest_Input>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationClientDataRequest_Input.CreateFromDiscriminatorValue); } },
                 { "direction", n => { Direction = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TelephonyDirection>(); } },
                 { "from_number", n => { FromNumber = n.GetStringValue(); } },
                 { "to_number", n => { ToNumber = n.GetStringValue(); } },
@@ -89,7 +89,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("agent_id", AgentId);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Register_a_Twilio_call_and_return_TwiML_v1_convai_twilio_register_call_post_conversation_initiation_client_data>("conversation_initiation_client_data", ConversationInitiationClientData);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationClientDataRequest_Input>("conversation_initiation_client_data", ConversationInitiationClientData);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TelephonyDirection>("direction", Direction);
             writer.WriteStringValue("from_number", FromNumber);
             writer.WriteStringValue("to_number", ToNumber);

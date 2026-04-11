@@ -15,348 +15,348 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Text and ARIA label for the accept terms button.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_accept_terms? AcceptTerms { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Accept_Terms? AcceptTerms { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_accept_terms AcceptTerms { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Accept_Terms AcceptTerms { get; set; }
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Status text displayed when the agent finishes processing a tool call.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_agent_done? AgentDone { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Agent_Done? AgentDone { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_agent_done AgentDone { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Agent_Done AgentDone { get; set; }
 #endif
         /// <summary>Information message displayed when the agent ends the conversation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_agent_ended_conversation? AgentEndedConversation { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Agent_Ended_Conversation? AgentEndedConversation { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_agent_ended_conversation AgentEndedConversation { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Agent_Ended_Conversation AgentEndedConversation { get; set; }
 #endif
         /// <summary>Status text displayed when the agent encounters an error during a tool call.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_agent_error? AgentError { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Agent_Error? AgentError { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_agent_error AgentError { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Agent_Error AgentError { get; set; }
 #endif
         /// <summary>Status text displayed when the agent is processing a tool call.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_agent_working? AgentWorking { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Agent_Working? AgentWorking { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_agent_working AgentWorking { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Agent_Working AgentWorking { get; set; }
 #endif
         /// <summary>ARIA label for the change language dropdown.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_change_language? ChangeLanguage { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Change_Language? ChangeLanguage { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_change_language ChangeLanguage { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Change_Language ChangeLanguage { get; set; }
 #endif
         /// <summary>Status displayed when the agent is chatting (text only)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_chatting_status? ChattingStatus { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Chatting_Status? ChattingStatus { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_chatting_status ChattingStatus { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Chatting_Status ChattingStatus { get; set; }
 #endif
         /// <summary>ARIA label for the collapse button.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_collapse? Collapse { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Collapse? Collapse { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_collapse Collapse { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Collapse Collapse { get; set; }
 #endif
         /// <summary>Status displayed when the agent is connecting.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_connecting_status? ConnectingStatus { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Connecting_Status? ConnectingStatus { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_connecting_status ConnectingStatus { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Connecting_Status ConnectingStatus { get; set; }
 #endif
         /// <summary>Text label used next to the conversation ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_conversation_id? ConversationId { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Conversation_Id? ConversationId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_conversation_id ConversationId { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Conversation_Id ConversationId { get; set; }
 #endif
         /// <summary>Text displayed when the user copies a value using the copy button.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_copied? Copied { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Copied? Copied { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_copied Copied { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Copied Copied { get; set; }
 #endif
         /// <summary>Text and ARIA label for the copy button.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_copy? Copy { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Copy? Copy { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_copy Copy { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Copy Copy { get; set; }
 #endif
         /// <summary>Text and ARIA label used for the copy ID button.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_copy_id? CopyId { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Copy_Id? CopyId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_copy_id CopyId { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Copy_Id CopyId { get; set; }
 #endif
         /// <summary>Text and ARIA label for the cancel terms button.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_dismiss_terms? DismissTerms { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Dismiss_Terms? DismissTerms { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_dismiss_terms DismissTerms { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Dismiss_Terms DismissTerms { get; set; }
 #endif
         /// <summary>Text and ARIA label for the download button.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_download? Download { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Download? Download { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_download Download { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Download Download { get; set; }
 #endif
         /// <summary>Text and ARIA label for the end call button.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_end_call? EndCall { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.End_Call? EndCall { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_end_call EndCall { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.End_Call EndCall { get; set; }
 #endif
         /// <summary>Text label used when an error occurs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_error_occurred? ErrorOccurred { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Error_Occurred? ErrorOccurred { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_error_occurred ErrorOccurred { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Error_Occurred ErrorOccurred { get; set; }
 #endif
         /// <summary>ARIA label for the expand button.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_expand? Expand { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Expand? Expand { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_expand Expand { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Expand Expand { get; set; }
 #endif
         /// <summary>Placeholder text for the follow-up feedback input field.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_follow_up_feedback_placeholder? FollowUpFeedbackPlaceholder { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Follow_Up_Feedback_Placeholder? FollowUpFeedbackPlaceholder { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_follow_up_feedback_placeholder FollowUpFeedbackPlaceholder { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Follow_Up_Feedback_Placeholder FollowUpFeedbackPlaceholder { get; set; }
 #endif
         /// <summary>Text and ARIA label for the go back button.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_go_back? GoBack { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Go_Back? GoBack { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_go_back GoBack { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Go_Back GoBack { get; set; }
 #endif
         /// <summary>Text displayed to prompt the user for feedback.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_initiate_feedback? InitiateFeedback { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Initiate_Feedback? InitiateFeedback { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_initiate_feedback InitiateFeedback { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Initiate_Feedback InitiateFeedback { get; set; }
 #endif
         /// <summary>ARIA label for the text message input.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_input_label? InputLabel { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Input_Label? InputLabel { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_input_label InputLabel { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Input_Label InputLabel { get; set; }
 #endif
         /// <summary>Placeholder text for the text message input.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_input_placeholder? InputPlaceholder { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Input_Placeholder? InputPlaceholder { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_input_placeholder InputPlaceholder { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Input_Placeholder InputPlaceholder { get; set; }
 #endif
         /// <summary>Placeholder text for the text message input when starting a new conversation (text only)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_input_placeholder_new_conversation? InputPlaceholderNewConversation { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Input_Placeholder_New_Conversation? InputPlaceholderNewConversation { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_input_placeholder_new_conversation InputPlaceholderNewConversation { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Input_Placeholder_New_Conversation InputPlaceholderNewConversation { get; set; }
 #endif
         /// <summary>Placeholder text for the text message input (text only)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_input_placeholder_text_only? InputPlaceholderTextOnly { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Input_Placeholder_Text_Only? InputPlaceholderTextOnly { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_input_placeholder_text_only InputPlaceholderTextOnly { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Input_Placeholder_Text_Only InputPlaceholderTextOnly { get; set; }
 #endif
         /// <summary>Status displayed when the agent is listening.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_listening_status? ListeningStatus { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Listening_Status? ListeningStatus { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_listening_status ListeningStatus { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Listening_Status ListeningStatus { get; set; }
 #endif
         /// <summary>Call to action displayed inside the compact and full variants.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_main_label? MainLabel { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Main_Label? MainLabel { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_main_label MainLabel { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Main_Label MainLabel { get; set; }
 #endif
         /// <summary>ARIA label for the mute microphone button.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_mute_microphone? MuteMicrophone { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Mute_Microphone? MuteMicrophone { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_mute_microphone MuteMicrophone { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Mute_Microphone MuteMicrophone { get; set; }
 #endif
         /// <summary>Text and ARIA label for the new call button. Displayed when the caller already finished at least one call in order ot start the next one.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_new_call? NewCall { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.New_Call? NewCall { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_new_call NewCall { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.New_Call NewCall { get; set; }
 #endif
         /// <summary>Text displayed to request additional feedback details.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_request_follow_up_feedback? RequestFollowUpFeedback { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Request_Follow_Up_Feedback? RequestFollowUpFeedback { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_request_follow_up_feedback RequestFollowUpFeedback { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Request_Follow_Up_Feedback RequestFollowUpFeedback { get; set; }
 #endif
         /// <summary>Text and ARIA label for the send message button.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_send_message? SendMessage { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Send_Message? SendMessage { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_send_message SendMessage { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Send_Message SendMessage { get; set; }
 #endif
         /// <summary>Status displayed when the agent is speaking.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_speaking_status? SpeakingStatus { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Speaking_Status? SpeakingStatus { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_speaking_status SpeakingStatus { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Speaking_Status SpeakingStatus { get; set; }
 #endif
         /// <summary>Text and ARIA label for the start call button.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_start_call? StartCall { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Start_Call? StartCall { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_start_call StartCall { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Start_Call StartCall { get; set; }
 #endif
         /// <summary>Text and ARIA label for the start chat button (text only)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_start_chat? StartChat { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Start_Chat? StartChat { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_start_chat StartChat { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Start_Chat StartChat { get; set; }
 #endif
         /// <summary>Text and ARIA label for the submit button.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_submit? Submit { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Submit? Submit { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_submit Submit { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Submit Submit { get; set; }
 #endif
         /// <summary>Toast notification displayed when switching to text mode.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_switched_to_text_mode? SwitchedToTextMode { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Switched_To_Text_Mode? SwitchedToTextMode { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_switched_to_text_mode SwitchedToTextMode { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Switched_To_Text_Mode SwitchedToTextMode { get; set; }
 #endif
         /// <summary>Toast notification displayed when switching to voice mode.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_switched_to_voice_mode? SwitchedToVoiceMode { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Switched_To_Voice_Mode? SwitchedToVoiceMode { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_switched_to_voice_mode SwitchedToVoiceMode { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Switched_To_Voice_Mode SwitchedToVoiceMode { get; set; }
 #endif
         /// <summary>Text and ARIA label for the switch to text mode button.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_text_mode? TextMode { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Text_Mode? TextMode { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_text_mode TextMode { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Text_Mode TextMode { get; set; }
 #endif
         /// <summary>Text displayed to thank the user for providing feedback.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_thanks_for_feedback? ThanksForFeedback { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Thanks_For_Feedback? ThanksForFeedback { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_thanks_for_feedback ThanksForFeedback { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Thanks_For_Feedback ThanksForFeedback { get; set; }
 #endif
         /// <summary>Additional text displayed explaining the value of user feedback.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_thanks_for_feedback_details? ThanksForFeedbackDetails { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Thanks_For_Feedback_Details? ThanksForFeedbackDetails { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_thanks_for_feedback_details ThanksForFeedbackDetails { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Thanks_For_Feedback_Details ThanksForFeedbackDetails { get; set; }
 #endif
         /// <summary>Information message displayed when the user ends the conversation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_user_ended_conversation? UserEndedConversation { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.User_Ended_Conversation? UserEndedConversation { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_user_ended_conversation UserEndedConversation { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.User_Ended_Conversation UserEndedConversation { get; set; }
 #endif
         /// <summary>Text and ARIA label for the switch to voice mode button.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_voice_mode? VoiceMode { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Voice_Mode? VoiceMode { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_voice_mode VoiceMode { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Voice_Mode VoiceMode { get; set; }
 #endif
         /// <summary>Text and ARIA label for the wrap toggle button.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_wrap? Wrap { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Wrap? Wrap { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_wrap Wrap { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Wrap Wrap { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents"/> and sets the default values.
@@ -383,49 +383,49 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "accept_terms", n => { AcceptTerms = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_accept_terms>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_accept_terms.CreateFromDiscriminatorValue); } },
-                { "agent_done", n => { AgentDone = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_agent_done>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_agent_done.CreateFromDiscriminatorValue); } },
-                { "agent_ended_conversation", n => { AgentEndedConversation = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_agent_ended_conversation>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_agent_ended_conversation.CreateFromDiscriminatorValue); } },
-                { "agent_error", n => { AgentError = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_agent_error>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_agent_error.CreateFromDiscriminatorValue); } },
-                { "agent_working", n => { AgentWorking = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_agent_working>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_agent_working.CreateFromDiscriminatorValue); } },
-                { "change_language", n => { ChangeLanguage = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_change_language>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_change_language.CreateFromDiscriminatorValue); } },
-                { "chatting_status", n => { ChattingStatus = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_chatting_status>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_chatting_status.CreateFromDiscriminatorValue); } },
-                { "collapse", n => { Collapse = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_collapse>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_collapse.CreateFromDiscriminatorValue); } },
-                { "connecting_status", n => { ConnectingStatus = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_connecting_status>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_connecting_status.CreateFromDiscriminatorValue); } },
-                { "conversation_id", n => { ConversationId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_conversation_id>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_conversation_id.CreateFromDiscriminatorValue); } },
-                { "copied", n => { Copied = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_copied>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_copied.CreateFromDiscriminatorValue); } },
-                { "copy", n => { Copy = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_copy>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_copy.CreateFromDiscriminatorValue); } },
-                { "copy_id", n => { CopyId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_copy_id>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_copy_id.CreateFromDiscriminatorValue); } },
-                { "dismiss_terms", n => { DismissTerms = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_dismiss_terms>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_dismiss_terms.CreateFromDiscriminatorValue); } },
-                { "download", n => { Download = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_download>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_download.CreateFromDiscriminatorValue); } },
-                { "end_call", n => { EndCall = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_end_call>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_end_call.CreateFromDiscriminatorValue); } },
-                { "error_occurred", n => { ErrorOccurred = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_error_occurred>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_error_occurred.CreateFromDiscriminatorValue); } },
-                { "expand", n => { Expand = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_expand>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_expand.CreateFromDiscriminatorValue); } },
-                { "follow_up_feedback_placeholder", n => { FollowUpFeedbackPlaceholder = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_follow_up_feedback_placeholder>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_follow_up_feedback_placeholder.CreateFromDiscriminatorValue); } },
-                { "go_back", n => { GoBack = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_go_back>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_go_back.CreateFromDiscriminatorValue); } },
-                { "initiate_feedback", n => { InitiateFeedback = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_initiate_feedback>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_initiate_feedback.CreateFromDiscriminatorValue); } },
-                { "input_label", n => { InputLabel = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_input_label>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_input_label.CreateFromDiscriminatorValue); } },
-                { "input_placeholder", n => { InputPlaceholder = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_input_placeholder>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_input_placeholder.CreateFromDiscriminatorValue); } },
-                { "input_placeholder_new_conversation", n => { InputPlaceholderNewConversation = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_input_placeholder_new_conversation>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_input_placeholder_new_conversation.CreateFromDiscriminatorValue); } },
-                { "input_placeholder_text_only", n => { InputPlaceholderTextOnly = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_input_placeholder_text_only>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_input_placeholder_text_only.CreateFromDiscriminatorValue); } },
-                { "listening_status", n => { ListeningStatus = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_listening_status>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_listening_status.CreateFromDiscriminatorValue); } },
-                { "main_label", n => { MainLabel = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_main_label>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_main_label.CreateFromDiscriminatorValue); } },
-                { "mute_microphone", n => { MuteMicrophone = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_mute_microphone>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_mute_microphone.CreateFromDiscriminatorValue); } },
-                { "new_call", n => { NewCall = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_new_call>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_new_call.CreateFromDiscriminatorValue); } },
-                { "request_follow_up_feedback", n => { RequestFollowUpFeedback = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_request_follow_up_feedback>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_request_follow_up_feedback.CreateFromDiscriminatorValue); } },
-                { "send_message", n => { SendMessage = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_send_message>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_send_message.CreateFromDiscriminatorValue); } },
-                { "speaking_status", n => { SpeakingStatus = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_speaking_status>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_speaking_status.CreateFromDiscriminatorValue); } },
-                { "start_call", n => { StartCall = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_start_call>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_start_call.CreateFromDiscriminatorValue); } },
-                { "start_chat", n => { StartChat = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_start_chat>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_start_chat.CreateFromDiscriminatorValue); } },
-                { "submit", n => { Submit = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_submit>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_submit.CreateFromDiscriminatorValue); } },
-                { "switched_to_text_mode", n => { SwitchedToTextMode = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_switched_to_text_mode>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_switched_to_text_mode.CreateFromDiscriminatorValue); } },
-                { "switched_to_voice_mode", n => { SwitchedToVoiceMode = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_switched_to_voice_mode>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_switched_to_voice_mode.CreateFromDiscriminatorValue); } },
-                { "text_mode", n => { TextMode = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_text_mode>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_text_mode.CreateFromDiscriminatorValue); } },
-                { "thanks_for_feedback", n => { ThanksForFeedback = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_thanks_for_feedback>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_thanks_for_feedback.CreateFromDiscriminatorValue); } },
-                { "thanks_for_feedback_details", n => { ThanksForFeedbackDetails = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_thanks_for_feedback_details>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_thanks_for_feedback_details.CreateFromDiscriminatorValue); } },
-                { "user_ended_conversation", n => { UserEndedConversation = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_user_ended_conversation>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_user_ended_conversation.CreateFromDiscriminatorValue); } },
-                { "voice_mode", n => { VoiceMode = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_voice_mode>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_voice_mode.CreateFromDiscriminatorValue); } },
-                { "wrap", n => { Wrap = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_wrap>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_wrap.CreateFromDiscriminatorValue); } },
+                { "accept_terms", n => { AcceptTerms = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Accept_Terms>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Accept_Terms.CreateFromDiscriminatorValue); } },
+                { "agent_done", n => { AgentDone = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Agent_Done>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Agent_Done.CreateFromDiscriminatorValue); } },
+                { "agent_ended_conversation", n => { AgentEndedConversation = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Agent_Ended_Conversation>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Agent_Ended_Conversation.CreateFromDiscriminatorValue); } },
+                { "agent_error", n => { AgentError = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Agent_Error>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Agent_Error.CreateFromDiscriminatorValue); } },
+                { "agent_working", n => { AgentWorking = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Agent_Working>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Agent_Working.CreateFromDiscriminatorValue); } },
+                { "change_language", n => { ChangeLanguage = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Change_Language>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Change_Language.CreateFromDiscriminatorValue); } },
+                { "chatting_status", n => { ChattingStatus = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Chatting_Status>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Chatting_Status.CreateFromDiscriminatorValue); } },
+                { "collapse", n => { Collapse = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Collapse>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Collapse.CreateFromDiscriminatorValue); } },
+                { "connecting_status", n => { ConnectingStatus = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Connecting_Status>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Connecting_Status.CreateFromDiscriminatorValue); } },
+                { "conversation_id", n => { ConversationId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Conversation_Id>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Conversation_Id.CreateFromDiscriminatorValue); } },
+                { "copied", n => { Copied = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Copied>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Copied.CreateFromDiscriminatorValue); } },
+                { "copy", n => { Copy = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Copy>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Copy.CreateFromDiscriminatorValue); } },
+                { "copy_id", n => { CopyId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Copy_Id>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Copy_Id.CreateFromDiscriminatorValue); } },
+                { "dismiss_terms", n => { DismissTerms = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Dismiss_Terms>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Dismiss_Terms.CreateFromDiscriminatorValue); } },
+                { "download", n => { Download = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Download>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Download.CreateFromDiscriminatorValue); } },
+                { "end_call", n => { EndCall = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.End_Call>(global::Soenneker.ElevenLabs.OpenApiClient.Models.End_Call.CreateFromDiscriminatorValue); } },
+                { "error_occurred", n => { ErrorOccurred = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Error_Occurred>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Error_Occurred.CreateFromDiscriminatorValue); } },
+                { "expand", n => { Expand = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Expand>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Expand.CreateFromDiscriminatorValue); } },
+                { "follow_up_feedback_placeholder", n => { FollowUpFeedbackPlaceholder = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Follow_Up_Feedback_Placeholder>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Follow_Up_Feedback_Placeholder.CreateFromDiscriminatorValue); } },
+                { "go_back", n => { GoBack = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Go_Back>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Go_Back.CreateFromDiscriminatorValue); } },
+                { "initiate_feedback", n => { InitiateFeedback = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Initiate_Feedback>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Initiate_Feedback.CreateFromDiscriminatorValue); } },
+                { "input_label", n => { InputLabel = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Input_Label>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Input_Label.CreateFromDiscriminatorValue); } },
+                { "input_placeholder", n => { InputPlaceholder = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Input_Placeholder>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Input_Placeholder.CreateFromDiscriminatorValue); } },
+                { "input_placeholder_new_conversation", n => { InputPlaceholderNewConversation = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Input_Placeholder_New_Conversation>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Input_Placeholder_New_Conversation.CreateFromDiscriminatorValue); } },
+                { "input_placeholder_text_only", n => { InputPlaceholderTextOnly = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Input_Placeholder_Text_Only>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Input_Placeholder_Text_Only.CreateFromDiscriminatorValue); } },
+                { "listening_status", n => { ListeningStatus = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Listening_Status>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Listening_Status.CreateFromDiscriminatorValue); } },
+                { "main_label", n => { MainLabel = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Main_Label>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Main_Label.CreateFromDiscriminatorValue); } },
+                { "mute_microphone", n => { MuteMicrophone = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Mute_Microphone>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Mute_Microphone.CreateFromDiscriminatorValue); } },
+                { "new_call", n => { NewCall = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.New_Call>(global::Soenneker.ElevenLabs.OpenApiClient.Models.New_Call.CreateFromDiscriminatorValue); } },
+                { "request_follow_up_feedback", n => { RequestFollowUpFeedback = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Request_Follow_Up_Feedback>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Request_Follow_Up_Feedback.CreateFromDiscriminatorValue); } },
+                { "send_message", n => { SendMessage = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Send_Message>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Send_Message.CreateFromDiscriminatorValue); } },
+                { "speaking_status", n => { SpeakingStatus = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Speaking_Status>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Speaking_Status.CreateFromDiscriminatorValue); } },
+                { "start_call", n => { StartCall = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Start_Call>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Start_Call.CreateFromDiscriminatorValue); } },
+                { "start_chat", n => { StartChat = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Start_Chat>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Start_Chat.CreateFromDiscriminatorValue); } },
+                { "submit", n => { Submit = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Submit>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Submit.CreateFromDiscriminatorValue); } },
+                { "switched_to_text_mode", n => { SwitchedToTextMode = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Switched_To_Text_Mode>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Switched_To_Text_Mode.CreateFromDiscriminatorValue); } },
+                { "switched_to_voice_mode", n => { SwitchedToVoiceMode = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Switched_To_Voice_Mode>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Switched_To_Voice_Mode.CreateFromDiscriminatorValue); } },
+                { "text_mode", n => { TextMode = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Text_Mode>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Text_Mode.CreateFromDiscriminatorValue); } },
+                { "thanks_for_feedback", n => { ThanksForFeedback = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Thanks_For_Feedback>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Thanks_For_Feedback.CreateFromDiscriminatorValue); } },
+                { "thanks_for_feedback_details", n => { ThanksForFeedbackDetails = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Thanks_For_Feedback_Details>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Thanks_For_Feedback_Details.CreateFromDiscriminatorValue); } },
+                { "user_ended_conversation", n => { UserEndedConversation = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.User_Ended_Conversation>(global::Soenneker.ElevenLabs.OpenApiClient.Models.User_Ended_Conversation.CreateFromDiscriminatorValue); } },
+                { "voice_mode", n => { VoiceMode = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Voice_Mode>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Voice_Mode.CreateFromDiscriminatorValue); } },
+                { "wrap", n => { Wrap = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Wrap>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Wrap.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -435,49 +435,49 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_accept_terms>("accept_terms", AcceptTerms);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_agent_done>("agent_done", AgentDone);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_agent_ended_conversation>("agent_ended_conversation", AgentEndedConversation);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_agent_error>("agent_error", AgentError);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_agent_working>("agent_working", AgentWorking);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_change_language>("change_language", ChangeLanguage);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_chatting_status>("chatting_status", ChattingStatus);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_collapse>("collapse", Collapse);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_connecting_status>("connecting_status", ConnectingStatus);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_conversation_id>("conversation_id", ConversationId);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_copied>("copied", Copied);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_copy>("copy", Copy);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_copy_id>("copy_id", CopyId);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_dismiss_terms>("dismiss_terms", DismissTerms);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_download>("download", Download);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_end_call>("end_call", EndCall);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_error_occurred>("error_occurred", ErrorOccurred);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_expand>("expand", Expand);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_follow_up_feedback_placeholder>("follow_up_feedback_placeholder", FollowUpFeedbackPlaceholder);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_go_back>("go_back", GoBack);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_initiate_feedback>("initiate_feedback", InitiateFeedback);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_input_label>("input_label", InputLabel);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_input_placeholder>("input_placeholder", InputPlaceholder);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_input_placeholder_new_conversation>("input_placeholder_new_conversation", InputPlaceholderNewConversation);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_input_placeholder_text_only>("input_placeholder_text_only", InputPlaceholderTextOnly);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_listening_status>("listening_status", ListeningStatus);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_main_label>("main_label", MainLabel);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_mute_microphone>("mute_microphone", MuteMicrophone);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_new_call>("new_call", NewCall);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_request_follow_up_feedback>("request_follow_up_feedback", RequestFollowUpFeedback);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_send_message>("send_message", SendMessage);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_speaking_status>("speaking_status", SpeakingStatus);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_start_call>("start_call", StartCall);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_start_chat>("start_chat", StartChat);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_submit>("submit", Submit);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_switched_to_text_mode>("switched_to_text_mode", SwitchedToTextMode);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_switched_to_voice_mode>("switched_to_voice_mode", SwitchedToVoiceMode);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_text_mode>("text_mode", TextMode);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_thanks_for_feedback>("thanks_for_feedback", ThanksForFeedback);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_thanks_for_feedback_details>("thanks_for_feedback_details", ThanksForFeedbackDetails);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_user_ended_conversation>("user_ended_conversation", UserEndedConversation);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_voice_mode>("voice_mode", VoiceMode);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents_wrap>("wrap", Wrap);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Accept_Terms>("accept_terms", AcceptTerms);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Agent_Done>("agent_done", AgentDone);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Agent_Ended_Conversation>("agent_ended_conversation", AgentEndedConversation);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Agent_Error>("agent_error", AgentError);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Agent_Working>("agent_working", AgentWorking);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Change_Language>("change_language", ChangeLanguage);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Chatting_Status>("chatting_status", ChattingStatus);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Collapse>("collapse", Collapse);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Connecting_Status>("connecting_status", ConnectingStatus);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Conversation_Id>("conversation_id", ConversationId);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Copied>("copied", Copied);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Copy>("copy", Copy);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Copy_Id>("copy_id", CopyId);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Dismiss_Terms>("dismiss_terms", DismissTerms);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Download>("download", Download);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.End_Call>("end_call", EndCall);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Error_Occurred>("error_occurred", ErrorOccurred);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Expand>("expand", Expand);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Follow_Up_Feedback_Placeholder>("follow_up_feedback_placeholder", FollowUpFeedbackPlaceholder);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Go_Back>("go_back", GoBack);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Initiate_Feedback>("initiate_feedback", InitiateFeedback);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Input_Label>("input_label", InputLabel);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Input_Placeholder>("input_placeholder", InputPlaceholder);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Input_Placeholder_New_Conversation>("input_placeholder_new_conversation", InputPlaceholderNewConversation);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Input_Placeholder_Text_Only>("input_placeholder_text_only", InputPlaceholderTextOnly);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Listening_Status>("listening_status", ListeningStatus);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Main_Label>("main_label", MainLabel);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Mute_Microphone>("mute_microphone", MuteMicrophone);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.New_Call>("new_call", NewCall);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Request_Follow_Up_Feedback>("request_follow_up_feedback", RequestFollowUpFeedback);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Send_Message>("send_message", SendMessage);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Speaking_Status>("speaking_status", SpeakingStatus);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Start_Call>("start_call", StartCall);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Start_Chat>("start_chat", StartChat);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Submit>("submit", Submit);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Switched_To_Text_Mode>("switched_to_text_mode", SwitchedToTextMode);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Switched_To_Voice_Mode>("switched_to_voice_mode", SwitchedToVoiceMode);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Text_Mode>("text_mode", TextMode);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Thanks_For_Feedback>("thanks_for_feedback", ThanksForFeedback);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Thanks_For_Feedback_Details>("thanks_for_feedback_details", ThanksForFeedbackDetails);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.User_Ended_Conversation>("user_ended_conversation", UserEndedConversation);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Voice_Mode>("voice_mode", VoiceMode);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Wrap>("wrap", Wrap);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

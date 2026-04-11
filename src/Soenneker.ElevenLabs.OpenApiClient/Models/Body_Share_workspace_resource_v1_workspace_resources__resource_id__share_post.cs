@@ -17,10 +17,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The ID of the target group. To target the permissions principals have by default on this resource, use the value &apos;default&apos;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Share_workspace_resource_v1_workspace_resources__resource_id__share_post_group_id? GroupId { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Group_Id? GroupId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Share_workspace_resource_v1_workspace_resources__resource_id__share_post_group_id GroupId { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Group_Id GroupId { get; set; }
 #endif
         /// <summary>Resource types that can be shared in the workspace. The name always need to match the collection names</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceResourceType? ResourceType { get; set; }
@@ -29,18 +29,18 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The email of the user or service account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Share_workspace_resource_v1_workspace_resources__resource_id__share_post_user_email? UserEmail { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.User_Email? UserEmail { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Share_workspace_resource_v1_workspace_resources__resource_id__share_post_user_email UserEmail { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.User_Email UserEmail { get; set; }
 #endif
         /// <summary>The ID of the target workspace API key. This isn&apos;t the same as the key itself that would you pass in the header for authentication. Workspace admins can find this in the workspace settings UI.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Share_workspace_resource_v1_workspace_resources__resource_id__share_post_workspace_api_key_id? WorkspaceApiKeyId { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Workspace_Api_Key_Id? WorkspaceApiKeyId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Share_workspace_resource_v1_workspace_resources__resource_id__share_post_workspace_api_key_id WorkspaceApiKeyId { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Workspace_Api_Key_Id WorkspaceApiKeyId { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Share_workspace_resource_v1_workspace_resources__resource_id__share_post"/> and sets the default values.
@@ -67,11 +67,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "group_id", n => { GroupId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Share_workspace_resource_v1_workspace_resources__resource_id__share_post_group_id>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Share_workspace_resource_v1_workspace_resources__resource_id__share_post_group_id.CreateFromDiscriminatorValue); } },
+                { "group_id", n => { GroupId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Group_Id>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Group_Id.CreateFromDiscriminatorValue); } },
                 { "resource_type", n => { ResourceType = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceResourceType>(); } },
                 { "role", n => { Role = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Share_workspace_resource_v1_workspace_resources__resource_id__share_post_role>(); } },
-                { "user_email", n => { UserEmail = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Share_workspace_resource_v1_workspace_resources__resource_id__share_post_user_email>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Share_workspace_resource_v1_workspace_resources__resource_id__share_post_user_email.CreateFromDiscriminatorValue); } },
-                { "workspace_api_key_id", n => { WorkspaceApiKeyId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Share_workspace_resource_v1_workspace_resources__resource_id__share_post_workspace_api_key_id>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Share_workspace_resource_v1_workspace_resources__resource_id__share_post_workspace_api_key_id.CreateFromDiscriminatorValue); } },
+                { "user_email", n => { UserEmail = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.User_Email>(global::Soenneker.ElevenLabs.OpenApiClient.Models.User_Email.CreateFromDiscriminatorValue); } },
+                { "workspace_api_key_id", n => { WorkspaceApiKeyId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Workspace_Api_Key_Id>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Workspace_Api_Key_Id.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -81,11 +81,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Share_workspace_resource_v1_workspace_resources__resource_id__share_post_group_id>("group_id", GroupId);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Group_Id>("group_id", GroupId);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceResourceType>("resource_type", ResourceType);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Share_workspace_resource_v1_workspace_resources__resource_id__share_post_role>("role", Role);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Share_workspace_resource_v1_workspace_resources__resource_id__share_post_user_email>("user_email", UserEmail);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Share_workspace_resource_v1_workspace_resources__resource_id__share_post_workspace_api_key_id>("workspace_api_key_id", WorkspaceApiKeyId);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.User_Email>("user_email", UserEmail);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Workspace_Api_Key_Id>("workspace_api_key_id", WorkspaceApiKeyId);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

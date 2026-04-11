@@ -12,6 +12,7 @@ using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.Duplicate;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.Link;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.RunTests;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.SimulateConversation;
+using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.Topics;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.Widget;
 using System.Collections.Generic;
 using System.IO;
@@ -65,6 +66,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item
         public global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.SimulateConversation.SimulateConversationRequestBuilder SimulateConversation
         {
             get => new global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.SimulateConversation.SimulateConversationRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The topics property</summary>
+        public global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.Topics.TopicsRequestBuilder Topics
+        {
+            get => new global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.Topics.TopicsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The widget property</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.Widget.WidgetRequestBuilder Widget

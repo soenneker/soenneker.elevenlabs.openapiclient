@@ -17,28 +17,28 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The json property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingTranscriptsResponseModel_json? Json { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingTranscript? Json { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingTranscriptsResponseModel_json Json { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingTranscript Json { get; set; }
 #endif
         /// <summary>The srt property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingTranscriptsResponseModel_srt? Srt { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Srt? Srt { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingTranscriptsResponseModel_srt Srt { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Srt Srt { get; set; }
 #endif
         /// <summary>The transcript_format property</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingTranscriptsResponseModel_transcript_format? TranscriptFormat { get; set; }
         /// <summary>The webvtt property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingTranscriptsResponseModel_webvtt? Webvtt { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Webvtt? Webvtt { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingTranscriptsResponseModel_webvtt Webvtt { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Webvtt Webvtt { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingTranscriptsResponseModel"/> and sets the default values.
@@ -65,10 +65,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "json", n => { Json = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingTranscriptsResponseModel_json>(global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingTranscriptsResponseModel_json.CreateFromDiscriminatorValue); } },
-                { "srt", n => { Srt = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingTranscriptsResponseModel_srt>(global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingTranscriptsResponseModel_srt.CreateFromDiscriminatorValue); } },
+                { "json", n => { Json = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingTranscript>(global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingTranscript.CreateFromDiscriminatorValue); } },
+                { "srt", n => { Srt = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Srt>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Srt.CreateFromDiscriminatorValue); } },
                 { "transcript_format", n => { TranscriptFormat = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingTranscriptsResponseModel_transcript_format>(); } },
-                { "webvtt", n => { Webvtt = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingTranscriptsResponseModel_webvtt>(global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingTranscriptsResponseModel_webvtt.CreateFromDiscriminatorValue); } },
+                { "webvtt", n => { Webvtt = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Webvtt>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Webvtt.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -78,10 +78,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingTranscriptsResponseModel_json>("json", Json);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingTranscriptsResponseModel_srt>("srt", Srt);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingTranscript>("json", Json);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Srt>("srt", Srt);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingTranscriptsResponseModel_transcript_format>("transcript_format", TranscriptFormat);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingTranscriptsResponseModel_webvtt>("webvtt", Webvtt);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Webvtt>("webvtt", Webvtt);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

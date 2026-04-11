@@ -25,10 +25,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The json_schema property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.DataCollectionResultCommonModel_json_schema? JsonSchema { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.LiteralJsonSchemaProperty? JsonSchema { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.DataCollectionResultCommonModel_json_schema JsonSchema { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.LiteralJsonSchemaProperty JsonSchema { get; set; }
 #endif
         /// <summary>The rationale property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -72,7 +72,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "data_collection_id", n => { DataCollectionId = n.GetStringValue(); } },
-                { "json_schema", n => { JsonSchema = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DataCollectionResultCommonModel_json_schema>(global::Soenneker.ElevenLabs.OpenApiClient.Models.DataCollectionResultCommonModel_json_schema.CreateFromDiscriminatorValue); } },
+                { "json_schema", n => { JsonSchema = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.LiteralJsonSchemaProperty>(global::Soenneker.ElevenLabs.OpenApiClient.Models.LiteralJsonSchemaProperty.CreateFromDiscriminatorValue); } },
                 { "rationale", n => { Rationale = n.GetStringValue(); } },
                 { "value", n => { Value = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DataCollectionResultCommonModel_value>(global::Soenneker.ElevenLabs.OpenApiClient.Models.DataCollectionResultCommonModel_value.CreateFromDiscriminatorValue); } },
             };
@@ -85,7 +85,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("data_collection_id", DataCollectionId);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DataCollectionResultCommonModel_json_schema>("json_schema", JsonSchema);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.LiteralJsonSchemaProperty>("json_schema", JsonSchema);
             writer.WriteStringValue("rationale", Rationale);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DataCollectionResultCommonModel_value>("value", Value);
             writer.WriteAdditionalData(AdditionalData);

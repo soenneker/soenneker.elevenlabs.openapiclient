@@ -23,44 +23,44 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Controls the balance of prompt versus reference audio when generating voice samples. 0 means almost no prompt influence, 1 means almost no reference audio influence. Only supported when using the eleven_ttv_v3 model.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceRemixRequestModel_prompt_strength? PromptStrength { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Prompt_Strength? PromptStrength { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceRemixRequestModel_prompt_strength PromptStrength { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Prompt_Strength PromptStrength { get; set; }
 #endif
         /// <summary>The remixing session id.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceRemixRequestModel_remixing_session_id? RemixingSessionId { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Remixing_Session_Id? RemixingSessionId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceRemixRequestModel_remixing_session_id RemixingSessionId { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Remixing_Session_Id RemixingSessionId { get; set; }
 #endif
         /// <summary>The id of the remixing session iteration where these generations should be attached to. If not provided, a new iteration will be created.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceRemixRequestModel_remixing_session_iteration_id? RemixingSessionIterationId { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Remixing_Session_Iteration_Id? RemixingSessionIterationId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceRemixRequestModel_remixing_session_iteration_id RemixingSessionIterationId { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Remixing_Session_Iteration_Id RemixingSessionIterationId { get; set; }
 #endif
         /// <summary>Random number that controls the voice generation. Same seed with same inputs produces same voice.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceRemixRequestModel_seed? Seed { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Seed? Seed { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceRemixRequestModel_seed Seed { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Seed Seed { get; set; }
 #endif
         /// <summary>Determines whether the Text to Voice previews should be included in the response. If true, only the generated IDs will be returned which can then be streamed via the /v1/text-to-voice/:generated_voice_id/stream endpoint.</summary>
         public bool? StreamPreviews { get; set; }
         /// <summary>Text to generate, text length has to be between 100 and 1000.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceRemixRequestModel_text? Text { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Text? Text { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceRemixRequestModel_text Text { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Text Text { get; set; }
 #endif
         /// <summary>Description of the changes to make to the voice.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -98,12 +98,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "auto_generate_text", n => { AutoGenerateText = n.GetBoolValue(); } },
                 { "guidance_scale", n => { GuidanceScale = n.GetDoubleValue(); } },
                 { "loudness", n => { Loudness = n.GetDoubleValue(); } },
-                { "prompt_strength", n => { PromptStrength = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceRemixRequestModel_prompt_strength>(global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceRemixRequestModel_prompt_strength.CreateFromDiscriminatorValue); } },
-                { "remixing_session_id", n => { RemixingSessionId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceRemixRequestModel_remixing_session_id>(global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceRemixRequestModel_remixing_session_id.CreateFromDiscriminatorValue); } },
-                { "remixing_session_iteration_id", n => { RemixingSessionIterationId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceRemixRequestModel_remixing_session_iteration_id>(global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceRemixRequestModel_remixing_session_iteration_id.CreateFromDiscriminatorValue); } },
-                { "seed", n => { Seed = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceRemixRequestModel_seed>(global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceRemixRequestModel_seed.CreateFromDiscriminatorValue); } },
+                { "prompt_strength", n => { PromptStrength = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Prompt_Strength>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Prompt_Strength.CreateFromDiscriminatorValue); } },
+                { "remixing_session_id", n => { RemixingSessionId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Remixing_Session_Id>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Remixing_Session_Id.CreateFromDiscriminatorValue); } },
+                { "remixing_session_iteration_id", n => { RemixingSessionIterationId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Remixing_Session_Iteration_Id>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Remixing_Session_Iteration_Id.CreateFromDiscriminatorValue); } },
+                { "seed", n => { Seed = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Seed>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Seed.CreateFromDiscriminatorValue); } },
                 { "stream_previews", n => { StreamPreviews = n.GetBoolValue(); } },
-                { "text", n => { Text = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceRemixRequestModel_text>(global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceRemixRequestModel_text.CreateFromDiscriminatorValue); } },
+                { "text", n => { Text = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Text>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Text.CreateFromDiscriminatorValue); } },
                 { "voice_description", n => { VoiceDescription = n.GetStringValue(); } },
             };
         }
@@ -117,12 +117,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteBoolValue("auto_generate_text", AutoGenerateText);
             writer.WriteDoubleValue("guidance_scale", GuidanceScale);
             writer.WriteDoubleValue("loudness", Loudness);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceRemixRequestModel_prompt_strength>("prompt_strength", PromptStrength);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceRemixRequestModel_remixing_session_id>("remixing_session_id", RemixingSessionId);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceRemixRequestModel_remixing_session_iteration_id>("remixing_session_iteration_id", RemixingSessionIterationId);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceRemixRequestModel_seed>("seed", Seed);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Prompt_Strength>("prompt_strength", PromptStrength);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Remixing_Session_Id>("remixing_session_id", RemixingSessionId);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Remixing_Session_Iteration_Id>("remixing_session_iteration_id", RemixingSessionIterationId);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Seed>("seed", Seed);
             writer.WriteBoolValue("stream_previews", StreamPreviews);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceRemixRequestModel_text>("text", Text);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Text>("text", Text);
             writer.WriteStringValue("voice_description", VoiceDescription);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -39,10 +39,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The transfer_message property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentTransfer_transfer_message? TransferMessage { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Transfer_Message? TransferMessage { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentTransfer_transfer_message TransferMessage { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Transfer_Message TransferMessage { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentTransfer"/> and sets the default values.
@@ -74,7 +74,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "delay_ms", n => { DelayMs = n.GetIntValue(); } },
                 { "enable_transferred_agent_first_message", n => { EnableTransferredAgentFirstMessage = n.GetBoolValue(); } },
                 { "is_workflow_node_transfer", n => { IsWorkflowNodeTransfer = n.GetBoolValue(); } },
-                { "transfer_message", n => { TransferMessage = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentTransfer_transfer_message>(global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentTransfer_transfer_message.CreateFromDiscriminatorValue); } },
+                { "transfer_message", n => { TransferMessage = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Transfer_Message>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Transfer_Message.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -89,7 +89,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteIntValue("delay_ms", DelayMs);
             writer.WriteBoolValue("enable_transferred_agent_first_message", EnableTransferredAgentFirstMessage);
             writer.WriteBoolValue("is_workflow_node_transfer", IsWorkflowNodeTransfer);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentTransfer_transfer_message>("transfer_message", TransferMessage);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Transfer_Message>("transfer_message", TransferMessage);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

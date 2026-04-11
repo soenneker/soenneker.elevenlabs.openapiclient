@@ -19,10 +19,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The threshold property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ContentThresholdGuardrail_threshold? Threshold { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Threshold? Threshold { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ContentThresholdGuardrail_threshold Threshold { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Threshold Threshold { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ContentThresholdGuardrail"/> and sets the default values.
@@ -50,7 +50,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "is_enabled", n => { IsEnabled = n.GetBoolValue(); } },
-                { "threshold", n => { Threshold = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ContentThresholdGuardrail_threshold>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ContentThresholdGuardrail_threshold.CreateFromDiscriminatorValue); } },
+                { "threshold", n => { Threshold = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Threshold>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Threshold.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -61,7 +61,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("is_enabled", IsEnabled);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ContentThresholdGuardrail_threshold>("threshold", Threshold);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Threshold>("threshold", Threshold);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

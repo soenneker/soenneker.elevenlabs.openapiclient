@@ -17,10 +17,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The folder to move the entities to. If not set, the entities will be moved to the root folder.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Move_entity_to_folder_v1_convai_knowledge_base__document_id__move_post_move_to? MoveTo { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Move_To? MoveTo { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Move_entity_to_folder_v1_convai_knowledge_base__document_id__move_post_move_to MoveTo { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Move_To MoveTo { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Move_entity_to_folder_v1_convai_knowledge_base__document_id__move_post"/> and sets the default values.
@@ -47,7 +47,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "move_to", n => { MoveTo = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Move_entity_to_folder_v1_convai_knowledge_base__document_id__move_post_move_to>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Move_entity_to_folder_v1_convai_knowledge_base__document_id__move_post_move_to.CreateFromDiscriminatorValue); } },
+                { "move_to", n => { MoveTo = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Move_To>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Move_To.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -57,7 +57,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Move_entity_to_folder_v1_convai_knowledge_base__document_id__move_post_move_to>("move_to", MoveTo);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Move_To>("move_to", MoveTo);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.ElevenLabs.OpenApiClient.V1.Voices.Item.Edit
 {
     /// <summary>
-    /// A description of the voice.
+    /// Labels for the voice. Keys can be language, accent, gender, or age.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Body_Edit_voice_v1_voices__voice_id__edit_postPostRequestBody : IAdditionalDataHolder, IParsable

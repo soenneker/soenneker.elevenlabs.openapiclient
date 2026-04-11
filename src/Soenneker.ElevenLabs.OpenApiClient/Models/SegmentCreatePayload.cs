@@ -21,10 +21,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The text property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SegmentCreatePayload_text? Text { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Text? Text { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SegmentCreatePayload_text Text { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Text Text { get; set; }
 #endif
         /// <summary>The translations property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -61,7 +61,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             {
                 { "end_time", n => { EndTime = n.GetDoubleValue(); } },
                 { "start_time", n => { StartTime = n.GetDoubleValue(); } },
-                { "text", n => { Text = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SegmentCreatePayload_text>(global::Soenneker.ElevenLabs.OpenApiClient.Models.SegmentCreatePayload_text.CreateFromDiscriminatorValue); } },
+                { "text", n => { Text = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Text>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Text.CreateFromDiscriminatorValue); } },
                 { "translations", n => { Translations = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SegmentCreatePayload_translations>(global::Soenneker.ElevenLabs.OpenApiClient.Models.SegmentCreatePayload_translations.CreateFromDiscriminatorValue); } },
             };
         }
@@ -74,7 +74,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDoubleValue("end_time", EndTime);
             writer.WriteDoubleValue("start_time", StartTime);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SegmentCreatePayload_text>("text", Text);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Text>("text", Text);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SegmentCreatePayload_translations>("translations", Translations);
             writer.WriteAdditionalData(AdditionalData);
         }

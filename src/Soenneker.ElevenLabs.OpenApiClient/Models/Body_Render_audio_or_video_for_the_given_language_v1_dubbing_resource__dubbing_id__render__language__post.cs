@@ -17,10 +17,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Whether to normalize the volume of the rendered audio.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Render_audio_or_video_for_the_given_language_v1_dubbing_resource__dubbing_id__render__language__post_normalize_volume? NormalizeVolume { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Normalize_Volume? NormalizeVolume { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Render_audio_or_video_for_the_given_language_v1_dubbing_resource__dubbing_id__render__language__post_normalize_volume NormalizeVolume { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Normalize_Volume NormalizeVolume { get; set; }
 #endif
         /// <summary>The render_type property</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.RenderType? RenderType { get; set; }
@@ -49,7 +49,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "normalize_volume", n => { NormalizeVolume = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Render_audio_or_video_for_the_given_language_v1_dubbing_resource__dubbing_id__render__language__post_normalize_volume>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Render_audio_or_video_for_the_given_language_v1_dubbing_resource__dubbing_id__render__language__post_normalize_volume.CreateFromDiscriminatorValue); } },
+                { "normalize_volume", n => { NormalizeVolume = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Normalize_Volume>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Normalize_Volume.CreateFromDiscriminatorValue); } },
                 { "render_type", n => { RenderType = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.RenderType>(); } },
             };
         }
@@ -60,7 +60,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Render_audio_or_video_for_the_given_language_v1_dubbing_resource__dubbing_id__render__language__post_normalize_volume>("normalize_volume", NormalizeVolume);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Normalize_Volume>("normalize_volume", NormalizeVolume);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.RenderType>("render_type", RenderType);
             writer.WriteAdditionalData(AdditionalData);
         }

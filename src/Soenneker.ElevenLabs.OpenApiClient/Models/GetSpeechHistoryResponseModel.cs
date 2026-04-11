@@ -27,18 +27,18 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The ID of the last history item.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetSpeechHistoryResponseModel_last_history_item_id? LastHistoryItemId { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Last_History_Item_Id? LastHistoryItemId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetSpeechHistoryResponseModel_last_history_item_id LastHistoryItemId { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Last_History_Item_Id LastHistoryItemId { get; set; }
 #endif
         /// <summary>The timestamp of the last history item.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetSpeechHistoryResponseModel_scanned_until? ScannedUntil { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Scanned_Until? ScannedUntil { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetSpeechHistoryResponseModel_scanned_until ScannedUntil { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Scanned_Until ScannedUntil { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.GetSpeechHistoryResponseModel"/> and sets the default values.
@@ -67,8 +67,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             {
                 { "has_more", n => { HasMore = n.GetBoolValue(); } },
                 { "history", n => { History = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechHistoryItemResponseModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechHistoryItemResponseModel.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "last_history_item_id", n => { LastHistoryItemId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetSpeechHistoryResponseModel_last_history_item_id>(global::Soenneker.ElevenLabs.OpenApiClient.Models.GetSpeechHistoryResponseModel_last_history_item_id.CreateFromDiscriminatorValue); } },
-                { "scanned_until", n => { ScannedUntil = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetSpeechHistoryResponseModel_scanned_until>(global::Soenneker.ElevenLabs.OpenApiClient.Models.GetSpeechHistoryResponseModel_scanned_until.CreateFromDiscriminatorValue); } },
+                { "last_history_item_id", n => { LastHistoryItemId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Last_History_Item_Id>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Last_History_Item_Id.CreateFromDiscriminatorValue); } },
+                { "scanned_until", n => { ScannedUntil = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Scanned_Until>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Scanned_Until.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -80,8 +80,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("has_more", HasMore);
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechHistoryItemResponseModel>("history", History);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetSpeechHistoryResponseModel_last_history_item_id>("last_history_item_id", LastHistoryItemId);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetSpeechHistoryResponseModel_scanned_until>("scanned_until", ScannedUntil);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Last_History_Item_Id>("last_history_item_id", LastHistoryItemId);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Scanned_Until>("scanned_until", ScannedUntil);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

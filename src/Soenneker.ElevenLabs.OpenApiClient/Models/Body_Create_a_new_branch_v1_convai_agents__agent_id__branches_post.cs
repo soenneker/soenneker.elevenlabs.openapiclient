@@ -57,10 +57,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Updated workflow definition</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Create_a_new_branch_v1_convai_agents__agent_id__branches_post_workflow? Workflow { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentWorkflowRequestModel? Workflow { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Create_a_new_branch_v1_convai_agents__agent_id__branches_post_workflow Workflow { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentWorkflowRequestModel Workflow { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Create_a_new_branch_v1_convai_agents__agent_id__branches_post"/> and sets the default values.
@@ -92,7 +92,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "parent_version_id", n => { ParentVersionId = n.GetStringValue(); } },
                 { "platform_settings", n => { PlatformSettings = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Create_a_new_branch_v1_convai_agents__agent_id__branches_post_platform_settings>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Create_a_new_branch_v1_convai_agents__agent_id__branches_post_platform_settings.CreateFromDiscriminatorValue); } },
-                { "workflow", n => { Workflow = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Create_a_new_branch_v1_convai_agents__agent_id__branches_post_workflow>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Create_a_new_branch_v1_convai_agents__agent_id__branches_post_workflow.CreateFromDiscriminatorValue); } },
+                { "workflow", n => { Workflow = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentWorkflowRequestModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentWorkflowRequestModel.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -107,7 +107,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("parent_version_id", ParentVersionId);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Create_a_new_branch_v1_convai_agents__agent_id__branches_post_platform_settings>("platform_settings", PlatformSettings);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Create_a_new_branch_v1_convai_agents__agent_id__branches_post_workflow>("workflow", Workflow);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentWorkflowRequestModel>("workflow", Workflow);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

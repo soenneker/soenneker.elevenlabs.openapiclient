@@ -26,10 +26,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The agent_name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.MessagesSearchResult_agent_name? AgentName { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Agent_Name? AgentName { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.MessagesSearchResult_agent_name AgentName { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Agent_Name AgentName { get; set; }
 #endif
         /// <summary>The chunk_text property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -79,7 +79,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "agent_id", n => { AgentId = n.GetStringValue(); } },
-                { "agent_name", n => { AgentName = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.MessagesSearchResult_agent_name>(global::Soenneker.ElevenLabs.OpenApiClient.Models.MessagesSearchResult_agent_name.CreateFromDiscriminatorValue); } },
+                { "agent_name", n => { AgentName = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Agent_Name>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Agent_Name.CreateFromDiscriminatorValue); } },
                 { "chunk_text", n => { ChunkText = n.GetStringValue(); } },
                 { "conversation_id", n => { ConversationId = n.GetStringValue(); } },
                 { "conversation_start_time_unix_secs", n => { ConversationStartTimeUnixSecs = n.GetIntValue(); } },
@@ -95,7 +95,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("agent_id", AgentId);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.MessagesSearchResult_agent_name>("agent_name", AgentName);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Agent_Name>("agent_name", AgentName);
             writer.WriteStringValue("chunk_text", ChunkText);
             writer.WriteStringValue("conversation_id", ConversationId);
             writer.WriteIntValue("conversation_start_time_unix_secs", ConversationStartTimeUnixSecs);

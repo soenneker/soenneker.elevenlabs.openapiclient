@@ -17,26 +17,26 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The page property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ListResponseMeta_page? Page { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Page? Page { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ListResponseMeta_page Page { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Page Page { get; set; }
 #endif
         /// <summary>The page_size property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ListResponseMeta_page_size? PageSize { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Page_Size? PageSize { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ListResponseMeta_page_size PageSize { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Page_Size PageSize { get; set; }
 #endif
         /// <summary>The total property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ListResponseMeta_total? Total { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Total? Total { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ListResponseMeta_total Total { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Total Total { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ListResponseMeta"/> and sets the default values.
@@ -63,9 +63,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "page", n => { Page = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ListResponseMeta_page>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ListResponseMeta_page.CreateFromDiscriminatorValue); } },
-                { "page_size", n => { PageSize = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ListResponseMeta_page_size>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ListResponseMeta_page_size.CreateFromDiscriminatorValue); } },
-                { "total", n => { Total = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ListResponseMeta_total>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ListResponseMeta_total.CreateFromDiscriminatorValue); } },
+                { "page", n => { Page = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Page>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Page.CreateFromDiscriminatorValue); } },
+                { "page_size", n => { PageSize = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Page_Size>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Page_Size.CreateFromDiscriminatorValue); } },
+                { "total", n => { Total = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Total>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Total.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -75,9 +75,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ListResponseMeta_page>("page", Page);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ListResponseMeta_page_size>("page_size", PageSize);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ListResponseMeta_total>("total", Total);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Page>("page", Page);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Page_Size>("page_size", PageSize);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Total>("total", Total);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

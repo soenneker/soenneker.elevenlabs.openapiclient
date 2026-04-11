@@ -27,10 +27,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The search_snippet property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeBaseContentSearchResult_search_snippet? SearchSnippet { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Search_Snippet? SearchSnippet { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeBaseContentSearchResult_search_snippet SearchSnippet { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Search_Snippet SearchSnippet { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeBaseContentSearchResult"/> and sets the default values.
@@ -59,7 +59,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             {
                 { "document", n => { Document = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeBaseContentSearchResult.KnowledgeBaseContentSearchResult_document>(global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeBaseContentSearchResult.KnowledgeBaseContentSearchResult_document.CreateFromDiscriminatorValue); } },
                 { "score", n => { Score = n.GetDoubleValue(); } },
-                { "search_snippet", n => { SearchSnippet = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeBaseContentSearchResult_search_snippet>(global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeBaseContentSearchResult_search_snippet.CreateFromDiscriminatorValue); } },
+                { "search_snippet", n => { SearchSnippet = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Search_Snippet>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Search_Snippet.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -71,7 +71,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeBaseContentSearchResult.KnowledgeBaseContentSearchResult_document>("document", Document);
             writer.WriteDoubleValue("score", Score);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeBaseContentSearchResult_search_snippet>("search_snippet", SearchSnippet);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Search_Snippet>("search_snippet", SearchSnippet);
             writer.WriteAdditionalData(AdditionalData);
         }
         /// <summary>

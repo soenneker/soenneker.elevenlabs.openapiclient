@@ -17,10 +17,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The camera_movement property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.VideoSegment_camera_movement? CameraMovement { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Camera_Movement? CameraMovement { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.VideoSegment_camera_movement CameraMovement { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Camera_Movement CameraMovement { get; set; }
 #endif
         /// <summary>The description property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -39,18 +39,18 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The pacing property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.VideoSegment_pacing? Pacing { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Pacing? Pacing { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.VideoSegment_pacing Pacing { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Pacing Pacing { get; set; }
 #endif
         /// <summary>The shot_type property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.VideoSegment_shot_type? ShotType { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Shot_Type? ShotType { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.VideoSegment_shot_type ShotType { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Shot_Type ShotType { get; set; }
 #endif
         /// <summary>The start_ms property</summary>
         public int? StartMs { get; set; }
@@ -65,10 +65,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The transition_in property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.VideoSegment_transition_in? TransitionIn { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Transition_In? TransitionIn { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.VideoSegment_transition_in TransitionIn { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Transition_In TransitionIn { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.VideoSegment"/> and sets the default values.
@@ -95,16 +95,16 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "camera_movement", n => { CameraMovement = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.VideoSegment_camera_movement>(global::Soenneker.ElevenLabs.OpenApiClient.Models.VideoSegment_camera_movement.CreateFromDiscriminatorValue); } },
+                { "camera_movement", n => { CameraMovement = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Camera_Movement>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Camera_Movement.CreateFromDiscriminatorValue); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "end_ms", n => { EndMs = n.GetIntValue(); } },
                 { "has_music", n => { HasMusic = n.GetBoolValue(); } },
                 { "has_speech", n => { HasSpeech = n.GetBoolValue(); } },
-                { "pacing", n => { Pacing = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.VideoSegment_pacing>(global::Soenneker.ElevenLabs.OpenApiClient.Models.VideoSegment_pacing.CreateFromDiscriminatorValue); } },
-                { "shot_type", n => { ShotType = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.VideoSegment_shot_type>(global::Soenneker.ElevenLabs.OpenApiClient.Models.VideoSegment_shot_type.CreateFromDiscriminatorValue); } },
+                { "pacing", n => { Pacing = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Pacing>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Pacing.CreateFromDiscriminatorValue); } },
+                { "shot_type", n => { ShotType = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Shot_Type>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Shot_Type.CreateFromDiscriminatorValue); } },
                 { "start_ms", n => { StartMs = n.GetIntValue(); } },
                 { "subjects", n => { Subjects = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "transition_in", n => { TransitionIn = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.VideoSegment_transition_in>(global::Soenneker.ElevenLabs.OpenApiClient.Models.VideoSegment_transition_in.CreateFromDiscriminatorValue); } },
+                { "transition_in", n => { TransitionIn = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Transition_In>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Transition_In.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -114,16 +114,16 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.VideoSegment_camera_movement>("camera_movement", CameraMovement);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Camera_Movement>("camera_movement", CameraMovement);
             writer.WriteStringValue("description", Description);
             writer.WriteIntValue("end_ms", EndMs);
             writer.WriteBoolValue("has_music", HasMusic);
             writer.WriteBoolValue("has_speech", HasSpeech);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.VideoSegment_pacing>("pacing", Pacing);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.VideoSegment_shot_type>("shot_type", ShotType);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Pacing>("pacing", Pacing);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Shot_Type>("shot_type", ShotType);
             writer.WriteIntValue("start_ms", StartMs);
             writer.WriteCollectionOfPrimitiveValues<string>("subjects", Subjects);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.VideoSegment_transition_in>("transition_in", TransitionIn);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Transition_In>("transition_in", TransitionIn);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

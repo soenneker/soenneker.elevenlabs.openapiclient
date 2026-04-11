@@ -33,10 +33,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Metadata of a conversation this test was created from (if applicable).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetSimulationTestResponseModel_from_conversation_metadata? FromConversationMetadata { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.TestFromConversationMetadata_Output? FromConversationMetadata { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetSimulationTestResponseModel_from_conversation_metadata FromConversationMetadata { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.TestFromConversationMetadata_Output FromConversationMetadata { get; set; }
 #endif
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -57,10 +57,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The environment to use when running this simulation test. If not provided, defaults to &apos;production&apos;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetSimulationTestResponseModel_simulation_environment? SimulationEnvironment { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Simulation_Environment? SimulationEnvironment { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetSimulationTestResponseModel_simulation_environment SimulationEnvironment { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Simulation_Environment SimulationEnvironment { get; set; }
 #endif
         /// <summary>Maximum number of conversation turns for simulation tests.</summary>
         public int? SimulationMaxTurns { get; set; }
@@ -118,10 +118,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             {
                 { "chat_history", n => { ChatHistory = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptCommonModel_Output>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptCommonModel_Output.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "dynamic_variables", n => { DynamicVariables = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetSimulationTestResponseModel_dynamic_variables>(global::Soenneker.ElevenLabs.OpenApiClient.Models.GetSimulationTestResponseModel_dynamic_variables.CreateFromDiscriminatorValue); } },
-                { "from_conversation_metadata", n => { FromConversationMetadata = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetSimulationTestResponseModel_from_conversation_metadata>(global::Soenneker.ElevenLabs.OpenApiClient.Models.GetSimulationTestResponseModel_from_conversation_metadata.CreateFromDiscriminatorValue); } },
+                { "from_conversation_metadata", n => { FromConversationMetadata = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TestFromConversationMetadata_Output>(global::Soenneker.ElevenLabs.OpenApiClient.Models.TestFromConversationMetadata_Output.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "simulation_environment", n => { SimulationEnvironment = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetSimulationTestResponseModel_simulation_environment>(global::Soenneker.ElevenLabs.OpenApiClient.Models.GetSimulationTestResponseModel_simulation_environment.CreateFromDiscriminatorValue); } },
+                { "simulation_environment", n => { SimulationEnvironment = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Simulation_Environment>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Simulation_Environment.CreateFromDiscriminatorValue); } },
                 { "simulation_max_turns", n => { SimulationMaxTurns = n.GetIntValue(); } },
                 { "simulation_scenario", n => { SimulationScenario = n.GetStringValue(); } },
                 { "success_condition", n => { SuccessCondition = n.GetStringValue(); } },
@@ -138,10 +138,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptCommonModel_Output>("chat_history", ChatHistory);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetSimulationTestResponseModel_dynamic_variables>("dynamic_variables", DynamicVariables);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetSimulationTestResponseModel_from_conversation_metadata>("from_conversation_metadata", FromConversationMetadata);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TestFromConversationMetadata_Output>("from_conversation_metadata", FromConversationMetadata);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("name", Name);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetSimulationTestResponseModel_simulation_environment>("simulation_environment", SimulationEnvironment);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Simulation_Environment>("simulation_environment", SimulationEnvironment);
             writer.WriteIntValue("simulation_max_turns", SimulationMaxTurns);
             writer.WriteStringValue("simulation_scenario", SimulationScenario);
             writer.WriteStringValue("success_condition", SuccessCondition);

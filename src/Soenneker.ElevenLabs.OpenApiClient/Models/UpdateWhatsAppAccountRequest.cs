@@ -17,26 +17,26 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The assigned_agent_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateWhatsAppAccountRequest_assigned_agent_id? AssignedAgentId { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Assigned_Agent_Id? AssignedAgentId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateWhatsAppAccountRequest_assigned_agent_id AssignedAgentId { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Assigned_Agent_Id AssignedAgentId { get; set; }
 #endif
         /// <summary>The enable_audio_message_response property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateWhatsAppAccountRequest_enable_audio_message_response? EnableAudioMessageResponse { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Enable_Audio_Message_Response? EnableAudioMessageResponse { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateWhatsAppAccountRequest_enable_audio_message_response EnableAudioMessageResponse { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Enable_Audio_Message_Response EnableAudioMessageResponse { get; set; }
 #endif
         /// <summary>The enable_messaging property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateWhatsAppAccountRequest_enable_messaging? EnableMessaging { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Enable_Messaging? EnableMessaging { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateWhatsAppAccountRequest_enable_messaging EnableMessaging { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Enable_Messaging EnableMessaging { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateWhatsAppAccountRequest"/> and sets the default values.
@@ -63,9 +63,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "assigned_agent_id", n => { AssignedAgentId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateWhatsAppAccountRequest_assigned_agent_id>(global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateWhatsAppAccountRequest_assigned_agent_id.CreateFromDiscriminatorValue); } },
-                { "enable_audio_message_response", n => { EnableAudioMessageResponse = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateWhatsAppAccountRequest_enable_audio_message_response>(global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateWhatsAppAccountRequest_enable_audio_message_response.CreateFromDiscriminatorValue); } },
-                { "enable_messaging", n => { EnableMessaging = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateWhatsAppAccountRequest_enable_messaging>(global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateWhatsAppAccountRequest_enable_messaging.CreateFromDiscriminatorValue); } },
+                { "assigned_agent_id", n => { AssignedAgentId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Assigned_Agent_Id>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Assigned_Agent_Id.CreateFromDiscriminatorValue); } },
+                { "enable_audio_message_response", n => { EnableAudioMessageResponse = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Enable_Audio_Message_Response>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Enable_Audio_Message_Response.CreateFromDiscriminatorValue); } },
+                { "enable_messaging", n => { EnableMessaging = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Enable_Messaging>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Enable_Messaging.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -75,9 +75,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateWhatsAppAccountRequest_assigned_agent_id>("assigned_agent_id", AssignedAgentId);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateWhatsAppAccountRequest_enable_audio_message_response>("enable_audio_message_response", EnableAudioMessageResponse);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateWhatsAppAccountRequest_enable_messaging>("enable_messaging", EnableMessaging);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Assigned_Agent_Id>("assigned_agent_id", AssignedAgentId);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Enable_Audio_Message_Response>("enable_audio_message_response", EnableAudioMessageResponse);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Enable_Messaging>("enable_messaging", EnableMessaging);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

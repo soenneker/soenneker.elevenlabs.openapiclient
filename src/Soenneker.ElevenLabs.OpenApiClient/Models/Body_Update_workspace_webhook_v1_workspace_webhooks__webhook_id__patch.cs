@@ -27,10 +27,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Whether to enable automatic retries for transient failures (5xx, 429, timeout)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Update_workspace_webhook_v1_workspace_webhooks__webhook_id__patch_retry_enabled? RetryEnabled { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Retry_Enabled? RetryEnabled { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Update_workspace_webhook_v1_workspace_webhooks__webhook_id__patch_retry_enabled RetryEnabled { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Retry_Enabled RetryEnabled { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Update_workspace_webhook_v1_workspace_webhooks__webhook_id__patch"/> and sets the default values.
@@ -59,7 +59,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             {
                 { "is_disabled", n => { IsDisabled = n.GetBoolValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "retry_enabled", n => { RetryEnabled = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Update_workspace_webhook_v1_workspace_webhooks__webhook_id__patch_retry_enabled>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Update_workspace_webhook_v1_workspace_webhooks__webhook_id__patch_retry_enabled.CreateFromDiscriminatorValue); } },
+                { "retry_enabled", n => { RetryEnabled = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Retry_Enabled>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Retry_Enabled.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -71,7 +71,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("is_disabled", IsDisabled);
             writer.WriteStringValue("name", Name);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Update_workspace_webhook_v1_workspace_webhooks__webhook_id__patch_retry_enabled>("retry_enabled", RetryEnabled);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Retry_Enabled>("retry_enabled", RetryEnabled);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

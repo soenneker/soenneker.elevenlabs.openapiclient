@@ -12,10 +12,6 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         #pragma warning disable CS1591
         Audio,
         #pragma warning restore CS1591
-        [EnumMember(Value = "dtmf")]
-        #pragma warning disable CS1591
-        Dtmf,
-        #pragma warning restore CS1591
         [EnumMember(Value = "text")]
         #pragma warning disable CS1591
         Text,

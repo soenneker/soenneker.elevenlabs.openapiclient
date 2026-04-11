@@ -33,10 +33,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>List of voice ids that the user has played but not selected. Used for RLHF.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Create_a_new_voice_from_voice_preview_v1_text_to_voice_post_played_not_selected_voice_ids? PlayedNotSelectedVoiceIds { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Played_Not_Selected_Voice_Ids? PlayedNotSelectedVoiceIds { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Create_a_new_voice_from_voice_preview_v1_text_to_voice_post_played_not_selected_voice_ids PlayedNotSelectedVoiceIds { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Played_Not_Selected_Voice_Ids PlayedNotSelectedVoiceIds { get; set; }
 #endif
         /// <summary>Description to use for the created voice.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -81,7 +81,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             {
                 { "generated_voice_id", n => { GeneratedVoiceId = n.GetStringValue(); } },
                 { "labels", n => { Labels = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Create_a_new_voice_from_voice_preview_v1_text_to_voice_post_labels>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Create_a_new_voice_from_voice_preview_v1_text_to_voice_post_labels.CreateFromDiscriminatorValue); } },
-                { "played_not_selected_voice_ids", n => { PlayedNotSelectedVoiceIds = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Create_a_new_voice_from_voice_preview_v1_text_to_voice_post_played_not_selected_voice_ids>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Create_a_new_voice_from_voice_preview_v1_text_to_voice_post_played_not_selected_voice_ids.CreateFromDiscriminatorValue); } },
+                { "played_not_selected_voice_ids", n => { PlayedNotSelectedVoiceIds = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Played_Not_Selected_Voice_Ids>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Played_Not_Selected_Voice_Ids.CreateFromDiscriminatorValue); } },
                 { "voice_description", n => { VoiceDescription = n.GetStringValue(); } },
                 { "voice_name", n => { VoiceName = n.GetStringValue(); } },
             };
@@ -95,7 +95,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("generated_voice_id", GeneratedVoiceId);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Create_a_new_voice_from_voice_preview_v1_text_to_voice_post_labels>("labels", Labels);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Create_a_new_voice_from_voice_preview_v1_text_to_voice_post_played_not_selected_voice_ids>("played_not_selected_voice_ids", PlayedNotSelectedVoiceIds);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Played_Not_Selected_Voice_Ids>("played_not_selected_voice_ids", PlayedNotSelectedVoiceIds);
             writer.WriteStringValue("voice_description", VoiceDescription);
             writer.WriteStringValue("voice_name", VoiceName);
             writer.WriteAdditionalData(AdditionalData);

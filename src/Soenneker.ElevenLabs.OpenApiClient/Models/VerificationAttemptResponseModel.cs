@@ -23,10 +23,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The recording of the verification attempt.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.VerificationAttemptResponseModel_recording? Recording { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.RecordingResponseModel? Recording { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.VerificationAttemptResponseModel_recording Recording { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.RecordingResponseModel Recording { get; set; }
 #endif
         /// <summary>The similarity of the verification attempt.</summary>
         public double? Similarity { get; set; }
@@ -66,7 +66,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "accepted", n => { Accepted = n.GetBoolValue(); } },
                 { "date_unix", n => { DateUnix = n.GetIntValue(); } },
                 { "levenshtein_distance", n => { LevenshteinDistance = n.GetDoubleValue(); } },
-                { "recording", n => { Recording = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.VerificationAttemptResponseModel_recording>(global::Soenneker.ElevenLabs.OpenApiClient.Models.VerificationAttemptResponseModel_recording.CreateFromDiscriminatorValue); } },
+                { "recording", n => { Recording = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.RecordingResponseModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.RecordingResponseModel.CreateFromDiscriminatorValue); } },
                 { "similarity", n => { Similarity = n.GetDoubleValue(); } },
                 { "text", n => { Text = n.GetStringValue(); } },
             };
@@ -81,7 +81,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteBoolValue("accepted", Accepted);
             writer.WriteIntValue("date_unix", DateUnix);
             writer.WriteDoubleValue("levenshtein_distance", LevenshteinDistance);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.VerificationAttemptResponseModel_recording>("recording", Recording);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.RecordingResponseModel>("recording", Recording);
             writer.WriteDoubleValue("similarity", Similarity);
             writer.WriteStringValue("text", Text);
             writer.WriteAdditionalData(AdditionalData);

@@ -20,10 +20,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The ca_certificate property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateMTLSAuthRequest_ca_certificate? CaCertificate { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Ca_Certificate? CaCertificate { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateMTLSAuthRequest_ca_certificate CaCertificate { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Ca_Certificate CaCertificate { get; set; }
 #endif
         /// <summary>The client_certificate property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -44,10 +44,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The key_passphrase property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateMTLSAuthRequest_key_passphrase? KeyPassphrase { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Key_Passphrase? KeyPassphrase { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateMTLSAuthRequest_key_passphrase KeyPassphrase { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Key_Passphrase KeyPassphrase { get; set; }
 #endif
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -92,10 +92,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "auth_type", n => { AuthType = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateMTLSAuthRequest_auth_type>(); } },
-                { "ca_certificate", n => { CaCertificate = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateMTLSAuthRequest_ca_certificate>(global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateMTLSAuthRequest_ca_certificate.CreateFromDiscriminatorValue); } },
+                { "ca_certificate", n => { CaCertificate = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Ca_Certificate>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Ca_Certificate.CreateFromDiscriminatorValue); } },
                 { "client_certificate", n => { ClientCertificate = n.GetStringValue(); } },
                 { "client_key", n => { ClientKey = n.GetStringValue(); } },
-                { "key_passphrase", n => { KeyPassphrase = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateMTLSAuthRequest_key_passphrase>(global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateMTLSAuthRequest_key_passphrase.CreateFromDiscriminatorValue); } },
+                { "key_passphrase", n => { KeyPassphrase = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Key_Passphrase>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Key_Passphrase.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "provider", n => { Provider = n.GetStringValue(); } },
             };
@@ -108,10 +108,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateMTLSAuthRequest_auth_type>("auth_type", AuthType);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateMTLSAuthRequest_ca_certificate>("ca_certificate", CaCertificate);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Ca_Certificate>("ca_certificate", CaCertificate);
             writer.WriteStringValue("client_certificate", ClientCertificate);
             writer.WriteStringValue("client_key", ClientKey);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateMTLSAuthRequest_key_passphrase>("key_passphrase", KeyPassphrase);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Key_Passphrase>("key_passphrase", KeyPassphrase);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("provider", Provider);
             writer.WriteAdditionalData(AdditionalData);

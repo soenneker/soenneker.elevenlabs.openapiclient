@@ -184,5 +184,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         #pragma warning disable CS1591
         Audit_log_read,
         #pragma warning restore CS1591
+        [EnumMember(Value = "copy_resources_cross_workspace")]
+        #pragma warning disable CS1591
+        Copy_resources_cross_workspace,
+        #pragma warning restore CS1591
     }
 }

@@ -25,20 +25,20 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Random number that controls the voice generation. Same seed with same inputs produces same voice.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.VoicePreviewsRequestModel_seed? Seed { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Seed? Seed { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.VoicePreviewsRequestModel_seed Seed { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Seed Seed { get; set; }
 #endif
         /// <summary>Whether to enhance the voice description using AI to add more detail and improve voice generation quality. When enabled, the system will automatically expand simple prompts into more detailed voice descriptions. Defaults to False</summary>
         public bool? ShouldEnhance { get; set; }
         /// <summary>Text to generate, text length has to be between 100 and 1000.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.VoicePreviewsRequestModel_text? Text { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Text? Text { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.VoicePreviewsRequestModel_text Text { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Text Text { get; set; }
 #endif
         /// <summary>Description to use for the created voice.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -77,9 +77,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "guidance_scale", n => { GuidanceScale = n.GetDoubleValue(); } },
                 { "loudness", n => { Loudness = n.GetDoubleValue(); } },
                 { "quality", n => { Quality = n.GetDoubleValue(); } },
-                { "seed", n => { Seed = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.VoicePreviewsRequestModel_seed>(global::Soenneker.ElevenLabs.OpenApiClient.Models.VoicePreviewsRequestModel_seed.CreateFromDiscriminatorValue); } },
+                { "seed", n => { Seed = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Seed>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Seed.CreateFromDiscriminatorValue); } },
                 { "should_enhance", n => { ShouldEnhance = n.GetBoolValue(); } },
-                { "text", n => { Text = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.VoicePreviewsRequestModel_text>(global::Soenneker.ElevenLabs.OpenApiClient.Models.VoicePreviewsRequestModel_text.CreateFromDiscriminatorValue); } },
+                { "text", n => { Text = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Text>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Text.CreateFromDiscriminatorValue); } },
                 { "voice_description", n => { VoiceDescription = n.GetStringValue(); } },
             };
         }
@@ -94,9 +94,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteDoubleValue("guidance_scale", GuidanceScale);
             writer.WriteDoubleValue("loudness", Loudness);
             writer.WriteDoubleValue("quality", Quality);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.VoicePreviewsRequestModel_seed>("seed", Seed);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Seed>("seed", Seed);
             writer.WriteBoolValue("should_enhance", ShouldEnhance);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.VoicePreviewsRequestModel_text>("text", Text);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Text>("text", Text);
             writer.WriteStringValue("voice_description", VoiceDescription);
             writer.WriteAdditionalData(AdditionalData);
         }

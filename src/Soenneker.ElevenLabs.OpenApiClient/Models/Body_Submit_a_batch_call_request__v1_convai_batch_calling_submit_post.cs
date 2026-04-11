@@ -25,18 +25,18 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The agent_phone_number_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Submit_a_batch_call_request__v1_convai_batch_calling_submit_post_agent_phone_number_id? AgentPhoneNumberId { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Agent_Phone_Number_Id? AgentPhoneNumberId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Submit_a_batch_call_request__v1_convai_batch_calling_submit_post_agent_phone_number_id AgentPhoneNumberId { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Agent_Phone_Number_Id AgentPhoneNumberId { get; set; }
 #endif
         /// <summary>The branch_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Submit_a_batch_call_request__v1_convai_batch_calling_submit_post_branch_id? BranchId { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Branch_Id? BranchId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Submit_a_batch_call_request__v1_convai_batch_calling_submit_post_branch_id BranchId { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Branch_Id BranchId { get; set; }
 #endif
         /// <summary>The call_name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -49,10 +49,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The environment property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Submit_a_batch_call_request__v1_convai_batch_calling_submit_post_environment? Environment { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.EnvironmentObject? Environment { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Submit_a_batch_call_request__v1_convai_batch_calling_submit_post_environment Environment { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.EnvironmentObject Environment { get; set; }
 #endif
         /// <summary>The recipients property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -65,18 +65,18 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The scheduled_time_unix property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Submit_a_batch_call_request__v1_convai_batch_calling_submit_post_scheduled_time_unix? ScheduledTimeUnix { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Scheduled_Time_Unix? ScheduledTimeUnix { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Submit_a_batch_call_request__v1_convai_batch_calling_submit_post_scheduled_time_unix ScheduledTimeUnix { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Scheduled_Time_Unix ScheduledTimeUnix { get; set; }
 #endif
         /// <summary>Maximum number of simultaneous calls for this batch. When set, dispatch is governed by this limit rather than workspace/agent capacity percentages.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Submit_a_batch_call_request__v1_convai_batch_calling_submit_post_target_concurrency_limit? TargetConcurrencyLimit { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Target_Concurrency_Limit? TargetConcurrencyLimit { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Submit_a_batch_call_request__v1_convai_batch_calling_submit_post_target_concurrency_limit TargetConcurrencyLimit { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Target_Concurrency_Limit TargetConcurrencyLimit { get; set; }
 #endif
         /// <summary>The telephony_call_config property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -89,18 +89,18 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The timezone property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Submit_a_batch_call_request__v1_convai_batch_calling_submit_post_timezone? Timezone { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.TimezoneObject? Timezone { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Submit_a_batch_call_request__v1_convai_batch_calling_submit_post_timezone Timezone { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.TimezoneObject Timezone { get; set; }
 #endif
         /// <summary>The whatsapp_params property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Submit_a_batch_call_request__v1_convai_batch_calling_submit_post_whatsapp_params? WhatsappParams { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BatchCallWhatsAppParams? WhatsappParams { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Submit_a_batch_call_request__v1_convai_batch_calling_submit_post_whatsapp_params WhatsappParams { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BatchCallWhatsAppParams WhatsappParams { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Submit_a_batch_call_request__v1_convai_batch_calling_submit_post"/> and sets the default values.
@@ -128,16 +128,16 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "agent_id", n => { AgentId = n.GetStringValue(); } },
-                { "agent_phone_number_id", n => { AgentPhoneNumberId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Submit_a_batch_call_request__v1_convai_batch_calling_submit_post_agent_phone_number_id>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Submit_a_batch_call_request__v1_convai_batch_calling_submit_post_agent_phone_number_id.CreateFromDiscriminatorValue); } },
-                { "branch_id", n => { BranchId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Submit_a_batch_call_request__v1_convai_batch_calling_submit_post_branch_id>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Submit_a_batch_call_request__v1_convai_batch_calling_submit_post_branch_id.CreateFromDiscriminatorValue); } },
+                { "agent_phone_number_id", n => { AgentPhoneNumberId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Agent_Phone_Number_Id>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Agent_Phone_Number_Id.CreateFromDiscriminatorValue); } },
+                { "branch_id", n => { BranchId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Branch_Id>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Branch_Id.CreateFromDiscriminatorValue); } },
                 { "call_name", n => { CallName = n.GetStringValue(); } },
-                { "environment", n => { Environment = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Submit_a_batch_call_request__v1_convai_batch_calling_submit_post_environment>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Submit_a_batch_call_request__v1_convai_batch_calling_submit_post_environment.CreateFromDiscriminatorValue); } },
+                { "environment", n => { Environment = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.EnvironmentObject>(global::Soenneker.ElevenLabs.OpenApiClient.Models.EnvironmentObject.CreateFromDiscriminatorValue); } },
                 { "recipients", n => { Recipients = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.OutboundCallRecipient>(global::Soenneker.ElevenLabs.OpenApiClient.Models.OutboundCallRecipient.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "scheduled_time_unix", n => { ScheduledTimeUnix = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Submit_a_batch_call_request__v1_convai_batch_calling_submit_post_scheduled_time_unix>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Submit_a_batch_call_request__v1_convai_batch_calling_submit_post_scheduled_time_unix.CreateFromDiscriminatorValue); } },
-                { "target_concurrency_limit", n => { TargetConcurrencyLimit = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Submit_a_batch_call_request__v1_convai_batch_calling_submit_post_target_concurrency_limit>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Submit_a_batch_call_request__v1_convai_batch_calling_submit_post_target_concurrency_limit.CreateFromDiscriminatorValue); } },
+                { "scheduled_time_unix", n => { ScheduledTimeUnix = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Scheduled_Time_Unix>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Scheduled_Time_Unix.CreateFromDiscriminatorValue); } },
+                { "target_concurrency_limit", n => { TargetConcurrencyLimit = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Target_Concurrency_Limit>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Target_Concurrency_Limit.CreateFromDiscriminatorValue); } },
                 { "telephony_call_config", n => { TelephonyCallConfig = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TelephonyCallConfig>(global::Soenneker.ElevenLabs.OpenApiClient.Models.TelephonyCallConfig.CreateFromDiscriminatorValue); } },
-                { "timezone", n => { Timezone = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Submit_a_batch_call_request__v1_convai_batch_calling_submit_post_timezone>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Submit_a_batch_call_request__v1_convai_batch_calling_submit_post_timezone.CreateFromDiscriminatorValue); } },
-                { "whatsapp_params", n => { WhatsappParams = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Submit_a_batch_call_request__v1_convai_batch_calling_submit_post_whatsapp_params>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Submit_a_batch_call_request__v1_convai_batch_calling_submit_post_whatsapp_params.CreateFromDiscriminatorValue); } },
+                { "timezone", n => { Timezone = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TimezoneObject>(global::Soenneker.ElevenLabs.OpenApiClient.Models.TimezoneObject.CreateFromDiscriminatorValue); } },
+                { "whatsapp_params", n => { WhatsappParams = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BatchCallWhatsAppParams>(global::Soenneker.ElevenLabs.OpenApiClient.Models.BatchCallWhatsAppParams.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -148,16 +148,16 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("agent_id", AgentId);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Submit_a_batch_call_request__v1_convai_batch_calling_submit_post_agent_phone_number_id>("agent_phone_number_id", AgentPhoneNumberId);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Submit_a_batch_call_request__v1_convai_batch_calling_submit_post_branch_id>("branch_id", BranchId);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Agent_Phone_Number_Id>("agent_phone_number_id", AgentPhoneNumberId);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Branch_Id>("branch_id", BranchId);
             writer.WriteStringValue("call_name", CallName);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Submit_a_batch_call_request__v1_convai_batch_calling_submit_post_environment>("environment", Environment);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.EnvironmentObject>("environment", Environment);
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.OutboundCallRecipient>("recipients", Recipients);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Submit_a_batch_call_request__v1_convai_batch_calling_submit_post_scheduled_time_unix>("scheduled_time_unix", ScheduledTimeUnix);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Submit_a_batch_call_request__v1_convai_batch_calling_submit_post_target_concurrency_limit>("target_concurrency_limit", TargetConcurrencyLimit);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Scheduled_Time_Unix>("scheduled_time_unix", ScheduledTimeUnix);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Target_Concurrency_Limit>("target_concurrency_limit", TargetConcurrencyLimit);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TelephonyCallConfig>("telephony_call_config", TelephonyCallConfig);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Submit_a_batch_call_request__v1_convai_batch_calling_submit_post_timezone>("timezone", Timezone);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Submit_a_batch_call_request__v1_convai_batch_calling_submit_post_whatsapp_params>("whatsapp_params", WhatsappParams);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TimezoneObject>("timezone", Timezone);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BatchCallWhatsAppParams>("whatsapp_params", WhatsappParams);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

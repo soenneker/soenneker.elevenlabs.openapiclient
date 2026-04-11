@@ -15,10 +15,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The accepted_time_unix_secs property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryMetadataCommonModel_accepted_time_unix_secs? AcceptedTimeUnixSecs { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Accepted_Time_Unix_Secs? AcceptedTimeUnixSecs { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryMetadataCommonModel_accepted_time_unix_secs AcceptedTimeUnixSecs { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Accepted_Time_Unix_Secs AcceptedTimeUnixSecs { get; set; }
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -29,20 +29,20 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The async_metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryMetadataCommonModel_async_metadata? AsyncMetadata { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AsyncConversationMetadata? AsyncMetadata { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryMetadataCommonModel_async_metadata AsyncMetadata { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AsyncConversationMetadata AsyncMetadata { get; set; }
 #endif
         /// <summary>The authorization_method property</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.AuthorizationMethod? AuthorizationMethod { get; set; }
         /// <summary>The batch_call property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryMetadataCommonModel_batch_call? BatchCall { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryBatchCallModel? BatchCall { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryMetadataCommonModel_batch_call BatchCall { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryBatchCallModel BatchCall { get; set; }
 #endif
         /// <summary>The call_duration_secs property</summary>
         public int? CallDurationSecs { get; set; }
@@ -59,18 +59,18 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The conversation_initiation_source_version property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryMetadataCommonModel_conversation_initiation_source_version? ConversationInitiationSourceVersion { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Conversation_Initiation_Source_Version? ConversationInitiationSourceVersion { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryMetadataCommonModel_conversation_initiation_source_version ConversationInitiationSourceVersion { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Conversation_Initiation_Source_Version ConversationInitiationSourceVersion { get; set; }
 #endif
         /// <summary>The cost property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryMetadataCommonModel_cost? Cost { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Cost? Cost { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryMetadataCommonModel_cost Cost { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Cost Cost { get; set; }
 #endif
         /// <summary>The deletion_settings property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -91,10 +91,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The error property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryMetadataCommonModel_error? Error { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryErrorCommonModel? Error { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryMetadataCommonModel_error Error { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryErrorCommonModel Error { get; set; }
 #endif
         /// <summary>The features_usage property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -115,18 +115,18 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The initiator_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryMetadataCommonModel_initiator_id? InitiatorId { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Initiator_Id? InitiatorId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryMetadataCommonModel_initiator_id InitiatorId { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Initiator_Id InitiatorId { get; set; }
 #endif
         /// <summary>The main_language property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryMetadataCommonModel_main_language? MainLanguage { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Main_Language? MainLanguage { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryMetadataCommonModel_main_language MainLanguage { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Main_Language MainLanguage { get; set; }
 #endif
         /// <summary>The phone_call property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -139,10 +139,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The rag_usage property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryMetadataCommonModel_rag_usage? RagUsage { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryRagUsageCommonModel? RagUsage { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryMetadataCommonModel_rag_usage RagUsage { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryRagUsageCommonModel RagUsage { get; set; }
 #endif
         /// <summary>The start_time_unix_secs property</summary>
         public int? StartTimeUnixSecs { get; set; }
@@ -159,10 +159,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The timezone property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryMetadataCommonModel_timezone? Timezone { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.TimezoneObject? Timezone { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryMetadataCommonModel_timezone Timezone { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.TimezoneObject Timezone { get; set; }
 #endif
         /// <summary>The warnings property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -175,10 +175,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The whatsapp property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryMetadataCommonModel_whatsapp? Whatsapp { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppConversationInfo? Whatsapp { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryMetadataCommonModel_whatsapp Whatsapp { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppConversationInfo Whatsapp { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryMetadataCommonModel"/> and sets the default values.
@@ -209,32 +209,32 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "accepted_time_unix_secs", n => { AcceptedTimeUnixSecs = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryMetadataCommonModel_accepted_time_unix_secs>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryMetadataCommonModel_accepted_time_unix_secs.CreateFromDiscriminatorValue); } },
+                { "accepted_time_unix_secs", n => { AcceptedTimeUnixSecs = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Accepted_Time_Unix_Secs>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Accepted_Time_Unix_Secs.CreateFromDiscriminatorValue); } },
                 { "agent_created_from", n => { AgentCreatedFrom = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentDefinitionSource>(); } },
                 { "agent_last_updated_from", n => { AgentLastUpdatedFrom = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentDefinitionSource>(); } },
-                { "async_metadata", n => { AsyncMetadata = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryMetadataCommonModel_async_metadata>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryMetadataCommonModel_async_metadata.CreateFromDiscriminatorValue); } },
+                { "async_metadata", n => { AsyncMetadata = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AsyncConversationMetadata>(global::Soenneker.ElevenLabs.OpenApiClient.Models.AsyncConversationMetadata.CreateFromDiscriminatorValue); } },
                 { "authorization_method", n => { AuthorizationMethod = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AuthorizationMethod>(); } },
-                { "batch_call", n => { BatchCall = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryMetadataCommonModel_batch_call>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryMetadataCommonModel_batch_call.CreateFromDiscriminatorValue); } },
+                { "batch_call", n => { BatchCall = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryBatchCallModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryBatchCallModel.CreateFromDiscriminatorValue); } },
                 { "call_duration_secs", n => { CallDurationSecs = n.GetIntValue(); } },
                 { "charging", n => { Charging = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationChargingCommonModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationChargingCommonModel.CreateFromDiscriminatorValue); } },
                 { "conversation_initiation_source", n => { ConversationInitiationSource = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationSource>(); } },
-                { "conversation_initiation_source_version", n => { ConversationInitiationSourceVersion = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryMetadataCommonModel_conversation_initiation_source_version>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryMetadataCommonModel_conversation_initiation_source_version.CreateFromDiscriminatorValue); } },
-                { "cost", n => { Cost = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryMetadataCommonModel_cost>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryMetadataCommonModel_cost.CreateFromDiscriminatorValue); } },
+                { "conversation_initiation_source_version", n => { ConversationInitiationSourceVersion = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Conversation_Initiation_Source_Version>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Conversation_Initiation_Source_Version.CreateFromDiscriminatorValue); } },
+                { "cost", n => { Cost = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Cost>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Cost.CreateFromDiscriminatorValue); } },
                 { "deletion_settings", n => { DeletionSettings = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationDeletionSettings>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationDeletionSettings.CreateFromDiscriminatorValue); } },
                 { "eleven_assistant", n => { ElevenAssistant = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryElevenAssistantCommonModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryElevenAssistantCommonModel.CreateFromDiscriminatorValue); } },
-                { "error", n => { Error = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryMetadataCommonModel_error>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryMetadataCommonModel_error.CreateFromDiscriminatorValue); } },
+                { "error", n => { Error = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryErrorCommonModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryErrorCommonModel.CreateFromDiscriminatorValue); } },
                 { "features_usage", n => { FeaturesUsage = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.FeaturesUsageCommonModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.FeaturesUsageCommonModel.CreateFromDiscriminatorValue); } },
                 { "feedback", n => { Feedback = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryFeedbackCommonModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryFeedbackCommonModel.CreateFromDiscriminatorValue); } },
-                { "initiator_id", n => { InitiatorId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryMetadataCommonModel_initiator_id>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryMetadataCommonModel_initiator_id.CreateFromDiscriminatorValue); } },
-                { "main_language", n => { MainLanguage = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryMetadataCommonModel_main_language>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryMetadataCommonModel_main_language.CreateFromDiscriminatorValue); } },
+                { "initiator_id", n => { InitiatorId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Initiator_Id>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Initiator_Id.CreateFromDiscriminatorValue); } },
+                { "main_language", n => { MainLanguage = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Main_Language>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Main_Language.CreateFromDiscriminatorValue); } },
                 { "phone_call", n => { PhoneCall = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryMetadataCommonModel_phone_call>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryMetadataCommonModel_phone_call.CreateFromDiscriminatorValue); } },
-                { "rag_usage", n => { RagUsage = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryMetadataCommonModel_rag_usage>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryMetadataCommonModel_rag_usage.CreateFromDiscriminatorValue); } },
+                { "rag_usage", n => { RagUsage = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryRagUsageCommonModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryRagUsageCommonModel.CreateFromDiscriminatorValue); } },
                 { "start_time_unix_secs", n => { StartTimeUnixSecs = n.GetIntValue(); } },
                 { "termination_reason", n => { TerminationReason = n.GetStringValue(); } },
                 { "text_only", n => { TextOnly = n.GetBoolValue(); } },
-                { "timezone", n => { Timezone = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryMetadataCommonModel_timezone>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryMetadataCommonModel_timezone.CreateFromDiscriminatorValue); } },
+                { "timezone", n => { Timezone = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TimezoneObject>(global::Soenneker.ElevenLabs.OpenApiClient.Models.TimezoneObject.CreateFromDiscriminatorValue); } },
                 { "warnings", n => { Warnings = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "whatsapp", n => { Whatsapp = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryMetadataCommonModel_whatsapp>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryMetadataCommonModel_whatsapp.CreateFromDiscriminatorValue); } },
+                { "whatsapp", n => { Whatsapp = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppConversationInfo>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppConversationInfo.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -244,32 +244,32 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryMetadataCommonModel_accepted_time_unix_secs>("accepted_time_unix_secs", AcceptedTimeUnixSecs);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Accepted_Time_Unix_Secs>("accepted_time_unix_secs", AcceptedTimeUnixSecs);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentDefinitionSource>("agent_created_from", AgentCreatedFrom);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentDefinitionSource>("agent_last_updated_from", AgentLastUpdatedFrom);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryMetadataCommonModel_async_metadata>("async_metadata", AsyncMetadata);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AsyncConversationMetadata>("async_metadata", AsyncMetadata);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AuthorizationMethod>("authorization_method", AuthorizationMethod);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryMetadataCommonModel_batch_call>("batch_call", BatchCall);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryBatchCallModel>("batch_call", BatchCall);
             writer.WriteIntValue("call_duration_secs", CallDurationSecs);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationChargingCommonModel>("charging", Charging);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationSource>("conversation_initiation_source", ConversationInitiationSource);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryMetadataCommonModel_conversation_initiation_source_version>("conversation_initiation_source_version", ConversationInitiationSourceVersion);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryMetadataCommonModel_cost>("cost", Cost);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Conversation_Initiation_Source_Version>("conversation_initiation_source_version", ConversationInitiationSourceVersion);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Cost>("cost", Cost);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationDeletionSettings>("deletion_settings", DeletionSettings);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryElevenAssistantCommonModel>("eleven_assistant", ElevenAssistant);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryMetadataCommonModel_error>("error", Error);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryErrorCommonModel>("error", Error);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.FeaturesUsageCommonModel>("features_usage", FeaturesUsage);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryFeedbackCommonModel>("feedback", Feedback);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryMetadataCommonModel_initiator_id>("initiator_id", InitiatorId);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryMetadataCommonModel_main_language>("main_language", MainLanguage);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Initiator_Id>("initiator_id", InitiatorId);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Main_Language>("main_language", MainLanguage);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryMetadataCommonModel_phone_call>("phone_call", PhoneCall);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryMetadataCommonModel_rag_usage>("rag_usage", RagUsage);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryRagUsageCommonModel>("rag_usage", RagUsage);
             writer.WriteIntValue("start_time_unix_secs", StartTimeUnixSecs);
             writer.WriteStringValue("termination_reason", TerminationReason);
             writer.WriteBoolValue("text_only", TextOnly);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryMetadataCommonModel_timezone>("timezone", Timezone);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TimezoneObject>("timezone", Timezone);
             writer.WriteCollectionOfPrimitiveValues<string>("warnings", Warnings);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryMetadataCommonModel_whatsapp>("whatsapp", Whatsapp);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppConversationInfo>("whatsapp", Whatsapp);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

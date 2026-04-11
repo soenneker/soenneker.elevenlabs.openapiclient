@@ -25,10 +25,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The conversation_initiation_client_data property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Send_an_outbound_message_via_WhatsApp_v1_convai_whatsapp_outbound_message_post_conversation_initiation_client_data? ConversationInitiationClientData { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationClientDataRequest_Input? ConversationInitiationClientData { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Send_an_outbound_message_via_WhatsApp_v1_convai_whatsapp_outbound_message_post_conversation_initiation_client_data ConversationInitiationClientData { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationClientDataRequest_Input ConversationInitiationClientData { get; set; }
 #endif
         /// <summary>The template_language_code property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -96,7 +96,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "agent_id", n => { AgentId = n.GetStringValue(); } },
-                { "conversation_initiation_client_data", n => { ConversationInitiationClientData = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Send_an_outbound_message_via_WhatsApp_v1_convai_whatsapp_outbound_message_post_conversation_initiation_client_data>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Send_an_outbound_message_via_WhatsApp_v1_convai_whatsapp_outbound_message_post_conversation_initiation_client_data.CreateFromDiscriminatorValue); } },
+                { "conversation_initiation_client_data", n => { ConversationInitiationClientData = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationClientDataRequest_Input>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationClientDataRequest_Input.CreateFromDiscriminatorValue); } },
                 { "template_language_code", n => { TemplateLanguageCode = n.GetStringValue(); } },
                 { "template_name", n => { TemplateName = n.GetStringValue(); } },
                 { "template_params", n => { TemplateParams = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Send_an_outbound_message_via_WhatsApp_v1_convai_whatsapp_outbound_message_post.Body_Send_an_outbound_message_via_WhatsApp_v1_convai_whatsapp_outbound_message_post_template_params>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Send_an_outbound_message_via_WhatsApp_v1_convai_whatsapp_outbound_message_post.Body_Send_an_outbound_message_via_WhatsApp_v1_convai_whatsapp_outbound_message_post_template_params.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -112,7 +112,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("agent_id", AgentId);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Send_an_outbound_message_via_WhatsApp_v1_convai_whatsapp_outbound_message_post_conversation_initiation_client_data>("conversation_initiation_client_data", ConversationInitiationClientData);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationClientDataRequest_Input>("conversation_initiation_client_data", ConversationInitiationClientData);
             writer.WriteStringValue("template_language_code", TemplateLanguageCode);
             writer.WriteStringValue("template_name", TemplateName);
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Send_an_outbound_message_via_WhatsApp_v1_convai_whatsapp_outbound_message_post.Body_Send_an_outbound_message_via_WhatsApp_v1_convai_whatsapp_outbound_message_post_template_params>("template_params", TemplateParams);

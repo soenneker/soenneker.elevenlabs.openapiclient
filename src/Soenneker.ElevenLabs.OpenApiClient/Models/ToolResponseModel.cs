@@ -33,10 +33,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Mock responses with optional parameter conditions. Evaluated top-to-bottom; first match wins.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolResponseModel_response_mocks? ResponseMocks { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Response_Mocks? ResponseMocks { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolResponseModel_response_mocks ResponseMocks { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Response_Mocks ResponseMocks { get; set; }
 #endif
         /// <summary>The type of tool</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -81,7 +81,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             {
                 { "access_info", n => { AccessInfo = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceAccessInfo>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceAccessInfo.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "response_mocks", n => { ResponseMocks = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolResponseModel_response_mocks>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolResponseModel_response_mocks.CreateFromDiscriminatorValue); } },
+                { "response_mocks", n => { ResponseMocks = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Response_Mocks>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Response_Mocks.CreateFromDiscriminatorValue); } },
                 { "tool_config", n => { ToolConfig = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolResponseModel.ToolResponseModel_tool_config>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolResponseModel.ToolResponseModel_tool_config.CreateFromDiscriminatorValue); } },
                 { "usage_stats", n => { UsageStats = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolUsageStatsResponseModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolUsageStatsResponseModel.CreateFromDiscriminatorValue); } },
             };
@@ -95,7 +95,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceAccessInfo>("access_info", AccessInfo);
             writer.WriteStringValue("id", Id);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolResponseModel_response_mocks>("response_mocks", ResponseMocks);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Response_Mocks>("response_mocks", ResponseMocks);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolResponseModel.ToolResponseModel_tool_config>("tool_config", ToolConfig);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolUsageStatsResponseModel>("usage_stats", UsageStats);
             writer.WriteAdditionalData(AdditionalData);

@@ -17,10 +17,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The conversation_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SIPTrunkOutboundCallResponse_conversation_id? ConversationId { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Conversation_Id? ConversationId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SIPTrunkOutboundCallResponse_conversation_id ConversationId { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Conversation_Id ConversationId { get; set; }
 #endif
         /// <summary>The message property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -33,10 +33,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The sip_call_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SIPTrunkOutboundCallResponse_sip_call_id? SipCallId { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Sip_Call_Id? SipCallId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SIPTrunkOutboundCallResponse_sip_call_id SipCallId { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Sip_Call_Id SipCallId { get; set; }
 #endif
         /// <summary>The success property</summary>
         public bool? Success { get; set; }
@@ -65,9 +65,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "conversation_id", n => { ConversationId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SIPTrunkOutboundCallResponse_conversation_id>(global::Soenneker.ElevenLabs.OpenApiClient.Models.SIPTrunkOutboundCallResponse_conversation_id.CreateFromDiscriminatorValue); } },
+                { "conversation_id", n => { ConversationId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Conversation_Id>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Conversation_Id.CreateFromDiscriminatorValue); } },
                 { "message", n => { Message = n.GetStringValue(); } },
-                { "sip_call_id", n => { SipCallId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SIPTrunkOutboundCallResponse_sip_call_id>(global::Soenneker.ElevenLabs.OpenApiClient.Models.SIPTrunkOutboundCallResponse_sip_call_id.CreateFromDiscriminatorValue); } },
+                { "sip_call_id", n => { SipCallId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Sip_Call_Id>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Sip_Call_Id.CreateFromDiscriminatorValue); } },
                 { "success", n => { Success = n.GetBoolValue(); } },
             };
         }
@@ -78,9 +78,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SIPTrunkOutboundCallResponse_conversation_id>("conversation_id", ConversationId);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Conversation_Id>("conversation_id", ConversationId);
             writer.WriteStringValue("message", Message);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SIPTrunkOutboundCallResponse_sip_call_id>("sip_call_id", SipCallId);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Sip_Call_Id>("sip_call_id", SipCallId);
             writer.WriteBoolValue("success", Success);
             writer.WriteAdditionalData(AdditionalData);
         }

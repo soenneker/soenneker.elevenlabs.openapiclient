@@ -41,10 +41,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Tags to help classify and filter the agent</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Create_agent_draft_v1_convai_agents__agent_id__drafts_post_tags? Tags { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Tags? Tags { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Create_agent_draft_v1_convai_agents__agent_id__drafts_post_tags Tags { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Tags Tags { get; set; }
 #endif
         /// <summary>The workflow property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -82,7 +82,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "conversation_config", n => { ConversationConfig = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Create_agent_draft_v1_convai_agents__agent_id__drafts_post_conversation_config>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Create_agent_draft_v1_convai_agents__agent_id__drafts_post_conversation_config.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "platform_settings", n => { PlatformSettings = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Create_agent_draft_v1_convai_agents__agent_id__drafts_post_platform_settings>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Create_agent_draft_v1_convai_agents__agent_id__drafts_post_platform_settings.CreateFromDiscriminatorValue); } },
-                { "tags", n => { Tags = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Create_agent_draft_v1_convai_agents__agent_id__drafts_post_tags>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Create_agent_draft_v1_convai_agents__agent_id__drafts_post_tags.CreateFromDiscriminatorValue); } },
+                { "tags", n => { Tags = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Tags>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Tags.CreateFromDiscriminatorValue); } },
                 { "workflow", n => { Workflow = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentWorkflowRequestModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentWorkflowRequestModel.CreateFromDiscriminatorValue); } },
             };
         }
@@ -96,7 +96,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Create_agent_draft_v1_convai_agents__agent_id__drafts_post_conversation_config>("conversation_config", ConversationConfig);
             writer.WriteStringValue("name", Name);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Create_agent_draft_v1_convai_agents__agent_id__drafts_post_platform_settings>("platform_settings", PlatformSettings);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Create_agent_draft_v1_convai_agents__agent_id__drafts_post_tags>("tags", Tags);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Tags>("tags", Tags);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentWorkflowRequestModel>("workflow", Workflow);
             writer.WriteAdditionalData(AdditionalData);
         }

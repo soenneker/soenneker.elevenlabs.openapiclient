@@ -17,10 +17,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Either &apos;like&apos; or &apos;dislike&apos; to indicate the feedback for the conversation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationFeedbackRequestModel_feedback? Feedback { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.UserFeedbackScore_Wrapper? Feedback { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationFeedbackRequestModel_feedback Feedback { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.UserFeedbackScore_Wrapper Feedback { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationFeedbackRequestModel"/> and sets the default values.
@@ -47,7 +47,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "feedback", n => { Feedback = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationFeedbackRequestModel_feedback>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationFeedbackRequestModel_feedback.CreateFromDiscriminatorValue); } },
+                { "feedback", n => { Feedback = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UserFeedbackScore_Wrapper>(global::Soenneker.ElevenLabs.OpenApiClient.Models.UserFeedbackScore_Wrapper.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -57,7 +57,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationFeedbackRequestModel_feedback>("feedback", Feedback);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UserFeedbackScore_Wrapper>("feedback", Feedback);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

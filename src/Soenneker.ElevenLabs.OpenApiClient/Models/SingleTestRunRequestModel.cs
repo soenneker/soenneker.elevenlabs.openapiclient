@@ -17,18 +17,18 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>ID of the root folder to run the test on. If not provided, the test will be run on the agent&apos;s default folder.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SingleTestRunRequestModel_root_folder_id? RootFolderId { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Root_Folder_Id? RootFolderId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SingleTestRunRequestModel_root_folder_id RootFolderId { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Root_Folder_Id RootFolderId { get; set; }
 #endif
         /// <summary>Name of the root folder to run the test on. If not provided, the test will be run on the agent&apos;s default folder.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SingleTestRunRequestModel_root_folder_name? RootFolderName { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Root_Folder_Name? RootFolderName { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SingleTestRunRequestModel_root_folder_name RootFolderName { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Root_Folder_Name RootFolderName { get; set; }
 #endif
         /// <summary>ID of the test to run</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -41,10 +41,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>ID of the workflow node to run the test on. If not provided, the test will be run on the agent&apos;s default workflow node.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SingleTestRunRequestModel_workflow_node_id? WorkflowNodeId { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Workflow_Node_Id? WorkflowNodeId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SingleTestRunRequestModel_workflow_node_id WorkflowNodeId { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Workflow_Node_Id WorkflowNodeId { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.SingleTestRunRequestModel"/> and sets the default values.
@@ -71,10 +71,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "root_folder_id", n => { RootFolderId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SingleTestRunRequestModel_root_folder_id>(global::Soenneker.ElevenLabs.OpenApiClient.Models.SingleTestRunRequestModel_root_folder_id.CreateFromDiscriminatorValue); } },
-                { "root_folder_name", n => { RootFolderName = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SingleTestRunRequestModel_root_folder_name>(global::Soenneker.ElevenLabs.OpenApiClient.Models.SingleTestRunRequestModel_root_folder_name.CreateFromDiscriminatorValue); } },
+                { "root_folder_id", n => { RootFolderId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Root_Folder_Id>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Root_Folder_Id.CreateFromDiscriminatorValue); } },
+                { "root_folder_name", n => { RootFolderName = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Root_Folder_Name>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Root_Folder_Name.CreateFromDiscriminatorValue); } },
                 { "test_id", n => { TestId = n.GetStringValue(); } },
-                { "workflow_node_id", n => { WorkflowNodeId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SingleTestRunRequestModel_workflow_node_id>(global::Soenneker.ElevenLabs.OpenApiClient.Models.SingleTestRunRequestModel_workflow_node_id.CreateFromDiscriminatorValue); } },
+                { "workflow_node_id", n => { WorkflowNodeId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Workflow_Node_Id>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Workflow_Node_Id.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -84,10 +84,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SingleTestRunRequestModel_root_folder_id>("root_folder_id", RootFolderId);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SingleTestRunRequestModel_root_folder_name>("root_folder_name", RootFolderName);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Root_Folder_Id>("root_folder_id", RootFolderId);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Root_Folder_Name>("root_folder_name", RootFolderName);
             writer.WriteStringValue("test_id", TestId);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SingleTestRunRequestModel_workflow_node_id>("workflow_node_id", WorkflowNodeId);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Workflow_Node_Id>("workflow_node_id", WorkflowNodeId);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -56,10 +56,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Key ID (kid) for JWT header - useful for key rotation</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.OAuth2JWTResponse_key_id? KeyId { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Key_Id? KeyId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.OAuth2JWTResponse_key_id KeyId { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Key_Id KeyId { get; set; }
 #endif
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -104,10 +104,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The used_by property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.OAuth2JWTResponse_used_by? UsedBy { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AuthConnectionDependencies? UsedBy { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.OAuth2JWTResponse_used_by UsedBy { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AuthConnectionDependencies UsedBy { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.OAuth2JWTResponse"/> and sets the default values.
@@ -143,13 +143,13 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "extra_params", n => { ExtraParams = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.OAuth2JWTResponse_extra_params>(global::Soenneker.ElevenLabs.OpenApiClient.Models.OAuth2JWTResponse_extra_params.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "issuer", n => { Issuer = n.GetStringValue(); } },
-                { "key_id", n => { KeyId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.OAuth2JWTResponse_key_id>(global::Soenneker.ElevenLabs.OpenApiClient.Models.OAuth2JWTResponse_key_id.CreateFromDiscriminatorValue); } },
+                { "key_id", n => { KeyId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Key_Id>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Key_Id.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "provider", n => { Provider = n.GetStringValue(); } },
                 { "scopes", n => { Scopes = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "subject", n => { Subject = n.GetStringValue(); } },
                 { "token_url", n => { TokenUrl = n.GetStringValue(); } },
-                { "used_by", n => { UsedBy = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.OAuth2JWTResponse_used_by>(global::Soenneker.ElevenLabs.OpenApiClient.Models.OAuth2JWTResponse_used_by.CreateFromDiscriminatorValue); } },
+                { "used_by", n => { UsedBy = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AuthConnectionDependencies>(global::Soenneker.ElevenLabs.OpenApiClient.Models.AuthConnectionDependencies.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -166,13 +166,13 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.OAuth2JWTResponse_extra_params>("extra_params", ExtraParams);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("issuer", Issuer);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.OAuth2JWTResponse_key_id>("key_id", KeyId);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Key_Id>("key_id", KeyId);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("provider", Provider);
             writer.WriteCollectionOfPrimitiveValues<string>("scopes", Scopes);
             writer.WriteStringValue("subject", Subject);
             writer.WriteStringValue("token_url", TokenUrl);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.OAuth2JWTResponse_used_by>("used_by", UsedBy);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AuthConnectionDependencies>("used_by", UsedBy);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

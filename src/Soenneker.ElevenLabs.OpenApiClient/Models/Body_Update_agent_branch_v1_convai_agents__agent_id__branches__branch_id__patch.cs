@@ -17,26 +17,26 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Whether the branch should be archived</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Update_agent_branch_v1_convai_agents__agent_id__branches__branch_id__patch_is_archived? IsArchived { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Is_Archived? IsArchived { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Update_agent_branch_v1_convai_agents__agent_id__branches__branch_id__patch_is_archived IsArchived { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Is_Archived IsArchived { get; set; }
 #endif
         /// <summary>New name for the branch. Must be unique within the agent.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Update_agent_branch_v1_convai_agents__agent_id__branches__branch_id__patch_name? Name { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Name? Name { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Update_agent_branch_v1_convai_agents__agent_id__branches__branch_id__patch_name Name { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Name Name { get; set; }
 #endif
         /// <summary>The protection level for the branch</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Update_agent_branch_v1_convai_agents__agent_id__branches__branch_id__patch_protection_status? ProtectionStatus { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BranchProtectionStatus_Wrapper? ProtectionStatus { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Update_agent_branch_v1_convai_agents__agent_id__branches__branch_id__patch_protection_status ProtectionStatus { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BranchProtectionStatus_Wrapper ProtectionStatus { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Update_agent_branch_v1_convai_agents__agent_id__branches__branch_id__patch"/> and sets the default values.
@@ -63,9 +63,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "is_archived", n => { IsArchived = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Update_agent_branch_v1_convai_agents__agent_id__branches__branch_id__patch_is_archived>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Update_agent_branch_v1_convai_agents__agent_id__branches__branch_id__patch_is_archived.CreateFromDiscriminatorValue); } },
-                { "name", n => { Name = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Update_agent_branch_v1_convai_agents__agent_id__branches__branch_id__patch_name>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Update_agent_branch_v1_convai_agents__agent_id__branches__branch_id__patch_name.CreateFromDiscriminatorValue); } },
-                { "protection_status", n => { ProtectionStatus = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Update_agent_branch_v1_convai_agents__agent_id__branches__branch_id__patch_protection_status>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Update_agent_branch_v1_convai_agents__agent_id__branches__branch_id__patch_protection_status.CreateFromDiscriminatorValue); } },
+                { "is_archived", n => { IsArchived = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Is_Archived>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Is_Archived.CreateFromDiscriminatorValue); } },
+                { "name", n => { Name = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Name>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Name.CreateFromDiscriminatorValue); } },
+                { "protection_status", n => { ProtectionStatus = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BranchProtectionStatus_Wrapper>(global::Soenneker.ElevenLabs.OpenApiClient.Models.BranchProtectionStatus_Wrapper.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -75,9 +75,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Update_agent_branch_v1_convai_agents__agent_id__branches__branch_id__patch_is_archived>("is_archived", IsArchived);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Update_agent_branch_v1_convai_agents__agent_id__branches__branch_id__patch_name>("name", Name);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Update_agent_branch_v1_convai_agents__agent_id__branches__branch_id__patch_protection_status>("protection_status", ProtectionStatus);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Is_Archived>("is_archived", IsArchived);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Name>("name", Name);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BranchProtectionStatus_Wrapper>("protection_status", ProtectionStatus);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

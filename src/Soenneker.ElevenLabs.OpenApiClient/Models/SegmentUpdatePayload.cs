@@ -17,26 +17,26 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The end_time property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SegmentUpdatePayload_end_time? EndTime { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.End_Time? EndTime { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SegmentUpdatePayload_end_time EndTime { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.End_Time EndTime { get; set; }
 #endif
         /// <summary>The start_time property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SegmentUpdatePayload_start_time? StartTime { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Start_Time? StartTime { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SegmentUpdatePayload_start_time StartTime { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Start_Time StartTime { get; set; }
 #endif
         /// <summary>The text property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SegmentUpdatePayload_text? Text { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Text? Text { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SegmentUpdatePayload_text Text { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Text Text { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.SegmentUpdatePayload"/> and sets the default values.
@@ -63,9 +63,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "end_time", n => { EndTime = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SegmentUpdatePayload_end_time>(global::Soenneker.ElevenLabs.OpenApiClient.Models.SegmentUpdatePayload_end_time.CreateFromDiscriminatorValue); } },
-                { "start_time", n => { StartTime = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SegmentUpdatePayload_start_time>(global::Soenneker.ElevenLabs.OpenApiClient.Models.SegmentUpdatePayload_start_time.CreateFromDiscriminatorValue); } },
-                { "text", n => { Text = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SegmentUpdatePayload_text>(global::Soenneker.ElevenLabs.OpenApiClient.Models.SegmentUpdatePayload_text.CreateFromDiscriminatorValue); } },
+                { "end_time", n => { EndTime = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.End_Time>(global::Soenneker.ElevenLabs.OpenApiClient.Models.End_Time.CreateFromDiscriminatorValue); } },
+                { "start_time", n => { StartTime = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Start_Time>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Start_Time.CreateFromDiscriminatorValue); } },
+                { "text", n => { Text = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Text>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Text.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -75,9 +75,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SegmentUpdatePayload_end_time>("end_time", EndTime);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SegmentUpdatePayload_start_time>("start_time", StartTime);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SegmentUpdatePayload_text>("text", Text);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.End_Time>("end_time", EndTime);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Start_Time>("start_time", StartTime);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Text>("text", Text);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

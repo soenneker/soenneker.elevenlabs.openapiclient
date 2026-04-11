@@ -18,36 +18,36 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The characters that make up the word and their timing information.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechToTextWordResponseModel_characters? Characters { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Characters? Characters { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechToTextWordResponseModel_characters Characters { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Characters Characters { get; set; }
 #endif
         /// <summary>The end time of the word or sound in seconds.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechToTextWordResponseModel_end? End { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.End? End { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechToTextWordResponseModel_end End { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.End End { get; set; }
 #endif
         /// <summary>The log of the probability with which this word was predicted. Logprobs are in range [-infinity, 0], higher logprobs indicate a higher confidence the model has in its predictions.</summary>
         public double? Logprob { get; set; }
         /// <summary>Unique identifier for the speaker of this word.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechToTextWordResponseModel_speaker_id? SpeakerId { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Speaker_Id? SpeakerId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechToTextWordResponseModel_speaker_id SpeakerId { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Speaker_Id SpeakerId { get; set; }
 #endif
         /// <summary>The start time of the word or sound in seconds.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechToTextWordResponseModel_start? Start { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Start? Start { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechToTextWordResponseModel_start Start { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Start Start { get; set; }
 #endif
         /// <summary>The word or sound that was transcribed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -84,11 +84,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "characters", n => { Characters = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechToTextWordResponseModel_characters>(global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechToTextWordResponseModel_characters.CreateFromDiscriminatorValue); } },
-                { "end", n => { End = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechToTextWordResponseModel_end>(global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechToTextWordResponseModel_end.CreateFromDiscriminatorValue); } },
+                { "characters", n => { Characters = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Characters>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Characters.CreateFromDiscriminatorValue); } },
+                { "end", n => { End = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.End>(global::Soenneker.ElevenLabs.OpenApiClient.Models.End.CreateFromDiscriminatorValue); } },
                 { "logprob", n => { Logprob = n.GetDoubleValue(); } },
-                { "speaker_id", n => { SpeakerId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechToTextWordResponseModel_speaker_id>(global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechToTextWordResponseModel_speaker_id.CreateFromDiscriminatorValue); } },
-                { "start", n => { Start = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechToTextWordResponseModel_start>(global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechToTextWordResponseModel_start.CreateFromDiscriminatorValue); } },
+                { "speaker_id", n => { SpeakerId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Speaker_Id>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Speaker_Id.CreateFromDiscriminatorValue); } },
+                { "start", n => { Start = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Start>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Start.CreateFromDiscriminatorValue); } },
                 { "text", n => { Text = n.GetStringValue(); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechToTextWordResponseModel_type>(); } },
             };
@@ -100,11 +100,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechToTextWordResponseModel_characters>("characters", Characters);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechToTextWordResponseModel_end>("end", End);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Characters>("characters", Characters);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.End>("end", End);
             writer.WriteDoubleValue("logprob", Logprob);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechToTextWordResponseModel_speaker_id>("speaker_id", SpeakerId);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechToTextWordResponseModel_start>("start", Start);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Speaker_Id>("speaker_id", SpeakerId);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Start>("start", Start);
             writer.WriteStringValue("text", Text);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechToTextWordResponseModel_type>("type", Type);
             writer.WriteAdditionalData(AdditionalData);

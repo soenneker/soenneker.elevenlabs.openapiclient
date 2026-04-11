@@ -25,10 +25,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>A name to make the agent easier to find</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Patches_an_Agent_settings_v1_convai_agents__agent_id__patch_name? Name { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Name? Name { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Patches_an_Agent_settings_v1_convai_agents__agent_id__patch_name Name { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Name Name { get; set; }
 #endif
         /// <summary>Platform settings for the agent are all settings that aren&apos;t related to the conversation orchestration and content.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -41,18 +41,18 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Tags to help classify and filter the agent</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Patches_an_Agent_settings_v1_convai_agents__agent_id__patch_tags? Tags { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Tags? Tags { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Patches_an_Agent_settings_v1_convai_agents__agent_id__patch_tags Tags { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Tags Tags { get; set; }
 #endif
         /// <summary>Description for this version when publishing changes (only applicable for versioned agents)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Patches_an_Agent_settings_v1_convai_agents__agent_id__patch_version_description? VersionDescription { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Version_Description? VersionDescription { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Patches_an_Agent_settings_v1_convai_agents__agent_id__patch_version_description VersionDescription { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Version_Description VersionDescription { get; set; }
 #endif
         /// <summary>The workflow property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -88,10 +88,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "conversation_config", n => { ConversationConfig = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Patches_an_Agent_settings_v1_convai_agents__agent_id__patch_conversation_config>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Patches_an_Agent_settings_v1_convai_agents__agent_id__patch_conversation_config.CreateFromDiscriminatorValue); } },
-                { "name", n => { Name = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Patches_an_Agent_settings_v1_convai_agents__agent_id__patch_name>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Patches_an_Agent_settings_v1_convai_agents__agent_id__patch_name.CreateFromDiscriminatorValue); } },
+                { "name", n => { Name = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Name>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Name.CreateFromDiscriminatorValue); } },
                 { "platform_settings", n => { PlatformSettings = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Patches_an_Agent_settings_v1_convai_agents__agent_id__patch_platform_settings>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Patches_an_Agent_settings_v1_convai_agents__agent_id__patch_platform_settings.CreateFromDiscriminatorValue); } },
-                { "tags", n => { Tags = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Patches_an_Agent_settings_v1_convai_agents__agent_id__patch_tags>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Patches_an_Agent_settings_v1_convai_agents__agent_id__patch_tags.CreateFromDiscriminatorValue); } },
-                { "version_description", n => { VersionDescription = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Patches_an_Agent_settings_v1_convai_agents__agent_id__patch_version_description>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Patches_an_Agent_settings_v1_convai_agents__agent_id__patch_version_description.CreateFromDiscriminatorValue); } },
+                { "tags", n => { Tags = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Tags>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Tags.CreateFromDiscriminatorValue); } },
+                { "version_description", n => { VersionDescription = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Version_Description>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Version_Description.CreateFromDiscriminatorValue); } },
                 { "workflow", n => { Workflow = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentWorkflowRequestModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentWorkflowRequestModel.CreateFromDiscriminatorValue); } },
             };
         }
@@ -103,10 +103,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Patches_an_Agent_settings_v1_convai_agents__agent_id__patch_conversation_config>("conversation_config", ConversationConfig);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Patches_an_Agent_settings_v1_convai_agents__agent_id__patch_name>("name", Name);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Name>("name", Name);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Patches_an_Agent_settings_v1_convai_agents__agent_id__patch_platform_settings>("platform_settings", PlatformSettings);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Patches_an_Agent_settings_v1_convai_agents__agent_id__patch_tags>("tags", Tags);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Patches_an_Agent_settings_v1_convai_agents__agent_id__patch_version_description>("version_description", VersionDescription);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Tags>("tags", Tags);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Version_Description>("version_description", VersionDescription);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentWorkflowRequestModel>("workflow", Workflow);
             writer.WriteAdditionalData(AdditionalData);
         }

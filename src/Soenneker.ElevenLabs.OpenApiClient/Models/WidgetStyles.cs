@@ -15,164 +15,164 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The accent background color.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetStyles_accent? Accent { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Accent? Accent { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetStyles_accent Accent { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Accent Accent { get; set; }
 #endif
         /// <summary>The color of the accent background when active (clicked).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetStyles_accent_active? AccentActive { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Accent_Active? AccentActive { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetStyles_accent_active AccentActive { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Accent_Active AccentActive { get; set; }
 #endif
         /// <summary>The color of the border against the accent background.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetStyles_accent_border? AccentBorder { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Accent_Border? AccentBorder { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetStyles_accent_border AccentBorder { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Accent_Border AccentBorder { get; set; }
 #endif
         /// <summary>The color of the accent background when hovered.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetStyles_accent_hover? AccentHover { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Accent_Hover? AccentHover { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetStyles_accent_hover AccentHover { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Accent_Hover AccentHover { get; set; }
 #endif
         /// <summary>The color of primary text against the accent background.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetStyles_accent_primary? AccentPrimary { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Accent_Primary? AccentPrimary { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetStyles_accent_primary AccentPrimary { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Accent_Primary AccentPrimary { get; set; }
 #endif
         /// <summary>The color of subtle text against the accent background.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetStyles_accent_subtle? AccentSubtle { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Accent_Subtle? AccentSubtle { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetStyles_accent_subtle AccentSubtle { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Accent_Subtle AccentSubtle { get; set; }
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The base background color.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetStyles_base? Base { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Base? Base { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetStyles_base Base { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Base Base { get; set; }
 #endif
         /// <summary>The color of the base background when active (clicked).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetStyles_base_active? BaseActive { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Base_Active? BaseActive { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetStyles_base_active BaseActive { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Base_Active BaseActive { get; set; }
 #endif
         /// <summary>The color of the border against the base background.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetStyles_base_border? BaseBorder { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Base_Border? BaseBorder { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetStyles_base_border BaseBorder { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Base_Border BaseBorder { get; set; }
 #endif
         /// <summary>The color of error text against the base background.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetStyles_base_error? BaseError { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Base_Error? BaseError { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetStyles_base_error BaseError { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Base_Error BaseError { get; set; }
 #endif
         /// <summary>The color of the base background when hovered.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetStyles_base_hover? BaseHover { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Base_Hover? BaseHover { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetStyles_base_hover BaseHover { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Base_Hover BaseHover { get; set; }
 #endif
         /// <summary>The color of primary text against the base background.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetStyles_base_primary? BasePrimary { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Base_Primary? BasePrimary { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetStyles_base_primary BasePrimary { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Base_Primary BasePrimary { get; set; }
 #endif
         /// <summary>The color of subtle text against the base background.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetStyles_base_subtle? BaseSubtle { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Base_Subtle? BaseSubtle { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetStyles_base_subtle BaseSubtle { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Base_Subtle BaseSubtle { get; set; }
 #endif
         /// <summary>The radius of the chat bubbles.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetStyles_bubble_radius? BubbleRadius { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Bubble_Radius? BubbleRadius { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetStyles_bubble_radius BubbleRadius { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Bubble_Radius BubbleRadius { get; set; }
 #endif
         /// <summary>The radius of the buttons.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetStyles_button_radius? ButtonRadius { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Button_Radius? ButtonRadius { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetStyles_button_radius ButtonRadius { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Button_Radius ButtonRadius { get; set; }
 #endif
         /// <summary>The radius of the sheet in compact mode.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetStyles_compact_sheet_radius? CompactSheetRadius { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Compact_Sheet_Radius? CompactSheetRadius { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetStyles_compact_sheet_radius CompactSheetRadius { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Compact_Sheet_Radius CompactSheetRadius { get; set; }
 #endif
         /// <summary>The radius of the dropdown sheet.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetStyles_dropdown_sheet_radius? DropdownSheetRadius { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Dropdown_Sheet_Radius? DropdownSheetRadius { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetStyles_dropdown_sheet_radius DropdownSheetRadius { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Dropdown_Sheet_Radius DropdownSheetRadius { get; set; }
 #endif
         /// <summary>The radius of the input fields.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetStyles_input_radius? InputRadius { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Input_Radius? InputRadius { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetStyles_input_radius InputRadius { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Input_Radius InputRadius { get; set; }
 #endif
         /// <summary>The padding around the edges of the viewport.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetStyles_overlay_padding? OverlayPadding { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Overlay_Padding? OverlayPadding { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetStyles_overlay_padding OverlayPadding { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Overlay_Padding OverlayPadding { get; set; }
 #endif
         /// <summary>The default radius of sheets.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetStyles_sheet_radius? SheetRadius { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Sheet_Radius? SheetRadius { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetStyles_sheet_radius SheetRadius { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Sheet_Radius SheetRadius { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetStyles"/> and sets the default values.
@@ -199,26 +199,26 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "accent", n => { Accent = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetStyles_accent>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetStyles_accent.CreateFromDiscriminatorValue); } },
-                { "accent_active", n => { AccentActive = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetStyles_accent_active>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetStyles_accent_active.CreateFromDiscriminatorValue); } },
-                { "accent_border", n => { AccentBorder = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetStyles_accent_border>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetStyles_accent_border.CreateFromDiscriminatorValue); } },
-                { "accent_hover", n => { AccentHover = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetStyles_accent_hover>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetStyles_accent_hover.CreateFromDiscriminatorValue); } },
-                { "accent_primary", n => { AccentPrimary = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetStyles_accent_primary>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetStyles_accent_primary.CreateFromDiscriminatorValue); } },
-                { "accent_subtle", n => { AccentSubtle = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetStyles_accent_subtle>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetStyles_accent_subtle.CreateFromDiscriminatorValue); } },
-                { "base", n => { Base = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetStyles_base>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetStyles_base.CreateFromDiscriminatorValue); } },
-                { "base_active", n => { BaseActive = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetStyles_base_active>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetStyles_base_active.CreateFromDiscriminatorValue); } },
-                { "base_border", n => { BaseBorder = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetStyles_base_border>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetStyles_base_border.CreateFromDiscriminatorValue); } },
-                { "base_error", n => { BaseError = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetStyles_base_error>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetStyles_base_error.CreateFromDiscriminatorValue); } },
-                { "base_hover", n => { BaseHover = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetStyles_base_hover>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetStyles_base_hover.CreateFromDiscriminatorValue); } },
-                { "base_primary", n => { BasePrimary = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetStyles_base_primary>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetStyles_base_primary.CreateFromDiscriminatorValue); } },
-                { "base_subtle", n => { BaseSubtle = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetStyles_base_subtle>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetStyles_base_subtle.CreateFromDiscriminatorValue); } },
-                { "bubble_radius", n => { BubbleRadius = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetStyles_bubble_radius>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetStyles_bubble_radius.CreateFromDiscriminatorValue); } },
-                { "button_radius", n => { ButtonRadius = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetStyles_button_radius>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetStyles_button_radius.CreateFromDiscriminatorValue); } },
-                { "compact_sheet_radius", n => { CompactSheetRadius = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetStyles_compact_sheet_radius>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetStyles_compact_sheet_radius.CreateFromDiscriminatorValue); } },
-                { "dropdown_sheet_radius", n => { DropdownSheetRadius = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetStyles_dropdown_sheet_radius>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetStyles_dropdown_sheet_radius.CreateFromDiscriminatorValue); } },
-                { "input_radius", n => { InputRadius = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetStyles_input_radius>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetStyles_input_radius.CreateFromDiscriminatorValue); } },
-                { "overlay_padding", n => { OverlayPadding = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetStyles_overlay_padding>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetStyles_overlay_padding.CreateFromDiscriminatorValue); } },
-                { "sheet_radius", n => { SheetRadius = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetStyles_sheet_radius>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetStyles_sheet_radius.CreateFromDiscriminatorValue); } },
+                { "accent", n => { Accent = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Accent>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Accent.CreateFromDiscriminatorValue); } },
+                { "accent_active", n => { AccentActive = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Accent_Active>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Accent_Active.CreateFromDiscriminatorValue); } },
+                { "accent_border", n => { AccentBorder = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Accent_Border>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Accent_Border.CreateFromDiscriminatorValue); } },
+                { "accent_hover", n => { AccentHover = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Accent_Hover>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Accent_Hover.CreateFromDiscriminatorValue); } },
+                { "accent_primary", n => { AccentPrimary = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Accent_Primary>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Accent_Primary.CreateFromDiscriminatorValue); } },
+                { "accent_subtle", n => { AccentSubtle = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Accent_Subtle>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Accent_Subtle.CreateFromDiscriminatorValue); } },
+                { "base", n => { Base = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Base>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Base.CreateFromDiscriminatorValue); } },
+                { "base_active", n => { BaseActive = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Base_Active>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Base_Active.CreateFromDiscriminatorValue); } },
+                { "base_border", n => { BaseBorder = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Base_Border>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Base_Border.CreateFromDiscriminatorValue); } },
+                { "base_error", n => { BaseError = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Base_Error>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Base_Error.CreateFromDiscriminatorValue); } },
+                { "base_hover", n => { BaseHover = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Base_Hover>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Base_Hover.CreateFromDiscriminatorValue); } },
+                { "base_primary", n => { BasePrimary = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Base_Primary>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Base_Primary.CreateFromDiscriminatorValue); } },
+                { "base_subtle", n => { BaseSubtle = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Base_Subtle>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Base_Subtle.CreateFromDiscriminatorValue); } },
+                { "bubble_radius", n => { BubbleRadius = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Bubble_Radius>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Bubble_Radius.CreateFromDiscriminatorValue); } },
+                { "button_radius", n => { ButtonRadius = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Button_Radius>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Button_Radius.CreateFromDiscriminatorValue); } },
+                { "compact_sheet_radius", n => { CompactSheetRadius = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Compact_Sheet_Radius>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Compact_Sheet_Radius.CreateFromDiscriminatorValue); } },
+                { "dropdown_sheet_radius", n => { DropdownSheetRadius = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Dropdown_Sheet_Radius>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Dropdown_Sheet_Radius.CreateFromDiscriminatorValue); } },
+                { "input_radius", n => { InputRadius = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Input_Radius>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Input_Radius.CreateFromDiscriminatorValue); } },
+                { "overlay_padding", n => { OverlayPadding = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Overlay_Padding>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Overlay_Padding.CreateFromDiscriminatorValue); } },
+                { "sheet_radius", n => { SheetRadius = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Sheet_Radius>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Sheet_Radius.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -228,26 +228,26 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetStyles_accent>("accent", Accent);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetStyles_accent_active>("accent_active", AccentActive);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetStyles_accent_border>("accent_border", AccentBorder);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetStyles_accent_hover>("accent_hover", AccentHover);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetStyles_accent_primary>("accent_primary", AccentPrimary);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetStyles_accent_subtle>("accent_subtle", AccentSubtle);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetStyles_base>("base", Base);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetStyles_base_active>("base_active", BaseActive);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetStyles_base_border>("base_border", BaseBorder);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetStyles_base_error>("base_error", BaseError);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetStyles_base_hover>("base_hover", BaseHover);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetStyles_base_primary>("base_primary", BasePrimary);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetStyles_base_subtle>("base_subtle", BaseSubtle);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetStyles_bubble_radius>("bubble_radius", BubbleRadius);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetStyles_button_radius>("button_radius", ButtonRadius);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetStyles_compact_sheet_radius>("compact_sheet_radius", CompactSheetRadius);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetStyles_dropdown_sheet_radius>("dropdown_sheet_radius", DropdownSheetRadius);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetStyles_input_radius>("input_radius", InputRadius);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetStyles_overlay_padding>("overlay_padding", OverlayPadding);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetStyles_sheet_radius>("sheet_radius", SheetRadius);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Accent>("accent", Accent);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Accent_Active>("accent_active", AccentActive);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Accent_Border>("accent_border", AccentBorder);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Accent_Hover>("accent_hover", AccentHover);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Accent_Primary>("accent_primary", AccentPrimary);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Accent_Subtle>("accent_subtle", AccentSubtle);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Base>("base", Base);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Base_Active>("base_active", BaseActive);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Base_Border>("base_border", BaseBorder);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Base_Error>("base_error", BaseError);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Base_Hover>("base_hover", BaseHover);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Base_Primary>("base_primary", BasePrimary);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Base_Subtle>("base_subtle", BaseSubtle);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Bubble_Radius>("bubble_radius", BubbleRadius);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Button_Radius>("button_radius", ButtonRadius);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Compact_Sheet_Radius>("compact_sheet_radius", CompactSheetRadius);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Dropdown_Sheet_Radius>("dropdown_sheet_radius", DropdownSheetRadius);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Input_Radius>("input_radius", InputRadius);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Overlay_Padding>("overlay_padding", OverlayPadding);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Sheet_Radius>("sheet_radius", SheetRadius);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

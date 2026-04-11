@@ -19,18 +19,18 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Days to retain conversation embeddings. None means use the system default (30 days).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetConvAISettingsResponseModel_conversation_embedding_retention_days? ConversationEmbeddingRetentionDays { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Conversation_Embedding_Retention_Days? ConversationEmbeddingRetentionDays { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetConvAISettingsResponseModel_conversation_embedding_retention_days ConversationEmbeddingRetentionDays { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Conversation_Embedding_Retention_Days ConversationEmbeddingRetentionDays { get; set; }
 #endif
         /// <summary>The conversation_initiation_client_data_webhook property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetConvAISettingsResponseModel_conversation_initiation_client_data_webhook? ConversationInitiationClientDataWebhook { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationClientDataWebhook? ConversationInitiationClientDataWebhook { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetConvAISettingsResponseModel_conversation_initiation_client_data_webhook ConversationInitiationClientDataWebhook { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationClientDataWebhook ConversationInitiationClientDataWebhook { get; set; }
 #endif
         /// <summary>The default_livekit_stack property</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.LivekitStackType? DefaultLivekitStack { get; set; }
@@ -71,8 +71,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "can_use_mcp_servers", n => { CanUseMcpServers = n.GetBoolValue(); } },
-                { "conversation_embedding_retention_days", n => { ConversationEmbeddingRetentionDays = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetConvAISettingsResponseModel_conversation_embedding_retention_days>(global::Soenneker.ElevenLabs.OpenApiClient.Models.GetConvAISettingsResponseModel_conversation_embedding_retention_days.CreateFromDiscriminatorValue); } },
-                { "conversation_initiation_client_data_webhook", n => { ConversationInitiationClientDataWebhook = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetConvAISettingsResponseModel_conversation_initiation_client_data_webhook>(global::Soenneker.ElevenLabs.OpenApiClient.Models.GetConvAISettingsResponseModel_conversation_initiation_client_data_webhook.CreateFromDiscriminatorValue); } },
+                { "conversation_embedding_retention_days", n => { ConversationEmbeddingRetentionDays = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Conversation_Embedding_Retention_Days>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Conversation_Embedding_Retention_Days.CreateFromDiscriminatorValue); } },
+                { "conversation_initiation_client_data_webhook", n => { ConversationInitiationClientDataWebhook = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationClientDataWebhook>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationClientDataWebhook.CreateFromDiscriminatorValue); } },
                 { "default_livekit_stack", n => { DefaultLivekitStack = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.LivekitStackType>(); } },
                 { "rag_retention_period_days", n => { RagRetentionPeriodDays = n.GetIntValue(); } },
                 { "webhooks", n => { Webhooks = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConvAIWebhooks>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConvAIWebhooks.CreateFromDiscriminatorValue); } },
@@ -86,8 +86,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("can_use_mcp_servers", CanUseMcpServers);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetConvAISettingsResponseModel_conversation_embedding_retention_days>("conversation_embedding_retention_days", ConversationEmbeddingRetentionDays);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetConvAISettingsResponseModel_conversation_initiation_client_data_webhook>("conversation_initiation_client_data_webhook", ConversationInitiationClientDataWebhook);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Conversation_Embedding_Retention_Days>("conversation_embedding_retention_days", ConversationEmbeddingRetentionDays);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationClientDataWebhook>("conversation_initiation_client_data_webhook", ConversationInitiationClientDataWebhook);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.LivekitStackType>("default_livekit_stack", DefaultLivekitStack);
             writer.WriteIntValue("rag_retention_period_days", RagRetentionPeriodDays);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConvAIWebhooks>("webhooks", Webhooks);

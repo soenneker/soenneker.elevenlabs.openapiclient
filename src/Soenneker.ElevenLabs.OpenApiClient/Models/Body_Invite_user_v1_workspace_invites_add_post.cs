@@ -25,27 +25,27 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The group ids of the user</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Invite_user_v1_workspace_invites_add_post_group_ids? GroupIds { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Group_Ids? GroupIds { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Invite_user_v1_workspace_invites_add_post_group_ids GroupIds { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Group_Ids GroupIds { get; set; }
 #endif
         /// <summary>The seat type of the user</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Invite_user_v1_workspace_invites_add_post_seat_type? SeatType { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SeatType_Wrapper? SeatType { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Invite_user_v1_workspace_invites_add_post_seat_type SeatType { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SeatType_Wrapper SeatType { get; set; }
 #endif
         /// <summary>The workspace permission of the user. This is deprecated, use `seat_type` instead.</summary>
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Invite_user_v1_workspace_invites_add_post_workspace_permission? WorkspacePermission { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Workspace_Permission? WorkspacePermission { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Invite_user_v1_workspace_invites_add_post_workspace_permission WorkspacePermission { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Workspace_Permission WorkspacePermission { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Invite_user_v1_workspace_invites_add_post"/> and sets the default values.
@@ -73,9 +73,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "email", n => { Email = n.GetStringValue(); } },
-                { "group_ids", n => { GroupIds = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Invite_user_v1_workspace_invites_add_post_group_ids>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Invite_user_v1_workspace_invites_add_post_group_ids.CreateFromDiscriminatorValue); } },
-                { "seat_type", n => { SeatType = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Invite_user_v1_workspace_invites_add_post_seat_type>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Invite_user_v1_workspace_invites_add_post_seat_type.CreateFromDiscriminatorValue); } },
-                { "workspace_permission", n => { WorkspacePermission = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Invite_user_v1_workspace_invites_add_post_workspace_permission>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Invite_user_v1_workspace_invites_add_post_workspace_permission.CreateFromDiscriminatorValue); } },
+                { "group_ids", n => { GroupIds = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Group_Ids>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Group_Ids.CreateFromDiscriminatorValue); } },
+                { "seat_type", n => { SeatType = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SeatType_Wrapper>(global::Soenneker.ElevenLabs.OpenApiClient.Models.SeatType_Wrapper.CreateFromDiscriminatorValue); } },
+                { "workspace_permission", n => { WorkspacePermission = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Workspace_Permission>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Workspace_Permission.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -86,9 +86,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("email", Email);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Invite_user_v1_workspace_invites_add_post_group_ids>("group_ids", GroupIds);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Invite_user_v1_workspace_invites_add_post_seat_type>("seat_type", SeatType);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Invite_user_v1_workspace_invites_add_post_workspace_permission>("workspace_permission", WorkspacePermission);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Group_Ids>("group_ids", GroupIds);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SeatType_Wrapper>("seat_type", SeatType);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Workspace_Permission>("workspace_permission", WorkspacePermission);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

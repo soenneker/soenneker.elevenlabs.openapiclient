@@ -17,18 +17,18 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The background property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingResource_background? Background { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingMediaReference? Background { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingResource_background Background { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingMediaReference Background { get; set; }
 #endif
         /// <summary>The foreground property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingResource_foreground? Foreground { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingMediaReference? Foreground { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingResource_foreground Foreground { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingMediaReference Foreground { get; set; }
 #endif
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -113,8 +113,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "background", n => { Background = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingResource_background>(global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingResource_background.CreateFromDiscriminatorValue); } },
-                { "foreground", n => { Foreground = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingResource_foreground>(global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingResource_foreground.CreateFromDiscriminatorValue); } },
+                { "background", n => { Background = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingMediaReference>(global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingMediaReference.CreateFromDiscriminatorValue); } },
+                { "foreground", n => { Foreground = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingMediaReference>(global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingMediaReference.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "input", n => { Input = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingMediaReference>(global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingMediaReference.CreateFromDiscriminatorValue); } },
                 { "renders", n => { Renders = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingResource_renders>(global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingResource_renders.CreateFromDiscriminatorValue); } },
@@ -132,8 +132,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingResource_background>("background", Background);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingResource_foreground>("foreground", Foreground);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingMediaReference>("background", Background);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingMediaReference>("foreground", Foreground);
             writer.WriteStringValue("id", Id);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingMediaReference>("input", Input);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingResource_renders>("renders", Renders);

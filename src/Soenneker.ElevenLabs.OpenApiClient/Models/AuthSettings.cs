@@ -29,10 +29,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>A shareable token that can be used to start a conversation with the agent</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AuthSettings_shareable_token? ShareableToken { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Shareable_Token? ShareableToken { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AuthSettings_shareable_token ShareableToken { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Shareable_Token ShareableToken { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.AuthSettings"/> and sets the default values.
@@ -62,7 +62,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "allowlist", n => { Allowlist = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.AllowlistItem>(global::Soenneker.ElevenLabs.OpenApiClient.Models.AllowlistItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "enable_auth", n => { EnableAuth = n.GetBoolValue(); } },
                 { "require_origin_header", n => { RequireOriginHeader = n.GetBoolValue(); } },
-                { "shareable_token", n => { ShareableToken = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AuthSettings_shareable_token>(global::Soenneker.ElevenLabs.OpenApiClient.Models.AuthSettings_shareable_token.CreateFromDiscriminatorValue); } },
+                { "shareable_token", n => { ShareableToken = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Shareable_Token>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Shareable_Token.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -75,7 +75,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.AllowlistItem>("allowlist", Allowlist);
             writer.WriteBoolValue("enable_auth", EnableAuth);
             writer.WriteBoolValue("require_origin_header", RequireOriginHeader);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AuthSettings_shareable_token>("shareable_token", ShareableToken);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Shareable_Token>("shareable_token", ShareableToken);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

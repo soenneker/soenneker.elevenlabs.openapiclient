@@ -17,10 +17,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The duration_secs property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SampleResponseModel_duration_secs? DurationSecs { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Duration_Secs? DurationSecs { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SampleResponseModel_duration_secs DurationSecs { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Duration_Secs DurationSecs { get; set; }
 #endif
         /// <summary>The name of the sample file.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -41,18 +41,18 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The has_isolated_audio property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SampleResponseModel_has_isolated_audio? HasIsolatedAudio { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Has_Isolated_Audio? HasIsolatedAudio { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SampleResponseModel_has_isolated_audio HasIsolatedAudio { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Has_Isolated_Audio HasIsolatedAudio { get; set; }
 #endif
         /// <summary>The has_isolated_audio_preview property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SampleResponseModel_has_isolated_audio_preview? HasIsolatedAudioPreview { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Has_Isolated_Audio_Preview? HasIsolatedAudioPreview { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SampleResponseModel_has_isolated_audio_preview HasIsolatedAudioPreview { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Has_Isolated_Audio_Preview HasIsolatedAudioPreview { get; set; }
 #endif
         /// <summary>The MIME type of the sample file.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -65,10 +65,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The remove_background_noise property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SampleResponseModel_remove_background_noise? RemoveBackgroundNoise { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Remove_Background_Noise? RemoveBackgroundNoise { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SampleResponseModel_remove_background_noise RemoveBackgroundNoise { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Remove_Background_Noise RemoveBackgroundNoise { get; set; }
 #endif
         /// <summary>The ID of the sample.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -83,26 +83,26 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The speaker_separation property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SampleResponseModel_speaker_separation? SpeakerSeparation { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeakerSeparationResponseModel? SpeakerSeparation { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SampleResponseModel_speaker_separation SpeakerSeparation { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeakerSeparationResponseModel SpeakerSeparation { get; set; }
 #endif
         /// <summary>The trim_end property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SampleResponseModel_trim_end? TrimEnd { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Trim_End? TrimEnd { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SampleResponseModel_trim_end TrimEnd { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Trim_End TrimEnd { get; set; }
 #endif
         /// <summary>The trim_start property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SampleResponseModel_trim_start? TrimStart { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Trim_Start? TrimStart { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SampleResponseModel_trim_start TrimStart { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Trim_Start TrimStart { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.SampleResponseModel"/> and sets the default values.
@@ -129,18 +129,18 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "duration_secs", n => { DurationSecs = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SampleResponseModel_duration_secs>(global::Soenneker.ElevenLabs.OpenApiClient.Models.SampleResponseModel_duration_secs.CreateFromDiscriminatorValue); } },
+                { "duration_secs", n => { DurationSecs = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Duration_Secs>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Duration_Secs.CreateFromDiscriminatorValue); } },
                 { "file_name", n => { FileName = n.GetStringValue(); } },
-                { "has_isolated_audio", n => { HasIsolatedAudio = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SampleResponseModel_has_isolated_audio>(global::Soenneker.ElevenLabs.OpenApiClient.Models.SampleResponseModel_has_isolated_audio.CreateFromDiscriminatorValue); } },
-                { "has_isolated_audio_preview", n => { HasIsolatedAudioPreview = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SampleResponseModel_has_isolated_audio_preview>(global::Soenneker.ElevenLabs.OpenApiClient.Models.SampleResponseModel_has_isolated_audio_preview.CreateFromDiscriminatorValue); } },
+                { "has_isolated_audio", n => { HasIsolatedAudio = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Has_Isolated_Audio>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Has_Isolated_Audio.CreateFromDiscriminatorValue); } },
+                { "has_isolated_audio_preview", n => { HasIsolatedAudioPreview = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Has_Isolated_Audio_Preview>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Has_Isolated_Audio_Preview.CreateFromDiscriminatorValue); } },
                 { "hash", n => { Hash = n.GetStringValue(); } },
                 { "mime_type", n => { MimeType = n.GetStringValue(); } },
-                { "remove_background_noise", n => { RemoveBackgroundNoise = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SampleResponseModel_remove_background_noise>(global::Soenneker.ElevenLabs.OpenApiClient.Models.SampleResponseModel_remove_background_noise.CreateFromDiscriminatorValue); } },
+                { "remove_background_noise", n => { RemoveBackgroundNoise = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Remove_Background_Noise>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Remove_Background_Noise.CreateFromDiscriminatorValue); } },
                 { "sample_id", n => { SampleId = n.GetStringValue(); } },
                 { "size_bytes", n => { SizeBytes = n.GetIntValue(); } },
-                { "speaker_separation", n => { SpeakerSeparation = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SampleResponseModel_speaker_separation>(global::Soenneker.ElevenLabs.OpenApiClient.Models.SampleResponseModel_speaker_separation.CreateFromDiscriminatorValue); } },
-                { "trim_end", n => { TrimEnd = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SampleResponseModel_trim_end>(global::Soenneker.ElevenLabs.OpenApiClient.Models.SampleResponseModel_trim_end.CreateFromDiscriminatorValue); } },
-                { "trim_start", n => { TrimStart = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SampleResponseModel_trim_start>(global::Soenneker.ElevenLabs.OpenApiClient.Models.SampleResponseModel_trim_start.CreateFromDiscriminatorValue); } },
+                { "speaker_separation", n => { SpeakerSeparation = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeakerSeparationResponseModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeakerSeparationResponseModel.CreateFromDiscriminatorValue); } },
+                { "trim_end", n => { TrimEnd = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Trim_End>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Trim_End.CreateFromDiscriminatorValue); } },
+                { "trim_start", n => { TrimStart = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Trim_Start>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Trim_Start.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -150,18 +150,18 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SampleResponseModel_duration_secs>("duration_secs", DurationSecs);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Duration_Secs>("duration_secs", DurationSecs);
             writer.WriteStringValue("file_name", FileName);
             writer.WriteStringValue("hash", Hash);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SampleResponseModel_has_isolated_audio>("has_isolated_audio", HasIsolatedAudio);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SampleResponseModel_has_isolated_audio_preview>("has_isolated_audio_preview", HasIsolatedAudioPreview);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Has_Isolated_Audio>("has_isolated_audio", HasIsolatedAudio);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Has_Isolated_Audio_Preview>("has_isolated_audio_preview", HasIsolatedAudioPreview);
             writer.WriteStringValue("mime_type", MimeType);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SampleResponseModel_remove_background_noise>("remove_background_noise", RemoveBackgroundNoise);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Remove_Background_Noise>("remove_background_noise", RemoveBackgroundNoise);
             writer.WriteStringValue("sample_id", SampleId);
             writer.WriteIntValue("size_bytes", SizeBytes);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SampleResponseModel_speaker_separation>("speaker_separation", SpeakerSeparation);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SampleResponseModel_trim_end>("trim_end", TrimEnd);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SampleResponseModel_trim_start>("trim_start", TrimStart);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeakerSeparationResponseModel>("speaker_separation", SpeakerSeparation);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Trim_End>("trim_end", TrimEnd);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Trim_Start>("trim_start", TrimStart);
             writer.WriteAdditionalData(AdditionalData);
         }
     }
