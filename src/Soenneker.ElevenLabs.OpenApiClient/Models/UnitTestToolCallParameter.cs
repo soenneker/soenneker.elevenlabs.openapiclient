@@ -17,10 +17,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The eval property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.UnitTestToolCallParameter.UnitTestToolCallParameter_eval? Eval { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.UnitTestToolCallParameterEval? Eval { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.UnitTestToolCallParameter.UnitTestToolCallParameter_eval Eval { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.UnitTestToolCallParameterEval Eval { get; set; }
 #endif
         /// <summary>The path property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -55,7 +55,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "eval", n => { Eval = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UnitTestToolCallParameter.UnitTestToolCallParameter_eval>(global::Soenneker.ElevenLabs.OpenApiClient.Models.UnitTestToolCallParameter.UnitTestToolCallParameter_eval.CreateFromDiscriminatorValue); } },
+                { "eval", n => { Eval = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UnitTestToolCallParameterEval>(global::Soenneker.ElevenLabs.OpenApiClient.Models.UnitTestToolCallParameterEval.CreateFromDiscriminatorValue); } },
                 { "path", n => { Path = n.GetStringValue(); } },
             };
         }
@@ -66,124 +66,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UnitTestToolCallParameter.UnitTestToolCallParameter_eval>("eval", Eval);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UnitTestToolCallParameterEval>("eval", Eval);
             writer.WriteStringValue("path", Path);
             writer.WriteAdditionalData(AdditionalData);
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ExactParameterEvaluationStrategy"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.LLMParameterEvaluationStrategy"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.MatchAnythingParameterEvaluationStrategy"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.RegexParameterEvaluationStrategy"/>
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class UnitTestToolCallParameter_eval : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ExactParameterEvaluationStrategy"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.ElevenLabs.OpenApiClient.Models.ExactParameterEvaluationStrategy? ExactParameterEvaluationStrategy { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.ElevenLabs.OpenApiClient.Models.ExactParameterEvaluationStrategy ExactParameterEvaluationStrategy { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.LLMParameterEvaluationStrategy"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.ElevenLabs.OpenApiClient.Models.LLMParameterEvaluationStrategy? LLMParameterEvaluationStrategy { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.ElevenLabs.OpenApiClient.Models.LLMParameterEvaluationStrategy LLMParameterEvaluationStrategy { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.MatchAnythingParameterEvaluationStrategy"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.ElevenLabs.OpenApiClient.Models.MatchAnythingParameterEvaluationStrategy? MatchAnythingParameterEvaluationStrategy { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.ElevenLabs.OpenApiClient.Models.MatchAnythingParameterEvaluationStrategy MatchAnythingParameterEvaluationStrategy { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.RegexParameterEvaluationStrategy"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.ElevenLabs.OpenApiClient.Models.RegexParameterEvaluationStrategy? RegexParameterEvaluationStrategy { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.ElevenLabs.OpenApiClient.Models.RegexParameterEvaluationStrategy RegexParameterEvaluationStrategy { get; set; }
-#endif
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.UnitTestToolCallParameter.UnitTestToolCallParameter_eval"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.ElevenLabs.OpenApiClient.Models.UnitTestToolCallParameter.UnitTestToolCallParameter_eval CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
-                var result = new global::Soenneker.ElevenLabs.OpenApiClient.Models.UnitTestToolCallParameter.UnitTestToolCallParameter_eval();
-                if("exact".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.ExactParameterEvaluationStrategy = new global::Soenneker.ElevenLabs.OpenApiClient.Models.ExactParameterEvaluationStrategy();
-                }
-                else if("llm".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.LLMParameterEvaluationStrategy = new global::Soenneker.ElevenLabs.OpenApiClient.Models.LLMParameterEvaluationStrategy();
-                }
-                else if("anything".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.MatchAnythingParameterEvaluationStrategy = new global::Soenneker.ElevenLabs.OpenApiClient.Models.MatchAnythingParameterEvaluationStrategy();
-                }
-                else if("regex".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.RegexParameterEvaluationStrategy = new global::Soenneker.ElevenLabs.OpenApiClient.Models.RegexParameterEvaluationStrategy();
-                }
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                if(ExactParameterEvaluationStrategy != null)
-                {
-                    return ExactParameterEvaluationStrategy.GetFieldDeserializers();
-                }
-                else if(LLMParameterEvaluationStrategy != null)
-                {
-                    return LLMParameterEvaluationStrategy.GetFieldDeserializers();
-                }
-                else if(MatchAnythingParameterEvaluationStrategy != null)
-                {
-                    return MatchAnythingParameterEvaluationStrategy.GetFieldDeserializers();
-                }
-                else if(RegexParameterEvaluationStrategy != null)
-                {
-                    return RegexParameterEvaluationStrategy.GetFieldDeserializers();
-                }
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                if(ExactParameterEvaluationStrategy != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ExactParameterEvaluationStrategy>(null, ExactParameterEvaluationStrategy);
-                }
-                else if(LLMParameterEvaluationStrategy != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.LLMParameterEvaluationStrategy>(null, LLMParameterEvaluationStrategy);
-                }
-                else if(MatchAnythingParameterEvaluationStrategy != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.MatchAnythingParameterEvaluationStrategy>(null, MatchAnythingParameterEvaluationStrategy);
-                }
-                else if(RegexParameterEvaluationStrategy != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.RegexParameterEvaluationStrategy>(null, RegexParameterEvaluationStrategy);
-                }
-            }
         }
     }
 }

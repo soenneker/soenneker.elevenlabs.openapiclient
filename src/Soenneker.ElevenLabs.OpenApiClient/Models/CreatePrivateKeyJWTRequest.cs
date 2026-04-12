@@ -48,10 +48,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Key ID (kid) for JWT header - useful for key rotation</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Key_Id? KeyId { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CreatePrivateKeyJWTRequestKeyId? KeyId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Key_Id KeyId { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CreatePrivateKeyJWTRequestKeyId KeyId { get; set; }
 #endif
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -118,7 +118,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "expiration_seconds", n => { ExpirationSeconds = n.GetIntValue(); } },
                 { "extra_params", n => { ExtraParams = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CreatePrivateKeyJWTRequest_extra_params>(global::Soenneker.ElevenLabs.OpenApiClient.Models.CreatePrivateKeyJWTRequest_extra_params.CreateFromDiscriminatorValue); } },
                 { "issuer", n => { Issuer = n.GetStringValue(); } },
-                { "key_id", n => { KeyId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Key_Id>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Key_Id.CreateFromDiscriminatorValue); } },
+                { "key_id", n => { KeyId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CreatePrivateKeyJWTRequestKeyId>(global::Soenneker.ElevenLabs.OpenApiClient.Models.CreatePrivateKeyJWTRequestKeyId.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "provider", n => { Provider = n.GetStringValue(); } },
                 { "secret_key", n => { SecretKey = n.GetStringValue(); } },
@@ -138,7 +138,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteIntValue("expiration_seconds", ExpirationSeconds);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CreatePrivateKeyJWTRequest_extra_params>("extra_params", ExtraParams);
             writer.WriteStringValue("issuer", Issuer);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Key_Id>("key_id", KeyId);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CreatePrivateKeyJWTRequestKeyId>("key_id", KeyId);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("provider", Provider);
             writer.WriteStringValue("secret_key", SecretKey);

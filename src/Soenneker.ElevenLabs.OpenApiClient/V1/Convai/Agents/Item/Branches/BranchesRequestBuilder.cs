@@ -49,17 +49,17 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.Branches
         /// <summary>
         /// Returns a list of branches an agent has
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ListResponse_AgentBranchSummary_"/></returns>
+        /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ListResponseAgentBranchSummary"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.HTTPValidationError">When receiving a 422 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.ElevenLabs.OpenApiClient.Models.ListResponse_AgentBranchSummary_?> GetAsync(Action<RequestConfiguration<global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.Branches.BranchesRequestBuilder.BranchesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.ElevenLabs.OpenApiClient.Models.ListResponseAgentBranchSummary?> GetAsync(Action<RequestConfiguration<global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.Branches.BranchesRequestBuilder.BranchesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.ElevenLabs.OpenApiClient.Models.ListResponse_AgentBranchSummary_> GetAsync(Action<RequestConfiguration<global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.Branches.BranchesRequestBuilder.BranchesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.ElevenLabs.OpenApiClient.Models.ListResponseAgentBranchSummary> GetAsync(Action<RequestConfiguration<global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.Branches.BranchesRequestBuilder.BranchesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -67,7 +67,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.Branches
             {
                 { "422", global::Soenneker.ElevenLabs.OpenApiClient.Models.HTTPValidationError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.ElevenLabs.OpenApiClient.Models.ListResponse_AgentBranchSummary_>(requestInfo, global::Soenneker.ElevenLabs.OpenApiClient.Models.ListResponse_AgentBranchSummary_.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.ElevenLabs.OpenApiClient.Models.ListResponseAgentBranchSummary>(requestInfo, global::Soenneker.ElevenLabs.OpenApiClient.Models.ListResponseAgentBranchSummary.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create a new branch from a given version of any branch
@@ -79,11 +79,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.Branches
         /// <exception cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.HTTPValidationError">When receiving a 422 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateAgentBranchResponseModel?> PostAsync(global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Create_a_new_branch_v1_convai_agents__agent_id__branches_post body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateAgentBranchResponseModel?> PostAsync(global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateANewBranchV1ConvaiAgentsAgentIdBranchesPost body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateAgentBranchResponseModel> PostAsync(global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Create_a_new_branch_v1_convai_agents__agent_id__branches_post body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateAgentBranchResponseModel> PostAsync(global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateANewBranchV1ConvaiAgentsAgentIdBranchesPost body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -121,11 +121,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.Branches
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Create_a_new_branch_v1_convai_agents__agent_id__branches_post body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateANewBranchV1ConvaiAgentsAgentIdBranchesPost body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Create_a_new_branch_v1_convai_agents__agent_id__branches_post body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateANewBranchV1ConvaiAgentsAgentIdBranchesPost body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

@@ -35,10 +35,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The current_snapshot_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Current_Snapshot_Id? CurrentSnapshotId { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectImageResponseModelCurrentSnapshotId? CurrentSnapshotId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Current_Snapshot_Id CurrentSnapshotId { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectImageResponseModelCurrentSnapshotId CurrentSnapshotId { get; set; }
 #endif
         /// <summary>The duration_ms property</summary>
         public int? DurationMs { get; set; }
@@ -87,10 +87,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The source_asset_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Source_Asset_Id? SourceAssetId { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectImageResponseModelSourceAssetId? SourceAssetId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Source_Asset_Id SourceAssetId { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectImageResponseModelSourceAssetId SourceAssetId { get; set; }
 #endif
         /// <summary>The thumbnail_signed_url property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -145,7 +145,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "animation", n => { Animation = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ClipAnimation>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ClipAnimation.CreateFromDiscriminatorValue); } },
                 { "canvas_placement", n => { CanvasPlacement = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CanvasPlacement>(global::Soenneker.ElevenLabs.OpenApiClient.Models.CanvasPlacement.CreateFromDiscriminatorValue); } },
                 { "created_at_ms", n => { CreatedAtMs = n.GetIntValue(); } },
-                { "current_snapshot_id", n => { CurrentSnapshotId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Current_Snapshot_Id>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Current_Snapshot_Id.CreateFromDiscriminatorValue); } },
+                { "current_snapshot_id", n => { CurrentSnapshotId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectImageResponseModelCurrentSnapshotId>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectImageResponseModelCurrentSnapshotId.CreateFromDiscriminatorValue); } },
                 { "duration_ms", n => { DurationMs = n.GetIntValue(); } },
                 { "file_size_bytes", n => { FileSizeBytes = n.GetIntValue(); } },
                 { "filename", n => { Filename = n.GetStringValue(); } },
@@ -156,7 +156,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "order", n => { Order = n.GetStringValue(); } },
                 { "signed_url", n => { SignedUrl = n.GetStringValue(); } },
                 { "source", n => { Source = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectImageResponseModel_source>(); } },
-                { "source_asset_id", n => { SourceAssetId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Source_Asset_Id>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Source_Asset_Id.CreateFromDiscriminatorValue); } },
+                { "source_asset_id", n => { SourceAssetId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectImageResponseModelSourceAssetId>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectImageResponseModelSourceAssetId.CreateFromDiscriminatorValue); } },
                 { "thumbnail_signed_url", n => { ThumbnailSignedUrl = n.GetStringValue(); } },
                 { "track_id", n => { TrackId = n.GetStringValue(); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectImageResponseModel_type>(); } },
@@ -174,7 +174,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ClipAnimation>("animation", Animation);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CanvasPlacement>("canvas_placement", CanvasPlacement);
             writer.WriteIntValue("created_at_ms", CreatedAtMs);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Current_Snapshot_Id>("current_snapshot_id", CurrentSnapshotId);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectImageResponseModelCurrentSnapshotId>("current_snapshot_id", CurrentSnapshotId);
             writer.WriteIntValue("duration_ms", DurationMs);
             writer.WriteStringValue("filename", Filename);
             writer.WriteIntValue("file_size_bytes", FileSizeBytes);
@@ -185,7 +185,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteStringValue("order", Order);
             writer.WriteStringValue("signed_url", SignedUrl);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectImageResponseModel_source>("source", Source);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Source_Asset_Id>("source_asset_id", SourceAssetId);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectImageResponseModelSourceAssetId>("source_asset_id", SourceAssetId);
             writer.WriteStringValue("thumbnail_signed_url", ThumbnailSignedUrl);
             writer.WriteStringValue("track_id", TrackId);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectImageResponseModel_type>("type", Type);

@@ -18,10 +18,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The config property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.MCPServerConfig_Input? Config { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.MCPServerConfigInput? Config { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.MCPServerConfig_Input Config { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.MCPServerConfigInput Config { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.MCPServerRequestModel"/> and sets the default values.
@@ -48,7 +48,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "config", n => { Config = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.MCPServerConfig_Input>(global::Soenneker.ElevenLabs.OpenApiClient.Models.MCPServerConfig_Input.CreateFromDiscriminatorValue); } },
+                { "config", n => { Config = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.MCPServerConfigInput>(global::Soenneker.ElevenLabs.OpenApiClient.Models.MCPServerConfigInput.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -58,7 +58,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.MCPServerConfig_Input>("config", Config);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.MCPServerConfigInput>("config", Config);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

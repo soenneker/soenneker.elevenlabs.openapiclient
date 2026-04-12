@@ -26,10 +26,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The ID of the version of the pronunciation dictionary</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Version_Id? VersionId { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PydanticPronunciationDictionaryVersionLocatorVersionId? VersionId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Version_Id VersionId { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PydanticPronunciationDictionaryVersionLocatorVersionId VersionId { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.PydanticPronunciationDictionaryVersionLocator"/> and sets the default values.
@@ -57,7 +57,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "pronunciation_dictionary_id", n => { PronunciationDictionaryId = n.GetStringValue(); } },
-                { "version_id", n => { VersionId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Version_Id>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Version_Id.CreateFromDiscriminatorValue); } },
+                { "version_id", n => { VersionId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PydanticPronunciationDictionaryVersionLocatorVersionId>(global::Soenneker.ElevenLabs.OpenApiClient.Models.PydanticPronunciationDictionaryVersionLocatorVersionId.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -68,7 +68,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("pronunciation_dictionary_id", PronunciationDictionaryId);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Version_Id>("version_id", VersionId);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PydanticPronunciationDictionaryVersionLocatorVersionId>("version_id", VersionId);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

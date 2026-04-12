@@ -17,10 +17,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Timestamp information for each character in the original text</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CharacterAlignmentResponseModel? Alignment { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AudioWithTimestampsResponseModelAlignment? Alignment { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CharacterAlignmentResponseModel Alignment { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AudioWithTimestampsResponseModelAlignment Alignment { get; set; }
 #endif
         /// <summary>Base64 encoded audio data</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -33,10 +33,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Timestamp information for each character in the normalized text</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CharacterAlignmentResponseModel? NormalizedAlignment { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AudioWithTimestampsResponseModelNormalizedAlignment? NormalizedAlignment { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CharacterAlignmentResponseModel NormalizedAlignment { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AudioWithTimestampsResponseModelNormalizedAlignment NormalizedAlignment { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.AudioWithTimestampsResponseModel"/> and sets the default values.
@@ -63,9 +63,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "alignment", n => { Alignment = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CharacterAlignmentResponseModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.CharacterAlignmentResponseModel.CreateFromDiscriminatorValue); } },
+                { "alignment", n => { Alignment = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AudioWithTimestampsResponseModelAlignment>(global::Soenneker.ElevenLabs.OpenApiClient.Models.AudioWithTimestampsResponseModelAlignment.CreateFromDiscriminatorValue); } },
                 { "audio_base64", n => { AudioBase64 = n.GetStringValue(); } },
-                { "normalized_alignment", n => { NormalizedAlignment = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CharacterAlignmentResponseModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.CharacterAlignmentResponseModel.CreateFromDiscriminatorValue); } },
+                { "normalized_alignment", n => { NormalizedAlignment = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AudioWithTimestampsResponseModelNormalizedAlignment>(global::Soenneker.ElevenLabs.OpenApiClient.Models.AudioWithTimestampsResponseModelNormalizedAlignment.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -75,9 +75,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CharacterAlignmentResponseModel>("alignment", Alignment);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AudioWithTimestampsResponseModelAlignment>("alignment", Alignment);
             writer.WriteStringValue("audio_base64", AudioBase64);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CharacterAlignmentResponseModel>("normalized_alignment", NormalizedAlignment);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AudioWithTimestampsResponseModelNormalizedAlignment>("normalized_alignment", NormalizedAlignment);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

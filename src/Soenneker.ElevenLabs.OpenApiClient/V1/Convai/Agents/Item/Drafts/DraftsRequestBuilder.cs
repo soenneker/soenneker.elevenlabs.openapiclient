@@ -66,11 +66,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.Drafts
         /// <exception cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.HTTPValidationError">When receiving a 422 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.Drafts.DraftsPostResponse?> PostAsync(global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Create_agent_draft_v1_convai_agents__agent_id__drafts_post body, Action<RequestConfiguration<global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.Drafts.DraftsRequestBuilder.DraftsRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.Drafts.DraftsPostResponse?> PostAsync(global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateAgentDraftV1ConvaiAgentsAgentIdDraftsPost body, Action<RequestConfiguration<global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.Drafts.DraftsRequestBuilder.DraftsRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.Drafts.DraftsPostResponse> PostAsync(global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Create_agent_draft_v1_convai_agents__agent_id__drafts_post body, Action<RequestConfiguration<global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.Drafts.DraftsRequestBuilder.DraftsRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.Drafts.DraftsPostResponse> PostAsync(global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateAgentDraftV1ConvaiAgentsAgentIdDraftsPost body, Action<RequestConfiguration<global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.Drafts.DraftsRequestBuilder.DraftsRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -108,11 +108,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.Drafts
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Create_agent_draft_v1_convai_agents__agent_id__drafts_post body, Action<RequestConfiguration<global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.Drafts.DraftsRequestBuilder.DraftsRequestBuilderPostQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateAgentDraftV1ConvaiAgentsAgentIdDraftsPost body, Action<RequestConfiguration<global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.Drafts.DraftsRequestBuilder.DraftsRequestBuilderPostQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Create_agent_draft_v1_convai_agents__agent_id__drafts_post body, Action<RequestConfiguration<global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.Drafts.DraftsRequestBuilder.DraftsRequestBuilderPostQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateAgentDraftV1ConvaiAgentsAgentIdDraftsPost body, Action<RequestConfiguration<global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.Drafts.DraftsRequestBuilder.DraftsRequestBuilderPostQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

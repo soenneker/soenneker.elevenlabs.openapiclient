@@ -17,10 +17,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The filename property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Filename? Filename { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppTemplateDocumentParamDetailsFilename? Filename { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Filename Filename { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppTemplateDocumentParamDetailsFilename Filename { get; set; }
 #endif
         /// <summary>The link property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -55,7 +55,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "filename", n => { Filename = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Filename>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Filename.CreateFromDiscriminatorValue); } },
+                { "filename", n => { Filename = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppTemplateDocumentParamDetailsFilename>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppTemplateDocumentParamDetailsFilename.CreateFromDiscriminatorValue); } },
                 { "link", n => { Link = n.GetStringValue(); } },
             };
         }
@@ -66,7 +66,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Filename>("filename", Filename);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppTemplateDocumentParamDetailsFilename>("filename", Filename);
             writer.WriteStringValue("link", Link);
             writer.WriteAdditionalData(AdditionalData);
         }

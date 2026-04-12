@@ -31,18 +31,18 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The pacing property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Pacing? Pacing { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AudioSegmentPacing? Pacing { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Pacing Pacing { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AudioSegmentPacing Pacing { get; set; }
 #endif
         /// <summary>The segment_type property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Segment_Type? SegmentType { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AudioSegmentSegmentType? SegmentType { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Segment_Type SegmentType { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AudioSegmentSegmentType SegmentType { get; set; }
 #endif
         /// <summary>The start_ms property</summary>
         public int? StartMs { get; set; }
@@ -75,8 +75,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "end_ms", n => { EndMs = n.GetIntValue(); } },
                 { "has_music", n => { HasMusic = n.GetBoolValue(); } },
                 { "has_speech", n => { HasSpeech = n.GetBoolValue(); } },
-                { "pacing", n => { Pacing = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Pacing>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Pacing.CreateFromDiscriminatorValue); } },
-                { "segment_type", n => { SegmentType = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Segment_Type>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Segment_Type.CreateFromDiscriminatorValue); } },
+                { "pacing", n => { Pacing = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AudioSegmentPacing>(global::Soenneker.ElevenLabs.OpenApiClient.Models.AudioSegmentPacing.CreateFromDiscriminatorValue); } },
+                { "segment_type", n => { SegmentType = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AudioSegmentSegmentType>(global::Soenneker.ElevenLabs.OpenApiClient.Models.AudioSegmentSegmentType.CreateFromDiscriminatorValue); } },
                 { "start_ms", n => { StartMs = n.GetIntValue(); } },
             };
         }
@@ -91,8 +91,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteIntValue("end_ms", EndMs);
             writer.WriteBoolValue("has_music", HasMusic);
             writer.WriteBoolValue("has_speech", HasSpeech);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Pacing>("pacing", Pacing);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Segment_Type>("segment_type", SegmentType);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AudioSegmentPacing>("pacing", Pacing);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AudioSegmentSegmentType>("segment_type", SegmentType);
             writer.WriteIntValue("start_ms", StartMs);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -43,11 +43,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.Branches.Item
         /// <exception cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.HTTPValidationError">When receiving a 422 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.Branches.Item.Merge.MergePostResponse?> PostAsync(global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Merge_a_branch_into_a_target_branch_v1_convai_agents__agent_id__branches__source_branch_id__merge_post body, Action<RequestConfiguration<global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.Branches.Item.Merge.MergeRequestBuilder.MergeRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.Branches.Item.Merge.MergePostResponse?> PostAsync(global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyMergeABranchIntoATargetBranchV1ConvaiAgentsAgentIdBranchesSourceBranchIdMergePost body, Action<RequestConfiguration<global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.Branches.Item.Merge.MergeRequestBuilder.MergeRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.Branches.Item.Merge.MergePostResponse> PostAsync(global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Merge_a_branch_into_a_target_branch_v1_convai_agents__agent_id__branches__source_branch_id__merge_post body, Action<RequestConfiguration<global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.Branches.Item.Merge.MergeRequestBuilder.MergeRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.Branches.Item.Merge.MergePostResponse> PostAsync(global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyMergeABranchIntoATargetBranchV1ConvaiAgentsAgentIdBranchesSourceBranchIdMergePost body, Action<RequestConfiguration<global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.Branches.Item.Merge.MergeRequestBuilder.MergeRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -66,11 +66,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.Branches.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Merge_a_branch_into_a_target_branch_v1_convai_agents__agent_id__branches__source_branch_id__merge_post body, Action<RequestConfiguration<global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.Branches.Item.Merge.MergeRequestBuilder.MergeRequestBuilderPostQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyMergeABranchIntoATargetBranchV1ConvaiAgentsAgentIdBranchesSourceBranchIdMergePost body, Action<RequestConfiguration<global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.Branches.Item.Merge.MergeRequestBuilder.MergeRequestBuilderPostQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Merge_a_branch_into_a_target_branch_v1_convai_agents__agent_id__branches__source_branch_id__merge_post body, Action<RequestConfiguration<global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.Branches.Item.Merge.MergeRequestBuilder.MergeRequestBuilderPostQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyMergeABranchIntoATargetBranchV1ConvaiAgentsAgentIdBranchesSourceBranchIdMergePost body, Action<RequestConfiguration<global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.Branches.Item.Merge.MergeRequestBuilder.MergeRequestBuilderPostQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

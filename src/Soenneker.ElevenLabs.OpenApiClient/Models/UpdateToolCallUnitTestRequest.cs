@@ -17,18 +17,18 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The chat_history property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptCommonModel_Input>? ChatHistory { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptCommonModelInput>? ChatHistory { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptCommonModel_Input> ChatHistory { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptCommonModelInput> ChatHistory { get; set; }
 #endif
         /// <summary>If set to True this test will pass if any tool call returned by the LLM matches the criteria. Otherwise it will fail if more than one tool is returned by the agent.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Check_Any_Tool_Matches? CheckAnyToolMatches { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateToolCallUnitTestRequestCheckAnyToolMatches? CheckAnyToolMatches { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Check_Any_Tool_Matches CheckAnyToolMatches { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateToolCallUnitTestRequestCheckAnyToolMatches CheckAnyToolMatches { get; set; }
 #endif
         /// <summary>Dynamic variables to replace in the agent config during testing</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -41,10 +41,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Metadata of a conversation this test was created from (if applicable).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.TestFromConversationMetadata_Input? FromConversationMetadata { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateToolCallUnitTestRequestFromConversationMetadata? FromConversationMetadata { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.TestFromConversationMetadata_Input FromConversationMetadata { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateToolCallUnitTestRequestFromConversationMetadata FromConversationMetadata { get; set; }
 #endif
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -57,18 +57,18 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The ID of the parent folder. If not provided, the test will be moved to the root level.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Parent_Folder_Id? ParentFolderId { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateToolCallUnitTestRequestParentFolderId? ParentFolderId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Parent_Folder_Id ParentFolderId { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateToolCallUnitTestRequestParentFolderId ParentFolderId { get; set; }
 #endif
         /// <summary>How to evaluate the agent&apos;s tool call (if any). If empty, the tool call is not evaluated.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.UnitTestToolCallEvaluationModel_Input? ToolCallParameters { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateToolCallUnitTestRequestToolCallParameters? ToolCallParameters { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.UnitTestToolCallEvaluationModel_Input ToolCallParameters { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateToolCallUnitTestRequestToolCallParameters ToolCallParameters { get; set; }
 #endif
         /// <summary>The type property</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateToolCallUnitTestRequest_type? Type { get; set; }
@@ -98,13 +98,13 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "chat_history", n => { ChatHistory = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptCommonModel_Input>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptCommonModel_Input.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "check_any_tool_matches", n => { CheckAnyToolMatches = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Check_Any_Tool_Matches>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Check_Any_Tool_Matches.CreateFromDiscriminatorValue); } },
+                { "chat_history", n => { ChatHistory = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptCommonModelInput>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptCommonModelInput.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "check_any_tool_matches", n => { CheckAnyToolMatches = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateToolCallUnitTestRequestCheckAnyToolMatches>(global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateToolCallUnitTestRequestCheckAnyToolMatches.CreateFromDiscriminatorValue); } },
                 { "dynamic_variables", n => { DynamicVariables = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateToolCallUnitTestRequest_dynamic_variables>(global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateToolCallUnitTestRequest_dynamic_variables.CreateFromDiscriminatorValue); } },
-                { "from_conversation_metadata", n => { FromConversationMetadata = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TestFromConversationMetadata_Input>(global::Soenneker.ElevenLabs.OpenApiClient.Models.TestFromConversationMetadata_Input.CreateFromDiscriminatorValue); } },
+                { "from_conversation_metadata", n => { FromConversationMetadata = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateToolCallUnitTestRequestFromConversationMetadata>(global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateToolCallUnitTestRequestFromConversationMetadata.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "parent_folder_id", n => { ParentFolderId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Parent_Folder_Id>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Parent_Folder_Id.CreateFromDiscriminatorValue); } },
-                { "tool_call_parameters", n => { ToolCallParameters = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UnitTestToolCallEvaluationModel_Input>(global::Soenneker.ElevenLabs.OpenApiClient.Models.UnitTestToolCallEvaluationModel_Input.CreateFromDiscriminatorValue); } },
+                { "parent_folder_id", n => { ParentFolderId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateToolCallUnitTestRequestParentFolderId>(global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateToolCallUnitTestRequestParentFolderId.CreateFromDiscriminatorValue); } },
+                { "tool_call_parameters", n => { ToolCallParameters = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateToolCallUnitTestRequestToolCallParameters>(global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateToolCallUnitTestRequestToolCallParameters.CreateFromDiscriminatorValue); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateToolCallUnitTestRequest_type>(); } },
             };
         }
@@ -115,13 +115,13 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptCommonModel_Input>("chat_history", ChatHistory);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Check_Any_Tool_Matches>("check_any_tool_matches", CheckAnyToolMatches);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptCommonModelInput>("chat_history", ChatHistory);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateToolCallUnitTestRequestCheckAnyToolMatches>("check_any_tool_matches", CheckAnyToolMatches);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateToolCallUnitTestRequest_dynamic_variables>("dynamic_variables", DynamicVariables);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TestFromConversationMetadata_Input>("from_conversation_metadata", FromConversationMetadata);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateToolCallUnitTestRequestFromConversationMetadata>("from_conversation_metadata", FromConversationMetadata);
             writer.WriteStringValue("name", Name);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Parent_Folder_Id>("parent_folder_id", ParentFolderId);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UnitTestToolCallEvaluationModel_Input>("tool_call_parameters", ToolCallParameters);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateToolCallUnitTestRequestParentFolderId>("parent_folder_id", ParentFolderId);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateToolCallUnitTestRequestToolCallParameters>("tool_call_parameters", ToolCallParameters);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateToolCallUnitTestRequest_type>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }

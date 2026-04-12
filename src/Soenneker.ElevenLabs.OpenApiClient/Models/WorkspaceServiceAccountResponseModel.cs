@@ -25,10 +25,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The created_at_unix property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Created_At_Unix? CreatedAtUnix { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceServiceAccountResponseModelCreatedAtUnix? CreatedAtUnix { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Created_At_Unix CreatedAtUnix { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceServiceAccountResponseModelCreatedAtUnix CreatedAtUnix { get; set; }
 #endif
         /// <summary>The default_sharing_groups property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -80,7 +80,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "api-keys", n => { ApiKeys = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceApiKeyResponseModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceApiKeyResponseModel.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "created_at_unix", n => { CreatedAtUnix = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Created_At_Unix>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Created_At_Unix.CreateFromDiscriminatorValue); } },
+                { "created_at_unix", n => { CreatedAtUnix = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceServiceAccountResponseModelCreatedAtUnix>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceServiceAccountResponseModelCreatedAtUnix.CreateFromDiscriminatorValue); } },
                 { "default_sharing_groups", n => { DefaultSharingGroups = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.DefaultSharingGroupResponseModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.DefaultSharingGroupResponseModel.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "service_account_user_id", n => { ServiceAccountUserId = n.GetStringValue(); } },
@@ -94,7 +94,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceApiKeyResponseModel>("api-keys", ApiKeys);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Created_At_Unix>("created_at_unix", CreatedAtUnix);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceServiceAccountResponseModelCreatedAtUnix>("created_at_unix", CreatedAtUnix);
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.DefaultSharingGroupResponseModel>("default_sharing_groups", DefaultSharingGroups);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("service_account_user_id", ServiceAccountUserId);

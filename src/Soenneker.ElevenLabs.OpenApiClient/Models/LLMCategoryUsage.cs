@@ -17,18 +17,18 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The initiated_generation property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.LLMUsage_Output? InitiatedGeneration { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.LLMUsageOutput? InitiatedGeneration { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.LLMUsage_Output InitiatedGeneration { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.LLMUsageOutput InitiatedGeneration { get; set; }
 #endif
         /// <summary>The irreversible_generation property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.LLMUsage_Output? IrreversibleGeneration { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.LLMUsageOutput? IrreversibleGeneration { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.LLMUsage_Output IrreversibleGeneration { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.LLMUsageOutput IrreversibleGeneration { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.LLMCategoryUsage"/> and sets the default values.
@@ -55,8 +55,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "initiated_generation", n => { InitiatedGeneration = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.LLMUsage_Output>(global::Soenneker.ElevenLabs.OpenApiClient.Models.LLMUsage_Output.CreateFromDiscriminatorValue); } },
-                { "irreversible_generation", n => { IrreversibleGeneration = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.LLMUsage_Output>(global::Soenneker.ElevenLabs.OpenApiClient.Models.LLMUsage_Output.CreateFromDiscriminatorValue); } },
+                { "initiated_generation", n => { InitiatedGeneration = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.LLMUsageOutput>(global::Soenneker.ElevenLabs.OpenApiClient.Models.LLMUsageOutput.CreateFromDiscriminatorValue); } },
+                { "irreversible_generation", n => { IrreversibleGeneration = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.LLMUsageOutput>(global::Soenneker.ElevenLabs.OpenApiClient.Models.LLMUsageOutput.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -66,8 +66,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.LLMUsage_Output>("initiated_generation", InitiatedGeneration);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.LLMUsage_Output>("irreversible_generation", IrreversibleGeneration);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.LLMUsageOutput>("initiated_generation", InitiatedGeneration);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.LLMUsageOutput>("irreversible_generation", IrreversibleGeneration);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -26,18 +26,18 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>A partial conversation history to start the simulation from. If empty, simulation starts fresh.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptCommonModel_Input>? PartialConversationHistory { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptCommonModelInput>? PartialConversationHistory { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptCommonModel_Input> PartialConversationHistory { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptCommonModelInput> PartialConversationHistory { get; set; }
 #endif
         /// <summary>The simulated_user_config property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentConfigAPIModel_Input? SimulatedUserConfig { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentConfigAPIModelInput? SimulatedUserConfig { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentConfigAPIModel_Input SimulatedUserConfig { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentConfigAPIModelInput SimulatedUserConfig { get; set; }
 #endif
         /// <summary>The tool_mock_config property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -73,8 +73,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "dynamic_variables", n => { DynamicVariables = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationSimulationSpecification_dynamic_variables>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationSimulationSpecification_dynamic_variables.CreateFromDiscriminatorValue); } },
-                { "partial_conversation_history", n => { PartialConversationHistory = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptCommonModel_Input>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptCommonModel_Input.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "simulated_user_config", n => { SimulatedUserConfig = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentConfigAPIModel_Input>(global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentConfigAPIModel_Input.CreateFromDiscriminatorValue); } },
+                { "partial_conversation_history", n => { PartialConversationHistory = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptCommonModelInput>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptCommonModelInput.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "simulated_user_config", n => { SimulatedUserConfig = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentConfigAPIModelInput>(global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentConfigAPIModelInput.CreateFromDiscriminatorValue); } },
                 { "tool_mock_config", n => { ToolMockConfig = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationSimulationSpecification_tool_mock_config>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationSimulationSpecification_tool_mock_config.CreateFromDiscriminatorValue); } },
             };
         }
@@ -86,8 +86,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationSimulationSpecification_dynamic_variables>("dynamic_variables", DynamicVariables);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptCommonModel_Input>("partial_conversation_history", PartialConversationHistory);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentConfigAPIModel_Input>("simulated_user_config", SimulatedUserConfig);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptCommonModelInput>("partial_conversation_history", PartialConversationHistory);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentConfigAPIModelInput>("simulated_user_config", SimulatedUserConfig);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationSimulationSpecification_tool_mock_config>("tool_mock_config", ToolMockConfig);
             writer.WriteAdditionalData(AdditionalData);
         }

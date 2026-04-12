@@ -17,10 +17,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The chat_history property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptCommonModel_Input>? ChatHistory { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptCommonModelInput>? ChatHistory { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptCommonModel_Input> ChatHistory { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptCommonModelInput> ChatHistory { get; set; }
 #endif
         /// <summary>Dynamic variables to replace in the agent config during testing</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -41,10 +41,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Metadata of a conversation this test was created from (if applicable).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.TestFromConversationMetadata_Input? FromConversationMetadata { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateResponseUnitTestRequestFromConversationMetadata? FromConversationMetadata { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.TestFromConversationMetadata_Input FromConversationMetadata { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateResponseUnitTestRequestFromConversationMetadata FromConversationMetadata { get; set; }
 #endif
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -57,10 +57,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The ID of the parent folder. If not provided, the test will be created at the root level.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Parent_Folder_Id? ParentFolderId { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateResponseUnitTestRequestParentFolderId? ParentFolderId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Parent_Folder_Id ParentFolderId { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateResponseUnitTestRequestParentFolderId ParentFolderId { get; set; }
 #endif
         /// <summary>A prompt that evaluates whether the agent&apos;s response is successful. Should return True or False.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -106,12 +106,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "chat_history", n => { ChatHistory = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptCommonModel_Input>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptCommonModel_Input.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "chat_history", n => { ChatHistory = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptCommonModelInput>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptCommonModelInput.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "dynamic_variables", n => { DynamicVariables = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateResponseUnitTestRequest_dynamic_variables>(global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateResponseUnitTestRequest_dynamic_variables.CreateFromDiscriminatorValue); } },
                 { "failure_examples", n => { FailureExamples = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentFailureResponseExample>(global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentFailureResponseExample.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "from_conversation_metadata", n => { FromConversationMetadata = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TestFromConversationMetadata_Input>(global::Soenneker.ElevenLabs.OpenApiClient.Models.TestFromConversationMetadata_Input.CreateFromDiscriminatorValue); } },
+                { "from_conversation_metadata", n => { FromConversationMetadata = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateResponseUnitTestRequestFromConversationMetadata>(global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateResponseUnitTestRequestFromConversationMetadata.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "parent_folder_id", n => { ParentFolderId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Parent_Folder_Id>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Parent_Folder_Id.CreateFromDiscriminatorValue); } },
+                { "parent_folder_id", n => { ParentFolderId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateResponseUnitTestRequestParentFolderId>(global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateResponseUnitTestRequestParentFolderId.CreateFromDiscriminatorValue); } },
                 { "success_condition", n => { SuccessCondition = n.GetStringValue(); } },
                 { "success_examples", n => { SuccessExamples = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentSuccessfulResponseExample>(global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentSuccessfulResponseExample.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateResponseUnitTestRequest_type>(); } },
@@ -124,12 +124,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptCommonModel_Input>("chat_history", ChatHistory);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptCommonModelInput>("chat_history", ChatHistory);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateResponseUnitTestRequest_dynamic_variables>("dynamic_variables", DynamicVariables);
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentFailureResponseExample>("failure_examples", FailureExamples);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TestFromConversationMetadata_Input>("from_conversation_metadata", FromConversationMetadata);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateResponseUnitTestRequestFromConversationMetadata>("from_conversation_metadata", FromConversationMetadata);
             writer.WriteStringValue("name", Name);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Parent_Folder_Id>("parent_folder_id", ParentFolderId);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateResponseUnitTestRequestParentFolderId>("parent_folder_id", ParentFolderId);
             writer.WriteStringValue("success_condition", SuccessCondition);
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentSuccessfulResponseExample>("success_examples", SuccessExamples);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateResponseUnitTestRequest_type>("type", Type);

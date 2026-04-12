@@ -56,11 +56,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.AgentTesting.Folders
         /// <exception cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.HTTPValidationError">When receiving a 422 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateAgentTestFolderResponseModel?> PostAsync(global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Create_agent_test_folder_v1_convai_agent_testing_folders_post body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateAgentTestFolderResponseModel?> PostAsync(global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateAgentTestFolderV1ConvaiAgentTestingFoldersPost body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateAgentTestFolderResponseModel> PostAsync(global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Create_agent_test_folder_v1_convai_agent_testing_folders_post body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateAgentTestFolderResponseModel> PostAsync(global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateAgentTestFolderV1ConvaiAgentTestingFoldersPost body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -79,11 +79,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.AgentTesting.Folders
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Create_agent_test_folder_v1_convai_agent_testing_folders_post body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateAgentTestFolderV1ConvaiAgentTestingFoldersPost body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Create_agent_test_folder_v1_convai_agent_testing_folders_post body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateAgentTestFolderV1ConvaiAgentTestingFoldersPost body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

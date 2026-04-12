@@ -149,11 +149,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item
         /// <exception cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.HTTPValidationError">When receiving a 422 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetAgentResponseModel?> PatchAsync(global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Patches_an_Agent_settings_v1_convai_agents__agent_id__patch body, Action<RequestConfiguration<global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.WithAgent_ItemRequestBuilder.WithAgent_ItemRequestBuilderPatchQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetAgentResponseModel?> PatchAsync(global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyPatchesAnAgentSettingsV1ConvaiAgentsAgentIdPatch body, Action<RequestConfiguration<global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.WithAgent_ItemRequestBuilder.WithAgent_ItemRequestBuilderPatchQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetAgentResponseModel> PatchAsync(global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Patches_an_Agent_settings_v1_convai_agents__agent_id__patch body, Action<RequestConfiguration<global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.WithAgent_ItemRequestBuilder.WithAgent_ItemRequestBuilderPatchQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetAgentResponseModel> PatchAsync(global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyPatchesAnAgentSettingsV1ConvaiAgentsAgentIdPatch body, Action<RequestConfiguration<global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.WithAgent_ItemRequestBuilder.WithAgent_ItemRequestBuilderPatchQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -210,11 +210,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Patches_an_Agent_settings_v1_convai_agents__agent_id__patch body, Action<RequestConfiguration<global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.WithAgent_ItemRequestBuilder.WithAgent_ItemRequestBuilderPatchQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyPatchesAnAgentSettingsV1ConvaiAgentsAgentIdPatch body, Action<RequestConfiguration<global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.WithAgent_ItemRequestBuilder.WithAgent_ItemRequestBuilderPatchQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Patches_an_Agent_settings_v1_convai_agents__agent_id__patch body, Action<RequestConfiguration<global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.WithAgent_ItemRequestBuilder.WithAgent_ItemRequestBuilderPatchQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyPatchesAnAgentSettingsV1ConvaiAgentsAgentIdPatch body, Action<RequestConfiguration<global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.WithAgent_ItemRequestBuilder.WithAgent_ItemRequestBuilderPatchQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

@@ -35,10 +35,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The language of the preview.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Language? Language { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.VoicePreviewResponseModelLanguage? Language { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Language Language { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.VoicePreviewResponseModelLanguage Language { get; set; }
 #endif
         /// <summary>The media type of the preview.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -76,7 +76,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "audio_base_64", n => { AudioBase64 = n.GetStringValue(); } },
                 { "duration_secs", n => { DurationSecs = n.GetDoubleValue(); } },
                 { "generated_voice_id", n => { GeneratedVoiceId = n.GetStringValue(); } },
-                { "language", n => { Language = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Language>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Language.CreateFromDiscriminatorValue); } },
+                { "language", n => { Language = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.VoicePreviewResponseModelLanguage>(global::Soenneker.ElevenLabs.OpenApiClient.Models.VoicePreviewResponseModelLanguage.CreateFromDiscriminatorValue); } },
                 { "media_type", n => { MediaType = n.GetStringValue(); } },
             };
         }
@@ -90,7 +90,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteStringValue("audio_base_64", AudioBase64);
             writer.WriteDoubleValue("duration_secs", DurationSecs);
             writer.WriteStringValue("generated_voice_id", GeneratedVoiceId);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Language>("language", Language);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.VoicePreviewResponseModelLanguage>("language", Language);
             writer.WriteStringValue("media_type", MediaType);
             writer.WriteAdditionalData(AdditionalData);
         }

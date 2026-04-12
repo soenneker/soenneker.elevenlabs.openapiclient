@@ -25,10 +25,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The avatar_url property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Avatar_Url? AvatarUrl { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PostAgentAvatarResponseModelAvatarUrl? AvatarUrl { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Avatar_Url AvatarUrl { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PostAgentAvatarResponseModelAvatarUrl AvatarUrl { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.PostAgentAvatarResponseModel"/> and sets the default values.
@@ -56,7 +56,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "agent_id", n => { AgentId = n.GetStringValue(); } },
-                { "avatar_url", n => { AvatarUrl = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Avatar_Url>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Avatar_Url.CreateFromDiscriminatorValue); } },
+                { "avatar_url", n => { AvatarUrl = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PostAgentAvatarResponseModelAvatarUrl>(global::Soenneker.ElevenLabs.OpenApiClient.Models.PostAgentAvatarResponseModelAvatarUrl.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -67,7 +67,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("agent_id", AgentId);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Avatar_Url>("avatar_url", AvatarUrl);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PostAgentAvatarResponseModelAvatarUrl>("avatar_url", AvatarUrl);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

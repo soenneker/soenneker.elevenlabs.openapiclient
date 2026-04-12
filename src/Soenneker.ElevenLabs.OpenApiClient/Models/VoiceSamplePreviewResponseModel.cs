@@ -25,10 +25,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The duration of the audio in seconds.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Duration_Secs? DurationSecs { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceSamplePreviewResponseModelDurationSecs? DurationSecs { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Duration_Secs DurationSecs { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceSamplePreviewResponseModelDurationSecs DurationSecs { get; set; }
 #endif
         /// <summary>The media type of the audio.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -80,7 +80,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "audio_base_64", n => { AudioBase64 = n.GetStringValue(); } },
-                { "duration_secs", n => { DurationSecs = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Duration_Secs>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Duration_Secs.CreateFromDiscriminatorValue); } },
+                { "duration_secs", n => { DurationSecs = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceSamplePreviewResponseModelDurationSecs>(global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceSamplePreviewResponseModelDurationSecs.CreateFromDiscriminatorValue); } },
                 { "media_type", n => { MediaType = n.GetStringValue(); } },
                 { "sample_id", n => { SampleId = n.GetStringValue(); } },
                 { "voice_id", n => { VoiceId = n.GetStringValue(); } },
@@ -94,7 +94,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("audio_base_64", AudioBase64);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Duration_Secs>("duration_secs", DurationSecs);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceSamplePreviewResponseModelDurationSecs>("duration_secs", DurationSecs);
             writer.WriteStringValue("media_type", MediaType);
             writer.WriteStringValue("sample_id", SampleId);
             writer.WriteStringValue("voice_id", VoiceId);

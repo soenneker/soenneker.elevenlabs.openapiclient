@@ -19,10 +19,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The speaker_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Speaker_Id? SpeakerId { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AssetTranscriptionWordSpeakerId? SpeakerId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Speaker_Id SpeakerId { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AssetTranscriptionWordSpeakerId SpeakerId { get; set; }
 #endif
         /// <summary>The start_ms property</summary>
         public int? StartMs { get; set; }
@@ -60,7 +60,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "end_ms", n => { EndMs = n.GetIntValue(); } },
-                { "speaker_id", n => { SpeakerId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Speaker_Id>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Speaker_Id.CreateFromDiscriminatorValue); } },
+                { "speaker_id", n => { SpeakerId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AssetTranscriptionWordSpeakerId>(global::Soenneker.ElevenLabs.OpenApiClient.Models.AssetTranscriptionWordSpeakerId.CreateFromDiscriminatorValue); } },
                 { "start_ms", n => { StartMs = n.GetIntValue(); } },
                 { "text", n => { Text = n.GetStringValue(); } },
             };
@@ -73,7 +73,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("end_ms", EndMs);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Speaker_Id>("speaker_id", SpeakerId);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AssetTranscriptionWordSpeakerId>("speaker_id", SpeakerId);
             writer.WriteIntValue("start_ms", StartMs);
             writer.WriteStringValue("text", Text);
             writer.WriteAdditionalData(AdditionalData);

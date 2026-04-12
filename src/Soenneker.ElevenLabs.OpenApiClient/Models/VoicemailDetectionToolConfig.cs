@@ -20,10 +20,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Optional message to leave on voicemail when detected. If not provided, the call will end immediately when voicemail is detected. Supports dynamic variables (e.g., {{system__time}}, {{system__call_duration_secs}}, {{custom_variable}}).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Voicemail_Message? VoicemailMessage { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.VoicemailDetectionToolConfigVoicemailMessage? VoicemailMessage { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Voicemail_Message VoicemailMessage { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.VoicemailDetectionToolConfigVoicemailMessage VoicemailMessage { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.VoicemailDetectionToolConfig"/> and sets the default values.
@@ -52,7 +52,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "system_tool_type", n => { SystemToolType = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.VoicemailDetectionToolConfig_system_tool_type>(); } },
-                { "voicemail_message", n => { VoicemailMessage = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Voicemail_Message>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Voicemail_Message.CreateFromDiscriminatorValue); } },
+                { "voicemail_message", n => { VoicemailMessage = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.VoicemailDetectionToolConfigVoicemailMessage>(global::Soenneker.ElevenLabs.OpenApiClient.Models.VoicemailDetectionToolConfigVoicemailMessage.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -63,7 +63,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.VoicemailDetectionToolConfig_system_tool_type>("system_tool_type", SystemToolType);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Voicemail_Message>("voicemail_message", VoicemailMessage);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.VoicemailDetectionToolConfigVoicemailMessage>("voicemail_message", VoicemailMessage);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

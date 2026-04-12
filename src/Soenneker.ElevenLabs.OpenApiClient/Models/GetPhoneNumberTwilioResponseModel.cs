@@ -17,10 +17,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The agent that is assigned to the phone number</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberAgentInfo? AssignedAgent { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPhoneNumberTwilioResponseModelAssignedAgent? AssignedAgent { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberAgentInfo AssignedAgent { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPhoneNumberTwilioResponseModelAssignedAgent AssignedAgent { get; set; }
 #endif
         /// <summary>Label for the phone number</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -80,7 +80,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "assigned_agent", n => { AssignedAgent = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberAgentInfo>(global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberAgentInfo.CreateFromDiscriminatorValue); } },
+                { "assigned_agent", n => { AssignedAgent = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPhoneNumberTwilioResponseModelAssignedAgent>(global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPhoneNumberTwilioResponseModelAssignedAgent.CreateFromDiscriminatorValue); } },
                 { "label", n => { Label = n.GetStringValue(); } },
                 { "phone_number", n => { PhoneNumber = n.GetStringValue(); } },
                 { "phone_number_id", n => { PhoneNumberId = n.GetStringValue(); } },
@@ -96,7 +96,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberAgentInfo>("assigned_agent", AssignedAgent);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPhoneNumberTwilioResponseModelAssignedAgent>("assigned_agent", AssignedAgent);
             writer.WriteStringValue("label", Label);
             writer.WriteStringValue("phone_number", PhoneNumber);
             writer.WriteStringValue("phone_number_id", PhoneNumberId);

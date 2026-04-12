@@ -22,10 +22,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>First name of the user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.First_Name? FirstName { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.UserResponseModelFirstName? FirstName { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.First_Name FirstName { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.UserResponseModelFirstName FirstName { get; set; }
 #endif
         /// <summary>Whether the user&apos;s API key is hashed.</summary>
         public bool? IsApiKeyHashed { get; set; }
@@ -39,18 +39,18 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The Partnerstack partner default link of the user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Partnerstack_Partner_Default_Link? PartnerstackPartnerDefaultLink { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.UserResponseModelPartnerstackPartnerDefaultLink? PartnerstackPartnerDefaultLink { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Partnerstack_Partner_Default_Link PartnerstackPartnerDefaultLink { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.UserResponseModelPartnerstackPartnerDefaultLink PartnerstackPartnerDefaultLink { get; set; }
 #endif
         /// <summary>The referral link code of the user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Referral_Link_Code? ReferralLinkCode { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.UserResponseModelReferralLinkCode? ReferralLinkCode { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Referral_Link_Code ReferralLinkCode { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.UserResponseModelReferralLinkCode ReferralLinkCode { get; set; }
 #endif
         /// <summary>Seat types for workspace members.Lite Member is equivalent to Basic Seat in the web application.Member is equivalent to Full Seat in the web application.</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.SeatType? SeatType { get; set; }
@@ -75,18 +75,18 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The API key of the user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Xi_Api_Key? XiApiKey { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.UserResponseModelXiApiKey? XiApiKey { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Xi_Api_Key XiApiKey { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.UserResponseModelXiApiKey XiApiKey { get; set; }
 #endif
         /// <summary>The preview of the user&apos;s API key.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Xi_Api_Key_Preview? XiApiKeyPreview { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.UserResponseModelXiApiKeyPreview? XiApiKeyPreview { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Xi_Api_Key_Preview XiApiKeyPreview { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.UserResponseModelXiApiKeyPreview XiApiKeyPreview { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.UserResponseModel"/> and sets the default values.
@@ -115,19 +115,19 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             {
                 { "can_use_delayed_payment_methods", n => { CanUseDelayedPaymentMethods = n.GetBoolValue(); } },
                 { "created_at", n => { CreatedAt = n.GetIntValue(); } },
-                { "first_name", n => { FirstName = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.First_Name>(global::Soenneker.ElevenLabs.OpenApiClient.Models.First_Name.CreateFromDiscriminatorValue); } },
+                { "first_name", n => { FirstName = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UserResponseModelFirstName>(global::Soenneker.ElevenLabs.OpenApiClient.Models.UserResponseModelFirstName.CreateFromDiscriminatorValue); } },
                 { "is_api_key_hashed", n => { IsApiKeyHashed = n.GetBoolValue(); } },
                 { "is_new_user", n => { IsNewUser = n.GetBoolValue(); } },
                 { "is_onboarding_checklist_completed", n => { IsOnboardingChecklistCompleted = n.GetBoolValue(); } },
                 { "is_onboarding_completed", n => { IsOnboardingCompleted = n.GetBoolValue(); } },
-                { "partnerstack_partner_default_link", n => { PartnerstackPartnerDefaultLink = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Partnerstack_Partner_Default_Link>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Partnerstack_Partner_Default_Link.CreateFromDiscriminatorValue); } },
-                { "referral_link_code", n => { ReferralLinkCode = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Referral_Link_Code>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Referral_Link_Code.CreateFromDiscriminatorValue); } },
+                { "partnerstack_partner_default_link", n => { PartnerstackPartnerDefaultLink = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UserResponseModelPartnerstackPartnerDefaultLink>(global::Soenneker.ElevenLabs.OpenApiClient.Models.UserResponseModelPartnerstackPartnerDefaultLink.CreateFromDiscriminatorValue); } },
+                { "referral_link_code", n => { ReferralLinkCode = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UserResponseModelReferralLinkCode>(global::Soenneker.ElevenLabs.OpenApiClient.Models.UserResponseModelReferralLinkCode.CreateFromDiscriminatorValue); } },
                 { "seat_type", n => { SeatType = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SeatType>(); } },
                 { "show_compliance_terms", n => { ShowComplianceTerms = n.GetBoolValue(); } },
                 { "subscription", n => { Subscription = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SubscriptionResponseModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.SubscriptionResponseModel.CreateFromDiscriminatorValue); } },
                 { "user_id", n => { UserId = n.GetStringValue(); } },
-                { "xi_api_key", n => { XiApiKey = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Xi_Api_Key>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Xi_Api_Key.CreateFromDiscriminatorValue); } },
-                { "xi_api_key_preview", n => { XiApiKeyPreview = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Xi_Api_Key_Preview>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Xi_Api_Key_Preview.CreateFromDiscriminatorValue); } },
+                { "xi_api_key", n => { XiApiKey = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UserResponseModelXiApiKey>(global::Soenneker.ElevenLabs.OpenApiClient.Models.UserResponseModelXiApiKey.CreateFromDiscriminatorValue); } },
+                { "xi_api_key_preview", n => { XiApiKeyPreview = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UserResponseModelXiApiKeyPreview>(global::Soenneker.ElevenLabs.OpenApiClient.Models.UserResponseModelXiApiKeyPreview.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -139,19 +139,19 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("can_use_delayed_payment_methods", CanUseDelayedPaymentMethods);
             writer.WriteIntValue("created_at", CreatedAt);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.First_Name>("first_name", FirstName);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UserResponseModelFirstName>("first_name", FirstName);
             writer.WriteBoolValue("is_api_key_hashed", IsApiKeyHashed);
             writer.WriteBoolValue("is_new_user", IsNewUser);
             writer.WriteBoolValue("is_onboarding_checklist_completed", IsOnboardingChecklistCompleted);
             writer.WriteBoolValue("is_onboarding_completed", IsOnboardingCompleted);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Partnerstack_Partner_Default_Link>("partnerstack_partner_default_link", PartnerstackPartnerDefaultLink);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Referral_Link_Code>("referral_link_code", ReferralLinkCode);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UserResponseModelPartnerstackPartnerDefaultLink>("partnerstack_partner_default_link", PartnerstackPartnerDefaultLink);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UserResponseModelReferralLinkCode>("referral_link_code", ReferralLinkCode);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SeatType>("seat_type", SeatType);
             writer.WriteBoolValue("show_compliance_terms", ShowComplianceTerms);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SubscriptionResponseModel>("subscription", Subscription);
             writer.WriteStringValue("user_id", UserId);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Xi_Api_Key>("xi_api_key", XiApiKey);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Xi_Api_Key_Preview>("xi_api_key_preview", XiApiKeyPreview);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UserResponseModelXiApiKey>("xi_api_key", XiApiKey);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UserResponseModelXiApiKeyPreview>("xi_api_key_preview", XiApiKeyPreview);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

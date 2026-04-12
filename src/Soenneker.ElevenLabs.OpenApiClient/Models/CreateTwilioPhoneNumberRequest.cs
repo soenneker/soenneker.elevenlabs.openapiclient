@@ -35,10 +35,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Twilio Additional Region Configuration</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.RegionConfigRequest? RegionConfig { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateTwilioPhoneNumberRequestRegionConfig? RegionConfig { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.RegionConfigRequest RegionConfig { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateTwilioPhoneNumberRequestRegionConfig RegionConfig { get; set; }
 #endif
         /// <summary>Twilio Account SID</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -91,7 +91,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "label", n => { Label = n.GetStringValue(); } },
                 { "phone_number", n => { PhoneNumber = n.GetStringValue(); } },
                 { "provider", n => { Provider = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateTwilioPhoneNumberRequest_provider>(); } },
-                { "region_config", n => { RegionConfig = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.RegionConfigRequest>(global::Soenneker.ElevenLabs.OpenApiClient.Models.RegionConfigRequest.CreateFromDiscriminatorValue); } },
+                { "region_config", n => { RegionConfig = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateTwilioPhoneNumberRequestRegionConfig>(global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateTwilioPhoneNumberRequestRegionConfig.CreateFromDiscriminatorValue); } },
                 { "sid", n => { Sid = n.GetStringValue(); } },
                 { "supports_inbound", n => { SupportsInbound = n.GetBoolValue(); } },
                 { "supports_outbound", n => { SupportsOutbound = n.GetBoolValue(); } },
@@ -108,7 +108,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteStringValue("label", Label);
             writer.WriteStringValue("phone_number", PhoneNumber);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateTwilioPhoneNumberRequest_provider>("provider", Provider);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.RegionConfigRequest>("region_config", RegionConfig);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateTwilioPhoneNumberRequestRegionConfig>("region_config", RegionConfig);
             writer.WriteStringValue("sid", Sid);
             writer.WriteBoolValue("supports_inbound", SupportsInbound);
             writer.WriteBoolValue("supports_outbound", SupportsOutbound);

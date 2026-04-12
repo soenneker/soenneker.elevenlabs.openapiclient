@@ -55,11 +55,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Workspace.Invites
         /// <exception cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.HTTPValidationError">When receiving a 422 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.ElevenLabs.OpenApiClient.Models.DeleteWorkspaceInviteResponseModel?> DeleteAsync(global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Delete_existing_invitation_v1_workspace_invites_delete body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.ElevenLabs.OpenApiClient.Models.DeleteWorkspaceInviteResponseModel?> DeleteAsync(global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyDeleteExistingInvitationV1WorkspaceInvitesDelete body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.ElevenLabs.OpenApiClient.Models.DeleteWorkspaceInviteResponseModel> DeleteAsync(global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Delete_existing_invitation_v1_workspace_invites_delete body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.ElevenLabs.OpenApiClient.Models.DeleteWorkspaceInviteResponseModel> DeleteAsync(global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyDeleteExistingInvitationV1WorkspaceInvitesDelete body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -78,11 +78,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Workspace.Invites
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToDeleteRequestInformation(global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Delete_existing_invitation_v1_workspace_invites_delete body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToDeleteRequestInformation(global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyDeleteExistingInvitationV1WorkspaceInvitesDelete body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToDeleteRequestInformation(global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Delete_existing_invitation_v1_workspace_invites_delete body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToDeleteRequestInformation(global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyDeleteExistingInvitationV1WorkspaceInvitesDelete body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

@@ -18,18 +18,18 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Source of the conversation initiation</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationSource_Wrapper? Source { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationSourceInfoSource? Source { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationSource_Wrapper Source { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationSourceInfoSource Source { get; set; }
 #endif
         /// <summary>The SDK version number</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.VersionObject? Version { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationSourceInfoVersion? Version { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.VersionObject Version { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationSourceInfoVersion Version { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationSourceInfo"/> and sets the default values.
@@ -56,8 +56,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "source", n => { Source = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationSource_Wrapper>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationSource_Wrapper.CreateFromDiscriminatorValue); } },
-                { "version", n => { Version = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.VersionObject>(global::Soenneker.ElevenLabs.OpenApiClient.Models.VersionObject.CreateFromDiscriminatorValue); } },
+                { "source", n => { Source = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationSourceInfoSource>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationSourceInfoSource.CreateFromDiscriminatorValue); } },
+                { "version", n => { Version = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationSourceInfoVersion>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationSourceInfoVersion.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -67,8 +67,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationSource_Wrapper>("source", Source);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.VersionObject>("version", Version);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationSourceInfoSource>("source", Source);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationSourceInfoVersion>("version", Version);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

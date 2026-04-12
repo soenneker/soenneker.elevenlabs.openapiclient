@@ -19,10 +19,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The created_by_user_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Created_By_User_Id? CreatedByUserId { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.EnvironmentVariableResponseCreatedByUserId? CreatedByUserId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Created_By_User_Id CreatedByUserId { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.EnvironmentVariableResponseCreatedByUserId CreatedByUserId { get; set; }
 #endif
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -47,10 +47,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The values property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.EnvironmentVariableResponse_values? Values { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.EnvironmentVariableResponseValues? Values { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.EnvironmentVariableResponse_values Values { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.EnvironmentVariableResponseValues Values { get; set; }
 #endif
         /// <summary>The workspace_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -86,12 +86,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "created_at_unix_secs", n => { CreatedAtUnixSecs = n.GetIntValue(); } },
-                { "created_by_user_id", n => { CreatedByUserId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Created_By_User_Id>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Created_By_User_Id.CreateFromDiscriminatorValue); } },
+                { "created_by_user_id", n => { CreatedByUserId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.EnvironmentVariableResponseCreatedByUserId>(global::Soenneker.ElevenLabs.OpenApiClient.Models.EnvironmentVariableResponseCreatedByUserId.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "label", n => { Label = n.GetStringValue(); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.EnvironmentVariableResponse_type>(); } },
                 { "updated_at_unix_secs", n => { UpdatedAtUnixSecs = n.GetIntValue(); } },
-                { "values", n => { Values = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.EnvironmentVariableResponse_values>(global::Soenneker.ElevenLabs.OpenApiClient.Models.EnvironmentVariableResponse_values.CreateFromDiscriminatorValue); } },
+                { "values", n => { Values = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.EnvironmentVariableResponseValues>(global::Soenneker.ElevenLabs.OpenApiClient.Models.EnvironmentVariableResponseValues.CreateFromDiscriminatorValue); } },
                 { "workspace_id", n => { WorkspaceId = n.GetStringValue(); } },
             };
         }
@@ -103,12 +103,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("created_at_unix_secs", CreatedAtUnixSecs);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Created_By_User_Id>("created_by_user_id", CreatedByUserId);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.EnvironmentVariableResponseCreatedByUserId>("created_by_user_id", CreatedByUserId);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("label", Label);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.EnvironmentVariableResponse_type>("type", Type);
             writer.WriteIntValue("updated_at_unix_secs", UpdatedAtUnixSecs);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.EnvironmentVariableResponse_values>("values", Values);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.EnvironmentVariableResponseValues>("values", Values);
             writer.WriteStringValue("workspace_id", WorkspaceId);
             writer.WriteAdditionalData(AdditionalData);
         }

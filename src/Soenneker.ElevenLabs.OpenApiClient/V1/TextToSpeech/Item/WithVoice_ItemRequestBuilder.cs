@@ -55,11 +55,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.TextToSpeech.Item
         /// <exception cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.HTTPValidationError">When receiving a 422 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Stream?> PostAsync(global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_text_to_speech_full body, Action<RequestConfiguration<global::Soenneker.ElevenLabs.OpenApiClient.V1.TextToSpeech.Item.WithVoice_ItemRequestBuilder.WithVoice_ItemRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Stream?> PostAsync(global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyTextToSpeechFull body, Action<RequestConfiguration<global::Soenneker.ElevenLabs.OpenApiClient.V1.TextToSpeech.Item.WithVoice_ItemRequestBuilder.WithVoice_ItemRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Stream> PostAsync(global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_text_to_speech_full body, Action<RequestConfiguration<global::Soenneker.ElevenLabs.OpenApiClient.V1.TextToSpeech.Item.WithVoice_ItemRequestBuilder.WithVoice_ItemRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Stream> PostAsync(global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyTextToSpeechFull body, Action<RequestConfiguration<global::Soenneker.ElevenLabs.OpenApiClient.V1.TextToSpeech.Item.WithVoice_ItemRequestBuilder.WithVoice_ItemRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -78,11 +78,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.TextToSpeech.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_text_to_speech_full body, Action<RequestConfiguration<global::Soenneker.ElevenLabs.OpenApiClient.V1.TextToSpeech.Item.WithVoice_ItemRequestBuilder.WithVoice_ItemRequestBuilderPostQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyTextToSpeechFull body, Action<RequestConfiguration<global::Soenneker.ElevenLabs.OpenApiClient.V1.TextToSpeech.Item.WithVoice_ItemRequestBuilder.WithVoice_ItemRequestBuilderPostQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_text_to_speech_full body, Action<RequestConfiguration<global::Soenneker.ElevenLabs.OpenApiClient.V1.TextToSpeech.Item.WithVoice_ItemRequestBuilder.WithVoice_ItemRequestBuilderPostQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyTextToSpeechFull body, Action<RequestConfiguration<global::Soenneker.ElevenLabs.OpenApiClient.V1.TextToSpeech.Item.WithVoice_ItemRequestBuilder.WithVoice_ItemRequestBuilderPostQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

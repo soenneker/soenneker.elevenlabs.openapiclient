@@ -25,20 +25,20 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The auto_sync_info property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AutoSyncInfo? AutoSyncInfo { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseFolderResponseModelAutoSyncInfo? AutoSyncInfo { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AutoSyncInfo AutoSyncInfo { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseFolderResponseModelAutoSyncInfo AutoSyncInfo { get; set; }
 #endif
         /// <summary>The children_count property</summary>
         public int? ChildrenCount { get; set; }
         /// <summary>The ID of the parent folder, or null if the document is at the root level.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Folder_Parent_Id? FolderParentId { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseFolderResponseModelFolderParentId? FolderParentId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Folder_Parent_Id FolderParentId { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseFolderResponseModelFolderParentId FolderParentId { get; set; }
 #endif
         /// <summary>The folder path segments leading to this entity, from root to parent folder.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -108,9 +108,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "access_info", n => { AccessInfo = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceAccessInfo>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceAccessInfo.CreateFromDiscriminatorValue); } },
-                { "auto_sync_info", n => { AutoSyncInfo = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AutoSyncInfo>(global::Soenneker.ElevenLabs.OpenApiClient.Models.AutoSyncInfo.CreateFromDiscriminatorValue); } },
+                { "auto_sync_info", n => { AutoSyncInfo = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseFolderResponseModelAutoSyncInfo>(global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseFolderResponseModelAutoSyncInfo.CreateFromDiscriminatorValue); } },
                 { "children_count", n => { ChildrenCount = n.GetIntValue(); } },
-                { "folder_parent_id", n => { FolderParentId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Folder_Parent_Id>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Folder_Parent_Id.CreateFromDiscriminatorValue); } },
+                { "folder_parent_id", n => { FolderParentId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseFolderResponseModelFolderParentId>(global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseFolderResponseModelFolderParentId.CreateFromDiscriminatorValue); } },
                 { "folder_path", n => { FolderPath = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeBaseFolderPathSegmentResponseModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeBaseFolderPathSegmentResponseModel.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeBaseDocumentMetadataResponseModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeBaseDocumentMetadataResponseModel.CreateFromDiscriminatorValue); } },
@@ -127,9 +127,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceAccessInfo>("access_info", AccessInfo);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AutoSyncInfo>("auto_sync_info", AutoSyncInfo);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseFolderResponseModelAutoSyncInfo>("auto_sync_info", AutoSyncInfo);
             writer.WriteIntValue("children_count", ChildrenCount);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Folder_Parent_Id>("folder_parent_id", FolderParentId);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseFolderResponseModelFolderParentId>("folder_parent_id", FolderParentId);
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeBaseFolderPathSegmentResponseModel>("folder_path", FolderPath);
             writer.WriteStringValue("id", Id);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeBaseDocumentMetadataResponseModel>("metadata", Metadata);

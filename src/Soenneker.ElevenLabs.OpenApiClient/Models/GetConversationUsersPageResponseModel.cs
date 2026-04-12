@@ -19,10 +19,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The next_cursor property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Next_Cursor? NextCursor { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetConversationUsersPageResponseModelNextCursor? NextCursor { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Next_Cursor NextCursor { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetConversationUsersPageResponseModelNextCursor NextCursor { get; set; }
 #endif
         /// <summary>The users property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -58,7 +58,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "has_more", n => { HasMore = n.GetBoolValue(); } },
-                { "next_cursor", n => { NextCursor = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Next_Cursor>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Next_Cursor.CreateFromDiscriminatorValue); } },
+                { "next_cursor", n => { NextCursor = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetConversationUsersPageResponseModelNextCursor>(global::Soenneker.ElevenLabs.OpenApiClient.Models.GetConversationUsersPageResponseModelNextCursor.CreateFromDiscriminatorValue); } },
                 { "users", n => { Users = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationUserResponseModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationUserResponseModel.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
@@ -70,7 +70,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("has_more", HasMore);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Next_Cursor>("next_cursor", NextCursor);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetConversationUsersPageResponseModelNextCursor>("next_cursor", NextCursor);
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationUserResponseModel>("users", Users);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -21,18 +21,18 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The text property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Text? Text { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SegmentCreatePayloadText? Text { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Text Text { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SegmentCreatePayloadText Text { get; set; }
 #endif
         /// <summary>The translations property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SegmentCreatePayload_translations? Translations { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SegmentCreatePayloadTranslations? Translations { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SegmentCreatePayload_translations Translations { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SegmentCreatePayloadTranslations Translations { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.SegmentCreatePayload"/> and sets the default values.
@@ -61,8 +61,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             {
                 { "end_time", n => { EndTime = n.GetDoubleValue(); } },
                 { "start_time", n => { StartTime = n.GetDoubleValue(); } },
-                { "text", n => { Text = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Text>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Text.CreateFromDiscriminatorValue); } },
-                { "translations", n => { Translations = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SegmentCreatePayload_translations>(global::Soenneker.ElevenLabs.OpenApiClient.Models.SegmentCreatePayload_translations.CreateFromDiscriminatorValue); } },
+                { "text", n => { Text = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SegmentCreatePayloadText>(global::Soenneker.ElevenLabs.OpenApiClient.Models.SegmentCreatePayloadText.CreateFromDiscriminatorValue); } },
+                { "translations", n => { Translations = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SegmentCreatePayloadTranslations>(global::Soenneker.ElevenLabs.OpenApiClient.Models.SegmentCreatePayloadTranslations.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -74,8 +74,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDoubleValue("end_time", EndTime);
             writer.WriteDoubleValue("start_time", StartTime);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Text>("text", Text);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SegmentCreatePayload_translations>("translations", Translations);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SegmentCreatePayloadText>("text", Text);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SegmentCreatePayloadTranslations>("translations", Translations);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

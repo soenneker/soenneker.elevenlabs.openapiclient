@@ -43,11 +43,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Music.StreamNamespace
         /// <exception cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.HTTPValidationError">When receiving a 422 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Stream?> PostAsync(global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Stream_composed_music_v1_music_stream_post body, Action<RequestConfiguration<global::Soenneker.ElevenLabs.OpenApiClient.V1.Music.StreamNamespace.StreamRequestBuilder.StreamRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Stream?> PostAsync(global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyStreamComposedMusicV1MusicStreamPost body, Action<RequestConfiguration<global::Soenneker.ElevenLabs.OpenApiClient.V1.Music.StreamNamespace.StreamRequestBuilder.StreamRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Stream> PostAsync(global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Stream_composed_music_v1_music_stream_post body, Action<RequestConfiguration<global::Soenneker.ElevenLabs.OpenApiClient.V1.Music.StreamNamespace.StreamRequestBuilder.StreamRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Stream> PostAsync(global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyStreamComposedMusicV1MusicStreamPost body, Action<RequestConfiguration<global::Soenneker.ElevenLabs.OpenApiClient.V1.Music.StreamNamespace.StreamRequestBuilder.StreamRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -66,11 +66,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Music.StreamNamespace
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Stream_composed_music_v1_music_stream_post body, Action<RequestConfiguration<global::Soenneker.ElevenLabs.OpenApiClient.V1.Music.StreamNamespace.StreamRequestBuilder.StreamRequestBuilderPostQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyStreamComposedMusicV1MusicStreamPost body, Action<RequestConfiguration<global::Soenneker.ElevenLabs.OpenApiClient.V1.Music.StreamNamespace.StreamRequestBuilder.StreamRequestBuilderPostQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.ElevenLabs.OpenApiClient.Models.Body_Stream_composed_music_v1_music_stream_post body, Action<RequestConfiguration<global::Soenneker.ElevenLabs.OpenApiClient.V1.Music.StreamNamespace.StreamRequestBuilder.StreamRequestBuilderPostQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyStreamComposedMusicV1MusicStreamPost body, Action<RequestConfiguration<global::Soenneker.ElevenLabs.OpenApiClient.V1.Music.StreamNamespace.StreamRequestBuilder.StreamRequestBuilderPostQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

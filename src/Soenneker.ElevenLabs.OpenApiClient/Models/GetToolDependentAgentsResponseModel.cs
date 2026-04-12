@@ -35,10 +35,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The next_cursor property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Next_Cursor? NextCursor { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetToolDependentAgentsResponseModelNextCursor? NextCursor { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Next_Cursor NextCursor { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetToolDependentAgentsResponseModelNextCursor NextCursor { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.GetToolDependentAgentsResponseModel"/> and sets the default values.
@@ -68,7 +68,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "agents", n => { Agents = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetToolDependentAgentsResponseModel.GetToolDependentAgentsResponseModel_agents>(global::Soenneker.ElevenLabs.OpenApiClient.Models.GetToolDependentAgentsResponseModel.GetToolDependentAgentsResponseModel_agents.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "branches", n => { Branches = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.DependentBranchInfo>(global::Soenneker.ElevenLabs.OpenApiClient.Models.DependentBranchInfo.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "has_more", n => { HasMore = n.GetBoolValue(); } },
-                { "next_cursor", n => { NextCursor = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Next_Cursor>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Next_Cursor.CreateFromDiscriminatorValue); } },
+                { "next_cursor", n => { NextCursor = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetToolDependentAgentsResponseModelNextCursor>(global::Soenneker.ElevenLabs.OpenApiClient.Models.GetToolDependentAgentsResponseModelNextCursor.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -81,7 +81,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetToolDependentAgentsResponseModel.GetToolDependentAgentsResponseModel_agents>("agents", Agents);
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.DependentBranchInfo>("branches", Branches);
             writer.WriteBoolValue("has_more", HasMore);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Next_Cursor>("next_cursor", NextCursor);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetToolDependentAgentsResponseModelNextCursor>("next_cursor", NextCursor);
             writer.WriteAdditionalData(AdditionalData);
         }
         /// <summary>

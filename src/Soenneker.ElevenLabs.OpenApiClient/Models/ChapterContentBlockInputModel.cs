@@ -17,10 +17,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The block_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Block_Id? BlockId { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ChapterContentBlockInputModelBlockId? BlockId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Block_Id BlockId { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ChapterContentBlockInputModelBlockId BlockId { get; set; }
 #endif
         /// <summary>The nodes property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -33,10 +33,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The sub_type property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Sub_Type? SubType { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ChapterContentBlockInputModelSubType? SubType { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Sub_Type SubType { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ChapterContentBlockInputModelSubType SubType { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ChapterContentBlockInputModel"/> and sets the default values.
@@ -63,9 +63,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "block_id", n => { BlockId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Block_Id>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Block_Id.CreateFromDiscriminatorValue); } },
+                { "block_id", n => { BlockId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ChapterContentBlockInputModelBlockId>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ChapterContentBlockInputModelBlockId.CreateFromDiscriminatorValue); } },
                 { "nodes", n => { Nodes = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.ChapterContentParagraphTtsNodeInputModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ChapterContentParagraphTtsNodeInputModel.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "sub_type", n => { SubType = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Sub_Type>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Sub_Type.CreateFromDiscriminatorValue); } },
+                { "sub_type", n => { SubType = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ChapterContentBlockInputModelSubType>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ChapterContentBlockInputModelSubType.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -75,9 +75,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Block_Id>("block_id", BlockId);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ChapterContentBlockInputModelBlockId>("block_id", BlockId);
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.ChapterContentParagraphTtsNodeInputModel>("nodes", Nodes);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Sub_Type>("sub_type", SubType);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ChapterContentBlockInputModelSubType>("sub_type", SubType);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -44,10 +44,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The used_by property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AuthConnectionDependencies? UsedBy { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BearerAuthResponseUsedBy? UsedBy { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AuthConnectionDependencies UsedBy { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BearerAuthResponseUsedBy UsedBy { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.BearerAuthResponse"/> and sets the default values.
@@ -79,7 +79,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "provider", n => { Provider = n.GetStringValue(); } },
-                { "used_by", n => { UsedBy = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AuthConnectionDependencies>(global::Soenneker.ElevenLabs.OpenApiClient.Models.AuthConnectionDependencies.CreateFromDiscriminatorValue); } },
+                { "used_by", n => { UsedBy = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BearerAuthResponseUsedBy>(global::Soenneker.ElevenLabs.OpenApiClient.Models.BearerAuthResponseUsedBy.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -93,7 +93,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("provider", Provider);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AuthConnectionDependencies>("used_by", UsedBy);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BearerAuthResponseUsedBy>("used_by", UsedBy);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

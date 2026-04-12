@@ -17,26 +17,26 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The character_count property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Character_Count? CharacterCount { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceApiKeyResponseModelCharacterCount? CharacterCount { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Character_Count CharacterCount { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceApiKeyResponseModelCharacterCount CharacterCount { get; set; }
 #endif
         /// <summary>The character_limit property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Character_Limit? CharacterLimit { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceApiKeyResponseModelCharacterLimit? CharacterLimit { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Character_Limit CharacterLimit { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceApiKeyResponseModelCharacterLimit CharacterLimit { get; set; }
 #endif
         /// <summary>The created_at_unix property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Created_At_Unix? CreatedAtUnix { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceApiKeyResponseModelCreatedAtUnix? CreatedAtUnix { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Created_At_Unix CreatedAtUnix { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceApiKeyResponseModelCreatedAtUnix CreatedAtUnix { get; set; }
 #endif
         /// <summary>The hashed_xi_api_key property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -75,10 +75,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The permissions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Permissions? Permissions { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceApiKeyResponseModelPermissions? Permissions { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Permissions Permissions { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceApiKeyResponseModelPermissions Permissions { get; set; }
 #endif
         /// <summary>The service_account_user_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -113,15 +113,15 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "character_count", n => { CharacterCount = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Character_Count>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Character_Count.CreateFromDiscriminatorValue); } },
-                { "character_limit", n => { CharacterLimit = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Character_Limit>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Character_Limit.CreateFromDiscriminatorValue); } },
-                { "created_at_unix", n => { CreatedAtUnix = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Created_At_Unix>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Created_At_Unix.CreateFromDiscriminatorValue); } },
+                { "character_count", n => { CharacterCount = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceApiKeyResponseModelCharacterCount>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceApiKeyResponseModelCharacterCount.CreateFromDiscriminatorValue); } },
+                { "character_limit", n => { CharacterLimit = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceApiKeyResponseModelCharacterLimit>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceApiKeyResponseModelCharacterLimit.CreateFromDiscriminatorValue); } },
+                { "created_at_unix", n => { CreatedAtUnix = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceApiKeyResponseModelCreatedAtUnix>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceApiKeyResponseModelCreatedAtUnix.CreateFromDiscriminatorValue); } },
                 { "hashed_xi_api_key", n => { HashedXiApiKey = n.GetStringValue(); } },
                 { "hint", n => { Hint = n.GetStringValue(); } },
                 { "is_disabled", n => { IsDisabled = n.GetBoolValue(); } },
                 { "key_id", n => { KeyId = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "permissions", n => { Permissions = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Permissions>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Permissions.CreateFromDiscriminatorValue); } },
+                { "permissions", n => { Permissions = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceApiKeyResponseModelPermissions>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceApiKeyResponseModelPermissions.CreateFromDiscriminatorValue); } },
                 { "service_account_user_id", n => { ServiceAccountUserId = n.GetStringValue(); } },
             };
         }
@@ -132,15 +132,15 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Character_Count>("character_count", CharacterCount);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Character_Limit>("character_limit", CharacterLimit);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Created_At_Unix>("created_at_unix", CreatedAtUnix);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceApiKeyResponseModelCharacterCount>("character_count", CharacterCount);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceApiKeyResponseModelCharacterLimit>("character_limit", CharacterLimit);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceApiKeyResponseModelCreatedAtUnix>("created_at_unix", CreatedAtUnix);
             writer.WriteStringValue("hashed_xi_api_key", HashedXiApiKey);
             writer.WriteStringValue("hint", Hint);
             writer.WriteBoolValue("is_disabled", IsDisabled);
             writer.WriteStringValue("key_id", KeyId);
             writer.WriteStringValue("name", Name);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Permissions>("permissions", Permissions);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceApiKeyResponseModelPermissions>("permissions", Permissions);
             writer.WriteStringValue("service_account_user_id", ServiceAccountUserId);
             writer.WriteAdditionalData(AdditionalData);
         }

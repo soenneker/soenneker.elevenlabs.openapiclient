@@ -27,18 +27,18 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Number of candidates evaluated in ANN vector search. Higher number means better results, but higher latency. Minimum recommended value is 100. If disabled, the default value is used.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Num_Candidates? NumCandidates { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.RagConfigNumCandidates? NumCandidates { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Num_Candidates NumCandidates { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.RagConfigNumCandidates NumCandidates { get; set; }
 #endif
         /// <summary>Custom prompt for rewriting user queries before RAG retrieval. The conversation history will be automatically appended at the end. If not set, the default prompt will be used.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Query_Rewrite_Prompt_Override? QueryRewritePromptOverride { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.RagConfigQueryRewritePromptOverride? QueryRewritePromptOverride { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Query_Rewrite_Prompt_Override QueryRewritePromptOverride { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.RagConfigQueryRewritePromptOverride QueryRewritePromptOverride { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.RagConfig"/> and sets the default values.
@@ -71,8 +71,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "max_documents_length", n => { MaxDocumentsLength = n.GetIntValue(); } },
                 { "max_retrieved_rag_chunks_count", n => { MaxRetrievedRagChunksCount = n.GetIntValue(); } },
                 { "max_vector_distance", n => { MaxVectorDistance = n.GetDoubleValue(); } },
-                { "num_candidates", n => { NumCandidates = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Num_Candidates>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Num_Candidates.CreateFromDiscriminatorValue); } },
-                { "query_rewrite_prompt_override", n => { QueryRewritePromptOverride = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Query_Rewrite_Prompt_Override>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Query_Rewrite_Prompt_Override.CreateFromDiscriminatorValue); } },
+                { "num_candidates", n => { NumCandidates = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.RagConfigNumCandidates>(global::Soenneker.ElevenLabs.OpenApiClient.Models.RagConfigNumCandidates.CreateFromDiscriminatorValue); } },
+                { "query_rewrite_prompt_override", n => { QueryRewritePromptOverride = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.RagConfigQueryRewritePromptOverride>(global::Soenneker.ElevenLabs.OpenApiClient.Models.RagConfigQueryRewritePromptOverride.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -87,8 +87,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteIntValue("max_documents_length", MaxDocumentsLength);
             writer.WriteIntValue("max_retrieved_rag_chunks_count", MaxRetrievedRagChunksCount);
             writer.WriteDoubleValue("max_vector_distance", MaxVectorDistance);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Num_Candidates>("num_candidates", NumCandidates);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Query_Rewrite_Prompt_Override>("query_rewrite_prompt_override", QueryRewritePromptOverride);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.RagConfigNumCandidates>("num_candidates", NumCandidates);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.RagConfigQueryRewritePromptOverride>("query_rewrite_prompt_override", QueryRewritePromptOverride);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -25,26 +25,26 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The agent_name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Agent_Name? AgentName { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetConversationResponseModelAgentName? AgentName { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Agent_Name AgentName { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetConversationResponseModelAgentName AgentName { get; set; }
 #endif
         /// <summary>The analysis property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryAnalysisCommonModel? Analysis { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetConversationResponseModelAnalysis? Analysis { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryAnalysisCommonModel Analysis { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetConversationResponseModelAnalysis Analysis { get; set; }
 #endif
         /// <summary>The branch_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Branch_Id? BranchId { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetConversationResponseModelBranchId? BranchId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Branch_Id BranchId { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetConversationResponseModelBranchId BranchId { get; set; }
 #endif
         /// <summary>The conversation_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -57,10 +57,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The conversation_initiation_client_data property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationClientDataRequest_Output? ConversationInitiationClientData { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationClientDataRequestOutput? ConversationInitiationClientData { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationClientDataRequest_Output ConversationInitiationClientData { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationClientDataRequestOutput ConversationInitiationClientData { get; set; }
 #endif
         /// <summary>The environment property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -97,18 +97,18 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The user_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.User_Id? UserId { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetConversationResponseModelUserId? UserId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.User_Id UserId { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetConversationResponseModelUserId UserId { get; set; }
 #endif
         /// <summary>The ID of the agent version used for this conversation</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Version_Id? VersionId { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetConversationResponseModelVersionId? VersionId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Version_Id VersionId { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetConversationResponseModelVersionId VersionId { get; set; }
 #endif
         /// <summary>The visited_agents property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -145,11 +145,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "agent_id", n => { AgentId = n.GetStringValue(); } },
-                { "agent_name", n => { AgentName = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Agent_Name>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Agent_Name.CreateFromDiscriminatorValue); } },
-                { "analysis", n => { Analysis = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryAnalysisCommonModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryAnalysisCommonModel.CreateFromDiscriminatorValue); } },
-                { "branch_id", n => { BranchId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Branch_Id>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Branch_Id.CreateFromDiscriminatorValue); } },
+                { "agent_name", n => { AgentName = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetConversationResponseModelAgentName>(global::Soenneker.ElevenLabs.OpenApiClient.Models.GetConversationResponseModelAgentName.CreateFromDiscriminatorValue); } },
+                { "analysis", n => { Analysis = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetConversationResponseModelAnalysis>(global::Soenneker.ElevenLabs.OpenApiClient.Models.GetConversationResponseModelAnalysis.CreateFromDiscriminatorValue); } },
+                { "branch_id", n => { BranchId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetConversationResponseModelBranchId>(global::Soenneker.ElevenLabs.OpenApiClient.Models.GetConversationResponseModelBranchId.CreateFromDiscriminatorValue); } },
                 { "conversation_id", n => { ConversationId = n.GetStringValue(); } },
-                { "conversation_initiation_client_data", n => { ConversationInitiationClientData = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationClientDataRequest_Output>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationClientDataRequest_Output.CreateFromDiscriminatorValue); } },
+                { "conversation_initiation_client_data", n => { ConversationInitiationClientData = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationClientDataRequestOutput>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationClientDataRequestOutput.CreateFromDiscriminatorValue); } },
                 { "environment", n => { Environment = n.GetStringValue(); } },
                 { "has_audio", n => { HasAudio = n.GetBoolValue(); } },
                 { "has_response_audio", n => { HasResponseAudio = n.GetBoolValue(); } },
@@ -157,8 +157,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryMetadataCommonModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryMetadataCommonModel.CreateFromDiscriminatorValue); } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetConversationResponseModel_status>(); } },
                 { "transcript", n => { Transcript = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptResponseModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptResponseModel.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "user_id", n => { UserId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.User_Id>(global::Soenneker.ElevenLabs.OpenApiClient.Models.User_Id.CreateFromDiscriminatorValue); } },
-                { "version_id", n => { VersionId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Version_Id>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Version_Id.CreateFromDiscriminatorValue); } },
+                { "user_id", n => { UserId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetConversationResponseModelUserId>(global::Soenneker.ElevenLabs.OpenApiClient.Models.GetConversationResponseModelUserId.CreateFromDiscriminatorValue); } },
+                { "version_id", n => { VersionId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetConversationResponseModelVersionId>(global::Soenneker.ElevenLabs.OpenApiClient.Models.GetConversationResponseModelVersionId.CreateFromDiscriminatorValue); } },
                 { "visited_agents", n => { VisitedAgents = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.VisitedAgentRef>(global::Soenneker.ElevenLabs.OpenApiClient.Models.VisitedAgentRef.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
@@ -170,11 +170,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("agent_id", AgentId);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Agent_Name>("agent_name", AgentName);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryAnalysisCommonModel>("analysis", Analysis);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Branch_Id>("branch_id", BranchId);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetConversationResponseModelAgentName>("agent_name", AgentName);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetConversationResponseModelAnalysis>("analysis", Analysis);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetConversationResponseModelBranchId>("branch_id", BranchId);
             writer.WriteStringValue("conversation_id", ConversationId);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationClientDataRequest_Output>("conversation_initiation_client_data", ConversationInitiationClientData);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationClientDataRequestOutput>("conversation_initiation_client_data", ConversationInitiationClientData);
             writer.WriteStringValue("environment", Environment);
             writer.WriteBoolValue("has_audio", HasAudio);
             writer.WriteBoolValue("has_response_audio", HasResponseAudio);
@@ -182,8 +182,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryMetadataCommonModel>("metadata", Metadata);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetConversationResponseModel_status>("status", Status);
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptResponseModel>("transcript", Transcript);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.User_Id>("user_id", UserId);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Version_Id>("version_id", VersionId);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetConversationResponseModelUserId>("user_id", UserId);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetConversationResponseModelVersionId>("version_id", VersionId);
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.VisitedAgentRef>("visited_agents", VisitedAgents);
             writer.WriteAdditionalData(AdditionalData);
         }
