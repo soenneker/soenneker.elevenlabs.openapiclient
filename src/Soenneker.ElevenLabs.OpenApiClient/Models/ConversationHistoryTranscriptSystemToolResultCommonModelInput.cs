@@ -53,10 +53,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The result property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptSystemToolResultCommonModelInputResult? Result { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptSystemToolResultCommonModelInput_result? Result { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptSystemToolResultCommonModelInputResult Result { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptSystemToolResultCommonModelInput_result Result { get; set; }
 #endif
         /// <summary>The result_value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -111,7 +111,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "is_error", n => { IsError = n.GetBoolValue(); } },
                 { "raw_error_message", n => { RawErrorMessage = n.GetStringValue(); } },
                 { "request_id", n => { RequestId = n.GetStringValue(); } },
-                { "result", n => { Result = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptSystemToolResultCommonModelInputResult>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptSystemToolResultCommonModelInputResult.CreateFromDiscriminatorValue); } },
+                { "result", n => { Result = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptSystemToolResultCommonModelInput_result>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptSystemToolResultCommonModelInput_result.CreateFromDiscriminatorValue); } },
                 { "result_value", n => { ResultValue = n.GetStringValue(); } },
                 { "tool_has_been_called", n => { ToolHasBeenCalled = n.GetBoolValue(); } },
                 { "tool_latency_secs", n => { ToolLatencySecs = n.GetDoubleValue(); } },
@@ -132,7 +132,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteBoolValue("is_error", IsError);
             writer.WriteStringValue("raw_error_message", RawErrorMessage);
             writer.WriteStringValue("request_id", RequestId);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptSystemToolResultCommonModelInputResult>("result", Result);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptSystemToolResultCommonModelInput_result>("result", Result);
             writer.WriteStringValue("result_value", ResultValue);
             writer.WriteBoolValue("tool_has_been_called", ToolHasBeenCalled);
             writer.WriteDoubleValue("tool_latency_secs", ToolLatencySecs);

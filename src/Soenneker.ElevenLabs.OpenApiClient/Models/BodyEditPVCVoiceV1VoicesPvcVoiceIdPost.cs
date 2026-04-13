@@ -17,10 +17,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Description to use for the created voice.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyEditPVCVoiceV1VoicesPvcVoiceIdPostDescription? Description { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Description? Description { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyEditPVCVoiceV1VoicesPvcVoiceIdPostDescription Description { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Description Description { get; set; }
 #endif
         /// <summary>Labels for the voice. Keys can be language, accent, gender, or age.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -71,7 +71,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "description", n => { Description = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyEditPVCVoiceV1VoicesPvcVoiceIdPostDescription>(global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyEditPVCVoiceV1VoicesPvcVoiceIdPostDescription.CreateFromDiscriminatorValue); } },
+                { "description", n => { Description = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Description>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Description.CreateFromDiscriminatorValue); } },
                 { "labels", n => { Labels = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyEditPVCVoiceV1VoicesPvcVoiceIdPostLabels>(global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyEditPVCVoiceV1VoicesPvcVoiceIdPostLabels.CreateFromDiscriminatorValue); } },
                 { "language", n => { Language = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
@@ -84,7 +84,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyEditPVCVoiceV1VoicesPvcVoiceIdPostDescription>("description", Description);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Description>("description", Description);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyEditPVCVoiceV1VoicesPvcVoiceIdPostLabels>("labels", Labels);
             writer.WriteStringValue("language", Language);
             writer.WriteStringValue("name", Name);

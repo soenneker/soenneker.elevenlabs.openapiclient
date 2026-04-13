@@ -17,50 +17,50 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Languages to apply these changes to. If empty, will apply to all languages.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyUpdateMetadataForASpeakerV1DubbingResourceDubbingIdSpeakerSpeakerIdPatchLanguages? Languages { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Languages? Languages { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyUpdateMetadataForASpeakerV1DubbingResourceDubbingIdSpeakerSpeakerIdPatchLanguages Languages { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Languages Languages { get; set; }
 #endif
         /// <summary>Name to attribute to this speaker.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyUpdateMetadataForASpeakerV1DubbingResourceDubbingIdSpeakerSpeakerIdPatchSpeakerName? SpeakerName { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Speaker_Name? SpeakerName { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyUpdateMetadataForASpeakerV1DubbingResourceDubbingIdSpeakerSpeakerIdPatchSpeakerName SpeakerName { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Speaker_Name SpeakerName { get; set; }
 #endif
         /// <summary>Either the identifier of a voice from the ElevenLabs voice library, or one of [&apos;track-clone&apos;, &apos;clip-clone&apos;].</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyUpdateMetadataForASpeakerV1DubbingResourceDubbingIdSpeakerSpeakerIdPatchVoiceId? VoiceId { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Voice_Id? VoiceId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyUpdateMetadataForASpeakerV1DubbingResourceDubbingIdSpeakerSpeakerIdPatchVoiceId VoiceId { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Voice_Id VoiceId { get; set; }
 #endif
         /// <summary>For models that support it, the voice similarity value to use. This will default to 1.0, with a valid range of [0.0, 1.0].</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyUpdateMetadataForASpeakerV1DubbingResourceDubbingIdSpeakerSpeakerIdPatchVoiceSimilarity? VoiceSimilarity { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Voice_Similarity? VoiceSimilarity { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyUpdateMetadataForASpeakerV1DubbingResourceDubbingIdSpeakerSpeakerIdPatchVoiceSimilarity VoiceSimilarity { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Voice_Similarity VoiceSimilarity { get; set; }
 #endif
         /// <summary>For models that support it, the voice similarity value to use. This will default to 0.65, with a valid range of [0.0, 1.0].</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyUpdateMetadataForASpeakerV1DubbingResourceDubbingIdSpeakerSpeakerIdPatchVoiceStability? VoiceStability { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Voice_Stability? VoiceStability { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyUpdateMetadataForASpeakerV1DubbingResourceDubbingIdSpeakerSpeakerIdPatchVoiceStability VoiceStability { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Voice_Stability VoiceStability { get; set; }
 #endif
         /// <summary>For models that support it, the voice style value to use. This will default to 1.0, with a valid range of [0.0, 1.0].</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyUpdateMetadataForASpeakerV1DubbingResourceDubbingIdSpeakerSpeakerIdPatchVoiceStyle? VoiceStyle { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Voice_Style? VoiceStyle { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyUpdateMetadataForASpeakerV1DubbingResourceDubbingIdSpeakerSpeakerIdPatchVoiceStyle VoiceStyle { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Voice_Style VoiceStyle { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyUpdateMetadataForASpeakerV1DubbingResourceDubbingIdSpeakerSpeakerIdPatch"/> and sets the default values.
@@ -87,12 +87,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "languages", n => { Languages = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyUpdateMetadataForASpeakerV1DubbingResourceDubbingIdSpeakerSpeakerIdPatchLanguages>(global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyUpdateMetadataForASpeakerV1DubbingResourceDubbingIdSpeakerSpeakerIdPatchLanguages.CreateFromDiscriminatorValue); } },
-                { "speaker_name", n => { SpeakerName = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyUpdateMetadataForASpeakerV1DubbingResourceDubbingIdSpeakerSpeakerIdPatchSpeakerName>(global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyUpdateMetadataForASpeakerV1DubbingResourceDubbingIdSpeakerSpeakerIdPatchSpeakerName.CreateFromDiscriminatorValue); } },
-                { "voice_id", n => { VoiceId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyUpdateMetadataForASpeakerV1DubbingResourceDubbingIdSpeakerSpeakerIdPatchVoiceId>(global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyUpdateMetadataForASpeakerV1DubbingResourceDubbingIdSpeakerSpeakerIdPatchVoiceId.CreateFromDiscriminatorValue); } },
-                { "voice_similarity", n => { VoiceSimilarity = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyUpdateMetadataForASpeakerV1DubbingResourceDubbingIdSpeakerSpeakerIdPatchVoiceSimilarity>(global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyUpdateMetadataForASpeakerV1DubbingResourceDubbingIdSpeakerSpeakerIdPatchVoiceSimilarity.CreateFromDiscriminatorValue); } },
-                { "voice_stability", n => { VoiceStability = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyUpdateMetadataForASpeakerV1DubbingResourceDubbingIdSpeakerSpeakerIdPatchVoiceStability>(global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyUpdateMetadataForASpeakerV1DubbingResourceDubbingIdSpeakerSpeakerIdPatchVoiceStability.CreateFromDiscriminatorValue); } },
-                { "voice_style", n => { VoiceStyle = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyUpdateMetadataForASpeakerV1DubbingResourceDubbingIdSpeakerSpeakerIdPatchVoiceStyle>(global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyUpdateMetadataForASpeakerV1DubbingResourceDubbingIdSpeakerSpeakerIdPatchVoiceStyle.CreateFromDiscriminatorValue); } },
+                { "languages", n => { Languages = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Languages>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Languages.CreateFromDiscriminatorValue); } },
+                { "speaker_name", n => { SpeakerName = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Speaker_Name>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Speaker_Name.CreateFromDiscriminatorValue); } },
+                { "voice_id", n => { VoiceId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Voice_Id>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Voice_Id.CreateFromDiscriminatorValue); } },
+                { "voice_similarity", n => { VoiceSimilarity = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Voice_Similarity>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Voice_Similarity.CreateFromDiscriminatorValue); } },
+                { "voice_stability", n => { VoiceStability = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Voice_Stability>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Voice_Stability.CreateFromDiscriminatorValue); } },
+                { "voice_style", n => { VoiceStyle = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Voice_Style>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Voice_Style.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -102,12 +102,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyUpdateMetadataForASpeakerV1DubbingResourceDubbingIdSpeakerSpeakerIdPatchLanguages>("languages", Languages);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyUpdateMetadataForASpeakerV1DubbingResourceDubbingIdSpeakerSpeakerIdPatchSpeakerName>("speaker_name", SpeakerName);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyUpdateMetadataForASpeakerV1DubbingResourceDubbingIdSpeakerSpeakerIdPatchVoiceId>("voice_id", VoiceId);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyUpdateMetadataForASpeakerV1DubbingResourceDubbingIdSpeakerSpeakerIdPatchVoiceSimilarity>("voice_similarity", VoiceSimilarity);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyUpdateMetadataForASpeakerV1DubbingResourceDubbingIdSpeakerSpeakerIdPatchVoiceStability>("voice_stability", VoiceStability);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyUpdateMetadataForASpeakerV1DubbingResourceDubbingIdSpeakerSpeakerIdPatchVoiceStyle>("voice_style", VoiceStyle);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Languages>("languages", Languages);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Speaker_Name>("speaker_name", SpeakerName);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Voice_Id>("voice_id", VoiceId);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Voice_Similarity>("voice_similarity", VoiceSimilarity);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Voice_Stability>("voice_stability", VoiceStability);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Voice_Style>("voice_style", VoiceStyle);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

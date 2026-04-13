@@ -17,58 +17,58 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The end call tool</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BuiltInToolsOutputEndCall? EndCall { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigOutput? EndCall { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BuiltInToolsOutputEndCall EndCall { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigOutput EndCall { get; set; }
 #endif
         /// <summary>The language detection tool</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BuiltInToolsOutputLanguageDetection? LanguageDetection { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigOutput? LanguageDetection { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BuiltInToolsOutputLanguageDetection LanguageDetection { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigOutput LanguageDetection { get; set; }
 #endif
         /// <summary>The play DTMF tool</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BuiltInToolsOutputPlayKeypadTouchTone? PlayKeypadTouchTone { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigOutput? PlayKeypadTouchTone { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BuiltInToolsOutputPlayKeypadTouchTone PlayKeypadTouchTone { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigOutput PlayKeypadTouchTone { get; set; }
 #endif
         /// <summary>The skip turn tool</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BuiltInToolsOutputSkipTurn? SkipTurn { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigOutput? SkipTurn { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BuiltInToolsOutputSkipTurn SkipTurn { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigOutput SkipTurn { get; set; }
 #endif
         /// <summary>The transfer to agent tool</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BuiltInToolsOutputTransferToAgent? TransferToAgent { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigOutput? TransferToAgent { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BuiltInToolsOutputTransferToAgent TransferToAgent { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigOutput TransferToAgent { get; set; }
 #endif
         /// <summary>The transfer to number tool</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BuiltInToolsOutputTransferToNumber? TransferToNumber { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigOutput? TransferToNumber { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BuiltInToolsOutputTransferToNumber TransferToNumber { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigOutput TransferToNumber { get; set; }
 #endif
         /// <summary>The voicemail detection tool</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BuiltInToolsOutputVoicemailDetection? VoicemailDetection { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigOutput? VoicemailDetection { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BuiltInToolsOutputVoicemailDetection VoicemailDetection { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigOutput VoicemailDetection { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.BuiltInToolsOutput"/> and sets the default values.
@@ -95,13 +95,13 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "end_call", n => { EndCall = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BuiltInToolsOutputEndCall>(global::Soenneker.ElevenLabs.OpenApiClient.Models.BuiltInToolsOutputEndCall.CreateFromDiscriminatorValue); } },
-                { "language_detection", n => { LanguageDetection = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BuiltInToolsOutputLanguageDetection>(global::Soenneker.ElevenLabs.OpenApiClient.Models.BuiltInToolsOutputLanguageDetection.CreateFromDiscriminatorValue); } },
-                { "play_keypad_touch_tone", n => { PlayKeypadTouchTone = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BuiltInToolsOutputPlayKeypadTouchTone>(global::Soenneker.ElevenLabs.OpenApiClient.Models.BuiltInToolsOutputPlayKeypadTouchTone.CreateFromDiscriminatorValue); } },
-                { "skip_turn", n => { SkipTurn = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BuiltInToolsOutputSkipTurn>(global::Soenneker.ElevenLabs.OpenApiClient.Models.BuiltInToolsOutputSkipTurn.CreateFromDiscriminatorValue); } },
-                { "transfer_to_agent", n => { TransferToAgent = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BuiltInToolsOutputTransferToAgent>(global::Soenneker.ElevenLabs.OpenApiClient.Models.BuiltInToolsOutputTransferToAgent.CreateFromDiscriminatorValue); } },
-                { "transfer_to_number", n => { TransferToNumber = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BuiltInToolsOutputTransferToNumber>(global::Soenneker.ElevenLabs.OpenApiClient.Models.BuiltInToolsOutputTransferToNumber.CreateFromDiscriminatorValue); } },
-                { "voicemail_detection", n => { VoicemailDetection = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BuiltInToolsOutputVoicemailDetection>(global::Soenneker.ElevenLabs.OpenApiClient.Models.BuiltInToolsOutputVoicemailDetection.CreateFromDiscriminatorValue); } },
+                { "end_call", n => { EndCall = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigOutput>(global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigOutput.CreateFromDiscriminatorValue); } },
+                { "language_detection", n => { LanguageDetection = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigOutput>(global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigOutput.CreateFromDiscriminatorValue); } },
+                { "play_keypad_touch_tone", n => { PlayKeypadTouchTone = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigOutput>(global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigOutput.CreateFromDiscriminatorValue); } },
+                { "skip_turn", n => { SkipTurn = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigOutput>(global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigOutput.CreateFromDiscriminatorValue); } },
+                { "transfer_to_agent", n => { TransferToAgent = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigOutput>(global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigOutput.CreateFromDiscriminatorValue); } },
+                { "transfer_to_number", n => { TransferToNumber = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigOutput>(global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigOutput.CreateFromDiscriminatorValue); } },
+                { "voicemail_detection", n => { VoicemailDetection = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigOutput>(global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigOutput.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -111,13 +111,13 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BuiltInToolsOutputEndCall>("end_call", EndCall);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BuiltInToolsOutputLanguageDetection>("language_detection", LanguageDetection);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BuiltInToolsOutputPlayKeypadTouchTone>("play_keypad_touch_tone", PlayKeypadTouchTone);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BuiltInToolsOutputSkipTurn>("skip_turn", SkipTurn);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BuiltInToolsOutputTransferToAgent>("transfer_to_agent", TransferToAgent);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BuiltInToolsOutputTransferToNumber>("transfer_to_number", TransferToNumber);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BuiltInToolsOutputVoicemailDetection>("voicemail_detection", VoicemailDetection);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigOutput>("end_call", EndCall);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigOutput>("language_detection", LanguageDetection);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigOutput>("play_keypad_touch_tone", PlayKeypadTouchTone);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigOutput>("skip_turn", SkipTurn);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigOutput>("transfer_to_agent", TransferToAgent);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigOutput>("transfer_to_number", TransferToNumber);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigOutput>("voicemail_detection", VoicemailDetection);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

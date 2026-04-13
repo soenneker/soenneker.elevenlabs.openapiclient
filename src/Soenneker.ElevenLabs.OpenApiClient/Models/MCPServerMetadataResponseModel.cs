@@ -19,10 +19,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The owner_user_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.MCPServerMetadataResponseModelOwnerUserId? OwnerUserId { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Owner_User_Id? OwnerUserId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.MCPServerMetadataResponseModelOwnerUserId OwnerUserId { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Owner_User_Id OwnerUserId { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.MCPServerMetadataResponseModel"/> and sets the default values.
@@ -50,7 +50,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "created_at", n => { CreatedAt = n.GetIntValue(); } },
-                { "owner_user_id", n => { OwnerUserId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.MCPServerMetadataResponseModelOwnerUserId>(global::Soenneker.ElevenLabs.OpenApiClient.Models.MCPServerMetadataResponseModelOwnerUserId.CreateFromDiscriminatorValue); } },
+                { "owner_user_id", n => { OwnerUserId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Owner_User_Id>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Owner_User_Id.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -61,7 +61,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("created_at", CreatedAt);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.MCPServerMetadataResponseModelOwnerUserId>("owner_user_id", OwnerUserId);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Owner_User_Id>("owner_user_id", OwnerUserId);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

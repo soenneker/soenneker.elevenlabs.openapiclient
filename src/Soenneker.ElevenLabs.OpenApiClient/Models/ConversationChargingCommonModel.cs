@@ -17,10 +17,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The call_charge property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationChargingCommonModelCallCharge? CallCharge { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Call_Charge? CallCharge { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationChargingCommonModelCallCharge CallCharge { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Call_Charge CallCharge { get; set; }
 #endif
         /// <summary>The dev_discount property</summary>
         public bool? DevDiscount { get; set; }
@@ -33,18 +33,18 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The llm_charge property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationChargingCommonModelLlmCharge? LlmCharge { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Llm_Charge? LlmCharge { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationChargingCommonModelLlmCharge LlmCharge { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Llm_Charge LlmCharge { get; set; }
 #endif
         /// <summary>The llm_price property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationChargingCommonModelLlmPrice? LlmPrice { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Llm_Price? LlmPrice { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationChargingCommonModelLlmPrice LlmPrice { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Llm_Price LlmPrice { get; set; }
 #endif
         /// <summary>The llm_usage property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -57,10 +57,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The tier property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationChargingCommonModelTier? Tier { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Tier? Tier { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationChargingCommonModelTier Tier { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Tier Tier { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationChargingCommonModel"/> and sets the default values.
@@ -87,15 +87,15 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "call_charge", n => { CallCharge = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationChargingCommonModelCallCharge>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationChargingCommonModelCallCharge.CreateFromDiscriminatorValue); } },
+                { "call_charge", n => { CallCharge = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Call_Charge>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Call_Charge.CreateFromDiscriminatorValue); } },
                 { "dev_discount", n => { DevDiscount = n.GetBoolValue(); } },
                 { "free_llm_dollars_consumed", n => { FreeLlmDollarsConsumed = n.GetDoubleValue(); } },
                 { "free_minutes_consumed", n => { FreeMinutesConsumed = n.GetDoubleValue(); } },
                 { "is_burst", n => { IsBurst = n.GetBoolValue(); } },
-                { "llm_charge", n => { LlmCharge = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationChargingCommonModelLlmCharge>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationChargingCommonModelLlmCharge.CreateFromDiscriminatorValue); } },
-                { "llm_price", n => { LlmPrice = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationChargingCommonModelLlmPrice>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationChargingCommonModelLlmPrice.CreateFromDiscriminatorValue); } },
+                { "llm_charge", n => { LlmCharge = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Llm_Charge>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Llm_Charge.CreateFromDiscriminatorValue); } },
+                { "llm_price", n => { LlmPrice = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Llm_Price>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Llm_Price.CreateFromDiscriminatorValue); } },
                 { "llm_usage", n => { LlmUsage = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.LLMCategoryUsage>(global::Soenneker.ElevenLabs.OpenApiClient.Models.LLMCategoryUsage.CreateFromDiscriminatorValue); } },
-                { "tier", n => { Tier = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationChargingCommonModelTier>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationChargingCommonModelTier.CreateFromDiscriminatorValue); } },
+                { "tier", n => { Tier = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Tier>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Tier.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -105,15 +105,15 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationChargingCommonModelCallCharge>("call_charge", CallCharge);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Call_Charge>("call_charge", CallCharge);
             writer.WriteBoolValue("dev_discount", DevDiscount);
             writer.WriteDoubleValue("free_llm_dollars_consumed", FreeLlmDollarsConsumed);
             writer.WriteDoubleValue("free_minutes_consumed", FreeMinutesConsumed);
             writer.WriteBoolValue("is_burst", IsBurst);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationChargingCommonModelLlmCharge>("llm_charge", LlmCharge);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationChargingCommonModelLlmPrice>("llm_price", LlmPrice);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Llm_Charge>("llm_charge", LlmCharge);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Llm_Price>("llm_price", LlmPrice);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.LLMCategoryUsage>("llm_usage", LlmUsage);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationChargingCommonModelTier>("tier", Tier);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Tier>("tier", Tier);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

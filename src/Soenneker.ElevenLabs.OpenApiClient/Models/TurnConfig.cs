@@ -17,10 +17,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>How long the agent will wait for the user to start the conversation if the first message is empty. If not set, uses the regular turn_timeout.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.TurnConfigInitialWaitTime? InitialWaitTime { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Initial_Wait_Time? InitialWaitTime { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.TurnConfigInitialWaitTime InitialWaitTime { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Initial_Wait_Time InitialWaitTime { get; set; }
 #endif
         /// <summary>The mode property</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.TurnMode? Mode { get; set; }
@@ -72,7 +72,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "initial_wait_time", n => { InitialWaitTime = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TurnConfigInitialWaitTime>(global::Soenneker.ElevenLabs.OpenApiClient.Models.TurnConfigInitialWaitTime.CreateFromDiscriminatorValue); } },
+                { "initial_wait_time", n => { InitialWaitTime = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Initial_Wait_Time>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Initial_Wait_Time.CreateFromDiscriminatorValue); } },
                 { "mode", n => { Mode = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TurnMode>(); } },
                 { "retranscribe_on_turn_timeout", n => { RetranscribeOnTurnTimeout = n.GetBoolValue(); } },
                 { "silence_end_call_timeout", n => { SilenceEndCallTimeout = n.GetDoubleValue(); } },
@@ -90,7 +90,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TurnConfigInitialWaitTime>("initial_wait_time", InitialWaitTime);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Initial_Wait_Time>("initial_wait_time", InitialWaitTime);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TurnMode>("mode", Mode);
             writer.WriteBoolValue("retranscribe_on_turn_timeout", RetranscribeOnTurnTimeout);
             writer.WriteDoubleValue("silence_end_call_timeout", SilenceEndCallTimeout);

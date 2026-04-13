@@ -18,50 +18,50 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The approval mode to set for the MCP server</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.MCPServerConfigUpdateRequestModelApprovalPolicy? ApprovalPolicy { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.MCPApprovalPolicy_Wrapper? ApprovalPolicy { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.MCPServerConfigUpdateRequestModelApprovalPolicy ApprovalPolicy { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.MCPApprovalPolicy_Wrapper ApprovalPolicy { get; set; }
 #endif
         /// <summary>Optional auth connection to use for authentication with this MCP server</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.MCPServerConfigUpdateRequestModelAuthConnection? AuthConnection { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.MCPServerConfigUpdateRequestModel.MCPServerConfigUpdateRequestModel_auth_connection? AuthConnection { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.MCPServerConfigUpdateRequestModelAuthConnection AuthConnection { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.MCPServerConfigUpdateRequestModel.MCPServerConfigUpdateRequestModel_auth_connection AuthConnection { get; set; }
 #endif
         /// <summary>Whether to disable HTTP compression for this MCP server</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.MCPServerConfigUpdateRequestModelDisableCompression? DisableCompression { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Disable_Compression? DisableCompression { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.MCPServerConfigUpdateRequestModelDisableCompression DisableCompression { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Disable_Compression DisableCompression { get; set; }
 #endif
         /// <summary>If set, overrides the server&apos;s disable_interruptions setting for this tool</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.MCPServerConfigUpdateRequestModelDisableInterruptions? DisableInterruptions { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Disable_Interruptions? DisableInterruptions { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.MCPServerConfigUpdateRequestModelDisableInterruptions DisableInterruptions { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Disable_Interruptions DisableInterruptions { get; set; }
 #endif
         /// <summary>If set, overrides the server&apos;s execution_mode setting for this tool</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.MCPServerConfigUpdateRequestModelExecutionMode? ExecutionMode { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolExecutionMode_Wrapper? ExecutionMode { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.MCPServerConfigUpdateRequestModelExecutionMode ExecutionMode { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolExecutionMode_Wrapper ExecutionMode { get; set; }
 #endif
         /// <summary>If set, overrides the server&apos;s force_pre_tool_speech setting for this tool</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.MCPServerConfigUpdateRequestModelForcePreToolSpeech? ForcePreToolSpeech { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Force_Pre_Tool_Speech? ForcePreToolSpeech { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.MCPServerConfigUpdateRequestModelForcePreToolSpeech ForcePreToolSpeech { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Force_Pre_Tool_Speech ForcePreToolSpeech { get; set; }
 #endif
         /// <summary>The headers to include in requests to the MCP server</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -74,26 +74,26 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Optional secret token for authentication with this MCP server</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.MCPServerConfigUpdateRequestModelSecretToken? SecretToken { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConvAISecretLocator? SecretToken { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.MCPServerConfigUpdateRequestModelSecretToken SecretToken { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConvAISecretLocator SecretToken { get; set; }
 #endif
         /// <summary>Predefined tool call sound type to play during tool execution for all tools from this MCP server</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.MCPServerConfigUpdateRequestModelToolCallSound? ToolCallSound { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolCallSoundType_Wrapper? ToolCallSound { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.MCPServerConfigUpdateRequestModelToolCallSound ToolCallSound { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolCallSoundType_Wrapper ToolCallSound { get; set; }
 #endif
         /// <summary>Determines when the tool call sound should play for all tools from this MCP server</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.MCPServerConfigUpdateRequestModelToolCallSoundBehavior? ToolCallSoundBehavior { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolCallSoundBehavior_Wrapper? ToolCallSoundBehavior { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.MCPServerConfigUpdateRequestModelToolCallSoundBehavior ToolCallSoundBehavior { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolCallSoundBehavior_Wrapper ToolCallSoundBehavior { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.MCPServerConfigUpdateRequestModel"/> and sets the default values.
@@ -120,16 +120,16 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "approval_policy", n => { ApprovalPolicy = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.MCPServerConfigUpdateRequestModelApprovalPolicy>(global::Soenneker.ElevenLabs.OpenApiClient.Models.MCPServerConfigUpdateRequestModelApprovalPolicy.CreateFromDiscriminatorValue); } },
-                { "auth_connection", n => { AuthConnection = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.MCPServerConfigUpdateRequestModelAuthConnection>(global::Soenneker.ElevenLabs.OpenApiClient.Models.MCPServerConfigUpdateRequestModelAuthConnection.CreateFromDiscriminatorValue); } },
-                { "disable_compression", n => { DisableCompression = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.MCPServerConfigUpdateRequestModelDisableCompression>(global::Soenneker.ElevenLabs.OpenApiClient.Models.MCPServerConfigUpdateRequestModelDisableCompression.CreateFromDiscriminatorValue); } },
-                { "disable_interruptions", n => { DisableInterruptions = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.MCPServerConfigUpdateRequestModelDisableInterruptions>(global::Soenneker.ElevenLabs.OpenApiClient.Models.MCPServerConfigUpdateRequestModelDisableInterruptions.CreateFromDiscriminatorValue); } },
-                { "execution_mode", n => { ExecutionMode = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.MCPServerConfigUpdateRequestModelExecutionMode>(global::Soenneker.ElevenLabs.OpenApiClient.Models.MCPServerConfigUpdateRequestModelExecutionMode.CreateFromDiscriminatorValue); } },
-                { "force_pre_tool_speech", n => { ForcePreToolSpeech = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.MCPServerConfigUpdateRequestModelForcePreToolSpeech>(global::Soenneker.ElevenLabs.OpenApiClient.Models.MCPServerConfigUpdateRequestModelForcePreToolSpeech.CreateFromDiscriminatorValue); } },
+                { "approval_policy", n => { ApprovalPolicy = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.MCPApprovalPolicy_Wrapper>(global::Soenneker.ElevenLabs.OpenApiClient.Models.MCPApprovalPolicy_Wrapper.CreateFromDiscriminatorValue); } },
+                { "auth_connection", n => { AuthConnection = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.MCPServerConfigUpdateRequestModel.MCPServerConfigUpdateRequestModel_auth_connection>(global::Soenneker.ElevenLabs.OpenApiClient.Models.MCPServerConfigUpdateRequestModel.MCPServerConfigUpdateRequestModel_auth_connection.CreateFromDiscriminatorValue); } },
+                { "disable_compression", n => { DisableCompression = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Disable_Compression>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Disable_Compression.CreateFromDiscriminatorValue); } },
+                { "disable_interruptions", n => { DisableInterruptions = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Disable_Interruptions>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Disable_Interruptions.CreateFromDiscriminatorValue); } },
+                { "execution_mode", n => { ExecutionMode = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolExecutionMode_Wrapper>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolExecutionMode_Wrapper.CreateFromDiscriminatorValue); } },
+                { "force_pre_tool_speech", n => { ForcePreToolSpeech = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Force_Pre_Tool_Speech>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Force_Pre_Tool_Speech.CreateFromDiscriminatorValue); } },
                 { "request_headers", n => { RequestHeaders = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.MCPServerConfigUpdateRequestModelRequestHeaders>(global::Soenneker.ElevenLabs.OpenApiClient.Models.MCPServerConfigUpdateRequestModelRequestHeaders.CreateFromDiscriminatorValue); } },
-                { "secret_token", n => { SecretToken = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.MCPServerConfigUpdateRequestModelSecretToken>(global::Soenneker.ElevenLabs.OpenApiClient.Models.MCPServerConfigUpdateRequestModelSecretToken.CreateFromDiscriminatorValue); } },
-                { "tool_call_sound", n => { ToolCallSound = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.MCPServerConfigUpdateRequestModelToolCallSound>(global::Soenneker.ElevenLabs.OpenApiClient.Models.MCPServerConfigUpdateRequestModelToolCallSound.CreateFromDiscriminatorValue); } },
-                { "tool_call_sound_behavior", n => { ToolCallSoundBehavior = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.MCPServerConfigUpdateRequestModelToolCallSoundBehavior>(global::Soenneker.ElevenLabs.OpenApiClient.Models.MCPServerConfigUpdateRequestModelToolCallSoundBehavior.CreateFromDiscriminatorValue); } },
+                { "secret_token", n => { SecretToken = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConvAISecretLocator>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConvAISecretLocator.CreateFromDiscriminatorValue); } },
+                { "tool_call_sound", n => { ToolCallSound = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolCallSoundType_Wrapper>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolCallSoundType_Wrapper.CreateFromDiscriminatorValue); } },
+                { "tool_call_sound_behavior", n => { ToolCallSoundBehavior = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolCallSoundBehavior_Wrapper>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolCallSoundBehavior_Wrapper.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -139,17 +139,74 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.MCPServerConfigUpdateRequestModelApprovalPolicy>("approval_policy", ApprovalPolicy);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.MCPServerConfigUpdateRequestModelAuthConnection>("auth_connection", AuthConnection);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.MCPServerConfigUpdateRequestModelDisableCompression>("disable_compression", DisableCompression);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.MCPServerConfigUpdateRequestModelDisableInterruptions>("disable_interruptions", DisableInterruptions);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.MCPServerConfigUpdateRequestModelExecutionMode>("execution_mode", ExecutionMode);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.MCPServerConfigUpdateRequestModelForcePreToolSpeech>("force_pre_tool_speech", ForcePreToolSpeech);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.MCPApprovalPolicy_Wrapper>("approval_policy", ApprovalPolicy);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.MCPServerConfigUpdateRequestModel.MCPServerConfigUpdateRequestModel_auth_connection>("auth_connection", AuthConnection);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Disable_Compression>("disable_compression", DisableCompression);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Disable_Interruptions>("disable_interruptions", DisableInterruptions);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolExecutionMode_Wrapper>("execution_mode", ExecutionMode);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Force_Pre_Tool_Speech>("force_pre_tool_speech", ForcePreToolSpeech);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.MCPServerConfigUpdateRequestModelRequestHeaders>("request_headers", RequestHeaders);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.MCPServerConfigUpdateRequestModelSecretToken>("secret_token", SecretToken);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.MCPServerConfigUpdateRequestModelToolCallSound>("tool_call_sound", ToolCallSound);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.MCPServerConfigUpdateRequestModelToolCallSoundBehavior>("tool_call_sound_behavior", ToolCallSoundBehavior);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConvAISecretLocator>("secret_token", SecretToken);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolCallSoundType_Wrapper>("tool_call_sound", ToolCallSound);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolCallSoundBehavior_Wrapper>("tool_call_sound_behavior", ToolCallSoundBehavior);
             writer.WriteAdditionalData(AdditionalData);
+        }
+        /// <summary>
+        /// Composed type wrapper for classes <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.AuthConnectionLocator"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.EnvironmentAuthConnectionLocator"/>
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class MCPServerConfigUpdateRequestModel_auth_connection : IComposedTypeWrapper, IParsable
+        {
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.AuthConnectionLocator"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::Soenneker.ElevenLabs.OpenApiClient.Models.AuthConnectionLocator? AuthConnectionLocator { get; set; }
+#nullable restore
+#else
+            public global::Soenneker.ElevenLabs.OpenApiClient.Models.AuthConnectionLocator AuthConnectionLocator { get; set; }
+#endif
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.EnvironmentAuthConnectionLocator"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::Soenneker.ElevenLabs.OpenApiClient.Models.EnvironmentAuthConnectionLocator? EnvironmentAuthConnectionLocator { get; set; }
+#nullable restore
+#else
+            public global::Soenneker.ElevenLabs.OpenApiClient.Models.EnvironmentAuthConnectionLocator EnvironmentAuthConnectionLocator { get; set; }
+#endif
+            /// <summary>
+            /// Creates a new instance of the appropriate class based on discriminator value
+            /// </summary>
+            /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.MCPServerConfigUpdateRequestModel.MCPServerConfigUpdateRequestModel_auth_connection"/></returns>
+            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+            public static global::Soenneker.ElevenLabs.OpenApiClient.Models.MCPServerConfigUpdateRequestModel.MCPServerConfigUpdateRequestModel_auth_connection CreateFromDiscriminatorValue(IParseNode parseNode)
+            {
+                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
+                var result = new global::Soenneker.ElevenLabs.OpenApiClient.Models.MCPServerConfigUpdateRequestModel.MCPServerConfigUpdateRequestModel_auth_connection();
+                result.AuthConnectionLocator = new global::Soenneker.ElevenLabs.OpenApiClient.Models.AuthConnectionLocator();
+                result.EnvironmentAuthConnectionLocator = new global::Soenneker.ElevenLabs.OpenApiClient.Models.EnvironmentAuthConnectionLocator();
+                return result;
+            }
+            /// <summary>
+            /// The deserialization information for the current model
+            /// </summary>
+            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
+            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+            {
+                if(AuthConnectionLocator != null || EnvironmentAuthConnectionLocator != null)
+                {
+                    return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(AuthConnectionLocator, EnvironmentAuthConnectionLocator);
+                }
+                return new Dictionary<string, Action<IParseNode>>();
+            }
+            /// <summary>
+            /// Serializes information the current object
+            /// </summary>
+            /// <param name="writer">Serialization writer to use to serialize this model</param>
+            public virtual void Serialize(ISerializationWriter writer)
+            {
+                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+                writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AuthConnectionLocator>(null, AuthConnectionLocator, EnvironmentAuthConnectionLocator);
+            }
         }
     }
 }

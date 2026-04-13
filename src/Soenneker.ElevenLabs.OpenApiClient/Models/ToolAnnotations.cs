@@ -18,42 +18,42 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The destructiveHint property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolAnnotationsDestructiveHint? DestructiveHint { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Destructivehint? DestructiveHint { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolAnnotationsDestructiveHint DestructiveHint { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Destructivehint DestructiveHint { get; set; }
 #endif
         /// <summary>The idempotentHint property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolAnnotationsIdempotentHint? IdempotentHint { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Idempotenthint? IdempotentHint { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolAnnotationsIdempotentHint IdempotentHint { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Idempotenthint IdempotentHint { get; set; }
 #endif
         /// <summary>The openWorldHint property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolAnnotationsOpenWorldHint? OpenWorldHint { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Openworldhint? OpenWorldHint { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolAnnotationsOpenWorldHint OpenWorldHint { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Openworldhint OpenWorldHint { get; set; }
 #endif
         /// <summary>The readOnlyHint property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolAnnotationsReadOnlyHint? ReadOnlyHint { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Readonlyhint? ReadOnlyHint { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolAnnotationsReadOnlyHint ReadOnlyHint { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Readonlyhint ReadOnlyHint { get; set; }
 #endif
         /// <summary>The title property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolAnnotationsTitle? Title { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Title? Title { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolAnnotationsTitle Title { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Title Title { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolAnnotations"/> and sets the default values.
@@ -80,11 +80,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "destructiveHint", n => { DestructiveHint = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolAnnotationsDestructiveHint>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolAnnotationsDestructiveHint.CreateFromDiscriminatorValue); } },
-                { "idempotentHint", n => { IdempotentHint = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolAnnotationsIdempotentHint>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolAnnotationsIdempotentHint.CreateFromDiscriminatorValue); } },
-                { "openWorldHint", n => { OpenWorldHint = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolAnnotationsOpenWorldHint>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolAnnotationsOpenWorldHint.CreateFromDiscriminatorValue); } },
-                { "readOnlyHint", n => { ReadOnlyHint = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolAnnotationsReadOnlyHint>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolAnnotationsReadOnlyHint.CreateFromDiscriminatorValue); } },
-                { "title", n => { Title = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolAnnotationsTitle>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolAnnotationsTitle.CreateFromDiscriminatorValue); } },
+                { "destructiveHint", n => { DestructiveHint = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Destructivehint>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Destructivehint.CreateFromDiscriminatorValue); } },
+                { "idempotentHint", n => { IdempotentHint = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Idempotenthint>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Idempotenthint.CreateFromDiscriminatorValue); } },
+                { "openWorldHint", n => { OpenWorldHint = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Openworldhint>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Openworldhint.CreateFromDiscriminatorValue); } },
+                { "readOnlyHint", n => { ReadOnlyHint = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Readonlyhint>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Readonlyhint.CreateFromDiscriminatorValue); } },
+                { "title", n => { Title = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Title>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Title.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -94,11 +94,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolAnnotationsDestructiveHint>("destructiveHint", DestructiveHint);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolAnnotationsIdempotentHint>("idempotentHint", IdempotentHint);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolAnnotationsOpenWorldHint>("openWorldHint", OpenWorldHint);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolAnnotationsReadOnlyHint>("readOnlyHint", ReadOnlyHint);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolAnnotationsTitle>("title", Title);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Destructivehint>("destructiveHint", DestructiveHint);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Idempotenthint>("idempotentHint", IdempotentHint);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Openworldhint>("openWorldHint", OpenWorldHint);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Readonlyhint>("readOnlyHint", ReadOnlyHint);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Title>("title", Title);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

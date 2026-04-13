@@ -17,10 +17,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Translate only these languages for each segment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyTranslatesAllOrSomeSegmentsAndLanguagesV1DubbingResourceDubbingIdTranslatePostLanguages? Languages { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Languages? Languages { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyTranslatesAllOrSomeSegmentsAndLanguagesV1DubbingResourceDubbingIdTranslatePostLanguages Languages { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Languages Languages { get; set; }
 #endif
         /// <summary>Translate only this list of segments.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -55,7 +55,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "languages", n => { Languages = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyTranslatesAllOrSomeSegmentsAndLanguagesV1DubbingResourceDubbingIdTranslatePostLanguages>(global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyTranslatesAllOrSomeSegmentsAndLanguagesV1DubbingResourceDubbingIdTranslatePostLanguages.CreateFromDiscriminatorValue); } },
+                { "languages", n => { Languages = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Languages>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Languages.CreateFromDiscriminatorValue); } },
                 { "segments", n => { Segments = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
         }
@@ -66,7 +66,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyTranslatesAllOrSomeSegmentsAndLanguagesV1DubbingResourceDubbingIdTranslatePostLanguages>("languages", Languages);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Languages>("languages", Languages);
             writer.WriteCollectionOfPrimitiveValues<string>("segments", Segments);
             writer.WriteAdditionalData(AdditionalData);
         }

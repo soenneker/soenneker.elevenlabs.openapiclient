@@ -15,10 +15,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The action text of the widget</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigResponseModelActionText? ActionText { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Action_Text? ActionText { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigResponseModelActionText ActionText { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Action_Text ActionText { get; set; }
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -27,10 +27,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The avatar of the widget</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigResponseModelAvatar? Avatar { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigResponseModel.WidgetConfigResponseModel_avatar? Avatar { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigResponseModelAvatar Avatar { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigResponseModel.WidgetConfigResponseModel_avatar Avatar { get; set; }
 #endif
         /// <summary>The background color of the widget</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -51,10 +51,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The border radius of the widget</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigResponseModelBorderRadius? BorderRadius { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Border_Radius? BorderRadius { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigResponseModelBorderRadius BorderRadius { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Border_Radius BorderRadius { get; set; }
 #endif
         /// <summary>The button color of the widget</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -67,10 +67,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The button radius of the widget</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigResponseModelBtnRadius? BtnRadius { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Btn_Radius? BtnRadius { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigResponseModelBtnRadius BtnRadius { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Btn_Radius BtnRadius { get; set; }
 #endif
         /// <summary>The button text color of the widget</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -91,38 +91,38 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The end call text of the widget</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigResponseModelEndCallText? EndCallText { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.End_Call_Text? EndCallText { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigResponseModelEndCallText EndCallText { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.End_Call_Text EndCallText { get; set; }
 #endif
         /// <summary>Configuration for feedback collected at the end of the conversation</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigResponseModelEndFeedback? EndFeedback { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetEndFeedbackConfig? EndFeedback { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigResponseModelEndFeedback EndFeedback { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetEndFeedbackConfig EndFeedback { get; set; }
 #endif
         /// <summary>The expandable property</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetExpandable? Expandable { get; set; }
         /// <summary>The expand text of the widget</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigResponseModelExpandText? ExpandText { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Expand_Text? ExpandText { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigResponseModelExpandText ExpandText { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Expand_Text ExpandText { get; set; }
 #endif
         /// <summary>The feedback_mode property</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetFeedbackMode? FeedbackMode { get; set; }
         /// <summary>The first_message property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigResponseModelFirstMessage? FirstMessage { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.First_Message? FirstMessage { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigResponseModelFirstMessage FirstMessage { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.First_Message FirstMessage { get; set; }
 #endif
         /// <summary>The focus color of the widget</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -151,10 +151,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The text to display when the agent is listening</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigResponseModelListeningText? ListeningText { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Listening_Text? ListeningText { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigResponseModelListeningText ListeningText { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Listening_Text ListeningText { get; set; }
 #endif
         /// <summary>&quot;List of allowed hostnames for clickable markdown links. Use { hostname: &apos;*&apos; } to allow any domain. Empty means no links are allowed.&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -173,10 +173,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The override link for the widget</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigResponseModelOverrideLink? OverrideLink { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Override_Link? OverrideLink { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigResponseModelOverrideLink OverrideLink { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Override_Link OverrideLink { get; set; }
 #endif
         /// <summary>The placement property</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetPlacement? Placement { get; set; }
@@ -185,38 +185,38 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The text to display when sharing</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigResponseModelShareablePageText? ShareablePageText { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Shareable_Page_Text? ShareablePageText { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigResponseModelShareablePageText ShareablePageText { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Shareable_Page_Text ShareablePageText { get; set; }
 #endif
         /// <summary>Whether to show agent working/done/error status during tool use</summary>
         public bool? ShowAgentStatus { get; set; }
         /// <summary>Whether to show the avatar when the widget is collapsed</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigResponseModelShowAvatarWhenCollapsed? ShowAvatarWhenCollapsed { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Show_Avatar_When_Collapsed? ShowAvatarWhenCollapsed { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigResponseModelShowAvatarWhenCollapsed ShowAvatarWhenCollapsed { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Show_Avatar_When_Collapsed ShowAvatarWhenCollapsed { get; set; }
 #endif
         /// <summary>Whether to show the conversation ID after disconnection.</summary>
         public bool? ShowConversationId { get; set; }
         /// <summary>The text to display when the agent is speaking</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigResponseModelSpeakingText? SpeakingText { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Speaking_Text? SpeakingText { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigResponseModelSpeakingText SpeakingText { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Speaking_Text SpeakingText { get; set; }
 #endif
         /// <summary>The start call text of the widget</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigResponseModelStartCallText? StartCallText { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Start_Call_Text? StartCallText { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigResponseModelStartCallText StartCallText { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Start_Call_Text StartCallText { get; set; }
 #endif
         /// <summary>Whether to strip audio markup from messages.</summary>
         public bool? StripAudioTags { get; set; }
@@ -231,44 +231,44 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The supported_language_overrides property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigResponseModelSupportedLanguageOverrides? SupportedLanguageOverrides { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Supported_Language_Overrides? SupportedLanguageOverrides { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigResponseModelSupportedLanguageOverrides SupportedLanguageOverrides { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Supported_Language_Overrides SupportedLanguageOverrides { get; set; }
 #endif
         /// <summary>Whether the agent can be switched to text-only mode</summary>
         public bool? SupportsTextOnly { get; set; }
         /// <summary>Theme for code block syntax highlighting. Defaults to auto-detection by the widget when not set.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigResponseModelSyntaxHighlightTheme? SyntaxHighlightTheme { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Syntax_Highlight_Theme? SyntaxHighlightTheme { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigResponseModelSyntaxHighlightTheme SyntaxHighlightTheme { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Syntax_Highlight_Theme SyntaxHighlightTheme { get; set; }
 #endif
         /// <summary>The HTML to display for terms and conditions</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigResponseModelTermsHtml? TermsHtml { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Terms_Html? TermsHtml { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigResponseModelTermsHtml TermsHtml { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Terms_Html TermsHtml { get; set; }
 #endif
         /// <summary>The key to display for terms and conditions</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigResponseModelTermsKey? TermsKey { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Terms_Key? TermsKey { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigResponseModelTermsKey TermsKey { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Terms_Key TermsKey { get; set; }
 #endif
         /// <summary>The text to display for terms and conditions</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigResponseModelTermsText? TermsText { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Terms_Text? TermsText { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigResponseModelTermsText TermsText { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Terms_Text TermsText { get; set; }
 #endif
         /// <summary>The text color of the widget</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -295,10 +295,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Whether to use WebRTC for conversation connections</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigResponseModelUseRtc? UseRtc { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Use_Rtc? UseRtc { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigResponseModelUseRtc UseRtc { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Use_Rtc UseRtc { get; set; }
 #endif
         /// <summary>The variant property</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.EmbedVariant? Variant { get; set; }
@@ -337,56 +337,56 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "action_text", n => { ActionText = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigResponseModelActionText>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigResponseModelActionText.CreateFromDiscriminatorValue); } },
+                { "action_text", n => { ActionText = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Action_Text>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Action_Text.CreateFromDiscriminatorValue); } },
                 { "always_expanded", n => { AlwaysExpanded = n.GetBoolValue(); } },
-                { "avatar", n => { Avatar = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigResponseModelAvatar>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigResponseModelAvatar.CreateFromDiscriminatorValue); } },
+                { "avatar", n => { Avatar = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigResponseModel.WidgetConfigResponseModel_avatar>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigResponseModel.WidgetConfigResponseModel_avatar.CreateFromDiscriminatorValue); } },
                 { "bg_color", n => { BgColor = n.GetStringValue(); } },
                 { "border_color", n => { BorderColor = n.GetStringValue(); } },
-                { "border_radius", n => { BorderRadius = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigResponseModelBorderRadius>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigResponseModelBorderRadius.CreateFromDiscriminatorValue); } },
+                { "border_radius", n => { BorderRadius = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Border_Radius>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Border_Radius.CreateFromDiscriminatorValue); } },
                 { "btn_color", n => { BtnColor = n.GetStringValue(); } },
-                { "btn_radius", n => { BtnRadius = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigResponseModelBtnRadius>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigResponseModelBtnRadius.CreateFromDiscriminatorValue); } },
+                { "btn_radius", n => { BtnRadius = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Btn_Radius>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Btn_Radius.CreateFromDiscriminatorValue); } },
                 { "btn_text_color", n => { BtnTextColor = n.GetStringValue(); } },
                 { "conversation_mode_toggle_enabled", n => { ConversationModeToggleEnabled = n.GetBoolValue(); } },
                 { "default_expanded", n => { DefaultExpanded = n.GetBoolValue(); } },
                 { "disable_banner", n => { DisableBanner = n.GetBoolValue(); } },
                 { "dismissible", n => { Dismissible = n.GetBoolValue(); } },
-                { "end_call_text", n => { EndCallText = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigResponseModelEndCallText>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigResponseModelEndCallText.CreateFromDiscriminatorValue); } },
-                { "end_feedback", n => { EndFeedback = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigResponseModelEndFeedback>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigResponseModelEndFeedback.CreateFromDiscriminatorValue); } },
-                { "expand_text", n => { ExpandText = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigResponseModelExpandText>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigResponseModelExpandText.CreateFromDiscriminatorValue); } },
+                { "end_call_text", n => { EndCallText = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.End_Call_Text>(global::Soenneker.ElevenLabs.OpenApiClient.Models.End_Call_Text.CreateFromDiscriminatorValue); } },
+                { "end_feedback", n => { EndFeedback = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetEndFeedbackConfig>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetEndFeedbackConfig.CreateFromDiscriminatorValue); } },
+                { "expand_text", n => { ExpandText = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Expand_Text>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Expand_Text.CreateFromDiscriminatorValue); } },
                 { "expandable", n => { Expandable = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetExpandable>(); } },
                 { "feedback_mode", n => { FeedbackMode = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetFeedbackMode>(); } },
-                { "first_message", n => { FirstMessage = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigResponseModelFirstMessage>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigResponseModelFirstMessage.CreateFromDiscriminatorValue); } },
+                { "first_message", n => { FirstMessage = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.First_Message>(global::Soenneker.ElevenLabs.OpenApiClient.Models.First_Message.CreateFromDiscriminatorValue); } },
                 { "focus_color", n => { FocusColor = n.GetStringValue(); } },
                 { "language", n => { Language = n.GetStringValue(); } },
                 { "language_presets", n => { LanguagePresets = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigResponseModel_language_presets>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigResponseModel_language_presets.CreateFromDiscriminatorValue); } },
-                { "listening_text", n => { ListeningText = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigResponseModelListeningText>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigResponseModelListeningText.CreateFromDiscriminatorValue); } },
+                { "listening_text", n => { ListeningText = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Listening_Text>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Listening_Text.CreateFromDiscriminatorValue); } },
                 { "markdown_link_allow_http", n => { MarkdownLinkAllowHttp = n.GetBoolValue(); } },
                 { "markdown_link_allowed_hosts", n => { MarkdownLinkAllowedHosts = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.AllowlistItem>(global::Soenneker.ElevenLabs.OpenApiClient.Models.AllowlistItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "markdown_link_include_www", n => { MarkdownLinkIncludeWww = n.GetBoolValue(); } },
                 { "mic_muting_enabled", n => { MicMutingEnabled = n.GetBoolValue(); } },
-                { "override_link", n => { OverrideLink = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigResponseModelOverrideLink>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigResponseModelOverrideLink.CreateFromDiscriminatorValue); } },
+                { "override_link", n => { OverrideLink = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Override_Link>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Override_Link.CreateFromDiscriminatorValue); } },
                 { "placement", n => { Placement = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetPlacement>(); } },
                 { "shareable_page_show_terms", n => { ShareablePageShowTerms = n.GetBoolValue(); } },
-                { "shareable_page_text", n => { ShareablePageText = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigResponseModelShareablePageText>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigResponseModelShareablePageText.CreateFromDiscriminatorValue); } },
+                { "shareable_page_text", n => { ShareablePageText = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Shareable_Page_Text>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Shareable_Page_Text.CreateFromDiscriminatorValue); } },
                 { "show_agent_status", n => { ShowAgentStatus = n.GetBoolValue(); } },
-                { "show_avatar_when_collapsed", n => { ShowAvatarWhenCollapsed = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigResponseModelShowAvatarWhenCollapsed>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigResponseModelShowAvatarWhenCollapsed.CreateFromDiscriminatorValue); } },
+                { "show_avatar_when_collapsed", n => { ShowAvatarWhenCollapsed = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Show_Avatar_When_Collapsed>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Show_Avatar_When_Collapsed.CreateFromDiscriminatorValue); } },
                 { "show_conversation_id", n => { ShowConversationId = n.GetBoolValue(); } },
-                { "speaking_text", n => { SpeakingText = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigResponseModelSpeakingText>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigResponseModelSpeakingText.CreateFromDiscriminatorValue); } },
-                { "start_call_text", n => { StartCallText = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigResponseModelStartCallText>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigResponseModelStartCallText.CreateFromDiscriminatorValue); } },
+                { "speaking_text", n => { SpeakingText = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Speaking_Text>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Speaking_Text.CreateFromDiscriminatorValue); } },
+                { "start_call_text", n => { StartCallText = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Start_Call_Text>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Start_Call_Text.CreateFromDiscriminatorValue); } },
                 { "strip_audio_tags", n => { StripAudioTags = n.GetBoolValue(); } },
                 { "styles", n => { Styles = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetStyles>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetStyles.CreateFromDiscriminatorValue); } },
-                { "supported_language_overrides", n => { SupportedLanguageOverrides = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigResponseModelSupportedLanguageOverrides>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigResponseModelSupportedLanguageOverrides.CreateFromDiscriminatorValue); } },
+                { "supported_language_overrides", n => { SupportedLanguageOverrides = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Supported_Language_Overrides>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Supported_Language_Overrides.CreateFromDiscriminatorValue); } },
                 { "supports_text_only", n => { SupportsTextOnly = n.GetBoolValue(); } },
-                { "syntax_highlight_theme", n => { SyntaxHighlightTheme = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigResponseModelSyntaxHighlightTheme>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigResponseModelSyntaxHighlightTheme.CreateFromDiscriminatorValue); } },
-                { "terms_html", n => { TermsHtml = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigResponseModelTermsHtml>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigResponseModelTermsHtml.CreateFromDiscriminatorValue); } },
-                { "terms_key", n => { TermsKey = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigResponseModelTermsKey>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigResponseModelTermsKey.CreateFromDiscriminatorValue); } },
-                { "terms_text", n => { TermsText = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigResponseModelTermsText>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigResponseModelTermsText.CreateFromDiscriminatorValue); } },
+                { "syntax_highlight_theme", n => { SyntaxHighlightTheme = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Syntax_Highlight_Theme>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Syntax_Highlight_Theme.CreateFromDiscriminatorValue); } },
+                { "terms_html", n => { TermsHtml = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Terms_Html>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Terms_Html.CreateFromDiscriminatorValue); } },
+                { "terms_key", n => { TermsKey = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Terms_Key>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Terms_Key.CreateFromDiscriminatorValue); } },
+                { "terms_text", n => { TermsText = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Terms_Text>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Terms_Text.CreateFromDiscriminatorValue); } },
                 { "text_color", n => { TextColor = n.GetStringValue(); } },
                 { "text_contents", n => { TextContents = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents.CreateFromDiscriminatorValue); } },
                 { "text_input_enabled", n => { TextInputEnabled = n.GetBoolValue(); } },
                 { "text_only", n => { TextOnly = n.GetBoolValue(); } },
                 { "transcript_enabled", n => { TranscriptEnabled = n.GetBoolValue(); } },
-                { "use_rtc", n => { UseRtc = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigResponseModelUseRtc>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigResponseModelUseRtc.CreateFromDiscriminatorValue); } },
+                { "use_rtc", n => { UseRtc = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Use_Rtc>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Use_Rtc.CreateFromDiscriminatorValue); } },
                 { "variant", n => { Variant = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.EmbedVariant>(); } },
             };
         }
@@ -397,58 +397,124 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigResponseModelActionText>("action_text", ActionText);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Action_Text>("action_text", ActionText);
             writer.WriteBoolValue("always_expanded", AlwaysExpanded);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigResponseModelAvatar>("avatar", Avatar);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigResponseModel.WidgetConfigResponseModel_avatar>("avatar", Avatar);
             writer.WriteStringValue("bg_color", BgColor);
             writer.WriteStringValue("border_color", BorderColor);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigResponseModelBorderRadius>("border_radius", BorderRadius);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Border_Radius>("border_radius", BorderRadius);
             writer.WriteStringValue("btn_color", BtnColor);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigResponseModelBtnRadius>("btn_radius", BtnRadius);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Btn_Radius>("btn_radius", BtnRadius);
             writer.WriteStringValue("btn_text_color", BtnTextColor);
             writer.WriteBoolValue("conversation_mode_toggle_enabled", ConversationModeToggleEnabled);
             writer.WriteBoolValue("default_expanded", DefaultExpanded);
             writer.WriteBoolValue("disable_banner", DisableBanner);
             writer.WriteBoolValue("dismissible", Dismissible);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigResponseModelEndCallText>("end_call_text", EndCallText);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigResponseModelEndFeedback>("end_feedback", EndFeedback);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.End_Call_Text>("end_call_text", EndCallText);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetEndFeedbackConfig>("end_feedback", EndFeedback);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetExpandable>("expandable", Expandable);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigResponseModelExpandText>("expand_text", ExpandText);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Expand_Text>("expand_text", ExpandText);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetFeedbackMode>("feedback_mode", FeedbackMode);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigResponseModelFirstMessage>("first_message", FirstMessage);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.First_Message>("first_message", FirstMessage);
             writer.WriteStringValue("focus_color", FocusColor);
             writer.WriteStringValue("language", Language);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigResponseModel_language_presets>("language_presets", LanguagePresets);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigResponseModelListeningText>("listening_text", ListeningText);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Listening_Text>("listening_text", ListeningText);
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.AllowlistItem>("markdown_link_allowed_hosts", MarkdownLinkAllowedHosts);
             writer.WriteBoolValue("markdown_link_allow_http", MarkdownLinkAllowHttp);
             writer.WriteBoolValue("markdown_link_include_www", MarkdownLinkIncludeWww);
             writer.WriteBoolValue("mic_muting_enabled", MicMutingEnabled);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigResponseModelOverrideLink>("override_link", OverrideLink);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Override_Link>("override_link", OverrideLink);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetPlacement>("placement", Placement);
             writer.WriteBoolValue("shareable_page_show_terms", ShareablePageShowTerms);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigResponseModelShareablePageText>("shareable_page_text", ShareablePageText);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Shareable_Page_Text>("shareable_page_text", ShareablePageText);
             writer.WriteBoolValue("show_agent_status", ShowAgentStatus);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigResponseModelShowAvatarWhenCollapsed>("show_avatar_when_collapsed", ShowAvatarWhenCollapsed);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Show_Avatar_When_Collapsed>("show_avatar_when_collapsed", ShowAvatarWhenCollapsed);
             writer.WriteBoolValue("show_conversation_id", ShowConversationId);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigResponseModelSpeakingText>("speaking_text", SpeakingText);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigResponseModelStartCallText>("start_call_text", StartCallText);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Speaking_Text>("speaking_text", SpeakingText);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Start_Call_Text>("start_call_text", StartCallText);
             writer.WriteBoolValue("strip_audio_tags", StripAudioTags);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetStyles>("styles", Styles);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigResponseModelSupportedLanguageOverrides>("supported_language_overrides", SupportedLanguageOverrides);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Supported_Language_Overrides>("supported_language_overrides", SupportedLanguageOverrides);
             writer.WriteBoolValue("supports_text_only", SupportsTextOnly);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigResponseModelSyntaxHighlightTheme>("syntax_highlight_theme", SyntaxHighlightTheme);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigResponseModelTermsHtml>("terms_html", TermsHtml);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigResponseModelTermsKey>("terms_key", TermsKey);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigResponseModelTermsText>("terms_text", TermsText);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Syntax_Highlight_Theme>("syntax_highlight_theme", SyntaxHighlightTheme);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Terms_Html>("terms_html", TermsHtml);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Terms_Key>("terms_key", TermsKey);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Terms_Text>("terms_text", TermsText);
             writer.WriteStringValue("text_color", TextColor);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents>("text_contents", TextContents);
             writer.WriteBoolValue("text_input_enabled", TextInputEnabled);
             writer.WriteBoolValue("text_only", TextOnly);
             writer.WriteBoolValue("transcript_enabled", TranscriptEnabled);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigResponseModelUseRtc>("use_rtc", UseRtc);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Use_Rtc>("use_rtc", UseRtc);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.EmbedVariant>("variant", Variant);
             writer.WriteAdditionalData(AdditionalData);
+        }
+        /// <summary>
+        /// Composed type wrapper for classes <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ImageAvatar"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.OrbAvatar"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.URLAvatar"/>
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class WidgetConfigResponseModel_avatar : IComposedTypeWrapper, IParsable
+        {
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ImageAvatar"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::Soenneker.ElevenLabs.OpenApiClient.Models.ImageAvatar? ImageAvatar { get; set; }
+#nullable restore
+#else
+            public global::Soenneker.ElevenLabs.OpenApiClient.Models.ImageAvatar ImageAvatar { get; set; }
+#endif
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.OrbAvatar"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::Soenneker.ElevenLabs.OpenApiClient.Models.OrbAvatar? OrbAvatar { get; set; }
+#nullable restore
+#else
+            public global::Soenneker.ElevenLabs.OpenApiClient.Models.OrbAvatar OrbAvatar { get; set; }
+#endif
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.URLAvatar"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::Soenneker.ElevenLabs.OpenApiClient.Models.URLAvatar? URLAvatar { get; set; }
+#nullable restore
+#else
+            public global::Soenneker.ElevenLabs.OpenApiClient.Models.URLAvatar URLAvatar { get; set; }
+#endif
+            /// <summary>
+            /// Creates a new instance of the appropriate class based on discriminator value
+            /// </summary>
+            /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigResponseModel.WidgetConfigResponseModel_avatar"/></returns>
+            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+            public static global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigResponseModel.WidgetConfigResponseModel_avatar CreateFromDiscriminatorValue(IParseNode parseNode)
+            {
+                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
+                var result = new global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigResponseModel.WidgetConfigResponseModel_avatar();
+                result.ImageAvatar = new global::Soenneker.ElevenLabs.OpenApiClient.Models.ImageAvatar();
+                result.OrbAvatar = new global::Soenneker.ElevenLabs.OpenApiClient.Models.OrbAvatar();
+                result.URLAvatar = new global::Soenneker.ElevenLabs.OpenApiClient.Models.URLAvatar();
+                return result;
+            }
+            /// <summary>
+            /// The deserialization information for the current model
+            /// </summary>
+            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
+            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+            {
+                if(ImageAvatar != null || OrbAvatar != null || URLAvatar != null)
+                {
+                    return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(ImageAvatar, OrbAvatar, URLAvatar);
+                }
+                return new Dictionary<string, Action<IParseNode>>();
+            }
+            /// <summary>
+            /// Serializes information the current object
+            /// </summary>
+            /// <param name="writer">Serialization writer to use to serialize this model</param>
+            public virtual void Serialize(ISerializationWriter writer)
+            {
+                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+                writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ImageAvatar>(null, ImageAvatar, OrbAvatar, URLAvatar);
+            }
         }
     }
 }

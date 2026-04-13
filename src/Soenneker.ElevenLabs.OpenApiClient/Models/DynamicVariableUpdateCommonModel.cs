@@ -26,10 +26,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The old_value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.DynamicVariableUpdateCommonModelOldValue? OldValue { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Old_Value? OldValue { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.DynamicVariableUpdateCommonModelOldValue OldValue { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Old_Value OldValue { get; set; }
 #endif
         /// <summary>The tool_name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -83,7 +83,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "new_value", n => { NewValue = n.GetStringValue(); } },
-                { "old_value", n => { OldValue = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DynamicVariableUpdateCommonModelOldValue>(global::Soenneker.ElevenLabs.OpenApiClient.Models.DynamicVariableUpdateCommonModelOldValue.CreateFromDiscriminatorValue); } },
+                { "old_value", n => { OldValue = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Old_Value>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Old_Value.CreateFromDiscriminatorValue); } },
                 { "tool_name", n => { ToolName = n.GetStringValue(); } },
                 { "tool_request_id", n => { ToolRequestId = n.GetStringValue(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDoubleValue(); } },
@@ -98,7 +98,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("new_value", NewValue);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DynamicVariableUpdateCommonModelOldValue>("old_value", OldValue);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Old_Value>("old_value", OldValue);
             writer.WriteStringValue("tool_name", ToolName);
             writer.WriteStringValue("tool_request_id", ToolRequestId);
             writer.WriteDoubleValue("updated_at", UpdatedAt);

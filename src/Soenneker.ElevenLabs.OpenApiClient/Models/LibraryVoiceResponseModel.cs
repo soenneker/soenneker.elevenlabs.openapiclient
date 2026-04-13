@@ -39,10 +39,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The description of the voice.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.LibraryVoiceResponseModelDescription? Description { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Description? Description { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.LibraryVoiceResponseModelDescription Description { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Description Description { get; set; }
 #endif
         /// <summary>The descriptive of the voice.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -57,10 +57,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The rate of the voice in USD per 1000 credits. null if default</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.LibraryVoiceResponseModelFiatRate? FiatRate { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Fiat_Rate? FiatRate { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.LibraryVoiceResponseModelFiatRate FiatRate { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Fiat_Rate FiatRate { get; set; }
 #endif
         /// <summary>Whether free users are allowed to use the voice.</summary>
         public bool? FreeUsersAllowed { get; set; }
@@ -75,52 +75,52 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The image URL of the voice.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.LibraryVoiceResponseModelImageUrl? ImageUrl { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Image_Url? ImageUrl { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.LibraryVoiceResponseModelImageUrl ImageUrl { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Image_Url ImageUrl { get; set; }
 #endif
         /// <summary>The Instagram username of the voice.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.LibraryVoiceResponseModelInstagramUsername? InstagramUsername { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Instagram_Username? InstagramUsername { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.LibraryVoiceResponseModelInstagramUsername InstagramUsername { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Instagram_Username InstagramUsername { get; set; }
 #endif
         /// <summary>Whether the voice was added by the user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.LibraryVoiceResponseModelIsAddedByUser? IsAddedByUser { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Is_Added_By_User? IsAddedByUser { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.LibraryVoiceResponseModelIsAddedByUser IsAddedByUser { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Is_Added_By_User IsAddedByUser { get; set; }
 #endif
         /// <summary>Whether the voice is bookmarked by the current user. Only relevant when is_added_by_user is True.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.LibraryVoiceResponseModelIsBookmarked? IsBookmarked { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Is_Bookmarked? IsBookmarked { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.LibraryVoiceResponseModelIsBookmarked IsBookmarked { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Is_Bookmarked IsBookmarked { get; set; }
 #endif
         /// <summary>The language of the voice.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.LibraryVoiceResponseModelLanguage? Language { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Language? Language { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.LibraryVoiceResponseModelLanguage Language { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Language Language { get; set; }
 #endif
         /// <summary>Whether live moderation is enabled for the voice.</summary>
         public bool? LiveModerationEnabled { get; set; }
         /// <summary>The locale of the voice.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.LibraryVoiceResponseModelLocale? Locale { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Locale? Locale { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.LibraryVoiceResponseModelLocale Locale { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Locale Locale { get; set; }
 #endif
         /// <summary>The name of the voice.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -133,20 +133,20 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The notice period of the voice.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.LibraryVoiceResponseModelNoticePeriod? NoticePeriod { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Notice_Period? NoticePeriod { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.LibraryVoiceResponseModelNoticePeriod NoticePeriod { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Notice_Period NoticePeriod { get; set; }
 #endif
         /// <summary>The play API usage character count of the voice in the last year.</summary>
         public int? PlayApiUsageCharacterCount1y { get; set; }
         /// <summary>The preview URL of the voice.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.LibraryVoiceResponseModelPreviewUrl? PreviewUrl { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Preview_Url? PreviewUrl { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.LibraryVoiceResponseModelPreviewUrl PreviewUrl { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Preview_Url PreviewUrl { get; set; }
 #endif
         /// <summary>The public owner id of the voice.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -159,26 +159,26 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The rate multiplier of the voice.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.LibraryVoiceResponseModelRate? Rate { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Rate? Rate { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.LibraryVoiceResponseModelRate Rate { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Rate Rate { get; set; }
 #endif
         /// <summary>The TikTok username of the voice.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.LibraryVoiceResponseModelTiktokUsername? TiktokUsername { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Tiktok_Username? TiktokUsername { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.LibraryVoiceResponseModelTiktokUsername TiktokUsername { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Tiktok_Username TiktokUsername { get; set; }
 #endif
         /// <summary>The Twitter username of the voice.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.LibraryVoiceResponseModelTwitterUsername? TwitterUsername { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Twitter_Username? TwitterUsername { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.LibraryVoiceResponseModelTwitterUsername TwitterUsername { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Twitter_Username TwitterUsername { get; set; }
 #endif
         /// <summary>The usage character count of the voice in the last year.</summary>
         public int? UsageCharacterCount1y { get; set; }
@@ -195,10 +195,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The verified languages of the voice.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.LibraryVoiceResponseModelVerifiedLanguages? VerifiedLanguages { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Verified_Languages? VerifiedLanguages { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.LibraryVoiceResponseModelVerifiedLanguages VerifiedLanguages { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Verified_Languages VerifiedLanguages { get; set; }
 #endif
         /// <summary>The id of the voice.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -211,10 +211,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The YouTube username of the voice.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.LibraryVoiceResponseModelYoutubeUsername? YoutubeUsername { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Youtube_Username? YoutubeUsername { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.LibraryVoiceResponseModelYoutubeUsername YoutubeUsername { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Youtube_Username YoutubeUsername { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.LibraryVoiceResponseModel"/> and sets the default values.
@@ -246,33 +246,33 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "category", n => { Category = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.LibraryVoiceResponseModel_category>(); } },
                 { "cloned_by_count", n => { ClonedByCount = n.GetIntValue(); } },
                 { "date_unix", n => { DateUnix = n.GetIntValue(); } },
-                { "description", n => { Description = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.LibraryVoiceResponseModelDescription>(global::Soenneker.ElevenLabs.OpenApiClient.Models.LibraryVoiceResponseModelDescription.CreateFromDiscriminatorValue); } },
+                { "description", n => { Description = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Description>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Description.CreateFromDiscriminatorValue); } },
                 { "descriptive", n => { Descriptive = n.GetStringValue(); } },
                 { "featured", n => { Featured = n.GetBoolValue(); } },
-                { "fiat_rate", n => { FiatRate = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.LibraryVoiceResponseModelFiatRate>(global::Soenneker.ElevenLabs.OpenApiClient.Models.LibraryVoiceResponseModelFiatRate.CreateFromDiscriminatorValue); } },
+                { "fiat_rate", n => { FiatRate = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Fiat_Rate>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Fiat_Rate.CreateFromDiscriminatorValue); } },
                 { "free_users_allowed", n => { FreeUsersAllowed = n.GetBoolValue(); } },
                 { "gender", n => { Gender = n.GetStringValue(); } },
-                { "image_url", n => { ImageUrl = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.LibraryVoiceResponseModelImageUrl>(global::Soenneker.ElevenLabs.OpenApiClient.Models.LibraryVoiceResponseModelImageUrl.CreateFromDiscriminatorValue); } },
-                { "instagram_username", n => { InstagramUsername = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.LibraryVoiceResponseModelInstagramUsername>(global::Soenneker.ElevenLabs.OpenApiClient.Models.LibraryVoiceResponseModelInstagramUsername.CreateFromDiscriminatorValue); } },
-                { "is_added_by_user", n => { IsAddedByUser = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.LibraryVoiceResponseModelIsAddedByUser>(global::Soenneker.ElevenLabs.OpenApiClient.Models.LibraryVoiceResponseModelIsAddedByUser.CreateFromDiscriminatorValue); } },
-                { "is_bookmarked", n => { IsBookmarked = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.LibraryVoiceResponseModelIsBookmarked>(global::Soenneker.ElevenLabs.OpenApiClient.Models.LibraryVoiceResponseModelIsBookmarked.CreateFromDiscriminatorValue); } },
-                { "language", n => { Language = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.LibraryVoiceResponseModelLanguage>(global::Soenneker.ElevenLabs.OpenApiClient.Models.LibraryVoiceResponseModelLanguage.CreateFromDiscriminatorValue); } },
+                { "image_url", n => { ImageUrl = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Image_Url>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Image_Url.CreateFromDiscriminatorValue); } },
+                { "instagram_username", n => { InstagramUsername = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Instagram_Username>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Instagram_Username.CreateFromDiscriminatorValue); } },
+                { "is_added_by_user", n => { IsAddedByUser = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Is_Added_By_User>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Is_Added_By_User.CreateFromDiscriminatorValue); } },
+                { "is_bookmarked", n => { IsBookmarked = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Is_Bookmarked>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Is_Bookmarked.CreateFromDiscriminatorValue); } },
+                { "language", n => { Language = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Language>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Language.CreateFromDiscriminatorValue); } },
                 { "live_moderation_enabled", n => { LiveModerationEnabled = n.GetBoolValue(); } },
-                { "locale", n => { Locale = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.LibraryVoiceResponseModelLocale>(global::Soenneker.ElevenLabs.OpenApiClient.Models.LibraryVoiceResponseModelLocale.CreateFromDiscriminatorValue); } },
+                { "locale", n => { Locale = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Locale>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Locale.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "notice_period", n => { NoticePeriod = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.LibraryVoiceResponseModelNoticePeriod>(global::Soenneker.ElevenLabs.OpenApiClient.Models.LibraryVoiceResponseModelNoticePeriod.CreateFromDiscriminatorValue); } },
+                { "notice_period", n => { NoticePeriod = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Notice_Period>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Notice_Period.CreateFromDiscriminatorValue); } },
                 { "play_api_usage_character_count_1y", n => { PlayApiUsageCharacterCount1y = n.GetIntValue(); } },
-                { "preview_url", n => { PreviewUrl = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.LibraryVoiceResponseModelPreviewUrl>(global::Soenneker.ElevenLabs.OpenApiClient.Models.LibraryVoiceResponseModelPreviewUrl.CreateFromDiscriminatorValue); } },
+                { "preview_url", n => { PreviewUrl = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Preview_Url>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Preview_Url.CreateFromDiscriminatorValue); } },
                 { "public_owner_id", n => { PublicOwnerId = n.GetStringValue(); } },
-                { "rate", n => { Rate = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.LibraryVoiceResponseModelRate>(global::Soenneker.ElevenLabs.OpenApiClient.Models.LibraryVoiceResponseModelRate.CreateFromDiscriminatorValue); } },
-                { "tiktok_username", n => { TiktokUsername = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.LibraryVoiceResponseModelTiktokUsername>(global::Soenneker.ElevenLabs.OpenApiClient.Models.LibraryVoiceResponseModelTiktokUsername.CreateFromDiscriminatorValue); } },
-                { "twitter_username", n => { TwitterUsername = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.LibraryVoiceResponseModelTwitterUsername>(global::Soenneker.ElevenLabs.OpenApiClient.Models.LibraryVoiceResponseModelTwitterUsername.CreateFromDiscriminatorValue); } },
+                { "rate", n => { Rate = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Rate>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Rate.CreateFromDiscriminatorValue); } },
+                { "tiktok_username", n => { TiktokUsername = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Tiktok_Username>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Tiktok_Username.CreateFromDiscriminatorValue); } },
+                { "twitter_username", n => { TwitterUsername = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Twitter_Username>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Twitter_Username.CreateFromDiscriminatorValue); } },
                 { "usage_character_count_1y", n => { UsageCharacterCount1y = n.GetIntValue(); } },
                 { "usage_character_count_7d", n => { UsageCharacterCount7d = n.GetIntValue(); } },
                 { "use_case", n => { UseCase = n.GetStringValue(); } },
-                { "verified_languages", n => { VerifiedLanguages = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.LibraryVoiceResponseModelVerifiedLanguages>(global::Soenneker.ElevenLabs.OpenApiClient.Models.LibraryVoiceResponseModelVerifiedLanguages.CreateFromDiscriminatorValue); } },
+                { "verified_languages", n => { VerifiedLanguages = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Verified_Languages>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Verified_Languages.CreateFromDiscriminatorValue); } },
                 { "voice_id", n => { VoiceId = n.GetStringValue(); } },
-                { "youtube_username", n => { YoutubeUsername = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.LibraryVoiceResponseModelYoutubeUsername>(global::Soenneker.ElevenLabs.OpenApiClient.Models.LibraryVoiceResponseModelYoutubeUsername.CreateFromDiscriminatorValue); } },
+                { "youtube_username", n => { YoutubeUsername = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Youtube_Username>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Youtube_Username.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -287,33 +287,33 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.LibraryVoiceResponseModel_category>("category", Category);
             writer.WriteIntValue("cloned_by_count", ClonedByCount);
             writer.WriteIntValue("date_unix", DateUnix);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.LibraryVoiceResponseModelDescription>("description", Description);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Description>("description", Description);
             writer.WriteStringValue("descriptive", Descriptive);
             writer.WriteBoolValue("featured", Featured);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.LibraryVoiceResponseModelFiatRate>("fiat_rate", FiatRate);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Fiat_Rate>("fiat_rate", FiatRate);
             writer.WriteBoolValue("free_users_allowed", FreeUsersAllowed);
             writer.WriteStringValue("gender", Gender);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.LibraryVoiceResponseModelImageUrl>("image_url", ImageUrl);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.LibraryVoiceResponseModelInstagramUsername>("instagram_username", InstagramUsername);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.LibraryVoiceResponseModelIsAddedByUser>("is_added_by_user", IsAddedByUser);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.LibraryVoiceResponseModelIsBookmarked>("is_bookmarked", IsBookmarked);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.LibraryVoiceResponseModelLanguage>("language", Language);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Image_Url>("image_url", ImageUrl);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Instagram_Username>("instagram_username", InstagramUsername);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Is_Added_By_User>("is_added_by_user", IsAddedByUser);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Is_Bookmarked>("is_bookmarked", IsBookmarked);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Language>("language", Language);
             writer.WriteBoolValue("live_moderation_enabled", LiveModerationEnabled);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.LibraryVoiceResponseModelLocale>("locale", Locale);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Locale>("locale", Locale);
             writer.WriteStringValue("name", Name);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.LibraryVoiceResponseModelNoticePeriod>("notice_period", NoticePeriod);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Notice_Period>("notice_period", NoticePeriod);
             writer.WriteIntValue("play_api_usage_character_count_1y", PlayApiUsageCharacterCount1y);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.LibraryVoiceResponseModelPreviewUrl>("preview_url", PreviewUrl);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Preview_Url>("preview_url", PreviewUrl);
             writer.WriteStringValue("public_owner_id", PublicOwnerId);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.LibraryVoiceResponseModelRate>("rate", Rate);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.LibraryVoiceResponseModelTiktokUsername>("tiktok_username", TiktokUsername);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.LibraryVoiceResponseModelTwitterUsername>("twitter_username", TwitterUsername);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Rate>("rate", Rate);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Tiktok_Username>("tiktok_username", TiktokUsername);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Twitter_Username>("twitter_username", TwitterUsername);
             writer.WriteIntValue("usage_character_count_1y", UsageCharacterCount1y);
             writer.WriteIntValue("usage_character_count_7d", UsageCharacterCount7d);
             writer.WriteStringValue("use_case", UseCase);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.LibraryVoiceResponseModelVerifiedLanguages>("verified_languages", VerifiedLanguages);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Verified_Languages>("verified_languages", VerifiedLanguages);
             writer.WriteStringValue("voice_id", VoiceId);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.LibraryVoiceResponseModelYoutubeUsername>("youtube_username", YoutubeUsername);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Youtube_Username>("youtube_username", YoutubeUsername);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

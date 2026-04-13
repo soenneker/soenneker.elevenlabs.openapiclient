@@ -17,18 +17,18 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Mock responses with optional parameter conditions. Evaluated top-to-bottom; first match wins.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolRequestModelResponseMocks? ResponseMocks { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Response_Mocks? ResponseMocks { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolRequestModelResponseMocks ResponseMocks { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Response_Mocks ResponseMocks { get; set; }
 #endif
         /// <summary>Configuration for the tool</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolRequestModelToolConfig? ToolConfig { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolRequestModel.ToolRequestModel_tool_config? ToolConfig { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolRequestModelToolConfig ToolConfig { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolRequestModel.ToolRequestModel_tool_config ToolConfig { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolRequestModel"/> and sets the default values.
@@ -55,8 +55,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "response_mocks", n => { ResponseMocks = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolRequestModelResponseMocks>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolRequestModelResponseMocks.CreateFromDiscriminatorValue); } },
-                { "tool_config", n => { ToolConfig = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolRequestModelToolConfig>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolRequestModelToolConfig.CreateFromDiscriminatorValue); } },
+                { "response_mocks", n => { ResponseMocks = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Response_Mocks>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Response_Mocks.CreateFromDiscriminatorValue); } },
+                { "tool_config", n => { ToolConfig = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolRequestModel.ToolRequestModel_tool_config>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolRequestModel.ToolRequestModel_tool_config.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -66,9 +66,124 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolRequestModelResponseMocks>("response_mocks", ResponseMocks);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolRequestModelToolConfig>("tool_config", ToolConfig);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Response_Mocks>("response_mocks", ResponseMocks);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolRequestModel.ToolRequestModel_tool_config>("tool_config", ToolConfig);
             writer.WriteAdditionalData(AdditionalData);
+        }
+        /// <summary>
+        /// Composed type wrapper for classes <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ClientToolConfigInput"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.MCPToolConfigInput"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigInput"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookToolConfigInput"/>
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class ToolRequestModel_tool_config : IComposedTypeWrapper, IParsable
+        {
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ClientToolConfigInput"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::Soenneker.ElevenLabs.OpenApiClient.Models.ClientToolConfigInput? ClientToolConfigInput { get; set; }
+#nullable restore
+#else
+            public global::Soenneker.ElevenLabs.OpenApiClient.Models.ClientToolConfigInput ClientToolConfigInput { get; set; }
+#endif
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.MCPToolConfigInput"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::Soenneker.ElevenLabs.OpenApiClient.Models.MCPToolConfigInput? MCPToolConfigInput { get; set; }
+#nullable restore
+#else
+            public global::Soenneker.ElevenLabs.OpenApiClient.Models.MCPToolConfigInput MCPToolConfigInput { get; set; }
+#endif
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigInput"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigInput? SystemToolConfigInput { get; set; }
+#nullable restore
+#else
+            public global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigInput SystemToolConfigInput { get; set; }
+#endif
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookToolConfigInput"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookToolConfigInput? WebhookToolConfigInput { get; set; }
+#nullable restore
+#else
+            public global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookToolConfigInput WebhookToolConfigInput { get; set; }
+#endif
+            /// <summary>
+            /// Creates a new instance of the appropriate class based on discriminator value
+            /// </summary>
+            /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolRequestModel.ToolRequestModel_tool_config"/></returns>
+            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+            public static global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolRequestModel.ToolRequestModel_tool_config CreateFromDiscriminatorValue(IParseNode parseNode)
+            {
+                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
+                var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
+                var result = new global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolRequestModel.ToolRequestModel_tool_config();
+                if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                {
+                    result.ClientToolConfigInput = new global::Soenneker.ElevenLabs.OpenApiClient.Models.ClientToolConfigInput();
+                }
+                else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                {
+                    result.MCPToolConfigInput = new global::Soenneker.ElevenLabs.OpenApiClient.Models.MCPToolConfigInput();
+                }
+                else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                {
+                    result.SystemToolConfigInput = new global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigInput();
+                }
+                else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                {
+                    result.WebhookToolConfigInput = new global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookToolConfigInput();
+                }
+                return result;
+            }
+            /// <summary>
+            /// The deserialization information for the current model
+            /// </summary>
+            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
+            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+            {
+                if(ClientToolConfigInput != null)
+                {
+                    return ClientToolConfigInput.GetFieldDeserializers();
+                }
+                else if(MCPToolConfigInput != null)
+                {
+                    return MCPToolConfigInput.GetFieldDeserializers();
+                }
+                else if(SystemToolConfigInput != null)
+                {
+                    return SystemToolConfigInput.GetFieldDeserializers();
+                }
+                else if(WebhookToolConfigInput != null)
+                {
+                    return WebhookToolConfigInput.GetFieldDeserializers();
+                }
+                return new Dictionary<string, Action<IParseNode>>();
+            }
+            /// <summary>
+            /// Serializes information the current object
+            /// </summary>
+            /// <param name="writer">Serialization writer to use to serialize this model</param>
+            public virtual void Serialize(ISerializationWriter writer)
+            {
+                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+                if(ClientToolConfigInput != null)
+                {
+                    writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ClientToolConfigInput>(null, ClientToolConfigInput);
+                }
+                else if(MCPToolConfigInput != null)
+                {
+                    writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.MCPToolConfigInput>(null, MCPToolConfigInput);
+                }
+                else if(SystemToolConfigInput != null)
+                {
+                    writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigInput>(null, SystemToolConfigInput);
+                }
+                else if(WebhookToolConfigInput != null)
+                {
+                    writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookToolConfigInput>(null, WebhookToolConfigInput);
+                }
+            }
         }
     }
 }

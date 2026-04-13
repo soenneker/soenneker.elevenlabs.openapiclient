@@ -17,10 +17,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The model ID to use for the conversion.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyRunPVCTrainingV1VoicesPvcVoiceIdTrainPostModelId? ModelId { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Model_Id? ModelId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyRunPVCTrainingV1VoicesPvcVoiceIdTrainPostModelId ModelId { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Model_Id ModelId { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyRunPVCTrainingV1VoicesPvcVoiceIdTrainPost"/> and sets the default values.
@@ -47,7 +47,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "model_id", n => { ModelId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyRunPVCTrainingV1VoicesPvcVoiceIdTrainPostModelId>(global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyRunPVCTrainingV1VoicesPvcVoiceIdTrainPostModelId.CreateFromDiscriminatorValue); } },
+                { "model_id", n => { ModelId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Model_Id>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Model_Id.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -57,7 +57,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyRunPVCTrainingV1VoicesPvcVoiceIdTrainPostModelId>("model_id", ModelId);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Model_Id>("model_id", ModelId);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

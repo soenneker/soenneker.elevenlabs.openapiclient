@@ -17,10 +17,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The comment property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryFeedbackCommonModelComment? Comment { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Comment? Comment { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryFeedbackCommonModelComment Comment { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Comment Comment { get; set; }
 #endif
         /// <summary>The dislikes property</summary>
         public int? Dislikes { get; set; }
@@ -29,26 +29,26 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The overall_score property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryFeedbackCommonModelOverallScore? OverallScore { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.UserFeedbackScore_Wrapper? OverallScore { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryFeedbackCommonModelOverallScore OverallScore { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.UserFeedbackScore_Wrapper OverallScore { get; set; }
 #endif
         /// <summary>The rating property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryFeedbackCommonModelRating? Rating { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Rating? Rating { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryFeedbackCommonModelRating Rating { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Rating Rating { get; set; }
 #endif
         /// <summary>The type property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryFeedbackCommonModelType? Type { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationFeedbackType_Wrapper? Type { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryFeedbackCommonModelType Type { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationFeedbackType_Wrapper Type { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryFeedbackCommonModel"/> and sets the default values.
@@ -75,12 +75,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "comment", n => { Comment = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryFeedbackCommonModelComment>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryFeedbackCommonModelComment.CreateFromDiscriminatorValue); } },
+                { "comment", n => { Comment = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Comment>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Comment.CreateFromDiscriminatorValue); } },
                 { "dislikes", n => { Dislikes = n.GetIntValue(); } },
                 { "likes", n => { Likes = n.GetIntValue(); } },
-                { "overall_score", n => { OverallScore = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryFeedbackCommonModelOverallScore>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryFeedbackCommonModelOverallScore.CreateFromDiscriminatorValue); } },
-                { "rating", n => { Rating = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryFeedbackCommonModelRating>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryFeedbackCommonModelRating.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryFeedbackCommonModelType>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryFeedbackCommonModelType.CreateFromDiscriminatorValue); } },
+                { "overall_score", n => { OverallScore = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UserFeedbackScore_Wrapper>(global::Soenneker.ElevenLabs.OpenApiClient.Models.UserFeedbackScore_Wrapper.CreateFromDiscriminatorValue); } },
+                { "rating", n => { Rating = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Rating>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Rating.CreateFromDiscriminatorValue); } },
+                { "type", n => { Type = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationFeedbackType_Wrapper>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationFeedbackType_Wrapper.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -90,12 +90,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryFeedbackCommonModelComment>("comment", Comment);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Comment>("comment", Comment);
             writer.WriteIntValue("dislikes", Dislikes);
             writer.WriteIntValue("likes", Likes);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryFeedbackCommonModelOverallScore>("overall_score", OverallScore);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryFeedbackCommonModelRating>("rating", Rating);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryFeedbackCommonModelType>("type", Type);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UserFeedbackScore_Wrapper>("overall_score", OverallScore);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Rating>("rating", Rating);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationFeedbackType_Wrapper>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

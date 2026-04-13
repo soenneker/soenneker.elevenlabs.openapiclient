@@ -51,10 +51,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Optional source to extract the section from. Used for inpainting. Only available to enterprise clients with access to the inpainting feature.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SongSectionSourceFrom? SourceFrom { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SectionSource? SourceFrom { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SongSectionSourceFrom SourceFrom { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SectionSource SourceFrom { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.SongSection"/> and sets the default values.
@@ -86,7 +86,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "negative_local_styles", n => { NegativeLocalStyles = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "positive_local_styles", n => { PositiveLocalStyles = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "section_name", n => { SectionName = n.GetStringValue(); } },
-                { "source_from", n => { SourceFrom = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SongSectionSourceFrom>(global::Soenneker.ElevenLabs.OpenApiClient.Models.SongSectionSourceFrom.CreateFromDiscriminatorValue); } },
+                { "source_from", n => { SourceFrom = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SectionSource>(global::Soenneker.ElevenLabs.OpenApiClient.Models.SectionSource.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -101,7 +101,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("negative_local_styles", NegativeLocalStyles);
             writer.WriteCollectionOfPrimitiveValues<string>("positive_local_styles", PositiveLocalStyles);
             writer.WriteStringValue("section_name", SectionName);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SongSectionSourceFrom>("source_from", SourceFrom);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SectionSource>("source_from", SourceFrom);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

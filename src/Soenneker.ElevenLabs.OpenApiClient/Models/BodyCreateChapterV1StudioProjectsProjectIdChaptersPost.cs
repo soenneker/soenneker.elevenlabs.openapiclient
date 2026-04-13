@@ -17,10 +17,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>An optional URL from which we will extract content to initialize the Studio project. If this is set, &apos;from_url&apos; and &apos;from_content&apos; must be null. If neither &apos;from_url&apos;, &apos;from_document&apos;, &apos;from_content&apos; are provided we will initialize the Studio project as blank.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateChapterV1StudioProjectsProjectIdChaptersPostFromUrl? FromUrl { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.From_Url? FromUrl { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateChapterV1StudioProjectsProjectIdChaptersPostFromUrl FromUrl { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.From_Url FromUrl { get; set; }
 #endif
         /// <summary>The name of the chapter, used for identification only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -55,7 +55,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "from_url", n => { FromUrl = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateChapterV1StudioProjectsProjectIdChaptersPostFromUrl>(global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateChapterV1StudioProjectsProjectIdChaptersPostFromUrl.CreateFromDiscriminatorValue); } },
+                { "from_url", n => { FromUrl = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.From_Url>(global::Soenneker.ElevenLabs.OpenApiClient.Models.From_Url.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
             };
         }
@@ -66,7 +66,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateChapterV1StudioProjectsProjectIdChaptersPostFromUrl>("from_url", FromUrl);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.From_Url>("from_url", FromUrl);
             writer.WriteStringValue("name", Name);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -17,18 +17,18 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Author used in the player and inserted at the start of the uploaded article. If not provided, the default author set in the Player settings is used.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyUpdateAudioNativeContentFromURLV1AudioNativeContentPostAuthor? Author { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Author? Author { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyUpdateAudioNativeContentFromURLV1AudioNativeContentPostAuthor Author { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Author Author { get; set; }
 #endif
         /// <summary>Title used in the player and inserted at the top of the uploaded article. If not provided, the default title set in the Player settings is used.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyUpdateAudioNativeContentFromURLV1AudioNativeContentPostTitle? Title { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Title? Title { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyUpdateAudioNativeContentFromURLV1AudioNativeContentPostTitle Title { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Title Title { get; set; }
 #endif
         /// <summary>URL of the page to extract content from.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -63,8 +63,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "author", n => { Author = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyUpdateAudioNativeContentFromURLV1AudioNativeContentPostAuthor>(global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyUpdateAudioNativeContentFromURLV1AudioNativeContentPostAuthor.CreateFromDiscriminatorValue); } },
-                { "title", n => { Title = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyUpdateAudioNativeContentFromURLV1AudioNativeContentPostTitle>(global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyUpdateAudioNativeContentFromURLV1AudioNativeContentPostTitle.CreateFromDiscriminatorValue); } },
+                { "author", n => { Author = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Author>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Author.CreateFromDiscriminatorValue); } },
+                { "title", n => { Title = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Title>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Title.CreateFromDiscriminatorValue); } },
                 { "url", n => { Url = n.GetStringValue(); } },
             };
         }
@@ -75,8 +75,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyUpdateAudioNativeContentFromURLV1AudioNativeContentPostAuthor>("author", Author);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyUpdateAudioNativeContentFromURLV1AudioNativeContentPostTitle>("title", Title);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Author>("author", Author);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Title>("title", Title);
             writer.WriteStringValue("url", Url);
             writer.WriteAdditionalData(AdditionalData);
         }

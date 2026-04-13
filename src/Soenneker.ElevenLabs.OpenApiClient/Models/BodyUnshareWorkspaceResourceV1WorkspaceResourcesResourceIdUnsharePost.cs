@@ -17,28 +17,28 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The ID of the target group. To target the permissions principals have by default on this resource, use the value &apos;default&apos;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyUnshareWorkspaceResourceV1WorkspaceResourcesResourceIdUnsharePostGroupId? GroupId { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Group_Id? GroupId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyUnshareWorkspaceResourceV1WorkspaceResourcesResourceIdUnsharePostGroupId GroupId { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Group_Id GroupId { get; set; }
 #endif
         /// <summary>Resource types that can be shared in the workspace. The name always need to match the collection names</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceResourceType? ResourceType { get; set; }
         /// <summary>The email of the user or service account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyUnshareWorkspaceResourceV1WorkspaceResourcesResourceIdUnsharePostUserEmail? UserEmail { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.User_Email? UserEmail { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyUnshareWorkspaceResourceV1WorkspaceResourcesResourceIdUnsharePostUserEmail UserEmail { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.User_Email UserEmail { get; set; }
 #endif
         /// <summary>The ID of the target workspace API key. This isn&apos;t the same as the key itself that would you pass in the header for authentication. Workspace admins can find this in the workspace settings UI.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyUnshareWorkspaceResourceV1WorkspaceResourcesResourceIdUnsharePostWorkspaceApiKeyId? WorkspaceApiKeyId { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Workspace_Api_Key_Id? WorkspaceApiKeyId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyUnshareWorkspaceResourceV1WorkspaceResourcesResourceIdUnsharePostWorkspaceApiKeyId WorkspaceApiKeyId { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Workspace_Api_Key_Id WorkspaceApiKeyId { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyUnshareWorkspaceResourceV1WorkspaceResourcesResourceIdUnsharePost"/> and sets the default values.
@@ -65,10 +65,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "group_id", n => { GroupId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyUnshareWorkspaceResourceV1WorkspaceResourcesResourceIdUnsharePostGroupId>(global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyUnshareWorkspaceResourceV1WorkspaceResourcesResourceIdUnsharePostGroupId.CreateFromDiscriminatorValue); } },
+                { "group_id", n => { GroupId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Group_Id>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Group_Id.CreateFromDiscriminatorValue); } },
                 { "resource_type", n => { ResourceType = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceResourceType>(); } },
-                { "user_email", n => { UserEmail = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyUnshareWorkspaceResourceV1WorkspaceResourcesResourceIdUnsharePostUserEmail>(global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyUnshareWorkspaceResourceV1WorkspaceResourcesResourceIdUnsharePostUserEmail.CreateFromDiscriminatorValue); } },
-                { "workspace_api_key_id", n => { WorkspaceApiKeyId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyUnshareWorkspaceResourceV1WorkspaceResourcesResourceIdUnsharePostWorkspaceApiKeyId>(global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyUnshareWorkspaceResourceV1WorkspaceResourcesResourceIdUnsharePostWorkspaceApiKeyId.CreateFromDiscriminatorValue); } },
+                { "user_email", n => { UserEmail = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.User_Email>(global::Soenneker.ElevenLabs.OpenApiClient.Models.User_Email.CreateFromDiscriminatorValue); } },
+                { "workspace_api_key_id", n => { WorkspaceApiKeyId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Workspace_Api_Key_Id>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Workspace_Api_Key_Id.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -78,10 +78,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyUnshareWorkspaceResourceV1WorkspaceResourcesResourceIdUnsharePostGroupId>("group_id", GroupId);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Group_Id>("group_id", GroupId);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceResourceType>("resource_type", ResourceType);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyUnshareWorkspaceResourceV1WorkspaceResourcesResourceIdUnsharePostUserEmail>("user_email", UserEmail);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyUnshareWorkspaceResourceV1WorkspaceResourcesResourceIdUnsharePostWorkspaceApiKeyId>("workspace_api_key_id", WorkspaceApiKeyId);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.User_Email>("user_email", UserEmail);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Workspace_Api_Key_Id>("workspace_api_key_id", WorkspaceApiKeyId);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

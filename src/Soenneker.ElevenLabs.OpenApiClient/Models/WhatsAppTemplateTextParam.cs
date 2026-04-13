@@ -17,10 +17,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The parameter_name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppTemplateTextParamParameterName? ParameterName { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Parameter_Name? ParameterName { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppTemplateTextParamParameterName ParameterName { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Parameter_Name ParameterName { get; set; }
 #endif
         /// <summary>The text property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -58,7 +58,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "parameter_name", n => { ParameterName = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppTemplateTextParamParameterName>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppTemplateTextParamParameterName.CreateFromDiscriminatorValue); } },
+                { "parameter_name", n => { ParameterName = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Parameter_Name>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Parameter_Name.CreateFromDiscriminatorValue); } },
                 { "text", n => { Text = n.GetStringValue(); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppTemplateTextParam_type>(); } },
             };
@@ -70,7 +70,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppTemplateTextParamParameterName>("parameter_name", ParameterName);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Parameter_Name>("parameter_name", ParameterName);
             writer.WriteStringValue("text", Text);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppTemplateTextParam_type>("type", Type);
             writer.WriteAdditionalData(AdditionalData);

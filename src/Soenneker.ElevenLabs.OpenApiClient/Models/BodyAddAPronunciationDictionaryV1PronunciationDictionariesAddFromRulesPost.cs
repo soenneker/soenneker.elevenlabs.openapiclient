@@ -17,10 +17,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>A description of the pronunciation dictionary, used for identification only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyAddAPronunciationDictionaryV1PronunciationDictionariesAddFromRulesPostDescription? Description { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Description? Description { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyAddAPronunciationDictionaryV1PronunciationDictionariesAddFromRulesPostDescription Description { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Description Description { get; set; }
 #endif
         /// <summary>The name of the pronunciation dictionary, used for identification only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -41,10 +41,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Should be one of &apos;admin&apos;, &apos;editor&apos; or &apos;viewer&apos;. If not provided, defaults to no access.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyAddAPronunciationDictionaryV1PronunciationDictionariesAddFromRulesPostWorkspaceAccess? WorkspaceAccess { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Workspace_Access? WorkspaceAccess { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyAddAPronunciationDictionaryV1PronunciationDictionariesAddFromRulesPostWorkspaceAccess WorkspaceAccess { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Workspace_Access WorkspaceAccess { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyAddAPronunciationDictionaryV1PronunciationDictionariesAddFromRulesPost"/> and sets the default values.
@@ -71,10 +71,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "description", n => { Description = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyAddAPronunciationDictionaryV1PronunciationDictionariesAddFromRulesPostDescription>(global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyAddAPronunciationDictionaryV1PronunciationDictionariesAddFromRulesPostDescription.CreateFromDiscriminatorValue); } },
+                { "description", n => { Description = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Description>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Description.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "rules", n => { Rules = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyAddAPronunciationDictionaryV1PronunciationDictionariesAddFromRulesPost.BodyAddAPronunciationDictionaryV1PronunciationDictionariesAddFromRulesPost_rules>(global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyAddAPronunciationDictionaryV1PronunciationDictionariesAddFromRulesPost.BodyAddAPronunciationDictionaryV1PronunciationDictionariesAddFromRulesPost_rules.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "workspace_access", n => { WorkspaceAccess = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyAddAPronunciationDictionaryV1PronunciationDictionariesAddFromRulesPostWorkspaceAccess>(global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyAddAPronunciationDictionaryV1PronunciationDictionariesAddFromRulesPostWorkspaceAccess.CreateFromDiscriminatorValue); } },
+                { "workspace_access", n => { WorkspaceAccess = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Workspace_Access>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Workspace_Access.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -84,10 +84,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyAddAPronunciationDictionaryV1PronunciationDictionariesAddFromRulesPostDescription>("description", Description);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Description>("description", Description);
             writer.WriteStringValue("name", Name);
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyAddAPronunciationDictionaryV1PronunciationDictionariesAddFromRulesPost.BodyAddAPronunciationDictionaryV1PronunciationDictionariesAddFromRulesPost_rules>("rules", Rules);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyAddAPronunciationDictionaryV1PronunciationDictionariesAddFromRulesPostWorkspaceAccess>("workspace_access", WorkspaceAccess);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Workspace_Access>("workspace_access", WorkspaceAccess);
             writer.WriteAdditionalData(AdditionalData);
         }
         /// <summary>

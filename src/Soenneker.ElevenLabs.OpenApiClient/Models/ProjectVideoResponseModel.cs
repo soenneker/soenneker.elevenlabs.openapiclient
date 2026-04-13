@@ -17,10 +17,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The analysis property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectVideoResponseModelAnalysis? Analysis { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.VideoAnalysis? Analysis { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectVideoResponseModelAnalysis Analysis { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.VideoAnalysis Analysis { get; set; }
 #endif
         /// <summary>The animation property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -33,10 +33,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The asset_preview_signed_url property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectVideoResponseModelAssetPreviewSignedUrl? AssetPreviewSignedUrl { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Asset_Preview_Signed_Url? AssetPreviewSignedUrl { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectVideoResponseModelAssetPreviewSignedUrl AssetPreviewSignedUrl { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Asset_Preview_Signed_Url AssetPreviewSignedUrl { get; set; }
 #endif
         /// <summary>The audio_track_ready property</summary>
         public bool? AudioTrackReady { get; set; }
@@ -61,10 +61,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The current_snapshot_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectVideoResponseModelCurrentSnapshotId? CurrentSnapshotId { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Current_Snapshot_Id? CurrentSnapshotId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectVideoResponseModelCurrentSnapshotId CurrentSnapshotId { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Current_Snapshot_Id CurrentSnapshotId { get; set; }
 #endif
         /// <summary>The duration_ms property</summary>
         public int? DurationMs { get; set; }
@@ -73,10 +73,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The error property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectVideoResponseModelError? Error { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Error? Error { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectVideoResponseModelError Error { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Error Error { get; set; }
 #endif
         /// <summary>The export_format_ready property</summary>
         public bool? ExportFormatReady { get; set; }
@@ -97,10 +97,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The import_speech_progress property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectVideoResponseModelImportSpeechProgress? ImportSpeechProgress { get; private set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Import_Speech_Progress? ImportSpeechProgress { get; private set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectVideoResponseModelImportSpeechProgress ImportSpeechProgress { get; private set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Import_Speech_Progress ImportSpeechProgress { get; private set; }
 #endif
         /// <summary>The muted property</summary>
         public bool? Muted { get; set; }
@@ -135,10 +135,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The pending_task property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectVideoResponseModelPendingTask? PendingTask { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PendingClipTask? PendingTask { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectVideoResponseModelPendingTask PendingTask { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PendingClipTask PendingTask { get; set; }
 #endif
         /// <summary>The playback_speed property</summary>
         public double? PlaybackSpeed { get; set; }
@@ -147,42 +147,42 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The signed_preview_url property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectVideoResponseModelSignedPreviewUrl? SignedPreviewUrl { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Signed_Preview_Url? SignedPreviewUrl { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectVideoResponseModelSignedPreviewUrl SignedPreviewUrl { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Signed_Preview_Url SignedPreviewUrl { get; set; }
 #endif
         /// <summary>The signed_url property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectVideoResponseModelSignedUrl? SignedUrl { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Signed_Url? SignedUrl { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectVideoResponseModelSignedUrl SignedUrl { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Signed_Url SignedUrl { get; set; }
 #endif
         /// <summary>The source_asset_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectVideoResponseModelSourceAssetId? SourceAssetId { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Source_Asset_Id? SourceAssetId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectVideoResponseModelSourceAssetId SourceAssetId { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Source_Asset_Id SourceAssetId { get; set; }
 #endif
         /// <summary>The source_context property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectVideoResponseModelSourceContext? SourceContext { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GenerationSourceContext? SourceContext { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectVideoResponseModelSourceContext SourceContext { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GenerationSourceContext SourceContext { get; set; }
 #endif
         /// <summary>The source_video_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectVideoResponseModelSourceVideoId? SourceVideoId { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Source_Video_Id? SourceVideoId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectVideoResponseModelSourceVideoId SourceVideoId { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Source_Video_Id SourceVideoId { get; set; }
 #endif
         /// <summary>The speech_imported property</summary>
         public bool? SpeechImported { get; set; }
@@ -257,37 +257,37 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "analysis", n => { Analysis = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectVideoResponseModelAnalysis>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectVideoResponseModelAnalysis.CreateFromDiscriminatorValue); } },
+                { "analysis", n => { Analysis = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.VideoAnalysis>(global::Soenneker.ElevenLabs.OpenApiClient.Models.VideoAnalysis.CreateFromDiscriminatorValue); } },
                 { "animation", n => { Animation = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ClipAnimation>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ClipAnimation.CreateFromDiscriminatorValue); } },
-                { "asset_preview_signed_url", n => { AssetPreviewSignedUrl = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectVideoResponseModelAssetPreviewSignedUrl>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectVideoResponseModelAssetPreviewSignedUrl.CreateFromDiscriminatorValue); } },
+                { "asset_preview_signed_url", n => { AssetPreviewSignedUrl = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Asset_Preview_Signed_Url>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Asset_Preview_Signed_Url.CreateFromDiscriminatorValue); } },
                 { "audio_track_ready", n => { AudioTrackReady = n.GetBoolValue(); } },
                 { "canvas_placement", n => { CanvasPlacement = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CanvasPlacement>(global::Soenneker.ElevenLabs.OpenApiClient.Models.CanvasPlacement.CreateFromDiscriminatorValue); } },
                 { "codec", n => { Codec = n.GetStringValue(); } },
                 { "created_at_ms", n => { CreatedAtMs = n.GetIntValue(); } },
-                { "current_snapshot_id", n => { CurrentSnapshotId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectVideoResponseModelCurrentSnapshotId>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectVideoResponseModelCurrentSnapshotId.CreateFromDiscriminatorValue); } },
+                { "current_snapshot_id", n => { CurrentSnapshotId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Current_Snapshot_Id>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Current_Snapshot_Id.CreateFromDiscriminatorValue); } },
                 { "duration_ms", n => { DurationMs = n.GetIntValue(); } },
                 { "end_time_ms", n => { EndTimeMs = n.GetIntValue(); } },
-                { "error", n => { Error = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectVideoResponseModelError>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectVideoResponseModelError.CreateFromDiscriminatorValue); } },
+                { "error", n => { Error = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Error>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Error.CreateFromDiscriminatorValue); } },
                 { "export_format_ready", n => { ExportFormatReady = n.GetBoolValue(); } },
                 { "fade_in_ms", n => { FadeInMs = n.GetIntValue(); } },
                 { "fade_out_ms", n => { FadeOutMs = n.GetIntValue(); } },
                 { "filename", n => { Filename = n.GetStringValue(); } },
                 { "height", n => { Height = n.GetIntValue(); } },
-                { "import_speech_progress", n => { ImportSpeechProgress = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectVideoResponseModelImportSpeechProgress>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectVideoResponseModelImportSpeechProgress.CreateFromDiscriminatorValue); } },
+                { "import_speech_progress", n => { ImportSpeechProgress = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Import_Speech_Progress>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Import_Speech_Progress.CreateFromDiscriminatorValue); } },
                 { "muted", n => { Muted = n.GetBoolValue(); } },
                 { "offset_ms", n => { OffsetMs = n.GetIntValue(); } },
                 { "opacity", n => { Opacity = n.GetDoubleValue(); } },
                 { "order", n => { Order = n.GetStringValue(); } },
                 { "pending_block_ids", n => { PendingBlockIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "pending_external_audio_ids", n => { PendingExternalAudioIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "pending_task", n => { PendingTask = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectVideoResponseModelPendingTask>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectVideoResponseModelPendingTask.CreateFromDiscriminatorValue); } },
+                { "pending_task", n => { PendingTask = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PendingClipTask>(global::Soenneker.ElevenLabs.OpenApiClient.Models.PendingClipTask.CreateFromDiscriminatorValue); } },
                 { "playback_speed", n => { PlaybackSpeed = n.GetDoubleValue(); } },
                 { "preview_job_progress", n => { PreviewJobProgress = n.GetDoubleValue(); } },
-                { "signed_preview_url", n => { SignedPreviewUrl = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectVideoResponseModelSignedPreviewUrl>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectVideoResponseModelSignedPreviewUrl.CreateFromDiscriminatorValue); } },
-                { "signed_url", n => { SignedUrl = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectVideoResponseModelSignedUrl>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectVideoResponseModelSignedUrl.CreateFromDiscriminatorValue); } },
-                { "source_asset_id", n => { SourceAssetId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectVideoResponseModelSourceAssetId>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectVideoResponseModelSourceAssetId.CreateFromDiscriminatorValue); } },
-                { "source_context", n => { SourceContext = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectVideoResponseModelSourceContext>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectVideoResponseModelSourceContext.CreateFromDiscriminatorValue); } },
-                { "source_video_id", n => { SourceVideoId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectVideoResponseModelSourceVideoId>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectVideoResponseModelSourceVideoId.CreateFromDiscriminatorValue); } },
+                { "signed_preview_url", n => { SignedPreviewUrl = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Signed_Preview_Url>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Signed_Preview_Url.CreateFromDiscriminatorValue); } },
+                { "signed_url", n => { SignedUrl = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Signed_Url>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Signed_Url.CreateFromDiscriminatorValue); } },
+                { "source_asset_id", n => { SourceAssetId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Source_Asset_Id>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Source_Asset_Id.CreateFromDiscriminatorValue); } },
+                { "source_context", n => { SourceContext = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GenerationSourceContext>(global::Soenneker.ElevenLabs.OpenApiClient.Models.GenerationSourceContext.CreateFromDiscriminatorValue); } },
+                { "source_video_id", n => { SourceVideoId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Source_Video_Id>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Source_Video_Id.CreateFromDiscriminatorValue); } },
                 { "speech_imported", n => { SpeechImported = n.GetBoolValue(); } },
                 { "start_time_ms", n => { StartTimeMs = n.GetIntValue(); } },
                 { "thumbnail_interval_seconds", n => { ThumbnailIntervalSeconds = n.GetDoubleValue(); } },
@@ -308,17 +308,17 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectVideoResponseModelAnalysis>("analysis", Analysis);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.VideoAnalysis>("analysis", Analysis);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ClipAnimation>("animation", Animation);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectVideoResponseModelAssetPreviewSignedUrl>("asset_preview_signed_url", AssetPreviewSignedUrl);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Asset_Preview_Signed_Url>("asset_preview_signed_url", AssetPreviewSignedUrl);
             writer.WriteBoolValue("audio_track_ready", AudioTrackReady);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CanvasPlacement>("canvas_placement", CanvasPlacement);
             writer.WriteStringValue("codec", Codec);
             writer.WriteIntValue("created_at_ms", CreatedAtMs);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectVideoResponseModelCurrentSnapshotId>("current_snapshot_id", CurrentSnapshotId);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Current_Snapshot_Id>("current_snapshot_id", CurrentSnapshotId);
             writer.WriteIntValue("duration_ms", DurationMs);
             writer.WriteIntValue("end_time_ms", EndTimeMs);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectVideoResponseModelError>("error", Error);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Error>("error", Error);
             writer.WriteBoolValue("export_format_ready", ExportFormatReady);
             writer.WriteIntValue("fade_in_ms", FadeInMs);
             writer.WriteIntValue("fade_out_ms", FadeOutMs);
@@ -330,13 +330,13 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteStringValue("order", Order);
             writer.WriteCollectionOfPrimitiveValues<string>("pending_block_ids", PendingBlockIds);
             writer.WriteCollectionOfPrimitiveValues<string>("pending_external_audio_ids", PendingExternalAudioIds);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectVideoResponseModelPendingTask>("pending_task", PendingTask);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PendingClipTask>("pending_task", PendingTask);
             writer.WriteDoubleValue("playback_speed", PlaybackSpeed);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectVideoResponseModelSignedPreviewUrl>("signed_preview_url", SignedPreviewUrl);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectVideoResponseModelSignedUrl>("signed_url", SignedUrl);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectVideoResponseModelSourceAssetId>("source_asset_id", SourceAssetId);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectVideoResponseModelSourceContext>("source_context", SourceContext);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectVideoResponseModelSourceVideoId>("source_video_id", SourceVideoId);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Signed_Preview_Url>("signed_preview_url", SignedPreviewUrl);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Signed_Url>("signed_url", SignedUrl);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Source_Asset_Id>("source_asset_id", SourceAssetId);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GenerationSourceContext>("source_context", SourceContext);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Source_Video_Id>("source_video_id", SourceVideoId);
             writer.WriteBoolValue("speech_imported", SpeechImported);
             writer.WriteIntValue("start_time_ms", StartTimeMs);
             writer.WriteDoubleValue("thumbnail_interval_seconds", ThumbnailIntervalSeconds);

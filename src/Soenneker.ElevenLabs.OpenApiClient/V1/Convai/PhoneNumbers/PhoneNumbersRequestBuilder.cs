@@ -49,17 +49,17 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.PhoneNumbers
         /// <summary>
         /// Retrieve all Phone Numbers
         /// </summary>
-        /// <returns>A List&lt;global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.PhoneNumbers.PhoneNumbersRequestBuilder.ListPhoneNumbersRoute200&gt;</returns>
+        /// <returns>A List&lt;global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.PhoneNumbers.PhoneNumbersRequestBuilder.ResponseListPhoneNumbersV1ConvaiPhoneNumbersGet&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.HTTPValidationError">When receiving a 422 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<List<global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.PhoneNumbers.PhoneNumbersRequestBuilder.ListPhoneNumbersRoute200>?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<List<global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.PhoneNumbers.PhoneNumbersRequestBuilder.ResponseListPhoneNumbersV1ConvaiPhoneNumbersGet>?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<List<global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.PhoneNumbers.PhoneNumbersRequestBuilder.ListPhoneNumbersRoute200>> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<List<global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.PhoneNumbers.PhoneNumbersRequestBuilder.ResponseListPhoneNumbersV1ConvaiPhoneNumbersGet>> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -67,7 +67,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.PhoneNumbers
             {
                 { "422", global::Soenneker.ElevenLabs.OpenApiClient.Models.HTTPValidationError.CreateFromDiscriminatorValue },
             };
-            var collectionResult = await RequestAdapter.SendCollectionAsync<global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.PhoneNumbers.PhoneNumbersRequestBuilder.ListPhoneNumbersRoute200>(requestInfo, global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.PhoneNumbers.PhoneNumbersRequestBuilder.ListPhoneNumbersRoute200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            var collectionResult = await RequestAdapter.SendCollectionAsync<global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.PhoneNumbers.PhoneNumbersRequestBuilder.ResponseListPhoneNumbersV1ConvaiPhoneNumbersGet>(requestInfo, global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.PhoneNumbers.PhoneNumbersRequestBuilder.ResponseListPhoneNumbersV1ConvaiPhoneNumbersGet.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
             return collectionResult?.AsList();
         }
         /// <summary>
@@ -149,7 +149,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.PhoneNumbers
         /// Composed type wrapper for classes <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPhoneNumberSIPTrunkResponseModel"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPhoneNumberTwilioResponseModel"/>
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class ListPhoneNumbersRoute200 : IComposedTypeWrapper, IParsable
+        public partial class ResponseListPhoneNumbersV1ConvaiPhoneNumbersGet : IComposedTypeWrapper, IParsable
         {
             /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPhoneNumberSIPTrunkResponseModel"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -170,13 +170,13 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.PhoneNumbers
             /// <summary>
             /// Creates a new instance of the appropriate class based on discriminator value
             /// </summary>
-            /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.PhoneNumbers.PhoneNumbersRequestBuilder.ListPhoneNumbersRoute200"/></returns>
+            /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.PhoneNumbers.PhoneNumbersRequestBuilder.ResponseListPhoneNumbersV1ConvaiPhoneNumbersGet"/></returns>
             /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.PhoneNumbers.PhoneNumbersRequestBuilder.ListPhoneNumbersRoute200 CreateFromDiscriminatorValue(IParseNode parseNode)
+            public static global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.PhoneNumbers.PhoneNumbersRequestBuilder.ResponseListPhoneNumbersV1ConvaiPhoneNumbersGet CreateFromDiscriminatorValue(IParseNode parseNode)
             {
                 if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
                 var mappingValue = parseNode.GetChildNode("provider")?.GetStringValue();
-                var result = new global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.PhoneNumbers.PhoneNumbersRequestBuilder.ListPhoneNumbersRoute200();
+                var result = new global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.PhoneNumbers.PhoneNumbersRequestBuilder.ResponseListPhoneNumbersV1ConvaiPhoneNumbersGet();
                 if("sip_trunk".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
                     result.GetPhoneNumberSIPTrunkResponseModel = new global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPhoneNumberSIPTrunkResponseModel();

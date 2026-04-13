@@ -19,10 +19,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The billing period of the user&apos;s subscription.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ExtendedSubscriptionResponseModelBillingPeriod? BillingPeriod { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BillingPeriod_Wrapper? BillingPeriod { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ExtendedSubscriptionResponseModelBillingPeriod BillingPeriod { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BillingPeriod_Wrapper BillingPeriod { get; set; }
 #endif
         /// <summary>Whether the workspace is entitled to enter overages (usage-based billing).</summary>
         public bool? CanExtendCharacterLimit { get; set; }
@@ -39,18 +39,18 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The character refresh period of the user&apos;s subscription.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ExtendedSubscriptionResponseModelCharacterRefreshPeriod? CharacterRefreshPeriod { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CharacterRefreshPeriod_Wrapper? CharacterRefreshPeriod { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ExtendedSubscriptionResponseModelCharacterRefreshPeriod CharacterRefreshPeriod { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CharacterRefreshPeriod_Wrapper CharacterRefreshPeriod { get; set; }
 #endif
         /// <summary>The currency of the user&apos;s subscription.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ExtendedSubscriptionResponseModelCurrency? Currency { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Currency? Currency { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ExtendedSubscriptionResponseModelCurrency Currency { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Currency Currency { get; set; }
 #endif
         /// <summary>Whether the user has open invoices.</summary>
         public bool? HasOpenInvoices { get; set; }
@@ -61,34 +61,34 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Maximum number of characters that the character limit can be exceeded by. Managed by the workspace admin.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ExtendedSubscriptionResponseModelMaxCharacterLimitExtension? MaxCharacterLimitExtension { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Max_Character_Limit_Extension? MaxCharacterLimitExtension { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ExtendedSubscriptionResponseModelMaxCharacterLimitExtension MaxCharacterLimitExtension { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Max_Character_Limit_Extension MaxCharacterLimitExtension { get; set; }
 #endif
         /// <summary>The maximum number of voice add/edits allowed for the user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ExtendedSubscriptionResponseModelMaxVoiceAddEdits? MaxVoiceAddEdits { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Max_Voice_Add_Edits? MaxVoiceAddEdits { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ExtendedSubscriptionResponseModelMaxVoiceAddEdits MaxVoiceAddEdits { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Max_Voice_Add_Edits MaxVoiceAddEdits { get; set; }
 #endif
         /// <summary>The Unix timestamp of the next character count reset.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ExtendedSubscriptionResponseModelNextCharacterCountResetUnix? NextCharacterCountResetUnix { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Next_Character_Count_Reset_Unix? NextCharacterCountResetUnix { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ExtendedSubscriptionResponseModelNextCharacterCountResetUnix NextCharacterCountResetUnix { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Next_Character_Count_Reset_Unix NextCharacterCountResetUnix { get; set; }
 #endif
         /// <summary>The next invoice for the user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ExtendedSubscriptionResponseModelNextInvoice? NextInvoice { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.InvoiceResponseModel? NextInvoice { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ExtendedSubscriptionResponseModelNextInvoice NextInvoice { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.InvoiceResponseModel NextInvoice { get; set; }
 #endif
         /// <summary>The open invoices for the user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -101,10 +101,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The pending change for the user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ExtendedSubscriptionResponseModelPendingChange? PendingChange { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ExtendedSubscriptionResponseModel.ExtendedSubscriptionResponseModel_pending_change? PendingChange { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ExtendedSubscriptionResponseModelPendingChange PendingChange { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ExtendedSubscriptionResponseModel.ExtendedSubscriptionResponseModel_pending_change PendingChange { get; set; }
 #endif
         /// <summary>The maximum number of professional voices allowed for the user.</summary>
         public int? ProfessionalVoiceLimit { get; set; }
@@ -152,24 +152,24 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "allowed_to_extend_character_limit", n => { AllowedToExtendCharacterLimit = n.GetBoolValue(); } },
-                { "billing_period", n => { BillingPeriod = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ExtendedSubscriptionResponseModelBillingPeriod>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ExtendedSubscriptionResponseModelBillingPeriod.CreateFromDiscriminatorValue); } },
+                { "billing_period", n => { BillingPeriod = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BillingPeriod_Wrapper>(global::Soenneker.ElevenLabs.OpenApiClient.Models.BillingPeriod_Wrapper.CreateFromDiscriminatorValue); } },
                 { "can_extend_character_limit", n => { CanExtendCharacterLimit = n.GetBoolValue(); } },
                 { "can_extend_voice_limit", n => { CanExtendVoiceLimit = n.GetBoolValue(); } },
                 { "can_use_instant_voice_cloning", n => { CanUseInstantVoiceCloning = n.GetBoolValue(); } },
                 { "can_use_professional_voice_cloning", n => { CanUseProfessionalVoiceCloning = n.GetBoolValue(); } },
                 { "character_count", n => { CharacterCount = n.GetIntValue(); } },
                 { "character_limit", n => { CharacterLimit = n.GetIntValue(); } },
-                { "character_refresh_period", n => { CharacterRefreshPeriod = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ExtendedSubscriptionResponseModelCharacterRefreshPeriod>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ExtendedSubscriptionResponseModelCharacterRefreshPeriod.CreateFromDiscriminatorValue); } },
-                { "currency", n => { Currency = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ExtendedSubscriptionResponseModelCurrency>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ExtendedSubscriptionResponseModelCurrency.CreateFromDiscriminatorValue); } },
+                { "character_refresh_period", n => { CharacterRefreshPeriod = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CharacterRefreshPeriod_Wrapper>(global::Soenneker.ElevenLabs.OpenApiClient.Models.CharacterRefreshPeriod_Wrapper.CreateFromDiscriminatorValue); } },
+                { "currency", n => { Currency = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Currency>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Currency.CreateFromDiscriminatorValue); } },
                 { "has_open_invoices", n => { HasOpenInvoices = n.GetBoolValue(); } },
                 { "has_used_creator_coupon_on_account", n => { HasUsedCreatorCouponOnAccount = n.GetBoolValue(); } },
                 { "has_used_starter_coupon_on_account", n => { HasUsedStarterCouponOnAccount = n.GetBoolValue(); } },
-                { "max_character_limit_extension", n => { MaxCharacterLimitExtension = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ExtendedSubscriptionResponseModelMaxCharacterLimitExtension>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ExtendedSubscriptionResponseModelMaxCharacterLimitExtension.CreateFromDiscriminatorValue); } },
-                { "max_voice_add_edits", n => { MaxVoiceAddEdits = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ExtendedSubscriptionResponseModelMaxVoiceAddEdits>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ExtendedSubscriptionResponseModelMaxVoiceAddEdits.CreateFromDiscriminatorValue); } },
-                { "next_character_count_reset_unix", n => { NextCharacterCountResetUnix = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ExtendedSubscriptionResponseModelNextCharacterCountResetUnix>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ExtendedSubscriptionResponseModelNextCharacterCountResetUnix.CreateFromDiscriminatorValue); } },
-                { "next_invoice", n => { NextInvoice = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ExtendedSubscriptionResponseModelNextInvoice>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ExtendedSubscriptionResponseModelNextInvoice.CreateFromDiscriminatorValue); } },
+                { "max_character_limit_extension", n => { MaxCharacterLimitExtension = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Max_Character_Limit_Extension>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Max_Character_Limit_Extension.CreateFromDiscriminatorValue); } },
+                { "max_voice_add_edits", n => { MaxVoiceAddEdits = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Max_Voice_Add_Edits>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Max_Voice_Add_Edits.CreateFromDiscriminatorValue); } },
+                { "next_character_count_reset_unix", n => { NextCharacterCountResetUnix = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Next_Character_Count_Reset_Unix>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Next_Character_Count_Reset_Unix.CreateFromDiscriminatorValue); } },
+                { "next_invoice", n => { NextInvoice = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.InvoiceResponseModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.InvoiceResponseModel.CreateFromDiscriminatorValue); } },
                 { "open_invoices", n => { OpenInvoices = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.InvoiceResponseModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.InvoiceResponseModel.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "pending_change", n => { PendingChange = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ExtendedSubscriptionResponseModelPendingChange>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ExtendedSubscriptionResponseModelPendingChange.CreateFromDiscriminatorValue); } },
+                { "pending_change", n => { PendingChange = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ExtendedSubscriptionResponseModel.ExtendedSubscriptionResponseModel_pending_change>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ExtendedSubscriptionResponseModel.ExtendedSubscriptionResponseModel_pending_change.CreateFromDiscriminatorValue); } },
                 { "professional_voice_limit", n => { ProfessionalVoiceLimit = n.GetIntValue(); } },
                 { "professional_voice_slots_used", n => { ProfessionalVoiceSlotsUsed = n.GetIntValue(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SubscriptionStatusType>(); } },
@@ -187,24 +187,24 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("allowed_to_extend_character_limit", AllowedToExtendCharacterLimit);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ExtendedSubscriptionResponseModelBillingPeriod>("billing_period", BillingPeriod);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BillingPeriod_Wrapper>("billing_period", BillingPeriod);
             writer.WriteBoolValue("can_extend_character_limit", CanExtendCharacterLimit);
             writer.WriteBoolValue("can_extend_voice_limit", CanExtendVoiceLimit);
             writer.WriteBoolValue("can_use_instant_voice_cloning", CanUseInstantVoiceCloning);
             writer.WriteBoolValue("can_use_professional_voice_cloning", CanUseProfessionalVoiceCloning);
             writer.WriteIntValue("character_count", CharacterCount);
             writer.WriteIntValue("character_limit", CharacterLimit);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ExtendedSubscriptionResponseModelCharacterRefreshPeriod>("character_refresh_period", CharacterRefreshPeriod);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ExtendedSubscriptionResponseModelCurrency>("currency", Currency);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CharacterRefreshPeriod_Wrapper>("character_refresh_period", CharacterRefreshPeriod);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Currency>("currency", Currency);
             writer.WriteBoolValue("has_open_invoices", HasOpenInvoices);
             writer.WriteBoolValue("has_used_creator_coupon_on_account", HasUsedCreatorCouponOnAccount);
             writer.WriteBoolValue("has_used_starter_coupon_on_account", HasUsedStarterCouponOnAccount);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ExtendedSubscriptionResponseModelMaxCharacterLimitExtension>("max_character_limit_extension", MaxCharacterLimitExtension);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ExtendedSubscriptionResponseModelMaxVoiceAddEdits>("max_voice_add_edits", MaxVoiceAddEdits);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ExtendedSubscriptionResponseModelNextCharacterCountResetUnix>("next_character_count_reset_unix", NextCharacterCountResetUnix);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ExtendedSubscriptionResponseModelNextInvoice>("next_invoice", NextInvoice);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Max_Character_Limit_Extension>("max_character_limit_extension", MaxCharacterLimitExtension);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Max_Voice_Add_Edits>("max_voice_add_edits", MaxVoiceAddEdits);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Next_Character_Count_Reset_Unix>("next_character_count_reset_unix", NextCharacterCountResetUnix);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.InvoiceResponseModel>("next_invoice", NextInvoice);
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.InvoiceResponseModel>("open_invoices", OpenInvoices);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ExtendedSubscriptionResponseModelPendingChange>("pending_change", PendingChange);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ExtendedSubscriptionResponseModel.ExtendedSubscriptionResponseModel_pending_change>("pending_change", PendingChange);
             writer.WriteIntValue("professional_voice_limit", ProfessionalVoiceLimit);
             writer.WriteIntValue("professional_voice_slots_used", ProfessionalVoiceSlotsUsed);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SubscriptionStatusType>("status", Status);
@@ -213,6 +213,63 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteIntValue("voice_limit", VoiceLimit);
             writer.WriteIntValue("voice_slots_used", VoiceSlotsUsed);
             writer.WriteAdditionalData(AdditionalData);
+        }
+        /// <summary>
+        /// Composed type wrapper for classes <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.PendingCancellationResponseModel"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.PendingSubscriptionSwitchResponseModel"/>
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class ExtendedSubscriptionResponseModel_pending_change : IComposedTypeWrapper, IParsable
+        {
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.PendingCancellationResponseModel"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::Soenneker.ElevenLabs.OpenApiClient.Models.PendingCancellationResponseModel? PendingCancellationResponseModel { get; set; }
+#nullable restore
+#else
+            public global::Soenneker.ElevenLabs.OpenApiClient.Models.PendingCancellationResponseModel PendingCancellationResponseModel { get; set; }
+#endif
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.PendingSubscriptionSwitchResponseModel"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::Soenneker.ElevenLabs.OpenApiClient.Models.PendingSubscriptionSwitchResponseModel? PendingSubscriptionSwitchResponseModel { get; set; }
+#nullable restore
+#else
+            public global::Soenneker.ElevenLabs.OpenApiClient.Models.PendingSubscriptionSwitchResponseModel PendingSubscriptionSwitchResponseModel { get; set; }
+#endif
+            /// <summary>
+            /// Creates a new instance of the appropriate class based on discriminator value
+            /// </summary>
+            /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ExtendedSubscriptionResponseModel.ExtendedSubscriptionResponseModel_pending_change"/></returns>
+            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+            public static global::Soenneker.ElevenLabs.OpenApiClient.Models.ExtendedSubscriptionResponseModel.ExtendedSubscriptionResponseModel_pending_change CreateFromDiscriminatorValue(IParseNode parseNode)
+            {
+                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
+                var result = new global::Soenneker.ElevenLabs.OpenApiClient.Models.ExtendedSubscriptionResponseModel.ExtendedSubscriptionResponseModel_pending_change();
+                result.PendingCancellationResponseModel = new global::Soenneker.ElevenLabs.OpenApiClient.Models.PendingCancellationResponseModel();
+                result.PendingSubscriptionSwitchResponseModel = new global::Soenneker.ElevenLabs.OpenApiClient.Models.PendingSubscriptionSwitchResponseModel();
+                return result;
+            }
+            /// <summary>
+            /// The deserialization information for the current model
+            /// </summary>
+            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
+            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+            {
+                if(PendingCancellationResponseModel != null || PendingSubscriptionSwitchResponseModel != null)
+                {
+                    return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(PendingCancellationResponseModel, PendingSubscriptionSwitchResponseModel);
+                }
+                return new Dictionary<string, Action<IParseNode>>();
+            }
+            /// <summary>
+            /// Serializes information the current object
+            /// </summary>
+            /// <param name="writer">Serialization writer to use to serialize this model</param>
+            public virtual void Serialize(ISerializationWriter writer)
+            {
+                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+                writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PendingCancellationResponseModel>(null, PendingCancellationResponseModel, PendingSubscriptionSwitchResponseModel);
+            }
         }
     }
 }

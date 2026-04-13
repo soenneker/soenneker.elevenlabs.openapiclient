@@ -17,18 +17,18 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The conversation_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.OutboundCallRecipientResponseModelConversationId? ConversationId { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Conversation_Id? ConversationId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.OutboundCallRecipientResponseModelConversationId ConversationId { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Conversation_Id ConversationId { get; set; }
 #endif
         /// <summary>The conversation_initiation_client_data property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.OutboundCallRecipientResponseModelConversationInitiationClientData? ConversationInitiationClientData { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationClientDataInternal? ConversationInitiationClientData { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.OutboundCallRecipientResponseModelConversationInitiationClientData ConversationInitiationClientData { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationClientDataInternal ConversationInitiationClientData { get; set; }
 #endif
         /// <summary>The created_at_unix property</summary>
         public int? CreatedAtUnix { get; set; }
@@ -43,10 +43,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The phone_number property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.OutboundCallRecipientResponseModelPhoneNumber? PhoneNumber { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Phone_Number? PhoneNumber { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.OutboundCallRecipientResponseModelPhoneNumber PhoneNumber { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Phone_Number PhoneNumber { get; set; }
 #endif
         /// <summary>The status property</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.BatchCallRecipientStatus? Status { get; set; }
@@ -55,10 +55,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The whatsapp_user_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.OutboundCallRecipientResponseModelWhatsappUserId? WhatsappUserId { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Whatsapp_User_Id? WhatsappUserId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.OutboundCallRecipientResponseModelWhatsappUserId WhatsappUserId { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Whatsapp_User_Id WhatsappUserId { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.OutboundCallRecipientResponseModel"/> and sets the default values.
@@ -85,14 +85,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "conversation_id", n => { ConversationId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.OutboundCallRecipientResponseModelConversationId>(global::Soenneker.ElevenLabs.OpenApiClient.Models.OutboundCallRecipientResponseModelConversationId.CreateFromDiscriminatorValue); } },
-                { "conversation_initiation_client_data", n => { ConversationInitiationClientData = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.OutboundCallRecipientResponseModelConversationInitiationClientData>(global::Soenneker.ElevenLabs.OpenApiClient.Models.OutboundCallRecipientResponseModelConversationInitiationClientData.CreateFromDiscriminatorValue); } },
+                { "conversation_id", n => { ConversationId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Conversation_Id>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Conversation_Id.CreateFromDiscriminatorValue); } },
+                { "conversation_initiation_client_data", n => { ConversationInitiationClientData = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationClientDataInternal>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationClientDataInternal.CreateFromDiscriminatorValue); } },
                 { "created_at_unix", n => { CreatedAtUnix = n.GetIntValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "phone_number", n => { PhoneNumber = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.OutboundCallRecipientResponseModelPhoneNumber>(global::Soenneker.ElevenLabs.OpenApiClient.Models.OutboundCallRecipientResponseModelPhoneNumber.CreateFromDiscriminatorValue); } },
+                { "phone_number", n => { PhoneNumber = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Phone_Number>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Phone_Number.CreateFromDiscriminatorValue); } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BatchCallRecipientStatus>(); } },
                 { "updated_at_unix", n => { UpdatedAtUnix = n.GetIntValue(); } },
-                { "whatsapp_user_id", n => { WhatsappUserId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.OutboundCallRecipientResponseModelWhatsappUserId>(global::Soenneker.ElevenLabs.OpenApiClient.Models.OutboundCallRecipientResponseModelWhatsappUserId.CreateFromDiscriminatorValue); } },
+                { "whatsapp_user_id", n => { WhatsappUserId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Whatsapp_User_Id>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Whatsapp_User_Id.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -102,14 +102,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.OutboundCallRecipientResponseModelConversationId>("conversation_id", ConversationId);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.OutboundCallRecipientResponseModelConversationInitiationClientData>("conversation_initiation_client_data", ConversationInitiationClientData);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Conversation_Id>("conversation_id", ConversationId);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationClientDataInternal>("conversation_initiation_client_data", ConversationInitiationClientData);
             writer.WriteIntValue("created_at_unix", CreatedAtUnix);
             writer.WriteStringValue("id", Id);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.OutboundCallRecipientResponseModelPhoneNumber>("phone_number", PhoneNumber);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Phone_Number>("phone_number", PhoneNumber);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BatchCallRecipientStatus>("status", Status);
             writer.WriteIntValue("updated_at_unix", UpdatedAtUnix);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.OutboundCallRecipientResponseModelWhatsappUserId>("whatsapp_user_id", WhatsappUserId);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Whatsapp_User_Id>("whatsapp_user_id", WhatsappUserId);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

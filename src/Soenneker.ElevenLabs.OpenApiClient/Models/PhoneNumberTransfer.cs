@@ -34,26 +34,26 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberTransferPhoneNumber? PhoneNumber { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Phone_Number? PhoneNumber { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberTransferPhoneNumber PhoneNumber { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Phone_Number PhoneNumber { get; set; }
 #endif
         /// <summary>DTMF digits to send after call connects (e.g., &apos;ww1234&apos; for extension). Can be either a static value or a dynamic variable reference. Use &apos;w&apos; for 0.5s pause. Only supported for Twilio transfers.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberTransferPostDialDigits? PostDialDigits { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberTransfer_post_dial_digits? PostDialDigits { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberTransferPostDialDigits PostDialDigits { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberTransfer_post_dial_digits PostDialDigits { get; set; }
 #endif
         /// <summary>The transfer_destination property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberTransferTransferDestination? TransferDestination { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberTransfer_transfer_destination? TransferDestination { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberTransferTransferDestination TransferDestination { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberTransfer_transfer_destination TransferDestination { get; set; }
 #endif
         /// <summary>The transfer_type property</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.TransferTypeEnum? TransferType { get; set; }
@@ -85,9 +85,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             {
                 { "condition", n => { Condition = n.GetStringValue(); } },
                 { "custom_sip_headers", n => { CustomSipHeaders = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberTransfer.PhoneNumberTransfer_custom_sip_headers>(global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberTransfer.PhoneNumberTransfer_custom_sip_headers.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "phone_number", n => { PhoneNumber = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberTransferPhoneNumber>(global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberTransferPhoneNumber.CreateFromDiscriminatorValue); } },
-                { "post_dial_digits", n => { PostDialDigits = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberTransferPostDialDigits>(global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberTransferPostDialDigits.CreateFromDiscriminatorValue); } },
-                { "transfer_destination", n => { TransferDestination = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberTransferTransferDestination>(global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberTransferTransferDestination.CreateFromDiscriminatorValue); } },
+                { "phone_number", n => { PhoneNumber = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Phone_Number>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Phone_Number.CreateFromDiscriminatorValue); } },
+                { "post_dial_digits", n => { PostDialDigits = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberTransfer_post_dial_digits>(global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberTransfer_post_dial_digits.CreateFromDiscriminatorValue); } },
+                { "transfer_destination", n => { TransferDestination = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberTransfer_transfer_destination>(global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberTransfer_transfer_destination.CreateFromDiscriminatorValue); } },
                 { "transfer_type", n => { TransferType = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TransferTypeEnum>(); } },
             };
         }
@@ -100,9 +100,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("condition", Condition);
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberTransfer.PhoneNumberTransfer_custom_sip_headers>("custom_sip_headers", CustomSipHeaders);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberTransferPhoneNumber>("phone_number", PhoneNumber);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberTransferPostDialDigits>("post_dial_digits", PostDialDigits);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberTransferTransferDestination>("transfer_destination", TransferDestination);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Phone_Number>("phone_number", PhoneNumber);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberTransfer_post_dial_digits>("post_dial_digits", PostDialDigits);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberTransfer_transfer_destination>("transfer_destination", TransferDestination);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TransferTypeEnum>("transfer_type", TransferType);
             writer.WriteAdditionalData(AdditionalData);
         }

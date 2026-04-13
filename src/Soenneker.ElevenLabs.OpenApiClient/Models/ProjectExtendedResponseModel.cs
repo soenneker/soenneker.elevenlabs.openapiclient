@@ -19,20 +19,20 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Agent-related settings for the project</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExtendedResponseModelAgentSettings? AgentSettings { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.StudioAgentSettingsModel? AgentSettings { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExtendedResponseModelAgentSettings AgentSettings { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.StudioAgentSettingsModel AgentSettings { get; set; }
 #endif
         /// <summary>Whether text normalization is applied to the project.</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExtendedResponseModel_apply_text_normalization? ApplyTextNormalization { get; set; }
         /// <summary>The aspect ratio of the project.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExtendedResponseModelAspectRatio? AspectRatio { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Aspect_Ratio? AspectRatio { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExtendedResponseModelAspectRatio AspectRatio { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Aspect_Ratio AspectRatio { get; set; }
 #endif
         /// <summary>List of uploaded assets e.g. videos, audios.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -45,44 +45,44 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The author of the project.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExtendedResponseModelAuthor? Author { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Author? Author { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExtendedResponseModelAuthor Author { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Author Author { get; set; }
 #endif
         /// <summary>List of voices used by the project.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExtendedResponseModelBaseVoices? BaseVoices { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Base_Voices? BaseVoices { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExtendedResponseModelBaseVoices BaseVoices { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Base_Voices BaseVoices { get; set; }
 #endif
         /// <summary>Whether the project can be downloaded.</summary>
         public bool? CanBeDownloaded { get; set; }
         /// <summary>Whether captions are enabled for the project.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExtendedResponseModelCaptionsEnabled? CaptionsEnabled { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Captions_Enabled? CaptionsEnabled { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExtendedResponseModelCaptionsEnabled CaptionsEnabled { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Captions_Enabled CaptionsEnabled { get; set; }
 #endif
         /// <summary>Global styling to be applied to all captions</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExtendedResponseModelCaptionStyle? CaptionStyle { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CaptionStyleModel? CaptionStyle { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExtendedResponseModelCaptionStyle CaptionStyle { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CaptionStyleModel CaptionStyle { get; set; }
 #endif
         /// <summary>Styling changes that have been made to the provided templates</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExtendedResponseModelCaptionStyleTemplateOverrides? CaptionStyleTemplateOverrides { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExtendedResponseModel_caption_style_template_overrides? CaptionStyleTemplateOverrides { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExtendedResponseModelCaptionStyleTemplateOverrides CaptionStyleTemplateOverrides { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExtendedResponseModel_caption_style_template_overrides CaptionStyleTemplateOverrides { get; set; }
 #endif
         /// <summary>List of chapters of the project and their metadata.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -95,44 +95,44 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Whether chapters are enabled for the project.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExtendedResponseModelChaptersEnabled? ChaptersEnabled { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Chapters_Enabled? ChaptersEnabled { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExtendedResponseModelChaptersEnabled ChaptersEnabled { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Chapters_Enabled ChaptersEnabled { get; set; }
 #endif
         /// <summary>The content type of the project, e.g. &apos;Novel&apos; or &apos;Short Story&apos;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExtendedResponseModelContentType? ContentType { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Content_Type? ContentType { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExtendedResponseModelContentType ContentType { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Content_Type ContentType { get; set; }
 #endif
         /// <summary>The cover image URL of the project.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExtendedResponseModelCoverImageUrl? CoverImageUrl { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Cover_Image_Url? CoverImageUrl { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExtendedResponseModelCoverImageUrl CoverImageUrl { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Cover_Image_Url CoverImageUrl { get; set; }
 #endif
         /// <summary>The creation date of the project.</summary>
         public int? CreateDateUnix { get; set; }
         /// <summary>The user ID who created the project.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExtendedResponseModelCreatedByUserId? CreatedByUserId { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Created_By_User_Id? CreatedByUserId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExtendedResponseModelCreatedByUserId CreatedByUserId { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Created_By_User_Id CreatedByUserId { get; set; }
 #endif
         /// <summary>The creation meta of the project.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExtendedResponseModelCreationMeta? CreationMeta { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectCreationMetaResponseModel? CreationMeta { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExtendedResponseModelCreationMeta CreationMeta { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectCreationMetaResponseModel CreationMeta { get; set; }
 #endif
         /// <summary>The default model ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -161,10 +161,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The description of the project.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExtendedResponseModelDescription? Description { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Description? Description { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExtendedResponseModelDescription Description { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Description Description { get; set; }
 #endif
         /// <summary>Experimental features for the project.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -177,50 +177,50 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Whether the project is fiction.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExtendedResponseModelFiction? Fiction { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Fiction? Fiction { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExtendedResponseModelFiction Fiction { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Fiction Fiction { get; set; }
 #endif
         /// <summary>List of genres of the project.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExtendedResponseModelGenres? Genres { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Genres? Genres { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExtendedResponseModelGenres Genres { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Genres Genres { get; set; }
 #endif
         /// <summary>The ISBN number of the project.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExtendedResponseModelIsbnNumber? IsbnNumber { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Isbn_Number? IsbnNumber { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExtendedResponseModelIsbnNumber IsbnNumber { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Isbn_Number IsbnNumber { get; set; }
 #endif
         /// <summary>Two-letter language code (ISO 639-1) of the language of the project.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExtendedResponseModelLanguage? Language { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Language? Language { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExtendedResponseModelLanguage Language { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Language Language { get; set; }
 #endif
         /// <summary>The last conversion date of the project.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExtendedResponseModelLastConversionDateUnix? LastConversionDateUnix { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Last_Conversion_Date_Unix? LastConversionDateUnix { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExtendedResponseModelLastConversionDateUnix LastConversionDateUnix { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Last_Conversion_Date_Unix LastConversionDateUnix { get; set; }
 #endif
         /// <summary>Whether the project contains mature content.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExtendedResponseModelMatureContent? MatureContent { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Mature_Content? MatureContent { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExtendedResponseModelMatureContent MatureContent { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Mature_Content MatureContent { get; set; }
 #endif
         /// <summary>The name of the project.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -233,10 +233,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The original publication date of the project.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExtendedResponseModelOriginalPublicationDate? OriginalPublicationDate { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Original_Publication_Date? OriginalPublicationDate { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExtendedResponseModelOriginalPublicationDate OriginalPublicationDate { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Original_Publication_Date OriginalPublicationDate { get; set; }
 #endif
         /// <summary>The ID of the project.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -265,18 +265,18 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The public share ID of the project.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExtendedResponseModelPublicShareId? PublicShareId { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Public_Share_Id? PublicShareId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExtendedResponseModelPublicShareId PublicShareId { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Public_Share_Id PublicShareId { get; set; }
 #endif
         /// <summary>The ElevenReader data if the book was published.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExtendedResponseModelPublishingRead? PublishingRead { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.DirectPublishingReadResponseModel? PublishingRead { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExtendedResponseModelPublishingRead PublishingRead { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.DirectPublishingReadResponseModel PublishingRead { get; set; }
 #endif
         /// <summary>Whether quality check is enabled for this project.</summary>
         [Obsolete("")]
@@ -289,28 +289,28 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The source type of the project.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExtendedResponseModelSourceType? SourceType { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Source_Type? SourceType { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExtendedResponseModelSourceType SourceType { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Source_Type SourceType { get; set; }
 #endif
         /// <summary>The state of the project.</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExtendedResponseModel_state? State { get; set; }
         /// <summary>The target audience of the project.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExtendedResponseModelTargetAudience? TargetAudience { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Target_Audience? TargetAudience { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExtendedResponseModelTargetAudience TargetAudience { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Target_Audience TargetAudience { get; set; }
 #endif
         /// <summary>The title of the project.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExtendedResponseModelTitle? Title { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Title? Title { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExtendedResponseModelTitle Title { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Title Title { get; set; }
 #endif
         /// <summary>List of configured project voices.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -348,48 +348,48 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "access_level", n => { AccessLevel = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExtendedResponseModel_access_level>(); } },
-                { "agent_settings", n => { AgentSettings = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExtendedResponseModelAgentSettings>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExtendedResponseModelAgentSettings.CreateFromDiscriminatorValue); } },
+                { "agent_settings", n => { AgentSettings = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.StudioAgentSettingsModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.StudioAgentSettingsModel.CreateFromDiscriminatorValue); } },
                 { "apply_text_normalization", n => { ApplyTextNormalization = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExtendedResponseModel_apply_text_normalization>(); } },
-                { "aspect_ratio", n => { AspectRatio = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExtendedResponseModelAspectRatio>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExtendedResponseModelAspectRatio.CreateFromDiscriminatorValue); } },
+                { "aspect_ratio", n => { AspectRatio = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Aspect_Ratio>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Aspect_Ratio.CreateFromDiscriminatorValue); } },
                 { "assets", n => { Assets = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExtendedResponseModel.ProjectExtendedResponseModel_assets>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExtendedResponseModel.ProjectExtendedResponseModel_assets.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "author", n => { Author = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExtendedResponseModelAuthor>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExtendedResponseModelAuthor.CreateFromDiscriminatorValue); } },
-                { "base_voices", n => { BaseVoices = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExtendedResponseModelBaseVoices>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExtendedResponseModelBaseVoices.CreateFromDiscriminatorValue); } },
+                { "author", n => { Author = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Author>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Author.CreateFromDiscriminatorValue); } },
+                { "base_voices", n => { BaseVoices = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Base_Voices>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Base_Voices.CreateFromDiscriminatorValue); } },
                 { "can_be_downloaded", n => { CanBeDownloaded = n.GetBoolValue(); } },
-                { "caption_style", n => { CaptionStyle = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExtendedResponseModelCaptionStyle>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExtendedResponseModelCaptionStyle.CreateFromDiscriminatorValue); } },
-                { "caption_style_template_overrides", n => { CaptionStyleTemplateOverrides = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExtendedResponseModelCaptionStyleTemplateOverrides>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExtendedResponseModelCaptionStyleTemplateOverrides.CreateFromDiscriminatorValue); } },
-                { "captions_enabled", n => { CaptionsEnabled = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExtendedResponseModelCaptionsEnabled>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExtendedResponseModelCaptionsEnabled.CreateFromDiscriminatorValue); } },
+                { "caption_style", n => { CaptionStyle = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CaptionStyleModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.CaptionStyleModel.CreateFromDiscriminatorValue); } },
+                { "caption_style_template_overrides", n => { CaptionStyleTemplateOverrides = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExtendedResponseModel_caption_style_template_overrides>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExtendedResponseModel_caption_style_template_overrides.CreateFromDiscriminatorValue); } },
+                { "captions_enabled", n => { CaptionsEnabled = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Captions_Enabled>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Captions_Enabled.CreateFromDiscriminatorValue); } },
                 { "chapters", n => { Chapters = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.ChapterResponseModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ChapterResponseModel.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "chapters_enabled", n => { ChaptersEnabled = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExtendedResponseModelChaptersEnabled>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExtendedResponseModelChaptersEnabled.CreateFromDiscriminatorValue); } },
-                { "content_type", n => { ContentType = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExtendedResponseModelContentType>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExtendedResponseModelContentType.CreateFromDiscriminatorValue); } },
-                { "cover_image_url", n => { CoverImageUrl = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExtendedResponseModelCoverImageUrl>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExtendedResponseModelCoverImageUrl.CreateFromDiscriminatorValue); } },
+                { "chapters_enabled", n => { ChaptersEnabled = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Chapters_Enabled>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Chapters_Enabled.CreateFromDiscriminatorValue); } },
+                { "content_type", n => { ContentType = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Content_Type>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Content_Type.CreateFromDiscriminatorValue); } },
+                { "cover_image_url", n => { CoverImageUrl = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Cover_Image_Url>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Cover_Image_Url.CreateFromDiscriminatorValue); } },
                 { "create_date_unix", n => { CreateDateUnix = n.GetIntValue(); } },
-                { "created_by_user_id", n => { CreatedByUserId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExtendedResponseModelCreatedByUserId>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExtendedResponseModelCreatedByUserId.CreateFromDiscriminatorValue); } },
-                { "creation_meta", n => { CreationMeta = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExtendedResponseModelCreationMeta>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExtendedResponseModelCreationMeta.CreateFromDiscriminatorValue); } },
+                { "created_by_user_id", n => { CreatedByUserId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Created_By_User_Id>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Created_By_User_Id.CreateFromDiscriminatorValue); } },
+                { "creation_meta", n => { CreationMeta = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectCreationMetaResponseModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectCreationMetaResponseModel.CreateFromDiscriminatorValue); } },
                 { "default_model_id", n => { DefaultModelId = n.GetStringValue(); } },
                 { "default_paragraph_voice_id", n => { DefaultParagraphVoiceId = n.GetStringValue(); } },
                 { "default_title_voice_id", n => { DefaultTitleVoiceId = n.GetStringValue(); } },
-                { "description", n => { Description = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExtendedResponseModelDescription>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExtendedResponseModelDescription.CreateFromDiscriminatorValue); } },
+                { "description", n => { Description = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Description>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Description.CreateFromDiscriminatorValue); } },
                 { "experimental", n => { Experimental = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExtendedResponseModel_experimental>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExtendedResponseModel_experimental.CreateFromDiscriminatorValue); } },
-                { "fiction", n => { Fiction = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExtendedResponseModelFiction>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExtendedResponseModelFiction.CreateFromDiscriminatorValue); } },
-                { "genres", n => { Genres = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExtendedResponseModelGenres>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExtendedResponseModelGenres.CreateFromDiscriminatorValue); } },
-                { "isbn_number", n => { IsbnNumber = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExtendedResponseModelIsbnNumber>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExtendedResponseModelIsbnNumber.CreateFromDiscriminatorValue); } },
-                { "language", n => { Language = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExtendedResponseModelLanguage>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExtendedResponseModelLanguage.CreateFromDiscriminatorValue); } },
-                { "last_conversion_date_unix", n => { LastConversionDateUnix = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExtendedResponseModelLastConversionDateUnix>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExtendedResponseModelLastConversionDateUnix.CreateFromDiscriminatorValue); } },
-                { "mature_content", n => { MatureContent = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExtendedResponseModelMatureContent>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExtendedResponseModelMatureContent.CreateFromDiscriminatorValue); } },
+                { "fiction", n => { Fiction = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Fiction>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Fiction.CreateFromDiscriminatorValue); } },
+                { "genres", n => { Genres = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Genres>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Genres.CreateFromDiscriminatorValue); } },
+                { "isbn_number", n => { IsbnNumber = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Isbn_Number>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Isbn_Number.CreateFromDiscriminatorValue); } },
+                { "language", n => { Language = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Language>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Language.CreateFromDiscriminatorValue); } },
+                { "last_conversion_date_unix", n => { LastConversionDateUnix = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Last_Conversion_Date_Unix>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Last_Conversion_Date_Unix.CreateFromDiscriminatorValue); } },
+                { "mature_content", n => { MatureContent = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Mature_Content>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Mature_Content.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "original_publication_date", n => { OriginalPublicationDate = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExtendedResponseModelOriginalPublicationDate>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExtendedResponseModelOriginalPublicationDate.CreateFromDiscriminatorValue); } },
+                { "original_publication_date", n => { OriginalPublicationDate = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Original_Publication_Date>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Original_Publication_Date.CreateFromDiscriminatorValue); } },
                 { "project_id", n => { ProjectId = n.GetStringValue(); } },
                 { "pronunciation_dictionary_locators", n => { PronunciationDictionaryLocators = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.PronunciationDictionaryLocatorResponseModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.PronunciationDictionaryLocatorResponseModel.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "pronunciation_dictionary_versions", n => { PronunciationDictionaryVersions = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.PronunciationDictionaryVersionResponseModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.PronunciationDictionaryVersionResponseModel.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "public_share_id", n => { PublicShareId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExtendedResponseModelPublicShareId>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExtendedResponseModelPublicShareId.CreateFromDiscriminatorValue); } },
-                { "publishing_read", n => { PublishingRead = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExtendedResponseModelPublishingRead>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExtendedResponseModelPublishingRead.CreateFromDiscriminatorValue); } },
+                { "public_share_id", n => { PublicShareId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Public_Share_Id>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Public_Share_Id.CreateFromDiscriminatorValue); } },
+                { "publishing_read", n => { PublishingRead = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DirectPublishingReadResponseModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.DirectPublishingReadResponseModel.CreateFromDiscriminatorValue); } },
                 { "quality_check_on", n => { QualityCheckOn = n.GetBoolValue(); } },
                 { "quality_check_on_when_bulk_convert", n => { QualityCheckOnWhenBulkConvert = n.GetBoolValue(); } },
                 { "quality_preset", n => { QualityPreset = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExtendedResponseModel_quality_preset>(); } },
-                { "source_type", n => { SourceType = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExtendedResponseModelSourceType>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExtendedResponseModelSourceType.CreateFromDiscriminatorValue); } },
+                { "source_type", n => { SourceType = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Source_Type>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Source_Type.CreateFromDiscriminatorValue); } },
                 { "state", n => { State = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExtendedResponseModel_state>(); } },
-                { "target_audience", n => { TargetAudience = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExtendedResponseModelTargetAudience>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExtendedResponseModelTargetAudience.CreateFromDiscriminatorValue); } },
-                { "title", n => { Title = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExtendedResponseModelTitle>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExtendedResponseModelTitle.CreateFromDiscriminatorValue); } },
+                { "target_audience", n => { TargetAudience = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Target_Audience>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Target_Audience.CreateFromDiscriminatorValue); } },
+                { "title", n => { Title = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Title>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Title.CreateFromDiscriminatorValue); } },
                 { "voices", n => { Voices = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectVoiceResponseModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectVoiceResponseModel.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "volume_normalization", n => { VolumeNormalization = n.GetBoolValue(); } },
             };
@@ -402,48 +402,48 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExtendedResponseModel_access_level>("access_level", AccessLevel);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExtendedResponseModelAgentSettings>("agent_settings", AgentSettings);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.StudioAgentSettingsModel>("agent_settings", AgentSettings);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExtendedResponseModel_apply_text_normalization>("apply_text_normalization", ApplyTextNormalization);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExtendedResponseModelAspectRatio>("aspect_ratio", AspectRatio);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Aspect_Ratio>("aspect_ratio", AspectRatio);
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExtendedResponseModel.ProjectExtendedResponseModel_assets>("assets", Assets);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExtendedResponseModelAuthor>("author", Author);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExtendedResponseModelBaseVoices>("base_voices", BaseVoices);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Author>("author", Author);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Base_Voices>("base_voices", BaseVoices);
             writer.WriteBoolValue("can_be_downloaded", CanBeDownloaded);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExtendedResponseModelCaptionsEnabled>("captions_enabled", CaptionsEnabled);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExtendedResponseModelCaptionStyle>("caption_style", CaptionStyle);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExtendedResponseModelCaptionStyleTemplateOverrides>("caption_style_template_overrides", CaptionStyleTemplateOverrides);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Captions_Enabled>("captions_enabled", CaptionsEnabled);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CaptionStyleModel>("caption_style", CaptionStyle);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExtendedResponseModel_caption_style_template_overrides>("caption_style_template_overrides", CaptionStyleTemplateOverrides);
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.ChapterResponseModel>("chapters", Chapters);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExtendedResponseModelChaptersEnabled>("chapters_enabled", ChaptersEnabled);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExtendedResponseModelContentType>("content_type", ContentType);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExtendedResponseModelCoverImageUrl>("cover_image_url", CoverImageUrl);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Chapters_Enabled>("chapters_enabled", ChaptersEnabled);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Content_Type>("content_type", ContentType);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Cover_Image_Url>("cover_image_url", CoverImageUrl);
             writer.WriteIntValue("create_date_unix", CreateDateUnix);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExtendedResponseModelCreatedByUserId>("created_by_user_id", CreatedByUserId);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExtendedResponseModelCreationMeta>("creation_meta", CreationMeta);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Created_By_User_Id>("created_by_user_id", CreatedByUserId);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectCreationMetaResponseModel>("creation_meta", CreationMeta);
             writer.WriteStringValue("default_model_id", DefaultModelId);
             writer.WriteStringValue("default_paragraph_voice_id", DefaultParagraphVoiceId);
             writer.WriteStringValue("default_title_voice_id", DefaultTitleVoiceId);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExtendedResponseModelDescription>("description", Description);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Description>("description", Description);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExtendedResponseModel_experimental>("experimental", Experimental);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExtendedResponseModelFiction>("fiction", Fiction);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExtendedResponseModelGenres>("genres", Genres);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExtendedResponseModelIsbnNumber>("isbn_number", IsbnNumber);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExtendedResponseModelLanguage>("language", Language);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExtendedResponseModelLastConversionDateUnix>("last_conversion_date_unix", LastConversionDateUnix);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExtendedResponseModelMatureContent>("mature_content", MatureContent);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Fiction>("fiction", Fiction);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Genres>("genres", Genres);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Isbn_Number>("isbn_number", IsbnNumber);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Language>("language", Language);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Last_Conversion_Date_Unix>("last_conversion_date_unix", LastConversionDateUnix);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Mature_Content>("mature_content", MatureContent);
             writer.WriteStringValue("name", Name);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExtendedResponseModelOriginalPublicationDate>("original_publication_date", OriginalPublicationDate);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Original_Publication_Date>("original_publication_date", OriginalPublicationDate);
             writer.WriteStringValue("project_id", ProjectId);
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.PronunciationDictionaryLocatorResponseModel>("pronunciation_dictionary_locators", PronunciationDictionaryLocators);
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.PronunciationDictionaryVersionResponseModel>("pronunciation_dictionary_versions", PronunciationDictionaryVersions);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExtendedResponseModelPublicShareId>("public_share_id", PublicShareId);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExtendedResponseModelPublishingRead>("publishing_read", PublishingRead);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Public_Share_Id>("public_share_id", PublicShareId);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DirectPublishingReadResponseModel>("publishing_read", PublishingRead);
             writer.WriteBoolValue("quality_check_on", QualityCheckOn);
             writer.WriteBoolValue("quality_check_on_when_bulk_convert", QualityCheckOnWhenBulkConvert);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExtendedResponseModel_quality_preset>("quality_preset", QualityPreset);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExtendedResponseModelSourceType>("source_type", SourceType);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Source_Type>("source_type", SourceType);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExtendedResponseModel_state>("state", State);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExtendedResponseModelTargetAudience>("target_audience", TargetAudience);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExtendedResponseModelTitle>("title", Title);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Target_Audience>("target_audience", TargetAudience);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Title>("title", Title);
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectVoiceResponseModel>("voices", Voices);
             writer.WriteBoolValue("volume_normalization", VolumeNormalization);
             writer.WriteAdditionalData(AdditionalData);

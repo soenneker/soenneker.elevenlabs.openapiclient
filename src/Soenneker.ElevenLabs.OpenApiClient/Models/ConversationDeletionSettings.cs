@@ -19,36 +19,36 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The deleted_audio_at_time_unix_secs property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationDeletionSettingsDeletedAudioAtTimeUnixSecs? DeletedAudioAtTimeUnixSecs { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Deleted_Audio_At_Time_Unix_Secs? DeletedAudioAtTimeUnixSecs { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationDeletionSettingsDeletedAudioAtTimeUnixSecs DeletedAudioAtTimeUnixSecs { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Deleted_Audio_At_Time_Unix_Secs DeletedAudioAtTimeUnixSecs { get; set; }
 #endif
         /// <summary>The deleted_logs_at_time_unix_secs property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationDeletionSettingsDeletedLogsAtTimeUnixSecs? DeletedLogsAtTimeUnixSecs { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Deleted_Logs_At_Time_Unix_Secs? DeletedLogsAtTimeUnixSecs { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationDeletionSettingsDeletedLogsAtTimeUnixSecs DeletedLogsAtTimeUnixSecs { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Deleted_Logs_At_Time_Unix_Secs DeletedLogsAtTimeUnixSecs { get; set; }
 #endif
         /// <summary>The deleted_transcript_at_time_unix_secs property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationDeletionSettingsDeletedTranscriptAtTimeUnixSecs? DeletedTranscriptAtTimeUnixSecs { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Deleted_Transcript_At_Time_Unix_Secs? DeletedTranscriptAtTimeUnixSecs { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationDeletionSettingsDeletedTranscriptAtTimeUnixSecs DeletedTranscriptAtTimeUnixSecs { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Deleted_Transcript_At_Time_Unix_Secs DeletedTranscriptAtTimeUnixSecs { get; set; }
 #endif
         /// <summary>The delete_transcript_and_pii property</summary>
         public bool? DeleteTranscriptAndPii { get; set; }
         /// <summary>The deletion_time_unix_secs property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationDeletionSettingsDeletionTimeUnixSecs? DeletionTimeUnixSecs { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Deletion_Time_Unix_Secs? DeletionTimeUnixSecs { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationDeletionSettingsDeletionTimeUnixSecs DeletionTimeUnixSecs { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Deletion_Time_Unix_Secs DeletionTimeUnixSecs { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationDeletionSettings"/> and sets the default values.
@@ -77,10 +77,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             {
                 { "delete_audio", n => { DeleteAudio = n.GetBoolValue(); } },
                 { "delete_transcript_and_pii", n => { DeleteTranscriptAndPii = n.GetBoolValue(); } },
-                { "deleted_audio_at_time_unix_secs", n => { DeletedAudioAtTimeUnixSecs = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationDeletionSettingsDeletedAudioAtTimeUnixSecs>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationDeletionSettingsDeletedAudioAtTimeUnixSecs.CreateFromDiscriminatorValue); } },
-                { "deleted_logs_at_time_unix_secs", n => { DeletedLogsAtTimeUnixSecs = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationDeletionSettingsDeletedLogsAtTimeUnixSecs>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationDeletionSettingsDeletedLogsAtTimeUnixSecs.CreateFromDiscriminatorValue); } },
-                { "deleted_transcript_at_time_unix_secs", n => { DeletedTranscriptAtTimeUnixSecs = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationDeletionSettingsDeletedTranscriptAtTimeUnixSecs>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationDeletionSettingsDeletedTranscriptAtTimeUnixSecs.CreateFromDiscriminatorValue); } },
-                { "deletion_time_unix_secs", n => { DeletionTimeUnixSecs = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationDeletionSettingsDeletionTimeUnixSecs>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationDeletionSettingsDeletionTimeUnixSecs.CreateFromDiscriminatorValue); } },
+                { "deleted_audio_at_time_unix_secs", n => { DeletedAudioAtTimeUnixSecs = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Deleted_Audio_At_Time_Unix_Secs>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Deleted_Audio_At_Time_Unix_Secs.CreateFromDiscriminatorValue); } },
+                { "deleted_logs_at_time_unix_secs", n => { DeletedLogsAtTimeUnixSecs = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Deleted_Logs_At_Time_Unix_Secs>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Deleted_Logs_At_Time_Unix_Secs.CreateFromDiscriminatorValue); } },
+                { "deleted_transcript_at_time_unix_secs", n => { DeletedTranscriptAtTimeUnixSecs = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Deleted_Transcript_At_Time_Unix_Secs>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Deleted_Transcript_At_Time_Unix_Secs.CreateFromDiscriminatorValue); } },
+                { "deletion_time_unix_secs", n => { DeletionTimeUnixSecs = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Deletion_Time_Unix_Secs>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Deletion_Time_Unix_Secs.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -91,11 +91,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("delete_audio", DeleteAudio);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationDeletionSettingsDeletedAudioAtTimeUnixSecs>("deleted_audio_at_time_unix_secs", DeletedAudioAtTimeUnixSecs);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationDeletionSettingsDeletedLogsAtTimeUnixSecs>("deleted_logs_at_time_unix_secs", DeletedLogsAtTimeUnixSecs);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationDeletionSettingsDeletedTranscriptAtTimeUnixSecs>("deleted_transcript_at_time_unix_secs", DeletedTranscriptAtTimeUnixSecs);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Deleted_Audio_At_Time_Unix_Secs>("deleted_audio_at_time_unix_secs", DeletedAudioAtTimeUnixSecs);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Deleted_Logs_At_Time_Unix_Secs>("deleted_logs_at_time_unix_secs", DeletedLogsAtTimeUnixSecs);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Deleted_Transcript_At_Time_Unix_Secs>("deleted_transcript_at_time_unix_secs", DeletedTranscriptAtTimeUnixSecs);
             writer.WriteBoolValue("delete_transcript_and_pii", DeleteTranscriptAndPii);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationDeletionSettingsDeletionTimeUnixSecs>("deletion_time_unix_secs", DeletionTimeUnixSecs);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Deletion_Time_Unix_Secs>("deletion_time_unix_secs", DeletionTimeUnixSecs);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

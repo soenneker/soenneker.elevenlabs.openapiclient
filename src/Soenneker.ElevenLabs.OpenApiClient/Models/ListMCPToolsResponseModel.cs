@@ -18,10 +18,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Error message if the operation was not successful.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ListMCPToolsResponseModelErrorMessage? ErrorMessage { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Error_Message? ErrorMessage { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ListMCPToolsResponseModelErrorMessage ErrorMessage { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Error_Message ErrorMessage { get; set; }
 #endif
         /// <summary>Indicates if the operation was successful.</summary>
         public bool? Success { get; set; }
@@ -58,7 +58,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "error_message", n => { ErrorMessage = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ListMCPToolsResponseModelErrorMessage>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ListMCPToolsResponseModelErrorMessage.CreateFromDiscriminatorValue); } },
+                { "error_message", n => { ErrorMessage = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Error_Message>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Error_Message.CreateFromDiscriminatorValue); } },
                 { "success", n => { Success = n.GetBoolValue(); } },
                 { "tools", n => { Tools = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.Tool>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Tool.CreateFromDiscriminatorValue)?.AsList(); } },
             };
@@ -70,7 +70,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ListMCPToolsResponseModelErrorMessage>("error_message", ErrorMessage);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Error_Message>("error_message", ErrorMessage);
             writer.WriteBoolValue("success", Success);
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.Tool>("tools", Tools);
             writer.WriteAdditionalData(AdditionalData);

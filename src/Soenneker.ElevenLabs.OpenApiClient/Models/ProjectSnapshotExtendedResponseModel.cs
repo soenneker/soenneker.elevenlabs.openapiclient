@@ -19,10 +19,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>(Deprecated)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectSnapshotExtendedResponseModelAudioUpload? AudioUpload { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectSnapshotExtendedResponseModel_audio_upload? AudioUpload { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectSnapshotExtendedResponseModelAudioUpload AudioUpload { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectSnapshotExtendedResponseModel_audio_upload AudioUpload { get; set; }
 #endif
         /// <summary>The character_alignments property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -61,10 +61,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>(Deprecated)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectSnapshotExtendedResponseModelZipUpload? ZipUpload { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectSnapshotExtendedResponseModel_zip_upload? ZipUpload { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectSnapshotExtendedResponseModelZipUpload ZipUpload { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectSnapshotExtendedResponseModel_zip_upload ZipUpload { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectSnapshotExtendedResponseModel"/> and sets the default values.
@@ -92,13 +92,13 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "audio_duration_secs", n => { AudioDurationSecs = n.GetDoubleValue(); } },
-                { "audio_upload", n => { AudioUpload = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectSnapshotExtendedResponseModelAudioUpload>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectSnapshotExtendedResponseModelAudioUpload.CreateFromDiscriminatorValue); } },
+                { "audio_upload", n => { AudioUpload = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectSnapshotExtendedResponseModel_audio_upload>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectSnapshotExtendedResponseModel_audio_upload.CreateFromDiscriminatorValue); } },
                 { "character_alignments", n => { CharacterAlignments = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.CharacterAlignmentModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.CharacterAlignmentModel.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "created_at_unix", n => { CreatedAtUnix = n.GetIntValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "project_id", n => { ProjectId = n.GetStringValue(); } },
                 { "project_snapshot_id", n => { ProjectSnapshotId = n.GetStringValue(); } },
-                { "zip_upload", n => { ZipUpload = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectSnapshotExtendedResponseModelZipUpload>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectSnapshotExtendedResponseModelZipUpload.CreateFromDiscriminatorValue); } },
+                { "zip_upload", n => { ZipUpload = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectSnapshotExtendedResponseModel_zip_upload>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectSnapshotExtendedResponseModel_zip_upload.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -109,13 +109,13 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDoubleValue("audio_duration_secs", AudioDurationSecs);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectSnapshotExtendedResponseModelAudioUpload>("audio_upload", AudioUpload);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectSnapshotExtendedResponseModel_audio_upload>("audio_upload", AudioUpload);
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.CharacterAlignmentModel>("character_alignments", CharacterAlignments);
             writer.WriteIntValue("created_at_unix", CreatedAtUnix);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("project_id", ProjectId);
             writer.WriteStringValue("project_snapshot_id", ProjectSnapshotId);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectSnapshotExtendedResponseModelZipUpload>("zip_upload", ZipUpload);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectSnapshotExtendedResponseModel_zip_upload>("zip_upload", ZipUpload);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -17,10 +17,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Changes to apply to conversation config</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateANewBranchV1ConvaiAgentsAgentIdBranchesPostConversationConfig? ConversationConfig { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateANewBranchV1ConvaiAgentsAgentIdBranchesPost_conversation_config? ConversationConfig { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateANewBranchV1ConvaiAgentsAgentIdBranchesPostConversationConfig ConversationConfig { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateANewBranchV1ConvaiAgentsAgentIdBranchesPost_conversation_config ConversationConfig { get; set; }
 #endif
         /// <summary>Description for the branch</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -49,18 +49,18 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Changes to apply to platform settings</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateANewBranchV1ConvaiAgentsAgentIdBranchesPostPlatformSettings? PlatformSettings { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateANewBranchV1ConvaiAgentsAgentIdBranchesPost_platform_settings? PlatformSettings { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateANewBranchV1ConvaiAgentsAgentIdBranchesPostPlatformSettings PlatformSettings { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateANewBranchV1ConvaiAgentsAgentIdBranchesPost_platform_settings PlatformSettings { get; set; }
 #endif
         /// <summary>Updated workflow definition</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateANewBranchV1ConvaiAgentsAgentIdBranchesPostWorkflow? Workflow { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentWorkflowRequestModel? Workflow { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateANewBranchV1ConvaiAgentsAgentIdBranchesPostWorkflow Workflow { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentWorkflowRequestModel Workflow { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateANewBranchV1ConvaiAgentsAgentIdBranchesPost"/> and sets the default values.
@@ -87,12 +87,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "conversation_config", n => { ConversationConfig = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateANewBranchV1ConvaiAgentsAgentIdBranchesPostConversationConfig>(global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateANewBranchV1ConvaiAgentsAgentIdBranchesPostConversationConfig.CreateFromDiscriminatorValue); } },
+                { "conversation_config", n => { ConversationConfig = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateANewBranchV1ConvaiAgentsAgentIdBranchesPost_conversation_config>(global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateANewBranchV1ConvaiAgentsAgentIdBranchesPost_conversation_config.CreateFromDiscriminatorValue); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "parent_version_id", n => { ParentVersionId = n.GetStringValue(); } },
-                { "platform_settings", n => { PlatformSettings = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateANewBranchV1ConvaiAgentsAgentIdBranchesPostPlatformSettings>(global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateANewBranchV1ConvaiAgentsAgentIdBranchesPostPlatformSettings.CreateFromDiscriminatorValue); } },
-                { "workflow", n => { Workflow = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateANewBranchV1ConvaiAgentsAgentIdBranchesPostWorkflow>(global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateANewBranchV1ConvaiAgentsAgentIdBranchesPostWorkflow.CreateFromDiscriminatorValue); } },
+                { "platform_settings", n => { PlatformSettings = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateANewBranchV1ConvaiAgentsAgentIdBranchesPost_platform_settings>(global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateANewBranchV1ConvaiAgentsAgentIdBranchesPost_platform_settings.CreateFromDiscriminatorValue); } },
+                { "workflow", n => { Workflow = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentWorkflowRequestModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentWorkflowRequestModel.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -102,12 +102,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateANewBranchV1ConvaiAgentsAgentIdBranchesPostConversationConfig>("conversation_config", ConversationConfig);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateANewBranchV1ConvaiAgentsAgentIdBranchesPost_conversation_config>("conversation_config", ConversationConfig);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("parent_version_id", ParentVersionId);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateANewBranchV1ConvaiAgentsAgentIdBranchesPostPlatformSettings>("platform_settings", PlatformSettings);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateANewBranchV1ConvaiAgentsAgentIdBranchesPostWorkflow>("workflow", Workflow);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateANewBranchV1ConvaiAgentsAgentIdBranchesPost_platform_settings>("platform_settings", PlatformSettings);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentWorkflowRequestModel>("workflow", Workflow);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -15,20 +15,20 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The access information of the test</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.UnitTestSummaryResponseModelAccessInfo? AccessInfo { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceAccessInfo? AccessInfo { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.UnitTestSummaryResponseModelAccessInfo AccessInfo { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceAccessInfo AccessInfo { get; set; }
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Number of direct children (tests and subfolders) for folders only</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.UnitTestSummaryResponseModelChildrenCount? ChildrenCount { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Children_Count? ChildrenCount { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.UnitTestSummaryResponseModelChildrenCount ChildrenCount { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Children_Count ChildrenCount { get; set; }
 #endif
         /// <summary>Creation time of the test in unix seconds</summary>
         public int? CreatedAtUnixSecs { get; set; }
@@ -37,10 +37,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The ID of the parent folder</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.UnitTestSummaryResponseModelFolderParentId? FolderParentId { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Folder_Parent_Id? FolderParentId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.UnitTestSummaryResponseModelFolderParentId FolderParentId { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Folder_Parent_Id FolderParentId { get; set; }
 #endif
         /// <summary>The folder path segments from root to this entity</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -96,11 +96,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "access_info", n => { AccessInfo = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UnitTestSummaryResponseModelAccessInfo>(global::Soenneker.ElevenLabs.OpenApiClient.Models.UnitTestSummaryResponseModelAccessInfo.CreateFromDiscriminatorValue); } },
-                { "children_count", n => { ChildrenCount = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UnitTestSummaryResponseModelChildrenCount>(global::Soenneker.ElevenLabs.OpenApiClient.Models.UnitTestSummaryResponseModelChildrenCount.CreateFromDiscriminatorValue); } },
+                { "access_info", n => { AccessInfo = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceAccessInfo>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceAccessInfo.CreateFromDiscriminatorValue); } },
+                { "children_count", n => { ChildrenCount = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Children_Count>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Children_Count.CreateFromDiscriminatorValue); } },
                 { "created_at_unix_secs", n => { CreatedAtUnixSecs = n.GetIntValue(); } },
                 { "entity_type", n => { EntityType = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentTestEntityType>(); } },
-                { "folder_parent_id", n => { FolderParentId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UnitTestSummaryResponseModelFolderParentId>(global::Soenneker.ElevenLabs.OpenApiClient.Models.UnitTestSummaryResponseModelFolderParentId.CreateFromDiscriminatorValue); } },
+                { "folder_parent_id", n => { FolderParentId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Folder_Parent_Id>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Folder_Parent_Id.CreateFromDiscriminatorValue); } },
                 { "folder_path", n => { FolderPath = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentTestFolderPathSegmentResponseModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentTestFolderPathSegmentResponseModel.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "last_updated_at_unix_secs", n => { LastUpdatedAtUnixSecs = n.GetIntValue(); } },
@@ -115,11 +115,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UnitTestSummaryResponseModelAccessInfo>("access_info", AccessInfo);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UnitTestSummaryResponseModelChildrenCount>("children_count", ChildrenCount);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceAccessInfo>("access_info", AccessInfo);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Children_Count>("children_count", ChildrenCount);
             writer.WriteIntValue("created_at_unix_secs", CreatedAtUnixSecs);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentTestEntityType>("entity_type", EntityType);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UnitTestSummaryResponseModelFolderParentId>("folder_parent_id", FolderParentId);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Folder_Parent_Id>("folder_parent_id", FolderParentId);
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentTestFolderPathSegmentResponseModel>("folder_path", FolderPath);
             writer.WriteStringValue("id", Id);
             writer.WriteIntValue("last_updated_at_unix_secs", LastUpdatedAtUnixSecs);

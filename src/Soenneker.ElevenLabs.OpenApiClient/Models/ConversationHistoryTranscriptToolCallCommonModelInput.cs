@@ -33,10 +33,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The tool_details property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptToolCallCommonModelInputToolDetails? ToolDetails { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptToolCallCommonModelInput_tool_details? ToolDetails { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptToolCallCommonModelInputToolDetails ToolDetails { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptToolCallCommonModelInput_tool_details ToolDetails { get; set; }
 #endif
         /// <summary>The tool_has_been_called property</summary>
         public bool? ToolHasBeenCalled { get; set; }
@@ -51,10 +51,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The type property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptToolCallCommonModelInputType? Type { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolType_Wrapper? Type { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptToolCallCommonModelInputType Type { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolType_Wrapper Type { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptToolCallCommonModelInput"/> and sets the default values.
@@ -83,10 +83,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             {
                 { "params_as_json", n => { ParamsAsJson = n.GetStringValue(); } },
                 { "request_id", n => { RequestId = n.GetStringValue(); } },
-                { "tool_details", n => { ToolDetails = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptToolCallCommonModelInputToolDetails>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptToolCallCommonModelInputToolDetails.CreateFromDiscriminatorValue); } },
+                { "tool_details", n => { ToolDetails = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptToolCallCommonModelInput_tool_details>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptToolCallCommonModelInput_tool_details.CreateFromDiscriminatorValue); } },
                 { "tool_has_been_called", n => { ToolHasBeenCalled = n.GetBoolValue(); } },
                 { "tool_name", n => { ToolName = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptToolCallCommonModelInputType>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptToolCallCommonModelInputType.CreateFromDiscriminatorValue); } },
+                { "type", n => { Type = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolType_Wrapper>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolType_Wrapper.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -98,10 +98,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("params_as_json", ParamsAsJson);
             writer.WriteStringValue("request_id", RequestId);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptToolCallCommonModelInputToolDetails>("tool_details", ToolDetails);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptToolCallCommonModelInput_tool_details>("tool_details", ToolDetails);
             writer.WriteBoolValue("tool_has_been_called", ToolHasBeenCalled);
             writer.WriteStringValue("tool_name", ToolName);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptToolCallCommonModelInputType>("type", Type);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolType_Wrapper>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

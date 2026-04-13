@@ -52,10 +52,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Original inputSchema dict for consistent hashing</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.MCPToolConfigOutputMcpInputSchema? McpInputSchema { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.MCPToolConfigOutput_mcp_input_schema? McpInputSchema { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.MCPToolConfigOutputMcpInputSchema McpInputSchema { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.MCPToolConfigOutput_mcp_input_schema McpInputSchema { get; set; }
 #endif
         /// <summary>The id of the MCP server to call</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -100,20 +100,20 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Schema for any parameters the LLM needs to provide to the MCP tool.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.MCPToolConfigOutputParameters? Parameters { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ObjectJsonSchemaPropertyOutput? Parameters { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.MCPToolConfigOutputParameters Parameters { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ObjectJsonSchemaPropertyOutput Parameters { get; set; }
 #endif
         /// <summary>The maximum time in seconds to wait for the tool call to complete.</summary>
         public int? ResponseTimeoutSecs { get; set; }
         /// <summary>Predefined tool call sound type to play during tool execution. If not specified, no tool call sound will be played.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.MCPToolConfigOutputToolCallSound? ToolCallSound { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolCallSoundType_Wrapper? ToolCallSound { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.MCPToolConfigOutputToolCallSound ToolCallSound { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolCallSoundType_Wrapper ToolCallSound { get; set; }
 #endif
         /// <summary>Determines how the tool call sound should be played.</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolCallSoundBehavior? ToolCallSoundBehavior { get; set; }
@@ -159,15 +159,15 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "force_pre_tool_speech", n => { ForcePreToolSpeech = n.GetBoolValue(); } },
                 { "input_overrides", n => { InputOverrides = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.MCPToolConfigOutputInputOverrides>(global::Soenneker.ElevenLabs.OpenApiClient.Models.MCPToolConfigOutputInputOverrides.CreateFromDiscriminatorValue); } },
                 { "integration_type", n => { IntegrationType = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.IntegrationType>(); } },
-                { "mcp_input_schema", n => { McpInputSchema = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.MCPToolConfigOutputMcpInputSchema>(global::Soenneker.ElevenLabs.OpenApiClient.Models.MCPToolConfigOutputMcpInputSchema.CreateFromDiscriminatorValue); } },
+                { "mcp_input_schema", n => { McpInputSchema = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.MCPToolConfigOutput_mcp_input_schema>(global::Soenneker.ElevenLabs.OpenApiClient.Models.MCPToolConfigOutput_mcp_input_schema.CreateFromDiscriminatorValue); } },
                 { "mcp_server_id", n => { McpServerId = n.GetStringValue(); } },
                 { "mcp_server_name", n => { McpServerName = n.GetStringValue(); } },
                 { "mcp_tool_description", n => { McpToolDescription = n.GetStringValue(); } },
                 { "mcp_tool_name", n => { McpToolName = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "parameters", n => { Parameters = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.MCPToolConfigOutputParameters>(global::Soenneker.ElevenLabs.OpenApiClient.Models.MCPToolConfigOutputParameters.CreateFromDiscriminatorValue); } },
+                { "parameters", n => { Parameters = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ObjectJsonSchemaPropertyOutput>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ObjectJsonSchemaPropertyOutput.CreateFromDiscriminatorValue); } },
                 { "response_timeout_secs", n => { ResponseTimeoutSecs = n.GetIntValue(); } },
-                { "tool_call_sound", n => { ToolCallSound = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.MCPToolConfigOutputToolCallSound>(global::Soenneker.ElevenLabs.OpenApiClient.Models.MCPToolConfigOutputToolCallSound.CreateFromDiscriminatorValue); } },
+                { "tool_call_sound", n => { ToolCallSound = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolCallSoundType_Wrapper>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolCallSoundType_Wrapper.CreateFromDiscriminatorValue); } },
                 { "tool_call_sound_behavior", n => { ToolCallSoundBehavior = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolCallSoundBehavior>(); } },
                 { "tool_error_handling_mode", n => { ToolErrorHandlingMode = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolErrorHandlingMode>(); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.MCPToolConfigOutput_type>(); } },
@@ -188,15 +188,15 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteBoolValue("force_pre_tool_speech", ForcePreToolSpeech);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.MCPToolConfigOutputInputOverrides>("input_overrides", InputOverrides);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.IntegrationType>("integration_type", IntegrationType);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.MCPToolConfigOutputMcpInputSchema>("mcp_input_schema", McpInputSchema);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.MCPToolConfigOutput_mcp_input_schema>("mcp_input_schema", McpInputSchema);
             writer.WriteStringValue("mcp_server_id", McpServerId);
             writer.WriteStringValue("mcp_server_name", McpServerName);
             writer.WriteStringValue("mcp_tool_description", McpToolDescription);
             writer.WriteStringValue("mcp_tool_name", McpToolName);
             writer.WriteStringValue("name", Name);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.MCPToolConfigOutputParameters>("parameters", Parameters);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ObjectJsonSchemaPropertyOutput>("parameters", Parameters);
             writer.WriteIntValue("response_timeout_secs", ResponseTimeoutSecs);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.MCPToolConfigOutputToolCallSound>("tool_call_sound", ToolCallSound);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolCallSoundType_Wrapper>("tool_call_sound", ToolCallSound);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolCallSoundBehavior>("tool_call_sound_behavior", ToolCallSoundBehavior);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolErrorHandlingMode>("tool_error_handling_mode", ToolErrorHandlingMode);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.MCPToolConfigOutput_type>("type", Type);

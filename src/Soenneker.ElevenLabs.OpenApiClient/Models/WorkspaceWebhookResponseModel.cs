@@ -25,18 +25,18 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The most recent error code returned from the callback URL.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceWebhookResponseModelMostRecentFailureErrorCode? MostRecentFailureErrorCode { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Most_Recent_Failure_Error_Code? MostRecentFailureErrorCode { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceWebhookResponseModelMostRecentFailureErrorCode MostRecentFailureErrorCode { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Most_Recent_Failure_Error_Code MostRecentFailureErrorCode { get; set; }
 #endif
         /// <summary>The most recent time the webhook failed, failures are any non-200 codes returned by the callback URL.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceWebhookResponseModelMostRecentFailureTimestamp? MostRecentFailureTimestamp { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Most_Recent_Failure_Timestamp? MostRecentFailureTimestamp { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceWebhookResponseModelMostRecentFailureTimestamp MostRecentFailureTimestamp { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Most_Recent_Failure_Timestamp MostRecentFailureTimestamp { get; set; }
 #endif
         /// <summary>The display name for this webhook.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -49,10 +49,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The list of products that are currently configured to trigger this webhook.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceWebhookResponseModelUsage? Usage { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Usage? Usage { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceWebhookResponseModelUsage Usage { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Usage Usage { get; set; }
 #endif
         /// <summary>The unique ID for this webhook.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -99,10 +99,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "created_at_unix", n => { CreatedAtUnix = n.GetIntValue(); } },
                 { "is_auto_disabled", n => { IsAutoDisabled = n.GetBoolValue(); } },
                 { "is_disabled", n => { IsDisabled = n.GetBoolValue(); } },
-                { "most_recent_failure_error_code", n => { MostRecentFailureErrorCode = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceWebhookResponseModelMostRecentFailureErrorCode>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceWebhookResponseModelMostRecentFailureErrorCode.CreateFromDiscriminatorValue); } },
-                { "most_recent_failure_timestamp", n => { MostRecentFailureTimestamp = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceWebhookResponseModelMostRecentFailureTimestamp>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceWebhookResponseModelMostRecentFailureTimestamp.CreateFromDiscriminatorValue); } },
+                { "most_recent_failure_error_code", n => { MostRecentFailureErrorCode = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Most_Recent_Failure_Error_Code>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Most_Recent_Failure_Error_Code.CreateFromDiscriminatorValue); } },
+                { "most_recent_failure_timestamp", n => { MostRecentFailureTimestamp = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Most_Recent_Failure_Timestamp>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Most_Recent_Failure_Timestamp.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "usage", n => { Usage = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceWebhookResponseModelUsage>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceWebhookResponseModelUsage.CreateFromDiscriminatorValue); } },
+                { "usage", n => { Usage = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Usage>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Usage.CreateFromDiscriminatorValue); } },
                 { "webhook_id", n => { WebhookId = n.GetStringValue(); } },
                 { "webhook_url", n => { WebhookUrl = n.GetStringValue(); } },
             };
@@ -118,10 +118,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteIntValue("created_at_unix", CreatedAtUnix);
             writer.WriteBoolValue("is_auto_disabled", IsAutoDisabled);
             writer.WriteBoolValue("is_disabled", IsDisabled);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceWebhookResponseModelMostRecentFailureErrorCode>("most_recent_failure_error_code", MostRecentFailureErrorCode);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceWebhookResponseModelMostRecentFailureTimestamp>("most_recent_failure_timestamp", MostRecentFailureTimestamp);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Most_Recent_Failure_Error_Code>("most_recent_failure_error_code", MostRecentFailureErrorCode);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Most_Recent_Failure_Timestamp>("most_recent_failure_timestamp", MostRecentFailureTimestamp);
             writer.WriteStringValue("name", Name);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceWebhookResponseModelUsage>("usage", Usage);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Usage>("usage", Usage);
             writer.WriteStringValue("webhook_id", WebhookId);
             writer.WriteStringValue("webhook_url", WebhookUrl);
             writer.WriteAdditionalData(AdditionalData);

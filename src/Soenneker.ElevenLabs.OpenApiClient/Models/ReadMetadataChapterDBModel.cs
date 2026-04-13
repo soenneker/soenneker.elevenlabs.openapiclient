@@ -27,18 +27,18 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The duration_seconds property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ReadMetadataChapterDBModelDurationSeconds? DurationSeconds { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Duration_Seconds? DurationSeconds { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ReadMetadataChapterDBModelDurationSeconds DurationSeconds { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Duration_Seconds DurationSeconds { get; set; }
 #endif
         /// <summary>The file_number property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ReadMetadataChapterDBModelFileNumber? FileNumber { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.File_Number? FileNumber { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ReadMetadataChapterDBModelFileNumber FileNumber { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.File_Number FileNumber { get; set; }
 #endif
         /// <summary>The has_parsed_html property</summary>
         public bool? HasParsedHtml { get; set; }
@@ -75,8 +75,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             {
                 { "chapter_name", n => { ChapterName = n.GetStringValue(); } },
                 { "char_count", n => { CharCount = n.GetIntValue(); } },
-                { "duration_seconds", n => { DurationSeconds = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ReadMetadataChapterDBModelDurationSeconds>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ReadMetadataChapterDBModelDurationSeconds.CreateFromDiscriminatorValue); } },
-                { "file_number", n => { FileNumber = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ReadMetadataChapterDBModelFileNumber>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ReadMetadataChapterDBModelFileNumber.CreateFromDiscriminatorValue); } },
+                { "duration_seconds", n => { DurationSeconds = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Duration_Seconds>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Duration_Seconds.CreateFromDiscriminatorValue); } },
+                { "file_number", n => { FileNumber = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.File_Number>(global::Soenneker.ElevenLabs.OpenApiClient.Models.File_Number.CreateFromDiscriminatorValue); } },
                 { "has_parsed_html", n => { HasParsedHtml = n.GetBoolValue(); } },
                 { "has_summary", n => { HasSummary = n.GetBoolValue(); } },
                 { "starting_char_offset", n => { StartingCharOffset = n.GetIntValue(); } },
@@ -92,8 +92,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("chapter_name", ChapterName);
             writer.WriteIntValue("char_count", CharCount);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ReadMetadataChapterDBModelDurationSeconds>("duration_seconds", DurationSeconds);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ReadMetadataChapterDBModelFileNumber>("file_number", FileNumber);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Duration_Seconds>("duration_seconds", DurationSeconds);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.File_Number>("file_number", FileNumber);
             writer.WriteBoolValue("has_parsed_html", HasParsedHtml);
             writer.WriteBoolValue("has_summary", HasSummary);
             writer.WriteIntValue("starting_char_offset", StartingCharOffset);

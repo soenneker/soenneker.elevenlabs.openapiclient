@@ -29,10 +29,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>If set, the created document or folder will be placed inside the given folder.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateFolderV1ConvaiKnowledgeBaseFolderPostParentFolderId? ParentFolderId { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Parent_Folder_Id? ParentFolderId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateFolderV1ConvaiKnowledgeBaseFolderPostParentFolderId ParentFolderId { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Parent_Folder_Id ParentFolderId { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateFolderV1ConvaiKnowledgeBaseFolderPost"/> and sets the default values.
@@ -62,7 +62,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "auto_remove", n => { AutoRemove = n.GetBoolValue(); } },
                 { "enable_auto_sync", n => { EnableAutoSync = n.GetBoolValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "parent_folder_id", n => { ParentFolderId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateFolderV1ConvaiKnowledgeBaseFolderPostParentFolderId>(global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateFolderV1ConvaiKnowledgeBaseFolderPostParentFolderId.CreateFromDiscriminatorValue); } },
+                { "parent_folder_id", n => { ParentFolderId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Parent_Folder_Id>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Parent_Folder_Id.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -75,7 +75,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteBoolValue("auto_remove", AutoRemove);
             writer.WriteBoolValue("enable_auto_sync", EnableAutoSync);
             writer.WriteStringValue("name", Name);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateFolderV1ConvaiKnowledgeBaseFolderPostParentFolderId>("parent_folder_id", ParentFolderId);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Parent_Folder_Id>("parent_folder_id", ParentFolderId);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

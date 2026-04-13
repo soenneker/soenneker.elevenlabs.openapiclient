@@ -17,18 +17,18 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Available reasoning effort levels for this model. Null if the model does not support configurable reasoning.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.LLMInfoModelInputAvailableReasoningEfforts? AvailableReasoningEfforts { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Available_Reasoning_Efforts? AvailableReasoningEfforts { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.LLMInfoModelInputAvailableReasoningEfforts AvailableReasoningEfforts { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Available_Reasoning_Efforts AvailableReasoningEfforts { get; set; }
 #endif
         /// <summary>Deprecation information if this model is deprecated or scheduled for deprecation. Null if the model is not affected.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.LLMInfoModelInputDeprecationInfo? DeprecationInfo { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.LLMDeprecationInfoModel? DeprecationInfo { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.LLMInfoModelInputDeprecationInfo DeprecationInfo { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.LLMDeprecationInfoModel DeprecationInfo { get; set; }
 #endif
         /// <summary>Whether this is a pinned checkpoint version of a model rather than a top-level alias.</summary>
         public bool? IsCheckpoint { get; set; }
@@ -70,8 +70,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "available_reasoning_efforts", n => { AvailableReasoningEfforts = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.LLMInfoModelInputAvailableReasoningEfforts>(global::Soenneker.ElevenLabs.OpenApiClient.Models.LLMInfoModelInputAvailableReasoningEfforts.CreateFromDiscriminatorValue); } },
-                { "deprecation_info", n => { DeprecationInfo = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.LLMInfoModelInputDeprecationInfo>(global::Soenneker.ElevenLabs.OpenApiClient.Models.LLMInfoModelInputDeprecationInfo.CreateFromDiscriminatorValue); } },
+                { "available_reasoning_efforts", n => { AvailableReasoningEfforts = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Available_Reasoning_Efforts>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Available_Reasoning_Efforts.CreateFromDiscriminatorValue); } },
+                { "deprecation_info", n => { DeprecationInfo = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.LLMDeprecationInfoModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.LLMDeprecationInfoModel.CreateFromDiscriminatorValue); } },
                 { "is_checkpoint", n => { IsCheckpoint = n.GetBoolValue(); } },
                 { "llm", n => { Llm = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.LLM>(); } },
                 { "max_context_limit", n => { MaxContextLimit = n.GetIntValue(); } },
@@ -88,8 +88,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.LLMInfoModelInputAvailableReasoningEfforts>("available_reasoning_efforts", AvailableReasoningEfforts);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.LLMInfoModelInputDeprecationInfo>("deprecation_info", DeprecationInfo);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Available_Reasoning_Efforts>("available_reasoning_efforts", AvailableReasoningEfforts);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.LLMDeprecationInfoModel>("deprecation_info", DeprecationInfo);
             writer.WriteBoolValue("is_checkpoint", IsCheckpoint);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.LLM>("llm", Llm);
             writer.WriteIntValue("max_context_limit", MaxContextLimit);

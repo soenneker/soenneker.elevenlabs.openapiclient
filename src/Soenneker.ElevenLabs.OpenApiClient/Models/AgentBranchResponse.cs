@@ -15,10 +15,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Access information for the branch</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentBranchResponseAccessInfo? AccessInfo { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceAccessInfo? AccessInfo { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentBranchResponseAccessInfo AccessInfo { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceAccessInfo AccessInfo { get; set; }
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -73,10 +73,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Parent branch of the branch</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentBranchResponseParentBranch? ParentBranch { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentBranchBasicInfo? ParentBranch { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentBranchResponseParentBranch ParentBranch { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentBranchBasicInfo ParentBranch { get; set; }
 #endif
         /// <summary>The protection_status property</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.BranchProtectionStatus? ProtectionStatus { get; set; }
@@ -106,7 +106,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "access_info", n => { AccessInfo = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentBranchResponseAccessInfo>(global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentBranchResponseAccessInfo.CreateFromDiscriminatorValue); } },
+                { "access_info", n => { AccessInfo = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceAccessInfo>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceAccessInfo.CreateFromDiscriminatorValue); } },
                 { "agent_id", n => { AgentId = n.GetStringValue(); } },
                 { "created_at", n => { CreatedAt = n.GetIntValue(); } },
                 { "current_live_percentage", n => { CurrentLivePercentage = n.GetDoubleValue(); } },
@@ -116,7 +116,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "last_committed_at", n => { LastCommittedAt = n.GetIntValue(); } },
                 { "most_recent_versions", n => { MostRecentVersions = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentVersionMetadata>(global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentVersionMetadata.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "parent_branch", n => { ParentBranch = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentBranchResponseParentBranch>(global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentBranchResponseParentBranch.CreateFromDiscriminatorValue); } },
+                { "parent_branch", n => { ParentBranch = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentBranchBasicInfo>(global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentBranchBasicInfo.CreateFromDiscriminatorValue); } },
                 { "protection_status", n => { ProtectionStatus = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BranchProtectionStatus>(); } },
             };
         }
@@ -127,7 +127,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentBranchResponseAccessInfo>("access_info", AccessInfo);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceAccessInfo>("access_info", AccessInfo);
             writer.WriteStringValue("agent_id", AgentId);
             writer.WriteIntValue("created_at", CreatedAt);
             writer.WriteDoubleValue("current_live_percentage", CurrentLivePercentage);
@@ -137,7 +137,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteIntValue("last_committed_at", LastCommittedAt);
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentVersionMetadata>("most_recent_versions", MostRecentVersions);
             writer.WriteStringValue("name", Name);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentBranchResponseParentBranch>("parent_branch", ParentBranch);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentBranchBasicInfo>("parent_branch", ParentBranch);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BranchProtectionStatus>("protection_status", ProtectionStatus);
             writer.WriteAdditionalData(AdditionalData);
         }

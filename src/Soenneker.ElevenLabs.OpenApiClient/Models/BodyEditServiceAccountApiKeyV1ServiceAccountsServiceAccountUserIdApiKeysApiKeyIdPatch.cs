@@ -17,10 +17,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The character limit of the XI API key. If provided this will limit the usage of this api key to n characters per month where n is the chosen value. Requests that incur charges will fail after reaching this monthly limit.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyEditServiceAccountApiKeyV1ServiceAccountsServiceAccountUserIdApiKeysApiKeyIdPatchCharacterLimit? CharacterLimit { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Character_Limit? CharacterLimit { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyEditServiceAccountApiKeyV1ServiceAccountsServiceAccountUserIdApiKeysApiKeyIdPatchCharacterLimit CharacterLimit { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Character_Limit CharacterLimit { get; set; }
 #endif
         /// <summary>Whether to enable or disable the API key.</summary>
         public bool? IsEnabled { get; set; }
@@ -35,10 +35,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The permissions of the XI API.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyEditServiceAccountApiKeyV1ServiceAccountsServiceAccountUserIdApiKeysApiKeyIdPatchPermissions? Permissions { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Permissions? Permissions { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyEditServiceAccountApiKeyV1ServiceAccountsServiceAccountUserIdApiKeysApiKeyIdPatchPermissions Permissions { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Permissions Permissions { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyEditServiceAccountApiKeyV1ServiceAccountsServiceAccountUserIdApiKeysApiKeyIdPatch"/> and sets the default values.
@@ -65,10 +65,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "character_limit", n => { CharacterLimit = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyEditServiceAccountApiKeyV1ServiceAccountsServiceAccountUserIdApiKeysApiKeyIdPatchCharacterLimit>(global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyEditServiceAccountApiKeyV1ServiceAccountsServiceAccountUserIdApiKeysApiKeyIdPatchCharacterLimit.CreateFromDiscriminatorValue); } },
+                { "character_limit", n => { CharacterLimit = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Character_Limit>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Character_Limit.CreateFromDiscriminatorValue); } },
                 { "is_enabled", n => { IsEnabled = n.GetBoolValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "permissions", n => { Permissions = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyEditServiceAccountApiKeyV1ServiceAccountsServiceAccountUserIdApiKeysApiKeyIdPatchPermissions>(global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyEditServiceAccountApiKeyV1ServiceAccountsServiceAccountUserIdApiKeysApiKeyIdPatchPermissions.CreateFromDiscriminatorValue); } },
+                { "permissions", n => { Permissions = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Permissions>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Permissions.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -78,10 +78,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyEditServiceAccountApiKeyV1ServiceAccountsServiceAccountUserIdApiKeysApiKeyIdPatchCharacterLimit>("character_limit", CharacterLimit);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Character_Limit>("character_limit", CharacterLimit);
             writer.WriteBoolValue("is_enabled", IsEnabled);
             writer.WriteStringValue("name", Name);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyEditServiceAccountApiKeyV1ServiceAccountsServiceAccountUserIdApiKeysApiKeyIdPatchPermissions>("permissions", Permissions);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Permissions>("permissions", Permissions);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

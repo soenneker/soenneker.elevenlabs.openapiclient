@@ -17,28 +17,28 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The agent_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetTestSuiteInvocationResponseModelAgentId? AgentId { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Agent_Id? AgentId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetTestSuiteInvocationResponseModelAgentId AgentId { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Agent_Id AgentId { get; set; }
 #endif
         /// <summary>The branch_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetTestSuiteInvocationResponseModelBranchId? BranchId { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Branch_Id? BranchId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetTestSuiteInvocationResponseModelBranchId BranchId { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Branch_Id BranchId { get; set; }
 #endif
         /// <summary>The created_at property</summary>
         public int? CreatedAt { get; set; }
         /// <summary>The folder_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetTestSuiteInvocationResponseModelFolderId? FolderId { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Folder_Id? FolderId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetTestSuiteInvocationResponseModelFolderId FolderId { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Folder_Id FolderId { get; set; }
 #endif
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -81,10 +81,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "agent_id", n => { AgentId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetTestSuiteInvocationResponseModelAgentId>(global::Soenneker.ElevenLabs.OpenApiClient.Models.GetTestSuiteInvocationResponseModelAgentId.CreateFromDiscriminatorValue); } },
-                { "branch_id", n => { BranchId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetTestSuiteInvocationResponseModelBranchId>(global::Soenneker.ElevenLabs.OpenApiClient.Models.GetTestSuiteInvocationResponseModelBranchId.CreateFromDiscriminatorValue); } },
+                { "agent_id", n => { AgentId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Agent_Id>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Agent_Id.CreateFromDiscriminatorValue); } },
+                { "branch_id", n => { BranchId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Branch_Id>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Branch_Id.CreateFromDiscriminatorValue); } },
                 { "created_at", n => { CreatedAt = n.GetIntValue(); } },
-                { "folder_id", n => { FolderId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetTestSuiteInvocationResponseModelFolderId>(global::Soenneker.ElevenLabs.OpenApiClient.Models.GetTestSuiteInvocationResponseModelFolderId.CreateFromDiscriminatorValue); } },
+                { "folder_id", n => { FolderId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Folder_Id>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Folder_Id.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "test_runs", n => { TestRuns = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.UnitTestRunResponseModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.UnitTestRunResponseModel.CreateFromDiscriminatorValue)?.AsList(); } },
             };
@@ -96,10 +96,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetTestSuiteInvocationResponseModelAgentId>("agent_id", AgentId);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetTestSuiteInvocationResponseModelBranchId>("branch_id", BranchId);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Agent_Id>("agent_id", AgentId);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Branch_Id>("branch_id", BranchId);
             writer.WriteIntValue("created_at", CreatedAt);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetTestSuiteInvocationResponseModelFolderId>("folder_id", FolderId);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Folder_Id>("folder_id", FolderId);
             writer.WriteStringValue("id", Id);
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.UnitTestRunResponseModel>("test_runs", TestRuns);
             writer.WriteAdditionalData(AdditionalData);

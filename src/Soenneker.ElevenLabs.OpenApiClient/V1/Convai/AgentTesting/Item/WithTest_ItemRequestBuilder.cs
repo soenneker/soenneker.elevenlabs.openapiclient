@@ -59,17 +59,17 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.AgentTesting.Item
         /// <summary>
         /// Gets an agent response test by ID.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.GetAgentResponseTestRoute200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ResponseGetAgentResponseTestByIdV1ConvaiAgentTestingTestIdGet"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.HTTPValidationError">When receiving a 422 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetAgentResponseTestRoute200?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.ElevenLabs.OpenApiClient.Models.ResponseGetAgentResponseTestByIdV1ConvaiAgentTestingTestIdGet?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetAgentResponseTestRoute200> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.ElevenLabs.OpenApiClient.Models.ResponseGetAgentResponseTestByIdV1ConvaiAgentTestingTestIdGet> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -77,23 +77,23 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.AgentTesting.Item
             {
                 { "422", global::Soenneker.ElevenLabs.OpenApiClient.Models.HTTPValidationError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetAgentResponseTestRoute200>(requestInfo, global::Soenneker.ElevenLabs.OpenApiClient.Models.GetAgentResponseTestRoute200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.ElevenLabs.OpenApiClient.Models.ResponseGetAgentResponseTestByIdV1ConvaiAgentTestingTestIdGet>(requestInfo, global::Soenneker.ElevenLabs.OpenApiClient.Models.ResponseGetAgentResponseTestByIdV1ConvaiAgentTestingTestIdGet.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Updates an agent response test by ID.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateAgentResponseTestRoute200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ResponseUpdateAgentResponseTestV1ConvaiAgentTestingTestIdPut"/></returns>
         /// <param name="body">Agent test to update</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.HTTPValidationError">When receiving a 422 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateAgentResponseTestRoute200?> PutAsync(global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateAgentResponseTestRoute body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.ElevenLabs.OpenApiClient.Models.ResponseUpdateAgentResponseTestV1ConvaiAgentTestingTestIdPut?> PutAsync(global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateAgentResponseTestRoute body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateAgentResponseTestRoute200> PutAsync(global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateAgentResponseTestRoute body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.ElevenLabs.OpenApiClient.Models.ResponseUpdateAgentResponseTestV1ConvaiAgentTestingTestIdPut> PutAsync(global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateAgentResponseTestRoute body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -102,7 +102,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.AgentTesting.Item
             {
                 { "422", global::Soenneker.ElevenLabs.OpenApiClient.Models.HTTPValidationError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateAgentResponseTestRoute200>(requestInfo, global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateAgentResponseTestRoute200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.ElevenLabs.OpenApiClient.Models.ResponseUpdateAgentResponseTestV1ConvaiAgentTestingTestIdPut>(requestInfo, global::Soenneker.ElevenLabs.OpenApiClient.Models.ResponseUpdateAgentResponseTestV1ConvaiAgentTestingTestIdPut.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Deletes an agent response test by ID.

@@ -19,12 +19,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Avatar context when this generation is made from the Avatars video editor.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyTextToDialogueMultiVoiceV1TextToDialoguePostAvatarContext? AvatarContext { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AvatarContextRequestModel? AvatarContext { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyTextToDialogueMultiVoiceV1TextToDialoguePostAvatarContext AvatarContext { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AvatarContextRequestModel AvatarContext { get; set; }
 #endif
-        /// <summary>A list of dialogue inputs, each containing text and a voice ID which will be converted into speech. The maximum number of unique voice IDs is 10.</summary>
+        /// <summary>A list of dialogue inputs, each containing text and a voice ID which will be converted into speech. The maximum number of unique voice IDs is 10. For reliable generation, keep the total character count across all `inputs[].text` values at or below 2,000 characters per request. Longer requests can terminate early in streaming responses or return a validation error.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.DialogueInput>? Inputs { get; set; }
@@ -35,10 +35,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Language code (ISO 639-1) used to enforce a language for the model and text normalization. If the model does not support provided language code, an error will be returned.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyTextToDialogueMultiVoiceV1TextToDialoguePostLanguageCode? LanguageCode { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Language_Code? LanguageCode { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyTextToDialogueMultiVoiceV1TextToDialoguePostLanguageCode LanguageCode { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Language_Code LanguageCode { get; set; }
 #endif
         /// <summary>Identifier of the model that will be used, you can query them using GET /v1/models. The model needs to have support for text to speech, you can check this using the can_do_text_to_speech property.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -51,26 +51,26 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>A list of pronunciation dictionary locators (id, version_id) to be applied to the text. They will be applied in order. You may have up to 3 locators per request</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyTextToDialogueMultiVoiceV1TextToDialoguePostPronunciationDictionaryLocators? PronunciationDictionaryLocators { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Pronunciation_Dictionary_Locators? PronunciationDictionaryLocators { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyTextToDialogueMultiVoiceV1TextToDialoguePostPronunciationDictionaryLocators PronunciationDictionaryLocators { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Pronunciation_Dictionary_Locators PronunciationDictionaryLocators { get; set; }
 #endif
         /// <summary>If specified, our system will make a best effort to sample deterministically, such that repeated requests with the same seed and parameters should return the same result. Determinism is not guaranteed. Must be integer between 0 and 4294967295.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyTextToDialogueMultiVoiceV1TextToDialoguePostSeed? Seed { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Seed? Seed { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyTextToDialogueMultiVoiceV1TextToDialoguePostSeed Seed { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Seed Seed { get; set; }
 #endif
         /// <summary>Settings controlling the dialogue generation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyTextToDialogueMultiVoiceV1TextToDialoguePostSettings? Settings { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ModelSettingsResponseModel? Settings { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyTextToDialogueMultiVoiceV1TextToDialoguePostSettings Settings { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ModelSettingsResponseModel Settings { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyTextToDialogueMultiVoiceV1TextToDialoguePost"/> and sets the default values.
@@ -100,13 +100,13 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "apply_text_normalization", n => { ApplyTextNormalization = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyTextToDialogueMultiVoiceV1TextToDialoguePost_apply_text_normalization>(); } },
-                { "avatar_context", n => { AvatarContext = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyTextToDialogueMultiVoiceV1TextToDialoguePostAvatarContext>(global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyTextToDialogueMultiVoiceV1TextToDialoguePostAvatarContext.CreateFromDiscriminatorValue); } },
+                { "avatar_context", n => { AvatarContext = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AvatarContextRequestModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.AvatarContextRequestModel.CreateFromDiscriminatorValue); } },
                 { "inputs", n => { Inputs = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.DialogueInput>(global::Soenneker.ElevenLabs.OpenApiClient.Models.DialogueInput.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "language_code", n => { LanguageCode = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyTextToDialogueMultiVoiceV1TextToDialoguePostLanguageCode>(global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyTextToDialogueMultiVoiceV1TextToDialoguePostLanguageCode.CreateFromDiscriminatorValue); } },
+                { "language_code", n => { LanguageCode = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Language_Code>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Language_Code.CreateFromDiscriminatorValue); } },
                 { "model_id", n => { ModelId = n.GetStringValue(); } },
-                { "pronunciation_dictionary_locators", n => { PronunciationDictionaryLocators = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyTextToDialogueMultiVoiceV1TextToDialoguePostPronunciationDictionaryLocators>(global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyTextToDialogueMultiVoiceV1TextToDialoguePostPronunciationDictionaryLocators.CreateFromDiscriminatorValue); } },
-                { "seed", n => { Seed = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyTextToDialogueMultiVoiceV1TextToDialoguePostSeed>(global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyTextToDialogueMultiVoiceV1TextToDialoguePostSeed.CreateFromDiscriminatorValue); } },
-                { "settings", n => { Settings = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyTextToDialogueMultiVoiceV1TextToDialoguePostSettings>(global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyTextToDialogueMultiVoiceV1TextToDialoguePostSettings.CreateFromDiscriminatorValue); } },
+                { "pronunciation_dictionary_locators", n => { PronunciationDictionaryLocators = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Pronunciation_Dictionary_Locators>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Pronunciation_Dictionary_Locators.CreateFromDiscriminatorValue); } },
+                { "seed", n => { Seed = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Seed>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Seed.CreateFromDiscriminatorValue); } },
+                { "settings", n => { Settings = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ModelSettingsResponseModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ModelSettingsResponseModel.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -117,13 +117,13 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyTextToDialogueMultiVoiceV1TextToDialoguePost_apply_text_normalization>("apply_text_normalization", ApplyTextNormalization);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyTextToDialogueMultiVoiceV1TextToDialoguePostAvatarContext>("avatar_context", AvatarContext);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AvatarContextRequestModel>("avatar_context", AvatarContext);
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.DialogueInput>("inputs", Inputs);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyTextToDialogueMultiVoiceV1TextToDialoguePostLanguageCode>("language_code", LanguageCode);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Language_Code>("language_code", LanguageCode);
             writer.WriteStringValue("model_id", ModelId);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyTextToDialogueMultiVoiceV1TextToDialoguePostPronunciationDictionaryLocators>("pronunciation_dictionary_locators", PronunciationDictionaryLocators);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyTextToDialogueMultiVoiceV1TextToDialoguePostSeed>("seed", Seed);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyTextToDialogueMultiVoiceV1TextToDialoguePostSettings>("settings", Settings);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Pronunciation_Dictionary_Locators>("pronunciation_dictionary_locators", PronunciationDictionaryLocators);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Seed>("seed", Seed);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ModelSettingsResponseModel>("settings", Settings);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

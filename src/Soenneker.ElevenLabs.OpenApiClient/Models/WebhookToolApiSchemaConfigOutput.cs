@@ -17,10 +17,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Optional auth connection to use for authentication with this webhook</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookToolApiSchemaConfigOutputAuthConnection? AuthConnection { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookToolApiSchemaConfigOutput.WebhookToolApiSchemaConfigOutput_auth_connection? AuthConnection { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookToolApiSchemaConfigOutputAuthConnection AuthConnection { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookToolApiSchemaConfigOutput.WebhookToolApiSchemaConfigOutput_auth_connection AuthConnection { get; set; }
 #endif
         /// <summary>Content type for the request body. Only applies to POST/PUT/PATCH requests.</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookToolApiSchemaConfigOutput_content_type? ContentType { get; set; }
@@ -37,18 +37,18 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>&quot;Schema for any query params, if any. These will be added to end of the URL as query params. Note: properties in a query param must all be literal types&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookToolApiSchemaConfigOutputQueryParamsSchema? QueryParamsSchema { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.QueryParamsJsonSchema? QueryParamsSchema { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookToolApiSchemaConfigOutputQueryParamsSchema QueryParamsSchema { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.QueryParamsJsonSchema QueryParamsSchema { get; set; }
 #endif
         /// <summary>Schema for the body parameters, if any. Used for POST/PATCH/PUT requests. The schema should be an object which will be sent as the json body</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookToolApiSchemaConfigOutputRequestBodySchema? RequestBodySchema { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ObjectJsonSchemaPropertyOutput? RequestBodySchema { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookToolApiSchemaConfigOutputRequestBodySchema RequestBodySchema { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ObjectJsonSchemaPropertyOutput RequestBodySchema { get; set; }
 #endif
         /// <summary>Headers that should be included in the request</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -93,12 +93,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "auth_connection", n => { AuthConnection = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookToolApiSchemaConfigOutputAuthConnection>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookToolApiSchemaConfigOutputAuthConnection.CreateFromDiscriminatorValue); } },
+                { "auth_connection", n => { AuthConnection = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookToolApiSchemaConfigOutput.WebhookToolApiSchemaConfigOutput_auth_connection>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookToolApiSchemaConfigOutput.WebhookToolApiSchemaConfigOutput_auth_connection.CreateFromDiscriminatorValue); } },
                 { "content_type", n => { ContentType = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookToolApiSchemaConfigOutput_content_type>(); } },
                 { "method", n => { Method = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookToolApiSchemaConfigOutput_method>(); } },
                 { "path_params_schema", n => { PathParamsSchema = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookToolApiSchemaConfigOutput_path_params_schema>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookToolApiSchemaConfigOutput_path_params_schema.CreateFromDiscriminatorValue); } },
-                { "query_params_schema", n => { QueryParamsSchema = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookToolApiSchemaConfigOutputQueryParamsSchema>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookToolApiSchemaConfigOutputQueryParamsSchema.CreateFromDiscriminatorValue); } },
-                { "request_body_schema", n => { RequestBodySchema = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookToolApiSchemaConfigOutputRequestBodySchema>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookToolApiSchemaConfigOutputRequestBodySchema.CreateFromDiscriminatorValue); } },
+                { "query_params_schema", n => { QueryParamsSchema = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.QueryParamsJsonSchema>(global::Soenneker.ElevenLabs.OpenApiClient.Models.QueryParamsJsonSchema.CreateFromDiscriminatorValue); } },
+                { "request_body_schema", n => { RequestBodySchema = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ObjectJsonSchemaPropertyOutput>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ObjectJsonSchemaPropertyOutput.CreateFromDiscriminatorValue); } },
                 { "request_headers", n => { RequestHeaders = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookToolApiSchemaConfigOutput_request_headers>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookToolApiSchemaConfigOutput_request_headers.CreateFromDiscriminatorValue); } },
                 { "url", n => { Url = n.GetStringValue(); } },
             };
@@ -110,15 +110,72 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookToolApiSchemaConfigOutputAuthConnection>("auth_connection", AuthConnection);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookToolApiSchemaConfigOutput.WebhookToolApiSchemaConfigOutput_auth_connection>("auth_connection", AuthConnection);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookToolApiSchemaConfigOutput_content_type>("content_type", ContentType);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookToolApiSchemaConfigOutput_method>("method", Method);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookToolApiSchemaConfigOutput_path_params_schema>("path_params_schema", PathParamsSchema);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookToolApiSchemaConfigOutputQueryParamsSchema>("query_params_schema", QueryParamsSchema);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookToolApiSchemaConfigOutputRequestBodySchema>("request_body_schema", RequestBodySchema);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.QueryParamsJsonSchema>("query_params_schema", QueryParamsSchema);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ObjectJsonSchemaPropertyOutput>("request_body_schema", RequestBodySchema);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookToolApiSchemaConfigOutput_request_headers>("request_headers", RequestHeaders);
             writer.WriteStringValue("url", Url);
             writer.WriteAdditionalData(AdditionalData);
+        }
+        /// <summary>
+        /// Composed type wrapper for classes <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.AuthConnectionLocator"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.EnvironmentAuthConnectionLocator"/>
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class WebhookToolApiSchemaConfigOutput_auth_connection : IComposedTypeWrapper, IParsable
+        {
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.AuthConnectionLocator"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::Soenneker.ElevenLabs.OpenApiClient.Models.AuthConnectionLocator? AuthConnectionLocator { get; set; }
+#nullable restore
+#else
+            public global::Soenneker.ElevenLabs.OpenApiClient.Models.AuthConnectionLocator AuthConnectionLocator { get; set; }
+#endif
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.EnvironmentAuthConnectionLocator"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::Soenneker.ElevenLabs.OpenApiClient.Models.EnvironmentAuthConnectionLocator? EnvironmentAuthConnectionLocator { get; set; }
+#nullable restore
+#else
+            public global::Soenneker.ElevenLabs.OpenApiClient.Models.EnvironmentAuthConnectionLocator EnvironmentAuthConnectionLocator { get; set; }
+#endif
+            /// <summary>
+            /// Creates a new instance of the appropriate class based on discriminator value
+            /// </summary>
+            /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookToolApiSchemaConfigOutput.WebhookToolApiSchemaConfigOutput_auth_connection"/></returns>
+            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+            public static global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookToolApiSchemaConfigOutput.WebhookToolApiSchemaConfigOutput_auth_connection CreateFromDiscriminatorValue(IParseNode parseNode)
+            {
+                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
+                var result = new global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookToolApiSchemaConfigOutput.WebhookToolApiSchemaConfigOutput_auth_connection();
+                result.AuthConnectionLocator = new global::Soenneker.ElevenLabs.OpenApiClient.Models.AuthConnectionLocator();
+                result.EnvironmentAuthConnectionLocator = new global::Soenneker.ElevenLabs.OpenApiClient.Models.EnvironmentAuthConnectionLocator();
+                return result;
+            }
+            /// <summary>
+            /// The deserialization information for the current model
+            /// </summary>
+            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
+            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+            {
+                if(AuthConnectionLocator != null || EnvironmentAuthConnectionLocator != null)
+                {
+                    return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(AuthConnectionLocator, EnvironmentAuthConnectionLocator);
+                }
+                return new Dictionary<string, Action<IParseNode>>();
+            }
+            /// <summary>
+            /// Serializes information the current object
+            /// </summary>
+            /// <param name="writer">Serialization writer to use to serialize this model</param>
+            public virtual void Serialize(ISerializationWriter writer)
+            {
+                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+                writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AuthConnectionLocator>(null, AuthConnectionLocator, EnvironmentAuthConnectionLocator);
+            }
         }
     }
 }

@@ -17,10 +17,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Configuration for backup LLM cascading. Can be disabled, use system defaults, or specify custom order.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentAPIModelOutputBackupLlmConfig? BackupLlmConfig { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentAPIModelOutput.PromptAgentAPIModelOutput_backup_llm_config? BackupLlmConfig { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentAPIModelOutputBackupLlmConfig BackupLlmConfig { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentAPIModelOutput.PromptAgentAPIModelOutput_backup_llm_config BackupLlmConfig { get; set; }
 #endif
         /// <summary>The built_in_tools property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -35,18 +35,18 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Definition for a custom LLM if LLM field is set to &apos;CUSTOM_LLM&apos;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentAPIModelOutputCustomLlm? CustomLlm { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomLLM? CustomLlm { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentAPIModelOutputCustomLlm CustomLlm { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomLLM CustomLlm { get; set; }
 #endif
         /// <summary>Whether to remove the default personality lines from the system prompt</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentAPIModelOutputIgnoreDefaultPersonality? IgnoreDefaultPersonality { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Ignore_Default_Personality? IgnoreDefaultPersonality { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentAPIModelOutputIgnoreDefaultPersonality IgnoreDefaultPersonality { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Ignore_Default_Personality IgnoreDefaultPersonality { get; set; }
 #endif
         /// <summary>A list of knowledge bases to be used by the agent</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -95,28 +95,28 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Reasoning effort of the model. Only available for some models.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentAPIModelOutputReasoningEffort? ReasoningEffort { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.LLMReasoningEffort_Wrapper? ReasoningEffort { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentAPIModelOutputReasoningEffort ReasoningEffort { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.LLMReasoningEffort_Wrapper ReasoningEffort { get; set; }
 #endif
         /// <summary>The temperature for the LLM</summary>
         public double? Temperature { get; set; }
         /// <summary>Max number of tokens used for thinking. Use 0 to turn off if supported by the model.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentAPIModelOutputThinkingBudget? ThinkingBudget { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Thinking_Budget? ThinkingBudget { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentAPIModelOutputThinkingBudget ThinkingBudget { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Thinking_Budget ThinkingBudget { get; set; }
 #endif
         /// <summary>Timezone for displaying current time in system prompt. If set, the current time will be included in the system prompt using this timezone. Must be a valid timezone name (e.g., &apos;America/New_York&apos;, &apos;Europe/London&apos;, &apos;UTC&apos;).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentAPIModelOutputTimezone? Timezone { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.TimezoneObject? Timezone { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentAPIModelOutputTimezone Timezone { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.TimezoneObject Timezone { get; set; }
 #endif
         /// <summary>A list of IDs of tools used by the agent</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -161,11 +161,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "backup_llm_config", n => { BackupLlmConfig = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentAPIModelOutputBackupLlmConfig>(global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentAPIModelOutputBackupLlmConfig.CreateFromDiscriminatorValue); } },
+                { "backup_llm_config", n => { BackupLlmConfig = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentAPIModelOutput.PromptAgentAPIModelOutput_backup_llm_config>(global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentAPIModelOutput.PromptAgentAPIModelOutput_backup_llm_config.CreateFromDiscriminatorValue); } },
                 { "built_in_tools", n => { BuiltInTools = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BuiltInToolsOutput>(global::Soenneker.ElevenLabs.OpenApiClient.Models.BuiltInToolsOutput.CreateFromDiscriminatorValue); } },
                 { "cascade_timeout_seconds", n => { CascadeTimeoutSeconds = n.GetDoubleValue(); } },
-                { "custom_llm", n => { CustomLlm = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentAPIModelOutputCustomLlm>(global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentAPIModelOutputCustomLlm.CreateFromDiscriminatorValue); } },
-                { "ignore_default_personality", n => { IgnoreDefaultPersonality = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentAPIModelOutputIgnoreDefaultPersonality>(global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentAPIModelOutputIgnoreDefaultPersonality.CreateFromDiscriminatorValue); } },
+                { "custom_llm", n => { CustomLlm = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomLLM>(global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomLLM.CreateFromDiscriminatorValue); } },
+                { "ignore_default_personality", n => { IgnoreDefaultPersonality = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Ignore_Default_Personality>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Ignore_Default_Personality.CreateFromDiscriminatorValue); } },
                 { "knowledge_base", n => { KnowledgeBase = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeBaseLocator>(global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeBaseLocator.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "llm", n => { Llm = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.LLM>(); } },
                 { "max_tokens", n => { MaxTokens = n.GetIntValue(); } },
@@ -173,10 +173,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "native_mcp_server_ids", n => { NativeMcpServerIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "prompt", n => { Prompt = n.GetStringValue(); } },
                 { "rag", n => { Rag = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.RagConfig>(global::Soenneker.ElevenLabs.OpenApiClient.Models.RagConfig.CreateFromDiscriminatorValue); } },
-                { "reasoning_effort", n => { ReasoningEffort = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentAPIModelOutputReasoningEffort>(global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentAPIModelOutputReasoningEffort.CreateFromDiscriminatorValue); } },
+                { "reasoning_effort", n => { ReasoningEffort = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.LLMReasoningEffort_Wrapper>(global::Soenneker.ElevenLabs.OpenApiClient.Models.LLMReasoningEffort_Wrapper.CreateFromDiscriminatorValue); } },
                 { "temperature", n => { Temperature = n.GetDoubleValue(); } },
-                { "thinking_budget", n => { ThinkingBudget = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentAPIModelOutputThinkingBudget>(global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentAPIModelOutputThinkingBudget.CreateFromDiscriminatorValue); } },
-                { "timezone", n => { Timezone = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentAPIModelOutputTimezone>(global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentAPIModelOutputTimezone.CreateFromDiscriminatorValue); } },
+                { "thinking_budget", n => { ThinkingBudget = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Thinking_Budget>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Thinking_Budget.CreateFromDiscriminatorValue); } },
+                { "timezone", n => { Timezone = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TimezoneObject>(global::Soenneker.ElevenLabs.OpenApiClient.Models.TimezoneObject.CreateFromDiscriminatorValue); } },
                 { "tool_ids", n => { ToolIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "tools", n => { Tools = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentAPIModelOutput.PromptAgentAPIModelOutput_tools>(global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentAPIModelOutput.PromptAgentAPIModelOutput_tools.CreateFromDiscriminatorValue)?.AsList(); } },
             };
@@ -188,11 +188,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentAPIModelOutputBackupLlmConfig>("backup_llm_config", BackupLlmConfig);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentAPIModelOutput.PromptAgentAPIModelOutput_backup_llm_config>("backup_llm_config", BackupLlmConfig);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BuiltInToolsOutput>("built_in_tools", BuiltInTools);
             writer.WriteDoubleValue("cascade_timeout_seconds", CascadeTimeoutSeconds);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentAPIModelOutputCustomLlm>("custom_llm", CustomLlm);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentAPIModelOutputIgnoreDefaultPersonality>("ignore_default_personality", IgnoreDefaultPersonality);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomLLM>("custom_llm", CustomLlm);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Ignore_Default_Personality>("ignore_default_personality", IgnoreDefaultPersonality);
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeBaseLocator>("knowledge_base", KnowledgeBase);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.LLM>("llm", Llm);
             writer.WriteIntValue("max_tokens", MaxTokens);
@@ -200,13 +200,108 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("native_mcp_server_ids", NativeMcpServerIds);
             writer.WriteStringValue("prompt", Prompt);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.RagConfig>("rag", Rag);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentAPIModelOutputReasoningEffort>("reasoning_effort", ReasoningEffort);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.LLMReasoningEffort_Wrapper>("reasoning_effort", ReasoningEffort);
             writer.WriteDoubleValue("temperature", Temperature);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentAPIModelOutputThinkingBudget>("thinking_budget", ThinkingBudget);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentAPIModelOutputTimezone>("timezone", Timezone);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Thinking_Budget>("thinking_budget", ThinkingBudget);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TimezoneObject>("timezone", Timezone);
             writer.WriteCollectionOfPrimitiveValues<string>("tool_ids", ToolIds);
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentAPIModelOutput.PromptAgentAPIModelOutput_tools>("tools", Tools);
             writer.WriteAdditionalData(AdditionalData);
+        }
+        /// <summary>
+        /// Composed type wrapper for classes <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.BackupLLMDefault"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.BackupLLMDisabled"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.BackupLLMOverride"/>
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class PromptAgentAPIModelOutput_backup_llm_config : IComposedTypeWrapper, IParsable
+        {
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.BackupLLMDefault"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::Soenneker.ElevenLabs.OpenApiClient.Models.BackupLLMDefault? BackupLLMDefault { get; set; }
+#nullable restore
+#else
+            public global::Soenneker.ElevenLabs.OpenApiClient.Models.BackupLLMDefault BackupLLMDefault { get; set; }
+#endif
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.BackupLLMDisabled"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::Soenneker.ElevenLabs.OpenApiClient.Models.BackupLLMDisabled? BackupLLMDisabled { get; set; }
+#nullable restore
+#else
+            public global::Soenneker.ElevenLabs.OpenApiClient.Models.BackupLLMDisabled BackupLLMDisabled { get; set; }
+#endif
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.BackupLLMOverride"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::Soenneker.ElevenLabs.OpenApiClient.Models.BackupLLMOverride? BackupLLMOverride { get; set; }
+#nullable restore
+#else
+            public global::Soenneker.ElevenLabs.OpenApiClient.Models.BackupLLMOverride BackupLLMOverride { get; set; }
+#endif
+            /// <summary>
+            /// Creates a new instance of the appropriate class based on discriminator value
+            /// </summary>
+            /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentAPIModelOutput.PromptAgentAPIModelOutput_backup_llm_config"/></returns>
+            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+            public static global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentAPIModelOutput.PromptAgentAPIModelOutput_backup_llm_config CreateFromDiscriminatorValue(IParseNode parseNode)
+            {
+                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
+                var mappingValue = parseNode.GetChildNode("preference")?.GetStringValue();
+                var result = new global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentAPIModelOutput.PromptAgentAPIModelOutput_backup_llm_config();
+                if("default".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                {
+                    result.BackupLLMDefault = new global::Soenneker.ElevenLabs.OpenApiClient.Models.BackupLLMDefault();
+                }
+                else if("disabled".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                {
+                    result.BackupLLMDisabled = new global::Soenneker.ElevenLabs.OpenApiClient.Models.BackupLLMDisabled();
+                }
+                else if("override".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                {
+                    result.BackupLLMOverride = new global::Soenneker.ElevenLabs.OpenApiClient.Models.BackupLLMOverride();
+                }
+                return result;
+            }
+            /// <summary>
+            /// The deserialization information for the current model
+            /// </summary>
+            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
+            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+            {
+                if(BackupLLMDefault != null)
+                {
+                    return BackupLLMDefault.GetFieldDeserializers();
+                }
+                else if(BackupLLMDisabled != null)
+                {
+                    return BackupLLMDisabled.GetFieldDeserializers();
+                }
+                else if(BackupLLMOverride != null)
+                {
+                    return BackupLLMOverride.GetFieldDeserializers();
+                }
+                return new Dictionary<string, Action<IParseNode>>();
+            }
+            /// <summary>
+            /// Serializes information the current object
+            /// </summary>
+            /// <param name="writer">Serialization writer to use to serialize this model</param>
+            public virtual void Serialize(ISerializationWriter writer)
+            {
+                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+                if(BackupLLMDefault != null)
+                {
+                    writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BackupLLMDefault>(null, BackupLLMDefault);
+                }
+                else if(BackupLLMDisabled != null)
+                {
+                    writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BackupLLMDisabled>(null, BackupLLMDisabled);
+                }
+                else if(BackupLLMOverride != null)
+                {
+                    writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BackupLLMOverride>(null, BackupLLMOverride);
+                }
+            }
         }
         /// <summary>
         /// Composed type wrapper for classes <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ApiIntegrationWebhookToolConfigOutput"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ClientToolConfigOutput"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.MCPToolConfigOutput"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.SMBToolConfig"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigOutput"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookToolConfigOutput"/>

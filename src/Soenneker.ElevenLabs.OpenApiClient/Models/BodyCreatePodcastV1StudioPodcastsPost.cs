@@ -17,60 +17,60 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>&quot;    This parameter controls text normalization with four modes: &apos;auto&apos;, &apos;on&apos;, &apos;apply_english&apos; and &apos;off&apos;.    When set to &apos;auto&apos;, the system will automatically decide whether to apply text normalization    (e.g., spelling out numbers). With &apos;on&apos;, text normalization will always be applied, while    with &apos;off&apos;, it will be skipped. &apos;apply_english&apos; is the same as &apos;on&apos; but will assume that text is in English.    &quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreatePodcastV1StudioPodcastsPostApplyTextNormalization? ApplyTextNormalization { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Apply_Text_Normalization? ApplyTextNormalization { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreatePodcastV1StudioPodcastsPostApplyTextNormalization ApplyTextNormalization { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Apply_Text_Normalization ApplyTextNormalization { get; set; }
 #endif
         /// <summary>&quot;    A url that will be called by our service when the Studio project is converted. Request will contain a json blob containing the status of the conversion    Messages:    1. When project was converted successfully:    {      type: \&quot;project_conversion_status\&quot;,      event_timestamp: 1234567890,      data: {        request_id: \&quot;1234567890\&quot;,        project_id: \&quot;21m00Tcm4TlvDq8ikWAM\&quot;,        conversion_status: \&quot;success\&quot;,        project_snapshot_id: \&quot;22m00Tcm4TlvDq8ikMAT\&quot;,        error_details: None,      }    }    2. When project conversion failed:    {      type: \&quot;project_conversion_status\&quot;,      event_timestamp: 1234567890,      data: {        request_id: \&quot;1234567890\&quot;,        project_id: \&quot;21m00Tcm4TlvDq8ikWAM\&quot;,        conversion_status: \&quot;error\&quot;,        project_snapshot_id: None,        error_details: \&quot;Error details if conversion failed\&quot;      }    }    3. When chapter was converted successfully:    {      type: \&quot;chapter_conversion_status\&quot;,      event_timestamp: 1234567890,      data: {        request_id: \&quot;1234567890\&quot;,        project_id: \&quot;21m00Tcm4TlvDq8ikWAM\&quot;,        chapter_id: \&quot;22m00Tcm4TlvDq8ikMAT\&quot;,        conversion_status: \&quot;success\&quot;,        chapter_snapshot_id: \&quot;23m00Tcm4TlvDq8ikMAV\&quot;,        error_details: None,      }    }    4. When chapter conversion failed:    {      type: \&quot;chapter_conversion_status\&quot;,      event_timestamp: 1234567890,      data: {        request_id: \&quot;1234567890\&quot;,        project_id: \&quot;21m00Tcm4TlvDq8ikWAM\&quot;,        chapter_id: \&quot;22m00Tcm4TlvDq8ikMAT\&quot;,        conversion_status: \&quot;error\&quot;,        chapter_snapshot_id: None,        error_details: \&quot;Error details if conversion failed\&quot;      }    }    &quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreatePodcastV1StudioPodcastsPostCallbackUrl? CallbackUrl { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Callback_Url? CallbackUrl { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreatePodcastV1StudioPodcastsPostCallbackUrl CallbackUrl { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Callback_Url CallbackUrl { get; set; }
 #endif
         /// <summary>Duration of the generated podcast. Must be one of:short - produces podcasts shorter than 3 minutes.default - produces podcasts roughly between 3-7 minutes.long - produces podcasts longer than 7 minutes.</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreatePodcastV1StudioPodcastsPost_duration_scale? DurationScale { get; set; }
         /// <summary>A brief summary or highlights of the Studio project&apos;s content, providing key points or themes. This should be between 10 and 70 characters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreatePodcastV1StudioPodcastsPostHighlights? Highlights { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Highlights? Highlights { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreatePodcastV1StudioPodcastsPostHighlights Highlights { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Highlights Highlights { get; set; }
 #endif
         /// <summary>Additional instructions prompt for the podcast generation used to adjust the podcast&apos;s style and tone.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreatePodcastV1StudioPodcastsPostInstructionsPrompt? InstructionsPrompt { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Instructions_Prompt? InstructionsPrompt { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreatePodcastV1StudioPodcastsPostInstructionsPrompt InstructionsPrompt { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Instructions_Prompt InstructionsPrompt { get; set; }
 #endif
         /// <summary>The intro text that will always be added to the beginning of the podcast.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreatePodcastV1StudioPodcastsPostIntro? Intro { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Intro? Intro { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreatePodcastV1StudioPodcastsPostIntro Intro { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Intro Intro { get; set; }
 #endif
         /// <summary>An optional language of the Studio project. Two-letter language code (ISO 639-1).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreatePodcastV1StudioPodcastsPostLanguage? Language { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Language? Language { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreatePodcastV1StudioPodcastsPostLanguage Language { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Language Language { get; set; }
 #endif
         /// <summary>The type of podcast to generate. Can be &apos;conversation&apos;, an interaction between two voices, or &apos;bulletin&apos;, a monologue.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreatePodcastV1StudioPodcastsPostMode? Mode { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreatePodcastV1StudioPodcastsPost.BodyCreatePodcastV1StudioPodcastsPost_mode? Mode { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreatePodcastV1StudioPodcastsPostMode Mode { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreatePodcastV1StudioPodcastsPost.BodyCreatePodcastV1StudioPodcastsPost_mode Mode { get; set; }
 #endif
         /// <summary>The ID of the model to be used for this Studio project, you can query GET /v1/models to list all available models.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -83,20 +83,20 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The outro text that will always be added to the end of the podcast.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreatePodcastV1StudioPodcastsPostOutro? Outro { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Outro? Outro { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreatePodcastV1StudioPodcastsPostOutro Outro { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Outro Outro { get; set; }
 #endif
         /// <summary>Output quality of the generated audio. Must be one of:&apos;standard&apos; - standard output format, 128kbps with 44.1kHz sample rate.&apos;high&apos; - high quality output format, 192kbps with 44.1kHz sample rate and major improvements on our side.&apos;ultra&apos; - ultra quality output format, 192kbps with 44.1kHz sample rate and highest improvements on our side.&apos;ultra_lossless&apos; - ultra quality output format, 705.6kbps with 44.1kHz sample rate and highest improvements on our side in a fully lossless format.</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreatePodcastV1StudioPodcastsPost_quality_preset? QualityPreset { get; set; }
         /// <summary>The source content for the Podcast.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreatePodcastV1StudioPodcastsPostSource? Source { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreatePodcastV1StudioPodcastsPost.BodyCreatePodcastV1StudioPodcastsPost_source? Source { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreatePodcastV1StudioPodcastsPostSource Source { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreatePodcastV1StudioPodcastsPost.BodyCreatePodcastV1StudioPodcastsPost_source Source { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreatePodcastV1StudioPodcastsPost"/> and sets the default values.
@@ -125,18 +125,18 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "apply_text_normalization", n => { ApplyTextNormalization = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreatePodcastV1StudioPodcastsPostApplyTextNormalization>(global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreatePodcastV1StudioPodcastsPostApplyTextNormalization.CreateFromDiscriminatorValue); } },
-                { "callback_url", n => { CallbackUrl = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreatePodcastV1StudioPodcastsPostCallbackUrl>(global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreatePodcastV1StudioPodcastsPostCallbackUrl.CreateFromDiscriminatorValue); } },
+                { "apply_text_normalization", n => { ApplyTextNormalization = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Apply_Text_Normalization>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Apply_Text_Normalization.CreateFromDiscriminatorValue); } },
+                { "callback_url", n => { CallbackUrl = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Callback_Url>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Callback_Url.CreateFromDiscriminatorValue); } },
                 { "duration_scale", n => { DurationScale = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreatePodcastV1StudioPodcastsPost_duration_scale>(); } },
-                { "highlights", n => { Highlights = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreatePodcastV1StudioPodcastsPostHighlights>(global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreatePodcastV1StudioPodcastsPostHighlights.CreateFromDiscriminatorValue); } },
-                { "instructions_prompt", n => { InstructionsPrompt = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreatePodcastV1StudioPodcastsPostInstructionsPrompt>(global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreatePodcastV1StudioPodcastsPostInstructionsPrompt.CreateFromDiscriminatorValue); } },
-                { "intro", n => { Intro = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreatePodcastV1StudioPodcastsPostIntro>(global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreatePodcastV1StudioPodcastsPostIntro.CreateFromDiscriminatorValue); } },
-                { "language", n => { Language = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreatePodcastV1StudioPodcastsPostLanguage>(global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreatePodcastV1StudioPodcastsPostLanguage.CreateFromDiscriminatorValue); } },
-                { "mode", n => { Mode = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreatePodcastV1StudioPodcastsPostMode>(global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreatePodcastV1StudioPodcastsPostMode.CreateFromDiscriminatorValue); } },
+                { "highlights", n => { Highlights = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Highlights>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Highlights.CreateFromDiscriminatorValue); } },
+                { "instructions_prompt", n => { InstructionsPrompt = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Instructions_Prompt>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Instructions_Prompt.CreateFromDiscriminatorValue); } },
+                { "intro", n => { Intro = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Intro>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Intro.CreateFromDiscriminatorValue); } },
+                { "language", n => { Language = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Language>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Language.CreateFromDiscriminatorValue); } },
+                { "mode", n => { Mode = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreatePodcastV1StudioPodcastsPost.BodyCreatePodcastV1StudioPodcastsPost_mode>(global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreatePodcastV1StudioPodcastsPost.BodyCreatePodcastV1StudioPodcastsPost_mode.CreateFromDiscriminatorValue); } },
                 { "model_id", n => { ModelId = n.GetStringValue(); } },
-                { "outro", n => { Outro = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreatePodcastV1StudioPodcastsPostOutro>(global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreatePodcastV1StudioPodcastsPostOutro.CreateFromDiscriminatorValue); } },
+                { "outro", n => { Outro = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Outro>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Outro.CreateFromDiscriminatorValue); } },
                 { "quality_preset", n => { QualityPreset = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreatePodcastV1StudioPodcastsPost_quality_preset>(); } },
-                { "source", n => { Source = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreatePodcastV1StudioPodcastsPostSource>(global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreatePodcastV1StudioPodcastsPostSource.CreateFromDiscriminatorValue); } },
+                { "source", n => { Source = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreatePodcastV1StudioPodcastsPost.BodyCreatePodcastV1StudioPodcastsPost_source>(global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreatePodcastV1StudioPodcastsPost.BodyCreatePodcastV1StudioPodcastsPost_source.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -146,19 +146,142 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreatePodcastV1StudioPodcastsPostApplyTextNormalization>("apply_text_normalization", ApplyTextNormalization);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreatePodcastV1StudioPodcastsPostCallbackUrl>("callback_url", CallbackUrl);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Apply_Text_Normalization>("apply_text_normalization", ApplyTextNormalization);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Callback_Url>("callback_url", CallbackUrl);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreatePodcastV1StudioPodcastsPost_duration_scale>("duration_scale", DurationScale);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreatePodcastV1StudioPodcastsPostHighlights>("highlights", Highlights);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreatePodcastV1StudioPodcastsPostInstructionsPrompt>("instructions_prompt", InstructionsPrompt);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreatePodcastV1StudioPodcastsPostIntro>("intro", Intro);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreatePodcastV1StudioPodcastsPostLanguage>("language", Language);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreatePodcastV1StudioPodcastsPostMode>("mode", Mode);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Highlights>("highlights", Highlights);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Instructions_Prompt>("instructions_prompt", InstructionsPrompt);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Intro>("intro", Intro);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Language>("language", Language);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreatePodcastV1StudioPodcastsPost.BodyCreatePodcastV1StudioPodcastsPost_mode>("mode", Mode);
             writer.WriteStringValue("model_id", ModelId);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreatePodcastV1StudioPodcastsPostOutro>("outro", Outro);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Outro>("outro", Outro);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreatePodcastV1StudioPodcastsPost_quality_preset>("quality_preset", QualityPreset);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreatePodcastV1StudioPodcastsPostSource>("source", Source);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreatePodcastV1StudioPodcastsPost.BodyCreatePodcastV1StudioPodcastsPost_source>("source", Source);
             writer.WriteAdditionalData(AdditionalData);
+        }
+        /// <summary>
+        /// Composed type wrapper for classes <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.PodcastBulletinMode"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.PodcastConversationMode"/>
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class BodyCreatePodcastV1StudioPodcastsPost_mode : IComposedTypeWrapper, IParsable
+        {
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.PodcastBulletinMode"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::Soenneker.ElevenLabs.OpenApiClient.Models.PodcastBulletinMode? PodcastBulletinMode { get; set; }
+#nullable restore
+#else
+            public global::Soenneker.ElevenLabs.OpenApiClient.Models.PodcastBulletinMode PodcastBulletinMode { get; set; }
+#endif
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.PodcastConversationMode"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::Soenneker.ElevenLabs.OpenApiClient.Models.PodcastConversationMode? PodcastConversationMode { get; set; }
+#nullable restore
+#else
+            public global::Soenneker.ElevenLabs.OpenApiClient.Models.PodcastConversationMode PodcastConversationMode { get; set; }
+#endif
+            /// <summary>
+            /// Creates a new instance of the appropriate class based on discriminator value
+            /// </summary>
+            /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreatePodcastV1StudioPodcastsPost.BodyCreatePodcastV1StudioPodcastsPost_mode"/></returns>
+            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+            public static global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreatePodcastV1StudioPodcastsPost.BodyCreatePodcastV1StudioPodcastsPost_mode CreateFromDiscriminatorValue(IParseNode parseNode)
+            {
+                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
+                var result = new global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreatePodcastV1StudioPodcastsPost.BodyCreatePodcastV1StudioPodcastsPost_mode();
+                result.PodcastBulletinMode = new global::Soenneker.ElevenLabs.OpenApiClient.Models.PodcastBulletinMode();
+                result.PodcastConversationMode = new global::Soenneker.ElevenLabs.OpenApiClient.Models.PodcastConversationMode();
+                return result;
+            }
+            /// <summary>
+            /// The deserialization information for the current model
+            /// </summary>
+            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
+            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+            {
+                if(PodcastBulletinMode != null || PodcastConversationMode != null)
+                {
+                    return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(PodcastBulletinMode, PodcastConversationMode);
+                }
+                return new Dictionary<string, Action<IParseNode>>();
+            }
+            /// <summary>
+            /// Serializes information the current object
+            /// </summary>
+            /// <param name="writer">Serialization writer to use to serialize this model</param>
+            public virtual void Serialize(ISerializationWriter writer)
+            {
+                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+                writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PodcastBulletinMode>(null, PodcastBulletinMode, PodcastConversationMode);
+            }
+        }
+        /// <summary>
+        /// Composed type wrapper for classes <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.PodcastTextSource"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.PodcastURLSource"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.Source"/>
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class BodyCreatePodcastV1StudioPodcastsPost_source : IComposedTypeWrapper, IParsable
+        {
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.PodcastTextSource"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::Soenneker.ElevenLabs.OpenApiClient.Models.PodcastTextSource? PodcastTextSource { get; set; }
+#nullable restore
+#else
+            public global::Soenneker.ElevenLabs.OpenApiClient.Models.PodcastTextSource PodcastTextSource { get; set; }
+#endif
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.PodcastURLSource"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::Soenneker.ElevenLabs.OpenApiClient.Models.PodcastURLSource? PodcastURLSource { get; set; }
+#nullable restore
+#else
+            public global::Soenneker.ElevenLabs.OpenApiClient.Models.PodcastURLSource PodcastURLSource { get; set; }
+#endif
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.Source"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::Soenneker.ElevenLabs.OpenApiClient.Models.Source? Source { get; set; }
+#nullable restore
+#else
+            public global::Soenneker.ElevenLabs.OpenApiClient.Models.Source Source { get; set; }
+#endif
+            /// <summary>
+            /// Creates a new instance of the appropriate class based on discriminator value
+            /// </summary>
+            /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreatePodcastV1StudioPodcastsPost.BodyCreatePodcastV1StudioPodcastsPost_source"/></returns>
+            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+            public static global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreatePodcastV1StudioPodcastsPost.BodyCreatePodcastV1StudioPodcastsPost_source CreateFromDiscriminatorValue(IParseNode parseNode)
+            {
+                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
+                var result = new global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreatePodcastV1StudioPodcastsPost.BodyCreatePodcastV1StudioPodcastsPost_source();
+                result.PodcastTextSource = new global::Soenneker.ElevenLabs.OpenApiClient.Models.PodcastTextSource();
+                result.PodcastURLSource = new global::Soenneker.ElevenLabs.OpenApiClient.Models.PodcastURLSource();
+                result.Source = new global::Soenneker.ElevenLabs.OpenApiClient.Models.Source();
+                return result;
+            }
+            /// <summary>
+            /// The deserialization information for the current model
+            /// </summary>
+            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
+            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+            {
+                if(PodcastTextSource != null || PodcastURLSource != null || Source != null)
+                {
+                    return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(PodcastTextSource, PodcastURLSource, Source);
+                }
+                return new Dictionary<string, Action<IParseNode>>();
+            }
+            /// <summary>
+            /// Serializes information the current object
+            /// </summary>
+            /// <param name="writer">Serialization writer to use to serialize this model</param>
+            public virtual void Serialize(ISerializationWriter writer)
+            {
+                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+                writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PodcastTextSource>(null, PodcastTextSource, PodcastURLSource, Source);
+            }
         }
     }
 }

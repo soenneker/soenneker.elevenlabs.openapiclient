@@ -33,18 +33,18 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Whether let Twilio record the call.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyHandleAnOutboundCallViaTwilioV1ConvaiTwilioOutboundCallPostCallRecordingEnabled? CallRecordingEnabled { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Call_Recording_Enabled? CallRecordingEnabled { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyHandleAnOutboundCallViaTwilioV1ConvaiTwilioOutboundCallPostCallRecordingEnabled CallRecordingEnabled { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Call_Recording_Enabled CallRecordingEnabled { get; set; }
 #endif
         /// <summary>The conversation_initiation_client_data property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyHandleAnOutboundCallViaTwilioV1ConvaiTwilioOutboundCallPostConversationInitiationClientData? ConversationInitiationClientData { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationClientDataRequestInput? ConversationInitiationClientData { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyHandleAnOutboundCallViaTwilioV1ConvaiTwilioOutboundCallPostConversationInitiationClientData ConversationInitiationClientData { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationClientDataRequestInput ConversationInitiationClientData { get; set; }
 #endif
         /// <summary>The telephony_call_config property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -89,8 +89,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             {
                 { "agent_id", n => { AgentId = n.GetStringValue(); } },
                 { "agent_phone_number_id", n => { AgentPhoneNumberId = n.GetStringValue(); } },
-                { "call_recording_enabled", n => { CallRecordingEnabled = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyHandleAnOutboundCallViaTwilioV1ConvaiTwilioOutboundCallPostCallRecordingEnabled>(global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyHandleAnOutboundCallViaTwilioV1ConvaiTwilioOutboundCallPostCallRecordingEnabled.CreateFromDiscriminatorValue); } },
-                { "conversation_initiation_client_data", n => { ConversationInitiationClientData = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyHandleAnOutboundCallViaTwilioV1ConvaiTwilioOutboundCallPostConversationInitiationClientData>(global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyHandleAnOutboundCallViaTwilioV1ConvaiTwilioOutboundCallPostConversationInitiationClientData.CreateFromDiscriminatorValue); } },
+                { "call_recording_enabled", n => { CallRecordingEnabled = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Call_Recording_Enabled>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Call_Recording_Enabled.CreateFromDiscriminatorValue); } },
+                { "conversation_initiation_client_data", n => { ConversationInitiationClientData = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationClientDataRequestInput>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationClientDataRequestInput.CreateFromDiscriminatorValue); } },
                 { "telephony_call_config", n => { TelephonyCallConfig = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TelephonyCallConfig>(global::Soenneker.ElevenLabs.OpenApiClient.Models.TelephonyCallConfig.CreateFromDiscriminatorValue); } },
                 { "to_number", n => { ToNumber = n.GetStringValue(); } },
             };
@@ -104,8 +104,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("agent_id", AgentId);
             writer.WriteStringValue("agent_phone_number_id", AgentPhoneNumberId);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyHandleAnOutboundCallViaTwilioV1ConvaiTwilioOutboundCallPostCallRecordingEnabled>("call_recording_enabled", CallRecordingEnabled);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyHandleAnOutboundCallViaTwilioV1ConvaiTwilioOutboundCallPostConversationInitiationClientData>("conversation_initiation_client_data", ConversationInitiationClientData);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Call_Recording_Enabled>("call_recording_enabled", CallRecordingEnabled);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationClientDataRequestInput>("conversation_initiation_client_data", ConversationInitiationClientData);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TelephonyCallConfig>("telephony_call_config", TelephonyCallConfig);
             writer.WriteStringValue("to_number", ToNumber);
             writer.WriteAdditionalData(AdditionalData);

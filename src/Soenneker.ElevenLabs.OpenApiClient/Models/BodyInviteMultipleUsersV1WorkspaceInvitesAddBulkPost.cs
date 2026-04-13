@@ -25,18 +25,18 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The group ids of the user</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyInviteMultipleUsersV1WorkspaceInvitesAddBulkPostGroupIds? GroupIds { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Group_Ids? GroupIds { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyInviteMultipleUsersV1WorkspaceInvitesAddBulkPostGroupIds GroupIds { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Group_Ids GroupIds { get; set; }
 #endif
         /// <summary>The seat type of the user</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyInviteMultipleUsersV1WorkspaceInvitesAddBulkPostSeatType? SeatType { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SeatType_Wrapper? SeatType { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyInviteMultipleUsersV1WorkspaceInvitesAddBulkPostSeatType SeatType { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SeatType_Wrapper SeatType { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyInviteMultipleUsersV1WorkspaceInvitesAddBulkPost"/> and sets the default values.
@@ -64,8 +64,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "emails", n => { Emails = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "group_ids", n => { GroupIds = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyInviteMultipleUsersV1WorkspaceInvitesAddBulkPostGroupIds>(global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyInviteMultipleUsersV1WorkspaceInvitesAddBulkPostGroupIds.CreateFromDiscriminatorValue); } },
-                { "seat_type", n => { SeatType = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyInviteMultipleUsersV1WorkspaceInvitesAddBulkPostSeatType>(global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyInviteMultipleUsersV1WorkspaceInvitesAddBulkPostSeatType.CreateFromDiscriminatorValue); } },
+                { "group_ids", n => { GroupIds = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Group_Ids>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Group_Ids.CreateFromDiscriminatorValue); } },
+                { "seat_type", n => { SeatType = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SeatType_Wrapper>(global::Soenneker.ElevenLabs.OpenApiClient.Models.SeatType_Wrapper.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -76,8 +76,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<string>("emails", Emails);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyInviteMultipleUsersV1WorkspaceInvitesAddBulkPostGroupIds>("group_ids", GroupIds);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyInviteMultipleUsersV1WorkspaceInvitesAddBulkPostSeatType>("seat_type", SeatType);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Group_Ids>("group_ids", GroupIds);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SeatType_Wrapper>("seat_type", SeatType);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

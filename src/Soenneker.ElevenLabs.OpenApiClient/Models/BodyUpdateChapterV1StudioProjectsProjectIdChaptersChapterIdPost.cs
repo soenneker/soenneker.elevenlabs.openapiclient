@@ -17,18 +17,18 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The chapter content to use.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyUpdateChapterV1StudioProjectsProjectIdChaptersChapterIdPostContent? Content { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ChapterContentInputModel? Content { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyUpdateChapterV1StudioProjectsProjectIdChaptersChapterIdPostContent Content { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ChapterContentInputModel Content { get; set; }
 #endif
         /// <summary>The name of the chapter, used for identification only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyUpdateChapterV1StudioProjectsProjectIdChaptersChapterIdPostName? Name { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Name? Name { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyUpdateChapterV1StudioProjectsProjectIdChaptersChapterIdPostName Name { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Name Name { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyUpdateChapterV1StudioProjectsProjectIdChaptersChapterIdPost"/> and sets the default values.
@@ -55,8 +55,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "content", n => { Content = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyUpdateChapterV1StudioProjectsProjectIdChaptersChapterIdPostContent>(global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyUpdateChapterV1StudioProjectsProjectIdChaptersChapterIdPostContent.CreateFromDiscriminatorValue); } },
-                { "name", n => { Name = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyUpdateChapterV1StudioProjectsProjectIdChaptersChapterIdPostName>(global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyUpdateChapterV1StudioProjectsProjectIdChaptersChapterIdPostName.CreateFromDiscriminatorValue); } },
+                { "content", n => { Content = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ChapterContentInputModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ChapterContentInputModel.CreateFromDiscriminatorValue); } },
+                { "name", n => { Name = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Name>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Name.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -66,8 +66,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyUpdateChapterV1StudioProjectsProjectIdChaptersChapterIdPostContent>("content", Content);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyUpdateChapterV1StudioProjectsProjectIdChaptersChapterIdPostName>("name", Name);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ChapterContentInputModel>("content", Content);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Name>("name", Name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

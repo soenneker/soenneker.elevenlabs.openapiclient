@@ -17,36 +17,36 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The name of the audio file to be used for PVC training.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyUpdatePVCVoiceSampleV1VoicesPvcVoiceIdSamplesSampleIdPostFileName? FileName { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.File_Name? FileName { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyUpdatePVCVoiceSampleV1VoicesPvcVoiceIdSamplesSampleIdPostFileName FileName { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.File_Name FileName { get; set; }
 #endif
         /// <summary>If set will remove background noise for voice samples using our audio isolation model. If the samples do not include background noise, it can make the quality worse.</summary>
         public bool? RemoveBackgroundNoise { get; set; }
         /// <summary>Speaker IDs to be used for PVC training. Make sure you send all the speaker IDs you want to use for PVC training in one request because the last request will override the previous ones.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyUpdatePVCVoiceSampleV1VoicesPvcVoiceIdSamplesSampleIdPostSelectedSpeakerIds? SelectedSpeakerIds { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Selected_Speaker_Ids? SelectedSpeakerIds { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyUpdatePVCVoiceSampleV1VoicesPvcVoiceIdSamplesSampleIdPostSelectedSpeakerIds SelectedSpeakerIds { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Selected_Speaker_Ids SelectedSpeakerIds { get; set; }
 #endif
         /// <summary>The end time of the audio to be used for PVC training. Time should be in milliseconds</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyUpdatePVCVoiceSampleV1VoicesPvcVoiceIdSamplesSampleIdPostTrimEndTime? TrimEndTime { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Trim_End_Time? TrimEndTime { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyUpdatePVCVoiceSampleV1VoicesPvcVoiceIdSamplesSampleIdPostTrimEndTime TrimEndTime { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Trim_End_Time TrimEndTime { get; set; }
 #endif
         /// <summary>The start time of the audio to be used for PVC training. Time should be in milliseconds</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyUpdatePVCVoiceSampleV1VoicesPvcVoiceIdSamplesSampleIdPostTrimStartTime? TrimStartTime { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Trim_Start_Time? TrimStartTime { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyUpdatePVCVoiceSampleV1VoicesPvcVoiceIdSamplesSampleIdPostTrimStartTime TrimStartTime { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Trim_Start_Time TrimStartTime { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyUpdatePVCVoiceSampleV1VoicesPvcVoiceIdSamplesSampleIdPost"/> and sets the default values.
@@ -73,11 +73,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "file_name", n => { FileName = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyUpdatePVCVoiceSampleV1VoicesPvcVoiceIdSamplesSampleIdPostFileName>(global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyUpdatePVCVoiceSampleV1VoicesPvcVoiceIdSamplesSampleIdPostFileName.CreateFromDiscriminatorValue); } },
+                { "file_name", n => { FileName = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.File_Name>(global::Soenneker.ElevenLabs.OpenApiClient.Models.File_Name.CreateFromDiscriminatorValue); } },
                 { "remove_background_noise", n => { RemoveBackgroundNoise = n.GetBoolValue(); } },
-                { "selected_speaker_ids", n => { SelectedSpeakerIds = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyUpdatePVCVoiceSampleV1VoicesPvcVoiceIdSamplesSampleIdPostSelectedSpeakerIds>(global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyUpdatePVCVoiceSampleV1VoicesPvcVoiceIdSamplesSampleIdPostSelectedSpeakerIds.CreateFromDiscriminatorValue); } },
-                { "trim_end_time", n => { TrimEndTime = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyUpdatePVCVoiceSampleV1VoicesPvcVoiceIdSamplesSampleIdPostTrimEndTime>(global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyUpdatePVCVoiceSampleV1VoicesPvcVoiceIdSamplesSampleIdPostTrimEndTime.CreateFromDiscriminatorValue); } },
-                { "trim_start_time", n => { TrimStartTime = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyUpdatePVCVoiceSampleV1VoicesPvcVoiceIdSamplesSampleIdPostTrimStartTime>(global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyUpdatePVCVoiceSampleV1VoicesPvcVoiceIdSamplesSampleIdPostTrimStartTime.CreateFromDiscriminatorValue); } },
+                { "selected_speaker_ids", n => { SelectedSpeakerIds = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Selected_Speaker_Ids>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Selected_Speaker_Ids.CreateFromDiscriminatorValue); } },
+                { "trim_end_time", n => { TrimEndTime = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Trim_End_Time>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Trim_End_Time.CreateFromDiscriminatorValue); } },
+                { "trim_start_time", n => { TrimStartTime = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Trim_Start_Time>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Trim_Start_Time.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -87,11 +87,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyUpdatePVCVoiceSampleV1VoicesPvcVoiceIdSamplesSampleIdPostFileName>("file_name", FileName);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.File_Name>("file_name", FileName);
             writer.WriteBoolValue("remove_background_noise", RemoveBackgroundNoise);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyUpdatePVCVoiceSampleV1VoicesPvcVoiceIdSamplesSampleIdPostSelectedSpeakerIds>("selected_speaker_ids", SelectedSpeakerIds);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyUpdatePVCVoiceSampleV1VoicesPvcVoiceIdSamplesSampleIdPostTrimEndTime>("trim_end_time", TrimEndTime);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyUpdatePVCVoiceSampleV1VoicesPvcVoiceIdSamplesSampleIdPostTrimStartTime>("trim_start_time", TrimStartTime);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Selected_Speaker_Ids>("selected_speaker_ids", SelectedSpeakerIds);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Trim_End_Time>("trim_end_time", TrimEndTime);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Trim_Start_Time>("trim_start_time", TrimStartTime);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

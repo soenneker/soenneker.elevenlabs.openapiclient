@@ -17,18 +17,18 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The agent that is assigned to the phone number</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPhoneNumberSIPTrunkResponseModelAssignedAgent? AssignedAgent { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberAgentInfo? AssignedAgent { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPhoneNumberSIPTrunkResponseModelAssignedAgent AssignedAgent { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberAgentInfo AssignedAgent { get; set; }
 #endif
         /// <summary>Configuration of the Inbound SIP trunk - if configured.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPhoneNumberSIPTrunkResponseModelInboundTrunk? InboundTrunk { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPhoneNumberInboundSIPTrunkConfigResponseModel? InboundTrunk { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPhoneNumberSIPTrunkResponseModelInboundTrunk InboundTrunk { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPhoneNumberInboundSIPTrunkConfigResponseModel InboundTrunk { get; set; }
 #endif
         /// <summary>Label for the phone number</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -43,10 +43,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Configuration of the Outbound SIP trunk - if configured.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPhoneNumberSIPTrunkResponseModelOutboundTrunk? OutboundTrunk { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPhoneNumberOutboundSIPTrunkConfigResponseModel? OutboundTrunk { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPhoneNumberSIPTrunkResponseModelOutboundTrunk OutboundTrunk { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPhoneNumberOutboundSIPTrunkConfigResponseModel OutboundTrunk { get; set; }
 #endif
         /// <summary>Phone number</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -70,10 +70,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPhoneNumberSIPTrunkResponseModelProviderConfig? ProviderConfig { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPhoneNumberOutboundSIPTrunkConfigResponseModel? ProviderConfig { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPhoneNumberSIPTrunkResponseModelProviderConfig ProviderConfig { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPhoneNumberOutboundSIPTrunkConfigResponseModel ProviderConfig { get; set; }
 #endif
         /// <summary>This field is deprecated and will be removed in the future. Whether this phone number supports inbound calls</summary>
         [Obsolete("")]
@@ -108,15 +108,15 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "assigned_agent", n => { AssignedAgent = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPhoneNumberSIPTrunkResponseModelAssignedAgent>(global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPhoneNumberSIPTrunkResponseModelAssignedAgent.CreateFromDiscriminatorValue); } },
-                { "inbound_trunk", n => { InboundTrunk = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPhoneNumberSIPTrunkResponseModelInboundTrunk>(global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPhoneNumberSIPTrunkResponseModelInboundTrunk.CreateFromDiscriminatorValue); } },
+                { "assigned_agent", n => { AssignedAgent = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberAgentInfo>(global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberAgentInfo.CreateFromDiscriminatorValue); } },
+                { "inbound_trunk", n => { InboundTrunk = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPhoneNumberInboundSIPTrunkConfigResponseModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPhoneNumberInboundSIPTrunkConfigResponseModel.CreateFromDiscriminatorValue); } },
                 { "label", n => { Label = n.GetStringValue(); } },
                 { "livekit_stack", n => { LivekitStack = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.LivekitStackType>(); } },
-                { "outbound_trunk", n => { OutboundTrunk = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPhoneNumberSIPTrunkResponseModelOutboundTrunk>(global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPhoneNumberSIPTrunkResponseModelOutboundTrunk.CreateFromDiscriminatorValue); } },
+                { "outbound_trunk", n => { OutboundTrunk = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPhoneNumberOutboundSIPTrunkConfigResponseModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPhoneNumberOutboundSIPTrunkConfigResponseModel.CreateFromDiscriminatorValue); } },
                 { "phone_number", n => { PhoneNumber = n.GetStringValue(); } },
                 { "phone_number_id", n => { PhoneNumberId = n.GetStringValue(); } },
                 { "provider", n => { Provider = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPhoneNumberSIPTrunkResponseModel_provider>(); } },
-                { "provider_config", n => { ProviderConfig = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPhoneNumberSIPTrunkResponseModelProviderConfig>(global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPhoneNumberSIPTrunkResponseModelProviderConfig.CreateFromDiscriminatorValue); } },
+                { "provider_config", n => { ProviderConfig = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPhoneNumberOutboundSIPTrunkConfigResponseModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPhoneNumberOutboundSIPTrunkConfigResponseModel.CreateFromDiscriminatorValue); } },
                 { "supports_inbound", n => { SupportsInbound = n.GetBoolValue(); } },
                 { "supports_outbound", n => { SupportsOutbound = n.GetBoolValue(); } },
             };
@@ -128,15 +128,15 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPhoneNumberSIPTrunkResponseModelAssignedAgent>("assigned_agent", AssignedAgent);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPhoneNumberSIPTrunkResponseModelInboundTrunk>("inbound_trunk", InboundTrunk);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberAgentInfo>("assigned_agent", AssignedAgent);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPhoneNumberInboundSIPTrunkConfigResponseModel>("inbound_trunk", InboundTrunk);
             writer.WriteStringValue("label", Label);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.LivekitStackType>("livekit_stack", LivekitStack);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPhoneNumberSIPTrunkResponseModelOutboundTrunk>("outbound_trunk", OutboundTrunk);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPhoneNumberOutboundSIPTrunkConfigResponseModel>("outbound_trunk", OutboundTrunk);
             writer.WriteStringValue("phone_number", PhoneNumber);
             writer.WriteStringValue("phone_number_id", PhoneNumberId);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPhoneNumberSIPTrunkResponseModel_provider>("provider", Provider);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPhoneNumberSIPTrunkResponseModelProviderConfig>("provider_config", ProviderConfig);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPhoneNumberOutboundSIPTrunkConfigResponseModel>("provider_config", ProviderConfig);
             writer.WriteBoolValue("supports_inbound", SupportsInbound);
             writer.WriteBoolValue("supports_outbound", SupportsOutbound);
             writer.WriteAdditionalData(AdditionalData);

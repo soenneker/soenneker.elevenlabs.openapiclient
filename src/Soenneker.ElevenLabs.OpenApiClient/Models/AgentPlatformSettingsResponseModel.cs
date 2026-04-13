@@ -91,10 +91,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Language for all conversation analysis outputs (summaries, titles, evaluation rationales, data collection rationales). If not set, the language will be inferred from the conversation. Must be one of the supported conversation languages.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentPlatformSettingsResponseModelSummaryLanguage? SummaryLanguage { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Summary_Language? SummaryLanguage { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentPlatformSettingsResponseModelSummaryLanguage SummaryLanguage { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Summary_Language SummaryLanguage { get; set; }
 #endif
         /// <summary>Settings for agent testing configuration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -155,7 +155,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "overrides", n => { Overrides = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationClientDataConfigOutput>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationClientDataConfigOutput.CreateFromDiscriminatorValue); } },
                 { "privacy", n => { Privacy = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PrivacyConfigOutput>(global::Soenneker.ElevenLabs.OpenApiClient.Models.PrivacyConfigOutput.CreateFromDiscriminatorValue); } },
                 { "safety", n => { Safety = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SafetyResponseModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.SafetyResponseModel.CreateFromDiscriminatorValue); } },
-                { "summary_language", n => { SummaryLanguage = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentPlatformSettingsResponseModelSummaryLanguage>(global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentPlatformSettingsResponseModelSummaryLanguage.CreateFromDiscriminatorValue); } },
+                { "summary_language", n => { SummaryLanguage = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Summary_Language>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Summary_Language.CreateFromDiscriminatorValue); } },
                 { "testing", n => { Testing = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentTestingSettings>(global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentTestingSettings.CreateFromDiscriminatorValue); } },
                 { "widget", n => { Widget = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigOutput>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigOutput.CreateFromDiscriminatorValue); } },
                 { "workspace_overrides", n => { WorkspaceOverrides = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentWorkspaceOverridesOutput>(global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentWorkspaceOverridesOutput.CreateFromDiscriminatorValue); } },
@@ -178,7 +178,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationClientDataConfigOutput>("overrides", Overrides);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PrivacyConfigOutput>("privacy", Privacy);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SafetyResponseModel>("safety", Safety);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentPlatformSettingsResponseModelSummaryLanguage>("summary_language", SummaryLanguage);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Summary_Language>("summary_language", SummaryLanguage);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentTestingSettings>("testing", Testing);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigOutput>("widget", Widget);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentWorkspaceOverridesOutput>("workspace_overrides", WorkspaceOverrides);

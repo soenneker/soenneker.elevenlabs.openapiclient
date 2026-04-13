@@ -41,10 +41,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The moderation property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GuardrailsV1InputModeration? Moderation { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ModerationGuardrailInput? Moderation { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GuardrailsV1InputModeration Moderation { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ModerationGuardrailInput Moderation { get; set; }
 #endif
         /// <summary>The prompt_injection property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -85,7 +85,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "content", n => { Content = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ContentGuardrailInput>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ContentGuardrailInput.CreateFromDiscriminatorValue); } },
                 { "custom", n => { Custom = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomGuardrailInput>(global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomGuardrailInput.CreateFromDiscriminatorValue); } },
                 { "focus", n => { Focus = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.FocusGuardrail>(global::Soenneker.ElevenLabs.OpenApiClient.Models.FocusGuardrail.CreateFromDiscriminatorValue); } },
-                { "moderation", n => { Moderation = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GuardrailsV1InputModeration>(global::Soenneker.ElevenLabs.OpenApiClient.Models.GuardrailsV1InputModeration.CreateFromDiscriminatorValue); } },
+                { "moderation", n => { Moderation = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ModerationGuardrailInput>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ModerationGuardrailInput.CreateFromDiscriminatorValue); } },
                 { "prompt_injection", n => { PromptInjection = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptInjectionGuardrail>(global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptInjectionGuardrail.CreateFromDiscriminatorValue); } },
                 { "version", n => { Version = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GuardrailsV1Input_version>(); } },
             };
@@ -100,7 +100,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ContentGuardrailInput>("content", Content);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomGuardrailInput>("custom", Custom);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.FocusGuardrail>("focus", Focus);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GuardrailsV1InputModeration>("moderation", Moderation);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ModerationGuardrailInput>("moderation", Moderation);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptInjectionGuardrail>("prompt_injection", PromptInjection);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GuardrailsV1Input_version>("version", Version);
             writer.WriteAdditionalData(AdditionalData);

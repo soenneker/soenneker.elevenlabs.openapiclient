@@ -19,10 +19,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Token to retrieve the next page of results. Pass this value to the next request to continue pagination. Null if there are no more results.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetVoicesV2ResponseModelNextPageToken? NextPageToken { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Next_Page_Token? NextPageToken { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetVoicesV2ResponseModelNextPageToken NextPageToken { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Next_Page_Token NextPageToken { get; set; }
 #endif
         /// <summary>The total count of voices matching the query. This value is a live snapshot that reflects the current state of the database and may change between requests as users create, modify, or delete voices. For reliable pagination, use the has_more flag instead of relying on this value. Only request this field when you actually need the total count (e.g., for display purposes), as calculating it incurs a performance cost.</summary>
         public int? TotalCount { get; set; }
@@ -60,7 +60,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "has_more", n => { HasMore = n.GetBoolValue(); } },
-                { "next_page_token", n => { NextPageToken = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetVoicesV2ResponseModelNextPageToken>(global::Soenneker.ElevenLabs.OpenApiClient.Models.GetVoicesV2ResponseModelNextPageToken.CreateFromDiscriminatorValue); } },
+                { "next_page_token", n => { NextPageToken = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Next_Page_Token>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Next_Page_Token.CreateFromDiscriminatorValue); } },
                 { "total_count", n => { TotalCount = n.GetIntValue(); } },
                 { "voices", n => { Voices = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceResponseModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceResponseModel.CreateFromDiscriminatorValue)?.AsList(); } },
             };
@@ -73,7 +73,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("has_more", HasMore);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetVoicesV2ResponseModelNextPageToken>("next_page_token", NextPageToken);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Next_Page_Token>("next_page_token", NextPageToken);
             writer.WriteIntValue("total_count", TotalCount);
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceResponseModel>("voices", Voices);
             writer.WriteAdditionalData(AdditionalData);
