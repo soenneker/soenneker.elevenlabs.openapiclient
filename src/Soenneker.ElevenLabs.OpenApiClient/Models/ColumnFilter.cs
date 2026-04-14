@@ -9,35 +9,45 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class PhoneNumberTransfer_transfer_destination : IAdditionalDataHolder, IParsable
+    public partial class ColumnFilter : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The type property</summary>
+        /// <summary>The column property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Type { get; set; }
+        public string? Column { get; set; }
 #nullable restore
 #else
-        public string Type { get; set; }
+        public string Column { get; set; }
+#endif
+        /// <summary>The operation property</summary>
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ColumnFilter_operation? Operation { get; set; }
+        /// <summary>The values property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.UnionBranch>? Values { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.UnionBranch> Values { get; set; }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberTransfer_transfer_destination"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ColumnFilter"/> and sets the default values.
         /// </summary>
-        public PhoneNumberTransfer_transfer_destination()
+        public ColumnFilter()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberTransfer_transfer_destination"/></returns>
+        /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ColumnFilter"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberTransfer_transfer_destination CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.ElevenLabs.OpenApiClient.Models.ColumnFilter CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberTransfer_transfer_destination();
+            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.ColumnFilter();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -47,7 +57,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "type", n => { Type = n.GetStringValue(); } },
+                { "column", n => { Column = n.GetStringValue(); } },
+                { "operation", n => { Operation = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ColumnFilter_operation>(); } },
+                { "values", n => { Values = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.UnionBranch>(global::Soenneker.ElevenLabs.OpenApiClient.Models.UnionBranch.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -57,7 +69,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("type", Type);
+            writer.WriteStringValue("column", Column);
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ColumnFilter_operation>("operation", Operation);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.UnionBranch>("values", Values);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

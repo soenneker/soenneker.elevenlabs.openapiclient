@@ -50,10 +50,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The transfer_destination property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberTransfer_transfer_destination? TransferDestination { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberTransfer.PhoneNumberTransfer_transfer_destination? TransferDestination { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberTransfer_transfer_destination TransferDestination { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberTransfer.PhoneNumberTransfer_transfer_destination TransferDestination { get; set; }
 #endif
         /// <summary>The transfer_type property</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.TransferTypeEnum? TransferType { get; set; }
@@ -87,7 +87,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "custom_sip_headers", n => { CustomSipHeaders = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberTransfer.PhoneNumberTransfer_custom_sip_headers>(global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberTransfer.PhoneNumberTransfer_custom_sip_headers.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "phone_number", n => { PhoneNumber = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Phone_Number>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Phone_Number.CreateFromDiscriminatorValue); } },
                 { "post_dial_digits", n => { PostDialDigits = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberTransfer_post_dial_digits>(global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberTransfer_post_dial_digits.CreateFromDiscriminatorValue); } },
-                { "transfer_destination", n => { TransferDestination = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberTransfer_transfer_destination>(global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberTransfer_transfer_destination.CreateFromDiscriminatorValue); } },
+                { "transfer_destination", n => { TransferDestination = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberTransfer.PhoneNumberTransfer_transfer_destination>(global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberTransfer.PhoneNumberTransfer_transfer_destination.CreateFromDiscriminatorValue); } },
                 { "transfer_type", n => { TransferType = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TransferTypeEnum>(); } },
             };
         }
@@ -102,7 +102,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberTransfer.PhoneNumberTransfer_custom_sip_headers>("custom_sip_headers", CustomSipHeaders);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Phone_Number>("phone_number", PhoneNumber);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberTransfer_post_dial_digits>("post_dial_digits", PostDialDigits);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberTransfer_transfer_destination>("transfer_destination", TransferDestination);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberTransfer.PhoneNumberTransfer_transfer_destination>("transfer_destination", TransferDestination);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TransferTypeEnum>("transfer_type", TransferType);
             writer.WriteAdditionalData(AdditionalData);
         }
@@ -178,6 +178,121 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 else if(CustomSIPHeaderWithDynamicVariable != null)
                 {
                     writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomSIPHeaderWithDynamicVariable>(null, CustomSIPHeaderWithDynamicVariable);
+                }
+            }
+        }
+        /// <summary>
+        /// Composed type wrapper for classes <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberDynamicVariableTransferDestination"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberTransferDestination"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.SIPUriDynamicVariableTransferDestination"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.SIPUriTransferDestination"/>
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class PhoneNumberTransfer_transfer_destination : IComposedTypeWrapper, IParsable
+        {
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberDynamicVariableTransferDestination"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberDynamicVariableTransferDestination? PhoneNumberDynamicVariableTransferDestination { get; set; }
+#nullable restore
+#else
+            public global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberDynamicVariableTransferDestination PhoneNumberDynamicVariableTransferDestination { get; set; }
+#endif
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberTransferDestination"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberTransferDestination? PhoneNumberTransferDestination { get; set; }
+#nullable restore
+#else
+            public global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberTransferDestination PhoneNumberTransferDestination { get; set; }
+#endif
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.SIPUriDynamicVariableTransferDestination"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::Soenneker.ElevenLabs.OpenApiClient.Models.SIPUriDynamicVariableTransferDestination? SIPUriDynamicVariableTransferDestination { get; set; }
+#nullable restore
+#else
+            public global::Soenneker.ElevenLabs.OpenApiClient.Models.SIPUriDynamicVariableTransferDestination SIPUriDynamicVariableTransferDestination { get; set; }
+#endif
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.SIPUriTransferDestination"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::Soenneker.ElevenLabs.OpenApiClient.Models.SIPUriTransferDestination? SIPUriTransferDestination { get; set; }
+#nullable restore
+#else
+            public global::Soenneker.ElevenLabs.OpenApiClient.Models.SIPUriTransferDestination SIPUriTransferDestination { get; set; }
+#endif
+            /// <summary>
+            /// Creates a new instance of the appropriate class based on discriminator value
+            /// </summary>
+            /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberTransfer.PhoneNumberTransfer_transfer_destination"/></returns>
+            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+            public static global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberTransfer.PhoneNumberTransfer_transfer_destination CreateFromDiscriminatorValue(IParseNode parseNode)
+            {
+                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
+                var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
+                var result = new global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberTransfer.PhoneNumberTransfer_transfer_destination();
+                if("phone_dynamic_variable".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                {
+                    result.PhoneNumberDynamicVariableTransferDestination = new global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberDynamicVariableTransferDestination();
+                }
+                else if("phone".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                {
+                    result.PhoneNumberTransferDestination = new global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberTransferDestination();
+                }
+                else if("sip_uri_dynamic_variable".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                {
+                    result.SIPUriDynamicVariableTransferDestination = new global::Soenneker.ElevenLabs.OpenApiClient.Models.SIPUriDynamicVariableTransferDestination();
+                }
+                else if("sip_uri".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                {
+                    result.SIPUriTransferDestination = new global::Soenneker.ElevenLabs.OpenApiClient.Models.SIPUriTransferDestination();
+                }
+                return result;
+            }
+            /// <summary>
+            /// The deserialization information for the current model
+            /// </summary>
+            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
+            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+            {
+                if(PhoneNumberDynamicVariableTransferDestination != null)
+                {
+                    return PhoneNumberDynamicVariableTransferDestination.GetFieldDeserializers();
+                }
+                else if(PhoneNumberTransferDestination != null)
+                {
+                    return PhoneNumberTransferDestination.GetFieldDeserializers();
+                }
+                else if(SIPUriDynamicVariableTransferDestination != null)
+                {
+                    return SIPUriDynamicVariableTransferDestination.GetFieldDeserializers();
+                }
+                else if(SIPUriTransferDestination != null)
+                {
+                    return SIPUriTransferDestination.GetFieldDeserializers();
+                }
+                return new Dictionary<string, Action<IParseNode>>();
+            }
+            /// <summary>
+            /// Serializes information the current object
+            /// </summary>
+            /// <param name="writer">Serialization writer to use to serialize this model</param>
+            public virtual void Serialize(ISerializationWriter writer)
+            {
+                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+                if(PhoneNumberDynamicVariableTransferDestination != null)
+                {
+                    writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberDynamicVariableTransferDestination>(null, PhoneNumberDynamicVariableTransferDestination);
+                }
+                else if(PhoneNumberTransferDestination != null)
+                {
+                    writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberTransferDestination>(null, PhoneNumberTransferDestination);
+                }
+                else if(SIPUriDynamicVariableTransferDestination != null)
+                {
+                    writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SIPUriDynamicVariableTransferDestination>(null, SIPUriDynamicVariableTransferDestination);
+                }
+                else if(SIPUriTransferDestination != null)
+                {
+                    writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SIPUriTransferDestination>(null, SIPUriTransferDestination);
                 }
             }
         }

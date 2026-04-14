@@ -9,29 +9,35 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class SeatType_Wrapper : IAdditionalDataHolder, IParsable
+    public partial class Group_By : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Seat types for workspace members.</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SeatType? Value { get; set; }
+        /// <summary>The value property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.Group_By_value?>? Value { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.Group_By_value?> Value { get; set; }
+#endif
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.SeatType_Wrapper"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.Group_By"/> and sets the default values.
         /// </summary>
-        public SeatType_Wrapper()
+        public Group_By()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.SeatType_Wrapper"/></returns>
+        /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.Group_By"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.ElevenLabs.OpenApiClient.Models.SeatType_Wrapper CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.ElevenLabs.OpenApiClient.Models.Group_By CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.SeatType_Wrapper();
+            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.Group_By();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -41,7 +47,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "value", n => { Value = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SeatType>(); } },
+                { "value", n => { Value = n.GetCollectionOfEnumValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.Group_By_value>()?.AsList(); } },
             };
         }
         /// <summary>
@@ -51,7 +57,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SeatType>("value", Value);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.Group_By_value>("value", Value);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

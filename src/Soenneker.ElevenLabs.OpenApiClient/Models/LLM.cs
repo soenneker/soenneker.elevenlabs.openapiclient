@@ -52,6 +52,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         #pragma warning disable CS1591
         Gpt52ChatLatest,
         #pragma warning restore CS1591
+        [EnumMember(Value = "gpt-5.4")]
+        #pragma warning disable CS1591
+        Gpt54,
+        #pragma warning restore CS1591
         [EnumMember(Value = "gpt-5-mini")]
         #pragma warning disable CS1591
         Gpt5Mini,
@@ -255,6 +259,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         [EnumMember(Value = "gpt-5.2-2025-12-11")]
         #pragma warning disable CS1591
         Gpt5220251211,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "gpt-5.4-2026-03-05")]
+        #pragma warning disable CS1591
+        Gpt5420260305,
         #pragma warning restore CS1591
         [EnumMember(Value = "gpt-5-mini-2025-08-07")]
         #pragma warning disable CS1591

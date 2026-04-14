@@ -2,6 +2,7 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.ElevenLabs.OpenApiClient.V1.Workspace.Analytics;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Workspace.AuthConnections;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Workspace.Groups;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Workspace.Invites;
@@ -20,6 +21,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Workspace
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WorkspaceRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The analytics property</summary>
+        public global::Soenneker.ElevenLabs.OpenApiClient.V1.Workspace.Analytics.AnalyticsRequestBuilder Analytics
+        {
+            get => new global::Soenneker.ElevenLabs.OpenApiClient.V1.Workspace.Analytics.AnalyticsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The authConnections property</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.V1.Workspace.AuthConnections.AuthConnectionsRequestBuilder AuthConnections
         {

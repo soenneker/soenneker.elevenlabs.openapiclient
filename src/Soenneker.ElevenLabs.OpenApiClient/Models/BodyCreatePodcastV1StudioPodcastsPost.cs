@@ -88,8 +88,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.Outro Outro { get; set; }
 #endif
-        /// <summary>Output quality of the generated audio. Must be one of:&apos;standard&apos; - standard output format, 128kbps with 44.1kHz sample rate.&apos;high&apos; - high quality output format, 192kbps with 44.1kHz sample rate and major improvements on our side.&apos;ultra&apos; - ultra quality output format, 192kbps with 44.1kHz sample rate and highest improvements on our side.&apos;ultra_lossless&apos; - ultra quality output format, 705.6kbps with 44.1kHz sample rate and highest improvements on our side in a fully lossless format.</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreatePodcastV1StudioPodcastsPost_quality_preset? QualityPreset { get; set; }
+        /// <summary>The quality_preset property</summary>
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.QualityPresetType? QualityPreset { get; set; }
         /// <summary>The source content for the Podcast.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -105,7 +105,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             AdditionalData = new Dictionary<string, object>();
             DurationScale = global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreatePodcastV1StudioPodcastsPost_duration_scale.Default;
-            QualityPreset = global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreatePodcastV1StudioPodcastsPost_quality_preset.Standard;
+            QualityPreset = global::Soenneker.ElevenLabs.OpenApiClient.Models.QualityPresetType.Standard;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -135,7 +135,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "mode", n => { Mode = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreatePodcastV1StudioPodcastsPost.BodyCreatePodcastV1StudioPodcastsPost_mode>(global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreatePodcastV1StudioPodcastsPost.BodyCreatePodcastV1StudioPodcastsPost_mode.CreateFromDiscriminatorValue); } },
                 { "model_id", n => { ModelId = n.GetStringValue(); } },
                 { "outro", n => { Outro = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Outro>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Outro.CreateFromDiscriminatorValue); } },
-                { "quality_preset", n => { QualityPreset = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreatePodcastV1StudioPodcastsPost_quality_preset>(); } },
+                { "quality_preset", n => { QualityPreset = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.QualityPresetType>(); } },
                 { "source", n => { Source = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreatePodcastV1StudioPodcastsPost.BodyCreatePodcastV1StudioPodcastsPost_source>(global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreatePodcastV1StudioPodcastsPost.BodyCreatePodcastV1StudioPodcastsPost_source.CreateFromDiscriminatorValue); } },
             };
         }
@@ -156,7 +156,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreatePodcastV1StudioPodcastsPost.BodyCreatePodcastV1StudioPodcastsPost_mode>("mode", Mode);
             writer.WriteStringValue("model_id", ModelId);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Outro>("outro", Outro);
-            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreatePodcastV1StudioPodcastsPost_quality_preset>("quality_preset", QualityPreset);
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.QualityPresetType>("quality_preset", QualityPreset);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreatePodcastV1StudioPodcastsPost.BodyCreatePodcastV1StudioPodcastsPost_source>("source", Source);
             writer.WriteAdditionalData(AdditionalData);
         }

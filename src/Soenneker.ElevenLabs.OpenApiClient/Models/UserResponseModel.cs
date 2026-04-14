@@ -52,7 +52,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.Referral_Link_Code ReferralLinkCode { get; set; }
 #endif
-        /// <summary>Seat types for workspace members.Lite Member is equivalent to Basic Seat in the web application.Member is equivalent to Full Seat in the web application.</summary>
+        /// <summary>Seat types for workspace members.</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.SeatType? SeatType { get; set; }
         /// <summary>Whether to show compliance terms (ToS, Privacy Policy, biometric consent) during onboarding. Set for users signing up from the marketing site.</summary>
         public bool? ShowComplianceTerms { get; set; }

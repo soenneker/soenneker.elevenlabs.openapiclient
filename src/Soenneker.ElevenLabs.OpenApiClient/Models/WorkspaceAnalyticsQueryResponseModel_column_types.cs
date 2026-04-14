@@ -5,32 +5,36 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public enum LLMReasoningEffort
+    public enum WorkspaceAnalyticsQueryResponseModel_column_types
     #pragma warning restore CS1591
     {
-        [EnumMember(Value = "none")]
+        [EnumMember(Value = "String")]
         #pragma warning disable CS1591
-        None,
+        String,
         #pragma warning restore CS1591
-        [EnumMember(Value = "minimal")]
+        [EnumMember(Value = "Float")]
         #pragma warning disable CS1591
-        Minimal,
+        Float,
         #pragma warning restore CS1591
-        [EnumMember(Value = "low")]
+        [EnumMember(Value = "DateTime")]
         #pragma warning disable CS1591
-        Low,
+        DateTime,
         #pragma warning restore CS1591
-        [EnumMember(Value = "medium")]
+        [EnumMember(Value = "Int")]
         #pragma warning disable CS1591
-        Medium,
+        Int,
         #pragma warning restore CS1591
-        [EnumMember(Value = "high")]
+        [EnumMember(Value = "Bool")]
         #pragma warning disable CS1591
-        High,
+        Bool,
         #pragma warning restore CS1591
-        [EnumMember(Value = "xhigh")]
+        [EnumMember(Value = "JSON")]
         #pragma warning disable CS1591
-        Xhigh,
+        JSON,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "Map")]
+        #pragma warning disable CS1591
+        Map,
         #pragma warning restore CS1591
     }
 }

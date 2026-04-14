@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.ElevenLabs.OpenApiClient.Models
 {
-    /// <summary>Seat types for workspace members.Lite Member is equivalent to Basic Seat in the web application.Member is equivalent to Full Seat in the web application.</summary>
+    /// <summary>Seat types for workspace members.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum SeatType
     {

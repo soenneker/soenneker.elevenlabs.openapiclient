@@ -5,32 +5,40 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public enum LLMReasoningEffort
+    public enum ColumnFilter_operation
     #pragma warning restore CS1591
     {
-        [EnumMember(Value = "none")]
+        [EnumMember(Value = "in")]
         #pragma warning disable CS1591
-        None,
+        In,
         #pragma warning restore CS1591
-        [EnumMember(Value = "minimal")]
+        [EnumMember(Value = "not_in")]
         #pragma warning disable CS1591
-        Minimal,
+        Not_in,
         #pragma warning restore CS1591
-        [EnumMember(Value = "low")]
+        [EnumMember(Value = "le")]
         #pragma warning disable CS1591
-        Low,
+        Le,
         #pragma warning restore CS1591
-        [EnumMember(Value = "medium")]
+        [EnumMember(Value = "ge")]
         #pragma warning disable CS1591
-        Medium,
+        Ge,
         #pragma warning restore CS1591
-        [EnumMember(Value = "high")]
+        [EnumMember(Value = "lt")]
         #pragma warning disable CS1591
-        High,
+        Lt,
         #pragma warning restore CS1591
-        [EnumMember(Value = "xhigh")]
+        [EnumMember(Value = "gt")]
         #pragma warning disable CS1591
-        Xhigh,
+        Gt,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "eq")]
+        #pragma warning disable CS1591
+        Eq,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "neq")]
+        #pragma warning disable CS1591
+        Neq,
         #pragma warning restore CS1591
     }
 }

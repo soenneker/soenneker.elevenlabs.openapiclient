@@ -3,9 +3,10 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.ElevenLabs.OpenApiClient.Models
 {
-    /// <summary>The quality preset level of the project.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public enum ProjectExtendedResponseModel_quality_preset
+    #pragma warning disable CS1591
+    public enum QualityPresetType
+    #pragma warning restore CS1591
     {
         [EnumMember(Value = "standard")]
         #pragma warning disable CS1591
@@ -14,10 +15,6 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         [EnumMember(Value = "high")]
         #pragma warning disable CS1591
         High,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "highest")]
-        #pragma warning disable CS1591
-        Highest,
         #pragma warning restore CS1591
         [EnumMember(Value = "ultra")]
         #pragma warning disable CS1591

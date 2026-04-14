@@ -16672,6 +16672,22 @@
             }
           },
           {
+            "name": "search",
+            "in": "query",
+            "description": "If specified, returns only secrets whose names start with this string.",
+            "schema": {
+              "title": "Search",
+              "type": "object",
+              "anyOf": [
+                {
+                  "type": "string"
+                }
+              ],
+              "description": "If specified, returns only secrets whose names start with this string.",
+              "nullable": true
+            }
+          },
+          {
             "name": "cursor",
             "in": "query",
             "description": "Used for fetching next page. Cursor is returned in the response.",
@@ -16729,6 +16745,63 @@
       }
     },
     "/v1/convai/secrets/{secret_id}": {
+      "get": {
+        "tags": [
+          "Agents Platform"
+        ],
+        "summary": "Get Convai Workspace Secret",
+        "description": "Get a workspace secret by ID",
+        "operationId": "get-secret-route",
+        "parameters": [
+          {
+            "name": "secret_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "title": "Secret Id",
+              "type": "string"
+            }
+          },
+          {
+            "name": "xi-api-key",
+            "in": "header",
+            "description": "Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the \u0027Profile\u0027 tab on the website.",
+            "schema": {
+              "title": "Xi-Api-Key",
+              "type": "object",
+              "anyOf": [
+                {
+                  "type": "string"
+                }
+              ],
+              "description": "Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the \u0027Profile\u0027 tab on the website.",
+              "nullable": true
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ConvAIWorkspaceStoredSecretConfig"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      },
       "delete": {
         "tags": [
           "Agents Platform"
@@ -20785,6 +20858,65 @@
         }
       }
     },
+    "/v1/workspace/analytics/query/usage-by-product-over-time": {
+      "post": {
+        "tags": [
+          "access:all"
+        ],
+        "summary": "Usage-By-Product-Over-Time",
+        "description": "Returns credit usage broken down by product type over time. Timestamps are Unix milliseconds. The response is a tabular structure with columns, column_types, column_units, and rows.",
+        "operationId": "usage-by-product-over-time",
+        "parameters": [
+          {
+            "name": "xi-api-key",
+            "in": "header",
+            "description": "Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the \u0027Profile\u0027 tab on the website.",
+            "schema": {
+              "title": "Xi-Api-Key",
+              "type": "object",
+              "anyOf": [
+                {
+                  "type": "string"
+                }
+              ],
+              "description": "Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the \u0027Profile\u0027 tab on the website.",
+              "nullable": true
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BodyUsageByProductOverTimeV1WorkspaceAnalyticsQueryUsageByProductOverTimePost"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/WorkspaceAnalyticsQueryResponseModel"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/docs": {
       "get": {
         "summary": "Redirect To Mintlify",
@@ -21622,6 +21754,9 @@
             "$ref": "#/components/schemas/ASTBooleanNodeInput"
           },
           {
+            "$ref": "#/components/schemas/ASTNullNodeInput"
+          },
+          {
             "$ref": "#/components/schemas/ASTLLMNodeInput"
           },
           {
@@ -21680,6 +21815,7 @@
             "ASTStringNodeInput": "#/components/schemas/ASTStringNodeInput",
             "ASTNumberNodeInput": "#/components/schemas/ASTNumberNodeInput",
             "ASTBooleanNodeInput": "#/components/schemas/ASTBooleanNodeInput",
+            "ASTNullNodeInput": "#/components/schemas/ASTNullNodeInput",
             "ASTLLMNodeInput": "#/components/schemas/ASTLLMNodeInput",
             "ASTDynamicVariableNodeInput": "#/components/schemas/ASTDynamicVariableNodeInput",
             "ASTOrOperatorNodeInput": "#/components/schemas/ASTOrOperatorNodeInput",
@@ -21712,6 +21848,9 @@
           },
           {
             "$ref": "#/components/schemas/ASTBooleanNodeOutput"
+          },
+          {
+            "$ref": "#/components/schemas/ASTNullNodeOutput"
           },
           {
             "$ref": "#/components/schemas/ASTLLMNodeOutput"
@@ -21772,6 +21911,7 @@
             "ASTStringNodeOutput": "#/components/schemas/ASTStringNodeOutput",
             "ASTNumberNodeOutput": "#/components/schemas/ASTNumberNodeOutput",
             "ASTBooleanNodeOutput": "#/components/schemas/ASTBooleanNodeOutput",
+            "ASTNullNodeOutput": "#/components/schemas/ASTNullNodeOutput",
             "ASTLLMNodeOutput": "#/components/schemas/ASTLLMNodeOutput",
             "ASTDynamicVariableNodeOutput": "#/components/schemas/ASTDynamicVariableNodeOutput",
             "ASTOrOperatorNodeOutput": "#/components/schemas/ASTOrOperatorNodeOutput",
@@ -21836,6 +21976,37 @@
           },
           "right": {
             "$ref": "#/components/schemas/ASTNodeOutput"
+          }
+        }
+      },
+      "ASTNullNodeInput": {
+        "title": "ASTNullNode",
+        "type": "object",
+        "properties": {
+          "type": {
+            "title": "Type",
+            "enum": [
+              "null_literal"
+            ],
+            "type": "string",
+            "default": "null_literal"
+          }
+        }
+      },
+      "ASTNullNodeOutput": {
+        "title": "ASTNullNode",
+        "required": [
+          "type"
+        ],
+        "type": "object",
+        "properties": {
+          "type": {
+            "title": "Type",
+            "enum": [
+              "null_literal"
+            ],
+            "type": "string",
+            "default": "null_literal"
           }
         }
       },
@@ -27077,17 +27248,7 @@
             "description": "\u0022\n    An optional content to initialize the Studio project with. If this is set, \u0027from_url\u0027 and \u0027from_document\u0027 must be null. If neither \u0027from_url\u0027, \u0027from_document\u0027, \u0027from_content\u0027 are provided we will initialize the Studio project as blank.\n\n    Example:\n    [{\\\u0022name\\\u0022: \\\u0022Chapter A\\\u0022, \\\u0022blocks\\\u0022: [{\\\u0022sub_type\\\u0022: \\\u0022p\\\u0022, \\\u0022nodes\\\u0022: [{\\\u0022voice_id\\\u0022: \\\u00226lCwbsX1yVjD49QmpkT0\\\u0022, \\\u0022text\\\u0022: \\\u0022A\\\u0022, \\\u0022type\\\u0022: \\\u0022tts_node\\\u0022}, {\\\u0022voice_id\\\u0022: \\\u00226lCwbsX1yVjD49QmpkT1\\\u0022, \\\u0022text\\\u0022: \\\u0022B\\\u0022, \\\u0022type\\\u0022: \\\u0022tts_node\\\u0022}]}, {\\\u0022sub_type\\\u0022: \\\u0022h1\\\u0022, \\\u0022nodes\\\u0022: [{\\\u0022voice_id\\\u0022: \\\u00226lCwbsX1yVjD49QmpkT0\\\u0022, \\\u0022text\\\u0022: \\\u0022C\\\u0022, \\\u0022type\\\u0022: \\\u0022tts_node\\\u0022}, {\\\u0022voice_id\\\u0022: \\\u00226lCwbsX1yVjD49QmpkT1\\\u0022, \\\u0022text\\\u0022: \\\u0022D\\\u0022, \\\u0022type\\\u0022: \\\u0022tts_node\\\u0022}]}]}, {\\\u0022name\\\u0022: \\\u0022Chapter B\\\u0022, \\\u0022blocks\\\u0022: [{\\\u0022sub_type\\\u0022: \\\u0022p\\\u0022, \\\u0022nodes\\\u0022: [{\\\u0022voice_id\\\u0022: \\\u00226lCwbsX1yVjD49QmpkT0\\\u0022, \\\u0022text\\\u0022: \\\u0022E\\\u0022, \\\u0022type\\\u0022: \\\u0022tts_node\\\u0022}, {\\\u0022voice_id\\\u0022: \\\u00226lCwbsX1yVjD49QmpkT1\\\u0022, \\\u0022text\\\u0022: \\\u0022F\\\u0022, \\\u0022type\\\u0022: \\\u0022tts_node\\\u0022}]}, {\\\u0022sub_type\\\u0022: \\\u0022h2\\\u0022, \\\u0022nodes\\\u0022: [{\\\u0022voice_id\\\u0022: \\\u00226lCwbsX1yVjD49QmpkT0\\\u0022, \\\u0022text\\\u0022: \\\u0022G\\\u0022, \\\u0022type\\\u0022: \\\u0022tts_node\\\u0022}, {\\\u0022voice_id\\\u0022: \\\u00226lCwbsX1yVjD49QmpkT1\\\u0022, \\\u0022text\\\u0022: \\\u0022H\\\u0022, \\\u0022type\\\u0022: \\\u0022tts_node\\\u0022}]}]}]\n    \u0022"
           },
           "quality_preset": {
-            "title": "Quality of the generated audio.",
-            "enum": [
-              "standard",
-              "high",
-              "ultra",
-              "ultra_lossless"
-            ],
-            "type": "string",
-            "additionalProperties": false,
-            "description": "Output quality of the generated audio. Must be one of:\n\u0027standard\u0027 - standard output format, 128kbps with 44.1kHz sample rate.\n\u0027high\u0027 - high quality output format, 192kbps with 44.1kHz sample rate and major improvements on our side.\n\u0027ultra\u0027 - ultra quality output format, 192kbps with 44.1kHz sample rate and highest improvements on our side.\n\u0027ultra_lossless\u0027 - ultra quality output format, 705.6kbps with 44.1kHz sample rate and highest improvements on our side in a fully lossless format.\n",
-            "default": "standard"
+            "$ref": "#/components/schemas/QualityPresetType"
           },
           "title": {
             "title": "Title",
@@ -27758,18 +27919,7 @@
             "description": "The source content for the Podcast."
           },
           "quality_preset": {
-            "title": "Quality of the generated audio.",
-            "enum": [
-              "standard",
-              "high",
-              "highest",
-              "ultra",
-              "ultra_lossless"
-            ],
-            "type": "string",
-            "additionalProperties": false,
-            "description": "Output quality of the generated audio. Must be one of:\n\u0027standard\u0027 - standard output format, 128kbps with 44.1kHz sample rate.\n\u0027high\u0027 - high quality output format, 192kbps with 44.1kHz sample rate and major improvements on our side.\n\u0027ultra\u0027 - ultra quality output format, 192kbps with 44.1kHz sample rate and highest improvements on our side.\n\u0027ultra_lossless\u0027 - ultra quality output format, 705.6kbps with 44.1kHz sample rate and highest improvements on our side in a fully lossless format.\n",
-            "default": "standard"
+            "$ref": "#/components/schemas/QualityPresetType"
           },
           "duration_scale": {
             "title": "The duration of the generated podcast. This varies depending on the format, voice and language.",
@@ -29551,6 +29701,12 @@
             "title": "No Verbatim",
             "type": "boolean",
             "description": "If true, the transcription will not have any filler words, false starts and non-speech sounds. Only supported with scribe_v2 model.",
+            "default": false
+          },
+          "detect_speaker_roles": {
+            "title": "Detect Speaker Roles",
+            "type": "boolean",
+            "description": "Whether to detect speaker roles (agent vs customer). Requires diarize=true. Cannot be used with use_multi_channel=true. When enabled, speaker_id values will be \u0027agent\u0027 and \u0027customer\u0027 instead of \u0027speaker_0\u0027, \u0027speaker_1\u0027, etc. Usage incurs an additional 10% surcharge on base transcription cost.",
             "default": false
           },
           "entity_redaction": {
@@ -31457,6 +31613,52 @@
             "type": "boolean",
             "description": "\u0022This parameter controls language text normalization. This helps with proper pronunciation of text in some supported languages. WARNING: This parameter can heavily increase the latency of the request. Currently only supported for Japanese.\u0022",
             "default": false
+          }
+        }
+      },
+      "BodyUsageByProductOverTimeV1WorkspaceAnalyticsQueryUsageByProductOverTimePost": {
+        "title": "Body_usage_by_product_over_time_v1_workspace_analytics_query_usage_by_product_over_time_post",
+        "required": [
+          "start_time",
+          "end_time"
+        ],
+        "type": "object",
+        "properties": {
+          "start_time": {
+            "title": "Start Time",
+            "minimum": 0.0,
+            "type": "integer"
+          },
+          "end_time": {
+            "title": "End Time",
+            "minimum": 0.0,
+            "type": "integer"
+          },
+          "interval_seconds": {
+            "title": "Interval Seconds",
+            "minimum": 1.0,
+            "type": "integer",
+            "default": 60
+          },
+          "group_by": {
+            "title": "Group By",
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Group_By"
+              }
+            ],
+            "nullable": true
+          },
+          "filters": {
+            "title": "Filters",
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Filters"
+              }
+            ],
+            "nullable": true
           }
         }
       },
@@ -33394,6 +33596,66 @@
           }
         },
         "description": "Runtime-only settings for the virtual coach. Not stored in the database."
+      },
+      "ColumnFilter": {
+        "title": "ColumnFilter",
+        "required": [
+          "column",
+          "operation",
+          "values"
+        ],
+        "type": "object",
+        "properties": {
+          "column": {
+            "title": "Column",
+            "type": "string"
+          },
+          "operation": {
+            "title": "Operation",
+            "enum": [
+              "in",
+              "not_in",
+              "le",
+              "ge",
+              "lt",
+              "gt",
+              "eq",
+              "neq"
+            ],
+            "type": "string",
+            "additionalProperties": false
+          },
+          "values": {
+            "title": "Values",
+            "type": "array",
+            "items": {
+              "type": "object",
+              "anyOf": [
+                {
+                  "$ref": "#/components/schemas/UnionBranch"
+                }
+              ],
+              "nullable": true
+            }
+          }
+        }
+      },
+      "ColumnUnit": {
+        "title": "ColumnUnit",
+        "enum": [
+          "ms",
+          "s",
+          "min",
+          "duration",
+          "credits",
+          "usd",
+          "eur",
+          "inr",
+          "ratio",
+          "rating"
+        ],
+        "type": "string",
+        "additionalProperties": false
       },
       "ConfigEntityType": {
         "title": "ConfigEntityType",
@@ -46528,6 +46790,7 @@
           "gpt-5.1",
           "gpt-5.2",
           "gpt-5.2-chat-latest",
+          "gpt-5.4",
           "gpt-5-mini",
           "gpt-5-nano",
           "gpt-3.5-turbo",
@@ -46579,6 +46842,7 @@
           "gpt-5-2025-08-07",
           "gpt-5.1-2025-11-13",
           "gpt-5.2-2025-12-11",
+          "gpt-5.4-2026-03-05",
           "gpt-5-mini-2025-08-07",
           "gpt-5-nano-2025-08-07",
           "gpt-4.1-2025-04-14",
@@ -47055,7 +47319,8 @@
           "minimal",
           "low",
           "medium",
-          "high"
+          "high",
+          "xhigh"
         ],
         "type": "string",
         "additionalProperties": false
@@ -51188,6 +51453,7 @@
       "PhoneNumberTransfer": {
         "title": "PhoneNumberTransfer",
         "required": [
+          "transfer_destination",
           "condition"
         ],
         "type": "object",
@@ -51226,59 +51492,38 @@
           },
           "transfer_destination": {
             "title": "Transfer Destination",
+            "required": [
+              "type"
+            ],
             "type": "object",
-            "anyOf": [
+            "oneOf": [
               {
-                "required": [
-                  "type"
-                ],
-                "type": "object",
-                "oneOf": [
-                  {
-                    "$ref": "#/components/schemas/PhoneNumberTransferDestination"
-                  },
-                  {
-                    "$ref": "#/components/schemas/SIPUriTransferDestination"
-                  },
-                  {
-                    "$ref": "#/components/schemas/PhoneNumberDynamicVariableTransferDestination"
-                  },
-                  {
-                    "$ref": "#/components/schemas/SIPUriDynamicVariableTransferDestination"
-                  }
-                ],
-                "properties": {
-                  "type": {
-                    "type": "string"
-                  }
-                },
-                "discriminator": {
-                  "propertyName": "type",
-                  "mapping": {
-                    "phone": "#/components/schemas/PhoneNumberTransferDestination",
-                    "phone_dynamic_variable": "#/components/schemas/PhoneNumberDynamicVariableTransferDestination",
-                    "sip_uri": "#/components/schemas/SIPUriTransferDestination",
-                    "sip_uri_dynamic_variable": "#/components/schemas/SIPUriDynamicVariableTransferDestination"
-                  }
-                }
+                "$ref": "#/components/schemas/PhoneNumberTransferDestination"
+              },
+              {
+                "$ref": "#/components/schemas/SIPUriTransferDestination"
+              },
+              {
+                "$ref": "#/components/schemas/PhoneNumberDynamicVariableTransferDestination"
+              },
+              {
+                "$ref": "#/components/schemas/SIPUriDynamicVariableTransferDestination"
               }
             ],
-            "nullable": true
-          },
-          "phone_number": {
-            "title": "Phone Number",
-            "type": "object",
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/Phone_Number"
+            "properties": {
+              "type": {
+                "type": "string"
               }
-            ],
-            "nullable": true,
-            "deprecated": true
-          },
-          "condition": {
-            "title": "Condition",
-            "type": "string"
+            },
+            "discriminator": {
+              "propertyName": "type",
+              "mapping": {
+                "phone": "#/components/schemas/PhoneNumberTransferDestination",
+                "phone_dynamic_variable": "#/components/schemas/PhoneNumberDynamicVariableTransferDestination",
+                "sip_uri": "#/components/schemas/SIPUriTransferDestination",
+                "sip_uri_dynamic_variable": "#/components/schemas/SIPUriDynamicVariableTransferDestination"
+              }
+            }
           },
           "transfer_type": {
             "$ref": "#/components/schemas/TransferTypeEnum"
@@ -51316,6 +51561,21 @@
             ],
             "description": "DTMF digits to send after call connects (e.g., \u0027ww1234\u0027 for extension). Can be either a static value or a dynamic variable reference. Use \u0027w\u0027 for 0.5s pause. Only supported for Twilio transfers.",
             "nullable": true
+          },
+          "phone_number": {
+            "title": "Phone Number",
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Phone_Number"
+              }
+            ],
+            "nullable": true,
+            "deprecated": true
+          },
+          "condition": {
+            "title": "Condition",
+            "type": "string"
           }
         }
       },
@@ -52493,17 +52753,7 @@
             "nullable": true
           },
           "quality_preset": {
-            "title": "Quality Preset",
-            "enum": [
-              "standard",
-              "high",
-              "highest",
-              "ultra",
-              "ultra_lossless"
-            ],
-            "type": "string",
-            "additionalProperties": false,
-            "description": "The quality preset level of the project."
+            "$ref": "#/components/schemas/QualityPresetType"
           },
           "chapters": {
             "title": "Chapters",
@@ -55470,6 +55720,17 @@
         },
         "description": "A locator for other documents to be able to reference a specific dictionary and it\u0027s version.\nThis is a pydantic version of PronunciationDictionaryVersionLocatorDBModel.\nRequired to ensure compat with the rest of the agent data models."
       },
+      "QualityPresetType": {
+        "enum": [
+          "standard",
+          "high",
+          "ultra",
+          "ultra_lossless"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "default": "standard"
+      },
       "QueryParamsJsonSchema": {
         "title": "QueryParamsJsonSchema",
         "required": [
@@ -57546,7 +57807,7 @@
         ],
         "type": "string",
         "additionalProperties": false,
-        "description": "Seat types for workspace members.\nLite Member is equivalent to Basic Seat in the web application.\nMember is equivalent to Full Seat in the web application."
+        "description": "Seat types for workspace members."
       },
       "SecretDependencyResourceType": {
         "title": "SecretDependencyResourceType",
@@ -69864,25 +70125,6 @@
             },
             "description": "Custom SIP headers to include when transferring the call. Each header can be either a static value or a dynamic variable reference."
           },
-          "type": {
-            "title": "Type",
-            "enum": [
-              "phone_number"
-            ],
-            "type": "string",
-            "default": "phone_number"
-          },
-          "position": {
-            "$ref": "#/components/schemas/PositionInput"
-          },
-          "edge_order": {
-            "title": "Edge Order",
-            "type": "array",
-            "items": {
-              "type": "string"
-            },
-            "description": "The ids of outgoing edges in the order they should be evaluated."
-          },
           "transfer_destination": {
             "title": "Transfer Destination",
             "required": [
@@ -69952,8 +70194,27 @@
                 }
               }
             ],
-            "description": "DTMF digits to send after call connects (e.g., \u0027ww1234\u0027 for extension). Can be either a static value or a dynamic variable reference. Use \u0027w\u0027 for 0.5s pause.",
+            "description": "DTMF digits to send after call connects (e.g., \u0027ww1234\u0027 for extension). Can be either a static value or a dynamic variable reference. Use \u0027w\u0027 for 0.5s pause. Only supported for Twilio transfers.",
             "nullable": true
+          },
+          "type": {
+            "title": "Type",
+            "enum": [
+              "phone_number"
+            ],
+            "type": "string",
+            "default": "phone_number"
+          },
+          "position": {
+            "$ref": "#/components/schemas/PositionInput"
+          },
+          "edge_order": {
+            "title": "Edge Order",
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "The ids of outgoing edges in the order they should be evaluated."
           }
         }
       },
@@ -69961,12 +70222,12 @@
         "title": "WorkflowPhoneNumberNodeModel",
         "required": [
           "custom_sip_headers",
-          "type",
-          "position",
-          "edge_order",
           "transfer_destination",
           "transfer_type",
-          "post_dial_digits"
+          "post_dial_digits",
+          "type",
+          "position",
+          "edge_order"
         ],
         "type": "object",
         "properties": {
@@ -70002,25 +70263,6 @@
             },
             "description": "Custom SIP headers to include when transferring the call. Each header can be either a static value or a dynamic variable reference."
           },
-          "type": {
-            "title": "Type",
-            "enum": [
-              "phone_number"
-            ],
-            "type": "string",
-            "default": "phone_number"
-          },
-          "position": {
-            "$ref": "#/components/schemas/PositionOutput"
-          },
-          "edge_order": {
-            "title": "Edge Order",
-            "type": "array",
-            "items": {
-              "type": "string"
-            },
-            "description": "The ids of outgoing edges in the order they should be evaluated."
-          },
           "transfer_destination": {
             "title": "Transfer Destination",
             "required": [
@@ -70090,8 +70332,27 @@
                 }
               }
             ],
-            "description": "DTMF digits to send after call connects (e.g., \u0027ww1234\u0027 for extension). Can be either a static value or a dynamic variable reference. Use \u0027w\u0027 for 0.5s pause.",
+            "description": "DTMF digits to send after call connects (e.g., \u0027ww1234\u0027 for extension). Can be either a static value or a dynamic variable reference. Use \u0027w\u0027 for 0.5s pause. Only supported for Twilio transfers.",
             "nullable": true
+          },
+          "type": {
+            "title": "Type",
+            "enum": [
+              "phone_number"
+            ],
+            "type": "string",
+            "default": "phone_number"
+          },
+          "position": {
+            "$ref": "#/components/schemas/PositionOutput"
+          },
+          "edge_order": {
+            "title": "Edge Order",
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "The ids of outgoing edges in the order they should be evaluated."
           }
         }
       },
@@ -70733,6 +70994,71 @@
             ],
             "type": "string",
             "default": "unconditional"
+          }
+        }
+      },
+      "WorkspaceAnalyticsQueryResponseModel": {
+        "title": "WorkspaceAnalyticsQueryResponseModel",
+        "required": [
+          "columns",
+          "column_types",
+          "rows",
+          "column_units"
+        ],
+        "type": "object",
+        "properties": {
+          "columns": {
+            "title": "Columns",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "column_types": {
+            "title": "Column Types",
+            "type": "array",
+            "items": {
+              "enum": [
+                "String",
+                "Float",
+                "DateTime",
+                "Int",
+                "Bool",
+                "JSON",
+                "Map"
+              ],
+              "type": "string",
+              "additionalProperties": false
+            }
+          },
+          "rows": {
+            "title": "Rows",
+            "type": "array",
+            "items": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "anyOf": [
+                  {
+                    "$ref": "#/components/schemas/UnionBranch"
+                  }
+                ],
+                "nullable": true
+              }
+            }
+          },
+          "column_units": {
+            "title": "Column Units",
+            "type": "array",
+            "items": {
+              "type": "object",
+              "anyOf": [
+                {
+                  "$ref": "#/components/schemas/ColumnUnit_Wrapper"
+                }
+              ],
+              "nullable": true
+            }
           }
         }
       },
@@ -75347,6 +75673,52 @@
           }
         }
       },
+      "Group_By": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "array",
+            "items": {
+              "enum": [
+                "product_type",
+                "model",
+                "voice_id",
+                "user_id",
+                "fiat_currency",
+                "fiat_charge_type",
+                "region",
+                "reporting_workspace_id",
+                "request_source",
+                "resource_id",
+                "subresource_id",
+                "request_queue_type",
+                "voice_multiplier",
+                "hashed_xi_api_key",
+                "billing_group_id"
+              ],
+              "type": "string",
+              "additionalProperties": false
+            }
+          }
+        }
+      },
+      "Filters": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ColumnFilter"
+            }
+          }
+        }
+      },
       "Text_Font": {
         "required": [
           "value"
@@ -75675,6 +76047,17 @@
         }
       },
       "Memory_Base_Id": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string"
+          }
+        }
+      },
+      "UnionBranch": {
         "required": [
           "value"
         ],
@@ -79485,17 +79868,6 @@
           }
         }
       },
-      "UnionBranch": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "type": "string"
-          }
-        }
-      },
       "Accent": {
         "required": [
           "value"
@@ -80845,6 +81217,17 @@
         "properties": {
           "value": {
             "type": "string"
+          }
+        }
+      },
+      "ColumnUnit_Wrapper": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "$ref": "#/components/schemas/ColumnUnit"
           }
         }
       },

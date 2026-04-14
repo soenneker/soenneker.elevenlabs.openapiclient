@@ -35,7 +35,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Secrets
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SecretsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/convai/secrets{?cursor*,dependency_limit*,page_size*}", pathParameters)
+        public SecretsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/convai/secrets{?cursor*,dependency_limit*,page_size*,search*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Secrets
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SecretsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/convai/secrets{?cursor*,dependency_limit*,page_size*}", rawUrl)
+        public SecretsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/convai/secrets{?cursor*,dependency_limit*,page_size*,search*}", rawUrl)
         {
         }
         /// <summary>
@@ -179,6 +179,16 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Secrets
 #else
             [QueryParameter("page_size")]
             public string PageSize { get; set; }
+#endif
+            /// <summary>If specified, returns only secrets whose names start with this string.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("search")]
+            public string? Search { get; set; }
+#nullable restore
+#else
+            [QueryParameter("search")]
+            public string Search { get; set; }
 #endif
         }
     }

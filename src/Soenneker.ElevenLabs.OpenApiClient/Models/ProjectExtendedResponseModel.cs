@@ -284,8 +284,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Whether quality check is enabled on the project when bulk converting.</summary>
         [Obsolete("")]
         public bool? QualityCheckOnWhenBulkConvert { get; set; }
-        /// <summary>The quality preset level of the project.</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExtendedResponseModel_quality_preset? QualityPreset { get; set; }
+        /// <summary>The quality_preset property</summary>
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.QualityPresetType? QualityPreset { get; set; }
         /// <summary>The source type of the project.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -328,6 +328,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public ProjectExtendedResponseModel()
         {
             AdditionalData = new Dictionary<string, object>();
+            QualityPreset = global::Soenneker.ElevenLabs.OpenApiClient.Models.QualityPresetType.Standard;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -385,7 +386,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "publishing_read", n => { PublishingRead = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DirectPublishingReadResponseModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.DirectPublishingReadResponseModel.CreateFromDiscriminatorValue); } },
                 { "quality_check_on", n => { QualityCheckOn = n.GetBoolValue(); } },
                 { "quality_check_on_when_bulk_convert", n => { QualityCheckOnWhenBulkConvert = n.GetBoolValue(); } },
-                { "quality_preset", n => { QualityPreset = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExtendedResponseModel_quality_preset>(); } },
+                { "quality_preset", n => { QualityPreset = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.QualityPresetType>(); } },
                 { "source_type", n => { SourceType = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Source_Type>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Source_Type.CreateFromDiscriminatorValue); } },
                 { "state", n => { State = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExtendedResponseModel_state>(); } },
                 { "target_audience", n => { TargetAudience = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Target_Audience>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Target_Audience.CreateFromDiscriminatorValue); } },
@@ -439,7 +440,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DirectPublishingReadResponseModel>("publishing_read", PublishingRead);
             writer.WriteBoolValue("quality_check_on", QualityCheckOn);
             writer.WriteBoolValue("quality_check_on_when_bulk_convert", QualityCheckOnWhenBulkConvert);
-            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExtendedResponseModel_quality_preset>("quality_preset", QualityPreset);
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.QualityPresetType>("quality_preset", QualityPreset);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Source_Type>("source_type", SourceType);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExtendedResponseModel_state>("state", State);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Target_Audience>("target_audience", TargetAudience);
