@@ -62,6 +62,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationSourceInfo SourceInfo { get; set; }
 #endif
+        /// <summary>If set, start the workflow at this node id instead of the default entry</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Starting_Workflow_Node_Id? StartingWorkflowNodeId { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Starting_Workflow_Node_Id StartingWorkflowNodeId { get; set; }
+#endif
         /// <summary>&quot;Orchestrator-side config: tools are identified by resolved names.&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -109,6 +117,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "dynamic_variables", n => { DynamicVariables = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationClientDataInternal_dynamic_variables>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationClientDataInternal_dynamic_variables.CreateFromDiscriminatorValue); } },
                 { "environment", n => { Environment = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.EnvironmentObject>(global::Soenneker.ElevenLabs.OpenApiClient.Models.EnvironmentObject.CreateFromDiscriminatorValue); } },
                 { "source_info", n => { SourceInfo = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationSourceInfo>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationSourceInfo.CreateFromDiscriminatorValue); } },
+                { "starting_workflow_node_id", n => { StartingWorkflowNodeId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Starting_Workflow_Node_Id>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Starting_Workflow_Node_Id.CreateFromDiscriminatorValue); } },
                 { "tool_mock_config", n => { ToolMockConfig = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.OrchestratorToolMockBehaviorConfig>(global::Soenneker.ElevenLabs.OpenApiClient.Models.OrchestratorToolMockBehaviorConfig.CreateFromDiscriminatorValue); } },
                 { "user_id", n => { UserId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.User_Id>(global::Soenneker.ElevenLabs.OpenApiClient.Models.User_Id.CreateFromDiscriminatorValue); } },
             };
@@ -126,6 +135,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationClientDataInternal_dynamic_variables>("dynamic_variables", DynamicVariables);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.EnvironmentObject>("environment", Environment);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationSourceInfo>("source_info", SourceInfo);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Starting_Workflow_Node_Id>("starting_workflow_node_id", StartingWorkflowNodeId);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.OrchestratorToolMockBehaviorConfig>("tool_mock_config", ToolMockConfig);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.User_Id>("user_id", UserId);
             writer.WriteAdditionalData(AdditionalData);

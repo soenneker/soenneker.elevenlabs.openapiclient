@@ -18049,7 +18049,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/MCPToolConfigOverride"
+                  "$ref": "#/components/schemas/MCPToolConfigOverrideOutput"
                 }
               }
             }
@@ -36796,11 +36796,18 @@
             "type": "boolean",
             "description": "Whether to enable conversation initiation client data from webhooks",
             "default": false
+          },
+          "enable_starting_workflow_node_id_from_client": {
+            "title": "Enable Starting Workflow Node Id From Client",
+            "type": "boolean",
+            "description": "Whether clients may pass starting_workflow_node_id in initiation client data; if false, sending it fails conversation start.",
+            "default": false
           }
         },
         "example": {
           "custom_llm_extra_body": true,
-          "enable_conversation_initiation_client_data_from_webhook": true
+          "enable_conversation_initiation_client_data_from_webhook": true,
+          "enable_starting_workflow_node_id_from_client": true
         }
       },
       "ConversationInitiationClientDataConfigOutput": {
@@ -36821,11 +36828,18 @@
             "type": "boolean",
             "description": "Whether to enable conversation initiation client data from webhooks",
             "default": false
+          },
+          "enable_starting_workflow_node_id_from_client": {
+            "title": "Enable Starting Workflow Node Id From Client",
+            "type": "boolean",
+            "description": "Whether clients may pass starting_workflow_node_id in initiation client data; if false, sending it fails conversation start.",
+            "default": false
           }
         },
         "example": {
           "custom_llm_extra_body": true,
-          "enable_conversation_initiation_client_data_from_webhook": true
+          "enable_conversation_initiation_client_data_from_webhook": true,
+          "enable_starting_workflow_node_id_from_client": true
         }
       },
       "ConversationInitiationClientDataInternal": {
@@ -36873,6 +36887,17 @@
               }
             ],
             "description": "Environment to use for resolving environment variables",
+            "nullable": true
+          },
+          "starting_workflow_node_id": {
+            "title": "Starting Workflow Node Id",
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Starting_Workflow_Node_Id"
+              }
+            ],
+            "description": "If set, start the workflow at this node id instead of the default entry",
             "nullable": true
           },
           "dynamic_variables": {
@@ -36939,6 +36964,17 @@
             "description": "Environment to use for resolving environment variables",
             "nullable": true
           },
+          "starting_workflow_node_id": {
+            "title": "Starting Workflow Node Id",
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Starting_Workflow_Node_Id"
+              }
+            ],
+            "description": "If set, start the workflow at this node id instead of the default entry",
+            "nullable": true
+          },
           "dynamic_variables": {
             "type": "object",
             "additionalProperties": {
@@ -36998,6 +37034,17 @@
               }
             ],
             "description": "Environment to use for resolving environment variables",
+            "nullable": true
+          },
+          "starting_workflow_node_id": {
+            "title": "Starting Workflow Node Id",
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Starting_Workflow_Node_Id"
+              }
+            ],
+            "description": "If set, start the workflow at this node id instead of the default entry",
             "nullable": true
           },
           "dynamic_variables": {
@@ -46816,8 +46863,6 @@
           "custom-llm",
           "qwen3-4b",
           "qwen3-30b-a3b",
-          "qwen35-35b-a3b",
-          "qwen35-397b-a17b",
           "gpt-oss-20b",
           "gpt-oss-120b",
           "glm-45-air-fp8",
@@ -48612,7 +48657,7 @@
             "title": "Tool Config Overrides",
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/MCPToolConfigOverride"
+              "$ref": "#/components/schemas/MCPToolConfigOverrideInput"
             },
             "description": "List of per-tool configuration overrides that override the server-level defaults for specific tools"
           },
@@ -48748,7 +48793,7 @@
             "title": "Tool Config Overrides",
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/MCPToolConfigOverride"
+              "$ref": "#/components/schemas/MCPToolConfigOverrideOutput"
             },
             "description": "List of per-tool configuration overrides that override the server-level defaults for specific tools"
           },
@@ -49324,7 +49369,7 @@
         "description": "An MCP tool configuration that can be used to call MCP servers",
         "x-fern-ignore": true
       },
-      "MCPToolConfigOverride": {
+      "MCPToolConfigOverrideInput": {
         "title": "MCPToolConfigOverride",
         "required": [
           "tool_name"
@@ -49397,7 +49442,106 @@
             "description": "Dynamic variable assignments for this MCP tool"
           },
           "input_overrides": {
-            "$ref": "#/components/schemas/MCPToolConfigOverrideInputOverrides"
+            "$ref": "#/components/schemas/MCPToolConfigOverrideInputInputOverrides"
+          },
+          "response_mocks": {
+            "title": "Response Mocks",
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Response_Mocks"
+              }
+            ],
+            "description": "Mock responses with optional parameter conditions. Evaluated top-to-bottom; first match wins.",
+            "nullable": true
+          }
+        }
+      },
+      "MCPToolConfigOverrideOutput": {
+        "title": "MCPToolConfigOverride",
+        "required": [
+          "tool_name"
+        ],
+        "type": "object",
+        "properties": {
+          "tool_name": {
+            "title": "Tool Name",
+            "type": "string",
+            "description": "The name of the MCP tool"
+          },
+          "force_pre_tool_speech": {
+            "title": "Force Pre Tool Speech",
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Force_Pre_Tool_Speech"
+              }
+            ],
+            "description": "If set, overrides the server\u0027s force_pre_tool_speech setting for this tool",
+            "nullable": true
+          },
+          "disable_interruptions": {
+            "title": "Disable Interruptions",
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Disable_Interruptions"
+              }
+            ],
+            "description": "If set, overrides the server\u0027s disable_interruptions setting for this tool",
+            "nullable": true
+          },
+          "tool_call_sound": {
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/ToolCallSoundType_Wrapper"
+              }
+            ],
+            "description": "If set, overrides the server\u0027s tool_call_sound setting for this tool",
+            "nullable": true
+          },
+          "tool_call_sound_behavior": {
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/ToolCallSoundBehavior_Wrapper"
+              }
+            ],
+            "description": "If set, overrides the server\u0027s tool_call_sound_behavior setting for this tool",
+            "nullable": true
+          },
+          "execution_mode": {
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/ToolExecutionMode_Wrapper"
+              }
+            ],
+            "description": "If set, overrides the server\u0027s execution_mode setting for this tool",
+            "nullable": true
+          },
+          "assignments": {
+            "title": "Assignments",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DynamicVariableAssignment"
+            },
+            "description": "Dynamic variable assignments for this MCP tool"
+          },
+          "input_overrides": {
+            "$ref": "#/components/schemas/MCPToolConfigOverrideOutputInputOverrides"
+          },
+          "response_mocks": {
+            "title": "Response Mocks",
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Response_Mocks"
+              }
+            ],
+            "description": "Mock responses with optional parameter conditions. Evaluated top-to-bottom; first match wins.",
+            "nullable": true
           }
         }
       },
@@ -49473,6 +49617,17 @@
           },
           "input_overrides": {
             "$ref": "#/components/schemas/MCPToolConfigOverrideCreateRequestModelInputOverrides"
+          },
+          "response_mocks": {
+            "title": "Response Mocks",
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Response_Mocks"
+              }
+            ],
+            "description": "Mock responses with optional parameter conditions. Evaluated top-to-bottom; first match wins.",
+            "nullable": true
           },
           "tool_name": {
             "title": "Tool Name",
@@ -49550,6 +49705,17 @@
           },
           "input_overrides": {
             "$ref": "#/components/schemas/MCPToolConfigOverrideUpdateRequestModelInputOverrides"
+          },
+          "response_mocks": {
+            "title": "Response Mocks",
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Response_Mocks"
+              }
+            ],
+            "description": "Mock responses with optional parameter conditions. Evaluated top-to-bottom; first match wins.",
+            "nullable": true
           }
         }
       },
@@ -52028,19 +52194,29 @@
       "PreviewAudioDBModel": {
         "title": "PreviewAudioDBModel",
         "required": [
-          "voice_id",
-          "text",
           "audio_url"
         ],
         "type": "object",
         "properties": {
           "voice_id": {
             "title": "Voice Id",
-            "type": "string"
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Voice_Id"
+              }
+            ],
+            "nullable": true
           },
           "text": {
             "title": "Text",
-            "type": "string"
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Text"
+              }
+            ],
+            "nullable": true
           },
           "audio_url": {
             "title": "Audio Url",
@@ -72543,7 +72719,60 @@
           "propertyName": "type"
         }
       },
-      "MCPToolConfigOverrideInputOverrides": {
+      "MCPToolConfigOverrideInputInputOverrides": {
+        "title": "Input Overrides",
+        "required": [
+          "type"
+        ],
+        "type": "object",
+        "anyOf": [
+          {
+            "type": "object",
+            "additionalProperties": {
+              "required": [
+                "source"
+              ],
+              "type": "object",
+              "oneOf": [
+                {
+                  "$ref": "#/components/schemas/ConstantSchemaOverride"
+                },
+                {
+                  "$ref": "#/components/schemas/DynamicVariableSchemaOverride"
+                },
+                {
+                  "$ref": "#/components/schemas/LLMSchemaOverride"
+                }
+              ],
+              "properties": {
+                "source": {
+                  "type": "string"
+                }
+              },
+              "discriminator": {
+                "propertyName": "source",
+                "mapping": {
+                  "constant": "#/components/schemas/ConstantSchemaOverride",
+                  "dynamic_variable": "#/components/schemas/DynamicVariableSchemaOverride",
+                  "llm": "#/components/schemas/LLMSchemaOverride"
+                }
+              }
+            }
+          }
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "Union discriminator"
+          }
+        },
+        "description": "Mapping of json path to input override configuration",
+        "nullable": true,
+        "discriminator": {
+          "propertyName": "type"
+        }
+      },
+      "MCPToolConfigOverrideOutputInputOverrides": {
         "title": "Input Overrides",
         "required": [
           "type"
@@ -76532,6 +76761,17 @@
           }
         }
       },
+      "Starting_Workflow_Node_Id": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string"
+          }
+        }
+      },
       "ConversationInitiationSource_Wrapper": {
         "required": [
           "value"
@@ -78106,6 +78346,20 @@
           }
         }
       },
+      "Response_Mocks": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ToolResponseMockConfigInput"
+            }
+          }
+        }
+      },
       "Assignments": {
         "required": [
           "value"
@@ -79584,20 +79838,6 @@
         "properties": {
           "value": {
             "type": "boolean"
-          }
-        }
-      },
-      "Response_Mocks": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/ToolResponseMockConfigInput"
-            }
           }
         }
       },

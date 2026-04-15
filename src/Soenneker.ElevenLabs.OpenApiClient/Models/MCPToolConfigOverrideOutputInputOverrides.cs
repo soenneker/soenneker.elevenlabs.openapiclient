@@ -11,7 +11,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     /// Mapping of json path to input override configuration
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class MCPToolConfigOverrideInputOverrides : IAdditionalDataHolder, IParsable
+    public partial class MCPToolConfigOverrideOutputInputOverrides : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -24,21 +24,21 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public string Type { get; set; }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.MCPToolConfigOverrideInputOverrides"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.MCPToolConfigOverrideOutputInputOverrides"/> and sets the default values.
         /// </summary>
-        public MCPToolConfigOverrideInputOverrides()
+        public MCPToolConfigOverrideOutputInputOverrides()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.MCPToolConfigOverrideInputOverrides"/></returns>
+        /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.MCPToolConfigOverrideOutputInputOverrides"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.ElevenLabs.OpenApiClient.Models.MCPToolConfigOverrideInputOverrides CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.ElevenLabs.OpenApiClient.Models.MCPToolConfigOverrideOutputInputOverrides CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.MCPToolConfigOverrideInputOverrides();
+            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.MCPToolConfigOverrideOutputInputOverrides();
         }
         /// <summary>
         /// The deserialization information for the current model

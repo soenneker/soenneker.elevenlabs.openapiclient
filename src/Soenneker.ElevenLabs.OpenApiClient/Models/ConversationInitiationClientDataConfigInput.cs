@@ -26,6 +26,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public bool? CustomLlmExtraBody { get; set; }
         /// <summary>Whether to enable conversation initiation client data from webhooks</summary>
         public bool? EnableConversationInitiationClientDataFromWebhook { get; set; }
+        /// <summary>Whether clients may pass starting_workflow_node_id in initiation client data; if false, sending it fails conversation start.</summary>
+        public bool? EnableStartingWorkflowNodeIdFromClient { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationClientDataConfigInput"/> and sets the default values.
         /// </summary>
@@ -54,6 +56,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "conversation_config_override", n => { ConversationConfigOverride = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationConfigClientOverrideConfigInput>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationConfigClientOverrideConfigInput.CreateFromDiscriminatorValue); } },
                 { "custom_llm_extra_body", n => { CustomLlmExtraBody = n.GetBoolValue(); } },
                 { "enable_conversation_initiation_client_data_from_webhook", n => { EnableConversationInitiationClientDataFromWebhook = n.GetBoolValue(); } },
+                { "enable_starting_workflow_node_id_from_client", n => { EnableStartingWorkflowNodeIdFromClient = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -66,6 +69,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationConfigClientOverrideConfigInput>("conversation_config_override", ConversationConfigOverride);
             writer.WriteBoolValue("custom_llm_extra_body", CustomLlmExtraBody);
             writer.WriteBoolValue("enable_conversation_initiation_client_data_from_webhook", EnableConversationInitiationClientDataFromWebhook);
+            writer.WriteBoolValue("enable_starting_workflow_node_id_from_client", EnableStartingWorkflowNodeIdFromClient);
             writer.WriteAdditionalData(AdditionalData);
         }
     }
