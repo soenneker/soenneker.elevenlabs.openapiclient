@@ -31,6 +31,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
+        /// <summary>LLM model to use for this evaluation criteria. If not set, uses agent&apos;s analysis_llm default.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.LLM_Wrapper? Llm { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.LLM_Wrapper Llm { get; set; }
+#endif
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -74,6 +82,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             {
                 { "conversation_goal_prompt", n => { ConversationGoalPrompt = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
+                { "llm", n => { Llm = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.LLM_Wrapper>(global::Soenneker.ElevenLabs.OpenApiClient.Models.LLM_Wrapper.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "scope", n => { Scope = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AnalysisScope>(); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptEvaluationCriteria_type>(); } },
@@ -89,6 +98,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("conversation_goal_prompt", ConversationGoalPrompt);
             writer.WriteStringValue("id", Id);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.LLM_Wrapper>("llm", Llm);
             writer.WriteStringValue("name", Name);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AnalysisScope>("scope", Scope);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptEvaluationCriteria_type>("type", Type);

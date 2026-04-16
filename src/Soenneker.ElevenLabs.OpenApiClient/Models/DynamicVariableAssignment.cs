@@ -23,6 +23,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public string DynamicVariable { get; set; }
 #endif
+        /// <summary>If true, non-scalar values (lists, objects) extracted from the tool response are stored as their native type instead of being stringified to JSON. Enable this to use extracted arrays directly as list dynamic variables.</summary>
+        public bool? PreserveNativeType { get; set; }
         /// <summary>If true, this assignment&apos;s value will be removed from the tool response before sending to the LLM and transcript, but still processed for variable assignment.</summary>
         public bool? Sanitize { get; set; }
         /// <summary>The source to extract the value from. Currently only &apos;response&apos; is supported.</summary>
@@ -62,6 +64,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "dynamic_variable", n => { DynamicVariable = n.GetStringValue(); } },
+                { "preserve_native_type", n => { PreserveNativeType = n.GetBoolValue(); } },
                 { "sanitize", n => { Sanitize = n.GetBoolValue(); } },
                 { "source", n => { Source = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DynamicVariableAssignment_source>(); } },
                 { "value_path", n => { ValuePath = n.GetStringValue(); } },
@@ -75,6 +78,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("dynamic_variable", DynamicVariable);
+            writer.WriteBoolValue("preserve_native_type", PreserveNativeType);
             writer.WriteBoolValue("sanitize", Sanitize);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DynamicVariableAssignment_source>("source", Source);
             writer.WriteStringValue("value_path", ValuePath);

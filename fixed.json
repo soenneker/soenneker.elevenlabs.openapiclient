@@ -22706,7 +22706,7 @@
             "default": false
           },
           "dynamic_variables": {
-            "$ref": "#/components/schemas/DynamicVariablesConfig"
+            "$ref": "#/components/schemas/DynamicVariablesConfigInput"
           },
           "disable_first_message_interruptions": {
             "title": "Disable First Message Interruptions",
@@ -22756,7 +22756,7 @@
             "default": false
           },
           "dynamic_variables": {
-            "$ref": "#/components/schemas/DynamicVariablesConfig"
+            "$ref": "#/components/schemas/DynamicVariablesConfigOutput"
           },
           "disable_first_message_interruptions": {
             "title": "Disable First Message Interruptions",
@@ -22825,7 +22825,7 @@
             "type": "object",
             "anyOf": [
               {
-                "$ref": "#/components/schemas/DynamicVariablesConfigWorkflowOverride"
+                "$ref": "#/components/schemas/DynamicVariablesConfigWorkflowOverrideInput"
               }
             ],
             "description": "Configuration for dynamic variables",
@@ -22930,7 +22930,7 @@
             "type": "object",
             "anyOf": [
               {
-                "$ref": "#/components/schemas/DynamicVariablesConfigWorkflowOverride"
+                "$ref": "#/components/schemas/DynamicVariablesConfigWorkflowOverrideOutput"
               }
             ],
             "description": "Configuration for dynamic variables",
@@ -23329,7 +23329,7 @@
             "title": "Data Collection",
             "type": "object",
             "additionalProperties": {
-              "$ref": "#/components/schemas/LiteralJsonSchemaProperty"
+              "$ref": "#/components/schemas/AnalysisProperty"
             },
             "description": "Data collection settings"
           },
@@ -23378,6 +23378,9 @@
           },
           "privacy": {
             "$ref": "#/components/schemas/PrivacyConfigInput"
+          },
+          "analysis_llm": {
+            "$ref": "#/components/schemas/LLM"
           }
         }
       },
@@ -23395,7 +23398,7 @@
             "title": "Data Collection",
             "type": "object",
             "additionalProperties": {
-              "$ref": "#/components/schemas/LiteralJsonSchemaProperty"
+              "$ref": "#/components/schemas/AnalysisProperty"
             },
             "description": "Data collection settings"
           },
@@ -23444,6 +23447,9 @@
           },
           "privacy": {
             "$ref": "#/components/schemas/PrivacyConfigOutput"
+          },
+          "analysis_llm": {
+            "$ref": "#/components/schemas/LLM"
           },
           "safety": {
             "$ref": "#/components/schemas/SafetyResponseModel"
@@ -24398,6 +24404,81 @@
           }
         }
       },
+      "AnalysisProperty": {
+        "title": "AnalysisProperty",
+        "required": [
+          "type"
+        ],
+        "type": "object",
+        "properties": {
+          "type": {
+            "title": "Type",
+            "enum": [
+              "boolean",
+              "string",
+              "integer",
+              "number"
+            ],
+            "type": "string",
+            "additionalProperties": false
+          },
+          "description": {
+            "title": "Description",
+            "type": "string",
+            "description": "The description of the property. When set, the LLM will provide the value based on this description. Mutually exclusive with dynamic_variable, is_system_provided, and constant_value."
+          },
+          "enum": {
+            "title": "Enum",
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Enum"
+              }
+            ],
+            "description": "List of allowed string values for string type parameters",
+            "nullable": true
+          },
+          "is_system_provided": {
+            "title": "Is System Provided",
+            "type": "boolean",
+            "description": "If true, the value will be populated by the system at runtime. Used by API Integration Webhook tools for templating. Mutually exclusive with description, dynamic_variable, and constant_value.",
+            "default": false
+          },
+          "dynamic_variable": {
+            "title": "Dynamic Variable",
+            "type": "string",
+            "description": "The name of the dynamic variable to use for this property\u0027s value. Mutually exclusive with description, is_system_provided, and constant_value."
+          },
+          "constant_value": {
+            "title": "Constant Value",
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Constant_Value"
+              }
+            ],
+            "description": "A constant value to use for this property. Mutually exclusive with description, dynamic_variable, and is_system_provided."
+          },
+          "llm": {
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/LLM_Wrapper"
+              }
+            ],
+            "description": "LLM model to use for this analysis item. If not set, uses agent\u0027s analysis_llm default.",
+            "nullable": true
+          }
+        },
+        "description": "\u0022Data collection property with optional per-item LLM override for post-call analysis.\n\nTODO: migrate to composition (value_schema: LiteralJsonSchemaProperty \u002B llm) instead of\ninheritance, so this generalizes cleanly to object/array schemas in the future.\u0022",
+        "example": {
+          "constant_value": "",
+          "description": "My property",
+          "dynamic_variable": "",
+          "is_system_provided": false,
+          "type": "string"
+        }
+      },
       "AnalysisScope": {
         "title": "AnalysisScope",
         "enum": [
@@ -24628,7 +24709,7 @@
             "$ref": "#/components/schemas/ToolErrorHandlingMode"
           },
           "dynamic_variables": {
-            "$ref": "#/components/schemas/DynamicVariablesConfig"
+            "$ref": "#/components/schemas/DynamicVariablesConfigInput"
           },
           "execution_mode": {
             "$ref": "#/components/schemas/ToolExecutionMode"
@@ -24747,7 +24828,7 @@
             "$ref": "#/components/schemas/ToolErrorHandlingMode"
           },
           "dynamic_variables": {
-            "$ref": "#/components/schemas/DynamicVariablesConfig"
+            "$ref": "#/components/schemas/DynamicVariablesConfigOutput"
           },
           "execution_mode": {
             "$ref": "#/components/schemas/ToolExecutionMode"
@@ -24780,9 +24861,6 @@
       },
       "ArrayJsonSchemaPropertyInput": {
         "title": "ArrayJsonSchemaProperty",
-        "required": [
-          "items"
-        ],
         "type": "object",
         "properties": {
           "type": {
@@ -24810,16 +24888,37 @@
               {
                 "$ref": "#/components/schemas/ArrayJsonSchemaPropertyInput"
               }
-            ]
+            ],
+            "description": "Schema for array elements.",
+            "default": {
+              "type": "string",
+              "description": "Array element",
+              "is_system_provided": false,
+              "dynamic_variable": "",
+              "constant_value": ""
+            }
+          },
+          "dynamic_variable": {
+            "title": "Dynamic Variable",
+            "type": "string",
+            "description": "When set, the entire array is populated from this dynamic variable at runtime. Mutually exclusive with description (LLM-provided array) and constant_value."
+          },
+          "constant_value": {
+            "title": "Constant Value",
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Constant_Value"
+              }
+            ],
+            "description": "When set, the entire array uses this constant value at runtime. Mutually exclusive with description (LLM-provided array) and dynamic_variable.",
+            "nullable": true
           }
         },
         "additionalProperties": false
       },
       "ArrayJsonSchemaPropertyOutput": {
         "title": "ArrayJsonSchemaProperty",
-        "required": [
-          "items"
-        ],
         "type": "object",
         "properties": {
           "type": {
@@ -24847,69 +24946,34 @@
               {
                 "$ref": "#/components/schemas/ArrayJsonSchemaPropertyOutput"
               }
-            ]
-          }
-        },
-        "additionalProperties": false
-      },
-      "AssetTranscription": {
-        "title": "AssetTranscription",
-        "required": [
-          "language_code",
-          "text",
-          "words"
-        ],
-        "type": "object",
-        "properties": {
-          "language_code": {
-            "title": "Language Code",
-            "type": "string"
-          },
-          "text": {
-            "title": "Text",
-            "type": "string"
-          },
-          "words": {
-            "title": "Words",
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/AssetTranscriptionWord"
+            ],
+            "description": "Schema for array elements.",
+            "default": {
+              "type": "string",
+              "description": "Array element",
+              "is_system_provided": false,
+              "dynamic_variable": "",
+              "constant_value": ""
             }
-          }
-        }
-      },
-      "AssetTranscriptionWord": {
-        "title": "AssetTranscriptionWord",
-        "required": [
-          "text",
-          "start_ms",
-          "end_ms"
-        ],
-        "type": "object",
-        "properties": {
-          "speaker_id": {
-            "title": "Speaker Id",
+          },
+          "dynamic_variable": {
+            "title": "Dynamic Variable",
+            "type": "string",
+            "description": "When set, the entire array is populated from this dynamic variable at runtime. Mutually exclusive with description (LLM-provided array) and constant_value."
+          },
+          "constant_value": {
+            "title": "Constant Value",
             "type": "object",
             "anyOf": [
               {
-                "$ref": "#/components/schemas/Speaker_Id"
+                "$ref": "#/components/schemas/Constant_Value"
               }
             ],
+            "description": "When set, the entire array uses this constant value at runtime. Mutually exclusive with description (LLM-provided array) and dynamic_variable.",
             "nullable": true
-          },
-          "text": {
-            "title": "Text",
-            "type": "string"
-          },
-          "start_ms": {
-            "title": "Start Ms",
-            "type": "integer"
-          },
-          "end_ms": {
-            "title": "End Ms",
-            "type": "integer"
           }
-        }
+        },
+        "additionalProperties": false
       },
       "AsyncConversationMetadata": {
         "title": "AsyncConversationMetadata",
@@ -24952,6 +25016,16 @@
           "external_id": {
             "title": "External Id",
             "type": "string"
+          },
+          "external_link": {
+            "title": "External Link",
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/External_Link"
+              }
+            ],
+            "nullable": true
           },
           "retry_count": {
             "title": "Retry Count",
@@ -25086,15 +25160,6 @@
             "items": {
               "$ref": "#/components/schemas/AudioKeyMoment"
             }
-          },
-          "transcription": {
-            "type": "object",
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/AssetTranscription"
-              }
-            ],
-            "nullable": true
           }
         }
       },
@@ -33366,7 +33431,7 @@
             "default": false
           },
           "dynamic_variables": {
-            "$ref": "#/components/schemas/DynamicVariablesConfig"
+            "$ref": "#/components/schemas/DynamicVariablesConfigInput"
           },
           "execution_mode": {
             "$ref": "#/components/schemas/ToolExecutionMode"
@@ -33469,7 +33534,7 @@
             "default": false
           },
           "dynamic_variables": {
-            "$ref": "#/components/schemas/DynamicVariablesConfig"
+            "$ref": "#/components/schemas/DynamicVariablesConfigOutput"
           },
           "execution_mode": {
             "$ref": "#/components/schemas/ToolExecutionMode"
@@ -36907,6 +36972,9 @@
               "anyOf": [
                 {
                   "$ref": "#/components/schemas/UnionBranch"
+                },
+                {
+                  "$ref": "#/components/schemas/DynamicVariableContainerValueTypeOutput_Wrapper"
                 }
               ],
               "nullable": true
@@ -36982,6 +37050,9 @@
               "anyOf": [
                 {
                   "$ref": "#/components/schemas/UnionBranch"
+                },
+                {
+                  "$ref": "#/components/schemas/DynamicVariableContainerValueTypeInput_Wrapper"
                 }
               ],
               "nullable": true
@@ -37054,6 +37125,9 @@
               "anyOf": [
                 {
                   "$ref": "#/components/schemas/UnionBranch"
+                },
+                {
+                  "$ref": "#/components/schemas/DynamicVariableContainerValueTypeOutput_Wrapper"
                 }
               ],
               "nullable": true
@@ -37196,6 +37270,9 @@
               "anyOf": [
                 {
                   "$ref": "#/components/schemas/UnionBranch"
+                },
+                {
+                  "$ref": "#/components/schemas/DynamicVariableContainerValueTypeInput_Wrapper"
                 }
               ],
               "nullable": true
@@ -38601,6 +38678,9 @@
               "anyOf": [
                 {
                   "$ref": "#/components/schemas/UnionBranch"
+                },
+                {
+                  "$ref": "#/components/schemas/DynamicVariableContainerValueTypeInput_Wrapper"
                 }
               ],
               "nullable": true
@@ -38793,6 +38873,9 @@
               "anyOf": [
                 {
                   "$ref": "#/components/schemas/UnionBranch"
+                },
+                {
+                  "$ref": "#/components/schemas/DynamicVariableContainerValueTypeInput_Wrapper"
                 }
               ],
               "nullable": true
@@ -38934,6 +39017,9 @@
               "anyOf": [
                 {
                   "$ref": "#/components/schemas/UnionBranch"
+                },
+                {
+                  "$ref": "#/components/schemas/DynamicVariableContainerValueTypeInput_Wrapper"
                 }
               ],
               "nullable": true
@@ -41443,14 +41529,113 @@
             "type": "boolean",
             "description": "If true, this assignment\u0027s value will be removed from the tool response before sending to the LLM and transcript, but still processed for variable assignment.",
             "default": false
+          },
+          "preserve_native_type": {
+            "title": "Preserve Native Type",
+            "type": "boolean",
+            "description": "If true, non-scalar values (lists, objects) extracted from the tool response are stored as their native type instead of being stringified to JSON. Enable this to use extracted arrays directly as list dynamic variables.",
+            "default": false
           }
         },
         "description": "Configuration for extracting values from tool responses and assigning them to dynamic variables.",
         "example": {
           "dynamic_variable": "user_name",
+          "preserve_native_type": false,
           "sanitize": false,
           "source": "response",
           "value_path": "user.name"
+        }
+      },
+      "DynamicVariableContainerValueTypeInput": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/DynamicVariableNestedValueTypeInput"
+        }
+      },
+      "DynamicVariableContainerValueTypeOutput": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/DynamicVariableNestedValueTypeOutput"
+        }
+      },
+      "DynamicVariableNestedValueTypeInput": {
+        "required": [
+          "type"
+        ],
+        "type": "object",
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/DynamicVariableNestedValueTypeInput_Branch1"
+          },
+          {
+            "$ref": "#/components/schemas/DynamicVariableNestedValueTypeInput_Branch2"
+          },
+          {
+            "$ref": "#/components/schemas/DynamicVariableNestedValueTypeInput_Branch3"
+          },
+          {
+            "$ref": "#/components/schemas/DynamicVariableNestedValueTypeInput_Branch4"
+          },
+          {
+            "$ref": "#/components/schemas/DynamicVariableNestedValueTypeInput_Branch5"
+          }
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "Union discriminator"
+          }
+        },
+        "nullable": true,
+        "discriminator": {
+          "propertyName": "type",
+          "mapping": {
+            "DynamicVariableNestedValueTypeInput_1": "#/components/schemas/DynamicVariableNestedValueTypeInput_Branch1",
+            "DynamicVariableNestedValueTypeInput_2": "#/components/schemas/DynamicVariableNestedValueTypeInput_Branch2",
+            "DynamicVariableNestedValueTypeInput_3": "#/components/schemas/DynamicVariableNestedValueTypeInput_Branch3",
+            "DynamicVariableNestedValueTypeInput_4": "#/components/schemas/DynamicVariableNestedValueTypeInput_Branch4",
+            "DynamicVariableNestedValueTypeInput_5": "#/components/schemas/DynamicVariableNestedValueTypeInput_Branch5"
+          }
+        }
+      },
+      "DynamicVariableNestedValueTypeOutput": {
+        "required": [
+          "type"
+        ],
+        "type": "object",
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/DynamicVariableNestedValueTypeOutput_Branch1"
+          },
+          {
+            "$ref": "#/components/schemas/DynamicVariableNestedValueTypeOutput_Branch2"
+          },
+          {
+            "$ref": "#/components/schemas/DynamicVariableNestedValueTypeOutput_Branch3"
+          },
+          {
+            "$ref": "#/components/schemas/DynamicVariableNestedValueTypeOutput_Branch4"
+          },
+          {
+            "$ref": "#/components/schemas/DynamicVariableNestedValueTypeOutput_Branch5"
+          }
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "Union discriminator"
+          }
+        },
+        "nullable": true,
+        "discriminator": {
+          "propertyName": "type",
+          "mapping": {
+            "DynamicVariableNestedValueTypeOutput_1": "#/components/schemas/DynamicVariableNestedValueTypeOutput_Branch1",
+            "DynamicVariableNestedValueTypeOutput_2": "#/components/schemas/DynamicVariableNestedValueTypeOutput_Branch2",
+            "DynamicVariableNestedValueTypeOutput_3": "#/components/schemas/DynamicVariableNestedValueTypeOutput_Branch3",
+            "DynamicVariableNestedValueTypeOutput_4": "#/components/schemas/DynamicVariableNestedValueTypeOutput_Branch4",
+            "DynamicVariableNestedValueTypeOutput_5": "#/components/schemas/DynamicVariableNestedValueTypeOutput_Branch5"
+          }
         }
       },
       "DynamicVariableSchemaOverride": {
@@ -41521,7 +41706,7 @@
         },
         "description": "Tracks a dynamic variable update that occurred during tool execution."
       },
-      "DynamicVariablesConfig": {
+      "DynamicVariablesConfigInput": {
         "title": "DynamicVariablesConfig",
         "type": "object",
         "properties": {
@@ -41532,6 +41717,9 @@
               "anyOf": [
                 {
                   "$ref": "#/components/schemas/UnionBranch"
+                },
+                {
+                  "$ref": "#/components/schemas/DynamicVariableContainerValueTypeInput_Wrapper"
                 }
               ]
             },
@@ -41544,12 +41732,52 @@
           }
         }
       },
-      "DynamicVariablesConfigWorkflowOverride": {
+      "DynamicVariablesConfigOutput": {
+        "title": "DynamicVariablesConfig",
+        "type": "object",
+        "properties": {
+          "dynamic_variable_placeholders": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "object",
+              "anyOf": [
+                {
+                  "$ref": "#/components/schemas/UnionBranch"
+                },
+                {
+                  "$ref": "#/components/schemas/DynamicVariableContainerValueTypeOutput_Wrapper"
+                }
+              ]
+            },
+            "description": "A dictionary of dynamic variable placeholders and their values"
+          }
+        },
+        "example": {
+          "dynamic_variable_placeholders": {
+            "user_name": "John Doe"
+          }
+        }
+      },
+      "DynamicVariablesConfigWorkflowOverrideInput": {
         "title": "DynamicVariablesConfigWorkflowOverride",
         "type": "object",
         "properties": {
           "dynamic_variable_placeholders": {
-            "$ref": "#/components/schemas/DynamicVariablesConfigWorkflowOverrideDynamicVariablePlaceholders"
+            "$ref": "#/components/schemas/DynamicVariablesConfigWorkflowOverrideInputDynamicVariablePlaceholders"
+          }
+        },
+        "example": {
+          "dynamic_variable_placeholders": {
+            "user_name": "John Doe"
+          }
+        }
+      },
+      "DynamicVariablesConfigWorkflowOverrideOutput": {
+        "title": "DynamicVariablesConfigWorkflowOverride",
+        "type": "object",
+        "properties": {
+          "dynamic_variable_placeholders": {
+            "$ref": "#/components/schemas/DynamicVariablesConfigWorkflowOverrideOutputDynamicVariablePlaceholders"
           }
         },
         "example": {
@@ -45288,6 +45516,9 @@
               "anyOf": [
                 {
                   "$ref": "#/components/schemas/UnionBranch"
+                },
+                {
+                  "$ref": "#/components/schemas/DynamicVariableContainerValueTypeOutput_Wrapper"
                 }
               ],
               "nullable": true
@@ -45411,6 +45642,9 @@
               "anyOf": [
                 {
                   "$ref": "#/components/schemas/UnionBranch"
+                },
+                {
+                  "$ref": "#/components/schemas/DynamicVariableContainerValueTypeOutput_Wrapper"
                 }
               ],
               "nullable": true
@@ -45712,6 +45946,9 @@
               "anyOf": [
                 {
                   "$ref": "#/components/schemas/UnionBranch"
+                },
+                {
+                  "$ref": "#/components/schemas/DynamicVariableContainerValueTypeOutput_Wrapper"
                 }
               ],
               "nullable": true
@@ -55495,6 +55732,16 @@
           },
           "scope": {
             "$ref": "#/components/schemas/AnalysisScope"
+          },
+          "llm": {
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/LLM_Wrapper"
+              }
+            ],
+            "description": "LLM model to use for this evaluation criteria. If not set, uses agent\u0027s analysis_llm default.",
+            "nullable": true
           }
         },
         "description": "An evaluation using the transcript and a prompt for a yes/no achieved answer",
@@ -56901,6 +57148,9 @@
               "anyOf": [
                 {
                   "$ref": "#/components/schemas/UnionBranch"
+                },
+                {
+                  "$ref": "#/components/schemas/DynamicVariableContainerValueTypeOutput_Wrapper"
                 }
               ],
               "nullable": true
@@ -58447,6 +58697,9 @@
               "anyOf": [
                 {
                   "$ref": "#/components/schemas/UnionBranch"
+                },
+                {
+                  "$ref": "#/components/schemas/DynamicVariableContainerValueTypeOutput_Wrapper"
                 }
               ],
               "nullable": true
@@ -62207,6 +62460,9 @@
               "anyOf": [
                 {
                   "$ref": "#/components/schemas/UnionBranch"
+                },
+                {
+                  "$ref": "#/components/schemas/DynamicVariableContainerValueTypeOutput_Wrapper"
                 }
               ],
               "nullable": true
@@ -64031,6 +64287,9 @@
               "anyOf": [
                 {
                   "$ref": "#/components/schemas/UnionBranch"
+                },
+                {
+                  "$ref": "#/components/schemas/DynamicVariableContainerValueTypeInput_Wrapper"
                 }
               ],
               "nullable": true
@@ -64132,6 +64391,9 @@
               "anyOf": [
                 {
                   "$ref": "#/components/schemas/UnionBranch"
+                },
+                {
+                  "$ref": "#/components/schemas/DynamicVariableContainerValueTypeInput_Wrapper"
                 }
               ],
               "nullable": true
@@ -64242,6 +64504,9 @@
               "anyOf": [
                 {
                   "$ref": "#/components/schemas/UnionBranch"
+                },
+                {
+                  "$ref": "#/components/schemas/DynamicVariableContainerValueTypeInput_Wrapper"
                 }
               ],
               "nullable": true
@@ -64928,15 +65193,6 @@
             "items": {
               "$ref": "#/components/schemas/VideoKeyMoment"
             }
-          },
-          "transcription": {
-            "type": "object",
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/AssetTranscription"
-              }
-            ],
-            "nullable": true
           }
         }
       },
@@ -67111,7 +67367,7 @@
             "$ref": "#/components/schemas/ToolErrorHandlingMode"
           },
           "dynamic_variables": {
-            "$ref": "#/components/schemas/DynamicVariablesConfig"
+            "$ref": "#/components/schemas/DynamicVariablesConfigInput"
           },
           "execution_mode": {
             "$ref": "#/components/schemas/ToolExecutionMode"
@@ -67202,7 +67458,7 @@
             "$ref": "#/components/schemas/ToolErrorHandlingMode"
           },
           "dynamic_variables": {
-            "$ref": "#/components/schemas/DynamicVariablesConfig"
+            "$ref": "#/components/schemas/DynamicVariablesConfigOutput"
           },
           "execution_mode": {
             "$ref": "#/components/schemas/ToolExecutionMode"
@@ -72167,6 +72423,9 @@
           "anyOf": [
             {
               "$ref": "#/components/schemas/UnionBranch"
+            },
+            {
+              "$ref": "#/components/schemas/DynamicVariableContainerValueTypeOutput_Wrapper"
             }
           ],
           "nullable": true
@@ -72180,6 +72439,9 @@
           "anyOf": [
             {
               "$ref": "#/components/schemas/UnionBranch"
+            },
+            {
+              "$ref": "#/components/schemas/DynamicVariableContainerValueTypeInput_Wrapper"
             }
           ],
           "nullable": true
@@ -72193,6 +72455,9 @@
           "anyOf": [
             {
               "$ref": "#/components/schemas/UnionBranch"
+            },
+            {
+              "$ref": "#/components/schemas/DynamicVariableContainerValueTypeOutput_Wrapper"
             }
           ],
           "nullable": true
@@ -72222,6 +72487,9 @@
           "anyOf": [
             {
               "$ref": "#/components/schemas/UnionBranch"
+            },
+            {
+              "$ref": "#/components/schemas/DynamicVariableContainerValueTypeInput_Wrapper"
             }
           ],
           "nullable": true
@@ -72265,6 +72533,9 @@
           "anyOf": [
             {
               "$ref": "#/components/schemas/UnionBranch"
+            },
+            {
+              "$ref": "#/components/schemas/DynamicVariableContainerValueTypeInput_Wrapper"
             }
           ],
           "nullable": true
@@ -72279,6 +72550,9 @@
           "anyOf": [
             {
               "$ref": "#/components/schemas/UnionBranch"
+            },
+            {
+              "$ref": "#/components/schemas/DynamicVariableContainerValueTypeInput_Wrapper"
             }
           ],
           "nullable": true
@@ -72302,6 +72576,9 @@
           "anyOf": [
             {
               "$ref": "#/components/schemas/UnionBranch"
+            },
+            {
+              "$ref": "#/components/schemas/DynamicVariableContainerValueTypeInput_Wrapper"
             }
           ],
           "nullable": true
@@ -72330,7 +72607,7 @@
         },
         "description": "Headers that should be included in the request"
       },
-      "DynamicVariablesConfigDynamicVariablePlaceholders": {
+      "DynamicVariablesConfigInputDynamicVariablePlaceholders": {
         "title": "Dynamic Variable Placeholders",
         "type": "object",
         "additionalProperties": {
@@ -72338,12 +72615,31 @@
           "anyOf": [
             {
               "$ref": "#/components/schemas/UnionBranch"
+            },
+            {
+              "$ref": "#/components/schemas/DynamicVariableContainerValueTypeInput_Wrapper"
             }
           ]
         },
         "description": "A dictionary of dynamic variable placeholders and their values"
       },
-      "DynamicVariablesConfigWorkflowOverrideDynamicVariablePlaceholders": {
+      "DynamicVariablesConfigOutputDynamicVariablePlaceholders": {
+        "title": "Dynamic Variable Placeholders",
+        "type": "object",
+        "additionalProperties": {
+          "type": "object",
+          "anyOf": [
+            {
+              "$ref": "#/components/schemas/UnionBranch"
+            },
+            {
+              "$ref": "#/components/schemas/DynamicVariableContainerValueTypeOutput_Wrapper"
+            }
+          ]
+        },
+        "description": "A dictionary of dynamic variable placeholders and their values"
+      },
+      "DynamicVariablesConfigWorkflowOverrideInputDynamicVariablePlaceholders": {
         "title": "Dynamic Variable Placeholders",
         "required": [
           "type"
@@ -72357,6 +72653,43 @@
               "anyOf": [
                 {
                   "$ref": "#/components/schemas/UnionBranch"
+                },
+                {
+                  "$ref": "#/components/schemas/DynamicVariableContainerValueTypeInput_Wrapper"
+                }
+              ]
+            }
+          }
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "Union discriminator"
+          }
+        },
+        "description": "A dictionary of dynamic variable placeholders and their values",
+        "nullable": true,
+        "discriminator": {
+          "propertyName": "type"
+        }
+      },
+      "DynamicVariablesConfigWorkflowOverrideOutputDynamicVariablePlaceholders": {
+        "title": "Dynamic Variable Placeholders",
+        "required": [
+          "type"
+        ],
+        "type": "object",
+        "anyOf": [
+          {
+            "type": "object",
+            "additionalProperties": {
+              "type": "object",
+              "anyOf": [
+                {
+                  "$ref": "#/components/schemas/UnionBranch"
+                },
+                {
+                  "$ref": "#/components/schemas/DynamicVariableContainerValueTypeOutput_Wrapper"
                 }
               ]
             }
@@ -72495,6 +72828,9 @@
           "anyOf": [
             {
               "$ref": "#/components/schemas/UnionBranch"
+            },
+            {
+              "$ref": "#/components/schemas/DynamicVariableContainerValueTypeOutput_Wrapper"
             }
           ],
           "nullable": true
@@ -72509,6 +72845,9 @@
           "anyOf": [
             {
               "$ref": "#/components/schemas/UnionBranch"
+            },
+            {
+              "$ref": "#/components/schemas/DynamicVariableContainerValueTypeOutput_Wrapper"
             }
           ],
           "nullable": true
@@ -72523,6 +72862,9 @@
           "anyOf": [
             {
               "$ref": "#/components/schemas/UnionBranch"
+            },
+            {
+              "$ref": "#/components/schemas/DynamicVariableContainerValueTypeOutput_Wrapper"
             }
           ],
           "nullable": true
@@ -73027,6 +73369,9 @@
           "anyOf": [
             {
               "$ref": "#/components/schemas/UnionBranch"
+            },
+            {
+              "$ref": "#/components/schemas/DynamicVariableContainerValueTypeOutput_Wrapper"
             }
           ],
           "nullable": true
@@ -73091,6 +73436,9 @@
           "anyOf": [
             {
               "$ref": "#/components/schemas/UnionBranch"
+            },
+            {
+              "$ref": "#/components/schemas/DynamicVariableContainerValueTypeOutput_Wrapper"
             }
           ],
           "nullable": true
@@ -73122,6 +73470,9 @@
           "anyOf": [
             {
               "$ref": "#/components/schemas/UnionBranch"
+            },
+            {
+              "$ref": "#/components/schemas/DynamicVariableContainerValueTypeOutput_Wrapper"
             }
           ],
           "nullable": true
@@ -73156,6 +73507,9 @@
           "anyOf": [
             {
               "$ref": "#/components/schemas/UnionBranch"
+            },
+            {
+              "$ref": "#/components/schemas/DynamicVariableContainerValueTypeInput_Wrapper"
             }
           ],
           "nullable": true
@@ -73170,6 +73524,9 @@
           "anyOf": [
             {
               "$ref": "#/components/schemas/UnionBranch"
+            },
+            {
+              "$ref": "#/components/schemas/DynamicVariableContainerValueTypeInput_Wrapper"
             }
           ],
           "nullable": true
@@ -73184,6 +73541,9 @@
           "anyOf": [
             {
               "$ref": "#/components/schemas/UnionBranch"
+            },
+            {
+              "$ref": "#/components/schemas/DynamicVariableContainerValueTypeInput_Wrapper"
             }
           ],
           "nullable": true
@@ -74126,6 +74486,122 @@
       "RedirectToMintlify200": {
         "type": "object"
       },
+      "DynamicVariableNestedValueTypeInput_Branch1": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string"
+          }
+        }
+      },
+      "DynamicVariableNestedValueTypeInput_Branch2": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "integer"
+          }
+        }
+      },
+      "DynamicVariableNestedValueTypeInput_Branch3": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "number"
+          }
+        }
+      },
+      "DynamicVariableNestedValueTypeInput_Branch4": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "boolean"
+          }
+        }
+      },
+      "DynamicVariableNestedValueTypeInput_Branch5": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DynamicVariableNestedValueTypeInput"
+            }
+          }
+        }
+      },
+      "DynamicVariableNestedValueTypeOutput_Branch1": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string"
+          }
+        }
+      },
+      "DynamicVariableNestedValueTypeOutput_Branch2": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "integer"
+          }
+        }
+      },
+      "DynamicVariableNestedValueTypeOutput_Branch3": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "number"
+          }
+        }
+      },
+      "DynamicVariableNestedValueTypeOutput_Branch4": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "boolean"
+          }
+        }
+      },
+      "DynamicVariableNestedValueTypeOutput_Branch5": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DynamicVariableNestedValueTypeOutput"
+            }
+          }
+        }
+      },
       "BodyAddVoiceV1VoicesAddPostLabels_Branch2": {
         "required": [
           "value"
@@ -74415,6 +74891,42 @@
           }
         }
       },
+      "Enum": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "Constant_Value": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string"
+          }
+        }
+      },
+      "LLM_Wrapper": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "$ref": "#/components/schemas/LLM"
+          }
+        }
+      },
       "Status_Detail": {
         "required": [
           "value"
@@ -74462,7 +74974,7 @@
           }
         }
       },
-      "Speaker_Id": {
+      "Delivery_Error": {
         "required": [
           "value"
         ],
@@ -74473,7 +74985,7 @@
           }
         }
       },
-      "Delivery_Error": {
+      "External_Link": {
         "required": [
           "value"
         ],
@@ -76297,17 +76809,6 @@
           }
         }
       },
-      "Constant_Value": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "type": "string"
-          }
-        }
-      },
       "Threshold": {
         "required": [
           "value"
@@ -78007,17 +78508,6 @@
           }
         }
       },
-      "LLM_Wrapper": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "$ref": "#/components/schemas/LLM"
-          }
-        }
-      },
       "Available_Reasoning_Efforts": {
         "required": [
           "value"
@@ -78028,20 +78518,6 @@
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/LLMReasoningEffort"
-            }
-          }
-        }
-      },
-      "Enum": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "type": "array",
-            "items": {
-              "type": "string"
             }
           }
         }
@@ -79649,6 +80125,17 @@
             "items": {
               "$ref": "#/components/schemas/DetectedEntity"
             }
+          }
+        }
+      },
+      "Speaker_Id": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string"
           }
         }
       },
@@ -81570,6 +82057,28 @@
         "properties": {
           "value": {
             "type": "integer"
+          }
+        }
+      },
+      "DynamicVariableContainerValueTypeOutput_Wrapper": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "$ref": "#/components/schemas/DynamicVariableContainerValueTypeOutput"
+          }
+        }
+      },
+      "DynamicVariableContainerValueTypeInput_Wrapper": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "$ref": "#/components/schemas/DynamicVariableContainerValueTypeInput"
           }
         }
       }

@@ -14,6 +14,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The analysis_llm property</summary>
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.LLM? AnalysisLlm { get; set; }
         /// <summary>Whether the agent is archived</summary>
         public bool? Archived { get; set; }
         /// <summary>The auth property</summary>
@@ -126,6 +128,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public AgentPlatformSettingsResponseModel()
         {
             AdditionalData = new Dictionary<string, object>();
+            AnalysisLlm = global::Soenneker.ElevenLabs.OpenApiClient.Models.LLM.Gemini25Flash;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -145,6 +148,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "analysis_llm", n => { AnalysisLlm = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.LLM>(); } },
                 { "archived", n => { Archived = n.GetBoolValue(); } },
                 { "auth", n => { Auth = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AuthSettings>(global::Soenneker.ElevenLabs.OpenApiClient.Models.AuthSettings.CreateFromDiscriminatorValue); } },
                 { "call_limits", n => { CallLimits = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentCallLimits>(global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentCallLimits.CreateFromDiscriminatorValue); } },
@@ -168,6 +172,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.LLM>("analysis_llm", AnalysisLlm);
             writer.WriteBoolValue("archived", Archived);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AuthSettings>("auth", Auth);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentCallLimits>("call_limits", CallLimits);

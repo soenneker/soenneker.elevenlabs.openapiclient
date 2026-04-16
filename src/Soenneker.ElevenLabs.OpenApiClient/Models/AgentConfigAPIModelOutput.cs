@@ -19,10 +19,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The dynamic_variables property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.DynamicVariablesConfig? DynamicVariables { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.DynamicVariablesConfigOutput? DynamicVariables { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.DynamicVariablesConfig DynamicVariables { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.DynamicVariablesConfigOutput DynamicVariables { get; set; }
 #endif
         /// <summary>If non-empty, the first message the agent will say. If empty, the agent waits for the user to start the discussion.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -85,7 +85,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "disable_first_message_interruptions", n => { DisableFirstMessageInterruptions = n.GetBoolValue(); } },
-                { "dynamic_variables", n => { DynamicVariables = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DynamicVariablesConfig>(global::Soenneker.ElevenLabs.OpenApiClient.Models.DynamicVariablesConfig.CreateFromDiscriminatorValue); } },
+                { "dynamic_variables", n => { DynamicVariables = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DynamicVariablesConfigOutput>(global::Soenneker.ElevenLabs.OpenApiClient.Models.DynamicVariablesConfigOutput.CreateFromDiscriminatorValue); } },
                 { "first_message", n => { FirstMessage = n.GetStringValue(); } },
                 { "hinglish_mode", n => { HinglishMode = n.GetBoolValue(); } },
                 { "language", n => { Language = n.GetStringValue(); } },
@@ -101,7 +101,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("disable_first_message_interruptions", DisableFirstMessageInterruptions);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DynamicVariablesConfig>("dynamic_variables", DynamicVariables);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DynamicVariablesConfigOutput>("dynamic_variables", DynamicVariables);
             writer.WriteStringValue("first_message", FirstMessage);
             writer.WriteBoolValue("hinglish_mode", HinglishMode);
             writer.WriteStringValue("language", Language);

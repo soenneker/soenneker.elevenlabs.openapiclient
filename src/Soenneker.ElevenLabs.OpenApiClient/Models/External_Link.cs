@@ -9,51 +9,35 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class AssetTranscription : IAdditionalDataHolder, IParsable
+    public partial class External_Link : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The language_code property</summary>
+        /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LanguageCode { get; set; }
+        public string? Value { get; set; }
 #nullable restore
 #else
-        public string LanguageCode { get; set; }
-#endif
-        /// <summary>The text property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Text { get; set; }
-#nullable restore
-#else
-        public string Text { get; set; }
-#endif
-        /// <summary>The words property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.AssetTranscriptionWord>? Words { get; set; }
-#nullable restore
-#else
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.AssetTranscriptionWord> Words { get; set; }
+        public string Value { get; set; }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.AssetTranscription"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.External_Link"/> and sets the default values.
         /// </summary>
-        public AssetTranscription()
+        public External_Link()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.AssetTranscription"/></returns>
+        /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.External_Link"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.ElevenLabs.OpenApiClient.Models.AssetTranscription CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.ElevenLabs.OpenApiClient.Models.External_Link CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.AssetTranscription();
+            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.External_Link();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -63,9 +47,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "language_code", n => { LanguageCode = n.GetStringValue(); } },
-                { "text", n => { Text = n.GetStringValue(); } },
-                { "words", n => { Words = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.AssetTranscriptionWord>(global::Soenneker.ElevenLabs.OpenApiClient.Models.AssetTranscriptionWord.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "value", n => { Value = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -75,9 +57,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("language_code", LanguageCode);
-            writer.WriteStringValue("text", Text);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.AssetTranscriptionWord>("words", Words);
+            writer.WriteStringValue("value", Value);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

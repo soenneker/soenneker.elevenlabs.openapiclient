@@ -70,14 +70,6 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public string Title { get; set; }
 #endif
-        /// <summary>The transcription property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AssetTranscription? Transcription { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AssetTranscription Transcription { get; set; }
-#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.VideoAnalysisResult"/> and sets the default values.
         /// </summary>
@@ -110,7 +102,6 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "segments", n => { Segments = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.VideoSegment>(global::Soenneker.ElevenLabs.OpenApiClient.Models.VideoSegment.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "subjects", n => { Subjects = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.VideoSubject>(global::Soenneker.ElevenLabs.OpenApiClient.Models.VideoSubject.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "title", n => { Title = n.GetStringValue(); } },
-                { "transcription", n => { Transcription = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AssetTranscription>(global::Soenneker.ElevenLabs.OpenApiClient.Models.AssetTranscription.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -127,7 +118,6 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.VideoSegment>("segments", Segments);
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.VideoSubject>("subjects", Subjects);
             writer.WriteStringValue("title", Title);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AssetTranscription>("transcription", Transcription);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

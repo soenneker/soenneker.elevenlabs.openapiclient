@@ -59,10 +59,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The dynamic_variables property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.DynamicVariablesConfig? DynamicVariables { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.DynamicVariablesConfigInput? DynamicVariables { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.DynamicVariablesConfig DynamicVariables { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.DynamicVariablesConfigInput DynamicVariables { get; set; }
 #endif
         /// <summary>The execution_mode property</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolExecutionMode? ExecutionMode { get; set; }
@@ -136,7 +136,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "assignments", n => { Assignments = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.DynamicVariableAssignment>(global::Soenneker.ElevenLabs.OpenApiClient.Models.DynamicVariableAssignment.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "disable_interruptions", n => { DisableInterruptions = n.GetBoolValue(); } },
-                { "dynamic_variables", n => { DynamicVariables = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DynamicVariablesConfig>(global::Soenneker.ElevenLabs.OpenApiClient.Models.DynamicVariablesConfig.CreateFromDiscriminatorValue); } },
+                { "dynamic_variables", n => { DynamicVariables = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DynamicVariablesConfigInput>(global::Soenneker.ElevenLabs.OpenApiClient.Models.DynamicVariablesConfigInput.CreateFromDiscriminatorValue); } },
                 { "execution_mode", n => { ExecutionMode = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolExecutionMode>(); } },
                 { "force_pre_tool_speech", n => { ForcePreToolSpeech = n.GetBoolValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
@@ -161,7 +161,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.DynamicVariableAssignment>("assignments", Assignments);
             writer.WriteStringValue("description", Description);
             writer.WriteBoolValue("disable_interruptions", DisableInterruptions);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DynamicVariablesConfig>("dynamic_variables", DynamicVariables);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DynamicVariablesConfigInput>("dynamic_variables", DynamicVariables);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolExecutionMode>("execution_mode", ExecutionMode);
             writer.WriteBoolValue("force_pre_tool_speech", ForcePreToolSpeech);
             writer.WriteStringValue("name", Name);
