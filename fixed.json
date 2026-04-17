@@ -41219,6 +41219,7 @@
       "DubbingModel": {
         "title": "DubbingModel",
         "enum": [
+          "dubbing_v1_tts_v3",
           "dubbing_v2",
           "dubbing_v3",
           "dubbing_e2e_v1"
@@ -52712,7 +52713,8 @@
         "title": "ProcedureCompilerMode",
         "enum": [
           "llm",
-          "deterministic"
+          "deterministic",
+          "append"
         ],
         "type": "string",
         "additionalProperties": false,
