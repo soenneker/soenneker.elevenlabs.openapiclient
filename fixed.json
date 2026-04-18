@@ -4790,1004 +4790,6 @@
         }
       }
     },
-    "/v1/dubbing/resource/{dubbing_id}": {
-      "get": {
-        "tags": [
-          "dubbing",
-          "resource",
-          "segment",
-          "enterprise"
-        ],
-        "summary": "Get The Dubbing Resource For An Id.",
-        "description": "Given a dubbing ID generated from the \u0027/v1/dubbing\u0027 endpoint with studio enabled, returns the dubbing resource.",
-        "operationId": "get-dubbing-resource",
-        "parameters": [
-          {
-            "name": "dubbing_id",
-            "in": "path",
-            "description": "ID of the dubbing project.",
-            "required": true,
-            "schema": {
-              "title": "Dubbing Id",
-              "type": "string",
-              "description": "ID of the dubbing project."
-            }
-          },
-          {
-            "name": "xi-api-key",
-            "in": "header",
-            "description": "Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the \u0027Profile\u0027 tab on the website.",
-            "schema": {
-              "title": "Xi-Api-Key",
-              "type": "object",
-              "anyOf": [
-                {
-                  "type": "string"
-                }
-              ],
-              "description": "Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the \u0027Profile\u0027 tab on the website.",
-              "nullable": true
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Successful Response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/DubbingResource"
-                }
-              }
-            }
-          },
-          "422": {
-            "description": "Validation Error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/HTTPValidationError"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/v1/dubbing/resource/{dubbing_id}/language": {
-      "post": {
-        "tags": [
-          "dubbing",
-          "resource",
-          "segment",
-          "enterprise"
-        ],
-        "summary": "Add A Language To The Resource",
-        "description": "Adds the given ElevenLab Turbo V2/V2.5 language code to the resource. Does not automatically generate transcripts/translations/audio.",
-        "operationId": "add-language",
-        "parameters": [
-          {
-            "name": "dubbing_id",
-            "in": "path",
-            "description": "ID of the dubbing project.",
-            "required": true,
-            "schema": {
-              "title": "Dubbing Id",
-              "type": "string",
-              "description": "ID of the dubbing project."
-            }
-          },
-          {
-            "name": "xi-api-key",
-            "in": "header",
-            "description": "Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the \u0027Profile\u0027 tab on the website.",
-            "schema": {
-              "title": "Xi-Api-Key",
-              "type": "object",
-              "anyOf": [
-                {
-                  "type": "string"
-                }
-              ],
-              "description": "Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the \u0027Profile\u0027 tab on the website.",
-              "nullable": true
-            }
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/BodyAddALanguageToTheResourceV1DubbingResourceDubbingIdLanguagePost"
-              }
-            }
-          }
-        },
-        "responses": {
-          "201": {
-            "description": "Successful Response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/LanguageAddedResponse"
-                }
-              }
-            }
-          },
-          "422": {
-            "description": "Validation Error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/HTTPValidationError"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/v1/dubbing/resource/{dubbing_id}/speaker/{speaker_id}/segment": {
-      "post": {
-        "tags": [
-          "dubbing",
-          "resource",
-          "segment",
-          "enterprise"
-        ],
-        "summary": "Create A Segment For The Speaker",
-        "description": "Creates a new segment in dubbing resource with a start and end time for the speaker in every available language. Does not automatically generate transcripts/translations/audio.",
-        "operationId": "create-clip",
-        "parameters": [
-          {
-            "name": "dubbing_id",
-            "in": "path",
-            "description": "ID of the dubbing project.",
-            "required": true,
-            "schema": {
-              "title": "Dubbing Id",
-              "type": "string",
-              "description": "ID of the dubbing project."
-            }
-          },
-          {
-            "name": "speaker_id",
-            "in": "path",
-            "description": "ID of the speaker.",
-            "required": true,
-            "schema": {
-              "title": "Speaker Id",
-              "type": "string",
-              "description": "ID of the speaker."
-            }
-          },
-          {
-            "name": "xi-api-key",
-            "in": "header",
-            "description": "Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the \u0027Profile\u0027 tab on the website.",
-            "schema": {
-              "title": "Xi-Api-Key",
-              "type": "object",
-              "anyOf": [
-                {
-                  "type": "string"
-                }
-              ],
-              "description": "Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the \u0027Profile\u0027 tab on the website.",
-              "nullable": true
-            }
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/SegmentCreatePayload"
-              }
-            }
-          }
-        },
-        "responses": {
-          "201": {
-            "description": "Successful Response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/SegmentCreateResponse"
-                }
-              }
-            }
-          },
-          "422": {
-            "description": "Validation Error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/HTTPValidationError"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/v1/dubbing/resource/{dubbing_id}/segment/{segment_id}/{language}": {
-      "patch": {
-        "tags": [
-          "dubbing",
-          "resource",
-          "segment",
-          "enterprise"
-        ],
-        "summary": "Modify A Single Segment",
-        "description": "Modifies a single segment with new text and/or start/end times. Will update the values for only a specific language of a segment. Does not automatically regenerate the dub.",
-        "operationId": "update-segment-language",
-        "parameters": [
-          {
-            "name": "dubbing_id",
-            "in": "path",
-            "description": "ID of the dubbing project.",
-            "required": true,
-            "schema": {
-              "title": "Dubbing Id",
-              "type": "string",
-              "description": "ID of the dubbing project."
-            }
-          },
-          {
-            "name": "segment_id",
-            "in": "path",
-            "description": "ID of the segment",
-            "required": true,
-            "schema": {
-              "title": "Segment Id",
-              "type": "string",
-              "description": "ID of the segment"
-            }
-          },
-          {
-            "name": "language",
-            "in": "path",
-            "description": "ID of the language.",
-            "required": true,
-            "schema": {
-              "title": "Language",
-              "type": "string",
-              "description": "ID of the language."
-            }
-          },
-          {
-            "name": "xi-api-key",
-            "in": "header",
-            "description": "Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the \u0027Profile\u0027 tab on the website.",
-            "schema": {
-              "title": "Xi-Api-Key",
-              "type": "object",
-              "anyOf": [
-                {
-                  "type": "string"
-                }
-              ],
-              "description": "Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the \u0027Profile\u0027 tab on the website.",
-              "nullable": true
-            }
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/SegmentUpdatePayload"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Successful Response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/SegmentUpdateResponse"
-                }
-              }
-            }
-          },
-          "422": {
-            "description": "Validation Error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/HTTPValidationError"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/v1/dubbing/resource/{dubbing_id}/migrate-segments": {
-      "post": {
-        "tags": [
-          "dubbing",
-          "resource",
-          "segment",
-          "enterprise"
-        ],
-        "summary": "Move Segments Between Speakers",
-        "description": "Change the attribution of one or more segments to a different speaker.",
-        "operationId": "migrate-segments",
-        "parameters": [
-          {
-            "name": "dubbing_id",
-            "in": "path",
-            "description": "ID of the dubbing project.",
-            "required": true,
-            "schema": {
-              "title": "Dubbing Id",
-              "type": "string",
-              "description": "ID of the dubbing project."
-            }
-          },
-          {
-            "name": "xi-api-key",
-            "in": "header",
-            "description": "Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the \u0027Profile\u0027 tab on the website.",
-            "schema": {
-              "title": "Xi-Api-Key",
-              "type": "object",
-              "anyOf": [
-                {
-                  "type": "string"
-                }
-              ],
-              "description": "Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the \u0027Profile\u0027 tab on the website.",
-              "nullable": true
-            }
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/BodyMoveSegmentsBetweenSpeakersV1DubbingResourceDubbingIdMigrateSegmentsPost"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Successful Response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/SegmentMigrationResponse"
-                }
-              }
-            }
-          },
-          "422": {
-            "description": "Validation Error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/HTTPValidationError"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/v1/dubbing/resource/{dubbing_id}/segment/{segment_id}": {
-      "delete": {
-        "tags": [
-          "dubbing",
-          "resource",
-          "segment",
-          "enterprise"
-        ],
-        "summary": "Deletes A Single Segment",
-        "description": "Deletes a single segment from the dubbing.",
-        "operationId": "delete-segment",
-        "parameters": [
-          {
-            "name": "dubbing_id",
-            "in": "path",
-            "description": "ID of the dubbing project.",
-            "required": true,
-            "schema": {
-              "title": "Dubbing Id",
-              "type": "string",
-              "description": "ID of the dubbing project."
-            }
-          },
-          {
-            "name": "segment_id",
-            "in": "path",
-            "description": "ID of the segment",
-            "required": true,
-            "schema": {
-              "title": "Segment Id",
-              "type": "string",
-              "description": "ID of the segment"
-            }
-          },
-          {
-            "name": "xi-api-key",
-            "in": "header",
-            "description": "Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the \u0027Profile\u0027 tab on the website.",
-            "schema": {
-              "title": "Xi-Api-Key",
-              "type": "object",
-              "anyOf": [
-                {
-                  "type": "string"
-                }
-              ],
-              "description": "Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the \u0027Profile\u0027 tab on the website.",
-              "nullable": true
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Successful Response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/SegmentDeleteResponse"
-                }
-              }
-            }
-          },
-          "422": {
-            "description": "Validation Error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/HTTPValidationError"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/v1/dubbing/resource/{dubbing_id}/transcribe": {
-      "post": {
-        "tags": [
-          "dubbing",
-          "resource",
-          "segment",
-          "enterprise"
-        ],
-        "summary": "Transcribes Segments",
-        "description": "Regenerate the transcriptions for the specified segments. Does not automatically regenerate translations or dubs.",
-        "operationId": "transcribe",
-        "parameters": [
-          {
-            "name": "dubbing_id",
-            "in": "path",
-            "description": "ID of the dubbing project.",
-            "required": true,
-            "schema": {
-              "title": "Dubbing Id",
-              "type": "string",
-              "description": "ID of the dubbing project."
-            }
-          },
-          {
-            "name": "xi-api-key",
-            "in": "header",
-            "description": "Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the \u0027Profile\u0027 tab on the website.",
-            "schema": {
-              "title": "Xi-Api-Key",
-              "type": "object",
-              "anyOf": [
-                {
-                  "type": "string"
-                }
-              ],
-              "description": "Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the \u0027Profile\u0027 tab on the website.",
-              "nullable": true
-            }
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/BodyTranscribesSegmentsV1DubbingResourceDubbingIdTranscribePost"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Successful Response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/SegmentTranscriptionResponse"
-                }
-              }
-            }
-          },
-          "422": {
-            "description": "Validation Error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/HTTPValidationError"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/v1/dubbing/resource/{dubbing_id}/translate": {
-      "post": {
-        "tags": [
-          "dubbing",
-          "resource",
-          "segment",
-          "enterprise"
-        ],
-        "summary": "Translates All Or Some Segments And Languages",
-        "description": "Regenerate the translations for either the entire resource or the specified segments/languages. Will automatically transcribe missing transcriptions. Will not automatically regenerate the dubs.",
-        "operationId": "translate",
-        "parameters": [
-          {
-            "name": "dubbing_id",
-            "in": "path",
-            "description": "ID of the dubbing project.",
-            "required": true,
-            "schema": {
-              "title": "Dubbing Id",
-              "type": "string",
-              "description": "ID of the dubbing project."
-            }
-          },
-          {
-            "name": "xi-api-key",
-            "in": "header",
-            "description": "Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the \u0027Profile\u0027 tab on the website.",
-            "schema": {
-              "title": "Xi-Api-Key",
-              "type": "object",
-              "anyOf": [
-                {
-                  "type": "string"
-                }
-              ],
-              "description": "Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the \u0027Profile\u0027 tab on the website.",
-              "nullable": true
-            }
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/BodyTranslatesAllOrSomeSegmentsAndLanguagesV1DubbingResourceDubbingIdTranslatePost"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Successful Response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/SegmentTranslationResponse"
-                }
-              }
-            }
-          },
-          "422": {
-            "description": "Validation Error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/HTTPValidationError"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/v1/dubbing/resource/{dubbing_id}/dub": {
-      "post": {
-        "tags": [
-          "dubbing",
-          "resource",
-          "segment",
-          "enterprise"
-        ],
-        "summary": "Dubs All Or Some Segments And Languages",
-        "description": "Regenerate the dubs for either the entire resource or the specified segments/languages. Will automatically transcribe and translate any missing transcriptions and translations.",
-        "operationId": "dub",
-        "parameters": [
-          {
-            "name": "dubbing_id",
-            "in": "path",
-            "description": "ID of the dubbing project.",
-            "required": true,
-            "schema": {
-              "title": "Dubbing Id",
-              "type": "string",
-              "description": "ID of the dubbing project."
-            }
-          },
-          {
-            "name": "xi-api-key",
-            "in": "header",
-            "description": "Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the \u0027Profile\u0027 tab on the website.",
-            "schema": {
-              "title": "Xi-Api-Key",
-              "type": "object",
-              "anyOf": [
-                {
-                  "type": "string"
-                }
-              ],
-              "description": "Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the \u0027Profile\u0027 tab on the website.",
-              "nullable": true
-            }
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/BodyDubsAllOrSomeSegmentsAndLanguagesV1DubbingResourceDubbingIdDubPost"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Successful Response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/SegmentDubResponse"
-                }
-              }
-            }
-          },
-          "422": {
-            "description": "Validation Error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/HTTPValidationError"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/v1/dubbing/resource/{dubbing_id}/speaker/{speaker_id}": {
-      "patch": {
-        "tags": [
-          "dubbing",
-          "resource",
-          "segment",
-          "enterprise"
-        ],
-        "summary": "Update Metadata For A Speaker",
-        "description": "Amend the metadata associated with a speaker, such as their voice. Both voice cloning and using voices from the ElevenLabs library are supported.",
-        "operationId": "update-speaker",
-        "parameters": [
-          {
-            "name": "dubbing_id",
-            "in": "path",
-            "description": "ID of the dubbing project.",
-            "required": true,
-            "schema": {
-              "title": "Dubbing Id",
-              "type": "string",
-              "description": "ID of the dubbing project."
-            }
-          },
-          {
-            "name": "speaker_id",
-            "in": "path",
-            "description": "ID of the speaker.",
-            "required": true,
-            "schema": {
-              "title": "Speaker Id",
-              "type": "string",
-              "description": "ID of the speaker."
-            }
-          },
-          {
-            "name": "xi-api-key",
-            "in": "header",
-            "description": "Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the \u0027Profile\u0027 tab on the website.",
-            "schema": {
-              "title": "Xi-Api-Key",
-              "type": "object",
-              "anyOf": [
-                {
-                  "type": "string"
-                }
-              ],
-              "description": "Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the \u0027Profile\u0027 tab on the website.",
-              "nullable": true
-            }
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/BodyUpdateMetadataForASpeakerV1DubbingResourceDubbingIdSpeakerSpeakerIdPatch"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Successful Response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/SpeakerUpdatedResponse"
-                }
-              }
-            }
-          },
-          "422": {
-            "description": "Validation Error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/HTTPValidationError"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/v1/dubbing/resource/{dubbing_id}/speaker": {
-      "post": {
-        "tags": [
-          "dubbing",
-          "resource",
-          "segment",
-          "enterprise"
-        ],
-        "summary": "Create A New Speaker",
-        "operationId": "create-speaker",
-        "parameters": [
-          {
-            "name": "dubbing_id",
-            "in": "path",
-            "description": "ID of the dubbing project.",
-            "required": true,
-            "schema": {
-              "title": "Dubbing Id",
-              "type": "string",
-              "description": "ID of the dubbing project."
-            }
-          },
-          {
-            "name": "xi-api-key",
-            "in": "header",
-            "description": "Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the \u0027Profile\u0027 tab on the website.",
-            "schema": {
-              "title": "Xi-Api-Key",
-              "type": "object",
-              "anyOf": [
-                {
-                  "type": "string"
-                }
-              ],
-              "description": "Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the \u0027Profile\u0027 tab on the website.",
-              "nullable": true
-            }
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/BodyCreateANewSpeakerV1DubbingResourceDubbingIdSpeakerPost"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Successful Response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/SpeakerCreatedResponse"
-                }
-              }
-            }
-          },
-          "422": {
-            "description": "Validation Error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/HTTPValidationError"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/v1/dubbing/resource/{dubbing_id}/speaker/{speaker_id}/similar-voices": {
-      "get": {
-        "tags": [
-          "dubbing",
-          "resource",
-          "segment",
-          "enterprise"
-        ],
-        "summary": "Search The Elevenlabs Library For Voices Similar To A Speaker.",
-        "description": "Fetch the top 10 similar voices to a speaker, including the voice IDs, names, descriptions, and, where possible, a sample audio recording.",
-        "operationId": "get-similar-voices-for-speaker",
-        "parameters": [
-          {
-            "name": "dubbing_id",
-            "in": "path",
-            "description": "ID of the dubbing project.",
-            "required": true,
-            "schema": {
-              "title": "Dubbing Id",
-              "type": "string",
-              "description": "ID of the dubbing project."
-            }
-          },
-          {
-            "name": "speaker_id",
-            "in": "path",
-            "description": "ID of the speaker.",
-            "required": true,
-            "schema": {
-              "title": "Speaker Id",
-              "type": "string",
-              "description": "ID of the speaker."
-            }
-          },
-          {
-            "name": "xi-api-key",
-            "in": "header",
-            "description": "Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the \u0027Profile\u0027 tab on the website.",
-            "schema": {
-              "title": "Xi-Api-Key",
-              "type": "object",
-              "anyOf": [
-                {
-                  "type": "string"
-                }
-              ],
-              "description": "Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the \u0027Profile\u0027 tab on the website.",
-              "nullable": true
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Successful Response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/SimilarVoicesForSpeakerResponse"
-                }
-              }
-            }
-          },
-          "422": {
-            "description": "Validation Error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/HTTPValidationError"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/v1/dubbing/resource/{dubbing_id}/render/{language}": {
-      "post": {
-        "tags": [
-          "dubbing",
-          "resource",
-          "segment",
-          "enterprise"
-        ],
-        "summary": "Render Audio Or Video For The Given Language",
-        "description": "Regenerate the output media for a language using the latest Studio state. Please ensure all segments have been dubbed before rendering, otherwise they will be omitted. Renders are generated asynchronously, and to check the status of all renders please use the \u0027Get Dubbing Resource\u0027 endpoint.",
-        "operationId": "render",
-        "parameters": [
-          {
-            "name": "dubbing_id",
-            "in": "path",
-            "description": "ID of the dubbing project.",
-            "required": true,
-            "schema": {
-              "title": "Dubbing Id",
-              "type": "string",
-              "description": "ID of the dubbing project."
-            }
-          },
-          {
-            "name": "language",
-            "in": "path",
-            "description": "The target language code to render, eg. \u0027es\u0027. To render the source track use \u0027original\u0027.",
-            "required": true,
-            "schema": {
-              "title": "Language",
-              "type": "string",
-              "description": "The target language code to render, eg. \u0027es\u0027. To render the source track use \u0027original\u0027."
-            }
-          },
-          {
-            "name": "xi-api-key",
-            "in": "header",
-            "description": "Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the \u0027Profile\u0027 tab on the website.",
-            "schema": {
-              "title": "Xi-Api-Key",
-              "type": "object",
-              "anyOf": [
-                {
-                  "type": "string"
-                }
-              ],
-              "description": "Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the \u0027Profile\u0027 tab on the website.",
-              "nullable": true
-            }
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/BodyRenderAudioOrVideoForTheGivenLanguageV1DubbingResourceDubbingIdRenderLanguagePost"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Successful Response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/DubbingRenderResponseModel"
-                }
-              }
-            }
-          },
-          "422": {
-            "description": "Validation Error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/HTTPValidationError"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
     "/v1/dubbing": {
       "get": {
         "tags": [
@@ -6941,126 +5943,6 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/GetLibraryVoicesResponseModel"
-                }
-              }
-            }
-          },
-          "422": {
-            "description": "Validation Error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/HTTPValidationError"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/v1/usage/character-stats": {
-      "get": {
-        "summary": "Get Characters Usage Metrics",
-        "description": "\u0022Returns the usage metrics for the current user or the entire workspace they are part of. The response provides a time axis based on the specified aggregation interval (default: day), with usage values for each interval along that axis. Usage is broken down by the selected breakdown type. For example, breakdown type \\\u0022voice\\\u0022 will return the usage of each voice for each interval along the time axis.\u0022",
-        "operationId": "usage-characters",
-        "parameters": [
-          {
-            "name": "start_unix",
-            "in": "query",
-            "description": "UTC Unix timestamp for the start of the usage window, in milliseconds. To include the first day of the window, the timestamp should be at 00:00:00 of that day.",
-            "required": true,
-            "schema": {
-              "title": "Start Unix",
-              "type": "integer",
-              "description": "UTC Unix timestamp for the start of the usage window, in milliseconds. To include the first day of the window, the timestamp should be at 00:00:00 of that day."
-            }
-          },
-          {
-            "name": "end_unix",
-            "in": "query",
-            "description": "UTC Unix timestamp for the end of the usage window, in milliseconds. To include the last day of the window, the timestamp should be at 23:59:59 of that day.",
-            "required": true,
-            "schema": {
-              "title": "End Unix",
-              "type": "integer",
-              "description": "UTC Unix timestamp for the end of the usage window, in milliseconds. To include the last day of the window, the timestamp should be at 23:59:59 of that day."
-            }
-          },
-          {
-            "name": "include_workspace_metrics",
-            "in": "query",
-            "description": "Whether or not to include the statistics of the entire workspace.",
-            "schema": {
-              "title": "Include Workspace Metrics",
-              "type": "boolean",
-              "description": "Whether or not to include the statistics of the entire workspace.",
-              "default": false
-            }
-          },
-          {
-            "name": "breakdown_type",
-            "in": "query",
-            "description": "How to break down the information. Cannot be \u0022user\u0022 if include_workspace_metrics is False.",
-            "schema": {
-              "$ref": "#/components/schemas/BreakdownTypes"
-            }
-          },
-          {
-            "name": "aggregation_interval",
-            "in": "query",
-            "description": "How to aggregate usage data over time. Can be \u0022hour\u0022, \u0022day\u0022, \u0022week\u0022, \u0022month\u0022, or \u0022cumulative\u0022.",
-            "schema": {
-              "$ref": "#/components/schemas/UsageAggregationInterval"
-            }
-          },
-          {
-            "name": "aggregation_bucket_size",
-            "in": "query",
-            "description": "Aggregation bucket size in seconds. Overrides the aggregation interval.",
-            "schema": {
-              "title": "Aggregation Bucket Size",
-              "type": "object",
-              "anyOf": [
-                {
-                  "type": "string"
-                }
-              ],
-              "description": "Aggregation bucket size in seconds. Overrides the aggregation interval.",
-              "nullable": true
-            }
-          },
-          {
-            "name": "metric",
-            "in": "query",
-            "description": "Which metric to aggregate.",
-            "schema": {
-              "$ref": "#/components/schemas/MetricType"
-            }
-          },
-          {
-            "name": "xi-api-key",
-            "in": "header",
-            "description": "Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the \u0027Profile\u0027 tab on the website.",
-            "schema": {
-              "title": "Xi-Api-Key",
-              "type": "object",
-              "anyOf": [
-                {
-                  "type": "string"
-                }
-              ],
-              "description": "Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the \u0027Profile\u0027 tab on the website.",
-              "nullable": true
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Successful Response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/UsageCharactersResponseModel"
                 }
               }
             }
@@ -20863,7 +19745,7 @@
         "tags": [
           "access:all"
         ],
-        "summary": "Usage-By-Product-Over-Time",
+        "summary": "Get Workspace Usage",
         "description": "Returns credit usage broken down by product type over time. Timestamps are Unix milliseconds. The response is a tabular structure with columns, column_types, column_units, and rows.",
         "operationId": "usage-by-product-over-time",
         "parameters": [
@@ -20888,7 +19770,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/BodyUsageByProductOverTimeV1WorkspaceAnalyticsQueryUsageByProductOverTimePost"
+                "$ref": "#/components/schemas/BodyGetWorkspaceUsageV1WorkspaceAnalyticsQueryUsageByProductOverTimePost"
               }
             }
           }
@@ -25801,102 +24683,6 @@
           }
         }
       },
-      "AvatarContextRequestModel": {
-        "title": "AvatarContextRequestModel",
-        "type": "object",
-        "properties": {
-          "avatar_id": {
-            "title": "Avatar Id",
-            "type": "object",
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/Avatar_Id"
-              }
-            ],
-            "nullable": true
-          },
-          "avatar_style_id": {
-            "title": "Avatar Style Id",
-            "type": "object",
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/Avatar_Style_Id"
-              }
-            ],
-            "nullable": true
-          },
-          "avatar_name": {
-            "title": "Avatar Name",
-            "type": "object",
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/Avatar_Name"
-              }
-            ],
-            "nullable": true
-          },
-          "avatar_style_name": {
-            "title": "Avatar Style Name",
-            "type": "object",
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/Avatar_Style_Name"
-              }
-            ],
-            "nullable": true
-          }
-        }
-      },
-      "AvatarContextResponseModel": {
-        "title": "AvatarContextResponseModel",
-        "type": "object",
-        "properties": {
-          "avatar_id": {
-            "title": "Avatar Id",
-            "type": "object",
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/Avatar_Id"
-              }
-            ],
-            "description": "The ID of the avatar.",
-            "nullable": true
-          },
-          "avatar_style_id": {
-            "title": "Avatar Style Id",
-            "type": "object",
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/Avatar_Style_Id"
-              }
-            ],
-            "description": "The ID of the avatar style.",
-            "nullable": true
-          },
-          "avatar_name": {
-            "title": "Avatar Name",
-            "type": "object",
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/Avatar_Name"
-              }
-            ],
-            "description": "The name of the avatar.",
-            "nullable": true
-          },
-          "avatar_style_name": {
-            "title": "Avatar Style Name",
-            "type": "object",
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/Avatar_Style_Name"
-              }
-            ],
-            "description": "The name of the avatar style.",
-            "nullable": true
-          }
-        }
-      },
       "BackupLLMDefault": {
         "title": "BackupLLMDefault",
         "type": "object",
@@ -28678,6 +27464,52 @@
           }
         }
       },
+      "BodyGetWorkspaceUsageV1WorkspaceAnalyticsQueryUsageByProductOverTimePost": {
+        "title": "Body_Get_Workspace_Usage_v1_workspace_analytics_query_usage_by_product_over_time_post",
+        "required": [
+          "start_time",
+          "end_time"
+        ],
+        "type": "object",
+        "properties": {
+          "start_time": {
+            "title": "Start Time",
+            "minimum": 0.0,
+            "type": "integer"
+          },
+          "end_time": {
+            "title": "End Time",
+            "minimum": 0.0,
+            "type": "integer"
+          },
+          "interval_seconds": {
+            "title": "Interval Seconds",
+            "minimum": 1.0,
+            "type": "integer",
+            "default": 60
+          },
+          "group_by": {
+            "title": "Group By",
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Group_By"
+              }
+            ],
+            "nullable": true
+          },
+          "filters": {
+            "title": "Filters",
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Filters"
+              }
+            ],
+            "nullable": true
+          }
+        }
+      },
       "BodyGetSimilarLibraryVoicesV1SimilarVoicesPost": {
         "title": "Body_Get_similar_library_voices_v1_similar_voices_post",
         "type": "object",
@@ -30136,16 +28968,6 @@
             "additionalProperties": false,
             "description": "\u0022This parameter controls text normalization with three modes: \u0027auto\u0027, \u0027on\u0027, and \u0027off\u0027. When set to \u0027auto\u0027, the system will automatically decide whether to apply text normalization (e.g., spelling out numbers). With \u0027on\u0027, text normalization will always be applied, while with \u0027off\u0027, it will be skipped.\u0022",
             "default": "auto"
-          },
-          "avatar_context": {
-            "type": "object",
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/AvatarContextRequestModel"
-              }
-            ],
-            "description": "Avatar context when this generation is made from the Avatars video editor.",
-            "nullable": true
           }
         }
       },
@@ -30225,16 +29047,6 @@
             "additionalProperties": false,
             "description": "\u0022This parameter controls text normalization with three modes: \u0027auto\u0027, \u0027on\u0027, and \u0027off\u0027. When set to \u0027auto\u0027, the system will automatically decide whether to apply text normalization (e.g., spelling out numbers). With \u0027on\u0027, text normalization will always be applied, while with \u0027off\u0027, it will be skipped.\u0022",
             "default": "auto"
-          },
-          "avatar_context": {
-            "type": "object",
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/AvatarContextRequestModel"
-              }
-            ],
-            "description": "Avatar context when this generation is made from the Avatars video editor.",
-            "nullable": true
           }
         }
       },
@@ -31271,16 +30083,6 @@
             "type": "boolean",
             "description": "\u0022This parameter controls language text normalization. This helps with proper pronunciation of text in some supported languages. WARNING: This parameter can heavily increase the latency of the request. Currently only supported for Japanese.\u0022",
             "default": false
-          },
-          "avatar_context": {
-            "type": "object",
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/AvatarContextRequestModel"
-              }
-            ],
-            "description": "Avatar context when this generation is made from the Avatars video editor.",
-            "nullable": true
           }
         }
       },
@@ -31536,16 +30338,6 @@
             "type": "boolean",
             "description": "\u0022This parameter controls language text normalization. This helps with proper pronunciation of text in some supported languages. WARNING: This parameter can heavily increase the latency of the request. Currently only supported for Japanese.\u0022",
             "default": false
-          },
-          "avatar_context": {
-            "type": "object",
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/AvatarContextRequestModel"
-              }
-            ],
-            "description": "Avatar context when this generation is made from the Avatars video editor.",
-            "nullable": true
           }
         }
       },
@@ -31678,52 +30470,6 @@
             "type": "boolean",
             "description": "\u0022This parameter controls language text normalization. This helps with proper pronunciation of text in some supported languages. WARNING: This parameter can heavily increase the latency of the request. Currently only supported for Japanese.\u0022",
             "default": false
-          }
-        }
-      },
-      "BodyUsageByProductOverTimeV1WorkspaceAnalyticsQueryUsageByProductOverTimePost": {
-        "title": "Body_usage_by_product_over_time_v1_workspace_analytics_query_usage_by_product_over_time_post",
-        "required": [
-          "start_time",
-          "end_time"
-        ],
-        "type": "object",
-        "properties": {
-          "start_time": {
-            "title": "Start Time",
-            "minimum": 0.0,
-            "type": "integer"
-          },
-          "end_time": {
-            "title": "End Time",
-            "minimum": 0.0,
-            "type": "integer"
-          },
-          "interval_seconds": {
-            "title": "Interval Seconds",
-            "minimum": 1.0,
-            "type": "integer",
-            "default": 60
-          },
-          "group_by": {
-            "title": "Group By",
-            "type": "object",
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/Group_By"
-              }
-            ],
-            "nullable": true
-          },
-          "filters": {
-            "title": "Filters",
-            "type": "object",
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/Filters"
-              }
-            ],
-            "nullable": true
           }
         }
       },
@@ -59901,16 +58647,6 @@
             ],
             "description": "The output format the audio was originally generated in.",
             "nullable": true
-          },
-          "avatar_context": {
-            "type": "object",
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/AvatarContextResponseModel"
-              }
-            ],
-            "description": "Avatar context if this generation was created from the Avatars video editor.",
-            "nullable": true
           }
         },
         "example": {
@@ -75108,50 +73844,6 @@
           }
         }
       },
-      "Avatar_Id": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "type": "string"
-          }
-        }
-      },
-      "Avatar_Style_Id": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "type": "string"
-          }
-        }
-      },
-      "Avatar_Name": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "type": "string"
-          }
-        }
-      },
-      "Avatar_Style_Name": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "type": "string"
-          }
-        }
-      },
       "Phone_Number_Id": {
         "required": [
           "value"
@@ -75927,6 +74619,52 @@
           }
         }
       },
+      "Group_By": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "array",
+            "items": {
+              "enum": [
+                "product_type",
+                "model",
+                "voice_id",
+                "user_id",
+                "fiat_currency",
+                "fiat_charge_type",
+                "region",
+                "reporting_workspace_id",
+                "request_source",
+                "resource_id",
+                "subresource_id",
+                "request_queue_type",
+                "voice_multiplier",
+                "hashed_xi_api_key",
+                "billing_group_id"
+              ],
+              "type": "string",
+              "additionalProperties": false
+            }
+          }
+        }
+      },
+      "Filters": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ColumnFilter"
+            }
+          }
+        }
+      },
       "Similarity_Threshold": {
         "required": [
           "value"
@@ -76412,52 +75150,6 @@
             "type": "array",
             "items": {
               "type": "string"
-            }
-          }
-        }
-      },
-      "Group_By": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "type": "array",
-            "items": {
-              "enum": [
-                "product_type",
-                "model",
-                "voice_id",
-                "user_id",
-                "fiat_currency",
-                "fiat_charge_type",
-                "region",
-                "reporting_workspace_id",
-                "request_source",
-                "resource_id",
-                "subresource_id",
-                "request_queue_type",
-                "voice_multiplier",
-                "hashed_xi_api_key",
-                "billing_group_id"
-              ],
-              "type": "string",
-              "additionalProperties": false
-            }
-          }
-        }
-      },
-      "Filters": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/ColumnFilter"
             }
           }
         }

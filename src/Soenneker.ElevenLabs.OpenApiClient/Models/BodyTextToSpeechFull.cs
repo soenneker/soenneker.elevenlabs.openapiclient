@@ -18,14 +18,6 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public bool? ApplyLanguageTextNormalization { get; set; }
         /// <summary>&quot;This parameter controls text normalization with three modes: &apos;auto&apos;, &apos;on&apos;, and &apos;off&apos;. When set to &apos;auto&apos;, the system will automatically decide whether to apply text normalization (e.g., spelling out numbers). With &apos;on&apos;, text normalization will always be applied, while with &apos;off&apos;, it will be skipped.&quot;</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyTextToSpeechFull_apply_text_normalization? ApplyTextNormalization { get; set; }
-        /// <summary>Avatar context when this generation is made from the Avatars video editor.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AvatarContextRequestModel? AvatarContext { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AvatarContextRequestModel AvatarContext { get; set; }
-#endif
         /// <summary>Language code (ISO 639-1) used to enforce a language for the model and text normalization. If the model does not support provided language code, an error will be returned.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -138,7 +130,6 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             {
                 { "apply_language_text_normalization", n => { ApplyLanguageTextNormalization = n.GetBoolValue(); } },
                 { "apply_text_normalization", n => { ApplyTextNormalization = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyTextToSpeechFull_apply_text_normalization>(); } },
-                { "avatar_context", n => { AvatarContext = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AvatarContextRequestModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.AvatarContextRequestModel.CreateFromDiscriminatorValue); } },
                 { "language_code", n => { LanguageCode = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Language_Code>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Language_Code.CreateFromDiscriminatorValue); } },
                 { "model_id", n => { ModelId = n.GetStringValue(); } },
                 { "next_request_ids", n => { NextRequestIds = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Next_Request_Ids>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Next_Request_Ids.CreateFromDiscriminatorValue); } },
@@ -161,7 +152,6 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("apply_language_text_normalization", ApplyLanguageTextNormalization);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyTextToSpeechFull_apply_text_normalization>("apply_text_normalization", ApplyTextNormalization);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AvatarContextRequestModel>("avatar_context", AvatarContext);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Language_Code>("language_code", LanguageCode);
             writer.WriteStringValue("model_id", ModelId);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Next_Request_Ids>("next_request_ids", NextRequestIds);

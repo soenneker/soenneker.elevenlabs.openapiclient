@@ -22,14 +22,6 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.HistoryAlignmentsResponseModel Alignments { get; set; }
 #endif
-        /// <summary>Avatar context if this generation was created from the Avatars video editor.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AvatarContextResponseModel? AvatarContext { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AvatarContextResponseModel AvatarContext { get; set; }
-#endif
         /// <summary>The character count change from.</summary>
         public int? CharacterCountChangeFrom { get; set; }
         /// <summary>The character count change to.</summary>
@@ -176,7 +168,6 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "alignments", n => { Alignments = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.HistoryAlignmentsResponseModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.HistoryAlignmentsResponseModel.CreateFromDiscriminatorValue); } },
-                { "avatar_context", n => { AvatarContext = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AvatarContextResponseModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.AvatarContextResponseModel.CreateFromDiscriminatorValue); } },
                 { "character_count_change_from", n => { CharacterCountChangeFrom = n.GetIntValue(); } },
                 { "character_count_change_to", n => { CharacterCountChangeTo = n.GetIntValue(); } },
                 { "content_type", n => { ContentType = n.GetStringValue(); } },
@@ -205,7 +196,6 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.HistoryAlignmentsResponseModel>("alignments", Alignments);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AvatarContextResponseModel>("avatar_context", AvatarContext);
             writer.WriteIntValue("character_count_change_from", CharacterCountChangeFrom);
             writer.WriteIntValue("character_count_change_to", CharacterCountChangeTo);
             writer.WriteStringValue("content_type", ContentType);

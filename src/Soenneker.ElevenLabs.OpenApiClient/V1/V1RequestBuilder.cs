@@ -22,7 +22,6 @@ using Soenneker.ElevenLabs.OpenApiClient.V1.Studio;
 using Soenneker.ElevenLabs.OpenApiClient.V1.TextToDialogue;
 using Soenneker.ElevenLabs.OpenApiClient.V1.TextToSpeech;
 using Soenneker.ElevenLabs.OpenApiClient.V1.TextToVoice;
-using Soenneker.ElevenLabs.OpenApiClient.V1.Usage;
 using Soenneker.ElevenLabs.OpenApiClient.V1.User;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Voices;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Workspace;
@@ -137,11 +136,6 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1
         public global::Soenneker.ElevenLabs.OpenApiClient.V1.TextToVoice.TextToVoiceRequestBuilder TextToVoice
         {
             get => new global::Soenneker.ElevenLabs.OpenApiClient.V1.TextToVoice.TextToVoiceRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The usage property</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.V1.Usage.UsageRequestBuilder Usage
-        {
-            get => new global::Soenneker.ElevenLabs.OpenApiClient.V1.Usage.UsageRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The user property</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.V1.User.UserRequestBuilder User

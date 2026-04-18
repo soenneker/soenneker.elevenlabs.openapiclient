@@ -5,7 +5,6 @@ using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.ElevenLabs.OpenApiClient.Models;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Dubbing.Item;
-using Soenneker.ElevenLabs.OpenApiClient.V1.Dubbing.Resource;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -19,11 +18,6 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Dubbing
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class DubbingRequestBuilder : BaseRequestBuilder
     {
-        /// <summary>The resource property</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.V1.Dubbing.Resource.ResourceRequestBuilder Resource
-        {
-            get => new global::Soenneker.ElevenLabs.OpenApiClient.V1.Dubbing.Resource.ResourceRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Gets an item from the Soenneker.ElevenLabs.OpenApiClient.v1.dubbing.item collection</summary>
         /// <param name="position">ID of the dubbing project.</param>
         /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.V1.Dubbing.Item.WithDubbing_ItemRequestBuilder"/></returns>

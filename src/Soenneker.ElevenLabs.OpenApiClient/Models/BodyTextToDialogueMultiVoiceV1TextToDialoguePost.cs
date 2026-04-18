@@ -16,14 +16,6 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>&quot;This parameter controls text normalization with three modes: &apos;auto&apos;, &apos;on&apos;, and &apos;off&apos;. When set to &apos;auto&apos;, the system will automatically decide whether to apply text normalization (e.g., spelling out numbers). With &apos;on&apos;, text normalization will always be applied, while with &apos;off&apos;, it will be skipped.&quot;</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyTextToDialogueMultiVoiceV1TextToDialoguePost_apply_text_normalization? ApplyTextNormalization { get; set; }
-        /// <summary>Avatar context when this generation is made from the Avatars video editor.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AvatarContextRequestModel? AvatarContext { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AvatarContextRequestModel AvatarContext { get; set; }
-#endif
         /// <summary>A list of dialogue inputs, each containing text and a voice ID which will be converted into speech. The maximum number of unique voice IDs is 10. For reliable generation, keep the total character count across all `inputs[].text` values at or below 2,000 characters per request. Longer requests can terminate early in streaming responses or return a validation error.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -100,7 +92,6 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "apply_text_normalization", n => { ApplyTextNormalization = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyTextToDialogueMultiVoiceV1TextToDialoguePost_apply_text_normalization>(); } },
-                { "avatar_context", n => { AvatarContext = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AvatarContextRequestModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.AvatarContextRequestModel.CreateFromDiscriminatorValue); } },
                 { "inputs", n => { Inputs = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.DialogueInput>(global::Soenneker.ElevenLabs.OpenApiClient.Models.DialogueInput.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "language_code", n => { LanguageCode = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Language_Code>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Language_Code.CreateFromDiscriminatorValue); } },
                 { "model_id", n => { ModelId = n.GetStringValue(); } },
@@ -117,7 +108,6 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyTextToDialogueMultiVoiceV1TextToDialoguePost_apply_text_normalization>("apply_text_normalization", ApplyTextNormalization);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AvatarContextRequestModel>("avatar_context", AvatarContext);
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.DialogueInput>("inputs", Inputs);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Language_Code>("language_code", LanguageCode);
             writer.WriteStringValue("model_id", ModelId);
