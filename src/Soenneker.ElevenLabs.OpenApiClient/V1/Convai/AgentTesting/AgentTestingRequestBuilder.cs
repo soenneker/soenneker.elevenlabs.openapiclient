@@ -59,7 +59,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.AgentTesting
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AgentTestingRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/convai/agent-testing{?cursor*,include_folders*,page_size*,parent_folder_id*,search*,sort_mode*,types*}", pathParameters)
+        public AgentTestingRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/convai/agent-testing{?cursor*,include_folders*,page_size*,parent_folder_id*,search*,sharing_mode*,sort_mode*,types*}", pathParameters)
         {
         }
         /// <summary>
@@ -67,7 +67,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.AgentTesting
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AgentTestingRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/convai/agent-testing{?cursor*,include_folders*,page_size*,parent_folder_id*,search*,sort_mode*,types*}", rawUrl)
+        public AgentTestingRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/convai/agent-testing{?cursor*,include_folders*,page_size*,parent_folder_id*,search*,sharing_mode*,sort_mode*,types*}", rawUrl)
         {
         }
         /// <summary>
@@ -171,6 +171,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.AgentTesting
             [QueryParameter("search")]
             public string Search { get; set; }
 #endif
+            /// <summary>Filter test visibility. Use `shared_with_me` to return only tests/folders shared with the current user that they did not create.</summary>
+            [QueryParameter("sharing_mode")]
+            public global::Soenneker.ElevenLabs.OpenApiClient.Models.TestSharingMode? SharingMode { get; set; }
             /// <summary>Sort mode for listing tests. Use &apos;folders_first&apos; to place folders before tests.</summary>
             [QueryParameter("sort_mode")]
             public global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.AgentTesting.GetSort_modeQueryParameterType? SortMode { get; set; }

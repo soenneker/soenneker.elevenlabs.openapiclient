@@ -10701,6 +10701,14 @@
             }
           },
           {
+            "name": "sharing_mode",
+            "in": "query",
+            "description": "Filter test visibility. Use \u0060shared_with_me\u0060 to return only tests/folders shared with the current user that they did not create.",
+            "schema": {
+              "$ref": "#/components/schemas/TestSharingMode"
+            }
+          },
+          {
             "name": "xi-api-key",
             "in": "header",
             "description": "Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the \u0027Profile\u0027 tab on the website.",
@@ -44332,6 +44340,11 @@
             ],
             "type": "string",
             "default": "get_schedule"
+          },
+          "include_location_filter": {
+            "title": "Include Location Filter",
+            "type": "boolean",
+            "default": false
           }
         }
       },
@@ -60874,6 +60887,15 @@
           "pending",
           "passed",
           "failed"
+        ],
+        "type": "string",
+        "additionalProperties": false
+      },
+      "TestSharingMode": {
+        "title": "TestSharingMode",
+        "enum": [
+          "all",
+          "shared_with_me"
         ],
         "type": "string",
         "additionalProperties": false
