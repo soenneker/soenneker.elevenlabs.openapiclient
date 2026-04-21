@@ -5,6 +5,7 @@ using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.ElevenLabs.OpenApiClient.Models;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Tools.Item.DependentAgents;
+using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Tools.Item.Executions;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -22,6 +23,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Tools.Item
         public global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Tools.Item.DependentAgents.DependentAgentsRequestBuilder DependentAgents
         {
             get => new global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Tools.Item.DependentAgents.DependentAgentsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The executions property</summary>
+        public global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Tools.Item.Executions.ExecutionsRequestBuilder Executions
+        {
+            get => new global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Tools.Item.Executions.ExecutionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Tools.Item.WithTool_ItemRequestBuilder"/> and sets the default values.

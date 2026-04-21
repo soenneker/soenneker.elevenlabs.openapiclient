@@ -15249,6 +15249,176 @@
         }
       }
     },
+    "/v1/convai/tools/{tool_id}/executions": {
+      "get": {
+        "tags": [
+          "Agents Platform"
+        ],
+        "summary": "Get Tool Executions",
+        "description": "Get paginated list of tool executions for a specific tool.",
+        "operationId": "get-tool-executions-route",
+        "parameters": [
+          {
+            "name": "tool_id",
+            "in": "path",
+            "description": "ID of the requested tool.",
+            "required": true,
+            "schema": {
+              "title": "Tool Id",
+              "type": "string",
+              "description": "ID of the requested tool."
+            }
+          },
+          {
+            "name": "cursor",
+            "in": "query",
+            "description": "Used for fetching next page. Cursor is returned in the response.",
+            "schema": {
+              "title": "Cursor",
+              "type": "object",
+              "anyOf": [
+                {
+                  "type": "string"
+                }
+              ],
+              "description": "Used for fetching next page. Cursor is returned in the response.",
+              "nullable": true
+            }
+          },
+          {
+            "name": "page_size",
+            "in": "query",
+            "description": "How many documents to return at maximum. Can not exceed 100, defaults to 30.",
+            "schema": {
+              "title": "Page Size",
+              "maximum": 100,
+              "minimum": 1,
+              "type": "integer",
+              "description": "How many documents to return at maximum. Can not exceed 100, defaults to 30.",
+              "default": 30
+            }
+          },
+          {
+            "name": "is_error",
+            "in": "query",
+            "description": "Filter by error status. If not provided, returns all executions.",
+            "schema": {
+              "title": "Is Error",
+              "type": "object",
+              "anyOf": [
+                {
+                  "type": "boolean"
+                }
+              ],
+              "description": "Filter by error status. If not provided, returns all executions.",
+              "nullable": true
+            }
+          },
+          {
+            "name": "agent_id",
+            "in": "query",
+            "description": "Filter by agent ID.",
+            "schema": {
+              "title": "Agent Id",
+              "type": "object",
+              "anyOf": [
+                {
+                  "type": "string"
+                }
+              ],
+              "description": "Filter by agent ID.",
+              "nullable": true
+            }
+          },
+          {
+            "name": "branch_id",
+            "in": "query",
+            "description": "Filter by agent branch ID.",
+            "schema": {
+              "title": "Branch Id",
+              "type": "object",
+              "anyOf": [
+                {
+                  "type": "string"
+                }
+              ],
+              "description": "Filter by agent branch ID.",
+              "nullable": true
+            }
+          },
+          {
+            "name": "start_time",
+            "in": "query",
+            "description": "Filter executions from this Unix timestamp (inclusive).",
+            "schema": {
+              "title": "Start Time",
+              "type": "object",
+              "anyOf": [
+                {
+                  "type": "string"
+                }
+              ],
+              "description": "Filter executions from this Unix timestamp (inclusive).",
+              "nullable": true
+            }
+          },
+          {
+            "name": "end_time",
+            "in": "query",
+            "description": "Filter executions until this Unix timestamp (inclusive).",
+            "schema": {
+              "title": "End Time",
+              "type": "object",
+              "anyOf": [
+                {
+                  "type": "string"
+                }
+              ],
+              "description": "Filter executions until this Unix timestamp (inclusive).",
+              "nullable": true
+            }
+          },
+          {
+            "name": "xi-api-key",
+            "in": "header",
+            "description": "Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the \u0027Profile\u0027 tab on the website.",
+            "schema": {
+              "title": "Xi-Api-Key",
+              "type": "object",
+              "anyOf": [
+                {
+                  "type": "string"
+                }
+              ],
+              "description": "Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the \u0027Profile\u0027 tab on the website.",
+              "nullable": true
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetToolExecutionsPageResponseModel"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/v1/convai/settings": {
       "get": {
         "tags": [
@@ -40966,6 +41136,7 @@
           "character_count",
           "character_limit",
           "max_character_limit_extension",
+          "max_credit_limit_extension",
           "can_extend_character_limit",
           "allowed_to_extend_character_limit",
           "voice_slots_used",
@@ -41005,8 +41176,18 @@
                 "$ref": "#/components/schemas/Max_Character_Limit_Extension"
               }
             ],
-            "description": "Maximum number of characters that the character limit can be exceeded by. Managed by the workspace admin.",
+            "description": "\u0022Deprecated: use \u0060max_credit_limit_extension\u0060. Maximum number of characters that the character limit can be exceeded by. Managed by the workspace admin.\u0022",
             "nullable": true
+          },
+          "max_credit_limit_extension": {
+            "title": "Max Credit Limit Extension",
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Max_Credit_Limit_Extension"
+              }
+            ],
+            "description": "Maximum number of credits that the credit limit can be exceeded by. Managed by the workspace admin. \u0060\u0022unlimited\u0022\u0060 means no cap, \u00600\u0060 means usage-based billing is disabled."
           },
           "can_extend_character_limit": {
             "title": "Can Extend Character Limit",
@@ -41016,7 +41197,7 @@
           "allowed_to_extend_character_limit": {
             "title": "Allowed To Extend Character Limit",
             "type": "boolean",
-            "description": "Whether the user is allowed to extend their character limit."
+            "description": "\u0022Deprecated: use \u0060max_credit_limit_extension != 0\u0060. Whether the user is allowed to extend their character limit.\u0022"
           },
           "next_character_count_reset_unix": {
             "title": "Next Character Count Reset Unix",
@@ -41179,6 +41360,7 @@
           "has_used_creator_coupon_on_account": false,
           "has_used_starter_coupon_on_account": false,
           "max_character_limit_extension": 10000,
+          "max_credit_limit_extension": 10000,
           "next_character_count_reset_unix": 1738356858,
           "next_invoice": {
             "amount_due_cents": 1000,
@@ -44805,6 +44987,37 @@
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/DependentBranchInfo"
+            }
+          },
+          "next_cursor": {
+            "title": "Next Cursor",
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Next_Cursor"
+              }
+            ],
+            "nullable": true
+          },
+          "has_more": {
+            "title": "Has More",
+            "type": "boolean"
+          }
+        }
+      },
+      "GetToolExecutionsPageResponseModel": {
+        "title": "GetToolExecutionsPageResponseModel",
+        "required": [
+          "executions",
+          "has_more"
+        ],
+        "type": "object",
+        "properties": {
+          "executions": {
+            "title": "Executions",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ToolExecutionResponseModel"
             }
           },
           "next_cursor": {
@@ -59410,6 +59623,7 @@
           "character_count",
           "character_limit",
           "max_character_limit_extension",
+          "max_credit_limit_extension",
           "can_extend_character_limit",
           "allowed_to_extend_character_limit",
           "voice_slots_used",
@@ -59447,8 +59661,18 @@
                 "$ref": "#/components/schemas/Max_Character_Limit_Extension"
               }
             ],
-            "description": "Maximum number of characters that the character limit can be exceeded by. Managed by the workspace admin.",
+            "description": "\u0022Deprecated: use \u0060max_credit_limit_extension\u0060. Maximum number of characters that the character limit can be exceeded by. Managed by the workspace admin.\u0022",
             "nullable": true
+          },
+          "max_credit_limit_extension": {
+            "title": "Max Credit Limit Extension",
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Max_Credit_Limit_Extension"
+              }
+            ],
+            "description": "Maximum number of credits that the credit limit can be exceeded by. Managed by the workspace admin. \u0060\u0022unlimited\u0022\u0060 means no cap, \u00600\u0060 means usage-based billing is disabled."
           },
           "can_extend_character_limit": {
             "title": "Can Extend Character Limit",
@@ -59458,7 +59682,7 @@
           "allowed_to_extend_character_limit": {
             "title": "Allowed To Extend Character Limit",
             "type": "boolean",
-            "description": "Whether the user is allowed to extend their character limit."
+            "description": "\u0022Deprecated: use \u0060max_credit_limit_extension != 0\u0060. Whether the user is allowed to extend their character limit.\u0022"
           },
           "next_character_count_reset_unix": {
             "title": "Next Character Count Reset Unix",
@@ -59569,6 +59793,7 @@
           "character_refresh_period": "monthly_period",
           "currency": "usd",
           "max_character_limit_extension": 10000,
+          "max_credit_limit_extension": 10000,
           "max_voice_add_edits": 230,
           "next_character_count_reset_unix": 1738356858,
           "professional_voice_limit": 1,
@@ -61291,6 +61516,157 @@
         "type": "string",
         "additionalProperties": false,
         "default": "immediate"
+      },
+      "ToolExecutionResponseModel": {
+        "title": "ToolExecutionResponseModel",
+        "required": [
+          "tool_id",
+          "tool_request_id",
+          "conversation_id",
+          "agent_id",
+          "timestamp",
+          "latency_secs",
+          "id"
+        ],
+        "type": "object",
+        "properties": {
+          "tool_id": {
+            "title": "Tool Id",
+            "type": "string",
+            "description": "The ID of the tool that was executed"
+          },
+          "tool_request_id": {
+            "title": "Tool Request Id",
+            "type": "string",
+            "description": "The request/call ID associated with this tool execution"
+          },
+          "conversation_id": {
+            "title": "Conversation Id",
+            "type": "string",
+            "description": "The ID of the conversation where the tool was executed"
+          },
+          "agent_id": {
+            "title": "Agent Id",
+            "type": "string",
+            "description": "The ID of the agent that ran the tool"
+          },
+          "branch_id": {
+            "title": "Branch Id",
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Branch_Id"
+              }
+            ],
+            "description": "The branch ID if the agent has branches",
+            "nullable": true
+          },
+          "timestamp": {
+            "title": "Timestamp",
+            "type": "number",
+            "description": "Unix timestamp when the tool was executed"
+          },
+          "latency_secs": {
+            "title": "Latency Secs",
+            "type": "number",
+            "description": "How long the tool execution took"
+          },
+          "is_error": {
+            "title": "Is Error",
+            "type": "boolean",
+            "description": "Whether the tool execution failed",
+            "default": false
+          },
+          "request_payload": {
+            "title": "Request Payload",
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Request_Payload"
+              }
+            ],
+            "description": "LLM-extracted parameters sent to the tool (JSON string)",
+            "nullable": true
+          },
+          "response_payload": {
+            "title": "Response Payload",
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Response_Payload"
+              }
+            ],
+            "description": "Response returned by the tool",
+            "nullable": true
+          },
+          "error_message": {
+            "title": "Error Message",
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Error_Message"
+              }
+            ],
+            "description": "Error message if the tool execution failed",
+            "nullable": true
+          },
+          "error_type": {
+            "title": "Error Type",
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Error_Type"
+              }
+            ],
+            "description": "Error category (internal, customer_config, customer_auth, external_server, external_client, client_timeout, unknown)",
+            "nullable": true
+          },
+          "id": {
+            "title": "Id",
+            "type": "string"
+          },
+          "tool_call_details": {
+            "title": "Tool Call Details",
+            "type": "object",
+            "anyOf": [
+              {
+                "required": [
+                  "type"
+                ],
+                "type": "object",
+                "oneOf": [
+                  {
+                    "$ref": "#/components/schemas/ConversationHistoryTranscriptToolCallWebhookDetails"
+                  },
+                  {
+                    "$ref": "#/components/schemas/ConversationHistoryTranscriptToolCallClientDetails"
+                  },
+                  {
+                    "$ref": "#/components/schemas/ConversationHistoryTranscriptToolCallMCPDetails"
+                  },
+                  {
+                    "$ref": "#/components/schemas/ConversationHistoryTranscriptToolCallApiIntegrationWebhookDetailsOutput"
+                  }
+                ],
+                "properties": {
+                  "type": {
+                    "type": "string"
+                  }
+                },
+                "discriminator": {
+                  "propertyName": "type",
+                  "mapping": {
+                    "api_integration_webhook": "#/components/schemas/ConversationHistoryTranscriptToolCallApiIntegrationWebhookDetails-Output",
+                    "client": "#/components/schemas/ConversationHistoryTranscriptToolCallClientDetails",
+                    "mcp": "#/components/schemas/ConversationHistoryTranscriptToolCallMCPDetails",
+                    "webhook": "#/components/schemas/ConversationHistoryTranscriptToolCallWebhookDetails"
+                  }
+                }
+              }
+            ],
+            "nullable": true
+          }
+        }
       },
       "ToolMockConfig": {
         "title": "ToolMockConfig",
@@ -63601,6 +63977,7 @@
             "character_refresh_period": "monthly_period",
             "currency": "usd",
             "max_character_limit_extension": 10000,
+            "max_credit_limit_extension": 10000,
             "max_voice_add_edits": 230,
             "next_character_count_reset_unix": 1738356858,
             "professional_voice_limit": 1,
@@ -76748,6 +77125,17 @@
           }
         }
       },
+      "Max_Credit_Limit_Extension": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "integer"
+          }
+        }
+      },
       "Next_Character_Count_Reset_Unix": {
         "required": [
           "value"
@@ -79041,6 +79429,39 @@
         "properties": {
           "value": {
             "type": "boolean"
+          }
+        }
+      },
+      "Request_Payload": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string"
+          }
+        }
+      },
+      "Response_Payload": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string"
+          }
+        }
+      },
+      "Error_Type": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string"
           }
         }
       },
