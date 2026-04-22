@@ -32258,6 +32258,7 @@
           "client_error",
           "guardrail_triggered",
           "dtmf_request",
+          "agent_response_complete",
           "internal_turn_probability",
           "internal_tentative_agent_response"
         ],
@@ -35890,18 +35891,10 @@
             "nullable": true
           },
           "dynamic_variables": {
+            "title": "Dynamic Variables",
             "type": "object",
             "additionalProperties": {
-              "type": "object",
-              "anyOf": [
-                {
-                  "$ref": "#/components/schemas/UnionBranch"
-                },
-                {
-                  "$ref": "#/components/schemas/DynamicVariableContainerValueTypeOutput_Wrapper"
-                }
-              ],
-              "nullable": true
+              "$ref": "#/components/schemas/DynamicVariableValueTypeOutput"
             }
           },
           "tool_mock_config": {
@@ -35968,18 +35961,10 @@
             "nullable": true
           },
           "dynamic_variables": {
+            "title": "Dynamic Variables",
             "type": "object",
             "additionalProperties": {
-              "type": "object",
-              "anyOf": [
-                {
-                  "$ref": "#/components/schemas/UnionBranch"
-                },
-                {
-                  "$ref": "#/components/schemas/DynamicVariableContainerValueTypeInput_Wrapper"
-                }
-              ],
-              "nullable": true
+              "$ref": "#/components/schemas/DynamicVariableValueTypeInput"
             }
           }
         }
@@ -36043,18 +36028,10 @@
             "nullable": true
           },
           "dynamic_variables": {
+            "title": "Dynamic Variables",
             "type": "object",
             "additionalProperties": {
-              "type": "object",
-              "anyOf": [
-                {
-                  "$ref": "#/components/schemas/UnionBranch"
-                },
-                {
-                  "$ref": "#/components/schemas/DynamicVariableContainerValueTypeOutput_Wrapper"
-                }
-              ],
-              "nullable": true
+              "$ref": "#/components/schemas/DynamicVariableValueTypeOutput"
             }
           }
         }
@@ -36188,18 +36165,10 @@
             "description": "A partial conversation history to start the simulation from. If empty, simulation starts fresh."
           },
           "dynamic_variables": {
+            "title": "Dynamic Variables",
             "type": "object",
             "additionalProperties": {
-              "type": "object",
-              "anyOf": [
-                {
-                  "$ref": "#/components/schemas/UnionBranch"
-                },
-                {
-                  "$ref": "#/components/schemas/DynamicVariableContainerValueTypeInput_Wrapper"
-                }
-              ],
-              "nullable": true
+              "$ref": "#/components/schemas/DynamicVariableValueTypeInput"
             }
           }
         },
@@ -37596,18 +37565,10 @@
             "nullable": true
           },
           "dynamic_variables": {
+            "title": "Dynamic Variables",
             "type": "object",
             "additionalProperties": {
-              "type": "object",
-              "anyOf": [
-                {
-                  "$ref": "#/components/schemas/UnionBranch"
-                },
-                {
-                  "$ref": "#/components/schemas/DynamicVariableContainerValueTypeInput_Wrapper"
-                }
-              ],
-              "nullable": true
+              "$ref": "#/components/schemas/DynamicVariableValueTypeInput"
             },
             "description": "Dynamic variables to replace in the agent config during testing"
           },
@@ -37791,18 +37752,10 @@
             "nullable": true
           },
           "dynamic_variables": {
+            "title": "Dynamic Variables",
             "type": "object",
             "additionalProperties": {
-              "type": "object",
-              "anyOf": [
-                {
-                  "$ref": "#/components/schemas/UnionBranch"
-                },
-                {
-                  "$ref": "#/components/schemas/DynamicVariableContainerValueTypeInput_Wrapper"
-                }
-              ],
-              "nullable": true
+              "$ref": "#/components/schemas/DynamicVariableValueTypeInput"
             },
             "description": "Dynamic variables to replace in the agent config during testing"
           },
@@ -37935,18 +37888,10 @@
             "nullable": true
           },
           "dynamic_variables": {
+            "title": "Dynamic Variables",
             "type": "object",
             "additionalProperties": {
-              "type": "object",
-              "anyOf": [
-                {
-                  "$ref": "#/components/schemas/UnionBranch"
-                },
-                {
-                  "$ref": "#/components/schemas/DynamicVariableContainerValueTypeInput_Wrapper"
-                }
-              ],
-              "nullable": true
+              "$ref": "#/components/schemas/DynamicVariableValueTypeInput"
             },
             "description": "Dynamic variables to replace in the agent config during testing"
           },
@@ -40471,18 +40416,6 @@
           "value_path": "user.name"
         }
       },
-      "DynamicVariableContainerValueTypeInput": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/DynamicVariableNestedValueTypeInput"
-        }
-      },
-      "DynamicVariableContainerValueTypeOutput": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/DynamicVariableNestedValueTypeOutput"
-        }
-      },
       "DynamicVariableNestedValueTypeInput": {
         "required": [
           "type"
@@ -40631,22 +40564,95 @@
         },
         "description": "Tracks a dynamic variable update that occurred during tool execution."
       },
+      "DynamicVariableValueTypeInput": {
+        "required": [
+          "type"
+        ],
+        "type": "object",
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/DynamicVariableValueTypeInput_Branch1"
+          },
+          {
+            "$ref": "#/components/schemas/DynamicVariableValueTypeInput_Branch2"
+          },
+          {
+            "$ref": "#/components/schemas/DynamicVariableValueTypeInput_Branch3"
+          },
+          {
+            "$ref": "#/components/schemas/DynamicVariableValueTypeInput_Branch4"
+          },
+          {
+            "$ref": "#/components/schemas/DynamicVariableValueTypeInput_Branch5"
+          }
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "Union discriminator"
+          }
+        },
+        "nullable": true,
+        "discriminator": {
+          "propertyName": "type",
+          "mapping": {
+            "DynamicVariableValueTypeInput_1": "#/components/schemas/DynamicVariableValueTypeInput_Branch1",
+            "DynamicVariableValueTypeInput_2": "#/components/schemas/DynamicVariableValueTypeInput_Branch2",
+            "DynamicVariableValueTypeInput_3": "#/components/schemas/DynamicVariableValueTypeInput_Branch3",
+            "DynamicVariableValueTypeInput_4": "#/components/schemas/DynamicVariableValueTypeInput_Branch4",
+            "DynamicVariableValueTypeInput_5": "#/components/schemas/DynamicVariableValueTypeInput_Branch5"
+          }
+        }
+      },
+      "DynamicVariableValueTypeOutput": {
+        "required": [
+          "type"
+        ],
+        "type": "object",
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/DynamicVariableValueTypeOutput_Branch1"
+          },
+          {
+            "$ref": "#/components/schemas/DynamicVariableValueTypeOutput_Branch2"
+          },
+          {
+            "$ref": "#/components/schemas/DynamicVariableValueTypeOutput_Branch3"
+          },
+          {
+            "$ref": "#/components/schemas/DynamicVariableValueTypeOutput_Branch4"
+          },
+          {
+            "$ref": "#/components/schemas/DynamicVariableValueTypeOutput_Branch5"
+          }
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "Union discriminator"
+          }
+        },
+        "nullable": true,
+        "discriminator": {
+          "propertyName": "type",
+          "mapping": {
+            "DynamicVariableValueTypeOutput_1": "#/components/schemas/DynamicVariableValueTypeOutput_Branch1",
+            "DynamicVariableValueTypeOutput_2": "#/components/schemas/DynamicVariableValueTypeOutput_Branch2",
+            "DynamicVariableValueTypeOutput_3": "#/components/schemas/DynamicVariableValueTypeOutput_Branch3",
+            "DynamicVariableValueTypeOutput_4": "#/components/schemas/DynamicVariableValueTypeOutput_Branch4",
+            "DynamicVariableValueTypeOutput_5": "#/components/schemas/DynamicVariableValueTypeOutput_Branch5"
+          }
+        }
+      },
       "DynamicVariablesConfigInput": {
         "title": "DynamicVariablesConfig",
         "type": "object",
         "properties": {
           "dynamic_variable_placeholders": {
+            "title": "Dynamic Variable Placeholders",
             "type": "object",
             "additionalProperties": {
-              "type": "object",
-              "anyOf": [
-                {
-                  "$ref": "#/components/schemas/UnionBranch"
-                },
-                {
-                  "$ref": "#/components/schemas/DynamicVariableContainerValueTypeInput_Wrapper"
-                }
-              ]
+              "$ref": "#/components/schemas/DynamicVariableValueTypeInput"
             },
             "description": "A dictionary of dynamic variable placeholders and their values"
           }
@@ -40662,17 +40668,10 @@
         "type": "object",
         "properties": {
           "dynamic_variable_placeholders": {
+            "title": "Dynamic Variable Placeholders",
             "type": "object",
             "additionalProperties": {
-              "type": "object",
-              "anyOf": [
-                {
-                  "$ref": "#/components/schemas/UnionBranch"
-                },
-                {
-                  "$ref": "#/components/schemas/DynamicVariableContainerValueTypeOutput_Wrapper"
-                }
-              ]
+              "$ref": "#/components/schemas/DynamicVariableValueTypeOutput"
             },
             "description": "A dictionary of dynamic variable placeholders and their values"
           }
@@ -40688,7 +40687,18 @@
         "type": "object",
         "properties": {
           "dynamic_variable_placeholders": {
-            "$ref": "#/components/schemas/DynamicVariablesConfigWorkflowOverrideInputDynamicVariablePlaceholders"
+            "title": "Dynamic Variable Placeholders",
+            "type": "object",
+            "anyOf": [
+              {
+                "type": "object",
+                "additionalProperties": {
+                  "$ref": "#/components/schemas/DynamicVariableValueTypeInput"
+                }
+              }
+            ],
+            "description": "A dictionary of dynamic variable placeholders and their values",
+            "nullable": true
           }
         },
         "example": {
@@ -40702,7 +40712,18 @@
         "type": "object",
         "properties": {
           "dynamic_variable_placeholders": {
-            "$ref": "#/components/schemas/DynamicVariablesConfigWorkflowOverrideOutputDynamicVariablePlaceholders"
+            "title": "Dynamic Variable Placeholders",
+            "type": "object",
+            "anyOf": [
+              {
+                "type": "object",
+                "additionalProperties": {
+                  "$ref": "#/components/schemas/DynamicVariableValueTypeOutput"
+                }
+              }
+            ],
+            "description": "A dictionary of dynamic variable placeholders and their values",
+            "nullable": true
           }
         },
         "example": {
@@ -44447,18 +44468,10 @@
             "nullable": true
           },
           "dynamic_variables": {
+            "title": "Dynamic Variables",
             "type": "object",
             "additionalProperties": {
-              "type": "object",
-              "anyOf": [
-                {
-                  "$ref": "#/components/schemas/UnionBranch"
-                },
-                {
-                  "$ref": "#/components/schemas/DynamicVariableContainerValueTypeOutput_Wrapper"
-                }
-              ],
-              "nullable": true
+              "$ref": "#/components/schemas/DynamicVariableValueTypeOutput"
             },
             "description": "Dynamic variables to replace in the agent config during testing"
           },
@@ -44578,18 +44591,10 @@
             "nullable": true
           },
           "dynamic_variables": {
+            "title": "Dynamic Variables",
             "type": "object",
             "additionalProperties": {
-              "type": "object",
-              "anyOf": [
-                {
-                  "$ref": "#/components/schemas/UnionBranch"
-                },
-                {
-                  "$ref": "#/components/schemas/DynamicVariableContainerValueTypeOutput_Wrapper"
-                }
-              ],
-              "nullable": true
+              "$ref": "#/components/schemas/DynamicVariableValueTypeOutput"
             },
             "description": "Dynamic variables to replace in the agent config during testing"
           },
@@ -44882,18 +44887,10 @@
             "nullable": true
           },
           "dynamic_variables": {
+            "title": "Dynamic Variables",
             "type": "object",
             "additionalProperties": {
-              "type": "object",
-              "anyOf": [
-                {
-                  "$ref": "#/components/schemas/UnionBranch"
-                },
-                {
-                  "$ref": "#/components/schemas/DynamicVariableContainerValueTypeOutput_Wrapper"
-                }
-              ],
-              "nullable": true
+              "$ref": "#/components/schemas/DynamicVariableValueTypeOutput"
             },
             "description": "Dynamic variables to replace in the agent config during testing"
           },
@@ -45532,6 +45529,40 @@
           }
         }
       },
+      "Icon": {
+        "title": "Icon",
+        "required": [
+          "src"
+        ],
+        "type": "object",
+        "properties": {
+          "src": {
+            "title": "Src",
+            "type": "string"
+          },
+          "mimeType": {
+            "title": "Mimetype",
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Mimetype"
+              }
+            ],
+            "nullable": true
+          },
+          "sizes": {
+            "title": "Sizes",
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Sizes"
+              }
+            ],
+            "nullable": true
+          }
+        },
+        "description": "An icon for display in user interfaces."
+      },
       "ImageAvatar": {
         "title": "ImageAvatar",
         "type": "object",
@@ -46047,7 +46078,6 @@
           "gpt-5.1",
           "gpt-5.2",
           "gpt-5.2-chat-latest",
-          "gpt-5.4",
           "gpt-5-mini",
           "gpt-5-nano",
           "gpt-3.5-turbo",
@@ -46097,7 +46127,6 @@
           "gpt-5-2025-08-07",
           "gpt-5.1-2025-11-13",
           "gpt-5.2-2025-12-11",
-          "gpt-5.4-2026-03-05",
           "gpt-5-mini-2025-08-07",
           "gpt-5-nano-2025-08-07",
           "gpt-4.1-2025-04-14",
@@ -51069,7 +51098,7 @@
           "use_out_of_band_dtmf": {
             "title": "Use Out Of Band Dtmf",
             "type": "boolean",
-            "description": "If true, send DTMF tones out-of-band using RFC 4733 (useful for SIP calls only). If false, send DTMF as in-band audio tones (works for all call types).",
+            "description": "Send DTMF tones as out-of-band RTP events (RFC 4733) instead of in-band audio. Only effective for SIP trunk imported numbers.",
             "default": true
           },
           "suppress_turn_after_dtmf": {
@@ -56116,18 +56145,10 @@
             "nullable": true
           },
           "dynamic_variables": {
+            "title": "Dynamic Variables",
             "type": "object",
             "additionalProperties": {
-              "type": "object",
-              "anyOf": [
-                {
-                  "$ref": "#/components/schemas/UnionBranch"
-                },
-                {
-                  "$ref": "#/components/schemas/DynamicVariableContainerValueTypeOutput_Wrapper"
-                }
-              ],
-              "nullable": true
+              "$ref": "#/components/schemas/DynamicVariableValueTypeOutput"
             },
             "description": "Dynamic variables to replace in the agent config during testing"
           },
@@ -57665,18 +57686,10 @@
             "nullable": true
           },
           "dynamic_variables": {
+            "title": "Dynamic Variables",
             "type": "object",
             "additionalProperties": {
-              "type": "object",
-              "anyOf": [
-                {
-                  "$ref": "#/components/schemas/UnionBranch"
-                },
-                {
-                  "$ref": "#/components/schemas/DynamicVariableContainerValueTypeOutput_Wrapper"
-                }
-              ],
-              "nullable": true
+              "$ref": "#/components/schemas/DynamicVariableValueTypeOutput"
             },
             "description": "Dynamic variables to replace in the agent config during testing"
           },
@@ -61321,6 +61334,16 @@
             ],
             "nullable": true
           },
+          "icons": {
+            "title": "Icons",
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Icons"
+              }
+            ],
+            "nullable": true
+          },
           "annotations": {
             "type": "object",
             "anyOf": [
@@ -61336,6 +61359,15 @@
             "anyOf": [
               {
                 "type": "object"
+              }
+            ],
+            "nullable": true
+          },
+          "execution": {
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/ToolExecution"
               }
             ],
             "nullable": true
@@ -61439,18 +61471,10 @@
             "nullable": true
           },
           "dynamic_variables": {
+            "title": "Dynamic Variables",
             "type": "object",
             "additionalProperties": {
-              "type": "object",
-              "anyOf": [
-                {
-                  "$ref": "#/components/schemas/UnionBranch"
-                },
-                {
-                  "$ref": "#/components/schemas/DynamicVariableContainerValueTypeOutput_Wrapper"
-                }
-              ],
-              "nullable": true
+              "$ref": "#/components/schemas/DynamicVariableValueTypeOutput"
             },
             "description": "Dynamic variables to replace in the agent config during testing"
           },
@@ -61505,6 +61529,23 @@
         "additionalProperties": false,
         "description": "Controls how tool errors are processed before being shared with the agent.",
         "default": "auto"
+      },
+      "ToolExecution": {
+        "title": "ToolExecution",
+        "type": "object",
+        "properties": {
+          "taskSupport": {
+            "title": "Tasksupport",
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Tasksupport"
+              }
+            ],
+            "nullable": true
+          }
+        },
+        "description": "Execution-related properties for a tool."
       },
       "ToolExecutionMode": {
         "title": "ToolExecutionMode",
@@ -63417,18 +63458,10 @@
             "nullable": true
           },
           "dynamic_variables": {
+            "title": "Dynamic Variables",
             "type": "object",
             "additionalProperties": {
-              "type": "object",
-              "anyOf": [
-                {
-                  "$ref": "#/components/schemas/UnionBranch"
-                },
-                {
-                  "$ref": "#/components/schemas/DynamicVariableContainerValueTypeInput_Wrapper"
-                }
-              ],
-              "nullable": true
+              "$ref": "#/components/schemas/DynamicVariableValueTypeInput"
             },
             "description": "Dynamic variables to replace in the agent config during testing"
           },
@@ -63521,18 +63554,10 @@
             "nullable": true
           },
           "dynamic_variables": {
+            "title": "Dynamic Variables",
             "type": "object",
             "additionalProperties": {
-              "type": "object",
-              "anyOf": [
-                {
-                  "$ref": "#/components/schemas/UnionBranch"
-                },
-                {
-                  "$ref": "#/components/schemas/DynamicVariableContainerValueTypeInput_Wrapper"
-                }
-              ],
-              "nullable": true
+              "$ref": "#/components/schemas/DynamicVariableValueTypeInput"
             },
             "description": "Dynamic variables to replace in the agent config during testing"
           },
@@ -63634,18 +63659,10 @@
             "nullable": true
           },
           "dynamic_variables": {
+            "title": "Dynamic Variables",
             "type": "object",
             "additionalProperties": {
-              "type": "object",
-              "anyOf": [
-                {
-                  "$ref": "#/components/schemas/UnionBranch"
-                },
-                {
-                  "$ref": "#/components/schemas/DynamicVariableContainerValueTypeInput_Wrapper"
-                }
-              ],
-              "nullable": true
+              "$ref": "#/components/schemas/DynamicVariableValueTypeInput"
             },
             "description": "Dynamic variables to replace in the agent config during testing"
           },
@@ -71552,54 +71569,6 @@
           "type": "string"
         }
       },
-      "ConversationInitiationClientDataInternalDynamicVariables": {
-        "title": "Dynamic Variables",
-        "type": "object",
-        "additionalProperties": {
-          "type": "object",
-          "anyOf": [
-            {
-              "$ref": "#/components/schemas/UnionBranch"
-            },
-            {
-              "$ref": "#/components/schemas/DynamicVariableContainerValueTypeOutput_Wrapper"
-            }
-          ],
-          "nullable": true
-        }
-      },
-      "ConversationInitiationClientDataRequestInputDynamicVariables": {
-        "title": "Dynamic Variables",
-        "type": "object",
-        "additionalProperties": {
-          "type": "object",
-          "anyOf": [
-            {
-              "$ref": "#/components/schemas/UnionBranch"
-            },
-            {
-              "$ref": "#/components/schemas/DynamicVariableContainerValueTypeInput_Wrapper"
-            }
-          ],
-          "nullable": true
-        }
-      },
-      "ConversationInitiationClientDataRequestOutputDynamicVariables": {
-        "title": "Dynamic Variables",
-        "type": "object",
-        "additionalProperties": {
-          "type": "object",
-          "anyOf": [
-            {
-              "$ref": "#/components/schemas/UnionBranch"
-            },
-            {
-              "$ref": "#/components/schemas/DynamicVariableContainerValueTypeOutput_Wrapper"
-            }
-          ],
-          "nullable": true
-        }
-      },
       "ConversationInitiationClientDataWebhookRequestHeaders": {
         "title": "Request Headers",
         "type": "object",
@@ -71615,22 +71584,6 @@
           ]
         },
         "description": "The headers to send with the webhook request"
-      },
-      "ConversationSimulationSpecificationDynamicVariables": {
-        "title": "Dynamic Variables",
-        "type": "object",
-        "additionalProperties": {
-          "type": "object",
-          "anyOf": [
-            {
-              "$ref": "#/components/schemas/UnionBranch"
-            },
-            {
-              "$ref": "#/components/schemas/DynamicVariableContainerValueTypeInput_Wrapper"
-            }
-          ],
-          "nullable": true
-        }
       },
       "CreateOAuth2ClientCredsRequestExtraParams": {
         "title": "Extra Params",
@@ -71662,40 +71615,6 @@
         },
         "description": "Additional custom claims to include in the JWT"
       },
-      "CreateResponseUnitTestRequestDynamicVariables": {
-        "title": "Dynamic Variables",
-        "type": "object",
-        "additionalProperties": {
-          "type": "object",
-          "anyOf": [
-            {
-              "$ref": "#/components/schemas/UnionBranch"
-            },
-            {
-              "$ref": "#/components/schemas/DynamicVariableContainerValueTypeInput_Wrapper"
-            }
-          ],
-          "nullable": true
-        },
-        "description": "Dynamic variables to replace in the agent config during testing"
-      },
-      "CreateSimulationTestRequestDynamicVariables": {
-        "title": "Dynamic Variables",
-        "type": "object",
-        "additionalProperties": {
-          "type": "object",
-          "anyOf": [
-            {
-              "$ref": "#/components/schemas/UnionBranch"
-            },
-            {
-              "$ref": "#/components/schemas/DynamicVariableContainerValueTypeInput_Wrapper"
-            }
-          ],
-          "nullable": true
-        },
-        "description": "Dynamic variables to replace in the agent config during testing"
-      },
       "CreateStringEnvironmentVariableRequestValues": {
         "title": "Values",
         "type": "object",
@@ -71704,23 +71623,6 @@
           "type": "string"
         },
         "description": "Environment-specific values. Must include \u0027production\u0027 key."
-      },
-      "CreateToolCallUnitTestRequestDynamicVariables": {
-        "title": "Dynamic Variables",
-        "type": "object",
-        "additionalProperties": {
-          "type": "object",
-          "anyOf": [
-            {
-              "$ref": "#/components/schemas/UnionBranch"
-            },
-            {
-              "$ref": "#/components/schemas/DynamicVariableContainerValueTypeInput_Wrapper"
-            }
-          ],
-          "nullable": true
-        },
-        "description": "Dynamic variables to replace in the agent config during testing"
       },
       "CustomLLMRequestHeaders": {
         "title": "Request Headers",
@@ -71743,106 +71645,6 @@
           ]
         },
         "description": "Headers that should be included in the request"
-      },
-      "DynamicVariablesConfigInputDynamicVariablePlaceholders": {
-        "title": "Dynamic Variable Placeholders",
-        "type": "object",
-        "additionalProperties": {
-          "type": "object",
-          "anyOf": [
-            {
-              "$ref": "#/components/schemas/UnionBranch"
-            },
-            {
-              "$ref": "#/components/schemas/DynamicVariableContainerValueTypeInput_Wrapper"
-            }
-          ]
-        },
-        "description": "A dictionary of dynamic variable placeholders and their values"
-      },
-      "DynamicVariablesConfigOutputDynamicVariablePlaceholders": {
-        "title": "Dynamic Variable Placeholders",
-        "type": "object",
-        "additionalProperties": {
-          "type": "object",
-          "anyOf": [
-            {
-              "$ref": "#/components/schemas/UnionBranch"
-            },
-            {
-              "$ref": "#/components/schemas/DynamicVariableContainerValueTypeOutput_Wrapper"
-            }
-          ]
-        },
-        "description": "A dictionary of dynamic variable placeholders and their values"
-      },
-      "DynamicVariablesConfigWorkflowOverrideInputDynamicVariablePlaceholders": {
-        "title": "Dynamic Variable Placeholders",
-        "required": [
-          "type"
-        ],
-        "type": "object",
-        "anyOf": [
-          {
-            "type": "object",
-            "additionalProperties": {
-              "type": "object",
-              "anyOf": [
-                {
-                  "$ref": "#/components/schemas/UnionBranch"
-                },
-                {
-                  "$ref": "#/components/schemas/DynamicVariableContainerValueTypeInput_Wrapper"
-                }
-              ]
-            }
-          }
-        ],
-        "properties": {
-          "type": {
-            "type": "string",
-            "description": "Union discriminator"
-          }
-        },
-        "description": "A dictionary of dynamic variable placeholders and their values",
-        "nullable": true,
-        "discriminator": {
-          "propertyName": "type"
-        }
-      },
-      "DynamicVariablesConfigWorkflowOverrideOutputDynamicVariablePlaceholders": {
-        "title": "Dynamic Variable Placeholders",
-        "required": [
-          "type"
-        ],
-        "type": "object",
-        "anyOf": [
-          {
-            "type": "object",
-            "additionalProperties": {
-              "type": "object",
-              "anyOf": [
-                {
-                  "$ref": "#/components/schemas/UnionBranch"
-                },
-                {
-                  "$ref": "#/components/schemas/DynamicVariableContainerValueTypeOutput_Wrapper"
-                }
-              ]
-            }
-          }
-        ],
-        "properties": {
-          "type": {
-            "type": "string",
-            "description": "Union discriminator"
-          }
-        },
-        "description": "A dictionary of dynamic variable placeholders and their values",
-        "nullable": true,
-        "discriminator": {
-          "propertyName": "type"
-        }
       },
       "EnvironmentVariableResponseValues": {
         "title": "Values",
@@ -71956,57 +71758,6 @@
           "type": "string"
         },
         "description": "SIP headers for INVITE request"
-      },
-      "GetResponseUnitTestResponseModelDynamicVariables": {
-        "title": "Dynamic Variables",
-        "type": "object",
-        "additionalProperties": {
-          "type": "object",
-          "anyOf": [
-            {
-              "$ref": "#/components/schemas/UnionBranch"
-            },
-            {
-              "$ref": "#/components/schemas/DynamicVariableContainerValueTypeOutput_Wrapper"
-            }
-          ],
-          "nullable": true
-        },
-        "description": "Dynamic variables to replace in the agent config during testing"
-      },
-      "GetSimulationTestResponseModelDynamicVariables": {
-        "title": "Dynamic Variables",
-        "type": "object",
-        "additionalProperties": {
-          "type": "object",
-          "anyOf": [
-            {
-              "$ref": "#/components/schemas/UnionBranch"
-            },
-            {
-              "$ref": "#/components/schemas/DynamicVariableContainerValueTypeOutput_Wrapper"
-            }
-          ],
-          "nullable": true
-        },
-        "description": "Dynamic variables to replace in the agent config during testing"
-      },
-      "GetToolCallUnitTestResponseModelDynamicVariables": {
-        "title": "Dynamic Variables",
-        "type": "object",
-        "additionalProperties": {
-          "type": "object",
-          "anyOf": [
-            {
-              "$ref": "#/components/schemas/UnionBranch"
-            },
-            {
-              "$ref": "#/components/schemas/DynamicVariableContainerValueTypeOutput_Wrapper"
-            }
-          ],
-          "nullable": true
-        },
-        "description": "Dynamic variables to replace in the agent config during testing"
       },
       "MCPServerConfigInputRequestHeaders": {
         "title": "Request Headers",
@@ -72498,23 +72249,6 @@
           }
         }
       },
-      "ResponseUnitTestModelDynamicVariables": {
-        "title": "Dynamic Variables",
-        "type": "object",
-        "additionalProperties": {
-          "type": "object",
-          "anyOf": [
-            {
-              "$ref": "#/components/schemas/UnionBranch"
-            },
-            {
-              "$ref": "#/components/schemas/DynamicVariableContainerValueTypeOutput_Wrapper"
-            }
-          ],
-          "nullable": true
-        },
-        "description": "Dynamic variables to replace in the agent config during testing"
-      },
       "ReviewResponseModelScoresBreakdown": {
         "title": "Scores Breakdown",
         "required": [
@@ -72565,23 +72299,6 @@
           "propertyName": "type"
         }
       },
-      "SimulationTestModelDynamicVariables": {
-        "title": "Dynamic Variables",
-        "type": "object",
-        "additionalProperties": {
-          "type": "object",
-          "anyOf": [
-            {
-              "$ref": "#/components/schemas/UnionBranch"
-            },
-            {
-              "$ref": "#/components/schemas/DynamicVariableContainerValueTypeOutput_Wrapper"
-            }
-          ],
-          "nullable": true
-        },
-        "description": "Dynamic variables to replace in the agent config during testing"
-      },
       "SourceRetrievalConfigResultFields": {
         "title": "Result Fields",
         "type": "object",
@@ -72598,23 +72315,6 @@
         "additionalProperties": {
           "type": "string"
         }
-      },
-      "ToolCallUnitTestModelDynamicVariables": {
-        "title": "Dynamic Variables",
-        "type": "object",
-        "additionalProperties": {
-          "type": "object",
-          "anyOf": [
-            {
-              "$ref": "#/components/schemas/UnionBranch"
-            },
-            {
-              "$ref": "#/components/schemas/DynamicVariableContainerValueTypeOutput_Wrapper"
-            }
-          ],
-          "nullable": true
-        },
-        "description": "Dynamic variables to replace in the agent config during testing"
       },
       "UpdateEnvironmentVariableRequestValues": {
         "title": "Values",
@@ -72635,57 +72335,6 @@
           "nullable": true
         },
         "description": "Values to replace. Set to null to remove an environment (except \u0027production\u0027)."
-      },
-      "UpdateResponseUnitTestRequestDynamicVariables": {
-        "title": "Dynamic Variables",
-        "type": "object",
-        "additionalProperties": {
-          "type": "object",
-          "anyOf": [
-            {
-              "$ref": "#/components/schemas/UnionBranch"
-            },
-            {
-              "$ref": "#/components/schemas/DynamicVariableContainerValueTypeInput_Wrapper"
-            }
-          ],
-          "nullable": true
-        },
-        "description": "Dynamic variables to replace in the agent config during testing"
-      },
-      "UpdateSimulationTestRequestDynamicVariables": {
-        "title": "Dynamic Variables",
-        "type": "object",
-        "additionalProperties": {
-          "type": "object",
-          "anyOf": [
-            {
-              "$ref": "#/components/schemas/UnionBranch"
-            },
-            {
-              "$ref": "#/components/schemas/DynamicVariableContainerValueTypeInput_Wrapper"
-            }
-          ],
-          "nullable": true
-        },
-        "description": "Dynamic variables to replace in the agent config during testing"
-      },
-      "UpdateToolCallUnitTestRequestDynamicVariables": {
-        "title": "Dynamic Variables",
-        "type": "object",
-        "additionalProperties": {
-          "type": "object",
-          "anyOf": [
-            {
-              "$ref": "#/components/schemas/UnionBranch"
-            },
-            {
-              "$ref": "#/components/schemas/DynamicVariableContainerValueTypeInput_Wrapper"
-            }
-          ],
-          "nullable": true
-        },
-        "description": "Dynamic variables to replace in the agent config during testing"
       },
       "UsageCharactersResponseModelUsage": {
         "title": "Usage",
@@ -73726,6 +73375,122 @@
         }
       },
       "DynamicVariableNestedValueTypeOutput_Branch5": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DynamicVariableNestedValueTypeOutput"
+            }
+          }
+        }
+      },
+      "DynamicVariableValueTypeInput_Branch1": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string"
+          }
+        }
+      },
+      "DynamicVariableValueTypeInput_Branch2": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "number"
+          }
+        }
+      },
+      "DynamicVariableValueTypeInput_Branch3": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "integer"
+          }
+        }
+      },
+      "DynamicVariableValueTypeInput_Branch4": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "boolean"
+          }
+        }
+      },
+      "DynamicVariableValueTypeInput_Branch5": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DynamicVariableNestedValueTypeInput"
+            }
+          }
+        }
+      },
+      "DynamicVariableValueTypeOutput_Branch1": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string"
+          }
+        }
+      },
+      "DynamicVariableValueTypeOutput_Branch2": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "number"
+          }
+        }
+      },
+      "DynamicVariableValueTypeOutput_Branch3": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "integer"
+          }
+        }
+      },
+      "DynamicVariableValueTypeOutput_Branch4": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "boolean"
+          }
+        }
+      },
+      "DynamicVariableValueTypeOutput_Branch5": {
         "required": [
           "value"
         ],
@@ -77529,6 +77294,31 @@
           }
         }
       },
+      "Mimetype": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string"
+          }
+        }
+      },
+      "Sizes": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
       "Allowed_Addresses": {
         "required": [
           "value"
@@ -79388,6 +79178,20 @@
           }
         }
       },
+      "Icons": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Icon"
+            }
+          }
+        }
+      },
       "Readonlyhint": {
         "required": [
           "value"
@@ -79429,6 +79233,23 @@
         "properties": {
           "value": {
             "type": "boolean"
+          }
+        }
+      },
+      "Tasksupport": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "enum": [
+              "forbidden",
+              "optional",
+              "required"
+            ],
+            "type": "string",
+            "additionalProperties": false
           }
         }
       },
@@ -81194,28 +81015,6 @@
         "properties": {
           "value": {
             "type": "integer"
-          }
-        }
-      },
-      "DynamicVariableContainerValueTypeOutput_Wrapper": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "$ref": "#/components/schemas/DynamicVariableContainerValueTypeOutput"
-          }
-        }
-      },
-      "DynamicVariableContainerValueTypeInput_Wrapper": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "$ref": "#/components/schemas/DynamicVariableContainerValueTypeInput"
           }
         }
       }

@@ -19,7 +19,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public bool? SuppressTurnAfterDtmf { get; set; }
         /// <summary>The system_tool_type property</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.PlayDTMFToolConfig_system_tool_type? SystemToolType { get; set; }
-        /// <summary>If true, send DTMF tones out-of-band using RFC 4733 (useful for SIP calls only). If false, send DTMF as in-band audio tones (works for all call types).</summary>
+        /// <summary>Send DTMF tones as out-of-band RTP events (RFC 4733) instead of in-band audio. Only effective for SIP trunk imported numbers.</summary>
         public bool? UseOutOfBandDtmf { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.PlayDTMFToolConfig"/> and sets the default values.

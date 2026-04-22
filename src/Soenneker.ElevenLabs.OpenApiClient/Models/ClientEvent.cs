@@ -88,6 +88,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         #pragma warning disable CS1591
         Dtmf_request,
         #pragma warning restore CS1591
+        [EnumMember(Value = "agent_response_complete")]
+        #pragma warning disable CS1591
+        Agent_response_complete,
+        #pragma warning restore CS1591
         [EnumMember(Value = "internal_turn_probability")]
         #pragma warning disable CS1591
         Internal_turn_probability,
