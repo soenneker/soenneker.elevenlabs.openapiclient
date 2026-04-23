@@ -14,7 +14,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The end_time property</summary>
+        /// <summary>End of the time range as a Unix timestamp in milliseconds. Must be at least 2020-01-01.</summary>
         public int? EndTime { get; set; }
         /// <summary>The filters property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -34,7 +34,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #endif
         /// <summary>The interval_seconds property</summary>
         public int? IntervalSeconds { get; set; }
-        /// <summary>The start_time property</summary>
+        /// <summary>Start of the time range as a Unix timestamp in milliseconds. Must be at least 2020-01-01.</summary>
         public int? StartTime { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyGetWorkspaceUsageV1WorkspaceAnalyticsQueryUsageByProductOverTimePost"/> and sets the default values.

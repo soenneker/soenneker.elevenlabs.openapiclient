@@ -124,6 +124,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public List<string> PendingBlockIds { get; set; }
 #endif
+        /// <summary>The pending_blocks_metadata property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PendingBlocksMetadataModel? PendingBlocksMetadata { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PendingBlocksMetadataModel PendingBlocksMetadata { get; set; }
+#endif
         /// <summary>The pending_external_audio_ids property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -131,6 +139,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #nullable restore
 #else
         public List<string> PendingExternalAudioIds { get; set; }
+#endif
+        /// <summary>The pending_external_audios_metadata property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PendingExternalAudiosMetadataModel? PendingExternalAudiosMetadata { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PendingExternalAudiosMetadataModel PendingExternalAudiosMetadata { get; set; }
 #endif
         /// <summary>The pending_task property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -214,6 +230,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public string TrackId { get; set; }
 #endif
+        /// <summary>The transcription property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AssetTranscription? Transcription { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AssetTranscription Transcription { get; set; }
+#endif
         /// <summary>The type property</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectVideoResponseModel_type? Type { get; set; }
         /// <summary>The updated_at_ms property</summary>
@@ -279,7 +303,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "opacity", n => { Opacity = n.GetDoubleValue(); } },
                 { "order", n => { Order = n.GetStringValue(); } },
                 { "pending_block_ids", n => { PendingBlockIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "pending_blocks_metadata", n => { PendingBlocksMetadata = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PendingBlocksMetadataModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.PendingBlocksMetadataModel.CreateFromDiscriminatorValue); } },
                 { "pending_external_audio_ids", n => { PendingExternalAudioIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "pending_external_audios_metadata", n => { PendingExternalAudiosMetadata = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PendingExternalAudiosMetadataModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.PendingExternalAudiosMetadataModel.CreateFromDiscriminatorValue); } },
                 { "pending_task", n => { PendingTask = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PendingClipTask>(global::Soenneker.ElevenLabs.OpenApiClient.Models.PendingClipTask.CreateFromDiscriminatorValue); } },
                 { "playback_speed", n => { PlaybackSpeed = n.GetDoubleValue(); } },
                 { "preview_job_progress", n => { PreviewJobProgress = n.GetDoubleValue(); } },
@@ -294,6 +320,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "thumbnail_sheets", n => { ThumbnailSheets = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectVideoThumbnailSheetResponseModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectVideoThumbnailSheetResponseModel.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "thumbnail_size", n => { ThumbnailSize = n.GetCollectionOfPrimitiveValues<int?>()?.AsList(); } },
                 { "track_id", n => { TrackId = n.GetStringValue(); } },
+                { "transcription", n => { Transcription = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AssetTranscription>(global::Soenneker.ElevenLabs.OpenApiClient.Models.AssetTranscription.CreateFromDiscriminatorValue); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectVideoResponseModel_type>(); } },
                 { "updated_at_ms", n => { UpdatedAtMs = n.GetIntValue(); } },
                 { "video_id", n => { VideoId = n.GetStringValue(); } },
@@ -329,7 +356,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteDoubleValue("opacity", Opacity);
             writer.WriteStringValue("order", Order);
             writer.WriteCollectionOfPrimitiveValues<string>("pending_block_ids", PendingBlockIds);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PendingBlocksMetadataModel>("pending_blocks_metadata", PendingBlocksMetadata);
             writer.WriteCollectionOfPrimitiveValues<string>("pending_external_audio_ids", PendingExternalAudioIds);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PendingExternalAudiosMetadataModel>("pending_external_audios_metadata", PendingExternalAudiosMetadata);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PendingClipTask>("pending_task", PendingTask);
             writer.WriteDoubleValue("playback_speed", PlaybackSpeed);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Signed_Preview_Url>("signed_preview_url", SignedPreviewUrl);
@@ -343,6 +372,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectVideoThumbnailSheetResponseModel>("thumbnail_sheets", ThumbnailSheets);
             writer.WriteCollectionOfPrimitiveValues<int?>("thumbnail_size", ThumbnailSize);
             writer.WriteStringValue("track_id", TrackId);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AssetTranscription>("transcription", Transcription);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectVideoResponseModel_type>("type", Type);
             writer.WriteIntValue("updated_at_ms", UpdatedAtMs);
             writer.WriteStringValue("video_id", VideoId);

@@ -19924,7 +19924,7 @@
           "access:all"
         ],
         "summary": "Get Workspace Usage",
-        "description": "Returns credit usage broken down by product type over time. Timestamps are Unix milliseconds. The response is a tabular structure with columns, column_types, column_units, and rows.",
+        "description": "Returns credit usage broken down by product type over time. The response is a tabular structure with columns, column_types, column_units, and rows.",
         "operationId": "usage-by-product-over-time",
         "parameters": [
           {
@@ -23740,8 +23740,12 @@
           "force_pre_tool_speech": {
             "title": "Force Pre Tool Speech",
             "type": "boolean",
-            "description": "If true, the agent will speak before the tool call.",
-            "default": false
+            "description": "\u0022DEPRECATED: use \u0060pre_tool_speech\u0060 instead. If true, the agent will speak before the tool call.\u0022",
+            "default": false,
+            "deprecated": true
+          },
+          "pre_tool_speech": {
+            "$ref": "#/components/schemas/PreToolSpeechMode"
           },
           "assignments": {
             "title": "Assignments",
@@ -23809,6 +23813,7 @@
           "response_timeout_secs",
           "disable_interruptions",
           "force_pre_tool_speech",
+          "pre_tool_speech",
           "assignments",
           "tool_call_sound",
           "tool_call_sound_behavior",
@@ -23859,8 +23864,12 @@
           "force_pre_tool_speech": {
             "title": "Force Pre Tool Speech",
             "type": "boolean",
-            "description": "If true, the agent will speak before the tool call.",
-            "default": false
+            "description": "\u0022DEPRECATED: use \u0060pre_tool_speech\u0060 instead. If true, the agent will speak before the tool call.\u0022",
+            "default": false,
+            "deprecated": true
+          },
+          "pre_tool_speech": {
+            "$ref": "#/components/schemas/PreToolSpeechMode"
           },
           "assignments": {
             "title": "Assignments",
@@ -24034,6 +24043,95 @@
           }
         },
         "additionalProperties": false
+      },
+      "AssetTranscription": {
+        "title": "AssetTranscription",
+        "required": [
+          "status",
+          "data"
+        ],
+        "type": "object",
+        "properties": {
+          "status": {
+            "title": "Status",
+            "enum": [
+              "processing",
+              "completed",
+              "failed"
+            ],
+            "type": "string",
+            "additionalProperties": false
+          },
+          "data": {
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/AssetTranscriptionData"
+              }
+            ],
+            "nullable": true
+          },
+          "updated_at_ms": {
+            "title": "Updated At Ms",
+            "type": "integer"
+          }
+        }
+      },
+      "AssetTranscriptionData": {
+        "title": "AssetTranscriptionData",
+        "required": [
+          "language_code",
+          "text",
+          "words",
+          "word_start_times_ms",
+          "word_end_times_ms",
+          "word_speaker_ids"
+        ],
+        "type": "object",
+        "properties": {
+          "language_code": {
+            "title": "Language Code",
+            "type": "string"
+          },
+          "text": {
+            "title": "Text",
+            "type": "string"
+          },
+          "words": {
+            "title": "Words",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "word_start_times_ms": {
+            "title": "Word Start Times Ms",
+            "type": "array",
+            "items": {
+              "type": "integer"
+            }
+          },
+          "word_end_times_ms": {
+            "title": "Word End Times Ms",
+            "type": "array",
+            "items": {
+              "type": "integer"
+            }
+          },
+          "word_speaker_ids": {
+            "title": "Word Speaker Ids",
+            "type": "array",
+            "items": {
+              "type": "object",
+              "anyOf": [
+                {
+                  "$ref": "#/components/schemas/UnionBranch"
+                }
+              ],
+              "nullable": true
+            }
+          }
+        }
       },
       "AsyncConversationMetadata": {
         "title": "AsyncConversationMetadata",
@@ -27652,13 +27750,15 @@
         "properties": {
           "start_time": {
             "title": "Start Time",
-            "minimum": 0.0,
-            "type": "integer"
+            "minimum": 1577836800000.0,
+            "type": "integer",
+            "description": "Start of the time range as a Unix timestamp in milliseconds. Must be at least 2020-01-01."
           },
           "end_time": {
             "title": "End Time",
-            "minimum": 0.0,
-            "type": "integer"
+            "minimum": 1577836800000.0,
+            "type": "integer",
+            "description": "End of the time range as a Unix timestamp in milliseconds. Must be at least 2020-01-01."
           },
           "interval_seconds": {
             "title": "Interval Seconds",
@@ -28807,7 +28907,7 @@
             "items": {
               "type": "string"
             },
-            "description": "A list of keyterms to bias the transcription towards.           The keyterms are words or phrases you want the model to recognise more accurately.           The number of keyterms cannot exceed 1000.           The length of each keyterm must be less than 50 characters.           Keyterms can contain at most 5 words (after normalisation).           For example [\u0022hello\u0022, \u0022world\u0022, \u0022technical term\u0022].           Usage of this parameter will incur an additional 20% surcharge on the base transcription cost.           When more than 100 keyterms are provided, a minimum billable duration of 20 seconds applies per request.",
+            "description": "\u0022A list of keyterms to bias the transcription towards.           The keyterms are words or phrases you want the model to recognise more accurately.           The number of keyterms cannot exceed 1000.           The length of each keyterm must be less than 50 characters.           Keyterms can contain at most 5 words (after normalisation).           For example [\\\u0022hello\\\u0022, \\\u0022world\\\u0022, \\\u0022technical term\\\u0022].           The following characters are not supported: \u0060\u003C\u0060, \u0060\u003E\u0060, \u0060{\u0060, \u0060}\u0060, \u0060[\u0060, \u0060]\u0060, \u0060\\\u0060.           Usage of this parameter will incur an additional 20% surcharge on the base transcription cost.           When more than 100 keyterms are provided, a minimum billable duration of 20 seconds applies per request.\u0022",
             "default": []
           }
         }
@@ -32311,8 +32411,12 @@
           "force_pre_tool_speech": {
             "title": "Force Pre Tool Speech",
             "type": "boolean",
-            "description": "If true, the agent will speak before the tool call.",
-            "default": false
+            "description": "\u0022DEPRECATED: use \u0060pre_tool_speech\u0060 instead. If true, the agent will speak before the tool call.\u0022",
+            "default": false,
+            "deprecated": true
+          },
+          "pre_tool_speech": {
+            "$ref": "#/components/schemas/PreToolSpeechMode"
           },
           "assignments": {
             "title": "Assignments",
@@ -32414,8 +32518,12 @@
           "force_pre_tool_speech": {
             "title": "Force Pre Tool Speech",
             "type": "boolean",
-            "description": "If true, the agent will speak before the tool call.",
-            "default": false
+            "description": "\u0022DEPRECATED: use \u0060pre_tool_speech\u0060 instead. If true, the agent will speak before the tool call.\u0022",
+            "default": false,
+            "deprecated": true
+          },
+          "pre_tool_speech": {
+            "$ref": "#/components/schemas/PreToolSpeechMode"
           },
           "assignments": {
             "title": "Assignments",
@@ -42526,6 +42634,21 @@
         },
         "description": "Get a summary of key business analytics for a time period."
       },
+      "GetAppointmentByConfirmationNumberParams": {
+        "title": "GetAppointmentByConfirmationNumberParams",
+        "type": "object",
+        "properties": {
+          "smb_tool_type": {
+            "title": "Smb Tool Type",
+            "enum": [
+              "get_appointment_by_confirmation_number"
+            ],
+            "type": "string",
+            "default": "get_appointment_by_confirmation_number"
+          }
+        },
+        "description": "Look up an appointment by the booking confirmation number the caller quotes.\n\nThe confirmation number is the 8-character code shown on the booking\nconfirmation page (e.g. \u0060\u0060#01ABCDEF\u0060\u0060). Callers may read it back with or\nwithout the leading \u0060\u0060#\u0060\u0060 and with varied spacing; the tool normalizes\nthe input and does a prefix match on the stored calendar item id."
+      },
       "GetAudioNativeProjectSettingsResponseModel": {
         "title": "GetAudioNativeProjectSettingsResponseModel",
         "required": [
@@ -47867,8 +47990,12 @@
           "force_pre_tool_speech": {
             "title": "Force Pre Tool Speech",
             "type": "boolean",
-            "description": "If true, all tools from this MCP server will require pre-tool execution speech",
-            "default": false
+            "description": "\u0022DEPRECATED: use \u0060pre_tool_speech\u0060 instead. If true, all tools from this MCP server will require pre-tool execution speech.\u0022",
+            "default": false,
+            "deprecated": true
+          },
+          "pre_tool_speech": {
+            "$ref": "#/components/schemas/PreToolSpeechMode"
           },
           "disable_interruptions": {
             "title": "Disable Interruptions",
@@ -48003,8 +48130,12 @@
           "force_pre_tool_speech": {
             "title": "Force Pre Tool Speech",
             "type": "boolean",
-            "description": "If true, all tools from this MCP server will require pre-tool execution speech",
-            "default": false
+            "description": "\u0022DEPRECATED: use \u0060pre_tool_speech\u0060 instead. If true, all tools from this MCP server will require pre-tool execution speech.\u0022",
+            "default": false,
+            "deprecated": true
+          },
+          "pre_tool_speech": {
+            "$ref": "#/components/schemas/PreToolSpeechMode"
           },
           "disable_interruptions": {
             "title": "Disable Interruptions",
@@ -48066,7 +48197,18 @@
                 "$ref": "#/components/schemas/Force_Pre_Tool_Speech"
               }
             ],
-            "description": "If set, overrides the server\u0027s force_pre_tool_speech setting for this tool",
+            "description": "\u0022DEPRECATED: use \u0060pre_tool_speech\u0060 instead. If set, overrides the server\u0027s force_pre_tool_speech setting for this tool.\u0022",
+            "nullable": true,
+            "deprecated": true
+          },
+          "pre_tool_speech": {
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/PreToolSpeechMode_Wrapper"
+              }
+            ],
+            "description": "If set, overrides the server\u0027s pre_tool_speech setting for this tool.",
             "nullable": true
           },
           "disable_interruptions": {
@@ -48390,8 +48532,12 @@
           "force_pre_tool_speech": {
             "title": "Force Pre Tool Speech",
             "type": "boolean",
-            "description": "If true, the agent will speak before the tool call.",
-            "default": false
+            "description": "\u0022DEPRECATED: use \u0060pre_tool_speech\u0060 instead. If true, the agent will speak before the tool call.\u0022",
+            "default": false,
+            "deprecated": true
+          },
+          "pre_tool_speech": {
+            "$ref": "#/components/schemas/PreToolSpeechMode"
           },
           "assignments": {
             "title": "Assignments",
@@ -48523,8 +48669,12 @@
           "force_pre_tool_speech": {
             "title": "Force Pre Tool Speech",
             "type": "boolean",
-            "description": "If true, the agent will speak before the tool call.",
-            "default": false
+            "description": "\u0022DEPRECATED: use \u0060pre_tool_speech\u0060 instead. If true, the agent will speak before the tool call.\u0022",
+            "default": false,
+            "deprecated": true
+          },
+          "pre_tool_speech": {
+            "$ref": "#/components/schemas/PreToolSpeechMode"
           },
           "assignments": {
             "title": "Assignments",
@@ -48628,7 +48778,18 @@
                 "$ref": "#/components/schemas/Force_Pre_Tool_Speech"
               }
             ],
-            "description": "If set, overrides the server\u0027s force_pre_tool_speech setting for this tool",
+            "description": "\u0022DEPRECATED: use \u0060pre_tool_speech\u0060 instead. If set, overrides the server\u0027s force_pre_tool_speech setting for this tool.\u0022",
+            "nullable": true,
+            "deprecated": true
+          },
+          "pre_tool_speech": {
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/PreToolSpeechMode_Wrapper"
+              }
+            ],
+            "description": "If set, overrides the server\u0027s pre_tool_speech setting for this tool.",
             "nullable": true
           },
           "disable_interruptions": {
@@ -48716,7 +48877,18 @@
                 "$ref": "#/components/schemas/Force_Pre_Tool_Speech"
               }
             ],
-            "description": "If set, overrides the server\u0027s force_pre_tool_speech setting for this tool",
+            "description": "\u0022DEPRECATED: use \u0060pre_tool_speech\u0060 instead. If set, overrides the server\u0027s force_pre_tool_speech setting for this tool.\u0022",
+            "nullable": true,
+            "deprecated": true
+          },
+          "pre_tool_speech": {
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/PreToolSpeechMode_Wrapper"
+              }
+            ],
+            "description": "If set, overrides the server\u0027s pre_tool_speech setting for this tool.",
             "nullable": true
           },
           "disable_interruptions": {
@@ -48799,7 +48971,18 @@
                 "$ref": "#/components/schemas/Force_Pre_Tool_Speech"
               }
             ],
-            "description": "If set, overrides the server\u0027s force_pre_tool_speech setting for this tool",
+            "description": "\u0022DEPRECATED: use \u0060pre_tool_speech\u0060 instead. If set, overrides the server\u0027s force_pre_tool_speech setting for this tool.\u0022",
+            "nullable": true,
+            "deprecated": true
+          },
+          "pre_tool_speech": {
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/PreToolSpeechMode_Wrapper"
+              }
+            ],
+            "description": "If set, overrides the server\u0027s pre_tool_speech setting for this tool.",
             "nullable": true
           },
           "disable_interruptions": {
@@ -48887,7 +49070,18 @@
                 "$ref": "#/components/schemas/Force_Pre_Tool_Speech"
               }
             ],
-            "description": "If set, overrides the server\u0027s force_pre_tool_speech setting for this tool",
+            "description": "\u0022DEPRECATED: use \u0060pre_tool_speech\u0060 instead. If set, overrides the server\u0027s force_pre_tool_speech setting for this tool.\u0022",
+            "nullable": true,
+            "deprecated": true
+          },
+          "pre_tool_speech": {
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/PreToolSpeechMode_Wrapper"
+              }
+            ],
+            "description": "If set, overrides the server\u0027s pre_tool_speech setting for this tool.",
             "nullable": true
           },
           "disable_interruptions": {
@@ -50653,6 +50847,33 @@
           }
         }
       },
+      "PendingBlocksMetadataModel": {
+        "title": "PendingBlocksMetadataModel",
+        "required": [
+          "target_global_offset_ms",
+          "block_ids"
+        ],
+        "type": "object",
+        "properties": {
+          "target_global_offset_ms": {
+            "title": "Target Global Offset Ms",
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Target_Global_Offset_Ms"
+              }
+            ],
+            "nullable": true
+          },
+          "block_ids": {
+            "title": "Block Ids",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
       "PendingCancellationResponseModel": {
         "title": "PendingCancellationResponseModel",
         "required": [
@@ -50710,6 +50931,33 @@
           "metadata": {
             "title": "Metadata",
             "type": "object"
+          }
+        }
+      },
+      "PendingExternalAudiosMetadataModel": {
+        "title": "PendingExternalAudiosMetadataModel",
+        "required": [
+          "target_global_offset_ms",
+          "external_audio_ids"
+        ],
+        "type": "object",
+        "properties": {
+          "target_global_offset_ms": {
+            "title": "Target Global Offset Ms",
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Target_Global_Offset_Ms"
+              }
+            ],
+            "nullable": true
+          },
+          "external_audio_ids": {
+            "title": "External Audio Ids",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           }
         }
       },
@@ -51429,6 +51677,17 @@
             "type": "string"
           }
         }
+      },
+      "PreToolSpeechMode": {
+        "title": "PreToolSpeechMode",
+        "enum": [
+          "auto",
+          "force",
+          "off"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "default": "auto"
       },
       "PreviewAudioDBModel": {
         "title": "PreviewAudioDBModel",
@@ -52460,6 +52719,24 @@
               "type": "string"
             }
           },
+          "pending_blocks_metadata": {
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/PendingBlocksMetadataModel"
+              }
+            ],
+            "nullable": true
+          },
+          "pending_external_audios_metadata": {
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/PendingExternalAudiosMetadataModel"
+              }
+            ],
+            "nullable": true
+          },
           "speech_imported": {
             "title": "Speech Imported",
             "type": "boolean",
@@ -52536,6 +52813,15 @@
             "anyOf": [
               {
                 "$ref": "#/components/schemas/AudioAnalysis"
+              }
+            ],
+            "nullable": true
+          },
+          "transcription": {
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/AssetTranscription"
               }
             ],
             "nullable": true
@@ -53443,6 +53729,24 @@
             ],
             "nullable": true
           },
+          "pending_blocks_metadata": {
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/PendingBlocksMetadataModel"
+              }
+            ],
+            "nullable": true
+          },
+          "pending_external_audios_metadata": {
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/PendingExternalAudiosMetadataModel"
+              }
+            ],
+            "nullable": true
+          },
           "pending_block_ids": {
             "title": "Pending Block Ids",
             "type": "array",
@@ -53505,6 +53809,15 @@
             "anyOf": [
               {
                 "$ref": "#/components/schemas/VideoAnalysis"
+              }
+            ],
+            "nullable": true
+          },
+          "transcription": {
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/AssetTranscription"
               }
             ],
             "nullable": true
@@ -56530,8 +56843,12 @@
           "force_pre_tool_speech": {
             "title": "Force Pre Tool Speech",
             "type": "boolean",
-            "description": "If true, the agent will speak before the tool call.",
-            "default": false
+            "description": "\u0022DEPRECATED: use \u0060pre_tool_speech\u0060 instead. If true, the agent will speak before the tool call.\u0022",
+            "default": false,
+            "deprecated": true
+          },
+          "pre_tool_speech": {
+            "$ref": "#/components/schemas/PreToolSpeechMode"
           },
           "assignments": {
             "title": "Assignments",
@@ -56645,6 +56962,9 @@
               },
               {
                 "$ref": "#/components/schemas/GetClientAppointmentsParams"
+              },
+              {
+                "$ref": "#/components/schemas/GetAppointmentByConfirmationNumberParams"
               },
               {
                 "$ref": "#/components/schemas/ListCalendarEventsParams"
@@ -56777,6 +57097,7 @@
                 "delete_service": "#/components/schemas/DeleteServiceParams",
                 "delete_staff": "#/components/schemas/DeleteStaffParams",
                 "get_analytics_summary": "#/components/schemas/GetAnalyticsSummaryParams",
+                "get_appointment_by_confirmation_number": "#/components/schemas/GetAppointmentByConfirmationNumberParams",
                 "get_booking_page_settings": "#/components/schemas/GetBookingPageSettingsParams",
                 "get_booking_slug_status": "#/components/schemas/GetBookingSlugStatusParams",
                 "get_client_appointments": "#/components/schemas/GetClientAppointmentsParams",
@@ -59990,8 +60311,12 @@
           "force_pre_tool_speech": {
             "title": "Force Pre Tool Speech",
             "type": "boolean",
-            "description": "If true, the agent will speak before the tool call.",
-            "default": false
+            "description": "\u0022DEPRECATED: use \u0060pre_tool_speech\u0060 instead. If true, the agent will speak before the tool call.\u0022",
+            "default": false,
+            "deprecated": true
+          },
+          "pre_tool_speech": {
+            "$ref": "#/components/schemas/PreToolSpeechMode"
           },
           "assignments": {
             "title": "Assignments",
@@ -60112,8 +60437,12 @@
           "force_pre_tool_speech": {
             "title": "Force Pre Tool Speech",
             "type": "boolean",
-            "description": "If true, the agent will speak before the tool call.",
-            "default": false
+            "description": "\u0022DEPRECATED: use \u0060pre_tool_speech\u0060 instead. If true, the agent will speak before the tool call.\u0022",
+            "default": false,
+            "deprecated": true
+          },
+          "pre_tool_speech": {
+            "$ref": "#/components/schemas/PreToolSpeechMode"
           },
           "assignments": {
             "title": "Assignments",
@@ -66492,8 +66821,12 @@
           "force_pre_tool_speech": {
             "title": "Force Pre Tool Speech",
             "type": "boolean",
-            "description": "If true, the agent will speak before the tool call.",
-            "default": false
+            "description": "\u0022DEPRECATED: use \u0060pre_tool_speech\u0060 instead. If true, the agent will speak before the tool call.\u0022",
+            "default": false,
+            "deprecated": true
+          },
+          "pre_tool_speech": {
+            "$ref": "#/components/schemas/PreToolSpeechMode"
           },
           "assignments": {
             "title": "Assignments",
@@ -66583,8 +66916,12 @@
           "force_pre_tool_speech": {
             "title": "Force Pre Tool Speech",
             "type": "boolean",
-            "description": "If true, the agent will speak before the tool call.",
-            "default": false
+            "description": "\u0022DEPRECATED: use \u0060pre_tool_speech\u0060 instead. If true, the agent will speak before the tool call.\u0022",
+            "default": false,
+            "deprecated": true
+          },
+          "pre_tool_speech": {
+            "$ref": "#/components/schemas/PreToolSpeechMode"
           },
           "assignments": {
             "title": "Assignments",
@@ -73876,6 +74213,17 @@
           }
         }
       },
+      "UnionBranch": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string"
+          }
+        }
+      },
       "Delivery_Error": {
         "required": [
           "value"
@@ -75646,17 +75994,6 @@
         }
       },
       "Memory_Base_Id": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "type": "string"
-          }
-        }
-      },
-      "UnionBranch": {
         "required": [
           "value"
         ],
@@ -77661,6 +77998,17 @@
           }
         }
       },
+      "PreToolSpeechMode_Wrapper": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "$ref": "#/components/schemas/PreToolSpeechMode"
+          }
+        }
+      },
       "Disable_Interruptions": {
         "required": [
           "value"
@@ -77881,6 +78229,17 @@
         "properties": {
           "value": {
             "type": "string"
+          }
+        }
+      },
+      "Target_Global_Offset_Ms": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "integer"
           }
         }
       },

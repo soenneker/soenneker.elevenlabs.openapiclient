@@ -33,7 +33,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #endif
         /// <summary>If true, the user will not be able to interrupt the agent while this tool is running.</summary>
         public bool? DisableInterruptions { get; set; }
-        /// <summary>If true, the agent will speak before the tool call.</summary>
+        /// <summary>&quot;DEPRECATED: use `pre_tool_speech` instead. If true, the agent will speak before the tool call.&quot;</summary>
+        [Obsolete("")]
         public bool? ForcePreToolSpeech { get; set; }
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -51,6 +52,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigInput.SystemToolConfigInput_params Params { get; set; }
 #endif
+        /// <summary>The pre_tool_speech property</summary>
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PreToolSpeechMode? PreToolSpeech { get; set; }
         /// <summary>The maximum time in seconds to wait for the tool call to complete.</summary>
         public int? ResponseTimeoutSecs { get; set; }
         /// <summary>Predefined tool call sound type to play during tool execution. If not specified, no tool call sound will be played.</summary>
@@ -73,6 +76,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public SystemToolConfigInput()
         {
             AdditionalData = new Dictionary<string, object>();
+            PreToolSpeech = global::Soenneker.ElevenLabs.OpenApiClient.Models.PreToolSpeechMode.Auto;
             ToolCallSoundBehavior = global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolCallSoundBehavior.Auto;
             ToolErrorHandlingMode = global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolErrorHandlingMode.Auto;
             Type = global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigInput_type.System;
@@ -101,6 +105,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "force_pre_tool_speech", n => { ForcePreToolSpeech = n.GetBoolValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "params", n => { Params = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigInput.SystemToolConfigInput_params>(global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigInput.SystemToolConfigInput_params.CreateFromDiscriminatorValue); } },
+                { "pre_tool_speech", n => { PreToolSpeech = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PreToolSpeechMode>(); } },
                 { "response_timeout_secs", n => { ResponseTimeoutSecs = n.GetIntValue(); } },
                 { "tool_call_sound", n => { ToolCallSound = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolCallSoundType_Wrapper>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolCallSoundType_Wrapper.CreateFromDiscriminatorValue); } },
                 { "tool_call_sound_behavior", n => { ToolCallSoundBehavior = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolCallSoundBehavior>(); } },
@@ -121,6 +126,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteBoolValue("force_pre_tool_speech", ForcePreToolSpeech);
             writer.WriteStringValue("name", Name);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigInput.SystemToolConfigInput_params>("params", Params);
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PreToolSpeechMode>("pre_tool_speech", PreToolSpeech);
             writer.WriteIntValue("response_timeout_secs", ResponseTimeoutSecs);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolCallSoundType_Wrapper>("tool_call_sound", ToolCallSound);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolCallSoundBehavior>("tool_call_sound_behavior", ToolCallSoundBehavior);

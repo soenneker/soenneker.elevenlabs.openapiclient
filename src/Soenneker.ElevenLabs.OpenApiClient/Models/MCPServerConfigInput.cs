@@ -38,7 +38,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public bool? DisableInterruptions { get; set; }
         /// <summary>The execution_mode property</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolExecutionMode? ExecutionMode { get; set; }
-        /// <summary>If true, all tools from this MCP server will require pre-tool execution speech</summary>
+        /// <summary>&quot;DEPRECATED: use `pre_tool_speech` instead. If true, all tools from this MCP server will require pre-tool execution speech.&quot;</summary>
+        [Obsolete("")]
         public bool? ForcePreToolSpeech { get; set; }
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -48,6 +49,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
+        /// <summary>The pre_tool_speech property</summary>
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PreToolSpeechMode? PreToolSpeech { get; set; }
         /// <summary>The headers included in the request</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -108,6 +111,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             AdditionalData = new Dictionary<string, object>();
             ApprovalPolicy = global::Soenneker.ElevenLabs.OpenApiClient.Models.MCPApprovalPolicy.Require_approval_all;
             ExecutionMode = global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolExecutionMode.Immediate;
+            PreToolSpeech = global::Soenneker.ElevenLabs.OpenApiClient.Models.PreToolSpeechMode.Auto;
             ToolCallSoundBehavior = global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolCallSoundBehavior.Auto;
             Transport = global::Soenneker.ElevenLabs.OpenApiClient.Models.MCPServerTransport.SSE;
         }
@@ -137,6 +141,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "execution_mode", n => { ExecutionMode = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolExecutionMode>(); } },
                 { "force_pre_tool_speech", n => { ForcePreToolSpeech = n.GetBoolValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
+                { "pre_tool_speech", n => { PreToolSpeech = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PreToolSpeechMode>(); } },
                 { "request_headers", n => { RequestHeaders = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.MCPServerConfigInput_request_headers>(global::Soenneker.ElevenLabs.OpenApiClient.Models.MCPServerConfigInput_request_headers.CreateFromDiscriminatorValue); } },
                 { "secret_token", n => { SecretToken = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.MCPServerConfigInput.MCPServerConfigInput_secret_token>(global::Soenneker.ElevenLabs.OpenApiClient.Models.MCPServerConfigInput.MCPServerConfigInput_secret_token.CreateFromDiscriminatorValue); } },
                 { "tool_approval_hashes", n => { ToolApprovalHashes = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.MCPToolApprovalHash>(global::Soenneker.ElevenLabs.OpenApiClient.Models.MCPToolApprovalHash.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -162,6 +167,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolExecutionMode>("execution_mode", ExecutionMode);
             writer.WriteBoolValue("force_pre_tool_speech", ForcePreToolSpeech);
             writer.WriteStringValue("name", Name);
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PreToolSpeechMode>("pre_tool_speech", PreToolSpeech);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.MCPServerConfigInput_request_headers>("request_headers", RequestHeaders);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.MCPServerConfigInput.MCPServerConfigInput_secret_token>("secret_token", SecretToken);
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.MCPToolApprovalHash>("tool_approval_hashes", ToolApprovalHashes);
