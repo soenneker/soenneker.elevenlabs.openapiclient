@@ -58,6 +58,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookToolApiSchemaConfigInput_request_headers RequestHeaders { get; set; }
 #endif
+        /// <summary>Schema describing the expected response body structure. For documentation only; not surfaced to the LLM.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ObjectJsonSchemaPropertyInput? ResponseBodySchema { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ObjectJsonSchemaPropertyInput ResponseBodySchema { get; set; }
+#endif
         /// <summary>The URL that the webhook will be sent to. May include path parameters, e.g. https://example.com/agents/{agent_id}</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -100,6 +108,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "query_params_schema", n => { QueryParamsSchema = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.QueryParamsJsonSchema>(global::Soenneker.ElevenLabs.OpenApiClient.Models.QueryParamsJsonSchema.CreateFromDiscriminatorValue); } },
                 { "request_body_schema", n => { RequestBodySchema = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ObjectJsonSchemaPropertyInput>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ObjectJsonSchemaPropertyInput.CreateFromDiscriminatorValue); } },
                 { "request_headers", n => { RequestHeaders = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookToolApiSchemaConfigInput_request_headers>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookToolApiSchemaConfigInput_request_headers.CreateFromDiscriminatorValue); } },
+                { "response_body_schema", n => { ResponseBodySchema = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ObjectJsonSchemaPropertyInput>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ObjectJsonSchemaPropertyInput.CreateFromDiscriminatorValue); } },
                 { "url", n => { Url = n.GetStringValue(); } },
             };
         }
@@ -117,6 +126,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.QueryParamsJsonSchema>("query_params_schema", QueryParamsSchema);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ObjectJsonSchemaPropertyInput>("request_body_schema", RequestBodySchema);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookToolApiSchemaConfigInput_request_headers>("request_headers", RequestHeaders);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ObjectJsonSchemaPropertyInput>("response_body_schema", ResponseBodySchema);
             writer.WriteStringValue("url", Url);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -59,6 +59,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.MCPServerConfigInput_request_headers RequestHeaders { get; set; }
 #endif
+        /// <summary>The maximum time in seconds to wait for each MCP tool call to complete. Must be between 5 and 120 seconds (inclusive).</summary>
+        public int? ResponseTimeoutSecs { get; set; }
         /// <summary>The secret token (Authorization header) stored as a workspace secret or in-place secret</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -143,6 +145,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "pre_tool_speech", n => { PreToolSpeech = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PreToolSpeechMode>(); } },
                 { "request_headers", n => { RequestHeaders = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.MCPServerConfigInput_request_headers>(global::Soenneker.ElevenLabs.OpenApiClient.Models.MCPServerConfigInput_request_headers.CreateFromDiscriminatorValue); } },
+                { "response_timeout_secs", n => { ResponseTimeoutSecs = n.GetIntValue(); } },
                 { "secret_token", n => { SecretToken = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.MCPServerConfigInput.MCPServerConfigInput_secret_token>(global::Soenneker.ElevenLabs.OpenApiClient.Models.MCPServerConfigInput.MCPServerConfigInput_secret_token.CreateFromDiscriminatorValue); } },
                 { "tool_approval_hashes", n => { ToolApprovalHashes = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.MCPToolApprovalHash>(global::Soenneker.ElevenLabs.OpenApiClient.Models.MCPToolApprovalHash.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "tool_call_sound", n => { ToolCallSound = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolCallSoundType_Wrapper>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolCallSoundType_Wrapper.CreateFromDiscriminatorValue); } },
@@ -169,6 +172,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteStringValue("name", Name);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PreToolSpeechMode>("pre_tool_speech", PreToolSpeech);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.MCPServerConfigInput_request_headers>("request_headers", RequestHeaders);
+            writer.WriteIntValue("response_timeout_secs", ResponseTimeoutSecs);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.MCPServerConfigInput.MCPServerConfigInput_secret_token>("secret_token", SecretToken);
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.MCPToolApprovalHash>("tool_approval_hashes", ToolApprovalHashes);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolCallSoundType_Wrapper>("tool_call_sound", ToolCallSound);

@@ -71,6 +71,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.Response_Mocks ResponseMocks { get; set; }
 #endif
+        /// <summary>If set, overrides the server&apos;s response timeout for this MCP tool (seconds).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Response_Timeout_Secs? ResponseTimeoutSecs { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Response_Timeout_Secs ResponseTimeoutSecs { get; set; }
+#endif
         /// <summary>If set, overrides the server&apos;s tool_call_sound setting for this tool</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -127,6 +135,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "input_overrides", n => { InputOverrides = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.MCPToolConfigOverrideOutputInputOverrides>(global::Soenneker.ElevenLabs.OpenApiClient.Models.MCPToolConfigOverrideOutputInputOverrides.CreateFromDiscriminatorValue); } },
                 { "pre_tool_speech", n => { PreToolSpeech = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PreToolSpeechMode_Wrapper>(global::Soenneker.ElevenLabs.OpenApiClient.Models.PreToolSpeechMode_Wrapper.CreateFromDiscriminatorValue); } },
                 { "response_mocks", n => { ResponseMocks = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Response_Mocks>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Response_Mocks.CreateFromDiscriminatorValue); } },
+                { "response_timeout_secs", n => { ResponseTimeoutSecs = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Response_Timeout_Secs>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Response_Timeout_Secs.CreateFromDiscriminatorValue); } },
                 { "tool_call_sound", n => { ToolCallSound = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolCallSoundType_Wrapper>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolCallSoundType_Wrapper.CreateFromDiscriminatorValue); } },
                 { "tool_call_sound_behavior", n => { ToolCallSoundBehavior = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolCallSoundBehavior_Wrapper>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolCallSoundBehavior_Wrapper.CreateFromDiscriminatorValue); } },
                 { "tool_name", n => { ToolName = n.GetStringValue(); } },
@@ -146,6 +155,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.MCPToolConfigOverrideOutputInputOverrides>("input_overrides", InputOverrides);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PreToolSpeechMode_Wrapper>("pre_tool_speech", PreToolSpeech);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Response_Mocks>("response_mocks", ResponseMocks);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Response_Timeout_Secs>("response_timeout_secs", ResponseTimeoutSecs);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolCallSoundType_Wrapper>("tool_call_sound", ToolCallSound);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolCallSoundBehavior_Wrapper>("tool_call_sound_behavior", ToolCallSoundBehavior);
             writer.WriteStringValue("tool_name", ToolName);

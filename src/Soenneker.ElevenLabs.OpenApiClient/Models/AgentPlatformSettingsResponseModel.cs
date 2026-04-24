@@ -106,6 +106,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentTestingSettings Testing { get; set; }
 #endif
+        /// <summary>&quot;The trust context in which the agent operates.UNKNOWN: not yet classified (existing agents created before this feature).LOW: serves untrusted external participants (e.g. customer support, sales) —     outputs should be vetted and tool access scoped.HIGH: serves the owner (e.g. personal assistant) — full tool access is appropriate.&quot;</summary>
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentTrustContext? TrustContext { get; set; }
         /// <summary>The widget property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -129,6 +131,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             AdditionalData = new Dictionary<string, object>();
             AnalysisLlm = global::Soenneker.ElevenLabs.OpenApiClient.Models.LLM.Gemini25Flash;
+            TrustContext = global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentTrustContext.Unknown;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -161,6 +164,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "safety", n => { Safety = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SafetyResponseModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.SafetyResponseModel.CreateFromDiscriminatorValue); } },
                 { "summary_language", n => { SummaryLanguage = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Summary_Language>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Summary_Language.CreateFromDiscriminatorValue); } },
                 { "testing", n => { Testing = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentTestingSettings>(global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentTestingSettings.CreateFromDiscriminatorValue); } },
+                { "trust_context", n => { TrustContext = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentTrustContext>(); } },
                 { "widget", n => { Widget = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigOutput>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigOutput.CreateFromDiscriminatorValue); } },
                 { "workspace_overrides", n => { WorkspaceOverrides = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentWorkspaceOverridesOutput>(global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentWorkspaceOverridesOutput.CreateFromDiscriminatorValue); } },
             };
@@ -185,6 +189,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SafetyResponseModel>("safety", Safety);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Summary_Language>("summary_language", SummaryLanguage);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentTestingSettings>("testing", Testing);
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentTrustContext>("trust_context", TrustContext);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigOutput>("widget", Widget);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentWorkspaceOverridesOutput>("workspace_overrides", WorkspaceOverrides);
             writer.WriteAdditionalData(AdditionalData);

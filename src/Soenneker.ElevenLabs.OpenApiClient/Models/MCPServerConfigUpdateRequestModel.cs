@@ -80,6 +80,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.MCPServerConfigUpdateRequestModelRequestHeaders RequestHeaders { get; set; }
 #endif
+        /// <summary>The maximum time in seconds to wait for each MCP tool call to complete.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Response_Timeout_Secs? ResponseTimeoutSecs { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Response_Timeout_Secs ResponseTimeoutSecs { get; set; }
+#endif
         /// <summary>Optional secret token for authentication with this MCP server</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -137,6 +145,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "force_pre_tool_speech", n => { ForcePreToolSpeech = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Force_Pre_Tool_Speech>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Force_Pre_Tool_Speech.CreateFromDiscriminatorValue); } },
                 { "pre_tool_speech", n => { PreToolSpeech = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PreToolSpeechMode_Wrapper>(global::Soenneker.ElevenLabs.OpenApiClient.Models.PreToolSpeechMode_Wrapper.CreateFromDiscriminatorValue); } },
                 { "request_headers", n => { RequestHeaders = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.MCPServerConfigUpdateRequestModelRequestHeaders>(global::Soenneker.ElevenLabs.OpenApiClient.Models.MCPServerConfigUpdateRequestModelRequestHeaders.CreateFromDiscriminatorValue); } },
+                { "response_timeout_secs", n => { ResponseTimeoutSecs = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Response_Timeout_Secs>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Response_Timeout_Secs.CreateFromDiscriminatorValue); } },
                 { "secret_token", n => { SecretToken = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConvAISecretLocator>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConvAISecretLocator.CreateFromDiscriminatorValue); } },
                 { "tool_call_sound", n => { ToolCallSound = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolCallSoundType_Wrapper>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolCallSoundType_Wrapper.CreateFromDiscriminatorValue); } },
                 { "tool_call_sound_behavior", n => { ToolCallSoundBehavior = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolCallSoundBehavior_Wrapper>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolCallSoundBehavior_Wrapper.CreateFromDiscriminatorValue); } },
@@ -157,6 +166,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Force_Pre_Tool_Speech>("force_pre_tool_speech", ForcePreToolSpeech);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PreToolSpeechMode_Wrapper>("pre_tool_speech", PreToolSpeech);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.MCPServerConfigUpdateRequestModelRequestHeaders>("request_headers", RequestHeaders);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Response_Timeout_Secs>("response_timeout_secs", ResponseTimeoutSecs);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConvAISecretLocator>("secret_token", SecretToken);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolCallSoundType_Wrapper>("tool_call_sound", ToolCallSound);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolCallSoundBehavior_Wrapper>("tool_call_sound_behavior", ToolCallSoundBehavior);

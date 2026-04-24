@@ -22439,6 +22439,9 @@
           "privacy": {
             "$ref": "#/components/schemas/PrivacyConfigInput"
           },
+          "trust_context": {
+            "$ref": "#/components/schemas/AgentTrustContext"
+          },
           "analysis_llm": {
             "$ref": "#/components/schemas/LLM"
           }
@@ -22507,6 +22510,9 @@
           },
           "privacy": {
             "$ref": "#/components/schemas/PrivacyConfigOutput"
+          },
+          "trust_context": {
+            "$ref": "#/components/schemas/AgentTrustContext"
           },
           "analysis_llm": {
             "$ref": "#/components/schemas/LLM"
@@ -22792,6 +22798,18 @@
             "default": false
           }
         }
+      },
+      "AgentTrustContext": {
+        "title": "AgentTrustContext",
+        "enum": [
+          "unknown",
+          "low",
+          "high"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "\u0022The trust context in which the agent operates.\n\nUNKNOWN: not yet classified (existing agents created before this feature).\nLOW: serves untrusted external participants (e.g. customer support, sales) \u2014\n     outputs should be vetted and tool access scoped.\nHIGH: serves the owner (e.g. personal assistant) \u2014 full tool access is appropriate.\u0022",
+        "default": "unknown"
       },
       "AgentVersionMetadata": {
         "title": "AgentVersionMetadata",
@@ -32307,20 +32325,6 @@
         "type": "string",
         "additionalProperties": false
       },
-      "CheckRentalAvailabilityParams": {
-        "title": "CheckRentalAvailabilityParams",
-        "type": "object",
-        "properties": {
-          "smb_tool_type": {
-            "title": "Smb Tool Type",
-            "enum": [
-              "check_rental_availability"
-            ],
-            "type": "string",
-            "default": "check_rental_availability"
-          }
-        }
-      },
       "CheckServiceAvailabilityParams": {
         "title": "CheckServiceAvailabilityParams",
         "type": "object",
@@ -37627,34 +37631,6 @@
           "status": "ok"
         }
       },
-      "CreateRentalBookingParams": {
-        "title": "CreateRentalBookingParams",
-        "type": "object",
-        "properties": {
-          "smb_tool_type": {
-            "title": "Smb Tool Type",
-            "enum": [
-              "create_rental_booking"
-            ],
-            "type": "string",
-            "default": "create_rental_booking"
-          }
-        }
-      },
-      "CreateRentalServiceParams": {
-        "title": "CreateRentalServiceParams",
-        "type": "object",
-        "properties": {
-          "smb_tool_type": {
-            "title": "Smb Tool Type",
-            "enum": [
-              "create_rental_service"
-            ],
-            "type": "string",
-            "default": "create_rental_service"
-          }
-        }
-      },
       "CreateResponseUnitTestRequest": {
         "title": "CreateResponseUnitTestRequest",
         "required": [
@@ -37840,7 +37816,7 @@
             "default": "create_service"
           }
         },
-        "description": "Create a new service in the system."
+        "description": "Create a new service (classic or rental) in the system."
       },
       "CreateSimulationTestRequest": {
         "title": "CreateSimulationTestRequest",
@@ -38756,20 +38732,6 @@
         },
         "example": {
           "status": "ok"
-        }
-      },
-      "DeleteRentalServiceParams": {
-        "title": "DeleteRentalServiceParams",
-        "type": "object",
-        "properties": {
-          "smb_tool_type": {
-            "title": "Smb Tool Type",
-            "enum": [
-              "delete_rental_service"
-            ],
-            "type": "string",
-            "default": "delete_rental_service"
-          }
         }
       },
       "DeleteSampleResponseModel": {
@@ -47656,24 +47618,6 @@
           }
         }
       },
-      "ListRentalServicesParams": {
-        "title": "ListRentalServicesParams",
-        "type": "object",
-        "properties": {
-          "list_kwargs": {
-            "title": "List Kwargs",
-            "type": "object"
-          },
-          "smb_tool_type": {
-            "title": "Smb Tool Type",
-            "enum": [
-              "list_rental_services"
-            ],
-            "type": "string",
-            "default": "list_rental_services"
-          }
-        }
-      },
       "ListResponseMeta": {
         "title": "ListResponseMeta",
         "type": "object",
@@ -48019,6 +47963,14 @@
           "execution_mode": {
             "$ref": "#/components/schemas/ToolExecutionMode"
           },
+          "response_timeout_secs": {
+            "title": "Response Timeout Secs",
+            "maximum": 120.0,
+            "minimum": 5.0,
+            "type": "integer",
+            "description": "The maximum time in seconds to wait for each MCP tool call to complete. Must be between 5 and 120 seconds (inclusive).",
+            "default": 30
+          },
           "tool_config_overrides": {
             "title": "Tool Config Overrides",
             "type": "array",
@@ -48159,6 +48111,14 @@
           "execution_mode": {
             "$ref": "#/components/schemas/ToolExecutionMode"
           },
+          "response_timeout_secs": {
+            "title": "Response Timeout Secs",
+            "maximum": 120.0,
+            "minimum": 5.0,
+            "type": "integer",
+            "description": "The maximum time in seconds to wait for each MCP tool call to complete. Must be between 5 and 120 seconds (inclusive).",
+            "default": 30
+          },
           "tool_config_overrides": {
             "title": "Tool Config Overrides",
             "type": "array",
@@ -48250,6 +48210,17 @@
               }
             ],
             "description": "If set, overrides the server\u0027s execution_mode setting for this tool",
+            "nullable": true
+          },
+          "response_timeout_secs": {
+            "title": "Response Timeout Secs",
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Response_Timeout_Secs"
+              }
+            ],
+            "description": "The maximum time in seconds to wait for each MCP tool call to complete.",
             "nullable": true
           },
           "request_headers": {
@@ -48519,9 +48490,11 @@
           },
           "response_timeout_secs": {
             "title": "Response Timeout Secs",
+            "maximum": 120.0,
+            "minimum": 5.0,
             "type": "integer",
-            "description": "The maximum time in seconds to wait for the tool call to complete.",
-            "default": 20
+            "description": "The maximum time in seconds to wait for the MCP tool call to complete. Must be between 5 and 120 seconds (inclusive).",
+            "default": 30
           },
           "disable_interruptions": {
             "title": "Disable Interruptions",
@@ -48656,9 +48629,11 @@
           },
           "response_timeout_secs": {
             "title": "Response Timeout Secs",
+            "maximum": 120.0,
+            "minimum": 5.0,
             "type": "integer",
-            "description": "The maximum time in seconds to wait for the tool call to complete.",
-            "default": 20
+            "description": "The maximum time in seconds to wait for the MCP tool call to complete. Must be between 5 and 120 seconds (inclusive).",
+            "default": 30
           },
           "disable_interruptions": {
             "title": "Disable Interruptions",
@@ -48833,6 +48808,17 @@
             "description": "If set, overrides the server\u0027s execution_mode setting for this tool",
             "nullable": true
           },
+          "response_timeout_secs": {
+            "title": "Response Timeout Secs",
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Response_Timeout_Secs"
+              }
+            ],
+            "description": "If set, overrides the server\u0027s response timeout for this MCP tool (seconds).",
+            "nullable": true
+          },
           "assignments": {
             "title": "Assignments",
             "type": "array",
@@ -48932,6 +48918,17 @@
             "description": "If set, overrides the server\u0027s execution_mode setting for this tool",
             "nullable": true
           },
+          "response_timeout_secs": {
+            "title": "Response Timeout Secs",
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Response_Timeout_Secs"
+              }
+            ],
+            "description": "If set, overrides the server\u0027s response timeout for this MCP tool (seconds).",
+            "nullable": true
+          },
           "assignments": {
             "title": "Assignments",
             "type": "array",
@@ -49024,6 +49021,17 @@
               }
             ],
             "description": "If set, overrides the server\u0027s execution_mode setting for this tool",
+            "nullable": true
+          },
+          "response_timeout_secs": {
+            "title": "Response Timeout Secs",
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Response_Timeout_Secs"
+              }
+            ],
+            "description": "If set, overrides the server\u0027s response timeout for this MCP tool.",
             "nullable": true
           },
           "assignments": {
@@ -49123,6 +49131,17 @@
               }
             ],
             "description": "If set, overrides the server\u0027s execution_mode setting for this tool",
+            "nullable": true
+          },
+          "response_timeout_secs": {
+            "title": "Response Timeout Secs",
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Response_Timeout_Secs"
+              }
+            ],
+            "description": "If set, overrides the server\u0027s response timeout for this MCP tool.",
             "nullable": true
           },
           "assignments": {
@@ -49295,18 +49314,6 @@
             "type": "string"
           }
         }
-      },
-      "MergingStrategy": {
-        "title": "MergingStrategy",
-        "enum": [
-          "rank_fusion",
-          "top_k_per_source",
-          "weighted_interleave"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "description": "Strategy for merging results from multiple sources.",
-        "default": "rank_fusion"
       },
       "MessageSearchSortBy": {
         "title": "MessageSearchSortBy",
@@ -49697,69 +49704,6 @@
             "$ref": "#/components/schemas/ModerationConfig"
           }
         }
-      },
-      "MultiSourceConfigJson": {
-        "title": "MultiSourceConfigJson",
-        "type": "object",
-        "properties": {
-          "source_names": {
-            "title": "Source Names",
-            "type": "object",
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/Source_Names"
-              }
-            ],
-            "description": "List of source names to use (e.g., [\u0027chunks\u0027, \u0027products\u0027])",
-            "nullable": true
-          },
-          "source_overrides": {
-            "title": "Source Overrides",
-            "type": "object",
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/Source_Overrides"
-              }
-            ],
-            "description": "Per-source parameter overrides",
-            "nullable": true
-          },
-          "merging_strategy": {
-            "$ref": "#/components/schemas/MergingStrategy"
-          },
-          "final_top_k": {
-            "title": "Final Top K",
-            "type": "object",
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/Final_Top_K"
-              }
-            ],
-            "description": "Final number of chunks after merging",
-            "default": 10,
-            "nullable": true
-          },
-          "use_decomposition": {
-            "title": "Use Decomposition",
-            "type": "boolean",
-            "description": "Decompose complex queries",
-            "default": true
-          },
-          "use_reformulation": {
-            "title": "Use Reformulation",
-            "type": "boolean",
-            "description": "LLM reformulates query",
-            "default": true
-          },
-          "synthesize_response": {
-            "title": "Synthesize Response",
-            "type": "boolean",
-            "description": "LLM generates answer vs raw chunks",
-            "default": true
-          }
-        },
-        "additionalProperties": false,
-        "description": "JSON-serializable multi-source retrieval configuration.\n\nThis can be passed as JSON in tool configurations for full control."
       },
       "MultichannelSpeechToTextResponseModel": {
         "title": "MultichannelSpeechToTextResponseModel",
@@ -51972,13 +51916,12 @@
       "ProcedureCompilerMode": {
         "title": "ProcedureCompilerMode",
         "enum": [
-          "llm",
           "deterministic",
           "append"
         ],
         "type": "string",
         "additionalProperties": false,
-        "default": "llm"
+        "default": "append"
       },
       "ProcedureRefResponseModel": {
         "title": "ProcedureRefResponseModel",
@@ -56976,24 +56919,6 @@
                 "$ref": "#/components/schemas/DeleteCalendarEventParams"
               },
               {
-                "$ref": "#/components/schemas/ListRentalServicesParams"
-              },
-              {
-                "$ref": "#/components/schemas/CreateRentalServiceParams"
-              },
-              {
-                "$ref": "#/components/schemas/UpdateRentalServiceParams"
-              },
-              {
-                "$ref": "#/components/schemas/DeleteRentalServiceParams"
-              },
-              {
-                "$ref": "#/components/schemas/CheckRentalAvailabilityParams"
-              },
-              {
-                "$ref": "#/components/schemas/CreateRentalBookingParams"
-              },
-              {
                 "$ref": "#/components/schemas/ListAgentRulesParams"
               },
               {
@@ -57071,7 +56996,6 @@
             "discriminator": {
               "propertyName": "smb_tool_type",
               "mapping": {
-                "check_rental_availability": "#/components/schemas/CheckRentalAvailabilityParams",
                 "check_service_availability": "#/components/schemas/CheckServiceAvailabilityParams",
                 "create_agent_rule": "#/components/schemas/CreateAgentRuleParams",
                 "create_asset": "#/components/schemas/CreateAssetParams",
@@ -57081,8 +57005,6 @@
                 "create_holiday": "#/components/schemas/CreateHolidayParams",
                 "create_location": "#/components/schemas/CreateLocationParams",
                 "create_product": "#/components/schemas/CreateProductParams",
-                "create_rental_booking": "#/components/schemas/CreateRentalBookingParams",
-                "create_rental_service": "#/components/schemas/CreateRentalServiceParams",
                 "create_service": "#/components/schemas/CreateServiceParams",
                 "create_staff": "#/components/schemas/CreateStaffParams",
                 "delete_agent_rule": "#/components/schemas/DeleteAgentRuleParams",
@@ -57093,7 +57015,6 @@
                 "delete_holiday": "#/components/schemas/DeleteHolidayParams",
                 "delete_location": "#/components/schemas/DeleteLocationParams",
                 "delete_product": "#/components/schemas/DeleteProductParams",
-                "delete_rental_service": "#/components/schemas/DeleteRentalServiceParams",
                 "delete_service": "#/components/schemas/DeleteServiceParams",
                 "delete_staff": "#/components/schemas/DeleteStaffParams",
                 "get_analytics_summary": "#/components/schemas/GetAnalyticsSummaryParams",
@@ -57111,7 +57032,6 @@
                 "list_holidays": "#/components/schemas/ListHolidaysParams",
                 "list_locations": "#/components/schemas/ListLocationsParams",
                 "list_products": "#/components/schemas/ListProductsParams",
-                "list_rental_services": "#/components/schemas/ListRentalServicesParams",
                 "list_services": "#/components/schemas/ListServicesParams",
                 "list_staff": "#/components/schemas/ListStaffParams",
                 "search_clients": "#/components/schemas/SearchClientsParams",
@@ -57126,7 +57046,6 @@
                 "update_holiday": "#/components/schemas/UpdateHolidayParams",
                 "update_location": "#/components/schemas/UpdateLocationParams",
                 "update_product": "#/components/schemas/UpdateProductParams",
-                "update_rental_service": "#/components/schemas/UpdateRentalServiceParams",
                 "update_service": "#/components/schemas/UpdateServiceParams",
                 "update_staff": "#/components/schemas/UpdateStaffParams"
               }
@@ -58553,230 +58472,6 @@
         ],
         "type": "string",
         "additionalProperties": false
-      },
-      "SourceConfigJson": {
-        "title": "SourceConfigJson",
-        "required": [
-          "name"
-        ],
-        "type": "object",
-        "properties": {
-          "name": {
-            "title": "Name",
-            "type": "string",
-            "description": "Source name (can be existing or new)"
-          },
-          "db_name": {
-            "title": "Db Name",
-            "type": "object",
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/Db_Name"
-              }
-            ],
-            "description": "\u0022MongoDB database name. Default: eleven_customer_support\u0022",
-            "nullable": true
-          },
-          "collection_name": {
-            "title": "Collection Name",
-            "type": "object",
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/Collection_Name"
-              }
-            ],
-            "description": "MongoDB collection name. Required for new sources.",
-            "nullable": true
-          },
-          "k_dense": {
-            "title": "K Dense",
-            "type": "object",
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/K_Dense"
-              }
-            ],
-            "description": "Number of chunks from vector search",
-            "nullable": true
-          },
-          "k_keyword": {
-            "title": "K Keyword",
-            "type": "object",
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/K_Keyword"
-              }
-            ],
-            "description": "Number of chunks from BM25 search",
-            "nullable": true
-          },
-          "dense_weight": {
-            "title": "Dense Weight",
-            "type": "object",
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/Dense_Weight"
-              }
-            ],
-            "description": "Weight for vector results",
-            "nullable": true
-          },
-          "keyword_weight": {
-            "title": "Keyword Weight",
-            "type": "object",
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/Keyword_Weight"
-              }
-            ],
-            "description": "Weight for BM25 results",
-            "nullable": true
-          },
-          "source_weight": {
-            "title": "Source Weight",
-            "type": "object",
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/Source_Weight"
-              }
-            ],
-            "description": "Weight for cross-source merging",
-            "nullable": true
-          },
-          "vector_index_name": {
-            "title": "Vector Index Name",
-            "type": "object",
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/Vector_Index_Name"
-              }
-            ],
-            "description": "\u0022Vector search index name. Default: \u0027default\u0027\u0022",
-            "nullable": true
-          },
-          "embedding_field": {
-            "title": "Embedding Field",
-            "type": "object",
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/Embedding_Field"
-              }
-            ],
-            "description": "\u0022Field containing embeddings. Default: \u0027embedding\u0027\u0022",
-            "nullable": true
-          },
-          "content_field": {
-            "title": "Content Field",
-            "type": "object",
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/Content_Field"
-              }
-            ],
-            "description": "\u0022Field containing text content. Default: \u0027content\u0027\u0022",
-            "nullable": true
-          },
-          "enabled": {
-            "title": "Enabled",
-            "type": "boolean",
-            "description": "Whether this source is active",
-            "default": true
-          }
-        },
-        "additionalProperties": false,
-        "description": "JSON-serializable source configuration for tool configs.\n\nThis can override existing sources or define entirely new ones.\nFor new sources, collection_name is required."
-      },
-      "SourceRetrievalConfig": {
-        "title": "SourceRetrievalConfig",
-        "required": [
-          "name",
-          "collection_name"
-        ],
-        "type": "object",
-        "properties": {
-          "name": {
-            "title": "Name",
-            "type": "string"
-          },
-          "collection_name": {
-            "title": "Collection Name",
-            "type": "string"
-          },
-          "db_name": {
-            "title": "Db Name",
-            "type": "string",
-            "default": "eleven_customer_support"
-          },
-          "enabled": {
-            "title": "Enabled",
-            "type": "boolean",
-            "default": true
-          },
-          "k_dense": {
-            "title": "K Dense",
-            "type": "integer",
-            "default": 5
-          },
-          "k_keyword": {
-            "title": "K Keyword",
-            "type": "integer",
-            "default": 5
-          },
-          "dense_weight": {
-            "title": "Dense Weight",
-            "type": "number",
-            "default": 1.0
-          },
-          "keyword_weight": {
-            "title": "Keyword Weight",
-            "type": "number",
-            "default": 1.0
-          },
-          "source_weight": {
-            "title": "Source Weight",
-            "type": "number",
-            "default": 1.0
-          },
-          "vector_index_name": {
-            "title": "Vector Index Name",
-            "type": "string",
-            "default": "default"
-          },
-          "embedding_field": {
-            "title": "Embedding Field",
-            "type": "string",
-            "default": "embedding"
-          },
-          "content_field": {
-            "title": "Content Field",
-            "type": "string",
-            "default": "content"
-          },
-          "filter_field": {
-            "title": "Filter Field",
-            "type": "object",
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/Filter_Field"
-              }
-            ],
-            "nullable": true
-          },
-          "num_candidates_multiplier": {
-            "title": "Num Candidates Multiplier",
-            "type": "integer",
-            "default": 10
-          },
-          "result_fields": {
-            "type": "object",
-            "additionalProperties": {
-              "type": "array",
-              "items": {
-                "type": "object"
-              }
-            }
-          }
-        }
       },
       "SpeakerAudioResponseModel": {
         "title": "SpeakerAudioResponseModel",
@@ -63755,20 +63450,6 @@
           }
         }
       },
-      "UpdateRentalServiceParams": {
-        "title": "UpdateRentalServiceParams",
-        "type": "object",
-        "properties": {
-          "smb_tool_type": {
-            "title": "Smb Tool Type",
-            "enum": [
-              "update_rental_service"
-            ],
-            "type": "string",
-            "default": "update_rental_service"
-          }
-        }
-      },
       "UpdateResponseUnitTestRequest": {
         "title": "UpdateResponseUnitTestRequest",
         "required": [
@@ -66601,6 +66282,16 @@
             "description": "Schema for the body parameters, if any. Used for POST/PATCH/PUT requests. The schema should be an object which will be sent as the json body",
             "nullable": true
           },
+          "response_body_schema": {
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/ObjectJsonSchemaPropertyInput"
+              }
+            ],
+            "description": "Schema describing the expected response body structure. For documentation only; not surfaced to the LLM.",
+            "nullable": true
+          },
           "content_type": {
             "title": "Content Type",
             "enum": [
@@ -66723,6 +66414,16 @@
               }
             ],
             "description": "Schema for the body parameters, if any. Used for POST/PATCH/PUT requests. The schema should be an object which will be sent as the json body",
+            "nullable": true
+          },
+          "response_body_schema": {
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/ObjectJsonSchemaPropertyOutput"
+              }
+            ],
+            "description": "Schema describing the expected response body structure. For documentation only; not surfaced to the LLM.",
             "nullable": true
           },
           "content_type": {
@@ -72636,16 +72337,6 @@
           "propertyName": "type"
         }
       },
-      "SourceRetrievalConfigResultFields": {
-        "title": "Result Fields",
-        "type": "object",
-        "additionalProperties": {
-          "type": "array",
-          "items": {
-            "type": "object"
-          }
-        }
-      },
       "SpeakerTrackVoices": {
         "title": "Voices",
         "type": "object",
@@ -78042,6 +77733,19 @@
           }
         }
       },
+      "Response_Timeout_Secs": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "maximum": 120.0,
+            "minimum": 5.0,
+            "type": "integer"
+          }
+        }
+      },
       "Disable_Compression": {
         "required": [
           "value"
@@ -78102,45 +77806,6 @@
             "maximum": 1.0,
             "minimum": 0.0,
             "type": "number"
-          }
-        }
-      },
-      "Source_Names": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          }
-        }
-      },
-      "Source_Overrides": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/SourceConfigJson"
-            }
-          }
-        }
-      },
-      "Final_Top_K": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "type": "integer"
           }
         }
       },
@@ -79111,127 +78776,6 @@
         "properties": {
           "value": {
             "type": "boolean"
-          }
-        }
-      },
-      "Db_Name": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "type": "string"
-          }
-        }
-      },
-      "Collection_Name": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "type": "string"
-          }
-        }
-      },
-      "K_Dense": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "type": "integer"
-          }
-        }
-      },
-      "K_Keyword": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "type": "integer"
-          }
-        }
-      },
-      "Dense_Weight": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "type": "number"
-          }
-        }
-      },
-      "Keyword_Weight": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "type": "number"
-          }
-        }
-      },
-      "Source_Weight": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "type": "number"
-          }
-        }
-      },
-      "Vector_Index_Name": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "type": "string"
-          }
-        }
-      },
-      "Embedding_Field": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "type": "string"
-          }
-        }
-      },
-      "Content_Field": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "type": "string"
-          }
-        }
-      },
-      "Filter_Field": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "type": "string"
           }
         }
       },

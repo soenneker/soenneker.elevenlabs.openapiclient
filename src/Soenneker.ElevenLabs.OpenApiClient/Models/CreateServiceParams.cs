@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.ElevenLabs.OpenApiClient.Models
 {
     /// <summary>
-    /// Create a new service in the system.
+    /// Create a new service (classic or rental) in the system.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CreateServiceParams : IAdditionalDataHolder, IParsable
