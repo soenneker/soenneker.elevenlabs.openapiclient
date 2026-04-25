@@ -4,6 +4,7 @@ using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.ElevenLabs.OpenApiClient.Models;
+using Soenneker.ElevenLabs.OpenApiClient.V1.AudioIsolation.History;
 using Soenneker.ElevenLabs.OpenApiClient.V1.AudioIsolation.StreamNamespace;
 using System.Collections.Generic;
 using System.IO;
@@ -18,6 +19,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.AudioIsolation
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AudioIsolationRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The history property</summary>
+        public global::Soenneker.ElevenLabs.OpenApiClient.V1.AudioIsolation.History.HistoryRequestBuilder History
+        {
+            get => new global::Soenneker.ElevenLabs.OpenApiClient.V1.AudioIsolation.History.HistoryRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The stream property</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.V1.AudioIsolation.StreamNamespace.StreamRequestBuilder Stream
         {

@@ -79,10 +79,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The currency property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Currency? Currency { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Currency_Wrapper? Currency { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Currency Currency { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Currency_Wrapper Currency { get; set; }
 #endif
         /// <summary>The description property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -420,7 +420,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "contributors", n => { Contributors = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Contributors>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Contributors.CreateFromDiscriminatorValue); } },
                 { "copyright", n => { Copyright = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Copyright>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Copyright.CreateFromDiscriminatorValue); } },
                 { "created_at_unix", n => { CreatedAtUnix = n.GetIntValue(); } },
-                { "currency", n => { Currency = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Currency>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Currency.CreateFromDiscriminatorValue); } },
+                { "currency", n => { Currency = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Currency_Wrapper>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Currency_Wrapper.CreateFromDiscriminatorValue); } },
                 { "description", n => { Description = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Description>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Description.CreateFromDiscriminatorValue); } },
                 { "display_mode", n => { DisplayMode = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Display_Mode>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Display_Mode.CreateFromDiscriminatorValue); } },
                 { "distribution_territories", n => { DistributionTerritories = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Distribution_Territories>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Distribution_Territories.CreateFromDiscriminatorValue); } },
@@ -479,7 +479,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Contributors>("contributors", Contributors);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Copyright>("copyright", Copyright);
             writer.WriteIntValue("created_at_unix", CreatedAtUnix);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Currency>("currency", Currency);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Currency_Wrapper>("currency", Currency);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Description>("description", Description);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Display_Mode>("display_mode", DisplayMode);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Distribution_Territories>("distribution_territories", DistributionTerritories);

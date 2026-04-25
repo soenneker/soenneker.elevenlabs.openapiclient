@@ -569,6 +569,148 @@
         }
       }
     },
+    "/v1/audio-isolation/history": {
+      "get": {
+        "tags": [
+          "audio-isolation"
+        ],
+        "summary": "Get Audio Isolation History",
+        "description": "Returns a list of all your audio isolation generations.",
+        "operationId": "get-audio-isolation-history",
+        "parameters": [
+          {
+            "name": "page_size",
+            "in": "query",
+            "description": "How many history items to return at maximum. Defaults to 100.",
+            "schema": {
+              "title": "Page Size",
+              "maximum": 1000,
+              "minimum": 1,
+              "type": "integer",
+              "description": "How many history items to return at maximum. Defaults to 100.",
+              "default": 100
+            }
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "description": "Page number for search pagination (1-based). Only used when search is provided.",
+            "schema": {
+              "title": "Page",
+              "minimum": 1,
+              "type": "integer",
+              "description": "Page number for search pagination (1-based). Only used when search is provided.",
+              "default": 1
+            }
+          },
+          {
+            "name": "search",
+            "in": "query",
+            "description": "Optional search term used for filtering audio isolation history (title/text).",
+            "schema": {
+              "title": "Search",
+              "type": "object",
+              "anyOf": [
+                {
+                  "type": "string"
+                }
+              ],
+              "description": "Optional search term used for filtering audio isolation history (title/text).",
+              "nullable": true
+            }
+          },
+          {
+            "name": "xi-api-key",
+            "in": "header",
+            "description": "Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the \u0027Profile\u0027 tab on the website.",
+            "schema": {
+              "title": "Xi-Api-Key",
+              "type": "object",
+              "anyOf": [
+                {
+                  "type": "string"
+                }
+              ],
+              "description": "Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the \u0027Profile\u0027 tab on the website.",
+              "nullable": true
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetAudioIsolationHistoryResponseModel"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/audio-isolation/history/{history_item_id}": {
+      "delete": {
+        "tags": [
+          "audio-isolation"
+        ],
+        "summary": "Delete Audio Isolation History Item",
+        "description": "Deletes a specific audio isolation history item and the associated media files.",
+        "operationId": "delete-audio-isolation-history-item",
+        "parameters": [
+          {
+            "name": "history_item_id",
+            "in": "path",
+            "description": "Identifier of the audio isolation history item.",
+            "required": true,
+            "schema": {
+              "title": "History Item Id",
+              "type": "string",
+              "description": "Identifier of the audio isolation history item."
+            }
+          },
+          {
+            "name": "xi-api-key",
+            "in": "header",
+            "description": "Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the \u0027Profile\u0027 tab on the website.",
+            "schema": {
+              "title": "Xi-Api-Key",
+              "type": "object",
+              "anyOf": [
+                {
+                  "type": "string"
+                }
+              ],
+              "description": "Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the \u0027Profile\u0027 tab on the website.",
+              "nullable": true
+            }
+          }
+        ],
+        "responses": {
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/v1/audio-isolation/stream": {
       "post": {
         "tags": [
@@ -23282,6 +23424,7 @@
               "additional_knowledge_base": [],
               "additional_prompt": "",
               "additional_tool_ids": [],
+              "auto_advance_after_first_response": false,
               "conversation_config": {},
               "edge_order": [
                 "entry_to_tool_a"
@@ -23297,6 +23440,7 @@
               "additional_knowledge_base": [],
               "additional_prompt": "",
               "additional_tool_ids": [],
+              "auto_advance_after_first_response": false,
               "conversation_config": {},
               "edge_order": [],
               "label": "Failure",
@@ -23320,6 +23464,7 @@
               "additional_knowledge_base": [],
               "additional_prompt": "",
               "additional_tool_ids": [],
+              "auto_advance_after_first_response": false,
               "conversation_config": {},
               "edge_order": [],
               "label": "Success A",
@@ -24336,6 +24481,105 @@
             "items": {
               "$ref": "#/components/schemas/AudioKeyMoment"
             }
+          }
+        }
+      },
+      "AudioIsolationHistoryItemResponseModel": {
+        "title": "AudioIsolationHistoryItemResponseModel",
+        "required": [
+          "id",
+          "title",
+          "created_at_unix",
+          "format",
+          "duration_seconds",
+          "download_url",
+          "icon_url",
+          "source_video_url",
+          "supports_video",
+          "processing",
+          "preview_b64"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "title": "Id",
+            "type": "string"
+          },
+          "title": {
+            "title": "Title",
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Title"
+              }
+            ],
+            "nullable": true
+          },
+          "created_at_unix": {
+            "title": "Created At Unix",
+            "type": "integer"
+          },
+          "format": {
+            "title": "Format",
+            "type": "string"
+          },
+          "duration_seconds": {
+            "title": "Duration Seconds",
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Duration_Seconds"
+              }
+            ],
+            "nullable": true
+          },
+          "download_url": {
+            "title": "Download Url",
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Download_Url"
+              }
+            ],
+            "nullable": true
+          },
+          "icon_url": {
+            "title": "Icon Url",
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Icon_Url"
+              }
+            ],
+            "nullable": true
+          },
+          "source_video_url": {
+            "title": "Source Video Url",
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Source_Video_Url"
+              }
+            ],
+            "nullable": true
+          },
+          "supports_video": {
+            "title": "Supports Video",
+            "type": "boolean"
+          },
+          "processing": {
+            "title": "Processing",
+            "type": "boolean"
+          },
+          "preview_b64": {
+            "title": "Preview B64",
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Preview_B64"
+              }
+            ],
+            "nullable": true
           }
         }
       },
@@ -36286,6 +36530,27 @@
         },
         "description": "A specification that will be used to simulate a conversation between an agent and an AI user."
       },
+      "ConversationSource": {
+        "title": "ConversationSource",
+        "required": [
+          "conversation_id"
+        ],
+        "type": "object",
+        "properties": {
+          "type": {
+            "title": "Type",
+            "enum": [
+              "conversation"
+            ],
+            "type": "string",
+            "default": "conversation"
+          },
+          "conversation_id": {
+            "title": "Conversation Id",
+            "type": "string"
+          }
+        }
+      },
       "ConversationSummaryResponseModel": {
         "title": "ConversationSummaryResponseModel",
         "required": [
@@ -38097,6 +38362,16 @@
           }
         }
       },
+      "Currency": {
+        "title": "Currency",
+        "enum": [
+          "usd",
+          "eur",
+          "inr"
+        ],
+        "type": "string",
+        "additionalProperties": false
+      },
       "CustomGuardrailInput": {
         "title": "CustomGuardrail",
         "type": "object",
@@ -39683,7 +39958,7 @@
             "type": "object",
             "anyOf": [
               {
-                "$ref": "#/components/schemas/Currency"
+                "$ref": "#/components/schemas/Currency_Wrapper"
               }
             ],
             "nullable": true
@@ -41353,11 +41628,10 @@
             "description": "Whether the user can use professional voice cloning."
           },
           "currency": {
-            "title": "Currency",
             "type": "object",
             "anyOf": [
               {
-                "$ref": "#/components/schemas/Currency"
+                "$ref": "#/components/schemas/Currency_Wrapper"
               }
             ],
             "description": "The currency of the user\u0027s subscription.",
@@ -42344,6 +42618,7 @@
                 "additional_knowledge_base": [],
                 "additional_prompt": "",
                 "additional_tool_ids": [],
+                "auto_advance_after_first_response": false,
                 "conversation_config": {},
                 "edge_order": [
                   "entry_to_tool_a"
@@ -42359,6 +42634,7 @@
                 "additional_knowledge_base": [],
                 "additional_prompt": "",
                 "additional_tool_ids": [],
+                "auto_advance_after_first_response": false,
                 "conversation_config": {},
                 "edge_order": [],
                 "label": "Failure",
@@ -42382,6 +42658,7 @@
                 "additional_knowledge_base": [],
                 "additional_prompt": "",
                 "additional_tool_ids": [],
+                "auto_advance_after_first_response": false,
                 "conversation_config": {},
                 "edge_order": [],
                 "label": "Success A",
@@ -42610,6 +42887,27 @@
           }
         },
         "description": "Look up an appointment by the booking confirmation number the caller quotes.\n\nThe confirmation number is the 8-character code shown on the booking\nconfirmation page (e.g. \u0060\u0060#01ABCDEF\u0060\u0060). Callers may read it back with or\nwithout the leading \u0060\u0060#\u0060\u0060 and with varied spacing; the tool normalizes\nthe input and does a prefix match on the stored calendar item id."
+      },
+      "GetAudioIsolationHistoryResponseModel": {
+        "title": "GetAudioIsolationHistoryResponseModel",
+        "required": [
+          "items",
+          "has_more"
+        ],
+        "type": "object",
+        "properties": {
+          "items": {
+            "title": "Items",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AudioIsolationHistoryItemResponseModel"
+            }
+          },
+          "has_more": {
+            "title": "Has More",
+            "type": "boolean"
+          }
+        }
       },
       "GetAudioNativeProjectSettingsResponseModel": {
         "title": "GetAudioNativeProjectSettingsResponseModel",
@@ -49212,6 +49510,37 @@
         },
         "description": "Response model for mTLS auth connections."
       },
+      "ManualSource": {
+        "title": "ManualSource",
+        "required": [
+          "created_by_user_id"
+        ],
+        "type": "object",
+        "properties": {
+          "type": {
+            "title": "Type",
+            "enum": [
+              "manual"
+            ],
+            "type": "string",
+            "default": "manual"
+          },
+          "created_by_user_id": {
+            "title": "Created By User Id",
+            "type": "string"
+          },
+          "notes": {
+            "title": "Notes",
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Notes"
+              }
+            ],
+            "nullable": true
+          }
+        }
+      },
       "ManualVerificationFileResponseModel": {
         "title": "ManualVerificationFileResponseModel",
         "required": [
@@ -49312,6 +49641,57 @@
               "anything"
             ],
             "type": "string"
+          }
+        }
+      },
+      "MemoryEntrySearchResult": {
+        "title": "MemoryEntrySearchResult",
+        "required": [
+          "entry_id",
+          "version"
+        ],
+        "type": "object",
+        "properties": {
+          "entry_id": {
+            "title": "Entry Id",
+            "type": "string"
+          },
+          "version": {
+            "title": "Version",
+            "type": "integer"
+          },
+          "summary": {
+            "title": "Summary",
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Summary"
+              }
+            ],
+            "nullable": true
+          },
+          "text": {
+            "title": "Text",
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Text"
+              }
+            ],
+            "nullable": true
+          },
+          "source": {
+            "title": "Source",
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/ConversationSource"
+              },
+              {
+                "$ref": "#/components/schemas/ManualSource"
+              }
+            ],
+            "nullable": true
           }
         }
       },
@@ -59776,11 +60156,10 @@
             "description": "Whether the user can use professional voice cloning."
           },
           "currency": {
-            "title": "Currency",
             "type": "object",
             "anyOf": [
               {
-                "$ref": "#/components/schemas/Currency"
+                "$ref": "#/components/schemas/Currency_Wrapper"
               }
             ],
             "description": "The currency of the user\u0027s subscription.",
@@ -73981,6 +74360,72 @@
           }
         }
       },
+      "Title": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string"
+          }
+        }
+      },
+      "Duration_Seconds": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "number"
+          }
+        }
+      },
+      "Download_Url": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string"
+          }
+        }
+      },
+      "Icon_Url": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string"
+          }
+        }
+      },
+      "Source_Video_Url": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string"
+          }
+        }
+      },
+      "Preview_B64": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string"
+          }
+        }
+      },
       "Audio_Path": {
         "required": [
           "value"
@@ -74183,17 +74628,6 @@
           }
         }
       },
-      "Preview_B64": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "type": "string"
-          }
-        }
-      },
       "Move_To": {
         "required": [
           "value"
@@ -74322,17 +74756,6 @@
           "value": {
             "type": "string",
             "format": "binary"
-          }
-        }
-      },
-      "Title": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "type": "string"
           }
         }
       },
@@ -75014,17 +75437,6 @@
             "items": {
               "$ref": "#/components/schemas/PromptEvaluationCriteria"
             }
-          }
-        }
-      },
-      "Duration_Seconds": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "type": "number"
           }
         }
       },
@@ -76684,7 +77096,7 @@
           }
         }
       },
-      "Currency": {
+      "Currency_Wrapper": {
         "required": [
           "value"
         ],
@@ -77793,6 +78205,28 @@
             "items": {
               "$ref": "#/components/schemas/DynamicVariableAssignment"
             }
+          }
+        }
+      },
+      "Notes": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string"
+          }
+        }
+      },
+      "Summary": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string"
           }
         }
       },
