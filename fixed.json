@@ -33650,6 +33650,12 @@
               "$ref": "#/components/schemas/ClientEvent"
             },
             "description": "The events that will be sent to monitoring connections."
+          },
+          "source_attribution": {
+            "title": "Source Attribution",
+            "type": "boolean",
+            "description": "When enabled and knowledge base content is present, the LLM is instructed to report which sources it used.",
+            "default": false
           }
         },
         "example": {
@@ -33933,6 +33939,17 @@
               }
             ],
             "description": "The events that will be sent to monitoring connections.",
+            "nullable": true
+          },
+          "source_attribution": {
+            "title": "Source Attribution",
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Source_Attribution"
+              }
+            ],
+            "description": "When enabled and knowledge base content is present, the LLM is instructed to report which sources it used.",
             "nullable": true
           }
         },
@@ -34871,6 +34888,13 @@
               }
             ],
             "nullable": true
+          },
+          "used_static_kb_document_ids": {
+            "title": "Used Static Kb Document Ids",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           }
         }
       },
@@ -35030,6 +35054,13 @@
               }
             ],
             "nullable": true
+          },
+          "used_static_kb_document_ids": {
+            "title": "Used Static Kb Document Ids",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           }
         }
       },
@@ -35285,6 +35316,13 @@
               }
             ],
             "nullable": true
+          },
+          "used_static_kb_document_ids": {
+            "title": "Used Static Kb Document Ids",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           },
           "file_input": {
             "type": "object",
@@ -56163,6 +56201,13 @@
           "rag_latency_secs": {
             "title": "Rag Latency Secs",
             "type": "number"
+          },
+          "used_chunk_ids": {
+            "title": "Used Chunk Ids",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           }
         }
       },
@@ -76264,6 +76309,17 @@
             "items": {
               "$ref": "#/components/schemas/ClientEvent"
             }
+          }
+        }
+      },
+      "Source_Attribution": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "boolean"
           }
         }
       },

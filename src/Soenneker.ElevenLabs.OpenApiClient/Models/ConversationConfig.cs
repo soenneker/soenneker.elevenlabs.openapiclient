@@ -42,6 +42,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ClientEvent?> MonitoringEvents { get; set; }
 #endif
+        /// <summary>When enabled and knowledge base content is present, the LLM is instructed to report which sources it used.</summary>
+        public bool? SourceAttribution { get; set; }
         /// <summary>If enabled audio will not be processed and only text will be used, use to avoid audio pricing.</summary>
         public bool? TextOnly { get; set; }
         /// <summary>
@@ -74,6 +76,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "max_duration_seconds", n => { MaxDurationSeconds = n.GetIntValue(); } },
                 { "monitoring_enabled", n => { MonitoringEnabled = n.GetBoolValue(); } },
                 { "monitoring_events", n => { MonitoringEvents = n.GetCollectionOfEnumValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.ClientEvent>()?.AsList(); } },
+                { "source_attribution", n => { SourceAttribution = n.GetBoolValue(); } },
                 { "text_only", n => { TextOnly = n.GetBoolValue(); } },
             };
         }
@@ -89,6 +92,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteIntValue("max_duration_seconds", MaxDurationSeconds);
             writer.WriteBoolValue("monitoring_enabled", MonitoringEnabled);
             writer.WriteCollectionOfEnumValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.ClientEvent>("monitoring_events", MonitoringEvents);
+            writer.WriteBoolValue("source_attribution", SourceAttribution);
             writer.WriteBoolValue("text_only", TextOnly);
             writer.WriteAdditionalData(AdditionalData);
         }

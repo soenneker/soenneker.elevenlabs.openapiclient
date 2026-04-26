@@ -34,6 +34,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public string RetrievalQuery { get; set; }
 #endif
+        /// <summary>The used_chunk_ids property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? UsedChunkIds { get; set; }
+#nullable restore
+#else
+        public List<string> UsedChunkIds { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.RagRetrievalInfo"/> and sets the default values.
         /// </summary>
@@ -64,6 +72,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "embedding_model", n => { EmbeddingModel = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.EmbeddingModelEnum>(); } },
                 { "rag_latency_secs", n => { RagLatencySecs = n.GetDoubleValue(); } },
                 { "retrieval_query", n => { RetrievalQuery = n.GetStringValue(); } },
+                { "used_chunk_ids", n => { UsedChunkIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
         }
         /// <summary>
@@ -77,6 +86,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.EmbeddingModelEnum>("embedding_model", EmbeddingModel);
             writer.WriteDoubleValue("rag_latency_secs", RagLatencySecs);
             writer.WriteStringValue("retrieval_query", RetrievalQuery);
+            writer.WriteCollectionOfPrimitiveValues<string>("used_chunk_ids", UsedChunkIds);
             writer.WriteAdditionalData(AdditionalData);
         }
     }
