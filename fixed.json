@@ -20060,6 +20060,56 @@
         }
       }
     },
+    "/v1/templates/agent/tool-call-schemas": {
+      "get": {
+        "tags": [
+          "template-agent"
+        ],
+        "summary": "Flow Agent Tool-Call Schemas",
+        "description": "Anchor every flows-agent tool input model in the OpenAPI schema.\n\nThe frontend imports the generated TypeScript shapes from \u0060@/api/xiSchemas\u0060\nto render typed approval details for each tool call. The endpoint itself\nintentionally returns an empty payload \u2014 only the response schema matters.",
+        "operationId": "get-flow-agent-tool-call-schemas",
+        "parameters": [
+          {
+            "name": "xi-api-key",
+            "in": "header",
+            "description": "Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the \u0027Profile\u0027 tab on the website.",
+            "schema": {
+              "title": "Xi-Api-Key",
+              "type": "object",
+              "anyOf": [
+                {
+                  "type": "string"
+                }
+              ],
+              "description": "Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the \u0027Profile\u0027 tab on the website.",
+              "nullable": true
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FlowsAgentToolCallSchemas"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/v1/workspace/analytics/query/usage-by-product-over-time": {
       "post": {
         "tags": [
@@ -21416,6 +21466,54 @@
           }
         }
       },
+      "AddEdgeSpec": {
+        "title": "AddEdgeSpec",
+        "required": [
+          "source_node_id",
+          "target_node_id"
+        ],
+        "type": "object",
+        "properties": {
+          "source_node_id": {
+            "title": "Source Node Id",
+            "type": "string",
+            "description": "ID of the source node."
+          },
+          "target_node_id": {
+            "title": "Target Node Id",
+            "type": "string",
+            "description": "ID of the target node."
+          },
+          "target_port": {
+            "title": "Target Port",
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Target_Port"
+              }
+            ],
+            "description": "Target port override. Usually auto-determined from source output type.",
+            "nullable": true
+          }
+        }
+      },
+      "AddEdgesInput": {
+        "title": "AddEdgesInput",
+        "required": [
+          "edges"
+        ],
+        "type": "object",
+        "properties": {
+          "edges": {
+            "title": "Edges",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AddEdgeSpec"
+            },
+            "description": "List of edges to create."
+          }
+        }
+      },
       "AddKnowledgeBaseResponseModel": {
         "title": "AddKnowledgeBaseResponseModel",
         "required": [
@@ -21439,6 +21537,71 @@
               "$ref": "#/components/schemas/KnowledgeBaseFolderPathSegmentSummaryResponseModel"
             },
             "description": "The folder path segments leading to this entity, from root to parent folder."
+          }
+        }
+      },
+      "AddNodeInput": {
+        "title": "AddNodeInput",
+        "required": [
+          "type"
+        ],
+        "type": "object",
+        "properties": {
+          "type": {
+            "$ref": "#/components/schemas/FlowNodeType"
+          },
+          "label": {
+            "title": "Label",
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Label"
+              }
+            ],
+            "description": "Optional display label for the node.",
+            "nullable": true
+          },
+          "model_id": {
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/ModelID_Wrapper"
+              }
+            ],
+            "description": "Model ID to use. If not set, the default model for the node type is used.",
+            "nullable": true
+          },
+          "model_parameters": {
+            "title": "Model Parameters",
+            "type": "object",
+            "description": "Initial model parameters. Use get_model_schema to see valid parameters."
+          },
+          "prompt": {
+            "title": "Prompt",
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Prompt"
+              }
+            ],
+            "description": "Optional prompt text for the node.",
+            "nullable": true
+          },
+          "connect_from": {
+            "title": "Connect From",
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Existing node IDs that should feed INTO this new node. Pass these when you already know the upstream wiring \u2014 the canvas places the new node correctly on creation instead of parking it first and reflowing later."
+          },
+          "connect_to": {
+            "title": "Connect To",
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Existing node IDs that this new node should feed INTO. Same purpose as connect_from but for downstream wiring."
           }
         }
       },
@@ -21529,6 +21692,60 @@
           "permission_on_resource": "admin",
           "version_id": "5xM3yVvZQKV0EfqQpLrJ",
           "version_rules_num": 5
+        }
+      },
+      "AddStaticAssetNodeInput": {
+        "title": "AddStaticAssetNodeInput",
+        "required": [
+          "modality"
+        ],
+        "type": "object",
+        "properties": {
+          "modality": {
+            "title": "Modality",
+            "enum": [
+              "image",
+              "video",
+              "audio",
+              "text"
+            ],
+            "type": "string",
+            "additionalProperties": false,
+            "description": "\u0022The type of static asset: \u0027image\u0027, \u0027video\u0027, \u0027audio\u0027, or \u0027text\u0027.\u0022"
+          },
+          "content_asset_id": {
+            "title": "Content Asset Id",
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Content_Asset_Id"
+              }
+            ],
+            "description": "ID of the uploaded asset. Required for image, video, and audio.",
+            "nullable": true
+          },
+          "inline_text": {
+            "title": "Inline Text",
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Inline_Text"
+              }
+            ],
+            "description": "Text content for text nodes. Required for text modality.",
+            "nullable": true
+          },
+          "label": {
+            "title": "Label",
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Label"
+              }
+            ],
+            "description": "Optional display label for the node.",
+            "nullable": true
+          }
         }
       },
       "AddVoiceIVCResponseModel": {
@@ -25182,6 +25399,23 @@
         "type": "string",
         "additionalProperties": false,
         "default": "public"
+      },
+      "AutoLayoutInput": {
+        "title": "AutoLayoutInput",
+        "required": [
+          "node_ids"
+        ],
+        "type": "object",
+        "properties": {
+          "node_ids": {
+            "title": "Node Ids",
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Node IDs to arrange."
+          }
+        }
       },
       "AutoSyncInfo": {
         "title": "AutoSyncInfo",
@@ -39468,6 +39702,30 @@
         },
         "description": "A model that represents an tool dependent on a knowledge base/tools\nto which the user has no direct access."
       },
+      "DescribeMediaInput": {
+        "title": "DescribeMediaInput",
+        "type": "object",
+        "properties": {
+          "node_ids": {
+            "title": "Node Ids",
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Node IDs whose latest completed generation should be described.",
+            "default": []
+          },
+          "asset_ids": {
+            "title": "Asset Ids",
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Asset IDs of user-uploaded files to describe.",
+            "default": []
+          }
+        }
+      },
       "DetailedMusicResponse": {
         "title": "DetailedMusicResponse",
         "required": [
@@ -40102,6 +40360,26 @@
             "title": "Can Use Assistant",
             "type": "boolean",
             "default": true
+          }
+        }
+      },
+      "DisconnectSpec": {
+        "title": "DisconnectSpec",
+        "required": [
+          "source_node_id",
+          "target_node_id"
+        ],
+        "type": "object",
+        "properties": {
+          "source_node_id": {
+            "title": "Source Node Id",
+            "type": "string",
+            "description": "ID of the source node to disconnect."
+          },
+          "target_node_id": {
+            "title": "Target Node Id",
+            "type": "string",
+            "description": "ID of the target node to disconnect from."
           }
         }
       },
@@ -42140,6 +42418,116 @@
           "verification_attempts_count": 2,
           "verification_failures": []
         }
+      },
+      "FlowNodeType": {
+        "title": "FlowNodeType",
+        "enum": [
+          "image-generation",
+          "video-generation",
+          "tts",
+          "sfx",
+          "music",
+          "composition",
+          "llm"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "All node types in the flows canvas."
+      },
+      "FlowsAgentToolCallSchemas": {
+        "title": "FlowsAgentToolCallSchemas",
+        "type": "object",
+        "properties": {
+          "tool_names": {
+            "title": "Tool Names",
+            "type": "array",
+            "items": {
+              "enum": [
+                "get_model_guide",
+                "judge_generation",
+                "describe_media",
+                "get_flow_state",
+                "get_node_type_registry",
+                "inspect_node",
+                "get_node_generation_metadata",
+                "get_generation_status",
+                "get_model_schema",
+                "get_available_voices",
+                "check_node_connections",
+                "wait",
+                "add_node",
+                "add_static_asset_node",
+                "add_edges",
+                "remove_elements",
+                "update_node",
+                "auto_layout",
+                "move_nodes",
+                "run_node",
+                "set_track_property",
+                "set_clip_property",
+                "move_clip",
+                "reorder_tracks"
+              ],
+              "type": "string",
+              "additionalProperties": false
+            },
+            "description": "Every server-tool name the flows agent can invoke."
+          },
+          "tool_inputs": {
+            "title": "Tool Inputs",
+            "type": "array",
+            "items": {
+              "type": "object",
+              "anyOf": [
+                {
+                  "$ref": "#/components/schemas/AddNodeInput"
+                },
+                {
+                  "$ref": "#/components/schemas/AddStaticAssetNodeInput"
+                },
+                {
+                  "$ref": "#/components/schemas/AddEdgesInput"
+                },
+                {
+                  "$ref": "#/components/schemas/RemoveElementsInput"
+                },
+                {
+                  "$ref": "#/components/schemas/UpdateNodeInput"
+                },
+                {
+                  "$ref": "#/components/schemas/AutoLayoutInput"
+                },
+                {
+                  "$ref": "#/components/schemas/MoveNodesInput"
+                },
+                {
+                  "$ref": "#/components/schemas/SetTrackPropertyInput"
+                },
+                {
+                  "$ref": "#/components/schemas/SetClipPropertyInput"
+                },
+                {
+                  "$ref": "#/components/schemas/MoveClipInput"
+                },
+                {
+                  "$ref": "#/components/schemas/ReorderTracksInput"
+                },
+                {
+                  "$ref": "#/components/schemas/DescribeMediaInput"
+                },
+                {
+                  "$ref": "#/components/schemas/JudgeGenerationInput"
+                },
+                {
+                  "$ref": "#/components/schemas/NodeIdInput"
+                }
+              ],
+              "description": "Input payload for one flows-agent tool call."
+            },
+            "description": "\u0022Sample list \u2014 populated only by the introspection endpoint. The shape is what matters: every member of the union becomes a TypeScript type the frontend can use to render typed tool approval details.\u0022"
+          }
+        },
+        "description": "Container that anchors all flows-agent tool input shapes in OpenAPI."
       },
       "FocusGuardrail": {
         "title": "FocusGuardrail",
@@ -46185,6 +46573,29 @@
           "tax_cents": 100
         }
       },
+      "JudgeGenerationInput": {
+        "title": "JudgeGenerationInput",
+        "required": [
+          "node_ids",
+          "user_intent"
+        ],
+        "type": "object",
+        "properties": {
+          "node_ids": {
+            "title": "Node Ids",
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Node IDs whose latest completed generation should be evaluated. Pass multiple IDs for cross-output consistency scoring."
+          },
+          "user_intent": {
+            "title": "User Intent",
+            "type": "string",
+            "description": "What the user wants from these outputs \u2014 restate the creative brief, not the prompt."
+          }
+        }
+      },
       "KnowledgeBaseContentSearchResponseModel": {
         "title": "KnowledgeBaseContentSearchResponseModel",
         "required": [
@@ -49877,6 +50288,84 @@
         "additionalProperties": false,
         "default": "none"
       },
+      "ModelID": {
+        "enum": [
+          "veo-2.0-generate-001",
+          "veo-2.0-generate-exp",
+          "veo-3.0-generate-001",
+          "veo-3.0-generate-preview",
+          "veo-3.0-fast-generate-001",
+          "veo-3.0-fast-generate-preview",
+          "veo-3.1-generate-001",
+          "veo-3.1-generate-preview",
+          "veo-3.1-fast-generate-001",
+          "veo-3.1-fast-generate-preview",
+          "veo-3.1-lite-generate-001",
+          "gemini-2.5-flash-image",
+          "gemini-3-pro-image-preview",
+          "gemini-3.1-flash-image-preview",
+          "imagen-4-fast",
+          "imagen-4",
+          "imagen-4-ultra",
+          "sora-2-pro",
+          "sora-2",
+          "gpt-image-1",
+          "gpt-image-1.5",
+          "gpt-image-2",
+          "kling-2.5-turbo",
+          "kling-2.6-pro",
+          "kling-2.6-pro-motion-control",
+          "kling-omni-video",
+          "kling-omni-edit-video",
+          "kling-omni-image",
+          "kling-o3-pro",
+          "kling-3-pro",
+          "kling-3-pro-motion-control",
+          "flux-1-kontext",
+          "flux-2-pro",
+          "topaz-image-upscale",
+          "topaz-video-upscale",
+          "sync-lipsync-v2-pro",
+          "sync-lipsync-v3",
+          "veed-lipsync",
+          "veed-fabric-1-fast",
+          "bytedance-omnihuman-v1.5",
+          "bytedance-seedance-v1-pro",
+          "bytedance-seedance-v1.5-pro",
+          "bytedance-seedance-v2",
+          "bytedance-seedance-v2-fast",
+          "bytedance-seedream-4",
+          "bytedance-seedream-4.5",
+          "bytedance-seedream-5-lite",
+          "wan-2.5-preview-image",
+          "wan-2.5-preview-video",
+          "wan-2.6",
+          "ltx-v2-retake",
+          "ltx-v2-fast",
+          "ltx-v2",
+          "ltx-audio-to-video",
+          "creatify-aurora",
+          "runway-gen4-turbo",
+          "runway-gen4-aleph",
+          "runway-gen4-5",
+          "runway-act-two",
+          "runway-gen4-image",
+          "runway-gen4-image-turbo",
+          "test-image",
+          "test-video",
+          "eleven_multilingual_v2",
+          "eleven_turbo_v2_5",
+          "eleven_v3",
+          "eleven_text_to_sound_v2",
+          "eleven_music_v1",
+          "eleven_composition",
+          "birefnet-v2-bg-removal",
+          "gemini-2.5-flash-llm",
+          "gemini-2.5-flash-lite-llm"
+        ],
+        "type": "string",
+        "additionalProperties": false
+      },
       "ModelRatesResponseModel": {
         "title": "ModelRatesResponseModel",
         "required": [
@@ -50120,6 +50609,88 @@
           },
           "config": {
             "$ref": "#/components/schemas/ModerationConfig"
+          }
+        }
+      },
+      "MoveClipInput": {
+        "title": "MoveClipInput",
+        "required": [
+          "node_id",
+          "from_track_index",
+          "from_clip_index",
+          "to_track_index"
+        ],
+        "type": "object",
+        "properties": {
+          "node_id": {
+            "title": "Node Id",
+            "type": "string",
+            "description": "ID of the composition node."
+          },
+          "from_track_index": {
+            "title": "From Track Index",
+            "type": "integer",
+            "description": "Source track index."
+          },
+          "from_clip_index": {
+            "title": "From Clip Index",
+            "type": "integer",
+            "description": "Source clip index within the track."
+          },
+          "to_track_index": {
+            "title": "To Track Index",
+            "type": "integer",
+            "description": "Destination track index."
+          },
+          "to_clip_index": {
+            "title": "To Clip Index",
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/To_Clip_Index"
+              }
+            ],
+            "description": "Destination clip position. None appends to the end.",
+            "nullable": true
+          }
+        }
+      },
+      "MoveNodesInput": {
+        "title": "MoveNodesInput",
+        "required": [
+          "moves"
+        ],
+        "type": "object",
+        "properties": {
+          "moves": {
+            "title": "Moves",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/MoveSpec"
+            },
+            "description": "List of node moves."
+          }
+        }
+      },
+      "MoveSpec": {
+        "title": "MoveSpec",
+        "required": [
+          "node_id",
+          "position"
+        ],
+        "type": "object",
+        "properties": {
+          "node_id": {
+            "title": "Node Id",
+            "type": "string",
+            "description": "ID of the node to move."
+          },
+          "position": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "number"
+            },
+            "description": "Target position with \u0027x\u0027 and \u0027y\u0027 coordinates."
           }
         }
       },
@@ -50505,6 +51076,20 @@
               }
             ],
             "nullable": true
+          }
+        }
+      },
+      "NodeIdInput": {
+        "title": "NodeIdInput",
+        "required": [
+          "node_id"
+        ],
+        "type": "object",
+        "properties": {
+          "node_id": {
+            "title": "Node Id",
+            "type": "string",
+            "description": "The ID of the node to operate on."
           }
         }
       },
@@ -56496,6 +57081,34 @@
           }
         }
       },
+      "RemoveElementsInput": {
+        "title": "RemoveElementsInput",
+        "type": "object",
+        "properties": {
+          "node_ids": {
+            "title": "Node Ids",
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Node_Ids"
+              }
+            ],
+            "description": "Node IDs to remove.",
+            "nullable": true
+          },
+          "disconnections": {
+            "title": "Disconnections",
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Disconnections"
+              }
+            ],
+            "description": "Connections to remove. The backend finds and clears all references.",
+            "nullable": true
+          }
+        }
+      },
       "RenderBody": {
         "title": "Render",
         "required": [
@@ -56569,6 +57182,29 @@
         ],
         "type": "string",
         "additionalProperties": false
+      },
+      "ReorderTracksInput": {
+        "title": "ReorderTracksInput",
+        "required": [
+          "node_id",
+          "track_order"
+        ],
+        "type": "object",
+        "properties": {
+          "node_id": {
+            "title": "Node Id",
+            "type": "string",
+            "description": "ID of the composition node."
+          },
+          "track_order": {
+            "title": "Track Order",
+            "type": "array",
+            "items": {
+              "type": "integer"
+            },
+            "description": "New track order as list of current track indices."
+          }
+        }
       },
       "RequestPVCManualVerificationResponseModel": {
         "title": "RequestPVCManualVerificationResponseModel",
@@ -58198,6 +58834,107 @@
             ],
             "type": "string",
             "default": "set_booking_slug"
+          }
+        }
+      },
+      "SetClipPropertyInput": {
+        "title": "SetClipPropertyInput",
+        "required": [
+          "node_id",
+          "track_index",
+          "clip_index"
+        ],
+        "type": "object",
+        "properties": {
+          "node_id": {
+            "title": "Node Id",
+            "type": "string",
+            "description": "ID of the composition node."
+          },
+          "track_index": {
+            "title": "Track Index",
+            "type": "integer",
+            "description": "Zero-based index of the track."
+          },
+          "clip_index": {
+            "title": "Clip Index",
+            "type": "integer",
+            "description": "Zero-based index of the clip within the track."
+          },
+          "gap_before": {
+            "title": "Gap Before",
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Gap_Before"
+              }
+            ],
+            "description": "Silence in seconds before this clip.",
+            "nullable": true
+          },
+          "trim_in": {
+            "title": "Trim In",
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Trim_In"
+              }
+            ],
+            "description": "Start time in seconds to trim from source.",
+            "nullable": true
+          },
+          "trim_out": {
+            "title": "Trim Out",
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Trim_Out"
+              }
+            ],
+            "description": "End time in seconds to trim to in source.",
+            "nullable": true
+          }
+        }
+      },
+      "SetTrackPropertyInput": {
+        "title": "SetTrackPropertyInput",
+        "required": [
+          "node_id",
+          "track_index"
+        ],
+        "type": "object",
+        "properties": {
+          "node_id": {
+            "title": "Node Id",
+            "type": "string",
+            "description": "ID of the composition node."
+          },
+          "track_index": {
+            "title": "Track Index",
+            "type": "integer",
+            "description": "Zero-based index of the track to update."
+          },
+          "volume": {
+            "title": "Volume",
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Volume"
+              }
+            ],
+            "description": "Track volume (0.0-10.0).",
+            "nullable": true
+          },
+          "mute": {
+            "title": "Mute",
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Mute"
+              }
+            ],
+            "description": "Whether to mute the track.",
+            "nullable": true
           }
         }
       },
@@ -63804,6 +64541,77 @@
             ],
             "type": "string",
             "default": "update_location"
+          }
+        }
+      },
+      "UpdateNodeInput": {
+        "title": "UpdateNodeInput",
+        "required": [
+          "node_id"
+        ],
+        "type": "object",
+        "properties": {
+          "node_id": {
+            "title": "Node Id",
+            "type": "string",
+            "description": "The ID of the node to update."
+          },
+          "model_id": {
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/ModelID_Wrapper"
+              }
+            ],
+            "description": "Switch to a new model. Resets model_parameters.",
+            "nullable": true
+          },
+          "model_parameters": {
+            "title": "Model Parameters",
+            "type": "object",
+            "anyOf": [
+              {
+                "type": "object"
+              }
+            ],
+            "description": "Full model parameters. Use get_model_schema to see valid parameters.",
+            "nullable": true
+          },
+          "prompt": {
+            "title": "Prompt",
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Prompt"
+              },
+              {
+                "type": "object"
+              }
+            ],
+            "description": "Set prompt text, or a reference dict with template_node_id.",
+            "nullable": true
+          },
+          "label": {
+            "title": "Label",
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Label"
+              }
+            ],
+            "description": "Set the display label.",
+            "nullable": true
+          },
+          "active_generation_id": {
+            "title": "Active Generation Id",
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Active_Generation_Id"
+              }
+            ],
+            "description": "Set the active generation ID.",
+            "nullable": true
           }
         }
       },
@@ -72623,6 +73431,14 @@
           "propertyName": "type"
         }
       },
+      "MoveSpecPosition": {
+        "title": "Position",
+        "type": "object",
+        "additionalProperties": {
+          "type": "number"
+        },
+        "description": "Target position with \u0027x\u0027 and \u0027y\u0027 coordinates."
+      },
       "OAuth2ClientCredsResponseExtraParams": {
         "title": "Extra Params",
         "type": "object",
@@ -74029,6 +74845,50 @@
           }
         }
       },
+      "Target_Port": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string"
+          }
+        }
+      },
+      "Label": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string"
+          }
+        }
+      },
+      "ModelID_Wrapper": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "$ref": "#/components/schemas/ModelID"
+          }
+        }
+      },
+      "Prompt": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string"
+          }
+        }
+      },
       "Description": {
         "required": [
           "value"
@@ -74055,6 +74915,28 @@
             ],
             "type": "string",
             "additionalProperties": false
+          }
+        }
+      },
+      "Content_Asset_Id": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string"
+          }
+        }
+      },
+      "Inline_Text": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string"
           }
         }
       },
@@ -74680,18 +75562,6 @@
         "type": "object",
         "properties": {
           "value": {
-            "type": "string"
-          }
-        }
-      },
-      "Prompt": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "maxLength": 4100,
             "type": "string"
           }
         }
@@ -78299,6 +79169,17 @@
           }
         }
       },
+      "To_Clip_Index": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "integer"
+          }
+        }
+      },
       "Transcription_Id": {
         "required": [
           "value"
@@ -78933,7 +79814,7 @@
           }
         }
       },
-      "Content_Asset_Id": {
+      "Template_Node_Id": {
         "required": [
           "value"
         ],
@@ -78944,14 +79825,31 @@
           }
         }
       },
-      "Template_Node_Id": {
+      "Node_Ids": {
         "required": [
           "value"
         ],
         "type": "object",
         "properties": {
           "value": {
-            "type": "string"
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "Disconnections": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DisconnectSpec"
+            }
           }
         }
       },
@@ -79200,6 +80098,53 @@
         "properties": {
           "value": {
             "type": "string"
+          }
+        }
+      },
+      "Gap_Before": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "minimum": 0.0,
+            "type": "number"
+          }
+        }
+      },
+      "Trim_In": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "minimum": 0.0,
+            "type": "number"
+          }
+        }
+      },
+      "Trim_Out": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "minimum": 0.0,
+            "type": "number"
+          }
+        }
+      },
+      "Mute": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "boolean"
           }
         }
       },
@@ -79836,7 +80781,7 @@
           }
         }
       },
-      "Label": {
+      "Active_Generation_Id": {
         "required": [
           "value"
         ],
