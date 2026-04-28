@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.ElevenLabs.OpenApiClient.Models
 {
     /// <summary>
-    /// Container that anchors all flows-agent tool input shapes in OpenAPI.
+    /// Container that anchors all flows-agent tool input/output shapes in OpenAPI.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class FlowsAgentToolCallSchemas : IAdditionalDataHolder, IParsable
@@ -30,6 +30,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #nullable restore
 #else
         public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.FlowsAgentToolCallSchemas_tool_names?> ToolNames { get; set; }
+#endif
+        /// <summary>Sample list — populated only by the introspection endpoint. The shape anchors every typed tool result in OpenAPI so the frontend can narrow AgentToolResult.output without hand-writing types.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.FlowsAgentToolCallSchemas.FlowsAgentToolCallSchemas_tool_outputs>? ToolOutputs { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.FlowsAgentToolCallSchemas.FlowsAgentToolCallSchemas_tool_outputs> ToolOutputs { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.FlowsAgentToolCallSchemas"/> and sets the default values.
@@ -58,6 +66,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             {
                 { "tool_inputs", n => { ToolInputs = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.FlowsAgentToolCallSchemas.FlowsAgentToolCallSchemas_tool_inputs>(global::Soenneker.ElevenLabs.OpenApiClient.Models.FlowsAgentToolCallSchemas.FlowsAgentToolCallSchemas_tool_inputs.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "tool_names", n => { ToolNames = n.GetCollectionOfEnumValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.FlowsAgentToolCallSchemas_tool_names>()?.AsList(); } },
+                { "tool_outputs", n => { ToolOutputs = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.FlowsAgentToolCallSchemas.FlowsAgentToolCallSchemas_tool_outputs>(global::Soenneker.ElevenLabs.OpenApiClient.Models.FlowsAgentToolCallSchemas.FlowsAgentToolCallSchemas_tool_outputs.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -69,10 +78,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.FlowsAgentToolCallSchemas.FlowsAgentToolCallSchemas_tool_inputs>("tool_inputs", ToolInputs);
             writer.WriteCollectionOfEnumValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.FlowsAgentToolCallSchemas_tool_names>("tool_names", ToolNames);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.FlowsAgentToolCallSchemas.FlowsAgentToolCallSchemas_tool_outputs>("tool_outputs", ToolOutputs);
             writer.WriteAdditionalData(AdditionalData);
         }
         /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.AddEdgesInput"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.AddNodeInput"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.AddStaticAssetNodeInput"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.AutoLayoutInput"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.DescribeMediaInput"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.JudgeGenerationInput"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.MoveClipInput"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.MoveNodesInput"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.NodeIdInput"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.RemoveElementsInput"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ReorderTracksInput"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.SetClipPropertyInput"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.SetTrackPropertyInput"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateNodeInput"/>
+        /// Composed type wrapper for classes <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.AddEdgesInput"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.AddNodeInput"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.AddStaticAssetNodeInput"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.AutoLayoutInput"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.DescribeMediaInput"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.GetAvailableVoicesInput"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.GetGenerationStatusInput"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.GetModelGuideInput"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.JudgeGenerationInput"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.MoveClipInput"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.MoveNodesInput"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.NodeIdInput"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.PreviewNodeModelInput"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.RemoveElementsInput"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ReorderTracksInput"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.SetClipPropertyInput"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.SetTrackPropertyInput"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateNodeInput"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.WaitInput"/>
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class FlowsAgentToolCallSchemas_tool_inputs : IComposedTypeWrapper, IParsable
@@ -117,6 +127,30 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
             public global::Soenneker.ElevenLabs.OpenApiClient.Models.DescribeMediaInput DescribeMediaInput { get; set; }
 #endif
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.GetAvailableVoicesInput"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetAvailableVoicesInput? GetAvailableVoicesInput { get; set; }
+#nullable restore
+#else
+            public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetAvailableVoicesInput GetAvailableVoicesInput { get; set; }
+#endif
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.GetGenerationStatusInput"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetGenerationStatusInput? GetGenerationStatusInput { get; set; }
+#nullable restore
+#else
+            public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetGenerationStatusInput GetGenerationStatusInput { get; set; }
+#endif
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.GetModelGuideInput"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetModelGuideInput? GetModelGuideInput { get; set; }
+#nullable restore
+#else
+            public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetModelGuideInput GetModelGuideInput { get; set; }
+#endif
             /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.JudgeGenerationInput"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -148,6 +182,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #nullable restore
 #else
             public global::Soenneker.ElevenLabs.OpenApiClient.Models.NodeIdInput NodeIdInput { get; set; }
+#endif
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.PreviewNodeModelInput"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::Soenneker.ElevenLabs.OpenApiClient.Models.PreviewNodeModelInput? PreviewNodeModelInput { get; set; }
+#nullable restore
+#else
+            public global::Soenneker.ElevenLabs.OpenApiClient.Models.PreviewNodeModelInput PreviewNodeModelInput { get; set; }
 #endif
             /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.RemoveElementsInput"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -189,6 +231,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
             public global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateNodeInput UpdateNodeInput { get; set; }
 #endif
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.WaitInput"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::Soenneker.ElevenLabs.OpenApiClient.Models.WaitInput? WaitInput { get; set; }
+#nullable restore
+#else
+            public global::Soenneker.ElevenLabs.OpenApiClient.Models.WaitInput WaitInput { get; set; }
+#endif
             /// <summary>
             /// Creates a new instance of the appropriate class based on discriminator value
             /// </summary>
@@ -203,15 +253,20 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 result.AddStaticAssetNodeInput = new global::Soenneker.ElevenLabs.OpenApiClient.Models.AddStaticAssetNodeInput();
                 result.AutoLayoutInput = new global::Soenneker.ElevenLabs.OpenApiClient.Models.AutoLayoutInput();
                 result.DescribeMediaInput = new global::Soenneker.ElevenLabs.OpenApiClient.Models.DescribeMediaInput();
+                result.GetAvailableVoicesInput = new global::Soenneker.ElevenLabs.OpenApiClient.Models.GetAvailableVoicesInput();
+                result.GetGenerationStatusInput = new global::Soenneker.ElevenLabs.OpenApiClient.Models.GetGenerationStatusInput();
+                result.GetModelGuideInput = new global::Soenneker.ElevenLabs.OpenApiClient.Models.GetModelGuideInput();
                 result.JudgeGenerationInput = new global::Soenneker.ElevenLabs.OpenApiClient.Models.JudgeGenerationInput();
                 result.MoveClipInput = new global::Soenneker.ElevenLabs.OpenApiClient.Models.MoveClipInput();
                 result.MoveNodesInput = new global::Soenneker.ElevenLabs.OpenApiClient.Models.MoveNodesInput();
                 result.NodeIdInput = new global::Soenneker.ElevenLabs.OpenApiClient.Models.NodeIdInput();
+                result.PreviewNodeModelInput = new global::Soenneker.ElevenLabs.OpenApiClient.Models.PreviewNodeModelInput();
                 result.RemoveElementsInput = new global::Soenneker.ElevenLabs.OpenApiClient.Models.RemoveElementsInput();
                 result.ReorderTracksInput = new global::Soenneker.ElevenLabs.OpenApiClient.Models.ReorderTracksInput();
                 result.SetClipPropertyInput = new global::Soenneker.ElevenLabs.OpenApiClient.Models.SetClipPropertyInput();
                 result.SetTrackPropertyInput = new global::Soenneker.ElevenLabs.OpenApiClient.Models.SetTrackPropertyInput();
                 result.UpdateNodeInput = new global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateNodeInput();
+                result.WaitInput = new global::Soenneker.ElevenLabs.OpenApiClient.Models.WaitInput();
                 return result;
             }
             /// <summary>
@@ -220,9 +275,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
             public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
             {
-                if(AddEdgesInput != null || AddNodeInput != null || AddStaticAssetNodeInput != null || AutoLayoutInput != null || DescribeMediaInput != null || JudgeGenerationInput != null || MoveClipInput != null || MoveNodesInput != null || NodeIdInput != null || RemoveElementsInput != null || ReorderTracksInput != null || SetClipPropertyInput != null || SetTrackPropertyInput != null || UpdateNodeInput != null)
+                if(AddEdgesInput != null || AddNodeInput != null || AddStaticAssetNodeInput != null || AutoLayoutInput != null || DescribeMediaInput != null || GetAvailableVoicesInput != null || GetGenerationStatusInput != null || GetModelGuideInput != null || JudgeGenerationInput != null || MoveClipInput != null || MoveNodesInput != null || NodeIdInput != null || PreviewNodeModelInput != null || RemoveElementsInput != null || ReorderTracksInput != null || SetClipPropertyInput != null || SetTrackPropertyInput != null || UpdateNodeInput != null || WaitInput != null)
                 {
-                    return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(AddEdgesInput, AddNodeInput, AddStaticAssetNodeInput, AutoLayoutInput, DescribeMediaInput, JudgeGenerationInput, MoveClipInput, MoveNodesInput, NodeIdInput, RemoveElementsInput, ReorderTracksInput, SetClipPropertyInput, SetTrackPropertyInput, UpdateNodeInput);
+                    return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(AddEdgesInput, AddNodeInput, AddStaticAssetNodeInput, AutoLayoutInput, DescribeMediaInput, GetAvailableVoicesInput, GetGenerationStatusInput, GetModelGuideInput, JudgeGenerationInput, MoveClipInput, MoveNodesInput, NodeIdInput, PreviewNodeModelInput, RemoveElementsInput, ReorderTracksInput, SetClipPropertyInput, SetTrackPropertyInput, UpdateNodeInput, WaitInput);
                 }
                 return new Dictionary<string, Action<IParseNode>>();
             }
@@ -233,7 +288,91 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             public virtual void Serialize(ISerializationWriter writer)
             {
                 if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AddEdgesInput>(null, AddEdgesInput, AddNodeInput, AddStaticAssetNodeInput, AutoLayoutInput, DescribeMediaInput, JudgeGenerationInput, MoveClipInput, MoveNodesInput, NodeIdInput, RemoveElementsInput, ReorderTracksInput, SetClipPropertyInput, SetTrackPropertyInput, UpdateNodeInput);
+                writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AddEdgesInput>(null, AddEdgesInput, AddNodeInput, AddStaticAssetNodeInput, AutoLayoutInput, DescribeMediaInput, GetAvailableVoicesInput, GetGenerationStatusInput, GetModelGuideInput, JudgeGenerationInput, MoveClipInput, MoveNodesInput, NodeIdInput, PreviewNodeModelInput, RemoveElementsInput, ReorderTracksInput, SetClipPropertyInput, SetTrackPropertyInput, UpdateNodeInput, WaitInput);
+            }
+        }
+        /// <summary>
+        /// Composed type wrapper for classes <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.FlowStateResult"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.GenerationStatusResult"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.MutationResult"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.NodeConnectionsResult"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.NodeGenerationMetadataResult"/>
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class FlowsAgentToolCallSchemas_tool_outputs : IComposedTypeWrapper, IParsable
+        {
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.FlowStateResult"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::Soenneker.ElevenLabs.OpenApiClient.Models.FlowStateResult? FlowStateResult { get; set; }
+#nullable restore
+#else
+            public global::Soenneker.ElevenLabs.OpenApiClient.Models.FlowStateResult FlowStateResult { get; set; }
+#endif
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.GenerationStatusResult"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::Soenneker.ElevenLabs.OpenApiClient.Models.GenerationStatusResult? GenerationStatusResult { get; set; }
+#nullable restore
+#else
+            public global::Soenneker.ElevenLabs.OpenApiClient.Models.GenerationStatusResult GenerationStatusResult { get; set; }
+#endif
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.MutationResult"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::Soenneker.ElevenLabs.OpenApiClient.Models.MutationResult? MutationResult { get; set; }
+#nullable restore
+#else
+            public global::Soenneker.ElevenLabs.OpenApiClient.Models.MutationResult MutationResult { get; set; }
+#endif
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.NodeConnectionsResult"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::Soenneker.ElevenLabs.OpenApiClient.Models.NodeConnectionsResult? NodeConnectionsResult { get; set; }
+#nullable restore
+#else
+            public global::Soenneker.ElevenLabs.OpenApiClient.Models.NodeConnectionsResult NodeConnectionsResult { get; set; }
+#endif
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.NodeGenerationMetadataResult"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::Soenneker.ElevenLabs.OpenApiClient.Models.NodeGenerationMetadataResult? NodeGenerationMetadataResult { get; set; }
+#nullable restore
+#else
+            public global::Soenneker.ElevenLabs.OpenApiClient.Models.NodeGenerationMetadataResult NodeGenerationMetadataResult { get; set; }
+#endif
+            /// <summary>
+            /// Creates a new instance of the appropriate class based on discriminator value
+            /// </summary>
+            /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.FlowsAgentToolCallSchemas.FlowsAgentToolCallSchemas_tool_outputs"/></returns>
+            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+            public static global::Soenneker.ElevenLabs.OpenApiClient.Models.FlowsAgentToolCallSchemas.FlowsAgentToolCallSchemas_tool_outputs CreateFromDiscriminatorValue(IParseNode parseNode)
+            {
+                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
+                var result = new global::Soenneker.ElevenLabs.OpenApiClient.Models.FlowsAgentToolCallSchemas.FlowsAgentToolCallSchemas_tool_outputs();
+                result.FlowStateResult = new global::Soenneker.ElevenLabs.OpenApiClient.Models.FlowStateResult();
+                result.GenerationStatusResult = new global::Soenneker.ElevenLabs.OpenApiClient.Models.GenerationStatusResult();
+                result.MutationResult = new global::Soenneker.ElevenLabs.OpenApiClient.Models.MutationResult();
+                result.NodeConnectionsResult = new global::Soenneker.ElevenLabs.OpenApiClient.Models.NodeConnectionsResult();
+                result.NodeGenerationMetadataResult = new global::Soenneker.ElevenLabs.OpenApiClient.Models.NodeGenerationMetadataResult();
+                return result;
+            }
+            /// <summary>
+            /// The deserialization information for the current model
+            /// </summary>
+            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
+            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+            {
+                if(FlowStateResult != null || GenerationStatusResult != null || MutationResult != null || NodeConnectionsResult != null || NodeGenerationMetadataResult != null)
+                {
+                    return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(FlowStateResult, GenerationStatusResult, MutationResult, NodeConnectionsResult, NodeGenerationMetadataResult);
+                }
+                return new Dictionary<string, Action<IParseNode>>();
+            }
+            /// <summary>
+            /// Serializes information the current object
+            /// </summary>
+            /// <param name="writer">Serialization writer to use to serialize this model</param>
+            public virtual void Serialize(ISerializationWriter writer)
+            {
+                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+                writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.FlowStateResult>(null, FlowStateResult, GenerationStatusResult, MutationResult, NodeConnectionsResult, NodeGenerationMetadataResult);
             }
         }
     }

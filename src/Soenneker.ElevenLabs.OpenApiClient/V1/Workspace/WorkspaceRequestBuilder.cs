@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Workspace.Analytics;
+using Soenneker.ElevenLabs.OpenApiClient.V1.Workspace.AuditLogs;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Workspace.AuthConnections;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Workspace.Groups;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Workspace.Invites;
@@ -25,6 +26,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Workspace
         public global::Soenneker.ElevenLabs.OpenApiClient.V1.Workspace.Analytics.AnalyticsRequestBuilder Analytics
         {
             get => new global::Soenneker.ElevenLabs.OpenApiClient.V1.Workspace.Analytics.AnalyticsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The auditLogs property</summary>
+        public global::Soenneker.ElevenLabs.OpenApiClient.V1.Workspace.AuditLogs.AuditLogsRequestBuilder AuditLogs
+        {
+            get => new global::Soenneker.ElevenLabs.OpenApiClient.V1.Workspace.AuditLogs.AuditLogsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The authConnections property</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.V1.Workspace.AuthConnections.AuthConnectionsRequestBuilder AuthConnections

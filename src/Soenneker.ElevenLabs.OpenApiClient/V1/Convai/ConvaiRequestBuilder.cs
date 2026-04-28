@@ -6,6 +6,7 @@ using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agent;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.AgentTesting;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Analytics;
+using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.ApiIntegrations;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.BatchCalling;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Conversation;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Conversations;
@@ -18,6 +19,7 @@ using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.PhoneNumbers;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Secrets;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Settings;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.SipTrunk;
+using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Tags;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.TestInvocations;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Tools;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Twilio;
@@ -55,6 +57,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai
         public global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Analytics.AnalyticsRequestBuilder Analytics
         {
             get => new global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Analytics.AnalyticsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The apiIntegrations property</summary>
+        public global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.ApiIntegrations.ApiIntegrationsRequestBuilder ApiIntegrations
+        {
+            get => new global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.ApiIntegrations.ApiIntegrationsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The batchCalling property</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.BatchCalling.BatchCallingRequestBuilder BatchCalling
@@ -115,6 +122,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai
         public global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.SipTrunk.SipTrunkRequestBuilder SipTrunk
         {
             get => new global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.SipTrunk.SipTrunkRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The tags property</summary>
+        public global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Tags.TagsRequestBuilder Tags
+        {
+            get => new global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Tags.TagsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The testInvocations property</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.TestInvocations.TestInvocationsRequestBuilder TestInvocations

@@ -14,6 +14,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The explanation property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Explanation? Explanation { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Explanation Explanation { get; set; }
+#endif
         /// <summary>The rejected_details property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -75,6 +83,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "explanation", n => { Explanation = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Explanation>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Explanation.CreateFromDiscriminatorValue); } },
                 { "reject_reasons", n => { RejectReasons = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Reject_Reasons>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Reject_Reasons.CreateFromDiscriminatorValue); } },
                 { "rejected_details", n => { RejectedDetails = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Rejected_Details>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Rejected_Details.CreateFromDiscriminatorValue); } },
                 { "review_status", n => { ReviewStatus = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ReviewResponseModel_review_status>(); } },
@@ -90,6 +99,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Explanation>("explanation", Explanation);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Rejected_Details>("rejected_details", RejectedDetails);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Reject_Reasons>("reject_reasons", RejectReasons);
             writer.WriteIntValue("reviewed_at_unix", ReviewedAtUnix);

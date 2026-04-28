@@ -8,6 +8,7 @@ using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Conversations.Item.Analysis;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Conversations.Item.Audio;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Conversations.Item.Feedback;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Conversations.Item.Files;
+using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Conversations.Item.Tags;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -40,6 +41,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Conversations.Item
         public global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Conversations.Item.Files.FilesRequestBuilder Files
         {
             get => new global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Conversations.Item.Files.FilesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The tags property</summary>
+        public global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Conversations.Item.Tags.TagsRequestBuilder Tags
+        {
+            get => new global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Conversations.Item.Tags.TagsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Conversations.Item.WithConversation_ItemRequestBuilder"/> and sets the default values.

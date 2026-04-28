@@ -14,14 +14,6 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Modified/enhanced prompt if different from original</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Altered_Prompt? AlteredPrompt { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Altered_Prompt AlteredPrompt { get; set; }
-#endif
         /// <summary>The extend_video property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -114,7 +106,6 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "altered_prompt", n => { AlteredPrompt = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Altered_Prompt>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Altered_Prompt.CreateFromDiscriminatorValue); } },
                 { "extend_video", n => { ExtendVideo = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ReferenceVideo>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ReferenceVideo.CreateFromDiscriminatorValue); } },
                 { "generation_id", n => { GenerationId = n.GetStringValue(); } },
                 { "generation_session_id", n => { GenerationSessionId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Generation_Session_Id>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Generation_Session_Id.CreateFromDiscriminatorValue); } },
@@ -133,7 +124,6 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Altered_Prompt>("altered_prompt", AlteredPrompt);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ReferenceVideo>("extend_video", ExtendVideo);
             writer.WriteStringValue("generation_id", GenerationId);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Generation_Session_Id>("generation_session_id", GenerationSessionId);

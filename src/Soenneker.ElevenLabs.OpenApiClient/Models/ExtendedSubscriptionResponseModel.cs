@@ -52,6 +52,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.Currency_Wrapper Currency { get; set; }
 #endif
+        /// <summary>Currency/amount pair.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Price? CurrentOverage { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Price CurrentOverage { get; set; }
+#endif
         /// <summary>Whether the user has open invoices.</summary>
         public bool? HasOpenInvoices { get; set; }
         /// <summary>True if any workspace owned by this user&apos;s auth account has redeemed the creator first-month discount coupon.</summary>
@@ -169,6 +177,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "character_limit", n => { CharacterLimit = n.GetIntValue(); } },
                 { "character_refresh_period", n => { CharacterRefreshPeriod = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CharacterRefreshPeriod_Wrapper>(global::Soenneker.ElevenLabs.OpenApiClient.Models.CharacterRefreshPeriod_Wrapper.CreateFromDiscriminatorValue); } },
                 { "currency", n => { Currency = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Currency_Wrapper>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Currency_Wrapper.CreateFromDiscriminatorValue); } },
+                { "current_overage", n => { CurrentOverage = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Price>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Price.CreateFromDiscriminatorValue); } },
                 { "has_open_invoices", n => { HasOpenInvoices = n.GetBoolValue(); } },
                 { "has_used_creator_coupon_on_account", n => { HasUsedCreatorCouponOnAccount = n.GetBoolValue(); } },
                 { "has_used_starter_coupon_on_account", n => { HasUsedStarterCouponOnAccount = n.GetBoolValue(); } },
@@ -205,6 +214,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteIntValue("character_limit", CharacterLimit);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CharacterRefreshPeriod_Wrapper>("character_refresh_period", CharacterRefreshPeriod);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Currency_Wrapper>("currency", Currency);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Price>("current_overage", CurrentOverage);
             writer.WriteBoolValue("has_open_invoices", HasOpenInvoices);
             writer.WriteBoolValue("has_used_creator_coupon_on_account", HasUsedCreatorCouponOnAccount);
             writer.WriteBoolValue("has_used_starter_coupon_on_account", HasUsedStarterCouponOnAccount);

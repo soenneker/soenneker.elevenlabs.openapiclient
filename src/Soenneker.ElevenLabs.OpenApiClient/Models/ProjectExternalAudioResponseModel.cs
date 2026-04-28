@@ -35,7 +35,13 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The duration_ms property</summary>
         public int? DurationMs { get; set; }
         /// <summary>The end_time_ms property</summary>
-        public int? EndTimeMs { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.End_Time_Ms? EndTimeMs { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.End_Time_Ms EndTimeMs { get; set; }
+#endif
         /// <summary>The error property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -212,7 +218,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "created_at_ms", n => { CreatedAtMs = n.GetIntValue(); } },
                 { "current_snapshot_id", n => { CurrentSnapshotId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Current_Snapshot_Id>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Current_Snapshot_Id.CreateFromDiscriminatorValue); } },
                 { "duration_ms", n => { DurationMs = n.GetIntValue(); } },
-                { "end_time_ms", n => { EndTimeMs = n.GetIntValue(); } },
+                { "end_time_ms", n => { EndTimeMs = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.End_Time_Ms>(global::Soenneker.ElevenLabs.OpenApiClient.Models.End_Time_Ms.CreateFromDiscriminatorValue); } },
                 { "error", n => { Error = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Error>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Error.CreateFromDiscriminatorValue); } },
                 { "external_audio_id", n => { ExternalAudioId = n.GetStringValue(); } },
                 { "fade_in_ms", n => { FadeInMs = n.GetIntValue(); } },
@@ -251,7 +257,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteIntValue("created_at_ms", CreatedAtMs);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Current_Snapshot_Id>("current_snapshot_id", CurrentSnapshotId);
             writer.WriteIntValue("duration_ms", DurationMs);
-            writer.WriteIntValue("end_time_ms", EndTimeMs);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.End_Time_Ms>("end_time_ms", EndTimeMs);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Error>("error", Error);
             writer.WriteStringValue("external_audio_id", ExternalAudioId);
             writer.WriteIntValue("fade_in_ms", FadeInMs);

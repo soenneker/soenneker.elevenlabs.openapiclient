@@ -14,13 +14,21 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Asset IDs of user-uploaded files to describe.</summary>
+        /// <summary>IDs of user-uploaded assets to describe. Use the value from a `content_asset_id=&lt;id&gt;` reference line.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? AssetIds { get; set; }
 #nullable restore
 #else
         public List<string> AssetIds { get; set; }
+#endif
+        /// <summary>IDs of saved content generations to describe. Use the value from a `generation_id=&lt;id&gt;` reference line.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? GenerationIds { get; set; }
+#nullable restore
+#else
+        public List<string> GenerationIds { get; set; }
 #endif
         /// <summary>Node IDs whose latest completed generation should be described.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -56,6 +64,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "asset_ids", n => { AssetIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "generation_ids", n => { GenerationIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "node_ids", n => { NodeIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
         }
@@ -67,6 +76,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<string>("asset_ids", AssetIds);
+            writer.WriteCollectionOfPrimitiveValues<string>("generation_ids", GenerationIds);
             writer.WriteCollectionOfPrimitiveValues<string>("node_ids", NodeIds);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -14,13 +14,21 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>ID of the uploaded asset. Required for image, video, and audio.</summary>
+        /// <summary>ID of an uploaded asset. For image/video/audio, set exactly one of `content_asset_id` or `generation_id`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.Content_Asset_Id? ContentAssetId { get; set; }
 #nullable restore
 #else
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.Content_Asset_Id ContentAssetId { get; set; }
+#endif
+        /// <summary>ID of a saved content generation. For image/video/audio, set exactly one of `content_asset_id` or `generation_id`.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Generation_Id? GenerationId { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Generation_Id GenerationId { get; set; }
 #endif
         /// <summary>Text content for text nodes. Required for text modality.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -66,6 +74,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "content_asset_id", n => { ContentAssetId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Content_Asset_Id>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Content_Asset_Id.CreateFromDiscriminatorValue); } },
+                { "generation_id", n => { GenerationId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Generation_Id>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Generation_Id.CreateFromDiscriminatorValue); } },
                 { "inline_text", n => { InlineText = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Inline_Text>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Inline_Text.CreateFromDiscriminatorValue); } },
                 { "label", n => { Label = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Label>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Label.CreateFromDiscriminatorValue); } },
                 { "modality", n => { Modality = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AddStaticAssetNodeInput_modality>(); } },
@@ -79,6 +88,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Content_Asset_Id>("content_asset_id", ContentAssetId);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Generation_Id>("generation_id", GenerationId);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Inline_Text>("inline_text", InlineText);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Label>("label", Label);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AddStaticAssetNodeInput_modality>("modality", Modality);

@@ -39,12 +39,15 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.Send_Audio SendAudio { get; set; }
 #endif
+        /// <summary>The transcript_format property</summary>
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookTranscriptFormat? TranscriptFormat { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ConvAIWebhooks"/> and sets the default values.
         /// </summary>
         public ConvAIWebhooks()
         {
             AdditionalData = new Dictionary<string, object>();
+            TranscriptFormat = global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookTranscriptFormat.Json;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -67,6 +70,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "events", n => { Events = n.GetCollectionOfEnumValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookEventType>()?.AsList(); } },
                 { "post_call_webhook_id", n => { PostCallWebhookId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Post_Call_Webhook_Id>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Post_Call_Webhook_Id.CreateFromDiscriminatorValue); } },
                 { "send_audio", n => { SendAudio = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Send_Audio>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Send_Audio.CreateFromDiscriminatorValue); } },
+                { "transcript_format", n => { TranscriptFormat = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookTranscriptFormat>(); } },
             };
         }
         /// <summary>
@@ -79,6 +83,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteCollectionOfEnumValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookEventType>("events", Events);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Post_Call_Webhook_Id>("post_call_webhook_id", PostCallWebhookId);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Send_Audio>("send_audio", SendAudio);
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookTranscriptFormat>("transcript_format", TranscriptFormat);
             writer.WriteAdditionalData(AdditionalData);
         }
     }
