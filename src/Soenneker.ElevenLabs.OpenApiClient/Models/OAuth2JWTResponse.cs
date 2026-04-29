@@ -93,6 +93,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public string Subject { get; set; }
 #endif
+        /// <summary>Token field to extract from the token endpoint response.</summary>
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.OAuth2JWTResponse_token_response_field? TokenResponseField { get; set; }
         /// <summary>Token endpoint URL for exchanging JWT for access token</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -117,6 +119,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             AdditionalData = new Dictionary<string, object>();
             Algorithm = global::Soenneker.ElevenLabs.OpenApiClient.Models.OAuth2JWTResponse_algorithm.HS256;
             AuthType = global::Soenneker.ElevenLabs.OpenApiClient.Models.OAuth2JWTResponse_auth_type.Oauth2_jwt;
+            TokenResponseField = global::Soenneker.ElevenLabs.OpenApiClient.Models.OAuth2JWTResponse_token_response_field.Access_token;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -148,6 +151,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "provider", n => { Provider = n.GetStringValue(); } },
                 { "scopes", n => { Scopes = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "subject", n => { Subject = n.GetStringValue(); } },
+                { "token_response_field", n => { TokenResponseField = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.OAuth2JWTResponse_token_response_field>(); } },
                 { "token_url", n => { TokenUrl = n.GetStringValue(); } },
                 { "used_by", n => { UsedBy = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AuthConnectionDependencies>(global::Soenneker.ElevenLabs.OpenApiClient.Models.AuthConnectionDependencies.CreateFromDiscriminatorValue); } },
             };
@@ -171,6 +175,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteStringValue("provider", Provider);
             writer.WriteCollectionOfPrimitiveValues<string>("scopes", Scopes);
             writer.WriteStringValue("subject", Subject);
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.OAuth2JWTResponse_token_response_field>("token_response_field", TokenResponseField);
             writer.WriteStringValue("token_url", TokenUrl);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AuthConnectionDependencies>("used_by", UsedBy);
             writer.WriteAdditionalData(AdditionalData);

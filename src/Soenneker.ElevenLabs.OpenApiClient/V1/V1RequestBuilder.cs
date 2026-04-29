@@ -19,7 +19,6 @@ using Soenneker.ElevenLabs.OpenApiClient.V1.SoundGeneration;
 using Soenneker.ElevenLabs.OpenApiClient.V1.SpeechToSpeech;
 using Soenneker.ElevenLabs.OpenApiClient.V1.SpeechToText;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Studio;
-using Soenneker.ElevenLabs.OpenApiClient.V1.Templates;
 using Soenneker.ElevenLabs.OpenApiClient.V1.TextToDialogue;
 using Soenneker.ElevenLabs.OpenApiClient.V1.TextToSpeech;
 using Soenneker.ElevenLabs.OpenApiClient.V1.TextToVoice;
@@ -122,11 +121,6 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1
         public global::Soenneker.ElevenLabs.OpenApiClient.V1.Studio.StudioRequestBuilder Studio
         {
             get => new global::Soenneker.ElevenLabs.OpenApiClient.V1.Studio.StudioRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The templates property</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.V1.Templates.TemplatesRequestBuilder Templates
-        {
-            get => new global::Soenneker.ElevenLabs.OpenApiClient.V1.Templates.TemplatesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The textToDialogue property</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.V1.TextToDialogue.TextToDialogueRequestBuilder TextToDialogue

@@ -30,6 +30,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateSimulationTestRequest_dynamic_variables DynamicVariables { get; set; }
 #endif
+        /// <summary>LLM model to use for evaluating simulation results. Defaults to Claude Sonnet 4.6.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.LLM_Wrapper? EvaluationModel { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.LLM_Wrapper EvaluationModel { get; set; }
+#endif
         /// <summary>Metadata of a conversation this test was created from (if applicable).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -53,6 +61,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #nullable restore
 #else
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.Parent_Folder_Id ParentFolderId { get; set; }
+#endif
+        /// <summary>LLM model for the simulated user. Defaults to Claude Sonnet 4.6.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.LLM_Wrapper? SimulatedUserModel { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.LLM_Wrapper SimulatedUserModel { get; set; }
 #endif
         /// <summary>The environment to use when running this simulation test. If not provided, defaults to &apos;production&apos;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -118,9 +134,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             {
                 { "chat_history", n => { ChatHistory = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptCommonModelInput>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptCommonModelInput.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "dynamic_variables", n => { DynamicVariables = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateSimulationTestRequest_dynamic_variables>(global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateSimulationTestRequest_dynamic_variables.CreateFromDiscriminatorValue); } },
+                { "evaluation_model", n => { EvaluationModel = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.LLM_Wrapper>(global::Soenneker.ElevenLabs.OpenApiClient.Models.LLM_Wrapper.CreateFromDiscriminatorValue); } },
                 { "from_conversation_metadata", n => { FromConversationMetadata = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TestFromConversationMetadataInput>(global::Soenneker.ElevenLabs.OpenApiClient.Models.TestFromConversationMetadataInput.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "parent_folder_id", n => { ParentFolderId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Parent_Folder_Id>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Parent_Folder_Id.CreateFromDiscriminatorValue); } },
+                { "simulated_user_model", n => { SimulatedUserModel = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.LLM_Wrapper>(global::Soenneker.ElevenLabs.OpenApiClient.Models.LLM_Wrapper.CreateFromDiscriminatorValue); } },
                 { "simulation_environment", n => { SimulationEnvironment = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Simulation_Environment>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Simulation_Environment.CreateFromDiscriminatorValue); } },
                 { "simulation_max_turns", n => { SimulationMaxTurns = n.GetIntValue(); } },
                 { "simulation_scenario", n => { SimulationScenario = n.GetStringValue(); } },
@@ -138,9 +156,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptCommonModelInput>("chat_history", ChatHistory);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateSimulationTestRequest_dynamic_variables>("dynamic_variables", DynamicVariables);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.LLM_Wrapper>("evaluation_model", EvaluationModel);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TestFromConversationMetadataInput>("from_conversation_metadata", FromConversationMetadata);
             writer.WriteStringValue("name", Name);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Parent_Folder_Id>("parent_folder_id", ParentFolderId);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.LLM_Wrapper>("simulated_user_model", SimulatedUserModel);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Simulation_Environment>("simulation_environment", SimulationEnvironment);
             writer.WriteIntValue("simulation_max_turns", SimulationMaxTurns);
             writer.WriteStringValue("simulation_scenario", SimulationScenario);

@@ -8,32 +8,32 @@ using System;
 namespace Soenneker.ElevenLabs.OpenApiClient.Models
 {
     /// <summary>
-    /// Create a new service (classic, rental, or group) in the system.
+    /// Register a client for a scheduled group session.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class CreateServiceParams : IAdditionalDataHolder, IParsable
+    public partial class RegisterForGroupSessionParams : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The smb_tool_type property</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateServiceParams_smb_tool_type? SmbToolType { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.RegisterForGroupSessionParams_smb_tool_type? SmbToolType { get; set; }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateServiceParams"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.RegisterForGroupSessionParams"/> and sets the default values.
         /// </summary>
-        public CreateServiceParams()
+        public RegisterForGroupSessionParams()
         {
             AdditionalData = new Dictionary<string, object>();
-            SmbToolType = global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateServiceParams_smb_tool_type.Create_service;
+            SmbToolType = global::Soenneker.ElevenLabs.OpenApiClient.Models.RegisterForGroupSessionParams_smb_tool_type.Register_for_group_session;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateServiceParams"/></returns>
+        /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.RegisterForGroupSessionParams"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateServiceParams CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.ElevenLabs.OpenApiClient.Models.RegisterForGroupSessionParams CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateServiceParams();
+            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.RegisterForGroupSessionParams();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -43,7 +43,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "smb_tool_type", n => { SmbToolType = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateServiceParams_smb_tool_type>(); } },
+                { "smb_tool_type", n => { SmbToolType = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.RegisterForGroupSessionParams_smb_tool_type>(); } },
             };
         }
         /// <summary>
@@ -53,7 +53,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateServiceParams_smb_tool_type>("smb_tool_type", SmbToolType);
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.RegisterForGroupSessionParams_smb_tool_type>("smb_tool_type", SmbToolType);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

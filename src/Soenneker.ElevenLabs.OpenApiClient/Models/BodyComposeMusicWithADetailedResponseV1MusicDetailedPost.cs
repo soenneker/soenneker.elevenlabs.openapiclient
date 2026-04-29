@@ -30,6 +30,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.Finetune_Id FinetuneId { get; set; }
 #endif
+        /// <summary>How strongly the finetune influences the generation. Defaults to 1.0 (full strength). Lower values soften the influence of the finetune, leaving more room for prompt-level steering. Only meaningful when `finetune_id` is also provided.</summary>
+        public double? FinetuneStrength { get; set; }
         /// <summary>If true, guarantees that the generated song will be instrumental. If false, the song may or may not be instrumental depending on the `prompt`. Can only be used with `prompt`.</summary>
         public bool? ForceInstrumental { get; set; }
         /// <summary>The lyrics text to use for the generation.</summary>
@@ -116,6 +118,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             {
                 { "composition_plan", n => { CompositionPlan = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.MusicPrompt>(global::Soenneker.ElevenLabs.OpenApiClient.Models.MusicPrompt.CreateFromDiscriminatorValue); } },
                 { "finetune_id", n => { FinetuneId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Finetune_Id>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Finetune_Id.CreateFromDiscriminatorValue); } },
+                { "finetune_strength", n => { FinetuneStrength = n.GetDoubleValue(); } },
                 { "force_instrumental", n => { ForceInstrumental = n.GetBoolValue(); } },
                 { "lyrics_text", n => { LyricsText = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Lyrics_Text>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Lyrics_Text.CreateFromDiscriminatorValue); } },
                 { "model_id", n => { ModelId = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyComposeMusicWithADetailedResponseV1MusicDetailedPost_model_id>(); } },
@@ -140,6 +143,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.MusicPrompt>("composition_plan", CompositionPlan);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Finetune_Id>("finetune_id", FinetuneId);
+            writer.WriteDoubleValue("finetune_strength", FinetuneStrength);
             writer.WriteBoolValue("force_instrumental", ForceInstrumental);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Lyrics_Text>("lyrics_text", LyricsText);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyComposeMusicWithADetailedResponseV1MusicDetailedPost_model_id>("model_id", ModelId);

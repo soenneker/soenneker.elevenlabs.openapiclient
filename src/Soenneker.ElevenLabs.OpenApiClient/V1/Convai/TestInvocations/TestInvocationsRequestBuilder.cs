@@ -35,7 +35,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.TestInvocations
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TestInvocationsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/convai/test-invocations?agent_id={agent_id}{&cursor*,page_size*}", pathParameters)
+        public TestInvocationsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/convai/test-invocations{?agent_id*,cursor*,page_size*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.TestInvocations
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TestInvocationsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/convai/test-invocations?agent_id={agent_id}{&cursor*,page_size*}", rawUrl)
+        public TestInvocationsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/convai/test-invocations{?agent_id*,cursor*,page_size*}", rawUrl)
         {
         }
         /// <summary>

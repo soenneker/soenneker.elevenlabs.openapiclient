@@ -8,29 +8,21 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     public enum Aspect_Ratio_value
     #pragma warning restore CS1591
     {
-        [EnumMember(Value = "21:9")]
-        #pragma warning disable CS1591
-        TwoOneNine,
-        #pragma warning restore CS1591
         [EnumMember(Value = "16:9")]
         #pragma warning disable CS1591
         OneSixNine,
         #pragma warning restore CS1591
-        [EnumMember(Value = "4:3")]
+        [EnumMember(Value = "9:16")]
         #pragma warning disable CS1591
-        FourThree,
+        NineOneSix,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "4:5")]
+        #pragma warning disable CS1591
+        FourFive,
         #pragma warning restore CS1591
         [EnumMember(Value = "1:1")]
         #pragma warning disable CS1591
         OneOne,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "3:4")]
-        #pragma warning disable CS1591
-        ThreeFour,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "9:16")]
-        #pragma warning disable CS1591
-        NineOneSix,
         #pragma warning restore CS1591
     }
 }
