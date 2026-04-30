@@ -16926,6 +16926,22 @@
             }
           },
           {
+            "name": "agent_id",
+            "in": "query",
+            "description": "Filter batch calls to a single agent.",
+            "schema": {
+              "title": "Agent Id",
+              "type": "object",
+              "anyOf": [
+                {
+                  "type": "string"
+                }
+              ],
+              "description": "Filter batch calls to a single agent.",
+              "nullable": true
+            }
+          },
+          {
             "name": "xi-api-key",
             "in": "header",
             "description": "Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the \u0027Profile\u0027 tab on the website.",
@@ -41242,6 +41258,11 @@
             "title": "Can Use Assistant",
             "type": "boolean",
             "default": true
+          },
+          "is_voice_changer_on": {
+            "title": "Is Voice Changer On",
+            "type": "boolean",
+            "default": false
           }
         }
       },
@@ -47779,6 +47800,7 @@
           "gpt-5.1",
           "gpt-5.2",
           "gpt-5.2-chat-latest",
+          "gpt-5.4",
           "gpt-5-mini",
           "gpt-5-nano",
           "gpt-3.5-turbo",
@@ -47793,6 +47815,7 @@
           "gemini-3.1-pro-preview",
           "gemini-3.1-flash-lite-preview",
           "claude-sonnet-4-5",
+          "claude-opus-4-7",
           "claude-sonnet-4-6",
           "claude-sonnet-4",
           "claude-haiku-4-5",
@@ -47804,6 +47827,7 @@
           "custom-llm",
           "qwen3-4b",
           "qwen3-30b-a3b",
+          "qwen36-35b-a3b",
           "gpt-oss-20b",
           "gpt-oss-120b",
           "glm-45-air-fp8",
@@ -47828,6 +47852,7 @@
           "gpt-5-2025-08-07",
           "gpt-5.1-2025-11-13",
           "gpt-5.2-2025-12-11",
+          "gpt-5.4-2026-03-05",
           "gpt-5-mini-2025-08-07",
           "gpt-5-nano-2025-08-07",
           "gpt-4.1-2025-04-14",

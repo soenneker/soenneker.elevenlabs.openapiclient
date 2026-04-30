@@ -148,6 +148,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.Isbn Isbn { get; set; }
 #endif
+        /// <summary>The is_voice_changer_on property</summary>
+        public bool? IsVoiceChangerOn { get; set; }
         /// <summary>The language property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -428,6 +430,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "edition", n => { Edition = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Edition>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Edition.CreateFromDiscriminatorValue); } },
                 { "fiction", n => { Fiction = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Fiction>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Fiction.CreateFromDiscriminatorValue); } },
                 { "genre", n => { Genre = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Genre>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Genre.CreateFromDiscriminatorValue); } },
+                { "is_voice_changer_on", n => { IsVoiceChangerOn = n.GetBoolValue(); } },
                 { "isbn", n => { Isbn = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Isbn>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Isbn.CreateFromDiscriminatorValue); } },
                 { "language", n => { Language = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Language>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Language.CreateFromDiscriminatorValue); } },
                 { "last_updated_from_project_unix", n => { LastUpdatedFromProjectUnix = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Last_Updated_From_Project_Unix>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Last_Updated_From_Project_Unix.CreateFromDiscriminatorValue); } },
@@ -488,6 +491,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Fiction>("fiction", Fiction);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Genre>("genre", Genre);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Isbn>("isbn", Isbn);
+            writer.WriteBoolValue("is_voice_changer_on", IsVoiceChangerOn);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Language>("language", Language);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Last_Updated_From_Project_Unix>("last_updated_from_project_unix", LastUpdatedFromProjectUnix);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ReadLegalTerms>("legal_terms", LegalTerms);

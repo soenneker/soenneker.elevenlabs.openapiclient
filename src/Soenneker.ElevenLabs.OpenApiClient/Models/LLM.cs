@@ -52,6 +52,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         #pragma warning disable CS1591
         Gpt52ChatLatest,
         #pragma warning restore CS1591
+        [EnumMember(Value = "gpt-5.4")]
+        #pragma warning disable CS1591
+        Gpt54,
+        #pragma warning restore CS1591
         [EnumMember(Value = "gpt-5-mini")]
         #pragma warning disable CS1591
         Gpt5Mini,
@@ -108,6 +112,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         #pragma warning disable CS1591
         ClaudeSonnet45,
         #pragma warning restore CS1591
+        [EnumMember(Value = "claude-opus-4-7")]
+        #pragma warning disable CS1591
+        ClaudeOpus47,
+        #pragma warning restore CS1591
         [EnumMember(Value = "claude-sonnet-4-6")]
         #pragma warning disable CS1591
         ClaudeSonnet46,
@@ -151,6 +159,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         [EnumMember(Value = "qwen3-30b-a3b")]
         #pragma warning disable CS1591
         Qwen330bA3b,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "qwen36-35b-a3b")]
+        #pragma warning disable CS1591
+        Qwen3635bA3b,
         #pragma warning restore CS1591
         [EnumMember(Value = "gpt-oss-20b")]
         #pragma warning disable CS1591
@@ -247,6 +259,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         [EnumMember(Value = "gpt-5.2-2025-12-11")]
         #pragma warning disable CS1591
         Gpt5220251211,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "gpt-5.4-2026-03-05")]
+        #pragma warning disable CS1591
+        Gpt5420260305,
         #pragma warning restore CS1591
         [EnumMember(Value = "gpt-5-mini-2025-08-07")]
         #pragma warning disable CS1591

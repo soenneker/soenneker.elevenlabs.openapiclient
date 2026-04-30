@@ -22,7 +22,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.BatchCalling.Workspace
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WorkspaceRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/convai/batch-calling/workspace{?last_doc*,limit*}", pathParameters)
+        public WorkspaceRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/convai/batch-calling/workspace{?agent_id*,last_doc*,limit*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.BatchCalling.Workspace
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WorkspaceRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/convai/batch-calling/workspace{?last_doc*,limit*}", rawUrl)
+        public WorkspaceRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/convai/batch-calling/workspace{?agent_id*,last_doc*,limit*}", rawUrl)
         {
         }
         /// <summary>
@@ -90,6 +90,16 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.BatchCalling.Workspace
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class WorkspaceRequestBuilderGetQueryParameters 
         {
+            /// <summary>Filter batch calls to a single agent.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("agent_id")]
+            public string? AgentId { get; set; }
+#nullable restore
+#else
+            [QueryParameter("agent_id")]
+            public string AgentId { get; set; }
+#endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("last_doc")]
