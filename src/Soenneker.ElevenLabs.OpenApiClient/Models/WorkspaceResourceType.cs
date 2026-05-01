@@ -151,5 +151,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         #pragma warning disable CS1591
         Avatar_video_generations,
         #pragma warning restore CS1591
+        [EnumMember(Value = "resource_collection")]
+        #pragma warning disable CS1591
+        Resource_collection,
+        #pragma warning restore CS1591
     }
 }

@@ -59,7 +59,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.MCPServerConfigInput_request_headers RequestHeaders { get; set; }
 #endif
-        /// <summary>The maximum time in seconds to wait for each MCP tool call to complete. Must be between 5 and 120 seconds (inclusive).</summary>
+        /// <summary>The maximum time in seconds to wait for each MCP tool call to complete. Must be between 5 and 300 seconds (inclusive).</summary>
         public int? ResponseTimeoutSecs { get; set; }
         /// <summary>The secret token (Authorization header) stored as a workspace secret or in-place secret</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

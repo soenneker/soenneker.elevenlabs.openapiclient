@@ -8,32 +8,32 @@ using System;
 namespace Soenneker.ElevenLabs.OpenApiClient.Models
 {
     /// <summary>
-    /// Permanently remove a previously-cancelled calendar event.This delete tool is the irreversible follow-up to cancel_calendar_event.The backend rejects the call (422) if the event hasn&apos;t beencancelled yet, so the only safe path is cancel-then-delete.
+    /// &quot;Permanently remove a previously-cancelled group session.Group analogue of ``delete_calendar_event``: cancel(``cancel_group_session_for_all``) is the soft, history-preserving step;this tool is the irreversible follow-up that drops the row from Mongoand the staff Google Calendar entirely. The backend rejects the call(422) if the session hasn&apos;t been cancelled yet, so the only safe pathis cancel-then-delete.&quot;
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class DeleteCalendarEventParams : IAdditionalDataHolder, IParsable
+    public partial class DeleteGroupSessionParams : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The smb_tool_type property</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.DeleteCalendarEventParams_smb_tool_type? SmbToolType { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.DeleteGroupSessionParams_smb_tool_type? SmbToolType { get; set; }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.DeleteCalendarEventParams"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.DeleteGroupSessionParams"/> and sets the default values.
         /// </summary>
-        public DeleteCalendarEventParams()
+        public DeleteGroupSessionParams()
         {
             AdditionalData = new Dictionary<string, object>();
-            SmbToolType = global::Soenneker.ElevenLabs.OpenApiClient.Models.DeleteCalendarEventParams_smb_tool_type.Delete_calendar_event;
+            SmbToolType = global::Soenneker.ElevenLabs.OpenApiClient.Models.DeleteGroupSessionParams_smb_tool_type.Delete_group_session;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.DeleteCalendarEventParams"/></returns>
+        /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.DeleteGroupSessionParams"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.ElevenLabs.OpenApiClient.Models.DeleteCalendarEventParams CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.ElevenLabs.OpenApiClient.Models.DeleteGroupSessionParams CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.DeleteCalendarEventParams();
+            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.DeleteGroupSessionParams();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -43,7 +43,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "smb_tool_type", n => { SmbToolType = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DeleteCalendarEventParams_smb_tool_type>(); } },
+                { "smb_tool_type", n => { SmbToolType = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DeleteGroupSessionParams_smb_tool_type>(); } },
             };
         }
         /// <summary>
@@ -53,7 +53,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DeleteCalendarEventParams_smb_tool_type>("smb_tool_type", SmbToolType);
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DeleteGroupSessionParams_smb_tool_type>("smb_tool_type", SmbToolType);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

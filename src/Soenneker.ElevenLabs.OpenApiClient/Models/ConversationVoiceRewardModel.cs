@@ -7,33 +7,39 @@ using System.IO;
 using System;
 namespace Soenneker.ElevenLabs.OpenApiClient.Models
 {
-    /// <summary>
-    /// Permanently remove a previously-cancelled calendar event.This delete tool is the irreversible follow-up to cancel_calendar_event.The backend rejects the call (422) if the event hasn&apos;t beencancelled yet, so the only safe path is cancel-then-delete.
-    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class DeleteCalendarEventParams : IAdditionalDataHolder, IParsable
+    #pragma warning disable CS1591
+    public partial class ConversationVoiceRewardModel : IAdditionalDataHolder, IParsable
+    #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The smb_tool_type property</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.DeleteCalendarEventParams_smb_tool_type? SmbToolType { get; set; }
+        /// <summary>The reward_usd_cents property</summary>
+        public double? RewardUsdCents { get; set; }
+        /// <summary>The voice_id property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? VoiceId { get; set; }
+#nullable restore
+#else
+        public string VoiceId { get; set; }
+#endif
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.DeleteCalendarEventParams"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationVoiceRewardModel"/> and sets the default values.
         /// </summary>
-        public DeleteCalendarEventParams()
+        public ConversationVoiceRewardModel()
         {
             AdditionalData = new Dictionary<string, object>();
-            SmbToolType = global::Soenneker.ElevenLabs.OpenApiClient.Models.DeleteCalendarEventParams_smb_tool_type.Delete_calendar_event;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.DeleteCalendarEventParams"/></returns>
+        /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationVoiceRewardModel"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.ElevenLabs.OpenApiClient.Models.DeleteCalendarEventParams CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationVoiceRewardModel CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.DeleteCalendarEventParams();
+            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationVoiceRewardModel();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -43,7 +49,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "smb_tool_type", n => { SmbToolType = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DeleteCalendarEventParams_smb_tool_type>(); } },
+                { "reward_usd_cents", n => { RewardUsdCents = n.GetDoubleValue(); } },
+                { "voice_id", n => { VoiceId = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -53,7 +60,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DeleteCalendarEventParams_smb_tool_type>("smb_tool_type", SmbToolType);
+            writer.WriteDoubleValue("reward_usd_cents", RewardUsdCents);
+            writer.WriteStringValue("voice_id", VoiceId);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

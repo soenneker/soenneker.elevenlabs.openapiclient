@@ -32239,6 +32239,20 @@
           }
         }
       },
+      "CancelCalendarEventParams": {
+        "title": "CancelCalendarEventParams",
+        "type": "object",
+        "properties": {
+          "smb_tool_type": {
+            "title": "Smb Tool Type",
+            "enum": [
+              "cancel_calendar_event"
+            ],
+            "type": "string",
+            "default": "cancel_calendar_event"
+          }
+        }
+      },
       "CancelGroupSessionForAllParams": {
         "title": "CancelGroupSessionForAllParams",
         "type": "object",
@@ -35394,6 +35408,13 @@
           },
           "agent_last_updated_from": {
             "$ref": "#/components/schemas/AgentDefinitionSource"
+          },
+          "voice_rewards": {
+            "title": "Voice Rewards",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ConversationVoiceRewardModel"
+            }
           }
         }
       },
@@ -37954,6 +37975,24 @@
           }
         }
       },
+      "ConversationVoiceRewardModel": {
+        "title": "ConversationVoiceRewardModel",
+        "required": [
+          "voice_id",
+          "reward_usd_cents"
+        ],
+        "type": "object",
+        "properties": {
+          "voice_id": {
+            "title": "Voice Id",
+            "type": "string"
+          },
+          "reward_usd_cents": {
+            "title": "Reward Usd Cents",
+            "type": "number"
+          }
+        }
+      },
       "ConversationVoiceUsageModel": {
         "title": "ConversationVoiceUsageModel",
         "required": [
@@ -38162,6 +38201,7 @@
             "voice_id": "cjVigY5qzO86Huf0OWal"
           },
           "turn": {
+            "interruption_ignore_terms": [],
             "mode": "turn",
             "retranscribe_on_turn_timeout": false,
             "silence_end_call_timeout": -1.0,
@@ -38306,6 +38346,7 @@
             "voice_id": "cjVigY5qzO86Huf0OWal"
           },
           "turn": {
+            "interruption_ignore_terms": [],
             "mode": "turn",
             "retranscribe_on_turn_timeout": false,
             "silence_end_call_timeout": -1.0,
@@ -40026,7 +40067,8 @@
             "type": "string",
             "default": "delete_calendar_event"
           }
-        }
+        },
+        "description": "Permanently remove a previously-cancelled calendar event.\n\nThis delete tool is the irreversible follow-up to cancel_calendar_event.\nThe backend rejects the call (422) if the event hasn\u0027t been\ncancelled yet, so the only safe path is cancel-then-delete."
       },
       "DeleteChapterResponseModel": {
         "title": "DeleteChapterResponseModel",
@@ -40090,6 +40132,21 @@
         "example": {
           "status": "ok"
         }
+      },
+      "DeleteGroupSessionParams": {
+        "title": "DeleteGroupSessionParams",
+        "type": "object",
+        "properties": {
+          "smb_tool_type": {
+            "title": "Smb Tool Type",
+            "enum": [
+              "delete_group_session"
+            ],
+            "type": "string",
+            "default": "delete_group_session"
+          }
+        },
+        "description": "\u0022Permanently remove a previously-cancelled group session.\n\nGroup analogue of \u0060\u0060delete_calendar_event\u0060\u0060: cancel\n(\u0060\u0060cancel_group_session_for_all\u0060\u0060) is the soft, history-preserving step;\nthis tool is the irreversible follow-up that drops the row from Mongo\nand the staff Google Calendar entirely. The backend rejects the call\n(422) if the session hasn\u0027t been cancelled yet, so the only safe path\nis cancel-then-delete.\u0022"
       },
       "DeleteHistoryItemResponse": {
         "title": "DeleteHistoryItemResponse",
@@ -41628,17 +41685,6 @@
             "de"
           ]
         }
-      },
-      "DubbingModel": {
-        "title": "DubbingModel",
-        "enum": [
-          "dubbing_v1_tts_v3",
-          "dubbing_v2",
-          "dubbing_v3",
-          "dubbing_e2e_v1"
-        ],
-        "type": "string",
-        "additionalProperties": false
       },
       "DubbingRenderResponseModel": {
         "title": "DubbingRenderResponseModel",
@@ -44234,6 +44280,11 @@
             ],
             "type": "string",
             "default": "get_client_appointments"
+          },
+          "include_cancelled": {
+            "title": "Include Cancelled",
+            "type": "boolean",
+            "default": false
           }
         }
       },
@@ -47801,6 +47852,7 @@
           "gpt-5.2",
           "gpt-5.2-chat-latest",
           "gpt-5.4",
+          "gpt-5.5",
           "gpt-5-mini",
           "gpt-5-nano",
           "gpt-3.5-turbo",
@@ -47853,6 +47905,7 @@
           "gpt-5.1-2025-11-13",
           "gpt-5.2-2025-12-11",
           "gpt-5.4-2026-03-05",
+          "gpt-5.5-2026-04-23",
           "gpt-5-mini-2025-08-07",
           "gpt-5-nano-2025-08-07",
           "gpt-4.1-2025-04-14",
@@ -48685,6 +48738,20 @@
           "name": "English"
         }
       },
+      "LeaveMessageParams": {
+        "title": "LeaveMessageParams",
+        "type": "object",
+        "properties": {
+          "smb_tool_type": {
+            "title": "Smb Tool Type",
+            "enum": [
+              "leave_message"
+            ],
+            "type": "string",
+            "default": "leave_message"
+          }
+        }
+      },
       "LibraryVoiceResponseModel": {
         "title": "LibraryVoiceResponseModel",
         "required": [
@@ -49112,6 +49179,11 @@
             ],
             "type": "string",
             "default": "list_calendar_events"
+          },
+          "include_cancelled": {
+            "title": "Include Cancelled",
+            "type": "boolean",
+            "default": false
           }
         }
       },
@@ -49640,10 +49712,10 @@
           },
           "response_timeout_secs": {
             "title": "Response Timeout Secs",
-            "maximum": 120.0,
+            "maximum": 300.0,
             "minimum": 5.0,
             "type": "integer",
-            "description": "The maximum time in seconds to wait for each MCP tool call to complete. Must be between 5 and 120 seconds (inclusive).",
+            "description": "The maximum time in seconds to wait for each MCP tool call to complete. Must be between 5 and 300 seconds (inclusive).",
             "default": 30
           },
           "tool_config_overrides": {
@@ -49788,10 +49860,10 @@
           },
           "response_timeout_secs": {
             "title": "Response Timeout Secs",
-            "maximum": 120.0,
+            "maximum": 300.0,
             "minimum": 5.0,
             "type": "integer",
-            "description": "The maximum time in seconds to wait for each MCP tool call to complete. Must be between 5 and 120 seconds (inclusive).",
+            "description": "The maximum time in seconds to wait for each MCP tool call to complete. Must be between 5 and 300 seconds (inclusive).",
             "default": 30
           },
           "tool_config_overrides": {
@@ -50165,10 +50237,10 @@
           },
           "response_timeout_secs": {
             "title": "Response Timeout Secs",
-            "maximum": 120.0,
+            "maximum": 300.0,
             "minimum": 5.0,
             "type": "integer",
-            "description": "The maximum time in seconds to wait for the MCP tool call to complete. Must be between 5 and 120 seconds (inclusive).",
+            "description": "The maximum time in seconds to wait for the MCP tool call to complete. Must be between 5 and 300 seconds (inclusive).",
             "default": 30
           },
           "disable_interruptions": {
@@ -50304,10 +50376,10 @@
           },
           "response_timeout_secs": {
             "title": "Response Timeout Secs",
-            "maximum": 120.0,
+            "maximum": 300.0,
             "minimum": 5.0,
             "type": "integer",
-            "description": "The maximum time in seconds to wait for the MCP tool call to complete. Must be between 5 and 120 seconds (inclusive).",
+            "description": "The maximum time in seconds to wait for the MCP tool call to complete. Must be between 5 and 300 seconds (inclusive).",
             "default": 30
           },
           "disable_interruptions": {
@@ -54366,8 +54438,6 @@
           "track_id",
           "created_at_ms",
           "updated_at_ms",
-          "pending_block_ids",
-          "pending_external_audio_ids",
           "import_speech_progress"
         ],
         "type": "object",
@@ -54467,20 +54537,6 @@
               }
             ],
             "nullable": true
-          },
-          "pending_block_ids": {
-            "title": "Pending Block Ids",
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "pending_external_audio_ids": {
-            "title": "Pending External Audio Ids",
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
           },
           "pending_blocks_metadata": {
             "type": "object",
@@ -55329,8 +55385,6 @@
           "thumbnail_sheets",
           "start_time_ms",
           "end_time_ms",
-          "pending_block_ids",
-          "pending_external_audio_ids",
           "preview_job_progress",
           "import_speech_progress"
         ],
@@ -55515,20 +55569,6 @@
               }
             ],
             "nullable": true
-          },
-          "pending_block_ids": {
-            "title": "Pending Block Ids",
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "pending_external_audio_ids": {
-            "title": "Pending External Audio Ids",
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
           },
           "speech_imported": {
             "title": "Speech Imported",
@@ -58084,6 +58124,17 @@
             "type": "string",
             "additionalProperties": false,
             "description": "The role of the user making the request"
+          },
+          "anonymous_access_level_override": {
+            "title": "Anonymous Access Level Override",
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Anonymous_Access_Level_Override"
+              }
+            ],
+            "description": "The access level for anonymous users. If None, the resource is not shared publicly.",
+            "nullable": true
           }
         },
         "example": {
@@ -58786,10 +58837,16 @@
                 "$ref": "#/components/schemas/CancelGroupSessionForAllParams"
               },
               {
+                "$ref": "#/components/schemas/DeleteGroupSessionParams"
+              },
+              {
                 "$ref": "#/components/schemas/ListCalendarEventsParams"
               },
               {
                 "$ref": "#/components/schemas/UpdateCalendarEventParams"
+              },
+              {
+                "$ref": "#/components/schemas/CancelCalendarEventParams"
               },
               {
                 "$ref": "#/components/schemas/DeleteCalendarEventParams"
@@ -58862,6 +58919,9 @@
               },
               {
                 "$ref": "#/components/schemas/DeleteLocationParams"
+              },
+              {
+                "$ref": "#/components/schemas/LeaveMessageParams"
               }
             ],
             "properties": {
@@ -58872,6 +58932,7 @@
             "discriminator": {
               "propertyName": "smb_tool_type",
               "mapping": {
+                "cancel_calendar_event": "#/components/schemas/CancelCalendarEventParams",
                 "cancel_group_session_for_all": "#/components/schemas/CancelGroupSessionForAllParams",
                 "cancel_group_session_registration": "#/components/schemas/CancelGroupSessionRegistrationParams",
                 "check_service_availability": "#/components/schemas/CheckServiceAvailabilityParams",
@@ -58890,6 +58951,7 @@
                 "delete_calendar_event": "#/components/schemas/DeleteCalendarEventParams",
                 "delete_client": "#/components/schemas/DeleteClientParams",
                 "delete_client_interaction": "#/components/schemas/DeleteClientInteractionParams",
+                "delete_group_session": "#/components/schemas/DeleteGroupSessionParams",
                 "delete_holiday": "#/components/schemas/DeleteHolidayParams",
                 "delete_location": "#/components/schemas/DeleteLocationParams",
                 "delete_product": "#/components/schemas/DeleteProductParams",
@@ -58902,6 +58964,7 @@
                 "get_client_appointments": "#/components/schemas/GetClientAppointmentsParams",
                 "get_client_by_phone": "#/components/schemas/GetClientByPhoneParams",
                 "get_schedule": "#/components/schemas/GetScheduleParams",
+                "leave_message": "#/components/schemas/LeaveMessageParams",
                 "list_agent_rules": "#/components/schemas/ListAgentRulesParams",
                 "list_assets": "#/components/schemas/ListAssetsParams",
                 "list_calendar_events": "#/components/schemas/ListCalendarEventsParams",
@@ -64442,6 +64505,7 @@
           }
         },
         "example": {
+          "interruption_ignore_terms": [],
           "mode": "turn",
           "retranscribe_on_turn_timeout": false,
           "silence_end_call_timeout": -1.0,
@@ -64587,6 +64651,7 @@
           }
         },
         "example": {
+          "interruption_ignore_terms": [],
           "mode": "turn",
           "retranscribe_on_turn_timeout": false,
           "silence_end_call_timeout": -1.0,
@@ -73395,7 +73460,8 @@
           "content_templates",
           "songs",
           "avatars",
-          "avatar_video_generations"
+          "avatar_video_generations",
+          "resource_collection"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -80227,7 +80293,7 @@
         "type": "object",
         "properties": {
           "value": {
-            "maximum": 120.0,
+            "maximum": 300.0,
             "minimum": 5.0,
             "type": "integer"
           }
@@ -80996,6 +81062,24 @@
           }
         }
       },
+      "Anonymous_Access_Level_Override": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "enum": [
+              "admin",
+              "editor",
+              "commenter",
+              "viewer"
+            ],
+            "type": "string",
+            "additionalProperties": false
+          }
+        }
+      },
       "Resource_Name": {
         "required": [
           "value"
@@ -81015,24 +81099,6 @@
         "properties": {
           "value": {
             "type": "string"
-          }
-        }
-      },
-      "Anonymous_Access_Level_Override": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "enum": [
-              "admin",
-              "editor",
-              "commenter",
-              "viewer"
-            ],
-            "type": "string",
-            "additionalProperties": false
           }
         }
       },

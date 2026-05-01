@@ -164,6 +164,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.TimezoneObject Timezone { get; set; }
 #endif
+        /// <summary>The voice_rewards property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationVoiceRewardModel>? VoiceRewards { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationVoiceRewardModel> VoiceRewards { get; set; }
+#endif
         /// <summary>The warnings property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -233,6 +241,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "termination_reason", n => { TerminationReason = n.GetStringValue(); } },
                 { "text_only", n => { TextOnly = n.GetBoolValue(); } },
                 { "timezone", n => { Timezone = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TimezoneObject>(global::Soenneker.ElevenLabs.OpenApiClient.Models.TimezoneObject.CreateFromDiscriminatorValue); } },
+                { "voice_rewards", n => { VoiceRewards = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationVoiceRewardModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationVoiceRewardModel.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "warnings", n => { Warnings = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "whatsapp", n => { Whatsapp = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppConversationInfo>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppConversationInfo.CreateFromDiscriminatorValue); } },
             };
@@ -268,6 +277,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteStringValue("termination_reason", TerminationReason);
             writer.WriteBoolValue("text_only", TextOnly);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TimezoneObject>("timezone", Timezone);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationVoiceRewardModel>("voice_rewards", VoiceRewards);
             writer.WriteCollectionOfPrimitiveValues<string>("warnings", Warnings);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppConversationInfo>("whatsapp", Whatsapp);
             writer.WriteAdditionalData(AdditionalData);

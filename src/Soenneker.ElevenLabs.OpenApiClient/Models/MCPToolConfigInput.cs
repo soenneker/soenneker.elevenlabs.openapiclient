@@ -108,7 +108,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #endif
         /// <summary>The pre_tool_speech property</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.PreToolSpeechMode? PreToolSpeech { get; set; }
-        /// <summary>The maximum time in seconds to wait for the MCP tool call to complete. Must be between 5 and 120 seconds (inclusive).</summary>
+        /// <summary>The maximum time in seconds to wait for the MCP tool call to complete. Must be between 5 and 300 seconds (inclusive).</summary>
         public int? ResponseTimeoutSecs { get; set; }
         /// <summary>Predefined tool call sound type to play during tool execution. If not specified, no tool call sound will be played.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

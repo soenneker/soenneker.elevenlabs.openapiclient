@@ -139,11 +139,19 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteAdditionalData(AdditionalData);
         }
         /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.CancelGroupSessionForAllParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.CancelGroupSessionRegistrationParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.CheckServiceAvailabilityParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateAgentRuleParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateAssetParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateClientAppointmentParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateClientInteractionParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateClientParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateHolidayParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateLocationParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateProductParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateServiceParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateStaffParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.DeleteAgentRuleParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.DeleteAssetParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.DeleteCalendarEventParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.DeleteClientInteractionParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.DeleteClientParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.DeleteHolidayParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.DeleteLocationParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.DeleteProductParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.DeleteServiceParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.DeleteStaffParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.GetAnalyticsSummaryParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.GetAppointmentByConfirmationNumberParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.GetBookingPageSettingsParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.GetBookingSlugStatusParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.GetClientAppointmentsParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.GetClientByPhoneParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.GetScheduleParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ListAgentRulesParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ListAssetsParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ListCalendarEventsParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ListClientInteractionsParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ListClientsParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ListGroupSessionsParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ListHolidaysParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ListLocationsParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ListProductsParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ListServicesParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ListStaffParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.RegisterForGroupSessionParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ScheduleGroupSessionParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.SearchClientsParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.SetBookingSlugParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateAgentRuleParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateAssetParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateBookingPageSettingsParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateBusinessInfoParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateCalendarEventParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateClientParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateCustomerFacingConfigParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateGroupSessionSeatsParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateHolidayParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateLocationParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateProductParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateServiceParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateStaffParams"/>
+        /// Composed type wrapper for classes <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.CancelCalendarEventParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.CancelGroupSessionForAllParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.CancelGroupSessionRegistrationParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.CheckServiceAvailabilityParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateAgentRuleParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateAssetParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateClientAppointmentParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateClientInteractionParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateClientParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateHolidayParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateLocationParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateProductParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateServiceParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateStaffParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.DeleteAgentRuleParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.DeleteAssetParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.DeleteCalendarEventParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.DeleteClientInteractionParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.DeleteClientParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.DeleteGroupSessionParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.DeleteHolidayParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.DeleteLocationParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.DeleteProductParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.DeleteServiceParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.DeleteStaffParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.GetAnalyticsSummaryParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.GetAppointmentByConfirmationNumberParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.GetBookingPageSettingsParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.GetBookingSlugStatusParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.GetClientAppointmentsParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.GetClientByPhoneParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.GetScheduleParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.LeaveMessageParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ListAgentRulesParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ListAssetsParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ListCalendarEventsParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ListClientInteractionsParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ListClientsParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ListGroupSessionsParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ListHolidaysParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ListLocationsParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ListProductsParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ListServicesParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ListStaffParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.RegisterForGroupSessionParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ScheduleGroupSessionParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.SearchClientsParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.SetBookingSlugParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateAgentRuleParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateAssetParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateBookingPageSettingsParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateBusinessInfoParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateCalendarEventParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateClientParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateCustomerFacingConfigParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateGroupSessionSeatsParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateHolidayParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateLocationParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateProductParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateServiceParams"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateStaffParams"/>
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class SMBToolConfig_params : IComposedTypeWrapper, IParsable
         {
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.CancelCalendarEventParams"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::Soenneker.ElevenLabs.OpenApiClient.Models.CancelCalendarEventParams? CancelCalendarEventParams { get; set; }
+#nullable restore
+#else
+            public global::Soenneker.ElevenLabs.OpenApiClient.Models.CancelCalendarEventParams CancelCalendarEventParams { get; set; }
+#endif
             /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.CancelGroupSessionForAllParams"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -288,6 +296,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
             public global::Soenneker.ElevenLabs.OpenApiClient.Models.DeleteClientParams DeleteClientParams { get; set; }
 #endif
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.DeleteGroupSessionParams"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::Soenneker.ElevenLabs.OpenApiClient.Models.DeleteGroupSessionParams? DeleteGroupSessionParams { get; set; }
+#nullable restore
+#else
+            public global::Soenneker.ElevenLabs.OpenApiClient.Models.DeleteGroupSessionParams DeleteGroupSessionParams { get; set; }
+#endif
             /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.DeleteHolidayParams"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -383,6 +399,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #nullable restore
 #else
             public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetScheduleParams GetScheduleParams { get; set; }
+#endif
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.LeaveMessageParams"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::Soenneker.ElevenLabs.OpenApiClient.Models.LeaveMessageParams? LeaveMessageParams { get; set; }
+#nullable restore
+#else
+            public global::Soenneker.ElevenLabs.OpenApiClient.Models.LeaveMessageParams LeaveMessageParams { get; set; }
 #endif
             /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ListAgentRulesParams"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -618,7 +642,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
                 var mappingValue = parseNode.GetChildNode("smb_tool_type")?.GetStringValue();
                 var result = new global::Soenneker.ElevenLabs.OpenApiClient.Models.SMBToolConfig.SMBToolConfig_params();
-                if("cancel_group_session_for_all".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                if("cancel_calendar_event".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                {
+                    result.CancelCalendarEventParams = new global::Soenneker.ElevenLabs.OpenApiClient.Models.CancelCalendarEventParams();
+                }
+                else if("cancel_group_session_for_all".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
                     result.CancelGroupSessionForAllParams = new global::Soenneker.ElevenLabs.OpenApiClient.Models.CancelGroupSessionForAllParams();
                 }
@@ -690,6 +718,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 {
                     result.DeleteClientParams = new global::Soenneker.ElevenLabs.OpenApiClient.Models.DeleteClientParams();
                 }
+                else if("delete_group_session".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                {
+                    result.DeleteGroupSessionParams = new global::Soenneker.ElevenLabs.OpenApiClient.Models.DeleteGroupSessionParams();
+                }
                 else if("delete_holiday".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
                     result.DeleteHolidayParams = new global::Soenneker.ElevenLabs.OpenApiClient.Models.DeleteHolidayParams();
@@ -737,6 +769,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 else if("get_schedule".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
                     result.GetScheduleParams = new global::Soenneker.ElevenLabs.OpenApiClient.Models.GetScheduleParams();
+                }
+                else if("leave_message".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                {
+                    result.LeaveMessageParams = new global::Soenneker.ElevenLabs.OpenApiClient.Models.LeaveMessageParams();
                 }
                 else if("list_agent_rules".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
@@ -858,7 +894,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
             public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
             {
-                if(CancelGroupSessionForAllParams != null)
+                if(CancelCalendarEventParams != null)
+                {
+                    return CancelCalendarEventParams.GetFieldDeserializers();
+                }
+                else if(CancelGroupSessionForAllParams != null)
                 {
                     return CancelGroupSessionForAllParams.GetFieldDeserializers();
                 }
@@ -930,6 +970,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 {
                     return DeleteClientParams.GetFieldDeserializers();
                 }
+                else if(DeleteGroupSessionParams != null)
+                {
+                    return DeleteGroupSessionParams.GetFieldDeserializers();
+                }
                 else if(DeleteHolidayParams != null)
                 {
                     return DeleteHolidayParams.GetFieldDeserializers();
@@ -977,6 +1021,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 else if(GetScheduleParams != null)
                 {
                     return GetScheduleParams.GetFieldDeserializers();
+                }
+                else if(LeaveMessageParams != null)
+                {
+                    return LeaveMessageParams.GetFieldDeserializers();
                 }
                 else if(ListAgentRulesParams != null)
                 {
@@ -1099,7 +1147,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             public virtual void Serialize(ISerializationWriter writer)
             {
                 if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                if(CancelGroupSessionForAllParams != null)
+                if(CancelCalendarEventParams != null)
+                {
+                    writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CancelCalendarEventParams>(null, CancelCalendarEventParams);
+                }
+                else if(CancelGroupSessionForAllParams != null)
                 {
                     writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CancelGroupSessionForAllParams>(null, CancelGroupSessionForAllParams);
                 }
@@ -1171,6 +1223,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 {
                     writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DeleteClientParams>(null, DeleteClientParams);
                 }
+                else if(DeleteGroupSessionParams != null)
+                {
+                    writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DeleteGroupSessionParams>(null, DeleteGroupSessionParams);
+                }
                 else if(DeleteHolidayParams != null)
                 {
                     writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DeleteHolidayParams>(null, DeleteHolidayParams);
@@ -1218,6 +1274,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 else if(GetScheduleParams != null)
                 {
                     writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetScheduleParams>(null, GetScheduleParams);
+                }
+                else if(LeaveMessageParams != null)
+                {
+                    writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.LeaveMessageParams>(null, LeaveMessageParams);
                 }
                 else if(ListAgentRulesParams != null)
                 {

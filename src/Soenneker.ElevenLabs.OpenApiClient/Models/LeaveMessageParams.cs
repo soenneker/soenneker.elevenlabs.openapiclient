@@ -7,33 +7,32 @@ using System.IO;
 using System;
 namespace Soenneker.ElevenLabs.OpenApiClient.Models
 {
-    /// <summary>
-    /// Permanently remove a previously-cancelled calendar event.This delete tool is the irreversible follow-up to cancel_calendar_event.The backend rejects the call (422) if the event hasn&apos;t beencancelled yet, so the only safe path is cancel-then-delete.
-    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class DeleteCalendarEventParams : IAdditionalDataHolder, IParsable
+    #pragma warning disable CS1591
+    public partial class LeaveMessageParams : IAdditionalDataHolder, IParsable
+    #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The smb_tool_type property</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.DeleteCalendarEventParams_smb_tool_type? SmbToolType { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.LeaveMessageParams_smb_tool_type? SmbToolType { get; set; }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.DeleteCalendarEventParams"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.LeaveMessageParams"/> and sets the default values.
         /// </summary>
-        public DeleteCalendarEventParams()
+        public LeaveMessageParams()
         {
             AdditionalData = new Dictionary<string, object>();
-            SmbToolType = global::Soenneker.ElevenLabs.OpenApiClient.Models.DeleteCalendarEventParams_smb_tool_type.Delete_calendar_event;
+            SmbToolType = global::Soenneker.ElevenLabs.OpenApiClient.Models.LeaveMessageParams_smb_tool_type.Leave_message;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.DeleteCalendarEventParams"/></returns>
+        /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.LeaveMessageParams"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.ElevenLabs.OpenApiClient.Models.DeleteCalendarEventParams CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.ElevenLabs.OpenApiClient.Models.LeaveMessageParams CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.DeleteCalendarEventParams();
+            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.LeaveMessageParams();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -43,7 +42,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "smb_tool_type", n => { SmbToolType = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DeleteCalendarEventParams_smb_tool_type>(); } },
+                { "smb_tool_type", n => { SmbToolType = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.LeaveMessageParams_smb_tool_type>(); } },
             };
         }
         /// <summary>
@@ -53,7 +52,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DeleteCalendarEventParams_smb_tool_type>("smb_tool_type", SmbToolType);
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.LeaveMessageParams_smb_tool_type>("smb_tool_type", SmbToolType);
             writer.WriteAdditionalData(AdditionalData);
         }
     }
