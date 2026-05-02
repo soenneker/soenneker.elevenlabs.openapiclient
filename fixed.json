@@ -34151,6 +34151,26 @@
           }
         }
       },
+      "ContextualUpdateInfo": {
+        "title": "ContextualUpdateInfo",
+        "required": [
+          "context_id"
+        ],
+        "type": "object",
+        "properties": {
+          "context_id": {
+            "title": "Context Id",
+            "type": "string",
+            "description": "Client-supplied identifier grouping related contextual updates."
+          },
+          "is_superseded": {
+            "title": "Is Superseded",
+            "type": "boolean",
+            "description": "True when this contextual update has been replaced by a newer update with the same context_id.",
+            "default": false
+          }
+        }
+      },
       "Contributor": {
         "title": "Contributor",
         "required": [
@@ -36316,6 +36336,15 @@
             "anyOf": [
               {
                 "$ref": "#/components/schemas/ConversationHistoryTranscriptFileInputResponseModel"
+              }
+            ],
+            "nullable": true
+          },
+          "contextual_update_info": {
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/ContextualUpdateInfo"
               }
             ],
             "nullable": true
@@ -54671,8 +54700,6 @@
         "required": [
           "image_id",
           "filename",
-          "signed_url",
-          "thumbnail_signed_url",
           "file_size_bytes",
           "width",
           "height",
@@ -54695,11 +54722,23 @@
           },
           "signed_url": {
             "title": "Signed Url",
-            "type": "string"
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Signed_Url"
+              }
+            ],
+            "nullable": true
           },
           "thumbnail_signed_url": {
             "title": "Thumbnail Signed Url",
-            "type": "string"
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Thumbnail_Signed_Url"
+              }
+            ],
+            "nullable": true
           },
           "type": {
             "title": "Type",
@@ -54783,6 +54822,25 @@
             "anyOf": [
               {
                 "$ref": "#/components/schemas/Source_Asset_Id"
+              }
+            ],
+            "nullable": true
+          },
+          "error": {
+            "title": "Error",
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Error"
+              }
+            ],
+            "nullable": true
+          },
+          "pending_task": {
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/PendingClipTask"
               }
             ],
             "nullable": true
@@ -80702,6 +80760,17 @@
         "properties": {
           "value": {
             "type": "number"
+          }
+        }
+      },
+      "Thumbnail_Signed_Url": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string"
           }
         }
       },

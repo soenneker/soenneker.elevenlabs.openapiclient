@@ -42,6 +42,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #endif
         /// <summary>The duration_ms property</summary>
         public int? DurationMs { get; set; }
+        /// <summary>The error property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Error? Error { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Error Error { get; set; }
+#endif
         /// <summary>The filename property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -74,13 +82,21 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public string Order { get; set; }
 #endif
+        /// <summary>The pending_task property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PendingClipTask? PendingTask { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PendingClipTask PendingTask { get; set; }
+#endif
         /// <summary>The signed_url property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SignedUrl { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Signed_Url? SignedUrl { get; set; }
 #nullable restore
 #else
-        public string SignedUrl { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Signed_Url SignedUrl { get; set; }
 #endif
         /// <summary>The source property</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectImageResponseModel_source? Source { get; set; }
@@ -95,10 +111,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The thumbnail_signed_url property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ThumbnailSignedUrl { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Thumbnail_Signed_Url? ThumbnailSignedUrl { get; set; }
 #nullable restore
 #else
-        public string ThumbnailSignedUrl { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Thumbnail_Signed_Url ThumbnailSignedUrl { get; set; }
 #endif
         /// <summary>The track_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -147,6 +163,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "created_at_ms", n => { CreatedAtMs = n.GetIntValue(); } },
                 { "current_snapshot_id", n => { CurrentSnapshotId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Current_Snapshot_Id>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Current_Snapshot_Id.CreateFromDiscriminatorValue); } },
                 { "duration_ms", n => { DurationMs = n.GetIntValue(); } },
+                { "error", n => { Error = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Error>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Error.CreateFromDiscriminatorValue); } },
                 { "file_size_bytes", n => { FileSizeBytes = n.GetIntValue(); } },
                 { "filename", n => { Filename = n.GetStringValue(); } },
                 { "height", n => { Height = n.GetIntValue(); } },
@@ -154,10 +171,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "offset_ms", n => { OffsetMs = n.GetIntValue(); } },
                 { "opacity", n => { Opacity = n.GetDoubleValue(); } },
                 { "order", n => { Order = n.GetStringValue(); } },
-                { "signed_url", n => { SignedUrl = n.GetStringValue(); } },
+                { "pending_task", n => { PendingTask = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PendingClipTask>(global::Soenneker.ElevenLabs.OpenApiClient.Models.PendingClipTask.CreateFromDiscriminatorValue); } },
+                { "signed_url", n => { SignedUrl = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Signed_Url>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Signed_Url.CreateFromDiscriminatorValue); } },
                 { "source", n => { Source = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectImageResponseModel_source>(); } },
                 { "source_asset_id", n => { SourceAssetId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Source_Asset_Id>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Source_Asset_Id.CreateFromDiscriminatorValue); } },
-                { "thumbnail_signed_url", n => { ThumbnailSignedUrl = n.GetStringValue(); } },
+                { "thumbnail_signed_url", n => { ThumbnailSignedUrl = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Thumbnail_Signed_Url>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Thumbnail_Signed_Url.CreateFromDiscriminatorValue); } },
                 { "track_id", n => { TrackId = n.GetStringValue(); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectImageResponseModel_type>(); } },
                 { "updated_at_ms", n => { UpdatedAtMs = n.GetIntValue(); } },
@@ -176,6 +194,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteIntValue("created_at_ms", CreatedAtMs);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Current_Snapshot_Id>("current_snapshot_id", CurrentSnapshotId);
             writer.WriteIntValue("duration_ms", DurationMs);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Error>("error", Error);
             writer.WriteStringValue("filename", Filename);
             writer.WriteIntValue("file_size_bytes", FileSizeBytes);
             writer.WriteIntValue("height", Height);
@@ -183,10 +202,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteIntValue("offset_ms", OffsetMs);
             writer.WriteDoubleValue("opacity", Opacity);
             writer.WriteStringValue("order", Order);
-            writer.WriteStringValue("signed_url", SignedUrl);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PendingClipTask>("pending_task", PendingTask);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Signed_Url>("signed_url", SignedUrl);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectImageResponseModel_source>("source", Source);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Source_Asset_Id>("source_asset_id", SourceAssetId);
-            writer.WriteStringValue("thumbnail_signed_url", ThumbnailSignedUrl);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Thumbnail_Signed_Url>("thumbnail_signed_url", ThumbnailSignedUrl);
             writer.WriteStringValue("track_id", TrackId);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectImageResponseModel_type>("type", Type);
             writer.WriteIntValue("updated_at_ms", UpdatedAtMs);
