@@ -4,7 +4,6 @@ using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.ElevenLabs.OpenApiClient.Models;
-using Soenneker.ElevenLabs.OpenApiClient.V1.TextToVoice.CreatePreviews;
 using Soenneker.ElevenLabs.OpenApiClient.V1.TextToVoice.Design;
 using Soenneker.ElevenLabs.OpenApiClient.V1.TextToVoice.Item;
 using System.Collections.Generic;
@@ -20,11 +19,6 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.TextToVoice
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class TextToVoiceRequestBuilder : BaseRequestBuilder
     {
-        /// <summary>The createPreviews property</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.V1.TextToVoice.CreatePreviews.CreatePreviewsRequestBuilder CreatePreviews
-        {
-            get => new global::Soenneker.ElevenLabs.OpenApiClient.V1.TextToVoice.CreatePreviews.CreatePreviewsRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>The design property</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.V1.TextToVoice.Design.DesignRequestBuilder Design
         {

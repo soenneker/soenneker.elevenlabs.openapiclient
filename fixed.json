@@ -2070,73 +2070,6 @@
         }
       }
     },
-    "/v1/text-to-voice/create-previews": {
-      "post": {
-        "tags": [
-          "text-to-voice"
-        ],
-        "summary": "Generate A Voice Preview From Description",
-        "description": "Generate a custom voice based on voice description. This method returns a list of voice previews. Each preview has a generated_voice_id and a sample of the voice as base64 encoded mp3 audio. If you like the a voice previewand want to create the voice call /v1/text-to-voice/create-voice-from-preview with the generated_voice_id to create the voice.",
-        "operationId": "text-to-voice",
-        "parameters": [
-          {
-            "name": "output_format",
-            "in": "query",
-            "description": "Output format of the generated audio. Formatted as codec_sample_rate_bitrate. So an mp3 with 22.05kHz sample rate at 32kbs is represented as mp3_22050_32. MP3 with 192kbps bitrate requires you to be subscribed to Creator tier or above. PCM with 44.1kHz sample rate requires you to be subscribed to Pro tier or above. Note that the \u03BC-law format (sometimes written mu-law, often approximated as u-law) is commonly used for Twilio audio inputs.",
-            "schema": {
-              "$ref": "#/components/schemas/AllowedOutputFormats"
-            }
-          },
-          {
-            "name": "xi-api-key",
-            "in": "header",
-            "description": "Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the \u0027Profile\u0027 tab on the website.",
-            "schema": {
-              "title": "Xi-Api-Key",
-              "type": "object",
-              "anyOf": [
-                {
-                  "type": "string"
-                }
-              ],
-              "description": "Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the \u0027Profile\u0027 tab on the website.",
-              "nullable": true
-            }
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/VoicePreviewsRequestModel"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Successful Response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/VoicePreviewsResponseModel"
-                }
-              }
-            }
-          },
-          "422": {
-            "description": "Validation Error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/HTTPValidationError"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
     "/v1/text-to-voice": {
       "post": {
         "tags": [
@@ -27910,7 +27843,7 @@
           "generated_voice_id": {
             "title": "Generated Voice Id",
             "type": "string",
-            "description": "The generated_voice_id to create, call POST /v1/text-to-voice/create-previews and fetch the generated_voice_id from the response header if don\u0027t have one yet."
+            "description": "The generated_voice_id to create; obtain it from POST /v1/text-to-voice/design, POST /v1/text-to-voice/:voice_id/remix, or the response headers when generating previews."
           },
           "labels": {
             "$ref": "#/components/schemas/BodyCreateANewVoiceFromVoicePreviewV1TextToVoicePostLabels"
@@ -47365,6 +47298,105 @@
         },
         "description": "An icon for display in user interfaces."
       },
+      "ImageAnalysis": {
+        "title": "ImageAnalysis",
+        "required": [
+          "status",
+          "data"
+        ],
+        "type": "object",
+        "properties": {
+          "status": {
+            "title": "Status",
+            "enum": [
+              "processing",
+              "completed",
+              "failed"
+            ],
+            "type": "string",
+            "additionalProperties": false
+          },
+          "data": {
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/ImageAnalysisResult"
+              }
+            ],
+            "nullable": true
+          },
+          "updated_at_ms": {
+            "title": "Updated At Ms",
+            "type": "integer"
+          }
+        }
+      },
+      "ImageAnalysisResult": {
+        "title": "ImageAnalysisResult",
+        "required": [
+          "title",
+          "description"
+        ],
+        "type": "object",
+        "properties": {
+          "title": {
+            "title": "Title",
+            "type": "string"
+          },
+          "description": {
+            "title": "Description",
+            "type": "string"
+          },
+          "content_type": {
+            "title": "Content Type",
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Content_Type"
+              }
+            ],
+            "nullable": true
+          },
+          "mood_and_style": {
+            "title": "Mood And Style",
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Mood_And_Style"
+              }
+            ],
+            "nullable": true
+          },
+          "composition_notes": {
+            "title": "Composition Notes",
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Composition_Notes"
+              }
+            ],
+            "nullable": true
+          },
+          "visible_text": {
+            "title": "Visible Text",
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Visible_Text"
+              }
+            ],
+            "description": "Readable text overlaid or shown in the image, if any.",
+            "nullable": true
+          },
+          "subjects": {
+            "title": "Subjects",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ImageSubject"
+            }
+          }
+        }
+      },
       "ImageAvatar": {
         "title": "ImageAvatar",
         "type": "object",
@@ -47382,6 +47414,24 @@
             "title": "Url",
             "type": "string",
             "description": "The URL of the avatar"
+          }
+        }
+      },
+      "ImageSubject": {
+        "title": "ImageSubject",
+        "required": [
+          "name",
+          "description"
+        ],
+        "type": "object",
+        "properties": {
+          "name": {
+            "title": "Name",
+            "type": "string"
+          },
+          "description": {
+            "title": "Description",
+            "type": "string"
           }
         }
       },
@@ -54841,6 +54891,15 @@
             "anyOf": [
               {
                 "$ref": "#/components/schemas/PendingClipTask"
+              }
+            ],
+            "nullable": true
+          },
+          "analysis": {
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/ImageAnalysis"
               }
             ],
             "nullable": true
@@ -79955,6 +80014,39 @@
             "items": {
               "type": "string"
             }
+          }
+        }
+      },
+      "Mood_And_Style": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string"
+          }
+        }
+      },
+      "Composition_Notes": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string"
+          }
+        }
+      },
+      "Visible_Text": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string"
           }
         }
       },
