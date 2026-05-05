@@ -75,6 +75,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPhoneNumberOutboundSIPTrunkConfigResponseModel ProviderConfig { get; set; }
 #endif
+        /// <summary>Whether to store SIP messages for this phone number.</summary>
+        public bool? StoreSipMessages { get; set; }
         /// <summary>This field is deprecated and will be removed in the future. Whether this phone number supports inbound calls</summary>
         [Obsolete("")]
         public bool? SupportsInbound { get; set; }
@@ -117,6 +119,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "phone_number_id", n => { PhoneNumberId = n.GetStringValue(); } },
                 { "provider", n => { Provider = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPhoneNumberSIPTrunkResponseModel_provider>(); } },
                 { "provider_config", n => { ProviderConfig = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPhoneNumberOutboundSIPTrunkConfigResponseModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPhoneNumberOutboundSIPTrunkConfigResponseModel.CreateFromDiscriminatorValue); } },
+                { "store_sip_messages", n => { StoreSipMessages = n.GetBoolValue(); } },
                 { "supports_inbound", n => { SupportsInbound = n.GetBoolValue(); } },
                 { "supports_outbound", n => { SupportsOutbound = n.GetBoolValue(); } },
             };
@@ -137,6 +140,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteStringValue("phone_number_id", PhoneNumberId);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPhoneNumberSIPTrunkResponseModel_provider>("provider", Provider);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPhoneNumberOutboundSIPTrunkConfigResponseModel>("provider_config", ProviderConfig);
+            writer.WriteBoolValue("store_sip_messages", StoreSipMessages);
             writer.WriteBoolValue("supports_inbound", SupportsInbound);
             writer.WriteBoolValue("supports_outbound", SupportsOutbound);
             writer.WriteAdditionalData(AdditionalData);

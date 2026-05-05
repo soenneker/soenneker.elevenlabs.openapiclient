@@ -8,6 +8,7 @@ using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Conversations.Item.Analysis;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Conversations.Item.Audio;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Conversations.Item.Feedback;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Conversations.Item.Files;
+using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Conversations.Item.SipMessages;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Conversations.Item.Tags;
 using System.Collections.Generic;
 using System.IO;
@@ -41,6 +42,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Conversations.Item
         public global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Conversations.Item.Files.FilesRequestBuilder Files
         {
             get => new global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Conversations.Item.Files.FilesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The sipMessages property</summary>
+        public global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Conversations.Item.SipMessages.SipMessagesRequestBuilder SipMessages
+        {
+            get => new global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Conversations.Item.SipMessages.SipMessagesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The tags property</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Conversations.Item.Tags.TagsRequestBuilder Tags

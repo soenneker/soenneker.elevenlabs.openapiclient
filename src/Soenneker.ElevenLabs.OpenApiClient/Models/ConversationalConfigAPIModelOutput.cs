@@ -33,10 +33,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The conversation property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationConfig? Conversation { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationConfigOutput? Conversation { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationConfig Conversation { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationConfigOutput Conversation { get; set; }
 #endif
         /// <summary>Language presets for conversations</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -97,7 +97,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             {
                 { "agent", n => { Agent = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentConfigAPIModelOutput>(global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentConfigAPIModelOutput.CreateFromDiscriminatorValue); } },
                 { "asr", n => { Asr = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ASRConversationalConfig>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ASRConversationalConfig.CreateFromDiscriminatorValue); } },
-                { "conversation", n => { Conversation = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationConfig>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationConfig.CreateFromDiscriminatorValue); } },
+                { "conversation", n => { Conversation = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationConfigOutput>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationConfigOutput.CreateFromDiscriminatorValue); } },
                 { "language_presets", n => { LanguagePresets = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationalConfigAPIModelOutput_language_presets>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationalConfigAPIModelOutput_language_presets.CreateFromDiscriminatorValue); } },
                 { "tts", n => { Tts = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TTSConversationalConfigOutput>(global::Soenneker.ElevenLabs.OpenApiClient.Models.TTSConversationalConfigOutput.CreateFromDiscriminatorValue); } },
                 { "turn", n => { Turn = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TurnConfig>(global::Soenneker.ElevenLabs.OpenApiClient.Models.TurnConfig.CreateFromDiscriminatorValue); } },
@@ -113,7 +113,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentConfigAPIModelOutput>("agent", Agent);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ASRConversationalConfig>("asr", Asr);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationConfig>("conversation", Conversation);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationConfigOutput>("conversation", Conversation);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationalConfigAPIModelOutput_language_presets>("language_presets", LanguagePresets);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TTSConversationalConfigOutput>("tts", Tts);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TurnConfig>("turn", Turn);

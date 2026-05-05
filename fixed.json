@@ -12016,6 +12016,97 @@
         }
       }
     },
+    "/v1/convai/conversations/{conversation_id}/sip-messages": {
+      "get": {
+        "tags": [
+          "Agents Platform"
+        ],
+        "summary": "Get Sip Messages For A Conversation",
+        "description": "Get SIP messages associated with a conversation\u0027s phone call",
+        "operationId": "get-conversation-sip-messages",
+        "parameters": [
+          {
+            "name": "conversation_id",
+            "in": "path",
+            "description": "The id of the conversation you\u0027re taking the action on.",
+            "required": true,
+            "schema": {
+              "title": "Conversation Id",
+              "type": "string",
+              "description": "The id of the conversation you\u0027re taking the action on.",
+              "unrecognizedKeywords": {
+                "embed": true
+              }
+            }
+          },
+          {
+            "name": "page_size",
+            "in": "query",
+            "schema": {
+              "title": "Page Size",
+              "maximum": 20,
+              "minimum": 1,
+              "type": "integer",
+              "default": 20
+            }
+          },
+          {
+            "name": "cursor",
+            "in": "query",
+            "description": "Used for fetching next page. Cursor is returned in the response.",
+            "schema": {
+              "title": "Cursor",
+              "type": "object",
+              "anyOf": [
+                {
+                  "type": "string"
+                }
+              ],
+              "description": "Used for fetching next page. Cursor is returned in the response.",
+              "nullable": true
+            }
+          },
+          {
+            "name": "xi-api-key",
+            "in": "header",
+            "description": "Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the \u0027Profile\u0027 tab on the website.",
+            "schema": {
+              "title": "Xi-Api-Key",
+              "type": "object",
+              "anyOf": [
+                {
+                  "type": "string"
+                }
+              ],
+              "description": "Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the \u0027Profile\u0027 tab on the website.",
+              "nullable": true
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetSIPLogMessagesResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/v1/convai/conversations/{conversation_id}/audio": {
       "get": {
         "tags": [
@@ -13356,6 +13447,97 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ResponseUpdatePhoneNumberV1ConvaiPhoneNumbersPhoneNumberIdPatch"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/convai/phone-numbers/{phone_number_id}/sip-messages": {
+      "get": {
+        "tags": [
+          "Agents Platform"
+        ],
+        "summary": "Get Sip Messages For A Phone Number",
+        "description": "Get SIP messages for a phone number",
+        "operationId": "list-sip-messages",
+        "parameters": [
+          {
+            "name": "phone_number_id",
+            "in": "path",
+            "description": "The id of an agent. This is returned on agent creation.",
+            "required": true,
+            "schema": {
+              "title": "Phone Number Id",
+              "type": "string",
+              "description": "The id of an agent. This is returned on agent creation.",
+              "unrecognizedKeywords": {
+                "embed": true
+              }
+            }
+          },
+          {
+            "name": "page_size",
+            "in": "query",
+            "schema": {
+              "title": "Page Size",
+              "maximum": 20,
+              "minimum": 1,
+              "type": "integer",
+              "default": 20
+            }
+          },
+          {
+            "name": "cursor",
+            "in": "query",
+            "description": "Used for fetching next page. Cursor is returned in the response.",
+            "schema": {
+              "title": "Cursor",
+              "type": "object",
+              "anyOf": [
+                {
+                  "type": "string"
+                }
+              ],
+              "description": "Used for fetching next page. Cursor is returned in the response.",
+              "nullable": true
+            }
+          },
+          {
+            "name": "xi-api-key",
+            "in": "header",
+            "description": "Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the \u0027Profile\u0027 tab on the website.",
+            "schema": {
+              "title": "Xi-Api-Key",
+              "type": "object",
+              "anyOf": [
+                {
+                  "type": "string"
+                }
+              ],
+              "description": "Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the \u0027Profile\u0027 tab on the website.",
+              "nullable": true
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetSIPLogMessagesResponse"
                 }
               }
             }
@@ -24543,6 +24725,124 @@
         },
         "description": "Response model for integration-managed OAuth2 Auth Code auth connections"
       },
+      "ApiIntegrationOAuth2CustomAppResponse": {
+        "title": "ApiIntegrationOAuth2CustomAppResponse",
+        "required": [
+          "name",
+          "provider",
+          "token_url",
+          "expires_at",
+          "integration_id",
+          "credential_id",
+          "client_id",
+          "id"
+        ],
+        "type": "object",
+        "properties": {
+          "name": {
+            "title": "Name",
+            "type": "string"
+          },
+          "auth_type": {
+            "title": "Auth Type",
+            "enum": [
+              "api_integration_oauth2_custom_app"
+            ],
+            "type": "string",
+            "default": "api_integration_oauth2_custom_app"
+          },
+          "provider": {
+            "title": "Provider",
+            "type": "string"
+          },
+          "token_url": {
+            "title": "Token Url",
+            "type": "string"
+          },
+          "scopes": {
+            "title": "Scopes",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "scope_separator": {
+            "title": "Scope Separator",
+            "enum": [
+              " ",
+              ","
+            ],
+            "type": "string",
+            "additionalProperties": false,
+            "description": "Separator for scopes",
+            "x-ms-enum": {
+              "name": "ScopeSeparator",
+              "modelAsString": false,
+              "values": [
+                {
+                  "value": " ",
+                  "name": "Space"
+                },
+                {
+                  "value": ",",
+                  "name": "Comma"
+                }
+              ]
+            }
+          },
+          "expires_at": {
+            "title": "Expires At",
+            "type": "string",
+            "description": "ISO 8601 timestamp of when the access token expires"
+          },
+          "integration_id": {
+            "title": "Integration Id",
+            "type": "string"
+          },
+          "credential_id": {
+            "title": "Credential Id",
+            "type": "string"
+          },
+          "status": {
+            "$ref": "#/components/schemas/OAuthConnectionStatus"
+          },
+          "status_detail": {
+            "title": "Status Detail",
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Status_Detail"
+              }
+            ],
+            "description": "Human-readable detail about the current status, e.g. the error message on refresh failure",
+            "nullable": true
+          },
+          "status_updated_at": {
+            "title": "Status Updated At",
+            "type": "string",
+            "description": "ISO 8601 timestamp of the last status change"
+          },
+          "client_id": {
+            "title": "Client Id",
+            "type": "string",
+            "description": "OAuth client ID (rendered from template if credential uses templated credentials, None for legacy connections)"
+          },
+          "id": {
+            "title": "Id",
+            "type": "string"
+          },
+          "used_by": {
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/AuthConnectionDependencies"
+              }
+            ],
+            "nullable": true
+          }
+        },
+        "description": "Response model for user-owned OAuth2 Custom App auth connections"
+      },
       "ApiIntegrationWebhookOverrides": {
         "title": "ApiIntegrationWebhookOverrides",
         "type": "object",
@@ -25975,6 +26275,116 @@
             "nullable": true
           }
         }
+      },
+      "BackgroundMusicConfig": {
+        "title": "BackgroundMusicConfig",
+        "type": "object",
+        "properties": {
+          "source_type": {
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/BackgroundMusicSourceType_Wrapper"
+              }
+            ],
+            "description": "The type of background music source.",
+            "nullable": true
+          },
+          "source_id": {
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/BackgroundMusicPresetId_Wrapper"
+              }
+            ],
+            "description": "Identifier for the music source.",
+            "nullable": true
+          },
+          "volume": {
+            "title": "Volume",
+            "maximum": 1.0,
+            "minimum": 0.01,
+            "type": "number",
+            "description": "Volume level for background music (0.01 to 1.0).",
+            "default": 0.6
+          },
+          "crossfade_loop": {
+            "title": "Crossfade Loop",
+            "type": "boolean",
+            "description": "Apply a crossfade at the loop boundary to avoid audible pops when the music loops.",
+            "default": false
+          }
+        }
+      },
+      "BackgroundMusicConfigWorkflowOverride": {
+        "title": "BackgroundMusicConfigWorkflowOverride",
+        "type": "object",
+        "properties": {
+          "source_type": {
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/BackgroundMusicSourceType_Wrapper"
+              }
+            ],
+            "description": "The type of background music source.",
+            "nullable": true
+          },
+          "source_id": {
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/BackgroundMusicPresetId_Wrapper"
+              }
+            ],
+            "description": "Identifier for the music source.",
+            "nullable": true
+          },
+          "volume": {
+            "title": "Volume",
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Volume"
+              }
+            ],
+            "description": "Volume level for background music (0.01 to 1.0).",
+            "nullable": true
+          },
+          "crossfade_loop": {
+            "title": "Crossfade Loop",
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Crossfade_Loop"
+              }
+            ],
+            "description": "Apply a crossfade at the loop boundary to avoid audible pops when the music loops.",
+            "nullable": true
+          }
+        }
+      },
+      "BackgroundMusicPresetId": {
+        "title": "BackgroundMusicPresetId",
+        "enum": [
+          "typing",
+          "elevator1",
+          "elevator2",
+          "elevator3",
+          "elevator4"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "Predefined background music preset identifiers."
+      },
+      "BackgroundMusicSourceType": {
+        "title": "BackgroundMusicSourceType",
+        "enum": [
+          "preset"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "The type of background music source."
       },
       "BackupLLMDefault": {
         "title": "BackupLLMDefault",
@@ -34542,7 +34952,64 @@
           }
         }
       },
-      "ConversationConfig": {
+      "ConversationConfigInput": {
+        "title": "ConversationConfig",
+        "type": "object",
+        "properties": {
+          "text_only": {
+            "title": "Text Only",
+            "type": "boolean",
+            "description": "If enabled audio will not be processed and only text will be used, use to avoid audio pricing.",
+            "default": false,
+            "x-convai-client-override": true
+          },
+          "max_duration_seconds": {
+            "title": "Max Duration Seconds",
+            "type": "integer",
+            "description": "The maximum duration of a conversation in seconds",
+            "default": 600
+          },
+          "client_events": {
+            "title": "Client Events",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ClientEvent"
+            },
+            "description": "The events that will be sent to the client"
+          },
+          "file_input": {
+            "$ref": "#/components/schemas/FileInputConfig"
+          },
+          "monitoring_enabled": {
+            "title": "Monitoring Enabled",
+            "type": "boolean",
+            "description": "Enable real-time monitoring of conversations via WebSocket",
+            "default": false
+          },
+          "monitoring_events": {
+            "title": "Monitoring Events",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ClientEvent"
+            },
+            "description": "The events that will be sent to monitoring connections."
+          },
+          "source_attribution": {
+            "title": "Source Attribution",
+            "type": "boolean",
+            "description": "When enabled and knowledge base content is present, the LLM is instructed to report which sources it used.",
+            "default": false
+          }
+        },
+        "example": {
+          "client_events": [
+            "audio",
+            "interruption"
+          ],
+          "max_duration_seconds": 600
+        }
+      },
+      "ConversationConfigOutput": {
         "title": "ConversationConfig",
         "type": "object",
         "properties": {
@@ -34803,7 +35270,98 @@
           }
         }
       },
-      "ConversationConfigWorkflowOverride": {
+      "ConversationConfigWorkflowOverrideInput": {
+        "title": "ConversationConfigWorkflowOverride",
+        "type": "object",
+        "properties": {
+          "text_only": {
+            "title": "Text Only",
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Text_Only"
+              }
+            ],
+            "description": "If enabled audio will not be processed and only text will be used, use to avoid audio pricing.",
+            "nullable": true,
+            "x-convai-client-override": true
+          },
+          "max_duration_seconds": {
+            "title": "Max Duration Seconds",
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Max_Duration_Seconds"
+              }
+            ],
+            "description": "The maximum duration of a conversation in seconds",
+            "nullable": true
+          },
+          "client_events": {
+            "title": "Client Events",
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Client_Events"
+              }
+            ],
+            "description": "The events that will be sent to the client",
+            "nullable": true
+          },
+          "file_input": {
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/FileInputConfigWorkflowOverride"
+              }
+            ],
+            "description": "Configuration for file input (image/PDF uploads) during conversations.",
+            "nullable": true,
+            "x-convai-client-override": true
+          },
+          "monitoring_enabled": {
+            "title": "Monitoring Enabled",
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Monitoring_Enabled"
+              }
+            ],
+            "description": "Enable real-time monitoring of conversations via WebSocket",
+            "nullable": true
+          },
+          "monitoring_events": {
+            "title": "Monitoring Events",
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Monitoring_Events"
+              }
+            ],
+            "description": "The events that will be sent to monitoring connections.",
+            "nullable": true
+          },
+          "source_attribution": {
+            "title": "Source Attribution",
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Source_Attribution"
+              }
+            ],
+            "description": "When enabled and knowledge base content is present, the LLM is instructed to report which sources it used.",
+            "nullable": true
+          }
+        },
+        "example": {
+          "client_events": [
+            "audio",
+            "interruption"
+          ],
+          "max_duration_seconds": 600
+        }
+      },
+      "ConversationConfigWorkflowOverrideOutput": {
         "title": "ConversationConfigWorkflowOverride",
         "type": "object",
         "properties": {
@@ -35495,6 +36053,16 @@
               "sip_trunking"
             ],
             "type": "string"
+          },
+          "call_id": {
+            "title": "Call Id",
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Call_Id"
+              }
+            ],
+            "nullable": true
           },
           "call_sid": {
             "title": "Call Sid",
@@ -36393,6 +36961,9 @@
                   },
                   {
                     "$ref": "#/components/schemas/TestToolResultModel"
+                  },
+                  {
+                    "$ref": "#/components/schemas/KnowledgeBaseRagToolResultModel"
                   }
                 ],
                 "properties": {
@@ -36404,6 +36975,7 @@
                   "propertyName": "result_type",
                   "mapping": {
                     "end_call_success": "#/components/schemas/EndCallToolResultModel",
+                    "knowledge_base_rag_success": "#/components/schemas/KnowledgeBaseRagToolResultModel",
                     "language_detection_success": "#/components/schemas/LanguageDetectionToolResultModel",
                     "play_dtmf_error": "#/components/schemas/PlayDTMFResultErrorModel",
                     "play_dtmf_success": "#/components/schemas/PlayDTMFResultSuccessModel",
@@ -36532,6 +37104,9 @@
                   },
                   {
                     "$ref": "#/components/schemas/TestToolResultModel"
+                  },
+                  {
+                    "$ref": "#/components/schemas/KnowledgeBaseRagToolResultModel"
                   }
                 ],
                 "properties": {
@@ -36543,6 +37118,7 @@
                   "propertyName": "result_type",
                   "mapping": {
                     "end_call_success": "#/components/schemas/EndCallToolResultModel",
+                    "knowledge_base_rag_success": "#/components/schemas/KnowledgeBaseRagToolResultModel",
                     "language_detection_success": "#/components/schemas/LanguageDetectionToolResultModel",
                     "play_dtmf_error": "#/components/schemas/PlayDTMFResultErrorModel",
                     "play_dtmf_success": "#/components/schemas/PlayDTMFResultSuccessModel",
@@ -37987,7 +38563,7 @@
             "$ref": "#/components/schemas/TTSConversationalConfigInput"
           },
           "conversation": {
-            "$ref": "#/components/schemas/ConversationConfig"
+            "$ref": "#/components/schemas/ConversationConfigInput"
           },
           "language_presets": {
             "title": "Language Presets",
@@ -38019,7 +38595,7 @@
             "$ref": "#/components/schemas/TTSConversationalConfigOutput"
           },
           "conversation": {
-            "$ref": "#/components/schemas/ConversationConfig"
+            "$ref": "#/components/schemas/ConversationConfigOutput"
           },
           "language_presets": {
             "title": "Language Presets",
@@ -38075,7 +38651,7 @@
             "type": "object",
             "anyOf": [
               {
-                "$ref": "#/components/schemas/ConversationConfigWorkflowOverride"
+                "$ref": "#/components/schemas/ConversationConfigWorkflowOverrideInput"
               }
             ],
             "description": "Configuration for conversational events",
@@ -38220,7 +38796,7 @@
             "type": "object",
             "anyOf": [
               {
-                "$ref": "#/components/schemas/ConversationConfigWorkflowOverride"
+                "$ref": "#/components/schemas/ConversationConfigWorkflowOverrideOutput"
               }
             ],
             "description": "Configuration for conversational events",
@@ -45714,6 +46290,12 @@
           },
           "livekit_stack": {
             "$ref": "#/components/schemas/LivekitStackType"
+          },
+          "store_sip_messages": {
+            "title": "Store Sip Messages",
+            "type": "boolean",
+            "description": "Whether to store SIP messages for this phone number.",
+            "default": false
           }
         },
         "example": {
@@ -46175,6 +46757,37 @@
           "name": {
             "title": "Name",
             "type": "string"
+          }
+        }
+      },
+      "GetSIPLogMessagesResponse": {
+        "title": "GetSIPLogMessagesResponse",
+        "required": [
+          "sip_messages"
+        ],
+        "type": "object",
+        "properties": {
+          "sip_messages": {
+            "title": "Sip Messages",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SIPLogMessage"
+            }
+          },
+          "next_cursor": {
+            "title": "Next Cursor",
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Next_Cursor"
+              }
+            ],
+            "nullable": true
+          },
+          "has_more": {
+            "title": "Has More",
+            "type": "boolean",
+            "default": false
           }
         }
       },
@@ -47838,6 +48451,60 @@
           "usage_mode": "auto"
         }
       },
+      "KnowledgeBaseRagToolConfig": {
+        "title": "KnowledgeBaseRagToolConfig",
+        "type": "object",
+        "properties": {
+          "system_tool_type": {
+            "title": "System Tool Type",
+            "enum": [
+              "knowledge_base_rag"
+            ],
+            "type": "string",
+            "default": "knowledge_base_rag"
+          }
+        }
+      },
+      "KnowledgeBaseRagToolResultModel": {
+        "title": "KnowledgeBaseRagToolResultModel",
+        "type": "object",
+        "properties": {
+          "result_type": {
+            "title": "Result Type",
+            "enum": [
+              "knowledge_base_rag_success"
+            ],
+            "type": "string",
+            "default": "knowledge_base_rag_success"
+          },
+          "status": {
+            "$ref": "#/components/schemas/KnowledgeBaseRagToolStatus"
+          },
+          "chunk_count": {
+            "title": "Chunk Count",
+            "type": "integer",
+            "description": "Number of relevant chunks retrieved",
+            "default": 0
+          },
+          "message": {
+            "title": "Message",
+            "type": "string",
+            "description": "Human-readable status for the LLM about the search results",
+            "default": "Referenced knowledge base."
+          }
+        }
+      },
+      "KnowledgeBaseRagToolStatus": {
+        "title": "KnowledgeBaseRagToolStatus",
+        "enum": [
+          "success",
+          "no_documents",
+          "no_results"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "default": "success"
+      },
       "KnowledgeBaseSortBy": {
         "title": "KnowledgeBaseSortBy",
         "enum": [
@@ -49220,6 +49887,9 @@
                   "$ref": "#/components/schemas/ApiIntegrationOAuth2AuthCodeResponse"
                 },
                 {
+                  "$ref": "#/components/schemas/ApiIntegrationOAuth2CustomAppResponse"
+                },
+                {
                   "$ref": "#/components/schemas/WhatsAppAuthResponse"
                 }
               ],
@@ -49233,6 +49903,7 @@
                 "propertyName": "auth_type",
                 "mapping": {
                   "api_integration_oauth2_auth_code": "#/components/schemas/ApiIntegrationOAuth2AuthCodeResponse",
+                  "api_integration_oauth2_custom_app": "#/components/schemas/ApiIntegrationOAuth2CustomAppResponse",
                   "basic_auth": "#/components/schemas/BasicAuthResponse",
                   "bearer_auth": "#/components/schemas/BearerAuthResponse",
                   "custom_header_auth": "#/components/schemas/CustomHeaderAuthResponse",
@@ -54617,6 +55288,16 @@
             ],
             "nullable": true
           },
+          "source_platform_asset_id": {
+            "title": "Source Platform Asset Id",
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Source_Platform_Asset_Id"
+              }
+            ],
+            "nullable": true
+          },
           "pending_blocks_metadata": {
             "type": "object",
             "anyOf": [
@@ -54872,6 +55553,16 @@
             "anyOf": [
               {
                 "$ref": "#/components/schemas/Source_Asset_Id"
+              }
+            ],
+            "nullable": true
+          },
+          "source_platform_asset_id": {
+            "title": "Source Platform Asset Id",
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Source_Platform_Asset_Id"
               }
             ],
             "nullable": true
@@ -55665,6 +56356,16 @@
             "anyOf": [
               {
                 "$ref": "#/components/schemas/Source_Asset_Id"
+              }
+            ],
+            "nullable": true
+          },
+          "source_platform_asset_id": {
+            "title": "Source Platform Asset Id",
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Source_Platform_Asset_Id"
               }
             ],
             "nullable": true
@@ -58638,6 +59339,70 @@
           }
         }
       },
+      "SIPLogMessage": {
+        "title": "SIPLogMessage",
+        "required": [
+          "call_id",
+          "phone_numbers",
+          "local_address",
+          "remote_address",
+          "transport",
+          "raw_message",
+          "error_message",
+          "direction",
+          "created_at_unix_micro"
+        ],
+        "type": "object",
+        "properties": {
+          "call_id": {
+            "title": "Call Id",
+            "type": "string"
+          },
+          "phone_numbers": {
+            "title": "Phone Numbers",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "local_address": {
+            "title": "Local Address",
+            "type": "string"
+          },
+          "remote_address": {
+            "title": "Remote Address",
+            "type": "string"
+          },
+          "transport": {
+            "title": "Transport",
+            "type": "string"
+          },
+          "raw_message": {
+            "title": "Raw Message",
+            "type": "string"
+          },
+          "error_message": {
+            "title": "Error Message",
+            "type": "string"
+          },
+          "direction": {
+            "$ref": "#/components/schemas/SIPLogMessageDirection"
+          },
+          "created_at_unix_micro": {
+            "title": "Created At Unix Micro",
+            "type": "integer"
+          }
+        }
+      },
+      "SIPLogMessageDirection": {
+        "title": "SIPLogMessageDirection",
+        "enum": [
+          "in",
+          "out"
+        ],
+        "type": "string",
+        "additionalProperties": false
+      },
       "SIPMediaEncryptionEnum": {
         "title": "SIPMediaEncryptionEnum",
         "enum": [
@@ -60827,6 +61592,38 @@
           }
         }
       },
+      "SpeechEngineConfig": {
+        "title": "SpeechEngineConfig",
+        "required": [
+          "ws_url"
+        ],
+        "type": "object",
+        "properties": {
+          "ws_url": {
+            "title": "Ws Url",
+            "type": "string",
+            "description": "The WebSocket URL for the transcript server"
+          },
+          "request_headers": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "object",
+              "anyOf": [
+                {
+                  "$ref": "#/components/schemas/UnionBranch"
+                },
+                {
+                  "$ref": "#/components/schemas/ConvAISecretLocator"
+                },
+                {
+                  "$ref": "#/components/schemas/ConvAIDynamicVariable"
+                }
+              ]
+            },
+            "description": "Headers to include in the WebSocket connection request"
+          }
+        }
+      },
       "SpeechHistoryItemResponseModel": {
         "title": "SpeechHistoryItemResponseModel",
         "required": [
@@ -62197,6 +62994,9 @@
               },
               {
                 "$ref": "#/components/schemas/VoicemailDetectionToolConfig"
+              },
+              {
+                "$ref": "#/components/schemas/KnowledgeBaseRagToolConfig"
               }
             ],
             "properties": {
@@ -62208,6 +63008,7 @@
               "propertyName": "system_tool_type",
               "mapping": {
                 "end_call": "#/components/schemas/EndCallToolConfig",
+                "knowledge_base_rag": "#/components/schemas/KnowledgeBaseRagToolConfig",
                 "language_detection": "#/components/schemas/LanguageDetectionToolConfig",
                 "play_keypad_touch_tone": "#/components/schemas/PlayDTMFToolConfig",
                 "skip_turn": "#/components/schemas/SkipTurnToolConfig",
@@ -62323,6 +63124,9 @@
               },
               {
                 "$ref": "#/components/schemas/VoicemailDetectionToolConfig"
+              },
+              {
+                "$ref": "#/components/schemas/KnowledgeBaseRagToolConfig"
               }
             ],
             "properties": {
@@ -62334,6 +63138,7 @@
               "propertyName": "system_tool_type",
               "mapping": {
                 "end_call": "#/components/schemas/EndCallToolConfig",
+                "knowledge_base_rag": "#/components/schemas/KnowledgeBaseRagToolConfig",
                 "language_detection": "#/components/schemas/LanguageDetectionToolConfig",
                 "play_keypad_touch_tone": "#/components/schemas/PlayDTMFToolConfig",
                 "skip_turn": "#/components/schemas/SkipTurnToolConfig",
@@ -65579,6 +66384,16 @@
             "anyOf": [
               {
                 "$ref": "#/components/schemas/LivekitStackType_Wrapper"
+              }
+            ],
+            "nullable": true
+          },
+          "store_sip_messages": {
+            "title": "Store Sip Messages",
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Store_Sip_Messages"
               }
             ],
             "nullable": true
@@ -70595,9 +71410,16 @@
             ],
             "description": "Whether to use WebRTC for conversation connections",
             "nullable": true
+          },
+          "file_input_config": {
+            "$ref": "#/components/schemas/FileInputConfig"
           }
         },
         "example": {
+          "file_input_config": {
+            "enabled": false,
+            "max_files_per_conversation": 10
+          },
           "first_message": "Hello! How can I help you today?",
           "language": "en",
           "language_presets": {},
@@ -73536,6 +74358,11 @@
               }
             ],
             "nullable": true
+          },
+          "is_scim_synced": {
+            "title": "Is Scim Synced",
+            "type": "boolean",
+            "default": false
           }
         }
       },
@@ -74878,6 +75705,25 @@
           "type": "string"
         }
       },
+      "SpeechEngineConfigRequestHeaders": {
+        "title": "Request Headers",
+        "type": "object",
+        "additionalProperties": {
+          "type": "object",
+          "anyOf": [
+            {
+              "$ref": "#/components/schemas/UnionBranch"
+            },
+            {
+              "$ref": "#/components/schemas/ConvAISecretLocator"
+            },
+            {
+              "$ref": "#/components/schemas/ConvAIDynamicVariable"
+            }
+          ]
+        },
+        "description": "Headers to include in the WebSocket connection request"
+      },
       "UpdateEnvironmentVariableRequestValues": {
         "title": "Values",
         "type": "object",
@@ -75130,6 +75976,9 @@
             "$ref": "#/components/schemas/ApiIntegrationOAuth2AuthCodeResponse"
           },
           {
+            "$ref": "#/components/schemas/ApiIntegrationOAuth2CustomAppResponse"
+          },
+          {
             "$ref": "#/components/schemas/WhatsAppAuthResponse"
           }
         ],
@@ -75152,6 +76001,7 @@
             "mtls": "#/components/schemas/MTLSAuthResponse",
             "custom_header_auth": "#/components/schemas/CustomHeaderAuthResponse",
             "api_integration_oauth2_auth_code": "#/components/schemas/ApiIntegrationOAuth2AuthCodeResponse",
+            "api_integration_oauth2_custom_app": "#/components/schemas/ApiIntegrationOAuth2CustomAppResponse",
             "whatsapp_auth": "#/components/schemas/WhatsAppAuthResponse",
             "OAuth2ClientCredsResponse": "#/components/schemas/OAuth2ClientCredsResponse",
             "BasicAuthResponse": "#/components/schemas/BasicAuthResponse",
@@ -75161,6 +76011,7 @@
             "MTLSAuthResponse": "#/components/schemas/MTLSAuthResponse",
             "CustomHeaderAuthResponse": "#/components/schemas/CustomHeaderAuthResponse",
             "ApiIntegrationOAuth2AuthCodeResponse": "#/components/schemas/ApiIntegrationOAuth2AuthCodeResponse",
+            "ApiIntegrationOAuth2CustomAppResponse": "#/components/schemas/ApiIntegrationOAuth2CustomAppResponse",
             "WhatsAppAuthResponse": "#/components/schemas/WhatsAppAuthResponse"
           }
         }
@@ -76666,6 +77517,50 @@
         "properties": {
           "value": {
             "type": "integer"
+          }
+        }
+      },
+      "BackgroundMusicSourceType_Wrapper": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "$ref": "#/components/schemas/BackgroundMusicSourceType"
+          }
+        }
+      },
+      "BackgroundMusicPresetId_Wrapper": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "$ref": "#/components/schemas/BackgroundMusicPresetId"
+          }
+        }
+      },
+      "Volume": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "number"
+          }
+        }
+      },
+      "Crossfade_Loop": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "boolean"
           }
         }
       },
@@ -78666,6 +79561,17 @@
           }
         }
       },
+      "Call_Id": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string"
+          }
+        }
+      },
       "Message": {
         "required": [
           "value"
@@ -79384,17 +80290,6 @@
         "properties": {
           "value": {
             "type": "string"
-          }
-        }
-      },
-      "Volume": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "type": "integer"
           }
         }
       },
@@ -80833,6 +81728,17 @@
           }
         }
       },
+      "Source_Platform_Asset_Id": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string"
+          }
+        }
+      },
       "Current_Snapshot_Id": {
         "required": [
           "value"
@@ -82123,6 +83029,17 @@
         "properties": {
           "value": {
             "$ref": "#/components/schemas/LivekitStackType"
+          }
+        }
+      },
+      "Store_Sip_Messages": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "boolean"
           }
         }
       },

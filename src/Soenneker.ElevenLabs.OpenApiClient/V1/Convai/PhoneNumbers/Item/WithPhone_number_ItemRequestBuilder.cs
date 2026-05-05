@@ -4,6 +4,7 @@ using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.ElevenLabs.OpenApiClient.Models;
+using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.PhoneNumbers.Item.SipMessages;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -17,6 +18,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.PhoneNumbers.Item
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WithPhone_number_ItemRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The sipMessages property</summary>
+        public global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.PhoneNumbers.Item.SipMessages.SipMessagesRequestBuilder SipMessages
+        {
+            get => new global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.PhoneNumbers.Item.SipMessages.SipMessagesRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.PhoneNumbers.Item.WithPhone_number_ItemRequestBuilder"/> and sets the default values.
         /// </summary>

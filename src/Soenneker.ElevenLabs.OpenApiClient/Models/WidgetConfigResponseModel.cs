@@ -116,6 +116,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #endif
         /// <summary>The feedback_mode property</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetFeedbackMode? FeedbackMode { get; set; }
+        /// <summary>The file_input_config property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.FileInputConfig? FileInputConfig { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.FileInputConfig FileInputConfig { get; set; }
+#endif
         /// <summary>The first_message property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -355,6 +363,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "expand_text", n => { ExpandText = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Expand_Text>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Expand_Text.CreateFromDiscriminatorValue); } },
                 { "expandable", n => { Expandable = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetExpandable>(); } },
                 { "feedback_mode", n => { FeedbackMode = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetFeedbackMode>(); } },
+                { "file_input_config", n => { FileInputConfig = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.FileInputConfig>(global::Soenneker.ElevenLabs.OpenApiClient.Models.FileInputConfig.CreateFromDiscriminatorValue); } },
                 { "first_message", n => { FirstMessage = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.First_Message>(global::Soenneker.ElevenLabs.OpenApiClient.Models.First_Message.CreateFromDiscriminatorValue); } },
                 { "focus_color", n => { FocusColor = n.GetStringValue(); } },
                 { "language", n => { Language = n.GetStringValue(); } },
@@ -415,6 +424,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetExpandable>("expandable", Expandable);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Expand_Text>("expand_text", ExpandText);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetFeedbackMode>("feedback_mode", FeedbackMode);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.FileInputConfig>("file_input_config", FileInputConfig);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.First_Message>("first_message", FirstMessage);
             writer.WriteStringValue("focus_color", FocusColor);
             writer.WriteStringValue("language", Language);

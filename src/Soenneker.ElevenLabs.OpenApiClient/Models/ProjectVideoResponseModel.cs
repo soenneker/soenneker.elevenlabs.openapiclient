@@ -182,6 +182,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.GenerationSourceContext SourceContext { get; set; }
 #endif
+        /// <summary>The source_platform_asset_id property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Source_Platform_Asset_Id? SourcePlatformAssetId { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Source_Platform_Asset_Id SourcePlatformAssetId { get; set; }
+#endif
         /// <summary>The source_video_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -301,6 +309,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "signed_url", n => { SignedUrl = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Signed_Url>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Signed_Url.CreateFromDiscriminatorValue); } },
                 { "source_asset_id", n => { SourceAssetId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Source_Asset_Id>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Source_Asset_Id.CreateFromDiscriminatorValue); } },
                 { "source_context", n => { SourceContext = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GenerationSourceContext>(global::Soenneker.ElevenLabs.OpenApiClient.Models.GenerationSourceContext.CreateFromDiscriminatorValue); } },
+                { "source_platform_asset_id", n => { SourcePlatformAssetId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Source_Platform_Asset_Id>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Source_Platform_Asset_Id.CreateFromDiscriminatorValue); } },
                 { "source_video_id", n => { SourceVideoId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Source_Video_Id>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Source_Video_Id.CreateFromDiscriminatorValue); } },
                 { "speech_imported", n => { SpeechImported = n.GetBoolValue(); } },
                 { "start_time_ms", n => { StartTimeMs = n.GetIntValue(); } },
@@ -351,6 +360,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Signed_Url>("signed_url", SignedUrl);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Source_Asset_Id>("source_asset_id", SourceAssetId);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GenerationSourceContext>("source_context", SourceContext);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Source_Platform_Asset_Id>("source_platform_asset_id", SourcePlatformAssetId);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Source_Video_Id>("source_video_id", SourceVideoId);
             writer.WriteBoolValue("speech_imported", SpeechImported);
             writer.WriteIntValue("start_time_ms", StartTimeMs);

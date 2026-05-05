@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.ElevenLabs.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ApiIntegrationOAuth2AuthCodeResponse"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.BasicAuthResponse"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.BearerAuthResponse"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomHeaderAuthResponse"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.MTLSAuthResponse"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.OAuth2ClientCredsResponse"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.OAuth2JWTResponse"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.PrivateKeyJWTResponse"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppAuthResponse"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ApiIntegrationOAuth2AuthCodeResponse"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ApiIntegrationOAuth2CustomAppResponse"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.BasicAuthResponse"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.BearerAuthResponse"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomHeaderAuthResponse"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.MTLSAuthResponse"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.OAuth2ClientCredsResponse"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.OAuth2JWTResponse"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.PrivateKeyJWTResponse"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppAuthResponse"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ResponseCreateWorkspaceAuthConnectionV1WorkspaceAuthConnectionsPost : IComposedTypeWrapper, IParsable
@@ -20,6 +20,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #nullable restore
 #else
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.ApiIntegrationOAuth2AuthCodeResponse ApiIntegrationOAuth2AuthCodeResponse { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ApiIntegrationOAuth2CustomAppResponse"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ApiIntegrationOAuth2CustomAppResponse? ApiIntegrationOAuth2CustomAppResponse { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ApiIntegrationOAuth2CustomAppResponse ApiIntegrationOAuth2CustomAppResponse { get; set; }
 #endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.BasicAuthResponse"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -99,6 +107,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             {
                 result.ApiIntegrationOAuth2AuthCodeResponse = new global::Soenneker.ElevenLabs.OpenApiClient.Models.ApiIntegrationOAuth2AuthCodeResponse();
             }
+            else if("ApiIntegrationOAuth2CustomAppResponse".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.ApiIntegrationOAuth2CustomAppResponse = new global::Soenneker.ElevenLabs.OpenApiClient.Models.ApiIntegrationOAuth2CustomAppResponse();
+            }
             else if("BasicAuthResponse".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.BasicAuthResponse = new global::Soenneker.ElevenLabs.OpenApiClient.Models.BasicAuthResponse();
@@ -142,6 +154,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             if(ApiIntegrationOAuth2AuthCodeResponse != null)
             {
                 return ApiIntegrationOAuth2AuthCodeResponse.GetFieldDeserializers();
+            }
+            else if(ApiIntegrationOAuth2CustomAppResponse != null)
+            {
+                return ApiIntegrationOAuth2CustomAppResponse.GetFieldDeserializers();
             }
             else if(BasicAuthResponse != null)
             {
@@ -187,6 +203,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             if(ApiIntegrationOAuth2AuthCodeResponse != null)
             {
                 writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ApiIntegrationOAuth2AuthCodeResponse>(null, ApiIntegrationOAuth2AuthCodeResponse);
+            }
+            else if(ApiIntegrationOAuth2CustomAppResponse != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ApiIntegrationOAuth2CustomAppResponse>(null, ApiIntegrationOAuth2CustomAppResponse);
             }
             else if(BasicAuthResponse != null)
             {

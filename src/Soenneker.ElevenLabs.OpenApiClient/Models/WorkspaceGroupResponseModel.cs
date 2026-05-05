@@ -46,6 +46,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
+        /// <summary>The is_scim_synced property</summary>
+        public bool? IsScimSynced { get; set; }
         /// <summary>The members property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -107,6 +109,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "group_pvc_limit", n => { GroupPvcLimit = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Group_Pvc_Limit>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Group_Pvc_Limit.CreateFromDiscriminatorValue); } },
                 { "group_usage_limit", n => { GroupUsageLimit = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Group_Usage_Limit>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Group_Usage_Limit.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetStringValue(); } },
+                { "is_scim_synced", n => { IsScimSynced = n.GetBoolValue(); } },
                 { "members", n => { Members = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "permissions", n => { Permissions = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Permissions>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Permissions.CreateFromDiscriminatorValue); } },
@@ -124,6 +127,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Group_Pvc_Limit>("group_pvc_limit", GroupPvcLimit);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Group_Usage_Limit>("group_usage_limit", GroupUsageLimit);
             writer.WriteStringValue("id", Id);
+            writer.WriteBoolValue("is_scim_synced", IsScimSynced);
             writer.WriteCollectionOfPrimitiveValues<string>("members", Members);
             writer.WriteStringValue("name", Name);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Permissions>("permissions", Permissions);
