@@ -65,7 +65,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Voices
         {
         }
         /// <summary>
-        /// Returns a list of all available voices for a user.
+        /// Returns a list of all available voices for a user. Stops working once the user&apos;s workspace exceeds 500 voices.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.GetVoicesResponseModel"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -88,7 +88,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Voices
             return await RequestAdapter.SendAsync<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetVoicesResponseModel>(requestInfo, global::Soenneker.ElevenLabs.OpenApiClient.Models.GetVoicesResponseModel.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Returns a list of all available voices for a user.
+        /// Returns a list of all available voices for a user. Stops working once the user&apos;s workspace exceeds 500 voices.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -116,7 +116,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Voices
             return new global::Soenneker.ElevenLabs.OpenApiClient.V1.Voices.VoicesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Returns a list of all available voices for a user.
+        /// Returns a list of all available voices for a user. Stops working once the user&apos;s workspace exceeds 500 voices.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class VoicesRequestBuilderGetQueryParameters 

@@ -2339,53 +2339,6 @@
         }
       }
     },
-    "/v1/user/subscription": {
-      "get": {
-        "summary": "Get User Subscription Info",
-        "description": "Gets extended information about the users subscription",
-        "operationId": "get-user-subscription-info",
-        "parameters": [
-          {
-            "name": "xi-api-key",
-            "in": "header",
-            "description": "Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the \u0027Profile\u0027 tab on the website.",
-            "schema": {
-              "title": "Xi-Api-Key",
-              "type": "object",
-              "anyOf": [
-                {
-                  "type": "string"
-                }
-              ],
-              "description": "Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the \u0027Profile\u0027 tab on the website.",
-              "nullable": true
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Successful Response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ExtendedSubscriptionResponseModel"
-                }
-              }
-            }
-          },
-          "422": {
-            "description": "Validation Error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/HTTPValidationError"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
     "/v1/user": {
       "get": {
         "summary": "Get User Info",
@@ -2433,13 +2386,60 @@
         }
       }
     },
+    "/v1/user/subscription": {
+      "get": {
+        "summary": "Get User Subscription Info",
+        "description": "Gets extended information about the users subscription",
+        "operationId": "get-user-subscription-info",
+        "parameters": [
+          {
+            "name": "xi-api-key",
+            "in": "header",
+            "description": "Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the \u0027Profile\u0027 tab on the website.",
+            "schema": {
+              "title": "Xi-Api-Key",
+              "type": "object",
+              "anyOf": [
+                {
+                  "type": "string"
+                }
+              ],
+              "description": "Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the \u0027Profile\u0027 tab on the website.",
+              "nullable": true
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExtendedSubscriptionResponseModel"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/v1/voices": {
       "get": {
         "tags": [
           "voices"
         ],
         "summary": "List Voices",
-        "description": "Returns a list of all available voices for a user.",
+        "description": "Returns a list of all available voices for a user. Stops working once the user\u0027s workspace exceeds 500 voices.",
         "operationId": "get-voices",
         "parameters": [
           {
@@ -9100,7 +9100,7 @@
               "title": "Enable Versioning",
               "type": "boolean",
               "description": "Enable versioning for the agent",
-              "default": false
+              "default": true
             }
           },
           {
@@ -9371,7 +9371,7 @@
               "title": "Enable Versioning If Not Enabled",
               "type": "boolean",
               "description": "Enable versioning for the agent, if not already enabled",
-              "default": false
+              "default": true
             }
           },
           {
@@ -34272,6 +34272,7 @@
           "usd",
           "eur",
           "inr",
+          "pln",
           "ratio",
           "rating"
         ],
@@ -40104,7 +40105,8 @@
         "enum": [
           "usd",
           "eur",
-          "inr"
+          "inr",
+          "pln"
         ],
         "type": "string",
         "additionalProperties": false

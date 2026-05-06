@@ -40,6 +40,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         #pragma warning disable CS1591
         Inr,
         #pragma warning restore CS1591
+        [EnumMember(Value = "pln")]
+        #pragma warning disable CS1591
+        Pln,
+        #pragma warning restore CS1591
         [EnumMember(Value = "ratio")]
         #pragma warning disable CS1591
         Ratio,
