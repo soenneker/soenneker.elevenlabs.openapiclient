@@ -32,6 +32,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public string Label { get; set; }
 #endif
+        /// <summary>The parent_topic_id property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Parent_Topic_Id? ParentTopicId { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Parent_Topic_Id ParentTopicId { get; set; }
+#endif
         /// <summary>The topic_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -39,6 +47,22 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #nullable restore
 #else
         public string TopicId { get; set; }
+#endif
+        /// <summary>The x_2d property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.X_2D? X2d { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.X_2D X2d { get; set; }
+#endif
+        /// <summary>The y_2d property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Y_2D? Y2d { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Y_2D Y2d { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentTopicResponseModel"/> and sets the default values.
@@ -68,7 +92,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "conversation_count", n => { ConversationCount = n.GetIntValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "label", n => { Label = n.GetStringValue(); } },
+                { "parent_topic_id", n => { ParentTopicId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Parent_Topic_Id>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Parent_Topic_Id.CreateFromDiscriminatorValue); } },
                 { "topic_id", n => { TopicId = n.GetStringValue(); } },
+                { "x_2d", n => { X2d = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.X_2D>(global::Soenneker.ElevenLabs.OpenApiClient.Models.X_2D.CreateFromDiscriminatorValue); } },
+                { "y_2d", n => { Y2d = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Y_2D>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Y_2D.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -81,7 +108,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteIntValue("conversation_count", ConversationCount);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("label", Label);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Parent_Topic_Id>("parent_topic_id", ParentTopicId);
             writer.WriteStringValue("topic_id", TopicId);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.X_2D>("x_2d", X2d);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Y_2D>("y_2d", Y2d);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

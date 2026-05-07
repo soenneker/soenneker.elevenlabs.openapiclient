@@ -144,6 +144,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryRagUsageCommonModel RagUsage { get; set; }
 #endif
+        /// <summary>The sms property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SMSConversationInfo? Sms { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SMSConversationInfo Sms { get; set; }
+#endif
         /// <summary>The start_time_unix_secs property</summary>
         public int? StartTimeUnixSecs { get; set; }
         /// <summary>The termination_reason property</summary>
@@ -237,6 +245,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "main_language", n => { MainLanguage = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Main_Language>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Main_Language.CreateFromDiscriminatorValue); } },
                 { "phone_call", n => { PhoneCall = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryMetadataCommonModel_phone_call>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryMetadataCommonModel_phone_call.CreateFromDiscriminatorValue); } },
                 { "rag_usage", n => { RagUsage = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryRagUsageCommonModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryRagUsageCommonModel.CreateFromDiscriminatorValue); } },
+                { "sms", n => { Sms = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SMSConversationInfo>(global::Soenneker.ElevenLabs.OpenApiClient.Models.SMSConversationInfo.CreateFromDiscriminatorValue); } },
                 { "start_time_unix_secs", n => { StartTimeUnixSecs = n.GetIntValue(); } },
                 { "termination_reason", n => { TerminationReason = n.GetStringValue(); } },
                 { "text_only", n => { TextOnly = n.GetBoolValue(); } },
@@ -273,6 +282,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Main_Language>("main_language", MainLanguage);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryMetadataCommonModel_phone_call>("phone_call", PhoneCall);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryRagUsageCommonModel>("rag_usage", RagUsage);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SMSConversationInfo>("sms", Sms);
             writer.WriteIntValue("start_time_unix_secs", StartTimeUnixSecs);
             writer.WriteStringValue("termination_reason", TerminationReason);
             writer.WriteBoolValue("text_only", TextOnly);

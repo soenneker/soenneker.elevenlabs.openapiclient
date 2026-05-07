@@ -23765,6 +23765,36 @@
           "conversation_count": {
             "title": "Conversation Count",
             "type": "integer"
+          },
+          "parent_topic_id": {
+            "title": "Parent Topic Id",
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Parent_Topic_Id"
+              }
+            ],
+            "nullable": true
+          },
+          "x_2d": {
+            "title": "X 2D",
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/X_2D"
+              }
+            ],
+            "nullable": true
+          },
+          "y_2d": {
+            "title": "Y 2D",
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Y_2D"
+              }
+            ],
+            "nullable": true
           }
         }
       },
@@ -26232,7 +26262,8 @@
           "livekit_token",
           "livekit_token_website",
           "genesys_api_key",
-          "whatsapp"
+          "whatsapp",
+          "sms"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -26367,6 +26398,10 @@
       "BackgroundMusicPresetId": {
         "title": "BackgroundMusicPresetId",
         "enum": [
+          "office2",
+          "office1",
+          "restaurant",
+          "city",
           "typing",
           "elevator1",
           "elevator2",
@@ -35915,6 +35950,15 @@
             ],
             "nullable": true
           },
+          "sms": {
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/SMSConversationInfo"
+              }
+            ],
+            "nullable": true
+          },
           "agent_created_from": {
             "$ref": "#/components/schemas/AgentDefinitionSource"
           },
@@ -38008,6 +38052,7 @@
           "genesys",
           "swift_sdk",
           "whatsapp",
+          "twilio_sms",
           "flutter_sdk",
           "zendesk_integration",
           "slack_integration",
@@ -48600,6 +48645,8 @@
           "gpt-5.2",
           "gpt-5.2-chat-latest",
           "gpt-5.4",
+          "gpt-5.4-mini",
+          "gpt-5.4-nano",
           "gpt-5.5",
           "gpt-5-mini",
           "gpt-5-nano",
@@ -48653,6 +48700,8 @@
           "gpt-5.1-2025-11-13",
           "gpt-5.2-2025-12-11",
           "gpt-5.4-2026-03-05",
+          "gpt-5.4-mini-2026-03-17",
+          "gpt-5.4-nano-2026-03-17",
           "gpt-5.5-2026-04-23",
           "gpt-5-mini-2025-08-07",
           "gpt-5-nano-2025-08-07",
@@ -54554,7 +54603,6 @@
       "ProcedureCompilerMode": {
         "title": "ProcedureCompilerMode",
         "enum": [
-          "deterministic",
           "append"
         ],
         "type": "string",
@@ -59883,6 +59931,49 @@
         },
         "description": "SMB tool configuration that wraps SMB tool parameters.",
         "x-fern-ignore": true
+      },
+      "SMSConversationInfo": {
+        "title": "SMSConversationInfo",
+        "required": [
+          "direction",
+          "sms_user_phone_number"
+        ],
+        "type": "object",
+        "properties": {
+          "direction": {
+            "title": "Direction",
+            "enum": [
+              "inbound",
+              "outbound"
+            ],
+            "type": "string",
+            "additionalProperties": false
+          },
+          "phone_number_id": {
+            "title": "Phone Number Id",
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Phone_Number_Id"
+              }
+            ],
+            "nullable": true
+          },
+          "sms_user_phone_number": {
+            "title": "Sms User Phone Number",
+            "type": "string"
+          },
+          "agent_phone_number": {
+            "title": "Agent Phone Number",
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Agent_Phone_Number"
+              }
+            ],
+            "nullable": true
+          }
+        }
       },
       "SafetyCommonModel": {
         "title": "SafetyCommonModel",
@@ -77164,6 +77255,39 @@
           }
         }
       },
+      "Parent_Topic_Id": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string"
+          }
+        }
+      },
+      "X_2D": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "number"
+          }
+        }
+      },
+      "Y_2D": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "number"
+          }
+        }
+      },
       "Transfer_Message": {
         "required": [
           "value"
@@ -82251,6 +82375,17 @@
         }
       },
       "Sip_Call_Id": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string"
+          }
+        }
+      },
+      "Agent_Phone_Number": {
         "required": [
           "value"
         ],

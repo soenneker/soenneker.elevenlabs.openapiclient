@@ -59,6 +59,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         #pragma warning disable CS1591
         Whatsapp,
         #pragma warning restore CS1591
+        [EnumMember(Value = "twilio_sms")]
+        #pragma warning disable CS1591
+        Twilio_sms,
+        #pragma warning restore CS1591
         [EnumMember(Value = "flutter_sdk")]
         #pragma warning disable CS1591
         Flutter_sdk,
