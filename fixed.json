@@ -20920,6 +20920,65 @@
         }
       }
     },
+    "/v1/workspace/analytics/requests": {
+      "post": {
+        "tags": [
+          "access:all"
+        ],
+        "summary": "List Api Requests",
+        "description": "Returns a list of API requests. Supports filtering by time range, column filters, and search terms. At least one of start_time or end_time must be provided. An optional sort parameter controls timestamp ordering. Results are ordered by timestamp. Descending if end_time is used, ascending if start_time is used. The response is a tabular structure with columns, column_types, column_units, and rows.",
+        "operationId": "requests-list",
+        "parameters": [
+          {
+            "name": "xi-api-key",
+            "in": "header",
+            "description": "Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the \u0027Profile\u0027 tab on the website.",
+            "schema": {
+              "title": "Xi-Api-Key",
+              "type": "object",
+              "anyOf": [
+                {
+                  "type": "string"
+                }
+              ],
+              "description": "Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the \u0027Profile\u0027 tab on the website.",
+              "nullable": true
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BodyListAPIRequestsV1WorkspaceAnalyticsRequestsPost"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/WorkspaceAnalyticsQueryResponseModel"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/docs": {
       "get": {
         "summary": "Redirect To Mintlify",
@@ -29493,6 +29552,72 @@
           }
         }
       },
+      "BodyListAPIRequestsV1WorkspaceAnalyticsRequestsPost": {
+        "title": "Body_List_API_requests_v1_workspace_analytics_requests_post",
+        "type": "object",
+        "properties": {
+          "start_time": {
+            "title": "Start Time",
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Start_Time"
+              }
+            ],
+            "description": "Start of the time range as a Unix timestamp in milliseconds.",
+            "nullable": true
+          },
+          "end_time": {
+            "title": "End Time",
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/End_Time"
+              }
+            ],
+            "description": "End of the time range as a Unix timestamp in milliseconds.",
+            "nullable": true
+          },
+          "limit": {
+            "title": "Limit",
+            "maximum": 1000.0,
+            "minimum": 1.0,
+            "type": "integer",
+            "default": 100
+          },
+          "sort": {
+            "title": "Sort",
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Sort"
+              }
+            ],
+            "description": "Optional timestamp sort direction. If omitted, defaults to desc when end_time is provided, otherwise asc.",
+            "nullable": true
+          },
+          "filters": {
+            "title": "Filters",
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Filters"
+              }
+            ],
+            "nullable": true
+          },
+          "search": {
+            "title": "Search",
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Search"
+              }
+            ],
+            "nullable": true
+          }
+        }
+      },
       "BodyMakeAnOutboundCallViaWhatsAppV1ConvaiWhatsappOutboundCallPost": {
         "title": "Body_Make_an_outbound_call_via_WhatsApp_v1_convai_whatsapp_outbound_call_post",
         "required": [
@@ -31557,6 +31682,17 @@
             ],
             "description": "The character limit of the XI API key. If provided this will limit the usage of this api key to n characters per month where n is the chosen value. Requests that incur charges will fail after reaching this monthly limit.",
             "nullable": true
+          },
+          "allowed_ips": {
+            "title": "Allowed Ips",
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Allowed_Ips"
+              }
+            ],
+            "description": "List of IP addresses or CIDR ranges allowed to use this API key. Each entry may be a CIDR range (e.g. \u002710.0.0.0/24\u0027) or a bare IP address (normalized to /32 or /128). On create, omit or pass null to allow all IPs. On update, omit to leave the whitelist unchanged, or pass \u0022clear\u0022 to remove it.",
+            "nullable": true
           }
         }
       },
@@ -31599,6 +31735,16 @@
             ],
             "description": "The character limit of the XI API key. If provided this will limit the usage of this api key to n characters per month where n is the chosen value. Requests that incur charges will fail after reaching this monthly limit.",
             "nullable": true
+          },
+          "allowed_ips": {
+            "title": "Allowed Ips",
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Allowed_Ips"
+              }
+            ],
+            "description": "List of IP addresses or CIDR ranges allowed to use this API key. Each entry may be a CIDR range (e.g. \u002710.0.0.0/24\u0027) or a bare IP address (normalized to /32 or /128). On create, omit or pass null to allow all IPs. On update, omit to leave the whitelist unchanged, or pass \u0022clear\u0022 to remove it."
           }
         }
       },
@@ -33910,6 +34056,7 @@
           "mcp_connection_status",
           "agent_tool_request",
           "agent_tool_response",
+          "agent_tool_response_full_payload",
           "agent_response_metadata",
           "vad_score",
           "agent_chat_response_part",
@@ -46342,7 +46489,7 @@
             "title": "Store Sip Messages",
             "type": "boolean",
             "description": "Whether to store SIP messages for this phone number.",
-            "default": false
+            "default": true
           }
         },
         "example": {
@@ -53688,6 +53835,28 @@
             "title": "Agent Name",
             "type": "string",
             "description": "The name of the agent"
+          },
+          "environment": {
+            "title": "Environment",
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Environment"
+              }
+            ],
+            "description": "Environment to use for resolving environment variables on calls to this number.",
+            "nullable": true
+          },
+          "branch_id": {
+            "title": "Branch Id",
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Branch_Id"
+              }
+            ],
+            "description": "Agent branch to use for calls to this number.",
+            "nullable": true
           }
         },
         "example": {
@@ -56743,7 +56912,7 @@
                 "$ref": "#/components/schemas/Timezone"
               }
             ],
-            "description": "Timezone for displaying current time in system prompt. If set, the current time will be included in the system prompt using this timezone. Must be a valid timezone name (e.g., \u0027America/New_York\u0027, \u0027Europe/London\u0027, \u0027UTC\u0027).",
+            "description": "Timezone for displaying current time in system prompt. If set, the current time will be included in the system prompt using this timezone. Must be a valid timezone name (e.g., \u0027America/New_York\u0027, \u0027Europe/London\u0027, \u0027UTC\u0027). Recommended for accurate time-aware responses; without this, the agent has no knowledge of the current date/time unless you provide it via dynamic variables or tools, which can lead to incorrect or hallucinated time references.",
             "nullable": true
           },
           "backup_llm_config": {
@@ -56965,7 +57134,7 @@
                 "$ref": "#/components/schemas/Timezone"
               }
             ],
-            "description": "Timezone for displaying current time in system prompt. If set, the current time will be included in the system prompt using this timezone. Must be a valid timezone name (e.g., \u0027America/New_York\u0027, \u0027Europe/London\u0027, \u0027UTC\u0027).",
+            "description": "Timezone for displaying current time in system prompt. If set, the current time will be included in the system prompt using this timezone. Must be a valid timezone name (e.g., \u0027America/New_York\u0027, \u0027Europe/London\u0027, \u0027UTC\u0027). Recommended for accurate time-aware responses; without this, the agent has no knowledge of the current date/time unless you provide it via dynamic variables or tools, which can lead to incorrect or hallucinated time references.",
             "nullable": true
           },
           "backup_llm_config": {
@@ -57412,7 +57581,7 @@
                 "$ref": "#/components/schemas/Timezone"
               }
             ],
-            "description": "Timezone for displaying current time in system prompt. If set, the current time will be included in the system prompt using this timezone. Must be a valid timezone name (e.g., \u0027America/New_York\u0027, \u0027Europe/London\u0027, \u0027UTC\u0027).",
+            "description": "Timezone for displaying current time in system prompt. If set, the current time will be included in the system prompt using this timezone. Must be a valid timezone name (e.g., \u0027America/New_York\u0027, \u0027Europe/London\u0027, \u0027UTC\u0027). Recommended for accurate time-aware responses; without this, the agent has no knowledge of the current date/time unless you provide it via dynamic variables or tools, which can lead to incorrect or hallucinated time references.",
             "nullable": true
           },
           "backup_llm_config": {
@@ -57631,7 +57800,7 @@
                 "$ref": "#/components/schemas/Timezone"
               }
             ],
-            "description": "Timezone for displaying current time in system prompt. If set, the current time will be included in the system prompt using this timezone. Must be a valid timezone name (e.g., \u0027America/New_York\u0027, \u0027Europe/London\u0027, \u0027UTC\u0027).",
+            "description": "Timezone for displaying current time in system prompt. If set, the current time will be included in the system prompt using this timezone. Must be a valid timezone name (e.g., \u0027America/New_York\u0027, \u0027Europe/London\u0027, \u0027UTC\u0027). Recommended for accurate time-aware responses; without this, the agent has no knowledge of the current date/time unless you provide it via dynamic variables or tools, which can lead to incorrect or hallucinated time references.",
             "nullable": true
           },
           "backup_llm_config": {
@@ -58901,6 +59070,20 @@
         "type": "string",
         "additionalProperties": false
       },
+      "ReportKnowledgeGapParams": {
+        "title": "ReportKnowledgeGapParams",
+        "type": "object",
+        "properties": {
+          "smb_tool_type": {
+            "title": "Smb Tool Type",
+            "enum": [
+              "report_knowledge_gap"
+            ],
+            "type": "string",
+            "default": "report_knowledge_gap"
+          }
+        }
+      },
       "RequestPVCManualVerificationResponseModel": {
         "title": "RequestPVCManualVerificationResponseModel",
         "required": [
@@ -59854,6 +60037,9 @@
               },
               {
                 "$ref": "#/components/schemas/LeaveMessageParams"
+              },
+              {
+                "$ref": "#/components/schemas/ReportKnowledgeGapParams"
               }
             ],
             "properties": {
@@ -59909,6 +60095,7 @@
                 "list_services": "#/components/schemas/ListServicesParams",
                 "list_staff": "#/components/schemas/ListStaffParams",
                 "register_for_group_session": "#/components/schemas/RegisterForGroupSessionParams",
+                "report_knowledge_gap": "#/components/schemas/ReportKnowledgeGapParams",
                 "schedule_group_session": "#/components/schemas/ScheduleGroupSessionParams",
                 "search_clients": "#/components/schemas/SearchClientsParams",
                 "set_booking_slug": "#/components/schemas/SetBookingSlugParams",
@@ -66489,6 +66676,28 @@
                 "$ref": "#/components/schemas/Store_Sip_Messages"
               }
             ],
+            "nullable": true
+          },
+          "environment": {
+            "title": "Environment",
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Environment"
+              }
+            ],
+            "description": "Environment to use for resolving environment variables on calls to this number.",
+            "nullable": true
+          },
+          "branch_id": {
+            "title": "Branch Id",
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Branch_Id"
+              }
+            ],
+            "description": "Agent branch to use for calls to this number.",
             "nullable": true
           }
         }
@@ -74052,6 +74261,16 @@
           "hashed_xi_api_key": {
             "title": "Hashed Xi Api Key",
             "type": "string"
+          },
+          "allowed_ips": {
+            "title": "Allowed Ips",
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Allowed_Ips"
+              }
+            ],
+            "nullable": true
           }
         }
       },
@@ -78570,6 +78789,33 @@
           }
         }
       },
+      "Sort": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "enum": [
+              "asc",
+              "desc"
+            ],
+            "type": "string",
+            "additionalProperties": false
+          }
+        }
+      },
+      "Search": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string"
+          }
+        }
+      },
       "Version_Description": {
         "required": [
           "value"
@@ -78926,6 +79172,22 @@
         "properties": {
           "value": {
             "type": "integer"
+          }
+        }
+      },
+      "Allowed_Ips": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "maxItems": 100,
+            "minItems": 1,
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           }
         }
       },

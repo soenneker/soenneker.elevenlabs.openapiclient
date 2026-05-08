@@ -64,6 +64,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         #pragma warning disable CS1591
         Agent_tool_response,
         #pragma warning restore CS1591
+        [EnumMember(Value = "agent_tool_response_full_payload")]
+        #pragma warning disable CS1591
+        Agent_tool_response_full_payload,
+        #pragma warning restore CS1591
         [EnumMember(Value = "agent_response_metadata")]
         #pragma warning disable CS1591
         Agent_response_metadata,
