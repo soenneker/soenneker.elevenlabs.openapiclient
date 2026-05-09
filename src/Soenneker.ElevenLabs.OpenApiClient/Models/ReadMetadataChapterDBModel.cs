@@ -44,6 +44,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public bool? HasParsedHtml { get; set; }
         /// <summary>The has_summary property</summary>
         public bool? HasSummary { get; set; }
+        /// <summary>The is_fallback_name property</summary>
+        public bool? IsFallbackName { get; set; }
         /// <summary>The starting_char_offset property</summary>
         public int? StartingCharOffset { get; set; }
         /// <summary>The word_count property</summary>
@@ -79,6 +81,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "file_number", n => { FileNumber = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.File_Number>(global::Soenneker.ElevenLabs.OpenApiClient.Models.File_Number.CreateFromDiscriminatorValue); } },
                 { "has_parsed_html", n => { HasParsedHtml = n.GetBoolValue(); } },
                 { "has_summary", n => { HasSummary = n.GetBoolValue(); } },
+                { "is_fallback_name", n => { IsFallbackName = n.GetBoolValue(); } },
                 { "starting_char_offset", n => { StartingCharOffset = n.GetIntValue(); } },
                 { "word_count", n => { WordCount = n.GetIntValue(); } },
             };
@@ -96,6 +99,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.File_Number>("file_number", FileNumber);
             writer.WriteBoolValue("has_parsed_html", HasParsedHtml);
             writer.WriteBoolValue("has_summary", HasSummary);
+            writer.WriteBoolValue("is_fallback_name", IsFallbackName);
             writer.WriteIntValue("starting_char_offset", StartingCharOffset);
             writer.WriteIntValue("word_count", WordCount);
             writer.WriteAdditionalData(AdditionalData);

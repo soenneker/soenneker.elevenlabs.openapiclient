@@ -25,6 +25,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
+        /// <summary>Optional custom request headers to include with each webhook delivery</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookHMACSettingsRequestHeaders? RequestHeaders { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookHMACSettingsRequestHeaders RequestHeaders { get; set; }
+#endif
         /// <summary>The HTTPS callback URL that will be called when this webhook is triggered</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -60,6 +68,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             {
                 { "auth_type", n => { AuthType = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookHMACSettings_auth_type>(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
+                { "request_headers", n => { RequestHeaders = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookHMACSettingsRequestHeaders>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookHMACSettingsRequestHeaders.CreateFromDiscriminatorValue); } },
                 { "webhook_url", n => { WebhookUrl = n.GetStringValue(); } },
             };
         }
@@ -72,6 +81,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookHMACSettings_auth_type>("auth_type", AuthType);
             writer.WriteStringValue("name", Name);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookHMACSettingsRequestHeaders>("request_headers", RequestHeaders);
             writer.WriteStringValue("webhook_url", WebhookUrl);
             writer.WriteAdditionalData(AdditionalData);
         }

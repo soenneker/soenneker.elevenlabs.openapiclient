@@ -31548,6 +31548,9 @@
             ],
             "description": "Whether to enable automatic retries for transient failures (5xx, 429, timeout)",
             "nullable": true
+          },
+          "request_headers": {
+            "$ref": "#/components/schemas/BodyUpdateWorkspaceWebhookV1WorkspaceWebhooksWebhookIdPatchRequestHeaders"
           }
         }
       },
@@ -58787,6 +58790,11 @@
               }
             ],
             "nullable": true
+          },
+          "is_fallback_name": {
+            "title": "Is Fallback Name",
+            "type": "boolean",
+            "default": false
           }
         }
       },
@@ -69670,6 +69678,9 @@
             "title": "Webhook Url",
             "type": "string",
             "description": "The HTTPS callback URL that will be called when this webhook is triggered"
+          },
+          "request_headers": {
+            "$ref": "#/components/schemas/WebhookHMACSettingsRequestHeaders"
           }
         },
         "description": "Settings for creating an HMAC-authenticated webhook"
@@ -74571,6 +74582,7 @@
           "dubbing",
           "audio_native",
           "conversational_ai",
+          "conversational_ai_read",
           "voice_isolator",
           "ai_speech_classifier",
           "add_voice_from_voice_library",
@@ -75243,6 +75255,32 @@
           "mapping": {
             "BodyEditVoiceV1VoicesVoiceIdEditPostLabels_2": "#/components/schemas/BodyEditVoiceV1VoicesVoiceIdEditPostLabels_Branch2"
           }
+        }
+      },
+      "BodyUpdateWorkspaceWebhookV1WorkspaceWebhooksWebhookIdPatchRequestHeaders": {
+        "title": "Request Headers",
+        "required": [
+          "type"
+        ],
+        "type": "object",
+        "anyOf": [
+          {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            }
+          }
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "Union discriminator"
+          }
+        },
+        "description": "A list of request headers to include with the webhook delivery (optional)",
+        "nullable": true,
+        "discriminator": {
+          "propertyName": "type"
         }
       },
       "ConversationHistorySIPTrunkingPhoneCallModelSipHeaderDynamicVariables": {
@@ -76082,6 +76120,32 @@
           "type": "string"
         },
         "description": "The labels of the voice."
+      },
+      "WebhookHMACSettingsRequestHeaders": {
+        "title": "Request Headers",
+        "required": [
+          "type"
+        ],
+        "type": "object",
+        "anyOf": [
+          {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            }
+          }
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "Union discriminator"
+          }
+        },
+        "description": "Optional custom request headers to include with each webhook delivery",
+        "nullable": true,
+        "discriminator": {
+          "propertyName": "type"
+        }
       },
       "WebhookToolApiSchemaConfigInputRequestHeaders": {
         "title": "Request Headers",
