@@ -9,43 +9,43 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class BodyUpdateDocumentV1ConvaiKnowledgeBaseDocumentationIdPatch : IAdditionalDataHolder, IParsable
+    public partial class KnowledgeBaseDocumentChunksResponseModel : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Updated content for the document. Only supported for text documents, URL documents with auto-sync disabled, and file documents.</summary>
+        /// <summary>The chunks property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Content? Content { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeBaseDocumentChunkResponseModel>? Chunks { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Content Content { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeBaseDocumentChunkResponseModel> Chunks { get; set; }
 #endif
-        /// <summary>A custom, human-readable name for the document.</summary>
+        /// <summary>The next_cursor property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Name? Name { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Next_Cursor? NextCursor { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Name Name { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Next_Cursor NextCursor { get; set; }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyUpdateDocumentV1ConvaiKnowledgeBaseDocumentationIdPatch"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeBaseDocumentChunksResponseModel"/> and sets the default values.
         /// </summary>
-        public BodyUpdateDocumentV1ConvaiKnowledgeBaseDocumentationIdPatch()
+        public KnowledgeBaseDocumentChunksResponseModel()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyUpdateDocumentV1ConvaiKnowledgeBaseDocumentationIdPatch"/></returns>
+        /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeBaseDocumentChunksResponseModel"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyUpdateDocumentV1ConvaiKnowledgeBaseDocumentationIdPatch CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeBaseDocumentChunksResponseModel CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyUpdateDocumentV1ConvaiKnowledgeBaseDocumentationIdPatch();
+            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeBaseDocumentChunksResponseModel();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -55,8 +55,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "content", n => { Content = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Content>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Content.CreateFromDiscriminatorValue); } },
-                { "name", n => { Name = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Name>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Name.CreateFromDiscriminatorValue); } },
+                { "chunks", n => { Chunks = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeBaseDocumentChunkResponseModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeBaseDocumentChunkResponseModel.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "next_cursor", n => { NextCursor = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Next_Cursor>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Next_Cursor.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -66,8 +66,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Content>("content", Content);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Name>("name", Name);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeBaseDocumentChunkResponseModel>("chunks", Chunks);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Next_Cursor>("next_cursor", NextCursor);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

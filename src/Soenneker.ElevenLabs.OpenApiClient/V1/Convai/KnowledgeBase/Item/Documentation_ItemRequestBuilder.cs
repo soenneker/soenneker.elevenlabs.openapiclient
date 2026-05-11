@@ -5,12 +5,14 @@ using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.ElevenLabs.OpenApiClient.Models;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.KnowledgeBase.Item.Chunk;
+using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.KnowledgeBase.Item.Chunks;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.KnowledgeBase.Item.Content;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.KnowledgeBase.Item.DependentAgents;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.KnowledgeBase.Item.Move;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.KnowledgeBase.Item.RagIndex;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.KnowledgeBase.Item.Refresh;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.KnowledgeBase.Item.SourceFileUrl;
+using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.KnowledgeBase.Item.UpdateFile;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -28,6 +30,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.KnowledgeBase.Item
         public global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.KnowledgeBase.Item.Chunk.ChunkRequestBuilder Chunk
         {
             get => new global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.KnowledgeBase.Item.Chunk.ChunkRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The chunks property</summary>
+        public global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.KnowledgeBase.Item.Chunks.ChunksRequestBuilder Chunks
+        {
+            get => new global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.KnowledgeBase.Item.Chunks.ChunksRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The content property</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.KnowledgeBase.Item.Content.ContentRequestBuilder Content
@@ -58,6 +65,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.KnowledgeBase.Item
         public global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.KnowledgeBase.Item.SourceFileUrl.SourceFileUrlRequestBuilder SourceFileUrl
         {
             get => new global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.KnowledgeBase.Item.SourceFileUrl.SourceFileUrlRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The updateFile property</summary>
+        public global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.KnowledgeBase.Item.UpdateFile.UpdateFileRequestBuilder UpdateFile
+        {
+            get => new global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.KnowledgeBase.Item.UpdateFile.UpdateFileRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.KnowledgeBase.Item.Documentation_ItemRequestBuilder"/> and sets the default values.
@@ -122,7 +134,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.KnowledgeBase.Item
             return await RequestAdapter.SendAsync<global::Soenneker.ElevenLabs.OpenApiClient.Models.ResponseGetDocumentationFromKnowledgeBaseV1ConvaiKnowledgeBaseDocumentationIdGet>(requestInfo, global::Soenneker.ElevenLabs.OpenApiClient.Models.ResponseGetDocumentationFromKnowledgeBaseV1ConvaiKnowledgeBaseDocumentationIdGet.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the name of a document
+        /// Update the name and/or content of a document.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ResponseUpdateDocumentV1ConvaiKnowledgeBaseDocumentationIdPatch"/></returns>
         /// <param name="body">The request body</param>
@@ -185,7 +197,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.KnowledgeBase.Item
             return requestInfo;
         }
         /// <summary>
-        /// Update the name of a document
+        /// Update the name and/or content of a document.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

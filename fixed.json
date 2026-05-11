@@ -14389,7 +14389,7 @@
           "Agents Platform"
         ],
         "summary": "Update Document",
-        "description": "Update the name of a document",
+        "description": "Update the name and/or content of a document.",
         "operationId": "update-document-route",
         "parameters": [
           {
@@ -14583,6 +14583,79 @@
               "application/json": {
                 "schema": {
                   "type": "object"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/convai/knowledge-base/{documentation_id}/update-file": {
+      "patch": {
+        "tags": [
+          "Agents Platform"
+        ],
+        "summary": "Update File Document",
+        "description": "Update the source file of a file document. The document name, content, and metadata are updated to reflect the new file. Any manual content edits will be overwritten.",
+        "operationId": "update-file-document-route",
+        "parameters": [
+          {
+            "name": "documentation_id",
+            "in": "path",
+            "description": "The id of a document from the knowledge base. This is returned on document addition.",
+            "required": true,
+            "schema": {
+              "title": "Documentation Id",
+              "type": "string",
+              "description": "The id of a document from the knowledge base. This is returned on document addition.",
+              "unrecognizedKeywords": {
+                "embed": true
+              }
+            }
+          },
+          {
+            "name": "xi-api-key",
+            "in": "header",
+            "description": "Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the \u0027Profile\u0027 tab on the website.",
+            "schema": {
+              "title": "Xi-Api-Key",
+              "type": "object",
+              "anyOf": [
+                {
+                  "type": "string"
+                }
+              ],
+              "description": "Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the \u0027Profile\u0027 tab on the website.",
+              "nullable": true
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "$ref": "#/components/schemas/BodyUpdateFileDocumentV1ConvaiKnowledgeBaseDocumentationIdUpdateFilePatch"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseUpdateFileDocumentV1ConvaiKnowledgeBaseDocumentationIdUpdateFilePatch"
                 }
               }
             }
@@ -15422,6 +15495,108 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/KnowledgeBaseDocumentChunkResponseModel"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/convai/knowledge-base/{documentation_id}/chunks": {
+      "get": {
+        "tags": [
+          "Agents Platform"
+        ],
+        "summary": "Get All Rag Chunks For A Document",
+        "description": "Get all RAG chunks for a specific knowledge base document.",
+        "operationId": "get-documentation-chunks-from-knowledge-base",
+        "parameters": [
+          {
+            "name": "documentation_id",
+            "in": "path",
+            "description": "The id of a document from the knowledge base. This is returned on document addition.",
+            "required": true,
+            "schema": {
+              "title": "Documentation Id",
+              "type": "string",
+              "description": "The id of a document from the knowledge base. This is returned on document addition.",
+              "unrecognizedKeywords": {
+                "embed": true
+              }
+            }
+          },
+          {
+            "name": "embedding_model",
+            "in": "query",
+            "description": "The embedding model used to retrieve the chunk.",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/EmbeddingModelEnum"
+            }
+          },
+          {
+            "name": "page_size",
+            "in": "query",
+            "description": "How many documents to return at maximum. Can not exceed 100, defaults to 30.",
+            "schema": {
+              "title": "Page Size",
+              "maximum": 100,
+              "minimum": 1,
+              "type": "integer",
+              "description": "How many documents to return at maximum. Can not exceed 100, defaults to 30.",
+              "default": 30
+            }
+          },
+          {
+            "name": "cursor",
+            "in": "query",
+            "description": "Used for fetching next page. Cursor is returned in the response.",
+            "schema": {
+              "title": "Cursor",
+              "type": "object",
+              "anyOf": [
+                {
+                  "type": "string"
+                }
+              ],
+              "description": "Used for fetching next page. Cursor is returned in the response.",
+              "nullable": true
+            }
+          },
+          {
+            "name": "xi-api-key",
+            "in": "header",
+            "description": "Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the \u0027Profile\u0027 tab on the website.",
+            "schema": {
+              "title": "Xi-Api-Key",
+              "type": "object",
+              "anyOf": [
+                {
+                  "type": "string"
+                }
+              ],
+              "description": "Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the \u0027Profile\u0027 tab on the website.",
+              "nullable": true
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/KnowledgeBaseDocumentChunksResponseModel"
                 }
               }
             }
@@ -31373,16 +31548,44 @@
       },
       "BodyUpdateDocumentV1ConvaiKnowledgeBaseDocumentationIdPatch": {
         "title": "Body_Update_document_v1_convai_knowledge_base__documentation_id__patch",
-        "required": [
-          "name"
-        ],
         "type": "object",
         "properties": {
           "name": {
             "title": "Name",
-            "minLength": 1,
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Name"
+              }
+            ],
+            "description": "A custom, human-readable name for the document.",
+            "nullable": true
+          },
+          "content": {
+            "title": "Content",
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Content"
+              }
+            ],
+            "description": "Updated content for the document. Only supported for text documents, URL documents with auto-sync disabled, and file documents.",
+            "nullable": true
+          }
+        }
+      },
+      "BodyUpdateFileDocumentV1ConvaiKnowledgeBaseDocumentationIdUpdateFilePatch": {
+        "title": "Body_Update_file_document_v1_convai_knowledge_base__documentation_id__update_file_patch",
+        "required": [
+          "file"
+        ],
+        "type": "object",
+        "properties": {
+          "file": {
+            "title": "File",
             "type": "string",
-            "description": "A custom, human-readable name for the document."
+            "description": "Documentation that the agent will have access to in order to interact with users.",
+            "format": "binary"
           }
         }
       },
@@ -48544,6 +48747,32 @@
           }
         }
       },
+      "KnowledgeBaseDocumentChunksResponseModel": {
+        "title": "KnowledgeBaseDocumentChunksResponseModel",
+        "required": [
+          "chunks"
+        ],
+        "type": "object",
+        "properties": {
+          "chunks": {
+            "title": "Chunks",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/KnowledgeBaseDocumentChunkResponseModel"
+            }
+          },
+          "next_cursor": {
+            "title": "Next Cursor",
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Next_Cursor"
+              }
+            ],
+            "nullable": true
+          }
+        }
+      },
       "KnowledgeBaseDocumentMetadataResponseModel": {
         "title": "KnowledgeBaseDocumentMetadataResponseModel",
         "required": [
@@ -49073,6 +49302,16 @@
             ],
             "description": "Deprecation information if this model is deprecated or scheduled for deprecation. Null if the model is not affected.",
             "nullable": true
+          },
+          "regional_processing_surcharge": {
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/RegionalProcessingSurchargeInfo"
+              }
+            ],
+            "description": "Regional processing surcharge details if this model has additional costs in the current deployment region. Null if no surcharge applies.",
+            "nullable": true
           }
         },
         "example": {
@@ -49150,6 +49389,16 @@
               }
             ],
             "description": "Deprecation information if this model is deprecated or scheduled for deprecation. Null if the model is not affected.",
+            "nullable": true
+          },
+          "regional_processing_surcharge": {
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/RegionalProcessingSurchargeInfo"
+              }
+            ],
+            "description": "Regional processing surcharge details if this model has additional costs in the current deployment region. Null if no surcharge applies.",
             "nullable": true
           }
         },
@@ -58987,6 +59236,23 @@
           "edge_location": {
             "$ref": "#/components/schemas/TwilioEdgeLocation"
           }
+        }
+      },
+      "RegionalProcessingSurchargeInfo": {
+        "title": "RegionalProcessingSurchargeInfo",
+        "required": [
+          "multiplier"
+        ],
+        "type": "object",
+        "properties": {
+          "multiplier": {
+            "title": "Multiplier",
+            "type": "number",
+            "description": "The surcharge multiplier applied to this model\u0027s pricing (e.g. 1.1 for a 10% surcharge)."
+          }
+        },
+        "example": {
+          "multiplier": 1.1
         }
       },
       "RegisterForGroupSessionParams": {
@@ -76903,6 +77169,47 @@
       "DeleteKnowledgeBaseDocument200": {
         "type": "object"
       },
+      "ResponseUpdateFileDocumentV1ConvaiKnowledgeBaseDocumentationIdUpdateFilePatch": {
+        "title": "Response Update File Document V1 Convai Knowledge Base  Documentation Id  Update File Patch",
+        "required": [
+          "type"
+        ],
+        "type": "object",
+        "oneOf": [
+          {
+            "$ref": "#/components/schemas/GetKnowledgeBaseURLResponseModel"
+          },
+          {
+            "$ref": "#/components/schemas/GetKnowledgeBaseFileResponseModel"
+          },
+          {
+            "$ref": "#/components/schemas/GetKnowledgeBaseTextResponseModel"
+          },
+          {
+            "$ref": "#/components/schemas/GetKnowledgeBaseFolderResponseModel"
+          }
+        ],
+        "properties": {
+          "type": {
+            "title": "type",
+            "type": "string",
+            "description": "Union discriminator"
+          }
+        },
+        "discriminator": {
+          "propertyName": "type",
+          "mapping": {
+            "url": "#/components/schemas/GetKnowledgeBaseURLResponseModel",
+            "file": "#/components/schemas/GetKnowledgeBaseFileResponseModel",
+            "text": "#/components/schemas/GetKnowledgeBaseTextResponseModel",
+            "folder": "#/components/schemas/GetKnowledgeBaseFolderResponseModel",
+            "GetKnowledgeBaseURLResponseModel": "#/components/schemas/GetKnowledgeBaseURLResponseModel",
+            "GetKnowledgeBaseFileResponseModel": "#/components/schemas/GetKnowledgeBaseFileResponseModel",
+            "GetKnowledgeBaseTextResponseModel": "#/components/schemas/GetKnowledgeBaseTextResponseModel",
+            "GetKnowledgeBaseFolderResponseModel": "#/components/schemas/GetKnowledgeBaseFolderResponseModel"
+          }
+        }
+      },
       "ResponseComputeRagIndexesInBatchV1ConvaiKnowledgeBaseRagIndexPost": {
         "title": "Response Compute Rag Indexes In Batch V1 Convai Knowledge Base Rag Index Post",
         "type": "object",
@@ -79189,6 +79496,17 @@
         "properties": {
           "value": {
             "$ref": "#/components/schemas/BranchProtectionStatus"
+          }
+        }
+      },
+      "Content": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string"
           }
         }
       },
