@@ -115,7 +115,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.SpeechToSpeech.Item
             [QueryParameter("optimize_streaming_latency")]
             public string OptimizeStreamingLatency { get; set; }
 #endif
-            /// <summary>Output format of the generated audio. Formatted as codec_sample_rate_bitrate. So an mp3 with 22.05kHz sample rate at 32kbs is represented as mp3_22050_32. MP3 with 192kbps bitrate requires you to be subscribed to Creator tier or above. PCM with 44.1kHz sample rate requires you to be subscribed to Pro tier or above. Note that the μ-law format (sometimes written mu-law, often approximated as u-law) is commonly used for Twilio audio inputs.</summary>
+            /// <summary>Output format of the generated audio. Formatted as codec_sample_rate_bitrate. So an mp3 with 22.05kHz sample rate at 32kbs is represented as mp3_22050_32. MP3 with 192kbps bitrate requires you to be subscribed to Creator tier or above. PCM and WAV formats with 44.1kHz sample rate requires you to be subscribed to Pro tier or above. Note that the μ-law format (sometimes written mu-law, often approximated as u-law) is commonly used for Twilio audio inputs.</summary>
             [QueryParameter("output_format")]
             public global::Soenneker.ElevenLabs.OpenApiClient.V1.SpeechToSpeech.Item.PostOutput_formatQueryParameterType? OutputFormat { get; set; }
         }

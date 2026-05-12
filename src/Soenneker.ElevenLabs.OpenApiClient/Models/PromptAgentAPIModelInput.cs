@@ -100,8 +100,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.LLMReasoningEffort_Wrapper ReasoningEffort { get; set; }
 #endif
-        /// <summary>The temperature for the LLM</summary>
-        public double? Temperature { get; set; }
+        /// <summary>The temperature for the LLM. Defaults to 0. Set to null to omit the parameter from the LLM request entirely (useful for custom LLMs that reject the temperature field).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Temperature? Temperature { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Temperature Temperature { get; set; }
+#endif
         /// <summary>Max number of tokens used for thinking. Use 0 to turn off if supported by the model.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -174,7 +180,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "prompt", n => { Prompt = n.GetStringValue(); } },
                 { "rag", n => { Rag = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.RagConfig>(global::Soenneker.ElevenLabs.OpenApiClient.Models.RagConfig.CreateFromDiscriminatorValue); } },
                 { "reasoning_effort", n => { ReasoningEffort = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.LLMReasoningEffort_Wrapper>(global::Soenneker.ElevenLabs.OpenApiClient.Models.LLMReasoningEffort_Wrapper.CreateFromDiscriminatorValue); } },
-                { "temperature", n => { Temperature = n.GetDoubleValue(); } },
+                { "temperature", n => { Temperature = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Temperature>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Temperature.CreateFromDiscriminatorValue); } },
                 { "thinking_budget", n => { ThinkingBudget = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Thinking_Budget>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Thinking_Budget.CreateFromDiscriminatorValue); } },
                 { "timezone", n => { Timezone = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TimezoneObject>(global::Soenneker.ElevenLabs.OpenApiClient.Models.TimezoneObject.CreateFromDiscriminatorValue); } },
                 { "tool_ids", n => { ToolIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
@@ -201,7 +207,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteStringValue("prompt", Prompt);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.RagConfig>("rag", Rag);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.LLMReasoningEffort_Wrapper>("reasoning_effort", ReasoningEffort);
-            writer.WriteDoubleValue("temperature", Temperature);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Temperature>("temperature", Temperature);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Thinking_Budget>("thinking_budget", ThinkingBudget);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TimezoneObject>("timezone", Timezone);
             writer.WriteCollectionOfPrimitiveValues<string>("tool_ids", ToolIds);

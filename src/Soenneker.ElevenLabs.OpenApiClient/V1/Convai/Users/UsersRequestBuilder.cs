@@ -90,7 +90,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Users
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class UsersRequestBuilderGetQueryParameters 
         {
-            /// <summary>The id of the agent you&apos;re taking the action on.</summary>
+            /// <summary>Agent id (agent_…) or speech engine external id (seng_), resolved to the same underlying resource.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("agent_id")]

@@ -16,6 +16,7 @@ using Soenneker.ElevenLabs.OpenApiClient.V1.SharedVoices;
 using Soenneker.ElevenLabs.OpenApiClient.V1.SimilarVoices;
 using Soenneker.ElevenLabs.OpenApiClient.V1.SingleUseToken;
 using Soenneker.ElevenLabs.OpenApiClient.V1.SoundGeneration;
+using Soenneker.ElevenLabs.OpenApiClient.V1.SpeechEngine;
 using Soenneker.ElevenLabs.OpenApiClient.V1.SpeechToSpeech;
 using Soenneker.ElevenLabs.OpenApiClient.V1.SpeechToText;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Studio;
@@ -106,6 +107,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1
         public global::Soenneker.ElevenLabs.OpenApiClient.V1.SoundGeneration.SoundGenerationRequestBuilder SoundGeneration
         {
             get => new global::Soenneker.ElevenLabs.OpenApiClient.V1.SoundGeneration.SoundGenerationRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The speechEngine property</summary>
+        public global::Soenneker.ElevenLabs.OpenApiClient.V1.SpeechEngine.SpeechEngineRequestBuilder SpeechEngine
+        {
+            get => new global::Soenneker.ElevenLabs.OpenApiClient.V1.SpeechEngine.SpeechEngineRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The speechToSpeech property</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.V1.SpeechToSpeech.SpeechToSpeechRequestBuilder SpeechToSpeech

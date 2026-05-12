@@ -3,10 +3,14 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.ElevenLabs.OpenApiClient.V1.SpeechToSpeech.Item
 {
-    /// <summary>Output format of the generated audio. Formatted as codec_sample_rate_bitrate. So an mp3 with 22.05kHz sample rate at 32kbs is represented as mp3_22050_32. MP3 with 192kbps bitrate requires you to be subscribed to Creator tier or above. PCM with 44.1kHz sample rate requires you to be subscribed to Pro tier or above. Note that the μ-law format (sometimes written mu-law, often approximated as u-law) is commonly used for Twilio audio inputs.</summary>
+    /// <summary>Output format of the generated audio. Formatted as codec_sample_rate_bitrate. So an mp3 with 22.05kHz sample rate at 32kbs is represented as mp3_22050_32. MP3 with 192kbps bitrate requires you to be subscribed to Creator tier or above. PCM and WAV formats with 44.1kHz sample rate requires you to be subscribed to Pro tier or above. Note that the μ-law format (sometimes written mu-law, often approximated as u-law) is commonly used for Twilio audio inputs.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum PostOutput_formatQueryParameterType
     {
+        [EnumMember(Value = "alaw_8000")]
+        #pragma warning disable CS1591
+        Alaw_8000,
+        #pragma warning restore CS1591
         [EnumMember(Value = "mp3_22050_32")]
         #pragma warning disable CS1591
         Mp3_22050_32,
@@ -14,6 +18,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.SpeechToSpeech.Item
         [EnumMember(Value = "mp3_24000_48")]
         #pragma warning disable CS1591
         Mp3_24000_48,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "mp3_44100_128")]
+        #pragma warning disable CS1591
+        Mp3_44100_128,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "mp3_44100_192")]
+        #pragma warning disable CS1591
+        Mp3_44100_192,
         #pragma warning restore CS1591
         [EnumMember(Value = "mp3_44100_32")]
         #pragma warning disable CS1591
@@ -27,17 +39,25 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.SpeechToSpeech.Item
         #pragma warning disable CS1591
         Mp3_44100_96,
         #pragma warning restore CS1591
-        [EnumMember(Value = "mp3_44100_128")]
+        [EnumMember(Value = "opus_48000_128")]
         #pragma warning disable CS1591
-        Mp3_44100_128,
+        Opus_48000_128,
         #pragma warning restore CS1591
-        [EnumMember(Value = "mp3_44100_192")]
+        [EnumMember(Value = "opus_48000_192")]
         #pragma warning disable CS1591
-        Mp3_44100_192,
+        Opus_48000_192,
         #pragma warning restore CS1591
-        [EnumMember(Value = "pcm_8000")]
+        [EnumMember(Value = "opus_48000_32")]
         #pragma warning disable CS1591
-        Pcm_8000,
+        Opus_48000_32,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "opus_48000_64")]
+        #pragma warning disable CS1591
+        Opus_48000_64,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "opus_48000_96")]
+        #pragma warning disable CS1591
+        Opus_48000_96,
         #pragma warning restore CS1591
         [EnumMember(Value = "pcm_16000")]
         #pragma warning disable CS1591
@@ -63,33 +83,41 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.SpeechToSpeech.Item
         #pragma warning disable CS1591
         Pcm_48000,
         #pragma warning restore CS1591
+        [EnumMember(Value = "pcm_8000")]
+        #pragma warning disable CS1591
+        Pcm_8000,
+        #pragma warning restore CS1591
         [EnumMember(Value = "ulaw_8000")]
         #pragma warning disable CS1591
         Ulaw_8000,
         #pragma warning restore CS1591
-        [EnumMember(Value = "alaw_8000")]
+        [EnumMember(Value = "wav_16000")]
         #pragma warning disable CS1591
-        Alaw_8000,
+        Wav_16000,
         #pragma warning restore CS1591
-        [EnumMember(Value = "opus_48000_32")]
+        [EnumMember(Value = "wav_22050")]
         #pragma warning disable CS1591
-        Opus_48000_32,
+        Wav_22050,
         #pragma warning restore CS1591
-        [EnumMember(Value = "opus_48000_64")]
+        [EnumMember(Value = "wav_24000")]
         #pragma warning disable CS1591
-        Opus_48000_64,
+        Wav_24000,
         #pragma warning restore CS1591
-        [EnumMember(Value = "opus_48000_96")]
+        [EnumMember(Value = "wav_32000")]
         #pragma warning disable CS1591
-        Opus_48000_96,
+        Wav_32000,
         #pragma warning restore CS1591
-        [EnumMember(Value = "opus_48000_128")]
+        [EnumMember(Value = "wav_44100")]
         #pragma warning disable CS1591
-        Opus_48000_128,
+        Wav_44100,
         #pragma warning restore CS1591
-        [EnumMember(Value = "opus_48000_192")]
+        [EnumMember(Value = "wav_48000")]
         #pragma warning disable CS1591
-        Opus_48000_192,
+        Wav_48000,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "wav_8000")]
+        #pragma warning disable CS1591
+        Wav_8000,
         #pragma warning restore CS1591
     }
 }

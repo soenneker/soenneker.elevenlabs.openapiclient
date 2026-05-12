@@ -143,6 +143,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         #pragma warning disable CS1591
         Songs,
         #pragma warning restore CS1591
+        [EnumMember(Value = "transcription_tasks")]
+        #pragma warning disable CS1591
+        Transcription_tasks,
+        #pragma warning restore CS1591
         [EnumMember(Value = "avatars")]
         #pragma warning disable CS1591
         Avatars,

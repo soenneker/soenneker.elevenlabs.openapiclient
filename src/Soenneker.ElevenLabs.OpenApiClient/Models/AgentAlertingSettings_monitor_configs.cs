@@ -7,45 +7,30 @@ using System.IO;
 using System;
 namespace Soenneker.ElevenLabs.OpenApiClient.Models
 {
+    /// <summary>
+    /// Alerting configuration keyed by monitor.
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
-    public partial class GetAgentLinkResponseModel : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
+    public partial class AgentAlertingSettings_monitor_configs : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The ID of the agent</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? AgentId { get; set; }
-#nullable restore
-#else
-        public string AgentId { get; set; }
-#endif
-        /// <summary>The token data for the agent</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationTokenResponseModel? Token { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationTokenResponseModel Token { get; set; }
-#endif
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.GetAgentLinkResponseModel"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentAlertingSettings_monitor_configs"/> and sets the default values.
         /// </summary>
-        public GetAgentLinkResponseModel()
+        public AgentAlertingSettings_monitor_configs()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.GetAgentLinkResponseModel"/></returns>
+        /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentAlertingSettings_monitor_configs"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.ElevenLabs.OpenApiClient.Models.GetAgentLinkResponseModel CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentAlertingSettings_monitor_configs CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.GetAgentLinkResponseModel();
+            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentAlertingSettings_monitor_configs();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -55,8 +40,6 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "agent_id", n => { AgentId = n.GetStringValue(); } },
-                { "token", n => { Token = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationTokenResponseModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationTokenResponseModel.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -66,8 +49,6 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("agent_id", AgentId);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationTokenResponseModel>("token", Token);
             writer.WriteAdditionalData(AdditionalData);
         }
     }
