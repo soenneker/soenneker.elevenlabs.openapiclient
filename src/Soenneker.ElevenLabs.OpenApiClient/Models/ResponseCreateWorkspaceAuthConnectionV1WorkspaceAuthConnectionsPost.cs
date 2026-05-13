@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.ElevenLabs.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ApiIntegrationOAuth2AuthCodeResponse"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ApiIntegrationOAuth2CustomAppResponse"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.BasicAuthResponse"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.BearerAuthResponse"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomHeaderAuthResponse"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.MTLSAuthResponse"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.OAuth2ClientCredsResponse"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.OAuth2JWTResponse"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.PrivateKeyJWTResponse"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppAuthResponse"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ApiIntegrationOAuth2AuthCodeResponse"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ApiIntegrationOAuth2CustomAppResponse"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.BasicAuthResponse"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.BearerAuthResponse"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomHeaderAuthResponse"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.MTLSAuthResponse"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.OAuth2ClientCredsResponse"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.OAuth2JWTResponse"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.PrivateKeyJWTResponse"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.SlackBotAuthResponse"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppAuthResponse"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ResponseCreateWorkspaceAuthConnectionV1WorkspaceAuthConnectionsPost : IComposedTypeWrapper, IParsable
@@ -85,6 +85,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.PrivateKeyJWTResponse PrivateKeyJWTResponse { get; set; }
 #endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.SlackBotAuthResponse"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SlackBotAuthResponse? SlackBotAuthResponse { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SlackBotAuthResponse SlackBotAuthResponse { get; set; }
+#endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppAuthResponse"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -139,6 +147,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             {
                 result.PrivateKeyJWTResponse = new global::Soenneker.ElevenLabs.OpenApiClient.Models.PrivateKeyJWTResponse();
             }
+            else if("SlackBotAuthResponse".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.SlackBotAuthResponse = new global::Soenneker.ElevenLabs.OpenApiClient.Models.SlackBotAuthResponse();
+            }
             else if("WhatsAppAuthResponse".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.WhatsAppAuthResponse = new global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppAuthResponse();
@@ -186,6 +198,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             else if(PrivateKeyJWTResponse != null)
             {
                 return PrivateKeyJWTResponse.GetFieldDeserializers();
+            }
+            else if(SlackBotAuthResponse != null)
+            {
+                return SlackBotAuthResponse.GetFieldDeserializers();
             }
             else if(WhatsAppAuthResponse != null)
             {
@@ -235,6 +251,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             else if(PrivateKeyJWTResponse != null)
             {
                 writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PrivateKeyJWTResponse>(null, PrivateKeyJWTResponse);
+            }
+            else if(SlackBotAuthResponse != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SlackBotAuthResponse>(null, SlackBotAuthResponse);
             }
             else if(WhatsAppAuthResponse != null)
             {

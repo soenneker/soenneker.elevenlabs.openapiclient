@@ -5394,7 +5394,10 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ResponseGetModelsV1ModelsGet"
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ModelResponseModel"
+                  }
                 }
               }
             }
@@ -7424,7 +7427,10 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ResponseSearchUserGroupsV1WorkspaceGroupsSearchGet"
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/WorkspaceGroupByNameResponseModel"
+                  }
                 }
               }
             }
@@ -13256,7 +13262,33 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ResponseListPhoneNumbersV1ConvaiPhoneNumbersGet"
+                  "type": "array",
+                  "items": {
+                    "required": [
+                      "provider"
+                    ],
+                    "type": "object",
+                    "oneOf": [
+                      {
+                        "$ref": "#/components/schemas/GetPhoneNumberTwilioResponseModel"
+                      },
+                      {
+                        "$ref": "#/components/schemas/GetPhoneNumberSIPTrunkResponseModel"
+                      }
+                    ],
+                    "properties": {
+                      "provider": {
+                        "type": "string"
+                      }
+                    },
+                    "discriminator": {
+                      "propertyName": "provider",
+                      "mapping": {
+                        "twilio": "#/components/schemas/GetPhoneNumberTwilioResponseModel",
+                        "sip_trunk": "#/components/schemas/GetPhoneNumberSIPTrunkResponseModel"
+                      }
+                    }
+                  }
                 }
               }
             }
@@ -20658,7 +20690,10 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ResponseAddSamplesToPvcVoiceV1VoicesPvcVoiceIdSamplesPost"
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/SampleResponseModel"
+                  }
                 }
               }
             }
@@ -22484,6 +22519,25 @@
         "discriminator": {
           "propertyName": "type",
           "mapping": {
+            "add_operator": "#/components/schemas/ASTAdditionOperatorNodeInput",
+            "and_operator": "#/components/schemas/ASTAndOperatorNodeInput",
+            "boolean_literal": "#/components/schemas/ASTBooleanNodeInput",
+            "conditional_operator": "#/components/schemas/ASTConditionalOperatorNodeInput",
+            "div_operator": "#/components/schemas/ASTDivisionOperatorNodeInput",
+            "dynamic_variable": "#/components/schemas/ASTDynamicVariableNodeInput",
+            "eq_operator": "#/components/schemas/ASTEqualsOperatorNodeInput",
+            "gt_operator": "#/components/schemas/ASTGreaterThanOperatorNodeInput",
+            "gte_operator": "#/components/schemas/ASTGreaterThanOrEqualsOperatorNodeInput",
+            "llm": "#/components/schemas/ASTLLMNodeInput",
+            "lt_operator": "#/components/schemas/ASTLessThanOperatorNodeInput",
+            "lte_operator": "#/components/schemas/ASTLessThanOrEqualsOperatorNodeInput",
+            "mul_operator": "#/components/schemas/ASTMultiplicationOperatorNodeInput",
+            "neq_operator": "#/components/schemas/ASTNotEqualsOperatorNodeInput",
+            "null_literal": "#/components/schemas/ASTNullNodeInput",
+            "number_literal": "#/components/schemas/ASTNumberNodeInput",
+            "or_operator": "#/components/schemas/ASTOrOperatorNodeInput",
+            "string_literal": "#/components/schemas/ASTStringNodeInput",
+            "sub_operator": "#/components/schemas/ASTSubtractionOperatorNodeInput",
             "ASTStringNodeInput": "#/components/schemas/ASTStringNodeInput",
             "ASTNumberNodeInput": "#/components/schemas/ASTNumberNodeInput",
             "ASTBooleanNodeInput": "#/components/schemas/ASTBooleanNodeInput",
@@ -22580,6 +22634,25 @@
         "discriminator": {
           "propertyName": "type",
           "mapping": {
+            "add_operator": "#/components/schemas/ASTAdditionOperatorNodeOutput",
+            "and_operator": "#/components/schemas/ASTAndOperatorNodeOutput",
+            "boolean_literal": "#/components/schemas/ASTBooleanNodeOutput",
+            "conditional_operator": "#/components/schemas/ASTConditionalOperatorNodeOutput",
+            "div_operator": "#/components/schemas/ASTDivisionOperatorNodeOutput",
+            "dynamic_variable": "#/components/schemas/ASTDynamicVariableNodeOutput",
+            "eq_operator": "#/components/schemas/ASTEqualsOperatorNodeOutput",
+            "gt_operator": "#/components/schemas/ASTGreaterThanOperatorNodeOutput",
+            "gte_operator": "#/components/schemas/ASTGreaterThanOrEqualsOperatorNodeOutput",
+            "llm": "#/components/schemas/ASTLLMNodeOutput",
+            "lt_operator": "#/components/schemas/ASTLessThanOperatorNodeOutput",
+            "lte_operator": "#/components/schemas/ASTLessThanOrEqualsOperatorNodeOutput",
+            "mul_operator": "#/components/schemas/ASTMultiplicationOperatorNodeOutput",
+            "neq_operator": "#/components/schemas/ASTNotEqualsOperatorNodeOutput",
+            "null_literal": "#/components/schemas/ASTNullNodeOutput",
+            "number_literal": "#/components/schemas/ASTNumberNodeOutput",
+            "or_operator": "#/components/schemas/ASTOrOperatorNodeOutput",
+            "string_literal": "#/components/schemas/ASTStringNodeOutput",
+            "sub_operator": "#/components/schemas/ASTSubtractionOperatorNodeOutput",
             "ASTStringNodeOutput": "#/components/schemas/ASTStringNodeOutput",
             "ASTNumberNodeOutput": "#/components/schemas/ASTNumberNodeOutput",
             "ASTBooleanNodeOutput": "#/components/schemas/ASTBooleanNodeOutput",
@@ -23227,6 +23300,17 @@
             "type": "number",
             "description": "Failure rate threshold at which this monitor can notify.",
             "default": 0.5
+          },
+          "auto_resolve_after_inactive_minutes": {
+            "title": "Auto Resolve After Inactive Minutes",
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Auto_Resolve_After_Inactive_Minutes"
+              }
+            ],
+            "description": "How many minutes an alert can stay inactive before it is auto-resolved.",
+            "nullable": true
           }
         }
       },
@@ -23246,6 +23330,13 @@
                 "$ref": "#/components/schemas/Monitor"
               }
             }
+          },
+          "auto_resolve_after_inactive_minutes": {
+            "title": "Auto Resolve After Inactive Minutes",
+            "minimum": 1.0,
+            "type": "integer",
+            "description": "How many minutes an alert can stay inactive before it is auto-resolved.",
+            "default": 15
           }
         }
       },
@@ -24750,12 +24841,12 @@
               "discriminator": {
                 "propertyName": "type",
                 "mapping": {
-                  "end": "#/components/schemas/WorkflowEndNodeModel-Input",
-                  "override_agent": "#/components/schemas/WorkflowOverrideAgentNodeModel-Input",
-                  "phone_number": "#/components/schemas/WorkflowPhoneNumberNodeModel-Input",
-                  "standalone_agent": "#/components/schemas/WorkflowStandaloneAgentNodeModel-Input",
-                  "start": "#/components/schemas/WorkflowStartNodeModel-Input",
-                  "tool": "#/components/schemas/WorkflowToolNodeModel-Input"
+                  "end": "#/components/schemas/WorkflowEndNodeModelInput",
+                  "override_agent": "#/components/schemas/WorkflowOverrideAgentNodeModelInput",
+                  "phone_number": "#/components/schemas/WorkflowPhoneNumberNodeModelInput",
+                  "standalone_agent": "#/components/schemas/WorkflowStandaloneAgentNodeModelInput",
+                  "start": "#/components/schemas/WorkflowStartNodeModelInput",
+                  "tool": "#/components/schemas/WorkflowToolNodeModelInput"
                 }
               }
             }
@@ -24954,12 +25045,12 @@
               "discriminator": {
                 "propertyName": "type",
                 "mapping": {
-                  "end": "#/components/schemas/WorkflowEndNodeModel-Output",
-                  "override_agent": "#/components/schemas/WorkflowOverrideAgentNodeModel-Output",
-                  "phone_number": "#/components/schemas/WorkflowPhoneNumberNodeModel-Output",
-                  "standalone_agent": "#/components/schemas/WorkflowStandaloneAgentNodeModel-Output",
-                  "start": "#/components/schemas/WorkflowStartNodeModel-Output",
-                  "tool": "#/components/schemas/WorkflowToolNodeModel-Output"
+                  "end": "#/components/schemas/WorkflowEndNodeModelOutput",
+                  "override_agent": "#/components/schemas/WorkflowOverrideAgentNodeModelOutput",
+                  "phone_number": "#/components/schemas/WorkflowPhoneNumberNodeModelOutput",
+                  "standalone_agent": "#/components/schemas/WorkflowStandaloneAgentNodeModelOutput",
+                  "start": "#/components/schemas/WorkflowStartNodeModelOutput",
+                  "tool": "#/components/schemas/WorkflowToolNodeModelOutput"
                 }
               }
             }
@@ -31147,7 +31238,11 @@
             "nullable": true
           },
           "additional_formats": {
-            "$ref": "#/components/schemas/AdditionalFormats"
+            "maxItems": 10,
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ExportOptions"
+            }
           },
           "file_format": {
             "title": "File Format",
@@ -38291,7 +38386,7 @@
                 "discriminator": {
                   "propertyName": "type",
                   "mapping": {
-                    "api_integration_webhook": "#/components/schemas/ConversationHistoryTranscriptToolCallApiIntegrationWebhookDetails-Input",
+                    "api_integration_webhook": "#/components/schemas/ConversationHistoryTranscriptToolCallApiIntegrationWebhookDetailsInput",
                     "client": "#/components/schemas/ConversationHistoryTranscriptToolCallClientDetails",
                     "mcp": "#/components/schemas/ConversationHistoryTranscriptToolCallMCPDetails",
                     "webhook": "#/components/schemas/ConversationHistoryTranscriptToolCallWebhookDetails"
@@ -38369,7 +38464,7 @@
                 "discriminator": {
                   "propertyName": "type",
                   "mapping": {
-                    "api_integration_webhook": "#/components/schemas/ConversationHistoryTranscriptToolCallApiIntegrationWebhookDetails-Output",
+                    "api_integration_webhook": "#/components/schemas/ConversationHistoryTranscriptToolCallApiIntegrationWebhookDetailsOutput",
                     "client": "#/components/schemas/ConversationHistoryTranscriptToolCallClientDetails",
                     "mcp": "#/components/schemas/ConversationHistoryTranscriptToolCallMCPDetails",
                     "webhook": "#/components/schemas/ConversationHistoryTranscriptToolCallWebhookDetails"
@@ -39009,7 +39104,8 @@
           "flutter_sdk",
           "zendesk_integration",
           "slack_integration",
-          "template_preview"
+          "template_preview",
+          "genesys_bot_connector"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -40093,6 +40189,38 @@
         },
         "description": "Request model for creating Basic Auth connections - inherits common settings and includes sensitive fields"
       },
+      "CreateBearerAuthRequest": {
+        "title": "CreateBearerAuthRequest",
+        "required": [
+          "name",
+          "provider",
+          "token"
+        ],
+        "type": "object",
+        "properties": {
+          "name": {
+            "title": "Name",
+            "type": "string"
+          },
+          "auth_type": {
+            "title": "Auth Type",
+            "enum": [
+              "bearer_auth"
+            ],
+            "type": "string",
+            "default": "bearer_auth"
+          },
+          "provider": {
+            "title": "Provider",
+            "type": "string"
+          },
+          "token": {
+            "title": "Token",
+            "type": "string"
+          }
+        },
+        "description": "Request model for creating Bearer Auth connections - inherits common settings and includes sensitive fields"
+      },
       "CreateClientAppointmentParams": {
         "title": "CreateClientAppointmentParams",
         "type": "object",
@@ -40964,6 +41092,9 @@
             "type": "string",
             "description": "The speech engine resource ID"
           }
+        },
+        "example": {
+          "speech_engine_id": "seng_3701k3ttaq12ewp8b7qv5rfyszkz"
         }
       },
       "CreateStaffParams": {
@@ -50998,6 +51129,9 @@
                 },
                 {
                   "$ref": "#/components/schemas/WhatsAppAuthResponse"
+                },
+                {
+                  "$ref": "#/components/schemas/SlackBotAuthResponse"
                 }
               ],
               "properties": {
@@ -51018,6 +51152,7 @@
                   "oauth2_client_credentials": "#/components/schemas/OAuth2ClientCredsResponse",
                   "oauth2_jwt": "#/components/schemas/OAuth2JWTResponse",
                   "private_key_jwt": "#/components/schemas/PrivateKeyJWTResponse",
+                  "slack_bot_auth": "#/components/schemas/SlackBotAuthResponse",
                   "whatsapp_auth": "#/components/schemas/WhatsAppAuthResponse"
                 }
               }
@@ -51072,6 +51207,21 @@
           }
         },
         "description": "List clients ordered by most recently updated, with an optional limit."
+      },
+      "ListCustomerFacingAgentsParams": {
+        "title": "ListCustomerFacingAgentsParams",
+        "type": "object",
+        "properties": {
+          "smb_tool_type": {
+            "title": "Smb Tool Type",
+            "enum": [
+              "list_customer_facing_agents"
+            ],
+            "type": "string",
+            "default": "list_customer_facing_agents"
+          }
+        },
+        "description": "\u0022List every customer-facing agent on the workspace.\n\nThe assistant uses this whenever it needs to act on a specific customer-facing\nagent (rules, config edits, etc.) so it can pick the right \u0060\u0060agent_id\u0060\u0060 to pass\nto mutating tools. Mirrors the \u0060\u0060list_services\u0060\u0060 / \u0060\u0060list_clients\u0060\u0060\npattern: read once, then mutate by id.\u0022"
       },
       "ListGroupSessionsParams": {
         "title": "ListGroupSessionsParams",
@@ -51308,7 +51458,8 @@
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/SpeechEngineSummaryResponse"
-            }
+            },
+            "description": "The speech engines matching the query"
           },
           "next_cursor": {
             "title": "Next Cursor",
@@ -51326,6 +51477,20 @@
             "type": "boolean",
             "description": "Whether there are more results"
           }
+        },
+        "example": {
+          "has_more": false,
+          "speech_engines": [
+            {
+              "created_at_unix_secs": 1714000000,
+              "name": "My Speech Engine",
+              "speech_engine_id": "seng_3701k3ttaq12ewp8b7qv5rfyszkz",
+              "tags": [
+                "production",
+                "v1"
+              ]
+            }
+          ]
         }
       },
       "ListStaffParams": {
@@ -51450,6 +51615,35 @@
         "type": "string",
         "additionalProperties": false,
         "default": "standard"
+      },
+      "LoadProcedureToolConfig": {
+        "title": "LoadProcedureToolConfig",
+        "type": "object",
+        "properties": {
+          "system_tool_type": {
+            "title": "System Tool Type",
+            "enum": [
+              "load_procedure"
+            ],
+            "type": "string",
+            "default": "load_procedure"
+          },
+          "procedures": {
+            "title": "Procedures",
+            "type": "object",
+            "additionalProperties": {
+              "$ref": "#/components/schemas/ProcedureAtVersion"
+            }
+          }
+        }
+      },
+      "LoadProcedureToolErrorStatus": {
+        "enum": [
+          "not_found",
+          "invalid_name"
+        ],
+        "type": "string",
+        "additionalProperties": false
       },
       "MCPApprovalPolicy": {
         "title": "MCPApprovalPolicy",
@@ -55720,10 +55914,56 @@
         },
         "description": "Response model for Private Key JWT auth connections"
       },
+      "ProcedureAtVersion": {
+        "title": "ProcedureAtVersion",
+        "required": [
+          "procedure_id",
+          "name",
+          "content",
+          "agent_id"
+        ],
+        "type": "object",
+        "properties": {
+          "procedure_id": {
+            "title": "Procedure Id",
+            "type": "string",
+            "description": "Procedure ID"
+          },
+          "name": {
+            "title": "Name",
+            "maxLength": 200,
+            "type": "string",
+            "description": "Procedure name"
+          },
+          "content": {
+            "title": "Content",
+            "maxLength": 50000,
+            "type": "string",
+            "description": "Procedure content"
+          },
+          "agent_id": {
+            "title": "Agent Id",
+            "type": "string",
+            "description": "Agent ID of the procedure"
+          },
+          "version_id": {
+            "title": "Version Id",
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Version_Id"
+              }
+            ],
+            "description": "Version ID of a version of the procedure. None for a procedure never versioned.",
+            "nullable": true
+          }
+        }
+      },
       "ProcedureCompilerMode": {
         "title": "ProcedureCompilerMode",
         "enum": [
-          "append"
+          "append",
+          "skills"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -57949,12 +58189,12 @@
               "discriminator": {
                 "propertyName": "type",
                 "mapping": {
-                  "api_integration_webhook": "#/components/schemas/ApiIntegrationWebhookToolConfig-Input",
-                  "client": "#/components/schemas/ClientToolConfig-Input",
-                  "mcp": "#/components/schemas/MCPToolConfig-Input",
+                  "api_integration_webhook": "#/components/schemas/ApiIntegrationWebhookToolConfigInput",
+                  "client": "#/components/schemas/ClientToolConfigInput",
+                  "mcp": "#/components/schemas/MCPToolConfigInput",
                   "smb": "#/components/schemas/SMBToolConfig",
-                  "system": "#/components/schemas/SystemToolConfig-Input",
-                  "webhook": "#/components/schemas/WebhookToolConfig-Input"
+                  "system": "#/components/schemas/SystemToolConfigInput",
+                  "webhook": "#/components/schemas/WebhookToolConfigInput"
                 }
               }
             },
@@ -58177,12 +58417,12 @@
               "discriminator": {
                 "propertyName": "type",
                 "mapping": {
-                  "api_integration_webhook": "#/components/schemas/ApiIntegrationWebhookToolConfig-Output",
-                  "client": "#/components/schemas/ClientToolConfig-Output",
-                  "mcp": "#/components/schemas/MCPToolConfig-Output",
+                  "api_integration_webhook": "#/components/schemas/ApiIntegrationWebhookToolConfigOutput",
+                  "client": "#/components/schemas/ClientToolConfigOutput",
+                  "mcp": "#/components/schemas/MCPToolConfigOutput",
                   "smb": "#/components/schemas/SMBToolConfig",
-                  "system": "#/components/schemas/SystemToolConfig-Output",
-                  "webhook": "#/components/schemas/WebhookToolConfig-Output"
+                  "system": "#/components/schemas/SystemToolConfigOutput",
+                  "webhook": "#/components/schemas/WebhookToolConfigOutput"
                 }
               }
             },
@@ -60952,6 +61192,9 @@
                 "$ref": "#/components/schemas/DeleteCalendarEventParams"
               },
               {
+                "$ref": "#/components/schemas/ListCustomerFacingAgentsParams"
+              },
+              {
                 "$ref": "#/components/schemas/ListAgentRulesParams"
               },
               {
@@ -61073,6 +61316,7 @@
                 "list_calendar_events": "#/components/schemas/ListCalendarEventsParams",
                 "list_client_interactions": "#/components/schemas/ListClientInteractionsParams",
                 "list_clients": "#/components/schemas/ListClientsParams",
+                "list_customer_facing_agents": "#/components/schemas/ListCustomerFacingAgentsParams",
                 "list_group_sessions": "#/components/schemas/ListGroupSessionsParams",
                 "list_holidays": "#/components/schemas/ListHolidaysParams",
                 "list_locations": "#/components/schemas/ListLocationsParams",
@@ -62267,6 +62511,50 @@
           }
         }
       },
+      "SlackBotAuthResponse": {
+        "title": "SlackBotAuthResponse",
+        "required": [
+          "name",
+          "id"
+        ],
+        "type": "object",
+        "properties": {
+          "name": {
+            "title": "Name",
+            "type": "string"
+          },
+          "auth_type": {
+            "title": "Auth Type",
+            "enum": [
+              "slack_bot_auth"
+            ],
+            "type": "string",
+            "default": "slack_bot_auth"
+          },
+          "provider": {
+            "title": "Provider",
+            "enum": [
+              "Slack"
+            ],
+            "type": "string",
+            "default": "Slack"
+          },
+          "id": {
+            "title": "Id",
+            "type": "string"
+          },
+          "used_by": {
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/AuthConnectionDependencies"
+              }
+            ],
+            "nullable": true
+          }
+        },
+        "description": "Response model for the internal Slack BYO bot auth connection."
+      },
       "SoftTimeoutConfig": {
         "title": "SoftTimeoutConfig",
         "type": "object",
@@ -62914,7 +63202,8 @@
           },
           "name": {
             "title": "Name",
-            "type": "string"
+            "type": "string",
+            "description": "Human-readable name for the speech engine"
           },
           "speech_engine": {
             "$ref": "#/components/schemas/SpeechEngineConfig"
@@ -62939,17 +63228,81 @@
           },
           "language": {
             "title": "Language",
-            "type": "string"
+            "type": "string",
+            "description": "ISO language code used by the speech engine (e.g. \u0027en\u0027)"
           },
           "tags": {
             "title": "Tags",
             "type": "array",
             "items": {
               "type": "string"
-            }
+            },
+            "description": "Arbitrary tags for categorization and filtering"
           },
           "metadata": {
             "$ref": "#/components/schemas/AgentMetadataDBModel"
+          }
+        },
+        "example": {
+          "asr": {
+            "keywords": [],
+            "provider": "elevenlabs",
+            "quality": "high",
+            "user_input_audio_format": "pcm_16000"
+          },
+          "call_limits": {
+            "agent_concurrency_limit": -1,
+            "bursting_enabled": true,
+            "daily_limit": 100000
+          },
+          "conversation": {
+            "client_events": [
+              "audio",
+              "interruption",
+              "agent_response",
+              "user_transcript"
+            ],
+            "max_duration_seconds": 600
+          },
+          "language": "en",
+          "metadata": {
+            "created_at_unix_secs": 1714000000,
+            "created_from": "api",
+            "last_updated_from": "api",
+            "updated_at_unix_secs": 1714000000
+          },
+          "name": "My Speech Engine",
+          "privacy": {
+            "apply_to_existing_conversations": false,
+            "delete_audio": false,
+            "delete_transcript_and_pii": false,
+            "record_voice": true,
+            "retention_days": -1,
+            "zero_retention_mode": false
+          },
+          "speech_engine": {
+            "request_headers": {},
+            "ws_url": "wss://example.com/transcript"
+          },
+          "speech_engine_id": "seng_3701k3ttaq12ewp8b7qv5rfyszkz",
+          "tags": [
+            "production",
+            "v1"
+          ],
+          "tts": {
+            "agent_output_audio_format": "pcm_16000",
+            "model_id": "eleven_flash_v2",
+            "optimize_streaming_latency": 3,
+            "similarity_boost": 0.8,
+            "speed": 1.0,
+            "stability": 0.5,
+            "voice_id": "cjVigY5qzO86Huf0OWal"
+          },
+          "turn": {
+            "mode": "turn",
+            "silence_end_call_timeout": -1,
+            "turn_eagerness": "normal",
+            "turn_timeout": 7.0
           }
         }
       },
@@ -62970,20 +63323,31 @@
           },
           "name": {
             "title": "Name",
-            "type": "string"
+            "type": "string",
+            "description": "Human-readable name for the speech engine"
           },
           "created_at_unix_secs": {
             "title": "Created At Unix Secs",
             "type": "integer",
-            "description": "Creation time in unix seconds"
+            "description": "Creation time in Unix seconds"
           },
           "tags": {
             "title": "Tags",
             "type": "array",
             "items": {
               "type": "string"
-            }
+            },
+            "description": "Arbitrary tags for categorization and filtering"
           }
+        },
+        "example": {
+          "created_at_unix_secs": 1714000000,
+          "name": "My Speech Engine",
+          "speech_engine_id": "seng_3701k3ttaq12ewp8b7qv5rfyszkz",
+          "tags": [
+            "production",
+            "v1"
+          ]
         }
       },
       "SpeechHistoryItemResponseModel": {
@@ -64359,6 +64723,9 @@
               },
               {
                 "$ref": "#/components/schemas/KnowledgeBaseRagToolConfig"
+              },
+              {
+                "$ref": "#/components/schemas/LoadProcedureToolConfig"
               }
             ],
             "properties": {
@@ -64372,10 +64739,11 @@
                 "end_call": "#/components/schemas/EndCallToolConfig",
                 "knowledge_base_rag": "#/components/schemas/KnowledgeBaseRagToolConfig",
                 "language_detection": "#/components/schemas/LanguageDetectionToolConfig",
+                "load_procedure": "#/components/schemas/LoadProcedureToolConfig",
                 "play_keypad_touch_tone": "#/components/schemas/PlayDTMFToolConfig",
                 "skip_turn": "#/components/schemas/SkipTurnToolConfig",
                 "transfer_to_agent": "#/components/schemas/TransferToAgentToolConfig",
-                "transfer_to_number": "#/components/schemas/TransferToNumberToolConfig-Input",
+                "transfer_to_number": "#/components/schemas/TransferToNumberToolConfigInput",
                 "voicemail_detection": "#/components/schemas/VoicemailDetectionToolConfig"
               }
             }
@@ -64489,6 +64857,9 @@
               },
               {
                 "$ref": "#/components/schemas/KnowledgeBaseRagToolConfig"
+              },
+              {
+                "$ref": "#/components/schemas/LoadProcedureToolConfig"
               }
             ],
             "properties": {
@@ -64502,10 +64873,11 @@
                 "end_call": "#/components/schemas/EndCallToolConfig",
                 "knowledge_base_rag": "#/components/schemas/KnowledgeBaseRagToolConfig",
                 "language_detection": "#/components/schemas/LanguageDetectionToolConfig",
+                "load_procedure": "#/components/schemas/LoadProcedureToolConfig",
                 "play_keypad_touch_tone": "#/components/schemas/PlayDTMFToolConfig",
                 "skip_turn": "#/components/schemas/SkipTurnToolConfig",
                 "transfer_to_agent": "#/components/schemas/TransferToAgentToolConfig",
-                "transfer_to_number": "#/components/schemas/TransferToNumberToolConfig-Output",
+                "transfer_to_number": "#/components/schemas/TransferToNumberToolConfigOutput",
                 "voicemail_detection": "#/components/schemas/VoicemailDetectionToolConfig"
               }
             }
@@ -66020,7 +66392,7 @@
                 "discriminator": {
                   "propertyName": "type",
                   "mapping": {
-                    "api_integration_webhook": "#/components/schemas/ConversationHistoryTranscriptToolCallApiIntegrationWebhookDetails-Output",
+                    "api_integration_webhook": "#/components/schemas/ConversationHistoryTranscriptToolCallApiIntegrationWebhookDetailsOutput",
                     "client": "#/components/schemas/ConversationHistoryTranscriptToolCallClientDetails",
                     "mcp": "#/components/schemas/ConversationHistoryTranscriptToolCallMCPDetails",
                     "webhook": "#/components/schemas/ConversationHistoryTranscriptToolCallWebhookDetails"
@@ -66084,10 +66456,10 @@
             "discriminator": {
               "propertyName": "type",
               "mapping": {
-                "client": "#/components/schemas/ClientToolConfig-Input",
-                "mcp": "#/components/schemas/MCPToolConfig-Input",
-                "system": "#/components/schemas/SystemToolConfig-Input",
-                "webhook": "#/components/schemas/WebhookToolConfig-Input"
+                "client": "#/components/schemas/ClientToolConfigInput",
+                "mcp": "#/components/schemas/MCPToolConfigInput",
+                "system": "#/components/schemas/SystemToolConfigInput",
+                "webhook": "#/components/schemas/WebhookToolConfigInput"
               }
             }
           },
@@ -66191,10 +66563,10 @@
             "discriminator": {
               "propertyName": "type",
               "mapping": {
-                "client": "#/components/schemas/ClientToolConfig-Output",
-                "mcp": "#/components/schemas/MCPToolConfig-Output",
-                "system": "#/components/schemas/SystemToolConfig-Output",
-                "webhook": "#/components/schemas/WebhookToolConfig-Output"
+                "client": "#/components/schemas/ClientToolConfigOutput",
+                "mcp": "#/components/schemas/MCPToolConfigOutput",
+                "system": "#/components/schemas/SystemToolConfigOutput",
+                "webhook": "#/components/schemas/WebhookToolConfigOutput"
               }
             }
           },
@@ -73886,10 +74258,10 @@
                 "discriminator": {
                   "propertyName": "type",
                   "mapping": {
-                    "expression": "#/components/schemas/WorkflowExpressionConditionModel-Input",
-                    "llm": "#/components/schemas/WorkflowLLMConditionModel-Input",
-                    "result": "#/components/schemas/WorkflowResultConditionModel-Input",
-                    "unconditional": "#/components/schemas/WorkflowUnconditionalModel-Input"
+                    "expression": "#/components/schemas/WorkflowExpressionConditionModelInput",
+                    "llm": "#/components/schemas/WorkflowLLMConditionModelInput",
+                    "result": "#/components/schemas/WorkflowResultConditionModelInput",
+                    "unconditional": "#/components/schemas/WorkflowUnconditionalModelInput"
                   }
                 }
               }
@@ -73928,10 +74300,10 @@
                 "discriminator": {
                   "propertyName": "type",
                   "mapping": {
-                    "expression": "#/components/schemas/WorkflowExpressionConditionModel-Input",
-                    "llm": "#/components/schemas/WorkflowLLMConditionModel-Input",
-                    "result": "#/components/schemas/WorkflowResultConditionModel-Input",
-                    "unconditional": "#/components/schemas/WorkflowUnconditionalModel-Input"
+                    "expression": "#/components/schemas/WorkflowExpressionConditionModelInput",
+                    "llm": "#/components/schemas/WorkflowLLMConditionModelInput",
+                    "result": "#/components/schemas/WorkflowResultConditionModelInput",
+                    "unconditional": "#/components/schemas/WorkflowUnconditionalModelInput"
                   }
                 }
               }
@@ -73992,10 +74364,10 @@
                 "discriminator": {
                   "propertyName": "type",
                   "mapping": {
-                    "expression": "#/components/schemas/WorkflowExpressionConditionModel-Output",
-                    "llm": "#/components/schemas/WorkflowLLMConditionModel-Output",
-                    "result": "#/components/schemas/WorkflowResultConditionModel-Output",
-                    "unconditional": "#/components/schemas/WorkflowUnconditionalModel-Output"
+                    "expression": "#/components/schemas/WorkflowExpressionConditionModelOutput",
+                    "llm": "#/components/schemas/WorkflowLLMConditionModelOutput",
+                    "result": "#/components/schemas/WorkflowResultConditionModelOutput",
+                    "unconditional": "#/components/schemas/WorkflowUnconditionalModelOutput"
                   }
                 }
               }
@@ -74034,10 +74406,10 @@
                 "discriminator": {
                   "propertyName": "type",
                   "mapping": {
-                    "expression": "#/components/schemas/WorkflowExpressionConditionModel-Output",
-                    "llm": "#/components/schemas/WorkflowLLMConditionModel-Output",
-                    "result": "#/components/schemas/WorkflowResultConditionModel-Output",
-                    "unconditional": "#/components/schemas/WorkflowUnconditionalModel-Output"
+                    "expression": "#/components/schemas/WorkflowExpressionConditionModelOutput",
+                    "llm": "#/components/schemas/WorkflowLLMConditionModelOutput",
+                    "result": "#/components/schemas/WorkflowResultConditionModelOutput",
+                    "unconditional": "#/components/schemas/WorkflowUnconditionalModelOutput"
                   }
                 }
               }
@@ -75186,7 +75558,7 @@
                 "mapping": {
                   "edge": "#/components/schemas/WorkflowToolEdgeStepModel",
                   "max_iterations_exceeded": "#/components/schemas/WorkflowToolMaxIterationsExceededStepModel",
-                  "nested_tools": "#/components/schemas/WorkflowToolNestedToolsStepModel-Input"
+                  "nested_tools": "#/components/schemas/WorkflowToolNestedToolsStepModelInput"
                 }
               }
             }
@@ -75227,7 +75599,7 @@
                 "mapping": {
                   "edge": "#/components/schemas/WorkflowToolEdgeStepModel",
                   "max_iterations_exceeded": "#/components/schemas/WorkflowToolMaxIterationsExceededStepModel",
-                  "nested_tools": "#/components/schemas/WorkflowToolNestedToolsStepModel-Output"
+                  "nested_tools": "#/components/schemas/WorkflowToolNestedToolsStepModelOutput"
                 }
               }
             }
@@ -75893,6 +76265,7 @@
           "convai_agent_versions_deployments",
           "convai_memory_entries",
           "convai_coaching_proposals",
+          "convai_templates",
           "dashboard",
           "dashboard_configuration",
           "convai_agent_drafts",
@@ -76145,12 +76518,12 @@
           "discriminator": {
             "propertyName": "type",
             "mapping": {
-              "end": "#/components/schemas/WorkflowEndNodeModel-Input",
-              "override_agent": "#/components/schemas/WorkflowOverrideAgentNodeModel-Input",
-              "phone_number": "#/components/schemas/WorkflowPhoneNumberNodeModel-Input",
-              "standalone_agent": "#/components/schemas/WorkflowStandaloneAgentNodeModel-Input",
-              "start": "#/components/schemas/WorkflowStartNodeModel-Input",
-              "tool": "#/components/schemas/WorkflowToolNodeModel-Input"
+              "end": "#/components/schemas/WorkflowEndNodeModelInput",
+              "override_agent": "#/components/schemas/WorkflowOverrideAgentNodeModelInput",
+              "phone_number": "#/components/schemas/WorkflowPhoneNumberNodeModelInput",
+              "standalone_agent": "#/components/schemas/WorkflowStandaloneAgentNodeModelInput",
+              "start": "#/components/schemas/WorkflowStartNodeModelInput",
+              "tool": "#/components/schemas/WorkflowToolNodeModelInput"
             }
           }
         }
@@ -76192,12 +76565,12 @@
           "discriminator": {
             "propertyName": "type",
             "mapping": {
-              "end": "#/components/schemas/WorkflowEndNodeModel-Output",
-              "override_agent": "#/components/schemas/WorkflowOverrideAgentNodeModel-Output",
-              "phone_number": "#/components/schemas/WorkflowPhoneNumberNodeModel-Output",
-              "standalone_agent": "#/components/schemas/WorkflowStandaloneAgentNodeModel-Output",
-              "start": "#/components/schemas/WorkflowStartNodeModel-Output",
-              "tool": "#/components/schemas/WorkflowToolNodeModel-Output"
+              "end": "#/components/schemas/WorkflowEndNodeModelOutput",
+              "override_agent": "#/components/schemas/WorkflowOverrideAgentNodeModelOutput",
+              "phone_number": "#/components/schemas/WorkflowPhoneNumberNodeModelOutput",
+              "standalone_agent": "#/components/schemas/WorkflowStandaloneAgentNodeModelOutput",
+              "start": "#/components/schemas/WorkflowStartNodeModelOutput",
+              "tool": "#/components/schemas/WorkflowToolNodeModelOutput"
             }
           }
         }
@@ -77467,6 +77840,9 @@
             "$ref": "#/components/schemas/CreateBasicAuthRequest"
           },
           {
+            "$ref": "#/components/schemas/CreateBearerAuthRequest"
+          },
+          {
             "$ref": "#/components/schemas/CreateOAuth2JWTRequest"
           },
           {
@@ -77489,6 +77865,7 @@
             "CreateOAuth2ClientCredsRequest": "#/components/schemas/CreateOAuth2ClientCredsRequest",
             "CreateCustomHeaderAuthRequest": "#/components/schemas/CreateCustomHeaderAuthRequest",
             "CreateBasicAuthRequest": "#/components/schemas/CreateBasicAuthRequest",
+            "CreateBearerAuthRequest": "#/components/schemas/CreateBearerAuthRequest",
             "CreateOAuth2JWTRequest": "#/components/schemas/CreateOAuth2JWTRequest",
             "CreatePrivateKeyJWTRequest": "#/components/schemas/CreatePrivateKeyJWTRequest",
             "CreateMTLSAuthRequest": "#/components/schemas/CreateMTLSAuthRequest"
@@ -77531,6 +77908,9 @@
           },
           {
             "$ref": "#/components/schemas/WhatsAppAuthResponse"
+          },
+          {
+            "$ref": "#/components/schemas/SlackBotAuthResponse"
           }
         ],
         "properties": {
@@ -77554,6 +77934,7 @@
             "api_integration_oauth2_auth_code": "#/components/schemas/ApiIntegrationOAuth2AuthCodeResponse",
             "api_integration_oauth2_custom_app": "#/components/schemas/ApiIntegrationOAuth2CustomAppResponse",
             "whatsapp_auth": "#/components/schemas/WhatsAppAuthResponse",
+            "slack_bot_auth": "#/components/schemas/SlackBotAuthResponse",
             "OAuth2ClientCredsResponse": "#/components/schemas/OAuth2ClientCredsResponse",
             "BasicAuthResponse": "#/components/schemas/BasicAuthResponse",
             "BearerAuthResponse": "#/components/schemas/BearerAuthResponse",
@@ -77563,7 +77944,8 @@
             "CustomHeaderAuthResponse": "#/components/schemas/CustomHeaderAuthResponse",
             "ApiIntegrationOAuth2AuthCodeResponse": "#/components/schemas/ApiIntegrationOAuth2AuthCodeResponse",
             "ApiIntegrationOAuth2CustomAppResponse": "#/components/schemas/ApiIntegrationOAuth2CustomAppResponse",
-            "WhatsAppAuthResponse": "#/components/schemas/WhatsAppAuthResponse"
+            "WhatsAppAuthResponse": "#/components/schemas/WhatsAppAuthResponse",
+            "SlackBotAuthResponse": "#/components/schemas/SlackBotAuthResponse"
           }
         }
       },
@@ -78630,6 +79012,17 @@
             ],
             "type": "string",
             "additionalProperties": false
+          }
+        }
+      },
+      "Auto_Resolve_After_Inactive_Minutes": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "integer"
           }
         }
       },
@@ -83648,12 +84041,12 @@
               "discriminator": {
                 "propertyName": "type",
                 "mapping": {
-                  "api_integration_webhook": "#/components/schemas/ApiIntegrationWebhookToolConfig-Input",
-                  "client": "#/components/schemas/ClientToolConfig-Input",
-                  "mcp": "#/components/schemas/MCPToolConfig-Input",
+                  "api_integration_webhook": "#/components/schemas/ApiIntegrationWebhookToolConfigInput",
+                  "client": "#/components/schemas/ClientToolConfigInput",
+                  "mcp": "#/components/schemas/MCPToolConfigInput",
                   "smb": "#/components/schemas/SMBToolConfig",
-                  "system": "#/components/schemas/SystemToolConfig-Input",
-                  "webhook": "#/components/schemas/WebhookToolConfig-Input"
+                  "system": "#/components/schemas/SystemToolConfigInput",
+                  "webhook": "#/components/schemas/WebhookToolConfigInput"
                 }
               }
             }

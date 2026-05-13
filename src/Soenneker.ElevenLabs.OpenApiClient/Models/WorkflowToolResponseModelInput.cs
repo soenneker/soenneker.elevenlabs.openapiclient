@@ -109,7 +109,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 {
                     result.WorkflowToolMaxIterationsExceededStepModel = new global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkflowToolMaxIterationsExceededStepModel();
                 }
-                else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                else if("nested_tools".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
                     result.WorkflowToolNestedToolsStepModelInput = new global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkflowToolNestedToolsStepModelInput();
                 }

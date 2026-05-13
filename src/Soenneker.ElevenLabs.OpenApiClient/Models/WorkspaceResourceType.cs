@@ -111,6 +111,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         #pragma warning disable CS1591
         Convai_coaching_proposals,
         #pragma warning restore CS1591
+        [EnumMember(Value = "convai_templates")]
+        #pragma warning disable CS1591
+        Convai_templates,
+        #pragma warning restore CS1591
         [EnumMember(Value = "dashboard")]
         #pragma warning disable CS1591
         Dashboard,

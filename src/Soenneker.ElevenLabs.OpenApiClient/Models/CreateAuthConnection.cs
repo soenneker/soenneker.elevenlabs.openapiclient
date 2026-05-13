@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.ElevenLabs.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateBasicAuthRequest"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateCustomHeaderAuthRequest"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateMTLSAuthRequest"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateOAuth2ClientCredsRequest"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateOAuth2JWTRequest"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.CreatePrivateKeyJWTRequest"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateBasicAuthRequest"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateBearerAuthRequest"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateCustomHeaderAuthRequest"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateMTLSAuthRequest"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateOAuth2ClientCredsRequest"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateOAuth2JWTRequest"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.CreatePrivateKeyJWTRequest"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CreateAuthConnection : IComposedTypeWrapper, IParsable
@@ -20,6 +20,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #nullable restore
 #else
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateBasicAuthRequest CreateBasicAuthRequest { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateBearerAuthRequest"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateBearerAuthRequest? CreateBearerAuthRequest { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateBearerAuthRequest CreateBearerAuthRequest { get; set; }
 #endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateCustomHeaderAuthRequest"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -71,6 +79,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var result = new global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateAuthConnection();
             result.CreateBasicAuthRequest = new global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateBasicAuthRequest();
+            result.CreateBearerAuthRequest = new global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateBearerAuthRequest();
             result.CreateCustomHeaderAuthRequest = new global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateCustomHeaderAuthRequest();
             result.CreateMTLSAuthRequest = new global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateMTLSAuthRequest();
             result.CreateOAuth2ClientCredsRequest = new global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateOAuth2ClientCredsRequest();
@@ -84,9 +93,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(CreateBasicAuthRequest != null || CreateCustomHeaderAuthRequest != null || CreateMTLSAuthRequest != null || CreateOAuth2ClientCredsRequest != null || CreateOAuth2JWTRequest != null || CreatePrivateKeyJWTRequest != null)
+            if(CreateBasicAuthRequest != null || CreateBearerAuthRequest != null || CreateCustomHeaderAuthRequest != null || CreateMTLSAuthRequest != null || CreateOAuth2ClientCredsRequest != null || CreateOAuth2JWTRequest != null || CreatePrivateKeyJWTRequest != null)
             {
-                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(CreateBasicAuthRequest, CreateCustomHeaderAuthRequest, CreateMTLSAuthRequest, CreateOAuth2ClientCredsRequest, CreateOAuth2JWTRequest, CreatePrivateKeyJWTRequest);
+                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(CreateBasicAuthRequest, CreateBearerAuthRequest, CreateCustomHeaderAuthRequest, CreateMTLSAuthRequest, CreateOAuth2ClientCredsRequest, CreateOAuth2JWTRequest, CreatePrivateKeyJWTRequest);
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -97,7 +106,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateBasicAuthRequest>(null, CreateBasicAuthRequest, CreateCustomHeaderAuthRequest, CreateMTLSAuthRequest, CreateOAuth2ClientCredsRequest, CreateOAuth2JWTRequest, CreatePrivateKeyJWTRequest);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateBasicAuthRequest>(null, CreateBasicAuthRequest, CreateBearerAuthRequest, CreateCustomHeaderAuthRequest, CreateMTLSAuthRequest, CreateOAuth2ClientCredsRequest, CreateOAuth2JWTRequest, CreatePrivateKeyJWTRequest);
         }
     }
 }

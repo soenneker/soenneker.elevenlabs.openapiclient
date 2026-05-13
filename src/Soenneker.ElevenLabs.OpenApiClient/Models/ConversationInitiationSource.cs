@@ -79,5 +79,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         #pragma warning disable CS1591
         Template_preview,
         #pragma warning restore CS1591
+        [EnumMember(Value = "genesys_bot_connector")]
+        #pragma warning disable CS1591
+        Genesys_bot_connector,
+        #pragma warning restore CS1591
     }
 }

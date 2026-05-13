@@ -148,19 +148,19 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
                 var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
                 var result = new global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolResponseModel.ToolResponseModel_tool_config();
-                if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                if("client".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
                     result.ClientToolConfigOutput = new global::Soenneker.ElevenLabs.OpenApiClient.Models.ClientToolConfigOutput();
                 }
-                else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                else if("mcp".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
                     result.MCPToolConfigOutput = new global::Soenneker.ElevenLabs.OpenApiClient.Models.MCPToolConfigOutput();
                 }
-                else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                else if("system".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
                     result.SystemToolConfigOutput = new global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigOutput();
                 }
-                else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                else if("webhook".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
                     result.WebhookToolConfigOutput = new global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookToolConfigOutput();
                 }

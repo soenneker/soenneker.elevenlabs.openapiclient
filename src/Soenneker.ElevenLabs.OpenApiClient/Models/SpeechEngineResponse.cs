@@ -38,7 +38,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationConfigOutput Conversation { get; set; }
 #endif
-        /// <summary>The language property</summary>
+        /// <summary>ISO language code used by the speech engine (e.g. &apos;en&apos;)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Language { get; set; }
@@ -54,7 +54,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentMetadataDBModel Metadata { get; set; }
 #endif
-        /// <summary>The name property</summary>
+        /// <summary>Human-readable name for the speech engine</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }
@@ -86,7 +86,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public string SpeechEngineId { get; set; }
 #endif
-        /// <summary>The tags property</summary>
+        /// <summary>Arbitrary tags for categorization and filtering</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Tags { get; set; }

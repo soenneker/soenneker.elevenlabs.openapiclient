@@ -24,7 +24,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.Next_Cursor NextCursor { get; set; }
 #endif
-        /// <summary>The speech_engines property</summary>
+        /// <summary>The speech engines matching the query</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechEngineSummaryResponse>? SpeechEngines { get; set; }

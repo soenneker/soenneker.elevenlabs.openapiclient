@@ -373,15 +373,15 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
                 var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
                 var result = new global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentAPIModelOutput.PromptAgentAPIModelOutput_tools();
-                if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                if("api_integration_webhook".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
                     result.ApiIntegrationWebhookToolConfigOutput = new global::Soenneker.ElevenLabs.OpenApiClient.Models.ApiIntegrationWebhookToolConfigOutput();
                 }
-                else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                else if("client".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
                     result.ClientToolConfigOutput = new global::Soenneker.ElevenLabs.OpenApiClient.Models.ClientToolConfigOutput();
                 }
-                else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                else if("mcp".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
                     result.MCPToolConfigOutput = new global::Soenneker.ElevenLabs.OpenApiClient.Models.MCPToolConfigOutput();
                 }
@@ -389,11 +389,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 {
                     result.SMBToolConfig = new global::Soenneker.ElevenLabs.OpenApiClient.Models.SMBToolConfig();
                 }
-                else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                else if("system".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
                     result.SystemToolConfigOutput = new global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigOutput();
                 }
-                else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                else if("webhook".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
                     result.WebhookToolConfigOutput = new global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookToolConfigOutput();
                 }
