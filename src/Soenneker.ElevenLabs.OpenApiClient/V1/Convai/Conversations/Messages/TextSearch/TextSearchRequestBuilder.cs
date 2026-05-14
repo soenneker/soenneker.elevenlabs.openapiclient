@@ -22,7 +22,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Conversations.Messages.Te
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TextSearchRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/convai/conversations/messages/text-search?text_query={text_query}{&agent_id*,branch_id*,call_duration_max_secs*,call_duration_min_secs*,call_start_after_unix*,call_start_before_unix*,call_successful*,conversation_initiation_source*,cursor*,data_collection_params*,evaluation_params*,has_feedback_comment*,main_languages*,page_size*,rating_max*,rating_min*,sort_by*,summary_mode*,tool_names*,tool_names_errored*,tool_names_successful*,user_id*}", pathParameters)
+        public TextSearchRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/convai/conversations/messages/text-search?text_query={text_query}{&agent_id*,branch_id*,call_duration_max_secs*,call_duration_min_secs*,call_start_after_unix*,call_start_before_unix*,call_successful*,conversation_initiation_source*,cursor*,data_collection_params*,evaluation_params*,has_feedback_comment*,main_languages*,page_size*,rating_max*,rating_min*,sort_by*,summary_mode*,text_only*,tool_names*,tool_names_errored*,tool_names_successful*,user_id*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Conversations.Messages.Te
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TextSearchRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/convai/conversations/messages/text-search?text_query={text_query}{&agent_id*,branch_id*,call_duration_max_secs*,call_duration_min_secs*,call_start_after_unix*,call_start_before_unix*,call_successful*,conversation_initiation_source*,cursor*,data_collection_params*,evaluation_params*,has_feedback_comment*,main_languages*,page_size*,rating_max*,rating_min*,sort_by*,summary_mode*,tool_names*,tool_names_errored*,tool_names_successful*,user_id*}", rawUrl)
+        public TextSearchRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/convai/conversations/messages/text-search?text_query={text_query}{&agent_id*,branch_id*,call_duration_max_secs*,call_duration_min_secs*,call_start_after_unix*,call_start_before_unix*,call_successful*,conversation_initiation_source*,cursor*,data_collection_params*,evaluation_params*,has_feedback_comment*,main_languages*,page_size*,rating_max*,rating_min*,sort_by*,summary_mode*,text_only*,tool_names*,tool_names_errored*,tool_names_successful*,user_id*}", rawUrl)
         {
         }
         /// <summary>
@@ -248,6 +248,15 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Conversations.Messages.Te
             /// <summary>Whether to include transcript summaries in the response.</summary>
             [QueryParameter("summary_mode")]
             public global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Conversations.Messages.TextSearch.GetSummary_modeQueryParameterType? SummaryMode { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("text_only")]
+            public string? TextOnly { get; set; }
+#nullable restore
+#else
+            [QueryParameter("text_only")]
+            public string TextOnly { get; set; }
+#endif
             /// <summary>The search query text for full-text and fuzzy matching</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

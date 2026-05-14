@@ -7223,6 +7223,72 @@
       }
     },
     "/v1/workspace/auth-connections/{auth_connection_id}": {
+      "patch": {
+        "tags": [
+          "workspace"
+        ],
+        "summary": "Update Workspace Auth Connection",
+        "description": "Update an auth connection",
+        "operationId": "update-auth-connection",
+        "parameters": [
+          {
+            "name": "auth_connection_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "title": "Auth Connection Id",
+              "type": "string"
+            }
+          },
+          {
+            "name": "xi-api-key",
+            "in": "header",
+            "description": "Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the \u0027Profile\u0027 tab on the website.",
+            "schema": {
+              "title": "Xi-Api-Key",
+              "type": "object",
+              "anyOf": [
+                {
+                  "type": "string"
+                }
+              ],
+              "description": "Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the \u0027Profile\u0027 tab on the website.",
+              "nullable": true
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateAuthConnection"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseUpdateWorkspaceAuthConnectionV1WorkspaceAuthConnectionsAuthConnectionIdPatch"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      },
       "delete": {
         "tags": [
           "workspace"
@@ -11632,6 +11698,20 @@
             }
           },
           {
+            "name": "text_only",
+            "in": "query",
+            "schema": {
+              "title": "Text Only",
+              "type": "object",
+              "anyOf": [
+                {
+                  "type": "string"
+                }
+              ],
+              "nullable": true
+            }
+          },
+          {
             "name": "branch_id",
             "in": "query",
             "description": "Filter conversations by branch ID.",
@@ -12547,6 +12627,20 @@
             "in": "query",
             "schema": {
               "title": "Conversation Initiation Source",
+              "type": "object",
+              "anyOf": [
+                {
+                  "type": "string"
+                }
+              ],
+              "nullable": true
+            }
+          },
+          {
+            "name": "text_only",
+            "in": "query",
+            "schema": {
+              "title": "Text Only",
               "type": "object",
               "anyOf": [
                 {
@@ -26400,6 +26494,7 @@
           "source_video_url",
           "supports_video",
           "processing",
+          "video_processing_failed",
           "preview_b64"
         ],
         "type": "object",
@@ -26472,6 +26567,10 @@
           },
           "processing": {
             "title": "Processing",
+            "type": "boolean"
+          },
+          "video_processing_failed": {
+            "title": "Video Processing Failed",
             "type": "boolean"
           },
           "preview_b64": {
@@ -47332,6 +47431,13 @@
             ],
             "description": "Domains of remote SIP servers used to validate TLS certificates.",
             "nullable": true
+          },
+          "attributes_to_headers": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            },
+            "description": "Map of dynamic variable name to header name for attributes_to_headers"
           }
         }
       },
@@ -47362,6 +47468,13 @@
               "type": "string"
             },
             "description": "SIP headers for INVITE request"
+          },
+          "attributes_to_headers": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            },
+            "description": "Map of dynamic variable name to header name for attributes_to_headers"
           },
           "has_auth_credentials": {
             "title": "Has Auth Credentials",
@@ -49285,6 +49398,13 @@
             ],
             "description": "Domains of remote SIP servers used to validate TLS certificates.",
             "nullable": true
+          },
+          "attributes_to_headers": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            },
+            "description": "Map of dynamic variable name to header name for attributes_to_headers"
           }
         }
       },
@@ -49828,6 +49948,7 @@
           "gemini-3-flash-preview",
           "gemini-3.1-pro-preview",
           "gemini-3.1-flash-lite-preview",
+          "gemini-3.1-flash-lite",
           "claude-sonnet-4-5",
           "claude-opus-4-7",
           "claude-sonnet-4-6",
@@ -49842,6 +49963,7 @@
           "qwen3-4b",
           "qwen3-30b-a3b",
           "qwen36-35b-a3b",
+          "qwen35-397b-a17b",
           "gpt-oss-20b",
           "gpt-oss-120b",
           "glm-45-air-fp8",
@@ -54092,6 +54214,13 @@
               }
             ],
             "nullable": true
+          },
+          "custom_headers": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            },
+            "description": "Custom headers configured for OAuth2 token requests"
           }
         },
         "description": "Response model for oauth2 client creds"
@@ -54525,6 +54654,13 @@
               "type": "string"
             },
             "description": "SIP X-* headers for INVITE request. These headers are sent as-is and may help identify this call."
+          },
+          "attributes_to_headers": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            },
+            "description": "Map of dynamic variable name to header name for attributes_to_headers"
           },
           "credentials": {
             "type": "object",
@@ -67929,6 +68065,50 @@
           }
         }
       },
+      "UpdateBasicAuthRequest": {
+        "title": "UpdateBasicAuthRequest",
+        "type": "object",
+        "properties": {
+          "auth_type": {
+            "title": "Auth Type",
+            "enum": [
+              "basic_auth"
+            ],
+            "type": "string",
+            "default": "basic_auth"
+          },
+          "provider": {
+            "title": "Provider",
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Provider"
+              }
+            ],
+            "nullable": true
+          },
+          "username": {
+            "title": "Username",
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Username"
+              }
+            ],
+            "nullable": true
+          },
+          "password": {
+            "title": "Password",
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Password"
+              }
+            ],
+            "nullable": true
+          }
+        }
+      },
       "UpdateBookingPageSettingsParams": {
         "title": "UpdateBookingPageSettingsParams",
         "type": "object",
@@ -68068,6 +68248,193 @@
             ],
             "type": "string",
             "default": "update_location"
+          }
+        }
+      },
+      "UpdateOAuth2ClientCredsRequest": {
+        "title": "UpdateOAuth2ClientCredsRequest",
+        "type": "object",
+        "properties": {
+          "auth_type": {
+            "title": "Auth Type",
+            "enum": [
+              "oauth2_client_credentials"
+            ],
+            "type": "string",
+            "default": "oauth2_client_credentials"
+          },
+          "provider": {
+            "title": "Provider",
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Provider"
+              }
+            ],
+            "nullable": true
+          },
+          "client_id": {
+            "title": "Client Id",
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Client_Id"
+              }
+            ],
+            "nullable": true
+          },
+          "scopes": {
+            "title": "Scopes",
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Scopes"
+              }
+            ],
+            "nullable": true
+          },
+          "extra_params": {
+            "$ref": "#/components/schemas/UpdateOAuth2ClientCredsRequestExtraParams"
+          },
+          "basic_auth_in_header": {
+            "title": "Basic Auth In Header",
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Basic_Auth_In_Header"
+              }
+            ],
+            "nullable": true
+          },
+          "client_secret": {
+            "title": "Client Secret",
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Client_Secret"
+              }
+            ],
+            "nullable": true
+          },
+          "custom_headers": {
+            "$ref": "#/components/schemas/UpdateOAuth2ClientCredsRequestCustomHeaders"
+          }
+        }
+      },
+      "UpdateOAuth2JWTRequest": {
+        "title": "UpdateOAuth2JWTRequest",
+        "type": "object",
+        "properties": {
+          "auth_type": {
+            "title": "Auth Type",
+            "enum": [
+              "oauth2_jwt"
+            ],
+            "type": "string",
+            "default": "oauth2_jwt"
+          },
+          "provider": {
+            "title": "Provider",
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Provider"
+              }
+            ],
+            "nullable": true
+          },
+          "algorithm": {
+            "title": "Algorithm",
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Algorithm"
+              }
+            ],
+            "nullable": true
+          },
+          "key_id": {
+            "title": "Key Id",
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Key_Id"
+              }
+            ],
+            "nullable": true
+          },
+          "issuer": {
+            "title": "Issuer",
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Issuer"
+              }
+            ],
+            "nullable": true
+          },
+          "audience": {
+            "title": "Audience",
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Audience"
+              }
+            ],
+            "nullable": true
+          },
+          "subject": {
+            "title": "Subject",
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Subject"
+              }
+            ],
+            "nullable": true
+          },
+          "expiration_seconds": {
+            "title": "Expiration Seconds",
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Expiration_Seconds"
+              }
+            ],
+            "nullable": true
+          },
+          "extra_params": {
+            "$ref": "#/components/schemas/UpdateOAuth2JWTRequestExtraParams"
+          },
+          "scopes": {
+            "title": "Scopes",
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Scopes"
+              }
+            ],
+            "nullable": true
+          },
+          "token_response_field": {
+            "title": "Token Response Field",
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Token_Response_Field"
+              }
+            ],
+            "nullable": true
+          },
+          "secret_key": {
+            "title": "Secret Key",
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Secret_Key"
+              }
+            ],
+            "nullable": true
           }
         }
       },
@@ -77048,6 +77415,14 @@
           "propertyName": "type"
         }
       },
+      "GetPhoneNumberInboundSIPTrunkConfigResponseModelAttributesToHeaders": {
+        "title": "Attributes To Headers",
+        "type": "object",
+        "additionalProperties": {
+          "type": "string"
+        },
+        "description": "Map of dynamic variable name to header name for attributes_to_headers"
+      },
       "GetPhoneNumberOutboundSIPTrunkConfigResponseModelHeaders": {
         "title": "Headers",
         "type": "object",
@@ -77055,6 +77430,22 @@
           "type": "string"
         },
         "description": "SIP headers for INVITE request"
+      },
+      "GetPhoneNumberOutboundSIPTrunkConfigResponseModelAttributesToHeaders": {
+        "title": "Attributes To Headers",
+        "type": "object",
+        "additionalProperties": {
+          "type": "string"
+        },
+        "description": "Map of dynamic variable name to header name for attributes_to_headers"
+      },
+      "InboundSIPTrunkConfigRequestModelAttributesToHeaders": {
+        "title": "Attributes To Headers",
+        "type": "object",
+        "additionalProperties": {
+          "type": "string"
+        },
+        "description": "Map of dynamic variable name to header name for attributes_to_headers"
       },
       "MCPServerConfigInputRequestHeaders": {
         "title": "Request Headers",
@@ -77465,6 +77856,14 @@
           "type": "string"
         }
       },
+      "OAuth2ClientCredsResponseCustomHeaders": {
+        "title": "Custom Headers",
+        "type": "object",
+        "additionalProperties": {
+          "type": "string"
+        },
+        "description": "Custom headers configured for OAuth2 token requests"
+      },
       "OAuth2JWTResponseExtraParams": {
         "title": "Extra Params",
         "type": "object",
@@ -77516,6 +77915,14 @@
           "type": "string"
         },
         "description": "SIP X-* headers for INVITE request. These headers are sent as-is and may help identify this call."
+      },
+      "OutboundSIPTrunkConfigRequestModelAttributesToHeaders": {
+        "title": "Attributes To Headers",
+        "type": "object",
+        "additionalProperties": {
+          "type": "string"
+        },
+        "description": "Map of dynamic variable name to header name for attributes_to_headers"
       },
       "PrivateKeyJWTResponseExtraParams": {
         "title": "Extra Params",
@@ -77641,6 +78048,81 @@
           "nullable": true
         },
         "description": "Values to replace. Set to null to remove an environment (except \u0027production\u0027)."
+      },
+      "UpdateOAuth2ClientCredsRequestExtraParams": {
+        "title": "Extra Params",
+        "required": [
+          "type"
+        ],
+        "type": "object",
+        "anyOf": [
+          {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            }
+          }
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "Union discriminator"
+          }
+        },
+        "nullable": true,
+        "discriminator": {
+          "propertyName": "type"
+        }
+      },
+      "UpdateOAuth2ClientCredsRequestCustomHeaders": {
+        "title": "Custom Headers",
+        "required": [
+          "type"
+        ],
+        "type": "object",
+        "anyOf": [
+          {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            }
+          }
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "Union discriminator"
+          }
+        },
+        "nullable": true,
+        "discriminator": {
+          "propertyName": "type"
+        }
+      },
+      "UpdateOAuth2JWTRequestExtraParams": {
+        "title": "Extra Params",
+        "required": [
+          "type"
+        ],
+        "type": "object",
+        "anyOf": [
+          {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            }
+          }
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "Union discriminator"
+          }
+        },
+        "nullable": true,
+        "discriminator": {
+          "propertyName": "type"
+        }
       },
       "UsageCharactersResponseModelUsage": {
         "title": "Usage",
@@ -77874,6 +78356,116 @@
       },
       "ResponseCreateWorkspaceAuthConnectionV1WorkspaceAuthConnectionsPost": {
         "title": "Response Create Workspace Auth Connection V1 Workspace Auth Connections Post",
+        "required": [
+          "auth_type"
+        ],
+        "type": "object",
+        "oneOf": [
+          {
+            "$ref": "#/components/schemas/OAuth2ClientCredsResponse"
+          },
+          {
+            "$ref": "#/components/schemas/BasicAuthResponse"
+          },
+          {
+            "$ref": "#/components/schemas/BearerAuthResponse"
+          },
+          {
+            "$ref": "#/components/schemas/OAuth2JWTResponse"
+          },
+          {
+            "$ref": "#/components/schemas/PrivateKeyJWTResponse"
+          },
+          {
+            "$ref": "#/components/schemas/MTLSAuthResponse"
+          },
+          {
+            "$ref": "#/components/schemas/CustomHeaderAuthResponse"
+          },
+          {
+            "$ref": "#/components/schemas/ApiIntegrationOAuth2AuthCodeResponse"
+          },
+          {
+            "$ref": "#/components/schemas/ApiIntegrationOAuth2CustomAppResponse"
+          },
+          {
+            "$ref": "#/components/schemas/WhatsAppAuthResponse"
+          },
+          {
+            "$ref": "#/components/schemas/SlackBotAuthResponse"
+          }
+        ],
+        "properties": {
+          "auth_type": {
+            "title": "auth_type",
+            "type": "string",
+            "description": "Union discriminator"
+          }
+        },
+        "description": "The type of auth connection config",
+        "discriminator": {
+          "propertyName": "auth_type",
+          "mapping": {
+            "oauth2_client_credentials": "#/components/schemas/OAuth2ClientCredsResponse",
+            "basic_auth": "#/components/schemas/BasicAuthResponse",
+            "bearer_auth": "#/components/schemas/BearerAuthResponse",
+            "oauth2_jwt": "#/components/schemas/OAuth2JWTResponse",
+            "private_key_jwt": "#/components/schemas/PrivateKeyJWTResponse",
+            "mtls": "#/components/schemas/MTLSAuthResponse",
+            "custom_header_auth": "#/components/schemas/CustomHeaderAuthResponse",
+            "api_integration_oauth2_auth_code": "#/components/schemas/ApiIntegrationOAuth2AuthCodeResponse",
+            "api_integration_oauth2_custom_app": "#/components/schemas/ApiIntegrationOAuth2CustomAppResponse",
+            "whatsapp_auth": "#/components/schemas/WhatsAppAuthResponse",
+            "slack_bot_auth": "#/components/schemas/SlackBotAuthResponse",
+            "OAuth2ClientCredsResponse": "#/components/schemas/OAuth2ClientCredsResponse",
+            "BasicAuthResponse": "#/components/schemas/BasicAuthResponse",
+            "BearerAuthResponse": "#/components/schemas/BearerAuthResponse",
+            "OAuth2JWTResponse": "#/components/schemas/OAuth2JWTResponse",
+            "PrivateKeyJWTResponse": "#/components/schemas/PrivateKeyJWTResponse",
+            "MTLSAuthResponse": "#/components/schemas/MTLSAuthResponse",
+            "CustomHeaderAuthResponse": "#/components/schemas/CustomHeaderAuthResponse",
+            "ApiIntegrationOAuth2AuthCodeResponse": "#/components/schemas/ApiIntegrationOAuth2AuthCodeResponse",
+            "ApiIntegrationOAuth2CustomAppResponse": "#/components/schemas/ApiIntegrationOAuth2CustomAppResponse",
+            "WhatsAppAuthResponse": "#/components/schemas/WhatsAppAuthResponse",
+            "SlackBotAuthResponse": "#/components/schemas/SlackBotAuthResponse"
+          }
+        }
+      },
+      "UpdateAuthConnection": {
+        "title": "Request Body",
+        "required": [
+          "type"
+        ],
+        "type": "object",
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/UpdateOAuth2ClientCredsRequest"
+          },
+          {
+            "$ref": "#/components/schemas/UpdateBasicAuthRequest"
+          },
+          {
+            "$ref": "#/components/schemas/UpdateOAuth2JWTRequest"
+          }
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "Union discriminator"
+          }
+        },
+        "description": "Updated auth connection fields",
+        "discriminator": {
+          "propertyName": "type",
+          "mapping": {
+            "UpdateOAuth2ClientCredsRequest": "#/components/schemas/UpdateOAuth2ClientCredsRequest",
+            "UpdateBasicAuthRequest": "#/components/schemas/UpdateBasicAuthRequest",
+            "UpdateOAuth2JWTRequest": "#/components/schemas/UpdateOAuth2JWTRequest"
+          }
+        }
+      },
+      "ResponseUpdateWorkspaceAuthConnectionV1WorkspaceAuthConnectionsAuthConnectionIdPatch": {
+        "title": "Response Update Workspace Auth Connection V1 Workspace Auth Connections  Auth Connection Id  Patch",
         "required": [
           "auth_type"
         ],
@@ -85090,6 +85682,157 @@
         "properties": {
           "value": {
             "type": "integer"
+          }
+        }
+      },
+      "Provider": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string"
+          }
+        }
+      },
+      "Client_Id": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string"
+          }
+        }
+      },
+      "Scopes": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "Basic_Auth_In_Header": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "boolean"
+          }
+        }
+      },
+      "Client_Secret": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string"
+          }
+        }
+      },
+      "Algorithm": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "enum": [
+              "HS256",
+              "HS384",
+              "HS512",
+              "RS256",
+              "RS384",
+              "RS512"
+            ],
+            "type": "string",
+            "additionalProperties": false
+          }
+        }
+      },
+      "Issuer": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string"
+          }
+        }
+      },
+      "Audience": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string"
+          }
+        }
+      },
+      "Subject": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string"
+          }
+        }
+      },
+      "Expiration_Seconds": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "maximum": 86400.0,
+            "minimum": 60.0,
+            "type": "integer"
+          }
+        }
+      },
+      "Token_Response_Field": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "enum": [
+              "access_token",
+              "id_token"
+            ],
+            "type": "string",
+            "additionalProperties": false
+          }
+        }
+      },
+      "Secret_Key": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string"
           }
         }
       },

@@ -120,6 +120,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         #pragma warning disable CS1591
         Gemini31FlashLitePreview,
         #pragma warning restore CS1591
+        [EnumMember(Value = "gemini-3.1-flash-lite")]
+        #pragma warning disable CS1591
+        Gemini31FlashLite,
+        #pragma warning restore CS1591
         [EnumMember(Value = "claude-sonnet-4-5")]
         #pragma warning disable CS1591
         ClaudeSonnet45,
@@ -175,6 +179,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         [EnumMember(Value = "qwen36-35b-a3b")]
         #pragma warning disable CS1591
         Qwen3635bA3b,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "qwen35-397b-a17b")]
+        #pragma warning disable CS1591
+        Qwen35397bA17b,
         #pragma warning restore CS1591
         [EnumMember(Value = "gpt-oss-20b")]
         #pragma warning disable CS1591

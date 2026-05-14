@@ -27,6 +27,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public string ClientId { get; set; }
 #endif
+        /// <summary>Custom headers configured for OAuth2 token requests</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.OAuth2ClientCredsResponse_custom_headers? CustomHeaders { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.OAuth2ClientCredsResponse_custom_headers CustomHeaders { get; set; }
+#endif
         /// <summary>The extra_params property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -112,6 +120,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "auth_type", n => { AuthType = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.OAuth2ClientCredsResponse_auth_type>(); } },
                 { "basic_auth_in_header", n => { BasicAuthInHeader = n.GetBoolValue(); } },
                 { "client_id", n => { ClientId = n.GetStringValue(); } },
+                { "custom_headers", n => { CustomHeaders = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.OAuth2ClientCredsResponse_custom_headers>(global::Soenneker.ElevenLabs.OpenApiClient.Models.OAuth2ClientCredsResponse_custom_headers.CreateFromDiscriminatorValue); } },
                 { "extra_params", n => { ExtraParams = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.OAuth2ClientCredsResponse_extra_params>(global::Soenneker.ElevenLabs.OpenApiClient.Models.OAuth2ClientCredsResponse_extra_params.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
@@ -131,6 +140,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.OAuth2ClientCredsResponse_auth_type>("auth_type", AuthType);
             writer.WriteBoolValue("basic_auth_in_header", BasicAuthInHeader);
             writer.WriteStringValue("client_id", ClientId);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.OAuth2ClientCredsResponse_custom_headers>("custom_headers", CustomHeaders);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.OAuth2ClientCredsResponse_extra_params>("extra_params", ExtraParams);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("name", Name);

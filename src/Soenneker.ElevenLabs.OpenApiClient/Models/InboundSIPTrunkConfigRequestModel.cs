@@ -30,6 +30,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.Allowed_Numbers AllowedNumbers { get; set; }
 #endif
+        /// <summary>Map of dynamic variable name to header name for attributes_to_headers</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.InboundSIPTrunkConfigRequestModel_attributes_to_headers? AttributesToHeaders { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.InboundSIPTrunkConfigRequestModel_attributes_to_headers AttributesToHeaders { get; set; }
+#endif
         /// <summary>Optional digest authentication credentials (username/password).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -76,6 +84,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             {
                 { "allowed_addresses", n => { AllowedAddresses = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Allowed_Addresses>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Allowed_Addresses.CreateFromDiscriminatorValue); } },
                 { "allowed_numbers", n => { AllowedNumbers = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Allowed_Numbers>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Allowed_Numbers.CreateFromDiscriminatorValue); } },
+                { "attributes_to_headers", n => { AttributesToHeaders = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.InboundSIPTrunkConfigRequestModel_attributes_to_headers>(global::Soenneker.ElevenLabs.OpenApiClient.Models.InboundSIPTrunkConfigRequestModel_attributes_to_headers.CreateFromDiscriminatorValue); } },
                 { "credentials", n => { Credentials = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SIPTrunkCredentialsRequestModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.SIPTrunkCredentialsRequestModel.CreateFromDiscriminatorValue); } },
                 { "media_encryption", n => { MediaEncryption = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SIPMediaEncryptionEnum>(); } },
                 { "remote_domains", n => { RemoteDomains = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Remote_Domains>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Remote_Domains.CreateFromDiscriminatorValue); } },
@@ -90,6 +99,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Allowed_Addresses>("allowed_addresses", AllowedAddresses);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Allowed_Numbers>("allowed_numbers", AllowedNumbers);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.InboundSIPTrunkConfigRequestModel_attributes_to_headers>("attributes_to_headers", AttributesToHeaders);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SIPTrunkCredentialsRequestModel>("credentials", Credentials);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SIPMediaEncryptionEnum>("media_encryption", MediaEncryption);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Remote_Domains>("remote_domains", RemoteDomains);

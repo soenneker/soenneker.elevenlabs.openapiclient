@@ -84,6 +84,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.Title Title { get; set; }
 #endif
+        /// <summary>The video_processing_failed property</summary>
+        public bool? VideoProcessingFailed { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.AudioIsolationHistoryItemResponseModel"/> and sets the default values.
         /// </summary>
@@ -120,6 +122,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "source_video_url", n => { SourceVideoUrl = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Source_Video_Url>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Source_Video_Url.CreateFromDiscriminatorValue); } },
                 { "supports_video", n => { SupportsVideo = n.GetBoolValue(); } },
                 { "title", n => { Title = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Title>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Title.CreateFromDiscriminatorValue); } },
+                { "video_processing_failed", n => { VideoProcessingFailed = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -140,6 +143,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Source_Video_Url>("source_video_url", SourceVideoUrl);
             writer.WriteBoolValue("supports_video", SupportsVideo);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Title>("title", Title);
+            writer.WriteBoolValue("video_processing_failed", VideoProcessingFailed);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

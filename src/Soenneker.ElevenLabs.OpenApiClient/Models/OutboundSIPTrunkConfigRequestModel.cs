@@ -22,6 +22,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public string Address { get; set; }
 #endif
+        /// <summary>Map of dynamic variable name to header name for attributes_to_headers</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.OutboundSIPTrunkConfigRequestModel_attributes_to_headers? AttributesToHeaders { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.OutboundSIPTrunkConfigRequestModel_attributes_to_headers AttributesToHeaders { get; set; }
+#endif
         /// <summary>Optional digest authentication credentials (username/password). If not provided, ACL authentication is assumed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -70,6 +78,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "address", n => { Address = n.GetStringValue(); } },
+                { "attributes_to_headers", n => { AttributesToHeaders = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.OutboundSIPTrunkConfigRequestModel_attributes_to_headers>(global::Soenneker.ElevenLabs.OpenApiClient.Models.OutboundSIPTrunkConfigRequestModel_attributes_to_headers.CreateFromDiscriminatorValue); } },
                 { "credentials", n => { Credentials = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SIPTrunkCredentialsRequestModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.SIPTrunkCredentialsRequestModel.CreateFromDiscriminatorValue); } },
                 { "headers", n => { Headers = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.OutboundSIPTrunkConfigRequestModel_headers>(global::Soenneker.ElevenLabs.OpenApiClient.Models.OutboundSIPTrunkConfigRequestModel_headers.CreateFromDiscriminatorValue); } },
                 { "media_encryption", n => { MediaEncryption = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SIPMediaEncryptionEnum>(); } },
@@ -84,6 +93,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("address", Address);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.OutboundSIPTrunkConfigRequestModel_attributes_to_headers>("attributes_to_headers", AttributesToHeaders);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SIPTrunkCredentialsRequestModel>("credentials", Credentials);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.OutboundSIPTrunkConfigRequestModel_headers>("headers", Headers);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SIPMediaEncryptionEnum>("media_encryption", MediaEncryption);

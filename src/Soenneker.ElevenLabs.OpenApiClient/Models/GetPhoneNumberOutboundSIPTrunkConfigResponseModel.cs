@@ -23,6 +23,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public string Address { get; set; }
 #endif
+        /// <summary>Map of dynamic variable name to header name for attributes_to_headers</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPhoneNumberOutboundSIPTrunkConfigResponseModel_attributes_to_headers? AttributesToHeaders { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPhoneNumberOutboundSIPTrunkConfigResponseModel_attributes_to_headers AttributesToHeaders { get; set; }
+#endif
         /// <summary>Whether authentication credentials are configured</summary>
         public bool? HasAuthCredentials { get; set; }
         /// <summary>Whether a LiveKit SIP outbound trunk is configured</summary>
@@ -75,6 +83,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "address", n => { Address = n.GetStringValue(); } },
+                { "attributes_to_headers", n => { AttributesToHeaders = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPhoneNumberOutboundSIPTrunkConfigResponseModel_attributes_to_headers>(global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPhoneNumberOutboundSIPTrunkConfigResponseModel_attributes_to_headers.CreateFromDiscriminatorValue); } },
                 { "has_auth_credentials", n => { HasAuthCredentials = n.GetBoolValue(); } },
                 { "has_outbound_trunk", n => { HasOutboundTrunk = n.GetBoolValue(); } },
                 { "headers", n => { Headers = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPhoneNumberOutboundSIPTrunkConfigResponseModel_headers>(global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPhoneNumberOutboundSIPTrunkConfigResponseModel_headers.CreateFromDiscriminatorValue); } },
@@ -91,6 +100,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("address", Address);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPhoneNumberOutboundSIPTrunkConfigResponseModel_attributes_to_headers>("attributes_to_headers", AttributesToHeaders);
             writer.WriteBoolValue("has_auth_credentials", HasAuthCredentials);
             writer.WriteBoolValue("has_outbound_trunk", HasOutboundTrunk);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPhoneNumberOutboundSIPTrunkConfigResponseModel_headers>("headers", Headers);
