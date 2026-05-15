@@ -56103,7 +56103,7 @@
         ],
         "type": "string",
         "additionalProperties": false,
-        "default": "append"
+        "default": "skills"
       },
       "ProcedureRefResponseModel": {
         "title": "ProcedureRefResponseModel",
