@@ -29,10 +29,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Error message indicate, if this dub has failed, what happened.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Error? Error { get; set; }
+        public string? Error { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Error Error { get; set; }
+        public string Error { get; set; }
 #endif
         /// <summary>Metadata, such as the length in seconds and content type, of the dubbed content.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -53,10 +53,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Once dubbing has completed, the ISO-639-1 code of the original media&apos;s source language.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Source_Language? SourceLanguage { get; set; }
+        public string? SourceLanguage { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Source_Language SourceLanguage { get; set; }
+        public string SourceLanguage { get; set; }
 #endif
         /// <summary>The state this dub is in.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -102,10 +102,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "dubbing_id", n => { DubbingId = n.GetStringValue(); } },
                 { "editable", n => { Editable = n.GetBoolValue(); } },
-                { "error", n => { Error = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Error>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Error.CreateFromDiscriminatorValue); } },
+                { "error", n => { Error = n.GetStringValue(); } },
                 { "media_metadata", n => { MediaMetadata = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingMediaMetadata>(global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingMediaMetadata.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "source_language", n => { SourceLanguage = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Source_Language>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Source_Language.CreateFromDiscriminatorValue); } },
+                { "source_language", n => { SourceLanguage = n.GetStringValue(); } },
                 { "status", n => { Status = n.GetStringValue(); } },
                 { "target_languages", n => { TargetLanguages = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
@@ -120,10 +120,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteStringValue("dubbing_id", DubbingId);
             writer.WriteBoolValue("editable", Editable);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Error>("error", Error);
+            writer.WriteStringValue("error", Error);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingMediaMetadata>("media_metadata", MediaMetadata);
             writer.WriteStringValue("name", Name);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Source_Language>("source_language", SourceLanguage);
+            writer.WriteStringValue("source_language", SourceLanguage);
             writer.WriteStringValue("status", Status);
             writer.WriteCollectionOfPrimitiveValues<string>("target_languages", TargetLanguages);
             writer.WriteAdditionalData(AdditionalData);

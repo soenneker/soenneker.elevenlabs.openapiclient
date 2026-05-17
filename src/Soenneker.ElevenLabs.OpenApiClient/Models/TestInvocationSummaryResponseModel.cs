@@ -25,18 +25,18 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The ID of the agent this test invocation belongs to</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Agent_Id? AgentId { get; set; }
+        public string? AgentId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Agent_Id AgentId { get; set; }
+        public string AgentId { get; set; }
 #endif
         /// <summary>The ID of the branch this test invocation was run on</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Branch_Id? BranchId { get; set; }
+        public string? BranchId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Branch_Id BranchId { get; set; }
+        public string BranchId { get; set; }
 #endif
         /// <summary>Creation time of the test invocation in unix seconds</summary>
         public int? CreatedAtUnixSecs { get; set; }
@@ -90,8 +90,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "access_info", n => { AccessInfo = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceAccessInfo>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceAccessInfo.CreateFromDiscriminatorValue); } },
-                { "agent_id", n => { AgentId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Agent_Id>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Agent_Id.CreateFromDiscriminatorValue); } },
-                { "branch_id", n => { BranchId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Branch_Id>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Branch_Id.CreateFromDiscriminatorValue); } },
+                { "agent_id", n => { AgentId = n.GetStringValue(); } },
+                { "branch_id", n => { BranchId = n.GetStringValue(); } },
                 { "created_at_unix_secs", n => { CreatedAtUnixSecs = n.GetIntValue(); } },
                 { "failed_count", n => { FailedCount = n.GetIntValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
@@ -109,8 +109,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceAccessInfo>("access_info", AccessInfo);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Agent_Id>("agent_id", AgentId);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Branch_Id>("branch_id", BranchId);
+            writer.WriteStringValue("agent_id", AgentId);
+            writer.WriteStringValue("branch_id", BranchId);
             writer.WriteIntValue("created_at_unix_secs", CreatedAtUnixSecs);
             writer.WriteIntValue("failed_count", FailedCount);
             writer.WriteStringValue("id", Id);

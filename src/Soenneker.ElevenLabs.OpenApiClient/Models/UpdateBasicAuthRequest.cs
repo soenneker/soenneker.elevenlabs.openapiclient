@@ -19,26 +19,26 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The password property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Password? Password { get; set; }
+        public string? Password { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Password Password { get; set; }
+        public string Password { get; set; }
 #endif
         /// <summary>The provider property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Provider? Provider { get; set; }
+        public string? Provider { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Provider Provider { get; set; }
+        public string Provider { get; set; }
 #endif
         /// <summary>The username property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Username? Username { get; set; }
+        public string? Username { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Username Username { get; set; }
+        public string Username { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateBasicAuthRequest"/> and sets the default values.
@@ -67,9 +67,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "auth_type", n => { AuthType = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateBasicAuthRequest_auth_type>(); } },
-                { "password", n => { Password = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Password>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Password.CreateFromDiscriminatorValue); } },
-                { "provider", n => { Provider = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Provider>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Provider.CreateFromDiscriminatorValue); } },
-                { "username", n => { Username = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Username>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Username.CreateFromDiscriminatorValue); } },
+                { "password", n => { Password = n.GetStringValue(); } },
+                { "provider", n => { Provider = n.GetStringValue(); } },
+                { "username", n => { Username = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -80,9 +80,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateBasicAuthRequest_auth_type>("auth_type", AuthType);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Password>("password", Password);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Provider>("provider", Provider);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Username>("username", Username);
+            writer.WriteStringValue("password", Password);
+            writer.WriteStringValue("provider", Provider);
+            writer.WriteStringValue("username", Username);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

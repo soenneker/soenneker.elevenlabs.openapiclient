@@ -17,18 +17,18 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The explanation property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Explanation? Explanation { get; set; }
+        public string? Explanation { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Explanation Explanation { get; set; }
+        public string Explanation { get; set; }
 #endif
         /// <summary>The rejected_details property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Rejected_Details? RejectedDetails { get; set; }
+        public string? RejectedDetails { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Rejected_Details RejectedDetails { get; set; }
+        public string RejectedDetails { get; set; }
 #endif
         /// <summary>The reject_reasons property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -43,10 +43,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The reviewed_by property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Reviewed_By? ReviewedBy { get; set; }
+        public string? ReviewedBy { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Reviewed_By ReviewedBy { get; set; }
+        public string ReviewedBy { get; set; }
 #endif
         /// <summary>The review_status property</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.ReviewResponseModel_review_status? ReviewStatus { get; set; }
@@ -83,12 +83,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "explanation", n => { Explanation = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Explanation>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Explanation.CreateFromDiscriminatorValue); } },
+                { "explanation", n => { Explanation = n.GetStringValue(); } },
                 { "reject_reasons", n => { RejectReasons = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Reject_Reasons>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Reject_Reasons.CreateFromDiscriminatorValue); } },
-                { "rejected_details", n => { RejectedDetails = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Rejected_Details>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Rejected_Details.CreateFromDiscriminatorValue); } },
+                { "rejected_details", n => { RejectedDetails = n.GetStringValue(); } },
                 { "review_status", n => { ReviewStatus = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ReviewResponseModel_review_status>(); } },
                 { "reviewed_at_unix", n => { ReviewedAtUnix = n.GetIntValue(); } },
-                { "reviewed_by", n => { ReviewedBy = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Reviewed_By>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Reviewed_By.CreateFromDiscriminatorValue); } },
+                { "reviewed_by", n => { ReviewedBy = n.GetStringValue(); } },
                 { "scores_breakdown", n => { ScoresBreakdown = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ReviewResponseModelScoresBreakdown>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ReviewResponseModelScoresBreakdown.CreateFromDiscriminatorValue); } },
             };
         }
@@ -99,11 +99,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Explanation>("explanation", Explanation);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Rejected_Details>("rejected_details", RejectedDetails);
+            writer.WriteStringValue("explanation", Explanation);
+            writer.WriteStringValue("rejected_details", RejectedDetails);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Reject_Reasons>("reject_reasons", RejectReasons);
             writer.WriteIntValue("reviewed_at_unix", ReviewedAtUnix);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Reviewed_By>("reviewed_by", ReviewedBy);
+            writer.WriteStringValue("reviewed_by", ReviewedBy);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ReviewResponseModel_review_status>("review_status", ReviewStatus);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ReviewResponseModelScoresBreakdown>("scores_breakdown", ScoresBreakdown);
             writer.WriteAdditionalData(AdditionalData);

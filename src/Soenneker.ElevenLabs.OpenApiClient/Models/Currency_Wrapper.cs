@@ -15,7 +15,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The value property</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Currency_Wrapper_value? Value { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Currency? Value { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.Currency_Wrapper"/> and sets the default values.
         /// </summary>
@@ -41,7 +41,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "value", n => { Value = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Currency_Wrapper_value>(); } },
+                { "value", n => { Value = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Currency>(); } },
             };
         }
         /// <summary>
@@ -51,7 +51,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Currency_Wrapper_value>("value", Value);
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Currency>("value", Value);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

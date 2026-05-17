@@ -26,10 +26,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The primary_tts_model property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Primary_Tts_Model? PrimaryTtsModel { get; set; }
+        public string? PrimaryTtsModel { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Primary_Tts_Model PrimaryTtsModel { get; set; }
+        public string PrimaryTtsModel { get; set; }
 #endif
         /// <summary>The total_audio_output_seconds property</summary>
         public double? TotalAudioOutputSeconds { get; set; }
@@ -61,7 +61,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "per_voice_usage", n => { PerVoiceUsage = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationVoiceUsageModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationVoiceUsageModel.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "primary_tts_model", n => { PrimaryTtsModel = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Primary_Tts_Model>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Primary_Tts_Model.CreateFromDiscriminatorValue); } },
+                { "primary_tts_model", n => { PrimaryTtsModel = n.GetStringValue(); } },
                 { "total_audio_output_seconds", n => { TotalAudioOutputSeconds = n.GetDoubleValue(); } },
                 { "total_characters", n => { TotalCharacters = n.GetIntValue(); } },
             };
@@ -74,7 +74,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationVoiceUsageModel>("per_voice_usage", PerVoiceUsage);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Primary_Tts_Model>("primary_tts_model", PrimaryTtsModel);
+            writer.WriteStringValue("primary_tts_model", PrimaryTtsModel);
             writer.WriteDoubleValue("total_audio_output_seconds", TotalAudioOutputSeconds);
             writer.WriteIntValue("total_characters", TotalCharacters);
             writer.WriteAdditionalData(AdditionalData);

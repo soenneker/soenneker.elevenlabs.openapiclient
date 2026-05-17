@@ -17,10 +17,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Message to show when soft timeout is reached while waiting for LLM response</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Message? Message { get; set; }
+        public string? Message { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Message Message { get; set; }
+        public string Message { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.SoftTimeoutConfigOverride"/> and sets the default values.
@@ -47,7 +47,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "message", n => { Message = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Message>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Message.CreateFromDiscriminatorValue); } },
+                { "message", n => { Message = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -57,7 +57,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Message>("message", Message);
+            writer.WriteStringValue("message", Message);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

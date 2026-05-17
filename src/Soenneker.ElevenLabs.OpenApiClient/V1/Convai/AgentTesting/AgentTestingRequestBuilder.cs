@@ -139,15 +139,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.AgentTesting
 #endif
             /// <summary>Deprecated. Use the `types` query param and include `folder` instead.</summary>
             [Obsolete("")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("include_folders")]
-            public string? IncludeFolders { get; set; }
-#nullable restore
-#else
-            [QueryParameter("include_folders")]
-            public string IncludeFolders { get; set; }
-#endif
+            public bool? IncludeFolders { get; set; }
             /// <summary>How many Tests to return at maximum. Can not exceed 100, defaults to 30.</summary>
             [QueryParameter("page_size")]
             public int? PageSize { get; set; }

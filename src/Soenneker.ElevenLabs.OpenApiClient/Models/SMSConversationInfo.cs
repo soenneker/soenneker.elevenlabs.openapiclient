@@ -17,20 +17,20 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The agent_phone_number property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Agent_Phone_Number? AgentPhoneNumber { get; set; }
+        public string? AgentPhoneNumber { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Agent_Phone_Number AgentPhoneNumber { get; set; }
+        public string AgentPhoneNumber { get; set; }
 #endif
         /// <summary>The direction property</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.SMSConversationInfo_direction? Direction { get; set; }
         /// <summary>The phone_number_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Phone_Number_Id? PhoneNumberId { get; set; }
+        public string? PhoneNumberId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Phone_Number_Id PhoneNumberId { get; set; }
+        public string PhoneNumberId { get; set; }
 #endif
         /// <summary>The sms_user_phone_number property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -65,9 +65,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "agent_phone_number", n => { AgentPhoneNumber = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Agent_Phone_Number>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Agent_Phone_Number.CreateFromDiscriminatorValue); } },
+                { "agent_phone_number", n => { AgentPhoneNumber = n.GetStringValue(); } },
                 { "direction", n => { Direction = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SMSConversationInfo_direction>(); } },
-                { "phone_number_id", n => { PhoneNumberId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Phone_Number_Id>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Phone_Number_Id.CreateFromDiscriminatorValue); } },
+                { "phone_number_id", n => { PhoneNumberId = n.GetStringValue(); } },
                 { "sms_user_phone_number", n => { SmsUserPhoneNumber = n.GetStringValue(); } },
             };
         }
@@ -78,9 +78,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Agent_Phone_Number>("agent_phone_number", AgentPhoneNumber);
+            writer.WriteStringValue("agent_phone_number", AgentPhoneNumber);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SMSConversationInfo_direction>("direction", Direction);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Phone_Number_Id>("phone_number_id", PhoneNumberId);
+            writer.WriteStringValue("phone_number_id", PhoneNumberId);
             writer.WriteStringValue("sms_user_phone_number", SmsUserPhoneNumber);
             writer.WriteAdditionalData(AdditionalData);
         }

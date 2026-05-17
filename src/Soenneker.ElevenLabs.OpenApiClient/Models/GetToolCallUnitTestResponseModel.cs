@@ -23,13 +23,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptCommonModelOutput> ChatHistory { get; set; }
 #endif
         /// <summary>If set to True this test will pass if any tool call returned by the LLM matches the criteria. Otherwise it will fail if more than one tool is returned by the agent.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Check_Any_Tool_Matches? CheckAnyToolMatches { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Check_Any_Tool_Matches CheckAnyToolMatches { get; set; }
-#endif
+        public bool? CheckAnyToolMatches { get; set; }
         /// <summary>Dynamic variables to replace in the agent config during testing</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -99,7 +93,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "chat_history", n => { ChatHistory = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptCommonModelOutput>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptCommonModelOutput.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "check_any_tool_matches", n => { CheckAnyToolMatches = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Check_Any_Tool_Matches>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Check_Any_Tool_Matches.CreateFromDiscriminatorValue); } },
+                { "check_any_tool_matches", n => { CheckAnyToolMatches = n.GetBoolValue(); } },
                 { "dynamic_variables", n => { DynamicVariables = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetToolCallUnitTestResponseModel_dynamic_variables>(global::Soenneker.ElevenLabs.OpenApiClient.Models.GetToolCallUnitTestResponseModel_dynamic_variables.CreateFromDiscriminatorValue); } },
                 { "from_conversation_metadata", n => { FromConversationMetadata = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TestFromConversationMetadataOutput>(global::Soenneker.ElevenLabs.OpenApiClient.Models.TestFromConversationMetadataOutput.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetStringValue(); } },
@@ -116,7 +110,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptCommonModelOutput>("chat_history", ChatHistory);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Check_Any_Tool_Matches>("check_any_tool_matches", CheckAnyToolMatches);
+            writer.WriteBoolValue("check_any_tool_matches", CheckAnyToolMatches);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetToolCallUnitTestResponseModel_dynamic_variables>("dynamic_variables", DynamicVariables);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TestFromConversationMetadataOutput>("from_conversation_metadata", FromConversationMetadata);
             writer.WriteStringValue("id", Id);

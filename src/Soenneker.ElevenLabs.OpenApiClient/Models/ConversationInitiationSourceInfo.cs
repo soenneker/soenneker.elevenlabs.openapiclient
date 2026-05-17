@@ -26,10 +26,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The SDK version number</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.VersionObject? Version { get; set; }
+        public string? Version { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.VersionObject Version { get; set; }
+        public string Version { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationSourceInfo"/> and sets the default values.
@@ -57,7 +57,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "source", n => { Source = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationSource_Wrapper>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationSource_Wrapper.CreateFromDiscriminatorValue); } },
-                { "version", n => { Version = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.VersionObject>(global::Soenneker.ElevenLabs.OpenApiClient.Models.VersionObject.CreateFromDiscriminatorValue); } },
+                { "version", n => { Version = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -68,7 +68,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationSource_Wrapper>("source", Source);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.VersionObject>("version", Version);
+            writer.WriteStringValue("version", Version);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

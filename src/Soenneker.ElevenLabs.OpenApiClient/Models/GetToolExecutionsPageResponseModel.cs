@@ -27,10 +27,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The next_cursor property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Next_Cursor? NextCursor { get; set; }
+        public string? NextCursor { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Next_Cursor NextCursor { get; set; }
+        public string NextCursor { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.GetToolExecutionsPageResponseModel"/> and sets the default values.
@@ -59,7 +59,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             {
                 { "executions", n => { Executions = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolExecutionResponseModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolExecutionResponseModel.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "has_more", n => { HasMore = n.GetBoolValue(); } },
-                { "next_cursor", n => { NextCursor = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Next_Cursor>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Next_Cursor.CreateFromDiscriminatorValue); } },
+                { "next_cursor", n => { NextCursor = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -71,7 +71,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolExecutionResponseModel>("executions", Executions);
             writer.WriteBoolValue("has_more", HasMore);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Next_Cursor>("next_cursor", NextCursor);
+            writer.WriteStringValue("next_cursor", NextCursor);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

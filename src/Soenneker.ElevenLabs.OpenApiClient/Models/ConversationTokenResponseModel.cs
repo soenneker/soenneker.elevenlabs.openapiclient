@@ -25,10 +25,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The ID of the conversation</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Conversation_Id? ConversationId { get; set; }
+        public string? ConversationId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Conversation_Id ConversationId { get; set; }
+        public string ConversationId { get; set; }
 #endif
         /// <summary>The token for the agent</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -39,22 +39,16 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public string ConversationToken { get; set; }
 #endif
         /// <summary>The expiration time of the token in unix seconds</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Expiration_Time_Unix_Secs? ExpirationTimeUnixSecs { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Expiration_Time_Unix_Secs ExpirationTimeUnixSecs { get; set; }
-#endif
+        public int? ExpirationTimeUnixSecs { get; set; }
         /// <summary>The purpose property</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationTokenPurpose? Purpose { get; set; }
         /// <summary>The user ID of the entity who requested the token</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Token_Requester_User_Id? TokenRequesterUserId { get; set; }
+        public string? TokenRequesterUserId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Token_Requester_User_Id TokenRequesterUserId { get; set; }
+        public string TokenRequesterUserId { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationTokenResponseModel"/> and sets the default values.
@@ -82,11 +76,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "agent_id", n => { AgentId = n.GetStringValue(); } },
-                { "conversation_id", n => { ConversationId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Conversation_Id>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Conversation_Id.CreateFromDiscriminatorValue); } },
+                { "conversation_id", n => { ConversationId = n.GetStringValue(); } },
                 { "conversation_token", n => { ConversationToken = n.GetStringValue(); } },
-                { "expiration_time_unix_secs", n => { ExpirationTimeUnixSecs = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Expiration_Time_Unix_Secs>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Expiration_Time_Unix_Secs.CreateFromDiscriminatorValue); } },
+                { "expiration_time_unix_secs", n => { ExpirationTimeUnixSecs = n.GetIntValue(); } },
                 { "purpose", n => { Purpose = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationTokenPurpose>(); } },
-                { "token_requester_user_id", n => { TokenRequesterUserId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Token_Requester_User_Id>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Token_Requester_User_Id.CreateFromDiscriminatorValue); } },
+                { "token_requester_user_id", n => { TokenRequesterUserId = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -97,11 +91,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("agent_id", AgentId);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Conversation_Id>("conversation_id", ConversationId);
+            writer.WriteStringValue("conversation_id", ConversationId);
             writer.WriteStringValue("conversation_token", ConversationToken);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Expiration_Time_Unix_Secs>("expiration_time_unix_secs", ExpirationTimeUnixSecs);
+            writer.WriteIntValue("expiration_time_unix_secs", ExpirationTimeUnixSecs);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationTokenPurpose>("purpose", Purpose);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Token_Requester_User_Id>("token_requester_user_id", TokenRequesterUserId);
+            writer.WriteStringValue("token_requester_user_id", TokenRequesterUserId);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

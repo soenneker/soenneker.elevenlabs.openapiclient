@@ -21,18 +21,18 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The last_contact_agent_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Last_Contact_Agent_Id? LastContactAgentId { get; set; }
+        public string? LastContactAgentId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Last_Contact_Agent_Id LastContactAgentId { get; set; }
+        public string LastContactAgentId { get; set; }
 #endif
         /// <summary>The last_contact_agent_name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Last_Contact_Agent_Name? LastContactAgentName { get; set; }
+        public string? LastContactAgentName { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Last_Contact_Agent_Name LastContactAgentName { get; set; }
+        public string LastContactAgentName { get; set; }
 #endif
         /// <summary>The last_contact_conversation_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -79,8 +79,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             {
                 { "conversation_count", n => { ConversationCount = n.GetIntValue(); } },
                 { "first_contact_unix_secs", n => { FirstContactUnixSecs = n.GetIntValue(); } },
-                { "last_contact_agent_id", n => { LastContactAgentId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Last_Contact_Agent_Id>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Last_Contact_Agent_Id.CreateFromDiscriminatorValue); } },
-                { "last_contact_agent_name", n => { LastContactAgentName = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Last_Contact_Agent_Name>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Last_Contact_Agent_Name.CreateFromDiscriminatorValue); } },
+                { "last_contact_agent_id", n => { LastContactAgentId = n.GetStringValue(); } },
+                { "last_contact_agent_name", n => { LastContactAgentName = n.GetStringValue(); } },
                 { "last_contact_conversation_id", n => { LastContactConversationId = n.GetStringValue(); } },
                 { "last_contact_unix_secs", n => { LastContactUnixSecs = n.GetIntValue(); } },
                 { "user_id", n => { UserId = n.GetStringValue(); } },
@@ -95,8 +95,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("conversation_count", ConversationCount);
             writer.WriteIntValue("first_contact_unix_secs", FirstContactUnixSecs);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Last_Contact_Agent_Id>("last_contact_agent_id", LastContactAgentId);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Last_Contact_Agent_Name>("last_contact_agent_name", LastContactAgentName);
+            writer.WriteStringValue("last_contact_agent_id", LastContactAgentId);
+            writer.WriteStringValue("last_contact_agent_name", LastContactAgentName);
             writer.WriteStringValue("last_contact_conversation_id", LastContactConversationId);
             writer.WriteIntValue("last_contact_unix_secs", LastContactUnixSecs);
             writer.WriteStringValue("user_id", UserId);

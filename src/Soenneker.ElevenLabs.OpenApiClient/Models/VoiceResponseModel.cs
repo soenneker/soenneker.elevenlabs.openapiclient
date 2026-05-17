@@ -33,29 +33,17 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.Collection_Ids CollectionIds { get; set; }
 #endif
         /// <summary>The creation time of the voice in Unix time.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Created_At_Unix? CreatedAtUnix { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Created_At_Unix CreatedAtUnix { get; set; }
-#endif
+        public int? CreatedAtUnix { get; set; }
         /// <summary>The description of the voice.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Description? Description { get; set; }
+        public string? Description { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Description Description { get; set; }
+        public string Description { get; set; }
 #endif
         /// <summary>Timestamp when the voice was marked as favorite in Unix time.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Favorited_At_Unix? FavoritedAtUnix { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Favorited_At_Unix FavoritedAtUnix { get; set; }
-#endif
+        public int? FavoritedAtUnix { get; set; }
         /// <summary>Fine-tuning information for the voice.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -73,33 +61,15 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public List<string> HighQualityBaseModelIds { get; set; }
 #endif
         /// <summary>Whether the voice is bookmarked by the current user. Only relevant for community (library-copied) voices.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Is_Bookmarked? IsBookmarked { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Is_Bookmarked IsBookmarked { get; set; }
-#endif
+        public bool? IsBookmarked { get; set; }
         /// <summary>Whether the voice is legacy.</summary>
         public bool? IsLegacy { get; set; }
         /// <summary>Whether the voice is mixed.</summary>
         public bool? IsMixed { get; set; }
         /// <summary>Whether the voice is owned by the user.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Is_Owner? IsOwner { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Is_Owner IsOwner { get; set; }
-#endif
+        public bool? IsOwner { get; set; }
         /// <summary>The review pipeline status of the voice.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Labelling_Status? LabellingStatus { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Labelling_Status LabellingStatus { get; set; }
-#endif
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceResponseModel_labelling_status? LabellingStatus { get; set; }
         /// <summary>Labels associated with the voice.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -119,43 +89,31 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The permission on the resource of the voice.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Permission_On_Resource? PermissionOnResource { get; set; }
+        public string? PermissionOnResource { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Permission_On_Resource PermissionOnResource { get; set; }
+        public string PermissionOnResource { get; set; }
 #endif
         /// <summary>The preview URL of the voice.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Preview_Url? PreviewUrl { get; set; }
+        public string? PreviewUrl { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Preview_Url PreviewUrl { get; set; }
+        public string PreviewUrl { get; set; }
 #endif
         /// <summary>The recording quality of the voice as determined by the review pipeline.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Recording_Quality? RecordingQuality { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Recording_Quality RecordingQuality { get; set; }
-#endif
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceResponseModel_recording_quality? RecordingQuality { get; set; }
         /// <summary>The reason for the recording quality assessment, as determined by the review pipeline.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Recording_Quality_Reason? RecordingQualityReason { get; set; }
+        public string? RecordingQualityReason { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Recording_Quality_Reason RecordingQualityReason { get; set; }
+        public string RecordingQualityReason { get; set; }
 #endif
         /// <summary>The safety controls of the voice.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Safety_Control? SafetyControl { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Safety_Control SafetyControl { get; set; }
-#endif
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceResponseModel_safety_control? SafetyControl { get; set; }
         /// <summary>List of samples associated with the voice.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -232,23 +190,23 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "available_for_tiers", n => { AvailableForTiers = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "category", n => { Category = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceResponseModel_category>(); } },
                 { "collection_ids", n => { CollectionIds = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Collection_Ids>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Collection_Ids.CreateFromDiscriminatorValue); } },
-                { "created_at_unix", n => { CreatedAtUnix = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Created_At_Unix>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Created_At_Unix.CreateFromDiscriminatorValue); } },
-                { "description", n => { Description = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Description>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Description.CreateFromDiscriminatorValue); } },
-                { "favorited_at_unix", n => { FavoritedAtUnix = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Favorited_At_Unix>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Favorited_At_Unix.CreateFromDiscriminatorValue); } },
+                { "created_at_unix", n => { CreatedAtUnix = n.GetIntValue(); } },
+                { "description", n => { Description = n.GetStringValue(); } },
+                { "favorited_at_unix", n => { FavoritedAtUnix = n.GetIntValue(); } },
                 { "fine_tuning", n => { FineTuning = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.FineTuningResponseModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.FineTuningResponseModel.CreateFromDiscriminatorValue); } },
                 { "high_quality_base_model_ids", n => { HighQualityBaseModelIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "is_bookmarked", n => { IsBookmarked = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Is_Bookmarked>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Is_Bookmarked.CreateFromDiscriminatorValue); } },
+                { "is_bookmarked", n => { IsBookmarked = n.GetBoolValue(); } },
                 { "is_legacy", n => { IsLegacy = n.GetBoolValue(); } },
                 { "is_mixed", n => { IsMixed = n.GetBoolValue(); } },
-                { "is_owner", n => { IsOwner = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Is_Owner>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Is_Owner.CreateFromDiscriminatorValue); } },
-                { "labelling_status", n => { LabellingStatus = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Labelling_Status>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Labelling_Status.CreateFromDiscriminatorValue); } },
+                { "is_owner", n => { IsOwner = n.GetBoolValue(); } },
+                { "labelling_status", n => { LabellingStatus = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceResponseModel_labelling_status>(); } },
                 { "labels", n => { Labels = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceResponseModel_labels>(global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceResponseModel_labels.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "permission_on_resource", n => { PermissionOnResource = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Permission_On_Resource>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Permission_On_Resource.CreateFromDiscriminatorValue); } },
-                { "preview_url", n => { PreviewUrl = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Preview_Url>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Preview_Url.CreateFromDiscriminatorValue); } },
-                { "recording_quality", n => { RecordingQuality = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Recording_Quality>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Recording_Quality.CreateFromDiscriminatorValue); } },
-                { "recording_quality_reason", n => { RecordingQualityReason = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Recording_Quality_Reason>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Recording_Quality_Reason.CreateFromDiscriminatorValue); } },
-                { "safety_control", n => { SafetyControl = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Safety_Control>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Safety_Control.CreateFromDiscriminatorValue); } },
+                { "permission_on_resource", n => { PermissionOnResource = n.GetStringValue(); } },
+                { "preview_url", n => { PreviewUrl = n.GetStringValue(); } },
+                { "recording_quality", n => { RecordingQuality = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceResponseModel_recording_quality>(); } },
+                { "recording_quality_reason", n => { RecordingQualityReason = n.GetStringValue(); } },
+                { "safety_control", n => { SafetyControl = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceResponseModel_safety_control>(); } },
                 { "samples", n => { Samples = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Samples>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Samples.CreateFromDiscriminatorValue); } },
                 { "settings", n => { Settings = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceSettingsResponseModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceSettingsResponseModel.CreateFromDiscriminatorValue); } },
                 { "sharing", n => { Sharing = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceSharingResponseModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceSharingResponseModel.CreateFromDiscriminatorValue); } },
@@ -267,23 +225,23 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("available_for_tiers", AvailableForTiers);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceResponseModel_category>("category", Category);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Collection_Ids>("collection_ids", CollectionIds);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Created_At_Unix>("created_at_unix", CreatedAtUnix);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Description>("description", Description);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Favorited_At_Unix>("favorited_at_unix", FavoritedAtUnix);
+            writer.WriteIntValue("created_at_unix", CreatedAtUnix);
+            writer.WriteStringValue("description", Description);
+            writer.WriteIntValue("favorited_at_unix", FavoritedAtUnix);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.FineTuningResponseModel>("fine_tuning", FineTuning);
             writer.WriteCollectionOfPrimitiveValues<string>("high_quality_base_model_ids", HighQualityBaseModelIds);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Is_Bookmarked>("is_bookmarked", IsBookmarked);
+            writer.WriteBoolValue("is_bookmarked", IsBookmarked);
             writer.WriteBoolValue("is_legacy", IsLegacy);
             writer.WriteBoolValue("is_mixed", IsMixed);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Is_Owner>("is_owner", IsOwner);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Labelling_Status>("labelling_status", LabellingStatus);
+            writer.WriteBoolValue("is_owner", IsOwner);
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceResponseModel_labelling_status>("labelling_status", LabellingStatus);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceResponseModel_labels>("labels", Labels);
             writer.WriteStringValue("name", Name);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Permission_On_Resource>("permission_on_resource", PermissionOnResource);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Preview_Url>("preview_url", PreviewUrl);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Recording_Quality>("recording_quality", RecordingQuality);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Recording_Quality_Reason>("recording_quality_reason", RecordingQualityReason);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Safety_Control>("safety_control", SafetyControl);
+            writer.WriteStringValue("permission_on_resource", PermissionOnResource);
+            writer.WriteStringValue("preview_url", PreviewUrl);
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceResponseModel_recording_quality>("recording_quality", RecordingQuality);
+            writer.WriteStringValue("recording_quality_reason", RecordingQualityReason);
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceResponseModel_safety_control>("safety_control", SafetyControl);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Samples>("samples", Samples);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceSettingsResponseModel>("settings", Settings);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceSharingResponseModel>("sharing", Sharing);

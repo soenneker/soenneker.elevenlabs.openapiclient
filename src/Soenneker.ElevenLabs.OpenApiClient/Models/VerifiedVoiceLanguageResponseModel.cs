@@ -15,10 +15,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The voice&apos;s accent, if applicable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Accent? Accent { get; set; }
+        public string? Accent { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Accent Accent { get; set; }
+        public string Accent { get; set; }
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -33,10 +33,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The voice&apos;s locale, if applicable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Locale? Locale { get; set; }
+        public string? Locale { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Locale Locale { get; set; }
+        public string Locale { get; set; }
 #endif
         /// <summary>The voice&apos;s model ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -49,10 +49,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The voice&apos;s preview URL, if applicable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Preview_Url? PreviewUrl { get; set; }
+        public string? PreviewUrl { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Preview_Url PreviewUrl { get; set; }
+        public string PreviewUrl { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.VerifiedVoiceLanguageResponseModel"/> and sets the default values.
@@ -79,11 +79,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "accent", n => { Accent = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Accent>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Accent.CreateFromDiscriminatorValue); } },
+                { "accent", n => { Accent = n.GetStringValue(); } },
                 { "language", n => { Language = n.GetStringValue(); } },
-                { "locale", n => { Locale = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Locale>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Locale.CreateFromDiscriminatorValue); } },
+                { "locale", n => { Locale = n.GetStringValue(); } },
                 { "model_id", n => { ModelId = n.GetStringValue(); } },
-                { "preview_url", n => { PreviewUrl = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Preview_Url>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Preview_Url.CreateFromDiscriminatorValue); } },
+                { "preview_url", n => { PreviewUrl = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -93,11 +93,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Accent>("accent", Accent);
+            writer.WriteStringValue("accent", Accent);
             writer.WriteStringValue("language", Language);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Locale>("locale", Locale);
+            writer.WriteStringValue("locale", Locale);
             writer.WriteStringValue("model_id", ModelId);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Preview_Url>("preview_url", PreviewUrl);
+            writer.WriteStringValue("preview_url", PreviewUrl);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

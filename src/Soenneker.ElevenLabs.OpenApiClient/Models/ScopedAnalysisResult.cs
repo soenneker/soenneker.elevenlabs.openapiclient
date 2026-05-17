@@ -43,10 +43,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Branch of the agent for this scoped block; disambiguates repeated agent_id.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Source_Branch_Id? SourceBranchId { get; set; }
+        public string? SourceBranchId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Source_Branch_Id SourceBranchId { get; set; }
+        public string SourceBranchId { get; set; }
 #endif
         /// <summary>The successful property</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.EvaluationSuccessResult? Successful { get; set; }
@@ -80,7 +80,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "evaluation_criteria_results", n => { EvaluationCriteriaResults = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ScopedAnalysisResult_evaluation_criteria_results>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ScopedAnalysisResult_evaluation_criteria_results.CreateFromDiscriminatorValue); } },
                 { "scope", n => { Scope = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AnalysisScope>(); } },
                 { "source_agent_id", n => { SourceAgentId = n.GetStringValue(); } },
-                { "source_branch_id", n => { SourceBranchId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Source_Branch_Id>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Source_Branch_Id.CreateFromDiscriminatorValue); } },
+                { "source_branch_id", n => { SourceBranchId = n.GetStringValue(); } },
                 { "successful", n => { Successful = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.EvaluationSuccessResult>(); } },
             };
         }
@@ -95,7 +95,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ScopedAnalysisResult_evaluation_criteria_results>("evaluation_criteria_results", EvaluationCriteriaResults);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AnalysisScope>("scope", Scope);
             writer.WriteStringValue("source_agent_id", SourceAgentId);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Source_Branch_Id>("source_branch_id", SourceBranchId);
+            writer.WriteStringValue("source_branch_id", SourceBranchId);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.EvaluationSuccessResult>("successful", Successful);
             writer.WriteAdditionalData(AdditionalData);
         }

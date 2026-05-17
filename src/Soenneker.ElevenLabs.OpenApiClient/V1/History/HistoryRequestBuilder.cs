@@ -110,25 +110,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.History
         public partial class HistoryRequestBuilderGetQueryParameters 
         {
             /// <summary>Unix timestamp to filter history items after this date (inclusive).</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("date_after_unix")]
-            public string? DateAfterUnix { get; set; }
-#nullable restore
-#else
-            [QueryParameter("date_after_unix")]
-            public string DateAfterUnix { get; set; }
-#endif
+            public int? DateAfterUnix { get; set; }
             /// <summary>Unix timestamp to filter history items before this date (exclusive).</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("date_before_unix")]
-            public string? DateBeforeUnix { get; set; }
-#nullable restore
-#else
-            [QueryParameter("date_before_unix")]
-            public string DateBeforeUnix { get; set; }
-#endif
+            public int? DateBeforeUnix { get; set; }
             /// <summary>Model ID to filter history items by.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -153,25 +139,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.History
             public string Search { get; set; }
 #endif
             /// <summary>Sort direction for the results.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("sort_direction")]
-            public string? SortDirection { get; set; }
-#nullable restore
-#else
-            [QueryParameter("sort_direction")]
-            public string SortDirection { get; set; }
-#endif
+            public global::Soenneker.ElevenLabs.OpenApiClient.V1.History.GetSort_directionQueryParameterType? SortDirection { get; set; }
             /// <summary>Source of the generated history item</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("source")]
-            public string? Source { get; set; }
-#nullable restore
-#else
-            [QueryParameter("source")]
-            public string Source { get; set; }
-#endif
+            public global::Soenneker.ElevenLabs.OpenApiClient.V1.History.GetSourceQueryParameterType? Source { get; set; }
             /// <summary>After which ID to start fetching, use this parameter to paginate across a large collection of history items. In case this parameter is not provided history items will be fetched starting from the most recently created one ordered descending by their creation date.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

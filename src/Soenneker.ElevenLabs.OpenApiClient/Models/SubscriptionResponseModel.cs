@@ -61,13 +61,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.Price CurrentOverage { get; set; }
 #endif
         /// <summary>&quot;Deprecated: use `max_credit_limit_extension`. Maximum number of characters that the character limit can be exceeded by. Managed by the workspace admin.&quot;</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Max_Character_Limit_Extension? MaxCharacterLimitExtension { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Max_Character_Limit_Extension MaxCharacterLimitExtension { get; set; }
-#endif
+        public int? MaxCharacterLimitExtension { get; set; }
         /// <summary>Maximum number of credits that the credit limit can be exceeded by. Managed by the workspace admin. `&quot;unlimited&quot;` means no cap, `0` means usage-based billing is disabled.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -77,21 +71,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.Max_Credit_Limit_Extension MaxCreditLimitExtension { get; set; }
 #endif
         /// <summary>The maximum number of voice add/edits allowed for the user.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Max_Voice_Add_Edits? MaxVoiceAddEdits { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Max_Voice_Add_Edits MaxVoiceAddEdits { get; set; }
-#endif
+        public int? MaxVoiceAddEdits { get; set; }
         /// <summary>The Unix timestamp of the next character count reset.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Next_Character_Count_Reset_Unix? NextCharacterCountResetUnix { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Next_Character_Count_Reset_Unix NextCharacterCountResetUnix { get; set; }
-#endif
+        public int? NextCharacterCountResetUnix { get; set; }
         /// <summary>The maximum number of professional voices allowed for the user.</summary>
         public int? ProfessionalVoiceLimit { get; set; }
         /// <summary>The number of professional voice slots used by the workspace/user if single seat.</summary>
@@ -148,10 +130,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "character_refresh_period", n => { CharacterRefreshPeriod = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CharacterRefreshPeriod_Wrapper>(global::Soenneker.ElevenLabs.OpenApiClient.Models.CharacterRefreshPeriod_Wrapper.CreateFromDiscriminatorValue); } },
                 { "currency", n => { Currency = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Currency_Wrapper>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Currency_Wrapper.CreateFromDiscriminatorValue); } },
                 { "current_overage", n => { CurrentOverage = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Price>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Price.CreateFromDiscriminatorValue); } },
-                { "max_character_limit_extension", n => { MaxCharacterLimitExtension = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Max_Character_Limit_Extension>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Max_Character_Limit_Extension.CreateFromDiscriminatorValue); } },
+                { "max_character_limit_extension", n => { MaxCharacterLimitExtension = n.GetIntValue(); } },
                 { "max_credit_limit_extension", n => { MaxCreditLimitExtension = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Max_Credit_Limit_Extension>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Max_Credit_Limit_Extension.CreateFromDiscriminatorValue); } },
-                { "max_voice_add_edits", n => { MaxVoiceAddEdits = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Max_Voice_Add_Edits>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Max_Voice_Add_Edits.CreateFromDiscriminatorValue); } },
-                { "next_character_count_reset_unix", n => { NextCharacterCountResetUnix = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Next_Character_Count_Reset_Unix>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Next_Character_Count_Reset_Unix.CreateFromDiscriminatorValue); } },
+                { "max_voice_add_edits", n => { MaxVoiceAddEdits = n.GetIntValue(); } },
+                { "next_character_count_reset_unix", n => { NextCharacterCountResetUnix = n.GetIntValue(); } },
                 { "professional_voice_limit", n => { ProfessionalVoiceLimit = n.GetIntValue(); } },
                 { "professional_voice_slots_used", n => { ProfessionalVoiceSlotsUsed = n.GetIntValue(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SubscriptionStatusType>(); } },
@@ -179,10 +161,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CharacterRefreshPeriod_Wrapper>("character_refresh_period", CharacterRefreshPeriod);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Currency_Wrapper>("currency", Currency);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Price>("current_overage", CurrentOverage);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Max_Character_Limit_Extension>("max_character_limit_extension", MaxCharacterLimitExtension);
+            writer.WriteIntValue("max_character_limit_extension", MaxCharacterLimitExtension);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Max_Credit_Limit_Extension>("max_credit_limit_extension", MaxCreditLimitExtension);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Max_Voice_Add_Edits>("max_voice_add_edits", MaxVoiceAddEdits);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Next_Character_Count_Reset_Unix>("next_character_count_reset_unix", NextCharacterCountResetUnix);
+            writer.WriteIntValue("max_voice_add_edits", MaxVoiceAddEdits);
+            writer.WriteIntValue("next_character_count_reset_unix", NextCharacterCountResetUnix);
             writer.WriteIntValue("professional_voice_limit", ProfessionalVoiceLimit);
             writer.WriteIntValue("professional_voice_slots_used", ProfessionalVoiceSlotsUsed);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SubscriptionStatusType>("status", Status);

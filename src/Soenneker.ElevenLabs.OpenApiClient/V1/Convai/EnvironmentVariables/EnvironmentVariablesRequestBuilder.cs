@@ -184,15 +184,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.EnvironmentVariables
             [QueryParameter("page_size")]
             public int? PageSize { get; set; }
             /// <summary>Filter by variable type</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("type")]
-            public string? Type { get; set; }
-#nullable restore
-#else
-            [QueryParameter("type")]
-            public string Type { get; set; }
-#endif
+            public global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.EnvironmentVariables.GetTypeQueryParameterType? Type { get; set; }
         }
     }
 }

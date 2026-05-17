@@ -17,26 +17,26 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>If non-empty, the first message the agent will say. If empty, the agent waits for the user to start the discussion.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.First_Message? FirstMessage { get; set; }
+        public string? FirstMessage { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.First_Message FirstMessage { get; set; }
+        public string FirstMessage { get; set; }
 #endif
         /// <summary>Language of the agent - used for ASR and TTS</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Language? Language { get; set; }
+        public string? Language { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Language Language { get; set; }
+        public string Language { get; set; }
 #endif
         /// <summary>If non-empty, the message the agent will send when max conversation duration is reached.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Max_Conversation_Duration_Message? MaxConversationDurationMessage { get; set; }
+        public string? MaxConversationDurationMessage { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Max_Conversation_Duration_Message MaxConversationDurationMessage { get; set; }
+        public string MaxConversationDurationMessage { get; set; }
 #endif
         /// <summary>The prompt for the agent</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -71,9 +71,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "first_message", n => { FirstMessage = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.First_Message>(global::Soenneker.ElevenLabs.OpenApiClient.Models.First_Message.CreateFromDiscriminatorValue); } },
-                { "language", n => { Language = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Language>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Language.CreateFromDiscriminatorValue); } },
-                { "max_conversation_duration_message", n => { MaxConversationDurationMessage = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Max_Conversation_Duration_Message>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Max_Conversation_Duration_Message.CreateFromDiscriminatorValue); } },
+                { "first_message", n => { FirstMessage = n.GetStringValue(); } },
+                { "language", n => { Language = n.GetStringValue(); } },
+                { "max_conversation_duration_message", n => { MaxConversationDurationMessage = n.GetStringValue(); } },
                 { "prompt", n => { Prompt = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentAPIModelOverrideInput>(global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentAPIModelOverrideInput.CreateFromDiscriminatorValue); } },
             };
         }
@@ -84,9 +84,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.First_Message>("first_message", FirstMessage);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Language>("language", Language);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Max_Conversation_Duration_Message>("max_conversation_duration_message", MaxConversationDurationMessage);
+            writer.WriteStringValue("first_message", FirstMessage);
+            writer.WriteStringValue("language", Language);
+            writer.WriteStringValue("max_conversation_duration_message", MaxConversationDurationMessage);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentAPIModelOverrideInput>("prompt", Prompt);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -15,37 +15,19 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The auto_break_enabled property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Auto_Break_Enabled? AutoBreakEnabled { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Auto_Break_Enabled AutoBreakEnabled { get; set; }
-#endif
+        public bool? AutoBreakEnabled { get; set; }
         /// <summary>The background_color property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Background_Color? BackgroundColor { get; set; }
+        public string? BackgroundColor { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Background_Color BackgroundColor { get; set; }
+        public string BackgroundColor { get; set; }
 #endif
         /// <summary>The background_enabled property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Background_Enabled? BackgroundEnabled { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Background_Enabled BackgroundEnabled { get; set; }
-#endif
+        public bool? BackgroundEnabled { get; set; }
         /// <summary>The background_opacity property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Background_Opacity? BackgroundOpacity { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Background_Opacity BackgroundOpacity { get; set; }
-#endif
+        public double? BackgroundOpacity { get; set; }
         /// <summary>The character_animation property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -63,21 +45,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.CaptionStyleHorizontalPlacementModel HorizontalPlacement { get; set; }
 #endif
         /// <summary>The max_lines_per_section property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Max_Lines_Per_Section? MaxLinesPerSection { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Max_Lines_Per_Section MaxLinesPerSection { get; set; }
-#endif
+        public int? MaxLinesPerSection { get; set; }
         /// <summary>The max_words_per_line property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Max_Words_Per_Line? MaxWordsPerLine { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Max_Words_Per_Line MaxWordsPerLine { get; set; }
-#endif
+        public int? MaxWordsPerLine { get; set; }
         /// <summary>The section_animation property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -95,36 +65,24 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.CaptionStyleTemplateModel Template { get; set; }
 #endif
         /// <summary>The text_align property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Text_Align? TextAlign { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Text_Align TextAlign { get; set; }
-#endif
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CaptionStyleModel_text_align? TextAlign { get; set; }
         /// <summary>The text_blend_mode property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Text_Blend_Mode? TextBlendMode { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Text_Blend_Mode TextBlendMode { get; set; }
-#endif
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CaptionStyleModel_text_blend_mode? TextBlendMode { get; set; }
         /// <summary>The text_color property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Text_Color? TextColor { get; set; }
+        public string? TextColor { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Text_Color TextColor { get; set; }
+        public string TextColor { get; set; }
 #endif
         /// <summary>The text_font property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Text_Font? TextFont { get; set; }
+        public string? TextFont { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Text_Font TextFont { get; set; }
+        public string TextFont { get; set; }
 #endif
         /// <summary>The text_outline property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -135,13 +93,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.StudioTextStyleOutlineModel TextOutline { get; set; }
 #endif
         /// <summary>The text_scale property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Text_Scale? TextScale { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Text_Scale TextScale { get; set; }
-#endif
+        public double? TextScale { get; set; }
         /// <summary>The text_shadow property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -151,29 +103,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.StudioTextStyleShadowModel TextShadow { get; set; }
 #endif
         /// <summary>The text_style property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Text_Style? TextStyle { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Text_Style TextStyle { get; set; }
-#endif
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CaptionStyleModel_text_style? TextStyle { get; set; }
         /// <summary>The text_transform property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Text_Transform? TextTransform { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Text_Transform TextTransform { get; set; }
-#endif
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CaptionStyleModel_text_transform? TextTransform { get; set; }
         /// <summary>The text_weight property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Text_Weight? TextWeight { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Text_Weight TextWeight { get; set; }
-#endif
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CaptionStyleModel_text_weight? TextWeight { get; set; }
         /// <summary>The vertical_placement property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -183,13 +117,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.CaptionStyleVerticalPlacementModel VerticalPlacement { get; set; }
 #endif
         /// <summary>The width_pct property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Width_Pct? WidthPct { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Width_Pct WidthPct { get; set; }
-#endif
+        public double? WidthPct { get; set; }
         /// <summary>The word_animation property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -201,35 +129,23 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The word_highlights_background_color property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Word_Highlights_Background_Color? WordHighlightsBackgroundColor { get; set; }
+        public string? WordHighlightsBackgroundColor { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Word_Highlights_Background_Color WordHighlightsBackgroundColor { get; set; }
+        public string WordHighlightsBackgroundColor { get; set; }
 #endif
         /// <summary>The word_highlights_color property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Word_Highlights_Color? WordHighlightsColor { get; set; }
+        public string? WordHighlightsColor { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Word_Highlights_Color WordHighlightsColor { get; set; }
+        public string WordHighlightsColor { get; set; }
 #endif
         /// <summary>The word_highlights_enabled property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Word_Highlights_Enabled? WordHighlightsEnabled { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Word_Highlights_Enabled WordHighlightsEnabled { get; set; }
-#endif
+        public bool? WordHighlightsEnabled { get; set; }
         /// <summary>The word_highlights_opacity property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Word_Highlights_Opacity? WordHighlightsOpacity { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Word_Highlights_Opacity WordHighlightsOpacity { get; set; }
-#endif
+        public double? WordHighlightsOpacity { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.CaptionStyleModel"/> and sets the default values.
         /// </summary>
@@ -255,33 +171,33 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "auto_break_enabled", n => { AutoBreakEnabled = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Auto_Break_Enabled>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Auto_Break_Enabled.CreateFromDiscriminatorValue); } },
-                { "background_color", n => { BackgroundColor = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Background_Color>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Background_Color.CreateFromDiscriminatorValue); } },
-                { "background_enabled", n => { BackgroundEnabled = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Background_Enabled>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Background_Enabled.CreateFromDiscriminatorValue); } },
-                { "background_opacity", n => { BackgroundOpacity = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Background_Opacity>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Background_Opacity.CreateFromDiscriminatorValue); } },
+                { "auto_break_enabled", n => { AutoBreakEnabled = n.GetBoolValue(); } },
+                { "background_color", n => { BackgroundColor = n.GetStringValue(); } },
+                { "background_enabled", n => { BackgroundEnabled = n.GetBoolValue(); } },
+                { "background_opacity", n => { BackgroundOpacity = n.GetDoubleValue(); } },
                 { "character_animation", n => { CharacterAnimation = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CaptionStyleCharacterAnimationModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.CaptionStyleCharacterAnimationModel.CreateFromDiscriminatorValue); } },
                 { "horizontal_placement", n => { HorizontalPlacement = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CaptionStyleHorizontalPlacementModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.CaptionStyleHorizontalPlacementModel.CreateFromDiscriminatorValue); } },
-                { "max_lines_per_section", n => { MaxLinesPerSection = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Max_Lines_Per_Section>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Max_Lines_Per_Section.CreateFromDiscriminatorValue); } },
-                { "max_words_per_line", n => { MaxWordsPerLine = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Max_Words_Per_Line>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Max_Words_Per_Line.CreateFromDiscriminatorValue); } },
+                { "max_lines_per_section", n => { MaxLinesPerSection = n.GetIntValue(); } },
+                { "max_words_per_line", n => { MaxWordsPerLine = n.GetIntValue(); } },
                 { "section_animation", n => { SectionAnimation = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CaptionStyleSectionAnimationModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.CaptionStyleSectionAnimationModel.CreateFromDiscriminatorValue); } },
                 { "template", n => { Template = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CaptionStyleTemplateModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.CaptionStyleTemplateModel.CreateFromDiscriminatorValue); } },
-                { "text_align", n => { TextAlign = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Text_Align>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Text_Align.CreateFromDiscriminatorValue); } },
-                { "text_blend_mode", n => { TextBlendMode = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Text_Blend_Mode>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Text_Blend_Mode.CreateFromDiscriminatorValue); } },
-                { "text_color", n => { TextColor = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Text_Color>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Text_Color.CreateFromDiscriminatorValue); } },
-                { "text_font", n => { TextFont = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Text_Font>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Text_Font.CreateFromDiscriminatorValue); } },
+                { "text_align", n => { TextAlign = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CaptionStyleModel_text_align>(); } },
+                { "text_blend_mode", n => { TextBlendMode = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CaptionStyleModel_text_blend_mode>(); } },
+                { "text_color", n => { TextColor = n.GetStringValue(); } },
+                { "text_font", n => { TextFont = n.GetStringValue(); } },
                 { "text_outline", n => { TextOutline = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.StudioTextStyleOutlineModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.StudioTextStyleOutlineModel.CreateFromDiscriminatorValue); } },
-                { "text_scale", n => { TextScale = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Text_Scale>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Text_Scale.CreateFromDiscriminatorValue); } },
+                { "text_scale", n => { TextScale = n.GetDoubleValue(); } },
                 { "text_shadow", n => { TextShadow = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.StudioTextStyleShadowModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.StudioTextStyleShadowModel.CreateFromDiscriminatorValue); } },
-                { "text_style", n => { TextStyle = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Text_Style>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Text_Style.CreateFromDiscriminatorValue); } },
-                { "text_transform", n => { TextTransform = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Text_Transform>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Text_Transform.CreateFromDiscriminatorValue); } },
-                { "text_weight", n => { TextWeight = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Text_Weight>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Text_Weight.CreateFromDiscriminatorValue); } },
+                { "text_style", n => { TextStyle = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CaptionStyleModel_text_style>(); } },
+                { "text_transform", n => { TextTransform = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CaptionStyleModel_text_transform>(); } },
+                { "text_weight", n => { TextWeight = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CaptionStyleModel_text_weight>(); } },
                 { "vertical_placement", n => { VerticalPlacement = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CaptionStyleVerticalPlacementModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.CaptionStyleVerticalPlacementModel.CreateFromDiscriminatorValue); } },
-                { "width_pct", n => { WidthPct = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Width_Pct>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Width_Pct.CreateFromDiscriminatorValue); } },
+                { "width_pct", n => { WidthPct = n.GetDoubleValue(); } },
                 { "word_animation", n => { WordAnimation = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CaptionStyleWordAnimationModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.CaptionStyleWordAnimationModel.CreateFromDiscriminatorValue); } },
-                { "word_highlights_background_color", n => { WordHighlightsBackgroundColor = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Word_Highlights_Background_Color>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Word_Highlights_Background_Color.CreateFromDiscriminatorValue); } },
-                { "word_highlights_color", n => { WordHighlightsColor = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Word_Highlights_Color>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Word_Highlights_Color.CreateFromDiscriminatorValue); } },
-                { "word_highlights_enabled", n => { WordHighlightsEnabled = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Word_Highlights_Enabled>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Word_Highlights_Enabled.CreateFromDiscriminatorValue); } },
-                { "word_highlights_opacity", n => { WordHighlightsOpacity = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Word_Highlights_Opacity>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Word_Highlights_Opacity.CreateFromDiscriminatorValue); } },
+                { "word_highlights_background_color", n => { WordHighlightsBackgroundColor = n.GetStringValue(); } },
+                { "word_highlights_color", n => { WordHighlightsColor = n.GetStringValue(); } },
+                { "word_highlights_enabled", n => { WordHighlightsEnabled = n.GetBoolValue(); } },
+                { "word_highlights_opacity", n => { WordHighlightsOpacity = n.GetDoubleValue(); } },
             };
         }
         /// <summary>
@@ -291,33 +207,33 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Auto_Break_Enabled>("auto_break_enabled", AutoBreakEnabled);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Background_Color>("background_color", BackgroundColor);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Background_Enabled>("background_enabled", BackgroundEnabled);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Background_Opacity>("background_opacity", BackgroundOpacity);
+            writer.WriteBoolValue("auto_break_enabled", AutoBreakEnabled);
+            writer.WriteStringValue("background_color", BackgroundColor);
+            writer.WriteBoolValue("background_enabled", BackgroundEnabled);
+            writer.WriteDoubleValue("background_opacity", BackgroundOpacity);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CaptionStyleCharacterAnimationModel>("character_animation", CharacterAnimation);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CaptionStyleHorizontalPlacementModel>("horizontal_placement", HorizontalPlacement);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Max_Lines_Per_Section>("max_lines_per_section", MaxLinesPerSection);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Max_Words_Per_Line>("max_words_per_line", MaxWordsPerLine);
+            writer.WriteIntValue("max_lines_per_section", MaxLinesPerSection);
+            writer.WriteIntValue("max_words_per_line", MaxWordsPerLine);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CaptionStyleSectionAnimationModel>("section_animation", SectionAnimation);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CaptionStyleTemplateModel>("template", Template);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Text_Align>("text_align", TextAlign);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Text_Blend_Mode>("text_blend_mode", TextBlendMode);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Text_Color>("text_color", TextColor);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Text_Font>("text_font", TextFont);
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CaptionStyleModel_text_align>("text_align", TextAlign);
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CaptionStyleModel_text_blend_mode>("text_blend_mode", TextBlendMode);
+            writer.WriteStringValue("text_color", TextColor);
+            writer.WriteStringValue("text_font", TextFont);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.StudioTextStyleOutlineModel>("text_outline", TextOutline);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Text_Scale>("text_scale", TextScale);
+            writer.WriteDoubleValue("text_scale", TextScale);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.StudioTextStyleShadowModel>("text_shadow", TextShadow);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Text_Style>("text_style", TextStyle);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Text_Transform>("text_transform", TextTransform);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Text_Weight>("text_weight", TextWeight);
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CaptionStyleModel_text_style>("text_style", TextStyle);
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CaptionStyleModel_text_transform>("text_transform", TextTransform);
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CaptionStyleModel_text_weight>("text_weight", TextWeight);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CaptionStyleVerticalPlacementModel>("vertical_placement", VerticalPlacement);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Width_Pct>("width_pct", WidthPct);
+            writer.WriteDoubleValue("width_pct", WidthPct);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CaptionStyleWordAnimationModel>("word_animation", WordAnimation);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Word_Highlights_Background_Color>("word_highlights_background_color", WordHighlightsBackgroundColor);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Word_Highlights_Color>("word_highlights_color", WordHighlightsColor);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Word_Highlights_Enabled>("word_highlights_enabled", WordHighlightsEnabled);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Word_Highlights_Opacity>("word_highlights_opacity", WordHighlightsOpacity);
+            writer.WriteStringValue("word_highlights_background_color", WordHighlightsBackgroundColor);
+            writer.WriteStringValue("word_highlights_color", WordHighlightsColor);
+            writer.WriteBoolValue("word_highlights_enabled", WordHighlightsEnabled);
+            writer.WriteDoubleValue("word_highlights_opacity", WordHighlightsOpacity);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

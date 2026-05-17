@@ -15,36 +15,18 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The similarity boost for generated speech</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Similarity_Boost? SimilarityBoost { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Similarity_Boost SimilarityBoost { get; set; }
-#endif
+        public double? SimilarityBoost { get; set; }
         /// <summary>The speed of generated speech</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Speed? Speed { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Speed Speed { get; set; }
-#endif
+        public double? Speed { get; set; }
         /// <summary>The stability of generated speech</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Stability? Stability { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Stability Stability { get; set; }
-#endif
+        public double? Stability { get; set; }
         /// <summary>The voice ID to use for TTS</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Voice_Id? VoiceId { get; set; }
+        public string? VoiceId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Voice_Id VoiceId { get; set; }
+        public string VoiceId { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.TTSConversationalConfigOverride"/> and sets the default values.
@@ -71,10 +53,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "similarity_boost", n => { SimilarityBoost = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Similarity_Boost>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Similarity_Boost.CreateFromDiscriminatorValue); } },
-                { "speed", n => { Speed = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Speed>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Speed.CreateFromDiscriminatorValue); } },
-                { "stability", n => { Stability = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Stability>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Stability.CreateFromDiscriminatorValue); } },
-                { "voice_id", n => { VoiceId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Voice_Id>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Voice_Id.CreateFromDiscriminatorValue); } },
+                { "similarity_boost", n => { SimilarityBoost = n.GetDoubleValue(); } },
+                { "speed", n => { Speed = n.GetDoubleValue(); } },
+                { "stability", n => { Stability = n.GetDoubleValue(); } },
+                { "voice_id", n => { VoiceId = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -84,10 +66,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Similarity_Boost>("similarity_boost", SimilarityBoost);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Speed>("speed", Speed);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Stability>("stability", Stability);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Voice_Id>("voice_id", VoiceId);
+            writer.WriteDoubleValue("similarity_boost", SimilarityBoost);
+            writer.WriteDoubleValue("speed", Speed);
+            writer.WriteDoubleValue("stability", Stability);
+            writer.WriteStringValue("voice_id", VoiceId);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

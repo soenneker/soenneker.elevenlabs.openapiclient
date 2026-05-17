@@ -67,10 +67,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>ID of the parent branch</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Parent_Branch_Id? ParentBranchId { get; set; }
+        public string? ParentBranchId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Parent_Branch_Id ParentBranchId { get; set; }
+        public string ParentBranchId { get; set; }
 #endif
         /// <summary>The protection_status property</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.BranchProtectionStatus? ProtectionStatus { get; set; }
@@ -110,7 +110,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "is_archived", n => { IsArchived = n.GetBoolValue(); } },
                 { "last_committed_at", n => { LastCommittedAt = n.GetIntValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "parent_branch_id", n => { ParentBranchId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Parent_Branch_Id>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Parent_Branch_Id.CreateFromDiscriminatorValue); } },
+                { "parent_branch_id", n => { ParentBranchId = n.GetStringValue(); } },
                 { "protection_status", n => { ProtectionStatus = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BranchProtectionStatus>(); } },
             };
         }
@@ -131,7 +131,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteBoolValue("is_archived", IsArchived);
             writer.WriteIntValue("last_committed_at", LastCommittedAt);
             writer.WriteStringValue("name", Name);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Parent_Branch_Id>("parent_branch_id", ParentBranchId);
+            writer.WriteStringValue("parent_branch_id", ParentBranchId);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BranchProtectionStatus>("protection_status", ProtectionStatus);
             writer.WriteAdditionalData(AdditionalData);
         }

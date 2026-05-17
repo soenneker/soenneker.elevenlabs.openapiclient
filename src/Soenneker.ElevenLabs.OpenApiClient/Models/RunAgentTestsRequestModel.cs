@@ -25,10 +25,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>ID of the branch to run the tests on. If not provided, the tests will be run on the agent default configuration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Branch_Id? BranchId { get; set; }
+        public string? BranchId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Branch_Id BranchId { get; set; }
+        public string BranchId { get; set; }
 #endif
         /// <summary>List of tests to run on the agent</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -64,7 +64,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "agent_config_override", n => { AgentConfigOverride = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AdhocAgentConfigOverrideForTestRequestModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.AdhocAgentConfigOverrideForTestRequestModel.CreateFromDiscriminatorValue); } },
-                { "branch_id", n => { BranchId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Branch_Id>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Branch_Id.CreateFromDiscriminatorValue); } },
+                { "branch_id", n => { BranchId = n.GetStringValue(); } },
                 { "tests", n => { Tests = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.SingleTestRunRequestModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.SingleTestRunRequestModel.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
@@ -76,7 +76,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AdhocAgentConfigOverrideForTestRequestModel>("agent_config_override", AgentConfigOverride);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Branch_Id>("branch_id", BranchId);
+            writer.WriteStringValue("branch_id", BranchId);
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.SingleTestRunRequestModel>("tests", Tests);
             writer.WriteAdditionalData(AdditionalData);
         }

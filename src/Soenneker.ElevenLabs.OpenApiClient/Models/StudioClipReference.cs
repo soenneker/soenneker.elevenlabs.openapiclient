@@ -17,10 +17,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The block_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Block_Id? BlockId { get; set; }
+        public string? BlockId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Block_Id BlockId { get; set; }
+        public string BlockId { get; set; }
 #endif
         /// <summary>The chapter_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -43,10 +43,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The preview_url property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Preview_Url? PreviewUrl { get; set; }
+        public string? PreviewUrl { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Preview_Url PreviewUrl { get; set; }
+        public string PreviewUrl { get; set; }
 #endif
         /// <summary>The project_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -81,11 +81,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "block_id", n => { BlockId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Block_Id>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Block_Id.CreateFromDiscriminatorValue); } },
+                { "block_id", n => { BlockId = n.GetStringValue(); } },
                 { "chapter_id", n => { ChapterId = n.GetStringValue(); } },
                 { "clip_id", n => { ClipId = n.GetStringValue(); } },
                 { "clip_type", n => { ClipType = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.StudioClipReference_clip_type>(); } },
-                { "preview_url", n => { PreviewUrl = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Preview_Url>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Preview_Url.CreateFromDiscriminatorValue); } },
+                { "preview_url", n => { PreviewUrl = n.GetStringValue(); } },
                 { "project_id", n => { ProjectId = n.GetStringValue(); } },
             };
         }
@@ -96,11 +96,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Block_Id>("block_id", BlockId);
+            writer.WriteStringValue("block_id", BlockId);
             writer.WriteStringValue("chapter_id", ChapterId);
             writer.WriteStringValue("clip_id", ClipId);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.StudioClipReference_clip_type>("clip_type", ClipType);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Preview_Url>("preview_url", PreviewUrl);
+            writer.WriteStringValue("preview_url", PreviewUrl);
             writer.WriteStringValue("project_id", ProjectId);
             writer.WriteAdditionalData(AdditionalData);
         }

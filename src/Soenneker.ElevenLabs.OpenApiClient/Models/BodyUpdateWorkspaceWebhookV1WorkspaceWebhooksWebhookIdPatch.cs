@@ -33,13 +33,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyUpdateWorkspaceWebhookV1WorkspaceWebhooksWebhookIdPatchRequestHeaders RequestHeaders { get; set; }
 #endif
         /// <summary>Whether to enable automatic retries for transient failures (5xx, 429, timeout)</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Retry_Enabled? RetryEnabled { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Retry_Enabled RetryEnabled { get; set; }
-#endif
+        public bool? RetryEnabled { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyUpdateWorkspaceWebhookV1WorkspaceWebhooksWebhookIdPatch"/> and sets the default values.
         /// </summary>
@@ -68,7 +62,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "is_disabled", n => { IsDisabled = n.GetBoolValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "request_headers", n => { RequestHeaders = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyUpdateWorkspaceWebhookV1WorkspaceWebhooksWebhookIdPatchRequestHeaders>(global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyUpdateWorkspaceWebhookV1WorkspaceWebhooksWebhookIdPatchRequestHeaders.CreateFromDiscriminatorValue); } },
-                { "retry_enabled", n => { RetryEnabled = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Retry_Enabled>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Retry_Enabled.CreateFromDiscriminatorValue); } },
+                { "retry_enabled", n => { RetryEnabled = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -81,7 +75,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteBoolValue("is_disabled", IsDisabled);
             writer.WriteStringValue("name", Name);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyUpdateWorkspaceWebhookV1WorkspaceWebhooksWebhookIdPatchRequestHeaders>("request_headers", RequestHeaders);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Retry_Enabled>("retry_enabled", RetryEnabled);
+            writer.WriteBoolValue("retry_enabled", RetryEnabled);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

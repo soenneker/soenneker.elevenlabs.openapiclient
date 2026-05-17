@@ -15,31 +15,19 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The algorithm property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Algorithm? Algorithm { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Algorithm Algorithm { get; set; }
-#endif
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateOAuth2JWTRequest_algorithm? Algorithm { get; set; }
         /// <summary>The audience property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Audience? Audience { get; set; }
+        public string? Audience { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Audience Audience { get; set; }
+        public string Audience { get; set; }
 #endif
         /// <summary>The auth_type property</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateOAuth2JWTRequest_auth_type? AuthType { get; set; }
         /// <summary>The expiration_seconds property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Expiration_Seconds? ExpirationSeconds { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Expiration_Seconds ExpirationSeconds { get; set; }
-#endif
+        public int? ExpirationSeconds { get; set; }
         /// <summary>The extra_params property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -51,26 +39,26 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The issuer property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Issuer? Issuer { get; set; }
+        public string? Issuer { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Issuer Issuer { get; set; }
+        public string Issuer { get; set; }
 #endif
         /// <summary>The key_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Key_Id? KeyId { get; set; }
+        public string? KeyId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Key_Id KeyId { get; set; }
+        public string KeyId { get; set; }
 #endif
         /// <summary>The provider property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Provider? Provider { get; set; }
+        public string? Provider { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Provider Provider { get; set; }
+        public string Provider { get; set; }
 #endif
         /// <summary>The scopes property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -83,27 +71,21 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The secret_key property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Secret_Key? SecretKey { get; set; }
+        public string? SecretKey { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Secret_Key SecretKey { get; set; }
+        public string SecretKey { get; set; }
 #endif
         /// <summary>The subject property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Subject? Subject { get; set; }
+        public string? Subject { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Subject Subject { get; set; }
+        public string Subject { get; set; }
 #endif
         /// <summary>The token_response_field property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Token_Response_Field? TokenResponseField { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Token_Response_Field TokenResponseField { get; set; }
-#endif
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateOAuth2JWTRequest_token_response_field? TokenResponseField { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateOAuth2JWTRequest"/> and sets the default values.
         /// </summary>
@@ -130,18 +112,18 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "algorithm", n => { Algorithm = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Algorithm>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Algorithm.CreateFromDiscriminatorValue); } },
-                { "audience", n => { Audience = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Audience>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Audience.CreateFromDiscriminatorValue); } },
+                { "algorithm", n => { Algorithm = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateOAuth2JWTRequest_algorithm>(); } },
+                { "audience", n => { Audience = n.GetStringValue(); } },
                 { "auth_type", n => { AuthType = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateOAuth2JWTRequest_auth_type>(); } },
-                { "expiration_seconds", n => { ExpirationSeconds = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Expiration_Seconds>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Expiration_Seconds.CreateFromDiscriminatorValue); } },
+                { "expiration_seconds", n => { ExpirationSeconds = n.GetIntValue(); } },
                 { "extra_params", n => { ExtraParams = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateOAuth2JWTRequestExtraParams>(global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateOAuth2JWTRequestExtraParams.CreateFromDiscriminatorValue); } },
-                { "issuer", n => { Issuer = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Issuer>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Issuer.CreateFromDiscriminatorValue); } },
-                { "key_id", n => { KeyId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Key_Id>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Key_Id.CreateFromDiscriminatorValue); } },
-                { "provider", n => { Provider = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Provider>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Provider.CreateFromDiscriminatorValue); } },
+                { "issuer", n => { Issuer = n.GetStringValue(); } },
+                { "key_id", n => { KeyId = n.GetStringValue(); } },
+                { "provider", n => { Provider = n.GetStringValue(); } },
                 { "scopes", n => { Scopes = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Scopes>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Scopes.CreateFromDiscriminatorValue); } },
-                { "secret_key", n => { SecretKey = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Secret_Key>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Secret_Key.CreateFromDiscriminatorValue); } },
-                { "subject", n => { Subject = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Subject>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Subject.CreateFromDiscriminatorValue); } },
-                { "token_response_field", n => { TokenResponseField = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Token_Response_Field>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Token_Response_Field.CreateFromDiscriminatorValue); } },
+                { "secret_key", n => { SecretKey = n.GetStringValue(); } },
+                { "subject", n => { Subject = n.GetStringValue(); } },
+                { "token_response_field", n => { TokenResponseField = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateOAuth2JWTRequest_token_response_field>(); } },
             };
         }
         /// <summary>
@@ -151,18 +133,18 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Algorithm>("algorithm", Algorithm);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Audience>("audience", Audience);
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateOAuth2JWTRequest_algorithm>("algorithm", Algorithm);
+            writer.WriteStringValue("audience", Audience);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateOAuth2JWTRequest_auth_type>("auth_type", AuthType);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Expiration_Seconds>("expiration_seconds", ExpirationSeconds);
+            writer.WriteIntValue("expiration_seconds", ExpirationSeconds);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateOAuth2JWTRequestExtraParams>("extra_params", ExtraParams);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Issuer>("issuer", Issuer);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Key_Id>("key_id", KeyId);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Provider>("provider", Provider);
+            writer.WriteStringValue("issuer", Issuer);
+            writer.WriteStringValue("key_id", KeyId);
+            writer.WriteStringValue("provider", Provider);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Scopes>("scopes", Scopes);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Secret_Key>("secret_key", SecretKey);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Subject>("subject", Subject);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Token_Response_Field>("token_response_field", TokenResponseField);
+            writer.WriteStringValue("secret_key", SecretKey);
+            writer.WriteStringValue("subject", Subject);
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateOAuth2JWTRequest_token_response_field>("token_response_field", TokenResponseField);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

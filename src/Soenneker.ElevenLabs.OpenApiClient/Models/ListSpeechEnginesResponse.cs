@@ -19,10 +19,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Cursor for fetching the next page</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Next_Cursor? NextCursor { get; set; }
+        public string? NextCursor { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Next_Cursor NextCursor { get; set; }
+        public string NextCursor { get; set; }
 #endif
         /// <summary>The speech engines matching the query</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -58,7 +58,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "has_more", n => { HasMore = n.GetBoolValue(); } },
-                { "next_cursor", n => { NextCursor = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Next_Cursor>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Next_Cursor.CreateFromDiscriminatorValue); } },
+                { "next_cursor", n => { NextCursor = n.GetStringValue(); } },
                 { "speech_engines", n => { SpeechEngines = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechEngineSummaryResponse>(global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechEngineSummaryResponse.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
@@ -70,7 +70,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("has_more", HasMore);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Next_Cursor>("next_cursor", NextCursor);
+            writer.WriteStringValue("next_cursor", NextCursor);
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechEngineSummaryResponse>("speech_engines", SpeechEngines);
             writer.WriteAdditionalData(AdditionalData);
         }

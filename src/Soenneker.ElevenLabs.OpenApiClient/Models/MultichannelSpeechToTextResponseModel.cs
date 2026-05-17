@@ -16,20 +16,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The duration of the audio that was transcribed across all channels in seconds.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Audio_Duration_Secs? AudioDurationSecs { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Audio_Duration_Secs AudioDurationSecs { get; set; }
-#endif
+        public double? AudioDurationSecs { get; set; }
         /// <summary>The transcription ID of the response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Transcription_Id? TranscriptionId { get; set; }
+        public string? TranscriptionId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Transcription_Id TranscriptionId { get; set; }
+        public string TranscriptionId { get; set; }
 #endif
         /// <summary>List of transcripts, one for each audio channel. Each transcript contains the text and word-level details for its respective channel.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -64,8 +58,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "audio_duration_secs", n => { AudioDurationSecs = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Audio_Duration_Secs>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Audio_Duration_Secs.CreateFromDiscriminatorValue); } },
-                { "transcription_id", n => { TranscriptionId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Transcription_Id>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Transcription_Id.CreateFromDiscriminatorValue); } },
+                { "audio_duration_secs", n => { AudioDurationSecs = n.GetDoubleValue(); } },
+                { "transcription_id", n => { TranscriptionId = n.GetStringValue(); } },
                 { "transcripts", n => { Transcripts = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechToTextChunkResponseModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechToTextChunkResponseModel.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
@@ -76,8 +70,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Audio_Duration_Secs>("audio_duration_secs", AudioDurationSecs);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Transcription_Id>("transcription_id", TranscriptionId);
+            writer.WriteDoubleValue("audio_duration_secs", AudioDurationSecs);
+            writer.WriteStringValue("transcription_id", TranscriptionId);
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechToTextChunkResponseModel>("transcripts", Transcripts);
             writer.WriteAdditionalData(AdditionalData);
         }

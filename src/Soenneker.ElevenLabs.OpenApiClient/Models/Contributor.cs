@@ -17,10 +17,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The bio property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Bio? Bio { get; set; }
+        public string? Bio { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Bio Bio { get; set; }
+        public string Bio { get; set; }
 #endif
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -33,10 +33,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The profile_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Profile_Id? ProfileId { get; set; }
+        public string? ProfileId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Profile_Id ProfileId { get; set; }
+        public string ProfileId { get; set; }
 #endif
         /// <summary>The role property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -71,9 +71,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "bio", n => { Bio = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Bio>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Bio.CreateFromDiscriminatorValue); } },
+                { "bio", n => { Bio = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "profile_id", n => { ProfileId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Profile_Id>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Profile_Id.CreateFromDiscriminatorValue); } },
+                { "profile_id", n => { ProfileId = n.GetStringValue(); } },
                 { "role", n => { Role = n.GetStringValue(); } },
             };
         }
@@ -84,9 +84,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Bio>("bio", Bio);
+            writer.WriteStringValue("bio", Bio);
             writer.WriteStringValue("name", Name);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Profile_Id>("profile_id", ProfileId);
+            writer.WriteStringValue("profile_id", ProfileId);
             writer.WriteStringValue("role", Role);
             writer.WriteAdditionalData(AdditionalData);
         }

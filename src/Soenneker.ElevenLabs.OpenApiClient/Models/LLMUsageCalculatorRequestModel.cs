@@ -15,29 +15,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Pages of content in pdf documents OR urls in agent&apos;s Knowledge Base.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Number_Of_Pages? NumberOfPages { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Number_Of_Pages NumberOfPages { get; set; }
-#endif
+        public int? NumberOfPages { get; set; }
         /// <summary>Length of the prompt in characters.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Prompt_Length? PromptLength { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Prompt_Length PromptLength { get; set; }
-#endif
+        public int? PromptLength { get; set; }
         /// <summary>Whether RAG is enabled.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Rag_Enabled? RagEnabled { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Rag_Enabled RagEnabled { get; set; }
-#endif
+        public bool? RagEnabled { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.LLMUsageCalculatorRequestModel"/> and sets the default values.
         /// </summary>
@@ -63,9 +45,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "number_of_pages", n => { NumberOfPages = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Number_Of_Pages>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Number_Of_Pages.CreateFromDiscriminatorValue); } },
-                { "prompt_length", n => { PromptLength = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Prompt_Length>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Prompt_Length.CreateFromDiscriminatorValue); } },
-                { "rag_enabled", n => { RagEnabled = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Rag_Enabled>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Rag_Enabled.CreateFromDiscriminatorValue); } },
+                { "number_of_pages", n => { NumberOfPages = n.GetIntValue(); } },
+                { "prompt_length", n => { PromptLength = n.GetIntValue(); } },
+                { "rag_enabled", n => { RagEnabled = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -75,9 +57,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Number_Of_Pages>("number_of_pages", NumberOfPages);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Prompt_Length>("prompt_length", PromptLength);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Rag_Enabled>("rag_enabled", RagEnabled);
+            writer.WriteIntValue("number_of_pages", NumberOfPages);
+            writer.WriteIntValue("prompt_length", PromptLength);
+            writer.WriteBoolValue("rag_enabled", RagEnabled);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

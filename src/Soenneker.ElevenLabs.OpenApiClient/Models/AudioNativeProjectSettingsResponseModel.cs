@@ -17,18 +17,18 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The path of the audio file.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Audio_Path? AudioPath { get; set; }
+        public string? AudioPath { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Audio_Path AudioPath { get; set; }
+        public string AudioPath { get; set; }
 #endif
         /// <summary>The URL of the audio file.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Audio_Url? AudioUrl { get; set; }
+        public string? AudioUrl { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Audio_Url AudioUrl { get; set; }
+        public string AudioUrl { get; set; }
 #endif
         /// <summary>The author of the project.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -102,8 +102,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "audio_path", n => { AudioPath = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Audio_Path>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Audio_Path.CreateFromDiscriminatorValue); } },
-                { "audio_url", n => { AudioUrl = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Audio_Url>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Audio_Url.CreateFromDiscriminatorValue); } },
+                { "audio_path", n => { AudioPath = n.GetStringValue(); } },
+                { "audio_url", n => { AudioUrl = n.GetStringValue(); } },
                 { "author", n => { Author = n.GetStringValue(); } },
                 { "background_color", n => { BackgroundColor = n.GetStringValue(); } },
                 { "image", n => { Image = n.GetStringValue(); } },
@@ -121,8 +121,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Audio_Path>("audio_path", AudioPath);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Audio_Url>("audio_url", AudioUrl);
+            writer.WriteStringValue("audio_path", AudioPath);
+            writer.WriteStringValue("audio_url", AudioUrl);
             writer.WriteStringValue("author", Author);
             writer.WriteStringValue("background_color", BackgroundColor);
             writer.WriteStringValue("image", Image);

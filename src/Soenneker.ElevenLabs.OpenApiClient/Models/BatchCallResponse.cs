@@ -33,28 +33,28 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The branch_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Branch_Id? BranchId { get; set; }
+        public string? BranchId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Branch_Id BranchId { get; set; }
+        public string BranchId { get; set; }
 #endif
         /// <summary>The branch_name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Branch_Name? BranchName { get; set; }
+        public string? BranchName { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Branch_Name BranchName { get; set; }
+        public string BranchName { get; set; }
 #endif
         /// <summary>The created_at_unix property</summary>
         public int? CreatedAtUnix { get; set; }
         /// <summary>The environment property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.EnvironmentObject? Environment { get; set; }
+        public string? Environment { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.EnvironmentObject Environment { get; set; }
+        public string Environment { get; set; }
 #endif
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -77,10 +77,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The phone_number_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Phone_Number_Id? PhoneNumberId { get; set; }
+        public string? PhoneNumberId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Phone_Number_Id PhoneNumberId { get; set; }
+        public string PhoneNumberId { get; set; }
 #endif
         /// <summary>The phone_provider property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -97,13 +97,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The status property</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.BatchCallStatus? Status { get; set; }
         /// <summary>Maximum number of simultaneous calls for this batch. When set, dispatch is governed by this limit rather than workspace/agent capacity percentages.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Target_Concurrency_Limit? TargetConcurrencyLimit { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Target_Concurrency_Limit TargetConcurrencyLimit { get; set; }
-#endif
+        public int? TargetConcurrencyLimit { get; set; }
         /// <summary>The telephony_call_config property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -115,10 +109,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The timezone property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.TimezoneObject? Timezone { get; set; }
+        public string? Timezone { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.TimezoneObject Timezone { get; set; }
+        public string Timezone { get; set; }
 #endif
         /// <summary>The total_calls_dispatched property</summary>
         public int? TotalCallsDispatched { get; set; }
@@ -161,21 +155,21 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             {
                 { "agent_id", n => { AgentId = n.GetStringValue(); } },
                 { "agent_name", n => { AgentName = n.GetStringValue(); } },
-                { "branch_id", n => { BranchId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Branch_Id>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Branch_Id.CreateFromDiscriminatorValue); } },
-                { "branch_name", n => { BranchName = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Branch_Name>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Branch_Name.CreateFromDiscriminatorValue); } },
+                { "branch_id", n => { BranchId = n.GetStringValue(); } },
+                { "branch_name", n => { BranchName = n.GetStringValue(); } },
                 { "created_at_unix", n => { CreatedAtUnix = n.GetIntValue(); } },
-                { "environment", n => { Environment = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.EnvironmentObject>(global::Soenneker.ElevenLabs.OpenApiClient.Models.EnvironmentObject.CreateFromDiscriminatorValue); } },
+                { "environment", n => { Environment = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "last_updated_at_unix", n => { LastUpdatedAtUnix = n.GetIntValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "phone_number_id", n => { PhoneNumberId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Phone_Number_Id>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Phone_Number_Id.CreateFromDiscriminatorValue); } },
+                { "phone_number_id", n => { PhoneNumberId = n.GetStringValue(); } },
                 { "phone_provider", n => { PhoneProvider = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TelephonyProvider_Wrapper>(global::Soenneker.ElevenLabs.OpenApiClient.Models.TelephonyProvider_Wrapper.CreateFromDiscriminatorValue); } },
                 { "retry_count", n => { RetryCount = n.GetIntValue(); } },
                 { "scheduled_time_unix", n => { ScheduledTimeUnix = n.GetIntValue(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BatchCallStatus>(); } },
-                { "target_concurrency_limit", n => { TargetConcurrencyLimit = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Target_Concurrency_Limit>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Target_Concurrency_Limit.CreateFromDiscriminatorValue); } },
+                { "target_concurrency_limit", n => { TargetConcurrencyLimit = n.GetIntValue(); } },
                 { "telephony_call_config", n => { TelephonyCallConfig = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TelephonyCallConfig>(global::Soenneker.ElevenLabs.OpenApiClient.Models.TelephonyCallConfig.CreateFromDiscriminatorValue); } },
-                { "timezone", n => { Timezone = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TimezoneObject>(global::Soenneker.ElevenLabs.OpenApiClient.Models.TimezoneObject.CreateFromDiscriminatorValue); } },
+                { "timezone", n => { Timezone = n.GetStringValue(); } },
                 { "total_calls_dispatched", n => { TotalCallsDispatched = n.GetIntValue(); } },
                 { "total_calls_finished", n => { TotalCallsFinished = n.GetIntValue(); } },
                 { "total_calls_scheduled", n => { TotalCallsScheduled = n.GetIntValue(); } },
@@ -191,21 +185,21 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("agent_id", AgentId);
             writer.WriteStringValue("agent_name", AgentName);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Branch_Id>("branch_id", BranchId);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Branch_Name>("branch_name", BranchName);
+            writer.WriteStringValue("branch_id", BranchId);
+            writer.WriteStringValue("branch_name", BranchName);
             writer.WriteIntValue("created_at_unix", CreatedAtUnix);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.EnvironmentObject>("environment", Environment);
+            writer.WriteStringValue("environment", Environment);
             writer.WriteStringValue("id", Id);
             writer.WriteIntValue("last_updated_at_unix", LastUpdatedAtUnix);
             writer.WriteStringValue("name", Name);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Phone_Number_Id>("phone_number_id", PhoneNumberId);
+            writer.WriteStringValue("phone_number_id", PhoneNumberId);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TelephonyProvider_Wrapper>("phone_provider", PhoneProvider);
             writer.WriteIntValue("retry_count", RetryCount);
             writer.WriteIntValue("scheduled_time_unix", ScheduledTimeUnix);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BatchCallStatus>("status", Status);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Target_Concurrency_Limit>("target_concurrency_limit", TargetConcurrencyLimit);
+            writer.WriteIntValue("target_concurrency_limit", TargetConcurrencyLimit);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TelephonyCallConfig>("telephony_call_config", TelephonyCallConfig);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TimezoneObject>("timezone", Timezone);
+            writer.WriteStringValue("timezone", Timezone);
             writer.WriteIntValue("total_calls_dispatched", TotalCallsDispatched);
             writer.WriteIntValue("total_calls_finished", TotalCallsFinished);
             writer.WriteIntValue("total_calls_scheduled", TotalCallsScheduled);

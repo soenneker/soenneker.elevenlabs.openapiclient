@@ -50,10 +50,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>SIP trunk username (if available)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Username? Username { get; set; }
+        public string? Username { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Username Username { get; set; }
+        public string Username { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPhoneNumberOutboundSIPTrunkConfigResponseModel"/> and sets the default values.
@@ -89,7 +89,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "headers", n => { Headers = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPhoneNumberOutboundSIPTrunkConfigResponseModel_headers>(global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPhoneNumberOutboundSIPTrunkConfigResponseModel_headers.CreateFromDiscriminatorValue); } },
                 { "media_encryption", n => { MediaEncryption = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SIPMediaEncryptionEnum>(); } },
                 { "transport", n => { Transport = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SIPTrunkTransportEnum>(); } },
-                { "username", n => { Username = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Username>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Username.CreateFromDiscriminatorValue); } },
+                { "username", n => { Username = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -106,7 +106,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPhoneNumberOutboundSIPTrunkConfigResponseModel_headers>("headers", Headers);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SIPMediaEncryptionEnum>("media_encryption", MediaEncryption);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SIPTrunkTransportEnum>("transport", Transport);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Username>("username", Username);
+            writer.WriteStringValue("username", Username);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

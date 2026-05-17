@@ -161,25 +161,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Secrets
             public string Cursor { get; set; }
 #endif
             /// <summary>Maximum number of dependent resources (tools, agents, phone numbers) to return per secret. Can not exceed 100.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("dependency_limit")]
-            public string? DependencyLimit { get; set; }
-#nullable restore
-#else
-            [QueryParameter("dependency_limit")]
-            public string DependencyLimit { get; set; }
-#endif
+            public int? DependencyLimit { get; set; }
             /// <summary>How many documents to return at maximum. Can not exceed 100. If not provided, returns all secrets.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("page_size")]
-            public string? PageSize { get; set; }
-#nullable restore
-#else
-            [QueryParameter("page_size")]
-            public string PageSize { get; set; }
-#endif
+            public int? PageSize { get; set; }
             /// <summary>If specified, returns only secrets whose names start with this string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

@@ -23,13 +23,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public string Email { get; set; }
 #endif
         /// <summary>Whether to lock or unlock the user account.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Is_Locked? IsLocked { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Is_Locked IsLocked { get; set; }
-#endif
+        public bool? IsLocked { get; set; }
         /// <summary>The workspace role of the user. This is deprecated, use `workspace_seat_type` instead.</summary>
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -73,7 +67,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "email", n => { Email = n.GetStringValue(); } },
-                { "is_locked", n => { IsLocked = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Is_Locked>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Is_Locked.CreateFromDiscriminatorValue); } },
+                { "is_locked", n => { IsLocked = n.GetBoolValue(); } },
                 { "workspace_role", n => { WorkspaceRole = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SeatType_Wrapper>(global::Soenneker.ElevenLabs.OpenApiClient.Models.SeatType_Wrapper.CreateFromDiscriminatorValue); } },
                 { "workspace_seat_type", n => { WorkspaceSeatType = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SeatType_Wrapper>(global::Soenneker.ElevenLabs.OpenApiClient.Models.SeatType_Wrapper.CreateFromDiscriminatorValue); } },
             };
@@ -86,7 +80,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("email", Email);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Is_Locked>("is_locked", IsLocked);
+            writer.WriteBoolValue("is_locked", IsLocked);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SeatType_Wrapper>("workspace_role", WorkspaceRole);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SeatType_Wrapper>("workspace_seat_type", WorkspaceSeatType);
             writer.WriteAdditionalData(AdditionalData);

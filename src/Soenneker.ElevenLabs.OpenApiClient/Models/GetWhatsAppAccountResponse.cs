@@ -17,18 +17,18 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The assigned_agent_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Assigned_Agent_Id? AssignedAgentId { get; set; }
+        public string? AssignedAgentId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Assigned_Agent_Id AssignedAgentId { get; set; }
+        public string AssignedAgentId { get; set; }
 #endif
         /// <summary>The assigned_agent_name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Assigned_Agent_Name? AssignedAgentName { get; set; }
+        public string? AssignedAgentName { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Assigned_Agent_Name AssignedAgentName { get; set; }
+        public string AssignedAgentName { get; set; }
 #endif
         /// <summary>The business_account_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -101,8 +101,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "assigned_agent_id", n => { AssignedAgentId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Assigned_Agent_Id>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Assigned_Agent_Id.CreateFromDiscriminatorValue); } },
-                { "assigned_agent_name", n => { AssignedAgentName = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Assigned_Agent_Name>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Assigned_Agent_Name.CreateFromDiscriminatorValue); } },
+                { "assigned_agent_id", n => { AssignedAgentId = n.GetStringValue(); } },
+                { "assigned_agent_name", n => { AssignedAgentName = n.GetStringValue(); } },
                 { "business_account_id", n => { BusinessAccountId = n.GetStringValue(); } },
                 { "business_account_name", n => { BusinessAccountName = n.GetStringValue(); } },
                 { "enable_audio_message_response", n => { EnableAudioMessageResponse = n.GetBoolValue(); } },
@@ -120,8 +120,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Assigned_Agent_Id>("assigned_agent_id", AssignedAgentId);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Assigned_Agent_Name>("assigned_agent_name", AssignedAgentName);
+            writer.WriteStringValue("assigned_agent_id", AssignedAgentId);
+            writer.WriteStringValue("assigned_agent_name", AssignedAgentName);
             writer.WriteStringValue("business_account_id", BusinessAccountId);
             writer.WriteStringValue("business_account_name", BusinessAccountName);
             writer.WriteBoolValue("enable_audio_message_response", EnableAudioMessageResponse);

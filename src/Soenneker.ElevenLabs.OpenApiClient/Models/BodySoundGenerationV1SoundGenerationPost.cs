@@ -15,13 +15,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The duration of the sound which will be generated in seconds. Must be at least 0.5 and at most 30. If set to None we will guess the optimal duration using the prompt. Defaults to None.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Duration_Seconds? DurationSeconds { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Duration_Seconds DurationSeconds { get; set; }
-#endif
+        public double? DurationSeconds { get; set; }
         /// <summary>Whether to create a sound effect that loops smoothly. Only available for the &apos;eleven_text_to_sound_v2 model&apos;.</summary>
         public bool? Loop { get; set; }
         /// <summary>The model ID to use for the sound generation.</summary>
@@ -33,13 +27,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public string ModelId { get; set; }
 #endif
         /// <summary>A higher prompt influence makes your generation follow the prompt more closely while also making generations less variable. Must be a value between 0 and 1. Defaults to 0.3.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Prompt_Influence? PromptInfluence { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Prompt_Influence PromptInfluence { get; set; }
-#endif
+        public double? PromptInfluence { get; set; }
         /// <summary>The text that will get converted into a sound effect.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -74,10 +62,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "duration_seconds", n => { DurationSeconds = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Duration_Seconds>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Duration_Seconds.CreateFromDiscriminatorValue); } },
+                { "duration_seconds", n => { DurationSeconds = n.GetDoubleValue(); } },
                 { "loop", n => { Loop = n.GetBoolValue(); } },
                 { "model_id", n => { ModelId = n.GetStringValue(); } },
-                { "prompt_influence", n => { PromptInfluence = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Prompt_Influence>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Prompt_Influence.CreateFromDiscriminatorValue); } },
+                { "prompt_influence", n => { PromptInfluence = n.GetDoubleValue(); } },
                 { "text", n => { Text = n.GetStringValue(); } },
             };
         }
@@ -88,10 +76,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Duration_Seconds>("duration_seconds", DurationSeconds);
+            writer.WriteDoubleValue("duration_seconds", DurationSeconds);
             writer.WriteBoolValue("loop", Loop);
             writer.WriteStringValue("model_id", ModelId);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Prompt_Influence>("prompt_influence", PromptInfluence);
+            writer.WriteDoubleValue("prompt_influence", PromptInfluence);
             writer.WriteStringValue("text", Text);
             writer.WriteAdditionalData(AdditionalData);
         }

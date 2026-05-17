@@ -15,13 +15,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>End of the time range as a Unix timestamp in milliseconds.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.End_Time? EndTime { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.End_Time EndTime { get; set; }
-#endif
+        public int? EndTime { get; set; }
         /// <summary>The filters property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -35,27 +29,15 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The search property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Search? Search { get; set; }
+        public string? Search { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Search Search { get; set; }
+        public string Search { get; set; }
 #endif
         /// <summary>Optional timestamp sort direction. If omitted, defaults to desc when end_time is provided, otherwise asc.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Sort? Sort { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Sort Sort { get; set; }
-#endif
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyListAPIRequestsV1WorkspaceAnalyticsRequestsPost_sort? Sort { get; set; }
         /// <summary>Start of the time range as a Unix timestamp in milliseconds.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Start_Time? StartTime { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Start_Time StartTime { get; set; }
-#endif
+        public int? StartTime { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyListAPIRequestsV1WorkspaceAnalyticsRequestsPost"/> and sets the default values.
         /// </summary>
@@ -81,12 +63,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "end_time", n => { EndTime = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.End_Time>(global::Soenneker.ElevenLabs.OpenApiClient.Models.End_Time.CreateFromDiscriminatorValue); } },
+                { "end_time", n => { EndTime = n.GetIntValue(); } },
                 { "filters", n => { Filters = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Filters>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Filters.CreateFromDiscriminatorValue); } },
                 { "limit", n => { Limit = n.GetIntValue(); } },
-                { "search", n => { Search = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Search>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Search.CreateFromDiscriminatorValue); } },
-                { "sort", n => { Sort = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Sort>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Sort.CreateFromDiscriminatorValue); } },
-                { "start_time", n => { StartTime = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Start_Time>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Start_Time.CreateFromDiscriminatorValue); } },
+                { "search", n => { Search = n.GetStringValue(); } },
+                { "sort", n => { Sort = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyListAPIRequestsV1WorkspaceAnalyticsRequestsPost_sort>(); } },
+                { "start_time", n => { StartTime = n.GetIntValue(); } },
             };
         }
         /// <summary>
@@ -96,12 +78,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.End_Time>("end_time", EndTime);
+            writer.WriteIntValue("end_time", EndTime);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Filters>("filters", Filters);
             writer.WriteIntValue("limit", Limit);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Search>("search", Search);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Sort>("sort", Sort);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Start_Time>("start_time", StartTime);
+            writer.WriteStringValue("search", Search);
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyListAPIRequestsV1WorkspaceAnalyticsRequestsPost_sort>("sort", Sort);
+            writer.WriteIntValue("start_time", StartTime);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

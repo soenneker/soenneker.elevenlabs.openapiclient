@@ -33,18 +33,18 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Agent branch to use for calls to this number.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Branch_Id? BranchId { get; set; }
+        public string? BranchId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Branch_Id BranchId { get; set; }
+        public string BranchId { get; set; }
 #endif
         /// <summary>Environment to use for resolving environment variables on calls to this number.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.EnvironmentObject? Environment { get; set; }
+        public string? Environment { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.EnvironmentObject Environment { get; set; }
+        public string Environment { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberAgentInfo"/> and sets the default values.
@@ -73,8 +73,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             {
                 { "agent_id", n => { AgentId = n.GetStringValue(); } },
                 { "agent_name", n => { AgentName = n.GetStringValue(); } },
-                { "branch_id", n => { BranchId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Branch_Id>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Branch_Id.CreateFromDiscriminatorValue); } },
-                { "environment", n => { Environment = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.EnvironmentObject>(global::Soenneker.ElevenLabs.OpenApiClient.Models.EnvironmentObject.CreateFromDiscriminatorValue); } },
+                { "branch_id", n => { BranchId = n.GetStringValue(); } },
+                { "environment", n => { Environment = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -86,8 +86,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("agent_id", AgentId);
             writer.WriteStringValue("agent_name", AgentName);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Branch_Id>("branch_id", BranchId);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.EnvironmentObject>("environment", Environment);
+            writer.WriteStringValue("branch_id", BranchId);
+            writer.WriteStringValue("environment", Environment);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

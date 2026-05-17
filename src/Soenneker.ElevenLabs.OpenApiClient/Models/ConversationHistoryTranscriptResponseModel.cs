@@ -59,10 +59,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The llm_override property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Llm_Override? LlmOverride { get; set; }
+        public string? LlmOverride { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Llm_Override LlmOverride { get; set; }
+        public string LlmOverride { get; set; }
 #endif
         /// <summary>The llm_usage property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -75,10 +75,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The message property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Message? Message { get; set; }
+        public string? Message { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Message Message { get; set; }
+        public string Message { get; set; }
 #endif
         /// <summary>The multivoice_message property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -91,10 +91,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The original_message property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Original_Message? OriginalMessage { get; set; }
+        public string? OriginalMessage { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Original_Message OriginalMessage { get; set; }
+        public string OriginalMessage { get; set; }
 #endif
         /// <summary>The rag_retrieval_info property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -107,13 +107,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The role property</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptResponseModel_role? Role { get; set; }
         /// <summary>The source_event_id property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Source_Event_Id? SourceEventId { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Source_Event_Id SourceEventId { get; set; }
-#endif
+        public int? SourceEventId { get; set; }
         /// <summary>The source_medium property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -179,14 +173,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "feedback", n => { Feedback = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UserFeedback>(global::Soenneker.ElevenLabs.OpenApiClient.Models.UserFeedback.CreateFromDiscriminatorValue); } },
                 { "file_input", n => { FileInput = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptFileInputResponseModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptFileInputResponseModel.CreateFromDiscriminatorValue); } },
                 { "interrupted", n => { Interrupted = n.GetBoolValue(); } },
-                { "llm_override", n => { LlmOverride = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Llm_Override>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Llm_Override.CreateFromDiscriminatorValue); } },
+                { "llm_override", n => { LlmOverride = n.GetStringValue(); } },
                 { "llm_usage", n => { LlmUsage = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.LLMUsageOutput>(global::Soenneker.ElevenLabs.OpenApiClient.Models.LLMUsageOutput.CreateFromDiscriminatorValue); } },
-                { "message", n => { Message = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Message>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Message.CreateFromDiscriminatorValue); } },
+                { "message", n => { Message = n.GetStringValue(); } },
                 { "multivoice_message", n => { MultivoiceMessage = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryMultivoiceMessageModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryMultivoiceMessageModel.CreateFromDiscriminatorValue); } },
-                { "original_message", n => { OriginalMessage = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Original_Message>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Original_Message.CreateFromDiscriminatorValue); } },
+                { "original_message", n => { OriginalMessage = n.GetStringValue(); } },
                 { "rag_retrieval_info", n => { RagRetrievalInfo = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.RagRetrievalInfo>(global::Soenneker.ElevenLabs.OpenApiClient.Models.RagRetrievalInfo.CreateFromDiscriminatorValue); } },
                 { "role", n => { Role = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptResponseModel_role>(); } },
-                { "source_event_id", n => { SourceEventId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Source_Event_Id>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Source_Event_Id.CreateFromDiscriminatorValue); } },
+                { "source_event_id", n => { SourceEventId = n.GetIntValue(); } },
                 { "source_medium", n => { SourceMedium = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ChatSourceMedium_Wrapper>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ChatSourceMedium_Wrapper.CreateFromDiscriminatorValue); } },
                 { "time_in_call_secs", n => { TimeInCallSecs = n.GetIntValue(); } },
                 { "tool_calls", n => { ToolCalls = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptToolCallCommonModelOutput>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptToolCallCommonModelOutput.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -207,14 +201,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UserFeedback>("feedback", Feedback);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptFileInputResponseModel>("file_input", FileInput);
             writer.WriteBoolValue("interrupted", Interrupted);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Llm_Override>("llm_override", LlmOverride);
+            writer.WriteStringValue("llm_override", LlmOverride);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.LLMUsageOutput>("llm_usage", LlmUsage);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Message>("message", Message);
+            writer.WriteStringValue("message", Message);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryMultivoiceMessageModel>("multivoice_message", MultivoiceMessage);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Original_Message>("original_message", OriginalMessage);
+            writer.WriteStringValue("original_message", OriginalMessage);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.RagRetrievalInfo>("rag_retrieval_info", RagRetrievalInfo);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptResponseModel_role>("role", Role);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Source_Event_Id>("source_event_id", SourceEventId);
+            writer.WriteIntValue("source_event_id", SourceEventId);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ChatSourceMedium_Wrapper>("source_medium", SourceMedium);
             writer.WriteIntValue("time_in_call_secs", TimeInCallSecs);
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptToolCallCommonModelOutput>("tool_calls", ToolCalls);

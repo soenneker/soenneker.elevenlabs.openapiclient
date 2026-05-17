@@ -16,18 +16,18 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Device hostname</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Hostname? Hostname { get; set; }
+        public string? Hostname { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Hostname Hostname { get; set; }
+        public string Hostname { get; set; }
 #endif
         /// <summary>IP address</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Ip? Ip { get; set; }
+        public string? Ip { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Ip Ip { get; set; }
+        public string Ip { get; set; }
 #endif
         /// <summary>Device type ID (99 = Unknown)</summary>
         public int? TypeId { get; set; }
@@ -49,8 +49,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "hostname", n => { Hostname = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Hostname>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Hostname.CreateFromDiscriminatorValue); } },
-                { "ip", n => { Ip = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Ip>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Ip.CreateFromDiscriminatorValue); } },
+                { "hostname", n => { Hostname = n.GetStringValue(); } },
+                { "ip", n => { Ip = n.GetStringValue(); } },
                 { "type_id", n => { TypeId = n.GetIntValue(); } },
             };
         }
@@ -61,8 +61,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Hostname>("hostname", Hostname);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Ip>("ip", Ip);
+            writer.WriteStringValue("hostname", Hostname);
+            writer.WriteStringValue("ip", Ip);
             writer.WriteIntValue("type_id", TypeId);
         }
     }

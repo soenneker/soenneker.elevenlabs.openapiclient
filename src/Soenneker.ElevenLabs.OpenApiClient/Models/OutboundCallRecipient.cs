@@ -25,26 +25,26 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Id? Id { get; set; }
+        public string? Id { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Id Id { get; set; }
+        public string Id { get; set; }
 #endif
         /// <summary>The phone_number property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Phone_Number? PhoneNumber { get; set; }
+        public string? PhoneNumber { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Phone_Number PhoneNumber { get; set; }
+        public string PhoneNumber { get; set; }
 #endif
         /// <summary>The whatsapp_user_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Whatsapp_User_Id? WhatsappUserId { get; set; }
+        public string? WhatsappUserId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Whatsapp_User_Id WhatsappUserId { get; set; }
+        public string WhatsappUserId { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.OutboundCallRecipient"/> and sets the default values.
@@ -72,9 +72,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "conversation_initiation_client_data", n => { ConversationInitiationClientData = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationClientDataRequestInput>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationClientDataRequestInput.CreateFromDiscriminatorValue); } },
-                { "id", n => { Id = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Id>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Id.CreateFromDiscriminatorValue); } },
-                { "phone_number", n => { PhoneNumber = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Phone_Number>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Phone_Number.CreateFromDiscriminatorValue); } },
-                { "whatsapp_user_id", n => { WhatsappUserId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Whatsapp_User_Id>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Whatsapp_User_Id.CreateFromDiscriminatorValue); } },
+                { "id", n => { Id = n.GetStringValue(); } },
+                { "phone_number", n => { PhoneNumber = n.GetStringValue(); } },
+                { "whatsapp_user_id", n => { WhatsappUserId = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -85,9 +85,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationClientDataRequestInput>("conversation_initiation_client_data", ConversationInitiationClientData);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Id>("id", Id);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Phone_Number>("phone_number", PhoneNumber);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Whatsapp_User_Id>("whatsapp_user_id", WhatsappUserId);
+            writer.WriteStringValue("id", Id);
+            writer.WriteStringValue("phone_number", PhoneNumber);
+            writer.WriteStringValue("whatsapp_user_id", WhatsappUserId);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

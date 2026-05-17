@@ -17,10 +17,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The name of the audio file to be used for PVC training.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.File_Name? FileName { get; set; }
+        public string? FileName { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.File_Name FileName { get; set; }
+        public string FileName { get; set; }
 #endif
         /// <summary>If set will remove background noise for voice samples using our audio isolation model. If the samples do not include background noise, it can make the quality worse.</summary>
         public bool? RemoveBackgroundNoise { get; set; }
@@ -33,21 +33,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.Selected_Speaker_Ids SelectedSpeakerIds { get; set; }
 #endif
         /// <summary>The end time of the audio to be used for PVC training. Time should be in milliseconds</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Trim_End_Time? TrimEndTime { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Trim_End_Time TrimEndTime { get; set; }
-#endif
+        public int? TrimEndTime { get; set; }
         /// <summary>The start time of the audio to be used for PVC training. Time should be in milliseconds</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Trim_Start_Time? TrimStartTime { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Trim_Start_Time TrimStartTime { get; set; }
-#endif
+        public int? TrimStartTime { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyUpdatePVCVoiceSampleV1VoicesPvcVoiceIdSamplesSampleIdPost"/> and sets the default values.
         /// </summary>
@@ -73,11 +61,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "file_name", n => { FileName = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.File_Name>(global::Soenneker.ElevenLabs.OpenApiClient.Models.File_Name.CreateFromDiscriminatorValue); } },
+                { "file_name", n => { FileName = n.GetStringValue(); } },
                 { "remove_background_noise", n => { RemoveBackgroundNoise = n.GetBoolValue(); } },
                 { "selected_speaker_ids", n => { SelectedSpeakerIds = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Selected_Speaker_Ids>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Selected_Speaker_Ids.CreateFromDiscriminatorValue); } },
-                { "trim_end_time", n => { TrimEndTime = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Trim_End_Time>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Trim_End_Time.CreateFromDiscriminatorValue); } },
-                { "trim_start_time", n => { TrimStartTime = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Trim_Start_Time>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Trim_Start_Time.CreateFromDiscriminatorValue); } },
+                { "trim_end_time", n => { TrimEndTime = n.GetIntValue(); } },
+                { "trim_start_time", n => { TrimStartTime = n.GetIntValue(); } },
             };
         }
         /// <summary>
@@ -87,11 +75,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.File_Name>("file_name", FileName);
+            writer.WriteStringValue("file_name", FileName);
             writer.WriteBoolValue("remove_background_noise", RemoveBackgroundNoise);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Selected_Speaker_Ids>("selected_speaker_ids", SelectedSpeakerIds);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Trim_End_Time>("trim_end_time", TrimEndTime);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Trim_Start_Time>("trim_start_time", TrimStartTime);
+            writer.WriteIntValue("trim_end_time", TrimEndTime);
+            writer.WriteIntValue("trim_start_time", TrimStartTime);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

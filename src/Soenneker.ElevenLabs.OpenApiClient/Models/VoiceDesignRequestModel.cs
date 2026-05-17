@@ -23,53 +23,35 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>&quot;Model to use for the voice generation. Possible values: eleven_multilingual_ttv_v2, eleven_ttv_v3.&quot;</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceDesignRequestModel_model_id? ModelId { get; set; }
         /// <summary>Controls the balance of prompt versus reference audio when generating voice samples. 0 means almost no prompt influence, 1 means almost no reference audio influence. Only supported when using the eleven_ttv_v3 model.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Prompt_Strength? PromptStrength { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Prompt_Strength PromptStrength { get; set; }
-#endif
+        public double? PromptStrength { get; set; }
         /// <summary>Higher quality results in better voice output but less variety.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Quality? Quality { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Quality Quality { get; set; }
-#endif
+        public double? Quality { get; set; }
         /// <summary>Reference audio to use for the voice generation. The audio should be base64 encoded. Only supported when using the  eleven_ttv_v3 model.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Reference_Audio_Base64? ReferenceAudioBase64 { get; set; }
+        public string? ReferenceAudioBase64 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Reference_Audio_Base64 ReferenceAudioBase64 { get; set; }
+        public string ReferenceAudioBase64 { get; set; }
 #endif
         /// <summary>The remixing session id.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Remixing_Session_Id? RemixingSessionId { get; set; }
+        public string? RemixingSessionId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Remixing_Session_Id RemixingSessionId { get; set; }
+        public string RemixingSessionId { get; set; }
 #endif
         /// <summary>The id of the remixing session iteration where these generations should be attached to. If not provided, a new iteration will be created.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Remixing_Session_Iteration_Id? RemixingSessionIterationId { get; set; }
+        public string? RemixingSessionIterationId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Remixing_Session_Iteration_Id RemixingSessionIterationId { get; set; }
+        public string RemixingSessionIterationId { get; set; }
 #endif
         /// <summary>Random number that controls the voice generation. Same seed with same inputs produces same voice.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Seed? Seed { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Seed Seed { get; set; }
-#endif
+        public int? Seed { get; set; }
         /// <summary>Whether to enhance the voice description using AI to add more detail and improve voice generation quality. When enabled, the system will automatically expand simple prompts into more detailed voice descriptions. Defaults to False</summary>
         public bool? ShouldEnhance { get; set; }
         /// <summary>Determines whether the Text to Voice previews should be included in the response. If true, only the generated IDs will be returned which can then be streamed via the /v1/text-to-voice/:generated_voice_id/stream endpoint.</summary>
@@ -77,10 +59,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Text to generate, text length has to be between 100 and 1000.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Text? Text { get; set; }
+        public string? Text { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Text Text { get; set; }
+        public string Text { get; set; }
 #endif
         /// <summary>Description to use for the created voice.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -120,15 +102,15 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "guidance_scale", n => { GuidanceScale = n.GetDoubleValue(); } },
                 { "loudness", n => { Loudness = n.GetDoubleValue(); } },
                 { "model_id", n => { ModelId = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceDesignRequestModel_model_id>(); } },
-                { "prompt_strength", n => { PromptStrength = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Prompt_Strength>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Prompt_Strength.CreateFromDiscriminatorValue); } },
-                { "quality", n => { Quality = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Quality>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Quality.CreateFromDiscriminatorValue); } },
-                { "reference_audio_base64", n => { ReferenceAudioBase64 = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Reference_Audio_Base64>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Reference_Audio_Base64.CreateFromDiscriminatorValue); } },
-                { "remixing_session_id", n => { RemixingSessionId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Remixing_Session_Id>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Remixing_Session_Id.CreateFromDiscriminatorValue); } },
-                { "remixing_session_iteration_id", n => { RemixingSessionIterationId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Remixing_Session_Iteration_Id>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Remixing_Session_Iteration_Id.CreateFromDiscriminatorValue); } },
-                { "seed", n => { Seed = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Seed>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Seed.CreateFromDiscriminatorValue); } },
+                { "prompt_strength", n => { PromptStrength = n.GetDoubleValue(); } },
+                { "quality", n => { Quality = n.GetDoubleValue(); } },
+                { "reference_audio_base64", n => { ReferenceAudioBase64 = n.GetStringValue(); } },
+                { "remixing_session_id", n => { RemixingSessionId = n.GetStringValue(); } },
+                { "remixing_session_iteration_id", n => { RemixingSessionIterationId = n.GetStringValue(); } },
+                { "seed", n => { Seed = n.GetIntValue(); } },
                 { "should_enhance", n => { ShouldEnhance = n.GetBoolValue(); } },
                 { "stream_previews", n => { StreamPreviews = n.GetBoolValue(); } },
-                { "text", n => { Text = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Text>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Text.CreateFromDiscriminatorValue); } },
+                { "text", n => { Text = n.GetStringValue(); } },
                 { "voice_description", n => { VoiceDescription = n.GetStringValue(); } },
             };
         }
@@ -143,15 +125,15 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteDoubleValue("guidance_scale", GuidanceScale);
             writer.WriteDoubleValue("loudness", Loudness);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceDesignRequestModel_model_id>("model_id", ModelId);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Prompt_Strength>("prompt_strength", PromptStrength);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Quality>("quality", Quality);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Reference_Audio_Base64>("reference_audio_base64", ReferenceAudioBase64);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Remixing_Session_Id>("remixing_session_id", RemixingSessionId);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Remixing_Session_Iteration_Id>("remixing_session_iteration_id", RemixingSessionIterationId);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Seed>("seed", Seed);
+            writer.WriteDoubleValue("prompt_strength", PromptStrength);
+            writer.WriteDoubleValue("quality", Quality);
+            writer.WriteStringValue("reference_audio_base64", ReferenceAudioBase64);
+            writer.WriteStringValue("remixing_session_id", RemixingSessionId);
+            writer.WriteStringValue("remixing_session_iteration_id", RemixingSessionIterationId);
+            writer.WriteIntValue("seed", Seed);
             writer.WriteBoolValue("should_enhance", ShouldEnhance);
             writer.WriteBoolValue("stream_previews", StreamPreviews);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Text>("text", Text);
+            writer.WriteStringValue("text", Text);
             writer.WriteStringValue("voice_description", VoiceDescription);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -23,13 +23,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public List<string> ExternalAudioIds { get; set; }
 #endif
         /// <summary>The target_global_offset_ms property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Target_Global_Offset_Ms? TargetGlobalOffsetMs { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Target_Global_Offset_Ms TargetGlobalOffsetMs { get; set; }
-#endif
+        public int? TargetGlobalOffsetMs { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.PendingExternalAudiosMetadataModel"/> and sets the default values.
         /// </summary>
@@ -56,7 +50,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "external_audio_ids", n => { ExternalAudioIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "target_global_offset_ms", n => { TargetGlobalOffsetMs = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Target_Global_Offset_Ms>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Target_Global_Offset_Ms.CreateFromDiscriminatorValue); } },
+                { "target_global_offset_ms", n => { TargetGlobalOffsetMs = n.GetIntValue(); } },
             };
         }
         /// <summary>
@@ -67,7 +61,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<string>("external_audio_ids", ExternalAudioIds);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Target_Global_Offset_Ms>("target_global_offset_ms", TargetGlobalOffsetMs);
+            writer.WriteIntValue("target_global_offset_ms", TargetGlobalOffsetMs);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

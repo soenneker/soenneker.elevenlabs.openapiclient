@@ -25,10 +25,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The agent_name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Agent_Name? AgentName { get; set; }
+        public string? AgentName { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Agent_Name AgentName { get; set; }
+        public string AgentName { get; set; }
 #endif
         /// <summary>The analysis property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -41,10 +41,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The branch_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Branch_Id? BranchId { get; set; }
+        public string? BranchId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Branch_Id BranchId { get; set; }
+        public string BranchId { get; set; }
 #endif
         /// <summary>The conversation_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -105,18 +105,18 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The user_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.User_Id? UserId { get; set; }
+        public string? UserId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.User_Id UserId { get; set; }
+        public string UserId { get; set; }
 #endif
         /// <summary>The ID of the agent version used for this conversation</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Version_Id? VersionId { get; set; }
+        public string? VersionId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Version_Id VersionId { get; set; }
+        public string VersionId { get; set; }
 #endif
         /// <summary>The visited_agents property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -153,9 +153,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "agent_id", n => { AgentId = n.GetStringValue(); } },
-                { "agent_name", n => { AgentName = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Agent_Name>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Agent_Name.CreateFromDiscriminatorValue); } },
+                { "agent_name", n => { AgentName = n.GetStringValue(); } },
                 { "analysis", n => { Analysis = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryAnalysisCommonModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryAnalysisCommonModel.CreateFromDiscriminatorValue); } },
-                { "branch_id", n => { BranchId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Branch_Id>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Branch_Id.CreateFromDiscriminatorValue); } },
+                { "branch_id", n => { BranchId = n.GetStringValue(); } },
                 { "conversation_id", n => { ConversationId = n.GetStringValue(); } },
                 { "conversation_initiation_client_data", n => { ConversationInitiationClientData = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationClientDataRequestOutput>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationClientDataRequestOutput.CreateFromDiscriminatorValue); } },
                 { "environment", n => { Environment = n.GetStringValue(); } },
@@ -166,8 +166,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetConversationResponseModel_status>(); } },
                 { "tag_ids", n => { TagIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "transcript", n => { Transcript = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptResponseModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptResponseModel.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "user_id", n => { UserId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.User_Id>(global::Soenneker.ElevenLabs.OpenApiClient.Models.User_Id.CreateFromDiscriminatorValue); } },
-                { "version_id", n => { VersionId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Version_Id>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Version_Id.CreateFromDiscriminatorValue); } },
+                { "user_id", n => { UserId = n.GetStringValue(); } },
+                { "version_id", n => { VersionId = n.GetStringValue(); } },
                 { "visited_agents", n => { VisitedAgents = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.VisitedAgentRef>(global::Soenneker.ElevenLabs.OpenApiClient.Models.VisitedAgentRef.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
@@ -179,9 +179,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("agent_id", AgentId);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Agent_Name>("agent_name", AgentName);
+            writer.WriteStringValue("agent_name", AgentName);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryAnalysisCommonModel>("analysis", Analysis);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Branch_Id>("branch_id", BranchId);
+            writer.WriteStringValue("branch_id", BranchId);
             writer.WriteStringValue("conversation_id", ConversationId);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationClientDataRequestOutput>("conversation_initiation_client_data", ConversationInitiationClientData);
             writer.WriteStringValue("environment", Environment);
@@ -192,8 +192,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetConversationResponseModel_status>("status", Status);
             writer.WriteCollectionOfPrimitiveValues<string>("tag_ids", TagIds);
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptResponseModel>("transcript", Transcript);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.User_Id>("user_id", UserId);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Version_Id>("version_id", VersionId);
+            writer.WriteStringValue("user_id", UserId);
+            writer.WriteStringValue("version_id", VersionId);
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.VisitedAgentRef>("visited_agents", VisitedAgents);
             writer.WriteAdditionalData(AdditionalData);
         }

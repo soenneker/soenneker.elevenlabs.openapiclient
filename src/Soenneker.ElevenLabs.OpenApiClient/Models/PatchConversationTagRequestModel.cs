@@ -17,18 +17,18 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>If provided, replaces the tag description. Omit to leave unchanged.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Description? Description { get; set; }
+        public string? Description { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Description Description { get; set; }
+        public string Description { get; set; }
 #endif
         /// <summary>If provided, replaces the tag title. Omit to leave unchanged.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Title? Title { get; set; }
+        public string? Title { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Title Title { get; set; }
+        public string Title { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.PatchConversationTagRequestModel"/> and sets the default values.
@@ -55,8 +55,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "description", n => { Description = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Description>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Description.CreateFromDiscriminatorValue); } },
-                { "title", n => { Title = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Title>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Title.CreateFromDiscriminatorValue); } },
+                { "description", n => { Description = n.GetStringValue(); } },
+                { "title", n => { Title = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -66,8 +66,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Description>("description", Description);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Title>("title", Title);
+            writer.WriteStringValue("description", Description);
+            writer.WriteStringValue("title", Title);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

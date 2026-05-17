@@ -17,10 +17,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>An optional name of the author of the Studio project, this will be added as metadata to the mp3 file on Studio project or chapter download.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Author? Author { get; set; }
+        public string? Author { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Author Author { get; set; }
+        public string Author { get; set; }
 #endif
         /// <summary>The voice_id that corresponds to the default voice used for new paragraphs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -41,10 +41,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>An optional ISBN number of the Studio project you want to create, this will be added as metadata to the mp3 file on Studio project or chapter download.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Isbn_Number? IsbnNumber { get; set; }
+        public string? IsbnNumber { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Isbn_Number IsbnNumber { get; set; }
+        public string IsbnNumber { get; set; }
 #endif
         /// <summary>The name of the Studio project, used for identification only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -57,10 +57,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>An optional name of the author of the Studio project, this will be added as metadata to the mp3 file on Studio project or chapter download.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Title? Title { get; set; }
+        public string? Title { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Title Title { get; set; }
+        public string Title { get; set; }
 #endif
         /// <summary>When the Studio project is downloaded, should the returned audio have postprocessing in order to make it compliant with audiobook normalized volume requirements</summary>
         public bool? VolumeNormalization { get; set; }
@@ -89,12 +89,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "author", n => { Author = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Author>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Author.CreateFromDiscriminatorValue); } },
+                { "author", n => { Author = n.GetStringValue(); } },
                 { "default_paragraph_voice_id", n => { DefaultParagraphVoiceId = n.GetStringValue(); } },
                 { "default_title_voice_id", n => { DefaultTitleVoiceId = n.GetStringValue(); } },
-                { "isbn_number", n => { IsbnNumber = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Isbn_Number>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Isbn_Number.CreateFromDiscriminatorValue); } },
+                { "isbn_number", n => { IsbnNumber = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "title", n => { Title = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Title>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Title.CreateFromDiscriminatorValue); } },
+                { "title", n => { Title = n.GetStringValue(); } },
                 { "volume_normalization", n => { VolumeNormalization = n.GetBoolValue(); } },
             };
         }
@@ -105,12 +105,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Author>("author", Author);
+            writer.WriteStringValue("author", Author);
             writer.WriteStringValue("default_paragraph_voice_id", DefaultParagraphVoiceId);
             writer.WriteStringValue("default_title_voice_id", DefaultTitleVoiceId);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Isbn_Number>("isbn_number", IsbnNumber);
+            writer.WriteStringValue("isbn_number", IsbnNumber);
             writer.WriteStringValue("name", Name);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Title>("title", Title);
+            writer.WriteStringValue("title", Title);
             writer.WriteBoolValue("volume_normalization", VolumeNormalization);
             writer.WriteAdditionalData(AdditionalData);
         }

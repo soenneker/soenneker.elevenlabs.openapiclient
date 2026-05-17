@@ -27,10 +27,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Cursor for the next page of results</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Next_Cursor? NextCursor { get; set; }
+        public string? NextCursor { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Next_Cursor NextCursor { get; set; }
+        public string NextCursor { get; set; }
 #endif
         /// <summary>The results property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -67,7 +67,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             {
                 { "has_more", n => { HasMore = n.GetBoolValue(); } },
                 { "meta", n => { Meta = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ListResponseMeta>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ListResponseMeta.CreateFromDiscriminatorValue); } },
-                { "next_cursor", n => { NextCursor = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Next_Cursor>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Next_Cursor.CreateFromDiscriminatorValue); } },
+                { "next_cursor", n => { NextCursor = n.GetStringValue(); } },
                 { "results", n => { Results = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.MessagesSearchResult>(global::Soenneker.ElevenLabs.OpenApiClient.Models.MessagesSearchResult.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
@@ -80,7 +80,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("has_more", HasMore);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ListResponseMeta>("meta", Meta);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Next_Cursor>("next_cursor", NextCursor);
+            writer.WriteStringValue("next_cursor", NextCursor);
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.MessagesSearchResult>("results", Results);
             writer.WriteAdditionalData(AdditionalData);
         }

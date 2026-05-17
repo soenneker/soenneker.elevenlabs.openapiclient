@@ -19,10 +19,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The language of the voice.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Language? Language { get; set; }
+        public string? Language { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Language Language { get; set; }
+        public string Language { get; set; }
 #endif
         /// <summary>Whether the voice requires verification.</summary>
         public bool? RequiresVerification { get; set; }
@@ -70,7 +70,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "is_verified", n => { IsVerified = n.GetBoolValue(); } },
-                { "language", n => { Language = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Language>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Language.CreateFromDiscriminatorValue); } },
+                { "language", n => { Language = n.GetStringValue(); } },
                 { "requires_verification", n => { RequiresVerification = n.GetBoolValue(); } },
                 { "verification_attempts", n => { VerificationAttempts = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Verification_Attempts>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Verification_Attempts.CreateFromDiscriminatorValue); } },
                 { "verification_attempts_count", n => { VerificationAttemptsCount = n.GetIntValue(); } },
@@ -85,7 +85,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("is_verified", IsVerified);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Language>("language", Language);
+            writer.WriteStringValue("language", Language);
             writer.WriteBoolValue("requires_verification", RequiresVerification);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Verification_Attempts>("verification_attempts", VerificationAttempts);
             writer.WriteIntValue("verification_attempts_count", VerificationAttemptsCount);

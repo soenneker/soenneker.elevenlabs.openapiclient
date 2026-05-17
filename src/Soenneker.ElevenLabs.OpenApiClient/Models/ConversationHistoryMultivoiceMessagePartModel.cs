@@ -24,20 +24,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public string Text { get; set; }
 #endif
         /// <summary>The time_in_call_secs property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Time_In_Call_Secs? TimeInCallSecs { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Time_In_Call_Secs TimeInCallSecs { get; set; }
-#endif
+        public int? TimeInCallSecs { get; set; }
         /// <summary>The voice_label property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Voice_Label? VoiceLabel { get; set; }
+        public string? VoiceLabel { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Voice_Label VoiceLabel { get; set; }
+        public string VoiceLabel { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryMultivoiceMessagePartModel"/> and sets the default values.
@@ -65,8 +59,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "text", n => { Text = n.GetStringValue(); } },
-                { "time_in_call_secs", n => { TimeInCallSecs = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Time_In_Call_Secs>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Time_In_Call_Secs.CreateFromDiscriminatorValue); } },
-                { "voice_label", n => { VoiceLabel = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Voice_Label>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Voice_Label.CreateFromDiscriminatorValue); } },
+                { "time_in_call_secs", n => { TimeInCallSecs = n.GetIntValue(); } },
+                { "voice_label", n => { VoiceLabel = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -77,8 +71,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("text", Text);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Time_In_Call_Secs>("time_in_call_secs", TimeInCallSecs);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Voice_Label>("voice_label", VoiceLabel);
+            writer.WriteIntValue("time_in_call_secs", TimeInCallSecs);
+            writer.WriteStringValue("voice_label", VoiceLabel);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -27,18 +27,18 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The API version to use for the request</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Api_Version? ApiVersion { get; set; }
+        public string? ApiVersion { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Api_Version ApiVersion { get; set; }
+        public string ApiVersion { get; set; }
 #endif
         /// <summary>The model ID to be used if URL serves multiple models</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Model_Id? ModelId { get; set; }
+        public string? ModelId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Model_Id ModelId { get; set; }
+        public string ModelId { get; set; }
 #endif
         /// <summary>Headers that should be included in the request</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -84,8 +84,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             {
                 { "api_key", n => { ApiKey = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomLLM.CustomLLM_api_key>(global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomLLM.CustomLLM_api_key.CreateFromDiscriminatorValue); } },
                 { "api_type", n => { ApiType = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomLLMAPIType>(); } },
-                { "api_version", n => { ApiVersion = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Api_Version>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Api_Version.CreateFromDiscriminatorValue); } },
-                { "model_id", n => { ModelId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Model_Id>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Model_Id.CreateFromDiscriminatorValue); } },
+                { "api_version", n => { ApiVersion = n.GetStringValue(); } },
+                { "model_id", n => { ModelId = n.GetStringValue(); } },
                 { "request_headers", n => { RequestHeaders = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomLLM_request_headers>(global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomLLM_request_headers.CreateFromDiscriminatorValue); } },
                 { "url", n => { Url = n.GetStringValue(); } },
             };
@@ -99,8 +99,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomLLM.CustomLLM_api_key>("api_key", ApiKey);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomLLMAPIType>("api_type", ApiType);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Api_Version>("api_version", ApiVersion);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Model_Id>("model_id", ModelId);
+            writer.WriteStringValue("api_version", ApiVersion);
+            writer.WriteStringValue("model_id", ModelId);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomLLM_request_headers>("request_headers", RequestHeaders);
             writer.WriteStringValue("url", Url);
             writer.WriteAdditionalData(AdditionalData);

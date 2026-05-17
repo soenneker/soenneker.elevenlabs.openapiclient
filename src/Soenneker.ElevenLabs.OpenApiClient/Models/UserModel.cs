@@ -16,52 +16,52 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>User&apos;s domain</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Domain? Domain { get; set; }
+        public string? Domain { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Domain Domain { get; set; }
+        public string Domain { get; set; }
 #endif
         /// <summary>User email address</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Email_Addr? EmailAddr { get; set; }
+        public string? EmailAddr { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Email_Addr EmailAddr { get; set; }
+        public string EmailAddr { get; set; }
 #endif
         /// <summary>Full name of the user</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Full_Name? FullName { get; set; }
+        public string? FullName { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Full_Name FullName { get; set; }
+        public string FullName { get; set; }
 #endif
         /// <summary>Username</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Name? Name { get; set; }
+        public string? Name { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Name Name { get; set; }
+        public string Name { get; set; }
 #endif
         /// <summary>Account type description</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.TypeObject? Type { get; set; }
+        public string? Type { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.TypeObject Type { get; set; }
+        public string Type { get; set; }
 #endif
         /// <summary>&quot;OCSF User type IDs.Spec: https://schema.ocsf.io/1.6.0/objects/user&quot;</summary>
         public int? TypeId { get; set; }
         /// <summary>Unique user identifier</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Uid? Uid { get; set; }
+        public string? Uid { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Uid Uid { get; set; }
+        public string Uid { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -81,13 +81,13 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "domain", n => { Domain = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Domain>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Domain.CreateFromDiscriminatorValue); } },
-                { "email_addr", n => { EmailAddr = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Email_Addr>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Email_Addr.CreateFromDiscriminatorValue); } },
-                { "full_name", n => { FullName = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Full_Name>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Full_Name.CreateFromDiscriminatorValue); } },
-                { "name", n => { Name = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Name>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Name.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TypeObject>(global::Soenneker.ElevenLabs.OpenApiClient.Models.TypeObject.CreateFromDiscriminatorValue); } },
+                { "domain", n => { Domain = n.GetStringValue(); } },
+                { "email_addr", n => { EmailAddr = n.GetStringValue(); } },
+                { "full_name", n => { FullName = n.GetStringValue(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
+                { "type", n => { Type = n.GetStringValue(); } },
                 { "type_id", n => { TypeId = n.GetIntValue(); } },
-                { "uid", n => { Uid = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Uid>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Uid.CreateFromDiscriminatorValue); } },
+                { "uid", n => { Uid = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -97,13 +97,13 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Domain>("domain", Domain);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Email_Addr>("email_addr", EmailAddr);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Full_Name>("full_name", FullName);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Name>("name", Name);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TypeObject>("type", Type);
+            writer.WriteStringValue("domain", Domain);
+            writer.WriteStringValue("email_addr", EmailAddr);
+            writer.WriteStringValue("full_name", FullName);
+            writer.WriteStringValue("name", Name);
+            writer.WriteStringValue("type", Type);
             writer.WriteIntValue("type_id", TypeId);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Uid>("uid", Uid);
+            writer.WriteStringValue("uid", Uid);
         }
     }
 }

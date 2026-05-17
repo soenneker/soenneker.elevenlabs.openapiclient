@@ -17,18 +17,18 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The article_image_url property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Article_Image_Url? ArticleImageUrl { get; set; }
+        public string? ArticleImageUrl { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Article_Image_Url ArticleImageUrl { get; set; }
+        public string ArticleImageUrl { get; set; }
 #endif
         /// <summary>The author property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Author? Author { get; set; }
+        public string? Author { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Author Author { get; set; }
+        public string Author { get; set; }
 #endif
         /// <summary>The can_use_assistant property</summary>
         public bool? CanUseAssistant { get; set; }
@@ -53,10 +53,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The content_type property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Content_Type? ContentType { get; set; }
+        public string? ContentType { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Content_Type ContentType { get; set; }
+        public string ContentType { get; set; }
 #endif
         /// <summary>The contributors property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -69,37 +69,31 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The copyright property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Copyright? Copyright { get; set; }
+        public string? Copyright { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Copyright Copyright { get; set; }
+        public string Copyright { get; set; }
 #endif
         /// <summary>The created_at_unix property</summary>
         public int? CreatedAtUnix { get; set; }
         /// <summary>The currency property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Currency_Wrapper? Currency { get; set; }
+        public string? Currency { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Currency_Wrapper Currency { get; set; }
+        public string Currency { get; set; }
 #endif
         /// <summary>The description property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Description? Description { get; set; }
+        public string? Description { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Description Description { get; set; }
+        public string Description { get; set; }
 #endif
         /// <summary>The display_mode property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Display_Mode? DisplayMode { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Display_Mode DisplayMode { get; set; }
-#endif
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.DirectPublishingReadResponseModel_display_mode? DisplayMode { get; set; }
         /// <summary>The distribution_territories property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -111,26 +105,26 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The ean property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Ean? Ean { get; set; }
+        public string? Ean { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Ean Ean { get; set; }
+        public string Ean { get; set; }
 #endif
         /// <summary>The edition property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Edition? Edition { get; set; }
+        public string? Edition { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Edition Edition { get; set; }
+        public string Edition { get; set; }
 #endif
         /// <summary>The fiction property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Fiction? Fiction { get; set; }
+        public string? Fiction { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Fiction Fiction { get; set; }
+        public string Fiction { get; set; }
 #endif
         /// <summary>The genre property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -143,29 +137,23 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The isbn property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Isbn? Isbn { get; set; }
+        public string? Isbn { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Isbn Isbn { get; set; }
+        public string Isbn { get; set; }
 #endif
         /// <summary>The is_voice_changer_on property</summary>
         public bool? IsVoiceChangerOn { get; set; }
         /// <summary>The language property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Language? Language { get; set; }
+        public string? Language { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Language Language { get; set; }
+        public string Language { get; set; }
 #endif
         /// <summary>The last_updated_from_project_unix property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Last_Updated_From_Project_Unix? LastUpdatedFromProjectUnix { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Last_Updated_From_Project_Unix LastUpdatedFromProjectUnix { get; set; }
-#endif
+        public int? LastUpdatedFromProjectUnix { get; set; }
         /// <summary>The legal_terms property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -175,69 +163,51 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.ReadLegalTerms LegalTerms { get; set; }
 #endif
         /// <summary>The list_price property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.List_Price? ListPrice { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.List_Price ListPrice { get; set; }
-#endif
+        public double? ListPrice { get; set; }
         /// <summary>The locale property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Locale? Locale { get; set; }
+        public string? Locale { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Locale Locale { get; set; }
+        public string Locale { get; set; }
 #endif
         /// <summary>The mature_content property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Mature_Content? MatureContent { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Mature_Content MatureContent { get; set; }
-#endif
+        public bool? MatureContent { get; set; }
         /// <summary>The origin property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Origin? Origin { get; set; }
+        public string? Origin { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Origin Origin { get; set; }
+        public string Origin { get; set; }
 #endif
         /// <summary>The original_audio_document_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Original_Audio_Document_Id? OriginalAudioDocumentId { get; set; }
+        public string? OriginalAudioDocumentId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Original_Audio_Document_Id OriginalAudioDocumentId { get; set; }
+        public string OriginalAudioDocumentId { get; set; }
 #endif
         /// <summary>The original_audio_project_export_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Original_Audio_Project_Export_Id? OriginalAudioProjectExportId { get; set; }
+        public string? OriginalAudioProjectExportId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Original_Audio_Project_Export_Id OriginalAudioProjectExportId { get; set; }
+        public string OriginalAudioProjectExportId { get; set; }
 #endif
         /// <summary>The original_file_type property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Original_File_Type? OriginalFileType { get; set; }
+        public string? OriginalFileType { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Original_File_Type OriginalFileType { get; set; }
+        public string OriginalFileType { get; set; }
 #endif
         /// <summary>The payout_type property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Payout_Type? PayoutType { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Payout_Type PayoutType { get; set; }
-#endif
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.DirectPublishingReadResponseModel_payout_type? PayoutType { get; set; }
         /// <summary>The preview_audio_object property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -249,42 +219,36 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The publication_date property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Publication_Date? PublicationDate { get; set; }
+        public string? PublicationDate { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Publication_Date PublicationDate { get; set; }
+        public string PublicationDate { get; set; }
 #endif
         /// <summary>The published_at_unix property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Published_At_Unix? PublishedAtUnix { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Published_At_Unix PublishedAtUnix { get; set; }
-#endif
+        public int? PublishedAtUnix { get; set; }
         /// <summary>The publisher property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Publisher? Publisher { get; set; }
+        public string? Publisher { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Publisher Publisher { get; set; }
+        public string Publisher { get; set; }
 #endif
         /// <summary>The publisher_profile_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Publisher_Profile_Id? PublisherProfileId { get; set; }
+        public string? PublisherProfileId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Publisher_Profile_Id PublisherProfileId { get; set; }
+        public string PublisherProfileId { get; set; }
 #endif
         /// <summary>The publishing_project_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Publishing_Project_Id? PublishingProjectId { get; set; }
+        public string? PublishingProjectId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Publishing_Project_Id PublishingProjectId { get; set; }
+        public string PublishingProjectId { get; set; }
 #endif
         /// <summary>The publishing_state property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -295,13 +259,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public string PublishingState { get; set; }
 #endif
         /// <summary>The quality_score property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Quality_Score? QualityScore { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Quality_Score QualityScore { get; set; }
-#endif
+        public int? QualityScore { get; set; }
         /// <summary>The read_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -313,10 +271,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The read_slug property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Read_Slug? ReadSlug { get; set; }
+        public string? ReadSlug { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Read_Slug ReadSlug { get; set; }
+        public string ReadSlug { get; set; }
 #endif
         /// <summary>The review property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -337,53 +295,41 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The series_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Series_Id? SeriesId { get; set; }
+        public string? SeriesId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Series_Id SeriesId { get; set; }
+        public string SeriesId { get; set; }
 #endif
         /// <summary>The subtitle property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Subtitle? Subtitle { get; set; }
+        public string? Subtitle { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Subtitle Subtitle { get; set; }
+        public string Subtitle { get; set; }
 #endif
         /// <summary>The target_audience property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Target_Audience? TargetAudience { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Target_Audience TargetAudience { get; set; }
-#endif
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.DirectPublishingReadResponseModel_target_audience? TargetAudience { get; set; }
         /// <summary>The title property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Title? Title { get; set; }
+        public string? Title { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Title Title { get; set; }
+        public string Title { get; set; }
 #endif
         /// <summary>The updated_at_unix property</summary>
         public int? UpdatedAtUnix { get; set; }
         /// <summary>The voice_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Voice_Id? VoiceId { get; set; }
+        public string? VoiceId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Voice_Id VoiceId { get; set; }
+        public string VoiceId { get; set; }
 #endif
         /// <summary>The volume property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Volume? Volume { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Volume Volume { get; set; }
-#endif
+        public int? Volume { get; set; }
         /// <summary>The word_count property</summary>
         public int? WordCount { get; set; }
         /// <summary>
@@ -412,56 +358,56 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "article_image_url", n => { ArticleImageUrl = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Article_Image_Url>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Article_Image_Url.CreateFromDiscriminatorValue); } },
-                { "author", n => { Author = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Author>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Author.CreateFromDiscriminatorValue); } },
+                { "article_image_url", n => { ArticleImageUrl = n.GetStringValue(); } },
+                { "author", n => { Author = n.GetStringValue(); } },
                 { "can_use_assistant", n => { CanUseAssistant = n.GetBoolValue(); } },
                 { "chapters", n => { Chapters = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.ReadMetadataChapterDBModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ReadMetadataChapterDBModel.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "char_count", n => { CharCount = n.GetIntValue(); } },
                 { "content_guidelines_terms", n => { ContentGuidelinesTerms = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ReadLegalTerms>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ReadLegalTerms.CreateFromDiscriminatorValue); } },
-                { "content_type", n => { ContentType = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Content_Type>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Content_Type.CreateFromDiscriminatorValue); } },
+                { "content_type", n => { ContentType = n.GetStringValue(); } },
                 { "contributors", n => { Contributors = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Contributors>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Contributors.CreateFromDiscriminatorValue); } },
-                { "copyright", n => { Copyright = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Copyright>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Copyright.CreateFromDiscriminatorValue); } },
+                { "copyright", n => { Copyright = n.GetStringValue(); } },
                 { "created_at_unix", n => { CreatedAtUnix = n.GetIntValue(); } },
-                { "currency", n => { Currency = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Currency_Wrapper>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Currency_Wrapper.CreateFromDiscriminatorValue); } },
-                { "description", n => { Description = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Description>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Description.CreateFromDiscriminatorValue); } },
-                { "display_mode", n => { DisplayMode = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Display_Mode>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Display_Mode.CreateFromDiscriminatorValue); } },
+                { "currency", n => { Currency = n.GetStringValue(); } },
+                { "description", n => { Description = n.GetStringValue(); } },
+                { "display_mode", n => { DisplayMode = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DirectPublishingReadResponseModel_display_mode>(); } },
                 { "distribution_territories", n => { DistributionTerritories = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Distribution_Territories>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Distribution_Territories.CreateFromDiscriminatorValue); } },
-                { "ean", n => { Ean = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Ean>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Ean.CreateFromDiscriminatorValue); } },
-                { "edition", n => { Edition = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Edition>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Edition.CreateFromDiscriminatorValue); } },
-                { "fiction", n => { Fiction = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Fiction>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Fiction.CreateFromDiscriminatorValue); } },
+                { "ean", n => { Ean = n.GetStringValue(); } },
+                { "edition", n => { Edition = n.GetStringValue(); } },
+                { "fiction", n => { Fiction = n.GetStringValue(); } },
                 { "genre", n => { Genre = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Genre>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Genre.CreateFromDiscriminatorValue); } },
                 { "is_voice_changer_on", n => { IsVoiceChangerOn = n.GetBoolValue(); } },
-                { "isbn", n => { Isbn = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Isbn>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Isbn.CreateFromDiscriminatorValue); } },
-                { "language", n => { Language = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Language>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Language.CreateFromDiscriminatorValue); } },
-                { "last_updated_from_project_unix", n => { LastUpdatedFromProjectUnix = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Last_Updated_From_Project_Unix>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Last_Updated_From_Project_Unix.CreateFromDiscriminatorValue); } },
+                { "isbn", n => { Isbn = n.GetStringValue(); } },
+                { "language", n => { Language = n.GetStringValue(); } },
+                { "last_updated_from_project_unix", n => { LastUpdatedFromProjectUnix = n.GetIntValue(); } },
                 { "legal_terms", n => { LegalTerms = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ReadLegalTerms>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ReadLegalTerms.CreateFromDiscriminatorValue); } },
-                { "list_price", n => { ListPrice = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.List_Price>(global::Soenneker.ElevenLabs.OpenApiClient.Models.List_Price.CreateFromDiscriminatorValue); } },
-                { "locale", n => { Locale = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Locale>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Locale.CreateFromDiscriminatorValue); } },
-                { "mature_content", n => { MatureContent = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Mature_Content>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Mature_Content.CreateFromDiscriminatorValue); } },
-                { "origin", n => { Origin = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Origin>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Origin.CreateFromDiscriminatorValue); } },
-                { "original_audio_document_id", n => { OriginalAudioDocumentId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Original_Audio_Document_Id>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Original_Audio_Document_Id.CreateFromDiscriminatorValue); } },
-                { "original_audio_project_export_id", n => { OriginalAudioProjectExportId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Original_Audio_Project_Export_Id>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Original_Audio_Project_Export_Id.CreateFromDiscriminatorValue); } },
-                { "original_file_type", n => { OriginalFileType = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Original_File_Type>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Original_File_Type.CreateFromDiscriminatorValue); } },
-                { "payout_type", n => { PayoutType = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Payout_Type>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Payout_Type.CreateFromDiscriminatorValue); } },
+                { "list_price", n => { ListPrice = n.GetDoubleValue(); } },
+                { "locale", n => { Locale = n.GetStringValue(); } },
+                { "mature_content", n => { MatureContent = n.GetBoolValue(); } },
+                { "origin", n => { Origin = n.GetStringValue(); } },
+                { "original_audio_document_id", n => { OriginalAudioDocumentId = n.GetStringValue(); } },
+                { "original_audio_project_export_id", n => { OriginalAudioProjectExportId = n.GetStringValue(); } },
+                { "original_file_type", n => { OriginalFileType = n.GetStringValue(); } },
+                { "payout_type", n => { PayoutType = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DirectPublishingReadResponseModel_payout_type>(); } },
                 { "preview_audio_object", n => { PreviewAudioObject = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PreviewAudioDBModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.PreviewAudioDBModel.CreateFromDiscriminatorValue); } },
-                { "publication_date", n => { PublicationDate = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Publication_Date>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Publication_Date.CreateFromDiscriminatorValue); } },
-                { "published_at_unix", n => { PublishedAtUnix = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Published_At_Unix>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Published_At_Unix.CreateFromDiscriminatorValue); } },
-                { "publisher", n => { Publisher = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Publisher>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Publisher.CreateFromDiscriminatorValue); } },
-                { "publisher_profile_id", n => { PublisherProfileId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Publisher_Profile_Id>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Publisher_Profile_Id.CreateFromDiscriminatorValue); } },
-                { "publishing_project_id", n => { PublishingProjectId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Publishing_Project_Id>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Publishing_Project_Id.CreateFromDiscriminatorValue); } },
+                { "publication_date", n => { PublicationDate = n.GetStringValue(); } },
+                { "published_at_unix", n => { PublishedAtUnix = n.GetIntValue(); } },
+                { "publisher", n => { Publisher = n.GetStringValue(); } },
+                { "publisher_profile_id", n => { PublisherProfileId = n.GetStringValue(); } },
+                { "publishing_project_id", n => { PublishingProjectId = n.GetStringValue(); } },
                 { "publishing_state", n => { PublishingState = n.GetStringValue(); } },
-                { "quality_score", n => { QualityScore = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Quality_Score>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Quality_Score.CreateFromDiscriminatorValue); } },
+                { "quality_score", n => { QualityScore = n.GetIntValue(); } },
                 { "read_id", n => { ReadId = n.GetStringValue(); } },
-                { "read_slug", n => { ReadSlug = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Read_Slug>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Read_Slug.CreateFromDiscriminatorValue); } },
+                { "read_slug", n => { ReadSlug = n.GetStringValue(); } },
                 { "review", n => { Review = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ReviewResponseModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ReviewResponseModel.CreateFromDiscriminatorValue); } },
                 { "sample_config", n => { SampleConfig = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SampleConfigDBModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.SampleConfigDBModel.CreateFromDiscriminatorValue); } },
-                { "series_id", n => { SeriesId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Series_Id>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Series_Id.CreateFromDiscriminatorValue); } },
-                { "subtitle", n => { Subtitle = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Subtitle>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Subtitle.CreateFromDiscriminatorValue); } },
-                { "target_audience", n => { TargetAudience = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Target_Audience>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Target_Audience.CreateFromDiscriminatorValue); } },
-                { "title", n => { Title = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Title>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Title.CreateFromDiscriminatorValue); } },
+                { "series_id", n => { SeriesId = n.GetStringValue(); } },
+                { "subtitle", n => { Subtitle = n.GetStringValue(); } },
+                { "target_audience", n => { TargetAudience = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DirectPublishingReadResponseModel_target_audience>(); } },
+                { "title", n => { Title = n.GetStringValue(); } },
                 { "updated_at_unix", n => { UpdatedAtUnix = n.GetIntValue(); } },
-                { "voice_id", n => { VoiceId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Voice_Id>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Voice_Id.CreateFromDiscriminatorValue); } },
-                { "volume", n => { Volume = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Volume>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Volume.CreateFromDiscriminatorValue); } },
+                { "voice_id", n => { VoiceId = n.GetStringValue(); } },
+                { "volume", n => { Volume = n.GetIntValue(); } },
                 { "word_count", n => { WordCount = n.GetIntValue(); } },
             };
         }
@@ -472,56 +418,56 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Article_Image_Url>("article_image_url", ArticleImageUrl);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Author>("author", Author);
+            writer.WriteStringValue("article_image_url", ArticleImageUrl);
+            writer.WriteStringValue("author", Author);
             writer.WriteBoolValue("can_use_assistant", CanUseAssistant);
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.ReadMetadataChapterDBModel>("chapters", Chapters);
             writer.WriteIntValue("char_count", CharCount);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ReadLegalTerms>("content_guidelines_terms", ContentGuidelinesTerms);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Content_Type>("content_type", ContentType);
+            writer.WriteStringValue("content_type", ContentType);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Contributors>("contributors", Contributors);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Copyright>("copyright", Copyright);
+            writer.WriteStringValue("copyright", Copyright);
             writer.WriteIntValue("created_at_unix", CreatedAtUnix);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Currency_Wrapper>("currency", Currency);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Description>("description", Description);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Display_Mode>("display_mode", DisplayMode);
+            writer.WriteStringValue("currency", Currency);
+            writer.WriteStringValue("description", Description);
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DirectPublishingReadResponseModel_display_mode>("display_mode", DisplayMode);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Distribution_Territories>("distribution_territories", DistributionTerritories);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Ean>("ean", Ean);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Edition>("edition", Edition);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Fiction>("fiction", Fiction);
+            writer.WriteStringValue("ean", Ean);
+            writer.WriteStringValue("edition", Edition);
+            writer.WriteStringValue("fiction", Fiction);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Genre>("genre", Genre);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Isbn>("isbn", Isbn);
+            writer.WriteStringValue("isbn", Isbn);
             writer.WriteBoolValue("is_voice_changer_on", IsVoiceChangerOn);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Language>("language", Language);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Last_Updated_From_Project_Unix>("last_updated_from_project_unix", LastUpdatedFromProjectUnix);
+            writer.WriteStringValue("language", Language);
+            writer.WriteIntValue("last_updated_from_project_unix", LastUpdatedFromProjectUnix);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ReadLegalTerms>("legal_terms", LegalTerms);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.List_Price>("list_price", ListPrice);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Locale>("locale", Locale);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Mature_Content>("mature_content", MatureContent);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Origin>("origin", Origin);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Original_Audio_Document_Id>("original_audio_document_id", OriginalAudioDocumentId);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Original_Audio_Project_Export_Id>("original_audio_project_export_id", OriginalAudioProjectExportId);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Original_File_Type>("original_file_type", OriginalFileType);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Payout_Type>("payout_type", PayoutType);
+            writer.WriteDoubleValue("list_price", ListPrice);
+            writer.WriteStringValue("locale", Locale);
+            writer.WriteBoolValue("mature_content", MatureContent);
+            writer.WriteStringValue("origin", Origin);
+            writer.WriteStringValue("original_audio_document_id", OriginalAudioDocumentId);
+            writer.WriteStringValue("original_audio_project_export_id", OriginalAudioProjectExportId);
+            writer.WriteStringValue("original_file_type", OriginalFileType);
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DirectPublishingReadResponseModel_payout_type>("payout_type", PayoutType);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PreviewAudioDBModel>("preview_audio_object", PreviewAudioObject);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Publication_Date>("publication_date", PublicationDate);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Published_At_Unix>("published_at_unix", PublishedAtUnix);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Publisher>("publisher", Publisher);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Publisher_Profile_Id>("publisher_profile_id", PublisherProfileId);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Publishing_Project_Id>("publishing_project_id", PublishingProjectId);
+            writer.WriteStringValue("publication_date", PublicationDate);
+            writer.WriteIntValue("published_at_unix", PublishedAtUnix);
+            writer.WriteStringValue("publisher", Publisher);
+            writer.WriteStringValue("publisher_profile_id", PublisherProfileId);
+            writer.WriteStringValue("publishing_project_id", PublishingProjectId);
             writer.WriteStringValue("publishing_state", PublishingState);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Quality_Score>("quality_score", QualityScore);
+            writer.WriteIntValue("quality_score", QualityScore);
             writer.WriteStringValue("read_id", ReadId);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Read_Slug>("read_slug", ReadSlug);
+            writer.WriteStringValue("read_slug", ReadSlug);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ReviewResponseModel>("review", Review);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SampleConfigDBModel>("sample_config", SampleConfig);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Series_Id>("series_id", SeriesId);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Subtitle>("subtitle", Subtitle);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Target_Audience>("target_audience", TargetAudience);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Title>("title", Title);
+            writer.WriteStringValue("series_id", SeriesId);
+            writer.WriteStringValue("subtitle", Subtitle);
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DirectPublishingReadResponseModel_target_audience>("target_audience", TargetAudience);
+            writer.WriteStringValue("title", Title);
             writer.WriteIntValue("updated_at_unix", UpdatedAtUnix);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Voice_Id>("voice_id", VoiceId);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Volume>("volume", Volume);
+            writer.WriteStringValue("voice_id", VoiceId);
+            writer.WriteIntValue("volume", Volume);
             writer.WriteIntValue("word_count", WordCount);
             writer.WriteAdditionalData(AdditionalData);
         }

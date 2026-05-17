@@ -17,18 +17,18 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Updated content for the document. Only supported for text documents, URL documents with auto-sync disabled, and file documents.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Content? Content { get; set; }
+        public string? Content { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Content Content { get; set; }
+        public string Content { get; set; }
 #endif
         /// <summary>A custom, human-readable name for the document.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Name? Name { get; set; }
+        public string? Name { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Name Name { get; set; }
+        public string Name { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyUpdateDocumentV1ConvaiKnowledgeBaseDocumentationIdPatch"/> and sets the default values.
@@ -55,8 +55,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "content", n => { Content = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Content>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Content.CreateFromDiscriminatorValue); } },
-                { "name", n => { Name = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Name>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Name.CreateFromDiscriminatorValue); } },
+                { "content", n => { Content = n.GetStringValue(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -66,8 +66,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Content>("content", Content);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Name>("name", Name);
+            writer.WriteStringValue("content", Content);
+            writer.WriteStringValue("name", Name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

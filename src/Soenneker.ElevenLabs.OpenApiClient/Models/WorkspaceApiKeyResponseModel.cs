@@ -23,29 +23,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.Allowed_Ips AllowedIps { get; set; }
 #endif
         /// <summary>The character_count property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Character_Count? CharacterCount { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Character_Count CharacterCount { get; set; }
-#endif
+        public int? CharacterCount { get; set; }
         /// <summary>The character_limit property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Character_Limit? CharacterLimit { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Character_Limit CharacterLimit { get; set; }
-#endif
+        public int? CharacterLimit { get; set; }
         /// <summary>The created_at_unix property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Created_At_Unix? CreatedAtUnix { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Created_At_Unix CreatedAtUnix { get; set; }
-#endif
+        public int? CreatedAtUnix { get; set; }
         /// <summary>The hashed_xi_api_key property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -122,9 +104,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "allowed_ips", n => { AllowedIps = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Allowed_Ips>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Allowed_Ips.CreateFromDiscriminatorValue); } },
-                { "character_count", n => { CharacterCount = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Character_Count>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Character_Count.CreateFromDiscriminatorValue); } },
-                { "character_limit", n => { CharacterLimit = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Character_Limit>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Character_Limit.CreateFromDiscriminatorValue); } },
-                { "created_at_unix", n => { CreatedAtUnix = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Created_At_Unix>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Created_At_Unix.CreateFromDiscriminatorValue); } },
+                { "character_count", n => { CharacterCount = n.GetIntValue(); } },
+                { "character_limit", n => { CharacterLimit = n.GetIntValue(); } },
+                { "created_at_unix", n => { CreatedAtUnix = n.GetIntValue(); } },
                 { "hashed_xi_api_key", n => { HashedXiApiKey = n.GetStringValue(); } },
                 { "hint", n => { Hint = n.GetStringValue(); } },
                 { "is_disabled", n => { IsDisabled = n.GetBoolValue(); } },
@@ -142,9 +124,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Allowed_Ips>("allowed_ips", AllowedIps);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Character_Count>("character_count", CharacterCount);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Character_Limit>("character_limit", CharacterLimit);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Created_At_Unix>("created_at_unix", CreatedAtUnix);
+            writer.WriteIntValue("character_count", CharacterCount);
+            writer.WriteIntValue("character_limit", CharacterLimit);
+            writer.WriteIntValue("created_at_unix", CreatedAtUnix);
             writer.WriteStringValue("hashed_xi_api_key", HashedXiApiKey);
             writer.WriteStringValue("hint", Hint);
             writer.WriteBoolValue("is_disabled", IsDisabled);

@@ -18,10 +18,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The mimeType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Mimetype? MimeType { get; set; }
+        public string? MimeType { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Mimetype MimeType { get; set; }
+        public string MimeType { get; set; }
 #endif
         /// <summary>The sizes property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -64,7 +64,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "mimeType", n => { MimeType = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Mimetype>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Mimetype.CreateFromDiscriminatorValue); } },
+                { "mimeType", n => { MimeType = n.GetStringValue(); } },
                 { "sizes", n => { Sizes = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Sizes>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Sizes.CreateFromDiscriminatorValue); } },
                 { "src", n => { Src = n.GetStringValue(); } },
             };
@@ -76,7 +76,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Mimetype>("mimeType", MimeType);
+            writer.WriteStringValue("mimeType", MimeType);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Sizes>("sizes", Sizes);
             writer.WriteStringValue("src", Src);
             writer.WriteAdditionalData(AdditionalData);

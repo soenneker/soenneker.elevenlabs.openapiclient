@@ -18,10 +18,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The delivery_error property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Delivery_Error? DeliveryError { get; set; }
+        public string? DeliveryError { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Delivery_Error DeliveryError { get; set; }
+        public string DeliveryError { get; set; }
 #endif
         /// <summary>The delivery_status property</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.AsyncConversationMetadata_delivery_status? DeliveryStatus { get; set; }
@@ -38,10 +38,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The external_link property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.External_Link? ExternalLink { get; set; }
+        public string? ExternalLink { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.External_Link ExternalLink { get; set; }
+        public string ExternalLink { get; set; }
 #endif
         /// <summary>The external_system property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -54,19 +54,13 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The last_processed_external_message_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Last_Processed_External_Message_Id? LastProcessedExternalMessageId { get; set; }
+        public string? LastProcessedExternalMessageId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Last_Processed_External_Message_Id LastProcessedExternalMessageId { get; set; }
+        public string LastProcessedExternalMessageId { get; set; }
 #endif
         /// <summary>The last_retry_timestamp property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Last_Retry_Timestamp? LastRetryTimestamp { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Last_Retry_Timestamp LastRetryTimestamp { get; set; }
-#endif
+        public int? LastRetryTimestamp { get; set; }
         /// <summary>The retry_count property</summary>
         public int? RetryCount { get; set; }
         /// <summary>
@@ -94,14 +88,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "delivery_error", n => { DeliveryError = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Delivery_Error>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Delivery_Error.CreateFromDiscriminatorValue); } },
+                { "delivery_error", n => { DeliveryError = n.GetStringValue(); } },
                 { "delivery_status", n => { DeliveryStatus = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AsyncConversationMetadata_delivery_status>(); } },
                 { "delivery_timestamp", n => { DeliveryTimestamp = n.GetIntValue(); } },
                 { "external_id", n => { ExternalId = n.GetStringValue(); } },
-                { "external_link", n => { ExternalLink = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.External_Link>(global::Soenneker.ElevenLabs.OpenApiClient.Models.External_Link.CreateFromDiscriminatorValue); } },
+                { "external_link", n => { ExternalLink = n.GetStringValue(); } },
                 { "external_system", n => { ExternalSystem = n.GetStringValue(); } },
-                { "last_processed_external_message_id", n => { LastProcessedExternalMessageId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Last_Processed_External_Message_Id>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Last_Processed_External_Message_Id.CreateFromDiscriminatorValue); } },
-                { "last_retry_timestamp", n => { LastRetryTimestamp = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Last_Retry_Timestamp>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Last_Retry_Timestamp.CreateFromDiscriminatorValue); } },
+                { "last_processed_external_message_id", n => { LastProcessedExternalMessageId = n.GetStringValue(); } },
+                { "last_retry_timestamp", n => { LastRetryTimestamp = n.GetIntValue(); } },
                 { "retry_count", n => { RetryCount = n.GetIntValue(); } },
             };
         }
@@ -112,14 +106,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Delivery_Error>("delivery_error", DeliveryError);
+            writer.WriteStringValue("delivery_error", DeliveryError);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AsyncConversationMetadata_delivery_status>("delivery_status", DeliveryStatus);
             writer.WriteIntValue("delivery_timestamp", DeliveryTimestamp);
             writer.WriteStringValue("external_id", ExternalId);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.External_Link>("external_link", ExternalLink);
+            writer.WriteStringValue("external_link", ExternalLink);
             writer.WriteStringValue("external_system", ExternalSystem);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Last_Processed_External_Message_Id>("last_processed_external_message_id", LastProcessedExternalMessageId);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Last_Retry_Timestamp>("last_retry_timestamp", LastRetryTimestamp);
+            writer.WriteStringValue("last_processed_external_message_id", LastProcessedExternalMessageId);
+            writer.WriteIntValue("last_retry_timestamp", LastRetryTimestamp);
             writer.WriteIntValue("retry_count", RetryCount);
             writer.WriteAdditionalData(AdditionalData);
         }

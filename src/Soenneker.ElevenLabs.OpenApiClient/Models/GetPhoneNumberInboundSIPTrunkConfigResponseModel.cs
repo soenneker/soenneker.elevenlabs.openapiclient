@@ -53,10 +53,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>SIP trunk username (if available)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Username? Username { get; set; }
+        public string? Username { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Username Username { get; set; }
+        public string Username { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPhoneNumberInboundSIPTrunkConfigResponseModel"/> and sets the default values.
@@ -90,7 +90,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "has_auth_credentials", n => { HasAuthCredentials = n.GetBoolValue(); } },
                 { "media_encryption", n => { MediaEncryption = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SIPMediaEncryptionEnum>(); } },
                 { "remote_domains", n => { RemoteDomains = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Remote_Domains>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Remote_Domains.CreateFromDiscriminatorValue); } },
-                { "username", n => { Username = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Username>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Username.CreateFromDiscriminatorValue); } },
+                { "username", n => { Username = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -106,7 +106,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteBoolValue("has_auth_credentials", HasAuthCredentials);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SIPMediaEncryptionEnum>("media_encryption", MediaEncryption);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Remote_Domains>("remote_domains", RemoteDomains);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Username>("username", Username);
+            writer.WriteStringValue("username", Username);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

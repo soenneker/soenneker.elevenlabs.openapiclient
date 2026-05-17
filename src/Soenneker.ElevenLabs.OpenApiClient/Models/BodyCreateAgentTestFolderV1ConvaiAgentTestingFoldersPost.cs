@@ -25,10 +25,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The ID of the parent folder. If not provided, the folder will be created at the root level.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Parent_Folder_Id? ParentFolderId { get; set; }
+        public string? ParentFolderId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Parent_Folder_Id ParentFolderId { get; set; }
+        public string ParentFolderId { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateAgentTestFolderV1ConvaiAgentTestingFoldersPost"/> and sets the default values.
@@ -56,7 +56,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "parent_folder_id", n => { ParentFolderId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Parent_Folder_Id>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Parent_Folder_Id.CreateFromDiscriminatorValue); } },
+                { "parent_folder_id", n => { ParentFolderId = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -67,7 +67,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("name", Name);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Parent_Folder_Id>("parent_folder_id", ParentFolderId);
+            writer.WriteStringValue("parent_folder_id", ParentFolderId);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

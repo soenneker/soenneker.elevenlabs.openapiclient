@@ -17,26 +17,26 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The end_date property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.End_Date? EndDate { get; set; }
+        public string? EndDate { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.End_Date EndDate { get; set; }
+        public string EndDate { get; set; }
 #endif
         /// <summary>The start_date property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Start_Date? StartDate { get; set; }
+        public string? StartDate { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Start_Date StartDate { get; set; }
+        public string StartDate { get; set; }
 #endif
         /// <summary>The terms property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Terms? Terms { get; set; }
+        public string? Terms { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Terms Terms { get; set; }
+        public string Terms { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ReadLegalTerms"/> and sets the default values.
@@ -63,9 +63,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "end_date", n => { EndDate = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.End_Date>(global::Soenneker.ElevenLabs.OpenApiClient.Models.End_Date.CreateFromDiscriminatorValue); } },
-                { "start_date", n => { StartDate = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Start_Date>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Start_Date.CreateFromDiscriminatorValue); } },
-                { "terms", n => { Terms = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Terms>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Terms.CreateFromDiscriminatorValue); } },
+                { "end_date", n => { EndDate = n.GetStringValue(); } },
+                { "start_date", n => { StartDate = n.GetStringValue(); } },
+                { "terms", n => { Terms = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -75,9 +75,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.End_Date>("end_date", EndDate);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Start_Date>("start_date", StartDate);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Terms>("terms", Terms);
+            writer.WriteStringValue("end_date", EndDate);
+            writer.WriteStringValue("start_date", StartDate);
+            writer.WriteStringValue("terms", Terms);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

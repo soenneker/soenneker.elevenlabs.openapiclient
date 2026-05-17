@@ -25,20 +25,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The char_count property</summary>
         public int? CharCount { get; set; }
         /// <summary>The duration_seconds property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Duration_Seconds? DurationSeconds { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Duration_Seconds DurationSeconds { get; set; }
-#endif
+        public double? DurationSeconds { get; set; }
         /// <summary>The file_number property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.File_Number? FileNumber { get; set; }
+        public string? FileNumber { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.File_Number FileNumber { get; set; }
+        public string FileNumber { get; set; }
 #endif
         /// <summary>The has_parsed_html property</summary>
         public bool? HasParsedHtml { get; set; }
@@ -77,8 +71,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             {
                 { "chapter_name", n => { ChapterName = n.GetStringValue(); } },
                 { "char_count", n => { CharCount = n.GetIntValue(); } },
-                { "duration_seconds", n => { DurationSeconds = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Duration_Seconds>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Duration_Seconds.CreateFromDiscriminatorValue); } },
-                { "file_number", n => { FileNumber = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.File_Number>(global::Soenneker.ElevenLabs.OpenApiClient.Models.File_Number.CreateFromDiscriminatorValue); } },
+                { "duration_seconds", n => { DurationSeconds = n.GetDoubleValue(); } },
+                { "file_number", n => { FileNumber = n.GetStringValue(); } },
                 { "has_parsed_html", n => { HasParsedHtml = n.GetBoolValue(); } },
                 { "has_summary", n => { HasSummary = n.GetBoolValue(); } },
                 { "is_fallback_name", n => { IsFallbackName = n.GetBoolValue(); } },
@@ -95,8 +89,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("chapter_name", ChapterName);
             writer.WriteIntValue("char_count", CharCount);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Duration_Seconds>("duration_seconds", DurationSeconds);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.File_Number>("file_number", FileNumber);
+            writer.WriteDoubleValue("duration_seconds", DurationSeconds);
+            writer.WriteStringValue("file_number", FileNumber);
             writer.WriteBoolValue("has_parsed_html", HasParsedHtml);
             writer.WriteBoolValue("has_summary", HasSummary);
             writer.WriteBoolValue("is_fallback_name", IsFallbackName);

@@ -17,26 +17,26 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The agent_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Agent_Id? AgentId { get; set; }
+        public string? AgentId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Agent_Id AgentId { get; set; }
+        public string AgentId { get; set; }
 #endif
         /// <summary>Agent branch to use for calls to this number.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Branch_Id? BranchId { get; set; }
+        public string? BranchId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Branch_Id BranchId { get; set; }
+        public string BranchId { get; set; }
 #endif
         /// <summary>Environment to use for resolving environment variables on calls to this number.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.EnvironmentObject? Environment { get; set; }
+        public string? Environment { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.EnvironmentObject Environment { get; set; }
+        public string Environment { get; set; }
 #endif
         /// <summary>The inbound_trunk_config property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -49,10 +49,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The label property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Label? Label { get; set; }
+        public string? Label { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Label Label { get; set; }
+        public string Label { get; set; }
 #endif
         /// <summary>The livekit_stack property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -71,13 +71,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.OutboundSIPTrunkConfigRequestModel OutboundTrunkConfig { get; set; }
 #endif
         /// <summary>The store_sip_messages property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Store_Sip_Messages? StoreSipMessages { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Store_Sip_Messages StoreSipMessages { get; set; }
-#endif
+        public bool? StoreSipMessages { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdatePhoneNumberRequest"/> and sets the default values.
         /// </summary>
@@ -103,14 +97,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "agent_id", n => { AgentId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Agent_Id>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Agent_Id.CreateFromDiscriminatorValue); } },
-                { "branch_id", n => { BranchId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Branch_Id>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Branch_Id.CreateFromDiscriminatorValue); } },
-                { "environment", n => { Environment = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.EnvironmentObject>(global::Soenneker.ElevenLabs.OpenApiClient.Models.EnvironmentObject.CreateFromDiscriminatorValue); } },
+                { "agent_id", n => { AgentId = n.GetStringValue(); } },
+                { "branch_id", n => { BranchId = n.GetStringValue(); } },
+                { "environment", n => { Environment = n.GetStringValue(); } },
                 { "inbound_trunk_config", n => { InboundTrunkConfig = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.InboundSIPTrunkConfigRequestModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.InboundSIPTrunkConfigRequestModel.CreateFromDiscriminatorValue); } },
-                { "label", n => { Label = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Label>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Label.CreateFromDiscriminatorValue); } },
+                { "label", n => { Label = n.GetStringValue(); } },
                 { "livekit_stack", n => { LivekitStack = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.LivekitStackType_Wrapper>(global::Soenneker.ElevenLabs.OpenApiClient.Models.LivekitStackType_Wrapper.CreateFromDiscriminatorValue); } },
                 { "outbound_trunk_config", n => { OutboundTrunkConfig = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.OutboundSIPTrunkConfigRequestModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.OutboundSIPTrunkConfigRequestModel.CreateFromDiscriminatorValue); } },
-                { "store_sip_messages", n => { StoreSipMessages = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Store_Sip_Messages>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Store_Sip_Messages.CreateFromDiscriminatorValue); } },
+                { "store_sip_messages", n => { StoreSipMessages = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -120,14 +114,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Agent_Id>("agent_id", AgentId);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Branch_Id>("branch_id", BranchId);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.EnvironmentObject>("environment", Environment);
+            writer.WriteStringValue("agent_id", AgentId);
+            writer.WriteStringValue("branch_id", BranchId);
+            writer.WriteStringValue("environment", Environment);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.InboundSIPTrunkConfigRequestModel>("inbound_trunk_config", InboundTrunkConfig);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Label>("label", Label);
+            writer.WriteStringValue("label", Label);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.LivekitStackType_Wrapper>("livekit_stack", LivekitStack);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.OutboundSIPTrunkConfigRequestModel>("outbound_trunk_config", OutboundTrunkConfig);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Store_Sip_Messages>("store_sip_messages", StoreSipMessages);
+            writer.WriteBoolValue("store_sip_messages", StoreSipMessages);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

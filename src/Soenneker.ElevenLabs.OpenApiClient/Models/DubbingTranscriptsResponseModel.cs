@@ -25,20 +25,20 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The srt property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Srt? Srt { get; set; }
+        public string? Srt { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Srt Srt { get; set; }
+        public string Srt { get; set; }
 #endif
         /// <summary>The transcript_format property</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingTranscriptsResponseModel_transcript_format? TranscriptFormat { get; set; }
         /// <summary>The webvtt property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Webvtt? Webvtt { get; set; }
+        public string? Webvtt { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Webvtt Webvtt { get; set; }
+        public string Webvtt { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingTranscriptsResponseModel"/> and sets the default values.
@@ -66,9 +66,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "json", n => { Json = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingTranscript>(global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingTranscript.CreateFromDiscriminatorValue); } },
-                { "srt", n => { Srt = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Srt>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Srt.CreateFromDiscriminatorValue); } },
+                { "srt", n => { Srt = n.GetStringValue(); } },
                 { "transcript_format", n => { TranscriptFormat = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingTranscriptsResponseModel_transcript_format>(); } },
-                { "webvtt", n => { Webvtt = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Webvtt>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Webvtt.CreateFromDiscriminatorValue); } },
+                { "webvtt", n => { Webvtt = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -79,9 +79,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingTranscript>("json", Json);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Srt>("srt", Srt);
+            writer.WriteStringValue("srt", Srt);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingTranscriptsResponseModel_transcript_format>("transcript_format", TranscriptFormat);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Webvtt>("webvtt", Webvtt);
+            writer.WriteStringValue("webvtt", Webvtt);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -32,10 +32,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>User agent string</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.User_Agent? UserAgent { get; set; }
+        public string? UserAgent { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.User_Agent UserAgent { get; set; }
+        public string UserAgent { get; set; }
 #endif
         /// <summary>X-Forwarded-For header as a list</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -65,7 +65,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             {
                 { "http_method", n => { HttpMethod = n.GetStringValue(); } },
                 { "url", n => { Url = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UrlModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.UrlModel.CreateFromDiscriminatorValue); } },
-                { "user_agent", n => { UserAgent = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.User_Agent>(global::Soenneker.ElevenLabs.OpenApiClient.Models.User_Agent.CreateFromDiscriminatorValue); } },
+                { "user_agent", n => { UserAgent = n.GetStringValue(); } },
                 { "x_forwarded_for", n => { XForwardedFor = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.X_Forwarded_For>(global::Soenneker.ElevenLabs.OpenApiClient.Models.X_Forwarded_For.CreateFromDiscriminatorValue); } },
             };
         }
@@ -78,7 +78,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("http_method", HttpMethod);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UrlModel>("url", Url);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.User_Agent>("user_agent", UserAgent);
+            writer.WriteStringValue("user_agent", UserAgent);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.X_Forwarded_For>("x_forwarded_for", XForwardedFor);
         }
     }

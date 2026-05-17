@@ -17,10 +17,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The conversation_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Conversation_Id? ConversationId { get; set; }
+        public string? ConversationId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Conversation_Id ConversationId { get; set; }
+        public string ConversationId { get; set; }
 #endif
         /// <summary>The message property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -57,7 +57,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "conversation_id", n => { ConversationId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Conversation_Id>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Conversation_Id.CreateFromDiscriminatorValue); } },
+                { "conversation_id", n => { ConversationId = n.GetStringValue(); } },
                 { "message", n => { Message = n.GetStringValue(); } },
                 { "success", n => { Success = n.GetBoolValue(); } },
             };
@@ -69,7 +69,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Conversation_Id>("conversation_id", ConversationId);
+            writer.WriteStringValue("conversation_id", ConversationId);
             writer.WriteStringValue("message", Message);
             writer.WriteBoolValue("success", Success);
             writer.WriteAdditionalData(AdditionalData);

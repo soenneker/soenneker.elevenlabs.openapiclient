@@ -17,13 +17,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The model to use for the generation.</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyGenerateCompositionPlanV1MusicPlanPost_model_id? ModelId { get; set; }
         /// <summary>The length of the composition plan to generate in milliseconds. Must be between 3000ms and 600000ms. Optional - if not provided, the model will choose a length based on the prompt.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Music_Length_Ms? MusicLengthMs { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Music_Length_Ms MusicLengthMs { get; set; }
-#endif
+        public int? MusicLengthMs { get; set; }
         /// <summary>A simple text prompt to compose a plan from.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -67,7 +61,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "model_id", n => { ModelId = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyGenerateCompositionPlanV1MusicPlanPost_model_id>(); } },
-                { "music_length_ms", n => { MusicLengthMs = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Music_Length_Ms>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Music_Length_Ms.CreateFromDiscriminatorValue); } },
+                { "music_length_ms", n => { MusicLengthMs = n.GetIntValue(); } },
                 { "prompt", n => { Prompt = n.GetStringValue(); } },
                 { "source_composition_plan", n => { SourceCompositionPlan = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.MusicPrompt>(global::Soenneker.ElevenLabs.OpenApiClient.Models.MusicPrompt.CreateFromDiscriminatorValue); } },
             };
@@ -80,7 +74,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyGenerateCompositionPlanV1MusicPlanPost_model_id>("model_id", ModelId);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Music_Length_Ms>("music_length_ms", MusicLengthMs);
+            writer.WriteIntValue("music_length_ms", MusicLengthMs);
             writer.WriteStringValue("prompt", Prompt);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.MusicPrompt>("source_composition_plan", SourceCompositionPlan);
             writer.WriteAdditionalData(AdditionalData);

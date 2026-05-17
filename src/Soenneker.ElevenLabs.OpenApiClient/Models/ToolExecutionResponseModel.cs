@@ -25,10 +25,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The branch ID if the agent has branches</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Branch_Id? BranchId { get; set; }
+        public string? BranchId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Branch_Id BranchId { get; set; }
+        public string BranchId { get; set; }
 #endif
         /// <summary>The ID of the conversation where the tool was executed</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -41,18 +41,18 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Error message if the tool execution failed</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Error_Message? ErrorMessage { get; set; }
+        public string? ErrorMessage { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Error_Message ErrorMessage { get; set; }
+        public string ErrorMessage { get; set; }
 #endif
         /// <summary>Error category (internal, customer_config, customer_auth, external_server, external_client, client_timeout, unknown)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Error_Type? ErrorType { get; set; }
+        public string? ErrorType { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Error_Type ErrorType { get; set; }
+        public string ErrorType { get; set; }
 #endif
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -69,18 +69,18 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>LLM-extracted parameters sent to the tool (JSON string)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Request_Payload? RequestPayload { get; set; }
+        public string? RequestPayload { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Request_Payload RequestPayload { get; set; }
+        public string RequestPayload { get; set; }
 #endif
         /// <summary>Response returned by the tool</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Response_Payload? ResponsePayload { get; set; }
+        public string? ResponsePayload { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Response_Payload ResponsePayload { get; set; }
+        public string ResponsePayload { get; set; }
 #endif
         /// <summary>Unix timestamp when the tool was executed</summary>
         public double? Timestamp { get; set; }
@@ -134,15 +134,15 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "agent_id", n => { AgentId = n.GetStringValue(); } },
-                { "branch_id", n => { BranchId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Branch_Id>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Branch_Id.CreateFromDiscriminatorValue); } },
+                { "branch_id", n => { BranchId = n.GetStringValue(); } },
                 { "conversation_id", n => { ConversationId = n.GetStringValue(); } },
-                { "error_message", n => { ErrorMessage = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Error_Message>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Error_Message.CreateFromDiscriminatorValue); } },
-                { "error_type", n => { ErrorType = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Error_Type>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Error_Type.CreateFromDiscriminatorValue); } },
+                { "error_message", n => { ErrorMessage = n.GetStringValue(); } },
+                { "error_type", n => { ErrorType = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "is_error", n => { IsError = n.GetBoolValue(); } },
                 { "latency_secs", n => { LatencySecs = n.GetDoubleValue(); } },
-                { "request_payload", n => { RequestPayload = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Request_Payload>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Request_Payload.CreateFromDiscriminatorValue); } },
-                { "response_payload", n => { ResponsePayload = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Response_Payload>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Response_Payload.CreateFromDiscriminatorValue); } },
+                { "request_payload", n => { RequestPayload = n.GetStringValue(); } },
+                { "response_payload", n => { ResponsePayload = n.GetStringValue(); } },
                 { "timestamp", n => { Timestamp = n.GetDoubleValue(); } },
                 { "tool_call_details", n => { ToolCallDetails = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolExecutionResponseModel_tool_call_details>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolExecutionResponseModel_tool_call_details.CreateFromDiscriminatorValue); } },
                 { "tool_id", n => { ToolId = n.GetStringValue(); } },
@@ -157,15 +157,15 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("agent_id", AgentId);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Branch_Id>("branch_id", BranchId);
+            writer.WriteStringValue("branch_id", BranchId);
             writer.WriteStringValue("conversation_id", ConversationId);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Error_Message>("error_message", ErrorMessage);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Error_Type>("error_type", ErrorType);
+            writer.WriteStringValue("error_message", ErrorMessage);
+            writer.WriteStringValue("error_type", ErrorType);
             writer.WriteStringValue("id", Id);
             writer.WriteBoolValue("is_error", IsError);
             writer.WriteDoubleValue("latency_secs", LatencySecs);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Request_Payload>("request_payload", RequestPayload);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Response_Payload>("response_payload", ResponsePayload);
+            writer.WriteStringValue("request_payload", RequestPayload);
+            writer.WriteStringValue("response_payload", ResponsePayload);
             writer.WriteDoubleValue("timestamp", Timestamp);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolExecutionResponseModel_tool_call_details>("tool_call_details", ToolCallDetails);
             writer.WriteStringValue("tool_id", ToolId);

@@ -25,20 +25,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The post_call_webhook_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Post_Call_Webhook_Id? PostCallWebhookId { get; set; }
+        public string? PostCallWebhookId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Post_Call_Webhook_Id PostCallWebhookId { get; set; }
+        public string PostCallWebhookId { get; set; }
 #endif
         /// <summary>&quot;DEPRECATED: Use &apos;events&apos; field instead. Whether to send audio data with post-call webhooks for ConvAI conversations&quot;</summary>
         [Obsolete("")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Send_Audio? SendAudio { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Send_Audio SendAudio { get; set; }
-#endif
+        public bool? SendAudio { get; set; }
         /// <summary>The transcript_format property</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookTranscriptFormat? TranscriptFormat { get; set; }
         /// <summary>
@@ -68,8 +62,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "events", n => { Events = n.GetCollectionOfEnumValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookEventType>()?.AsList(); } },
-                { "post_call_webhook_id", n => { PostCallWebhookId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Post_Call_Webhook_Id>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Post_Call_Webhook_Id.CreateFromDiscriminatorValue); } },
-                { "send_audio", n => { SendAudio = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Send_Audio>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Send_Audio.CreateFromDiscriminatorValue); } },
+                { "post_call_webhook_id", n => { PostCallWebhookId = n.GetStringValue(); } },
+                { "send_audio", n => { SendAudio = n.GetBoolValue(); } },
                 { "transcript_format", n => { TranscriptFormat = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookTranscriptFormat>(); } },
             };
         }
@@ -81,8 +75,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfEnumValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookEventType>("events", Events);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Post_Call_Webhook_Id>("post_call_webhook_id", PostCallWebhookId);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Send_Audio>("send_audio", SendAudio);
+            writer.WriteStringValue("post_call_webhook_id", PostCallWebhookId);
+            writer.WriteBoolValue("send_audio", SendAudio);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookTranscriptFormat>("transcript_format", TranscriptFormat);
             writer.WriteAdditionalData(AdditionalData);
         }

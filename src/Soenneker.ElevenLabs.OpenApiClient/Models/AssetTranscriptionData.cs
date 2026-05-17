@@ -49,10 +49,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The word_speaker_ids property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.UnionBranch>? WordSpeakerIds { get; set; }
+        public List<string>? WordSpeakerIds { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.UnionBranch> WordSpeakerIds { get; set; }
+        public List<string> WordSpeakerIds { get; set; }
 #endif
         /// <summary>The word_start_times_ms property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -90,7 +90,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "language_code", n => { LanguageCode = n.GetStringValue(); } },
                 { "text", n => { Text = n.GetStringValue(); } },
                 { "word_end_times_ms", n => { WordEndTimesMs = n.GetCollectionOfPrimitiveValues<int?>()?.AsList(); } },
-                { "word_speaker_ids", n => { WordSpeakerIds = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.UnionBranch>(global::Soenneker.ElevenLabs.OpenApiClient.Models.UnionBranch.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "word_speaker_ids", n => { WordSpeakerIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "word_start_times_ms", n => { WordStartTimesMs = n.GetCollectionOfPrimitiveValues<int?>()?.AsList(); } },
                 { "words", n => { Words = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
@@ -106,7 +106,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteStringValue("text", Text);
             writer.WriteCollectionOfPrimitiveValues<int?>("word_end_times_ms", WordEndTimesMs);
             writer.WriteCollectionOfPrimitiveValues<string>("words", Words);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.UnionBranch>("word_speaker_ids", WordSpeakerIds);
+            writer.WriteCollectionOfPrimitiveValues<string>("word_speaker_ids", WordSpeakerIds);
             writer.WriteCollectionOfPrimitiveValues<int?>("word_start_times_ms", WordStartTimesMs);
             writer.WriteAdditionalData(AdditionalData);
         }

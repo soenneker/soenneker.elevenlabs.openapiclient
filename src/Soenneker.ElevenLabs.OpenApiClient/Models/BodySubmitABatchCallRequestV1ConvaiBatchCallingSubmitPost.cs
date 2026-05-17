@@ -25,18 +25,18 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The agent_phone_number_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Agent_Phone_Number_Id? AgentPhoneNumberId { get; set; }
+        public string? AgentPhoneNumberId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Agent_Phone_Number_Id AgentPhoneNumberId { get; set; }
+        public string AgentPhoneNumberId { get; set; }
 #endif
         /// <summary>The branch_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Branch_Id? BranchId { get; set; }
+        public string? BranchId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Branch_Id BranchId { get; set; }
+        public string BranchId { get; set; }
 #endif
         /// <summary>The call_name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -49,10 +49,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The environment property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.EnvironmentObject? Environment { get; set; }
+        public string? Environment { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.EnvironmentObject Environment { get; set; }
+        public string Environment { get; set; }
 #endif
         /// <summary>The recipients property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -63,21 +63,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.OutboundCallRecipient> Recipients { get; set; }
 #endif
         /// <summary>The scheduled_time_unix property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Scheduled_Time_Unix? ScheduledTimeUnix { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Scheduled_Time_Unix ScheduledTimeUnix { get; set; }
-#endif
+        public int? ScheduledTimeUnix { get; set; }
         /// <summary>Maximum number of simultaneous calls for this batch. When set, dispatch is governed by this limit rather than workspace/agent capacity percentages.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Target_Concurrency_Limit? TargetConcurrencyLimit { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Target_Concurrency_Limit TargetConcurrencyLimit { get; set; }
-#endif
+        public int? TargetConcurrencyLimit { get; set; }
         /// <summary>The telephony_call_config property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -89,10 +77,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The timezone property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.TimezoneObject? Timezone { get; set; }
+        public string? Timezone { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.TimezoneObject Timezone { get; set; }
+        public string Timezone { get; set; }
 #endif
         /// <summary>The whatsapp_params property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -128,15 +116,15 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "agent_id", n => { AgentId = n.GetStringValue(); } },
-                { "agent_phone_number_id", n => { AgentPhoneNumberId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Agent_Phone_Number_Id>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Agent_Phone_Number_Id.CreateFromDiscriminatorValue); } },
-                { "branch_id", n => { BranchId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Branch_Id>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Branch_Id.CreateFromDiscriminatorValue); } },
+                { "agent_phone_number_id", n => { AgentPhoneNumberId = n.GetStringValue(); } },
+                { "branch_id", n => { BranchId = n.GetStringValue(); } },
                 { "call_name", n => { CallName = n.GetStringValue(); } },
-                { "environment", n => { Environment = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.EnvironmentObject>(global::Soenneker.ElevenLabs.OpenApiClient.Models.EnvironmentObject.CreateFromDiscriminatorValue); } },
+                { "environment", n => { Environment = n.GetStringValue(); } },
                 { "recipients", n => { Recipients = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.OutboundCallRecipient>(global::Soenneker.ElevenLabs.OpenApiClient.Models.OutboundCallRecipient.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "scheduled_time_unix", n => { ScheduledTimeUnix = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Scheduled_Time_Unix>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Scheduled_Time_Unix.CreateFromDiscriminatorValue); } },
-                { "target_concurrency_limit", n => { TargetConcurrencyLimit = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Target_Concurrency_Limit>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Target_Concurrency_Limit.CreateFromDiscriminatorValue); } },
+                { "scheduled_time_unix", n => { ScheduledTimeUnix = n.GetIntValue(); } },
+                { "target_concurrency_limit", n => { TargetConcurrencyLimit = n.GetIntValue(); } },
                 { "telephony_call_config", n => { TelephonyCallConfig = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TelephonyCallConfig>(global::Soenneker.ElevenLabs.OpenApiClient.Models.TelephonyCallConfig.CreateFromDiscriminatorValue); } },
-                { "timezone", n => { Timezone = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TimezoneObject>(global::Soenneker.ElevenLabs.OpenApiClient.Models.TimezoneObject.CreateFromDiscriminatorValue); } },
+                { "timezone", n => { Timezone = n.GetStringValue(); } },
                 { "whatsapp_params", n => { WhatsappParams = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BatchCallWhatsAppParams>(global::Soenneker.ElevenLabs.OpenApiClient.Models.BatchCallWhatsAppParams.CreateFromDiscriminatorValue); } },
             };
         }
@@ -148,15 +136,15 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("agent_id", AgentId);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Agent_Phone_Number_Id>("agent_phone_number_id", AgentPhoneNumberId);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Branch_Id>("branch_id", BranchId);
+            writer.WriteStringValue("agent_phone_number_id", AgentPhoneNumberId);
+            writer.WriteStringValue("branch_id", BranchId);
             writer.WriteStringValue("call_name", CallName);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.EnvironmentObject>("environment", Environment);
+            writer.WriteStringValue("environment", Environment);
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.OutboundCallRecipient>("recipients", Recipients);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Scheduled_Time_Unix>("scheduled_time_unix", ScheduledTimeUnix);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Target_Concurrency_Limit>("target_concurrency_limit", TargetConcurrencyLimit);
+            writer.WriteIntValue("scheduled_time_unix", ScheduledTimeUnix);
+            writer.WriteIntValue("target_concurrency_limit", TargetConcurrencyLimit);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TelephonyCallConfig>("telephony_call_config", TelephonyCallConfig);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TimezoneObject>("timezone", Timezone);
+            writer.WriteStringValue("timezone", Timezone);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BatchCallWhatsAppParams>("whatsapp_params", WhatsappParams);
             writer.WriteAdditionalData(AdditionalData);
         }

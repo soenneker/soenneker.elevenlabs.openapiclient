@@ -41,18 +41,18 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The language property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Language? Language { get; set; }
+        public string? Language { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Language Language { get; set; }
+        public string Language { get; set; }
 #endif
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Name? Name { get; set; }
+        public string? Name { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Name Name { get; set; }
+        public string Name { get; set; }
 #endif
         /// <summary>The privacy property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -122,8 +122,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "asr", n => { Asr = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ASRConversationalConfig>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ASRConversationalConfig.CreateFromDiscriminatorValue); } },
                 { "call_limits", n => { CallLimits = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentCallLimits>(global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentCallLimits.CreateFromDiscriminatorValue); } },
                 { "conversation", n => { Conversation = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationConfigInput>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationConfigInput.CreateFromDiscriminatorValue); } },
-                { "language", n => { Language = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Language>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Language.CreateFromDiscriminatorValue); } },
-                { "name", n => { Name = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Name>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Name.CreateFromDiscriminatorValue); } },
+                { "language", n => { Language = n.GetStringValue(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
                 { "privacy", n => { Privacy = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PrivacyConfigInput>(global::Soenneker.ElevenLabs.OpenApiClient.Models.PrivacyConfigInput.CreateFromDiscriminatorValue); } },
                 { "speech_engine", n => { SpeechEngine = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechEngineConfig>(global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechEngineConfig.CreateFromDiscriminatorValue); } },
                 { "tags", n => { Tags = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Tags>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Tags.CreateFromDiscriminatorValue); } },
@@ -141,8 +141,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ASRConversationalConfig>("asr", Asr);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentCallLimits>("call_limits", CallLimits);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationConfigInput>("conversation", Conversation);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Language>("language", Language);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Name>("name", Name);
+            writer.WriteStringValue("language", Language);
+            writer.WriteStringValue("name", Name);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PrivacyConfigInput>("privacy", Privacy);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechEngineConfig>("speech_engine", SpeechEngine);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Tags>("tags", Tags);

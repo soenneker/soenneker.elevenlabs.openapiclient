@@ -15,13 +15,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The access level for anonymous users. If None, the resource is not shared publicly.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Anonymous_Access_Level_Override? AnonymousAccessLevelOverride { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Anonymous_Access_Level_Override AnonymousAccessLevelOverride { get; set; }
-#endif
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceAccessInfo_anonymous_access_level_override? AnonymousAccessLevelOverride { get; set; }
         /// <summary>Email of the agent&apos;s creator</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -67,7 +61,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "anonymous_access_level_override", n => { AnonymousAccessLevelOverride = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Anonymous_Access_Level_Override>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Anonymous_Access_Level_Override.CreateFromDiscriminatorValue); } },
+                { "anonymous_access_level_override", n => { AnonymousAccessLevelOverride = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceAccessInfo_anonymous_access_level_override>(); } },
                 { "creator_email", n => { CreatorEmail = n.GetStringValue(); } },
                 { "creator_name", n => { CreatorName = n.GetStringValue(); } },
                 { "is_creator", n => { IsCreator = n.GetBoolValue(); } },
@@ -81,7 +75,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Anonymous_Access_Level_Override>("anonymous_access_level_override", AnonymousAccessLevelOverride);
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceAccessInfo_anonymous_access_level_override>("anonymous_access_level_override", AnonymousAccessLevelOverride);
             writer.WriteStringValue("creator_email", CreatorEmail);
             writer.WriteStringValue("creator_name", CreatorName);
             writer.WriteBoolValue("is_creator", IsCreator);

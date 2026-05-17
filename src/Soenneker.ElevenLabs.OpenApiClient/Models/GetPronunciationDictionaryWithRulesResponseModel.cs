@@ -15,13 +15,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The archive time of the pronunciation dictionary in Unix timestamp.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Archived_Time_Unix? ArchivedTimeUnix { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Archived_Time_Unix ArchivedTimeUnix { get; set; }
-#endif
+        public int? ArchivedTimeUnix { get; set; }
         /// <summary>The user ID of the creator of the pronunciation dictionary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -35,10 +29,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The description of the pronunciation dictionary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Description? Description { get; set; }
+        public string? Description { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Description Description { get; set; }
+        public string Description { get; set; }
 #endif
         /// <summary>The ID of the pronunciation dictionary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -67,13 +61,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public string Name { get; set; }
 #endif
         /// <summary>The permission on the resource of the pronunciation dictionary.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Permission_On_Resource? PermissionOnResource { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Permission_On_Resource PermissionOnResource { get; set; }
-#endif
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPronunciationDictionaryWithRulesResponseModel_permission_on_resource? PermissionOnResource { get; set; }
         /// <summary>The rules in the latest version of the pronunciation dictionary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -107,15 +95,15 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "archived_time_unix", n => { ArchivedTimeUnix = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Archived_Time_Unix>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Archived_Time_Unix.CreateFromDiscriminatorValue); } },
+                { "archived_time_unix", n => { ArchivedTimeUnix = n.GetIntValue(); } },
                 { "created_by", n => { CreatedBy = n.GetStringValue(); } },
                 { "creation_time_unix", n => { CreationTimeUnix = n.GetIntValue(); } },
-                { "description", n => { Description = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Description>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Description.CreateFromDiscriminatorValue); } },
+                { "description", n => { Description = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "latest_version_id", n => { LatestVersionId = n.GetStringValue(); } },
                 { "latest_version_rules_num", n => { LatestVersionRulesNum = n.GetIntValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "permission_on_resource", n => { PermissionOnResource = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Permission_On_Resource>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Permission_On_Resource.CreateFromDiscriminatorValue); } },
+                { "permission_on_resource", n => { PermissionOnResource = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPronunciationDictionaryWithRulesResponseModel_permission_on_resource>(); } },
                 { "rules", n => { Rules = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPronunciationDictionaryWithRulesResponseModel.GetPronunciationDictionaryWithRulesResponseModel_rules>(global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPronunciationDictionaryWithRulesResponseModel.GetPronunciationDictionaryWithRulesResponseModel_rules.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
@@ -126,15 +114,15 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Archived_Time_Unix>("archived_time_unix", ArchivedTimeUnix);
+            writer.WriteIntValue("archived_time_unix", ArchivedTimeUnix);
             writer.WriteStringValue("created_by", CreatedBy);
             writer.WriteIntValue("creation_time_unix", CreationTimeUnix);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Description>("description", Description);
+            writer.WriteStringValue("description", Description);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("latest_version_id", LatestVersionId);
             writer.WriteIntValue("latest_version_rules_num", LatestVersionRulesNum);
             writer.WriteStringValue("name", Name);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Permission_On_Resource>("permission_on_resource", PermissionOnResource);
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPronunciationDictionaryWithRulesResponseModel_permission_on_resource>("permission_on_resource", PermissionOnResource);
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPronunciationDictionaryWithRulesResponseModel.GetPronunciationDictionaryWithRulesResponseModel_rules>("rules", Rules);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -21,13 +21,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Maximum number of days between automatic syncs</summary>
         public int? MinimumFrequencyDays { get; set; }
         /// <summary>Unix timestamp for the next scheduled sync or None (in case of folders)</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Next_Refresh_By? NextRefreshBy { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Next_Refresh_By NextRefreshBy { get; set; }
-#endif
+        public int? NextRefreshBy { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.AutoSyncInfo"/> and sets the default values.
         /// </summary>
@@ -56,7 +50,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "auto_remove", n => { AutoRemove = n.GetBoolValue(); } },
                 { "consec_failures", n => { ConsecFailures = n.GetIntValue(); } },
                 { "minimum_frequency_days", n => { MinimumFrequencyDays = n.GetIntValue(); } },
-                { "next_refresh_by", n => { NextRefreshBy = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Next_Refresh_By>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Next_Refresh_By.CreateFromDiscriminatorValue); } },
+                { "next_refresh_by", n => { NextRefreshBy = n.GetIntValue(); } },
             };
         }
         /// <summary>
@@ -69,7 +63,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteBoolValue("auto_remove", AutoRemove);
             writer.WriteIntValue("consec_failures", ConsecFailures);
             writer.WriteIntValue("minimum_frequency_days", MinimumFrequencyDays);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Next_Refresh_By>("next_refresh_by", NextRefreshBy);
+            writer.WriteIntValue("next_refresh_by", NextRefreshBy);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

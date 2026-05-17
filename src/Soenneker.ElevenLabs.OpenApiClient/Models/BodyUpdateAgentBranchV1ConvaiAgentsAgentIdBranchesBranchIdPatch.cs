@@ -15,20 +15,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Whether the branch should be archived</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Is_Archived? IsArchived { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Is_Archived IsArchived { get; set; }
-#endif
+        public bool? IsArchived { get; set; }
         /// <summary>New name for the branch. Must be unique within the agent.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Name? Name { get; set; }
+        public string? Name { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Name Name { get; set; }
+        public string Name { get; set; }
 #endif
         /// <summary>The protection level for the branch</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -63,8 +57,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "is_archived", n => { IsArchived = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Is_Archived>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Is_Archived.CreateFromDiscriminatorValue); } },
-                { "name", n => { Name = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Name>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Name.CreateFromDiscriminatorValue); } },
+                { "is_archived", n => { IsArchived = n.GetBoolValue(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
                 { "protection_status", n => { ProtectionStatus = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BranchProtectionStatus_Wrapper>(global::Soenneker.ElevenLabs.OpenApiClient.Models.BranchProtectionStatus_Wrapper.CreateFromDiscriminatorValue); } },
             };
         }
@@ -75,8 +69,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Is_Archived>("is_archived", IsArchived);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Name>("name", Name);
+            writer.WriteBoolValue("is_archived", IsArchived);
+            writer.WriteStringValue("name", Name);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BranchProtectionStatus_Wrapper>("protection_status", ProtectionStatus);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -121,15 +121,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Tools.Item.Executions
             public string Cursor { get; set; }
 #endif
             /// <summary>Filter executions until this Unix timestamp (inclusive).</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("end_time")]
-            public string? EndTime { get; set; }
-#nullable restore
-#else
-            [QueryParameter("end_time")]
-            public string EndTime { get; set; }
-#endif
+            public double? EndTime { get; set; }
             /// <summary>Filter by error status. If not provided, returns all executions.</summary>
             [QueryParameter("is_error")]
             public bool? IsError { get; set; }
@@ -137,15 +130,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Tools.Item.Executions
             [QueryParameter("page_size")]
             public int? PageSize { get; set; }
             /// <summary>Filter executions from this Unix timestamp (inclusive).</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("start_time")]
-            public string? StartTime { get; set; }
-#nullable restore
-#else
-            [QueryParameter("start_time")]
-            public string StartTime { get; set; }
-#endif
+            public double? StartTime { get; set; }
         }
     }
 }

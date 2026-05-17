@@ -27,28 +27,22 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The current_snapshot_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Current_Snapshot_Id? CurrentSnapshotId { get; set; }
+        public string? CurrentSnapshotId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Current_Snapshot_Id CurrentSnapshotId { get; set; }
+        public string CurrentSnapshotId { get; set; }
 #endif
         /// <summary>The duration_ms property</summary>
         public int? DurationMs { get; set; }
         /// <summary>The end_time_ms property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.End_Time_Ms? EndTimeMs { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.End_Time_Ms EndTimeMs { get; set; }
-#endif
+        public int? EndTimeMs { get; set; }
         /// <summary>The error property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Error? Error { get; set; }
+        public string? Error { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Error Error { get; set; }
+        public string Error { get; set; }
 #endif
         /// <summary>The external_audio_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -71,13 +65,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public string Filename { get; set; }
 #endif
         /// <summary>The import_speech_progress property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Import_Speech_Progress? ImportSpeechProgress { get; private set; }
-#nullable restore
-#else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Import_Speech_Progress ImportSpeechProgress { get; private set; }
-#endif
+        public double? ImportSpeechProgress { get; private set; }
         /// <summary>The muted property</summary>
         public bool? Muted { get; set; }
         /// <summary>The offset_ms property</summary>
@@ -117,18 +105,18 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The signed_url property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Signed_Url? SignedUrl { get; set; }
+        public string? SignedUrl { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Signed_Url SignedUrl { get; set; }
+        public string SignedUrl { get; set; }
 #endif
         /// <summary>The source_asset_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Source_Asset_Id? SourceAssetId { get; set; }
+        public string? SourceAssetId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Source_Asset_Id SourceAssetId { get; set; }
+        public string SourceAssetId { get; set; }
 #endif
         /// <summary>The source_context property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -141,18 +129,18 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The source_external_audio_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Source_External_Audio_Id? SourceExternalAudioId { get; set; }
+        public string? SourceExternalAudioId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Source_External_Audio_Id SourceExternalAudioId { get; set; }
+        public string SourceExternalAudioId { get; set; }
 #endif
         /// <summary>The source_platform_asset_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Source_Platform_Asset_Id? SourcePlatformAssetId { get; set; }
+        public string? SourcePlatformAssetId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Source_Platform_Asset_Id SourcePlatformAssetId { get; set; }
+        public string SourcePlatformAssetId { get; set; }
 #endif
         /// <summary>The speech_imported property</summary>
         public bool? SpeechImported { get; set; }
@@ -208,26 +196,26 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             {
                 { "analysis", n => { Analysis = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AudioAnalysis>(global::Soenneker.ElevenLabs.OpenApiClient.Models.AudioAnalysis.CreateFromDiscriminatorValue); } },
                 { "created_at_ms", n => { CreatedAtMs = n.GetIntValue(); } },
-                { "current_snapshot_id", n => { CurrentSnapshotId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Current_Snapshot_Id>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Current_Snapshot_Id.CreateFromDiscriminatorValue); } },
+                { "current_snapshot_id", n => { CurrentSnapshotId = n.GetStringValue(); } },
                 { "duration_ms", n => { DurationMs = n.GetIntValue(); } },
-                { "end_time_ms", n => { EndTimeMs = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.End_Time_Ms>(global::Soenneker.ElevenLabs.OpenApiClient.Models.End_Time_Ms.CreateFromDiscriminatorValue); } },
-                { "error", n => { Error = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Error>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Error.CreateFromDiscriminatorValue); } },
+                { "end_time_ms", n => { EndTimeMs = n.GetIntValue(); } },
+                { "error", n => { Error = n.GetStringValue(); } },
                 { "external_audio_id", n => { ExternalAudioId = n.GetStringValue(); } },
                 { "fade_in_ms", n => { FadeInMs = n.GetIntValue(); } },
                 { "fade_out_ms", n => { FadeOutMs = n.GetIntValue(); } },
                 { "filename", n => { Filename = n.GetStringValue(); } },
-                { "import_speech_progress", n => { ImportSpeechProgress = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Import_Speech_Progress>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Import_Speech_Progress.CreateFromDiscriminatorValue); } },
+                { "import_speech_progress", n => { ImportSpeechProgress = n.GetDoubleValue(); } },
                 { "muted", n => { Muted = n.GetBoolValue(); } },
                 { "offset_ms", n => { OffsetMs = n.GetIntValue(); } },
                 { "order", n => { Order = n.GetStringValue(); } },
                 { "pending_blocks_metadata", n => { PendingBlocksMetadata = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PendingBlocksMetadataModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.PendingBlocksMetadataModel.CreateFromDiscriminatorValue); } },
                 { "pending_external_audios_metadata", n => { PendingExternalAudiosMetadata = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PendingExternalAudiosMetadataModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.PendingExternalAudiosMetadataModel.CreateFromDiscriminatorValue); } },
                 { "pending_task", n => { PendingTask = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PendingClipTask>(global::Soenneker.ElevenLabs.OpenApiClient.Models.PendingClipTask.CreateFromDiscriminatorValue); } },
-                { "signed_url", n => { SignedUrl = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Signed_Url>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Signed_Url.CreateFromDiscriminatorValue); } },
-                { "source_asset_id", n => { SourceAssetId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Source_Asset_Id>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Source_Asset_Id.CreateFromDiscriminatorValue); } },
+                { "signed_url", n => { SignedUrl = n.GetStringValue(); } },
+                { "source_asset_id", n => { SourceAssetId = n.GetStringValue(); } },
                 { "source_context", n => { SourceContext = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExternalAudioResponseModel_source_context>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExternalAudioResponseModel_source_context.CreateFromDiscriminatorValue); } },
-                { "source_external_audio_id", n => { SourceExternalAudioId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Source_External_Audio_Id>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Source_External_Audio_Id.CreateFromDiscriminatorValue); } },
-                { "source_platform_asset_id", n => { SourcePlatformAssetId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Source_Platform_Asset_Id>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Source_Platform_Asset_Id.CreateFromDiscriminatorValue); } },
+                { "source_external_audio_id", n => { SourceExternalAudioId = n.GetStringValue(); } },
+                { "source_platform_asset_id", n => { SourcePlatformAssetId = n.GetStringValue(); } },
                 { "speech_imported", n => { SpeechImported = n.GetBoolValue(); } },
                 { "start_time_ms", n => { StartTimeMs = n.GetIntValue(); } },
                 { "track_id", n => { TrackId = n.GetStringValue(); } },
@@ -246,10 +234,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AudioAnalysis>("analysis", Analysis);
             writer.WriteIntValue("created_at_ms", CreatedAtMs);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Current_Snapshot_Id>("current_snapshot_id", CurrentSnapshotId);
+            writer.WriteStringValue("current_snapshot_id", CurrentSnapshotId);
             writer.WriteIntValue("duration_ms", DurationMs);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.End_Time_Ms>("end_time_ms", EndTimeMs);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Error>("error", Error);
+            writer.WriteIntValue("end_time_ms", EndTimeMs);
+            writer.WriteStringValue("error", Error);
             writer.WriteStringValue("external_audio_id", ExternalAudioId);
             writer.WriteIntValue("fade_in_ms", FadeInMs);
             writer.WriteIntValue("fade_out_ms", FadeOutMs);
@@ -260,11 +248,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PendingBlocksMetadataModel>("pending_blocks_metadata", PendingBlocksMetadata);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PendingExternalAudiosMetadataModel>("pending_external_audios_metadata", PendingExternalAudiosMetadata);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PendingClipTask>("pending_task", PendingTask);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Signed_Url>("signed_url", SignedUrl);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Source_Asset_Id>("source_asset_id", SourceAssetId);
+            writer.WriteStringValue("signed_url", SignedUrl);
+            writer.WriteStringValue("source_asset_id", SourceAssetId);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectExternalAudioResponseModel_source_context>("source_context", SourceContext);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Source_External_Audio_Id>("source_external_audio_id", SourceExternalAudioId);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Source_Platform_Asset_Id>("source_platform_asset_id", SourcePlatformAssetId);
+            writer.WriteStringValue("source_external_audio_id", SourceExternalAudioId);
+            writer.WriteStringValue("source_platform_asset_id", SourcePlatformAssetId);
             writer.WriteBoolValue("speech_imported", SpeechImported);
             writer.WriteIntValue("start_time_ms", StartTimeMs);
             writer.WriteStringValue("track_id", TrackId);

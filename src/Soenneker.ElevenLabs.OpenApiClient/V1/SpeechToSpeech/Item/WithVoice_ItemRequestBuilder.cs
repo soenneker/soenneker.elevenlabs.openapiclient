@@ -106,15 +106,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.SpeechToSpeech.Item
             public bool? EnableLogging { get; set; }
             /// <summary>You can turn on latency optimizations at some cost of quality. The best possible final latency varies by model. Possible values:0 - default mode (no latency optimizations)1 - normal latency optimizations (about 50% of possible latency improvement of option 3)2 - strong latency optimizations (about 75% of possible latency improvement of option 3)3 - max latency optimizations4 - max latency optimizations, but also with text normalizer turned off for even more latency savings (best latency, but can mispronounce eg numbers and dates).Defaults to None.</summary>
             [Obsolete("")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("optimize_streaming_latency")]
-            public string? OptimizeStreamingLatency { get; set; }
-#nullable restore
-#else
-            [QueryParameter("optimize_streaming_latency")]
-            public string OptimizeStreamingLatency { get; set; }
-#endif
+            public int? OptimizeStreamingLatency { get; set; }
             /// <summary>Output format of the generated audio. Formatted as codec_sample_rate_bitrate. So an mp3 with 22.05kHz sample rate at 32kbs is represented as mp3_22050_32. MP3 with 192kbps bitrate requires you to be subscribed to Creator tier or above. PCM and WAV formats with 44.1kHz sample rate requires you to be subscribed to Pro tier or above. Note that the μ-law format (sometimes written mu-law, often approximated as u-law) is commonly used for Twilio audio inputs.</summary>
             [QueryParameter("output_format")]
             public global::Soenneker.ElevenLabs.OpenApiClient.V1.SpeechToSpeech.Item.PostOutput_formatQueryParameterType? OutputFormat { get; set; }

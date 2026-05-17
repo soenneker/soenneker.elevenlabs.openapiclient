@@ -17,10 +17,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The content_type property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Content_Type? ContentType { get; set; }
+        public string? ContentType { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Content_Type ContentType { get; set; }
+        public string ContentType { get; set; }
 #endif
         /// <summary>The description property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -41,10 +41,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The overall_pacing property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Overall_Pacing? OverallPacing { get; set; }
+        public string? OverallPacing { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Overall_Pacing OverallPacing { get; set; }
+        public string OverallPacing { get; set; }
 #endif
         /// <summary>The segments property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -95,10 +95,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "content_type", n => { ContentType = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Content_Type>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Content_Type.CreateFromDiscriminatorValue); } },
+                { "content_type", n => { ContentType = n.GetStringValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "key_moments", n => { KeyMoments = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.VideoKeyMoment>(global::Soenneker.ElevenLabs.OpenApiClient.Models.VideoKeyMoment.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "overall_pacing", n => { OverallPacing = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Overall_Pacing>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Overall_Pacing.CreateFromDiscriminatorValue); } },
+                { "overall_pacing", n => { OverallPacing = n.GetStringValue(); } },
                 { "segments", n => { Segments = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.VideoSegment>(global::Soenneker.ElevenLabs.OpenApiClient.Models.VideoSegment.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "subjects", n => { Subjects = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.VideoSubject>(global::Soenneker.ElevenLabs.OpenApiClient.Models.VideoSubject.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "title", n => { Title = n.GetStringValue(); } },
@@ -111,10 +111,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Content_Type>("content_type", ContentType);
+            writer.WriteStringValue("content_type", ContentType);
             writer.WriteStringValue("description", Description);
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.VideoKeyMoment>("key_moments", KeyMoments);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Overall_Pacing>("overall_pacing", OverallPacing);
+            writer.WriteStringValue("overall_pacing", OverallPacing);
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.VideoSegment>("segments", Segments);
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.VideoSubject>("subjects", Subjects);
             writer.WriteStringValue("title", Title);

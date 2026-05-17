@@ -15,45 +15,15 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Determines how closely the AI should adhere to the original voice when attempting to replicate it.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Similarity_Boost? SimilarityBoost { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Similarity_Boost SimilarityBoost { get; set; }
-#endif
+        public double? SimilarityBoost { get; set; }
         /// <summary>Adjusts the speed of the voice. A value of 1.0 is the default speed, while values less than 1.0 slow down the speech, and values greater than 1.0 speed it up.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Speed? Speed { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Speed Speed { get; set; }
-#endif
+        public double? Speed { get; set; }
         /// <summary>Determines how stable the voice is and the randomness between each generation. Lower values introduce broader emotional range for the voice. Higher values can result in a monotonous voice with limited emotion.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Stability? Stability { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Stability Stability { get; set; }
-#endif
+        public double? Stability { get; set; }
         /// <summary>Determines the style exaggeration of the voice. This setting attempts to amplify the style of the original speaker. It does consume additional computational resources and might increase latency if set to anything other than 0.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Style? Style { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Style Style { get; set; }
-#endif
+        public double? Style { get; set; }
         /// <summary>This setting boosts the similarity to the original speaker. Using this setting requires a slightly higher computational load, which in turn increases latency.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Use_Speaker_Boost? UseSpeakerBoost { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Use_Speaker_Boost UseSpeakerBoost { get; set; }
-#endif
+        public bool? UseSpeakerBoost { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceSettingsResponseModel"/> and sets the default values.
         /// </summary>
@@ -79,11 +49,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "similarity_boost", n => { SimilarityBoost = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Similarity_Boost>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Similarity_Boost.CreateFromDiscriminatorValue); } },
-                { "speed", n => { Speed = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Speed>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Speed.CreateFromDiscriminatorValue); } },
-                { "stability", n => { Stability = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Stability>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Stability.CreateFromDiscriminatorValue); } },
-                { "style", n => { Style = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Style>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Style.CreateFromDiscriminatorValue); } },
-                { "use_speaker_boost", n => { UseSpeakerBoost = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Use_Speaker_Boost>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Use_Speaker_Boost.CreateFromDiscriminatorValue); } },
+                { "similarity_boost", n => { SimilarityBoost = n.GetDoubleValue(); } },
+                { "speed", n => { Speed = n.GetDoubleValue(); } },
+                { "stability", n => { Stability = n.GetDoubleValue(); } },
+                { "style", n => { Style = n.GetDoubleValue(); } },
+                { "use_speaker_boost", n => { UseSpeakerBoost = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -93,11 +63,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Similarity_Boost>("similarity_boost", SimilarityBoost);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Speed>("speed", Speed);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Stability>("stability", Stability);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Style>("style", Style);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Use_Speaker_Boost>("use_speaker_boost", UseSpeakerBoost);
+            writer.WriteDoubleValue("similarity_boost", SimilarityBoost);
+            writer.WriteDoubleValue("speed", Speed);
+            writer.WriteDoubleValue("stability", Stability);
+            writer.WriteDoubleValue("style", Style);
+            writer.WriteBoolValue("use_speaker_boost", UseSpeakerBoost);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

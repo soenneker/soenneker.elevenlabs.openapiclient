@@ -33,10 +33,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The generation_session_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Generation_Session_Id? GenerationSessionId { get; set; }
+        public string? GenerationSessionId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Generation_Session_Id GenerationSessionId { get; set; }
+        public string GenerationSessionId { get; set; }
 #endif
         /// <summary>The model_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -57,26 +57,26 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The model_provider property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Model_Provider? ModelProvider { get; set; }
+        public string? ModelProvider { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Model_Provider ModelProvider { get; set; }
+        public string ModelProvider { get; set; }
 #endif
         /// <summary>The prompt property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Prompt? Prompt { get; set; }
+        public string? Prompt { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Prompt Prompt { get; set; }
+        public string Prompt { get; set; }
 #endif
         /// <summary>The session_iteration_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Session_Iteration_Id? SessionIterationId { get; set; }
+        public string? SessionIterationId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Session_Iteration_Id SessionIterationId { get; set; }
+        public string SessionIterationId { get; set; }
 #endif
         /// <summary>The source_type property</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.GenerationSourceContext_source_type? SourceType { get; set; }
@@ -108,12 +108,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             {
                 { "extend_video", n => { ExtendVideo = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ReferenceVideo>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ReferenceVideo.CreateFromDiscriminatorValue); } },
                 { "generation_id", n => { GenerationId = n.GetStringValue(); } },
-                { "generation_session_id", n => { GenerationSessionId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Generation_Session_Id>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Generation_Session_Id.CreateFromDiscriminatorValue); } },
+                { "generation_session_id", n => { GenerationSessionId = n.GetStringValue(); } },
                 { "model_id", n => { ModelId = n.GetStringValue(); } },
                 { "model_parameters", n => { ModelParameters = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GenerationSourceContext_model_parameters>(global::Soenneker.ElevenLabs.OpenApiClient.Models.GenerationSourceContext_model_parameters.CreateFromDiscriminatorValue); } },
-                { "model_provider", n => { ModelProvider = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Model_Provider>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Model_Provider.CreateFromDiscriminatorValue); } },
-                { "prompt", n => { Prompt = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Prompt>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Prompt.CreateFromDiscriminatorValue); } },
-                { "session_iteration_id", n => { SessionIterationId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Session_Iteration_Id>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Session_Iteration_Id.CreateFromDiscriminatorValue); } },
+                { "model_provider", n => { ModelProvider = n.GetStringValue(); } },
+                { "prompt", n => { Prompt = n.GetStringValue(); } },
+                { "session_iteration_id", n => { SessionIterationId = n.GetStringValue(); } },
                 { "source_type", n => { SourceType = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GenerationSourceContext_source_type>(); } },
             };
         }
@@ -126,12 +126,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ReferenceVideo>("extend_video", ExtendVideo);
             writer.WriteStringValue("generation_id", GenerationId);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Generation_Session_Id>("generation_session_id", GenerationSessionId);
+            writer.WriteStringValue("generation_session_id", GenerationSessionId);
             writer.WriteStringValue("model_id", ModelId);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GenerationSourceContext_model_parameters>("model_parameters", ModelParameters);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Model_Provider>("model_provider", ModelProvider);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Prompt>("prompt", Prompt);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Session_Iteration_Id>("session_iteration_id", SessionIterationId);
+            writer.WriteStringValue("model_provider", ModelProvider);
+            writer.WriteStringValue("prompt", Prompt);
+            writer.WriteStringValue("session_iteration_id", SessionIterationId);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GenerationSourceContext_source_type>("source_type", SourceType);
             writer.WriteAdditionalData(AdditionalData);
         }

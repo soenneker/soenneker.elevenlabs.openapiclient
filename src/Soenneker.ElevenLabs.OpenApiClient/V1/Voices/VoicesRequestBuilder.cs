@@ -122,15 +122,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Voices
         public partial class VoicesRequestBuilderGetQueryParameters 
         {
             /// <summary>If set to true, legacy premade voices will be included in responses from /v1/voices</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("show_legacy")]
-            public string? ShowLegacy { get; set; }
-#nullable restore
-#else
-            [QueryParameter("show_legacy")]
-            public string ShowLegacy { get; set; }
-#endif
+            public bool? ShowLegacy { get; set; }
         }
     }
 }

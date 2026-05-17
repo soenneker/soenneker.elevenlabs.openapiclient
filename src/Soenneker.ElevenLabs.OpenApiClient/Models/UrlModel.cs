@@ -16,50 +16,44 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>URL hostname</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Hostname? Hostname { get; set; }
+        public string? Hostname { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Hostname Hostname { get; set; }
+        public string Hostname { get; set; }
 #endif
         /// <summary>URL path</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PathObject? Path { get; set; }
+        public string? Path { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PathObject Path { get; set; }
+        public string Path { get; set; }
 #endif
         /// <summary>URL port</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Port? Port { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Port Port { get; set; }
-#endif
+        public int? Port { get; set; }
         /// <summary>URL query string</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Query_String? QueryString { get; set; }
+        public string? QueryString { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Query_String QueryString { get; set; }
+        public string QueryString { get; set; }
 #endif
         /// <summary>URL scheme (e.g., https)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Scheme? Scheme { get; set; }
+        public string? Scheme { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Scheme Scheme { get; set; }
+        public string Scheme { get; set; }
 #endif
         /// <summary>Full URL string</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Url_String? UrlString { get; set; }
+        public string? UrlString { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Url_String UrlString { get; set; }
+        public string UrlString { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -79,12 +73,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "hostname", n => { Hostname = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Hostname>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Hostname.CreateFromDiscriminatorValue); } },
-                { "path", n => { Path = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PathObject>(global::Soenneker.ElevenLabs.OpenApiClient.Models.PathObject.CreateFromDiscriminatorValue); } },
-                { "port", n => { Port = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Port>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Port.CreateFromDiscriminatorValue); } },
-                { "query_string", n => { QueryString = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Query_String>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Query_String.CreateFromDiscriminatorValue); } },
-                { "scheme", n => { Scheme = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Scheme>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Scheme.CreateFromDiscriminatorValue); } },
-                { "url_string", n => { UrlString = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Url_String>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Url_String.CreateFromDiscriminatorValue); } },
+                { "hostname", n => { Hostname = n.GetStringValue(); } },
+                { "path", n => { Path = n.GetStringValue(); } },
+                { "port", n => { Port = n.GetIntValue(); } },
+                { "query_string", n => { QueryString = n.GetStringValue(); } },
+                { "scheme", n => { Scheme = n.GetStringValue(); } },
+                { "url_string", n => { UrlString = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -94,12 +88,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Hostname>("hostname", Hostname);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PathObject>("path", Path);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Port>("port", Port);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Query_String>("query_string", QueryString);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Scheme>("scheme", Scheme);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Url_String>("url_string", UrlString);
+            writer.WriteStringValue("hostname", Hostname);
+            writer.WriteStringValue("path", Path);
+            writer.WriteIntValue("port", Port);
+            writer.WriteStringValue("query_string", QueryString);
+            writer.WriteStringValue("scheme", Scheme);
+            writer.WriteStringValue("url_string", UrlString);
         }
     }
 }

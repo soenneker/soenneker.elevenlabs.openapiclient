@@ -15,22 +15,16 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The awaiting_first_user_message property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Awaiting_First_User_Message? AwaitingFirstUserMessage { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Awaiting_First_User_Message AwaitingFirstUserMessage { get; set; }
-#endif
+        public bool? AwaitingFirstUserMessage { get; set; }
         /// <summary>The direction property</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppConversationInfo_direction? Direction { get; set; }
         /// <summary>The whatsapp_phone_number_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Whatsapp_Phone_Number_Id? WhatsappPhoneNumberId { get; set; }
+        public string? WhatsappPhoneNumberId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Whatsapp_Phone_Number_Id WhatsappPhoneNumberId { get; set; }
+        public string WhatsappPhoneNumberId { get; set; }
 #endif
         /// <summary>The whatsapp_user_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -66,9 +60,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "awaiting_first_user_message", n => { AwaitingFirstUserMessage = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Awaiting_First_User_Message>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Awaiting_First_User_Message.CreateFromDiscriminatorValue); } },
+                { "awaiting_first_user_message", n => { AwaitingFirstUserMessage = n.GetBoolValue(); } },
                 { "direction", n => { Direction = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppConversationInfo_direction>(); } },
-                { "whatsapp_phone_number_id", n => { WhatsappPhoneNumberId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Whatsapp_Phone_Number_Id>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Whatsapp_Phone_Number_Id.CreateFromDiscriminatorValue); } },
+                { "whatsapp_phone_number_id", n => { WhatsappPhoneNumberId = n.GetStringValue(); } },
                 { "whatsapp_user_id", n => { WhatsappUserId = n.GetStringValue(); } },
             };
         }
@@ -79,9 +73,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Awaiting_First_User_Message>("awaiting_first_user_message", AwaitingFirstUserMessage);
+            writer.WriteBoolValue("awaiting_first_user_message", AwaitingFirstUserMessage);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppConversationInfo_direction>("direction", Direction);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Whatsapp_Phone_Number_Id>("whatsapp_phone_number_id", WhatsappPhoneNumberId);
+            writer.WriteStringValue("whatsapp_phone_number_id", WhatsappPhoneNumberId);
             writer.WriteStringValue("whatsapp_user_id", WhatsappUserId);
             writer.WriteAdditionalData(AdditionalData);
         }

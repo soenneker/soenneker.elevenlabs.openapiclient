@@ -15,22 +15,16 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The duration of the dataset in seconds.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Dataset_Duration_Seconds? DatasetDurationSeconds { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Dataset_Duration_Seconds DatasetDurationSeconds { get; set; }
-#endif
+        public double? DatasetDurationSeconds { get; set; }
         /// <summary>Whether the user is allowed to fine-tune the voice.</summary>
         public bool? IsAllowedToFineTune { get; set; }
         /// <summary>The language of the fine-tuning process.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Language? Language { get; set; }
+        public string? Language { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Language Language { get; set; }
+        public string Language { get; set; }
 #endif
         /// <summary>The manual verification of the fine-tuning process.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -43,13 +37,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Whether a manual verification was requested for the fine-tuning process.</summary>
         public bool? ManualVerificationRequested { get; set; }
         /// <summary>The maximum number of verification attempts.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Max_Verification_Attempts? MaxVerificationAttempts { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Max_Verification_Attempts MaxVerificationAttempts { get; set; }
-#endif
+        public int? MaxVerificationAttempts { get; set; }
         /// <summary>The message of the fine-tuning process.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -59,13 +47,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.FineTuningResponseModelMessage Message { get; set; }
 #endif
         /// <summary>The next maximum verification attempts reset time in Unix milliseconds.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Next_Max_Verification_Attempts_Reset_Unix_Ms? NextMaxVerificationAttemptsResetUnixMs { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Next_Max_Verification_Attempts_Reset_Unix_Ms NextMaxVerificationAttemptsResetUnixMs { get; set; }
-#endif
+        public int? NextMaxVerificationAttemptsResetUnixMs { get; set; }
         /// <summary>The progress of the fine-tuning process.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -133,14 +115,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "dataset_duration_seconds", n => { DatasetDurationSeconds = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Dataset_Duration_Seconds>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Dataset_Duration_Seconds.CreateFromDiscriminatorValue); } },
+                { "dataset_duration_seconds", n => { DatasetDurationSeconds = n.GetDoubleValue(); } },
                 { "is_allowed_to_fine_tune", n => { IsAllowedToFineTune = n.GetBoolValue(); } },
-                { "language", n => { Language = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Language>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Language.CreateFromDiscriminatorValue); } },
+                { "language", n => { Language = n.GetStringValue(); } },
                 { "manual_verification", n => { ManualVerification = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ManualVerificationResponseModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ManualVerificationResponseModel.CreateFromDiscriminatorValue); } },
                 { "manual_verification_requested", n => { ManualVerificationRequested = n.GetBoolValue(); } },
-                { "max_verification_attempts", n => { MaxVerificationAttempts = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Max_Verification_Attempts>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Max_Verification_Attempts.CreateFromDiscriminatorValue); } },
+                { "max_verification_attempts", n => { MaxVerificationAttempts = n.GetIntValue(); } },
                 { "message", n => { Message = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.FineTuningResponseModelMessage>(global::Soenneker.ElevenLabs.OpenApiClient.Models.FineTuningResponseModelMessage.CreateFromDiscriminatorValue); } },
-                { "next_max_verification_attempts_reset_unix_ms", n => { NextMaxVerificationAttemptsResetUnixMs = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Next_Max_Verification_Attempts_Reset_Unix_Ms>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Next_Max_Verification_Attempts_Reset_Unix_Ms.CreateFromDiscriminatorValue); } },
+                { "next_max_verification_attempts_reset_unix_ms", n => { NextMaxVerificationAttemptsResetUnixMs = n.GetIntValue(); } },
                 { "progress", n => { Progress = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.FineTuningResponseModelProgress>(global::Soenneker.ElevenLabs.OpenApiClient.Models.FineTuningResponseModelProgress.CreateFromDiscriminatorValue); } },
                 { "slice_ids", n => { SliceIds = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Slice_Ids>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Slice_Ids.CreateFromDiscriminatorValue); } },
                 { "state", n => { State = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.FineTuningResponseModel_state>(global::Soenneker.ElevenLabs.OpenApiClient.Models.FineTuningResponseModel_state.CreateFromDiscriminatorValue); } },
@@ -156,14 +138,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Dataset_Duration_Seconds>("dataset_duration_seconds", DatasetDurationSeconds);
+            writer.WriteDoubleValue("dataset_duration_seconds", DatasetDurationSeconds);
             writer.WriteBoolValue("is_allowed_to_fine_tune", IsAllowedToFineTune);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Language>("language", Language);
+            writer.WriteStringValue("language", Language);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ManualVerificationResponseModel>("manual_verification", ManualVerification);
             writer.WriteBoolValue("manual_verification_requested", ManualVerificationRequested);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Max_Verification_Attempts>("max_verification_attempts", MaxVerificationAttempts);
+            writer.WriteIntValue("max_verification_attempts", MaxVerificationAttempts);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.FineTuningResponseModelMessage>("message", Message);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Next_Max_Verification_Attempts_Reset_Unix_Ms>("next_max_verification_attempts_reset_unix_ms", NextMaxVerificationAttemptsResetUnixMs);
+            writer.WriteIntValue("next_max_verification_attempts_reset_unix_ms", NextMaxVerificationAttemptsResetUnixMs);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.FineTuningResponseModelProgress>("progress", Progress);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Slice_Ids>("slice_ids", SliceIds);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.FineTuningResponseModel_state>("state", State);

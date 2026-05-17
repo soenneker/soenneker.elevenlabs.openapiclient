@@ -15,13 +15,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>If enabled audio will not be processed and only text will be used, use to avoid audio pricing.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Text_Only? TextOnly { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Text_Only TextOnly { get; set; }
-#endif
+        public bool? TextOnly { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationConfigOverride"/> and sets the default values.
         /// </summary>
@@ -47,7 +41,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "text_only", n => { TextOnly = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Text_Only>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Text_Only.CreateFromDiscriminatorValue); } },
+                { "text_only", n => { TextOnly = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -57,7 +51,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Text_Only>("text_only", TextOnly);
+            writer.WriteBoolValue("text_only", TextOnly);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

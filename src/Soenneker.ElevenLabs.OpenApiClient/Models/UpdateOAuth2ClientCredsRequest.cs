@@ -17,28 +17,22 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The auth_type property</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateOAuth2ClientCredsRequest_auth_type? AuthType { get; set; }
         /// <summary>The basic_auth_in_header property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Basic_Auth_In_Header? BasicAuthInHeader { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Basic_Auth_In_Header BasicAuthInHeader { get; set; }
-#endif
+        public bool? BasicAuthInHeader { get; set; }
         /// <summary>The client_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Client_Id? ClientId { get; set; }
+        public string? ClientId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Client_Id ClientId { get; set; }
+        public string ClientId { get; set; }
 #endif
         /// <summary>The client_secret property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Client_Secret? ClientSecret { get; set; }
+        public string? ClientSecret { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Client_Secret ClientSecret { get; set; }
+        public string ClientSecret { get; set; }
 #endif
         /// <summary>The custom_headers property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -59,10 +53,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The provider property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Provider? Provider { get; set; }
+        public string? Provider { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Provider Provider { get; set; }
+        public string Provider { get; set; }
 #endif
         /// <summary>The scopes property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -99,12 +93,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "auth_type", n => { AuthType = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateOAuth2ClientCredsRequest_auth_type>(); } },
-                { "basic_auth_in_header", n => { BasicAuthInHeader = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Basic_Auth_In_Header>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Basic_Auth_In_Header.CreateFromDiscriminatorValue); } },
-                { "client_id", n => { ClientId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Client_Id>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Client_Id.CreateFromDiscriminatorValue); } },
-                { "client_secret", n => { ClientSecret = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Client_Secret>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Client_Secret.CreateFromDiscriminatorValue); } },
+                { "basic_auth_in_header", n => { BasicAuthInHeader = n.GetBoolValue(); } },
+                { "client_id", n => { ClientId = n.GetStringValue(); } },
+                { "client_secret", n => { ClientSecret = n.GetStringValue(); } },
                 { "custom_headers", n => { CustomHeaders = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateOAuth2ClientCredsRequestCustomHeaders>(global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateOAuth2ClientCredsRequestCustomHeaders.CreateFromDiscriminatorValue); } },
                 { "extra_params", n => { ExtraParams = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateOAuth2ClientCredsRequestExtraParams>(global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateOAuth2ClientCredsRequestExtraParams.CreateFromDiscriminatorValue); } },
-                { "provider", n => { Provider = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Provider>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Provider.CreateFromDiscriminatorValue); } },
+                { "provider", n => { Provider = n.GetStringValue(); } },
                 { "scopes", n => { Scopes = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Scopes>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Scopes.CreateFromDiscriminatorValue); } },
             };
         }
@@ -116,12 +110,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateOAuth2ClientCredsRequest_auth_type>("auth_type", AuthType);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Basic_Auth_In_Header>("basic_auth_in_header", BasicAuthInHeader);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Client_Id>("client_id", ClientId);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Client_Secret>("client_secret", ClientSecret);
+            writer.WriteBoolValue("basic_auth_in_header", BasicAuthInHeader);
+            writer.WriteStringValue("client_id", ClientId);
+            writer.WriteStringValue("client_secret", ClientSecret);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateOAuth2ClientCredsRequestCustomHeaders>("custom_headers", CustomHeaders);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateOAuth2ClientCredsRequestExtraParams>("extra_params", ExtraParams);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Provider>("provider", Provider);
+            writer.WriteStringValue("provider", Provider);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Scopes>("scopes", Scopes);
             writer.WriteAdditionalData(AdditionalData);
         }

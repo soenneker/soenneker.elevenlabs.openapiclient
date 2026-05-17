@@ -18,10 +18,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The asr_model property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Asr_Model? AsrModel { get; set; }
+        public string? AsrModel { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Asr_Model AsrModel { get; set; }
+        public string AsrModel { get; set; }
 #endif
         /// <summary>The total_audio_input_seconds property</summary>
         public double? TotalAudioInputSeconds { get; set; }
@@ -52,7 +52,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "asr_model", n => { AsrModel = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Asr_Model>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Asr_Model.CreateFromDiscriminatorValue); } },
+                { "asr_model", n => { AsrModel = n.GetStringValue(); } },
                 { "total_audio_input_seconds", n => { TotalAudioInputSeconds = n.GetDoubleValue(); } },
                 { "total_transcription_calls", n => { TotalTranscriptionCalls = n.GetIntValue(); } },
             };
@@ -64,7 +64,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Asr_Model>("asr_model", AsrModel);
+            writer.WriteStringValue("asr_model", AsrModel);
             writer.WriteDoubleValue("total_audio_input_seconds", TotalAudioInputSeconds);
             writer.WriteIntValue("total_transcription_calls", TotalTranscriptionCalls);
             writer.WriteAdditionalData(AdditionalData);

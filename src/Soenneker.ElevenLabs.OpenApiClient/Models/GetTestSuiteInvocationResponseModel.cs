@@ -17,28 +17,28 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The agent_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Agent_Id? AgentId { get; set; }
+        public string? AgentId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Agent_Id AgentId { get; set; }
+        public string AgentId { get; set; }
 #endif
         /// <summary>The branch_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Branch_Id? BranchId { get; set; }
+        public string? BranchId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Branch_Id BranchId { get; set; }
+        public string BranchId { get; set; }
 #endif
         /// <summary>The created_at property</summary>
         public int? CreatedAt { get; set; }
         /// <summary>The folder_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Folder_Id? FolderId { get; set; }
+        public string? FolderId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Folder_Id FolderId { get; set; }
+        public string FolderId { get; set; }
 #endif
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -81,10 +81,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "agent_id", n => { AgentId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Agent_Id>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Agent_Id.CreateFromDiscriminatorValue); } },
-                { "branch_id", n => { BranchId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Branch_Id>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Branch_Id.CreateFromDiscriminatorValue); } },
+                { "agent_id", n => { AgentId = n.GetStringValue(); } },
+                { "branch_id", n => { BranchId = n.GetStringValue(); } },
                 { "created_at", n => { CreatedAt = n.GetIntValue(); } },
-                { "folder_id", n => { FolderId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Folder_Id>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Folder_Id.CreateFromDiscriminatorValue); } },
+                { "folder_id", n => { FolderId = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "test_runs", n => { TestRuns = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.UnitTestRunResponseModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.UnitTestRunResponseModel.CreateFromDiscriminatorValue)?.AsList(); } },
             };
@@ -96,10 +96,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Agent_Id>("agent_id", AgentId);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Branch_Id>("branch_id", BranchId);
+            writer.WriteStringValue("agent_id", AgentId);
+            writer.WriteStringValue("branch_id", BranchId);
             writer.WriteIntValue("created_at", CreatedAt);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Folder_Id>("folder_id", FolderId);
+            writer.WriteStringValue("folder_id", FolderId);
             writer.WriteStringValue("id", Id);
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.UnitTestRunResponseModel>("test_runs", TestRuns);
             writer.WriteAdditionalData(AdditionalData);

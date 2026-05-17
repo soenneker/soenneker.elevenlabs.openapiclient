@@ -33,10 +33,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The branch_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Branch_Id? BranchId { get; set; }
+        public string? BranchId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Branch_Id BranchId { get; set; }
+        public string BranchId { get; set; }
 #endif
         /// <summary>The condition_result property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -49,10 +49,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The environment property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.EnvironmentObject? Environment { get; set; }
+        public string? Environment { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.EnvironmentObject Environment { get; set; }
+        public string Environment { get; set; }
 #endif
         /// <summary>The last_updated_at_unix property</summary>
         public int? LastUpdatedAtUnix { get; set; }
@@ -67,18 +67,18 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The root_folder_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Root_Folder_Id? RootFolderId { get; set; }
+        public string? RootFolderId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Root_Folder_Id RootFolderId { get; set; }
+        public string RootFolderId { get; set; }
 #endif
         /// <summary>The root_folder_name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Root_Folder_Name? RootFolderName { get; set; }
+        public string? RootFolderName { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Root_Folder_Name RootFolderName { get; set; }
+        public string RootFolderName { get; set; }
 #endif
         /// <summary>The status property</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.TestRunStatus? Status { get; set; }
@@ -125,10 +125,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The workflow_node_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Workflow_Node_Id? WorkflowNodeId { get; set; }
+        public string? WorkflowNodeId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Workflow_Node_Id WorkflowNodeId { get; set; }
+        public string WorkflowNodeId { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.UnitTestRunResponseModel"/> and sets the default values.
@@ -158,20 +158,20 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             {
                 { "agent_id", n => { AgentId = n.GetStringValue(); } },
                 { "agent_responses", n => { AgentResponses = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Agent_Responses>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Agent_Responses.CreateFromDiscriminatorValue); } },
-                { "branch_id", n => { BranchId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Branch_Id>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Branch_Id.CreateFromDiscriminatorValue); } },
+                { "branch_id", n => { BranchId = n.GetStringValue(); } },
                 { "condition_result", n => { ConditionResult = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TestConditionResultCommonModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.TestConditionResultCommonModel.CreateFromDiscriminatorValue); } },
-                { "environment", n => { Environment = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.EnvironmentObject>(global::Soenneker.ElevenLabs.OpenApiClient.Models.EnvironmentObject.CreateFromDiscriminatorValue); } },
+                { "environment", n => { Environment = n.GetStringValue(); } },
                 { "last_updated_at_unix", n => { LastUpdatedAtUnix = n.GetIntValue(); } },
                 { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TestRunMetadata>(global::Soenneker.ElevenLabs.OpenApiClient.Models.TestRunMetadata.CreateFromDiscriminatorValue); } },
-                { "root_folder_id", n => { RootFolderId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Root_Folder_Id>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Root_Folder_Id.CreateFromDiscriminatorValue); } },
-                { "root_folder_name", n => { RootFolderName = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Root_Folder_Name>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Root_Folder_Name.CreateFromDiscriminatorValue); } },
+                { "root_folder_id", n => { RootFolderId = n.GetStringValue(); } },
+                { "root_folder_name", n => { RootFolderName = n.GetStringValue(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TestRunStatus>(); } },
                 { "test_id", n => { TestId = n.GetStringValue(); } },
                 { "test_info", n => { TestInfo = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UnitTestRunResponseModel_test_info>(global::Soenneker.ElevenLabs.OpenApiClient.Models.UnitTestRunResponseModel_test_info.CreateFromDiscriminatorValue); } },
                 { "test_invocation_id", n => { TestInvocationId = n.GetStringValue(); } },
                 { "test_name", n => { TestName = n.GetStringValue(); } },
                 { "test_run_id", n => { TestRunId = n.GetStringValue(); } },
-                { "workflow_node_id", n => { WorkflowNodeId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Workflow_Node_Id>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Workflow_Node_Id.CreateFromDiscriminatorValue); } },
+                { "workflow_node_id", n => { WorkflowNodeId = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -183,20 +183,20 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("agent_id", AgentId);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Agent_Responses>("agent_responses", AgentResponses);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Branch_Id>("branch_id", BranchId);
+            writer.WriteStringValue("branch_id", BranchId);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TestConditionResultCommonModel>("condition_result", ConditionResult);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.EnvironmentObject>("environment", Environment);
+            writer.WriteStringValue("environment", Environment);
             writer.WriteIntValue("last_updated_at_unix", LastUpdatedAtUnix);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TestRunMetadata>("metadata", Metadata);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Root_Folder_Id>("root_folder_id", RootFolderId);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Root_Folder_Name>("root_folder_name", RootFolderName);
+            writer.WriteStringValue("root_folder_id", RootFolderId);
+            writer.WriteStringValue("root_folder_name", RootFolderName);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TestRunStatus>("status", Status);
             writer.WriteStringValue("test_id", TestId);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UnitTestRunResponseModel_test_info>("test_info", TestInfo);
             writer.WriteStringValue("test_invocation_id", TestInvocationId);
             writer.WriteStringValue("test_name", TestName);
             writer.WriteStringValue("test_run_id", TestRunId);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Workflow_Node_Id>("workflow_node_id", WorkflowNodeId);
+            writer.WriteStringValue("workflow_node_id", WorkflowNodeId);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

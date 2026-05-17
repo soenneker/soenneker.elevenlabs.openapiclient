@@ -17,18 +17,18 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The composition_notes property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Composition_Notes? CompositionNotes { get; set; }
+        public string? CompositionNotes { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Composition_Notes CompositionNotes { get; set; }
+        public string CompositionNotes { get; set; }
 #endif
         /// <summary>The content_type property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Content_Type? ContentType { get; set; }
+        public string? ContentType { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Content_Type ContentType { get; set; }
+        public string ContentType { get; set; }
 #endif
         /// <summary>The description property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -41,10 +41,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The mood_and_style property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Mood_And_Style? MoodAndStyle { get; set; }
+        public string? MoodAndStyle { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Mood_And_Style MoodAndStyle { get; set; }
+        public string MoodAndStyle { get; set; }
 #endif
         /// <summary>The subjects property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -65,10 +65,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Readable text overlaid or shown in the image, if any.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Visible_Text? VisibleText { get; set; }
+        public string? VisibleText { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Visible_Text VisibleText { get; set; }
+        public string VisibleText { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ImageAnalysisResult"/> and sets the default values.
@@ -95,13 +95,13 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "composition_notes", n => { CompositionNotes = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Composition_Notes>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Composition_Notes.CreateFromDiscriminatorValue); } },
-                { "content_type", n => { ContentType = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Content_Type>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Content_Type.CreateFromDiscriminatorValue); } },
+                { "composition_notes", n => { CompositionNotes = n.GetStringValue(); } },
+                { "content_type", n => { ContentType = n.GetStringValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
-                { "mood_and_style", n => { MoodAndStyle = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Mood_And_Style>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Mood_And_Style.CreateFromDiscriminatorValue); } },
+                { "mood_and_style", n => { MoodAndStyle = n.GetStringValue(); } },
                 { "subjects", n => { Subjects = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.ImageSubject>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ImageSubject.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "title", n => { Title = n.GetStringValue(); } },
-                { "visible_text", n => { VisibleText = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Visible_Text>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Visible_Text.CreateFromDiscriminatorValue); } },
+                { "visible_text", n => { VisibleText = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -111,13 +111,13 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Composition_Notes>("composition_notes", CompositionNotes);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Content_Type>("content_type", ContentType);
+            writer.WriteStringValue("composition_notes", CompositionNotes);
+            writer.WriteStringValue("content_type", ContentType);
             writer.WriteStringValue("description", Description);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Mood_And_Style>("mood_and_style", MoodAndStyle);
+            writer.WriteStringValue("mood_and_style", MoodAndStyle);
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.ImageSubject>("subjects", Subjects);
             writer.WriteStringValue("title", Title);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Visible_Text>("visible_text", VisibleText);
+            writer.WriteStringValue("visible_text", VisibleText);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

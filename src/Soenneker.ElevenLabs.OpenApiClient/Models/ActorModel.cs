@@ -16,18 +16,18 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Client application or service name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.App_Name? AppName { get; set; }
+        public string? AppName { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.App_Name AppName { get; set; }
+        public string AppName { get; set; }
 #endif
         /// <summary>Client application unique identifier</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.App_Uid? AppUid { get; set; }
+        public string? AppUid { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.App_Uid AppUid { get; set; }
+        public string AppUid { get; set; }
 #endif
         /// <summary>Session information</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -63,8 +63,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "app_name", n => { AppName = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.App_Name>(global::Soenneker.ElevenLabs.OpenApiClient.Models.App_Name.CreateFromDiscriminatorValue); } },
-                { "app_uid", n => { AppUid = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.App_Uid>(global::Soenneker.ElevenLabs.OpenApiClient.Models.App_Uid.CreateFromDiscriminatorValue); } },
+                { "app_name", n => { AppName = n.GetStringValue(); } },
+                { "app_uid", n => { AppUid = n.GetStringValue(); } },
                 { "session", n => { Session = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ActorModel_session>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ActorModel_session.CreateFromDiscriminatorValue); } },
                 { "user", n => { User = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UserModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.UserModel.CreateFromDiscriminatorValue); } },
             };
@@ -76,8 +76,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.App_Name>("app_name", AppName);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.App_Uid>("app_uid", AppUid);
+            writer.WriteStringValue("app_name", AppName);
+            writer.WriteStringValue("app_uid", AppUid);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ActorModel_session>("session", Session);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UserModel>("user", User);
         }

@@ -15,13 +15,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The character_count property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Character_Count? CharacterCount { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Character_Count CharacterCount { get; set; }
-#endif
+        public int? CharacterCount { get; set; }
         /// <summary>The group_pvc_limit property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -75,10 +69,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The scim_external_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Scim_External_Id? ScimExternalId { get; set; }
+        public string? ScimExternalId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Scim_External_Id ScimExternalId { get; set; }
+        public string ScimExternalId { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceGroupResponseModel"/> and sets the default values.
@@ -105,7 +99,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "character_count", n => { CharacterCount = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Character_Count>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Character_Count.CreateFromDiscriminatorValue); } },
+                { "character_count", n => { CharacterCount = n.GetIntValue(); } },
                 { "group_pvc_limit", n => { GroupPvcLimit = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Group_Pvc_Limit>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Group_Pvc_Limit.CreateFromDiscriminatorValue); } },
                 { "group_usage_limit", n => { GroupUsageLimit = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Group_Usage_Limit>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Group_Usage_Limit.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetStringValue(); } },
@@ -113,7 +107,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "members", n => { Members = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "permissions", n => { Permissions = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Permissions>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Permissions.CreateFromDiscriminatorValue); } },
-                { "scim_external_id", n => { ScimExternalId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Scim_External_Id>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Scim_External_Id.CreateFromDiscriminatorValue); } },
+                { "scim_external_id", n => { ScimExternalId = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -123,7 +117,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Character_Count>("character_count", CharacterCount);
+            writer.WriteIntValue("character_count", CharacterCount);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Group_Pvc_Limit>("group_pvc_limit", GroupPvcLimit);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Group_Usage_Limit>("group_usage_limit", GroupUsageLimit);
             writer.WriteStringValue("id", Id);
@@ -131,7 +125,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("members", Members);
             writer.WriteStringValue("name", Name);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Permissions>("permissions", Permissions);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Scim_External_Id>("scim_external_id", ScimExternalId);
+            writer.WriteStringValue("scim_external_id", ScimExternalId);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

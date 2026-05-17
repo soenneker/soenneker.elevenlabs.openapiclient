@@ -111,25 +111,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Users
             public string BranchId { get; set; }
 #endif
             /// <summary>Unix timestamp (in seconds) to filter conversations after to this start date.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("call_start_after_unix")]
-            public string? CallStartAfterUnix { get; set; }
-#nullable restore
-#else
-            [QueryParameter("call_start_after_unix")]
-            public string CallStartAfterUnix { get; set; }
-#endif
+            public int? CallStartAfterUnix { get; set; }
             /// <summary>Unix timestamp (in seconds) to filter conversations up to this start date.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("call_start_before_unix")]
-            public string? CallStartBeforeUnix { get; set; }
-#nullable restore
-#else
-            [QueryParameter("call_start_before_unix")]
-            public string CallStartBeforeUnix { get; set; }
-#endif
+            public int? CallStartBeforeUnix { get; set; }
             /// <summary>Used for fetching next page. Cursor is returned in the response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

@@ -17,18 +17,18 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The content_asset_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Content_Asset_Id? ContentAssetId { get; set; }
+        public string? ContentAssetId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Content_Asset_Id ContentAssetId { get; set; }
+        public string ContentAssetId { get; set; }
 #endif
         /// <summary>The generation_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Generation_Id? GenerationId { get; set; }
+        public string? GenerationId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Generation_Id GenerationId { get; set; }
+        public string GenerationId { get; set; }
 #endif
         /// <summary>The studio_clip property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -41,10 +41,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The template_node_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Template_Node_Id? TemplateNodeId { get; set; }
+        public string? TemplateNodeId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Template_Node_Id TemplateNodeId { get; set; }
+        public string TemplateNodeId { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ReferenceVideo"/> and sets the default values.
@@ -71,10 +71,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "content_asset_id", n => { ContentAssetId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Content_Asset_Id>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Content_Asset_Id.CreateFromDiscriminatorValue); } },
-                { "generation_id", n => { GenerationId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Generation_Id>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Generation_Id.CreateFromDiscriminatorValue); } },
+                { "content_asset_id", n => { ContentAssetId = n.GetStringValue(); } },
+                { "generation_id", n => { GenerationId = n.GetStringValue(); } },
                 { "studio_clip", n => { StudioClip = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.StudioClipReference>(global::Soenneker.ElevenLabs.OpenApiClient.Models.StudioClipReference.CreateFromDiscriminatorValue); } },
-                { "template_node_id", n => { TemplateNodeId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Template_Node_Id>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Template_Node_Id.CreateFromDiscriminatorValue); } },
+                { "template_node_id", n => { TemplateNodeId = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -84,10 +84,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Content_Asset_Id>("content_asset_id", ContentAssetId);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Generation_Id>("generation_id", GenerationId);
+            writer.WriteStringValue("content_asset_id", ContentAssetId);
+            writer.WriteStringValue("generation_id", GenerationId);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.StudioClipReference>("studio_clip", StudioClip);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Template_Node_Id>("template_node_id", TemplateNodeId);
+            writer.WriteStringValue("template_node_id", TemplateNodeId);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

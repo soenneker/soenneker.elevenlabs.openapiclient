@@ -57,10 +57,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The ID of the parent folder. If not provided, the test will be moved to the root level.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Parent_Folder_Id? ParentFolderId { get; set; }
+        public string? ParentFolderId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Parent_Folder_Id ParentFolderId { get; set; }
+        public string ParentFolderId { get; set; }
 #endif
         /// <summary>LLM model for the simulated user. Defaults to Claude Sonnet 4.6.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -73,10 +73,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The environment to use when running this simulation test. If not provided, defaults to &apos;production&apos;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Simulation_Environment? SimulationEnvironment { get; set; }
+        public string? SimulationEnvironment { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Simulation_Environment SimulationEnvironment { get; set; }
+        public string SimulationEnvironment { get; set; }
 #endif
         /// <summary>Maximum number of conversation turns for simulation tests.</summary>
         public int? SimulationMaxTurns { get; set; }
@@ -137,9 +137,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "evaluation_model", n => { EvaluationModel = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.LLM_Wrapper>(global::Soenneker.ElevenLabs.OpenApiClient.Models.LLM_Wrapper.CreateFromDiscriminatorValue); } },
                 { "from_conversation_metadata", n => { FromConversationMetadata = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TestFromConversationMetadataInput>(global::Soenneker.ElevenLabs.OpenApiClient.Models.TestFromConversationMetadataInput.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "parent_folder_id", n => { ParentFolderId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Parent_Folder_Id>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Parent_Folder_Id.CreateFromDiscriminatorValue); } },
+                { "parent_folder_id", n => { ParentFolderId = n.GetStringValue(); } },
                 { "simulated_user_model", n => { SimulatedUserModel = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.LLM_Wrapper>(global::Soenneker.ElevenLabs.OpenApiClient.Models.LLM_Wrapper.CreateFromDiscriminatorValue); } },
-                { "simulation_environment", n => { SimulationEnvironment = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Simulation_Environment>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Simulation_Environment.CreateFromDiscriminatorValue); } },
+                { "simulation_environment", n => { SimulationEnvironment = n.GetStringValue(); } },
                 { "simulation_max_turns", n => { SimulationMaxTurns = n.GetIntValue(); } },
                 { "simulation_scenario", n => { SimulationScenario = n.GetStringValue(); } },
                 { "success_condition", n => { SuccessCondition = n.GetStringValue(); } },
@@ -159,9 +159,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.LLM_Wrapper>("evaluation_model", EvaluationModel);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TestFromConversationMetadataInput>("from_conversation_metadata", FromConversationMetadata);
             writer.WriteStringValue("name", Name);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Parent_Folder_Id>("parent_folder_id", ParentFolderId);
+            writer.WriteStringValue("parent_folder_id", ParentFolderId);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.LLM_Wrapper>("simulated_user_model", SimulatedUserModel);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Simulation_Environment>("simulation_environment", SimulationEnvironment);
+            writer.WriteStringValue("simulation_environment", SimulationEnvironment);
             writer.WriteIntValue("simulation_max_turns", SimulationMaxTurns);
             writer.WriteStringValue("simulation_scenario", SimulationScenario);
             writer.WriteStringValue("success_condition", SuccessCondition);

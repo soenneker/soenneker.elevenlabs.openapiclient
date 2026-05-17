@@ -111,45 +111,17 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Conversations.Messages.Te
             public string BranchId { get; set; }
 #endif
             /// <summary>Maximum call duration in seconds.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("call_duration_max_secs")]
-            public string? CallDurationMaxSecs { get; set; }
-#nullable restore
-#else
-            [QueryParameter("call_duration_max_secs")]
-            public string CallDurationMaxSecs { get; set; }
-#endif
+            public int? CallDurationMaxSecs { get; set; }
             /// <summary>Minimum call duration in seconds.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("call_duration_min_secs")]
-            public string? CallDurationMinSecs { get; set; }
-#nullable restore
-#else
-            [QueryParameter("call_duration_min_secs")]
-            public string CallDurationMinSecs { get; set; }
-#endif
+            public int? CallDurationMinSecs { get; set; }
             /// <summary>Unix timestamp (in seconds) to filter conversations after to this start date.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("call_start_after_unix")]
-            public string? CallStartAfterUnix { get; set; }
-#nullable restore
-#else
-            [QueryParameter("call_start_after_unix")]
-            public string CallStartAfterUnix { get; set; }
-#endif
+            public int? CallStartAfterUnix { get; set; }
             /// <summary>Unix timestamp (in seconds) to filter conversations up to this start date.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("call_start_before_unix")]
-            public string? CallStartBeforeUnix { get; set; }
-#nullable restore
-#else
-            [QueryParameter("call_start_before_unix")]
-            public string CallStartBeforeUnix { get; set; }
-#endif
+            public int? CallStartBeforeUnix { get; set; }
             /// <summary>The result of the success evaluation</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -200,15 +172,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Conversations.Messages.Te
             public string EvaluationParams { get; set; }
 #endif
             /// <summary>Filter conversations with user feedback comments.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("has_feedback_comment")]
-            public string? HasFeedbackComment { get; set; }
-#nullable restore
-#else
-            [QueryParameter("has_feedback_comment")]
-            public string HasFeedbackComment { get; set; }
-#endif
+            public bool? HasFeedbackComment { get; set; }
             /// <summary>Filter conversations by detected main language (language code).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -223,40 +188,19 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Conversations.Messages.Te
             [QueryParameter("page_size")]
             public int? PageSize { get; set; }
             /// <summary>Maximum overall rating (1-5).</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("rating_max")]
-            public string? RatingMax { get; set; }
-#nullable restore
-#else
-            [QueryParameter("rating_max")]
-            public string RatingMax { get; set; }
-#endif
+            public int? RatingMax { get; set; }
             /// <summary>Minimum overall rating (1-5).</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("rating_min")]
-            public string? RatingMin { get; set; }
-#nullable restore
-#else
-            [QueryParameter("rating_min")]
-            public string RatingMin { get; set; }
-#endif
+            public int? RatingMin { get; set; }
             /// <summary>Sort order for search results. &apos;search_score&apos; sorts by search score, &apos;created_at&apos; sorts by conversation start time.</summary>
             [QueryParameter("sort_by")]
             public global::Soenneker.ElevenLabs.OpenApiClient.Models.MessageSearchSortBy? SortBy { get; set; }
             /// <summary>Whether to include transcript summaries in the response.</summary>
             [QueryParameter("summary_mode")]
             public global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Conversations.Messages.TextSearch.GetSummary_modeQueryParameterType? SummaryMode { get; set; }
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("text_only")]
-            public string? TextOnly { get; set; }
-#nullable restore
-#else
-            [QueryParameter("text_only")]
-            public string TextOnly { get; set; }
-#endif
+            public bool? TextOnly { get; set; }
             /// <summary>The search query text for full-text and fuzzy matching</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

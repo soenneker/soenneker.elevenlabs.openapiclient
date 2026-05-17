@@ -23,13 +23,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.Allowed_Ips AllowedIps { get; set; }
 #endif
         /// <summary>The character limit of the XI API key. If provided this will limit the usage of this api key to n characters per month where n is the chosen value. Requests that incur charges will fail after reaching this monthly limit.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Character_Limit? CharacterLimit { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Character_Limit CharacterLimit { get; set; }
-#endif
+        public int? CharacterLimit { get; set; }
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -72,7 +66,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "allowed_ips", n => { AllowedIps = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Allowed_Ips>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Allowed_Ips.CreateFromDiscriminatorValue); } },
-                { "character_limit", n => { CharacterLimit = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Character_Limit>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Character_Limit.CreateFromDiscriminatorValue); } },
+                { "character_limit", n => { CharacterLimit = n.GetIntValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "permissions", n => { Permissions = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Permissions>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Permissions.CreateFromDiscriminatorValue); } },
             };
@@ -85,7 +79,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Allowed_Ips>("allowed_ips", AllowedIps);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Character_Limit>("character_limit", CharacterLimit);
+            writer.WriteIntValue("character_limit", CharacterLimit);
             writer.WriteStringValue("name", Name);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Permissions>("permissions", Permissions);
             writer.WriteAdditionalData(AdditionalData);

@@ -116,15 +116,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents
         public partial class AgentsRequestBuilderGetQueryParameters 
         {
             /// <summary>Filter agents by archived status</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("archived")]
-            public string? Archived { get; set; }
-#nullable restore
-#else
-            [QueryParameter("archived")]
-            public string Archived { get; set; }
-#endif
+            public bool? Archived { get; set; }
             /// <summary>Filter agents by creator user ID. When set, only agents created by this user are returned. Takes precedence over show_only_owned_agents. Use &apos;@me&apos; to refer to the authenticated user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

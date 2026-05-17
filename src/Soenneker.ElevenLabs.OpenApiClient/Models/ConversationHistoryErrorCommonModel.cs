@@ -19,10 +19,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The reason property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Reason? Reason { get; set; }
+        public string? Reason { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Reason Reason { get; set; }
+        public string Reason { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryErrorCommonModel"/> and sets the default values.
@@ -50,7 +50,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "code", n => { Code = n.GetIntValue(); } },
-                { "reason", n => { Reason = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Reason>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Reason.CreateFromDiscriminatorValue); } },
+                { "reason", n => { Reason = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -61,7 +61,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("code", Code);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Reason>("reason", Reason);
+            writer.WriteStringValue("reason", Reason);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

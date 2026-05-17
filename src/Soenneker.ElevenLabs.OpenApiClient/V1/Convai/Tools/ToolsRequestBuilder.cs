@@ -171,15 +171,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Tools
             public string Cursor { get; set; }
 #endif
             /// <summary>How many documents to return at maximum. Can not exceed 100, defaults to 30.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("page_size")]
-            public string? PageSize { get; set; }
-#nullable restore
-#else
-            [QueryParameter("page_size")]
-            public string PageSize { get; set; }
-#endif
+            public int? PageSize { get; set; }
             /// <summary>If specified, the endpoint returns only tools whose names start with this string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

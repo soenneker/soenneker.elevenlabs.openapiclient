@@ -33,10 +33,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The whatsapp_phone_number_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Whatsapp_Phone_Number_Id? WhatsappPhoneNumberId { get; set; }
+        public string? WhatsappPhoneNumberId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Whatsapp_Phone_Number_Id WhatsappPhoneNumberId { get; set; }
+        public string WhatsappPhoneNumberId { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.BatchCallWhatsAppParams"/> and sets the default values.
@@ -65,7 +65,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             {
                 { "whatsapp_call_permission_request_template_language_code", n => { WhatsappCallPermissionRequestTemplateLanguageCode = n.GetStringValue(); } },
                 { "whatsapp_call_permission_request_template_name", n => { WhatsappCallPermissionRequestTemplateName = n.GetStringValue(); } },
-                { "whatsapp_phone_number_id", n => { WhatsappPhoneNumberId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Whatsapp_Phone_Number_Id>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Whatsapp_Phone_Number_Id.CreateFromDiscriminatorValue); } },
+                { "whatsapp_phone_number_id", n => { WhatsappPhoneNumberId = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -77,7 +77,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("whatsapp_call_permission_request_template_language_code", WhatsappCallPermissionRequestTemplateLanguageCode);
             writer.WriteStringValue("whatsapp_call_permission_request_template_name", WhatsappCallPermissionRequestTemplateName);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Whatsapp_Phone_Number_Id>("whatsapp_phone_number_id", WhatsappPhoneNumberId);
+            writer.WriteStringValue("whatsapp_phone_number_id", WhatsappPhoneNumberId);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

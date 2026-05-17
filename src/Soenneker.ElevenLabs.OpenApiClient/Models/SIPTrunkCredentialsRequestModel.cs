@@ -17,10 +17,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>SIP trunk password - if not specified, then remain unchanged</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Password? Password { get; set; }
+        public string? Password { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Password Password { get; set; }
+        public string Password { get; set; }
 #endif
         /// <summary>SIP trunk username</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -55,7 +55,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "password", n => { Password = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Password>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Password.CreateFromDiscriminatorValue); } },
+                { "password", n => { Password = n.GetStringValue(); } },
                 { "username", n => { Username = n.GetStringValue(); } },
             };
         }
@@ -66,7 +66,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Password>("password", Password);
+            writer.WriteStringValue("password", Password);
             writer.WriteStringValue("username", Username);
             writer.WriteAdditionalData(AdditionalData);
         }

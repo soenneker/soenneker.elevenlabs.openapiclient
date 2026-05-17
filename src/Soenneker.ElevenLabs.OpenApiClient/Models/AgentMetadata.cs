@@ -25,26 +25,26 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The branch_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Branch_Id? BranchId { get; set; }
+        public string? BranchId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Branch_Id BranchId { get; set; }
+        public string BranchId { get; set; }
 #endif
         /// <summary>The version_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Version_Id? VersionId { get; set; }
+        public string? VersionId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Version_Id VersionId { get; set; }
+        public string VersionId { get; set; }
 #endif
         /// <summary>The workflow_node_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Workflow_Node_Id? WorkflowNodeId { get; set; }
+        public string? WorkflowNodeId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Workflow_Node_Id WorkflowNodeId { get; set; }
+        public string WorkflowNodeId { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentMetadata"/> and sets the default values.
@@ -72,9 +72,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "agent_id", n => { AgentId = n.GetStringValue(); } },
-                { "branch_id", n => { BranchId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Branch_Id>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Branch_Id.CreateFromDiscriminatorValue); } },
-                { "version_id", n => { VersionId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Version_Id>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Version_Id.CreateFromDiscriminatorValue); } },
-                { "workflow_node_id", n => { WorkflowNodeId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Workflow_Node_Id>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Workflow_Node_Id.CreateFromDiscriminatorValue); } },
+                { "branch_id", n => { BranchId = n.GetStringValue(); } },
+                { "version_id", n => { VersionId = n.GetStringValue(); } },
+                { "workflow_node_id", n => { WorkflowNodeId = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -85,9 +85,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("agent_id", AgentId);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Branch_Id>("branch_id", BranchId);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Version_Id>("version_id", VersionId);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Workflow_Node_Id>("workflow_node_id", WorkflowNodeId);
+            writer.WriteStringValue("branch_id", BranchId);
+            writer.WriteStringValue("version_id", VersionId);
+            writer.WriteStringValue("workflow_node_id", WorkflowNodeId);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

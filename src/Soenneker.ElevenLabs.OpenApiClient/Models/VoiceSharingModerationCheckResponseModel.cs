@@ -31,44 +31,26 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.Captcha_Ids CaptchaIds { get; set; }
 #endif
         /// <summary>The date the moderation check was made in Unix time.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Date_Checked_Unix? DateCheckedUnix { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Date_Checked_Unix DateCheckedUnix { get; set; }
-#endif
+        public int? DateCheckedUnix { get; set; }
         /// <summary>Whether the description check was successful.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Description_Check? DescriptionCheck { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Description_Check DescriptionCheck { get; set; }
-#endif
+        public bool? DescriptionCheck { get; set; }
         /// <summary>The description value of the voice.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Description_Value? DescriptionValue { get; set; }
+        public string? DescriptionValue { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Description_Value DescriptionValue { get; set; }
+        public string DescriptionValue { get; set; }
 #endif
         /// <summary>Whether the name check was successful.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Name_Check? NameCheck { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Name_Check NameCheck { get; set; }
-#endif
+        public bool? NameCheck { get; set; }
         /// <summary>The name value of the voice.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Name_Value? NameValue { get; set; }
+        public string? NameValue { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Name_Value NameValue { get; set; }
+        public string NameValue { get; set; }
 #endif
         /// <summary>A list of sample checks.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -113,11 +95,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             {
                 { "captcha_checks", n => { CaptchaChecks = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Captcha_Checks>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Captcha_Checks.CreateFromDiscriminatorValue); } },
                 { "captcha_ids", n => { CaptchaIds = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Captcha_Ids>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Captcha_Ids.CreateFromDiscriminatorValue); } },
-                { "date_checked_unix", n => { DateCheckedUnix = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Date_Checked_Unix>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Date_Checked_Unix.CreateFromDiscriminatorValue); } },
-                { "description_check", n => { DescriptionCheck = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Description_Check>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Description_Check.CreateFromDiscriminatorValue); } },
-                { "description_value", n => { DescriptionValue = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Description_Value>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Description_Value.CreateFromDiscriminatorValue); } },
-                { "name_check", n => { NameCheck = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Name_Check>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Name_Check.CreateFromDiscriminatorValue); } },
-                { "name_value", n => { NameValue = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Name_Value>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Name_Value.CreateFromDiscriminatorValue); } },
+                { "date_checked_unix", n => { DateCheckedUnix = n.GetIntValue(); } },
+                { "description_check", n => { DescriptionCheck = n.GetBoolValue(); } },
+                { "description_value", n => { DescriptionValue = n.GetStringValue(); } },
+                { "name_check", n => { NameCheck = n.GetBoolValue(); } },
+                { "name_value", n => { NameValue = n.GetStringValue(); } },
                 { "sample_checks", n => { SampleChecks = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Sample_Checks>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Sample_Checks.CreateFromDiscriminatorValue); } },
                 { "sample_ids", n => { SampleIds = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Sample_Ids>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Sample_Ids.CreateFromDiscriminatorValue); } },
             };
@@ -131,11 +113,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Captcha_Checks>("captcha_checks", CaptchaChecks);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Captcha_Ids>("captcha_ids", CaptchaIds);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Date_Checked_Unix>("date_checked_unix", DateCheckedUnix);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Description_Check>("description_check", DescriptionCheck);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Description_Value>("description_value", DescriptionValue);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Name_Check>("name_check", NameCheck);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Name_Value>("name_value", NameValue);
+            writer.WriteIntValue("date_checked_unix", DateCheckedUnix);
+            writer.WriteBoolValue("description_check", DescriptionCheck);
+            writer.WriteStringValue("description_value", DescriptionValue);
+            writer.WriteBoolValue("name_check", NameCheck);
+            writer.WriteStringValue("name_value", NameValue);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Sample_Checks>("sample_checks", SampleChecks);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Sample_Ids>("sample_ids", SampleIds);
             writer.WriteAdditionalData(AdditionalData);

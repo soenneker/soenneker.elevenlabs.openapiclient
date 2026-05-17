@@ -19,19 +19,13 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The download_url property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Download_Url? DownloadUrl { get; set; }
+        public string? DownloadUrl { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Download_Url DownloadUrl { get; set; }
+        public string DownloadUrl { get; set; }
 #endif
         /// <summary>The duration_seconds property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Duration_Seconds? DurationSeconds { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Duration_Seconds DurationSeconds { get; set; }
-#endif
+        public double? DurationSeconds { get; set; }
         /// <summary>The format property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -43,10 +37,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The icon_url property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Icon_Url? IconUrl { get; set; }
+        public string? IconUrl { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Icon_Url IconUrl { get; set; }
+        public string IconUrl { get; set; }
 #endif
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -59,30 +53,30 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The preview_b64 property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Preview_B64? PreviewB64 { get; set; }
+        public string? PreviewB64 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Preview_B64 PreviewB64 { get; set; }
+        public string PreviewB64 { get; set; }
 #endif
         /// <summary>The processing property</summary>
         public bool? Processing { get; set; }
         /// <summary>The source_video_url property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Source_Video_Url? SourceVideoUrl { get; set; }
+        public string? SourceVideoUrl { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Source_Video_Url SourceVideoUrl { get; set; }
+        public string SourceVideoUrl { get; set; }
 #endif
         /// <summary>The supports_video property</summary>
         public bool? SupportsVideo { get; set; }
         /// <summary>The title property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Title? Title { get; set; }
+        public string? Title { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Title Title { get; set; }
+        public string Title { get; set; }
 #endif
         /// <summary>The video_processing_failed property</summary>
         public bool? VideoProcessingFailed { get; set; }
@@ -112,16 +106,16 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "created_at_unix", n => { CreatedAtUnix = n.GetIntValue(); } },
-                { "download_url", n => { DownloadUrl = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Download_Url>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Download_Url.CreateFromDiscriminatorValue); } },
-                { "duration_seconds", n => { DurationSeconds = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Duration_Seconds>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Duration_Seconds.CreateFromDiscriminatorValue); } },
+                { "download_url", n => { DownloadUrl = n.GetStringValue(); } },
+                { "duration_seconds", n => { DurationSeconds = n.GetDoubleValue(); } },
                 { "format", n => { Format = n.GetStringValue(); } },
-                { "icon_url", n => { IconUrl = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Icon_Url>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Icon_Url.CreateFromDiscriminatorValue); } },
+                { "icon_url", n => { IconUrl = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "preview_b64", n => { PreviewB64 = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Preview_B64>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Preview_B64.CreateFromDiscriminatorValue); } },
+                { "preview_b64", n => { PreviewB64 = n.GetStringValue(); } },
                 { "processing", n => { Processing = n.GetBoolValue(); } },
-                { "source_video_url", n => { SourceVideoUrl = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Source_Video_Url>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Source_Video_Url.CreateFromDiscriminatorValue); } },
+                { "source_video_url", n => { SourceVideoUrl = n.GetStringValue(); } },
                 { "supports_video", n => { SupportsVideo = n.GetBoolValue(); } },
-                { "title", n => { Title = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Title>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Title.CreateFromDiscriminatorValue); } },
+                { "title", n => { Title = n.GetStringValue(); } },
                 { "video_processing_failed", n => { VideoProcessingFailed = n.GetBoolValue(); } },
             };
         }
@@ -133,16 +127,16 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("created_at_unix", CreatedAtUnix);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Download_Url>("download_url", DownloadUrl);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Duration_Seconds>("duration_seconds", DurationSeconds);
+            writer.WriteStringValue("download_url", DownloadUrl);
+            writer.WriteDoubleValue("duration_seconds", DurationSeconds);
             writer.WriteStringValue("format", Format);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Icon_Url>("icon_url", IconUrl);
+            writer.WriteStringValue("icon_url", IconUrl);
             writer.WriteStringValue("id", Id);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Preview_B64>("preview_b64", PreviewB64);
+            writer.WriteStringValue("preview_b64", PreviewB64);
             writer.WriteBoolValue("processing", Processing);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Source_Video_Url>("source_video_url", SourceVideoUrl);
+            writer.WriteStringValue("source_video_url", SourceVideoUrl);
             writer.WriteBoolValue("supports_video", SupportsVideo);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Title>("title", Title);
+            writer.WriteStringValue("title", Title);
             writer.WriteBoolValue("video_processing_failed", VideoProcessingFailed);
             writer.WriteAdditionalData(AdditionalData);
         }

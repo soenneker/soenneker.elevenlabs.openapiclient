@@ -134,25 +134,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Workspace.AuditLogs
             [QueryParameter("limit")]
             public int? Limit { get; set; }
             /// <summary>Only include entries at or after this time (ms since epoch)</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("time_from_unix_ms")]
-            public string? TimeFromUnixMs { get; set; }
-#nullable restore
-#else
-            [QueryParameter("time_from_unix_ms")]
-            public string TimeFromUnixMs { get; set; }
-#endif
+            public int? TimeFromUnixMs { get; set; }
             /// <summary>Only include entries at or before this time (ms since epoch)</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("time_to_unix_ms")]
-            public string? TimeToUnixMs { get; set; }
-#nullable restore
-#else
-            [QueryParameter("time_to_unix_ms")]
-            public string TimeToUnixMs { get; set; }
-#endif
+            public int? TimeToUnixMs { get; set; }
         }
     }
 }

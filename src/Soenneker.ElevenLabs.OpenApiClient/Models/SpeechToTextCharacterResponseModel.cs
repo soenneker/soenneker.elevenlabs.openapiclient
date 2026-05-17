@@ -15,21 +15,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The end time of the character in seconds.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.End? End { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.End End { get; set; }
-#endif
+        public double? End { get; set; }
         /// <summary>The start time of the character in seconds.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Start? Start { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Start Start { get; set; }
-#endif
+        public double? Start { get; set; }
         /// <summary>The character that was transcribed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -63,8 +51,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "end", n => { End = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.End>(global::Soenneker.ElevenLabs.OpenApiClient.Models.End.CreateFromDiscriminatorValue); } },
-                { "start", n => { Start = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Start>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Start.CreateFromDiscriminatorValue); } },
+                { "end", n => { End = n.GetDoubleValue(); } },
+                { "start", n => { Start = n.GetDoubleValue(); } },
                 { "text", n => { Text = n.GetStringValue(); } },
             };
         }
@@ -75,8 +63,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.End>("end", End);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Start>("start", Start);
+            writer.WriteDoubleValue("end", End);
+            writer.WriteDoubleValue("start", Start);
             writer.WriteStringValue("text", Text);
             writer.WriteAdditionalData(AdditionalData);
         }

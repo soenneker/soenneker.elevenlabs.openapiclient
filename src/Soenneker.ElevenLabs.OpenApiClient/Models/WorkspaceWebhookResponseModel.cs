@@ -23,21 +23,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Whether the webhook has been manually disabled by a user.</summary>
         public bool? IsDisabled { get; set; }
         /// <summary>The most recent error code returned from the callback URL.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Most_Recent_Failure_Error_Code? MostRecentFailureErrorCode { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Most_Recent_Failure_Error_Code MostRecentFailureErrorCode { get; set; }
-#endif
+        public int? MostRecentFailureErrorCode { get; set; }
         /// <summary>The most recent time the webhook failed, failures are any non-200 codes returned by the callback URL.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Most_Recent_Failure_Timestamp? MostRecentFailureTimestamp { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Most_Recent_Failure_Timestamp MostRecentFailureTimestamp { get; set; }
-#endif
+        public int? MostRecentFailureTimestamp { get; set; }
         /// <summary>The display name for this webhook.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -99,8 +87,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "created_at_unix", n => { CreatedAtUnix = n.GetIntValue(); } },
                 { "is_auto_disabled", n => { IsAutoDisabled = n.GetBoolValue(); } },
                 { "is_disabled", n => { IsDisabled = n.GetBoolValue(); } },
-                { "most_recent_failure_error_code", n => { MostRecentFailureErrorCode = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Most_Recent_Failure_Error_Code>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Most_Recent_Failure_Error_Code.CreateFromDiscriminatorValue); } },
-                { "most_recent_failure_timestamp", n => { MostRecentFailureTimestamp = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Most_Recent_Failure_Timestamp>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Most_Recent_Failure_Timestamp.CreateFromDiscriminatorValue); } },
+                { "most_recent_failure_error_code", n => { MostRecentFailureErrorCode = n.GetIntValue(); } },
+                { "most_recent_failure_timestamp", n => { MostRecentFailureTimestamp = n.GetIntValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "usage", n => { Usage = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Usage>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Usage.CreateFromDiscriminatorValue); } },
                 { "webhook_id", n => { WebhookId = n.GetStringValue(); } },
@@ -118,8 +106,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteIntValue("created_at_unix", CreatedAtUnix);
             writer.WriteBoolValue("is_auto_disabled", IsAutoDisabled);
             writer.WriteBoolValue("is_disabled", IsDisabled);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Most_Recent_Failure_Error_Code>("most_recent_failure_error_code", MostRecentFailureErrorCode);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Most_Recent_Failure_Timestamp>("most_recent_failure_timestamp", MostRecentFailureTimestamp);
+            writer.WriteIntValue("most_recent_failure_error_code", MostRecentFailureErrorCode);
+            writer.WriteIntValue("most_recent_failure_timestamp", MostRecentFailureTimestamp);
             writer.WriteStringValue("name", Name);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Usage>("usage", Usage);
             writer.WriteStringValue("webhook_id", WebhookId);

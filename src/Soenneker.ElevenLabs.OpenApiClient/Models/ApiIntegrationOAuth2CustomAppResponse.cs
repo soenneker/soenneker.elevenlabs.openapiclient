@@ -88,10 +88,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Human-readable detail about the current status, e.g. the error message on refresh failure</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Status_Detail? StatusDetail { get; set; }
+        public string? StatusDetail { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Status_Detail StatusDetail { get; set; }
+        public string StatusDetail { get; set; }
 #endif
         /// <summary>ISO 8601 timestamp of the last status change</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -155,7 +155,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "scope_separator", n => { ScopeSeparator = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ApiIntegrationOAuth2CustomAppResponse_scope_separator>(); } },
                 { "scopes", n => { Scopes = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.OAuthConnectionStatus>(); } },
-                { "status_detail", n => { StatusDetail = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Status_Detail>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Status_Detail.CreateFromDiscriminatorValue); } },
+                { "status_detail", n => { StatusDetail = n.GetStringValue(); } },
                 { "status_updated_at", n => { StatusUpdatedAt = n.GetStringValue(); } },
                 { "token_url", n => { TokenUrl = n.GetStringValue(); } },
                 { "used_by", n => { UsedBy = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AuthConnectionDependencies>(global::Soenneker.ElevenLabs.OpenApiClient.Models.AuthConnectionDependencies.CreateFromDiscriminatorValue); } },
@@ -179,7 +179,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("scopes", Scopes);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ApiIntegrationOAuth2CustomAppResponse_scope_separator>("scope_separator", ScopeSeparator);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.OAuthConnectionStatus>("status", Status);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Status_Detail>("status_detail", StatusDetail);
+            writer.WriteStringValue("status_detail", StatusDetail);
             writer.WriteStringValue("status_updated_at", StatusUpdatedAt);
             writer.WriteStringValue("token_url", TokenUrl);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AuthConnectionDependencies>("used_by", UsedBy);

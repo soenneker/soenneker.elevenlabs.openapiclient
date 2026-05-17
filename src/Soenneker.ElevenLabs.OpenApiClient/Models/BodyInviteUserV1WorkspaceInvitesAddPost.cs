@@ -42,10 +42,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Workspace_Permission? WorkspacePermission { get; set; }
+        public string? WorkspacePermission { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Workspace_Permission WorkspacePermission { get; set; }
+        public string WorkspacePermission { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyInviteUserV1WorkspaceInvitesAddPost"/> and sets the default values.
@@ -75,7 +75,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "email", n => { Email = n.GetStringValue(); } },
                 { "group_ids", n => { GroupIds = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Group_Ids>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Group_Ids.CreateFromDiscriminatorValue); } },
                 { "seat_type", n => { SeatType = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SeatType_Wrapper>(global::Soenneker.ElevenLabs.OpenApiClient.Models.SeatType_Wrapper.CreateFromDiscriminatorValue); } },
-                { "workspace_permission", n => { WorkspacePermission = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Workspace_Permission>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Workspace_Permission.CreateFromDiscriminatorValue); } },
+                { "workspace_permission", n => { WorkspacePermission = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -88,7 +88,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteStringValue("email", Email);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Group_Ids>("group_ids", GroupIds);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SeatType_Wrapper>("seat_type", SeatType);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Workspace_Permission>("workspace_permission", WorkspacePermission);
+            writer.WriteStringValue("workspace_permission", WorkspacePermission);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

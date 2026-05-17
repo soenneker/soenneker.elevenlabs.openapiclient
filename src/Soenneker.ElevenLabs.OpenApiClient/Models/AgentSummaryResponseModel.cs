@@ -35,13 +35,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The creation time of the agent in unix seconds</summary>
         public int? CreatedAtUnixSecs { get; set; }
         /// <summary>The time of the most recent call in unix seconds, null if no calls have been made</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Last_Call_Time_Unix_Secs? LastCallTimeUnixSecs { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Last_Call_Time_Unix_Secs LastCallTimeUnixSecs { get; set; }
-#endif
+        public int? LastCallTimeUnixSecs { get; set; }
         /// <summary>The name of the agent</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -87,7 +81,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "agent_id", n => { AgentId = n.GetStringValue(); } },
                 { "archived", n => { Archived = n.GetBoolValue(); } },
                 { "created_at_unix_secs", n => { CreatedAtUnixSecs = n.GetIntValue(); } },
-                { "last_call_time_unix_secs", n => { LastCallTimeUnixSecs = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Last_Call_Time_Unix_Secs>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Last_Call_Time_Unix_Secs.CreateFromDiscriminatorValue); } },
+                { "last_call_time_unix_secs", n => { LastCallTimeUnixSecs = n.GetIntValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "tags", n => { Tags = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
@@ -103,7 +97,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteStringValue("agent_id", AgentId);
             writer.WriteBoolValue("archived", Archived);
             writer.WriteIntValue("created_at_unix_secs", CreatedAtUnixSecs);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Last_Call_Time_Unix_Secs>("last_call_time_unix_secs", LastCallTimeUnixSecs);
+            writer.WriteIntValue("last_call_time_unix_secs", LastCallTimeUnixSecs);
             writer.WriteStringValue("name", Name);
             writer.WriteCollectionOfPrimitiveValues<string>("tags", Tags);
             writer.WriteAdditionalData(AdditionalData);

@@ -15,21 +15,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The discount applied to the invoice. E.g. [20.0f] for 20 cents off.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Discount_Amount_Off? DiscountAmountOff { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Discount_Amount_Off DiscountAmountOff { get; set; }
-#endif
+        public double? DiscountAmountOff { get; set; }
         /// <summary>The discount applied to the invoice. E.g. [20.0f] for 20% off.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Discount_Percent_Off? DiscountPercentOff { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Discount_Percent_Off DiscountPercentOff { get; set; }
-#endif
+        public double? DiscountPercentOff { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.DiscountResponseModel"/> and sets the default values.
         /// </summary>
@@ -55,8 +43,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "discount_amount_off", n => { DiscountAmountOff = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Discount_Amount_Off>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Discount_Amount_Off.CreateFromDiscriminatorValue); } },
-                { "discount_percent_off", n => { DiscountPercentOff = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Discount_Percent_Off>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Discount_Percent_Off.CreateFromDiscriminatorValue); } },
+                { "discount_amount_off", n => { DiscountAmountOff = n.GetDoubleValue(); } },
+                { "discount_percent_off", n => { DiscountPercentOff = n.GetDoubleValue(); } },
             };
         }
         /// <summary>
@@ -66,8 +54,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Discount_Amount_Off>("discount_amount_off", DiscountAmountOff);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Discount_Percent_Off>("discount_percent_off", DiscountPercentOff);
+            writer.WriteDoubleValue("discount_amount_off", DiscountAmountOff);
+            writer.WriteDoubleValue("discount_percent_off", DiscountPercentOff);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -17,10 +17,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The description property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Description? Description { get; set; }
+        public string? Description { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Description Description { get; set; }
+        public string Description { get; set; }
 #endif
         /// <summary>The label property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -33,10 +33,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The language property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Language? Language { get; set; }
+        public string? Language { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Language Language { get; set; }
+        public string Language { get; set; }
 #endif
         /// <summary>The model_family property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -55,29 +55,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.TTSOptimizeStreamingLatency_Wrapper OptimizeStreamingLatency { get; set; }
 #endif
         /// <summary>The similarity_boost property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Similarity_Boost? SimilarityBoost { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Similarity_Boost SimilarityBoost { get; set; }
-#endif
+        public double? SimilarityBoost { get; set; }
         /// <summary>The speed property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Speed? Speed { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Speed Speed { get; set; }
-#endif
+        public double? Speed { get; set; }
         /// <summary>The stability property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Stability? Stability { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Stability Stability { get; set; }
-#endif
+        public double? Stability { get; set; }
         /// <summary>The voice_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -111,14 +93,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "description", n => { Description = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Description>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Description.CreateFromDiscriminatorValue); } },
+                { "description", n => { Description = n.GetStringValue(); } },
                 { "label", n => { Label = n.GetStringValue(); } },
-                { "language", n => { Language = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Language>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Language.CreateFromDiscriminatorValue); } },
+                { "language", n => { Language = n.GetStringValue(); } },
                 { "model_family", n => { ModelFamily = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TTSModelFamily_Wrapper>(global::Soenneker.ElevenLabs.OpenApiClient.Models.TTSModelFamily_Wrapper.CreateFromDiscriminatorValue); } },
                 { "optimize_streaming_latency", n => { OptimizeStreamingLatency = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TTSOptimizeStreamingLatency_Wrapper>(global::Soenneker.ElevenLabs.OpenApiClient.Models.TTSOptimizeStreamingLatency_Wrapper.CreateFromDiscriminatorValue); } },
-                { "similarity_boost", n => { SimilarityBoost = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Similarity_Boost>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Similarity_Boost.CreateFromDiscriminatorValue); } },
-                { "speed", n => { Speed = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Speed>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Speed.CreateFromDiscriminatorValue); } },
-                { "stability", n => { Stability = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Stability>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Stability.CreateFromDiscriminatorValue); } },
+                { "similarity_boost", n => { SimilarityBoost = n.GetDoubleValue(); } },
+                { "speed", n => { Speed = n.GetDoubleValue(); } },
+                { "stability", n => { Stability = n.GetDoubleValue(); } },
                 { "voice_id", n => { VoiceId = n.GetStringValue(); } },
             };
         }
@@ -129,14 +111,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Description>("description", Description);
+            writer.WriteStringValue("description", Description);
             writer.WriteStringValue("label", Label);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Language>("language", Language);
+            writer.WriteStringValue("language", Language);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TTSModelFamily_Wrapper>("model_family", ModelFamily);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TTSOptimizeStreamingLatency_Wrapper>("optimize_streaming_latency", OptimizeStreamingLatency);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Similarity_Boost>("similarity_boost", SimilarityBoost);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Speed>("speed", Speed);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Stability>("stability", Stability);
+            writer.WriteDoubleValue("similarity_boost", SimilarityBoost);
+            writer.WriteDoubleValue("speed", Speed);
+            writer.WriteDoubleValue("stability", Stability);
             writer.WriteStringValue("voice_id", VoiceId);
             writer.WriteAdditionalData(AdditionalData);
         }

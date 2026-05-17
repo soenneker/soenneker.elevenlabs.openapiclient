@@ -71,13 +71,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public string ToolName { get; set; }
 #endif
         /// <summary>The type property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.TypeObject? Type { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.TypeObject Type { get; set; }
-#endif
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptOtherToolsResultCommonModel_type? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptOtherToolsResultCommonModel"/> and sets the default values.
         /// </summary>
@@ -113,7 +107,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "tool_has_been_called", n => { ToolHasBeenCalled = n.GetBoolValue(); } },
                 { "tool_latency_secs", n => { ToolLatencySecs = n.GetDoubleValue(); } },
                 { "tool_name", n => { ToolName = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TypeObject>(global::Soenneker.ElevenLabs.OpenApiClient.Models.TypeObject.CreateFromDiscriminatorValue); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptOtherToolsResultCommonModel_type>(); } },
             };
         }
         /// <summary>
@@ -133,7 +127,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteBoolValue("tool_has_been_called", ToolHasBeenCalled);
             writer.WriteDoubleValue("tool_latency_secs", ToolLatencySecs);
             writer.WriteStringValue("tool_name", ToolName);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TypeObject>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptOtherToolsResultCommonModel_type>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

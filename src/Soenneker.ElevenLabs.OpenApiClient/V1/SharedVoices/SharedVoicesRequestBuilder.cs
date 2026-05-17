@@ -111,8 +111,15 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.SharedVoices
             public string Age { get; set; }
 #endif
             /// <summary>Voice category used for filtering</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
             [QueryParameter("category")]
-            public global::Soenneker.ElevenLabs.OpenApiClient.V1.SharedVoices.GetCategoryQueryParameterType? Category { get; set; }
+            public string? Category { get; set; }
+#nullable restore
+#else
+            [QueryParameter("category")]
+            public string Category { get; set; }
+#endif
             /// <summary>Search term used for filtering</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -137,25 +144,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.SharedVoices
             public string Gender { get; set; }
 #endif
             /// <summary>Include/exclude voices with custom rates</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("include_custom_rates")]
-            public string? IncludeCustomRates { get; set; }
-#nullable restore
-#else
-            [QueryParameter("include_custom_rates")]
-            public string IncludeCustomRates { get; set; }
-#endif
+            public bool? IncludeCustomRates { get; set; }
             /// <summary>Include/exclude voices that are live moderated</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("include_live_moderated")]
-            public string? IncludeLiveModerated { get; set; }
-#nullable restore
-#else
-            [QueryParameter("include_live_moderated")]
-            public string IncludeLiveModerated { get; set; }
-#endif
+            public bool? IncludeLiveModerated { get; set; }
             /// <summary>Language used for filtering</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -177,15 +170,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.SharedVoices
             public string Locale { get; set; }
 #endif
             /// <summary>Filter voices with a minimum notice period of the given number of days.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("min_notice_period_days")]
-            public string? MinNoticePeriodDays { get; set; }
-#nullable restore
-#else
-            [QueryParameter("min_notice_period_days")]
-            public string MinNoticePeriodDays { get; set; }
-#endif
+            public int? MinNoticePeriodDays { get; set; }
             /// <summary>Filter voices by public owner ID</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

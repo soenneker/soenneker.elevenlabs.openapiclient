@@ -17,26 +17,26 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The convai_asr_provider property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Convai_Asr_Provider? ConvaiAsrProvider { get; set; }
+        public string? ConvaiAsrProvider { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Convai_Asr_Provider ConvaiAsrProvider { get; set; }
+        public string ConvaiAsrProvider { get; set; }
 #endif
         /// <summary>The convai_tts_cascade property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Convai_Tts_Cascade? ConvaiTtsCascade { get; set; }
+        public string? ConvaiTtsCascade { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Convai_Tts_Cascade ConvaiTtsCascade { get; set; }
+        public string ConvaiTtsCascade { get; set; }
 #endif
         /// <summary>The convai_tts_model property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Convai_Tts_Model? ConvaiTtsModel { get; set; }
+        public string? ConvaiTtsModel { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Convai_Tts_Model ConvaiTtsModel { get; set; }
+        public string ConvaiTtsModel { get; set; }
 #endif
         /// <summary>The metrics property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -71,9 +71,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "convai_asr_provider", n => { ConvaiAsrProvider = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Convai_Asr_Provider>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Convai_Asr_Provider.CreateFromDiscriminatorValue); } },
-                { "convai_tts_cascade", n => { ConvaiTtsCascade = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Convai_Tts_Cascade>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Convai_Tts_Cascade.CreateFromDiscriminatorValue); } },
-                { "convai_tts_model", n => { ConvaiTtsModel = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Convai_Tts_Model>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Convai_Tts_Model.CreateFromDiscriminatorValue); } },
+                { "convai_asr_provider", n => { ConvaiAsrProvider = n.GetStringValue(); } },
+                { "convai_tts_cascade", n => { ConvaiTtsCascade = n.GetStringValue(); } },
+                { "convai_tts_model", n => { ConvaiTtsModel = n.GetStringValue(); } },
                 { "metrics", n => { Metrics = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationTurnMetrics_metrics>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationTurnMetrics_metrics.CreateFromDiscriminatorValue); } },
             };
         }
@@ -84,9 +84,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Convai_Asr_Provider>("convai_asr_provider", ConvaiAsrProvider);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Convai_Tts_Cascade>("convai_tts_cascade", ConvaiTtsCascade);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Convai_Tts_Model>("convai_tts_model", ConvaiTtsModel);
+            writer.WriteStringValue("convai_asr_provider", ConvaiAsrProvider);
+            writer.WriteStringValue("convai_tts_cascade", ConvaiTtsCascade);
+            writer.WriteStringValue("convai_tts_model", ConvaiTtsModel);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationTurnMetrics_metrics>("metrics", Metrics);
             writer.WriteAdditionalData(AdditionalData);
         }

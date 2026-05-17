@@ -27,19 +27,13 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The parent_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Parent_Id? ParentId { get; set; }
+        public string? ParentId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Parent_Id ParentId { get; set; }
+        public string ParentId { get; set; }
 #endif
         /// <summary>The parent_type property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Parent_Type? ParentType { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Parent_Type ParentType { get; set; }
-#endif
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SampleConfigDBModel_parent_type? ParentType { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.SampleConfigDBModel"/> and sets the default values.
         /// </summary>
@@ -67,8 +61,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             {
                 { "chapter_ids", n => { ChapterIds = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Chapter_Ids>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Chapter_Ids.CreateFromDiscriminatorValue); } },
                 { "is_sample", n => { IsSample = n.GetBoolValue(); } },
-                { "parent_id", n => { ParentId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Parent_Id>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Parent_Id.CreateFromDiscriminatorValue); } },
-                { "parent_type", n => { ParentType = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Parent_Type>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Parent_Type.CreateFromDiscriminatorValue); } },
+                { "parent_id", n => { ParentId = n.GetStringValue(); } },
+                { "parent_type", n => { ParentType = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SampleConfigDBModel_parent_type>(); } },
             };
         }
         /// <summary>
@@ -80,8 +74,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Chapter_Ids>("chapter_ids", ChapterIds);
             writer.WriteBoolValue("is_sample", IsSample);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Parent_Id>("parent_id", ParentId);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Parent_Type>("parent_type", ParentType);
+            writer.WriteStringValue("parent_id", ParentId);
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SampleConfigDBModel_parent_type>("parent_type", ParentType);
             writer.WriteAdditionalData(AdditionalData);
         }
     }
