@@ -24,6 +24,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentAlertingSettings_monitor_configs MonitorConfigs { get; set; }
 #endif
+        /// <summary>Delivery channels for alert lifecycle notifications. Currently supports webhook notifiers.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentAlertingWebhookNotifier>? Notifiers { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentAlertingWebhookNotifier> Notifiers { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentAlertingSettings"/> and sets the default values.
         /// </summary>
@@ -51,6 +59,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             {
                 { "auto_resolve_after_inactive_minutes", n => { AutoResolveAfterInactiveMinutes = n.GetIntValue(); } },
                 { "monitor_configs", n => { MonitorConfigs = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentAlertingSettings_monitor_configs>(global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentAlertingSettings_monitor_configs.CreateFromDiscriminatorValue); } },
+                { "notifiers", n => { Notifiers = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentAlertingWebhookNotifier>(global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentAlertingWebhookNotifier.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -62,6 +71,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("auto_resolve_after_inactive_minutes", AutoResolveAfterInactiveMinutes);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentAlertingSettings_monitor_configs>("monitor_configs", MonitorConfigs);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentAlertingWebhookNotifier>("notifiers", Notifiers);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

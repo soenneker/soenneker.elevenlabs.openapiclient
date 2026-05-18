@@ -22,6 +22,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentConfigOverrideConfig Agent { get; set; }
 #endif
+        /// <summary>The asr property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ASRConversationalConfigOverrideConfig? Asr { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ASRConversationalConfigOverrideConfig Asr { get; set; }
+#endif
         /// <summary>The conversation property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -72,6 +80,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "agent", n => { Agent = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentConfigOverrideConfig>(global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentConfigOverrideConfig.CreateFromDiscriminatorValue); } },
+                { "asr", n => { Asr = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ASRConversationalConfigOverrideConfig>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ASRConversationalConfigOverrideConfig.CreateFromDiscriminatorValue); } },
                 { "conversation", n => { Conversation = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationConfigOverrideConfig>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationConfigOverrideConfig.CreateFromDiscriminatorValue); } },
                 { "tts", n => { Tts = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TTSConversationalConfigOverrideConfig>(global::Soenneker.ElevenLabs.OpenApiClient.Models.TTSConversationalConfigOverrideConfig.CreateFromDiscriminatorValue); } },
                 { "turn", n => { Turn = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TurnConfigOverrideConfig>(global::Soenneker.ElevenLabs.OpenApiClient.Models.TurnConfigOverrideConfig.CreateFromDiscriminatorValue); } },
@@ -85,6 +94,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentConfigOverrideConfig>("agent", Agent);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ASRConversationalConfigOverrideConfig>("asr", Asr);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationConfigOverrideConfig>("conversation", Conversation);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TTSConversationalConfigOverrideConfig>("tts", Tts);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TurnConfigOverrideConfig>("turn", Turn);
