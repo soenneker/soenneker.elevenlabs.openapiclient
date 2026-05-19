@@ -9,41 +9,35 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class VoiceStatisticsResponseModel : IAdditionalDataHolder, IParsable
+    public partial class OrderDeliverablesResponse : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The number of converted characters for this voice.</summary>
-        public int? CharactersConverted { get; set; }
-        /// <summary>The number of unconverted characters for this voice.</summary>
-        public int? CharactersUnconverted { get; set; }
-        /// <summary>The number of credits needed to convert the remaining audio for this voice.</summary>
-        public int? CreditsNeededToConvert { get; set; }
-        /// <summary>The voice ID.</summary>
+        /// <summary>The list of delivered files for the order. Empty if the order is not yet completed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? VoiceId { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.DeliverableInfo>? Deliverables { get; set; }
 #nullable restore
 #else
-        public string VoiceId { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.DeliverableInfo> Deliverables { get; set; }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceStatisticsResponseModel"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.OrderDeliverablesResponse"/> and sets the default values.
         /// </summary>
-        public VoiceStatisticsResponseModel()
+        public OrderDeliverablesResponse()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceStatisticsResponseModel"/></returns>
+        /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.OrderDeliverablesResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceStatisticsResponseModel CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.ElevenLabs.OpenApiClient.Models.OrderDeliverablesResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceStatisticsResponseModel();
+            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.OrderDeliverablesResponse();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -53,10 +47,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "characters_converted", n => { CharactersConverted = n.GetIntValue(); } },
-                { "characters_unconverted", n => { CharactersUnconverted = n.GetIntValue(); } },
-                { "credits_needed_to_convert", n => { CreditsNeededToConvert = n.GetIntValue(); } },
-                { "voice_id", n => { VoiceId = n.GetStringValue(); } },
+                { "deliverables", n => { Deliverables = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.DeliverableInfo>(global::Soenneker.ElevenLabs.OpenApiClient.Models.DeliverableInfo.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -66,10 +57,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteIntValue("characters_converted", CharactersConverted);
-            writer.WriteIntValue("characters_unconverted", CharactersUnconverted);
-            writer.WriteIntValue("credits_needed_to_convert", CreditsNeededToConvert);
-            writer.WriteStringValue("voice_id", VoiceId);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.DeliverableInfo>("deliverables", Deliverables);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

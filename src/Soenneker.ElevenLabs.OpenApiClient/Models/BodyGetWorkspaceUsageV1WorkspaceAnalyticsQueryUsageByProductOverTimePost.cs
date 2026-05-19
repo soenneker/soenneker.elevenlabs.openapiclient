@@ -32,7 +32,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.Group_By GroupBy { get; set; }
 #endif
-        /// <summary>The interval_seconds property</summary>
+        /// <summary>Bucket size in seconds. Each row in the response covers this many seconds of usage. For example, pass 3600 for hourly buckets or 86400 for daily buckets.</summary>
         public int? IntervalSeconds { get; set; }
         /// <summary>Start of the time range as a Unix timestamp in milliseconds. Must be at least 2020-01-01.</summary>
         public int? StartTime { get; set; }

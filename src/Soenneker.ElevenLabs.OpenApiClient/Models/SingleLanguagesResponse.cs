@@ -9,41 +9,38 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class VoiceStatisticsResponseModel : IAdditionalDataHolder, IParsable
+    public partial class SingleLanguagesResponse : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The number of converted characters for this voice.</summary>
-        public int? CharactersConverted { get; set; }
-        /// <summary>The number of unconverted characters for this voice.</summary>
-        public int? CharactersUnconverted { get; set; }
-        /// <summary>The number of credits needed to convert the remaining audio for this voice.</summary>
-        public int? CreditsNeededToConvert { get; set; }
-        /// <summary>The voice ID.</summary>
+        /// <summary>Indicates this response contains single languages (not source-to-destination pairs).</summary>
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SingleLanguagesResponse_kind? Kind { get; set; }
+        /// <summary>The list of available languages.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? VoiceId { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.LanguageInfo>? Languages { get; set; }
 #nullable restore
 #else
-        public string VoiceId { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.LanguageInfo> Languages { get; set; }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceStatisticsResponseModel"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.SingleLanguagesResponse"/> and sets the default values.
         /// </summary>
-        public VoiceStatisticsResponseModel()
+        public SingleLanguagesResponse()
         {
             AdditionalData = new Dictionary<string, object>();
+            Kind = global::Soenneker.ElevenLabs.OpenApiClient.Models.SingleLanguagesResponse_kind.Single;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceStatisticsResponseModel"/></returns>
+        /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.SingleLanguagesResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceStatisticsResponseModel CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.ElevenLabs.OpenApiClient.Models.SingleLanguagesResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceStatisticsResponseModel();
+            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.SingleLanguagesResponse();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -53,10 +50,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "characters_converted", n => { CharactersConverted = n.GetIntValue(); } },
-                { "characters_unconverted", n => { CharactersUnconverted = n.GetIntValue(); } },
-                { "credits_needed_to_convert", n => { CreditsNeededToConvert = n.GetIntValue(); } },
-                { "voice_id", n => { VoiceId = n.GetStringValue(); } },
+                { "kind", n => { Kind = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SingleLanguagesResponse_kind>(); } },
+                { "languages", n => { Languages = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.LanguageInfo>(global::Soenneker.ElevenLabs.OpenApiClient.Models.LanguageInfo.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -66,10 +61,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteIntValue("characters_converted", CharactersConverted);
-            writer.WriteIntValue("characters_unconverted", CharactersUnconverted);
-            writer.WriteIntValue("credits_needed_to_convert", CreditsNeededToConvert);
-            writer.WriteStringValue("voice_id", VoiceId);
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SingleLanguagesResponse_kind>("kind", Kind);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.LanguageInfo>("languages", Languages);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

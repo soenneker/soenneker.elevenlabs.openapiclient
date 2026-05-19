@@ -10,6 +10,7 @@ using Soenneker.ElevenLabs.OpenApiClient.V1.ForcedAlignment;
 using Soenneker.ElevenLabs.OpenApiClient.V1.History;
 using Soenneker.ElevenLabs.OpenApiClient.V1.ModelsRequests;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Music;
+using Soenneker.ElevenLabs.OpenApiClient.V1.Productions;
 using Soenneker.ElevenLabs.OpenApiClient.V1.PronunciationDictionaries;
 using Soenneker.ElevenLabs.OpenApiClient.V1.ServiceAccounts;
 using Soenneker.ElevenLabs.OpenApiClient.V1.SharedVoices;
@@ -77,6 +78,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1
         public global::Soenneker.ElevenLabs.OpenApiClient.V1.Music.MusicRequestBuilder Music
         {
             get => new global::Soenneker.ElevenLabs.OpenApiClient.V1.Music.MusicRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The productions property</summary>
+        public global::Soenneker.ElevenLabs.OpenApiClient.V1.Productions.ProductionsRequestBuilder Productions
+        {
+            get => new global::Soenneker.ElevenLabs.OpenApiClient.V1.Productions.ProductionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The pronunciationDictionaries property</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.V1.PronunciationDictionaries.PronunciationDictionariesRequestBuilder PronunciationDictionaries

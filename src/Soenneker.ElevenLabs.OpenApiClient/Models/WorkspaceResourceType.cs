@@ -163,5 +163,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         #pragma warning disable CS1591
         Resource_collection,
         #pragma warning restore CS1591
+        [EnumMember(Value = "studio_projects")]
+        #pragma warning disable CS1591
+        Studio_projects,
+        #pragma warning restore CS1591
     }
 }

@@ -18,6 +18,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public int? CharactersConverted { get; set; }
         /// <summary>The number of unconverted characters.</summary>
         public int? CharactersUnconverted { get; set; }
+        /// <summary>The number of credits needed to convert the remaining paragraphs.</summary>
+        public int? CreditsNeededToConvert { get; set; }
         /// <summary>The number of converted paragraphs.</summary>
         public int? ParagraphsConverted { get; set; }
         /// <summary>The number of unconverted paragraphs.</summary>
@@ -57,6 +59,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             {
                 { "characters_converted", n => { CharactersConverted = n.GetIntValue(); } },
                 { "characters_unconverted", n => { CharactersUnconverted = n.GetIntValue(); } },
+                { "credits_needed_to_convert", n => { CreditsNeededToConvert = n.GetIntValue(); } },
                 { "paragraphs_converted", n => { ParagraphsConverted = n.GetIntValue(); } },
                 { "paragraphs_unconverted", n => { ParagraphsUnconverted = n.GetIntValue(); } },
                 { "voice_statistics", n => { VoiceStatistics = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Voice_Statistics>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Voice_Statistics.CreateFromDiscriminatorValue); } },
@@ -71,6 +74,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("characters_converted", CharactersConverted);
             writer.WriteIntValue("characters_unconverted", CharactersUnconverted);
+            writer.WriteIntValue("credits_needed_to_convert", CreditsNeededToConvert);
             writer.WriteIntValue("paragraphs_converted", ParagraphsConverted);
             writer.WriteIntValue("paragraphs_unconverted", ParagraphsUnconverted);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Voice_Statistics>("voice_statistics", VoiceStatistics);
