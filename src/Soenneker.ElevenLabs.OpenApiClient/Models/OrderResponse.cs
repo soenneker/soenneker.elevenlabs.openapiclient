@@ -46,6 +46,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #endif
         /// <summary>The timestamp when payment was received, if applicable.</summary>
         public DateTimeOffset? PaidAt { get; set; }
+        /// <summary>Whether this is a sandbox order that auto-progresses without producer intervention.</summary>
+        public bool? Sandbox { get; set; }
         /// <summary>The state property</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.OrderState? State { get; set; }
         /// <summary>The timestamp when the order was submitted, if applicable.</summary>
@@ -84,6 +86,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "order_id", n => { OrderId = n.GetStringValue(); } },
                 { "paid_at", n => { PaidAt = n.GetDateTimeOffsetValue(); } },
+                { "sandbox", n => { Sandbox = n.GetBoolValue(); } },
                 { "state", n => { State = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.OrderState>(); } },
                 { "submitted_at", n => { SubmittedAt = n.GetDateTimeOffsetValue(); } },
                 { "total_amount_usd", n => { TotalAmountUsd = n.GetDoubleValue(); } },
@@ -103,6 +106,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("order_id", OrderId);
             writer.WriteDateTimeOffsetValue("paid_at", PaidAt);
+            writer.WriteBoolValue("sandbox", Sandbox);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.OrderState>("state", State);
             writer.WriteDateTimeOffsetValue("submitted_at", SubmittedAt);
             writer.WriteDoubleValue("total_amount_usd", TotalAmountUsd);
