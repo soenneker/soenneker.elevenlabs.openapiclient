@@ -19289,7 +19289,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/RootModelAnnotatedUnionPairedLanguagesResponseSingleLanguagesResponseFieldInfoAnnotationNoneTypeRequiredTrueDiscriminatorKind"
+                  "$ref": "#/components/schemas/LanguagesResponse"
                 }
               }
             }
@@ -22356,6 +22356,25 @@
             "x-convai-client-override": true,
             "x-convai-language-override": true
           },
+          "text_behavior_overrides": {
+            "title": "Text Behavior Overrides",
+            "type": "object",
+            "anyOf": [
+              {
+                "type": "object",
+                "additionalProperties": {
+                  "$ref": "#/components/schemas/BehaviorOverride"
+                },
+                "unrecognizedKeywords": {
+                  "propertyNames": {
+                    "$ref": "#/components/schemas/ConversationInitiationSource"
+                  }
+                }
+              }
+            ],
+            "description": "Per-channel response behavior overrides for text conversations. Built-in channel defaults apply when unset.",
+            "nullable": true
+          },
           "prompt": {
             "$ref": "#/components/schemas/PromptAgentAPIModelInput"
           }
@@ -22405,6 +22424,25 @@
             "description": "If non-empty, the message the agent will send when max conversation duration is reached.",
             "x-convai-client-override": true,
             "x-convai-language-override": true
+          },
+          "text_behavior_overrides": {
+            "title": "Text Behavior Overrides",
+            "type": "object",
+            "anyOf": [
+              {
+                "type": "object",
+                "additionalProperties": {
+                  "$ref": "#/components/schemas/BehaviorOverride"
+                },
+                "unrecognizedKeywords": {
+                  "propertyNames": {
+                    "$ref": "#/components/schemas/ConversationInitiationSource"
+                  }
+                }
+              }
+            ],
+            "description": "Per-channel response behavior overrides for text conversations. Built-in channel defaults apply when unset.",
+            "nullable": true
           },
           "prompt": {
             "$ref": "#/components/schemas/PromptAgentAPIModelOutput"
@@ -22464,6 +22502,25 @@
             "nullable": true,
             "x-convai-client-override": true,
             "x-convai-language-override": true
+          },
+          "text_behavior_overrides": {
+            "title": "Text Behavior Overrides",
+            "type": "object",
+            "anyOf": [
+              {
+                "type": "object",
+                "additionalProperties": {
+                  "$ref": "#/components/schemas/BehaviorOverride"
+                },
+                "unrecognizedKeywords": {
+                  "propertyNames": {
+                    "$ref": "#/components/schemas/ConversationInitiationSource"
+                  }
+                }
+              }
+            ],
+            "description": "Per-channel response behavior overrides for text conversations. Built-in channel defaults apply when unset.",
+            "nullable": true
           },
           "prompt": {
             "type": "object",
@@ -22544,6 +22601,25 @@
             "nullable": true,
             "x-convai-client-override": true,
             "x-convai-language-override": true
+          },
+          "text_behavior_overrides": {
+            "title": "Text Behavior Overrides",
+            "type": "object",
+            "anyOf": [
+              {
+                "type": "object",
+                "additionalProperties": {
+                  "$ref": "#/components/schemas/BehaviorOverride"
+                },
+                "unrecognizedKeywords": {
+                  "propertyNames": {
+                    "$ref": "#/components/schemas/ConversationInitiationSource"
+                  }
+                }
+              }
+            ],
+            "description": "Per-channel response behavior overrides for text conversations. Built-in channel defaults apply when unset.",
+            "nullable": true
           },
           "prompt": {
             "type": "object",
@@ -26278,6 +26354,42 @@
         },
         "description": "Response model for bearer auth"
       },
+      "BehaviorOverride": {
+        "title": "BehaviorOverride",
+        "type": "object",
+        "properties": {
+          "verbosity": {
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Verbosity_Wrapper"
+              }
+            ],
+            "description": "Verbosity override. Underlying default applies when unset.",
+            "nullable": true
+          },
+          "output_format": {
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/OutputFormat_Wrapper"
+              }
+            ],
+            "description": "Output format override. Underlying default applies when unset.",
+            "nullable": true
+          },
+          "interaction_budget": {
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/InteractionBudget_Wrapper"
+              }
+            ],
+            "description": "Interaction budget override. Underlying default applies when unset.",
+            "nullable": true
+          }
+        }
+      },
       "BillingPeriod": {
         "title": "BillingPeriod",
         "enum": [
@@ -26661,6 +26773,17 @@
             "description": "A simple text prompt to generate a song from. Cannot be used in conjunction with \u0060composition_plan\u0060.",
             "nullable": true
           },
+          "generation_mode": {
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/MusicGenerationMode_Wrapper"
+              }
+            ],
+            "description": "Optional generation mode hint for prompt-based music generation. Can only be used with \u0060prompt\u0060.",
+            "nullable": true,
+            "x-fern-ignore": true
+          },
           "music_prompt": {
             "type": "object",
             "anyOf": [
@@ -26799,6 +26922,17 @@
             "type": "string",
             "description": "A simple text prompt to generate a song from. Cannot be used in conjunction with \u0060composition_plan\u0060.",
             "nullable": true
+          },
+          "generation_mode": {
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/MusicGenerationMode_Wrapper"
+              }
+            ],
+            "description": "Optional generation mode hint for prompt-based music generation. Can only be used with \u0060prompt\u0060.",
+            "nullable": true,
+            "x-fern-ignore": true
           },
           "music_prompt": {
             "type": "object",
@@ -29430,6 +29564,17 @@
             "type": "string",
             "description": "A simple text prompt to generate a song from. Cannot be used in conjunction with \u0060composition_plan\u0060.",
             "nullable": true
+          },
+          "generation_mode": {
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/MusicGenerationMode_Wrapper"
+              }
+            ],
+            "description": "Optional generation mode hint for prompt-based music generation. Can only be used with \u0060prompt\u0060.",
+            "nullable": true,
+            "x-fern-ignore": true
           },
           "music_prompt": {
             "type": "object",
@@ -32891,6 +33036,216 @@
             "description": "Human-readable label for this domain entry"
           }
         }
+      },
+      "CodeToolConfigInput": {
+        "title": "CodeToolConfig",
+        "required": [
+          "name",
+          "description",
+          "source_code"
+        ],
+        "type": "object",
+        "properties": {
+          "type": {
+            "title": "Type",
+            "enum": [
+              "code"
+            ],
+            "type": "string",
+            "description": "The type of tool",
+            "default": "code"
+          },
+          "name": {
+            "title": "Name",
+            "minLength": 0,
+            "pattern": "^[a-zA-Z0-9_-]{1,64}$",
+            "type": "string"
+          },
+          "description": {
+            "title": "Description",
+            "minLength": 0,
+            "type": "string",
+            "description": "Description of when the tool should be used and what it does."
+          },
+          "response_timeout_secs": {
+            "title": "Response Timeout Secs",
+            "maximum": 120.0,
+            "minimum": 5.0,
+            "type": "integer",
+            "description": "The maximum time in seconds to wait for the tool call to complete. Must be between 5 and 120 seconds (inclusive).",
+            "default": 20
+          },
+          "disable_interruptions": {
+            "title": "Disable Interruptions",
+            "type": "boolean",
+            "description": "If true, the user will not be able to interrupt the agent while this tool is running.",
+            "default": false
+          },
+          "force_pre_tool_speech": {
+            "title": "Force Pre Tool Speech",
+            "type": "boolean",
+            "description": "\u0022DEPRECATED: use \u0060pre_tool_speech\u0060 instead. If true, the agent will speak before the tool call.\u0022",
+            "default": false,
+            "deprecated": true
+          },
+          "pre_tool_speech": {
+            "$ref": "#/components/schemas/PreToolSpeechMode"
+          },
+          "assignments": {
+            "title": "Assignments",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DynamicVariableAssignment"
+            },
+            "description": "Configuration for extracting values from tool responses and assigning them to dynamic variables"
+          },
+          "tool_call_sound": {
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/ToolCallSoundType_Wrapper"
+              }
+            ],
+            "description": "Predefined tool call sound type to play during tool execution. If not specified, no tool call sound will be played.",
+            "nullable": true,
+            "x-convai-client-override": true
+          },
+          "tool_call_sound_behavior": {
+            "$ref": "#/components/schemas/ToolCallSoundBehavior"
+          },
+          "tool_error_handling_mode": {
+            "$ref": "#/components/schemas/ToolErrorHandlingMode"
+          },
+          "source_code": {
+            "title": "Source Code",
+            "minLength": 1,
+            "type": "string",
+            "description": "TypeScript/JavaScript source code that implements the tool logic"
+          },
+          "dependencies": {
+            "$ref": "#/components/schemas/CodeToolConfigInputDependencies"
+          },
+          "parameters": {
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/ObjectJsonSchemaPropertyInput"
+              }
+            ],
+            "description": "Schema for parameters the LLM provides to the code tool via \u0060args\u0060",
+            "nullable": true
+          },
+          "execution_mode": {
+            "$ref": "#/components/schemas/ToolExecutionMode"
+          }
+        },
+        "description": "A code tool runs user-provided TypeScript/JavaScript in a sandboxed isolate.",
+        "x-fern-ignore": true
+      },
+      "CodeToolConfigOutput": {
+        "title": "CodeToolConfig",
+        "required": [
+          "name",
+          "description",
+          "source_code"
+        ],
+        "type": "object",
+        "properties": {
+          "type": {
+            "title": "Type",
+            "enum": [
+              "code"
+            ],
+            "type": "string",
+            "description": "The type of tool",
+            "default": "code"
+          },
+          "name": {
+            "title": "Name",
+            "minLength": 0,
+            "pattern": "^[a-zA-Z0-9_-]{1,64}$",
+            "type": "string"
+          },
+          "description": {
+            "title": "Description",
+            "minLength": 0,
+            "type": "string",
+            "description": "Description of when the tool should be used and what it does."
+          },
+          "response_timeout_secs": {
+            "title": "Response Timeout Secs",
+            "maximum": 120.0,
+            "minimum": 5.0,
+            "type": "integer",
+            "description": "The maximum time in seconds to wait for the tool call to complete. Must be between 5 and 120 seconds (inclusive).",
+            "default": 20
+          },
+          "disable_interruptions": {
+            "title": "Disable Interruptions",
+            "type": "boolean",
+            "description": "If true, the user will not be able to interrupt the agent while this tool is running.",
+            "default": false
+          },
+          "force_pre_tool_speech": {
+            "title": "Force Pre Tool Speech",
+            "type": "boolean",
+            "description": "\u0022DEPRECATED: use \u0060pre_tool_speech\u0060 instead. If true, the agent will speak before the tool call.\u0022",
+            "default": false,
+            "deprecated": true
+          },
+          "pre_tool_speech": {
+            "$ref": "#/components/schemas/PreToolSpeechMode"
+          },
+          "assignments": {
+            "title": "Assignments",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DynamicVariableAssignment"
+            },
+            "description": "Configuration for extracting values from tool responses and assigning them to dynamic variables"
+          },
+          "tool_call_sound": {
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/ToolCallSoundType_Wrapper"
+              }
+            ],
+            "description": "Predefined tool call sound type to play during tool execution. If not specified, no tool call sound will be played.",
+            "nullable": true,
+            "x-convai-client-override": true
+          },
+          "tool_call_sound_behavior": {
+            "$ref": "#/components/schemas/ToolCallSoundBehavior"
+          },
+          "tool_error_handling_mode": {
+            "$ref": "#/components/schemas/ToolErrorHandlingMode"
+          },
+          "source_code": {
+            "title": "Source Code",
+            "minLength": 1,
+            "type": "string",
+            "description": "TypeScript/JavaScript source code that implements the tool logic"
+          },
+          "dependencies": {
+            "$ref": "#/components/schemas/CodeToolConfigOutputDependencies"
+          },
+          "parameters": {
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/ObjectJsonSchemaPropertyOutput"
+              }
+            ],
+            "description": "Schema for parameters the LLM provides to the code tool via \u0060args\u0060",
+            "nullable": true
+          },
+          "execution_mode": {
+            "$ref": "#/components/schemas/ToolExecutionMode"
+          }
+        },
+        "description": "A code tool runs user-provided TypeScript/JavaScript in a sandboxed isolate.",
+        "x-fern-ignore": true
       },
       "ColumnFilter": {
         "title": "ColumnFilter",
@@ -36435,6 +36790,7 @@
           "flutter_sdk",
           "zendesk_integration",
           "slack_integration",
+          "intercom_integration",
           "template_preview",
           "genesys_bot_connector"
         ],
@@ -46127,6 +46483,15 @@
         "type": "string",
         "additionalProperties": false
       },
+      "InteractionBudget": {
+        "title": "InteractionBudget",
+        "enum": [
+          "realtime",
+          "async"
+        ],
+        "type": "string",
+        "additionalProperties": false
+      },
       "InvoiceResponseModel": {
         "title": "InvoiceResponseModel",
         "required": [
@@ -47598,6 +47963,36 @@
           "name": "English"
         }
       },
+      "LanguagesResponse": {
+        "required": [
+          "kind"
+        ],
+        "type": "object",
+        "oneOf": [
+          {
+            "$ref": "#/components/schemas/PairedLanguagesResponse"
+          },
+          {
+            "$ref": "#/components/schemas/SingleLanguagesResponse"
+          }
+        ],
+        "properties": {
+          "kind": {
+            "title": "kind",
+            "type": "string",
+            "description": "Union discriminator"
+          }
+        },
+        "discriminator": {
+          "propertyName": "kind",
+          "mapping": {
+            "pair": "#/components/schemas/PairedLanguagesResponse",
+            "single": "#/components/schemas/SingleLanguagesResponse",
+            "PairedLanguagesResponse": "#/components/schemas/PairedLanguagesResponse",
+            "SingleLanguagesResponse": "#/components/schemas/SingleLanguagesResponse"
+          }
+        }
+      },
       "LeaveMessageParams": {
         "title": "LeaveMessageParams",
         "type": "object",
@@ -48273,6 +48668,12 @@
           "has_more": false,
           "speech_engines": [
             {
+              "access_info": {
+                "creator_email": "john@example.com",
+                "creator_name": "John Doe",
+                "is_creator": true,
+                "role": "admin"
+              },
               "created_at_unix_secs": 1714000000,
               "name": "My Speech Engine",
               "speech_engine_id": "seng_3701k3ttaq12ewp8b7qv5rfyszkz",
@@ -50564,6 +50965,16 @@
           }
         }
       },
+      "MusicGenerationMode": {
+        "title": "MusicGenerationMode",
+        "enum": [
+          "track",
+          "loop",
+          "ambience"
+        ],
+        "type": "string",
+        "additionalProperties": false
+      },
       "MusicPrompt": {
         "title": "MusicPrompt",
         "required": [
@@ -51125,7 +51536,7 @@
             "type": "string"
           },
           "item": {
-            "$ref": "#/components/schemas/RootModelAnnotatedUnionDubOrderItemRequestSubtitleOrderItemRequestFieldInfoAnnotationNoneTypeRequiredTrueDiscriminatorKindOutput"
+            "$ref": "#/components/schemas/OrderItemRequestOutput"
           },
           "quote": {
             "type": "object",
@@ -51167,6 +51578,66 @@
         ],
         "type": "string",
         "additionalProperties": false
+      },
+      "OrderItemRequestInput": {
+        "required": [
+          "kind"
+        ],
+        "type": "object",
+        "oneOf": [
+          {
+            "$ref": "#/components/schemas/DubOrderItemRequest"
+          },
+          {
+            "$ref": "#/components/schemas/SubtitleOrderItemRequest"
+          }
+        ],
+        "properties": {
+          "kind": {
+            "title": "kind",
+            "type": "string",
+            "description": "Union discriminator"
+          }
+        },
+        "discriminator": {
+          "propertyName": "kind",
+          "mapping": {
+            "dub": "#/components/schemas/DubOrderItemRequest",
+            "subtitles": "#/components/schemas/SubtitleOrderItemRequest",
+            "DubOrderItemRequest": "#/components/schemas/DubOrderItemRequest",
+            "SubtitleOrderItemRequest": "#/components/schemas/SubtitleOrderItemRequest"
+          }
+        }
+      },
+      "OrderItemRequestOutput": {
+        "required": [
+          "kind"
+        ],
+        "type": "object",
+        "oneOf": [
+          {
+            "$ref": "#/components/schemas/DubOrderItemRequest"
+          },
+          {
+            "$ref": "#/components/schemas/SubtitleOrderItemRequest"
+          }
+        ],
+        "properties": {
+          "kind": {
+            "title": "kind",
+            "type": "string",
+            "description": "Union discriminator"
+          }
+        },
+        "discriminator": {
+          "propertyName": "kind",
+          "mapping": {
+            "dub": "#/components/schemas/DubOrderItemRequest",
+            "subtitles": "#/components/schemas/SubtitleOrderItemRequest",
+            "DubOrderItemRequest": "#/components/schemas/DubOrderItemRequest",
+            "SubtitleOrderItemRequest": "#/components/schemas/SubtitleOrderItemRequest"
+          }
+        }
       },
       "OrderMediaResponse": {
         "title": "OrderMediaResponse",
@@ -51530,6 +52001,15 @@
             "nullable": true
           }
         }
+      },
+      "OutputFormat": {
+        "title": "OutputFormat",
+        "enum": [
+          "plain_text",
+          "markdown"
+        ],
+        "type": "string",
+        "additionalProperties": false
       },
       "PairedLanguagesResponse": {
         "title": "PairedLanguagesResponse",
@@ -54863,6 +55343,9 @@
                 },
                 {
                   "$ref": "#/components/schemas/SMBToolConfig"
+                },
+                {
+                  "$ref": "#/components/schemas/CodeToolConfigInput"
                 }
               ],
               "properties": {
@@ -54876,6 +55359,7 @@
                 "mapping": {
                   "api_integration_webhook": "#/components/schemas/ApiIntegrationWebhookToolConfigInput",
                   "client": "#/components/schemas/ClientToolConfigInput",
+                  "code": "#/components/schemas/CodeToolConfigInput",
                   "mcp": "#/components/schemas/MCPToolConfigInput",
                   "smb": "#/components/schemas/SMBToolConfig",
                   "system": "#/components/schemas/SystemToolConfigInput",
@@ -55071,6 +55555,9 @@
                 },
                 {
                   "$ref": "#/components/schemas/SMBToolConfig"
+                },
+                {
+                  "$ref": "#/components/schemas/CodeToolConfigOutput"
                 }
               ],
               "properties": {
@@ -55084,6 +55571,7 @@
                 "mapping": {
                   "api_integration_webhook": "#/components/schemas/ApiIntegrationWebhookToolConfigOutput",
                   "client": "#/components/schemas/ClientToolConfigOutput",
+                  "code": "#/components/schemas/CodeToolConfigOutput",
                   "mcp": "#/components/schemas/MCPToolConfigOutput",
                   "smb": "#/components/schemas/SMBToolConfig",
                   "system": "#/components/schemas/SystemToolConfigOutput",
@@ -56641,7 +57129,8 @@
               "client",
               "workflow",
               "api_integration_webhook",
-              "mcp"
+              "mcp",
+              "code"
             ],
             "type": "string",
             "additionalProperties": false,
@@ -57261,99 +57750,6 @@
             "title": "Explanation",
             "type": "string",
             "nullable": true
-          }
-        }
-      },
-      "RootModelAnnotatedUnionDubOrderItemRequestSubtitleOrderItemRequestFieldInfoAnnotationNoneTypeRequiredTrueDiscriminatorKindInput": {
-        "title": "RootModel[Annotated[Union[DubOrderItemRequest, SubtitleOrderItemRequest], FieldInfo(annotation=NoneType, required=True, discriminator=\u0027kind\u0027)]]",
-        "required": [
-          "kind"
-        ],
-        "type": "object",
-        "oneOf": [
-          {
-            "$ref": "#/components/schemas/DubOrderItemRequest"
-          },
-          {
-            "$ref": "#/components/schemas/SubtitleOrderItemRequest"
-          }
-        ],
-        "properties": {
-          "kind": {
-            "title": "kind",
-            "type": "string",
-            "description": "Union discriminator"
-          }
-        },
-        "discriminator": {
-          "propertyName": "kind",
-          "mapping": {
-            "dub": "#/components/schemas/DubOrderItemRequest",
-            "subtitles": "#/components/schemas/SubtitleOrderItemRequest",
-            "DubOrderItemRequest": "#/components/schemas/DubOrderItemRequest",
-            "SubtitleOrderItemRequest": "#/components/schemas/SubtitleOrderItemRequest"
-          }
-        }
-      },
-      "RootModelAnnotatedUnionDubOrderItemRequestSubtitleOrderItemRequestFieldInfoAnnotationNoneTypeRequiredTrueDiscriminatorKindOutput": {
-        "title": "RootModel[Annotated[Union[DubOrderItemRequest, SubtitleOrderItemRequest], FieldInfo(annotation=NoneType, required=True, discriminator=\u0027kind\u0027)]]",
-        "required": [
-          "kind"
-        ],
-        "type": "object",
-        "oneOf": [
-          {
-            "$ref": "#/components/schemas/DubOrderItemRequest"
-          },
-          {
-            "$ref": "#/components/schemas/SubtitleOrderItemRequest"
-          }
-        ],
-        "properties": {
-          "kind": {
-            "title": "kind",
-            "type": "string",
-            "description": "Union discriminator"
-          }
-        },
-        "discriminator": {
-          "propertyName": "kind",
-          "mapping": {
-            "dub": "#/components/schemas/DubOrderItemRequest",
-            "subtitles": "#/components/schemas/SubtitleOrderItemRequest",
-            "DubOrderItemRequest": "#/components/schemas/DubOrderItemRequest",
-            "SubtitleOrderItemRequest": "#/components/schemas/SubtitleOrderItemRequest"
-          }
-        }
-      },
-      "RootModelAnnotatedUnionPairedLanguagesResponseSingleLanguagesResponseFieldInfoAnnotationNoneTypeRequiredTrueDiscriminatorKind": {
-        "title": "RootModel[Annotated[Union[PairedLanguagesResponse, SingleLanguagesResponse], FieldInfo(annotation=NoneType, required=True, discriminator=\u0027kind\u0027)]]",
-        "required": [
-          "kind"
-        ],
-        "type": "object",
-        "oneOf": [
-          {
-            "$ref": "#/components/schemas/PairedLanguagesResponse"
-          },
-          {
-            "$ref": "#/components/schemas/SingleLanguagesResponse"
-          }
-        ],
-        "properties": {
-          "kind": {
-            "title": "kind",
-            "type": "string",
-            "description": "Union discriminator"
-          }
-        },
-        "discriminator": {
-          "propertyName": "kind",
-          "mapping": {
-            "pair": "#/components/schemas/PairedLanguagesResponse",
-            "single": "#/components/schemas/SingleLanguagesResponse",
-            "PairedLanguagesResponse": "#/components/schemas/PairedLanguagesResponse",
-            "SingleLanguagesResponse": "#/components/schemas/SingleLanguagesResponse"
           }
         }
       },
@@ -59695,6 +60091,16 @@
           },
           "metadata": {
             "$ref": "#/components/schemas/AgentMetadataDBModel"
+          },
+          "access_info": {
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/ResourceAccessInfo"
+              }
+            ],
+            "description": "The access information of the speech engine for the user",
+            "nullable": true
           }
         },
         "example": {
@@ -59769,7 +60175,8 @@
           "speech_engine_id",
           "name",
           "created_at_unix_secs",
-          "tags"
+          "tags",
+          "access_info"
         ],
         "type": "object",
         "properties": {
@@ -59795,9 +60202,18 @@
               "type": "string"
             },
             "description": "Arbitrary tags for categorization and filtering"
+          },
+          "access_info": {
+            "$ref": "#/components/schemas/ResourceAccessInfo"
           }
         },
         "example": {
+          "access_info": {
+            "creator_email": "john@example.com",
+            "creator_name": "John Doe",
+            "is_creator": true,
+            "role": "admin"
+          },
           "created_at_unix_secs": 1714000000,
           "name": "My Speech Engine",
           "speech_engine_id": "seng_3701k3ttaq12ewp8b7qv5rfyszkz",
@@ -62711,6 +63127,9 @@
               },
               {
                 "$ref": "#/components/schemas/MCPToolConfigInput"
+              },
+              {
+                "$ref": "#/components/schemas/CodeToolConfigInput"
               }
             ],
             "properties": {
@@ -62723,6 +63142,7 @@
               "propertyName": "type",
               "mapping": {
                 "client": "#/components/schemas/ClientToolConfigInput",
+                "code": "#/components/schemas/CodeToolConfigInput",
                 "mcp": "#/components/schemas/MCPToolConfigInput",
                 "system": "#/components/schemas/SystemToolConfigInput",
                 "webhook": "#/components/schemas/WebhookToolConfigInput"
@@ -62818,6 +63238,9 @@
               },
               {
                 "$ref": "#/components/schemas/MCPToolConfigOutput"
+              },
+              {
+                "$ref": "#/components/schemas/CodeToolConfigOutput"
               }
             ],
             "properties": {
@@ -62830,6 +63253,7 @@
               "propertyName": "type",
               "mapping": {
                 "client": "#/components/schemas/ClientToolConfigOutput",
+                "code": "#/components/schemas/CodeToolConfigOutput",
                 "mcp": "#/components/schemas/MCPToolConfigOutput",
                 "system": "#/components/schemas/SystemToolConfigOutput",
                 "webhook": "#/components/schemas/WebhookToolConfigOutput"
@@ -62874,7 +63298,8 @@
           "workflow",
           "api_integration_webhook",
           "api_integration_mcp",
-          "smb"
+          "smb",
+          "code"
         ],
         "type": "string",
         "additionalProperties": false
@@ -62884,7 +63309,8 @@
         "enum": [
           "webhook",
           "client",
-          "api_integration_webhook"
+          "api_integration_webhook",
+          "code"
         ],
         "type": "string",
         "additionalProperties": false
@@ -64895,7 +65321,7 @@
         "type": "object",
         "properties": {
           "item": {
-            "$ref": "#/components/schemas/RootModelAnnotatedUnionDubOrderItemRequestSubtitleOrderItemRequestFieldInfoAnnotationNoneTypeRequiredTrueDiscriminatorKindInput"
+            "$ref": "#/components/schemas/OrderItemRequestInput"
           },
           "item_id": {
             "pattern": "^proditem_[a-z0-9]{26}$",
@@ -65372,6 +65798,16 @@
             "type": "string"
           }
         }
+      },
+      "Verbosity": {
+        "title": "Verbosity",
+        "enum": [
+          "auto",
+          "concise",
+          "thorough"
+        ],
+        "type": "string",
+        "additionalProperties": false
       },
       "VerificationAttemptResponseModel": {
         "title": "VerificationAttemptResponseModel",
@@ -72034,6 +72470,58 @@
           "propertyName": "type"
         }
       },
+      "CodeToolConfigInputDependencies": {
+        "title": "Dependencies",
+        "required": [
+          "type"
+        ],
+        "type": "object",
+        "anyOf": [
+          {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            }
+          }
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "Union discriminator"
+          }
+        },
+        "description": "\u0022npm dependencies as a package-name \u2192 version map (e.g. {\\\u0022lodash\\\u0022: \\\u0022^4.17.21\\\u0022})\u0022",
+        "nullable": true,
+        "discriminator": {
+          "propertyName": "type"
+        }
+      },
+      "CodeToolConfigOutputDependencies": {
+        "title": "Dependencies",
+        "required": [
+          "type"
+        ],
+        "type": "object",
+        "anyOf": [
+          {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            }
+          }
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "Union discriminator"
+          }
+        },
+        "description": "\u0022npm dependencies as a package-name \u2192 version map (e.g. {\\\u0022lodash\\\u0022: \\\u0022^4.17.21\\\u0022})\u0022",
+        "nullable": true,
+        "discriminator": {
+          "propertyName": "type"
+        }
+      },
       "ConversationHistorySIPTrunkingPhoneCallModelSipHeaderDynamicVariables": {
         "title": "Sip Header Dynamic Variables",
         "type": "object",
@@ -74522,6 +75010,50 @@
           }
         }
       },
+      "Verbosity_Wrapper": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "$ref": "#/components/schemas/Verbosity"
+          }
+        }
+      },
+      "OutputFormat_Wrapper": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "$ref": "#/components/schemas/OutputFormat"
+          }
+        }
+      },
+      "InteractionBudget_Wrapper": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "$ref": "#/components/schemas/InteractionBudget"
+          }
+        }
+      },
+      "MusicGenerationMode_Wrapper": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "$ref": "#/components/schemas/MusicGenerationMode"
+          }
+        }
+      },
       "Tags": {
         "required": [
           "value"
@@ -75496,6 +76028,9 @@
                 },
                 {
                   "$ref": "#/components/schemas/SMBToolConfig"
+                },
+                {
+                  "$ref": "#/components/schemas/CodeToolConfigInput"
                 }
               ],
               "properties": {
@@ -75509,6 +76044,7 @@
                 "mapping": {
                   "api_integration_webhook": "#/components/schemas/ApiIntegrationWebhookToolConfigInput",
                   "client": "#/components/schemas/ClientToolConfigInput",
+                  "code": "#/components/schemas/CodeToolConfigInput",
                   "mcp": "#/components/schemas/MCPToolConfigInput",
                   "smb": "#/components/schemas/SMBToolConfig",
                   "system": "#/components/schemas/SystemToolConfigInput",

@@ -17,10 +17,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The item property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.RootModelAnnotatedUnionDubOrderItemRequestSubtitleOrderItemRequestFieldInfoAnnotationNoneTypeRequiredTrueDiscriminatorKindOutput? Item { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.OrderItemRequestOutput? Item { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.RootModelAnnotatedUnionDubOrderItemRequestSubtitleOrderItemRequestFieldInfoAnnotationNoneTypeRequiredTrueDiscriminatorKindOutput Item { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.OrderItemRequestOutput Item { get; set; }
 #endif
         /// <summary>The item_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -63,7 +63,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "item", n => { Item = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.RootModelAnnotatedUnionDubOrderItemRequestSubtitleOrderItemRequestFieldInfoAnnotationNoneTypeRequiredTrueDiscriminatorKindOutput>(global::Soenneker.ElevenLabs.OpenApiClient.Models.RootModelAnnotatedUnionDubOrderItemRequestSubtitleOrderItemRequestFieldInfoAnnotationNoneTypeRequiredTrueDiscriminatorKindOutput.CreateFromDiscriminatorValue); } },
+                { "item", n => { Item = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.OrderItemRequestOutput>(global::Soenneker.ElevenLabs.OpenApiClient.Models.OrderItemRequestOutput.CreateFromDiscriminatorValue); } },
                 { "item_id", n => { ItemId = n.GetStringValue(); } },
                 { "quote", n => { Quote = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.QuoteInfo>(global::Soenneker.ElevenLabs.OpenApiClient.Models.QuoteInfo.CreateFromDiscriminatorValue); } },
             };
@@ -75,7 +75,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.RootModelAnnotatedUnionDubOrderItemRequestSubtitleOrderItemRequestFieldInfoAnnotationNoneTypeRequiredTrueDiscriminatorKindOutput>("item", Item);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.OrderItemRequestOutput>("item", Item);
             writer.WriteStringValue("item_id", ItemId);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.QuoteInfo>("quote", Quote);
             writer.WriteAdditionalData(AdditionalData);

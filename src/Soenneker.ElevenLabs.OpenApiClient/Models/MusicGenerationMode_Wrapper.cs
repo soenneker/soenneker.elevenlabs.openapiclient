@@ -9,43 +9,29 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class UpsertOrderItemRequest : IAdditionalDataHolder, IParsable
+    public partial class MusicGenerationMode_Wrapper : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The item property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.OrderItemRequestInput? Item { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.OrderItemRequestInput Item { get; set; }
-#endif
-        /// <summary>The ID of an existing item to update. Omit to create a new item.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ItemId { get; set; }
-#nullable restore
-#else
-        public string ItemId { get; set; }
-#endif
+        /// <summary>The value property</summary>
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.MusicGenerationMode? Value { get; set; }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.UpsertOrderItemRequest"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.MusicGenerationMode_Wrapper"/> and sets the default values.
         /// </summary>
-        public UpsertOrderItemRequest()
+        public MusicGenerationMode_Wrapper()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.UpsertOrderItemRequest"/></returns>
+        /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.MusicGenerationMode_Wrapper"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.ElevenLabs.OpenApiClient.Models.UpsertOrderItemRequest CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.ElevenLabs.OpenApiClient.Models.MusicGenerationMode_Wrapper CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.UpsertOrderItemRequest();
+            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.MusicGenerationMode_Wrapper();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -55,8 +41,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "item", n => { Item = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.OrderItemRequestInput>(global::Soenneker.ElevenLabs.OpenApiClient.Models.OrderItemRequestInput.CreateFromDiscriminatorValue); } },
-                { "item_id", n => { ItemId = n.GetStringValue(); } },
+                { "value", n => { Value = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.MusicGenerationMode>(); } },
             };
         }
         /// <summary>
@@ -66,8 +51,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.OrderItemRequestInput>("item", Item);
-            writer.WriteStringValue("item_id", ItemId);
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.MusicGenerationMode>("value", Value);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

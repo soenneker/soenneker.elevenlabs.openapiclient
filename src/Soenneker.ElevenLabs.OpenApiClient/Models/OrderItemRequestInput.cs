@@ -11,7 +11,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     /// Composed type wrapper for classes <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.DubOrderItemRequest"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.SubtitleOrderItemRequest"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class RootModelAnnotatedUnionDubOrderItemRequestSubtitleOrderItemRequestFieldInfoAnnotationNoneTypeRequiredTrueDiscriminatorKindInput : IComposedTypeWrapper, IParsable
+    public partial class OrderItemRequestInput : IComposedTypeWrapper, IParsable
     {
         /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.DubOrderItemRequest"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -32,13 +32,13 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.RootModelAnnotatedUnionDubOrderItemRequestSubtitleOrderItemRequestFieldInfoAnnotationNoneTypeRequiredTrueDiscriminatorKindInput"/></returns>
+        /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.OrderItemRequestInput"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.ElevenLabs.OpenApiClient.Models.RootModelAnnotatedUnionDubOrderItemRequestSubtitleOrderItemRequestFieldInfoAnnotationNoneTypeRequiredTrueDiscriminatorKindInput CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.ElevenLabs.OpenApiClient.Models.OrderItemRequestInput CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("kind")?.GetStringValue();
-            var result = new global::Soenneker.ElevenLabs.OpenApiClient.Models.RootModelAnnotatedUnionDubOrderItemRequestSubtitleOrderItemRequestFieldInfoAnnotationNoneTypeRequiredTrueDiscriminatorKindInput();
+            var result = new global::Soenneker.ElevenLabs.OpenApiClient.Models.OrderItemRequestInput();
             if("dub".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.DubOrderItemRequest = new global::Soenneker.ElevenLabs.OpenApiClient.Models.DubOrderItemRequest();

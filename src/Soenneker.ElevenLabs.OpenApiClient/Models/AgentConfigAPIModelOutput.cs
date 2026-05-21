@@ -58,6 +58,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentAPIModelOutput Prompt { get; set; }
 #endif
+        /// <summary>Per-channel response behavior overrides for text conversations. Built-in channel defaults apply when unset.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentConfigAPIModelOutput_text_behavior_overrides? TextBehaviorOverrides { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentConfigAPIModelOutput_text_behavior_overrides TextBehaviorOverrides { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentConfigAPIModelOutput"/> and sets the default values.
         /// </summary>
@@ -91,6 +99,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "language", n => { Language = n.GetStringValue(); } },
                 { "max_conversation_duration_message", n => { MaxConversationDurationMessage = n.GetStringValue(); } },
                 { "prompt", n => { Prompt = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentAPIModelOutput>(global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentAPIModelOutput.CreateFromDiscriminatorValue); } },
+                { "text_behavior_overrides", n => { TextBehaviorOverrides = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentConfigAPIModelOutput_text_behavior_overrides>(global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentConfigAPIModelOutput_text_behavior_overrides.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -107,6 +116,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteStringValue("language", Language);
             writer.WriteStringValue("max_conversation_duration_message", MaxConversationDurationMessage);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentAPIModelOutput>("prompt", Prompt);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentConfigAPIModelOutput_text_behavior_overrides>("text_behavior_overrides", TextBehaviorOverrides);
             writer.WriteAdditionalData(AdditionalData);
         }
     }
