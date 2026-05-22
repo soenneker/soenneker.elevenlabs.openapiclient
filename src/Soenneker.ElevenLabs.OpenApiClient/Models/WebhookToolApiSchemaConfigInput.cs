@@ -22,6 +22,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookToolApiSchemaConfigInput.WebhookToolApiSchemaConfigInput_auth_connection AuthConnection { get; set; }
 #endif
+        /// <summary>URL placeholders resolved from the auth connection (e.g. secrets injected via UrlSecretAuthConnection) rather than from path_params_schema.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? AuthResolvedParams { get; set; }
+#nullable restore
+#else
+        public List<string> AuthResolvedParams { get; set; }
+#endif
         /// <summary>Content type for the request body. Only applies to POST/PUT/PATCH requests.</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookToolApiSchemaConfigInput_content_type? ContentType { get; set; }
         /// <summary>The HTTP method to use for the webhook</summary>
@@ -102,6 +110,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "auth_connection", n => { AuthConnection = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookToolApiSchemaConfigInput.WebhookToolApiSchemaConfigInput_auth_connection>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookToolApiSchemaConfigInput.WebhookToolApiSchemaConfigInput_auth_connection.CreateFromDiscriminatorValue); } },
+                { "auth_resolved_params", n => { AuthResolvedParams = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "content_type", n => { ContentType = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookToolApiSchemaConfigInput_content_type>(); } },
                 { "method", n => { Method = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookToolApiSchemaConfigInput_method>(); } },
                 { "path_params_schema", n => { PathParamsSchema = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookToolApiSchemaConfigInput_path_params_schema>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookToolApiSchemaConfigInput_path_params_schema.CreateFromDiscriminatorValue); } },
@@ -120,6 +129,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookToolApiSchemaConfigInput.WebhookToolApiSchemaConfigInput_auth_connection>("auth_connection", AuthConnection);
+            writer.WriteCollectionOfPrimitiveValues<string>("auth_resolved_params", AuthResolvedParams);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookToolApiSchemaConfigInput_content_type>("content_type", ContentType);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookToolApiSchemaConfigInput_method>("method", Method);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookToolApiSchemaConfigInput_path_params_schema>("path_params_schema", PathParamsSchema);

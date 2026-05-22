@@ -75,9 +75,17 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         #pragma warning disable CS1591
         Slack_integration,
         #pragma warning restore CS1591
+        [EnumMember(Value = "telegram_integration")]
+        #pragma warning disable CS1591
+        Telegram_integration,
+        #pragma warning restore CS1591
         [EnumMember(Value = "intercom_integration")]
         #pragma warning disable CS1591
         Intercom_integration,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "freshdesk_integration")]
+        #pragma warning disable CS1591
+        Freshdesk_integration,
         #pragma warning restore CS1591
         [EnumMember(Value = "template_preview")]
         #pragma warning disable CS1591
