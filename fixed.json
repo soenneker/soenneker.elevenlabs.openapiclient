@@ -17029,7 +17029,7 @@
             "schema": {
               "title": "Limit",
               "maximum": 100,
-              "minimum": 1,
+              "minimum": true,
               "exclusiveMinimum": true,
               "type": "integer",
               "description": "How many results at most should be returned",
