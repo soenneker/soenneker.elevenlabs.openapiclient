@@ -24,6 +24,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Number of direct children (tests and subfolders) for folders only</summary>
         public int? ChildrenCount { get; set; }
+        /// <summary>Channel the test simulates the conversation as. Null for folders or default behavior.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationSource_Wrapper? ConversationInitiationSource { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationSource_Wrapper ConversationInitiationSource { get; set; }
+#endif
         /// <summary>Creation time of the test in unix seconds</summary>
         public int? CreatedAtUnixSecs { get; set; }
         /// <summary>The entity_type property</summary>
@@ -92,6 +100,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             {
                 { "access_info", n => { AccessInfo = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceAccessInfo>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceAccessInfo.CreateFromDiscriminatorValue); } },
                 { "children_count", n => { ChildrenCount = n.GetIntValue(); } },
+                { "conversation_initiation_source", n => { ConversationInitiationSource = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationSource_Wrapper>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationSource_Wrapper.CreateFromDiscriminatorValue); } },
                 { "created_at_unix_secs", n => { CreatedAtUnixSecs = n.GetIntValue(); } },
                 { "entity_type", n => { EntityType = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentTestEntityType>(); } },
                 { "folder_parent_id", n => { FolderParentId = n.GetStringValue(); } },
@@ -111,6 +120,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceAccessInfo>("access_info", AccessInfo);
             writer.WriteIntValue("children_count", ChildrenCount);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationSource_Wrapper>("conversation_initiation_source", ConversationInitiationSource);
             writer.WriteIntValue("created_at_unix_secs", CreatedAtUnixSecs);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentTestEntityType>("entity_type", EntityType);
             writer.WriteStringValue("folder_parent_id", FolderParentId);

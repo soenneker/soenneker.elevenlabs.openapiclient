@@ -5,20 +5,16 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public enum TelephonyProvider
+    public enum ExotelApiSubdomain
     #pragma warning restore CS1591
     {
-        [EnumMember(Value = "twilio")]
+        [EnumMember(Value = "api.in.exotel.com")]
         #pragma warning disable CS1591
-        Twilio,
+        ApiInExotelCom,
         #pragma warning restore CS1591
-        [EnumMember(Value = "sip_trunk")]
+        [EnumMember(Value = "api.exotel.com")]
         #pragma warning disable CS1591
-        Sip_trunk,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "exotel")]
-        #pragma warning disable CS1591
-        Exotel,
+        ApiExotelCom,
         #pragma warning restore CS1591
     }
 }

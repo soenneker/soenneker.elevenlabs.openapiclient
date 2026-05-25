@@ -282,7 +282,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item
             [QueryParameter("branch_id")]
             public string BranchId { get; set; }
 #endif
-            /// <summary>Enable versioning for the agent, if not already enabled</summary>
+            /// <summary>&quot;Deprecated: all agents are versioned. This parameter is ignored.&quot;</summary>
+            [Obsolete("")]
             [QueryParameter("enable_versioning_if_not_enabled")]
             public bool? EnableVersioningIfNotEnabled { get; set; }
         }

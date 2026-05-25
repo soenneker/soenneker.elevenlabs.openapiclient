@@ -30,6 +30,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public string BranchId { get; set; }
 #endif
+        /// <summary>None when repeat_count==1 (no bucketing). Otherwise tracks bucketing lifecycle.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BucketingStatus_Wrapper? BucketingStatus { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BucketingStatus_Wrapper BucketingStatus { get; set; }
+#endif
         /// <summary>The created_at property</summary>
         public int? CreatedAt { get; set; }
         /// <summary>The folder_id property</summary>
@@ -47,6 +55,16 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #nullable restore
 #else
         public string Id { get; set; }
+#endif
+        /// <summary>The repeat_count property</summary>
+        public int? RepeatCount { get; set; }
+        /// <summary>The result_groups property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.TestRunResultSummary>? ResultGroups { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.TestRunResultSummary> ResultGroups { get; set; }
 #endif
         /// <summary>The test_runs property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -83,9 +101,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             {
                 { "agent_id", n => { AgentId = n.GetStringValue(); } },
                 { "branch_id", n => { BranchId = n.GetStringValue(); } },
+                { "bucketing_status", n => { BucketingStatus = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BucketingStatus_Wrapper>(global::Soenneker.ElevenLabs.OpenApiClient.Models.BucketingStatus_Wrapper.CreateFromDiscriminatorValue); } },
                 { "created_at", n => { CreatedAt = n.GetIntValue(); } },
                 { "folder_id", n => { FolderId = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
+                { "repeat_count", n => { RepeatCount = n.GetIntValue(); } },
+                { "result_groups", n => { ResultGroups = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.TestRunResultSummary>(global::Soenneker.ElevenLabs.OpenApiClient.Models.TestRunResultSummary.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "test_runs", n => { TestRuns = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.UnitTestRunResponseModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.UnitTestRunResponseModel.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
@@ -98,9 +119,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("agent_id", AgentId);
             writer.WriteStringValue("branch_id", BranchId);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BucketingStatus_Wrapper>("bucketing_status", BucketingStatus);
             writer.WriteIntValue("created_at", CreatedAt);
             writer.WriteStringValue("folder_id", FolderId);
             writer.WriteStringValue("id", Id);
+            writer.WriteIntValue("repeat_count", RepeatCount);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.TestRunResultSummary>("result_groups", ResultGroups);
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.UnitTestRunResponseModel>("test_runs", TestRuns);
             writer.WriteAdditionalData(AdditionalData);
         }

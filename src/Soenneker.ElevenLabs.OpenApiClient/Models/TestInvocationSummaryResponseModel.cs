@@ -54,6 +54,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public int? PassedCount { get; set; }
         /// <summary>Number of test runs that are pending</summary>
         public int? PendingCount { get; set; }
+        /// <summary>Number of times each test was repeated in this invocation</summary>
+        public int? RepeatCount { get; set; }
         /// <summary>Number of test runs in this invocation</summary>
         public int? TestRunCount { get; set; }
         /// <summary>Title of the test invocation - either the single test name or count of tests</summary>
@@ -97,6 +99,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "passed_count", n => { PassedCount = n.GetIntValue(); } },
                 { "pending_count", n => { PendingCount = n.GetIntValue(); } },
+                { "repeat_count", n => { RepeatCount = n.GetIntValue(); } },
                 { "test_run_count", n => { TestRunCount = n.GetIntValue(); } },
                 { "title", n => { Title = n.GetStringValue(); } },
             };
@@ -116,6 +119,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteStringValue("id", Id);
             writer.WriteIntValue("passed_count", PassedCount);
             writer.WriteIntValue("pending_count", PendingCount);
+            writer.WriteIntValue("repeat_count", RepeatCount);
             writer.WriteIntValue("test_run_count", TestRunCount);
             writer.WriteStringValue("title", Title);
             writer.WriteAdditionalData(AdditionalData);

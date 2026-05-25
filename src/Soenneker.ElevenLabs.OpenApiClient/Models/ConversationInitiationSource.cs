@@ -47,6 +47,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         #pragma warning disable CS1591
         Twilio,
         #pragma warning restore CS1591
+        [EnumMember(Value = "exotel")]
+        #pragma warning disable CS1591
+        Exotel,
+        #pragma warning restore CS1591
         [EnumMember(Value = "genesys")]
         #pragma warning disable CS1591
         Genesys,

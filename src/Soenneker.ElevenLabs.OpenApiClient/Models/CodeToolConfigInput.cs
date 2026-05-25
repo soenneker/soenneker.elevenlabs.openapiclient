@@ -41,6 +41,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #endif
         /// <summary>If true, the user will not be able to interrupt the agent while this tool is running.</summary>
         public bool? DisableInterruptions { get; set; }
+        /// <summary>The dynamic_variables property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.DynamicVariablesConfigInput? DynamicVariables { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.DynamicVariablesConfigInput DynamicVariables { get; set; }
+#endif
         /// <summary>The execution_mode property</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolExecutionMode? ExecutionMode { get; set; }
         /// <summary>&quot;DEPRECATED: use `pre_tool_speech` instead. If true, the agent will speak before the tool call.&quot;</summary>
@@ -122,6 +130,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "dependencies", n => { Dependencies = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CodeToolConfigInputDependencies>(global::Soenneker.ElevenLabs.OpenApiClient.Models.CodeToolConfigInputDependencies.CreateFromDiscriminatorValue); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "disable_interruptions", n => { DisableInterruptions = n.GetBoolValue(); } },
+                { "dynamic_variables", n => { DynamicVariables = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DynamicVariablesConfigInput>(global::Soenneker.ElevenLabs.OpenApiClient.Models.DynamicVariablesConfigInput.CreateFromDiscriminatorValue); } },
                 { "execution_mode", n => { ExecutionMode = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolExecutionMode>(); } },
                 { "force_pre_tool_speech", n => { ForcePreToolSpeech = n.GetBoolValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
@@ -146,6 +155,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CodeToolConfigInputDependencies>("dependencies", Dependencies);
             writer.WriteStringValue("description", Description);
             writer.WriteBoolValue("disable_interruptions", DisableInterruptions);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DynamicVariablesConfigInput>("dynamic_variables", DynamicVariables);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolExecutionMode>("execution_mode", ExecutionMode);
             writer.WriteBoolValue("force_pre_tool_speech", ForcePreToolSpeech);
             writer.WriteStringValue("name", Name);

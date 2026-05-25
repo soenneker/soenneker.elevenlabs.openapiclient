@@ -8,11 +8,19 @@ using System;
 namespace Soenneker.ElevenLabs.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateSIPTrunkPhoneNumberRequestV2"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateTwilioPhoneNumberRequest"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateExotelPhoneNumberRequest"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateSIPTrunkPhoneNumberRequestV2"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateTwilioPhoneNumberRequest"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CreatePhoneNumberRoute : IComposedTypeWrapper, IParsable
     {
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateExotelPhoneNumberRequest"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateExotelPhoneNumberRequest? CreateExotelPhoneNumberRequest { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateExotelPhoneNumberRequest CreateExotelPhoneNumberRequest { get; set; }
+#endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateSIPTrunkPhoneNumberRequestV2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -38,6 +46,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var result = new global::Soenneker.ElevenLabs.OpenApiClient.Models.CreatePhoneNumberRoute();
+            result.CreateExotelPhoneNumberRequest = new global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateExotelPhoneNumberRequest();
             result.CreateSIPTrunkPhoneNumberRequestV2 = new global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateSIPTrunkPhoneNumberRequestV2();
             result.CreateTwilioPhoneNumberRequest = new global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateTwilioPhoneNumberRequest();
             return result;
@@ -48,9 +57,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(CreateSIPTrunkPhoneNumberRequestV2 != null || CreateTwilioPhoneNumberRequest != null)
+            if(CreateExotelPhoneNumberRequest != null || CreateSIPTrunkPhoneNumberRequestV2 != null || CreateTwilioPhoneNumberRequest != null)
             {
-                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(CreateSIPTrunkPhoneNumberRequestV2, CreateTwilioPhoneNumberRequest);
+                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(CreateExotelPhoneNumberRequest, CreateSIPTrunkPhoneNumberRequestV2, CreateTwilioPhoneNumberRequest);
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -61,7 +70,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateSIPTrunkPhoneNumberRequestV2>(null, CreateSIPTrunkPhoneNumberRequestV2, CreateTwilioPhoneNumberRequest);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateExotelPhoneNumberRequest>(null, CreateExotelPhoneNumberRequest, CreateSIPTrunkPhoneNumberRequestV2, CreateTwilioPhoneNumberRequest);
         }
     }
 }

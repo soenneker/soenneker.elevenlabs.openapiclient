@@ -5,20 +5,20 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public enum TelephonyProvider
+    public enum BucketingStatus
     #pragma warning restore CS1591
     {
-        [EnumMember(Value = "twilio")]
+        [EnumMember(Value = "pending")]
         #pragma warning disable CS1591
-        Twilio,
+        Pending,
         #pragma warning restore CS1591
-        [EnumMember(Value = "sip_trunk")]
+        [EnumMember(Value = "completed")]
         #pragma warning disable CS1591
-        Sip_trunk,
+        Completed,
         #pragma warning restore CS1591
-        [EnumMember(Value = "exotel")]
+        [EnumMember(Value = "failed")]
         #pragma warning disable CS1591
-        Exotel,
+        Failed,
         #pragma warning restore CS1591
     }
 }

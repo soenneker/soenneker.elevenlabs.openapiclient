@@ -10,6 +10,7 @@ using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.BatchCalling;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Conversation;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Conversations;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.EnvironmentVariables;
+using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Exotel;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.KnowledgeBase;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Llm;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.LlmUsage;
@@ -76,6 +77,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai
         public global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.EnvironmentVariables.EnvironmentVariablesRequestBuilder EnvironmentVariables
         {
             get => new global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.EnvironmentVariables.EnvironmentVariablesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The exotel property</summary>
+        public global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Exotel.ExotelRequestBuilder Exotel
+        {
+            get => new global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Exotel.ExotelRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The knowledgeBase property</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.KnowledgeBase.KnowledgeBaseRequestBuilder KnowledgeBase
