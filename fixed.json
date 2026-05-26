@@ -23419,14 +23419,19 @@
       "AgentTransfer": {
         "title": "AgentTransfer",
         "required": [
-          "agent_id",
           "condition"
         ],
         "type": "object",
         "properties": {
           "agent_id": {
             "title": "Agent Id",
-            "type": "string"
+            "type": "string",
+            "nullable": true
+          },
+          "node_id": {
+            "title": "Node Id",
+            "type": "string",
+            "nullable": true
           },
           "condition": {
             "title": "Condition",
@@ -39754,7 +39759,7 @@
             "default": "delete_client"
           }
         },
-        "description": "Delete an existing client from the system."
+        "description": "Delete a client, cascading deletion of all their appointments first."
       },
       "DeleteDubbingResponseModel": {
         "title": "DeleteDubbingResponseModel",
@@ -57764,7 +57769,8 @@
           "wav",
           "aaf",
           "tracks_zip",
-          "clips_zip"
+          "clips_zip",
+          "zip"
         ],
         "type": "string",
         "additionalProperties": false
@@ -64057,6 +64063,11 @@
           "to_agent": {
             "title": "To Agent",
             "type": "string"
+          },
+          "to_node": {
+            "title": "To Node",
+            "type": "string",
+            "nullable": true
           },
           "condition": {
             "title": "Condition",

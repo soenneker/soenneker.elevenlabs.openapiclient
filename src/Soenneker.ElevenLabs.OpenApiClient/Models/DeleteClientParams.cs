@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.ElevenLabs.OpenApiClient.Models
 {
     /// <summary>
-    /// Delete an existing client from the system.
+    /// Delete a client, cascading deletion of all their appointments first.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class DeleteClientParams : IAdditionalDataHolder, IParsable

@@ -36,6 +36,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public bool? EnableTransferredAgentFirstMessage { get; set; }
         /// <summary>The is_workflow_node_transfer property</summary>
         public bool? IsWorkflowNodeTransfer { get; set; }
+        /// <summary>The node_id property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? NodeId { get; set; }
+#nullable restore
+#else
+        public string NodeId { get; set; }
+#endif
         /// <summary>The transfer_message property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -74,6 +82,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "delay_ms", n => { DelayMs = n.GetIntValue(); } },
                 { "enable_transferred_agent_first_message", n => { EnableTransferredAgentFirstMessage = n.GetBoolValue(); } },
                 { "is_workflow_node_transfer", n => { IsWorkflowNodeTransfer = n.GetBoolValue(); } },
+                { "node_id", n => { NodeId = n.GetStringValue(); } },
                 { "transfer_message", n => { TransferMessage = n.GetStringValue(); } },
             };
         }
@@ -89,6 +98,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteIntValue("delay_ms", DelayMs);
             writer.WriteBoolValue("enable_transferred_agent_first_message", EnableTransferredAgentFirstMessage);
             writer.WriteBoolValue("is_workflow_node_transfer", IsWorkflowNodeTransfer);
+            writer.WriteStringValue("node_id", NodeId);
             writer.WriteStringValue("transfer_message", TransferMessage);
             writer.WriteAdditionalData(AdditionalData);
         }
