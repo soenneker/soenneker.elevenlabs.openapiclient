@@ -14,7 +14,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The ID of the target group. To target the permissions principals have by default on this resource, use the value &apos;default&apos;.</summary>
+        /// <summary>The ID of the target group. Use &apos;default&apos; to set the resource&apos;s baseline role — every workspace member receives this role unless they hold a higher one through a direct user grant, group membership, or workspace (service account) API key.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? GroupId { get; set; }
@@ -24,7 +24,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #endif
         /// <summary>Resource types that can be shared in the workspace. The name always need to match the collection names</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceResourceType? ResourceType { get; set; }
-        /// <summary>Role to update the target principal with.</summary>
+        /// <summary>&quot;Role to grant to the target: one of &apos;admin&apos;, &apos;editor&apos;, &apos;commenter&apos;, or &apos;viewer&apos;.&quot;</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyShareWorkspaceResourceV1WorkspaceResourcesResourceIdSharePost_role? Role { get; set; }
         /// <summary>The email of the user or service account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -34,7 +34,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public string UserEmail { get; set; }
 #endif
-        /// <summary>The ID of the target workspace API key. This isn&apos;t the same as the key itself that would you pass in the header for authentication. Workspace admins can find this in the workspace settings UI.</summary>
+        /// <summary>The ID of the target workspace (service account) API key. This is not the API key string itself that you pass in the header for authentication — it is the key&apos;s ID, which workspace admins can find under Developers → Service Accounts.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? WorkspaceApiKeyId { get; set; }

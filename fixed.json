@@ -7225,7 +7225,7 @@
           "workspace"
         ],
         "summary": "Share Workspace Resource",
-        "description": "Grants a role on a workspace resource to a user or a group. It overrides any existing role this user/service account/group/workspace api key has on the resource. To target a user or service account, pass only the user email. The user must be in your workspace. To target a group, pass only the group id. To target a workspace api key, pass the api key id. The resource will be shared with the service account associated with the api key. You must have admin access to the resource to share it.",
+        "description": "Grants a role (one of \u0027admin\u0027, \u0027editor\u0027, \u0027commenter\u0027, or \u0027viewer\u0027) on a workspace resource to a user, group, or workspace (service account) API key. This overrides any existing role the target has on the resource. To target a user or service account, pass only the user email; the user must be in your workspace. To target a group, pass only the group id. To target a workspace (service account) API key, pass the api key id; the resource will be shared with the service account associated with that key. You must have admin access to the resource to share it.",
         "operationId": "share-resource-endpoint",
         "parameters": [
           {
@@ -7290,7 +7290,7 @@
           "workspace"
         ],
         "summary": "Unshare Workspace Resource",
-        "description": "Removes any existing role on a workspace resource from a user, service account, group or workspace api key. To target a user or service account, pass only the user email. The user must be in your workspace. To target a group, pass only the group id. To target a workspace api key, pass the api key id. The resource will be unshared from the service account associated with the api key. You must have admin access to the resource to unshare it. You cannot remove permissions from the user who created the resource.",
+        "description": "Removes any existing role on a workspace resource from a user, group, or workspace (service account) API key. To target a user or service account, pass only the user email; the user must be in your workspace. To target a group, pass only the group id. To target a workspace (service account) API key, pass the api key id; the resource will be unshared from the service account associated with that key. You must have admin access to the resource to unshare it. You cannot remove permissions from the user who created the resource.",
         "operationId": "unshare-resource-endpoint",
         "parameters": [
           {
@@ -29167,7 +29167,7 @@
             ],
             "type": "string",
             "additionalProperties": false,
-            "description": "Role to update the target principal with."
+            "description": "\u0022Role to grant to the target: one of \u0027admin\u0027, \u0027editor\u0027, \u0027commenter\u0027, or \u0027viewer\u0027.\u0022"
           },
           "resource_type": {
             "$ref": "#/components/schemas/WorkspaceResourceType"
@@ -29181,13 +29181,13 @@
           "group_id": {
             "title": "Group Id",
             "type": "string",
-            "description": "The ID of the target group. To target the permissions principals have by default on this resource, use the value \u0027default\u0027.",
+            "description": "The ID of the target group. Use \u0027default\u0027 to set the resource\u0027s baseline role \u2014 every workspace member receives this role unless they hold a higher one through a direct user grant, group membership, or workspace (service account) API key.",
             "nullable": true
           },
           "workspace_api_key_id": {
             "title": "Workspace Api Key Id",
             "type": "string",
-            "description": "The ID of the target workspace API key. This isn\u0027t the same as the key itself that would you pass in the header for authentication. Workspace admins can find this in the workspace settings UI.",
+            "description": "The ID of the target workspace (service account) API key. This is not the API key string itself that you pass in the header for authentication \u2014 it is the key\u0027s ID, which workspace admins can find under Developers \u2192 Service Accounts.",
             "nullable": true
           }
         }
@@ -29411,7 +29411,7 @@
           "file": {
             "title": "File",
             "type": "string",
-            "description": "The file to transcribe (100ms minimum audio length). All major audio and video formats are supported. Exactly one of the file or cloud_storage_url parameters must be provided. The file size must be less than 3.0GB.",
+            "description": "The file to transcribe (100ms minimum audio length). All major audio and video formats are supported. Exactly one of the file or cloud_storage_url parameters must be provided. The file size must be less than 5.0GB.",
             "format": "binary",
             "nullable": true
           },
@@ -30052,13 +30052,13 @@
           "group_id": {
             "title": "Group Id",
             "type": "string",
-            "description": "The ID of the target group. To target the permissions principals have by default on this resource, use the value \u0027default\u0027.",
+            "description": "The ID of the target group. Use \u0027default\u0027 to set the resource\u0027s baseline role \u2014 every workspace member receives this role unless they hold a higher one through a direct user grant, group membership, or workspace (service account) API key.",
             "nullable": true
           },
           "workspace_api_key_id": {
             "title": "Workspace Api Key Id",
             "type": "string",
-            "description": "The ID of the target workspace API key. This isn\u0027t the same as the key itself that would you pass in the header for authentication. Workspace admins can find this in the workspace settings UI.",
+            "description": "The ID of the target workspace (service account) API key. This is not the API key string itself that you pass in the header for authentication \u2014 it is the key\u0027s ID, which workspace admins can find under Developers \u2192 Service Accounts.",
             "nullable": true
           }
         }
@@ -53852,7 +53852,6 @@
       "ProcedureCompilerMode": {
         "title": "ProcedureCompilerMode",
         "enum": [
-          "append",
           "skills"
         ],
         "type": "string",
