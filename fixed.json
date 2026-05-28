@@ -23081,15 +23081,6 @@
           },
           "analysis_llm": {
             "$ref": "#/components/schemas/LLM"
-          },
-          "alerting": {
-            "type": "object",
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/AgentAlertingSettings"
-              }
-            ],
-            "nullable": true
           }
         }
       },
@@ -23157,15 +23148,6 @@
           },
           "analysis_llm": {
             "$ref": "#/components/schemas/LLM"
-          },
-          "alerting": {
-            "type": "object",
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/AgentAlertingSettings"
-              }
-            ],
-            "nullable": true
           },
           "safety": {
             "$ref": "#/components/schemas/SafetyResponseModel"
@@ -28252,6 +28234,12 @@
             "type": "number",
             "description": "Frames per second to use when parsing a CSV file for dubbing. If not provided, FPS will be inferred from timecodes.",
             "nullable": true
+          },
+          "hcaptcha_token": {
+            "title": "HCaptcha token",
+            "type": "string",
+            "description": "HCaptcha token used to prevent spam, generated on the frontend either automatically or when the client solves the hCaptcha challenge.\n",
+            "nullable": true
           }
         }
       },
@@ -33149,222 +33137,6 @@
           }
         }
       },
-      "CodeToolConfigInput": {
-        "title": "CodeToolConfig",
-        "required": [
-          "name",
-          "description",
-          "source_code"
-        ],
-        "type": "object",
-        "properties": {
-          "type": {
-            "title": "Type",
-            "enum": [
-              "code"
-            ],
-            "type": "string",
-            "description": "The type of tool",
-            "default": "code"
-          },
-          "name": {
-            "title": "Name",
-            "minLength": 0,
-            "pattern": "^[a-zA-Z0-9_-]{1,64}$",
-            "type": "string"
-          },
-          "description": {
-            "title": "Description",
-            "minLength": 0,
-            "type": "string",
-            "description": "Description of when the tool should be used and what it does."
-          },
-          "response_timeout_secs": {
-            "title": "Response Timeout Secs",
-            "maximum": 120.0,
-            "minimum": 5.0,
-            "type": "integer",
-            "description": "The maximum time in seconds to wait for the tool call to complete. Must be between 5 and 120 seconds (inclusive).",
-            "default": 20
-          },
-          "disable_interruptions": {
-            "title": "Disable Interruptions",
-            "type": "boolean",
-            "description": "If true, the user will not be able to interrupt the agent while this tool is running.",
-            "default": false
-          },
-          "force_pre_tool_speech": {
-            "title": "Force Pre Tool Speech",
-            "type": "boolean",
-            "description": "\u0022DEPRECATED: use \u0060pre_tool_speech\u0060 instead. If true, the agent will speak before the tool call.\u0022",
-            "default": false,
-            "deprecated": true
-          },
-          "pre_tool_speech": {
-            "$ref": "#/components/schemas/PreToolSpeechMode"
-          },
-          "assignments": {
-            "title": "Assignments",
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/DynamicVariableAssignment"
-            },
-            "description": "Configuration for extracting values from tool responses and assigning them to dynamic variables"
-          },
-          "tool_call_sound": {
-            "type": "object",
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/ToolCallSoundType_Wrapper"
-              }
-            ],
-            "description": "Predefined tool call sound type to play during tool execution. If not specified, no tool call sound will be played.",
-            "nullable": true,
-            "x-convai-client-override": true
-          },
-          "tool_call_sound_behavior": {
-            "$ref": "#/components/schemas/ToolCallSoundBehavior"
-          },
-          "tool_error_handling_mode": {
-            "$ref": "#/components/schemas/ToolErrorHandlingMode"
-          },
-          "source_code": {
-            "title": "Source Code",
-            "minLength": 1,
-            "type": "string",
-            "description": "TypeScript/JavaScript source code that implements the tool logic"
-          },
-          "dependencies": {
-            "$ref": "#/components/schemas/CodeToolConfigInputDependencies"
-          },
-          "parameters": {
-            "type": "object",
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/ObjectJsonSchemaPropertyInput"
-              }
-            ],
-            "description": "Schema for parameters the LLM provides to the code tool via \u0060args\u0060",
-            "nullable": true
-          },
-          "dynamic_variables": {
-            "$ref": "#/components/schemas/DynamicVariablesConfigInput"
-          },
-          "execution_mode": {
-            "$ref": "#/components/schemas/ToolExecutionMode"
-          }
-        },
-        "description": "A code tool runs user-provided TypeScript/JavaScript in a sandboxed isolate.",
-        "x-fern-ignore": true
-      },
-      "CodeToolConfigOutput": {
-        "title": "CodeToolConfig",
-        "required": [
-          "name",
-          "description",
-          "source_code"
-        ],
-        "type": "object",
-        "properties": {
-          "type": {
-            "title": "Type",
-            "enum": [
-              "code"
-            ],
-            "type": "string",
-            "description": "The type of tool",
-            "default": "code"
-          },
-          "name": {
-            "title": "Name",
-            "minLength": 0,
-            "pattern": "^[a-zA-Z0-9_-]{1,64}$",
-            "type": "string"
-          },
-          "description": {
-            "title": "Description",
-            "minLength": 0,
-            "type": "string",
-            "description": "Description of when the tool should be used and what it does."
-          },
-          "response_timeout_secs": {
-            "title": "Response Timeout Secs",
-            "maximum": 120.0,
-            "minimum": 5.0,
-            "type": "integer",
-            "description": "The maximum time in seconds to wait for the tool call to complete. Must be between 5 and 120 seconds (inclusive).",
-            "default": 20
-          },
-          "disable_interruptions": {
-            "title": "Disable Interruptions",
-            "type": "boolean",
-            "description": "If true, the user will not be able to interrupt the agent while this tool is running.",
-            "default": false
-          },
-          "force_pre_tool_speech": {
-            "title": "Force Pre Tool Speech",
-            "type": "boolean",
-            "description": "\u0022DEPRECATED: use \u0060pre_tool_speech\u0060 instead. If true, the agent will speak before the tool call.\u0022",
-            "default": false,
-            "deprecated": true
-          },
-          "pre_tool_speech": {
-            "$ref": "#/components/schemas/PreToolSpeechMode"
-          },
-          "assignments": {
-            "title": "Assignments",
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/DynamicVariableAssignment"
-            },
-            "description": "Configuration for extracting values from tool responses and assigning them to dynamic variables"
-          },
-          "tool_call_sound": {
-            "type": "object",
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/ToolCallSoundType_Wrapper"
-              }
-            ],
-            "description": "Predefined tool call sound type to play during tool execution. If not specified, no tool call sound will be played.",
-            "nullable": true,
-            "x-convai-client-override": true
-          },
-          "tool_call_sound_behavior": {
-            "$ref": "#/components/schemas/ToolCallSoundBehavior"
-          },
-          "tool_error_handling_mode": {
-            "$ref": "#/components/schemas/ToolErrorHandlingMode"
-          },
-          "source_code": {
-            "title": "Source Code",
-            "minLength": 1,
-            "type": "string",
-            "description": "TypeScript/JavaScript source code that implements the tool logic"
-          },
-          "dependencies": {
-            "$ref": "#/components/schemas/CodeToolConfigOutputDependencies"
-          },
-          "parameters": {
-            "type": "object",
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/ObjectJsonSchemaPropertyOutput"
-              }
-            ],
-            "description": "Schema for parameters the LLM provides to the code tool via \u0060args\u0060",
-            "nullable": true
-          },
-          "dynamic_variables": {
-            "$ref": "#/components/schemas/DynamicVariablesConfigOutput"
-          },
-          "execution_mode": {
-            "$ref": "#/components/schemas/ToolExecutionMode"
-          }
-        },
-        "description": "A code tool runs user-provided TypeScript/JavaScript in a sandboxed isolate.",
-        "x-fern-ignore": true
-      },
       "ColumnFilter": {
         "title": "ColumnFilter",
         "required": [
@@ -35691,7 +35463,8 @@
             "enum": [
               "client",
               "webhook",
-              "mcp"
+              "mcp",
+              "code"
             ],
             "type": "string",
             "additionalProperties": false,
@@ -49264,7 +49037,28 @@
         "additionalProperties": false,
         "default": "standard"
       },
-      "LoadProcedureToolConfig": {
+      "LoadProcedureToolConfigInput": {
+        "title": "LoadProcedureToolConfig",
+        "type": "object",
+        "properties": {
+          "system_tool_type": {
+            "title": "System Tool Type",
+            "enum": [
+              "load_procedure"
+            ],
+            "type": "string",
+            "default": "load_procedure"
+          },
+          "procedures": {
+            "title": "Procedures",
+            "type": "object",
+            "additionalProperties": {
+              "$ref": "#/components/schemas/ProcedureAtVersion"
+            }
+          }
+        }
+      },
+      "LoadProcedureToolConfigOutput": {
         "title": "LoadProcedureToolConfig",
         "type": "object",
         "properties": {
@@ -51874,6 +51668,34 @@
         },
         "additionalProperties": false
       },
+      "OptInSmsReminderParams": {
+        "title": "OptInSmsReminderParams",
+        "type": "object",
+        "properties": {
+          "smb_tool_type": {
+            "title": "Smb Tool Type",
+            "enum": [
+              "opt_in_sms_reminder"
+            ],
+            "type": "string",
+            "default": "opt_in_sms_reminder"
+          }
+        }
+      },
+      "OptOutSmsReminderParams": {
+        "title": "OptOutSmsReminderParams",
+        "type": "object",
+        "properties": {
+          "smb_tool_type": {
+            "title": "Smb Tool Type",
+            "enum": [
+              "opt_out_sms_reminder"
+            ],
+            "type": "string",
+            "default": "opt_out_sms_reminder"
+          }
+        }
+      },
       "OrbAvatar": {
         "title": "OrbAvatar",
         "type": "object",
@@ -53836,6 +53658,9 @@
             "type": "string",
             "description": "Procedure content"
           },
+          "type": {
+            "$ref": "#/components/schemas/ProcedureType"
+          },
           "agent_id": {
             "title": "Agent Id",
             "type": "string",
@@ -53896,6 +53721,16 @@
             "$ref": "#/components/schemas/ProcedureCompilerMode"
           }
         }
+      },
+      "ProcedureType": {
+        "title": "ProcedureType",
+        "enum": [
+          "free_form",
+          "deterministic"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "default": "free_form"
       },
       "ProjectCreationMetaResponseModel": {
         "title": "ProjectCreationMetaResponseModel",
@@ -55799,9 +55634,6 @@
                 },
                 {
                   "$ref": "#/components/schemas/SMBToolConfig"
-                },
-                {
-                  "$ref": "#/components/schemas/CodeToolConfigInput"
                 }
               ],
               "properties": {
@@ -55815,7 +55647,6 @@
                 "mapping": {
                   "api_integration_webhook": "#/components/schemas/ApiIntegrationWebhookToolConfigInput",
                   "client": "#/components/schemas/ClientToolConfigInput",
-                  "code": "#/components/schemas/CodeToolConfigInput",
                   "mcp": "#/components/schemas/MCPToolConfigInput",
                   "smb": "#/components/schemas/SMBToolConfig",
                   "system": "#/components/schemas/SystemToolConfigInput",
@@ -56011,9 +55842,6 @@
                 },
                 {
                   "$ref": "#/components/schemas/SMBToolConfig"
-                },
-                {
-                  "$ref": "#/components/schemas/CodeToolConfigOutput"
                 }
               ],
               "properties": {
@@ -56027,7 +55855,6 @@
                 "mapping": {
                   "api_integration_webhook": "#/components/schemas/ApiIntegrationWebhookToolConfigOutput",
                   "client": "#/components/schemas/ClientToolConfigOutput",
-                  "code": "#/components/schemas/CodeToolConfigOutput",
                   "mcp": "#/components/schemas/MCPToolConfigOutput",
                   "smb": "#/components/schemas/SMBToolConfig",
                   "system": "#/components/schemas/SystemToolConfigOutput",
@@ -57892,9 +57719,23 @@
             "additionalProperties": false,
             "description": "The access level for anonymous users. If None, the resource is not shared publicly.",
             "nullable": true
+          },
+          "access_source": {
+            "title": "Access Source",
+            "enum": [
+              "creator",
+              "explicit",
+              "workspace_admin",
+              "workspace_default"
+            ],
+            "type": "string",
+            "additionalProperties": false,
+            "description": "Why the requesting user has access to this resource. \u0027creator\u0027 = caller is the owner. \u0027explicit\u0027 = caller (or one of their workspace groups) is listed in role_to_group_ids beyond the workspace-wide everyone group. \u0027workspace_default\u0027 = the workspace-wide everyone group is listed in role_to_group_ids (every non-anon workspace member, including admins, sees this resource). \u0027workspace_admin\u0027 = caller is a workspace admin and the admin seat is the *only* path to access; reserved for docs nobody else can see. Lets the UI disclose why an admin-bypass viewer sees a doc that wasn\u0027t explicitly shared with them.",
+            "nullable": true
           }
         },
         "example": {
+          "access_source": "creator",
           "creator_email": "john.doe@example.com",
           "creator_name": "John Doe",
           "is_creator": true,
@@ -58719,6 +58560,12 @@
               },
               {
                 "$ref": "#/components/schemas/ReportKnowledgeGapParams"
+              },
+              {
+                "$ref": "#/components/schemas/OptInSmsReminderParams"
+              },
+              {
+                "$ref": "#/components/schemas/OptOutSmsReminderParams"
               }
             ],
             "properties": {
@@ -58774,6 +58621,8 @@
                 "list_products": "#/components/schemas/ListProductsParams",
                 "list_services": "#/components/schemas/ListServicesParams",
                 "list_staff": "#/components/schemas/ListStaffParams",
+                "opt_in_sms_reminder": "#/components/schemas/OptInSmsReminderParams",
+                "opt_out_sms_reminder": "#/components/schemas/OptOutSmsReminderParams",
                 "register_for_group_session": "#/components/schemas/RegisterForGroupSessionParams",
                 "report_knowledge_gap": "#/components/schemas/ReportKnowledgeGapParams",
                 "schedule_group_session": "#/components/schemas/ScheduleGroupSessionParams",
@@ -62058,7 +61907,7 @@
                 "$ref": "#/components/schemas/KnowledgeBaseRagToolConfig"
               },
               {
-                "$ref": "#/components/schemas/LoadProcedureToolConfig"
+                "$ref": "#/components/schemas/LoadProcedureToolConfigInput"
               }
             ],
             "properties": {
@@ -62072,7 +61921,7 @@
                 "end_call": "#/components/schemas/EndCallToolConfig",
                 "knowledge_base_rag": "#/components/schemas/KnowledgeBaseRagToolConfig",
                 "language_detection": "#/components/schemas/LanguageDetectionToolConfig",
-                "load_procedure": "#/components/schemas/LoadProcedureToolConfig",
+                "load_procedure": "#/components/schemas/LoadProcedureToolConfigInput",
                 "play_keypad_touch_tone": "#/components/schemas/PlayDTMFToolConfig",
                 "skip_turn": "#/components/schemas/SkipTurnToolConfig",
                 "transfer_to_agent": "#/components/schemas/TransferToAgentToolConfig",
@@ -62192,7 +62041,7 @@
                 "$ref": "#/components/schemas/KnowledgeBaseRagToolConfig"
               },
               {
-                "$ref": "#/components/schemas/LoadProcedureToolConfig"
+                "$ref": "#/components/schemas/LoadProcedureToolConfigOutput"
               }
             ],
             "properties": {
@@ -62206,7 +62055,7 @@
                 "end_call": "#/components/schemas/EndCallToolConfig",
                 "knowledge_base_rag": "#/components/schemas/KnowledgeBaseRagToolConfig",
                 "language_detection": "#/components/schemas/LanguageDetectionToolConfig",
-                "load_procedure": "#/components/schemas/LoadProcedureToolConfig",
+                "load_procedure": "#/components/schemas/LoadProcedureToolConfigOutput",
                 "play_keypad_touch_tone": "#/components/schemas/PlayDTMFToolConfig",
                 "skip_turn": "#/components/schemas/SkipTurnToolConfig",
                 "transfer_to_agent": "#/components/schemas/TransferToAgentToolConfig",
@@ -63692,9 +63541,6 @@
               },
               {
                 "$ref": "#/components/schemas/MCPToolConfigInput"
-              },
-              {
-                "$ref": "#/components/schemas/CodeToolConfigInput"
               }
             ],
             "properties": {
@@ -63707,7 +63553,6 @@
               "propertyName": "type",
               "mapping": {
                 "client": "#/components/schemas/ClientToolConfigInput",
-                "code": "#/components/schemas/CodeToolConfigInput",
                 "mcp": "#/components/schemas/MCPToolConfigInput",
                 "system": "#/components/schemas/SystemToolConfigInput",
                 "webhook": "#/components/schemas/WebhookToolConfigInput"
@@ -63803,9 +63648,6 @@
               },
               {
                 "$ref": "#/components/schemas/MCPToolConfigOutput"
-              },
-              {
-                "$ref": "#/components/schemas/CodeToolConfigOutput"
               }
             ],
             "properties": {
@@ -63818,7 +63660,6 @@
               "propertyName": "type",
               "mapping": {
                 "client": "#/components/schemas/ClientToolConfigOutput",
-                "code": "#/components/schemas/CodeToolConfigOutput",
                 "mcp": "#/components/schemas/MCPToolConfigOutput",
                 "system": "#/components/schemas/SystemToolConfigOutput",
                 "webhook": "#/components/schemas/WebhookToolConfigOutput"
@@ -63863,8 +63704,7 @@
           "workflow",
           "api_integration_webhook",
           "api_integration_mcp",
-          "smb",
-          "code"
+          "smb"
         ],
         "type": "string",
         "additionalProperties": false
@@ -63874,8 +63714,7 @@
         "enum": [
           "webhook",
           "client",
-          "api_integration_webhook",
-          "code"
+          "api_integration_webhook"
         ],
         "type": "string",
         "additionalProperties": false
@@ -71524,9 +71363,6 @@
       },
       "WorkflowStandaloneAgentNodeModelInput": {
         "title": "WorkflowStandaloneAgentNodeModel",
-        "required": [
-          "agent_id"
-        ],
         "type": "object",
         "properties": {
           "type": {
@@ -71551,7 +71387,15 @@
           "agent_id": {
             "title": "Agent Id",
             "type": "string",
-            "description": "The ID of the agent to transfer the conversation to."
+            "description": "The ID of the agent to transfer the conversation to. None means transfer within the current agent.",
+            "nullable": true
+          },
+          "node_id": {
+            "title": "Node Id",
+            "minLength": 1,
+            "type": "string",
+            "description": "Optional target node ID in the destination agent\u0027s workflow. When set, the transfer starts at this node instead of the default entry node.",
+            "nullable": true
           },
           "delay_ms": {
             "title": "Delay Ms",
@@ -71580,6 +71424,7 @@
           "position",
           "edge_order",
           "agent_id",
+          "node_id",
           "delay_ms",
           "transfer_message",
           "enable_transferred_agent_first_message"
@@ -71608,7 +71453,15 @@
           "agent_id": {
             "title": "Agent Id",
             "type": "string",
-            "description": "The ID of the agent to transfer the conversation to."
+            "description": "The ID of the agent to transfer the conversation to. None means transfer within the current agent.",
+            "nullable": true
+          },
+          "node_id": {
+            "title": "Node Id",
+            "minLength": 1,
+            "type": "string",
+            "description": "Optional target node ID in the destination agent\u0027s workflow. When set, the transfer starts at this node instead of the default entry node.",
+            "nullable": true
           },
           "delay_ms": {
             "title": "Delay Ms",
@@ -73131,58 +72984,6 @@
           }
         },
         "description": "A list of request headers to include with the webhook delivery (optional)",
-        "nullable": true,
-        "discriminator": {
-          "propertyName": "type"
-        }
-      },
-      "CodeToolConfigInputDependencies": {
-        "title": "Dependencies",
-        "required": [
-          "type"
-        ],
-        "type": "object",
-        "anyOf": [
-          {
-            "type": "object",
-            "additionalProperties": {
-              "type": "string"
-            }
-          }
-        ],
-        "properties": {
-          "type": {
-            "type": "string",
-            "description": "Union discriminator"
-          }
-        },
-        "description": "\u0022npm dependencies as a package-name \u2192 version map (e.g. {\\\u0022lodash\\\u0022: \\\u0022^4.17.21\\\u0022})\u0022",
-        "nullable": true,
-        "discriminator": {
-          "propertyName": "type"
-        }
-      },
-      "CodeToolConfigOutputDependencies": {
-        "title": "Dependencies",
-        "required": [
-          "type"
-        ],
-        "type": "object",
-        "anyOf": [
-          {
-            "type": "object",
-            "additionalProperties": {
-              "type": "string"
-            }
-          }
-        ],
-        "properties": {
-          "type": {
-            "type": "string",
-            "description": "Union discriminator"
-          }
-        },
-        "description": "\u0022npm dependencies as a package-name \u2192 version map (e.g. {\\\u0022lodash\\\u0022: \\\u0022^4.17.21\\\u0022})\u0022",
         "nullable": true,
         "discriminator": {
           "propertyName": "type"
@@ -76723,9 +76524,6 @@
                 },
                 {
                   "$ref": "#/components/schemas/SMBToolConfig"
-                },
-                {
-                  "$ref": "#/components/schemas/CodeToolConfigInput"
                 }
               ],
               "properties": {
@@ -76739,7 +76537,6 @@
                 "mapping": {
                   "api_integration_webhook": "#/components/schemas/ApiIntegrationWebhookToolConfigInput",
                   "client": "#/components/schemas/ClientToolConfigInput",
-                  "code": "#/components/schemas/CodeToolConfigInput",
                   "mcp": "#/components/schemas/MCPToolConfigInput",
                   "smb": "#/components/schemas/SMBToolConfig",
                   "system": "#/components/schemas/SystemToolConfigInput",

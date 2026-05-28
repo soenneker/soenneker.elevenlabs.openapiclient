@@ -5,12 +5,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public enum LoadProcedureToolConfig_system_tool_type
+    public enum OptInSmsReminderParams_smb_tool_type
     #pragma warning restore CS1591
     {
-        [EnumMember(Value = "load_procedure")]
+        [EnumMember(Value = "opt_in_sms_reminder")]
         #pragma warning disable CS1591
-        Load_procedure,
+        Opt_in_sms_reminder,
         #pragma warning restore CS1591
     }
 }

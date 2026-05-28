@@ -3,13 +3,14 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.ElevenLabs.OpenApiClient.Models
 {
-    /// <summary>The type of tool</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public enum CodeToolConfigInput_type
+    #pragma warning disable CS1591
+    public enum LoadProcedureToolConfigInput_system_tool_type
+    #pragma warning restore CS1591
     {
-        [EnumMember(Value = "code")]
+        [EnumMember(Value = "load_procedure")]
         #pragma warning disable CS1591
-        Code,
+        Load_procedure,
         #pragma warning restore CS1591
     }
 }

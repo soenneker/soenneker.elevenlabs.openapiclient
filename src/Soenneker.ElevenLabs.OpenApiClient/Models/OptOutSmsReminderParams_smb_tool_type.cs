@@ -3,13 +3,14 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.ElevenLabs.OpenApiClient.Models
 {
-    /// <summary>The type of tool</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public enum CodeToolConfigOutput_type
+    #pragma warning disable CS1591
+    public enum OptOutSmsReminderParams_smb_tool_type
+    #pragma warning restore CS1591
     {
-        [EnumMember(Value = "code")]
+        [EnumMember(Value = "opt_out_sms_reminder")]
         #pragma warning disable CS1591
-        Code,
+        Opt_out_sms_reminder,
         #pragma warning restore CS1591
     }
 }

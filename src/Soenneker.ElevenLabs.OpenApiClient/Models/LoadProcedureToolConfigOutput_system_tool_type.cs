@@ -5,12 +5,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public enum AgentAlertingWebhookNotifier_type
+    public enum LoadProcedureToolConfigOutput_system_tool_type
     #pragma warning restore CS1591
     {
-        [EnumMember(Value = "webhook")]
+        [EnumMember(Value = "load_procedure")]
         #pragma warning disable CS1591
-        Webhook,
+        Load_procedure,
         #pragma warning restore CS1591
     }
 }

@@ -71,7 +71,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteAdditionalData(AdditionalData);
         }
         /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ClientToolConfigInput"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.CodeToolConfigInput"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.MCPToolConfigInput"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigInput"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookToolConfigInput"/>
+        /// Composed type wrapper for classes <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ClientToolConfigInput"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.MCPToolConfigInput"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigInput"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookToolConfigInput"/>
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ToolRequestModel_tool_config : IComposedTypeWrapper, IParsable
@@ -83,14 +83,6 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #nullable restore
 #else
             public global::Soenneker.ElevenLabs.OpenApiClient.Models.ClientToolConfigInput ClientToolConfigInput { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.CodeToolConfigInput"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.ElevenLabs.OpenApiClient.Models.CodeToolConfigInput? CodeToolConfigInput { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.ElevenLabs.OpenApiClient.Models.CodeToolConfigInput CodeToolConfigInput { get; set; }
 #endif
             /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.MCPToolConfigInput"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -130,10 +122,6 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 {
                     result.ClientToolConfigInput = new global::Soenneker.ElevenLabs.OpenApiClient.Models.ClientToolConfigInput();
                 }
-                else if("code".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.CodeToolConfigInput = new global::Soenneker.ElevenLabs.OpenApiClient.Models.CodeToolConfigInput();
-                }
                 else if("mcp".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
                     result.MCPToolConfigInput = new global::Soenneker.ElevenLabs.OpenApiClient.Models.MCPToolConfigInput();
@@ -157,10 +145,6 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 if(ClientToolConfigInput != null)
                 {
                     return ClientToolConfigInput.GetFieldDeserializers();
-                }
-                else if(CodeToolConfigInput != null)
-                {
-                    return CodeToolConfigInput.GetFieldDeserializers();
                 }
                 else if(MCPToolConfigInput != null)
                 {
@@ -186,10 +170,6 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 if(ClientToolConfigInput != null)
                 {
                     writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ClientToolConfigInput>(null, ClientToolConfigInput);
-                }
-                else if(CodeToolConfigInput != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CodeToolConfigInput>(null, CodeToolConfigInput);
                 }
                 else if(MCPToolConfigInput != null)
                 {

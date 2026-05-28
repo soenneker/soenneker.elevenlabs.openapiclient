@@ -135,7 +135,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteAdditionalData(AdditionalData);
         }
         /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.EndCallToolConfig"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeBaseRagToolConfig"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.LanguageDetectionToolConfig"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.LoadProcedureToolConfig"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.PlayDTMFToolConfig"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.SkipTurnToolConfig"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.TransferToAgentToolConfig"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.TransferToNumberToolConfigOutput"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.VoicemailDetectionToolConfig"/>
+        /// Composed type wrapper for classes <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.EndCallToolConfig"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeBaseRagToolConfig"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.LanguageDetectionToolConfig"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.LoadProcedureToolConfigOutput"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.PlayDTMFToolConfig"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.SkipTurnToolConfig"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.TransferToAgentToolConfig"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.TransferToNumberToolConfigOutput"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.VoicemailDetectionToolConfig"/>
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class SystemToolConfigOutput_params : IComposedTypeWrapper, IParsable
@@ -164,13 +164,13 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
             public global::Soenneker.ElevenLabs.OpenApiClient.Models.LanguageDetectionToolConfig LanguageDetectionToolConfig { get; set; }
 #endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.LoadProcedureToolConfig"/></summary>
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.LoadProcedureToolConfigOutput"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            public global::Soenneker.ElevenLabs.OpenApiClient.Models.LoadProcedureToolConfig? LoadProcedureToolConfig { get; set; }
+            public global::Soenneker.ElevenLabs.OpenApiClient.Models.LoadProcedureToolConfigOutput? LoadProcedureToolConfigOutput { get; set; }
 #nullable restore
 #else
-            public global::Soenneker.ElevenLabs.OpenApiClient.Models.LoadProcedureToolConfig LoadProcedureToolConfig { get; set; }
+            public global::Soenneker.ElevenLabs.OpenApiClient.Models.LoadProcedureToolConfigOutput LoadProcedureToolConfigOutput { get; set; }
 #endif
             /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.PlayDTMFToolConfig"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -236,7 +236,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 }
                 else if("load_procedure".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
-                    result.LoadProcedureToolConfig = new global::Soenneker.ElevenLabs.OpenApiClient.Models.LoadProcedureToolConfig();
+                    result.LoadProcedureToolConfigOutput = new global::Soenneker.ElevenLabs.OpenApiClient.Models.LoadProcedureToolConfigOutput();
                 }
                 else if("play_keypad_touch_tone".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
@@ -278,9 +278,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 {
                     return LanguageDetectionToolConfig.GetFieldDeserializers();
                 }
-                else if(LoadProcedureToolConfig != null)
+                else if(LoadProcedureToolConfigOutput != null)
                 {
-                    return LoadProcedureToolConfig.GetFieldDeserializers();
+                    return LoadProcedureToolConfigOutput.GetFieldDeserializers();
                 }
                 else if(PlayDTMFToolConfig != null)
                 {
@@ -323,9 +323,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 {
                     writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.LanguageDetectionToolConfig>(null, LanguageDetectionToolConfig);
                 }
-                else if(LoadProcedureToolConfig != null)
+                else if(LoadProcedureToolConfigOutput != null)
                 {
-                    writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.LoadProcedureToolConfig>(null, LoadProcedureToolConfig);
+                    writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.LoadProcedureToolConfigOutput>(null, LoadProcedureToolConfigOutput);
                 }
                 else if(PlayDTMFToolConfig != null)
                 {

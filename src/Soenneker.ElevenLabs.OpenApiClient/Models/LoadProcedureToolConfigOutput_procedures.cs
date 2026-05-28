@@ -9,27 +9,27 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class LoadProcedureToolConfig_procedures : IAdditionalDataHolder, IParsable
+    public partial class LoadProcedureToolConfigOutput_procedures : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.LoadProcedureToolConfig_procedures"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.LoadProcedureToolConfigOutput_procedures"/> and sets the default values.
         /// </summary>
-        public LoadProcedureToolConfig_procedures()
+        public LoadProcedureToolConfigOutput_procedures()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.LoadProcedureToolConfig_procedures"/></returns>
+        /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.LoadProcedureToolConfigOutput_procedures"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.ElevenLabs.OpenApiClient.Models.LoadProcedureToolConfig_procedures CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.ElevenLabs.OpenApiClient.Models.LoadProcedureToolConfigOutput_procedures CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.LoadProcedureToolConfig_procedures();
+            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.LoadProcedureToolConfigOutput_procedures();
         }
         /// <summary>
         /// The deserialization information for the current model

@@ -40,9 +40,5 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         #pragma warning disable CS1591
         Smb,
         #pragma warning restore CS1591
-        [EnumMember(Value = "code")]
-        #pragma warning disable CS1591
-        Code,
-        #pragma warning restore CS1591
     }
 }
