@@ -6072,6 +6072,52 @@
         }
       }
     },
+    "/v1/api-key/revoke-self": {
+      "delete": {
+        "tags": [
+          "workspace",
+          "api-key"
+        ],
+        "summary": "Revoke Self",
+        "description": "Revoke the API key used to authenticate this request",
+        "operationId": "revoke-self",
+        "parameters": [
+          {
+            "name": "xi-api-key",
+            "in": "header",
+            "description": "Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the \u0027Profile\u0027 tab on the website.",
+            "schema": {
+              "title": "Xi-Api-Key",
+              "type": "string",
+              "description": "Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the \u0027Profile\u0027 tab on the website.",
+              "nullable": true
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/v1/service-accounts/{service_account_user_id}/api-keys": {
       "get": {
         "tags": [
@@ -10707,6 +10753,17 @@
                 }
               ],
               "description": "Filter conversations by conversation tag IDs assigned via the conversation-tags endpoints.",
+              "nullable": true
+            }
+          },
+          {
+            "name": "workflow_node_entered_id",
+            "in": "query",
+            "description": "Filter conversations to only those that entered the given node.",
+            "schema": {
+              "title": "Workflow Node Entered Id",
+              "type": "string",
+              "description": "Filter conversations to only those that entered the given node.",
               "nullable": true
             }
           },
@@ -29474,7 +29531,7 @@
           "cloud_storage_url": {
             "title": "Cloud Storage Url",
             "type": "string",
-            "description": "The HTTPS URL of the file to transcribe. Exactly one of the file or cloud_storage_url parameters must be provided. The file must be accessible via HTTPS and the file size must be less than 2GB. Any valid HTTPS URL is accepted, including URLs from cloud storage providers (AWS S3, Google Cloud Storage, Cloudflare R2, etc.), CDNs, or any other HTTPS source. URLs can be pre-signed or include authentication tokens in query parameters.",
+            "description": "[Deprecated] This parameter is deprecated and will be removed in the future. Use \u0027source_url\u0027 instead.The HTTPS URL of the file to transcribe. Exactly one of the file or cloud_storage_url parameters must be provided. The file must be accessible via HTTPS and the file size must be less than 2GB. Any valid HTTPS URL is accepted, including URLs from cloud storage providers (AWS S3, Google Cloud Storage, Cloudflare R2, etc.), CDNs, or any other HTTPS source. URLs can be pre-signed or include authentication tokens in query parameters.",
             "nullable": true,
             "deprecated": true,
             "x-fern-ignore": true
@@ -53705,11 +53762,15 @@
             "title": "Name",
             "type": "string",
             "description": "Procedure name"
+          },
+          "type": {
+            "$ref": "#/components/schemas/ProcedureType"
           }
         },
         "example": {
           "name": "Customer Support Procedure",
           "procedure_id": "agtprc_6qbpwdq8n01bxhk44bgjy6f10ck3",
+          "type": "free_form",
           "version_id": "agtprcv_7rbqxer9o12cyxi55ckw6sgz1dl4"
         }
       },
@@ -74089,6 +74150,9 @@
       "GetPronunciationDictionaryVersionPls200": {
         "type": "string",
         "format": "binary"
+      },
+      "RevokeSelf200": {
+        "type": "object"
       },
       "EditServiceAccountApiKey200": {
         "type": "object"
