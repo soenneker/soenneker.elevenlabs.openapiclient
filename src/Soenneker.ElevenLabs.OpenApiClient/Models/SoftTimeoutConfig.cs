@@ -15,6 +15,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Custom prompt for generating the soft timeout filler message when use_llm_generated_message is enabled. Recent conversation context is provided as a separate user message. If not set, the default prompt will be used.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? LlmGeneratedMessagePromptOverride { get; set; }
+#nullable restore
+#else
+        public string LlmGeneratedMessagePromptOverride { get; set; }
+#endif
         /// <summary>Message to show when soft timeout is reached while waiting for LLM response</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -53,6 +61,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "llm_generated_message_prompt_override", n => { LlmGeneratedMessagePromptOverride = n.GetStringValue(); } },
                 { "message", n => { Message = n.GetStringValue(); } },
                 { "timeout_seconds", n => { TimeoutSeconds = n.GetDoubleValue(); } },
                 { "use_llm_generated_message", n => { UseLlmGeneratedMessage = n.GetBoolValue(); } },
@@ -65,6 +74,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("llm_generated_message_prompt_override", LlmGeneratedMessagePromptOverride);
             writer.WriteStringValue("message", Message);
             writer.WriteDoubleValue("timeout_seconds", TimeoutSeconds);
             writer.WriteBoolValue("use_llm_generated_message", UseLlmGeneratedMessage);

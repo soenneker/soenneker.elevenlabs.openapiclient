@@ -6072,16 +6072,27 @@
         }
       }
     },
-    "/v1/api-key/revoke-self": {
+    "/v1/workspaces/api-keys/revoke": {
       "delete": {
         "tags": [
           "workspace",
           "api-key"
         ],
-        "summary": "Revoke Self",
-        "description": "Revoke the API key used to authenticate this request",
-        "operationId": "revoke-self",
+        "summary": "Revoke Api Key",
+        "description": "Revoke the API key used to authenticate this request. Requires the query parameter \u0060api_key_name=self\u0060 as an explicit confirmation.",
+        "operationId": "revoke",
         "parameters": [
+          {
+            "name": "api_key_name",
+            "in": "query",
+            "description": "Must be set to \u0060self\u0060 to revoke the API key used to authenticate this request. Required as an explicit confirmation to avoid accidental revocation.",
+            "required": true,
+            "schema": {
+              "title": "Api Key Name",
+              "type": "string",
+              "description": "Must be set to \u0060self\u0060 to revoke the API key used to authenticate this request. Required as an explicit confirmation to avoid accidental revocation."
+            }
+          },
           {
             "name": "xi-api-key",
             "in": "header",
@@ -11559,6 +11570,22 @@
               "title": "Branch Id",
               "type": "string",
               "description": "Filter conversations by branch ID.",
+              "nullable": true
+            }
+          },
+          {
+            "name": "topic_ids",
+            "in": "query",
+            "description": "Filter conversations by topic IDs assigned during topic discovery.",
+            "schema": {
+              "title": "Topic Ids",
+              "type": "object",
+              "anyOf": [
+                {
+                  "type": "string"
+                }
+              ],
+              "description": "Filter conversations by topic IDs assigned during topic discovery.",
               "nullable": true
             }
           },
@@ -36831,6 +36858,59 @@
         },
         "description": "Information about the source of conversation initiation"
       },
+      "ConversationSentimentAnalysis": {
+        "title": "ConversationSentimentAnalysis",
+        "required": [
+          "overall_label",
+          "overall_sentiment_score",
+          "overall_frustration_score",
+          "min_user_sentiment_score",
+          "max_user_frustration_score",
+          "num_scored_user_turns"
+        ],
+        "type": "object",
+        "properties": {
+          "overall_label": {
+            "title": "Overall Label",
+            "enum": [
+              "positive",
+              "neutral",
+              "negative"
+            ],
+            "type": "string",
+            "additionalProperties": false
+          },
+          "overall_sentiment_score": {
+            "title": "Overall Sentiment Score",
+            "maximum": 1.0,
+            "minimum": -1.0,
+            "type": "number"
+          },
+          "overall_frustration_score": {
+            "title": "Overall Frustration Score",
+            "maximum": 1.0,
+            "minimum": 0.0,
+            "type": "number"
+          },
+          "min_user_sentiment_score": {
+            "title": "Min User Sentiment Score",
+            "maximum": 1.0,
+            "minimum": -1.0,
+            "type": "number"
+          },
+          "max_user_frustration_score": {
+            "title": "Max User Frustration Score",
+            "maximum": 1.0,
+            "minimum": 0.0,
+            "type": "number"
+          },
+          "num_scored_user_turns": {
+            "title": "Num Scored User Turns",
+            "minimum": 0.0,
+            "type": "integer"
+          }
+        }
+      },
       "ConversationSignedUrlResponseModel": {
         "title": "ConversationSignedUrlResponseModel",
         "required": [
@@ -39241,6 +39321,20 @@
               }
             ],
             "description": "\u0022The API key for authentication. Either a workspace secret reference {\u0027secret_id\u0027: \u0027...\u0027} or an environment variable reference {\u0027env_var_label\u0027: \u0027...\u0027}.\u0022",
+            "nullable": true
+          },
+          "auth_connection": {
+            "title": "Auth Connection",
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/AuthConnectionLocator"
+              },
+              {
+                "$ref": "#/components/schemas/EnvironmentAuthConnectionLocator"
+              }
+            ],
+            "description": "Optional workspace auth connection for authentication. Only auth connections that produce an Authorization Bearer token are supported; Basic auth, mTLS, custom header, and URL secret auth connections are not supported.",
             "nullable": true
           },
           "request_headers": {
@@ -50728,6 +50822,16 @@
             "title": "Chunk Text",
             "type": "string"
           },
+          "chunk_highlights": {
+            "title": "Chunk Highlights",
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Chunk_Highlights"
+              }
+            ],
+            "nullable": true
+          },
           "score": {
             "title": "Score",
             "type": "number"
@@ -50737,7 +50841,7 @@
             "type": "integer"
           }
         },
-        "description": "\u0022transcript_index: index of the message in the conversation transcript\nchunk_text: text of the transcript; transcript messages if very long could have several chunks.\nscore: similarity score of the message to the search query\u0022"
+        "description": "\u0022transcript_index: index of the message in the conversation transcript\nchunk_text: text of the transcript; transcript messages if very long could have several chunks.\nchunk_highlights: chunk_text split into matched/unmatched segments for highlighting.\n    Only populated for keyword/text search, not semantic search.\nscore: similarity score of the message to the search query\u0022"
       },
       "MetricRecord": {
         "title": "MetricRecord",
@@ -51278,7 +51382,8 @@
         "enum": [
           "track",
           "loop",
-          "ambience"
+          "ambience",
+          "video_to_music"
         ],
         "type": "string",
         "additionalProperties": false
@@ -58009,6 +58114,20 @@
           }
         }
       },
+      "RestoreCalendarEventParams": {
+        "title": "RestoreCalendarEventParams",
+        "type": "object",
+        "properties": {
+          "smb_tool_type": {
+            "title": "Smb Tool Type",
+            "enum": [
+              "restore_calendar_event"
+            ],
+            "type": "string",
+            "default": "restore_calendar_event"
+          }
+        }
+      },
       "ResubmitTestsRequestModel": {
         "title": "ResubmitTestsRequestModel",
         "required": [
@@ -58542,6 +58661,9 @@
                 "$ref": "#/components/schemas/CancelCalendarEventParams"
               },
               {
+                "$ref": "#/components/schemas/RestoreCalendarEventParams"
+              },
+              {
                 "$ref": "#/components/schemas/DeleteCalendarEventParams"
               },
               {
@@ -58686,6 +58808,7 @@
                 "opt_out_sms_reminder": "#/components/schemas/OptOutSmsReminderParams",
                 "register_for_group_session": "#/components/schemas/RegisterForGroupSessionParams",
                 "report_knowledge_gap": "#/components/schemas/ReportKnowledgeGapParams",
+                "restore_calendar_event": "#/components/schemas/RestoreCalendarEventParams",
                 "schedule_group_session": "#/components/schemas/ScheduleGroupSessionParams",
                 "search_clients": "#/components/schemas/SearchClientsParams",
                 "set_booking_slug": "#/components/schemas/SetBookingSlugParams",
@@ -59864,6 +59987,14 @@
             "type": "boolean",
             "description": "If enabled, the soft timeout message will be generated dynamically instead of using the static message.",
             "default": false
+          },
+          "llm_generated_message_prompt_override": {
+            "title": "Llm Generated Message Prompt Override",
+            "maxLength": 1000,
+            "minLength": 1,
+            "type": "string",
+            "description": "Custom prompt for generating the soft timeout filler message when use_llm_generated_message is enabled. Recent conversation context is provided as a separate user message. If not set, the default prompt will be used.",
+            "nullable": true
           }
         },
         "description": "Configuration for soft timeout functionality during LLM response generation.",
@@ -59924,6 +60055,12 @@
             "title": "Use Llm Generated Message",
             "type": "boolean",
             "description": "If enabled, the soft timeout message will be generated dynamically instead of using the static message.",
+            "nullable": true
+          },
+          "llm_generated_message_prompt_override": {
+            "title": "Llm Generated Message Prompt Override",
+            "type": "string",
+            "description": "Custom prompt for generating the soft timeout filler message when use_llm_generated_message is enabled. Recent conversation context is provided as a separate user message. If not set, the default prompt will be used.",
             "nullable": true
           }
         },
@@ -61857,6 +61994,28 @@
             "exclusiveMinimum": false,
             "type": "number",
             "nullable": true
+          }
+        }
+      },
+      "SystemEvaluationCriteria": {
+        "title": "SystemEvaluationCriteria",
+        "required": [
+          "user_sentiment_score",
+          "user_frustration_score"
+        ],
+        "type": "object",
+        "properties": {
+          "user_sentiment_score": {
+            "title": "User Sentiment Score",
+            "maximum": 1.0,
+            "minimum": -1.0,
+            "type": "number"
+          },
+          "user_frustration_score": {
+            "title": "User Frustration Score",
+            "maximum": 1.0,
+            "minimum": 0.0,
+            "type": "number"
           }
         }
       },
@@ -74151,7 +74310,7 @@
         "type": "string",
         "format": "binary"
       },
-      "RevokeSelf200": {
+      "Revoke200": {
         "type": "object"
       },
       "EditServiceAccountApiKey200": {
@@ -76458,6 +76617,20 @@
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/DynamicVariableAssignment"
+            }
+          }
+        }
+      },
+      "Chunk_Highlights": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SearchHighlightSegment"
             }
           }
         }

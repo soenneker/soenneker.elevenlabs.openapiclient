@@ -2,7 +2,6 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.ElevenLabs.OpenApiClient.V1.ApiKey;
 using Soenneker.ElevenLabs.OpenApiClient.V1.AudioIsolation;
 using Soenneker.ElevenLabs.OpenApiClient.V1.AudioNative;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Convai;
@@ -28,6 +27,7 @@ using Soenneker.ElevenLabs.OpenApiClient.V1.TextToVoice;
 using Soenneker.ElevenLabs.OpenApiClient.V1.User;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Voices;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Workspace;
+using Soenneker.ElevenLabs.OpenApiClient.V1.Workspaces;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -40,11 +40,6 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class V1RequestBuilder : BaseRequestBuilder
     {
-        /// <summary>The apiKey property</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.V1.ApiKey.ApiKeyRequestBuilder ApiKey
-        {
-            get => new global::Soenneker.ElevenLabs.OpenApiClient.V1.ApiKey.ApiKeyRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>The audioIsolation property</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.V1.AudioIsolation.AudioIsolationRequestBuilder AudioIsolation
         {
@@ -169,6 +164,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1
         public global::Soenneker.ElevenLabs.OpenApiClient.V1.Workspace.WorkspaceRequestBuilder Workspace
         {
             get => new global::Soenneker.ElevenLabs.OpenApiClient.V1.Workspace.WorkspaceRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The workspaces property</summary>
+        public global::Soenneker.ElevenLabs.OpenApiClient.V1.Workspaces.WorkspacesRequestBuilder Workspaces
+        {
+            get => new global::Soenneker.ElevenLabs.OpenApiClient.V1.Workspaces.WorkspacesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.V1.V1RequestBuilder"/> and sets the default values.

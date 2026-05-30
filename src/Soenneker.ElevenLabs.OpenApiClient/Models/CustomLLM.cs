@@ -32,6 +32,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public string ApiVersion { get; set; }
 #endif
+        /// <summary>Optional workspace auth connection for authentication. Only auth connections that produce an Authorization Bearer token are supported; Basic auth, mTLS, custom header, and URL secret auth connections are not supported.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomLLM.CustomLLM_auth_connection? AuthConnection { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomLLM.CustomLLM_auth_connection AuthConnection { get; set; }
+#endif
         /// <summary>The model ID to be used if URL serves multiple models</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -85,6 +93,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "api_key", n => { ApiKey = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomLLM.CustomLLM_api_key>(global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomLLM.CustomLLM_api_key.CreateFromDiscriminatorValue); } },
                 { "api_type", n => { ApiType = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomLLMAPIType>(); } },
                 { "api_version", n => { ApiVersion = n.GetStringValue(); } },
+                { "auth_connection", n => { AuthConnection = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomLLM.CustomLLM_auth_connection>(global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomLLM.CustomLLM_auth_connection.CreateFromDiscriminatorValue); } },
                 { "model_id", n => { ModelId = n.GetStringValue(); } },
                 { "request_headers", n => { RequestHeaders = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomLLM_request_headers>(global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomLLM_request_headers.CreateFromDiscriminatorValue); } },
                 { "url", n => { Url = n.GetStringValue(); } },
@@ -100,6 +109,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomLLM.CustomLLM_api_key>("api_key", ApiKey);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomLLMAPIType>("api_type", ApiType);
             writer.WriteStringValue("api_version", ApiVersion);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomLLM.CustomLLM_auth_connection>("auth_connection", AuthConnection);
             writer.WriteStringValue("model_id", ModelId);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomLLM_request_headers>("request_headers", RequestHeaders);
             writer.WriteStringValue("url", Url);
@@ -160,6 +170,63 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             {
                 if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
                 writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConvAIEnvVarLocator>(null, ConvAIEnvVarLocator, ConvAISecretLocator);
+            }
+        }
+        /// <summary>
+        /// Composed type wrapper for classes <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.AuthConnectionLocator"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.EnvironmentAuthConnectionLocator"/>
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class CustomLLM_auth_connection : IComposedTypeWrapper, IParsable
+        {
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.AuthConnectionLocator"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::Soenneker.ElevenLabs.OpenApiClient.Models.AuthConnectionLocator? AuthConnectionLocator { get; set; }
+#nullable restore
+#else
+            public global::Soenneker.ElevenLabs.OpenApiClient.Models.AuthConnectionLocator AuthConnectionLocator { get; set; }
+#endif
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.EnvironmentAuthConnectionLocator"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::Soenneker.ElevenLabs.OpenApiClient.Models.EnvironmentAuthConnectionLocator? EnvironmentAuthConnectionLocator { get; set; }
+#nullable restore
+#else
+            public global::Soenneker.ElevenLabs.OpenApiClient.Models.EnvironmentAuthConnectionLocator EnvironmentAuthConnectionLocator { get; set; }
+#endif
+            /// <summary>
+            /// Creates a new instance of the appropriate class based on discriminator value
+            /// </summary>
+            /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomLLM.CustomLLM_auth_connection"/></returns>
+            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+            public static global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomLLM.CustomLLM_auth_connection CreateFromDiscriminatorValue(IParseNode parseNode)
+            {
+                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
+                var result = new global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomLLM.CustomLLM_auth_connection();
+                result.AuthConnectionLocator = new global::Soenneker.ElevenLabs.OpenApiClient.Models.AuthConnectionLocator();
+                result.EnvironmentAuthConnectionLocator = new global::Soenneker.ElevenLabs.OpenApiClient.Models.EnvironmentAuthConnectionLocator();
+                return result;
+            }
+            /// <summary>
+            /// The deserialization information for the current model
+            /// </summary>
+            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
+            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+            {
+                if(AuthConnectionLocator != null || EnvironmentAuthConnectionLocator != null)
+                {
+                    return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(AuthConnectionLocator, EnvironmentAuthConnectionLocator);
+                }
+                return new Dictionary<string, Action<IParseNode>>();
+            }
+            /// <summary>
+            /// Serializes information the current object
+            /// </summary>
+            /// <param name="writer">Serialization writer to use to serialize this model</param>
+            public virtual void Serialize(ISerializationWriter writer)
+            {
+                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+                writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AuthConnectionLocator>(null, AuthConnectionLocator, EnvironmentAuthConnectionLocator);
             }
         }
     }

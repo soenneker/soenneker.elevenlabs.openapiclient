@@ -20,5 +20,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         #pragma warning disable CS1591
         Ambience,
         #pragma warning restore CS1591
+        [EnumMember(Value = "video_to_music")]
+        #pragma warning disable CS1591
+        Video_to_music,
+        #pragma warning restore CS1591
     }
 }

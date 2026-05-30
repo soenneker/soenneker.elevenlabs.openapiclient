@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.ElevenLabs.OpenApiClient.Models
 {
     /// <summary>
-    /// &quot;transcript_index: index of the message in the conversation transcriptchunk_text: text of the transcript; transcript messages if very long could have several chunks.score: similarity score of the message to the search query&quot;
+    /// &quot;transcript_index: index of the message in the conversation transcriptchunk_text: text of the transcript; transcript messages if very long could have several chunks.chunk_highlights: chunk_text split into matched/unmatched segments for highlighting.    Only populated for keyword/text search, not semantic search.score: similarity score of the message to the search query&quot;
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class MessagesSearchResult : IAdditionalDataHolder, IParsable
@@ -30,6 +30,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #nullable restore
 #else
         public string AgentName { get; set; }
+#endif
+        /// <summary>The chunk_highlights property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Chunk_Highlights? ChunkHighlights { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Chunk_Highlights ChunkHighlights { get; set; }
 #endif
         /// <summary>The chunk_text property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -80,6 +88,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             {
                 { "agent_id", n => { AgentId = n.GetStringValue(); } },
                 { "agent_name", n => { AgentName = n.GetStringValue(); } },
+                { "chunk_highlights", n => { ChunkHighlights = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Chunk_Highlights>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Chunk_Highlights.CreateFromDiscriminatorValue); } },
                 { "chunk_text", n => { ChunkText = n.GetStringValue(); } },
                 { "conversation_id", n => { ConversationId = n.GetStringValue(); } },
                 { "conversation_start_time_unix_secs", n => { ConversationStartTimeUnixSecs = n.GetIntValue(); } },
@@ -96,6 +105,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("agent_id", AgentId);
             writer.WriteStringValue("agent_name", AgentName);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Chunk_Highlights>("chunk_highlights", ChunkHighlights);
             writer.WriteStringValue("chunk_text", ChunkText);
             writer.WriteStringValue("conversation_id", ConversationId);
             writer.WriteIntValue("conversation_start_time_unix_secs", ConversationStartTimeUnixSecs);
