@@ -53836,15 +53836,6 @@
           }
         }
       },
-      "ProcedureCompilerMode": {
-        "title": "ProcedureCompilerMode",
-        "enum": [
-          "skills"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "default": "skills"
-      },
       "ProcedureRefResponseModel": {
         "title": "ProcedureRefResponseModel",
         "required": [
@@ -53877,15 +53868,6 @@
           "procedure_id": "agtprc_6qbpwdq8n01bxhk44bgjy6f10ck3",
           "type": "free_form",
           "version_id": "agtprcv_7rbqxer9o12cyxi55ckw6sgz1dl4"
-        }
-      },
-      "ProcedureSettings": {
-        "title": "ProcedureSettings",
-        "type": "object",
-        "properties": {
-          "compiler_mode": {
-            "$ref": "#/components/schemas/ProcedureCompilerMode"
-          }
         }
       },
       "ProcedureType": {
