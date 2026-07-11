@@ -13,7 +13,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     #pragma warning restore CS1591
     {
         /// <summary>The access_level property</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.DependentAvailableToolIdentifier_access_level? AccessLevel { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.DependentAvailableToolIdentifierAccessLevel? AccessLevel { get; set; }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The created_at_unix_secs property</summary>
@@ -42,7 +42,6 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public DependentAvailableToolIdentifier()
         {
             AdditionalData = new Dictionary<string, object>();
-            Type = global::Soenneker.ElevenLabs.OpenApiClient.Models.DependentAvailableToolIdentifier_type.Available;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -62,7 +61,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "access_level", n => { AccessLevel = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DependentAvailableToolIdentifier_access_level>(); } },
+                { "access_level", n => { AccessLevel = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DependentAvailableToolIdentifierAccessLevel>(); } },
                 { "created_at_unix_secs", n => { CreatedAtUnixSecs = n.GetIntValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
@@ -76,7 +75,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DependentAvailableToolIdentifier_access_level>("access_level", AccessLevel);
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DependentAvailableToolIdentifierAccessLevel>("access_level", AccessLevel);
             writer.WriteIntValue("created_at_unix_secs", CreatedAtUnixSecs);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("name", Name);

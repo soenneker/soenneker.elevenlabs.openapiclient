@@ -24,7 +24,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public GetScheduleParams()
         {
             AdditionalData = new Dictionary<string, object>();
-            SmbToolType = global::Soenneker.ElevenLabs.OpenApiClient.Models.GetScheduleParams_smb_tool_type.Get_schedule;
+            IncludeLocationFilter = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

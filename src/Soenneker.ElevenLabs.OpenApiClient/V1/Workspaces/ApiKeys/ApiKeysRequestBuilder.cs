@@ -2,7 +2,8 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.ElevenLabs.OpenApiClient.V1.Workspaces.ApiKeys.Revoke;
+using Soenneker.ElevenLabs.OpenApiClient.V1.Workspaces.ApiKeys.Disable;
+using Soenneker.ElevenLabs.OpenApiClient.V1.Workspaces.ApiKeys.ThirdPartyDisabling;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -15,10 +16,15 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Workspaces.ApiKeys
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ApiKeysRequestBuilder : BaseRequestBuilder
     {
-        /// <summary>The revoke property</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.V1.Workspaces.ApiKeys.Revoke.RevokeRequestBuilder Revoke
+        /// <summary>The disable property</summary>
+        public global::Soenneker.ElevenLabs.OpenApiClient.V1.Workspaces.ApiKeys.Disable.DisableRequestBuilder Disable
         {
-            get => new global::Soenneker.ElevenLabs.OpenApiClient.V1.Workspaces.ApiKeys.Revoke.RevokeRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.ElevenLabs.OpenApiClient.V1.Workspaces.ApiKeys.Disable.DisableRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The thirdPartyDisabling property</summary>
+        public global::Soenneker.ElevenLabs.OpenApiClient.V1.Workspaces.ApiKeys.ThirdPartyDisabling.ThirdPartyDisablingRequestBuilder ThirdPartyDisabling
+        {
+            get => new global::Soenneker.ElevenLabs.OpenApiClient.V1.Workspaces.ApiKeys.ThirdPartyDisabling.ThirdPartyDisablingRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.V1.Workspaces.ApiKeys.ApiKeysRequestBuilder"/> and sets the default values.

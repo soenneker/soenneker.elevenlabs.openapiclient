@@ -94,6 +94,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public UserResponseModel()
         {
             AdditionalData = new Dictionary<string, object>();
+            IsApiKeyHashed = false;
+            ShowComplianceTerms = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

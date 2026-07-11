@@ -76,7 +76,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Music
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.HTTPValidationError">When receiving a 422 status code</exception>
+        /// <exception cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.HttpValidationError">When receiving a 422 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<Stream?> PostAsync(global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyComposeMusicV1MusicPost body, Action<RequestConfiguration<global::Soenneker.ElevenLabs.OpenApiClient.V1.Music.MusicRequestBuilder.MusicRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -90,7 +90,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Music
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "422", global::Soenneker.ElevenLabs.OpenApiClient.Models.HTTPValidationError.CreateFromDiscriminatorValue },
+                { "422", global::Soenneker.ElevenLabs.OpenApiClient.Models.HttpValidationError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -131,9 +131,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Music
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class MusicRequestBuilderPostQueryParameters 
         {
-            /// <summary>Output format of the generated audio. Formatted as codec_sample_rate_bitrate. So an mp3 with 22.05kHz sample rate at 32kbs is represented as mp3_22050_32. MP3 with 192kbps bitrate requires you to be subscribed to Creator tier or above. PCM with 44.1kHz sample rate requires you to be subscribed to Pro tier or above. Note that the μ-law format (sometimes written mu-law, often approximated as u-law) is commonly used for Twilio audio inputs.</summary>
+            /// <summary>&quot;Output format of the generated audio. Formatted as codec_sample_rate_bitrate. Use \&quot;auto\&quot; (the default) to let the API pick the best format for the selected model: mp3_44100_128 for v1 models and mp3_48000_192 for v2 models. &quot;</summary>
             [QueryParameter("output_format")]
-            public global::Soenneker.ElevenLabs.OpenApiClient.Models.AllowedOutputFormats? OutputFormat { get; set; }
+            public global::Soenneker.ElevenLabs.OpenApiClient.Models.GenerateOutputFormatParameter? OutputFormat { get; set; }
         }
     }
 }

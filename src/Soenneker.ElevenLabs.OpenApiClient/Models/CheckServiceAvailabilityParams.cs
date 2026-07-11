@@ -22,7 +22,6 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public CheckServiceAvailabilityParams()
         {
             AdditionalData = new Dictionary<string, object>();
-            SmbToolType = global::Soenneker.ElevenLabs.OpenApiClient.Models.CheckServiceAvailabilityParams_smb_tool_type.Check_service_availability;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -26,14 +26,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Workspace.Groups
         }
         /// <summary>Gets an item from the Soenneker.ElevenLabs.OpenApiClient.v1.workspace.groups.item collection</summary>
         /// <param name="position">The ID of the target group.</param>
-        /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.V1.Workspace.Groups.Item.WithGroup_ItemRequestBuilder"/></returns>
-        public global::Soenneker.ElevenLabs.OpenApiClient.V1.Workspace.Groups.Item.WithGroup_ItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.V1.Workspace.Groups.Item.WithGroupItemRequestBuilder"/></returns>
+        public global::Soenneker.ElevenLabs.OpenApiClient.V1.Workspace.Groups.Item.WithGroupItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("group_id", position);
-                return new global::Soenneker.ElevenLabs.OpenApiClient.V1.Workspace.Groups.Item.WithGroup_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("groupId", position);
+                return new global::Soenneker.ElevenLabs.OpenApiClient.V1.Workspace.Groups.Item.WithGroupItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -55,25 +55,25 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Workspace.Groups
         /// <summary>
         /// Get all groups in the workspace
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.V1.Workspace.Groups.GroupsGetResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.GetGroupsEndpoint200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.HTTPValidationError">When receiving a 422 status code</exception>
+        /// <exception cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.HttpValidationError">When receiving a 422 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.ElevenLabs.OpenApiClient.V1.Workspace.Groups.GroupsGetResponse?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetGroupsEndpoint200Response?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.ElevenLabs.OpenApiClient.V1.Workspace.Groups.GroupsGetResponse> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetGroupsEndpoint200Response> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "422", global::Soenneker.ElevenLabs.OpenApiClient.Models.HTTPValidationError.CreateFromDiscriminatorValue },
+                { "422", global::Soenneker.ElevenLabs.OpenApiClient.Models.HttpValidationError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.ElevenLabs.OpenApiClient.V1.Workspace.Groups.GroupsGetResponse>(requestInfo, global::Soenneker.ElevenLabs.OpenApiClient.V1.Workspace.Groups.GroupsGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetGroupsEndpoint200Response>(requestInfo, global::Soenneker.ElevenLabs.OpenApiClient.Models.GetGroupsEndpoint200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get all groups in the workspace

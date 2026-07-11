@@ -26,6 +26,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public SafetyResponseModel()
         {
             AdditionalData = new Dictionary<string, object>();
+            IgnoreSafetyEvaluation = false;
+            IsBlockedIvc = false;
+            IsBlockedNonIvc = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

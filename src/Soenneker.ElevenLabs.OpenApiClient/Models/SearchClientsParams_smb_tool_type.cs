@@ -10,7 +10,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     {
         [EnumMember(Value = "search_clients")]
         #pragma warning disable CS1591
-        Search_clients,
+        SearchClients,
         #pragma warning restore CS1591
     }
 }

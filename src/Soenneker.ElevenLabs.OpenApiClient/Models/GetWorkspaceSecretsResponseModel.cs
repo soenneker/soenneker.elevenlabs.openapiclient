@@ -25,10 +25,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The secrets property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConvAIWorkspaceStoredSecretConfig>? Secrets { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConvAiWorkspaceStoredSecretConfig>? Secrets { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConvAIWorkspaceStoredSecretConfig> Secrets { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConvAiWorkspaceStoredSecretConfig> Secrets { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.GetWorkspaceSecretsResponseModel"/> and sets the default values.
@@ -56,7 +56,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "next_cursor", n => { NextCursor = n.GetStringValue(); } },
-                { "secrets", n => { Secrets = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConvAIWorkspaceStoredSecretConfig>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConvAIWorkspaceStoredSecretConfig.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "secrets", n => { Secrets = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConvAiWorkspaceStoredSecretConfig>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConvAiWorkspaceStoredSecretConfig.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -67,7 +67,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("next_cursor", NextCursor);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConvAIWorkspaceStoredSecretConfig>("secrets", Secrets);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConvAiWorkspaceStoredSecretConfig>("secrets", Secrets);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

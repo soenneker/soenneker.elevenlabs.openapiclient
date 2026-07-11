@@ -42,6 +42,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public int? CallDurationSecs { get; set; }
         /// <summary>The call_successful property</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.EvaluationSuccessResult? CallSuccessful { get; set; }
+        /// <summary>The call_success_score property</summary>
+        public double? CallSuccessScore { get; set; }
         /// <summary>The call_summary_title property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -61,18 +63,18 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The conversation_initiation_source property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationSource_Wrapper? ConversationInitiationSource { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationSourceWrapper2? ConversationInitiationSource { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationSource_Wrapper ConversationInitiationSource { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationSourceWrapper2 ConversationInitiationSource { get; set; }
 #endif
         /// <summary>The direction property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.TelephonyDirection_Wrapper? Direction { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.TelephonyDirectionWrapper? Direction { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.TelephonyDirection_Wrapper Direction { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.TelephonyDirectionWrapper Direction { get; set; }
 #endif
         /// <summary>The main_language property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -86,10 +88,18 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public int? MessageCount { get; set; }
         /// <summary>The rating property</summary>
         public double? Rating { get; set; }
+        /// <summary>The sentiment_analysis property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationSummaryResponseModelSentimentAnalysis? SentimentAnalysis { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationSummaryResponseModelSentimentAnalysis SentimentAnalysis { get; set; }
+#endif
         /// <summary>The start_time_unix_secs property</summary>
         public int? StartTimeUnixSecs { get; set; }
         /// <summary>The status property</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationSummaryResponseModel_status? Status { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationSummaryResponseModelStatus? Status { get; set; }
         /// <summary>The termination_reason property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -101,10 +111,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The tool_names property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Tool_Names? ToolNames { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationSummaryResponseModelToolNames? ToolNames { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Tool_Names ToolNames { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationSummaryResponseModelToolNames ToolNames { get; set; }
 #endif
         /// <summary>The transcript_summary property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -151,18 +161,20 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "agent_name", n => { AgentName = n.GetStringValue(); } },
                 { "branch_id", n => { BranchId = n.GetStringValue(); } },
                 { "call_duration_secs", n => { CallDurationSecs = n.GetIntValue(); } },
+                { "call_success_score", n => { CallSuccessScore = n.GetDoubleValue(); } },
                 { "call_successful", n => { CallSuccessful = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.EvaluationSuccessResult>(); } },
                 { "call_summary_title", n => { CallSummaryTitle = n.GetStringValue(); } },
                 { "conversation_id", n => { ConversationId = n.GetStringValue(); } },
-                { "conversation_initiation_source", n => { ConversationInitiationSource = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationSource_Wrapper>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationSource_Wrapper.CreateFromDiscriminatorValue); } },
-                { "direction", n => { Direction = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TelephonyDirection_Wrapper>(global::Soenneker.ElevenLabs.OpenApiClient.Models.TelephonyDirection_Wrapper.CreateFromDiscriminatorValue); } },
+                { "conversation_initiation_source", n => { ConversationInitiationSource = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationSourceWrapper2>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationSourceWrapper2.CreateFromDiscriminatorValue); } },
+                { "direction", n => { Direction = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TelephonyDirectionWrapper>(global::Soenneker.ElevenLabs.OpenApiClient.Models.TelephonyDirectionWrapper.CreateFromDiscriminatorValue); } },
                 { "main_language", n => { MainLanguage = n.GetStringValue(); } },
                 { "message_count", n => { MessageCount = n.GetIntValue(); } },
                 { "rating", n => { Rating = n.GetDoubleValue(); } },
+                { "sentiment_analysis", n => { SentimentAnalysis = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationSummaryResponseModelSentimentAnalysis>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationSummaryResponseModelSentimentAnalysis.CreateFromDiscriminatorValue); } },
                 { "start_time_unix_secs", n => { StartTimeUnixSecs = n.GetIntValue(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationSummaryResponseModel_status>(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationSummaryResponseModelStatus>(); } },
                 { "termination_reason", n => { TerminationReason = n.GetStringValue(); } },
-                { "tool_names", n => { ToolNames = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Tool_Names>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Tool_Names.CreateFromDiscriminatorValue); } },
+                { "tool_names", n => { ToolNames = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationSummaryResponseModelToolNames>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationSummaryResponseModelToolNames.CreateFromDiscriminatorValue); } },
                 { "transcript_summary", n => { TranscriptSummary = n.GetStringValue(); } },
                 { "version_id", n => { VersionId = n.GetStringValue(); } },
             };
@@ -179,17 +191,19 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteStringValue("branch_id", BranchId);
             writer.WriteIntValue("call_duration_secs", CallDurationSecs);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.EvaluationSuccessResult>("call_successful", CallSuccessful);
+            writer.WriteDoubleValue("call_success_score", CallSuccessScore);
             writer.WriteStringValue("call_summary_title", CallSummaryTitle);
             writer.WriteStringValue("conversation_id", ConversationId);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationSource_Wrapper>("conversation_initiation_source", ConversationInitiationSource);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TelephonyDirection_Wrapper>("direction", Direction);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationSourceWrapper2>("conversation_initiation_source", ConversationInitiationSource);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TelephonyDirectionWrapper>("direction", Direction);
             writer.WriteStringValue("main_language", MainLanguage);
             writer.WriteIntValue("message_count", MessageCount);
             writer.WriteDoubleValue("rating", Rating);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationSummaryResponseModelSentimentAnalysis>("sentiment_analysis", SentimentAnalysis);
             writer.WriteIntValue("start_time_unix_secs", StartTimeUnixSecs);
-            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationSummaryResponseModel_status>("status", Status);
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationSummaryResponseModelStatus>("status", Status);
             writer.WriteStringValue("termination_reason", TerminationReason);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Tool_Names>("tool_names", ToolNames);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationSummaryResponseModelToolNames>("tool_names", ToolNames);
             writer.WriteStringValue("transcript_summary", TranscriptSummary);
             writer.WriteStringValue("version_id", VersionId);
             writer.WriteAdditionalData(AdditionalData);

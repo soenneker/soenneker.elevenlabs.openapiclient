@@ -31,7 +31,6 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public VoicemailDetectionToolConfig()
         {
             AdditionalData = new Dictionary<string, object>();
-            SystemToolType = global::Soenneker.ElevenLabs.OpenApiClient.Models.VoicemailDetectionToolConfig_system_tool_type.Voicemail_detection;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

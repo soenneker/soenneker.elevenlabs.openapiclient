@@ -47,7 +47,6 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public CreateBearerAuthRequest()
         {
             AdditionalData = new Dictionary<string, object>();
-            AuthType = global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateBearerAuthRequest_auth_type.Bearer_auth;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -61,14 +61,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public string Name { get; set; }
 #endif
         /// <summary>The permission on the resource of the pronunciation dictionary.</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPronunciationDictionaryWithRulesResponseModel_permission_on_resource? PermissionOnResource { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPronunciationDictionaryWithRulesResponseModelPermissionOnResource? PermissionOnResource { get; set; }
         /// <summary>The rules in the latest version of the pronunciation dictionary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPronunciationDictionaryWithRulesResponseModel.GetPronunciationDictionaryWithRulesResponseModel_rules>? Rules { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPronunciationDictionaryWithRulesResponseModelRulesItem>? Rules { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPronunciationDictionaryWithRulesResponseModel.GetPronunciationDictionaryWithRulesResponseModel_rules> Rules { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPronunciationDictionaryWithRulesResponseModelRulesItem> Rules { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPronunciationDictionaryWithRulesResponseModel"/> and sets the default values.
@@ -103,8 +103,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "latest_version_id", n => { LatestVersionId = n.GetStringValue(); } },
                 { "latest_version_rules_num", n => { LatestVersionRulesNum = n.GetIntValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "permission_on_resource", n => { PermissionOnResource = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPronunciationDictionaryWithRulesResponseModel_permission_on_resource>(); } },
-                { "rules", n => { Rules = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPronunciationDictionaryWithRulesResponseModel.GetPronunciationDictionaryWithRulesResponseModel_rules>(global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPronunciationDictionaryWithRulesResponseModel.GetPronunciationDictionaryWithRulesResponseModel_rules.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "permission_on_resource", n => { PermissionOnResource = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPronunciationDictionaryWithRulesResponseModelPermissionOnResource>(); } },
+                { "rules", n => { Rules = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPronunciationDictionaryWithRulesResponseModelRulesItem>(global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPronunciationDictionaryWithRulesResponseModelRulesItem.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -122,66 +122,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteStringValue("latest_version_id", LatestVersionId);
             writer.WriteIntValue("latest_version_rules_num", LatestVersionRulesNum);
             writer.WriteStringValue("name", Name);
-            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPronunciationDictionaryWithRulesResponseModel_permission_on_resource>("permission_on_resource", PermissionOnResource);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPronunciationDictionaryWithRulesResponseModel.GetPronunciationDictionaryWithRulesResponseModel_rules>("rules", Rules);
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPronunciationDictionaryWithRulesResponseModelPermissionOnResource>("permission_on_resource", PermissionOnResource);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPronunciationDictionaryWithRulesResponseModelRulesItem>("rules", Rules);
             writer.WriteAdditionalData(AdditionalData);
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.PronunciationDictionaryAliasRuleResponseModel"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.PronunciationDictionaryPhonemeRuleResponseModel"/>
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class GetPronunciationDictionaryWithRulesResponseModel_rules : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.PronunciationDictionaryAliasRuleResponseModel"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.ElevenLabs.OpenApiClient.Models.PronunciationDictionaryAliasRuleResponseModel? PronunciationDictionaryAliasRuleResponseModel { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.ElevenLabs.OpenApiClient.Models.PronunciationDictionaryAliasRuleResponseModel PronunciationDictionaryAliasRuleResponseModel { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.PronunciationDictionaryPhonemeRuleResponseModel"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.ElevenLabs.OpenApiClient.Models.PronunciationDictionaryPhonemeRuleResponseModel? PronunciationDictionaryPhonemeRuleResponseModel { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.ElevenLabs.OpenApiClient.Models.PronunciationDictionaryPhonemeRuleResponseModel PronunciationDictionaryPhonemeRuleResponseModel { get; set; }
-#endif
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPronunciationDictionaryWithRulesResponseModel.GetPronunciationDictionaryWithRulesResponseModel_rules"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPronunciationDictionaryWithRulesResponseModel.GetPronunciationDictionaryWithRulesResponseModel_rules CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var result = new global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPronunciationDictionaryWithRulesResponseModel.GetPronunciationDictionaryWithRulesResponseModel_rules();
-                result.PronunciationDictionaryAliasRuleResponseModel = new global::Soenneker.ElevenLabs.OpenApiClient.Models.PronunciationDictionaryAliasRuleResponseModel();
-                result.PronunciationDictionaryPhonemeRuleResponseModel = new global::Soenneker.ElevenLabs.OpenApiClient.Models.PronunciationDictionaryPhonemeRuleResponseModel();
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                if(PronunciationDictionaryAliasRuleResponseModel != null || PronunciationDictionaryPhonemeRuleResponseModel != null)
-                {
-                    return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(PronunciationDictionaryAliasRuleResponseModel, PronunciationDictionaryPhonemeRuleResponseModel);
-                }
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PronunciationDictionaryAliasRuleResponseModel>(null, PronunciationDictionaryAliasRuleResponseModel, PronunciationDictionaryPhonemeRuleResponseModel);
-            }
         }
     }
 }

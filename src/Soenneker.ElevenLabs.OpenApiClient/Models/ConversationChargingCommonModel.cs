@@ -17,10 +17,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The asr_usage property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationASRUsageModel? AsrUsage { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationChargingCommonModelAsrUsage? AsrUsage { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationASRUsageModel AsrUsage { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationChargingCommonModelAsrUsage AsrUsage { get; set; }
 #endif
         /// <summary>The call_charge property</summary>
         public int? CallCharge { get; set; }
@@ -39,10 +39,22 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The llm_usage property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.LLMCategoryUsage? LlmUsage { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmCategoryUsage? LlmUsage { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.LLMCategoryUsage LlmUsage { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmCategoryUsage LlmUsage { get; set; }
+#endif
+        /// <summary>The platform_charge property</summary>
+        public int? PlatformCharge { get; set; }
+        /// <summary>The platform_price property</summary>
+        public double? PlatformPrice { get; set; }
+        /// <summary>Per-category breakdown of ``platform_charge`` (the analogue of ``llm_usage``).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PlatformUsage? PlatformUsage { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PlatformUsage PlatformUsage { get; set; }
 #endif
         /// <summary>The tier property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -55,10 +67,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The tts_usage property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationTTSUsageModel? TtsUsage { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationChargingCommonModelTtsUsage? TtsUsage { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationTTSUsageModel TtsUsage { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationChargingCommonModelTtsUsage TtsUsage { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationChargingCommonModel"/> and sets the default values.
@@ -66,6 +78,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public ConversationChargingCommonModel()
         {
             AdditionalData = new Dictionary<string, object>();
+            DevDiscount = false;
+            FreeLlmDollarsConsumed = 0.0;
+            FreeMinutesConsumed = 0.0;
+            IsBurst = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -85,7 +101,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "asr_usage", n => { AsrUsage = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationASRUsageModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationASRUsageModel.CreateFromDiscriminatorValue); } },
+                { "asr_usage", n => { AsrUsage = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationChargingCommonModelAsrUsage>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationChargingCommonModelAsrUsage.CreateFromDiscriminatorValue); } },
                 { "call_charge", n => { CallCharge = n.GetIntValue(); } },
                 { "dev_discount", n => { DevDiscount = n.GetBoolValue(); } },
                 { "free_llm_dollars_consumed", n => { FreeLlmDollarsConsumed = n.GetDoubleValue(); } },
@@ -93,9 +109,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "is_burst", n => { IsBurst = n.GetBoolValue(); } },
                 { "llm_charge", n => { LlmCharge = n.GetIntValue(); } },
                 { "llm_price", n => { LlmPrice = n.GetDoubleValue(); } },
-                { "llm_usage", n => { LlmUsage = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.LLMCategoryUsage>(global::Soenneker.ElevenLabs.OpenApiClient.Models.LLMCategoryUsage.CreateFromDiscriminatorValue); } },
+                { "llm_usage", n => { LlmUsage = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmCategoryUsage>(global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmCategoryUsage.CreateFromDiscriminatorValue); } },
+                { "platform_charge", n => { PlatformCharge = n.GetIntValue(); } },
+                { "platform_price", n => { PlatformPrice = n.GetDoubleValue(); } },
+                { "platform_usage", n => { PlatformUsage = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PlatformUsage>(global::Soenneker.ElevenLabs.OpenApiClient.Models.PlatformUsage.CreateFromDiscriminatorValue); } },
                 { "tier", n => { Tier = n.GetStringValue(); } },
-                { "tts_usage", n => { TtsUsage = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationTTSUsageModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationTTSUsageModel.CreateFromDiscriminatorValue); } },
+                { "tts_usage", n => { TtsUsage = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationChargingCommonModelTtsUsage>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationChargingCommonModelTtsUsage.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -105,7 +124,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationASRUsageModel>("asr_usage", AsrUsage);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationChargingCommonModelAsrUsage>("asr_usage", AsrUsage);
             writer.WriteIntValue("call_charge", CallCharge);
             writer.WriteBoolValue("dev_discount", DevDiscount);
             writer.WriteDoubleValue("free_llm_dollars_consumed", FreeLlmDollarsConsumed);
@@ -113,9 +132,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteBoolValue("is_burst", IsBurst);
             writer.WriteIntValue("llm_charge", LlmCharge);
             writer.WriteDoubleValue("llm_price", LlmPrice);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.LLMCategoryUsage>("llm_usage", LlmUsage);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmCategoryUsage>("llm_usage", LlmUsage);
+            writer.WriteIntValue("platform_charge", PlatformCharge);
+            writer.WriteDoubleValue("platform_price", PlatformPrice);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PlatformUsage>("platform_usage", PlatformUsage);
             writer.WriteStringValue("tier", Tier);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationTTSUsageModel>("tts_usage", TtsUsage);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationChargingCommonModelTtsUsage>("tts_usage", TtsUsage);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

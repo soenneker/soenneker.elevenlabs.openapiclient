@@ -17,18 +17,18 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The data_collection_results property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ScopedAnalysisResult_data_collection_results? DataCollectionResults { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ScopedAnalysisResultDataCollectionResultsProperty? DataCollectionResults { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ScopedAnalysisResult_data_collection_results DataCollectionResults { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ScopedAnalysisResultDataCollectionResultsProperty DataCollectionResults { get; set; }
 #endif
         /// <summary>The evaluation_criteria_results property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ScopedAnalysisResult_evaluation_criteria_results? EvaluationCriteriaResults { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ScopedAnalysisResultEvaluationCriteriaResultsProperty? EvaluationCriteriaResults { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ScopedAnalysisResult_evaluation_criteria_results EvaluationCriteriaResults { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ScopedAnalysisResultEvaluationCriteriaResultsProperty EvaluationCriteriaResults { get; set; }
 #endif
         /// <summary>The scope property</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.AnalysisScope? Scope { get; set; }
@@ -50,13 +50,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #endif
         /// <summary>The successful property</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.EvaluationSuccessResult? Successful { get; set; }
+        /// <summary>The success_score property</summary>
+        public double? SuccessScore { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ScopedAnalysisResult"/> and sets the default values.
         /// </summary>
         public ScopedAnalysisResult()
         {
             AdditionalData = new Dictionary<string, object>();
-            Scope = global::Soenneker.ElevenLabs.OpenApiClient.Models.AnalysisScope.Conversation;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -76,11 +77,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "data_collection_results", n => { DataCollectionResults = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ScopedAnalysisResult_data_collection_results>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ScopedAnalysisResult_data_collection_results.CreateFromDiscriminatorValue); } },
-                { "evaluation_criteria_results", n => { EvaluationCriteriaResults = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ScopedAnalysisResult_evaluation_criteria_results>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ScopedAnalysisResult_evaluation_criteria_results.CreateFromDiscriminatorValue); } },
+                { "data_collection_results", n => { DataCollectionResults = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ScopedAnalysisResultDataCollectionResultsProperty>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ScopedAnalysisResultDataCollectionResultsProperty.CreateFromDiscriminatorValue); } },
+                { "evaluation_criteria_results", n => { EvaluationCriteriaResults = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ScopedAnalysisResultEvaluationCriteriaResultsProperty>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ScopedAnalysisResultEvaluationCriteriaResultsProperty.CreateFromDiscriminatorValue); } },
                 { "scope", n => { Scope = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AnalysisScope>(); } },
                 { "source_agent_id", n => { SourceAgentId = n.GetStringValue(); } },
                 { "source_branch_id", n => { SourceBranchId = n.GetStringValue(); } },
+                { "success_score", n => { SuccessScore = n.GetDoubleValue(); } },
                 { "successful", n => { Successful = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.EvaluationSuccessResult>(); } },
             };
         }
@@ -91,12 +93,13 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ScopedAnalysisResult_data_collection_results>("data_collection_results", DataCollectionResults);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ScopedAnalysisResult_evaluation_criteria_results>("evaluation_criteria_results", EvaluationCriteriaResults);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ScopedAnalysisResultDataCollectionResultsProperty>("data_collection_results", DataCollectionResults);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ScopedAnalysisResultEvaluationCriteriaResultsProperty>("evaluation_criteria_results", EvaluationCriteriaResults);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AnalysisScope>("scope", Scope);
             writer.WriteStringValue("source_agent_id", SourceAgentId);
             writer.WriteStringValue("source_branch_id", SourceBranchId);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.EvaluationSuccessResult>("successful", Successful);
+            writer.WriteDoubleValue("success_score", SuccessScore);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

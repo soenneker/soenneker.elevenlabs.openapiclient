@@ -52,6 +52,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public AudioSegment()
         {
             AdditionalData = new Dictionary<string, object>();
+            HasMusic = false;
+            HasSpeech = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

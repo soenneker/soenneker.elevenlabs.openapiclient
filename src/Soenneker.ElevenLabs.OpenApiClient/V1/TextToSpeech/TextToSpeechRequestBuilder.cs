@@ -17,14 +17,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.TextToSpeech
     {
         /// <summary>Gets an item from the Soenneker.ElevenLabs.OpenApiClient.v1.textToSpeech.item collection</summary>
         /// <param name="position">Voice ID to be used, you can use https://api.elevenlabs.io/v1/voices to list all the available voices.</param>
-        /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.V1.TextToSpeech.Item.WithVoice_ItemRequestBuilder"/></returns>
-        public global::Soenneker.ElevenLabs.OpenApiClient.V1.TextToSpeech.Item.WithVoice_ItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.V1.TextToSpeech.Item.WithVoiceItemRequestBuilder"/></returns>
+        public global::Soenneker.ElevenLabs.OpenApiClient.V1.TextToSpeech.Item.WithVoiceItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("voice_id", position);
-                return new global::Soenneker.ElevenLabs.OpenApiClient.V1.TextToSpeech.Item.WithVoice_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("voiceId", position);
+                return new global::Soenneker.ElevenLabs.OpenApiClient.V1.TextToSpeech.Item.WithVoiceItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>

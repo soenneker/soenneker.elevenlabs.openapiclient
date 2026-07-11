@@ -20,14 +20,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.AudioIsolation.History
     {
         /// <summary>Gets an item from the Soenneker.ElevenLabs.OpenApiClient.v1.audioIsolation.history.item collection</summary>
         /// <param name="position">Identifier of the audio isolation history item.</param>
-        /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.V1.AudioIsolation.History.Item.WithHistory_item_ItemRequestBuilder"/></returns>
-        public global::Soenneker.ElevenLabs.OpenApiClient.V1.AudioIsolation.History.Item.WithHistory_item_ItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.V1.AudioIsolation.History.Item.WithHistoryItemItemRequestBuilder"/></returns>
+        public global::Soenneker.ElevenLabs.OpenApiClient.V1.AudioIsolation.History.Item.WithHistoryItemItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("history_item_id", position);
-                return new global::Soenneker.ElevenLabs.OpenApiClient.V1.AudioIsolation.History.Item.WithHistory_item_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("historyItemId", position);
+                return new global::Soenneker.ElevenLabs.OpenApiClient.V1.AudioIsolation.History.Item.WithHistoryItemItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -52,7 +52,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.AudioIsolation.History
         /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.GetAudioIsolationHistoryResponseModel"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.HTTPValidationError">When receiving a 422 status code</exception>
+        /// <exception cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.HttpValidationError">When receiving a 422 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetAudioIsolationHistoryResponseModel?> GetAsync(Action<RequestConfiguration<global::Soenneker.ElevenLabs.OpenApiClient.V1.AudioIsolation.History.HistoryRequestBuilder.HistoryRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -65,7 +65,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.AudioIsolation.History
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "422", global::Soenneker.ElevenLabs.OpenApiClient.Models.HTTPValidationError.CreateFromDiscriminatorValue },
+                { "422", global::Soenneker.ElevenLabs.OpenApiClient.Models.HttpValidationError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetAudioIsolationHistoryResponseModel>(requestInfo, global::Soenneker.ElevenLabs.OpenApiClient.Models.GetAudioIsolationHistoryResponseModel.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

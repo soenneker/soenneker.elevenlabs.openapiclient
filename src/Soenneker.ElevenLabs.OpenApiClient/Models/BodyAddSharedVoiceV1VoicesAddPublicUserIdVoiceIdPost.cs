@@ -30,6 +30,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public BodyAddSharedVoiceV1VoicesAddPublicUserIdVoiceIdPost()
         {
             AdditionalData = new Dictionary<string, object>();
+            Bookmarked = true;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

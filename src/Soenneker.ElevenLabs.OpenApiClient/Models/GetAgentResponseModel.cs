@@ -15,10 +15,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The access information of the agent for the user</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceAccessInfo? AccessInfo { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetAgentResponseModelAccessInfo? AccessInfo { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceAccessInfo AccessInfo { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetAgentResponseModelAccessInfo AccessInfo { get; set; }
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -41,10 +41,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The conversation_config property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationalConfigAPIModelOutput? ConversationConfig { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationalConfigApiModelOutput? ConversationConfig { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationalConfigAPIModelOutput ConversationConfig { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationalConfigApiModelOutput ConversationConfig { get; set; }
 #endif
         /// <summary>The ID of the main branch for this agent</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -73,10 +73,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The phone numbers of the agent</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetAgentResponseModel.GetAgentResponseModel_phone_numbers>? PhoneNumbers { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetAgentResponseModelPhoneNumbersItem>? PhoneNumbers { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetAgentResponseModel.GetAgentResponseModel_phone_numbers> PhoneNumbers { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetAgentResponseModelPhoneNumbersItem> PhoneNumbers { get; set; }
 #endif
         /// <summary>The platform_settings property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -143,14 +143,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "access_info", n => { AccessInfo = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceAccessInfo>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceAccessInfo.CreateFromDiscriminatorValue); } },
+                { "access_info", n => { AccessInfo = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetAgentResponseModelAccessInfo>(global::Soenneker.ElevenLabs.OpenApiClient.Models.GetAgentResponseModelAccessInfo.CreateFromDiscriminatorValue); } },
                 { "agent_id", n => { AgentId = n.GetStringValue(); } },
                 { "branch_id", n => { BranchId = n.GetStringValue(); } },
-                { "conversation_config", n => { ConversationConfig = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationalConfigAPIModelOutput>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationalConfigAPIModelOutput.CreateFromDiscriminatorValue); } },
+                { "conversation_config", n => { ConversationConfig = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationalConfigApiModelOutput>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationalConfigApiModelOutput.CreateFromDiscriminatorValue); } },
                 { "main_branch_id", n => { MainBranchId = n.GetStringValue(); } },
                 { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentMetadataResponseModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentMetadataResponseModel.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "phone_numbers", n => { PhoneNumbers = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetAgentResponseModel.GetAgentResponseModel_phone_numbers>(global::Soenneker.ElevenLabs.OpenApiClient.Models.GetAgentResponseModel.GetAgentResponseModel_phone_numbers.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "phone_numbers", n => { PhoneNumbers = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetAgentResponseModelPhoneNumbersItem>(global::Soenneker.ElevenLabs.OpenApiClient.Models.GetAgentResponseModelPhoneNumbersItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "platform_settings", n => { PlatformSettings = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentPlatformSettingsResponseModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentPlatformSettingsResponseModel.CreateFromDiscriminatorValue); } },
                 { "tags", n => { Tags = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "version_id", n => { VersionId = n.GetStringValue(); } },
@@ -165,115 +165,20 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceAccessInfo>("access_info", AccessInfo);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetAgentResponseModelAccessInfo>("access_info", AccessInfo);
             writer.WriteStringValue("agent_id", AgentId);
             writer.WriteStringValue("branch_id", BranchId);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationalConfigAPIModelOutput>("conversation_config", ConversationConfig);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationalConfigApiModelOutput>("conversation_config", ConversationConfig);
             writer.WriteStringValue("main_branch_id", MainBranchId);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentMetadataResponseModel>("metadata", Metadata);
             writer.WriteStringValue("name", Name);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetAgentResponseModel.GetAgentResponseModel_phone_numbers>("phone_numbers", PhoneNumbers);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetAgentResponseModelPhoneNumbersItem>("phone_numbers", PhoneNumbers);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentPlatformSettingsResponseModel>("platform_settings", PlatformSettings);
             writer.WriteCollectionOfPrimitiveValues<string>("tags", Tags);
             writer.WriteStringValue("version_id", VersionId);
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetWhatsAppAccountResponse>("whatsapp_accounts", WhatsappAccounts);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentWorkflowResponseModel>("workflow", Workflow);
             writer.WriteAdditionalData(AdditionalData);
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPhoneNumberExotelResponseModel"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPhoneNumberSIPTrunkResponseModel"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPhoneNumberTwilioResponseModel"/>
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class GetAgentResponseModel_phone_numbers : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPhoneNumberExotelResponseModel"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPhoneNumberExotelResponseModel? GetPhoneNumberExotelResponseModel { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPhoneNumberExotelResponseModel GetPhoneNumberExotelResponseModel { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPhoneNumberSIPTrunkResponseModel"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPhoneNumberSIPTrunkResponseModel? GetPhoneNumberSIPTrunkResponseModel { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPhoneNumberSIPTrunkResponseModel GetPhoneNumberSIPTrunkResponseModel { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPhoneNumberTwilioResponseModel"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPhoneNumberTwilioResponseModel? GetPhoneNumberTwilioResponseModel { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPhoneNumberTwilioResponseModel GetPhoneNumberTwilioResponseModel { get; set; }
-#endif
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.GetAgentResponseModel.GetAgentResponseModel_phone_numbers"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.ElevenLabs.OpenApiClient.Models.GetAgentResponseModel.GetAgentResponseModel_phone_numbers CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var mappingValue = parseNode.GetChildNode("provider")?.GetStringValue();
-                var result = new global::Soenneker.ElevenLabs.OpenApiClient.Models.GetAgentResponseModel.GetAgentResponseModel_phone_numbers();
-                if("exotel".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.GetPhoneNumberExotelResponseModel = new global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPhoneNumberExotelResponseModel();
-                }
-                else if("sip_trunk".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.GetPhoneNumberSIPTrunkResponseModel = new global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPhoneNumberSIPTrunkResponseModel();
-                }
-                else if("twilio".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.GetPhoneNumberTwilioResponseModel = new global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPhoneNumberTwilioResponseModel();
-                }
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                if(GetPhoneNumberExotelResponseModel != null)
-                {
-                    return GetPhoneNumberExotelResponseModel.GetFieldDeserializers();
-                }
-                else if(GetPhoneNumberSIPTrunkResponseModel != null)
-                {
-                    return GetPhoneNumberSIPTrunkResponseModel.GetFieldDeserializers();
-                }
-                else if(GetPhoneNumberTwilioResponseModel != null)
-                {
-                    return GetPhoneNumberTwilioResponseModel.GetFieldDeserializers();
-                }
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                if(GetPhoneNumberExotelResponseModel != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPhoneNumberExotelResponseModel>(null, GetPhoneNumberExotelResponseModel);
-                }
-                else if(GetPhoneNumberSIPTrunkResponseModel != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPhoneNumberSIPTrunkResponseModel>(null, GetPhoneNumberSIPTrunkResponseModel);
-                }
-                else if(GetPhoneNumberTwilioResponseModel != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPhoneNumberTwilioResponseModel>(null, GetPhoneNumberTwilioResponseModel);
-                }
-            }
         }
     }
 }

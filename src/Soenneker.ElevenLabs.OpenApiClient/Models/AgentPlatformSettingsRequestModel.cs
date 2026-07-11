@@ -15,7 +15,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The analysis_llm property</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.LLM? AnalysisLlm { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Llm? AnalysisLlm { get; set; }
         /// <summary>Whether the agent is archived</summary>
         public bool? Archived { get; set; }
         /// <summary>The auth property</summary>
@@ -26,6 +26,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.AuthSettings Auth { get; set; }
 #endif
+        /// <summary>When enabled, a conversation transcript is automatically translated to the viewer&apos;s application language when they open the transcript page. If not set or false, transcripts are shown in their original language unless the viewer manually selects a translation.</summary>
+        public bool? AutoTranslateTranscriptToAppLanguage { get; set; }
         /// <summary>The call_limits property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -37,18 +39,18 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Data collection settings</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentPlatformSettingsRequestModel_data_collection? DataCollection { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentPlatformSettingsRequestModelDataCollectionProperty? DataCollection { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentPlatformSettingsRequestModel_data_collection DataCollection { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentPlatformSettingsRequestModelDataCollectionProperty DataCollection { get; set; }
 #endif
         /// <summary>Scope per data collection item ID. Missing keys default to conversation scope.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentPlatformSettingsRequestModel_data_collection_scopes? DataCollectionScopes { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentPlatformSettingsRequestModelDataCollectionScopesProperty? DataCollectionScopes { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentPlatformSettingsRequestModel_data_collection_scopes DataCollectionScopes { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentPlatformSettingsRequestModelDataCollectionScopesProperty DataCollectionScopes { get; set; }
 #endif
         /// <summary>Settings to evaluate an agent&apos;s performance.Agents are evaluated against a set of criteria, with success being defined as meeting some combination of those criteria.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -82,6 +84,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.PrivacyConfigInput Privacy { get; set; }
 #endif
+        /// <summary>The sentiment_analysis property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentPlatformSettingsRequestModelSentimentAnalysis? SentimentAnalysis { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentPlatformSettingsRequestModelSentimentAnalysis SentimentAnalysis { get; set; }
+#endif
         /// <summary>Language for all conversation analysis outputs (summaries, titles, evaluation rationales, data collection rationales). If not set, the language will be inferred from the conversation. Must be one of the supported conversation languages.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -97,6 +107,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #nullable restore
 #else
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentTestingSettings Testing { get; set; }
+#endif
+        /// <summary>Per-agent topic-discovery configuration. Cadence and analysis window aremanaged internally; this only exposes the customer-facing on/off toggle.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentPlatformSettingsRequestModelTopicDiscovery? TopicDiscovery { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentPlatformSettingsRequestModelTopicDiscovery TopicDiscovery { get; set; }
 #endif
         /// <summary>&quot;The trust context in which the agent operates.UNKNOWN: not yet classified (existing agents created before this feature).LOW: serves untrusted external participants (e.g. customer support, sales) —     outputs should be vetted and tool access scoped.HIGH: serves the owner (e.g. personal assistant) — full tool access is appropriate.&quot;</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentTrustContext? TrustContext { get; set; }
@@ -122,8 +140,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public AgentPlatformSettingsRequestModel()
         {
             AdditionalData = new Dictionary<string, object>();
-            AnalysisLlm = global::Soenneker.ElevenLabs.OpenApiClient.Models.LLM.Gemini25Flash;
-            TrustContext = global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentTrustContext.Unknown;
+            Archived = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -143,18 +160,21 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "analysis_llm", n => { AnalysisLlm = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.LLM>(); } },
+                { "analysis_llm", n => { AnalysisLlm = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Llm>(); } },
                 { "archived", n => { Archived = n.GetBoolValue(); } },
                 { "auth", n => { Auth = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AuthSettings>(global::Soenneker.ElevenLabs.OpenApiClient.Models.AuthSettings.CreateFromDiscriminatorValue); } },
+                { "auto_translate_transcript_to_app_language", n => { AutoTranslateTranscriptToAppLanguage = n.GetBoolValue(); } },
                 { "call_limits", n => { CallLimits = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentCallLimits>(global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentCallLimits.CreateFromDiscriminatorValue); } },
-                { "data_collection", n => { DataCollection = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentPlatformSettingsRequestModel_data_collection>(global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentPlatformSettingsRequestModel_data_collection.CreateFromDiscriminatorValue); } },
-                { "data_collection_scopes", n => { DataCollectionScopes = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentPlatformSettingsRequestModel_data_collection_scopes>(global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentPlatformSettingsRequestModel_data_collection_scopes.CreateFromDiscriminatorValue); } },
+                { "data_collection", n => { DataCollection = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentPlatformSettingsRequestModelDataCollectionProperty>(global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentPlatformSettingsRequestModelDataCollectionProperty.CreateFromDiscriminatorValue); } },
+                { "data_collection_scopes", n => { DataCollectionScopes = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentPlatformSettingsRequestModelDataCollectionScopesProperty>(global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentPlatformSettingsRequestModelDataCollectionScopesProperty.CreateFromDiscriminatorValue); } },
                 { "evaluation", n => { Evaluation = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.EvaluationSettingsInput>(global::Soenneker.ElevenLabs.OpenApiClient.Models.EvaluationSettingsInput.CreateFromDiscriminatorValue); } },
                 { "guardrails", n => { Guardrails = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GuardrailsV1Input>(global::Soenneker.ElevenLabs.OpenApiClient.Models.GuardrailsV1Input.CreateFromDiscriminatorValue); } },
                 { "overrides", n => { Overrides = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationClientDataConfigInput>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationClientDataConfigInput.CreateFromDiscriminatorValue); } },
                 { "privacy", n => { Privacy = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PrivacyConfigInput>(global::Soenneker.ElevenLabs.OpenApiClient.Models.PrivacyConfigInput.CreateFromDiscriminatorValue); } },
+                { "sentiment_analysis", n => { SentimentAnalysis = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentPlatformSettingsRequestModelSentimentAnalysis>(global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentPlatformSettingsRequestModelSentimentAnalysis.CreateFromDiscriminatorValue); } },
                 { "summary_language", n => { SummaryLanguage = n.GetStringValue(); } },
                 { "testing", n => { Testing = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentTestingSettings>(global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentTestingSettings.CreateFromDiscriminatorValue); } },
+                { "topic_discovery", n => { TopicDiscovery = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentPlatformSettingsRequestModelTopicDiscovery>(global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentPlatformSettingsRequestModelTopicDiscovery.CreateFromDiscriminatorValue); } },
                 { "trust_context", n => { TrustContext = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentTrustContext>(); } },
                 { "widget", n => { Widget = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigInput>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigInput.CreateFromDiscriminatorValue); } },
                 { "workspace_overrides", n => { WorkspaceOverrides = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentWorkspaceOverridesInput>(global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentWorkspaceOverridesInput.CreateFromDiscriminatorValue); } },
@@ -167,18 +187,21 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.LLM>("analysis_llm", AnalysisLlm);
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Llm>("analysis_llm", AnalysisLlm);
             writer.WriteBoolValue("archived", Archived);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AuthSettings>("auth", Auth);
+            writer.WriteBoolValue("auto_translate_transcript_to_app_language", AutoTranslateTranscriptToAppLanguage);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentCallLimits>("call_limits", CallLimits);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentPlatformSettingsRequestModel_data_collection>("data_collection", DataCollection);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentPlatformSettingsRequestModel_data_collection_scopes>("data_collection_scopes", DataCollectionScopes);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentPlatformSettingsRequestModelDataCollectionProperty>("data_collection", DataCollection);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentPlatformSettingsRequestModelDataCollectionScopesProperty>("data_collection_scopes", DataCollectionScopes);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.EvaluationSettingsInput>("evaluation", Evaluation);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GuardrailsV1Input>("guardrails", Guardrails);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationClientDataConfigInput>("overrides", Overrides);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PrivacyConfigInput>("privacy", Privacy);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentPlatformSettingsRequestModelSentimentAnalysis>("sentiment_analysis", SentimentAnalysis);
             writer.WriteStringValue("summary_language", SummaryLanguage);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentTestingSettings>("testing", Testing);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentPlatformSettingsRequestModelTopicDiscovery>("topic_discovery", TopicDiscovery);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentTrustContext>("trust_context", TrustContext);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigInput>("widget", Widget);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentWorkspaceOverridesInput>("workspace_overrides", WorkspaceOverrides);

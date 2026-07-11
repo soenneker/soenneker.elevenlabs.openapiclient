@@ -19,18 +19,18 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The group_pvc_limit property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Group_Pvc_Limit? GroupPvcLimit { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceGroupResponseModelGroupPvcLimit? GroupPvcLimit { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Group_Pvc_Limit GroupPvcLimit { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceGroupResponseModelGroupPvcLimit GroupPvcLimit { get; set; }
 #endif
         /// <summary>The group_usage_limit property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Group_Usage_Limit? GroupUsageLimit { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceGroupResponseModelGroupUsageLimit? GroupUsageLimit { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Group_Usage_Limit GroupUsageLimit { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceGroupResponseModelGroupUsageLimit GroupUsageLimit { get; set; }
 #endif
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -61,10 +61,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The permissions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Permissions? Permissions { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceGroupResponseModelPermissions? Permissions { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Permissions Permissions { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceGroupResponseModelPermissions Permissions { get; set; }
 #endif
         /// <summary>The scim_external_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -74,12 +74,24 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public string ScimExternalId { get; set; }
 #endif
+        /// <summary>The scim_frozen property</summary>
+        public bool? ScimFrozen { get; set; }
+        /// <summary>The scim_group property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceGroupResponseModelScimGroup? ScimGroup { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceGroupResponseModelScimGroup ScimGroup { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceGroupResponseModel"/> and sets the default values.
         /// </summary>
         public WorkspaceGroupResponseModel()
         {
             AdditionalData = new Dictionary<string, object>();
+            IsScimSynced = false;
+            ScimFrozen = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -100,14 +112,16 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "character_count", n => { CharacterCount = n.GetIntValue(); } },
-                { "group_pvc_limit", n => { GroupPvcLimit = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Group_Pvc_Limit>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Group_Pvc_Limit.CreateFromDiscriminatorValue); } },
-                { "group_usage_limit", n => { GroupUsageLimit = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Group_Usage_Limit>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Group_Usage_Limit.CreateFromDiscriminatorValue); } },
+                { "group_pvc_limit", n => { GroupPvcLimit = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceGroupResponseModelGroupPvcLimit>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceGroupResponseModelGroupPvcLimit.CreateFromDiscriminatorValue); } },
+                { "group_usage_limit", n => { GroupUsageLimit = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceGroupResponseModelGroupUsageLimit>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceGroupResponseModelGroupUsageLimit.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "is_scim_synced", n => { IsScimSynced = n.GetBoolValue(); } },
                 { "members", n => { Members = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "permissions", n => { Permissions = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Permissions>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Permissions.CreateFromDiscriminatorValue); } },
+                { "permissions", n => { Permissions = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceGroupResponseModelPermissions>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceGroupResponseModelPermissions.CreateFromDiscriminatorValue); } },
                 { "scim_external_id", n => { ScimExternalId = n.GetStringValue(); } },
+                { "scim_frozen", n => { ScimFrozen = n.GetBoolValue(); } },
+                { "scim_group", n => { ScimGroup = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceGroupResponseModelScimGroup>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceGroupResponseModelScimGroup.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -118,14 +132,16 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("character_count", CharacterCount);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Group_Pvc_Limit>("group_pvc_limit", GroupPvcLimit);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Group_Usage_Limit>("group_usage_limit", GroupUsageLimit);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceGroupResponseModelGroupPvcLimit>("group_pvc_limit", GroupPvcLimit);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceGroupResponseModelGroupUsageLimit>("group_usage_limit", GroupUsageLimit);
             writer.WriteStringValue("id", Id);
             writer.WriteBoolValue("is_scim_synced", IsScimSynced);
             writer.WriteCollectionOfPrimitiveValues<string>("members", Members);
             writer.WriteStringValue("name", Name);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Permissions>("permissions", Permissions);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceGroupResponseModelPermissions>("permissions", Permissions);
             writer.WriteStringValue("scim_external_id", ScimExternalId);
+            writer.WriteBoolValue("scim_frozen", ScimFrozen);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceGroupResponseModelScimGroup>("scim_group", ScimGroup);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

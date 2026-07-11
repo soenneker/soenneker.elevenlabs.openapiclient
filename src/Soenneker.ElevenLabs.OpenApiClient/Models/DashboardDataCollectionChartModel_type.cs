@@ -10,7 +10,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     {
         [EnumMember(Value = "data_collection")]
         #pragma warning disable CS1591
-        Data_collection,
+        DataCollection,
         #pragma warning restore CS1591
     }
 }

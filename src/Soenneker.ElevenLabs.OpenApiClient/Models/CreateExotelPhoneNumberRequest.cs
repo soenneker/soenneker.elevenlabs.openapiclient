@@ -22,6 +22,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Agent ID to assign the phone number to</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? AgentId { get; set; }
+#nullable restore
+#else
+        public string AgentId { get; set; }
+#endif
         /// <summary>Exotel API Key</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -86,7 +94,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public CreateExotelPhoneNumberRequest()
         {
             AdditionalData = new Dictionary<string, object>();
-            Provider = global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateExotelPhoneNumberRequest_provider.Exotel;
+            SupportsInbound = true;
+            SupportsOutbound = true;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -107,6 +116,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "account_sid", n => { AccountSid = n.GetStringValue(); } },
+                { "agent_id", n => { AgentId = n.GetStringValue(); } },
                 { "api_key", n => { ApiKey = n.GetStringValue(); } },
                 { "api_subdomain", n => { ApiSubdomain = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ExotelApiSubdomain>(); } },
                 { "api_token", n => { ApiToken = n.GetStringValue(); } },
@@ -127,6 +137,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("account_sid", AccountSid);
+            writer.WriteStringValue("agent_id", AgentId);
             writer.WriteStringValue("api_key", ApiKey);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ExotelApiSubdomain>("api_subdomain", ApiSubdomain);
             writer.WriteStringValue("api_token", ApiToken);

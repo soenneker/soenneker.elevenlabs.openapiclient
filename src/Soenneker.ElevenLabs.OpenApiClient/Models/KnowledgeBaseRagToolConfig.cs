@@ -22,7 +22,6 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public KnowledgeBaseRagToolConfig()
         {
             AdditionalData = new Dictionary<string, object>();
-            SystemToolType = global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeBaseRagToolConfig_system_tool_type.Knowledge_base_rag;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

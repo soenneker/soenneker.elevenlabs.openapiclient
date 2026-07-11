@@ -17,10 +17,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The parameters property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppTemplateHeaderComponentParams.WhatsAppTemplateHeaderComponentParams_parameters>? Parameters { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppTemplateHeaderComponentParamsParametersItem>? Parameters { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppTemplateHeaderComponentParams.WhatsAppTemplateHeaderComponentParams_parameters> Parameters { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppTemplateHeaderComponentParamsParametersItem> Parameters { get; set; }
 #endif
         /// <summary>The type property</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppTemplateHeaderComponentParams_type? Type { get; set; }
@@ -30,7 +30,6 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public WhatsAppTemplateHeaderComponentParams()
         {
             AdditionalData = new Dictionary<string, object>();
-            Type = global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppTemplateHeaderComponentParams_type.Header;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -50,7 +49,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "parameters", n => { Parameters = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppTemplateHeaderComponentParams.WhatsAppTemplateHeaderComponentParams_parameters>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppTemplateHeaderComponentParams.WhatsAppTemplateHeaderComponentParams_parameters.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "parameters", n => { Parameters = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppTemplateHeaderComponentParamsParametersItem>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppTemplateHeaderComponentParamsParametersItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppTemplateHeaderComponentParams_type>(); } },
             };
         }
@@ -61,124 +60,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppTemplateHeaderComponentParams.WhatsAppTemplateHeaderComponentParams_parameters>("parameters", Parameters);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppTemplateHeaderComponentParamsParametersItem>("parameters", Parameters);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppTemplateHeaderComponentParams_type>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppTemplateDocumentParam"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppTemplateImageParam"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppTemplateLocationParam"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppTemplateTextParam"/>
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class WhatsAppTemplateHeaderComponentParams_parameters : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppTemplateDocumentParam"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppTemplateDocumentParam? WhatsAppTemplateDocumentParam { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppTemplateDocumentParam WhatsAppTemplateDocumentParam { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppTemplateImageParam"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppTemplateImageParam? WhatsAppTemplateImageParam { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppTemplateImageParam WhatsAppTemplateImageParam { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppTemplateLocationParam"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppTemplateLocationParam? WhatsAppTemplateLocationParam { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppTemplateLocationParam WhatsAppTemplateLocationParam { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppTemplateTextParam"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppTemplateTextParam? WhatsAppTemplateTextParam { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppTemplateTextParam WhatsAppTemplateTextParam { get; set; }
-#endif
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppTemplateHeaderComponentParams.WhatsAppTemplateHeaderComponentParams_parameters"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppTemplateHeaderComponentParams.WhatsAppTemplateHeaderComponentParams_parameters CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
-                var result = new global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppTemplateHeaderComponentParams.WhatsAppTemplateHeaderComponentParams_parameters();
-                if("document".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.WhatsAppTemplateDocumentParam = new global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppTemplateDocumentParam();
-                }
-                else if("image".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.WhatsAppTemplateImageParam = new global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppTemplateImageParam();
-                }
-                else if("location".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.WhatsAppTemplateLocationParam = new global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppTemplateLocationParam();
-                }
-                else if("text".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.WhatsAppTemplateTextParam = new global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppTemplateTextParam();
-                }
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                if(WhatsAppTemplateDocumentParam != null)
-                {
-                    return WhatsAppTemplateDocumentParam.GetFieldDeserializers();
-                }
-                else if(WhatsAppTemplateImageParam != null)
-                {
-                    return WhatsAppTemplateImageParam.GetFieldDeserializers();
-                }
-                else if(WhatsAppTemplateLocationParam != null)
-                {
-                    return WhatsAppTemplateLocationParam.GetFieldDeserializers();
-                }
-                else if(WhatsAppTemplateTextParam != null)
-                {
-                    return WhatsAppTemplateTextParam.GetFieldDeserializers();
-                }
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                if(WhatsAppTemplateDocumentParam != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppTemplateDocumentParam>(null, WhatsAppTemplateDocumentParam);
-                }
-                else if(WhatsAppTemplateImageParam != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppTemplateImageParam>(null, WhatsAppTemplateImageParam);
-                }
-                else if(WhatsAppTemplateLocationParam != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppTemplateLocationParam>(null, WhatsAppTemplateLocationParam);
-                }
-                else if(WhatsAppTemplateTextParam != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppTemplateTextParam>(null, WhatsAppTemplateTextParam);
-                }
-            }
         }
     }
 }

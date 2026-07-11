@@ -25,7 +25,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Resource types that can be shared in the workspace. The name always need to match the collection names</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceResourceType? ResourceType { get; set; }
         /// <summary>&quot;Role to grant to the target: one of &apos;admin&apos;, &apos;editor&apos;, &apos;commenter&apos;, or &apos;viewer&apos;.&quot;</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyShareWorkspaceResourceV1WorkspaceResourcesResourceIdSharePost_role? Role { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyShareWorkspaceResourceV1WorkspaceResourcesResourceIdSharePostRole? Role { get; set; }
         /// <summary>The email of the user or service account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -69,7 +69,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             {
                 { "group_id", n => { GroupId = n.GetStringValue(); } },
                 { "resource_type", n => { ResourceType = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceResourceType>(); } },
-                { "role", n => { Role = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyShareWorkspaceResourceV1WorkspaceResourcesResourceIdSharePost_role>(); } },
+                { "role", n => { Role = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyShareWorkspaceResourceV1WorkspaceResourcesResourceIdSharePostRole>(); } },
                 { "user_email", n => { UserEmail = n.GetStringValue(); } },
                 { "workspace_api_key_id", n => { WorkspaceApiKeyId = n.GetStringValue(); } },
             };
@@ -83,7 +83,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("group_id", GroupId);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceResourceType>("resource_type", ResourceType);
-            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyShareWorkspaceResourceV1WorkspaceResourcesResourceIdSharePost_role>("role", Role);
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyShareWorkspaceResourceV1WorkspaceResourcesResourceIdSharePostRole>("role", Role);
             writer.WriteStringValue("user_email", UserEmail);
             writer.WriteStringValue("workspace_api_key_id", WorkspaceApiKeyId);
             writer.WriteAdditionalData(AdditionalData);

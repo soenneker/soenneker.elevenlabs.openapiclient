@@ -15,20 +15,20 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The access information of the speech engine for the user</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceAccessInfo? AccessInfo { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechEngineResponseAccessInfo? AccessInfo { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceAccessInfo AccessInfo { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechEngineResponseAccessInfo AccessInfo { get; set; }
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The asr property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ASRConversationalConfig? Asr { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AsrConversationalConfig? Asr { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ASRConversationalConfig Asr { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AsrConversationalConfig Asr { get; set; }
 #endif
         /// <summary>The call_limits property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -57,10 +57,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentMetadataDBModel? Metadata { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentMetadataDbModel? Metadata { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentMetadataDBModel Metadata { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentMetadataDbModel Metadata { get; set; }
 #endif
         /// <summary>Human-readable name for the speech engine</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -113,10 +113,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The tts property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.TTSConversationalConfigOutput? Tts { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.TtsConversationalConfigOutput? Tts { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.TTSConversationalConfigOutput Tts { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.TtsConversationalConfigOutput Tts { get; set; }
 #endif
         /// <summary>The turn property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -151,19 +151,19 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "access_info", n => { AccessInfo = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceAccessInfo>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceAccessInfo.CreateFromDiscriminatorValue); } },
-                { "asr", n => { Asr = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ASRConversationalConfig>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ASRConversationalConfig.CreateFromDiscriminatorValue); } },
+                { "access_info", n => { AccessInfo = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechEngineResponseAccessInfo>(global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechEngineResponseAccessInfo.CreateFromDiscriminatorValue); } },
+                { "asr", n => { Asr = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AsrConversationalConfig>(global::Soenneker.ElevenLabs.OpenApiClient.Models.AsrConversationalConfig.CreateFromDiscriminatorValue); } },
                 { "call_limits", n => { CallLimits = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentCallLimits>(global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentCallLimits.CreateFromDiscriminatorValue); } },
                 { "conversation", n => { Conversation = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationConfigOutput>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationConfigOutput.CreateFromDiscriminatorValue); } },
                 { "language", n => { Language = n.GetStringValue(); } },
-                { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentMetadataDBModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentMetadataDBModel.CreateFromDiscriminatorValue); } },
+                { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentMetadataDbModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentMetadataDbModel.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "overrides", n => { Overrides = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechEngineConversationInitiationClientDataConfig>(global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechEngineConversationInitiationClientDataConfig.CreateFromDiscriminatorValue); } },
                 { "privacy", n => { Privacy = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PrivacyConfigOutput>(global::Soenneker.ElevenLabs.OpenApiClient.Models.PrivacyConfigOutput.CreateFromDiscriminatorValue); } },
                 { "speech_engine", n => { SpeechEngine = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechEngineConfig>(global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechEngineConfig.CreateFromDiscriminatorValue); } },
                 { "speech_engine_id", n => { SpeechEngineId = n.GetStringValue(); } },
                 { "tags", n => { Tags = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "tts", n => { Tts = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TTSConversationalConfigOutput>(global::Soenneker.ElevenLabs.OpenApiClient.Models.TTSConversationalConfigOutput.CreateFromDiscriminatorValue); } },
+                { "tts", n => { Tts = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TtsConversationalConfigOutput>(global::Soenneker.ElevenLabs.OpenApiClient.Models.TtsConversationalConfigOutput.CreateFromDiscriminatorValue); } },
                 { "turn", n => { Turn = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BaseTurnConfig>(global::Soenneker.ElevenLabs.OpenApiClient.Models.BaseTurnConfig.CreateFromDiscriminatorValue); } },
             };
         }
@@ -174,19 +174,19 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceAccessInfo>("access_info", AccessInfo);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ASRConversationalConfig>("asr", Asr);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechEngineResponseAccessInfo>("access_info", AccessInfo);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AsrConversationalConfig>("asr", Asr);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentCallLimits>("call_limits", CallLimits);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationConfigOutput>("conversation", Conversation);
             writer.WriteStringValue("language", Language);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentMetadataDBModel>("metadata", Metadata);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentMetadataDbModel>("metadata", Metadata);
             writer.WriteStringValue("name", Name);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechEngineConversationInitiationClientDataConfig>("overrides", Overrides);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PrivacyConfigOutput>("privacy", Privacy);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechEngineConfig>("speech_engine", SpeechEngine);
             writer.WriteStringValue("speech_engine_id", SpeechEngineId);
             writer.WriteCollectionOfPrimitiveValues<string>("tags", Tags);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TTSConversationalConfigOutput>("tts", Tts);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TtsConversationalConfigOutput>("tts", Tts);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BaseTurnConfig>("turn", Turn);
             writer.WriteAdditionalData(AdditionalData);
         }

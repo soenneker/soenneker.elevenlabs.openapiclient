@@ -17,42 +17,42 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Agent specific configuration</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentConfigOverrideOutput? Agent { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationConfigClientOverrideOutputAgent? Agent { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentConfigOverrideOutput Agent { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationConfigClientOverrideOutputAgent Agent { get; set; }
 #endif
         /// <summary>Configuration for conversational transcription</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ASRConversationalConfigOverride? Asr { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationConfigClientOverrideOutputAsr? Asr { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ASRConversationalConfigOverride Asr { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationConfigClientOverrideOutputAsr Asr { get; set; }
 #endif
         /// <summary>Configuration for conversational events</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationConfigOverride? Conversation { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationConfigClientOverrideOutputConversation? Conversation { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationConfigOverride Conversation { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationConfigClientOverrideOutputConversation Conversation { get; set; }
 #endif
         /// <summary>Configuration for conversational text to speech</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.TTSConversationalConfigOverride? Tts { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationConfigClientOverrideOutputTts? Tts { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.TTSConversationalConfigOverride Tts { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationConfigClientOverrideOutputTts Tts { get; set; }
 #endif
         /// <summary>Configuration for turn detection</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.TurnConfigOverride? Turn { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationConfigClientOverrideOutputTurn? Turn { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.TurnConfigOverride Turn { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationConfigClientOverrideOutputTurn Turn { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationConfigClientOverrideOutput"/> and sets the default values.
@@ -79,11 +79,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "agent", n => { Agent = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentConfigOverrideOutput>(global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentConfigOverrideOutput.CreateFromDiscriminatorValue); } },
-                { "asr", n => { Asr = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ASRConversationalConfigOverride>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ASRConversationalConfigOverride.CreateFromDiscriminatorValue); } },
-                { "conversation", n => { Conversation = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationConfigOverride>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationConfigOverride.CreateFromDiscriminatorValue); } },
-                { "tts", n => { Tts = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TTSConversationalConfigOverride>(global::Soenneker.ElevenLabs.OpenApiClient.Models.TTSConversationalConfigOverride.CreateFromDiscriminatorValue); } },
-                { "turn", n => { Turn = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TurnConfigOverride>(global::Soenneker.ElevenLabs.OpenApiClient.Models.TurnConfigOverride.CreateFromDiscriminatorValue); } },
+                { "agent", n => { Agent = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationConfigClientOverrideOutputAgent>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationConfigClientOverrideOutputAgent.CreateFromDiscriminatorValue); } },
+                { "asr", n => { Asr = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationConfigClientOverrideOutputAsr>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationConfigClientOverrideOutputAsr.CreateFromDiscriminatorValue); } },
+                { "conversation", n => { Conversation = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationConfigClientOverrideOutputConversation>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationConfigClientOverrideOutputConversation.CreateFromDiscriminatorValue); } },
+                { "tts", n => { Tts = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationConfigClientOverrideOutputTts>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationConfigClientOverrideOutputTts.CreateFromDiscriminatorValue); } },
+                { "turn", n => { Turn = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationConfigClientOverrideOutputTurn>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationConfigClientOverrideOutputTurn.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -93,11 +93,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentConfigOverrideOutput>("agent", Agent);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ASRConversationalConfigOverride>("asr", Asr);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationConfigOverride>("conversation", Conversation);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TTSConversationalConfigOverride>("tts", Tts);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TurnConfigOverride>("turn", Turn);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationConfigClientOverrideOutputAgent>("agent", Agent);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationConfigClientOverrideOutputAsr>("asr", Asr);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationConfigClientOverrideOutputConversation>("conversation", Conversation);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationConfigClientOverrideOutputTts>("tts", Tts);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationConfigClientOverrideOutputTurn>("turn", Turn);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

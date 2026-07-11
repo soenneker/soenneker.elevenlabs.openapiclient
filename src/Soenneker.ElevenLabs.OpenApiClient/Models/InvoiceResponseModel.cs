@@ -31,14 +31,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The Unix timestamp of the next payment attempt. -1 when there is no next payment attempt.</summary>
         public int? NextPaymentAttemptUnix { get; set; }
         /// <summary>Deprecated. Use [payment_intent_statusses] instead. The status of this invoice&apos;s first payment intent. None when there is no payment intent.</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.InvoiceResponseModel_payment_intent_status? PaymentIntentStatus { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.InvoiceResponseModelPaymentIntentStatus? PaymentIntentStatus { get; set; }
         /// <summary>The statuses of this invoice&apos;s payment intents. Empty list when there are no payment intents.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.InvoiceResponseModel_payment_intent_statusses?>? PaymentIntentStatusses { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.InvoiceResponseModelPaymentIntentStatussesItem?>? PaymentIntentStatusses { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.InvoiceResponseModel_payment_intent_statusses?> PaymentIntentStatusses { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.InvoiceResponseModelPaymentIntentStatussesItem?> PaymentIntentStatusses { get; set; }
 #endif
         /// <summary>The subtotal amount in cents before tax (exclusive of tax and discounts).</summary>
         public int? SubtotalCents { get; set; }
@@ -74,8 +74,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "discount_percent_off", n => { DiscountPercentOff = n.GetDoubleValue(); } },
                 { "discounts", n => { Discounts = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.DiscountResponseModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.DiscountResponseModel.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "next_payment_attempt_unix", n => { NextPaymentAttemptUnix = n.GetIntValue(); } },
-                { "payment_intent_status", n => { PaymentIntentStatus = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.InvoiceResponseModel_payment_intent_status>(); } },
-                { "payment_intent_statusses", n => { PaymentIntentStatusses = n.GetCollectionOfEnumValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.InvoiceResponseModel_payment_intent_statusses>()?.AsList(); } },
+                { "payment_intent_status", n => { PaymentIntentStatus = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.InvoiceResponseModelPaymentIntentStatus>(); } },
+                { "payment_intent_statusses", n => { PaymentIntentStatusses = n.GetCollectionOfEnumValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.InvoiceResponseModelPaymentIntentStatussesItem>()?.AsList(); } },
                 { "subtotal_cents", n => { SubtotalCents = n.GetIntValue(); } },
                 { "tax_cents", n => { TaxCents = n.GetIntValue(); } },
             };
@@ -92,8 +92,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteDoubleValue("discount_percent_off", DiscountPercentOff);
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.DiscountResponseModel>("discounts", Discounts);
             writer.WriteIntValue("next_payment_attempt_unix", NextPaymentAttemptUnix);
-            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.InvoiceResponseModel_payment_intent_status>("payment_intent_status", PaymentIntentStatus);
-            writer.WriteCollectionOfEnumValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.InvoiceResponseModel_payment_intent_statusses>("payment_intent_statusses", PaymentIntentStatusses);
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.InvoiceResponseModelPaymentIntentStatus>("payment_intent_status", PaymentIntentStatus);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.InvoiceResponseModelPaymentIntentStatussesItem>("payment_intent_statusses", PaymentIntentStatusses);
             writer.WriteIntValue("subtotal_cents", SubtotalCents);
             writer.WriteIntValue("tax_cents", TaxCents);
             writer.WriteAdditionalData(AdditionalData);

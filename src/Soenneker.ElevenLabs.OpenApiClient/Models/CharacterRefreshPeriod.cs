@@ -10,19 +10,19 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     {
         [EnumMember(Value = "monthly_period")]
         #pragma warning disable CS1591
-        Monthly_period,
+        MonthlyPeriod,
         #pragma warning restore CS1591
         [EnumMember(Value = "3_month_period")]
         #pragma warning disable CS1591
-        Three_month_period,
+        Value3MonthPeriod,
         #pragma warning restore CS1591
         [EnumMember(Value = "6_month_period")]
         #pragma warning disable CS1591
-        Six_month_period,
+        Value6MonthPeriod,
         #pragma warning restore CS1591
         [EnumMember(Value = "annual_period")]
         #pragma warning disable CS1591
-        Annual_period,
+        AnnualPeriod,
         #pragma warning restore CS1591
     }
 }

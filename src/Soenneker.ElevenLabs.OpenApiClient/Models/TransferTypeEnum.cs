@@ -18,7 +18,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "sip_refer")]
         #pragma warning disable CS1591
-        Sip_refer,
+        SipRefer,
         #pragma warning restore CS1591
     }
 }

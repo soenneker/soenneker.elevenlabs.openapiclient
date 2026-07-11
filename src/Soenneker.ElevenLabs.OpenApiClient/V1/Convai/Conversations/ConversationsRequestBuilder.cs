@@ -26,14 +26,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Conversations
         }
         /// <summary>Gets an item from the Soenneker.ElevenLabs.OpenApiClient.v1.convai.conversations.item collection</summary>
         /// <param name="position">The id of the conversation you&apos;re taking the action on.</param>
-        /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Conversations.Item.WithConversation_ItemRequestBuilder"/></returns>
-        public global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Conversations.Item.WithConversation_ItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Conversations.Item.WithConversationItemRequestBuilder"/></returns>
+        public global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Conversations.Item.WithConversationItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("conversation_id", position);
-                return new global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Conversations.Item.WithConversation_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("conversationId", position);
+                return new global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Conversations.Item.WithConversationItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -41,7 +41,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Conversations
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ConversationsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/convai/conversations{?agent_id*,branch_id*,call_duration_max_secs*,call_duration_min_secs*,call_start_after_unix*,call_start_before_unix*,call_successful*,conversation_initiation_source*,cursor*,data_collection_params*,evaluation_params*,exclude_statuses*,has_feedback_comment*,main_languages*,page_size*,rating_max*,rating_min*,search*,summary_mode*,tag_ids*,text_only*,tool_names*,tool_names_errored*,tool_names_successful*,topic_ids*,user_id*,workflow_node_entered_id*}", pathParameters)
+        public ConversationsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/convai/conversations{?agent_id*,branch_id*,call_duration_max_secs*,call_duration_min_secs*,call_start_after_unix*,call_start_before_unix*,call_successful*,conversation_initiation_source*,conversation_product_type*,cursor*,data_collection_params*,evaluation_params*,exclude_statuses*,has_feedback_comment*,main_languages*,page_size*,rating_max*,rating_min*,search*,summary_mode*,tag_ids*,termination_reasons*,text_only*,tool_names*,tool_names_errored*,tool_names_successful*,topic_ids*,user_id*,workflow_node_entered_id*}", pathParameters)
         {
         }
         /// <summary>
@@ -49,7 +49,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Conversations
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ConversationsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/convai/conversations{?agent_id*,branch_id*,call_duration_max_secs*,call_duration_min_secs*,call_start_after_unix*,call_start_before_unix*,call_successful*,conversation_initiation_source*,cursor*,data_collection_params*,evaluation_params*,exclude_statuses*,has_feedback_comment*,main_languages*,page_size*,rating_max*,rating_min*,search*,summary_mode*,tag_ids*,text_only*,tool_names*,tool_names_errored*,tool_names_successful*,topic_ids*,user_id*,workflow_node_entered_id*}", rawUrl)
+        public ConversationsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/convai/conversations{?agent_id*,branch_id*,call_duration_max_secs*,call_duration_min_secs*,call_start_after_unix*,call_start_before_unix*,call_successful*,conversation_initiation_source*,conversation_product_type*,cursor*,data_collection_params*,evaluation_params*,exclude_statuses*,has_feedback_comment*,main_languages*,page_size*,rating_max*,rating_min*,search*,summary_mode*,tag_ids*,termination_reasons*,text_only*,tool_names*,tool_names_errored*,tool_names_successful*,topic_ids*,user_id*,workflow_node_entered_id*}", rawUrl)
         {
         }
         /// <summary>
@@ -58,7 +58,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Conversations
         /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.GetConversationsPageResponseModel"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.HTTPValidationError">When receiving a 422 status code</exception>
+        /// <exception cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.HttpValidationError">When receiving a 422 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetConversationsPageResponseModel?> GetAsync(Action<RequestConfiguration<global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Conversations.ConversationsRequestBuilder.ConversationsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -71,7 +71,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Conversations
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "422", global::Soenneker.ElevenLabs.OpenApiClient.Models.HTTPValidationError.CreateFromDiscriminatorValue },
+                { "422", global::Soenneker.ElevenLabs.OpenApiClient.Models.HttpValidationError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetConversationsPageResponseModel>(requestInfo, global::Soenneker.ElevenLabs.OpenApiClient.Models.GetConversationsPageResponseModel.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -160,6 +160,16 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Conversations
             [QueryParameter("conversation_initiation_source")]
             public string ConversationInitiationSource { get; set; }
 #endif
+            /// <summary>Restrict results to a single conversation product surface.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("conversation_product_type")]
+            public string? ConversationProductType { get; set; }
+#nullable restore
+#else
+            [QueryParameter("conversation_product_type")]
+            public string ConversationProductType { get; set; }
+#endif
             /// <summary>Used for fetching next page. Cursor is returned in the response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -235,7 +245,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Conversations
 #endif
             /// <summary>Whether to include transcript summaries in the response.</summary>
             [QueryParameter("summary_mode")]
-            public global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Conversations.GetSummary_modeQueryParameterType? SummaryMode { get; set; }
+            public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetConversationHistoriesRouteSummaryModeParameter? SummaryMode { get; set; }
             /// <summary>Filter conversations by conversation tag IDs assigned via the conversation-tags endpoints.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -245,6 +255,16 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Conversations
 #else
             [QueryParameter("tag_ids")]
             public string TagIds { get; set; }
+#endif
+            /// <summary>Filter conversations by their stored termination_reason (metadata.termination_reason). Repeat param to match any of several.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("termination_reasons")]
+            public string? TerminationReasons { get; set; }
+#nullable restore
+#else
+            [QueryParameter("termination_reasons")]
+            public string TerminationReasons { get; set; }
 #endif
             [QueryParameter("text_only")]
             public bool? TextOnly { get; set; }

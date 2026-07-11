@@ -10,7 +10,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     {
         [EnumMember(Value = "skip_turn")]
         #pragma warning disable CS1591
-        Skip_turn,
+        SkipTurn,
         #pragma warning restore CS1591
     }
 }

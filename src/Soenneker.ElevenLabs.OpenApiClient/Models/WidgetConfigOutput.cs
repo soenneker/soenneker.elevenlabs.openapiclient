@@ -27,10 +27,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The avatar of the widget</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigOutput.WidgetConfigOutput_avatar? Avatar { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigOutputAvatar? Avatar { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigOutput.WidgetConfigOutput_avatar Avatar { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigOutputAvatar Avatar { get; set; }
 #endif
         /// <summary>The background color of the widget</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -95,10 +95,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Configuration for feedback collected at the end of the conversation</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetEndFeedbackConfig? EndFeedback { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigOutputEndFeedback? EndFeedback { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetEndFeedbackConfig EndFeedback { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigOutputEndFeedback EndFeedback { get; set; }
 #endif
         /// <summary>The expandable property</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetExpandable? Expandable { get; set; }
@@ -123,10 +123,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Language presets for the widget</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigOutput_language_presets? LanguagePresets { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigOutputLanguagePresetsProperty? LanguagePresets { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigOutput_language_presets LanguagePresets { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigOutputLanguagePresetsProperty LanguagePresets { get; set; }
 #endif
         /// <summary>Whether to show the language selector</summary>
         public bool? LanguageSelector { get; set; }
@@ -207,7 +207,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Whether the widget can switch to text only mode</summary>
         public bool? SupportsTextOnly { get; set; }
         /// <summary>Theme for code block syntax highlighting. Defaults to auto-detection by the widget when not set.</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigOutput_syntax_highlight_theme? SyntaxHighlightTheme { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigOutputSyntaxHighlightTheme? SyntaxHighlightTheme { get; set; }
         /// <summary>The HTML to display for terms and conditions</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -260,16 +260,29 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public WidgetConfigOutput()
         {
             AdditionalData = new Dictionary<string, object>();
+            AlwaysExpanded = false;
             BgColor = "#ffffff";
             BorderColor = "#e1e1e1";
             BtnColor = "#000000";
             BtnTextColor = "#ffffff";
-            Expandable = global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetExpandable.Never;
-            FeedbackMode = global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetFeedbackMode.None;
+            ConversationModeToggleEnabled = false;
+            DefaultExpanded = false;
+            DisableBanner = false;
+            Dismissible = false;
             FocusColor = "#000000";
-            Placement = global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetPlacement.BottomRight;
+            LanguageSelector = false;
+            MarkdownLinkAllowHttp = true;
+            MarkdownLinkIncludeWww = true;
+            MicMutingEnabled = false;
+            ShareablePageShowTerms = true;
+            ShowAgentStatus = false;
+            ShowAvatarWhenCollapsed = false;
+            ShowConversationId = true;
+            StripAudioTags = true;
+            SupportsTextOnly = true;
             TextColor = "#000000";
-            Variant = global::Soenneker.ElevenLabs.OpenApiClient.Models.EmbedVariant.Full;
+            TextInputEnabled = true;
+            TranscriptEnabled = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -291,7 +304,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             {
                 { "action_text", n => { ActionText = n.GetStringValue(); } },
                 { "always_expanded", n => { AlwaysExpanded = n.GetBoolValue(); } },
-                { "avatar", n => { Avatar = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigOutput.WidgetConfigOutput_avatar>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigOutput.WidgetConfigOutput_avatar.CreateFromDiscriminatorValue); } },
+                { "avatar", n => { Avatar = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigOutputAvatar>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigOutputAvatar.CreateFromDiscriminatorValue); } },
                 { "bg_color", n => { BgColor = n.GetStringValue(); } },
                 { "border_color", n => { BorderColor = n.GetStringValue(); } },
                 { "border_radius", n => { BorderRadius = n.GetIntValue(); } },
@@ -304,12 +317,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "disable_banner", n => { DisableBanner = n.GetBoolValue(); } },
                 { "dismissible", n => { Dismissible = n.GetBoolValue(); } },
                 { "end_call_text", n => { EndCallText = n.GetStringValue(); } },
-                { "end_feedback", n => { EndFeedback = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetEndFeedbackConfig>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetEndFeedbackConfig.CreateFromDiscriminatorValue); } },
+                { "end_feedback", n => { EndFeedback = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigOutputEndFeedback>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigOutputEndFeedback.CreateFromDiscriminatorValue); } },
                 { "expand_text", n => { ExpandText = n.GetStringValue(); } },
                 { "expandable", n => { Expandable = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetExpandable>(); } },
                 { "feedback_mode", n => { FeedbackMode = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetFeedbackMode>(); } },
                 { "focus_color", n => { FocusColor = n.GetStringValue(); } },
-                { "language_presets", n => { LanguagePresets = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigOutput_language_presets>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigOutput_language_presets.CreateFromDiscriminatorValue); } },
+                { "language_presets", n => { LanguagePresets = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigOutputLanguagePresetsProperty>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigOutputLanguagePresetsProperty.CreateFromDiscriminatorValue); } },
                 { "language_selector", n => { LanguageSelector = n.GetBoolValue(); } },
                 { "listening_text", n => { ListeningText = n.GetStringValue(); } },
                 { "markdown_link_allow_http", n => { MarkdownLinkAllowHttp = n.GetBoolValue(); } },
@@ -328,7 +341,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "strip_audio_tags", n => { StripAudioTags = n.GetBoolValue(); } },
                 { "styles", n => { Styles = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetStyles>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetStyles.CreateFromDiscriminatorValue); } },
                 { "supports_text_only", n => { SupportsTextOnly = n.GetBoolValue(); } },
-                { "syntax_highlight_theme", n => { SyntaxHighlightTheme = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigOutput_syntax_highlight_theme>(); } },
+                { "syntax_highlight_theme", n => { SyntaxHighlightTheme = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigOutputSyntaxHighlightTheme>(); } },
                 { "terms_html", n => { TermsHtml = n.GetStringValue(); } },
                 { "terms_key", n => { TermsKey = n.GetStringValue(); } },
                 { "terms_text", n => { TermsText = n.GetStringValue(); } },
@@ -348,7 +361,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("action_text", ActionText);
             writer.WriteBoolValue("always_expanded", AlwaysExpanded);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigOutput.WidgetConfigOutput_avatar>("avatar", Avatar);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigOutputAvatar>("avatar", Avatar);
             writer.WriteStringValue("bg_color", BgColor);
             writer.WriteStringValue("border_color", BorderColor);
             writer.WriteIntValue("border_radius", BorderRadius);
@@ -361,12 +374,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteBoolValue("disable_banner", DisableBanner);
             writer.WriteBoolValue("dismissible", Dismissible);
             writer.WriteStringValue("end_call_text", EndCallText);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetEndFeedbackConfig>("end_feedback", EndFeedback);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigOutputEndFeedback>("end_feedback", EndFeedback);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetExpandable>("expandable", Expandable);
             writer.WriteStringValue("expand_text", ExpandText);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetFeedbackMode>("feedback_mode", FeedbackMode);
             writer.WriteStringValue("focus_color", FocusColor);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigOutput_language_presets>("language_presets", LanguagePresets);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigOutputLanguagePresetsProperty>("language_presets", LanguagePresets);
             writer.WriteBoolValue("language_selector", LanguageSelector);
             writer.WriteStringValue("listening_text", ListeningText);
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.AllowlistItem>("markdown_link_allowed_hosts", MarkdownLinkAllowedHosts);
@@ -385,7 +398,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteBoolValue("strip_audio_tags", StripAudioTags);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetStyles>("styles", Styles);
             writer.WriteBoolValue("supports_text_only", SupportsTextOnly);
-            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigOutput_syntax_highlight_theme>("syntax_highlight_theme", SyntaxHighlightTheme);
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigOutputSyntaxHighlightTheme>("syntax_highlight_theme", SyntaxHighlightTheme);
             writer.WriteStringValue("terms_html", TermsHtml);
             writer.WriteStringValue("terms_key", TermsKey);
             writer.WriteStringValue("terms_text", TermsText);
@@ -395,72 +408,6 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteBoolValue("transcript_enabled", TranscriptEnabled);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.EmbedVariant>("variant", Variant);
             writer.WriteAdditionalData(AdditionalData);
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ImageAvatar"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.OrbAvatar"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.URLAvatar"/>
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class WidgetConfigOutput_avatar : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ImageAvatar"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.ElevenLabs.OpenApiClient.Models.ImageAvatar? ImageAvatar { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.ElevenLabs.OpenApiClient.Models.ImageAvatar ImageAvatar { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.OrbAvatar"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.ElevenLabs.OpenApiClient.Models.OrbAvatar? OrbAvatar { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.ElevenLabs.OpenApiClient.Models.OrbAvatar OrbAvatar { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.URLAvatar"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.ElevenLabs.OpenApiClient.Models.URLAvatar? URLAvatar { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.ElevenLabs.OpenApiClient.Models.URLAvatar URLAvatar { get; set; }
-#endif
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigOutput.WidgetConfigOutput_avatar"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigOutput.WidgetConfigOutput_avatar CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var result = new global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigOutput.WidgetConfigOutput_avatar();
-                result.ImageAvatar = new global::Soenneker.ElevenLabs.OpenApiClient.Models.ImageAvatar();
-                result.OrbAvatar = new global::Soenneker.ElevenLabs.OpenApiClient.Models.OrbAvatar();
-                result.URLAvatar = new global::Soenneker.ElevenLabs.OpenApiClient.Models.URLAvatar();
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                if(ImageAvatar != null || OrbAvatar != null || URLAvatar != null)
-                {
-                    return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(ImageAvatar, OrbAvatar, URLAvatar);
-                }
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ImageAvatar>(null, ImageAvatar, OrbAvatar, URLAvatar);
-            }
         }
     }
 }

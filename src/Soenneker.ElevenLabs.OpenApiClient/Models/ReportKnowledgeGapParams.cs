@@ -22,7 +22,6 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public ReportKnowledgeGapParams()
         {
             AdditionalData = new Dictionary<string, object>();
-            SmbToolType = global::Soenneker.ElevenLabs.OpenApiClient.Models.ReportKnowledgeGapParams_smb_tool_type.Report_knowledge_gap;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

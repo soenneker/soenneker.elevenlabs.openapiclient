@@ -31,7 +31,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public string Age { get; set; }
 #endif
         /// <summary>The category of the voice.</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.LibraryVoiceResponseModel_category? Category { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.LibraryVoiceResponseModelCategory? Category { get; set; }
         /// <summary>The number of times the voice has been cloned.</summary>
         public int? ClonedByCount { get; set; }
         /// <summary>The date the voice was added to the library in Unix time.</summary>
@@ -165,10 +165,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The verified languages of the voice.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Verified_Languages? VerifiedLanguages { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.LibraryVoiceResponseModelVerifiedLanguages? VerifiedLanguages { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Verified_Languages VerifiedLanguages { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.LibraryVoiceResponseModelVerifiedLanguages VerifiedLanguages { get; set; }
 #endif
         /// <summary>The id of the voice.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -213,7 +213,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             {
                 { "accent", n => { Accent = n.GetStringValue(); } },
                 { "age", n => { Age = n.GetStringValue(); } },
-                { "category", n => { Category = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.LibraryVoiceResponseModel_category>(); } },
+                { "category", n => { Category = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.LibraryVoiceResponseModelCategory>(); } },
                 { "cloned_by_count", n => { ClonedByCount = n.GetIntValue(); } },
                 { "date_unix", n => { DateUnix = n.GetIntValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
@@ -240,7 +240,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "usage_character_count_1y", n => { UsageCharacterCount1y = n.GetIntValue(); } },
                 { "usage_character_count_7d", n => { UsageCharacterCount7d = n.GetIntValue(); } },
                 { "use_case", n => { UseCase = n.GetStringValue(); } },
-                { "verified_languages", n => { VerifiedLanguages = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Verified_Languages>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Verified_Languages.CreateFromDiscriminatorValue); } },
+                { "verified_languages", n => { VerifiedLanguages = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.LibraryVoiceResponseModelVerifiedLanguages>(global::Soenneker.ElevenLabs.OpenApiClient.Models.LibraryVoiceResponseModelVerifiedLanguages.CreateFromDiscriminatorValue); } },
                 { "voice_id", n => { VoiceId = n.GetStringValue(); } },
                 { "youtube_username", n => { YoutubeUsername = n.GetStringValue(); } },
             };
@@ -254,7 +254,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("accent", Accent);
             writer.WriteStringValue("age", Age);
-            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.LibraryVoiceResponseModel_category>("category", Category);
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.LibraryVoiceResponseModelCategory>("category", Category);
             writer.WriteIntValue("cloned_by_count", ClonedByCount);
             writer.WriteIntValue("date_unix", DateUnix);
             writer.WriteStringValue("description", Description);
@@ -281,7 +281,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteIntValue("usage_character_count_1y", UsageCharacterCount1y);
             writer.WriteIntValue("usage_character_count_7d", UsageCharacterCount7d);
             writer.WriteStringValue("use_case", UseCase);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Verified_Languages>("verified_languages", VerifiedLanguages);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.LibraryVoiceResponseModelVerifiedLanguages>("verified_languages", VerifiedLanguages);
             writer.WriteStringValue("voice_id", VoiceId);
             writer.WriteStringValue("youtube_username", YoutubeUsername);
             writer.WriteAdditionalData(AdditionalData);

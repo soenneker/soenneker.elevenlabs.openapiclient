@@ -25,21 +25,21 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The IDs of the selected speakers.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Selected_Speaker_Ids? SelectedSpeakerIds { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeakerSeparationResponseModelSelectedSpeakerIds? SelectedSpeakerIds { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Selected_Speaker_Ids SelectedSpeakerIds { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeakerSeparationResponseModelSelectedSpeakerIds SelectedSpeakerIds { get; set; }
 #endif
         /// <summary>The speakers of the sample.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeakerSeparationResponseModel_speakers? Speakers { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeakerSeparationResponseModelSpeakers? Speakers { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeakerSeparationResponseModel_speakers Speakers { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeakerSeparationResponseModelSpeakers Speakers { get; set; }
 #endif
         /// <summary>The status of the speaker separation.</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeakerSeparationResponseModel_status? Status { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeakerSeparationResponseModelStatus? Status { get; set; }
         /// <summary>The ID of the voice.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -74,9 +74,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "sample_id", n => { SampleId = n.GetStringValue(); } },
-                { "selected_speaker_ids", n => { SelectedSpeakerIds = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Selected_Speaker_Ids>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Selected_Speaker_Ids.CreateFromDiscriminatorValue); } },
-                { "speakers", n => { Speakers = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeakerSeparationResponseModel_speakers>(global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeakerSeparationResponseModel_speakers.CreateFromDiscriminatorValue); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeakerSeparationResponseModel_status>(); } },
+                { "selected_speaker_ids", n => { SelectedSpeakerIds = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeakerSeparationResponseModelSelectedSpeakerIds>(global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeakerSeparationResponseModelSelectedSpeakerIds.CreateFromDiscriminatorValue); } },
+                { "speakers", n => { Speakers = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeakerSeparationResponseModelSpeakers>(global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeakerSeparationResponseModelSpeakers.CreateFromDiscriminatorValue); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeakerSeparationResponseModelStatus>(); } },
                 { "voice_id", n => { VoiceId = n.GetStringValue(); } },
             };
         }
@@ -88,9 +88,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("sample_id", SampleId);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Selected_Speaker_Ids>("selected_speaker_ids", SelectedSpeakerIds);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeakerSeparationResponseModel_speakers>("speakers", Speakers);
-            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeakerSeparationResponseModel_status>("status", Status);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeakerSeparationResponseModelSelectedSpeakerIds>("selected_speaker_ids", SelectedSpeakerIds);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeakerSeparationResponseModelSpeakers>("speakers", Speakers);
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeakerSeparationResponseModelStatus>("status", Status);
             writer.WriteStringValue("voice_id", VoiceId);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -24,6 +24,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public BodyMergeABranchIntoATargetBranchV1ConvaiAgentsAgentIdBranchesSourceBranchIdMergePost()
         {
             AdditionalData = new Dictionary<string, object>();
+            ArchiveSourceBranch = true;
+            Force = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

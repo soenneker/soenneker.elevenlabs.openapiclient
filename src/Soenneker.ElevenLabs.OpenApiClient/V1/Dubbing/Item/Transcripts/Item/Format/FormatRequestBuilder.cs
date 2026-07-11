@@ -10,21 +10,21 @@ using System;
 namespace Soenneker.ElevenLabs.OpenApiClient.V1.Dubbing.Item.Transcripts.Item.Format
 {
     /// <summary>
-    /// Builds and executes requests for operations under \v1\dubbing\{dubbing_id}\transcripts\{language_code}\format
+    /// Builds and executes requests for operations under \v1\dubbing\{dubbingId}\transcripts\{languageCode}\format
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class FormatRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.ElevenLabs.OpenApiClient.v1.dubbing.item.transcripts.item.format.item collection</summary>
         /// <param name="position">Format to return transcript in. For subtitles use either &apos;srt&apos; or &apos;webvtt&apos;, and for a full transcript use &apos;json&apos;. The &apos;json&apos; format is not yet supported for Dubbing Studio.</param>
-        /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.V1.Dubbing.Item.Transcripts.Item.Format.Item.WithFormat_typeItemRequestBuilder"/></returns>
-        public global::Soenneker.ElevenLabs.OpenApiClient.V1.Dubbing.Item.Transcripts.Item.Format.Item.WithFormat_typeItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.V1.Dubbing.Item.Transcripts.Item.Format.Item.WithFormatTypeItemRequestBuilder"/></returns>
+        public global::Soenneker.ElevenLabs.OpenApiClient.V1.Dubbing.Item.Transcripts.Item.Format.Item.WithFormatTypeItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("format_type", position);
-                return new global::Soenneker.ElevenLabs.OpenApiClient.V1.Dubbing.Item.Transcripts.Item.Format.Item.WithFormat_typeItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("formatType", position);
+                return new global::Soenneker.ElevenLabs.OpenApiClient.V1.Dubbing.Item.Transcripts.Item.Format.Item.WithFormatTypeItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -32,7 +32,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Dubbing.Item.Transcripts.Item.Fo
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public FormatRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/dubbing/{dubbing_id}/transcripts/{language_code}/format", pathParameters)
+        public FormatRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/dubbing/{dubbingId}/transcripts/{languageCode}/format", pathParameters)
         {
         }
         /// <summary>
@@ -40,7 +40,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Dubbing.Item.Transcripts.Item.Fo
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public FormatRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/dubbing/{dubbing_id}/transcripts/{language_code}/format", rawUrl)
+        public FormatRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/dubbing/{dubbingId}/transcripts/{languageCode}/format", rawUrl)
         {
         }
     }

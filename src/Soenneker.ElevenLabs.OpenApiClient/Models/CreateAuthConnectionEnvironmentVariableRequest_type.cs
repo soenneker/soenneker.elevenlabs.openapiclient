@@ -10,7 +10,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     {
         [EnumMember(Value = "auth_connection")]
         #pragma warning disable CS1591
-        Auth_connection,
+        AuthConnection,
         #pragma warning restore CS1591
     }
 }

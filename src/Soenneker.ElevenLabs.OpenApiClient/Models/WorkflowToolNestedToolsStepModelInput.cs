@@ -35,10 +35,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The results property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkflowToolNestedToolsStepModelInput.WorkflowToolNestedToolsStepModelInput_results>? Results { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkflowToolNestedToolsStepModelInputResultsItem>? Results { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkflowToolNestedToolsStepModelInput.WorkflowToolNestedToolsStepModelInput_results> Results { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkflowToolNestedToolsStepModelInputResultsItem> Results { get; set; }
 #endif
         /// <summary>The step_latency_secs property</summary>
         public double? StepLatencySecs { get; set; }
@@ -50,7 +50,6 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public WorkflowToolNestedToolsStepModelInput()
         {
             AdditionalData = new Dictionary<string, object>();
-            Type = global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkflowToolNestedToolsStepModelInput_type.Nested_tools;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -73,7 +72,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "is_successful", n => { IsSuccessful = n.GetBoolValue(); } },
                 { "node_id", n => { NodeId = n.GetStringValue(); } },
                 { "requests", n => { Requests = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptToolCallCommonModelInput>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptToolCallCommonModelInput.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "results", n => { Results = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkflowToolNestedToolsStepModelInput.WorkflowToolNestedToolsStepModelInput_results>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkflowToolNestedToolsStepModelInput.WorkflowToolNestedToolsStepModelInput_results.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "results", n => { Results = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkflowToolNestedToolsStepModelInputResultsItem>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkflowToolNestedToolsStepModelInputResultsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "step_latency_secs", n => { StepLatencySecs = n.GetDoubleValue(); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkflowToolNestedToolsStepModelInput_type>(); } },
             };
@@ -88,125 +87,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteBoolValue("is_successful", IsSuccessful);
             writer.WriteStringValue("node_id", NodeId);
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptToolCallCommonModelInput>("requests", Requests);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkflowToolNestedToolsStepModelInput.WorkflowToolNestedToolsStepModelInput_results>("results", Results);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkflowToolNestedToolsStepModelInputResultsItem>("results", Results);
             writer.WriteDoubleValue("step_latency_secs", StepLatencySecs);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkflowToolNestedToolsStepModelInput_type>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptApiIntegrationWebhookToolsResultCommonModelInput"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptOtherToolsResultCommonModel"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptSystemToolResultCommonModelInput"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptWorkflowToolsResultCommonModelInput"/>
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class WorkflowToolNestedToolsStepModelInput_results : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptApiIntegrationWebhookToolsResultCommonModelInput"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptApiIntegrationWebhookToolsResultCommonModelInput? ConversationHistoryTranscriptApiIntegrationWebhookToolsResultCommonModelInput { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptApiIntegrationWebhookToolsResultCommonModelInput ConversationHistoryTranscriptApiIntegrationWebhookToolsResultCommonModelInput { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptOtherToolsResultCommonModel"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptOtherToolsResultCommonModel? ConversationHistoryTranscriptOtherToolsResultCommonModel { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptOtherToolsResultCommonModel ConversationHistoryTranscriptOtherToolsResultCommonModel { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptSystemToolResultCommonModelInput"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptSystemToolResultCommonModelInput? ConversationHistoryTranscriptSystemToolResultCommonModelInput { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptSystemToolResultCommonModelInput ConversationHistoryTranscriptSystemToolResultCommonModelInput { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptWorkflowToolsResultCommonModelInput"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptWorkflowToolsResultCommonModelInput? ConversationHistoryTranscriptWorkflowToolsResultCommonModelInput { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptWorkflowToolsResultCommonModelInput ConversationHistoryTranscriptWorkflowToolsResultCommonModelInput { get; set; }
-#endif
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkflowToolNestedToolsStepModelInput.WorkflowToolNestedToolsStepModelInput_results"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkflowToolNestedToolsStepModelInput.WorkflowToolNestedToolsStepModelInput_results CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
-                var result = new global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkflowToolNestedToolsStepModelInput.WorkflowToolNestedToolsStepModelInput_results();
-                if("ConversationHistoryTranscriptApiIntegrationWebhookToolsResultCommonModelInput".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.ConversationHistoryTranscriptApiIntegrationWebhookToolsResultCommonModelInput = new global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptApiIntegrationWebhookToolsResultCommonModelInput();
-                }
-                else if("ConversationHistoryTranscriptOtherToolsResultCommonModel".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.ConversationHistoryTranscriptOtherToolsResultCommonModel = new global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptOtherToolsResultCommonModel();
-                }
-                else if("ConversationHistoryTranscriptSystemToolResultCommonModelInput".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.ConversationHistoryTranscriptSystemToolResultCommonModelInput = new global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptSystemToolResultCommonModelInput();
-                }
-                else if("ConversationHistoryTranscriptWorkflowToolsResultCommonModelInput".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.ConversationHistoryTranscriptWorkflowToolsResultCommonModelInput = new global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptWorkflowToolsResultCommonModelInput();
-                }
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                if(ConversationHistoryTranscriptApiIntegrationWebhookToolsResultCommonModelInput != null)
-                {
-                    return ConversationHistoryTranscriptApiIntegrationWebhookToolsResultCommonModelInput.GetFieldDeserializers();
-                }
-                else if(ConversationHistoryTranscriptOtherToolsResultCommonModel != null)
-                {
-                    return ConversationHistoryTranscriptOtherToolsResultCommonModel.GetFieldDeserializers();
-                }
-                else if(ConversationHistoryTranscriptSystemToolResultCommonModelInput != null)
-                {
-                    return ConversationHistoryTranscriptSystemToolResultCommonModelInput.GetFieldDeserializers();
-                }
-                else if(ConversationHistoryTranscriptWorkflowToolsResultCommonModelInput != null)
-                {
-                    return ConversationHistoryTranscriptWorkflowToolsResultCommonModelInput.GetFieldDeserializers();
-                }
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                if(ConversationHistoryTranscriptApiIntegrationWebhookToolsResultCommonModelInput != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptApiIntegrationWebhookToolsResultCommonModelInput>(null, ConversationHistoryTranscriptApiIntegrationWebhookToolsResultCommonModelInput);
-                }
-                else if(ConversationHistoryTranscriptOtherToolsResultCommonModel != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptOtherToolsResultCommonModel>(null, ConversationHistoryTranscriptOtherToolsResultCommonModel);
-                }
-                else if(ConversationHistoryTranscriptSystemToolResultCommonModelInput != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptSystemToolResultCommonModelInput>(null, ConversationHistoryTranscriptSystemToolResultCommonModelInput);
-                }
-                else if(ConversationHistoryTranscriptWorkflowToolsResultCommonModelInput != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptWorkflowToolsResultCommonModelInput>(null, ConversationHistoryTranscriptWorkflowToolsResultCommonModelInput);
-                }
-            }
         }
     }
 }

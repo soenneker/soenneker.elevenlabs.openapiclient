@@ -10,7 +10,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     {
         [EnumMember(Value = "voicemail_detection")]
         #pragma warning disable CS1591
-        Voicemail_detection,
+        VoicemailDetection,
         #pragma warning restore CS1591
     }
 }

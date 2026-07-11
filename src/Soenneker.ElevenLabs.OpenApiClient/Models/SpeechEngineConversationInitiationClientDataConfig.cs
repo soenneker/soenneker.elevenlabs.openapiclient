@@ -22,6 +22,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public SpeechEngineConversationInitiationClientDataConfig()
         {
             AdditionalData = new Dictionary<string, object>();
+            FirstMessage = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

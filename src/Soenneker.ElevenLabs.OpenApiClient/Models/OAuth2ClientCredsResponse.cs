@@ -30,18 +30,18 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Custom headers configured for OAuth2 token requests</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.OAuth2ClientCredsResponse_custom_headers? CustomHeaders { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.OAuth2ClientCredsResponseCustomHeadersProperty? CustomHeaders { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.OAuth2ClientCredsResponse_custom_headers CustomHeaders { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.OAuth2ClientCredsResponseCustomHeadersProperty CustomHeaders { get; set; }
 #endif
         /// <summary>The extra_params property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.OAuth2ClientCredsResponse_extra_params? ExtraParams { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.OAuth2ClientCredsResponseExtraParamsProperty? ExtraParams { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.OAuth2ClientCredsResponse_extra_params ExtraParams { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.OAuth2ClientCredsResponseExtraParamsProperty ExtraParams { get; set; }
 #endif
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -75,6 +75,24 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public List<string> Scopes { get; set; }
 #endif
+        /// <summary>Single status field shared by every auth type&apos;s stored credential.OAuth values (``REFRESH_FAILED``, ``REVOKED``) are written by the OAuthtoken-manager refresh path. ``CREDENTIAL_INVALID`` is written by thetool execution path when an upstream response matches a credential&apos;s``failure_signatures`` entry (Bearer, Basic auth, etc.).</summary>
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AuthConnectionStatus? Status { get; set; }
+        /// <summary>The status_detail property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? StatusDetail { get; set; }
+#nullable restore
+#else
+        public string StatusDetail { get; set; }
+#endif
+        /// <summary>The status_updated_at property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? StatusUpdatedAt { get; set; }
+#nullable restore
+#else
+        public string StatusUpdatedAt { get; set; }
+#endif
         /// <summary>The token_url property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -86,10 +104,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The used_by property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AuthConnectionDependencies? UsedBy { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.OAuth2ClientCredsResponseUsedBy? UsedBy { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AuthConnectionDependencies UsedBy { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.OAuth2ClientCredsResponseUsedBy UsedBy { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.OAuth2ClientCredsResponse"/> and sets the default values.
@@ -97,7 +115,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public OAuth2ClientCredsResponse()
         {
             AdditionalData = new Dictionary<string, object>();
-            AuthType = global::Soenneker.ElevenLabs.OpenApiClient.Models.OAuth2ClientCredsResponse_auth_type.Oauth2_client_credentials;
+            BasicAuthInHeader = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -120,14 +138,17 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "auth_type", n => { AuthType = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.OAuth2ClientCredsResponse_auth_type>(); } },
                 { "basic_auth_in_header", n => { BasicAuthInHeader = n.GetBoolValue(); } },
                 { "client_id", n => { ClientId = n.GetStringValue(); } },
-                { "custom_headers", n => { CustomHeaders = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.OAuth2ClientCredsResponse_custom_headers>(global::Soenneker.ElevenLabs.OpenApiClient.Models.OAuth2ClientCredsResponse_custom_headers.CreateFromDiscriminatorValue); } },
-                { "extra_params", n => { ExtraParams = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.OAuth2ClientCredsResponse_extra_params>(global::Soenneker.ElevenLabs.OpenApiClient.Models.OAuth2ClientCredsResponse_extra_params.CreateFromDiscriminatorValue); } },
+                { "custom_headers", n => { CustomHeaders = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.OAuth2ClientCredsResponseCustomHeadersProperty>(global::Soenneker.ElevenLabs.OpenApiClient.Models.OAuth2ClientCredsResponseCustomHeadersProperty.CreateFromDiscriminatorValue); } },
+                { "extra_params", n => { ExtraParams = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.OAuth2ClientCredsResponseExtraParamsProperty>(global::Soenneker.ElevenLabs.OpenApiClient.Models.OAuth2ClientCredsResponseExtraParamsProperty.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "provider", n => { Provider = n.GetStringValue(); } },
                 { "scopes", n => { Scopes = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AuthConnectionStatus>(); } },
+                { "status_detail", n => { StatusDetail = n.GetStringValue(); } },
+                { "status_updated_at", n => { StatusUpdatedAt = n.GetStringValue(); } },
                 { "token_url", n => { TokenUrl = n.GetStringValue(); } },
-                { "used_by", n => { UsedBy = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AuthConnectionDependencies>(global::Soenneker.ElevenLabs.OpenApiClient.Models.AuthConnectionDependencies.CreateFromDiscriminatorValue); } },
+                { "used_by", n => { UsedBy = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.OAuth2ClientCredsResponseUsedBy>(global::Soenneker.ElevenLabs.OpenApiClient.Models.OAuth2ClientCredsResponseUsedBy.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -140,14 +161,17 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.OAuth2ClientCredsResponse_auth_type>("auth_type", AuthType);
             writer.WriteBoolValue("basic_auth_in_header", BasicAuthInHeader);
             writer.WriteStringValue("client_id", ClientId);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.OAuth2ClientCredsResponse_custom_headers>("custom_headers", CustomHeaders);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.OAuth2ClientCredsResponse_extra_params>("extra_params", ExtraParams);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.OAuth2ClientCredsResponseCustomHeadersProperty>("custom_headers", CustomHeaders);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.OAuth2ClientCredsResponseExtraParamsProperty>("extra_params", ExtraParams);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("provider", Provider);
             writer.WriteCollectionOfPrimitiveValues<string>("scopes", Scopes);
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AuthConnectionStatus>("status", Status);
+            writer.WriteStringValue("status_detail", StatusDetail);
+            writer.WriteStringValue("status_updated_at", StatusUpdatedAt);
             writer.WriteStringValue("token_url", TokenUrl);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AuthConnectionDependencies>("used_by", UsedBy);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.OAuth2ClientCredsResponseUsedBy>("used_by", UsedBy);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

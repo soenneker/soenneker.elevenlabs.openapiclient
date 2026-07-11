@@ -25,10 +25,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The conversation_initiation_client_data property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationClientDataInternal? ConversationInitiationClientData { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.OutboundCallRecipientResponseModelConversationInitiationClientData? ConversationInitiationClientData { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationClientDataInternal ConversationInitiationClientData { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.OutboundCallRecipientResponseModelConversationInitiationClientData ConversationInitiationClientData { get; set; }
 #endif
         /// <summary>The created_at_unix property</summary>
         public int? CreatedAtUnix { get; set; }
@@ -86,7 +86,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "conversation_id", n => { ConversationId = n.GetStringValue(); } },
-                { "conversation_initiation_client_data", n => { ConversationInitiationClientData = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationClientDataInternal>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationClientDataInternal.CreateFromDiscriminatorValue); } },
+                { "conversation_initiation_client_data", n => { ConversationInitiationClientData = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.OutboundCallRecipientResponseModelConversationInitiationClientData>(global::Soenneker.ElevenLabs.OpenApiClient.Models.OutboundCallRecipientResponseModelConversationInitiationClientData.CreateFromDiscriminatorValue); } },
                 { "created_at_unix", n => { CreatedAtUnix = n.GetIntValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "phone_number", n => { PhoneNumber = n.GetStringValue(); } },
@@ -103,7 +103,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("conversation_id", ConversationId);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationClientDataInternal>("conversation_initiation_client_data", ConversationInitiationClientData);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.OutboundCallRecipientResponseModelConversationInitiationClientData>("conversation_initiation_client_data", ConversationInitiationClientData);
             writer.WriteIntValue("created_at_unix", CreatedAtUnix);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("phone_number", PhoneNumber);

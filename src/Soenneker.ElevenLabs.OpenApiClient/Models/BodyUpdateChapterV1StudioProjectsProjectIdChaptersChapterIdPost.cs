@@ -17,10 +17,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The chapter content to use.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ChapterContentInputModel? Content { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyUpdateChapterV1StudioProjectsProjectIdChaptersChapterIdPostContent? Content { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ChapterContentInputModel Content { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyUpdateChapterV1StudioProjectsProjectIdChaptersChapterIdPostContent Content { get; set; }
 #endif
         /// <summary>The name of the chapter, used for identification only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -55,7 +55,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "content", n => { Content = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ChapterContentInputModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ChapterContentInputModel.CreateFromDiscriminatorValue); } },
+                { "content", n => { Content = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyUpdateChapterV1StudioProjectsProjectIdChaptersChapterIdPostContent>(global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyUpdateChapterV1StudioProjectsProjectIdChaptersChapterIdPostContent.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
             };
         }
@@ -66,7 +66,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ChapterContentInputModel>("content", Content);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyUpdateChapterV1StudioProjectsProjectIdChaptersChapterIdPostContent>("content", Content);
             writer.WriteStringValue("name", Name);
             writer.WriteAdditionalData(AdditionalData);
         }

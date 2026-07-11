@@ -34,10 +34,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The chunk_highlights property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Chunk_Highlights? ChunkHighlights { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.MessagesSearchResultChunkHighlights? ChunkHighlights { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Chunk_Highlights ChunkHighlights { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.MessagesSearchResultChunkHighlights ChunkHighlights { get; set; }
 #endif
         /// <summary>The chunk_text property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -88,7 +88,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             {
                 { "agent_id", n => { AgentId = n.GetStringValue(); } },
                 { "agent_name", n => { AgentName = n.GetStringValue(); } },
-                { "chunk_highlights", n => { ChunkHighlights = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Chunk_Highlights>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Chunk_Highlights.CreateFromDiscriminatorValue); } },
+                { "chunk_highlights", n => { ChunkHighlights = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.MessagesSearchResultChunkHighlights>(global::Soenneker.ElevenLabs.OpenApiClient.Models.MessagesSearchResultChunkHighlights.CreateFromDiscriminatorValue); } },
                 { "chunk_text", n => { ChunkText = n.GetStringValue(); } },
                 { "conversation_id", n => { ConversationId = n.GetStringValue(); } },
                 { "conversation_start_time_unix_secs", n => { ConversationStartTimeUnixSecs = n.GetIntValue(); } },
@@ -105,7 +105,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("agent_id", AgentId);
             writer.WriteStringValue("agent_name", AgentName);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Chunk_Highlights>("chunk_highlights", ChunkHighlights);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.MessagesSearchResultChunkHighlights>("chunk_highlights", ChunkHighlights);
             writer.WriteStringValue("chunk_text", ChunkText);
             writer.WriteStringValue("conversation_id", ConversationId);
             writer.WriteIntValue("conversation_start_time_unix_secs", ConversationStartTimeUnixSecs);

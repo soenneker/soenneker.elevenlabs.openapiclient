@@ -48,6 +48,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public DubbingTranscriptWord()
         {
             AdditionalData = new Dictionary<string, object>();
+            EndS = 0.0;
+            StartS = 0.0;
             WordType = "unknown";
         }
         /// <summary>

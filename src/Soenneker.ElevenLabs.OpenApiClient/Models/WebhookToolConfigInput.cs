@@ -39,21 +39,24 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public string Description { get; set; }
 #endif
-        /// <summary>If true, the user will not be able to interrupt the agent while this tool is running.</summary>
+        /// <summary>&quot;DEPRECATED: use `interruption_mode` instead. If true, the user will not be able to interrupt the agent while this tool is running.&quot;</summary>
+        [Obsolete("")]
         public bool? DisableInterruptions { get; set; }
         /// <summary>The dynamic_variables property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.DynamicVariablesConfigInput? DynamicVariables { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.DynamicVariablesConfig? DynamicVariables { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.DynamicVariablesConfigInput DynamicVariables { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.DynamicVariablesConfig DynamicVariables { get; set; }
 #endif
         /// <summary>The execution_mode property</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolExecutionMode? ExecutionMode { get; set; }
         /// <summary>&quot;DEPRECATED: use `pre_tool_speech` instead. If true, the agent will speak before the tool call.&quot;</summary>
         [Obsolete("")]
         public bool? ForcePreToolSpeech { get; set; }
+        /// <summary>The interruption_mode property</summary>
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolInterruptionMode? InterruptionMode { get; set; }
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -69,10 +72,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Predefined tool call sound type to play during tool execution. If not specified, no tool call sound will be played.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolCallSoundType_Wrapper? ToolCallSound { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolCallSoundTypeWrapper17? ToolCallSound { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolCallSoundType_Wrapper ToolCallSound { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolCallSoundTypeWrapper17 ToolCallSound { get; set; }
 #endif
         /// <summary>Determines how the tool call sound should be played.</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolCallSoundBehavior? ToolCallSoundBehavior { get; set; }
@@ -86,11 +89,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public WebhookToolConfigInput()
         {
             AdditionalData = new Dictionary<string, object>();
-            ExecutionMode = global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolExecutionMode.Immediate;
-            PreToolSpeech = global::Soenneker.ElevenLabs.OpenApiClient.Models.PreToolSpeechMode.Auto;
-            ToolCallSoundBehavior = global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolCallSoundBehavior.Auto;
-            ToolErrorHandlingMode = global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolErrorHandlingMode.Auto;
-            Type = global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookToolConfigInput_type.Webhook;
+            DisableInterruptions = false;
+            ForcePreToolSpeech = false;
+            ResponseTimeoutSecs = 20;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -114,13 +115,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "assignments", n => { Assignments = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.DynamicVariableAssignment>(global::Soenneker.ElevenLabs.OpenApiClient.Models.DynamicVariableAssignment.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "disable_interruptions", n => { DisableInterruptions = n.GetBoolValue(); } },
-                { "dynamic_variables", n => { DynamicVariables = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DynamicVariablesConfigInput>(global::Soenneker.ElevenLabs.OpenApiClient.Models.DynamicVariablesConfigInput.CreateFromDiscriminatorValue); } },
+                { "dynamic_variables", n => { DynamicVariables = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DynamicVariablesConfig>(global::Soenneker.ElevenLabs.OpenApiClient.Models.DynamicVariablesConfig.CreateFromDiscriminatorValue); } },
                 { "execution_mode", n => { ExecutionMode = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolExecutionMode>(); } },
                 { "force_pre_tool_speech", n => { ForcePreToolSpeech = n.GetBoolValue(); } },
+                { "interruption_mode", n => { InterruptionMode = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolInterruptionMode>(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "pre_tool_speech", n => { PreToolSpeech = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PreToolSpeechMode>(); } },
                 { "response_timeout_secs", n => { ResponseTimeoutSecs = n.GetIntValue(); } },
-                { "tool_call_sound", n => { ToolCallSound = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolCallSoundType_Wrapper>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolCallSoundType_Wrapper.CreateFromDiscriminatorValue); } },
+                { "tool_call_sound", n => { ToolCallSound = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolCallSoundTypeWrapper17>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolCallSoundTypeWrapper17.CreateFromDiscriminatorValue); } },
                 { "tool_call_sound_behavior", n => { ToolCallSoundBehavior = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolCallSoundBehavior>(); } },
                 { "tool_error_handling_mode", n => { ToolErrorHandlingMode = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolErrorHandlingMode>(); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookToolConfigInput_type>(); } },
@@ -137,13 +139,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.DynamicVariableAssignment>("assignments", Assignments);
             writer.WriteStringValue("description", Description);
             writer.WriteBoolValue("disable_interruptions", DisableInterruptions);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DynamicVariablesConfigInput>("dynamic_variables", DynamicVariables);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DynamicVariablesConfig>("dynamic_variables", DynamicVariables);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolExecutionMode>("execution_mode", ExecutionMode);
             writer.WriteBoolValue("force_pre_tool_speech", ForcePreToolSpeech);
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolInterruptionMode>("interruption_mode", InterruptionMode);
             writer.WriteStringValue("name", Name);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PreToolSpeechMode>("pre_tool_speech", PreToolSpeech);
             writer.WriteIntValue("response_timeout_secs", ResponseTimeoutSecs);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolCallSoundType_Wrapper>("tool_call_sound", ToolCallSound);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolCallSoundTypeWrapper17>("tool_call_sound", ToolCallSound);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolCallSoundBehavior>("tool_call_sound_behavior", ToolCallSoundBehavior);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolErrorHandlingMode>("tool_error_handling_mode", ToolErrorHandlingMode);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookToolConfigInput_type>("type", Type);

@@ -21,7 +21,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Controls the volume level of the generated voice. -1 is quietest, 1 is loudest, 0 corresponds to roughly -24 LUFS.</summary>
         public double? Loudness { get; set; }
         /// <summary>&quot;Model to use for the voice generation. Possible values: eleven_multilingual_ttv_v2, eleven_ttv_v3.&quot;</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceDesignRequestModel_model_id? ModelId { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceDesignRequestModelModelId? ModelId { get; set; }
         /// <summary>Controls the balance of prompt versus reference audio when generating voice samples. 0 means almost no prompt influence, 1 means almost no reference audio influence. Only supported when using the eleven_ttv_v3 model.</summary>
         public double? PromptStrength { get; set; }
         /// <summary>Higher quality results in better voice output but less variety.</summary>
@@ -78,7 +78,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public VoiceDesignRequestModel()
         {
             AdditionalData = new Dictionary<string, object>();
-            ModelId = global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceDesignRequestModel_model_id.Eleven_multilingual_ttv_v2;
+            AutoGenerateText = false;
+            GuidanceScale = 5;
+            Loudness = 0.5;
+            ShouldEnhance = false;
+            StreamPreviews = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -101,7 +105,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "auto_generate_text", n => { AutoGenerateText = n.GetBoolValue(); } },
                 { "guidance_scale", n => { GuidanceScale = n.GetDoubleValue(); } },
                 { "loudness", n => { Loudness = n.GetDoubleValue(); } },
-                { "model_id", n => { ModelId = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceDesignRequestModel_model_id>(); } },
+                { "model_id", n => { ModelId = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceDesignRequestModelModelId>(); } },
                 { "prompt_strength", n => { PromptStrength = n.GetDoubleValue(); } },
                 { "quality", n => { Quality = n.GetDoubleValue(); } },
                 { "reference_audio_base64", n => { ReferenceAudioBase64 = n.GetStringValue(); } },
@@ -124,7 +128,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteBoolValue("auto_generate_text", AutoGenerateText);
             writer.WriteDoubleValue("guidance_scale", GuidanceScale);
             writer.WriteDoubleValue("loudness", Loudness);
-            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceDesignRequestModel_model_id>("model_id", ModelId);
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceDesignRequestModelModelId>("model_id", ModelId);
             writer.WriteDoubleValue("prompt_strength", PromptStrength);
             writer.WriteDoubleValue("quality", Quality);
             writer.WriteStringValue("reference_audio_base64", ReferenceAudioBase64);

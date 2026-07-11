@@ -22,7 +22,6 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public UpdateProductParams()
         {
             AdditionalData = new Dictionary<string, object>();
-            SmbToolType = global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateProductParams_smb_tool_type.Update_product;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

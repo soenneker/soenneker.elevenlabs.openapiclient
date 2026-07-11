@@ -46,6 +46,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public GetAgentTestFolderResponseModel()
         {
             AdditionalData = new Dictionary<string, object>();
+            ChildrenCount = 0;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

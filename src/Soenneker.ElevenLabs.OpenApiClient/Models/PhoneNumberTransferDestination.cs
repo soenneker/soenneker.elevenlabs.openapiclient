@@ -30,7 +30,6 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public PhoneNumberTransferDestination()
         {
             AdditionalData = new Dictionary<string, object>();
-            Type = global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberTransferDestination_type.Phone;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

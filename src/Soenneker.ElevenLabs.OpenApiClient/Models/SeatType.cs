@@ -9,15 +9,15 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     {
         [EnumMember(Value = "workspace_admin")]
         #pragma warning disable CS1591
-        Workspace_admin,
+        WorkspaceAdmin,
         #pragma warning restore CS1591
         [EnumMember(Value = "workspace_member")]
         #pragma warning disable CS1591
-        Workspace_member,
+        WorkspaceMember,
         #pragma warning restore CS1591
         [EnumMember(Value = "workspace_lite_member")]
         #pragma warning disable CS1591
-        Workspace_lite_member,
+        WorkspaceLiteMember,
         #pragma warning restore CS1591
     }
 }

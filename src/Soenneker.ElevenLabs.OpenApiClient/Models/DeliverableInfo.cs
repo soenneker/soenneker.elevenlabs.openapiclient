@@ -46,6 +46,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public DeliverableInfo()
         {
             AdditionalData = new Dictionary<string, object>();
+            Version = 1;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

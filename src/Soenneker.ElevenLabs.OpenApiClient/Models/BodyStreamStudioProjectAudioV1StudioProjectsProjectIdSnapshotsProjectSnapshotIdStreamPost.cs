@@ -22,6 +22,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public BodyStreamStudioProjectAudioV1StudioProjectsProjectIdSnapshotsProjectSnapshotIdStreamPost()
         {
             AdditionalData = new Dictionary<string, object>();
+            ConvertToMpeg = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

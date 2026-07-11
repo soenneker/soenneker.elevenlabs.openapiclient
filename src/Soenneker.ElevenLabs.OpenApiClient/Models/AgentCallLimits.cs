@@ -26,6 +26,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public AgentCallLimits()
         {
             AdditionalData = new Dictionary<string, object>();
+            AgentConcurrencyLimit = -1;
+            BurstingEnabled = true;
+            DailyLimit = 100000;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -15,13 +15,15 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The channel this word was spoken on (for multichannel audio). Null for single-channel transcriptions.</summary>
+        public int? ChannelIndex { get; set; }
         /// <summary>The characters that make up the word and their timing information.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Characters? Characters { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechToTextWordResponseModelCharacters? Characters { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Characters Characters { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechToTextWordResponseModelCharacters Characters { get; set; }
 #endif
         /// <summary>The end time of the word or sound in seconds.</summary>
         public double? End { get; set; }
@@ -46,7 +48,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public string Text { get; set; }
 #endif
         /// <summary>The type of the word or sound. &apos;audio_event&apos; is used for non-word sounds like laughter or footsteps.</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechToTextWordResponseModel_type? Type { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechToTextWordResponseModelType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechToTextWordResponseModel"/> and sets the default values.
         /// </summary>
@@ -72,13 +74,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "characters", n => { Characters = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Characters>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Characters.CreateFromDiscriminatorValue); } },
+                { "channel_index", n => { ChannelIndex = n.GetIntValue(); } },
+                { "characters", n => { Characters = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechToTextWordResponseModelCharacters>(global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechToTextWordResponseModelCharacters.CreateFromDiscriminatorValue); } },
                 { "end", n => { End = n.GetDoubleValue(); } },
                 { "logprob", n => { Logprob = n.GetDoubleValue(); } },
                 { "speaker_id", n => { SpeakerId = n.GetStringValue(); } },
                 { "start", n => { Start = n.GetDoubleValue(); } },
                 { "text", n => { Text = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechToTextWordResponseModel_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechToTextWordResponseModelType>(); } },
             };
         }
         /// <summary>
@@ -88,13 +91,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Characters>("characters", Characters);
+            writer.WriteIntValue("channel_index", ChannelIndex);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechToTextWordResponseModelCharacters>("characters", Characters);
             writer.WriteDoubleValue("end", End);
             writer.WriteDoubleValue("logprob", Logprob);
             writer.WriteStringValue("speaker_id", SpeakerId);
             writer.WriteDoubleValue("start", Start);
             writer.WriteStringValue("text", Text);
-            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechToTextWordResponseModel_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechToTextWordResponseModelType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

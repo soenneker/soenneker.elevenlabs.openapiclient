@@ -14,7 +14,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "sip_trunk")]
         #pragma warning disable CS1591
-        Sip_trunk,
+        SipTrunk,
         #pragma warning restore CS1591
         [EnumMember(Value = "exotel")]
         #pragma warning disable CS1591

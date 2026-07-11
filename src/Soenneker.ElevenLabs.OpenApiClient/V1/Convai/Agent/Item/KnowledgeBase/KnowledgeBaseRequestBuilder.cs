@@ -10,7 +10,7 @@ using System;
 namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agent.Item.KnowledgeBase
 {
     /// <summary>
-    /// Builds and executes requests for operations under \v1\convai\agent\{agent_id}\knowledge-base
+    /// Builds and executes requests for operations under \v1\convai\agent\{agentId}\knowledge-base
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class KnowledgeBaseRequestBuilder : BaseRequestBuilder
@@ -25,7 +25,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agent.Item.KnowledgeBase
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public KnowledgeBaseRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/convai/agent/{agent_id}/knowledge-base", pathParameters)
+        public KnowledgeBaseRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/convai/agent/{agentId}/knowledge-base", pathParameters)
         {
         }
         /// <summary>
@@ -33,7 +33,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agent.Item.KnowledgeBase
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public KnowledgeBaseRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/convai/agent/{agent_id}/knowledge-base", rawUrl)
+        public KnowledgeBaseRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/convai/agent/{agentId}/knowledge-base", rawUrl)
         {
         }
     }

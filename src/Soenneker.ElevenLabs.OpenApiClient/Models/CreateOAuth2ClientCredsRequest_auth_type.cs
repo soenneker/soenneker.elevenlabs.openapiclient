@@ -10,7 +10,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     {
         [EnumMember(Value = "oauth2_client_credentials")]
         #pragma warning disable CS1591
-        Oauth2_client_credentials,
+        OAuth2ClientCredentials,
         #pragma warning restore CS1591
     }
 }

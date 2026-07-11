@@ -17,10 +17,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>(Deprecated)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectSnapshotResponseModel_audio_upload? AudioUpload { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectSnapshotResponseModelAudioUpload? AudioUpload { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectSnapshotResponseModel_audio_upload AudioUpload { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectSnapshotResponseModelAudioUpload AudioUpload { get; set; }
 #endif
         /// <summary>The creation date of the project snapshot.</summary>
         public int? CreatedAtUnix { get; set; }
@@ -51,10 +51,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>(Deprecated)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectSnapshotResponseModel_zip_upload? ZipUpload { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectSnapshotResponseModelZipUpload? ZipUpload { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectSnapshotResponseModel_zip_upload ZipUpload { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectSnapshotResponseModelZipUpload ZipUpload { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectSnapshotResponseModel"/> and sets the default values.
@@ -81,12 +81,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "audio_upload", n => { AudioUpload = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectSnapshotResponseModel_audio_upload>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectSnapshotResponseModel_audio_upload.CreateFromDiscriminatorValue); } },
+                { "audio_upload", n => { AudioUpload = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectSnapshotResponseModelAudioUpload>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectSnapshotResponseModelAudioUpload.CreateFromDiscriminatorValue); } },
                 { "created_at_unix", n => { CreatedAtUnix = n.GetIntValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "project_id", n => { ProjectId = n.GetStringValue(); } },
                 { "project_snapshot_id", n => { ProjectSnapshotId = n.GetStringValue(); } },
-                { "zip_upload", n => { ZipUpload = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectSnapshotResponseModel_zip_upload>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectSnapshotResponseModel_zip_upload.CreateFromDiscriminatorValue); } },
+                { "zip_upload", n => { ZipUpload = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectSnapshotResponseModelZipUpload>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectSnapshotResponseModelZipUpload.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -96,12 +96,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectSnapshotResponseModel_audio_upload>("audio_upload", AudioUpload);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectSnapshotResponseModelAudioUpload>("audio_upload", AudioUpload);
             writer.WriteIntValue("created_at_unix", CreatedAtUnix);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("project_id", ProjectId);
             writer.WriteStringValue("project_snapshot_id", ProjectSnapshotId);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectSnapshotResponseModel_zip_upload>("zip_upload", ZipUpload);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectSnapshotResponseModelZipUpload>("zip_upload", ZipUpload);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

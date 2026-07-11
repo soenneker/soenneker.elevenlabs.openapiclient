@@ -10,21 +10,21 @@ using System;
 namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.KnowledgeBase.Item.Chunk
 {
     /// <summary>
-    /// Builds and executes requests for operations under \v1\convai\knowledge-base\{documentation_-id}\chunk
+    /// Builds and executes requests for operations under \v1\convai\knowledge-base\{documentation-id}\chunk
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ChunkRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.ElevenLabs.OpenApiClient.v1.convai.knowledgeBase.item.chunk.item collection</summary>
         /// <param name="position">The id of a document RAG chunk from the knowledge base.</param>
-        /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.KnowledgeBase.Item.Chunk.Item.WithChunk_ItemRequestBuilder"/></returns>
-        public global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.KnowledgeBase.Item.Chunk.Item.WithChunk_ItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.KnowledgeBase.Item.Chunk.Item.WithChunkItemRequestBuilder"/></returns>
+        public global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.KnowledgeBase.Item.Chunk.Item.WithChunkItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("chunk_id", position);
-                return new global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.KnowledgeBase.Item.Chunk.Item.WithChunk_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("chunkId", position);
+                return new global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.KnowledgeBase.Item.Chunk.Item.WithChunkItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -32,7 +32,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.KnowledgeBase.Item.Chunk
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ChunkRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/convai/knowledge-base/{documentation_%2Did}/chunk", pathParameters)
+        public ChunkRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/convai/knowledge-base/{documentation%2Did}/chunk", pathParameters)
         {
         }
         /// <summary>
@@ -40,7 +40,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.KnowledgeBase.Item.Chunk
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ChunkRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/convai/knowledge-base/{documentation_%2Did}/chunk", rawUrl)
+        public ChunkRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/convai/knowledge-base/{documentation%2Did}/chunk", rawUrl)
         {
         }
     }

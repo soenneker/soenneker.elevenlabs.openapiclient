@@ -10,7 +10,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     {
         [EnumMember(Value = "tts_node")]
         #pragma warning disable CS1591
-        Tts_node,
+        TtsNode,
         #pragma warning restore CS1591
     }
 }

@@ -33,8 +33,6 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public SimulationToolMockBehaviorConfig()
         {
             AdditionalData = new Dictionary<string, object>();
-            FallbackStrategy = global::Soenneker.ElevenLabs.OpenApiClient.Models.MockNoMatchBehavior.Raise_error;
-            MockingStrategy = global::Soenneker.ElevenLabs.OpenApiClient.Models.MockingStrategy.None;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

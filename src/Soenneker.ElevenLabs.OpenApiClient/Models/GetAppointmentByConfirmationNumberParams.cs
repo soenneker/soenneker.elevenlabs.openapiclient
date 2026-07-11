@@ -23,7 +23,6 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public GetAppointmentByConfirmationNumberParams()
         {
             AdditionalData = new Dictionary<string, object>();
-            SmbToolType = global::Soenneker.ElevenLabs.OpenApiClient.Models.GetAppointmentByConfirmationNumberParams_smb_tool_type.Get_appointment_by_confirmation_number;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -60,7 +60,6 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public DubOrderItemRequest()
         {
             AdditionalData = new Dictionary<string, object>();
-            Kind = global::Soenneker.ElevenLabs.OpenApiClient.Models.DubOrderItemRequest_kind.Dub;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

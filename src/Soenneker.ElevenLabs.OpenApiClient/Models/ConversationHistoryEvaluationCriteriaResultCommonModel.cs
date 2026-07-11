@@ -22,6 +22,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public string CriteriaId { get; set; }
 #endif
+        /// <summary>The max_score property</summary>
+        public int? MaxScore { get; set; }
         /// <summary>The rationale property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -32,6 +34,16 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #endif
         /// <summary>The result property</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.EvaluationSuccessResult? Result { get; set; }
+        /// <summary>The score property</summary>
+        public int? Score { get; set; }
+        /// <summary>The scoring_mode property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CriteriaScoringModeWrapper? ScoringMode { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CriteriaScoringModeWrapper ScoringMode { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryEvaluationCriteriaResultCommonModel"/> and sets the default values.
         /// </summary>
@@ -58,8 +70,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "criteria_id", n => { CriteriaId = n.GetStringValue(); } },
+                { "max_score", n => { MaxScore = n.GetIntValue(); } },
                 { "rationale", n => { Rationale = n.GetStringValue(); } },
                 { "result", n => { Result = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.EvaluationSuccessResult>(); } },
+                { "score", n => { Score = n.GetIntValue(); } },
+                { "scoring_mode", n => { ScoringMode = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CriteriaScoringModeWrapper>(global::Soenneker.ElevenLabs.OpenApiClient.Models.CriteriaScoringModeWrapper.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -70,8 +85,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("criteria_id", CriteriaId);
+            writer.WriteIntValue("max_score", MaxScore);
             writer.WriteStringValue("rationale", Rationale);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.EvaluationSuccessResult>("result", Result);
+            writer.WriteIntValue("score", Score);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CriteriaScoringModeWrapper>("scoring_mode", ScoringMode);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

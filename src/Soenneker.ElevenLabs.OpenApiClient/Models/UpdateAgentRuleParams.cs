@@ -22,7 +22,6 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public UpdateAgentRuleParams()
         {
             AdditionalData = new Dictionary<string, object>();
-            SmbToolType = global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateAgentRuleParams_smb_tool_type.Update_agent_rule;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

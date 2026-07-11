@@ -10,7 +10,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     {
         [EnumMember(Value = "basic_auth")]
         #pragma warning disable CS1591
-        Basic_auth,
+        BasicAuth,
         #pragma warning restore CS1591
     }
 }

@@ -17,19 +17,19 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The enter_duration_ms property</summary>
         public int? EnterDurationMs { get; set; }
         /// <summary>The enter_effect property</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ClipAnimation_enter_effect? EnterEffect { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ClipAnimationEnterEffect? EnterEffect { get; set; }
         /// <summary>The exit_duration_ms property</summary>
         public int? ExitDurationMs { get; set; }
         /// <summary>The exit_effect property</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ClipAnimation_exit_effect? ExitEffect { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ClipAnimationExitEffect? ExitEffect { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ClipAnimation"/> and sets the default values.
         /// </summary>
         public ClipAnimation()
         {
             AdditionalData = new Dictionary<string, object>();
-            EnterEffect = global::Soenneker.ElevenLabs.OpenApiClient.Models.ClipAnimation_enter_effect.None;
-            ExitEffect = global::Soenneker.ElevenLabs.OpenApiClient.Models.ClipAnimation_exit_effect.None;
+            EnterDurationMs = 0;
+            ExitDurationMs = 0;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -50,9 +50,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "enter_duration_ms", n => { EnterDurationMs = n.GetIntValue(); } },
-                { "enter_effect", n => { EnterEffect = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ClipAnimation_enter_effect>(); } },
+                { "enter_effect", n => { EnterEffect = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ClipAnimationEnterEffect>(); } },
                 { "exit_duration_ms", n => { ExitDurationMs = n.GetIntValue(); } },
-                { "exit_effect", n => { ExitEffect = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ClipAnimation_exit_effect>(); } },
+                { "exit_effect", n => { ExitEffect = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ClipAnimationExitEffect>(); } },
             };
         }
         /// <summary>
@@ -63,9 +63,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("enter_duration_ms", EnterDurationMs);
-            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ClipAnimation_enter_effect>("enter_effect", EnterEffect);
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ClipAnimationEnterEffect>("enter_effect", EnterEffect);
             writer.WriteIntValue("exit_duration_ms", ExitDurationMs);
-            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ClipAnimation_exit_effect>("exit_effect", ExitEffect);
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ClipAnimationExitEffect>("exit_effect", ExitEffect);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

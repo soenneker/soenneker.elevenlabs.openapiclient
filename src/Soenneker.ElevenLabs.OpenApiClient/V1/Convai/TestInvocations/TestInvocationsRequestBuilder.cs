@@ -20,14 +20,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.TestInvocations
     {
         /// <summary>Gets an item from the Soenneker.ElevenLabs.OpenApiClient.v1.convai.testInvocations.item collection</summary>
         /// <param name="position">The id of a test invocation. This is returned when tests are run.</param>
-        /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.TestInvocations.Item.WithTest_invocation_ItemRequestBuilder"/></returns>
-        public global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.TestInvocations.Item.WithTest_invocation_ItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.TestInvocations.Item.WithTestInvocationItemRequestBuilder"/></returns>
+        public global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.TestInvocations.Item.WithTestInvocationItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("test_invocation_id", position);
-                return new global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.TestInvocations.Item.WithTest_invocation_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("testInvocationId", position);
+                return new global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.TestInvocations.Item.WithTestInvocationItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -52,7 +52,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.TestInvocations
         /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.GetTestInvocationsPageResponseModel"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.HTTPValidationError">When receiving a 422 status code</exception>
+        /// <exception cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.HttpValidationError">When receiving a 422 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetTestInvocationsPageResponseModel?> GetAsync(Action<RequestConfiguration<global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.TestInvocations.TestInvocationsRequestBuilder.TestInvocationsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -65,7 +65,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.TestInvocations
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "422", global::Soenneker.ElevenLabs.OpenApiClient.Models.HTTPValidationError.CreateFromDiscriminatorValue },
+                { "422", global::Soenneker.ElevenLabs.OpenApiClient.Models.HttpValidationError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetTestInvocationsPageResponseModel>(requestInfo, global::Soenneker.ElevenLabs.OpenApiClient.Models.GetTestInvocationsPageResponseModel.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

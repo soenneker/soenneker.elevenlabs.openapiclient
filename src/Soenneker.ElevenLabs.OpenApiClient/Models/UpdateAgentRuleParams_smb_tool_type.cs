@@ -10,7 +10,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     {
         [EnumMember(Value = "update_agent_rule")]
         #pragma warning disable CS1591
-        Update_agent_rule,
+        UpdateAgentRule,
         #pragma warning restore CS1591
     }
 }

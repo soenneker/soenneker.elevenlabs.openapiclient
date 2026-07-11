@@ -22,7 +22,6 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public CreateAssetParams()
         {
             AdditionalData = new Dictionary<string, object>();
-            SmbToolType = global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateAssetParams_smb_tool_type.Create_asset;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

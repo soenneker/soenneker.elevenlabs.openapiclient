@@ -10,7 +10,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     {
         [EnumMember(Value = "delete_holiday")]
         #pragma warning disable CS1591
-        Delete_holiday,
+        DeleteHoliday,
         #pragma warning restore CS1591
     }
 }

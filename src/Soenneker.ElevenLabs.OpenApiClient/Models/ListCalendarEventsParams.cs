@@ -24,7 +24,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public ListCalendarEventsParams()
         {
             AdditionalData = new Dictionary<string, object>();
-            SmbToolType = global::Soenneker.ElevenLabs.OpenApiClient.Models.ListCalendarEventsParams_smb_tool_type.List_calendar_events;
+            IncludeCancelled = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

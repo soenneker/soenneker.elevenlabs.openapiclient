@@ -10,7 +10,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     {
         [EnumMember(Value = "nested_tools")]
         #pragma warning disable CS1591
-        Nested_tools,
+        NestedTools,
         #pragma warning restore CS1591
     }
 }

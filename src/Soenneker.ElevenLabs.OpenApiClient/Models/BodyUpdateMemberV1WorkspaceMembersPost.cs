@@ -28,18 +28,18 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SeatType_Wrapper? WorkspaceRole { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SeatTypeWrapper3? WorkspaceRole { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SeatType_Wrapper WorkspaceRole { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SeatTypeWrapper3 WorkspaceRole { get; set; }
 #endif
         /// <summary>The workspace seat type</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SeatType_Wrapper? WorkspaceSeatType { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SeatTypeWrapper4? WorkspaceSeatType { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SeatType_Wrapper WorkspaceSeatType { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SeatTypeWrapper4 WorkspaceSeatType { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyUpdateMemberV1WorkspaceMembersPost"/> and sets the default values.
@@ -68,8 +68,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             {
                 { "email", n => { Email = n.GetStringValue(); } },
                 { "is_locked", n => { IsLocked = n.GetBoolValue(); } },
-                { "workspace_role", n => { WorkspaceRole = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SeatType_Wrapper>(global::Soenneker.ElevenLabs.OpenApiClient.Models.SeatType_Wrapper.CreateFromDiscriminatorValue); } },
-                { "workspace_seat_type", n => { WorkspaceSeatType = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SeatType_Wrapper>(global::Soenneker.ElevenLabs.OpenApiClient.Models.SeatType_Wrapper.CreateFromDiscriminatorValue); } },
+                { "workspace_role", n => { WorkspaceRole = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SeatTypeWrapper3>(global::Soenneker.ElevenLabs.OpenApiClient.Models.SeatTypeWrapper3.CreateFromDiscriminatorValue); } },
+                { "workspace_seat_type", n => { WorkspaceSeatType = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SeatTypeWrapper4>(global::Soenneker.ElevenLabs.OpenApiClient.Models.SeatTypeWrapper4.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -81,8 +81,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("email", Email);
             writer.WriteBoolValue("is_locked", IsLocked);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SeatType_Wrapper>("workspace_role", WorkspaceRole);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SeatType_Wrapper>("workspace_seat_type", WorkspaceSeatType);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SeatTypeWrapper3>("workspace_role", WorkspaceRole);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SeatTypeWrapper4>("workspace_seat_type", WorkspaceSeatType);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

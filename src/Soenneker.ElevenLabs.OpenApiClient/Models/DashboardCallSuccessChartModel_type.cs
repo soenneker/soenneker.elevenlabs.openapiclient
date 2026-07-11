@@ -10,7 +10,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     {
         [EnumMember(Value = "call_success")]
         #pragma warning disable CS1591
-        Call_success,
+        CallSuccess,
         #pragma warning restore CS1591
     }
 }

@@ -16,6 +16,22 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>How long the agent will wait for the user to start the conversation if the first message is empty. If not set, uses the regular turn_timeout.</summary>
         public double? InitialWaitTime { get; set; }
+        /// <summary>Language codes for which preset ignore-term categories have been activated. Stored explicitly so display is not inferred from term overlap.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? InterruptionIgnoreTermLanguages { get; set; }
+#nullable restore
+#else
+        public List<string> InterruptionIgnoreTermLanguages { get; set; }
+#endif
+        /// <summary>List of terms that should not trigger an interruption when spoken by the user (e.g. &apos;gotcha&apos;, &apos;understood&apos;). Uses case-insensitive exact matching.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? InterruptionIgnoreTerms { get; set; }
+#nullable restore
+#else
+        public List<string> InterruptionIgnoreTerms { get; set; }
+#endif
         /// <summary>The mode property</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.TurnMode? Mode { get; set; }
         /// <summary>When enabled, if VAD detects no speech, attempts to re-transcribe accumulated audio at turn timeout. Disables silence discount billing for affected turns.</summary>
@@ -26,8 +42,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public bool? SpeculativeTurn { get; set; }
         /// <summary>Controls if the agent should be more patient when user is spelling numbers and named entities.</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.SpellingPatience? SpellingPatience { get; set; }
+        /// <summary>When interruptions are disabled, still transcribe what the user says so it can carry into the next turn. When off, user speech during a non-interruptible turn is ignored and won&apos;t trigger a turn.</summary>
+        public bool? TranscribeOnDisabledInterruptions { get; set; }
         /// <summary>Agent&apos;s eagerness to respond. Higher values make agent wait for higher turn probability.</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.TurnEagerness? TurnEagerness { get; set; }
+        /// <summary>Version of the turn detection model to use.</summary>
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.TurnModel? TurnModel { get; set; }
         /// <summary>Maximum wait time for the user&apos;s reply before re-engaging the user</summary>
         public double? TurnTimeout { get; set; }
         /// <summary>
@@ -36,9 +56,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public BaseTurnConfig()
         {
             AdditionalData = new Dictionary<string, object>();
-            Mode = global::Soenneker.ElevenLabs.OpenApiClient.Models.TurnMode.Turn;
-            SpellingPatience = global::Soenneker.ElevenLabs.OpenApiClient.Models.SpellingPatience.Auto;
-            TurnEagerness = global::Soenneker.ElevenLabs.OpenApiClient.Models.TurnEagerness.Normal;
+            RetranscribeOnTurnTimeout = false;
+            SilenceEndCallTimeout = -1;
+            SpeculativeTurn = false;
+            TranscribeOnDisabledInterruptions = false;
+            TurnTimeout = 7.0;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -59,12 +81,16 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "initial_wait_time", n => { InitialWaitTime = n.GetDoubleValue(); } },
+                { "interruption_ignore_term_languages", n => { InterruptionIgnoreTermLanguages = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "interruption_ignore_terms", n => { InterruptionIgnoreTerms = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "mode", n => { Mode = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TurnMode>(); } },
                 { "retranscribe_on_turn_timeout", n => { RetranscribeOnTurnTimeout = n.GetBoolValue(); } },
                 { "silence_end_call_timeout", n => { SilenceEndCallTimeout = n.GetDoubleValue(); } },
                 { "speculative_turn", n => { SpeculativeTurn = n.GetBoolValue(); } },
                 { "spelling_patience", n => { SpellingPatience = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SpellingPatience>(); } },
+                { "transcribe_on_disabled_interruptions", n => { TranscribeOnDisabledInterruptions = n.GetBoolValue(); } },
                 { "turn_eagerness", n => { TurnEagerness = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TurnEagerness>(); } },
+                { "turn_model", n => { TurnModel = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TurnModel>(); } },
                 { "turn_timeout", n => { TurnTimeout = n.GetDoubleValue(); } },
             };
         }
@@ -76,12 +102,16 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDoubleValue("initial_wait_time", InitialWaitTime);
+            writer.WriteCollectionOfPrimitiveValues<string>("interruption_ignore_term_languages", InterruptionIgnoreTermLanguages);
+            writer.WriteCollectionOfPrimitiveValues<string>("interruption_ignore_terms", InterruptionIgnoreTerms);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TurnMode>("mode", Mode);
             writer.WriteBoolValue("retranscribe_on_turn_timeout", RetranscribeOnTurnTimeout);
             writer.WriteDoubleValue("silence_end_call_timeout", SilenceEndCallTimeout);
             writer.WriteBoolValue("speculative_turn", SpeculativeTurn);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SpellingPatience>("spelling_patience", SpellingPatience);
+            writer.WriteBoolValue("transcribe_on_disabled_interruptions", TranscribeOnDisabledInterruptions);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TurnEagerness>("turn_eagerness", TurnEagerness);
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TurnModel>("turn_model", TurnModel);
             writer.WriteDoubleValue("turn_timeout", TurnTimeout);
             writer.WriteAdditionalData(AdditionalData);
         }

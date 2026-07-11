@@ -38,7 +38,6 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public DashboardCriteriaChartModel()
         {
             AdditionalData = new Dictionary<string, object>();
-            Type = global::Soenneker.ElevenLabs.OpenApiClient.Models.DashboardCriteriaChartModel_type.Criteria;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

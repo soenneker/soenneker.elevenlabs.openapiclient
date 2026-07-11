@@ -13,27 +13,27 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "android_sdk")]
         #pragma warning disable CS1591
-        Android_sdk,
+        AndroidSdk,
         #pragma warning restore CS1591
         [EnumMember(Value = "node_js_sdk")]
         #pragma warning disable CS1591
-        Node_js_sdk,
+        NodeJsSdk,
         #pragma warning restore CS1591
         [EnumMember(Value = "react_native_sdk")]
         #pragma warning disable CS1591
-        React_native_sdk,
+        ReactNativeSdk,
         #pragma warning restore CS1591
         [EnumMember(Value = "react_sdk")]
         #pragma warning disable CS1591
-        React_sdk,
+        ReactSdk,
         #pragma warning restore CS1591
         [EnumMember(Value = "js_sdk")]
         #pragma warning disable CS1591
-        Js_sdk,
+        JsSdk,
         #pragma warning restore CS1591
         [EnumMember(Value = "python_sdk")]
         #pragma warning disable CS1591
-        Python_sdk,
+        PythonSdk,
         #pragma warning restore CS1591
         [EnumMember(Value = "widget")]
         #pragma warning disable CS1591
@@ -41,7 +41,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "sip_trunk")]
         #pragma warning disable CS1591
-        Sip_trunk,
+        SipTrunk,
         #pragma warning restore CS1591
         [EnumMember(Value = "twilio")]
         #pragma warning disable CS1591
@@ -57,7 +57,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "swift_sdk")]
         #pragma warning disable CS1591
-        Swift_sdk,
+        SwiftSdk,
         #pragma warning restore CS1591
         [EnumMember(Value = "whatsapp")]
         #pragma warning disable CS1591
@@ -65,39 +65,47 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "twilio_sms")]
         #pragma warning disable CS1591
-        Twilio_sms,
+        TwilioSms,
         #pragma warning restore CS1591
         [EnumMember(Value = "flutter_sdk")]
         #pragma warning disable CS1591
-        Flutter_sdk,
+        FlutterSdk,
         #pragma warning restore CS1591
         [EnumMember(Value = "zendesk_integration")]
         #pragma warning disable CS1591
-        Zendesk_integration,
+        ZendeskIntegration,
         #pragma warning restore CS1591
         [EnumMember(Value = "slack_integration")]
         #pragma warning disable CS1591
-        Slack_integration,
+        SlackIntegration,
         #pragma warning restore CS1591
         [EnumMember(Value = "telegram_integration")]
         #pragma warning disable CS1591
-        Telegram_integration,
+        TelegramIntegration,
         #pragma warning restore CS1591
         [EnumMember(Value = "intercom_integration")]
         #pragma warning disable CS1591
-        Intercom_integration,
+        IntercomIntegration,
         #pragma warning restore CS1591
         [EnumMember(Value = "freshdesk_integration")]
         #pragma warning disable CS1591
-        Freshdesk_integration,
+        FreshdeskIntegration,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "salesforce_integration")]
+        #pragma warning disable CS1591
+        SalesforceIntegration,
         #pragma warning restore CS1591
         [EnumMember(Value = "template_preview")]
         #pragma warning disable CS1591
-        Template_preview,
+        TemplatePreview,
         #pragma warning restore CS1591
         [EnumMember(Value = "genesys_bot_connector")]
         #pragma warning disable CS1591
-        Genesys_bot_connector,
+        GenesysBotConnector,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "subagent_tool")]
+        #pragma warning disable CS1591
+        SubagentTool,
         #pragma warning restore CS1591
     }
 }

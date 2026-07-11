@@ -13,21 +13,21 @@ using System;
 namespace Soenneker.ElevenLabs.OpenApiClient.V1.ServiceAccounts.Item.ApiKeys
 {
     /// <summary>
-    /// Builds and executes requests for operations under \v1\service-accounts\{service_account_user_id}\api-keys
+    /// Builds and executes requests for operations under \v1\service-accounts\{serviceAccountUserId}\api-keys
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ApiKeysRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.ElevenLabs.OpenApiClient.v1.serviceAccounts.item.apiKeys.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
-        /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.V1.ServiceAccounts.Item.ApiKeys.Item.WithApi_key_ItemRequestBuilder"/></returns>
-        public global::Soenneker.ElevenLabs.OpenApiClient.V1.ServiceAccounts.Item.ApiKeys.Item.WithApi_key_ItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.V1.ServiceAccounts.Item.ApiKeys.Item.WithApiKeyItemRequestBuilder"/></returns>
+        public global::Soenneker.ElevenLabs.OpenApiClient.V1.ServiceAccounts.Item.ApiKeys.Item.WithApiKeyItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("api_key_id", position);
-                return new global::Soenneker.ElevenLabs.OpenApiClient.V1.ServiceAccounts.Item.ApiKeys.Item.WithApi_key_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("apiKeyId", position);
+                return new global::Soenneker.ElevenLabs.OpenApiClient.V1.ServiceAccounts.Item.ApiKeys.Item.WithApiKeyItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -35,7 +35,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.ServiceAccounts.Item.ApiKeys
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ApiKeysRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/service-accounts/{service_account_user_id}/api-keys", pathParameters)
+        public ApiKeysRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/service-accounts/{serviceAccountUserId}/api-keys", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.ServiceAccounts.Item.ApiKeys
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ApiKeysRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/service-accounts/{service_account_user_id}/api-keys", rawUrl)
+        public ApiKeysRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/service-accounts/{serviceAccountUserId}/api-keys", rawUrl)
         {
         }
         /// <summary>
@@ -52,7 +52,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.ServiceAccounts.Item.ApiKeys
         /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceApiKeyListResponseModel"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.HTTPValidationError">When receiving a 422 status code</exception>
+        /// <exception cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.HttpValidationError">When receiving a 422 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceApiKeyListResponseModel?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -65,7 +65,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.ServiceAccounts.Item.ApiKeys
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "422", global::Soenneker.ElevenLabs.OpenApiClient.Models.HTTPValidationError.CreateFromDiscriminatorValue },
+                { "422", global::Soenneker.ElevenLabs.OpenApiClient.Models.HttpValidationError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceApiKeyListResponseModel>(requestInfo, global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceApiKeyListResponseModel.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -76,7 +76,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.ServiceAccounts.Item.ApiKeys
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.HTTPValidationError">When receiving a 422 status code</exception>
+        /// <exception cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.HttpValidationError">When receiving a 422 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceCreateApiKeyResponseModel?> PostAsync(global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateServiceAccountApiKeyV1ServiceAccountsServiceAccountUserIdApiKeysPost body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -90,7 +90,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.ServiceAccounts.Item.ApiKeys
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "422", global::Soenneker.ElevenLabs.OpenApiClient.Models.HTTPValidationError.CreateFromDiscriminatorValue },
+                { "422", global::Soenneker.ElevenLabs.OpenApiClient.Models.HttpValidationError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceCreateApiKeyResponseModel>(requestInfo, global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceCreateApiKeyResponseModel.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

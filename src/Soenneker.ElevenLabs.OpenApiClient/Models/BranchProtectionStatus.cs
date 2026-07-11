@@ -10,11 +10,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     {
         [EnumMember(Value = "writer_perms_required")]
         #pragma warning disable CS1591
-        Writer_perms_required,
+        WriterPermsRequired,
         #pragma warning restore CS1591
         [EnumMember(Value = "admin_perms_required")]
         #pragma warning disable CS1591
-        Admin_perms_required,
+        AdminPermsRequired,
         #pragma warning restore CS1591
     }
 }

@@ -30,7 +30,6 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public PhoneNumberDynamicVariableTransferDestination()
         {
             AdditionalData = new Dictionary<string, object>();
-            Type = global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberDynamicVariableTransferDestination_type.Phone_dynamic_variable;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

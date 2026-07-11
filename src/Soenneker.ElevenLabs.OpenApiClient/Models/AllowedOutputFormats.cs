@@ -10,87 +10,87 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     {
         [EnumMember(Value = "mp3_22050_32")]
         #pragma warning disable CS1591
-        Mp3_22050_32,
+        Mp32205032,
         #pragma warning restore CS1591
         [EnumMember(Value = "mp3_24000_48")]
         #pragma warning disable CS1591
-        Mp3_24000_48,
+        Mp32400048,
         #pragma warning restore CS1591
         [EnumMember(Value = "mp3_44100_32")]
         #pragma warning disable CS1591
-        Mp3_44100_32,
+        Mp34410032,
         #pragma warning restore CS1591
         [EnumMember(Value = "mp3_44100_64")]
         #pragma warning disable CS1591
-        Mp3_44100_64,
+        Mp34410064,
         #pragma warning restore CS1591
         [EnumMember(Value = "mp3_44100_96")]
         #pragma warning disable CS1591
-        Mp3_44100_96,
+        Mp34410096,
         #pragma warning restore CS1591
         [EnumMember(Value = "mp3_44100_128")]
         #pragma warning disable CS1591
-        Mp3_44100_128,
+        Mp344100128,
         #pragma warning restore CS1591
         [EnumMember(Value = "mp3_44100_192")]
         #pragma warning disable CS1591
-        Mp3_44100_192,
+        Mp344100192,
         #pragma warning restore CS1591
         [EnumMember(Value = "pcm_8000")]
         #pragma warning disable CS1591
-        Pcm_8000,
+        Pcm8000,
         #pragma warning restore CS1591
         [EnumMember(Value = "pcm_16000")]
         #pragma warning disable CS1591
-        Pcm_16000,
+        Pcm16000,
         #pragma warning restore CS1591
         [EnumMember(Value = "pcm_22050")]
         #pragma warning disable CS1591
-        Pcm_22050,
+        Pcm22050,
         #pragma warning restore CS1591
         [EnumMember(Value = "pcm_24000")]
         #pragma warning disable CS1591
-        Pcm_24000,
+        Pcm24000,
         #pragma warning restore CS1591
         [EnumMember(Value = "pcm_32000")]
         #pragma warning disable CS1591
-        Pcm_32000,
+        Pcm32000,
         #pragma warning restore CS1591
         [EnumMember(Value = "pcm_44100")]
         #pragma warning disable CS1591
-        Pcm_44100,
+        Pcm44100,
         #pragma warning restore CS1591
         [EnumMember(Value = "pcm_48000")]
         #pragma warning disable CS1591
-        Pcm_48000,
+        Pcm48000,
         #pragma warning restore CS1591
         [EnumMember(Value = "ulaw_8000")]
         #pragma warning disable CS1591
-        Ulaw_8000,
+        Ulaw8000,
         #pragma warning restore CS1591
         [EnumMember(Value = "alaw_8000")]
         #pragma warning disable CS1591
-        Alaw_8000,
+        Alaw8000,
         #pragma warning restore CS1591
         [EnumMember(Value = "opus_48000_32")]
         #pragma warning disable CS1591
-        Opus_48000_32,
+        Opus4800032,
         #pragma warning restore CS1591
         [EnumMember(Value = "opus_48000_64")]
         #pragma warning disable CS1591
-        Opus_48000_64,
+        Opus4800064,
         #pragma warning restore CS1591
         [EnumMember(Value = "opus_48000_96")]
         #pragma warning disable CS1591
-        Opus_48000_96,
+        Opus4800096,
         #pragma warning restore CS1591
         [EnumMember(Value = "opus_48000_128")]
         #pragma warning disable CS1591
-        Opus_48000_128,
+        Opus48000128,
         #pragma warning restore CS1591
         [EnumMember(Value = "opus_48000_192")]
         #pragma warning disable CS1591
-        Opus_48000_192,
+        Opus48000192,
         #pragma warning restore CS1591
     }
 }

@@ -10,7 +10,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     {
         [EnumMember(Value = "delete_location")]
         #pragma warning disable CS1591
-        Delete_location,
+        DeleteLocation,
         #pragma warning restore CS1591
     }
 }

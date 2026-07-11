@@ -17,10 +17,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The asr property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ASRConversationalConfig? Asr { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AsrConversationalConfig? Asr { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ASRConversationalConfig Asr { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AsrConversationalConfig Asr { get; set; }
 #endif
         /// <summary>The call_limits property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -89,10 +89,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The tts property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.TTSConversationalConfigInput? Tts { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.TtsConversationalConfigInput? Tts { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.TTSConversationalConfigInput Tts { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.TtsConversationalConfigInput Tts { get; set; }
 #endif
         /// <summary>The turn property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -129,7 +129,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "asr", n => { Asr = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ASRConversationalConfig>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ASRConversationalConfig.CreateFromDiscriminatorValue); } },
+                { "asr", n => { Asr = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AsrConversationalConfig>(global::Soenneker.ElevenLabs.OpenApiClient.Models.AsrConversationalConfig.CreateFromDiscriminatorValue); } },
                 { "call_limits", n => { CallLimits = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentCallLimits>(global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentCallLimits.CreateFromDiscriminatorValue); } },
                 { "conversation", n => { Conversation = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationConfigInput>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationConfigInput.CreateFromDiscriminatorValue); } },
                 { "language", n => { Language = n.GetStringValue(); } },
@@ -138,7 +138,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "privacy", n => { Privacy = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PrivacyConfigInput>(global::Soenneker.ElevenLabs.OpenApiClient.Models.PrivacyConfigInput.CreateFromDiscriminatorValue); } },
                 { "speech_engine", n => { SpeechEngine = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechEngineConfig>(global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechEngineConfig.CreateFromDiscriminatorValue); } },
                 { "tags", n => { Tags = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "tts", n => { Tts = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TTSConversationalConfigInput>(global::Soenneker.ElevenLabs.OpenApiClient.Models.TTSConversationalConfigInput.CreateFromDiscriminatorValue); } },
+                { "tts", n => { Tts = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TtsConversationalConfigInput>(global::Soenneker.ElevenLabs.OpenApiClient.Models.TtsConversationalConfigInput.CreateFromDiscriminatorValue); } },
                 { "turn", n => { Turn = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BaseTurnConfig>(global::Soenneker.ElevenLabs.OpenApiClient.Models.BaseTurnConfig.CreateFromDiscriminatorValue); } },
             };
         }
@@ -149,7 +149,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ASRConversationalConfig>("asr", Asr);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AsrConversationalConfig>("asr", Asr);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentCallLimits>("call_limits", CallLimits);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationConfigInput>("conversation", Conversation);
             writer.WriteStringValue("language", Language);
@@ -158,7 +158,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PrivacyConfigInput>("privacy", Privacy);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechEngineConfig>("speech_engine", SpeechEngine);
             writer.WriteCollectionOfPrimitiveValues<string>("tags", Tags);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TTSConversationalConfigInput>("tts", Tts);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TtsConversationalConfigInput>("tts", Tts);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BaseTurnConfig>("turn", Turn);
             writer.WriteAdditionalData(AdditionalData);
         }

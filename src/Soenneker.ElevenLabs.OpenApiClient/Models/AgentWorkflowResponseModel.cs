@@ -17,18 +17,18 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The edges property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentWorkflowResponseModel_edges? Edges { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentWorkflowResponseModelEdgesProperty? Edges { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentWorkflowResponseModel_edges Edges { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentWorkflowResponseModelEdgesProperty Edges { get; set; }
 #endif
         /// <summary>The nodes property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentWorkflowResponseModel_nodes? Nodes { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentWorkflowResponseModelNodesProperty? Nodes { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentWorkflowResponseModel_nodes Nodes { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentWorkflowResponseModelNodesProperty Nodes { get; set; }
 #endif
         /// <summary>Whether to prevent loops in the workflow execution.</summary>
         public bool? PreventSubagentLoops { get; set; }
@@ -38,6 +38,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public AgentWorkflowResponseModel()
         {
             AdditionalData = new Dictionary<string, object>();
+            PreventSubagentLoops = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -57,8 +58,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "edges", n => { Edges = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentWorkflowResponseModel_edges>(global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentWorkflowResponseModel_edges.CreateFromDiscriminatorValue); } },
-                { "nodes", n => { Nodes = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentWorkflowResponseModel_nodes>(global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentWorkflowResponseModel_nodes.CreateFromDiscriminatorValue); } },
+                { "edges", n => { Edges = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentWorkflowResponseModelEdgesProperty>(global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentWorkflowResponseModelEdgesProperty.CreateFromDiscriminatorValue); } },
+                { "nodes", n => { Nodes = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentWorkflowResponseModelNodesProperty>(global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentWorkflowResponseModelNodesProperty.CreateFromDiscriminatorValue); } },
                 { "prevent_subagent_loops", n => { PreventSubagentLoops = n.GetBoolValue(); } },
             };
         }
@@ -69,8 +70,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentWorkflowResponseModel_edges>("edges", Edges);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentWorkflowResponseModel_nodes>("nodes", Nodes);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentWorkflowResponseModelEdgesProperty>("edges", Edges);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentWorkflowResponseModelNodesProperty>("nodes", Nodes);
             writer.WriteBoolValue("prevent_subagent_loops", PreventSubagentLoops);
             writer.WriteAdditionalData(AdditionalData);
         }

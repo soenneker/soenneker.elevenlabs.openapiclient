@@ -49,22 +49,22 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public string Name { get; set; }
 #endif
         /// <summary>The state of the chapter.</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ChapterResponseModel_state? State { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ChapterResponseModelState? State { get; set; }
         /// <summary>The statistics of the chapter.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ChapterStatisticsResponseModel? Statistics { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ChapterResponseModelStatistics? Statistics { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ChapterStatisticsResponseModel Statistics { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ChapterResponseModelStatistics Statistics { get; set; }
 #endif
         /// <summary>List of voice ids used by the chapter</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Voice_Ids? VoiceIds { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ChapterResponseModelVoiceIds? VoiceIds { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Voice_Ids VoiceIds { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ChapterResponseModelVoiceIds VoiceIds { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ChapterResponseModel"/> and sets the default values.
@@ -99,9 +99,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "last_conversion_date_unix", n => { LastConversionDateUnix = n.GetIntValue(); } },
                 { "last_conversion_error", n => { LastConversionError = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "state", n => { State = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ChapterResponseModel_state>(); } },
-                { "statistics", n => { Statistics = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ChapterStatisticsResponseModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ChapterStatisticsResponseModel.CreateFromDiscriminatorValue); } },
-                { "voice_ids", n => { VoiceIds = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Voice_Ids>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Voice_Ids.CreateFromDiscriminatorValue); } },
+                { "state", n => { State = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ChapterResponseModelState>(); } },
+                { "statistics", n => { Statistics = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ChapterResponseModelStatistics>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ChapterResponseModelStatistics.CreateFromDiscriminatorValue); } },
+                { "voice_ids", n => { VoiceIds = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ChapterResponseModelVoiceIds>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ChapterResponseModelVoiceIds.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -119,9 +119,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteIntValue("last_conversion_date_unix", LastConversionDateUnix);
             writer.WriteStringValue("last_conversion_error", LastConversionError);
             writer.WriteStringValue("name", Name);
-            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ChapterResponseModel_state>("state", State);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ChapterStatisticsResponseModel>("statistics", Statistics);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Voice_Ids>("voice_ids", VoiceIds);
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ChapterResponseModelState>("state", State);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ChapterResponseModelStatistics>("statistics", Statistics);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ChapterResponseModelVoiceIds>("voice_ids", VoiceIds);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

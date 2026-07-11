@@ -16,7 +16,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The duration of the section in milliseconds. Must be between 3000ms and 120000ms.</summary>
         public int? DurationMs { get; set; }
-        /// <summary>The lyrics of the section. Max 200 characters per line.</summary>
+        /// <summary>The lyrics of the section. Max 30 lines per section and max 200 characters per line.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Lines { get; set; }
@@ -48,13 +48,13 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public string SectionName { get; set; }
 #endif
-        /// <summary>Optional source to extract the section from. Used for inpainting. Only available to enterprise clients with access to the inpainting feature.</summary>
+        /// <summary>Optional source to extract the section from. Used for inpainting.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SectionSource? SourceFrom { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SongSectionSourceFrom? SourceFrom { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SectionSource SourceFrom { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SongSectionSourceFrom SourceFrom { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.SongSection"/> and sets the default values.
@@ -86,7 +86,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "negative_local_styles", n => { NegativeLocalStyles = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "positive_local_styles", n => { PositiveLocalStyles = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "section_name", n => { SectionName = n.GetStringValue(); } },
-                { "source_from", n => { SourceFrom = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SectionSource>(global::Soenneker.ElevenLabs.OpenApiClient.Models.SectionSource.CreateFromDiscriminatorValue); } },
+                { "source_from", n => { SourceFrom = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SongSectionSourceFrom>(global::Soenneker.ElevenLabs.OpenApiClient.Models.SongSectionSourceFrom.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -101,7 +101,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("negative_local_styles", NegativeLocalStyles);
             writer.WriteCollectionOfPrimitiveValues<string>("positive_local_styles", PositiveLocalStyles);
             writer.WriteStringValue("section_name", SectionName);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SectionSource>("source_from", SourceFrom);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SongSectionSourceFrom>("source_from", SourceFrom);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -10,7 +10,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     {
         [EnumMember(Value = "update_location")]
         #pragma warning disable CS1591
-        Update_location,
+        UpdateLocation,
         #pragma warning restore CS1591
     }
 }

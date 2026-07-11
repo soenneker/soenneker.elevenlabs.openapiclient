@@ -22,7 +22,6 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public GetBookingSlugStatusParams()
         {
             AdditionalData = new Dictionary<string, object>();
-            SmbToolType = global::Soenneker.ElevenLabs.OpenApiClient.Models.GetBookingSlugStatusParams_smb_tool_type.Get_booking_slug_status;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

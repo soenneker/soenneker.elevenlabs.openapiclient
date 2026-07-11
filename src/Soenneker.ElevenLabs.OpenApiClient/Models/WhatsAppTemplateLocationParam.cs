@@ -30,7 +30,6 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public WhatsAppTemplateLocationParam()
         {
             AdditionalData = new Dictionary<string, object>();
-            Type = global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppTemplateLocationParam_type.Location;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

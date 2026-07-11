@@ -40,6 +40,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public AuthSettings()
         {
             AdditionalData = new Dictionary<string, object>();
+            EnableAuth = false;
+            RequireOriginHeader = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

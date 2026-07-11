@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.ElevenLabs.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseFileResponseModel"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseFolderResponseModel"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseTextResponseModel"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseURLResponseModel"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseFileResponseModel"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseFolderResponseModel"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseTextResponseModel"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseUrlResponseModel"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ResponseGetDocumentationFromKnowledgeBaseV1ConvaiKnowledgeBaseDocumentationIdGet : IComposedTypeWrapper, IParsable
@@ -37,13 +37,13 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseTextResponseModel GetKnowledgeBaseTextResponseModel { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseURLResponseModel"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseUrlResponseModel"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseURLResponseModel? GetKnowledgeBaseURLResponseModel { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseUrlResponseModel? GetKnowledgeBaseUrlResponseModel { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseURLResponseModel GetKnowledgeBaseURLResponseModel { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseUrlResponseModel GetKnowledgeBaseUrlResponseModel { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -67,9 +67,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             {
                 result.GetKnowledgeBaseTextResponseModel = new global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseTextResponseModel();
             }
-            else if("GetKnowledgeBaseURLResponseModel".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("GetKnowledgeBaseUrlResponseModel".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.GetKnowledgeBaseURLResponseModel = new global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseURLResponseModel();
+                result.GetKnowledgeBaseUrlResponseModel = new global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseUrlResponseModel();
             }
             return result;
         }
@@ -91,9 +91,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             {
                 return GetKnowledgeBaseTextResponseModel.GetFieldDeserializers();
             }
-            else if(GetKnowledgeBaseURLResponseModel != null)
+            else if(GetKnowledgeBaseUrlResponseModel != null)
             {
-                return GetKnowledgeBaseURLResponseModel.GetFieldDeserializers();
+                return GetKnowledgeBaseUrlResponseModel.GetFieldDeserializers();
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -116,9 +116,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             {
                 writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseTextResponseModel>(null, GetKnowledgeBaseTextResponseModel);
             }
-            else if(GetKnowledgeBaseURLResponseModel != null)
+            else if(GetKnowledgeBaseUrlResponseModel != null)
             {
-                writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseURLResponseModel>(null, GetKnowledgeBaseURLResponseModel);
+                writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseUrlResponseModel>(null, GetKnowledgeBaseUrlResponseModel);
             }
         }
     }

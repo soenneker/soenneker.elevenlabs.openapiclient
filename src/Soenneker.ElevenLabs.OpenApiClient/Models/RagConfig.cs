@@ -40,7 +40,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public RagConfig()
         {
             AdditionalData = new Dictionary<string, object>();
-            EmbeddingModel = global::Soenneker.ElevenLabs.OpenApiClient.Models.EmbeddingModelEnum.E5_mistral_7b_instruct;
+            Enabled = false;
+            MaxDocumentsLength = 50000;
+            MaxRetrievedRagChunksCount = 20;
+            MaxVectorDistance = 0.6;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

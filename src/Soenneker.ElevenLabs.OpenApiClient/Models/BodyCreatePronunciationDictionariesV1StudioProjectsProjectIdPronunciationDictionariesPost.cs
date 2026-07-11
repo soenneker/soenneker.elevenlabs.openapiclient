@@ -19,10 +19,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>A list of pronunciation dictionary locators (pronunciation_dictionary_id, version_id) encoded as a list of JSON strings for pronunciation dictionaries to be applied to the text. A list of json encoded strings is required as adding projects may occur through formData as opposed to jsonBody. To specify multiple dictionaries use multiple --form lines in your curl, such as --form &apos;pronunciation_dictionary_locators=&quot;{\&quot;pronunciation_dictionary_id\&quot;:\&quot;Vmd4Zor6fplcA7WrINey\&quot;,\&quot;version_id\&quot;:\&quot;hRPaxjlTdR7wFMhV4w0b\&quot;}&quot;&apos; --form &apos;pronunciation_dictionary_locators=&quot;{\&quot;pronunciation_dictionary_id\&quot;:\&quot;JzWtcGQMJ6bnlWwyMo7e\&quot;,\&quot;version_id\&quot;:\&quot;lbmwxiLu4q6txYxgdZqn\&quot;}&quot;&apos;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.PronunciationDictionaryVersionLocatorDBModel>? PronunciationDictionaryLocators { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.PronunciationDictionaryVersionLocatorDbModel>? PronunciationDictionaryLocators { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.PronunciationDictionaryVersionLocatorDBModel> PronunciationDictionaryLocators { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.PronunciationDictionaryVersionLocatorDbModel> PronunciationDictionaryLocators { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreatePronunciationDictionariesV1StudioProjectsProjectIdPronunciationDictionariesPost"/> and sets the default values.
@@ -30,6 +30,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public BodyCreatePronunciationDictionariesV1StudioProjectsProjectIdPronunciationDictionariesPost()
         {
             AdditionalData = new Dictionary<string, object>();
+            InvalidateAffectedText = true;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -50,7 +51,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "invalidate_affected_text", n => { InvalidateAffectedText = n.GetBoolValue(); } },
-                { "pronunciation_dictionary_locators", n => { PronunciationDictionaryLocators = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.PronunciationDictionaryVersionLocatorDBModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.PronunciationDictionaryVersionLocatorDBModel.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "pronunciation_dictionary_locators", n => { PronunciationDictionaryLocators = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.PronunciationDictionaryVersionLocatorDbModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.PronunciationDictionaryVersionLocatorDbModel.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -61,7 +62,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("invalidate_affected_text", InvalidateAffectedText);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.PronunciationDictionaryVersionLocatorDBModel>("pronunciation_dictionary_locators", PronunciationDictionaryLocators);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.PronunciationDictionaryVersionLocatorDbModel>("pronunciation_dictionary_locators", PronunciationDictionaryLocators);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -48,7 +48,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public DubbingTranscriptUtterance()
         {
             AdditionalData = new Dictionary<string, object>();
+            EndS = 0.0;
             SpeakerId = "unknown";
+            StartS = 0.0;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

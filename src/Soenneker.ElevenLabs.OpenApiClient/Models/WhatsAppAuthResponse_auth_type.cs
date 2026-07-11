@@ -10,7 +10,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     {
         [EnumMember(Value = "whatsapp_auth")]
         #pragma warning disable CS1591
-        Whatsapp_auth,
+        WhatsappAuth,
         #pragma warning restore CS1591
     }
 }

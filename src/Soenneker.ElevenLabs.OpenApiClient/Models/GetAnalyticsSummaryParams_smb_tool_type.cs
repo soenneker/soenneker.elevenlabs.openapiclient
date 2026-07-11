@@ -10,7 +10,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     {
         [EnumMember(Value = "get_analytics_summary")]
         #pragma warning disable CS1591
-        Get_analytics_summary,
+        GetAnalyticsSummary,
         #pragma warning restore CS1591
     }
 }

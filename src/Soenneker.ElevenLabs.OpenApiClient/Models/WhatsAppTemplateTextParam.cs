@@ -38,7 +38,6 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public WhatsAppTemplateTextParam()
         {
             AdditionalData = new Dictionary<string, object>();
-            Type = global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppTemplateTextParam_type.Text;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

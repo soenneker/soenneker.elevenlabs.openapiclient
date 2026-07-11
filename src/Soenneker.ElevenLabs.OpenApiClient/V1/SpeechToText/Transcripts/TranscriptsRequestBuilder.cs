@@ -17,14 +17,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.SpeechToText.Transcripts
     {
         /// <summary>Gets an item from the Soenneker.ElevenLabs.OpenApiClient.v1.speechToText.transcripts.item collection</summary>
         /// <param name="position">The unique ID of the transcript to retrieve</param>
-        /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.V1.SpeechToText.Transcripts.Item.WithTranscription_ItemRequestBuilder"/></returns>
-        public global::Soenneker.ElevenLabs.OpenApiClient.V1.SpeechToText.Transcripts.Item.WithTranscription_ItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.V1.SpeechToText.Transcripts.Item.WithTranscriptionItemRequestBuilder"/></returns>
+        public global::Soenneker.ElevenLabs.OpenApiClient.V1.SpeechToText.Transcripts.Item.WithTranscriptionItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("transcription_id", position);
-                return new global::Soenneker.ElevenLabs.OpenApiClient.V1.SpeechToText.Transcripts.Item.WithTranscription_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("transcriptionId", position);
+                return new global::Soenneker.ElevenLabs.OpenApiClient.V1.SpeechToText.Transcripts.Item.WithTranscriptionItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>

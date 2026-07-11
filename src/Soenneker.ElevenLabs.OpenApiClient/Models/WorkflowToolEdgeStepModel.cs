@@ -40,7 +40,6 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public WorkflowToolEdgeStepModel()
         {
             AdditionalData = new Dictionary<string, object>();
-            Type = global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkflowToolEdgeStepModel_type.Edge;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

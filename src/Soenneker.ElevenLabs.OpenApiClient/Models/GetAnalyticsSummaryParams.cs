@@ -23,7 +23,6 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public GetAnalyticsSummaryParams()
         {
             AdditionalData = new Dictionary<string, object>();
-            SmbToolType = global::Soenneker.ElevenLabs.OpenApiClient.Models.GetAnalyticsSummaryParams_smb_tool_type.Get_analytics_summary;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

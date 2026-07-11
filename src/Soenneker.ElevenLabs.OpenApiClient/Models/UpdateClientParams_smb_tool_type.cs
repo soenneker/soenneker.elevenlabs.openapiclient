@@ -10,7 +10,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     {
         [EnumMember(Value = "update_client")]
         #pragma warning disable CS1591
-        Update_client,
+        UpdateClient,
         #pragma warning restore CS1591
     }
 }

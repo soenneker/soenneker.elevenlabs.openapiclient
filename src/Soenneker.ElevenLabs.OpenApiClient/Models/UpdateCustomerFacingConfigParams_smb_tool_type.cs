@@ -10,7 +10,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     {
         [EnumMember(Value = "update_customer_facing_config")]
         #pragma warning disable CS1591
-        Update_customer_facing_config,
+        UpdateCustomerFacingConfig,
         #pragma warning restore CS1591
     }
 }

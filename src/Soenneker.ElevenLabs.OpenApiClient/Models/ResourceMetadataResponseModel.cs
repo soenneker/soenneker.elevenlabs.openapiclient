@@ -15,7 +15,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The access level for anonymous users. If None, the resource is not shared publicly.</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceMetadataResponseModel_anonymous_access_level_override? AnonymousAccessLevelOverride { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceMetadataResponseModelAnonymousAccessLevelOverride? AnonymousAccessLevelOverride { get; set; }
         /// <summary>The ID of the user who created the resource.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -45,10 +45,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>A mapping of roles to group IDs. When the resource is shared with a user, the group id is the user&apos;s id.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceMetadataResponseModel_role_to_group_ids? RoleToGroupIds { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceMetadataResponseModelRoleToGroupIdsProperty? RoleToGroupIds { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceMetadataResponseModel_role_to_group_ids RoleToGroupIds { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceMetadataResponseModelRoleToGroupIdsProperty RoleToGroupIds { get; set; }
 #endif
         /// <summary>List of options for sharing the resource further in the workspace. These are users who don&apos;t have access to the resource yet.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -83,12 +83,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "anonymous_access_level_override", n => { AnonymousAccessLevelOverride = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceMetadataResponseModel_anonymous_access_level_override>(); } },
+                { "anonymous_access_level_override", n => { AnonymousAccessLevelOverride = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceMetadataResponseModelAnonymousAccessLevelOverride>(); } },
                 { "creator_user_id", n => { CreatorUserId = n.GetStringValue(); } },
                 { "resource_id", n => { ResourceId = n.GetStringValue(); } },
                 { "resource_name", n => { ResourceName = n.GetStringValue(); } },
                 { "resource_type", n => { ResourceType = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceResourceType>(); } },
-                { "role_to_group_ids", n => { RoleToGroupIds = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceMetadataResponseModel_role_to_group_ids>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceMetadataResponseModel_role_to_group_ids.CreateFromDiscriminatorValue); } },
+                { "role_to_group_ids", n => { RoleToGroupIds = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceMetadataResponseModelRoleToGroupIdsProperty>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceMetadataResponseModelRoleToGroupIdsProperty.CreateFromDiscriminatorValue); } },
                 { "share_options", n => { ShareOptions = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.ShareOptionResponseModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ShareOptionResponseModel.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
@@ -99,12 +99,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceMetadataResponseModel_anonymous_access_level_override>("anonymous_access_level_override", AnonymousAccessLevelOverride);
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceMetadataResponseModelAnonymousAccessLevelOverride>("anonymous_access_level_override", AnonymousAccessLevelOverride);
             writer.WriteStringValue("creator_user_id", CreatorUserId);
             writer.WriteStringValue("resource_id", ResourceId);
             writer.WriteStringValue("resource_name", ResourceName);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceResourceType>("resource_type", ResourceType);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceMetadataResponseModel_role_to_group_ids>("role_to_group_ids", RoleToGroupIds);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceMetadataResponseModelRoleToGroupIdsProperty>("role_to_group_ids", RoleToGroupIds);
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.ShareOptionResponseModel>("share_options", ShareOptions);
             writer.WriteAdditionalData(AdditionalData);
         }

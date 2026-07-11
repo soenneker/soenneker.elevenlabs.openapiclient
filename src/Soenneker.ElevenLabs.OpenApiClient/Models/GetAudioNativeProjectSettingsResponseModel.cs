@@ -19,10 +19,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The settings of the project.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AudioNativeProjectSettingsResponseModel? Settings { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetAudioNativeProjectSettingsResponseModelSettings? Settings { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AudioNativeProjectSettingsResponseModel Settings { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetAudioNativeProjectSettingsResponseModelSettings Settings { get; set; }
 #endif
         /// <summary>The ID of the latest snapshot of the project.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -58,7 +58,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "enabled", n => { Enabled = n.GetBoolValue(); } },
-                { "settings", n => { Settings = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AudioNativeProjectSettingsResponseModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.AudioNativeProjectSettingsResponseModel.CreateFromDiscriminatorValue); } },
+                { "settings", n => { Settings = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetAudioNativeProjectSettingsResponseModelSettings>(global::Soenneker.ElevenLabs.OpenApiClient.Models.GetAudioNativeProjectSettingsResponseModelSettings.CreateFromDiscriminatorValue); } },
                 { "snapshot_id", n => { SnapshotId = n.GetStringValue(); } },
             };
         }
@@ -70,7 +70,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("enabled", Enabled);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AudioNativeProjectSettingsResponseModel>("settings", Settings);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetAudioNativeProjectSettingsResponseModelSettings>("settings", Settings);
             writer.WriteStringValue("snapshot_id", SnapshotId);
             writer.WriteAdditionalData(AdditionalData);
         }

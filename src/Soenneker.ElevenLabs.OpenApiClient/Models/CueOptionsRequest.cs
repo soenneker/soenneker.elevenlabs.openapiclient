@@ -32,6 +32,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public CueOptionsRequest()
         {
             AdditionalData = new Dictionary<string, object>();
+            MaxCharsPerLine = 42;
+            MaxDurationMs = 7000;
+            MaxLinesPerCue = 2;
+            MinDurationMs = 1000;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

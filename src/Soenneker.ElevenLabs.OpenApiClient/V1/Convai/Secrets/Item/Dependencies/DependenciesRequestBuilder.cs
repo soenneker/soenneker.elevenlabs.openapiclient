@@ -10,21 +10,21 @@ using System;
 namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Secrets.Item.Dependencies
 {
     /// <summary>
-    /// Builds and executes requests for operations under \v1\convai\secrets\{secret_id}\dependencies
+    /// Builds and executes requests for operations under \v1\convai\secrets\{secretId}\dependencies
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class DependenciesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.ElevenLabs.OpenApiClient.v1.convai.secrets.item.dependencies.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
-        /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Secrets.Item.Dependencies.Item.WithResource_typeItemRequestBuilder"/></returns>
-        public global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Secrets.Item.Dependencies.Item.WithResource_typeItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Secrets.Item.Dependencies.Item.WithResourceTypeItemRequestBuilder"/></returns>
+        public global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Secrets.Item.Dependencies.Item.WithResourceTypeItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("resource_type", position);
-                return new global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Secrets.Item.Dependencies.Item.WithResource_typeItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("resourceType", position);
+                return new global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Secrets.Item.Dependencies.Item.WithResourceTypeItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -32,7 +32,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Secrets.Item.Dependencies
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DependenciesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/convai/secrets/{secret_id}/dependencies", pathParameters)
+        public DependenciesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/convai/secrets/{secretId}/dependencies", pathParameters)
         {
         }
         /// <summary>
@@ -40,7 +40,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Secrets.Item.Dependencies
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DependenciesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/convai/secrets/{secret_id}/dependencies", rawUrl)
+        public DependenciesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/convai/secrets/{secretId}/dependencies", rawUrl)
         {
         }
     }

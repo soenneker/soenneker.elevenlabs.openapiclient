@@ -17,14 +17,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Productions.Orders.Languages
     {
         /// <summary>Gets an item from the Soenneker.ElevenLabs.OpenApiClient.v1.productions.orders.languages.item collection</summary>
         /// <param name="position">The kind of order item.</param>
-        /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.V1.Productions.Orders.Languages.Item.WithOrder_item_kindItemRequestBuilder"/></returns>
-        public global::Soenneker.ElevenLabs.OpenApiClient.V1.Productions.Orders.Languages.Item.WithOrder_item_kindItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.V1.Productions.Orders.Languages.Item.WithOrderItemKindItemRequestBuilder"/></returns>
+        public global::Soenneker.ElevenLabs.OpenApiClient.V1.Productions.Orders.Languages.Item.WithOrderItemKindItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("order_item_kind", position);
-                return new global::Soenneker.ElevenLabs.OpenApiClient.V1.Productions.Orders.Languages.Item.WithOrder_item_kindItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("orderItemKind", position);
+                return new global::Soenneker.ElevenLabs.OpenApiClient.V1.Productions.Orders.Languages.Item.WithOrderItemKindItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>

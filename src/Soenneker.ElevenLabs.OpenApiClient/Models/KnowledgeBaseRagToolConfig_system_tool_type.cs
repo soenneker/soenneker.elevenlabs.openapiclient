@@ -10,7 +10,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     {
         [EnumMember(Value = "knowledge_base_rag")]
         #pragma warning disable CS1591
-        Knowledge_base_rag,
+        KnowledgeBaseRag,
         #pragma warning restore CS1591
     }
 }

@@ -34,6 +34,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public ConversationInitiationClientDataConfigOutput()
         {
             AdditionalData = new Dictionary<string, object>();
+            CustomLlmExtraBody = false;
+            EnableConversationInitiationClientDataFromWebhook = false;
+            EnableStartingWorkflowNodeIdFromClient = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -22,7 +22,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "ultra_lossless")]
         #pragma warning disable CS1591
-        Ultra_lossless,
+        UltraLossless,
         #pragma warning restore CS1591
     }
 }

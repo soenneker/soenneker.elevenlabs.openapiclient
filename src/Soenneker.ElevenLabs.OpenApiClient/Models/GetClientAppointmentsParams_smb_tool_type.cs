@@ -10,7 +10,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     {
         [EnumMember(Value = "get_client_appointments")]
         #pragma warning disable CS1591
-        Get_client_appointments,
+        GetClientAppointments,
         #pragma warning restore CS1591
     }
 }

@@ -10,11 +10,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     {
         [EnumMember(Value = "mcp_server")]
         #pragma warning disable CS1591
-        Mcp_server,
+        McpServer,
         #pragma warning restore CS1591
         [EnumMember(Value = "mcp_integration")]
         #pragma warning disable CS1591
-        Mcp_integration,
+        McpIntegration,
         #pragma warning restore CS1591
     }
 }

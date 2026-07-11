@@ -17,10 +17,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Conversation config for the draft</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateAgentDraftV1ConvaiAgentsAgentIdDraftsPost_conversation_config? ConversationConfig { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateAgentDraftV1ConvaiAgentsAgentIdDraftsPostConversationConfigProperty? ConversationConfig { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateAgentDraftV1ConvaiAgentsAgentIdDraftsPost_conversation_config ConversationConfig { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateAgentDraftV1ConvaiAgentsAgentIdDraftsPostConversationConfigProperty ConversationConfig { get; set; }
 #endif
         /// <summary>Name for the draft</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -33,18 +33,18 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Platform settings for the draft</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateAgentDraftV1ConvaiAgentsAgentIdDraftsPost_platform_settings? PlatformSettings { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateAgentDraftV1ConvaiAgentsAgentIdDraftsPostPlatformSettingsProperty? PlatformSettings { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateAgentDraftV1ConvaiAgentsAgentIdDraftsPost_platform_settings PlatformSettings { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateAgentDraftV1ConvaiAgentsAgentIdDraftsPostPlatformSettingsProperty PlatformSettings { get; set; }
 #endif
         /// <summary>Tags to help classify and filter the agent</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Tags? Tags { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateAgentDraftV1ConvaiAgentsAgentIdDraftsPostTags? Tags { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Tags Tags { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateAgentDraftV1ConvaiAgentsAgentIdDraftsPostTags Tags { get; set; }
 #endif
         /// <summary>The workflow property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -79,10 +79,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "conversation_config", n => { ConversationConfig = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateAgentDraftV1ConvaiAgentsAgentIdDraftsPost_conversation_config>(global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateAgentDraftV1ConvaiAgentsAgentIdDraftsPost_conversation_config.CreateFromDiscriminatorValue); } },
+                { "conversation_config", n => { ConversationConfig = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateAgentDraftV1ConvaiAgentsAgentIdDraftsPostConversationConfigProperty>(global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateAgentDraftV1ConvaiAgentsAgentIdDraftsPostConversationConfigProperty.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "platform_settings", n => { PlatformSettings = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateAgentDraftV1ConvaiAgentsAgentIdDraftsPost_platform_settings>(global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateAgentDraftV1ConvaiAgentsAgentIdDraftsPost_platform_settings.CreateFromDiscriminatorValue); } },
-                { "tags", n => { Tags = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Tags>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Tags.CreateFromDiscriminatorValue); } },
+                { "platform_settings", n => { PlatformSettings = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateAgentDraftV1ConvaiAgentsAgentIdDraftsPostPlatformSettingsProperty>(global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateAgentDraftV1ConvaiAgentsAgentIdDraftsPostPlatformSettingsProperty.CreateFromDiscriminatorValue); } },
+                { "tags", n => { Tags = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateAgentDraftV1ConvaiAgentsAgentIdDraftsPostTags>(global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateAgentDraftV1ConvaiAgentsAgentIdDraftsPostTags.CreateFromDiscriminatorValue); } },
                 { "workflow", n => { Workflow = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentWorkflowRequestModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentWorkflowRequestModel.CreateFromDiscriminatorValue); } },
             };
         }
@@ -93,10 +93,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateAgentDraftV1ConvaiAgentsAgentIdDraftsPost_conversation_config>("conversation_config", ConversationConfig);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateAgentDraftV1ConvaiAgentsAgentIdDraftsPostConversationConfigProperty>("conversation_config", ConversationConfig);
             writer.WriteStringValue("name", Name);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateAgentDraftV1ConvaiAgentsAgentIdDraftsPost_platform_settings>("platform_settings", PlatformSettings);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Tags>("tags", Tags);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateAgentDraftV1ConvaiAgentsAgentIdDraftsPostPlatformSettingsProperty>("platform_settings", PlatformSettings);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateAgentDraftV1ConvaiAgentsAgentIdDraftsPostTags>("tags", Tags);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentWorkflowRequestModel>("workflow", Workflow);
             writer.WriteAdditionalData(AdditionalData);
         }

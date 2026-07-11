@@ -16,10 +16,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Activity ID</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceAuditLogEntryResponse.WorkspaceAuditLogEntryResponse_activity_id? ActivityId { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceAuditLogEntryResponseActivityId? ActivityId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceAuditLogEntryResponse.WorkspaceAuditLogEntryResponse_activity_id ActivityId { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceAuditLogEntryResponseActivityId ActivityId { get; set; }
 #endif
         /// <summary>Activity name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -62,18 +62,18 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Device information</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.DeviceModel? Device { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceAuditLogEntryResponseDevice? Device { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.DeviceModel Device { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceAuditLogEntryResponseDevice Device { get; set; }
 #endif
         /// <summary>HTTP request details</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.HttpRequestModel? HttpRequest { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceAuditLogEntryResponseHttpRequest? HttpRequest { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.HttpRequestModel HttpRequest { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceAuditLogEntryResponseHttpRequest HttpRequest { get; set; }
 #endif
         /// <summary>Firestore document ID</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -94,10 +94,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Event metadata</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceAuditLogEntryResponse_metadata? Metadata { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceAuditLogEntryResponseMetadataProperty? Metadata { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceAuditLogEntryResponse_metadata Metadata { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceAuditLogEntryResponseMetadataProperty Metadata { get; set; }
 #endif
         /// <summary>&quot;OCSF Severity levels.Spec: https://schema.ocsf.io/1.6.0/objects/severity_id&quot;</summary>
         public int? SeverityId { get; set; }
@@ -126,10 +126,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Attributes not mapped to OCSF</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceAuditLogEntryResponse_unmapped? Unmapped { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceAuditLogEntryResponseUnmappedProperty? Unmapped { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceAuditLogEntryResponse_unmapped Unmapped { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceAuditLogEntryResponseUnmappedProperty Unmapped { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceAuditLogEntryResponse"/> and sets the default values.
@@ -138,6 +138,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             AdditionalData = new Dictionary<string, object>();
             CategoryName = "Identity & Access Management";
+            CategoryUid = 3;
+            ClassUid = 0;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -157,25 +159,25 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "activity_id", n => { ActivityId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceAuditLogEntryResponse.WorkspaceAuditLogEntryResponse_activity_id>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceAuditLogEntryResponse.WorkspaceAuditLogEntryResponse_activity_id.CreateFromDiscriminatorValue); } },
+                { "activity_id", n => { ActivityId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceAuditLogEntryResponseActivityId>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceAuditLogEntryResponseActivityId.CreateFromDiscriminatorValue); } },
                 { "activity_name", n => { ActivityName = n.GetStringValue(); } },
                 { "actor", n => { Actor = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ActorModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ActorModel.CreateFromDiscriminatorValue); } },
                 { "category_name", n => { CategoryName = n.GetStringValue(); } },
                 { "category_uid", n => { CategoryUid = n.GetIntValue(); } },
                 { "class_name", n => { ClassName = n.GetStringValue(); } },
                 { "class_uid", n => { ClassUid = n.GetIntValue(); } },
-                { "device", n => { Device = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DeviceModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.DeviceModel.CreateFromDiscriminatorValue); } },
-                { "http_request", n => { HttpRequest = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.HttpRequestModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.HttpRequestModel.CreateFromDiscriminatorValue); } },
+                { "device", n => { Device = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceAuditLogEntryResponseDevice>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceAuditLogEntryResponseDevice.CreateFromDiscriminatorValue); } },
+                { "http_request", n => { HttpRequest = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceAuditLogEntryResponseHttpRequest>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceAuditLogEntryResponseHttpRequest.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "message", n => { Message = n.GetStringValue(); } },
-                { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceAuditLogEntryResponse_metadata>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceAuditLogEntryResponse_metadata.CreateFromDiscriminatorValue); } },
+                { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceAuditLogEntryResponseMetadataProperty>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceAuditLogEntryResponseMetadataProperty.CreateFromDiscriminatorValue); } },
                 { "severity_id", n => { SeverityId = n.GetIntValue(); } },
                 { "status_id", n => { StatusId = n.GetIntValue(); } },
                 { "time", n => { Time = n.GetIntValue(); } },
                 { "time_dt", n => { TimeDt = n.GetStringValue(); } },
                 { "type_name", n => { TypeName = n.GetStringValue(); } },
                 { "type_uid", n => { TypeUid = n.GetIntValue(); } },
-                { "unmapped", n => { Unmapped = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceAuditLogEntryResponse_unmapped>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceAuditLogEntryResponse_unmapped.CreateFromDiscriminatorValue); } },
+                { "unmapped", n => { Unmapped = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceAuditLogEntryResponseUnmappedProperty>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceAuditLogEntryResponseUnmappedProperty.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -185,107 +187,23 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceAuditLogEntryResponse.WorkspaceAuditLogEntryResponse_activity_id>("activity_id", ActivityId);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceAuditLogEntryResponseActivityId>("activity_id", ActivityId);
             writer.WriteStringValue("activity_name", ActivityName);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ActorModel>("actor", Actor);
             writer.WriteStringValue("category_name", CategoryName);
             writer.WriteIntValue("category_uid", CategoryUid);
             writer.WriteStringValue("class_name", ClassName);
             writer.WriteIntValue("class_uid", ClassUid);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DeviceModel>("device", Device);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.HttpRequestModel>("http_request", HttpRequest);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceAuditLogEntryResponseDevice>("device", Device);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceAuditLogEntryResponseHttpRequest>("http_request", HttpRequest);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("message", Message);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceAuditLogEntryResponse_metadata>("metadata", Metadata);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceAuditLogEntryResponseMetadataProperty>("metadata", Metadata);
             writer.WriteIntValue("severity_id", SeverityId);
             writer.WriteIntValue("status_id", StatusId);
             writer.WriteIntValue("time", Time);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceAuditLogEntryResponse_unmapped>("unmapped", Unmapped);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceAuditLogEntryResponseUnmappedProperty>("unmapped", Unmapped);
             writer.WriteAdditionalData(AdditionalData);
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.AccountChangeActivityId_Wrapper"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.AuthenticationActivityId_Wrapper"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.EntityManagementActivityId_Wrapper"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.GroupManagementActivityId_Wrapper"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.UserAccessManagementActivityId_Wrapper"/>
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class WorkspaceAuditLogEntryResponse_activity_id : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.AccountChangeActivityId_Wrapper"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.ElevenLabs.OpenApiClient.Models.AccountChangeActivityId_Wrapper? AccountChangeActivityIdWrapper { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.ElevenLabs.OpenApiClient.Models.AccountChangeActivityId_Wrapper AccountChangeActivityIdWrapper { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.AuthenticationActivityId_Wrapper"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.ElevenLabs.OpenApiClient.Models.AuthenticationActivityId_Wrapper? AuthenticationActivityIdWrapper { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.ElevenLabs.OpenApiClient.Models.AuthenticationActivityId_Wrapper AuthenticationActivityIdWrapper { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.EntityManagementActivityId_Wrapper"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.ElevenLabs.OpenApiClient.Models.EntityManagementActivityId_Wrapper? EntityManagementActivityIdWrapper { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.ElevenLabs.OpenApiClient.Models.EntityManagementActivityId_Wrapper EntityManagementActivityIdWrapper { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.GroupManagementActivityId_Wrapper"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.ElevenLabs.OpenApiClient.Models.GroupManagementActivityId_Wrapper? GroupManagementActivityIdWrapper { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.ElevenLabs.OpenApiClient.Models.GroupManagementActivityId_Wrapper GroupManagementActivityIdWrapper { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.UserAccessManagementActivityId_Wrapper"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.ElevenLabs.OpenApiClient.Models.UserAccessManagementActivityId_Wrapper? UserAccessManagementActivityIdWrapper { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.ElevenLabs.OpenApiClient.Models.UserAccessManagementActivityId_Wrapper UserAccessManagementActivityIdWrapper { get; set; }
-#endif
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceAuditLogEntryResponse.WorkspaceAuditLogEntryResponse_activity_id"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceAuditLogEntryResponse.WorkspaceAuditLogEntryResponse_activity_id CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var result = new global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceAuditLogEntryResponse.WorkspaceAuditLogEntryResponse_activity_id();
-                result.AccountChangeActivityIdWrapper = new global::Soenneker.ElevenLabs.OpenApiClient.Models.AccountChangeActivityId_Wrapper();
-                result.AuthenticationActivityIdWrapper = new global::Soenneker.ElevenLabs.OpenApiClient.Models.AuthenticationActivityId_Wrapper();
-                result.EntityManagementActivityIdWrapper = new global::Soenneker.ElevenLabs.OpenApiClient.Models.EntityManagementActivityId_Wrapper();
-                result.GroupManagementActivityIdWrapper = new global::Soenneker.ElevenLabs.OpenApiClient.Models.GroupManagementActivityId_Wrapper();
-                result.UserAccessManagementActivityIdWrapper = new global::Soenneker.ElevenLabs.OpenApiClient.Models.UserAccessManagementActivityId_Wrapper();
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                if(AccountChangeActivityIdWrapper != null || AuthenticationActivityIdWrapper != null || EntityManagementActivityIdWrapper != null || GroupManagementActivityIdWrapper != null || UserAccessManagementActivityIdWrapper != null)
-                {
-                    return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(AccountChangeActivityIdWrapper, AuthenticationActivityIdWrapper, EntityManagementActivityIdWrapper, GroupManagementActivityIdWrapper, UserAccessManagementActivityIdWrapper);
-                }
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AccountChangeActivityId_Wrapper>(null, AccountChangeActivityIdWrapper, AuthenticationActivityIdWrapper, EntityManagementActivityIdWrapper, GroupManagementActivityIdWrapper, UserAccessManagementActivityIdWrapper);
-            }
         }
     }
 }

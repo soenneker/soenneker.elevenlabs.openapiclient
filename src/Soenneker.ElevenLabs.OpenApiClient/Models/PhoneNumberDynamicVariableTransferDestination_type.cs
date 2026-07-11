@@ -10,7 +10,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     {
         [EnumMember(Value = "phone_dynamic_variable")]
         #pragma warning disable CS1591
-        Phone_dynamic_variable,
+        PhoneDynamicVariable,
         #pragma warning restore CS1591
     }
 }

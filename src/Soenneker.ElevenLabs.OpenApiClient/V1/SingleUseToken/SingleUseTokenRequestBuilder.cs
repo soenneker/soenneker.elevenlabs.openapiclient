@@ -17,14 +17,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.SingleUseToken
     {
         /// <summary>Gets an item from the Soenneker.ElevenLabs.OpenApiClient.v1.singleUseToken.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
-        /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.V1.SingleUseToken.Item.WithToken_typeItemRequestBuilder"/></returns>
-        public global::Soenneker.ElevenLabs.OpenApiClient.V1.SingleUseToken.Item.WithToken_typeItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.V1.SingleUseToken.Item.WithTokenTypeItemRequestBuilder"/></returns>
+        public global::Soenneker.ElevenLabs.OpenApiClient.V1.SingleUseToken.Item.WithTokenTypeItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("token_type", position);
-                return new global::Soenneker.ElevenLabs.OpenApiClient.V1.SingleUseToken.Item.WithToken_typeItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("tokenType", position);
+                return new global::Soenneker.ElevenLabs.OpenApiClient.V1.SingleUseToken.Item.WithTokenTypeItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>

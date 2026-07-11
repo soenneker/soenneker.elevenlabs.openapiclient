@@ -10,11 +10,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     {
         [EnumMember(Value = "call_real_tool")]
         #pragma warning disable CS1591
-        Call_real_tool,
+        CallRealTool,
         #pragma warning restore CS1591
         [EnumMember(Value = "raise_error")]
         #pragma warning disable CS1591
-        Raise_error,
+        RaiseError,
         #pragma warning restore CS1591
     }
 }

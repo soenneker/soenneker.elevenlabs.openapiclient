@@ -22,7 +22,6 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public LanguageDetectionToolConfig()
         {
             AdditionalData = new Dictionary<string, object>();
-            SystemToolType = global::Soenneker.ElevenLabs.OpenApiClient.Models.LanguageDetectionToolConfig_system_tool_type.Language_detection;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -23,7 +23,6 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public SkipTurnToolConfig()
         {
             AdditionalData = new Dictionary<string, object>();
-            SystemToolType = global::Soenneker.ElevenLabs.OpenApiClient.Models.SkipTurnToolConfig_system_tool_type.Skip_turn;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

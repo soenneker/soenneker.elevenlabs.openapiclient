@@ -19,15 +19,15 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.PhoneNumbers
     public partial class PhoneNumbersRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.ElevenLabs.OpenApiClient.v1.convai.phoneNumbers.item collection</summary>
-        /// <param name="position">The id of an agent. This is returned on agent creation.</param>
-        /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.PhoneNumbers.Item.WithPhone_number_ItemRequestBuilder"/></returns>
-        public global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.PhoneNumbers.Item.WithPhone_number_ItemRequestBuilder this[string position]
+        /// <param name="position">The phone number ID. This is returned when a phone number is imported.</param>
+        /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.PhoneNumbers.Item.WithPhoneNumberItemRequestBuilder"/></returns>
+        public global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.PhoneNumbers.Item.WithPhoneNumberItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("phone_number_id", position);
-                return new global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.PhoneNumbers.Item.WithPhone_number_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("phoneNumberId", position);
+                return new global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.PhoneNumbers.Item.WithPhoneNumberItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -35,7 +35,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.PhoneNumbers
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PhoneNumbersRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/convai/phone-numbers", pathParameters)
+        public PhoneNumbersRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/convai/phone-numbers{?agent_id*,branch_id*,provider*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,31 +43,31 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.PhoneNumbers
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PhoneNumbersRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/convai/phone-numbers", rawUrl)
+        public PhoneNumbersRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/convai/phone-numbers{?agent_id*,branch_id*,provider*}", rawUrl)
         {
         }
         /// <summary>
         /// Retrieve all Phone Numbers
         /// </summary>
-        /// <returns>A List&lt;global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.PhoneNumbers.PhoneNumbersRequestBuilder.PhoneNumbers&gt;</returns>
+        /// <returns>A List&lt;global::Soenneker.ElevenLabs.OpenApiClient.Models.ResponseListPhoneNumbersV1ConvaiPhoneNumbersGetItem&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.HTTPValidationError">When receiving a 422 status code</exception>
+        /// <exception cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.HttpValidationError">When receiving a 422 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<List<global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.PhoneNumbers.PhoneNumbersRequestBuilder.PhoneNumbers>?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ResponseListPhoneNumbersV1ConvaiPhoneNumbersGetItem>?> GetAsync(Action<RequestConfiguration<global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.PhoneNumbers.PhoneNumbersRequestBuilder.PhoneNumbersRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<List<global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.PhoneNumbers.PhoneNumbersRequestBuilder.PhoneNumbers>> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ResponseListPhoneNumbersV1ConvaiPhoneNumbersGetItem>> GetAsync(Action<RequestConfiguration<global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.PhoneNumbers.PhoneNumbersRequestBuilder.PhoneNumbersRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "422", global::Soenneker.ElevenLabs.OpenApiClient.Models.HTTPValidationError.CreateFromDiscriminatorValue },
+                { "422", global::Soenneker.ElevenLabs.OpenApiClient.Models.HttpValidationError.CreateFromDiscriminatorValue },
             };
-            var collectionResult = await RequestAdapter.SendCollectionAsync<global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.PhoneNumbers.PhoneNumbersRequestBuilder.PhoneNumbers>(requestInfo, global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.PhoneNumbers.PhoneNumbersRequestBuilder.PhoneNumbers.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            var collectionResult = await RequestAdapter.SendCollectionAsync<global::Soenneker.ElevenLabs.OpenApiClient.Models.ResponseListPhoneNumbersV1ConvaiPhoneNumbersGetItem>(requestInfo, global::Soenneker.ElevenLabs.OpenApiClient.Models.ResponseListPhoneNumbersV1ConvaiPhoneNumbersGetItem.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
             return collectionResult?.AsList();
         }
         /// <summary>
@@ -77,21 +77,21 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.PhoneNumbers
         /// <param name="body">Create Phone Request Information</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.HTTPValidationError">When receiving a 422 status code</exception>
+        /// <exception cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.HttpValidationError">When receiving a 422 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.ElevenLabs.OpenApiClient.Models.CreatePhoneNumberResponseModel?> PostAsync(global::Soenneker.ElevenLabs.OpenApiClient.Models.CreatePhoneNumberRoute body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.ElevenLabs.OpenApiClient.Models.CreatePhoneNumberResponseModel?> PostAsync(global::Soenneker.ElevenLabs.OpenApiClient.Models.CreatePhoneNumberRouteRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.ElevenLabs.OpenApiClient.Models.CreatePhoneNumberResponseModel> PostAsync(global::Soenneker.ElevenLabs.OpenApiClient.Models.CreatePhoneNumberRoute body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.ElevenLabs.OpenApiClient.Models.CreatePhoneNumberResponseModel> PostAsync(global::Soenneker.ElevenLabs.OpenApiClient.Models.CreatePhoneNumberRouteRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "422", global::Soenneker.ElevenLabs.OpenApiClient.Models.HTTPValidationError.CreateFromDiscriminatorValue },
+                { "422", global::Soenneker.ElevenLabs.OpenApiClient.Models.HttpValidationError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.ElevenLabs.OpenApiClient.Models.CreatePhoneNumberResponseModel>(requestInfo, global::Soenneker.ElevenLabs.OpenApiClient.Models.CreatePhoneNumberResponseModel.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -102,11 +102,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.PhoneNumbers
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.PhoneNumbers.PhoneNumbersRequestBuilder.PhoneNumbersRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.PhoneNumbers.PhoneNumbersRequestBuilder.PhoneNumbersRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -122,11 +122,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.PhoneNumbers
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.ElevenLabs.OpenApiClient.Models.CreatePhoneNumberRoute body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.ElevenLabs.OpenApiClient.Models.CreatePhoneNumberRouteRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.ElevenLabs.OpenApiClient.Models.CreatePhoneNumberRoute body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.ElevenLabs.OpenApiClient.Models.CreatePhoneNumberRouteRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -146,99 +146,41 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.PhoneNumbers
             return new global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.PhoneNumbers.PhoneNumbersRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPhoneNumberExotelResponseModel"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPhoneNumberSIPTrunkResponseModel"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPhoneNumberTwilioResponseModel"/>
+        /// Retrieve all Phone Numbers
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class PhoneNumbers : IComposedTypeWrapper, IParsable
+        public partial class PhoneNumbersRequestBuilderGetQueryParameters 
         {
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPhoneNumberExotelResponseModel"/></summary>
+            /// <summary>Filter by assigned agent ID</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPhoneNumberExotelResponseModel? GetPhoneNumberExotelResponseModel { get; set; }
+            [QueryParameter("agent_id")]
+            public string? AgentId { get; set; }
 #nullable restore
 #else
-            public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPhoneNumberExotelResponseModel GetPhoneNumberExotelResponseModel { get; set; }
+            [QueryParameter("agent_id")]
+            public string AgentId { get; set; }
 #endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPhoneNumberSIPTrunkResponseModel"/></summary>
+            /// <summary>Filter by assigned branch ID</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPhoneNumberSIPTrunkResponseModel? GetPhoneNumberSIPTrunkResponseModel { get; set; }
+            [QueryParameter("branch_id")]
+            public string? BranchId { get; set; }
 #nullable restore
 #else
-            public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPhoneNumberSIPTrunkResponseModel GetPhoneNumberSIPTrunkResponseModel { get; set; }
+            [QueryParameter("branch_id")]
+            public string BranchId { get; set; }
 #endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPhoneNumberTwilioResponseModel"/></summary>
+            /// <summary>Filter by telephony provider</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPhoneNumberTwilioResponseModel? GetPhoneNumberTwilioResponseModel { get; set; }
+            [QueryParameter("provider")]
+            public string? Provider { get; set; }
 #nullable restore
 #else
-            public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPhoneNumberTwilioResponseModel GetPhoneNumberTwilioResponseModel { get; set; }
+            [QueryParameter("provider")]
+            public string Provider { get; set; }
 #endif
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.PhoneNumbers.PhoneNumbersRequestBuilder.PhoneNumbers"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.PhoneNumbers.PhoneNumbersRequestBuilder.PhoneNumbers CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var mappingValue = parseNode.GetChildNode("provider")?.GetStringValue();
-                var result = new global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.PhoneNumbers.PhoneNumbersRequestBuilder.PhoneNumbers();
-                if("exotel".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.GetPhoneNumberExotelResponseModel = new global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPhoneNumberExotelResponseModel();
-                }
-                else if("sip_trunk".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.GetPhoneNumberSIPTrunkResponseModel = new global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPhoneNumberSIPTrunkResponseModel();
-                }
-                else if("twilio".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.GetPhoneNumberTwilioResponseModel = new global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPhoneNumberTwilioResponseModel();
-                }
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                if(GetPhoneNumberExotelResponseModel != null)
-                {
-                    return GetPhoneNumberExotelResponseModel.GetFieldDeserializers();
-                }
-                else if(GetPhoneNumberSIPTrunkResponseModel != null)
-                {
-                    return GetPhoneNumberSIPTrunkResponseModel.GetFieldDeserializers();
-                }
-                else if(GetPhoneNumberTwilioResponseModel != null)
-                {
-                    return GetPhoneNumberTwilioResponseModel.GetFieldDeserializers();
-                }
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                if(GetPhoneNumberExotelResponseModel != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPhoneNumberExotelResponseModel>(null, GetPhoneNumberExotelResponseModel);
-                }
-                else if(GetPhoneNumberSIPTrunkResponseModel != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPhoneNumberSIPTrunkResponseModel>(null, GetPhoneNumberSIPTrunkResponseModel);
-                }
-                else if(GetPhoneNumberTwilioResponseModel != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPhoneNumberTwilioResponseModel>(null, GetPhoneNumberTwilioResponseModel);
-                }
-            }
         }
     }
 }

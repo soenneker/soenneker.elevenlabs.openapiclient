@@ -17,10 +17,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The dependencies property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Dependencies? Dependencies { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetSecretDependenciesResponseModelDependencies? Dependencies { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Dependencies Dependencies { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetSecretDependenciesResponseModelDependencies Dependencies { get; set; }
 #endif
         /// <summary>Cursor for fetching the next page of dependencies</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -55,7 +55,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "dependencies", n => { Dependencies = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Dependencies>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Dependencies.CreateFromDiscriminatorValue); } },
+                { "dependencies", n => { Dependencies = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetSecretDependenciesResponseModelDependencies>(global::Soenneker.ElevenLabs.OpenApiClient.Models.GetSecretDependenciesResponseModelDependencies.CreateFromDiscriminatorValue); } },
                 { "next_cursor", n => { NextCursor = n.GetStringValue(); } },
             };
         }
@@ -66,7 +66,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Dependencies>("dependencies", Dependencies);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetSecretDependenciesResponseModelDependencies>("dependencies", Dependencies);
             writer.WriteStringValue("next_cursor", NextCursor);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -24,7 +24,6 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public AgentDeploymentPercentageStrategy()
         {
             AdditionalData = new Dictionary<string, object>();
-            Type = global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentDeploymentPercentageStrategy_type.Percentage;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

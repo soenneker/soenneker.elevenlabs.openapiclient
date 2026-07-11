@@ -10,7 +10,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     {
         [EnumMember(Value = "get_appointment_by_confirmation_number")]
         #pragma warning disable CS1591
-        Get_appointment_by_confirmation_number,
+        GetAppointmentByConfirmationNumber,
         #pragma warning restore CS1591
     }
 }

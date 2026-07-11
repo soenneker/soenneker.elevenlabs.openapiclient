@@ -22,6 +22,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public FocusGuardrail()
         {
             AdditionalData = new Dictionary<string, object>();
+            IsEnabled = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

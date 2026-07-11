@@ -14,7 +14,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "static")]
         #pragma warning disable CS1591
-        Static,
+        StaticValue,
         #pragma warning restore CS1591
     }
 }

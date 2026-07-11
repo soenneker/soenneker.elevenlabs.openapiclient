@@ -10,7 +10,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     {
         [EnumMember(Value = "get_booking_slug_status")]
         #pragma warning disable CS1591
-        Get_booking_slug_status,
+        GetBookingSlugStatus,
         #pragma warning restore CS1591
     }
 }

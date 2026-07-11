@@ -17,7 +17,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "hide_all")]
         #pragma warning disable CS1591
-        Hide_all,
+        HideAll,
         #pragma warning restore CS1591
     }
 }

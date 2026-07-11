@@ -26,14 +26,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.History
         }
         /// <summary>Gets an item from the Soenneker.ElevenLabs.OpenApiClient.v1.history.item collection</summary>
         /// <param name="position">History item ID to be used, you can use GET https://api.elevenlabs.io/v1/history to receive a list of history items and their IDs.</param>
-        /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.V1.History.Item.WithHistory_item_ItemRequestBuilder"/></returns>
-        public global::Soenneker.ElevenLabs.OpenApiClient.V1.History.Item.WithHistory_item_ItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.V1.History.Item.WithHistoryItemItemRequestBuilder"/></returns>
+        public global::Soenneker.ElevenLabs.OpenApiClient.V1.History.Item.WithHistoryItemItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("history_item_id", position);
-                return new global::Soenneker.ElevenLabs.OpenApiClient.V1.History.Item.WithHistory_item_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("historyItemId", position);
+                return new global::Soenneker.ElevenLabs.OpenApiClient.V1.History.Item.WithHistoryItemItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -58,7 +58,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.History
         /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.GetSpeechHistoryResponseModel"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.HTTPValidationError">When receiving a 422 status code</exception>
+        /// <exception cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.HttpValidationError">When receiving a 422 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetSpeechHistoryResponseModel?> GetAsync(Action<RequestConfiguration<global::Soenneker.ElevenLabs.OpenApiClient.V1.History.HistoryRequestBuilder.HistoryRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -71,7 +71,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.History
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "422", global::Soenneker.ElevenLabs.OpenApiClient.Models.HTTPValidationError.CreateFromDiscriminatorValue },
+                { "422", global::Soenneker.ElevenLabs.OpenApiClient.Models.HttpValidationError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetSpeechHistoryResponseModel>(requestInfo, global::Soenneker.ElevenLabs.OpenApiClient.Models.GetSpeechHistoryResponseModel.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -140,10 +140,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.History
 #endif
             /// <summary>Sort direction for the results.</summary>
             [QueryParameter("sort_direction")]
-            public global::Soenneker.ElevenLabs.OpenApiClient.V1.History.GetSort_directionQueryParameterType? SortDirection { get; set; }
+            public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetSpeechHistorySortDirectionParameter? SortDirection { get; set; }
             /// <summary>Source of the generated history item</summary>
             [QueryParameter("source")]
-            public global::Soenneker.ElevenLabs.OpenApiClient.V1.History.GetSourceQueryParameterType? Source { get; set; }
+            public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetSpeechHistorySourceParameter? Source { get; set; }
             /// <summary>After which ID to start fetching, use this parameter to paginate across a large collection of history items. In case this parameter is not provided history items will be fetched starting from the most recently created one ordered descending by their creation date.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

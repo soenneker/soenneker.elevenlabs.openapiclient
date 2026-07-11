@@ -10,7 +10,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     {
         [EnumMember(Value = "new")]
         #pragma warning disable CS1591
-        New,
+        NewValue,
         #pragma warning restore CS1591
     }
 }

@@ -64,7 +64,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public SubtitleOrderItemRequest()
         {
             AdditionalData = new Dictionary<string, object>();
-            Kind = global::Soenneker.ElevenLabs.OpenApiClient.Models.SubtitleOrderItemRequest_kind.Subtitles;
+            Sdh = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

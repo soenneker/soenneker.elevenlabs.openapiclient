@@ -10,11 +10,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     {
         [EnumMember(Value = "signed_url")]
         #pragma warning disable CS1591
-        Signed_url,
+        SignedUrl,
         #pragma warning restore CS1591
         [EnumMember(Value = "shareable_link")]
         #pragma warning disable CS1591
-        Shareable_link,
+        ShareableLink,
         #pragma warning restore CS1591
     }
 }

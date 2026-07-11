@@ -82,6 +82,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public GetWhatsAppAccountResponse()
         {
             AdditionalData = new Dictionary<string, object>();
+            EnableAudioMessageResponse = true;
+            EnableMessaging = true;
+            IsTokenExpired = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

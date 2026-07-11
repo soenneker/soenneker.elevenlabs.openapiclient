@@ -23,7 +23,6 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public ListGroupSessionsParams()
         {
             AdditionalData = new Dictionary<string, object>();
-            SmbToolType = global::Soenneker.ElevenLabs.OpenApiClient.Models.ListGroupSessionsParams_smb_tool_type.List_group_sessions;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

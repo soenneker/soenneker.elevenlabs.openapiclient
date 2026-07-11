@@ -17,8 +17,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The execution_mode property</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.GuardrailExecutionMode? ExecutionMode { get; set; }
+        /// <summary>&quot;When enabled, the history also renders the agent&apos;s tool calls, their input arguments, and the tool results, interleaved with the text, so an action between two agent messages is visible. Off by default: history shows only user and agent text. Tool payloads can be large and can mislead smaller evaluator models, so enabling this raises token cost.&quot;</summary>
+        public bool? HistoryIncludeToolCalls { get; set; }
+        /// <summary>How much recent history the guardrail sees before the reply it evaluates, counted in user messages (the agent replies between them are included too). The guardrail always gets a single &lt;conversation_history&gt; transcript ending in the evaluated reply, marked &apos;AGENT [current reply]:&apos;. 0 (default) adds no prior history (just that line); 1 adds the latest user message onward.</summary>
+        public int? HistoryMessageCount { get; set; }
         /// <summary>The is_enabled property</summary>
         public bool? IsEnabled { get; set; }
+        /// <summary>LLM model to use for custom guardrail evaluation</summary>
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomGuardrailConfigModel? Model { get; set; }
         /// <summary>User-facing name for this guardrail</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -38,10 +44,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The trigger_action property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomGuardrailConfig.CustomGuardrailConfig_trigger_action? TriggerAction { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomGuardrailConfigTriggerAction? TriggerAction { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomGuardrailConfig.CustomGuardrailConfig_trigger_action TriggerAction { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomGuardrailConfigTriggerAction TriggerAction { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomGuardrailConfig"/> and sets the default values.
@@ -49,7 +55,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public CustomGuardrailConfig()
         {
             AdditionalData = new Dictionary<string, object>();
-            ExecutionMode = global::Soenneker.ElevenLabs.OpenApiClient.Models.GuardrailExecutionMode.Streaming;
+            HistoryIncludeToolCalls = false;
+            HistoryMessageCount = 0;
+            IsEnabled = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -70,10 +78,13 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "execution_mode", n => { ExecutionMode = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GuardrailExecutionMode>(); } },
+                { "history_include_tool_calls", n => { HistoryIncludeToolCalls = n.GetBoolValue(); } },
+                { "history_message_count", n => { HistoryMessageCount = n.GetIntValue(); } },
                 { "is_enabled", n => { IsEnabled = n.GetBoolValue(); } },
+                { "model", n => { Model = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomGuardrailConfigModel>(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "prompt", n => { Prompt = n.GetStringValue(); } },
-                { "trigger_action", n => { TriggerAction = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomGuardrailConfig.CustomGuardrailConfig_trigger_action>(global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomGuardrailConfig.CustomGuardrailConfig_trigger_action.CreateFromDiscriminatorValue); } },
+                { "trigger_action", n => { TriggerAction = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomGuardrailConfigTriggerAction>(global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomGuardrailConfigTriggerAction.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -84,86 +95,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GuardrailExecutionMode>("execution_mode", ExecutionMode);
+            writer.WriteBoolValue("history_include_tool_calls", HistoryIncludeToolCalls);
+            writer.WriteIntValue("history_message_count", HistoryMessageCount);
             writer.WriteBoolValue("is_enabled", IsEnabled);
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomGuardrailConfigModel>("model", Model);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("prompt", Prompt);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomGuardrailConfig.CustomGuardrailConfig_trigger_action>("trigger_action", TriggerAction);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomGuardrailConfigTriggerAction>("trigger_action", TriggerAction);
             writer.WriteAdditionalData(AdditionalData);
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.EndCallTriggerAction"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.RetryTriggerAction"/>
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class CustomGuardrailConfig_trigger_action : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.EndCallTriggerAction"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.ElevenLabs.OpenApiClient.Models.EndCallTriggerAction? EndCallTriggerAction { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.ElevenLabs.OpenApiClient.Models.EndCallTriggerAction EndCallTriggerAction { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.RetryTriggerAction"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.ElevenLabs.OpenApiClient.Models.RetryTriggerAction? RetryTriggerAction { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.ElevenLabs.OpenApiClient.Models.RetryTriggerAction RetryTriggerAction { get; set; }
-#endif
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomGuardrailConfig.CustomGuardrailConfig_trigger_action"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomGuardrailConfig.CustomGuardrailConfig_trigger_action CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
-                var result = new global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomGuardrailConfig.CustomGuardrailConfig_trigger_action();
-                if("end_call".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.EndCallTriggerAction = new global::Soenneker.ElevenLabs.OpenApiClient.Models.EndCallTriggerAction();
-                }
-                else if("retry".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.RetryTriggerAction = new global::Soenneker.ElevenLabs.OpenApiClient.Models.RetryTriggerAction();
-                }
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                if(EndCallTriggerAction != null)
-                {
-                    return EndCallTriggerAction.GetFieldDeserializers();
-                }
-                else if(RetryTriggerAction != null)
-                {
-                    return RetryTriggerAction.GetFieldDeserializers();
-                }
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                if(EndCallTriggerAction != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.EndCallTriggerAction>(null, EndCallTriggerAction);
-                }
-                else if(RetryTriggerAction != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.RetryTriggerAction>(null, RetryTriggerAction);
-                }
-            }
         }
     }
 }

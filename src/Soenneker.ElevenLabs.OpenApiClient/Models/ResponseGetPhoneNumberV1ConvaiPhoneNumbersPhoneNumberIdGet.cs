@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.ElevenLabs.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPhoneNumberExotelResponseModel"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPhoneNumberSIPTrunkResponseModel"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPhoneNumberTwilioResponseModel"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPhoneNumberExotelResponseModel"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPhoneNumberSipTrunkResponseModel"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPhoneNumberTwilioResponseModel"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ResponseGetPhoneNumberV1ConvaiPhoneNumbersPhoneNumberIdGet : IComposedTypeWrapper, IParsable
@@ -21,13 +21,13 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPhoneNumberExotelResponseModel GetPhoneNumberExotelResponseModel { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPhoneNumberSIPTrunkResponseModel"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPhoneNumberSipTrunkResponseModel"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPhoneNumberSIPTrunkResponseModel? GetPhoneNumberSIPTrunkResponseModel { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPhoneNumberSipTrunkResponseModel? GetPhoneNumberSipTrunkResponseModel { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPhoneNumberSIPTrunkResponseModel GetPhoneNumberSIPTrunkResponseModel { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPhoneNumberSipTrunkResponseModel GetPhoneNumberSipTrunkResponseModel { get; set; }
 #endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPhoneNumberTwilioResponseModel"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -51,9 +51,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             {
                 result.GetPhoneNumberExotelResponseModel = new global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPhoneNumberExotelResponseModel();
             }
-            else if("GetPhoneNumberSIPTrunkResponseModel".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("GetPhoneNumberSipTrunkResponseModel".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.GetPhoneNumberSIPTrunkResponseModel = new global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPhoneNumberSIPTrunkResponseModel();
+                result.GetPhoneNumberSipTrunkResponseModel = new global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPhoneNumberSipTrunkResponseModel();
             }
             else if("GetPhoneNumberTwilioResponseModel".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
@@ -71,9 +71,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             {
                 return GetPhoneNumberExotelResponseModel.GetFieldDeserializers();
             }
-            else if(GetPhoneNumberSIPTrunkResponseModel != null)
+            else if(GetPhoneNumberSipTrunkResponseModel != null)
             {
-                return GetPhoneNumberSIPTrunkResponseModel.GetFieldDeserializers();
+                return GetPhoneNumberSipTrunkResponseModel.GetFieldDeserializers();
             }
             else if(GetPhoneNumberTwilioResponseModel != null)
             {
@@ -92,9 +92,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             {
                 writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPhoneNumberExotelResponseModel>(null, GetPhoneNumberExotelResponseModel);
             }
-            else if(GetPhoneNumberSIPTrunkResponseModel != null)
+            else if(GetPhoneNumberSipTrunkResponseModel != null)
             {
-                writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPhoneNumberSIPTrunkResponseModel>(null, GetPhoneNumberSIPTrunkResponseModel);
+                writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPhoneNumberSipTrunkResponseModel>(null, GetPhoneNumberSipTrunkResponseModel);
             }
             else if(GetPhoneNumberTwilioResponseModel != null)
             {

@@ -37,10 +37,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The list of products that are currently configured to trigger this webhook.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Usage? Usage { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceWebhookResponseModelUsage? Usage { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Usage Usage { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceWebhookResponseModelUsage Usage { get; set; }
 #endif
         /// <summary>The unique ID for this webhook.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -90,7 +90,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "most_recent_failure_error_code", n => { MostRecentFailureErrorCode = n.GetIntValue(); } },
                 { "most_recent_failure_timestamp", n => { MostRecentFailureTimestamp = n.GetIntValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "usage", n => { Usage = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Usage>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Usage.CreateFromDiscriminatorValue); } },
+                { "usage", n => { Usage = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceWebhookResponseModelUsage>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceWebhookResponseModelUsage.CreateFromDiscriminatorValue); } },
                 { "webhook_id", n => { WebhookId = n.GetStringValue(); } },
                 { "webhook_url", n => { WebhookUrl = n.GetStringValue(); } },
             };
@@ -109,7 +109,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteIntValue("most_recent_failure_error_code", MostRecentFailureErrorCode);
             writer.WriteIntValue("most_recent_failure_timestamp", MostRecentFailureTimestamp);
             writer.WriteStringValue("name", Name);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Usage>("usage", Usage);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceWebhookResponseModelUsage>("usage", Usage);
             writer.WriteStringValue("webhook_id", WebhookId);
             writer.WriteStringValue("webhook_url", WebhookUrl);
             writer.WriteAdditionalData(AdditionalData);

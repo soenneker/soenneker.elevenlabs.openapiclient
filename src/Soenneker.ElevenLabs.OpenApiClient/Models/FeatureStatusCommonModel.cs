@@ -24,6 +24,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public FeatureStatusCommonModel()
         {
             AdditionalData = new Dictionary<string, object>();
+            Enabled = false;
+            Used = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

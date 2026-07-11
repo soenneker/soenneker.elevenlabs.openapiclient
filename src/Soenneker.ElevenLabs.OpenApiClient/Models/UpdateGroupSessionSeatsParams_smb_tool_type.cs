@@ -10,7 +10,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     {
         [EnumMember(Value = "update_group_session_seats")]
         #pragma warning disable CS1591
-        Update_group_session_seats,
+        UpdateGroupSessionSeats,
         #pragma warning restore CS1591
     }
 }

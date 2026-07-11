@@ -17,8 +17,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>&quot;This parameter controls language text normalization. This helps with proper pronunciation of text in some supported languages. WARNING: This parameter can heavily increase the latency of the request. Currently only supported for Japanese.&quot;</summary>
         public bool? ApplyLanguageTextNormalization { get; set; }
         /// <summary>&quot;This parameter controls text normalization with three modes: &apos;auto&apos;, &apos;on&apos;, and &apos;off&apos;. When set to &apos;auto&apos;, the system will automatically decide whether to apply text normalization (e.g., spelling out numbers). With &apos;on&apos;, text normalization will always be applied, while with &apos;off&apos;, it will be skipped.&quot;</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyTextToSpeechFullWithTimestamps_apply_text_normalization? ApplyTextNormalization { get; set; }
-        /// <summary>Language code (ISO 639-1) used to enforce a language for the model and text normalization. If the model does not support provided language code, an error will be returned.</summary>
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyTextToSpeechFullWithTimestampsApplyTextNormalization? ApplyTextNormalization { get; set; }
+        /// <summary>Language code (ISO 639-1) used to enforce a language for the model and text normalization. If the model does not support the provided language code, it will be ignored. This parameter is not supported for multilingual_v2 models.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? LanguageCode { get; set; }
@@ -90,10 +90,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Voice settings overriding stored settings for the given voice. They are applied only on the given request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceSettingsResponseModel? VoiceSettings { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyTextToSpeechFullWithTimestampsVoiceSettings? VoiceSettings { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceSettingsResponseModel VoiceSettings { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyTextToSpeechFullWithTimestampsVoiceSettings VoiceSettings { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyTextToSpeechFullWithTimestamps"/> and sets the default values.
@@ -101,8 +101,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public BodyTextToSpeechFullWithTimestamps()
         {
             AdditionalData = new Dictionary<string, object>();
-            ApplyTextNormalization = global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyTextToSpeechFullWithTimestamps_apply_text_normalization.Auto;
+            ApplyLanguageTextNormalization = false;
             ModelId = "eleven_multilingual_v2";
+            UsePvcAsIvc = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -123,7 +124,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "apply_language_text_normalization", n => { ApplyLanguageTextNormalization = n.GetBoolValue(); } },
-                { "apply_text_normalization", n => { ApplyTextNormalization = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyTextToSpeechFullWithTimestamps_apply_text_normalization>(); } },
+                { "apply_text_normalization", n => { ApplyTextNormalization = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyTextToSpeechFullWithTimestampsApplyTextNormalization>(); } },
                 { "language_code", n => { LanguageCode = n.GetStringValue(); } },
                 { "model_id", n => { ModelId = n.GetStringValue(); } },
                 { "next_request_ids", n => { NextRequestIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
@@ -134,7 +135,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "seed", n => { Seed = n.GetIntValue(); } },
                 { "text", n => { Text = n.GetStringValue(); } },
                 { "use_pvc_as_ivc", n => { UsePvcAsIvc = n.GetBoolValue(); } },
-                { "voice_settings", n => { VoiceSettings = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceSettingsResponseModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceSettingsResponseModel.CreateFromDiscriminatorValue); } },
+                { "voice_settings", n => { VoiceSettings = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyTextToSpeechFullWithTimestampsVoiceSettings>(global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyTextToSpeechFullWithTimestampsVoiceSettings.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -145,7 +146,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("apply_language_text_normalization", ApplyLanguageTextNormalization);
-            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyTextToSpeechFullWithTimestamps_apply_text_normalization>("apply_text_normalization", ApplyTextNormalization);
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyTextToSpeechFullWithTimestampsApplyTextNormalization>("apply_text_normalization", ApplyTextNormalization);
             writer.WriteStringValue("language_code", LanguageCode);
             writer.WriteStringValue("model_id", ModelId);
             writer.WriteCollectionOfPrimitiveValues<string>("next_request_ids", NextRequestIds);
@@ -156,7 +157,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteIntValue("seed", Seed);
             writer.WriteStringValue("text", Text);
             writer.WriteBoolValue("use_pvc_as_ivc", UsePvcAsIvc);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceSettingsResponseModel>("voice_settings", VoiceSettings);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyTextToSpeechFullWithTimestampsVoiceSettings>("voice_settings", VoiceSettings);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

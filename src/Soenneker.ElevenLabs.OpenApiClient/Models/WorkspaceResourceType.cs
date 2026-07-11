@@ -13,11 +13,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "voice_collection")]
         #pragma warning disable CS1591
-        Voice_collection,
+        VoiceCollection,
         #pragma warning restore CS1591
         [EnumMember(Value = "pronunciation_dictionary")]
         #pragma warning disable CS1591
-        Pronunciation_dictionary,
+        PronunciationDictionary,
         #pragma warning restore CS1591
         [EnumMember(Value = "dubbing")]
         #pragma warning disable CS1591
@@ -29,91 +29,95 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "convai_agents")]
         #pragma warning disable CS1591
-        Convai_agents,
+        ConvaiAgents,
         #pragma warning restore CS1591
         [EnumMember(Value = "convai_knowledge_base_documents")]
         #pragma warning disable CS1591
-        Convai_knowledge_base_documents,
+        ConvaiKnowledgeBaseDocuments,
         #pragma warning restore CS1591
         [EnumMember(Value = "convai_tools")]
         #pragma warning disable CS1591
-        Convai_tools,
+        ConvaiTools,
         #pragma warning restore CS1591
         [EnumMember(Value = "convai_settings")]
         #pragma warning disable CS1591
-        Convai_settings,
+        ConvaiSettings,
         #pragma warning restore CS1591
         [EnumMember(Value = "convai_secrets")]
         #pragma warning disable CS1591
-        Convai_secrets,
+        ConvaiSecrets,
         #pragma warning restore CS1591
         [EnumMember(Value = "workspace_auth_connections")]
         #pragma warning disable CS1591
-        Workspace_auth_connections,
+        WorkspaceAuthConnections,
         #pragma warning restore CS1591
         [EnumMember(Value = "convai_phone_numbers")]
         #pragma warning disable CS1591
-        Convai_phone_numbers,
+        ConvaiPhoneNumbers,
         #pragma warning restore CS1591
         [EnumMember(Value = "convai_mcp_servers")]
         #pragma warning disable CS1591
-        Convai_mcp_servers,
+        ConvaiMcpServers,
         #pragma warning restore CS1591
         [EnumMember(Value = "convai_api_integration_connections")]
         #pragma warning disable CS1591
-        Convai_api_integration_connections,
+        ConvaiApiIntegrationConnections,
         #pragma warning restore CS1591
         [EnumMember(Value = "convai_api_integration_trigger_connections")]
         #pragma warning disable CS1591
-        Convai_api_integration_trigger_connections,
+        ConvaiApiIntegrationTriggerConnections,
         #pragma warning restore CS1591
         [EnumMember(Value = "convai_batch_calls")]
         #pragma warning disable CS1591
-        Convai_batch_calls,
+        ConvaiBatchCalls,
         #pragma warning restore CS1591
         [EnumMember(Value = "convai_agent_response_tests")]
         #pragma warning disable CS1591
-        Convai_agent_response_tests,
+        ConvaiAgentResponseTests,
         #pragma warning restore CS1591
         [EnumMember(Value = "convai_test_suite_invocations")]
         #pragma warning disable CS1591
-        Convai_test_suite_invocations,
+        ConvaiTestSuiteInvocations,
         #pragma warning restore CS1591
         [EnumMember(Value = "convai_crawl_jobs")]
         #pragma warning disable CS1591
-        Convai_crawl_jobs,
+        ConvaiCrawlJobs,
         #pragma warning restore CS1591
         [EnumMember(Value = "convai_crawl_tasks")]
         #pragma warning disable CS1591
-        Convai_crawl_tasks,
+        ConvaiCrawlTasks,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "convai_kb_external_sync_jobs")]
+        #pragma warning disable CS1591
+        ConvaiKbExternalSyncJobs,
         #pragma warning restore CS1591
         [EnumMember(Value = "convai_whatsapp_accounts")]
         #pragma warning disable CS1591
-        Convai_whatsapp_accounts,
+        ConvaiWhatsappAccounts,
         #pragma warning restore CS1591
         [EnumMember(Value = "convai_agent_versions")]
         #pragma warning disable CS1591
-        Convai_agent_versions,
+        ConvaiAgentVersions,
         #pragma warning restore CS1591
         [EnumMember(Value = "convai_agent_branches")]
         #pragma warning disable CS1591
-        Convai_agent_branches,
+        ConvaiAgentBranches,
         #pragma warning restore CS1591
         [EnumMember(Value = "convai_agent_versions_deployments")]
         #pragma warning disable CS1591
-        Convai_agent_versions_deployments,
+        ConvaiAgentVersionsDeployments,
         #pragma warning restore CS1591
         [EnumMember(Value = "convai_memory_entries")]
         #pragma warning disable CS1591
-        Convai_memory_entries,
+        ConvaiMemoryEntries,
         #pragma warning restore CS1591
         [EnumMember(Value = "convai_coaching_proposals")]
         #pragma warning disable CS1591
-        Convai_coaching_proposals,
+        ConvaiCoachingProposals,
         #pragma warning restore CS1591
         [EnumMember(Value = "convai_templates")]
         #pragma warning disable CS1591
-        Convai_templates,
+        ConvaiTemplates,
         #pragma warning restore CS1591
         [EnumMember(Value = "dashboard")]
         #pragma warning disable CS1591
@@ -121,15 +125,15 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "dashboard_configuration")]
         #pragma warning disable CS1591
-        Dashboard_configuration,
+        DashboardConfiguration,
         #pragma warning restore CS1591
         [EnumMember(Value = "convai_agent_drafts")]
         #pragma warning disable CS1591
-        Convai_agent_drafts,
+        ConvaiAgentDrafts,
         #pragma warning restore CS1591
         [EnumMember(Value = "resource_locators")]
         #pragma warning disable CS1591
-        Resource_locators,
+        ResourceLocators,
         #pragma warning restore CS1591
         [EnumMember(Value = "assets")]
         #pragma warning disable CS1591
@@ -137,11 +141,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "content_generations")]
         #pragma warning disable CS1591
-        Content_generations,
+        ContentGenerations,
         #pragma warning restore CS1591
         [EnumMember(Value = "content_templates")]
         #pragma warning disable CS1591
-        Content_templates,
+        ContentTemplates,
         #pragma warning restore CS1591
         [EnumMember(Value = "songs")]
         #pragma warning disable CS1591
@@ -149,7 +153,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "transcription_tasks")]
         #pragma warning disable CS1591
-        Transcription_tasks,
+        TranscriptionTasks,
         #pragma warning restore CS1591
         [EnumMember(Value = "avatars")]
         #pragma warning disable CS1591
@@ -157,15 +161,15 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "avatar_video_generations")]
         #pragma warning disable CS1591
-        Avatar_video_generations,
+        AvatarVideoGenerations,
         #pragma warning restore CS1591
         [EnumMember(Value = "resource_collection")]
         #pragma warning disable CS1591
-        Resource_collection,
+        ResourceCollection,
         #pragma warning restore CS1591
         [EnumMember(Value = "studio_projects")]
         #pragma warning disable CS1591
-        Studio_projects,
+        StudioProjects,
         #pragma warning restore CS1591
     }
 }

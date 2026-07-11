@@ -22,7 +22,6 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public DeleteAssetParams()
         {
             AdditionalData = new Dictionary<string, object>();
-            SmbToolType = global::Soenneker.ElevenLabs.OpenApiClient.Models.DeleteAssetParams_smb_tool_type.Delete_asset;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

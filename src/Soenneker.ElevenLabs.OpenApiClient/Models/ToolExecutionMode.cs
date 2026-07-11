@@ -14,7 +14,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "post_tool_speech")]
         #pragma warning disable CS1591
-        Post_tool_speech,
+        PostToolSpeech,
         #pragma warning restore CS1591
         [EnumMember(Value = "async")]
         #pragma warning disable CS1591

@@ -33,13 +33,13 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>&quot;List of pronunciation rules. Rule can be either:    an alias rule: {&apos;string_to_replace&apos;: &apos;a&apos;, &apos;type&apos;: &apos;alias&apos;, &apos;alias&apos;: &apos;b&apos;, }    or a phoneme rule: {&apos;string_to_replace&apos;: &apos;a&apos;, &apos;type&apos;: &apos;phoneme&apos;, &apos;phoneme&apos;: &apos;b&apos;, &apos;alphabet&apos;: &apos;ipa&apos; }&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyAddAPronunciationDictionaryV1PronunciationDictionariesAddFromRulesPost.BodyAddAPronunciationDictionaryV1PronunciationDictionariesAddFromRulesPost_rules>? Rules { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyAddAPronunciationDictionaryV1PronunciationDictionariesAddFromRulesPostRulesItem>? Rules { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyAddAPronunciationDictionaryV1PronunciationDictionariesAddFromRulesPost.BodyAddAPronunciationDictionaryV1PronunciationDictionariesAddFromRulesPost_rules> Rules { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyAddAPronunciationDictionaryV1PronunciationDictionariesAddFromRulesPostRulesItem> Rules { get; set; }
 #endif
         /// <summary>Should be one of &apos;admin&apos;, &apos;editor&apos; or &apos;viewer&apos;. If not provided, defaults to no access.</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyAddAPronunciationDictionaryV1PronunciationDictionariesAddFromRulesPost_workspace_access? WorkspaceAccess { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyAddAPronunciationDictionaryV1PronunciationDictionariesAddFromRulesPostWorkspaceAccess? WorkspaceAccess { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyAddAPronunciationDictionaryV1PronunciationDictionariesAddFromRulesPost"/> and sets the default values.
         /// </summary>
@@ -67,8 +67,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             {
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "rules", n => { Rules = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyAddAPronunciationDictionaryV1PronunciationDictionariesAddFromRulesPost.BodyAddAPronunciationDictionaryV1PronunciationDictionariesAddFromRulesPost_rules>(global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyAddAPronunciationDictionaryV1PronunciationDictionariesAddFromRulesPost.BodyAddAPronunciationDictionaryV1PronunciationDictionariesAddFromRulesPost_rules.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "workspace_access", n => { WorkspaceAccess = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyAddAPronunciationDictionaryV1PronunciationDictionariesAddFromRulesPost_workspace_access>(); } },
+                { "rules", n => { Rules = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyAddAPronunciationDictionaryV1PronunciationDictionariesAddFromRulesPostRulesItem>(global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyAddAPronunciationDictionaryV1PronunciationDictionariesAddFromRulesPostRulesItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "workspace_access", n => { WorkspaceAccess = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyAddAPronunciationDictionaryV1PronunciationDictionariesAddFromRulesPostWorkspaceAccess>(); } },
             };
         }
         /// <summary>
@@ -80,66 +80,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("name", Name);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyAddAPronunciationDictionaryV1PronunciationDictionariesAddFromRulesPost.BodyAddAPronunciationDictionaryV1PronunciationDictionariesAddFromRulesPost_rules>("rules", Rules);
-            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyAddAPronunciationDictionaryV1PronunciationDictionariesAddFromRulesPost_workspace_access>("workspace_access", WorkspaceAccess);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyAddAPronunciationDictionaryV1PronunciationDictionariesAddFromRulesPostRulesItem>("rules", Rules);
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyAddAPronunciationDictionaryV1PronunciationDictionariesAddFromRulesPostWorkspaceAccess>("workspace_access", WorkspaceAccess);
             writer.WriteAdditionalData(AdditionalData);
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.PronunciationDictionaryAliasRuleRequestModel"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.PronunciationDictionaryPhonemeRuleRequestModel"/>
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class BodyAddAPronunciationDictionaryV1PronunciationDictionariesAddFromRulesPost_rules : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.PronunciationDictionaryAliasRuleRequestModel"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.ElevenLabs.OpenApiClient.Models.PronunciationDictionaryAliasRuleRequestModel? PronunciationDictionaryAliasRuleRequestModel { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.ElevenLabs.OpenApiClient.Models.PronunciationDictionaryAliasRuleRequestModel PronunciationDictionaryAliasRuleRequestModel { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.PronunciationDictionaryPhonemeRuleRequestModel"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.ElevenLabs.OpenApiClient.Models.PronunciationDictionaryPhonemeRuleRequestModel? PronunciationDictionaryPhonemeRuleRequestModel { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.ElevenLabs.OpenApiClient.Models.PronunciationDictionaryPhonemeRuleRequestModel PronunciationDictionaryPhonemeRuleRequestModel { get; set; }
-#endif
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyAddAPronunciationDictionaryV1PronunciationDictionariesAddFromRulesPost.BodyAddAPronunciationDictionaryV1PronunciationDictionariesAddFromRulesPost_rules"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyAddAPronunciationDictionaryV1PronunciationDictionariesAddFromRulesPost.BodyAddAPronunciationDictionaryV1PronunciationDictionariesAddFromRulesPost_rules CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var result = new global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyAddAPronunciationDictionaryV1PronunciationDictionariesAddFromRulesPost.BodyAddAPronunciationDictionaryV1PronunciationDictionariesAddFromRulesPost_rules();
-                result.PronunciationDictionaryAliasRuleRequestModel = new global::Soenneker.ElevenLabs.OpenApiClient.Models.PronunciationDictionaryAliasRuleRequestModel();
-                result.PronunciationDictionaryPhonemeRuleRequestModel = new global::Soenneker.ElevenLabs.OpenApiClient.Models.PronunciationDictionaryPhonemeRuleRequestModel();
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                if(PronunciationDictionaryAliasRuleRequestModel != null || PronunciationDictionaryPhonemeRuleRequestModel != null)
-                {
-                    return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(PronunciationDictionaryAliasRuleRequestModel, PronunciationDictionaryPhonemeRuleRequestModel);
-                }
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PronunciationDictionaryAliasRuleRequestModel>(null, PronunciationDictionaryAliasRuleRequestModel, PronunciationDictionaryPhonemeRuleRequestModel);
-            }
         }
     }
 }

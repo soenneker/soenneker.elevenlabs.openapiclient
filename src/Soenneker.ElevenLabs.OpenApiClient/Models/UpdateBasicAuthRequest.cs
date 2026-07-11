@@ -46,7 +46,6 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public UpdateBasicAuthRequest()
         {
             AdditionalData = new Dictionary<string, object>();
-            AuthType = global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateBasicAuthRequest_auth_type.Basic_auth;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

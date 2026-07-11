@@ -14,18 +14,30 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>List of IP addresses or CIDR ranges allowed to use this API key. Each entry may be a CIDR range (e.g. &apos;10.0.0.0/24&apos;) or a bare IP address (normalized to /32 or /128). On create, omit or pass null to allow all IPs. On update, omit to leave the whitelist unchanged, or pass &quot;clear&quot; to remove it.</summary>
+        /// <summary>List of IP addresses or CIDR ranges allowed to use this API key. Each entry may be a CIDR range (e.g. &apos;10.0.0.0/24&apos;) or a bare IP address (normalized to /32 or /128). On create, omit or pass null to allow all IPs. On update, omit to leave the allowlist unchanged, or pass &quot;clear&quot; to remove it.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Allowed_Ips? AllowedIps { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyEditServiceAccountApiKeyV1ServiceAccountsServiceAccountUserIdApiKeysApiKeyIdPatchAllowedIps? AllowedIps { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Allowed_Ips AllowedIps { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyEditServiceAccountApiKeyV1ServiceAccountsServiceAccountUserIdApiKeysApiKeyIdPatchAllowedIps AllowedIps { get; set; }
 #endif
         /// <summary>The character limit of the XI API key. If provided this will limit the usage of this api key to n characters per month where n is the chosen value. Requests that incur charges will fail after reaching this monthly limit.</summary>
-        public int? CharacterLimit { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyEditServiceAccountApiKeyV1ServiceAccountsServiceAccountUserIdApiKeysApiKeyIdPatchCharacterLimit? CharacterLimit { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyEditServiceAccountApiKeyV1ServiceAccountsServiceAccountUserIdApiKeysApiKeyIdPatchCharacterLimit CharacterLimit { get; set; }
+#endif
         /// <summary>Whether to enable or disable the API key.</summary>
-        public bool? IsEnabled { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyEditServiceAccountApiKeyV1ServiceAccountsServiceAccountUserIdApiKeysApiKeyIdPatchIsEnabled? IsEnabled { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyEditServiceAccountApiKeyV1ServiceAccountsServiceAccountUserIdApiKeysApiKeyIdPatchIsEnabled IsEnabled { get; set; }
+#endif
         /// <summary>The name of the XI API key to use (used for identification purposes only).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -37,10 +49,18 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The permissions of the XI API.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Permissions? Permissions { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyEditServiceAccountApiKeyV1ServiceAccountsServiceAccountUserIdApiKeysApiKeyIdPatchPermissions? Permissions { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Permissions Permissions { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyEditServiceAccountApiKeyV1ServiceAccountsServiceAccountUserIdApiKeysApiKeyIdPatchPermissions Permissions { get; set; }
+#endif
+        /// <summary>Whether the holder of this key may disable it via the self-disable endpoint. On create, omit or pass null to use the workspace&apos;s default (enabled for non-Enterprise plans, disabled for Enterprise plans). On update, omit to leave it unchanged, or pass &quot;clear&quot; to reset it to the workspace default. Only honored for workspaces with self-disable access enabled.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyEditServiceAccountApiKeyV1ServiceAccountsServiceAccountUserIdApiKeysApiKeyIdPatchThirdPartyDisableAllowed? ThirdPartyDisableAllowed { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyEditServiceAccountApiKeyV1ServiceAccountsServiceAccountUserIdApiKeysApiKeyIdPatchThirdPartyDisableAllowed ThirdPartyDisableAllowed { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyEditServiceAccountApiKeyV1ServiceAccountsServiceAccountUserIdApiKeysApiKeyIdPatch"/> and sets the default values.
@@ -67,11 +87,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "allowed_ips", n => { AllowedIps = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Allowed_Ips>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Allowed_Ips.CreateFromDiscriminatorValue); } },
-                { "character_limit", n => { CharacterLimit = n.GetIntValue(); } },
-                { "is_enabled", n => { IsEnabled = n.GetBoolValue(); } },
+                { "allowed_ips", n => { AllowedIps = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyEditServiceAccountApiKeyV1ServiceAccountsServiceAccountUserIdApiKeysApiKeyIdPatchAllowedIps>(global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyEditServiceAccountApiKeyV1ServiceAccountsServiceAccountUserIdApiKeysApiKeyIdPatchAllowedIps.CreateFromDiscriminatorValue); } },
+                { "character_limit", n => { CharacterLimit = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyEditServiceAccountApiKeyV1ServiceAccountsServiceAccountUserIdApiKeysApiKeyIdPatchCharacterLimit>(global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyEditServiceAccountApiKeyV1ServiceAccountsServiceAccountUserIdApiKeysApiKeyIdPatchCharacterLimit.CreateFromDiscriminatorValue); } },
+                { "is_enabled", n => { IsEnabled = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyEditServiceAccountApiKeyV1ServiceAccountsServiceAccountUserIdApiKeysApiKeyIdPatchIsEnabled>(global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyEditServiceAccountApiKeyV1ServiceAccountsServiceAccountUserIdApiKeysApiKeyIdPatchIsEnabled.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "permissions", n => { Permissions = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Permissions>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Permissions.CreateFromDiscriminatorValue); } },
+                { "permissions", n => { Permissions = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyEditServiceAccountApiKeyV1ServiceAccountsServiceAccountUserIdApiKeysApiKeyIdPatchPermissions>(global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyEditServiceAccountApiKeyV1ServiceAccountsServiceAccountUserIdApiKeysApiKeyIdPatchPermissions.CreateFromDiscriminatorValue); } },
+                { "third_party_disable_allowed", n => { ThirdPartyDisableAllowed = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyEditServiceAccountApiKeyV1ServiceAccountsServiceAccountUserIdApiKeysApiKeyIdPatchThirdPartyDisableAllowed>(global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyEditServiceAccountApiKeyV1ServiceAccountsServiceAccountUserIdApiKeysApiKeyIdPatchThirdPartyDisableAllowed.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -81,11 +102,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Allowed_Ips>("allowed_ips", AllowedIps);
-            writer.WriteIntValue("character_limit", CharacterLimit);
-            writer.WriteBoolValue("is_enabled", IsEnabled);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyEditServiceAccountApiKeyV1ServiceAccountsServiceAccountUserIdApiKeysApiKeyIdPatchAllowedIps>("allowed_ips", AllowedIps);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyEditServiceAccountApiKeyV1ServiceAccountsServiceAccountUserIdApiKeysApiKeyIdPatchCharacterLimit>("character_limit", CharacterLimit);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyEditServiceAccountApiKeyV1ServiceAccountsServiceAccountUserIdApiKeysApiKeyIdPatchIsEnabled>("is_enabled", IsEnabled);
             writer.WriteStringValue("name", Name);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Permissions>("permissions", Permissions);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyEditServiceAccountApiKeyV1ServiceAccountsServiceAccountUserIdApiKeysApiKeyIdPatchPermissions>("permissions", Permissions);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyEditServiceAccountApiKeyV1ServiceAccountsServiceAccountUserIdApiKeysApiKeyIdPatchThirdPartyDisableAllowed>("third_party_disable_allowed", ThirdPartyDisableAllowed);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

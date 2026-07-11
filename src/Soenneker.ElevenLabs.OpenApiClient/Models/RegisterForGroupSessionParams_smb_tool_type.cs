@@ -10,7 +10,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     {
         [EnumMember(Value = "register_for_group_session")]
         #pragma warning disable CS1591
-        Register_for_group_session,
+        RegisterForGroupSession,
         #pragma warning restore CS1591
     }
 }

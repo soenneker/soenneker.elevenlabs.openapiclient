@@ -13,21 +13,21 @@ using System;
 namespace Soenneker.ElevenLabs.OpenApiClient.V1.Productions.Orders.Item.Items
 {
     /// <summary>
-    /// Builds and executes requests for operations under \v1\productions\orders\{order_id}\items
+    /// Builds and executes requests for operations under \v1\productions\orders\{orderId}\items
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ItemsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.ElevenLabs.OpenApiClient.v1.productions.orders.item.items.item collection</summary>
         /// <param name="position">The ID of the order item.</param>
-        /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.V1.Productions.Orders.Item.Items.Item.WithItem_ItemRequestBuilder"/></returns>
-        public global::Soenneker.ElevenLabs.OpenApiClient.V1.Productions.Orders.Item.Items.Item.WithItem_ItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.V1.Productions.Orders.Item.Items.Item.WithItemItemRequestBuilder"/></returns>
+        public global::Soenneker.ElevenLabs.OpenApiClient.V1.Productions.Orders.Item.Items.Item.WithItemItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("item_id", position);
-                return new global::Soenneker.ElevenLabs.OpenApiClient.V1.Productions.Orders.Item.Items.Item.WithItem_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("itemId", position);
+                return new global::Soenneker.ElevenLabs.OpenApiClient.V1.Productions.Orders.Item.Items.Item.WithItemItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -35,7 +35,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Productions.Orders.Item.Items
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ItemsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/productions/orders/{order_id}/items", pathParameters)
+        public ItemsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/productions/orders/{orderId}/items", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Productions.Orders.Item.Items
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ItemsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/productions/orders/{order_id}/items", rawUrl)
+        public ItemsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/productions/orders/{orderId}/items", rawUrl)
         {
         }
         /// <summary>
@@ -53,7 +53,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Productions.Orders.Item.Items
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.HTTPValidationError">When receiving a 422 status code</exception>
+        /// <exception cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.HttpValidationError">When receiving a 422 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.ElevenLabs.OpenApiClient.Models.UpsertOrderItemResponse?> PostAsync(global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyUpsertOrderItemV1ProductionsOrdersOrderIdItemsPost body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -67,7 +67,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Productions.Orders.Item.Items
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "422", global::Soenneker.ElevenLabs.OpenApiClient.Models.HTTPValidationError.CreateFromDiscriminatorValue },
+                { "422", global::Soenneker.ElevenLabs.OpenApiClient.Models.HttpValidationError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.ElevenLabs.OpenApiClient.Models.UpsertOrderItemResponse>(requestInfo, global::Soenneker.ElevenLabs.OpenApiClient.Models.UpsertOrderItemResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

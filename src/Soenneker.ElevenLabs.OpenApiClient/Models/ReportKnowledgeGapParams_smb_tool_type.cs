@@ -10,7 +10,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     {
         [EnumMember(Value = "report_knowledge_gap")]
         #pragma warning disable CS1591
-        Report_knowledge_gap,
+        ReportKnowledgeGap,
         #pragma warning restore CS1591
     }
 }

@@ -24,7 +24,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public GetClientAppointmentsParams()
         {
             AdditionalData = new Dictionary<string, object>();
-            SmbToolType = global::Soenneker.ElevenLabs.OpenApiClient.Models.GetClientAppointmentsParams_smb_tool_type.Get_client_appointments;
+            IncludeCancelled = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -38,6 +38,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public WorkspaceBatchCallsResponse()
         {
             AdditionalData = new Dictionary<string, object>();
+            HasMore = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

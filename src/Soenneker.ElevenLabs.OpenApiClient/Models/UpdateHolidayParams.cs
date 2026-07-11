@@ -22,7 +22,6 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public UpdateHolidayParams()
         {
             AdditionalData = new Dictionary<string, object>();
-            SmbToolType = global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateHolidayParams_smb_tool_type.Update_holiday;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

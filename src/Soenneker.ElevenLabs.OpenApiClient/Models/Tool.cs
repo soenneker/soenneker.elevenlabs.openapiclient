@@ -18,10 +18,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The annotations property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolAnnotations? Annotations { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolAnnotationsComposed? Annotations { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolAnnotations Annotations { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolAnnotationsComposed Annotations { get; set; }
 #endif
         /// <summary>The description property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -34,34 +34,34 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The execution property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolExecution? Execution { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolExecutionComposed? Execution { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolExecution Execution { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolExecutionComposed Execution { get; set; }
 #endif
         /// <summary>The icons property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Icons? Icons { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolIcons? Icons { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Icons Icons { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolIcons Icons { get; set; }
 #endif
         /// <summary>The inputSchema property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Tool_inputSchema? InputSchema { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolInputSchemaProperty? InputSchema { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Tool_inputSchema InputSchema { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolInputSchemaProperty InputSchema { get; set; }
 #endif
         /// <summary>The meta property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Tool_meta? Meta { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolMeta? Meta { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Tool_meta Meta { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolMeta Meta { get; set; }
 #endif
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -74,10 +74,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The outputSchema property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Tool_outputSchema? OutputSchema { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolOutputSchema? OutputSchema { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Tool_outputSchema OutputSchema { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolOutputSchema OutputSchema { get; set; }
 #endif
         /// <summary>The title property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -112,14 +112,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "annotations", n => { Annotations = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolAnnotations>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolAnnotations.CreateFromDiscriminatorValue); } },
+                { "annotations", n => { Annotations = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolAnnotationsComposed>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolAnnotationsComposed.CreateFromDiscriminatorValue); } },
                 { "description", n => { Description = n.GetStringValue(); } },
-                { "execution", n => { Execution = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolExecution>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolExecution.CreateFromDiscriminatorValue); } },
-                { "icons", n => { Icons = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Icons>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Icons.CreateFromDiscriminatorValue); } },
-                { "inputSchema", n => { InputSchema = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Tool_inputSchema>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Tool_inputSchema.CreateFromDiscriminatorValue); } },
-                { "_meta", n => { Meta = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Tool_meta>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Tool_meta.CreateFromDiscriminatorValue); } },
+                { "execution", n => { Execution = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolExecutionComposed>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolExecutionComposed.CreateFromDiscriminatorValue); } },
+                { "icons", n => { Icons = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolIcons>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolIcons.CreateFromDiscriminatorValue); } },
+                { "inputSchema", n => { InputSchema = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolInputSchemaProperty>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolInputSchemaProperty.CreateFromDiscriminatorValue); } },
+                { "_meta", n => { Meta = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolMeta>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolMeta.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "outputSchema", n => { OutputSchema = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Tool_outputSchema>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Tool_outputSchema.CreateFromDiscriminatorValue); } },
+                { "outputSchema", n => { OutputSchema = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolOutputSchema>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolOutputSchema.CreateFromDiscriminatorValue); } },
                 { "title", n => { Title = n.GetStringValue(); } },
             };
         }
@@ -130,14 +130,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolAnnotations>("annotations", Annotations);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolAnnotationsComposed>("annotations", Annotations);
             writer.WriteStringValue("description", Description);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolExecution>("execution", Execution);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Icons>("icons", Icons);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Tool_inputSchema>("inputSchema", InputSchema);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Tool_meta>("_meta", Meta);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolExecutionComposed>("execution", Execution);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolIcons>("icons", Icons);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolInputSchemaProperty>("inputSchema", InputSchema);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolMeta>("_meta", Meta);
             writer.WriteStringValue("name", Name);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Tool_outputSchema>("outputSchema", OutputSchema);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolOutputSchema>("outputSchema", OutputSchema);
             writer.WriteStringValue("title", Title);
             writer.WriteAdditionalData(AdditionalData);
         }

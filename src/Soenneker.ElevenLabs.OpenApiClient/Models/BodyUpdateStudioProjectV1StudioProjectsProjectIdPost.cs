@@ -70,6 +70,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public BodyUpdateStudioProjectV1StudioProjectsProjectIdPost()
         {
             AdditionalData = new Dictionary<string, object>();
+            VolumeNormalization = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

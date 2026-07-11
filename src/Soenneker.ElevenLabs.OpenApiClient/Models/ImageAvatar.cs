@@ -30,7 +30,6 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public ImageAvatar()
         {
             AdditionalData = new Dictionary<string, object>();
-            Type = global::Soenneker.ElevenLabs.OpenApiClient.Models.ImageAvatar_type.Image;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

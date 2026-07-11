@@ -14,6 +14,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The project_voice_ref_id property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ProjectVoiceRefId { get; set; }
+#nullable restore
+#else
+        public string ProjectVoiceRefId { get; set; }
+#endif
         /// <summary>The text property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -25,12 +33,13 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The type property</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.ChapterContentBlockTtsNodeResponseModel_type? Type { get; set; }
         /// <summary>The voice_id property</summary>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? VoiceId { get; set; }
+        public string? VoiceId { get; private set; }
 #nullable restore
 #else
-        public string VoiceId { get; set; }
+        public string VoiceId { get; private set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ChapterContentBlockTtsNodeResponseModel"/> and sets the default values.
@@ -57,6 +66,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "project_voice_ref_id", n => { ProjectVoiceRefId = n.GetStringValue(); } },
                 { "text", n => { Text = n.GetStringValue(); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ChapterContentBlockTtsNodeResponseModel_type>(); } },
                 { "voice_id", n => { VoiceId = n.GetStringValue(); } },
@@ -69,9 +79,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("project_voice_ref_id", ProjectVoiceRefId);
             writer.WriteStringValue("text", Text);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ChapterContentBlockTtsNodeResponseModel_type>("type", Type);
-            writer.WriteStringValue("voice_id", VoiceId);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

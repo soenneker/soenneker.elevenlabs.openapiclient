@@ -18,10 +18,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Requested additional formats of the transcript.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Additional_Formats? AdditionalFormats { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechToTextChunkResponseModelAdditionalFormats? AdditionalFormats { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Additional_Formats AdditionalFormats { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechToTextChunkResponseModelAdditionalFormats AdditionalFormats { get; set; }
 #endif
         /// <summary>The duration of the audio that was transcribed in seconds.</summary>
         public double? AudioDurationSecs { get; set; }
@@ -30,10 +30,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>List of detected entities with their text, type, and character positions in the transcript.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Entities? Entities { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechToTextChunkResponseModelEntities? Entities { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Entities Entities { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechToTextChunkResponseModelEntities Entities { get; set; }
 #endif
         /// <summary>The detected language code (e.g. &apos;eng&apos; for English).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -94,10 +94,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "additional_formats", n => { AdditionalFormats = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Additional_Formats>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Additional_Formats.CreateFromDiscriminatorValue); } },
+                { "additional_formats", n => { AdditionalFormats = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechToTextChunkResponseModelAdditionalFormats>(global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechToTextChunkResponseModelAdditionalFormats.CreateFromDiscriminatorValue); } },
                 { "audio_duration_secs", n => { AudioDurationSecs = n.GetDoubleValue(); } },
                 { "channel_index", n => { ChannelIndex = n.GetIntValue(); } },
-                { "entities", n => { Entities = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Entities>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Entities.CreateFromDiscriminatorValue); } },
+                { "entities", n => { Entities = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechToTextChunkResponseModelEntities>(global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechToTextChunkResponseModelEntities.CreateFromDiscriminatorValue); } },
                 { "language_code", n => { LanguageCode = n.GetStringValue(); } },
                 { "language_probability", n => { LanguageProbability = n.GetDoubleValue(); } },
                 { "text", n => { Text = n.GetStringValue(); } },
@@ -112,10 +112,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Additional_Formats>("additional_formats", AdditionalFormats);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechToTextChunkResponseModelAdditionalFormats>("additional_formats", AdditionalFormats);
             writer.WriteDoubleValue("audio_duration_secs", AudioDurationSecs);
             writer.WriteIntValue("channel_index", ChannelIndex);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Entities>("entities", Entities);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechToTextChunkResponseModelEntities>("entities", Entities);
             writer.WriteStringValue("language_code", LanguageCode);
             writer.WriteDoubleValue("language_probability", LanguageProbability);
             writer.WriteStringValue("text", Text);

@@ -54,7 +54,6 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public CreateCustomHeaderAuthRequest()
         {
             AdditionalData = new Dictionary<string, object>();
-            AuthType = global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateCustomHeaderAuthRequest_auth_type.Custom_header_auth;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

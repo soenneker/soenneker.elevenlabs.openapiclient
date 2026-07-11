@@ -10,7 +10,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     {
         [EnumMember(Value = "max_iterations_exceeded")]
         #pragma warning disable CS1591
-        Max_iterations_exceeded,
+        MaxIterationsExceeded,
         #pragma warning restore CS1591
     }
 }

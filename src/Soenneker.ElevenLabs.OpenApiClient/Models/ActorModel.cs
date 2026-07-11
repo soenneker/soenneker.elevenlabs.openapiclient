@@ -32,10 +32,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Session information</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ActorModel_session? Session { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ActorModelSession? Session { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ActorModel_session Session { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ActorModelSession Session { get; set; }
 #endif
         /// <summary>&quot;OCSF User object.Spec: https://schema.ocsf.io/1.6.0/objects/user&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -65,7 +65,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             {
                 { "app_name", n => { AppName = n.GetStringValue(); } },
                 { "app_uid", n => { AppUid = n.GetStringValue(); } },
-                { "session", n => { Session = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ActorModel_session>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ActorModel_session.CreateFromDiscriminatorValue); } },
+                { "session", n => { Session = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ActorModelSession>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ActorModelSession.CreateFromDiscriminatorValue); } },
                 { "user", n => { User = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UserModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.UserModel.CreateFromDiscriminatorValue); } },
             };
         }
@@ -78,7 +78,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("app_name", AppName);
             writer.WriteStringValue("app_uid", AppUid);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ActorModel_session>("session", Session);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ActorModelSession>("session", Session);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UserModel>("user", User);
         }
     }

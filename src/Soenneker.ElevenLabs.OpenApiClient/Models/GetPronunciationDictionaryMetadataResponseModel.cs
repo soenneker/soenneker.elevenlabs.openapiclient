@@ -61,7 +61,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public string Name { get; set; }
 #endif
         /// <summary>The permission on the resource of the pronunciation dictionary.</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPronunciationDictionaryMetadataResponseModel_permission_on_resource? PermissionOnResource { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPronunciationDictionaryMetadataResponseModelPermissionOnResource? PermissionOnResource { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPronunciationDictionaryMetadataResponseModel"/> and sets the default values.
         /// </summary>
@@ -95,7 +95,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "latest_version_id", n => { LatestVersionId = n.GetStringValue(); } },
                 { "latest_version_rules_num", n => { LatestVersionRulesNum = n.GetIntValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "permission_on_resource", n => { PermissionOnResource = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPronunciationDictionaryMetadataResponseModel_permission_on_resource>(); } },
+                { "permission_on_resource", n => { PermissionOnResource = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPronunciationDictionaryMetadataResponseModelPermissionOnResource>(); } },
             };
         }
         /// <summary>
@@ -113,7 +113,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteStringValue("latest_version_id", LatestVersionId);
             writer.WriteIntValue("latest_version_rules_num", LatestVersionRulesNum);
             writer.WriteStringValue("name", Name);
-            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPronunciationDictionaryMetadataResponseModel_permission_on_resource>("permission_on_resource", PermissionOnResource);
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPronunciationDictionaryMetadataResponseModelPermissionOnResource>("permission_on_resource", PermissionOnResource);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

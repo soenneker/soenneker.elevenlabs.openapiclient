@@ -25,10 +25,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The auto_sync_info property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AutoSyncInfo? AutoSyncInfo { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseSummaryFolderResponseModelAutoSyncInfo? AutoSyncInfo { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AutoSyncInfo AutoSyncInfo { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseSummaryFolderResponseModelAutoSyncInfo AutoSyncInfo { get; set; }
 #endif
         /// <summary>The children_count property</summary>
         public int? ChildrenCount { get; set; }
@@ -36,10 +36,18 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseSummaryFolderResponseModel.GetKnowledgeBaseSummaryFolderResponseModel_dependent_agents>? DependentAgents { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseSummaryFolderResponseModelDependentAgentsItem>? DependentAgents { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseSummaryFolderResponseModel.GetKnowledgeBaseSummaryFolderResponseModel_dependent_agents> DependentAgents { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseSummaryFolderResponseModelDependentAgentsItem> DependentAgents { get; set; }
+#endif
+        /// <summary>The external_sync_info property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseSummaryFolderResponseModelExternalSyncInfo? ExternalSyncInfo { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseSummaryFolderResponseModelExternalSyncInfo ExternalSyncInfo { get; set; }
 #endif
         /// <summary>The ID of the parent folder, or null if the document is at the root level.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -65,6 +73,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
+        /// <summary>The is_frozen property</summary>
+        public bool? IsFrozen { get; set; }
         /// <summary>The metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -97,6 +107,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public GetKnowledgeBaseSummaryFolderResponseModel()
         {
             AdditionalData = new Dictionary<string, object>();
+            IsFrozen = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -117,12 +128,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "access_info", n => { AccessInfo = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceAccessInfo>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceAccessInfo.CreateFromDiscriminatorValue); } },
-                { "auto_sync_info", n => { AutoSyncInfo = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AutoSyncInfo>(global::Soenneker.ElevenLabs.OpenApiClient.Models.AutoSyncInfo.CreateFromDiscriminatorValue); } },
+                { "auto_sync_info", n => { AutoSyncInfo = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseSummaryFolderResponseModelAutoSyncInfo>(global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseSummaryFolderResponseModelAutoSyncInfo.CreateFromDiscriminatorValue); } },
                 { "children_count", n => { ChildrenCount = n.GetIntValue(); } },
-                { "dependent_agents", n => { DependentAgents = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseSummaryFolderResponseModel.GetKnowledgeBaseSummaryFolderResponseModel_dependent_agents>(global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseSummaryFolderResponseModel.GetKnowledgeBaseSummaryFolderResponseModel_dependent_agents.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "dependent_agents", n => { DependentAgents = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseSummaryFolderResponseModelDependentAgentsItem>(global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseSummaryFolderResponseModelDependentAgentsItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "external_sync_info", n => { ExternalSyncInfo = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseSummaryFolderResponseModelExternalSyncInfo>(global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseSummaryFolderResponseModelExternalSyncInfo.CreateFromDiscriminatorValue); } },
                 { "folder_parent_id", n => { FolderParentId = n.GetStringValue(); } },
                 { "folder_path", n => { FolderPath = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeBaseFolderPathSegmentSummaryResponseModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeBaseFolderPathSegmentSummaryResponseModel.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
+                { "is_frozen", n => { IsFrozen = n.GetBoolValue(); } },
                 { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeBaseDocumentMetadataResponseModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeBaseDocumentMetadataResponseModel.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "supported_usages", n => { SupportedUsages = n.GetCollectionOfEnumValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.DocumentUsageModeEnum>()?.AsList(); } },
@@ -137,92 +150,19 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceAccessInfo>("access_info", AccessInfo);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AutoSyncInfo>("auto_sync_info", AutoSyncInfo);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseSummaryFolderResponseModelAutoSyncInfo>("auto_sync_info", AutoSyncInfo);
             writer.WriteIntValue("children_count", ChildrenCount);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseSummaryFolderResponseModel.GetKnowledgeBaseSummaryFolderResponseModel_dependent_agents>("dependent_agents", DependentAgents);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseSummaryFolderResponseModelDependentAgentsItem>("dependent_agents", DependentAgents);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseSummaryFolderResponseModelExternalSyncInfo>("external_sync_info", ExternalSyncInfo);
             writer.WriteStringValue("folder_parent_id", FolderParentId);
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeBaseFolderPathSegmentSummaryResponseModel>("folder_path", FolderPath);
             writer.WriteStringValue("id", Id);
+            writer.WriteBoolValue("is_frozen", IsFrozen);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeBaseDocumentMetadataResponseModel>("metadata", Metadata);
             writer.WriteStringValue("name", Name);
             writer.WriteCollectionOfEnumValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.DocumentUsageModeEnum>("supported_usages", SupportedUsages);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseSummaryFolderResponseModel_type>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.DependentAvailableAgentIdentifier"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.DependentUnknownAgentIdentifier"/>
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class GetKnowledgeBaseSummaryFolderResponseModel_dependent_agents : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.DependentAvailableAgentIdentifier"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.ElevenLabs.OpenApiClient.Models.DependentAvailableAgentIdentifier? DependentAvailableAgentIdentifier { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.ElevenLabs.OpenApiClient.Models.DependentAvailableAgentIdentifier DependentAvailableAgentIdentifier { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.DependentUnknownAgentIdentifier"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.ElevenLabs.OpenApiClient.Models.DependentUnknownAgentIdentifier? DependentUnknownAgentIdentifier { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.ElevenLabs.OpenApiClient.Models.DependentUnknownAgentIdentifier DependentUnknownAgentIdentifier { get; set; }
-#endif
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseSummaryFolderResponseModel.GetKnowledgeBaseSummaryFolderResponseModel_dependent_agents"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseSummaryFolderResponseModel.GetKnowledgeBaseSummaryFolderResponseModel_dependent_agents CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
-                var result = new global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseSummaryFolderResponseModel.GetKnowledgeBaseSummaryFolderResponseModel_dependent_agents();
-                if("available".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.DependentAvailableAgentIdentifier = new global::Soenneker.ElevenLabs.OpenApiClient.Models.DependentAvailableAgentIdentifier();
-                }
-                else if("unknown".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.DependentUnknownAgentIdentifier = new global::Soenneker.ElevenLabs.OpenApiClient.Models.DependentUnknownAgentIdentifier();
-                }
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                if(DependentAvailableAgentIdentifier != null)
-                {
-                    return DependentAvailableAgentIdentifier.GetFieldDeserializers();
-                }
-                else if(DependentUnknownAgentIdentifier != null)
-                {
-                    return DependentUnknownAgentIdentifier.GetFieldDeserializers();
-                }
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                if(DependentAvailableAgentIdentifier != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DependentAvailableAgentIdentifier>(null, DependentAvailableAgentIdentifier);
-                }
-                else if(DependentUnknownAgentIdentifier != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DependentUnknownAgentIdentifier>(null, DependentUnknownAgentIdentifier);
-                }
-            }
         }
     }
 }

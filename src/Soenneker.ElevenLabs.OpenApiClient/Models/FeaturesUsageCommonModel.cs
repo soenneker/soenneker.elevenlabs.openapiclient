@@ -130,6 +130,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public FeaturesUsageCommonModel()
         {
             AdditionalData = new Dictionary<string, object>();
+            IsLivekit = false;
+            PiiZrmAgent = false;
+            PiiZrmWorkspace = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

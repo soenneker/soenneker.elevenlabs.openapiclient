@@ -31,7 +31,6 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             AdditionalData = new Dictionary<string, object>();
             Feedback = "Your response was blocked by a guardrail that blocks content that matches this condition/category: '{{trigger_reason}}' During your next turn you must tell the user \"I'm sorry but I can't answer that question, would you like to know something else?\".";
-            Type = global::Soenneker.ElevenLabs.OpenApiClient.Models.RetryTriggerAction_type.Retry;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

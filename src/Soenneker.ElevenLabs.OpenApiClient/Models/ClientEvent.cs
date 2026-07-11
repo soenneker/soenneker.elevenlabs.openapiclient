@@ -10,11 +10,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     {
         [EnumMember(Value = "conversation_initiation_metadata")]
         #pragma warning disable CS1591
-        Conversation_initiation_metadata,
+        ConversationInitiationMetadata,
         #pragma warning restore CS1591
         [EnumMember(Value = "asr_initiation_metadata")]
         #pragma warning disable CS1591
-        Asr_initiation_metadata,
+        AsrInitiationMetadata,
         #pragma warning restore CS1591
         [EnumMember(Value = "ping")]
         #pragma warning disable CS1591
@@ -30,79 +30,79 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "user_transcript")]
         #pragma warning disable CS1591
-        User_transcript,
+        UserTranscript,
         #pragma warning restore CS1591
         [EnumMember(Value = "tentative_user_transcript")]
         #pragma warning disable CS1591
-        Tentative_user_transcript,
+        TentativeUserTranscript,
         #pragma warning restore CS1591
         [EnumMember(Value = "agent_response")]
         #pragma warning disable CS1591
-        Agent_response,
+        AgentResponse,
         #pragma warning restore CS1591
         [EnumMember(Value = "agent_response_correction")]
         #pragma warning disable CS1591
-        Agent_response_correction,
+        AgentResponseCorrection,
         #pragma warning restore CS1591
         [EnumMember(Value = "client_tool_call")]
         #pragma warning disable CS1591
-        Client_tool_call,
+        ClientToolCall,
         #pragma warning restore CS1591
         [EnumMember(Value = "mcp_tool_call")]
         #pragma warning disable CS1591
-        Mcp_tool_call,
+        McpToolCall,
         #pragma warning restore CS1591
         [EnumMember(Value = "mcp_connection_status")]
         #pragma warning disable CS1591
-        Mcp_connection_status,
+        McpConnectionStatus,
         #pragma warning restore CS1591
         [EnumMember(Value = "agent_tool_request")]
         #pragma warning disable CS1591
-        Agent_tool_request,
+        AgentToolRequest,
         #pragma warning restore CS1591
         [EnumMember(Value = "agent_tool_response")]
         #pragma warning disable CS1591
-        Agent_tool_response,
+        AgentToolResponse,
         #pragma warning restore CS1591
         [EnumMember(Value = "agent_tool_response_full_payload")]
         #pragma warning disable CS1591
-        Agent_tool_response_full_payload,
+        AgentToolResponseFullPayload,
         #pragma warning restore CS1591
         [EnumMember(Value = "agent_response_metadata")]
         #pragma warning disable CS1591
-        Agent_response_metadata,
+        AgentResponseMetadata,
         #pragma warning restore CS1591
         [EnumMember(Value = "vad_score")]
         #pragma warning disable CS1591
-        Vad_score,
+        VadScore,
         #pragma warning restore CS1591
         [EnumMember(Value = "agent_chat_response_part")]
         #pragma warning disable CS1591
-        Agent_chat_response_part,
+        AgentChatResponsePart,
         #pragma warning restore CS1591
         [EnumMember(Value = "client_error")]
         #pragma warning disable CS1591
-        Client_error,
+        ClientError,
         #pragma warning restore CS1591
         [EnumMember(Value = "guardrail_triggered")]
         #pragma warning disable CS1591
-        Guardrail_triggered,
+        GuardrailTriggered,
         #pragma warning restore CS1591
         [EnumMember(Value = "dtmf_request")]
         #pragma warning disable CS1591
-        Dtmf_request,
+        DtmfRequest,
         #pragma warning restore CS1591
         [EnumMember(Value = "agent_response_complete")]
         #pragma warning disable CS1591
-        Agent_response_complete,
+        AgentResponseComplete,
         #pragma warning restore CS1591
         [EnumMember(Value = "internal_turn_probability")]
         #pragma warning disable CS1591
-        Internal_turn_probability,
+        InternalTurnProbability,
         #pragma warning restore CS1591
         [EnumMember(Value = "internal_tentative_agent_response")]
         #pragma warning disable CS1591
-        Internal_tentative_agent_response,
+        InternalTentativeAgentResponse,
         #pragma warning restore CS1591
     }
 }

@@ -22,7 +22,6 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public DeleteProductParams()
         {
             AdditionalData = new Dictionary<string, object>();
-            SmbToolType = global::Soenneker.ElevenLabs.OpenApiClient.Models.DeleteProductParams_smb_tool_type.Delete_product;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -10,7 +10,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     {
         [EnumMember(Value = "delete_service")]
         #pragma warning disable CS1591
-        Delete_service,
+        DeleteService,
         #pragma warning restore CS1591
     }
 }

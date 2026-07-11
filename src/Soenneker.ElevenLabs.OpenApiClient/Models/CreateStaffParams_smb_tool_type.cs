@@ -10,7 +10,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     {
         [EnumMember(Value = "create_staff")]
         #pragma warning disable CS1591
-        Create_staff,
+        CreateStaff,
         #pragma warning restore CS1591
     }
 }

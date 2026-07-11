@@ -24,6 +24,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public FileInputConfig()
         {
             AdditionalData = new Dictionary<string, object>();
+            Enabled = true;
+            MaxFilesPerConversation = 10;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

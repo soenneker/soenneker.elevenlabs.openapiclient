@@ -29,20 +29,20 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The overall_score property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.UserFeedbackScore_Wrapper? OverallScore { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.UserFeedbackScoreWrapper2? OverallScore { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.UserFeedbackScore_Wrapper OverallScore { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.UserFeedbackScoreWrapper2 OverallScore { get; set; }
 #endif
         /// <summary>The rating property</summary>
         public int? Rating { get; set; }
         /// <summary>The type property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationFeedbackType_Wrapper? Type { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationFeedbackTypeWrapper? Type { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationFeedbackType_Wrapper Type { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationFeedbackTypeWrapper Type { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryFeedbackCommonModel"/> and sets the default values.
@@ -50,6 +50,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public ConversationHistoryFeedbackCommonModel()
         {
             AdditionalData = new Dictionary<string, object>();
+            Dislikes = 0;
+            Likes = 0;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -72,9 +74,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "comment", n => { Comment = n.GetStringValue(); } },
                 { "dislikes", n => { Dislikes = n.GetIntValue(); } },
                 { "likes", n => { Likes = n.GetIntValue(); } },
-                { "overall_score", n => { OverallScore = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UserFeedbackScore_Wrapper>(global::Soenneker.ElevenLabs.OpenApiClient.Models.UserFeedbackScore_Wrapper.CreateFromDiscriminatorValue); } },
+                { "overall_score", n => { OverallScore = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UserFeedbackScoreWrapper2>(global::Soenneker.ElevenLabs.OpenApiClient.Models.UserFeedbackScoreWrapper2.CreateFromDiscriminatorValue); } },
                 { "rating", n => { Rating = n.GetIntValue(); } },
-                { "type", n => { Type = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationFeedbackType_Wrapper>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationFeedbackType_Wrapper.CreateFromDiscriminatorValue); } },
+                { "type", n => { Type = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationFeedbackTypeWrapper>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationFeedbackTypeWrapper.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -87,9 +89,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteStringValue("comment", Comment);
             writer.WriteIntValue("dislikes", Dislikes);
             writer.WriteIntValue("likes", Likes);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UserFeedbackScore_Wrapper>("overall_score", OverallScore);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UserFeedbackScoreWrapper2>("overall_score", OverallScore);
             writer.WriteIntValue("rating", Rating);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationFeedbackType_Wrapper>("type", Type);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationFeedbackTypeWrapper>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

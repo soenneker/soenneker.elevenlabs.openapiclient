@@ -22,7 +22,6 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public UpdateCustomerFacingConfigParams()
         {
             AdditionalData = new Dictionary<string, object>();
-            SmbToolType = global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateCustomerFacingConfigParams_smb_tool_type.Update_customer_facing_config;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

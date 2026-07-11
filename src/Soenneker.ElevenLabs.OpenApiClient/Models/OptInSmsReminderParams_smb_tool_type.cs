@@ -10,7 +10,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     {
         [EnumMember(Value = "opt_in_sms_reminder")]
         #pragma warning disable CS1591
-        Opt_in_sms_reminder,
+        OptInSmsReminder,
         #pragma warning restore CS1591
     }
 }

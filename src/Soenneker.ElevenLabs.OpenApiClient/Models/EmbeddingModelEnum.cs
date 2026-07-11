@@ -10,11 +10,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     {
         [EnumMember(Value = "e5_mistral_7b_instruct")]
         #pragma warning disable CS1591
-        E5_mistral_7b_instruct,
+        E5Mistral7BInstruct,
         #pragma warning restore CS1591
         [EnumMember(Value = "multilingual_e5_large_instruct")]
         #pragma warning disable CS1591
-        Multilingual_e5_large_instruct,
+        MultilingualE5LargeInstruct,
         #pragma warning restore CS1591
     }
 }

@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.ElevenLabs.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.DubOrderItemRequest"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.SubtitleOrderItemRequest"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.DubOrderItemRequest"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.SubtitleOrderItemRequest"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.TranscriptionOrderItemRequest"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class OrderItemRequestOutput : IComposedTypeWrapper, IParsable
@@ -29,6 +29,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.SubtitleOrderItemRequest SubtitleOrderItemRequest { get; set; }
 #endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.TranscriptionOrderItemRequest"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.TranscriptionOrderItemRequest? TranscriptionOrderItemRequest { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.TranscriptionOrderItemRequest TranscriptionOrderItemRequest { get; set; }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -47,6 +55,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             {
                 result.SubtitleOrderItemRequest = new global::Soenneker.ElevenLabs.OpenApiClient.Models.SubtitleOrderItemRequest();
             }
+            else if("transcription".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.TranscriptionOrderItemRequest = new global::Soenneker.ElevenLabs.OpenApiClient.Models.TranscriptionOrderItemRequest();
+            }
             return result;
         }
         /// <summary>
@@ -62,6 +74,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             else if(SubtitleOrderItemRequest != null)
             {
                 return SubtitleOrderItemRequest.GetFieldDeserializers();
+            }
+            else if(TranscriptionOrderItemRequest != null)
+            {
+                return TranscriptionOrderItemRequest.GetFieldDeserializers();
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -79,6 +95,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             else if(SubtitleOrderItemRequest != null)
             {
                 writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SubtitleOrderItemRequest>(null, SubtitleOrderItemRequest);
+            }
+            else if(TranscriptionOrderItemRequest != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TranscriptionOrderItemRequest>(null, TranscriptionOrderItemRequest);
             }
         }
     }

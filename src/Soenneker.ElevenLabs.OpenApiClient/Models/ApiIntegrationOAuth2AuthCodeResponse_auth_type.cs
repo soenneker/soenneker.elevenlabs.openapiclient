@@ -10,7 +10,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     {
         [EnumMember(Value = "api_integration_oauth2_auth_code")]
         #pragma warning disable CS1591
-        Api_integration_oauth2_auth_code,
+        ApiIntegrationOAuth2AuthCode,
         #pragma warning restore CS1591
     }
 }

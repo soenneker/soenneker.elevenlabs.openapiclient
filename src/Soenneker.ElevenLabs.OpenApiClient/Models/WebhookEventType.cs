@@ -18,7 +18,15 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "call_initiation_failure")]
         #pragma warning disable CS1591
-        Call_initiation_failure,
+        CallInitiationFailure,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "unredacted_transcript")]
+        #pragma warning disable CS1591
+        UnredactedTranscript,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "unredacted_audio")]
+        #pragma warning disable CS1591
+        UnredactedAudio,
         #pragma warning restore CS1591
     }
 }

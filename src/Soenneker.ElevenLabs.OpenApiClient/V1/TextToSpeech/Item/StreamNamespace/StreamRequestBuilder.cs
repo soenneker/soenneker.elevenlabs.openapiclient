@@ -13,7 +13,7 @@ using System;
 namespace Soenneker.ElevenLabs.OpenApiClient.V1.TextToSpeech.Item.StreamNamespace
 {
     /// <summary>
-    /// Builds and executes requests for operations under \v1\text-to-speech\{voice_id}\stream
+    /// Builds and executes requests for operations under \v1\text-to-speech\{voiceId}\stream
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class StreamRequestBuilder : BaseRequestBuilder
@@ -28,7 +28,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.TextToSpeech.Item.StreamNamespac
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public StreamRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/text-to-speech/{voice_id}/stream{?enable_logging*,optimize_streaming_latency*,output_format*}", pathParameters)
+        public StreamRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/text-to-speech/{voiceId}/stream{?enable_logging*,optimize_streaming_latency*,output_format*}", pathParameters)
         {
         }
         /// <summary>
@@ -36,7 +36,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.TextToSpeech.Item.StreamNamespac
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public StreamRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/text-to-speech/{voice_id}/stream{?enable_logging*,optimize_streaming_latency*,output_format*}", rawUrl)
+        public StreamRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/text-to-speech/{voiceId}/stream{?enable_logging*,optimize_streaming_latency*,output_format*}", rawUrl)
         {
         }
         /// <summary>
@@ -46,7 +46,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.TextToSpeech.Item.StreamNamespac
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.HTTPValidationError">When receiving a 422 status code</exception>
+        /// <exception cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.HttpValidationError">When receiving a 422 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<Stream?> PostAsync(global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyTextToSpeechStream body, Action<RequestConfiguration<global::Soenneker.ElevenLabs.OpenApiClient.V1.TextToSpeech.Item.StreamNamespace.StreamRequestBuilder.StreamRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -60,7 +60,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.TextToSpeech.Item.StreamNamespac
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "422", global::Soenneker.ElevenLabs.OpenApiClient.Models.HTTPValidationError.CreateFromDiscriminatorValue },
+                { "422", global::Soenneker.ElevenLabs.OpenApiClient.Models.HttpValidationError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -110,7 +110,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.TextToSpeech.Item.StreamNamespac
             public int? OptimizeStreamingLatency { get; set; }
             /// <summary>Output format of the generated audio. Formatted as codec_sample_rate_bitrate. So an mp3 with 22.05kHz sample rate at 32kbs is represented as mp3_22050_32. MP3 with 192kbps bitrate requires you to be subscribed to Creator tier or above. PCM with 44.1kHz sample rate requires you to be subscribed to Pro tier or above. Note that the μ-law format (sometimes written mu-law, often approximated as u-law) is commonly used for Twilio audio inputs.</summary>
             [QueryParameter("output_format")]
-            public global::Soenneker.ElevenLabs.OpenApiClient.V1.TextToSpeech.Item.StreamNamespace.PostOutput_formatQueryParameterType? OutputFormat { get; set; }
+            public global::Soenneker.ElevenLabs.OpenApiClient.Models.TextToSpeechStreamOutputFormatParameter? OutputFormat { get; set; }
         }
     }
 }

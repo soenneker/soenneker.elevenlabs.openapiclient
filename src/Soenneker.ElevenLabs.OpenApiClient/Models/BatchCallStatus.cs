@@ -14,7 +14,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "in_progress")]
         #pragma warning disable CS1591
-        In_progress,
+        InProgress,
         #pragma warning restore CS1591
         [EnumMember(Value = "completed")]
         #pragma warning disable CS1591

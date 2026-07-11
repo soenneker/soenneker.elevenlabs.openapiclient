@@ -10,7 +10,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     {
         [EnumMember(Value = "language_detection")]
         #pragma warning disable CS1591
-        Language_detection,
+        LanguageDetection,
         #pragma warning restore CS1591
     }
 }

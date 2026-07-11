@@ -10,7 +10,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     {
         [EnumMember(Value = "bearer_auth")]
         #pragma warning disable CS1591
-        Bearer_auth,
+        BearerAuth,
         #pragma warning restore CS1591
     }
 }

@@ -14,7 +14,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "oauth2")]
         #pragma warning disable CS1591
-        Oauth2,
+        OAuth2,
         #pragma warning restore CS1591
         [EnumMember(Value = "mtls")]
         #pragma warning disable CS1591

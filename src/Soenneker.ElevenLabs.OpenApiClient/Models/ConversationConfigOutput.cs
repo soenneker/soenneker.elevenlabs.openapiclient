@@ -14,6 +14,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The background_sound property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BackgroundSoundConfig? BackgroundSound { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BackgroundSoundConfig BackgroundSound { get; set; }
+#endif
         /// <summary>The events that will be sent to the client</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -52,6 +60,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public ConversationConfigOutput()
         {
             AdditionalData = new Dictionary<string, object>();
+            MaxDurationSeconds = 600;
+            MonitoringEnabled = false;
+            SourceAttribution = false;
+            TextOnly = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -71,6 +83,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "background_sound", n => { BackgroundSound = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BackgroundSoundConfig>(global::Soenneker.ElevenLabs.OpenApiClient.Models.BackgroundSoundConfig.CreateFromDiscriminatorValue); } },
                 { "client_events", n => { ClientEvents = n.GetCollectionOfEnumValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.ClientEvent>()?.AsList(); } },
                 { "file_input", n => { FileInput = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.FileInputConfig>(global::Soenneker.ElevenLabs.OpenApiClient.Models.FileInputConfig.CreateFromDiscriminatorValue); } },
                 { "max_duration_seconds", n => { MaxDurationSeconds = n.GetIntValue(); } },
@@ -87,6 +100,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BackgroundSoundConfig>("background_sound", BackgroundSound);
             writer.WriteCollectionOfEnumValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.ClientEvent>("client_events", ClientEvents);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.FileInputConfig>("file_input", FileInput);
             writer.WriteIntValue("max_duration_seconds", MaxDurationSeconds);

@@ -32,6 +32,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public ConversationDeletionSettings()
         {
             AdditionalData = new Dictionary<string, object>();
+            DeleteAudio = false;
+            DeleteTranscriptAndPii = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

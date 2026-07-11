@@ -10,7 +10,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     {
         [EnumMember(Value = "delete_group_session")]
         #pragma warning disable CS1591
-        Delete_group_session,
+        DeleteGroupSession,
         #pragma warning restore CS1591
     }
 }

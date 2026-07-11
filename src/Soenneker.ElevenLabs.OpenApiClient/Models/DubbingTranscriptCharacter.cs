@@ -32,6 +32,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public DubbingTranscriptCharacter()
         {
             AdditionalData = new Dictionary<string, object>();
+            EndS = 0.0;
+            StartS = 0.0;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

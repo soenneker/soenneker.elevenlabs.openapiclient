@@ -61,10 +61,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The scopes property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Scopes? Scopes { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateOAuth2ClientCredsRequestScopes? Scopes { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Scopes Scopes { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateOAuth2ClientCredsRequestScopes Scopes { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateOAuth2ClientCredsRequest"/> and sets the default values.
@@ -72,7 +72,6 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public UpdateOAuth2ClientCredsRequest()
         {
             AdditionalData = new Dictionary<string, object>();
-            AuthType = global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateOAuth2ClientCredsRequest_auth_type.Oauth2_client_credentials;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -99,7 +98,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "custom_headers", n => { CustomHeaders = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateOAuth2ClientCredsRequestCustomHeaders>(global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateOAuth2ClientCredsRequestCustomHeaders.CreateFromDiscriminatorValue); } },
                 { "extra_params", n => { ExtraParams = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateOAuth2ClientCredsRequestExtraParams>(global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateOAuth2ClientCredsRequestExtraParams.CreateFromDiscriminatorValue); } },
                 { "provider", n => { Provider = n.GetStringValue(); } },
-                { "scopes", n => { Scopes = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Scopes>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Scopes.CreateFromDiscriminatorValue); } },
+                { "scopes", n => { Scopes = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateOAuth2ClientCredsRequestScopes>(global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateOAuth2ClientCredsRequestScopes.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -116,7 +115,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateOAuth2ClientCredsRequestCustomHeaders>("custom_headers", CustomHeaders);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateOAuth2ClientCredsRequestExtraParams>("extra_params", ExtraParams);
             writer.WriteStringValue("provider", Provider);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Scopes>("scopes", Scopes);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateOAuth2ClientCredsRequestScopes>("scopes", Scopes);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

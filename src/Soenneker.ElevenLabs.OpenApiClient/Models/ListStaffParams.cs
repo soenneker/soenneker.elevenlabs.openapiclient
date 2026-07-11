@@ -17,10 +17,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The list_kwargs property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ListStaffParams_list_kwargs? ListKwargs { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ListStaffParamsListKwargsProperty? ListKwargs { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ListStaffParams_list_kwargs ListKwargs { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ListStaffParamsListKwargsProperty ListKwargs { get; set; }
 #endif
         /// <summary>The smb_tool_type property</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.ListStaffParams_smb_tool_type? SmbToolType { get; set; }
@@ -30,7 +30,6 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public ListStaffParams()
         {
             AdditionalData = new Dictionary<string, object>();
-            SmbToolType = global::Soenneker.ElevenLabs.OpenApiClient.Models.ListStaffParams_smb_tool_type.List_staff;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -50,7 +49,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "list_kwargs", n => { ListKwargs = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ListStaffParams_list_kwargs>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ListStaffParams_list_kwargs.CreateFromDiscriminatorValue); } },
+                { "list_kwargs", n => { ListKwargs = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ListStaffParamsListKwargsProperty>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ListStaffParamsListKwargsProperty.CreateFromDiscriminatorValue); } },
                 { "smb_tool_type", n => { SmbToolType = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ListStaffParams_smb_tool_type>(); } },
             };
         }
@@ -61,7 +60,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ListStaffParams_list_kwargs>("list_kwargs", ListKwargs);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ListStaffParamsListKwargsProperty>("list_kwargs", ListKwargs);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ListStaffParams_smb_tool_type>("smb_tool_type", SmbToolType);
             writer.WriteAdditionalData(AdditionalData);
         }

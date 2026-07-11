@@ -31,7 +31,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ChapterContentParagraphTtsNodeInputModel> Nodes { get; set; }
 #endif
         /// <summary>The sub_type property</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ChapterContentBlockInputModel_sub_type? SubType { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ChapterContentBlockInputModelSubType? SubType { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ChapterContentBlockInputModel"/> and sets the default values.
         /// </summary>
@@ -59,7 +59,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             {
                 { "block_id", n => { BlockId = n.GetStringValue(); } },
                 { "nodes", n => { Nodes = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.ChapterContentParagraphTtsNodeInputModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ChapterContentParagraphTtsNodeInputModel.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "sub_type", n => { SubType = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ChapterContentBlockInputModel_sub_type>(); } },
+                { "sub_type", n => { SubType = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ChapterContentBlockInputModelSubType>(); } },
             };
         }
         /// <summary>
@@ -71,7 +71,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("block_id", BlockId);
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.ChapterContentParagraphTtsNodeInputModel>("nodes", Nodes);
-            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ChapterContentBlockInputModel_sub_type>("sub_type", SubType);
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ChapterContentBlockInputModelSubType>("sub_type", SubType);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

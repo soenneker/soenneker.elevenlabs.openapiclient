@@ -23,7 +23,6 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public DeleteServiceParams()
         {
             AdditionalData = new Dictionary<string, object>();
-            SmbToolType = global::Soenneker.ElevenLabs.OpenApiClient.Models.DeleteServiceParams_smb_tool_type.Delete_service;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

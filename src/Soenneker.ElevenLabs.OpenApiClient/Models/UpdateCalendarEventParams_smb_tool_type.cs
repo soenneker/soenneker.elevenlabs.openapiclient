@@ -10,7 +10,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     {
         [EnumMember(Value = "update_calendar_event")]
         #pragma warning disable CS1591
-        Update_calendar_event,
+        UpdateCalendarEvent,
         #pragma warning restore CS1591
     }
 }

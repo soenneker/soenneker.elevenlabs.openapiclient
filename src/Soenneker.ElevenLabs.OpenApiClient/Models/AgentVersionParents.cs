@@ -54,6 +54,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public string OutOfBranchParentId { get; set; }
 #endif
+        /// <summary>The rebased_from_version_id property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? RebasedFromVersionId { get; set; }
+#nullable restore
+#else
+        public string RebasedFromVersionId { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentVersionParents"/> and sets the default values.
         /// </summary>
@@ -84,6 +92,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "merged_from_version_id", n => { MergedFromVersionId = n.GetStringValue(); } },
                 { "merged_into_branch_id", n => { MergedIntoBranchId = n.GetStringValue(); } },
                 { "out_of_branch_parent_id", n => { OutOfBranchParentId = n.GetStringValue(); } },
+                { "rebased_from_version_id", n => { RebasedFromVersionId = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -98,6 +107,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteStringValue("merged_from_version_id", MergedFromVersionId);
             writer.WriteStringValue("merged_into_branch_id", MergedIntoBranchId);
             writer.WriteStringValue("out_of_branch_parent_id", OutOfBranchParentId);
+            writer.WriteStringValue("rebased_from_version_id", RebasedFromVersionId);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

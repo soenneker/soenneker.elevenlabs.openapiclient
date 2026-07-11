@@ -42,7 +42,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public BodySoundGenerationV1SoundGenerationPost()
         {
             AdditionalData = new Dictionary<string, object>();
+            Loop = false;
             ModelId = "eleven_text_to_sound_v2";
+            PromptInfluence = 0.3;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

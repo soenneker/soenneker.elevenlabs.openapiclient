@@ -24,6 +24,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #endif
         /// <summary>The is_pinned property</summary>
         public bool? IsPinned { get; set; }
+        /// <summary>The project_voice_ref_id property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ProjectVoiceRefId { get; set; }
+#nullable restore
+#else
+        public string ProjectVoiceRefId { get; set; }
+#endif
         /// <summary>The similarity_boost property</summary>
         public double? SimilarityBoost { get; set; }
         /// <summary>The speed property</summary>
@@ -71,6 +79,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             {
                 { "alias", n => { Alias = n.GetStringValue(); } },
                 { "is_pinned", n => { IsPinned = n.GetBoolValue(); } },
+                { "project_voice_ref_id", n => { ProjectVoiceRefId = n.GetStringValue(); } },
                 { "similarity_boost", n => { SimilarityBoost = n.GetDoubleValue(); } },
                 { "speed", n => { Speed = n.GetDoubleValue(); } },
                 { "stability", n => { Stability = n.GetDoubleValue(); } },
@@ -89,6 +98,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("alias", Alias);
             writer.WriteBoolValue("is_pinned", IsPinned);
+            writer.WriteStringValue("project_voice_ref_id", ProjectVoiceRefId);
             writer.WriteDoubleValue("similarity_boost", SimilarityBoost);
             writer.WriteDoubleValue("speed", Speed);
             writer.WriteDoubleValue("stability", Stability);

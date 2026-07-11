@@ -24,7 +24,6 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public PendingCancellationResponseModel()
         {
             AdditionalData = new Dictionary<string, object>();
-            Kind = global::Soenneker.ElevenLabs.OpenApiClient.Models.PendingCancellationResponseModel_kind.Cancellation;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

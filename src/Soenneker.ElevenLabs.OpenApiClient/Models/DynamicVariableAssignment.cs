@@ -43,7 +43,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public DynamicVariableAssignment()
         {
             AdditionalData = new Dictionary<string, object>();
-            Source = global::Soenneker.ElevenLabs.OpenApiClient.Models.DynamicVariableAssignment_source.Response;
+            PreserveNativeType = false;
+            Sanitize = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

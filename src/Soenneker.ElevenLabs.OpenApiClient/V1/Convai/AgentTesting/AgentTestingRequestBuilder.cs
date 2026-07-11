@@ -44,14 +44,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.AgentTesting
         }
         /// <summary>Gets an item from the Soenneker.ElevenLabs.OpenApiClient.v1.convai.agentTesting.item collection</summary>
         /// <param name="position">The id of a chat response test. This is returned on test creation.</param>
-        /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.AgentTesting.Item.WithTest_ItemRequestBuilder"/></returns>
-        public global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.AgentTesting.Item.WithTest_ItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.AgentTesting.Item.WithTestItemRequestBuilder"/></returns>
+        public global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.AgentTesting.Item.WithTestItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("test_id", position);
-                return new global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.AgentTesting.Item.WithTest_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("testId", position);
+                return new global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.AgentTesting.Item.WithTestItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -76,7 +76,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.AgentTesting
         /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.GetTestsPageResponseModel"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.HTTPValidationError">When receiving a 422 status code</exception>
+        /// <exception cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.HttpValidationError">When receiving a 422 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetTestsPageResponseModel?> GetAsync(Action<RequestConfiguration<global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.AgentTesting.AgentTestingRequestBuilder.AgentTestingRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -89,7 +89,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.AgentTesting
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "422", global::Soenneker.ElevenLabs.OpenApiClient.Models.HTTPValidationError.CreateFromDiscriminatorValue },
+                { "422", global::Soenneker.ElevenLabs.OpenApiClient.Models.HttpValidationError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetTestsPageResponseModel>(requestInfo, global::Soenneker.ElevenLabs.OpenApiClient.Models.GetTestsPageResponseModel.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -169,7 +169,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.AgentTesting
             public global::Soenneker.ElevenLabs.OpenApiClient.Models.TestSharingMode? SharingMode { get; set; }
             /// <summary>Sort mode for listing tests. Use &apos;folders_first&apos; to place folders before tests.</summary>
             [QueryParameter("sort_mode")]
-            public global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.AgentTesting.GetSort_modeQueryParameterType? SortMode { get; set; }
+            public global::Soenneker.ElevenLabs.OpenApiClient.Models.ListChatResponseTestsRouteSortModeParameter? SortMode { get; set; }
             /// <summary>If present, the endpoint will return only tests/folders of the given types.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

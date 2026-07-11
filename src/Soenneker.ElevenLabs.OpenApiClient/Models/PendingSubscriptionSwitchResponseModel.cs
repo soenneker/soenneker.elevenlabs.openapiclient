@@ -19,7 +19,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The next_billing_period property</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.BillingPeriod? NextBillingPeriod { get; set; }
         /// <summary>The tier to change to.</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PendingSubscriptionSwitchResponseModel_next_tier? NextTier { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PendingSubscriptionSwitchResponseModelNextTier? NextTier { get; set; }
         /// <summary>The timestamp of the change.</summary>
         public int? TimestampSeconds { get; set; }
         /// <summary>
@@ -28,7 +28,6 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public PendingSubscriptionSwitchResponseModel()
         {
             AdditionalData = new Dictionary<string, object>();
-            Kind = global::Soenneker.ElevenLabs.OpenApiClient.Models.PendingSubscriptionSwitchResponseModel_kind.Change;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -50,7 +49,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             {
                 { "kind", n => { Kind = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PendingSubscriptionSwitchResponseModel_kind>(); } },
                 { "next_billing_period", n => { NextBillingPeriod = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BillingPeriod>(); } },
-                { "next_tier", n => { NextTier = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PendingSubscriptionSwitchResponseModel_next_tier>(); } },
+                { "next_tier", n => { NextTier = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PendingSubscriptionSwitchResponseModelNextTier>(); } },
                 { "timestamp_seconds", n => { TimestampSeconds = n.GetIntValue(); } },
             };
         }
@@ -63,7 +62,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PendingSubscriptionSwitchResponseModel_kind>("kind", Kind);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BillingPeriod>("next_billing_period", NextBillingPeriod);
-            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PendingSubscriptionSwitchResponseModel_next_tier>("next_tier", NextTier);
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PendingSubscriptionSwitchResponseModelNextTier>("next_tier", NextTier);
             writer.WriteIntValue("timestamp_seconds", TimestampSeconds);
             writer.WriteAdditionalData(AdditionalData);
         }

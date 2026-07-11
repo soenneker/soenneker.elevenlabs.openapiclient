@@ -22,7 +22,6 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public DeleteClientInteractionParams()
         {
             AdditionalData = new Dictionary<string, object>();
-            SmbToolType = global::Soenneker.ElevenLabs.OpenApiClient.Models.DeleteClientInteractionParams_smb_tool_type.Delete_client_interaction;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

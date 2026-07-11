@@ -10,11 +10,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     {
         [EnumMember(Value = "search_score")]
         #pragma warning disable CS1591
-        Search_score,
+        SearchScore,
         #pragma warning restore CS1591
         [EnumMember(Value = "created_at")]
         #pragma warning disable CS1591
-        Created_at,
+        CreatedAt,
         #pragma warning restore CS1591
     }
 }

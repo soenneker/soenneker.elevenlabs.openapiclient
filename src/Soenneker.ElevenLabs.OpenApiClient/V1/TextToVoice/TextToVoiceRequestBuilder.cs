@@ -26,14 +26,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.TextToVoice
         }
         /// <summary>Gets an item from the Soenneker.ElevenLabs.OpenApiClient.v1.textToVoice.item collection</summary>
         /// <param name="position">The generated_voice_id to stream.</param>
-        /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.V1.TextToVoice.Item.Generated_voice_ItemRequestBuilder"/></returns>
-        public global::Soenneker.ElevenLabs.OpenApiClient.V1.TextToVoice.Item.Generated_voice_ItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.V1.TextToVoice.Item.GeneratedVoiceItemRequestBuilder"/></returns>
+        public global::Soenneker.ElevenLabs.OpenApiClient.V1.TextToVoice.Item.GeneratedVoiceItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("generated_voice_%2Did", position);
-                return new global::Soenneker.ElevenLabs.OpenApiClient.V1.TextToVoice.Item.Generated_voice_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("generatedVoice%2Did", position);
+                return new global::Soenneker.ElevenLabs.OpenApiClient.V1.TextToVoice.Item.GeneratedVoiceItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -59,7 +59,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.TextToVoice
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.HTTPValidationError">When receiving a 422 status code</exception>
+        /// <exception cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.HttpValidationError">When receiving a 422 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceResponseModel?> PostAsync(global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateANewVoiceFromVoicePreviewV1TextToVoicePost body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -73,7 +73,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.TextToVoice
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "422", global::Soenneker.ElevenLabs.OpenApiClient.Models.HTTPValidationError.CreateFromDiscriminatorValue },
+                { "422", global::Soenneker.ElevenLabs.OpenApiClient.Models.HttpValidationError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceResponseModel>(requestInfo, global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceResponseModel.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

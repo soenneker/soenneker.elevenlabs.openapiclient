@@ -10,11 +10,15 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     {
         [EnumMember(Value = "last_contact_unix_secs")]
         #pragma warning disable CS1591
-        Last_contact_unix_secs,
+        LastContactUnixSecs,
         #pragma warning restore CS1591
         [EnumMember(Value = "conversation_count")]
         #pragma warning disable CS1591
-        Conversation_count,
+        ConversationCount,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "average_sentiment_score")]
+        #pragma warning disable CS1591
+        AverageSentimentScore,
         #pragma warning restore CS1591
     }
 }

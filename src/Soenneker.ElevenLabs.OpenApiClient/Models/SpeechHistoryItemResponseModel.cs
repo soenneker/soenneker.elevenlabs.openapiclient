@@ -17,10 +17,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The alignments of the history item.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.HistoryAlignmentsResponseModel? Alignments { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechHistoryItemResponseModelAlignments? Alignments { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.HistoryAlignmentsResponseModel Alignments { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechHistoryItemResponseModelAlignments Alignments { get; set; }
 #endif
         /// <summary>The character count change from.</summary>
         public int? CharacterCountChangeFrom { get; set; }
@@ -39,18 +39,18 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The dialogue (voice and text pairs) used to generate the audio item. If this is set then the top level `text` and `voice_id` fields will be empty.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Dialogue? Dialogue { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechHistoryItemResponseModelDialogue? Dialogue { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Dialogue Dialogue { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechHistoryItemResponseModelDialogue Dialogue { get; set; }
 #endif
         /// <summary>Feedback associated with the generated item. Returns null if no feedback has been provided.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.FeedbackResponseModel? Feedback { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechHistoryItemResponseModelFeedback? Feedback { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.FeedbackResponseModel Feedback { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechHistoryItemResponseModelFeedback Feedback { get; set; }
 #endif
         /// <summary>The ID of the history item.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -87,10 +87,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The settings of the history item.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechHistoryItemResponseModel_settings? Settings { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechHistoryItemResponseModelSettings? Settings { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechHistoryItemResponseModel_settings Settings { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechHistoryItemResponseModelSettings Settings { get; set; }
 #endif
         /// <summary>The ID of the share link.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -101,9 +101,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public string ShareLinkId { get; set; }
 #endif
         /// <summary>The source of the history item. Either TTS (text to speech), STS (speech to text), AN (audio native), Projects, Dubbing, PlayAPI, PD (pronunciation dictionary) or ConvAI (Agents Platform).</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechHistoryItemResponseModel_source? Source { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechHistoryItemResponseModelSource? Source { get; set; }
         /// <summary>The state of the history item.</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechHistoryItemResponseModel_state? State { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechHistoryItemResponseModelState? State { get; set; }
         /// <summary>The text used to generate the audio item.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -113,7 +113,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public string Text { get; set; }
 #endif
         /// <summary>The category of the voice. Either &apos;premade&apos;, &apos;cloned&apos;, &apos;generated&apos; or &apos;professional&apos;.</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechHistoryItemResponseModel_voice_category? VoiceCategory { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechHistoryItemResponseModelVoiceCategory? VoiceCategory { get; set; }
         /// <summary>The ID of the voice used.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -155,23 +155,23 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "alignments", n => { Alignments = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.HistoryAlignmentsResponseModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.HistoryAlignmentsResponseModel.CreateFromDiscriminatorValue); } },
+                { "alignments", n => { Alignments = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechHistoryItemResponseModelAlignments>(global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechHistoryItemResponseModelAlignments.CreateFromDiscriminatorValue); } },
                 { "character_count_change_from", n => { CharacterCountChangeFrom = n.GetIntValue(); } },
                 { "character_count_change_to", n => { CharacterCountChangeTo = n.GetIntValue(); } },
                 { "content_type", n => { ContentType = n.GetStringValue(); } },
                 { "date_unix", n => { DateUnix = n.GetIntValue(); } },
-                { "dialogue", n => { Dialogue = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Dialogue>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Dialogue.CreateFromDiscriminatorValue); } },
-                { "feedback", n => { Feedback = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.FeedbackResponseModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.FeedbackResponseModel.CreateFromDiscriminatorValue); } },
+                { "dialogue", n => { Dialogue = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechHistoryItemResponseModelDialogue>(global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechHistoryItemResponseModelDialogue.CreateFromDiscriminatorValue); } },
+                { "feedback", n => { Feedback = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechHistoryItemResponseModelFeedback>(global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechHistoryItemResponseModelFeedback.CreateFromDiscriminatorValue); } },
                 { "history_item_id", n => { HistoryItemId = n.GetStringValue(); } },
                 { "model_id", n => { ModelId = n.GetStringValue(); } },
                 { "output_format", n => { OutputFormat = n.GetStringValue(); } },
                 { "request_id", n => { RequestId = n.GetStringValue(); } },
-                { "settings", n => { Settings = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechHistoryItemResponseModel_settings>(global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechHistoryItemResponseModel_settings.CreateFromDiscriminatorValue); } },
+                { "settings", n => { Settings = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechHistoryItemResponseModelSettings>(global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechHistoryItemResponseModelSettings.CreateFromDiscriminatorValue); } },
                 { "share_link_id", n => { ShareLinkId = n.GetStringValue(); } },
-                { "source", n => { Source = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechHistoryItemResponseModel_source>(); } },
-                { "state", n => { State = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechHistoryItemResponseModel_state>(); } },
+                { "source", n => { Source = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechHistoryItemResponseModelSource>(); } },
+                { "state", n => { State = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechHistoryItemResponseModelState>(); } },
                 { "text", n => { Text = n.GetStringValue(); } },
-                { "voice_category", n => { VoiceCategory = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechHistoryItemResponseModel_voice_category>(); } },
+                { "voice_category", n => { VoiceCategory = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechHistoryItemResponseModelVoiceCategory>(); } },
                 { "voice_id", n => { VoiceId = n.GetStringValue(); } },
                 { "voice_name", n => { VoiceName = n.GetStringValue(); } },
             };
@@ -183,23 +183,23 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.HistoryAlignmentsResponseModel>("alignments", Alignments);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechHistoryItemResponseModelAlignments>("alignments", Alignments);
             writer.WriteIntValue("character_count_change_from", CharacterCountChangeFrom);
             writer.WriteIntValue("character_count_change_to", CharacterCountChangeTo);
             writer.WriteStringValue("content_type", ContentType);
             writer.WriteIntValue("date_unix", DateUnix);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Dialogue>("dialogue", Dialogue);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.FeedbackResponseModel>("feedback", Feedback);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechHistoryItemResponseModelDialogue>("dialogue", Dialogue);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechHistoryItemResponseModelFeedback>("feedback", Feedback);
             writer.WriteStringValue("history_item_id", HistoryItemId);
             writer.WriteStringValue("model_id", ModelId);
             writer.WriteStringValue("output_format", OutputFormat);
             writer.WriteStringValue("request_id", RequestId);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechHistoryItemResponseModel_settings>("settings", Settings);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechHistoryItemResponseModelSettings>("settings", Settings);
             writer.WriteStringValue("share_link_id", ShareLinkId);
-            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechHistoryItemResponseModel_source>("source", Source);
-            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechHistoryItemResponseModel_state>("state", State);
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechHistoryItemResponseModelSource>("source", Source);
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechHistoryItemResponseModelState>("state", State);
             writer.WriteStringValue("text", Text);
-            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechHistoryItemResponseModel_voice_category>("voice_category", VoiceCategory);
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechHistoryItemResponseModelVoiceCategory>("voice_category", VoiceCategory);
             writer.WriteStringValue("voice_id", VoiceId);
             writer.WriteStringValue("voice_name", VoiceName);
             writer.WriteAdditionalData(AdditionalData);

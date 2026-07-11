@@ -23,7 +23,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceGroupResponseModel Group { get; set; }
 #endif
         /// <summary>The permission level to grant to the group</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.DefaultSharingGroupResponseModel_permission_level? PermissionLevel { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.DefaultSharingGroupResponseModelPermissionLevel? PermissionLevel { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.DefaultSharingGroupResponseModel"/> and sets the default values.
         /// </summary>
@@ -50,7 +50,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "group", n => { Group = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceGroupResponseModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceGroupResponseModel.CreateFromDiscriminatorValue); } },
-                { "permission_level", n => { PermissionLevel = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DefaultSharingGroupResponseModel_permission_level>(); } },
+                { "permission_level", n => { PermissionLevel = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DefaultSharingGroupResponseModelPermissionLevel>(); } },
             };
         }
         /// <summary>
@@ -61,7 +61,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceGroupResponseModel>("group", Group);
-            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DefaultSharingGroupResponseModel_permission_level>("permission_level", PermissionLevel);
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DefaultSharingGroupResponseModelPermissionLevel>("permission_level", PermissionLevel);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

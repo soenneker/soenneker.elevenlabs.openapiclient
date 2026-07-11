@@ -64,6 +64,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public VoiceRemixRequestModel()
         {
             AdditionalData = new Dictionary<string, object>();
+            AutoGenerateText = false;
+            GuidanceScale = 2;
+            Loudness = 0.5;
+            StreamPreviews = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

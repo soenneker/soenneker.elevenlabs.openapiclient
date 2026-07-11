@@ -40,6 +40,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public PrivacyConfigInput()
         {
             AdditionalData = new Dictionary<string, object>();
+            ApplyToExistingConversations = false;
+            DeleteAudio = false;
+            DeleteTranscriptAndPii = false;
+            RecordVoice = true;
+            RetentionDays = -1;
+            ZeroRetentionMode = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

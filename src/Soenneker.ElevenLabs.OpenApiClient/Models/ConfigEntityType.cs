@@ -13,23 +13,23 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "name.name_given")]
         #pragma warning disable CS1591
-        NameName_given,
+        NameNameGiven,
         #pragma warning restore CS1591
         [EnumMember(Value = "name.name_family")]
         #pragma warning disable CS1591
-        NameName_family,
+        NameNameFamily,
         #pragma warning restore CS1591
         [EnumMember(Value = "name.name_other")]
         #pragma warning disable CS1591
-        NameName_other,
+        NameNameOther,
         #pragma warning restore CS1591
         [EnumMember(Value = "email_address")]
         #pragma warning disable CS1591
-        Email_address,
+        EmailAddress,
         #pragma warning restore CS1591
         [EnumMember(Value = "contact_number")]
         #pragma warning disable CS1591
-        Contact_number,
+        ContactNumber,
         #pragma warning restore CS1591
         [EnumMember(Value = "dob")]
         #pragma warning disable CS1591
@@ -41,23 +41,23 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "religious_belief")]
         #pragma warning disable CS1591
-        Religious_belief,
+        ReligiousBelief,
         #pragma warning restore CS1591
         [EnumMember(Value = "political_opinion")]
         #pragma warning disable CS1591
-        Political_opinion,
+        PoliticalOpinion,
         #pragma warning restore CS1591
         [EnumMember(Value = "sexual_orientation")]
         #pragma warning disable CS1591
-        Sexual_orientation,
+        SexualOrientation,
         #pragma warning restore CS1591
         [EnumMember(Value = "ethnicity_race")]
         #pragma warning disable CS1591
-        Ethnicity_race,
+        EthnicityRace,
         #pragma warning restore CS1591
         [EnumMember(Value = "marital_status")]
         #pragma warning disable CS1591
-        Marital_status,
+        MaritalStatus,
         #pragma warning restore CS1591
         [EnumMember(Value = "occupation")]
         #pragma warning disable CS1591
@@ -65,7 +65,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "physical_attribute")]
         #pragma warning disable CS1591
-        Physical_attribute,
+        PhysicalAttribute,
         #pragma warning restore CS1591
         [EnumMember(Value = "language")]
         #pragma warning disable CS1591
@@ -89,43 +89,43 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "financial_id")]
         #pragma warning disable CS1591
-        Financial_id,
+        FinancialId,
         #pragma warning restore CS1591
         [EnumMember(Value = "financial_id.payment_card")]
         #pragma warning disable CS1591
-        Financial_idPayment_card,
+        FinancialIdPaymentCard,
         #pragma warning restore CS1591
         [EnumMember(Value = "financial_id.payment_card.payment_card_number")]
         #pragma warning disable CS1591
-        Financial_idPayment_cardPayment_card_number,
+        FinancialIdPaymentCardPaymentCardNumber,
         #pragma warning restore CS1591
         [EnumMember(Value = "financial_id.payment_card.payment_card_expiration_date")]
         #pragma warning disable CS1591
-        Financial_idPayment_cardPayment_card_expiration_date,
+        FinancialIdPaymentCardPaymentCardExpirationDate,
         #pragma warning restore CS1591
         [EnumMember(Value = "financial_id.payment_card.payment_card_cvv")]
         #pragma warning disable CS1591
-        Financial_idPayment_cardPayment_card_cvv,
+        FinancialIdPaymentCardPaymentCardCvv,
         #pragma warning restore CS1591
         [EnumMember(Value = "financial_id.bank_account")]
         #pragma warning disable CS1591
-        Financial_idBank_account,
+        FinancialIdBankAccount,
         #pragma warning restore CS1591
         [EnumMember(Value = "financial_id.bank_account.bank_account_number")]
         #pragma warning disable CS1591
-        Financial_idBank_accountBank_account_number,
+        FinancialIdBankAccountBankAccountNumber,
         #pragma warning restore CS1591
         [EnumMember(Value = "financial_id.bank_account.bank_routing_number")]
         #pragma warning disable CS1591
-        Financial_idBank_accountBank_routing_number,
+        FinancialIdBankAccountBankRoutingNumber,
         #pragma warning restore CS1591
         [EnumMember(Value = "financial_id.bank_account.swift_bic_code")]
         #pragma warning disable CS1591
-        Financial_idBank_accountSwift_bic_code,
+        FinancialIdBankAccountSwiftBicCode,
         #pragma warning restore CS1591
         [EnumMember(Value = "financial_id.financial_id_other")]
         #pragma warning disable CS1591
-        Financial_idFinancial_id_other,
+        FinancialIdFinancialIdOther,
         #pragma warning restore CS1591
         [EnumMember(Value = "location")]
         #pragma warning disable CS1591
@@ -133,31 +133,31 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "location.location_address")]
         #pragma warning disable CS1591
-        LocationLocation_address,
+        LocationLocationAddress,
         #pragma warning restore CS1591
         [EnumMember(Value = "location.location_city")]
         #pragma warning disable CS1591
-        LocationLocation_city,
+        LocationLocationCity,
         #pragma warning restore CS1591
         [EnumMember(Value = "location.location_postal_code")]
         #pragma warning disable CS1591
-        LocationLocation_postal_code,
+        LocationLocationPostalCode,
         #pragma warning restore CS1591
         [EnumMember(Value = "location.location_coordinate")]
         #pragma warning disable CS1591
-        LocationLocation_coordinate,
+        LocationLocationCoordinate,
         #pragma warning restore CS1591
         [EnumMember(Value = "location.location_state")]
         #pragma warning disable CS1591
-        LocationLocation_state,
+        LocationLocationState,
         #pragma warning restore CS1591
         [EnumMember(Value = "location.location_country")]
         #pragma warning disable CS1591
-        LocationLocation_country,
+        LocationLocationCountry,
         #pragma warning restore CS1591
         [EnumMember(Value = "location.location_other")]
         #pragma warning disable CS1591
-        LocationLocation_other,
+        LocationLocationOther,
         #pragma warning restore CS1591
         [EnumMember(Value = "date")]
         #pragma warning disable CS1591
@@ -165,43 +165,43 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "date_interval")]
         #pragma warning disable CS1591
-        Date_interval,
+        DateInterval,
         #pragma warning restore CS1591
         [EnumMember(Value = "unique_id")]
         #pragma warning disable CS1591
-        Unique_id,
+        UniqueId,
         #pragma warning restore CS1591
         [EnumMember(Value = "unique_id.government_issued_id")]
         #pragma warning disable CS1591
-        Unique_idGovernment_issued_id,
+        UniqueIdGovernmentIssuedId,
         #pragma warning restore CS1591
         [EnumMember(Value = "unique_id.account_number")]
         #pragma warning disable CS1591
-        Unique_idAccount_number,
+        UniqueIdAccountNumber,
         #pragma warning restore CS1591
         [EnumMember(Value = "unique_id.vehicle_id")]
         #pragma warning disable CS1591
-        Unique_idVehicle_id,
+        UniqueIdVehicleId,
         #pragma warning restore CS1591
         [EnumMember(Value = "unique_id.healthcare_number")]
         #pragma warning disable CS1591
-        Unique_idHealthcare_number,
+        UniqueIdHealthcareNumber,
         #pragma warning restore CS1591
         [EnumMember(Value = "unique_id.healthcare_number.medical_record_number")]
         #pragma warning disable CS1591
-        Unique_idHealthcare_numberMedical_record_number,
+        UniqueIdHealthcareNumberMedicalRecordNumber,
         #pragma warning restore CS1591
         [EnumMember(Value = "unique_id.healthcare_number.health_plan_beneficiary_number")]
         #pragma warning disable CS1591
-        Unique_idHealthcare_numberHealth_plan_beneficiary_number,
+        UniqueIdHealthcareNumberHealthPlanBeneficiaryNumber,
         #pragma warning restore CS1591
         [EnumMember(Value = "unique_id.device_id")]
         #pragma warning disable CS1591
-        Unique_idDevice_id,
+        UniqueIdDeviceId,
         #pragma warning restore CS1591
         [EnumMember(Value = "unique_id.unique_id_other")]
         #pragma warning disable CS1591
-        Unique_idUnique_id_other,
+        UniqueIdUniqueIdOther,
         #pragma warning restore CS1591
         [EnumMember(Value = "medical")]
         #pragma warning disable CS1591
@@ -209,7 +209,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "medical.medical_condition")]
         #pragma warning disable CS1591
-        MedicalMedical_condition,
+        MedicalMedicalCondition,
         #pragma warning restore CS1591
         [EnumMember(Value = "medical.medication")]
         #pragma warning disable CS1591
@@ -217,15 +217,15 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "medical.medical_procedure")]
         #pragma warning disable CS1591
-        MedicalMedical_procedure,
+        MedicalMedicalProcedure,
         #pragma warning restore CS1591
         [EnumMember(Value = "medical.medical_measurement")]
         #pragma warning disable CS1591
-        MedicalMedical_measurement,
+        MedicalMedicalMeasurement,
         #pragma warning restore CS1591
         [EnumMember(Value = "medical.medical_other")]
         #pragma warning disable CS1591
-        MedicalMedical_other,
+        MedicalMedicalOther,
         #pragma warning restore CS1591
     }
 }

@@ -40,7 +40,6 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             AdditionalData = new Dictionary<string, object>();
             Color1 = "#2792dc";
             Color2 = "#9ce6e6";
-            Type = global::Soenneker.ElevenLabs.OpenApiClient.Models.OrbAvatar_type.Orb;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

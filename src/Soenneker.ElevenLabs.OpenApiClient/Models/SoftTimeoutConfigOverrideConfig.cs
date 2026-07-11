@@ -22,6 +22,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public SoftTimeoutConfigOverrideConfig()
         {
             AdditionalData = new Dictionary<string, object>();
+            Message = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

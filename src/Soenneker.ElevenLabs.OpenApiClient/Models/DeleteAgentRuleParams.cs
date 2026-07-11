@@ -22,7 +22,6 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public DeleteAgentRuleParams()
         {
             AdditionalData = new Dictionary<string, object>();
-            SmbToolType = global::Soenneker.ElevenLabs.OpenApiClient.Models.DeleteAgentRuleParams_smb_tool_type.Delete_agent_rule;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

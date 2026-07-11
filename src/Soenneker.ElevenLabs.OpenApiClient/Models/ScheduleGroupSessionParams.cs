@@ -23,7 +23,6 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public ScheduleGroupSessionParams()
         {
             AdditionalData = new Dictionary<string, object>();
-            SmbToolType = global::Soenneker.ElevenLabs.OpenApiClient.Models.ScheduleGroupSessionParams_smb_tool_type.Schedule_group_session;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

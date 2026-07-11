@@ -9,7 +9,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     {
         [EnumMember(Value = "system_prompt")]
         #pragma warning disable CS1591
-        System_prompt,
+        SystemPrompt,
         #pragma warning restore CS1591
         [EnumMember(Value = "elevenlabs")]
         #pragma warning disable CS1591

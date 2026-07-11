@@ -10,7 +10,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     {
         [EnumMember(Value = "update_booking_page_settings")]
         #pragma warning disable CS1591
-        Update_booking_page_settings,
+        UpdateBookingPageSettings,
         #pragma warning restore CS1591
     }
 }

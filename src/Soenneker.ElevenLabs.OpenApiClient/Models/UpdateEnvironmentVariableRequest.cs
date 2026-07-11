@@ -17,10 +17,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Values to replace. Set to null to remove an environment (except &apos;production&apos;).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateEnvironmentVariableRequest_values? Values { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateEnvironmentVariableRequestValuesProperty? Values { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateEnvironmentVariableRequest_values Values { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateEnvironmentVariableRequestValuesProperty Values { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateEnvironmentVariableRequest"/> and sets the default values.
@@ -47,7 +47,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "values", n => { Values = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateEnvironmentVariableRequest_values>(global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateEnvironmentVariableRequest_values.CreateFromDiscriminatorValue); } },
+                { "values", n => { Values = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateEnvironmentVariableRequestValuesProperty>(global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateEnvironmentVariableRequestValuesProperty.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -57,7 +57,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateEnvironmentVariableRequest_values>("values", Values);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateEnvironmentVariableRequestValuesProperty>("values", Values);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

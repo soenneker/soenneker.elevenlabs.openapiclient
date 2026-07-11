@@ -22,7 +22,6 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public UpdateBookingPageSettingsParams()
         {
             AdditionalData = new Dictionary<string, object>();
-            SmbToolType = global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateBookingPageSettingsParams_smb_tool_type.Update_booking_page_settings;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

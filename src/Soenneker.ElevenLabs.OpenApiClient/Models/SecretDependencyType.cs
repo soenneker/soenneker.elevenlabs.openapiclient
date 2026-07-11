@@ -10,7 +10,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     {
         [EnumMember(Value = "conversation_initiation_webhook")]
         #pragma warning disable CS1591
-        Conversation_initiation_webhook,
+        ConversationInitiationWebhook,
         #pragma warning restore CS1591
     }
 }

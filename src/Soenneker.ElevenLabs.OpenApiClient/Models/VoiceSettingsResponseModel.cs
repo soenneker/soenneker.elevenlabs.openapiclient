@@ -30,6 +30,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public VoiceSettingsResponseModel()
         {
             AdditionalData = new Dictionary<string, object>();
+            SimilarityBoost = 0.75;
+            Speed = 1.0;
+            Stability = 0.5;
+            Style = 0.0;
+            UseSpeakerBoost = true;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -26,6 +26,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public TestsFeatureUsageCommonModel()
         {
             AdditionalData = new Dictionary<string, object>();
+            Enabled = false;
+            TestsRanAfterLastModification = false;
+            TestsRanInLast7Days = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

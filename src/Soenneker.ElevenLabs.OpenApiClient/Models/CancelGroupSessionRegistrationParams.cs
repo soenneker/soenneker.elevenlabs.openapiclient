@@ -23,7 +23,6 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public CancelGroupSessionRegistrationParams()
         {
             AdditionalData = new Dictionary<string, object>();
-            SmbToolType = global::Soenneker.ElevenLabs.OpenApiClient.Models.CancelGroupSessionRegistrationParams_smb_tool_type.Cancel_group_session_registration;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

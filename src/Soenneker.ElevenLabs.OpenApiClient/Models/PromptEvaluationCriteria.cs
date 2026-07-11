@@ -34,11 +34,13 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>LLM model to use for this evaluation criteria. If not set, uses agent&apos;s analysis_llm default.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.LLM_Wrapper? Llm { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmWrapper11? Llm { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.LLM_Wrapper Llm { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmWrapper11 Llm { get; set; }
 #endif
+        /// <summary>Maximum value of the numeric score scale (minimum is always 0). Only used when scoring_mode is &apos;numeric_uniform&apos;.</summary>
+        public int? MaxScore { get; set; }
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -49,6 +51,16 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #endif
         /// <summary>The scope property</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.AnalysisScope? Scope { get; set; }
+        /// <summary>Optional free-text instructions describing how to assign values on the numeric scale. Only used when scoring_mode is &apos;numeric_uniform&apos;.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ScoreInstructions { get; set; }
+#nullable restore
+#else
+        public string ScoreInstructions { get; set; }
+#endif
+        /// <summary>The scoring_mode property</summary>
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CriteriaScoringMode? ScoringMode { get; set; }
         /// <summary>The type of evaluation criteria</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptEvaluationCriteria_type? Type { get; set; }
         /// <summary>When evaluating the prompt, should the agent&apos;s knowledge base be used.</summary>
@@ -59,8 +71,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public PromptEvaluationCriteria()
         {
             AdditionalData = new Dictionary<string, object>();
-            Scope = global::Soenneker.ElevenLabs.OpenApiClient.Models.AnalysisScope.Conversation;
-            Type = global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptEvaluationCriteria_type.Prompt;
+            MaxScore = 100;
+            UseKnowledgeBase = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -82,9 +94,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             {
                 { "conversation_goal_prompt", n => { ConversationGoalPrompt = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "llm", n => { Llm = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.LLM_Wrapper>(global::Soenneker.ElevenLabs.OpenApiClient.Models.LLM_Wrapper.CreateFromDiscriminatorValue); } },
+                { "llm", n => { Llm = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmWrapper11>(global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmWrapper11.CreateFromDiscriminatorValue); } },
+                { "max_score", n => { MaxScore = n.GetIntValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "scope", n => { Scope = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AnalysisScope>(); } },
+                { "score_instructions", n => { ScoreInstructions = n.GetStringValue(); } },
+                { "scoring_mode", n => { ScoringMode = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CriteriaScoringMode>(); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptEvaluationCriteria_type>(); } },
                 { "use_knowledge_base", n => { UseKnowledgeBase = n.GetBoolValue(); } },
             };
@@ -98,9 +113,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("conversation_goal_prompt", ConversationGoalPrompt);
             writer.WriteStringValue("id", Id);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.LLM_Wrapper>("llm", Llm);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmWrapper11>("llm", Llm);
+            writer.WriteIntValue("max_score", MaxScore);
             writer.WriteStringValue("name", Name);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AnalysisScope>("scope", Scope);
+            writer.WriteStringValue("score_instructions", ScoreInstructions);
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CriteriaScoringMode>("scoring_mode", ScoringMode);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptEvaluationCriteria_type>("type", Type);
             writer.WriteBoolValue("use_knowledge_base", UseKnowledgeBase);
             writer.WriteAdditionalData(AdditionalData);

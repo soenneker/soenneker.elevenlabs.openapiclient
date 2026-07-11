@@ -20,14 +20,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.WhatsappAccounts
     {
         /// <summary>Gets an item from the Soenneker.ElevenLabs.OpenApiClient.v1.convai.whatsappAccounts.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
-        /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.WhatsappAccounts.Item.WithPhone_number_ItemRequestBuilder"/></returns>
-        public global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.WhatsappAccounts.Item.WithPhone_number_ItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.WhatsappAccounts.Item.WithPhoneNumberItemRequestBuilder"/></returns>
+        public global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.WhatsappAccounts.Item.WithPhoneNumberItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("phone_number_id", position);
-                return new global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.WhatsappAccounts.Item.WithPhone_number_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("phoneNumberId", position);
+                return new global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.WhatsappAccounts.Item.WithPhoneNumberItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -35,7 +35,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.WhatsappAccounts
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WhatsappAccountsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/convai/whatsapp-accounts", pathParameters)
+        public WhatsappAccountsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/convai/whatsapp-accounts{?agent_id*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.WhatsappAccounts
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WhatsappAccountsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/convai/whatsapp-accounts", rawUrl)
+        public WhatsappAccountsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/convai/whatsapp-accounts{?agent_id*}", rawUrl)
         {
         }
         /// <summary>
@@ -52,20 +52,20 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.WhatsappAccounts
         /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ListWhatsAppAccountsResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.HTTPValidationError">When receiving a 422 status code</exception>
+        /// <exception cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.HttpValidationError">When receiving a 422 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.ElevenLabs.OpenApiClient.Models.ListWhatsAppAccountsResponse?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.ElevenLabs.OpenApiClient.Models.ListWhatsAppAccountsResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.WhatsappAccounts.WhatsappAccountsRequestBuilder.WhatsappAccountsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.ElevenLabs.OpenApiClient.Models.ListWhatsAppAccountsResponse> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.ElevenLabs.OpenApiClient.Models.ListWhatsAppAccountsResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.WhatsappAccounts.WhatsappAccountsRequestBuilder.WhatsappAccountsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "422", global::Soenneker.ElevenLabs.OpenApiClient.Models.HTTPValidationError.CreateFromDiscriminatorValue },
+                { "422", global::Soenneker.ElevenLabs.OpenApiClient.Models.HttpValidationError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.ElevenLabs.OpenApiClient.Models.ListWhatsAppAccountsResponse>(requestInfo, global::Soenneker.ElevenLabs.OpenApiClient.Models.ListWhatsAppAccountsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -76,11 +76,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.WhatsappAccounts
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.WhatsappAccounts.WhatsappAccountsRequestBuilder.WhatsappAccountsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.WhatsappAccounts.WhatsappAccountsRequestBuilder.WhatsappAccountsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -96,6 +96,23 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.WhatsappAccounts
         public global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.WhatsappAccounts.WhatsappAccountsRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.WhatsappAccounts.WhatsappAccountsRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
+        /// List all WhatsApp accounts
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class WhatsappAccountsRequestBuilderGetQueryParameters 
+        {
+            /// <summary>Filter by assigned agent ID</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("agent_id")]
+            public string? AgentId { get; set; }
+#nullable restore
+#else
+            [QueryParameter("agent_id")]
+            public string AgentId { get; set; }
+#endif
         }
     }
 }

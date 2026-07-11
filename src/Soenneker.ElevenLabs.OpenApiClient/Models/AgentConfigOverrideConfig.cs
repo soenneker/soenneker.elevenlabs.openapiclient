@@ -23,10 +23,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The prompt property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentAPIModelOverrideConfig? Prompt { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentApiModelOverrideConfig? Prompt { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentAPIModelOverrideConfig Prompt { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentApiModelOverrideConfig Prompt { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentConfigOverrideConfig"/> and sets the default values.
@@ -34,6 +34,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public AgentConfigOverrideConfig()
         {
             AdditionalData = new Dictionary<string, object>();
+            FirstMessage = false;
+            Language = false;
+            MaxConversationDurationMessage = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -56,7 +59,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "first_message", n => { FirstMessage = n.GetBoolValue(); } },
                 { "language", n => { Language = n.GetBoolValue(); } },
                 { "max_conversation_duration_message", n => { MaxConversationDurationMessage = n.GetBoolValue(); } },
-                { "prompt", n => { Prompt = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentAPIModelOverrideConfig>(global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentAPIModelOverrideConfig.CreateFromDiscriminatorValue); } },
+                { "prompt", n => { Prompt = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentApiModelOverrideConfig>(global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentApiModelOverrideConfig.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -69,7 +72,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteBoolValue("first_message", FirstMessage);
             writer.WriteBoolValue("language", Language);
             writer.WriteBoolValue("max_conversation_duration_message", MaxConversationDurationMessage);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentAPIModelOverrideConfig>("prompt", Prompt);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentApiModelOverrideConfig>("prompt", Prompt);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

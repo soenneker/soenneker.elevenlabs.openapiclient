@@ -40,6 +40,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public BodyCreateFolderV1ConvaiKnowledgeBaseFolderPost()
         {
             AdditionalData = new Dictionary<string, object>();
+            AutoRemove = false;
+            EnableAutoSync = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -22,6 +22,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public ConversationHistoryElevenAssistantCommonModel()
         {
             AdditionalData = new Dictionary<string, object>();
+            IsElevenAssistant = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

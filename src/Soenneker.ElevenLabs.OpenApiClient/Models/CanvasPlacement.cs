@@ -49,6 +49,20 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public CanvasPlacement()
         {
             AdditionalData = new Dictionary<string, object>();
+            CropBottom = 0.0;
+            CropLeft = 0.0;
+            CropRight = 0.0;
+            CropTop = 0.0;
+            FlipX = false;
+            FlipY = false;
+            PivotX = 0.0;
+            PivotY = 0.0;
+            ScaleX = 1.0;
+            ScaleY = 1.0;
+            SkewX = 0.0;
+            SkewY = 0.0;
+            XRelative = 0.5;
+            YRelative = 0.5;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

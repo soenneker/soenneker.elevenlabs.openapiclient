@@ -17,10 +17,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Headers to include in the WebSocket connection request</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechEngineConfig_request_headers? RequestHeaders { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechEngineConfigRequestHeadersProperty? RequestHeaders { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechEngineConfig_request_headers RequestHeaders { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechEngineConfigRequestHeadersProperty RequestHeaders { get; set; }
 #endif
         /// <summary>The WebSocket URL for the transcript server</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -55,7 +55,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "request_headers", n => { RequestHeaders = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechEngineConfig_request_headers>(global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechEngineConfig_request_headers.CreateFromDiscriminatorValue); } },
+                { "request_headers", n => { RequestHeaders = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechEngineConfigRequestHeadersProperty>(global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechEngineConfigRequestHeadersProperty.CreateFromDiscriminatorValue); } },
                 { "ws_url", n => { WsUrl = n.GetStringValue(); } },
             };
         }
@@ -66,7 +66,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechEngineConfig_request_headers>("request_headers", RequestHeaders);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechEngineConfigRequestHeadersProperty>("request_headers", RequestHeaders);
             writer.WriteStringValue("ws_url", WsUrl);
             writer.WriteAdditionalData(AdditionalData);
         }

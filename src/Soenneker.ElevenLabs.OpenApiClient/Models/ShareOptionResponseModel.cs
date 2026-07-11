@@ -31,7 +31,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public string Name { get; set; }
 #endif
         /// <summary>&quot;The type of the principal: user, group, or service account (under &apos;key&apos;).&quot;</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ShareOptionResponseModel_type? Type { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ShareOptionResponseModelType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ShareOptionResponseModel"/> and sets the default values.
         /// </summary>
@@ -59,7 +59,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             {
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ShareOptionResponseModel_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ShareOptionResponseModelType>(); } },
             };
         }
         /// <summary>
@@ -71,7 +71,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("name", Name);
-            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ShareOptionResponseModel_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ShareOptionResponseModelType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.ElevenLabs.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ApiIntegrationOAuth2AuthCodeResponse"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ApiIntegrationOAuth2CustomAppResponse"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.BasicAuthResponse"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.BearerAuthResponse"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomHeaderAuthResponse"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.MTLSAuthResponse"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.OAuth2ClientCredsResponse"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.OAuth2JWTResponse"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.PrivateKeyJWTResponse"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.SlackBotAuthResponse"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppAuthResponse"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ApiIntegrationOAuth2AuthCodeResponse"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ApiIntegrationOAuth2CustomAppResponse"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.BasicAuthResponse"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.BearerAuthResponse"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomHeaderAuthResponse"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.MtlsAuthResponse"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.OAuth2ClientCredsResponse"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.OAuth2JwtResponse"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.PrivateKeyJwtResponse"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.SlackBotAuthResponse"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.UrlSecretAuthResponse"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppAuthResponse"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ResponseCreateWorkspaceAuthConnectionV1WorkspaceAuthConnectionsPost : IComposedTypeWrapper, IParsable
@@ -53,13 +53,13 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomHeaderAuthResponse CustomHeaderAuthResponse { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.MTLSAuthResponse"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.MtlsAuthResponse"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.MTLSAuthResponse? MTLSAuthResponse { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.MtlsAuthResponse? MtlsAuthResponse { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.MTLSAuthResponse MTLSAuthResponse { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.MtlsAuthResponse MtlsAuthResponse { get; set; }
 #endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.OAuth2ClientCredsResponse"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -69,21 +69,21 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.OAuth2ClientCredsResponse OAuth2ClientCredsResponse { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.OAuth2JWTResponse"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.OAuth2JwtResponse"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.OAuth2JWTResponse? OAuth2JWTResponse { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.OAuth2JwtResponse? OAuth2JwtResponse { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.OAuth2JWTResponse OAuth2JWTResponse { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.OAuth2JwtResponse OAuth2JwtResponse { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.PrivateKeyJWTResponse"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.PrivateKeyJwtResponse"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PrivateKeyJWTResponse? PrivateKeyJWTResponse { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PrivateKeyJwtResponse? PrivateKeyJwtResponse { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PrivateKeyJWTResponse PrivateKeyJWTResponse { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PrivateKeyJwtResponse PrivateKeyJwtResponse { get; set; }
 #endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.SlackBotAuthResponse"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -92,6 +92,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #nullable restore
 #else
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.SlackBotAuthResponse SlackBotAuthResponse { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.UrlSecretAuthResponse"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.UrlSecretAuthResponse? UrlSecretAuthResponse { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.UrlSecretAuthResponse UrlSecretAuthResponse { get; set; }
 #endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppAuthResponse"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -133,23 +141,27 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             }
             else if("mtls".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.MTLSAuthResponse = new global::Soenneker.ElevenLabs.OpenApiClient.Models.MTLSAuthResponse();
+                result.MtlsAuthResponse = new global::Soenneker.ElevenLabs.OpenApiClient.Models.MtlsAuthResponse();
             }
             else if("OAuth2ClientCredsResponse".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.OAuth2ClientCredsResponse = new global::Soenneker.ElevenLabs.OpenApiClient.Models.OAuth2ClientCredsResponse();
             }
-            else if("OAuth2JWTResponse".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("OAuth2JwtResponse".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.OAuth2JWTResponse = new global::Soenneker.ElevenLabs.OpenApiClient.Models.OAuth2JWTResponse();
+                result.OAuth2JwtResponse = new global::Soenneker.ElevenLabs.OpenApiClient.Models.OAuth2JwtResponse();
             }
-            else if("PrivateKeyJWTResponse".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("PrivateKeyJwtResponse".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.PrivateKeyJWTResponse = new global::Soenneker.ElevenLabs.OpenApiClient.Models.PrivateKeyJWTResponse();
+                result.PrivateKeyJwtResponse = new global::Soenneker.ElevenLabs.OpenApiClient.Models.PrivateKeyJwtResponse();
             }
             else if("SlackBotAuthResponse".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.SlackBotAuthResponse = new global::Soenneker.ElevenLabs.OpenApiClient.Models.SlackBotAuthResponse();
+            }
+            else if("UrlSecretAuthResponse".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.UrlSecretAuthResponse = new global::Soenneker.ElevenLabs.OpenApiClient.Models.UrlSecretAuthResponse();
             }
             else if("WhatsAppAuthResponse".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
@@ -183,25 +195,29 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             {
                 return CustomHeaderAuthResponse.GetFieldDeserializers();
             }
-            else if(MTLSAuthResponse != null)
+            else if(MtlsAuthResponse != null)
             {
-                return MTLSAuthResponse.GetFieldDeserializers();
+                return MtlsAuthResponse.GetFieldDeserializers();
             }
             else if(OAuth2ClientCredsResponse != null)
             {
                 return OAuth2ClientCredsResponse.GetFieldDeserializers();
             }
-            else if(OAuth2JWTResponse != null)
+            else if(OAuth2JwtResponse != null)
             {
-                return OAuth2JWTResponse.GetFieldDeserializers();
+                return OAuth2JwtResponse.GetFieldDeserializers();
             }
-            else if(PrivateKeyJWTResponse != null)
+            else if(PrivateKeyJwtResponse != null)
             {
-                return PrivateKeyJWTResponse.GetFieldDeserializers();
+                return PrivateKeyJwtResponse.GetFieldDeserializers();
             }
             else if(SlackBotAuthResponse != null)
             {
                 return SlackBotAuthResponse.GetFieldDeserializers();
+            }
+            else if(UrlSecretAuthResponse != null)
+            {
+                return UrlSecretAuthResponse.GetFieldDeserializers();
             }
             else if(WhatsAppAuthResponse != null)
             {
@@ -236,25 +252,29 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             {
                 writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomHeaderAuthResponse>(null, CustomHeaderAuthResponse);
             }
-            else if(MTLSAuthResponse != null)
+            else if(MtlsAuthResponse != null)
             {
-                writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.MTLSAuthResponse>(null, MTLSAuthResponse);
+                writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.MtlsAuthResponse>(null, MtlsAuthResponse);
             }
             else if(OAuth2ClientCredsResponse != null)
             {
                 writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.OAuth2ClientCredsResponse>(null, OAuth2ClientCredsResponse);
             }
-            else if(OAuth2JWTResponse != null)
+            else if(OAuth2JwtResponse != null)
             {
-                writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.OAuth2JWTResponse>(null, OAuth2JWTResponse);
+                writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.OAuth2JwtResponse>(null, OAuth2JwtResponse);
             }
-            else if(PrivateKeyJWTResponse != null)
+            else if(PrivateKeyJwtResponse != null)
             {
-                writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PrivateKeyJWTResponse>(null, PrivateKeyJWTResponse);
+                writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PrivateKeyJwtResponse>(null, PrivateKeyJwtResponse);
             }
             else if(SlackBotAuthResponse != null)
             {
                 writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SlackBotAuthResponse>(null, SlackBotAuthResponse);
+            }
+            else if(UrlSecretAuthResponse != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UrlSecretAuthResponse>(null, UrlSecretAuthResponse);
             }
             else if(WhatsAppAuthResponse != null)
             {

@@ -24,6 +24,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public ModelRatesResponseModel()
         {
             AdditionalData = new Dictionary<string, object>();
+            CostDiscountMultiplier = 1.0;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

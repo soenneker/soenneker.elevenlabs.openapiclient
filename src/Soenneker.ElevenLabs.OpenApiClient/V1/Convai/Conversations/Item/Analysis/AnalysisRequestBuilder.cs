@@ -2,6 +2,7 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Conversations.Item.Analysis.Evaluations;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Conversations.Item.Analysis.Run;
 using System.Collections.Generic;
 using System.IO;
@@ -10,11 +11,16 @@ using System;
 namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Conversations.Item.Analysis
 {
     /// <summary>
-    /// Builds and executes requests for operations under \v1\convai\conversations\{conversation_id}\analysis
+    /// Builds and executes requests for operations under \v1\convai\conversations\{conversationId}\analysis
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AnalysisRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The evaluations property</summary>
+        public global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Conversations.Item.Analysis.Evaluations.EvaluationsRequestBuilder Evaluations
+        {
+            get => new global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Conversations.Item.Analysis.Evaluations.EvaluationsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The run property</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Conversations.Item.Analysis.Run.RunRequestBuilder Run
         {
@@ -25,7 +31,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Conversations.Item.Analys
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AnalysisRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/convai/conversations/{conversation_id}/analysis", pathParameters)
+        public AnalysisRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/convai/conversations/{conversationId}/analysis", pathParameters)
         {
         }
         /// <summary>
@@ -33,7 +39,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Conversations.Item.Analys
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AnalysisRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/convai/conversations/{conversation_id}/analysis", rawUrl)
+        public AnalysisRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/convai/conversations/{conversationId}/analysis", rawUrl)
         {
         }
     }

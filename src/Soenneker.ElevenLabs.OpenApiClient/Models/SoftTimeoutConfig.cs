@@ -15,7 +15,15 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Custom prompt for generating the soft timeout filler message when use_llm_generated_message is enabled. Recent conversation context is provided as a separate user message. If not set, the default prompt will be used.</summary>
+        /// <summary>Extra static filler messages for subsequent soft timeouts in the same LLM generation. The first timeout uses `message`. If fewer messages are configured than `max_soft_timeouts_per_generation`, the last configured message is repeated; otherwise a built-in filler is used.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? AdditionalSoftTimeoutMessages { get; set; }
+#nullable restore
+#else
+        public List<string> AdditionalSoftTimeoutMessages { get; set; }
+#endif
+        /// <summary>Custom prompt for generating the soft timeout filler message when use_llm_generated_message is enabled. Recent conversation context is provided as a separate user message. If not set, the default prompt will be used. Supports dynamic variables (e.g., {{system__time}}, {{custom_variable}}).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? LlmGeneratedMessagePromptOverride { get; set; }
@@ -23,7 +31,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public string LlmGeneratedMessagePromptOverride { get; set; }
 #endif
-        /// <summary>Message to show when soft timeout is reached while waiting for LLM response</summary>
+        /// <summary>Maximum filler messages while waiting for a single LLM response. Fires every timeout_seconds until the LLM streams content or this limit is reached.</summary>
+        public int? MaxSoftTimeoutsPerGeneration { get; set; }
+        /// <summary>Message to show when the first soft timeout is reached while waiting for LLM response. Supports dynamic variables (e.g., {{system__time}}, {{custom_variable}}).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Message { get; set; }
@@ -31,6 +41,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public string Message { get; set; }
 #endif
+        /// <summary>If enabled, shuffle the order of static soft timeout messages once at the start of each turn. Only applies when use_llm_generated_message is false.</summary>
+        public bool? RandomizeFillers { get; set; }
         /// <summary>Time in seconds before showing the predefined message while waiting for LLM response. Set to -1 to disable.</summary>
         public double? TimeoutSeconds { get; set; }
         /// <summary>If enabled, the soft timeout message will be generated dynamically instead of using the static message.</summary>
@@ -41,7 +53,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public SoftTimeoutConfig()
         {
             AdditionalData = new Dictionary<string, object>();
+            MaxSoftTimeoutsPerGeneration = 1;
             Message = "Hhmmmm...yeah.";
+            RandomizeFillers = false;
+            TimeoutSeconds = -1.0;
+            UseLlmGeneratedMessage = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -61,8 +77,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "additional_soft_timeout_messages", n => { AdditionalSoftTimeoutMessages = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "llm_generated_message_prompt_override", n => { LlmGeneratedMessagePromptOverride = n.GetStringValue(); } },
+                { "max_soft_timeouts_per_generation", n => { MaxSoftTimeoutsPerGeneration = n.GetIntValue(); } },
                 { "message", n => { Message = n.GetStringValue(); } },
+                { "randomize_fillers", n => { RandomizeFillers = n.GetBoolValue(); } },
                 { "timeout_seconds", n => { TimeoutSeconds = n.GetDoubleValue(); } },
                 { "use_llm_generated_message", n => { UseLlmGeneratedMessage = n.GetBoolValue(); } },
             };
@@ -74,8 +93,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteCollectionOfPrimitiveValues<string>("additional_soft_timeout_messages", AdditionalSoftTimeoutMessages);
             writer.WriteStringValue("llm_generated_message_prompt_override", LlmGeneratedMessagePromptOverride);
+            writer.WriteIntValue("max_soft_timeouts_per_generation", MaxSoftTimeoutsPerGeneration);
             writer.WriteStringValue("message", Message);
+            writer.WriteBoolValue("randomize_fillers", RandomizeFillers);
             writer.WriteDoubleValue("timeout_seconds", TimeoutSeconds);
             writer.WriteBoolValue("use_llm_generated_message", UseLlmGeneratedMessage);
             writer.WriteAdditionalData(AdditionalData);

@@ -10,21 +10,21 @@ using System;
 namespace Soenneker.ElevenLabs.OpenApiClient.V1.Dubbing.Item.Audio
 {
     /// <summary>
-    /// Builds and executes requests for operations under \v1\dubbing\{dubbing_id}\audio
+    /// Builds and executes requests for operations under \v1\dubbing\{dubbingId}\audio
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AudioRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.ElevenLabs.OpenApiClient.v1.dubbing.item.audio.item collection</summary>
         /// <param name="position">ID of the language.</param>
-        /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.V1.Dubbing.Item.Audio.Item.WithLanguage_codeItemRequestBuilder"/></returns>
-        public global::Soenneker.ElevenLabs.OpenApiClient.V1.Dubbing.Item.Audio.Item.WithLanguage_codeItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.V1.Dubbing.Item.Audio.Item.WithLanguageCodeItemRequestBuilder"/></returns>
+        public global::Soenneker.ElevenLabs.OpenApiClient.V1.Dubbing.Item.Audio.Item.WithLanguageCodeItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("language_code", position);
-                return new global::Soenneker.ElevenLabs.OpenApiClient.V1.Dubbing.Item.Audio.Item.WithLanguage_codeItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("languageCode", position);
+                return new global::Soenneker.ElevenLabs.OpenApiClient.V1.Dubbing.Item.Audio.Item.WithLanguageCodeItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -32,7 +32,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Dubbing.Item.Audio
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AudioRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/dubbing/{dubbing_id}/audio", pathParameters)
+        public AudioRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/dubbing/{dubbingId}/audio", pathParameters)
         {
         }
         /// <summary>
@@ -40,7 +40,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Dubbing.Item.Audio
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AudioRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/dubbing/{dubbing_id}/audio", rawUrl)
+        public AudioRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/dubbing/{dubbingId}/audio", rawUrl)
         {
         }
     }

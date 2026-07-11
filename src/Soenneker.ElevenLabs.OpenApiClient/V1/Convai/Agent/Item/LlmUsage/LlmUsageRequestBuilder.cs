@@ -10,7 +10,7 @@ using System;
 namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agent.Item.LlmUsage
 {
     /// <summary>
-    /// Builds and executes requests for operations under \v1\convai\agent\{agent_id}\llm-usage
+    /// Builds and executes requests for operations under \v1\convai\agent\{agentId}\llm-usage
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class LlmUsageRequestBuilder : BaseRequestBuilder
@@ -25,7 +25,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agent.Item.LlmUsage
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public LlmUsageRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/convai/agent/{agent_id}/llm-usage", pathParameters)
+        public LlmUsageRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/convai/agent/{agentId}/llm-usage", pathParameters)
         {
         }
         /// <summary>
@@ -33,7 +33,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agent.Item.LlmUsage
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public LlmUsageRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/convai/agent/{agent_id}/llm-usage", rawUrl)
+        public LlmUsageRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/convai/agent/{agentId}/llm-usage", rawUrl)
         {
         }
     }

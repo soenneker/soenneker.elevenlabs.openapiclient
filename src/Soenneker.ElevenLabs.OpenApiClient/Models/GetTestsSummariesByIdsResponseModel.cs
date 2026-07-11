@@ -17,10 +17,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Dictionary mapping test IDs to their summary information</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetTestsSummariesByIdsResponseModel_tests? Tests { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetTestsSummariesByIdsResponseModelTestsProperty? Tests { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetTestsSummariesByIdsResponseModel_tests Tests { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetTestsSummariesByIdsResponseModelTestsProperty Tests { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.GetTestsSummariesByIdsResponseModel"/> and sets the default values.
@@ -47,7 +47,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "tests", n => { Tests = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetTestsSummariesByIdsResponseModel_tests>(global::Soenneker.ElevenLabs.OpenApiClient.Models.GetTestsSummariesByIdsResponseModel_tests.CreateFromDiscriminatorValue); } },
+                { "tests", n => { Tests = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetTestsSummariesByIdsResponseModelTestsProperty>(global::Soenneker.ElevenLabs.OpenApiClient.Models.GetTestsSummariesByIdsResponseModelTestsProperty.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -57,7 +57,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetTestsSummariesByIdsResponseModel_tests>("tests", Tests);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetTestsSummariesByIdsResponseModelTestsProperty>("tests", Tests);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

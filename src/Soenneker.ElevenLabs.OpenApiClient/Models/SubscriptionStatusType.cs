@@ -22,7 +22,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "past_due")]
         #pragma warning disable CS1591
-        Past_due,
+        PastDue,
         #pragma warning restore CS1591
         [EnumMember(Value = "free")]
         #pragma warning disable CS1591
@@ -30,7 +30,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "free_disabled")]
         #pragma warning disable CS1591
-        Free_disabled,
+        FreeDisabled,
         #pragma warning restore CS1591
     }
 }

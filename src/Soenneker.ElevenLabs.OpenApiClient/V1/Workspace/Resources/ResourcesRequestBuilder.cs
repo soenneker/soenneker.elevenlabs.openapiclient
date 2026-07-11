@@ -17,14 +17,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Workspace.Resources
     {
         /// <summary>Gets an item from the Soenneker.ElevenLabs.OpenApiClient.v1.workspace.resources.item collection</summary>
         /// <param name="position">The ID of the target resource.</param>
-        /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.V1.Workspace.Resources.Item.WithResource_ItemRequestBuilder"/></returns>
-        public global::Soenneker.ElevenLabs.OpenApiClient.V1.Workspace.Resources.Item.WithResource_ItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.V1.Workspace.Resources.Item.WithResourceItemRequestBuilder"/></returns>
+        public global::Soenneker.ElevenLabs.OpenApiClient.V1.Workspace.Resources.Item.WithResourceItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("resource_id", position);
-                return new global::Soenneker.ElevenLabs.OpenApiClient.V1.Workspace.Resources.Item.WithResource_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("resourceId", position);
+                return new global::Soenneker.ElevenLabs.OpenApiClient.V1.Workspace.Resources.Item.WithResourceItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>

@@ -50,6 +50,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public PronunciationDictionaryPhonemeRuleRequestModel()
         {
             AdditionalData = new Dictionary<string, object>();
+            CaseSensitive = true;
+            WordBoundaries = true;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

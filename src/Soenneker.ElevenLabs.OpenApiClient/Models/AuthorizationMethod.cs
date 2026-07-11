@@ -14,31 +14,31 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "public")]
         #pragma warning disable CS1591
-        Public,
+        PublicValue,
         #pragma warning restore CS1591
         [EnumMember(Value = "authorization_header")]
         #pragma warning disable CS1591
-        Authorization_header,
+        AuthorizationHeader,
         #pragma warning restore CS1591
         [EnumMember(Value = "signed_url")]
         #pragma warning disable CS1591
-        Signed_url,
+        SignedUrl,
         #pragma warning restore CS1591
         [EnumMember(Value = "shareable_link")]
         #pragma warning disable CS1591
-        Shareable_link,
+        ShareableLink,
         #pragma warning restore CS1591
         [EnumMember(Value = "livekit_token")]
         #pragma warning disable CS1591
-        Livekit_token,
+        LivekitToken,
         #pragma warning restore CS1591
         [EnumMember(Value = "livekit_token_website")]
         #pragma warning disable CS1591
-        Livekit_token_website,
+        LivekitTokenWebsite,
         #pragma warning restore CS1591
         [EnumMember(Value = "genesys_api_key")]
         #pragma warning disable CS1591
-        Genesys_api_key,
+        GenesysApiKey,
         #pragma warning restore CS1591
         [EnumMember(Value = "whatsapp")]
         #pragma warning disable CS1591

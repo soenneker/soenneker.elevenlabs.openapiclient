@@ -17,10 +17,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The analysis property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ImageAnalysis? Analysis { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectImageResponseModelAnalysis? Analysis { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ImageAnalysis Analysis { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectImageResponseModelAnalysis Analysis { get; set; }
 #endif
         /// <summary>The animation property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -93,10 +93,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The pending_task property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PendingClipTask? PendingTask { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectImageResponseModelPendingTask? PendingTask { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PendingClipTask PendingTask { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectImageResponseModelPendingTask PendingTask { get; set; }
 #endif
         /// <summary>The signed_url property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -152,9 +152,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public ProjectImageResponseModel()
         {
             AdditionalData = new Dictionary<string, object>();
-            Source = global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectImageResponseModel_source.Upload;
+            Opacity = 1.0;
             TrackId = "v0";
-            Type = global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectImageResponseModel_type.Image;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -174,7 +173,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "analysis", n => { Analysis = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ImageAnalysis>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ImageAnalysis.CreateFromDiscriminatorValue); } },
+                { "analysis", n => { Analysis = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectImageResponseModelAnalysis>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectImageResponseModelAnalysis.CreateFromDiscriminatorValue); } },
                 { "animation", n => { Animation = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ClipAnimation>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ClipAnimation.CreateFromDiscriminatorValue); } },
                 { "canvas_placement", n => { CanvasPlacement = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CanvasPlacement>(global::Soenneker.ElevenLabs.OpenApiClient.Models.CanvasPlacement.CreateFromDiscriminatorValue); } },
                 { "created_at_ms", n => { CreatedAtMs = n.GetIntValue(); } },
@@ -188,7 +187,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "offset_ms", n => { OffsetMs = n.GetIntValue(); } },
                 { "opacity", n => { Opacity = n.GetDoubleValue(); } },
                 { "order", n => { Order = n.GetStringValue(); } },
-                { "pending_task", n => { PendingTask = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PendingClipTask>(global::Soenneker.ElevenLabs.OpenApiClient.Models.PendingClipTask.CreateFromDiscriminatorValue); } },
+                { "pending_task", n => { PendingTask = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectImageResponseModelPendingTask>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectImageResponseModelPendingTask.CreateFromDiscriminatorValue); } },
                 { "signed_url", n => { SignedUrl = n.GetStringValue(); } },
                 { "source", n => { Source = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectImageResponseModel_source>(); } },
                 { "source_asset_id", n => { SourceAssetId = n.GetStringValue(); } },
@@ -207,7 +206,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ImageAnalysis>("analysis", Analysis);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectImageResponseModelAnalysis>("analysis", Analysis);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ClipAnimation>("animation", Animation);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CanvasPlacement>("canvas_placement", CanvasPlacement);
             writer.WriteIntValue("created_at_ms", CreatedAtMs);
@@ -221,7 +220,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteIntValue("offset_ms", OffsetMs);
             writer.WriteDoubleValue("opacity", Opacity);
             writer.WriteStringValue("order", Order);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PendingClipTask>("pending_task", PendingTask);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectImageResponseModelPendingTask>("pending_task", PendingTask);
             writer.WriteStringValue("signed_url", SignedUrl);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectImageResponseModel_source>("source", Source);
             writer.WriteStringValue("source_asset_id", SourceAssetId);

@@ -22,7 +22,6 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public CreateClientInteractionParams()
         {
             AdditionalData = new Dictionary<string, object>();
-            SmbToolType = global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateClientInteractionParams_smb_tool_type.Create_client_interaction;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

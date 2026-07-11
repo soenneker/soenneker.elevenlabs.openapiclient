@@ -10,7 +10,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     {
         [EnumMember(Value = "leave_message")]
         #pragma warning disable CS1591
-        Leave_message,
+        LeaveMessage,
         #pragma warning restore CS1591
     }
 }

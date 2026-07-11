@@ -22,7 +22,6 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public EndCallToolConfig()
         {
             AdditionalData = new Dictionary<string, object>();
-            SystemToolType = global::Soenneker.ElevenLabs.OpenApiClient.Models.EndCallToolConfig_system_tool_type.End_call;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

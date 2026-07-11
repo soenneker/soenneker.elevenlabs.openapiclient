@@ -17,18 +17,18 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The webhook to send conversation initiation client data to</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationClientDataWebhook? ConversationInitiationClientDataWebhook { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentWorkspaceOverridesInputConversationInitiationClientDataWebhook? ConversationInitiationClientDataWebhook { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationClientDataWebhook ConversationInitiationClientDataWebhook { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentWorkspaceOverridesInputConversationInitiationClientDataWebhook ConversationInitiationClientDataWebhook { get; set; }
 #endif
         /// <summary>The webhooks property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConvAIWebhooks? Webhooks { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConvAiWebhooks? Webhooks { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConvAIWebhooks Webhooks { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConvAiWebhooks Webhooks { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentWorkspaceOverridesInput"/> and sets the default values.
@@ -55,8 +55,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "conversation_initiation_client_data_webhook", n => { ConversationInitiationClientDataWebhook = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationClientDataWebhook>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationClientDataWebhook.CreateFromDiscriminatorValue); } },
-                { "webhooks", n => { Webhooks = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConvAIWebhooks>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConvAIWebhooks.CreateFromDiscriminatorValue); } },
+                { "conversation_initiation_client_data_webhook", n => { ConversationInitiationClientDataWebhook = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentWorkspaceOverridesInputConversationInitiationClientDataWebhook>(global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentWorkspaceOverridesInputConversationInitiationClientDataWebhook.CreateFromDiscriminatorValue); } },
+                { "webhooks", n => { Webhooks = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConvAiWebhooks>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConvAiWebhooks.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -66,8 +66,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationClientDataWebhook>("conversation_initiation_client_data_webhook", ConversationInitiationClientDataWebhook);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConvAIWebhooks>("webhooks", Webhooks);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentWorkspaceOverridesInputConversationInitiationClientDataWebhook>("conversation_initiation_client_data_webhook", ConversationInitiationClientDataWebhook);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConvAiWebhooks>("webhooks", Webhooks);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

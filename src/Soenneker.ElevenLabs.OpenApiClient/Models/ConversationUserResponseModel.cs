@@ -44,6 +44,22 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #endif
         /// <summary>The last_contact_unix_secs property</summary>
         public int? LastContactUnixSecs { get; set; }
+        /// <summary>The most_frustrated_conversations property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.FrustratedConversationRef>? MostFrustratedConversations { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.FrustratedConversationRef> MostFrustratedConversations { get; set; }
+#endif
+        /// <summary>The sentiment property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SentimentAggregate? Sentiment { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SentimentAggregate Sentiment { get; set; }
+#endif
         /// <summary>The user_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -83,6 +99,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "last_contact_agent_name", n => { LastContactAgentName = n.GetStringValue(); } },
                 { "last_contact_conversation_id", n => { LastContactConversationId = n.GetStringValue(); } },
                 { "last_contact_unix_secs", n => { LastContactUnixSecs = n.GetIntValue(); } },
+                { "most_frustrated_conversations", n => { MostFrustratedConversations = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.FrustratedConversationRef>(global::Soenneker.ElevenLabs.OpenApiClient.Models.FrustratedConversationRef.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "sentiment", n => { Sentiment = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SentimentAggregate>(global::Soenneker.ElevenLabs.OpenApiClient.Models.SentimentAggregate.CreateFromDiscriminatorValue); } },
                 { "user_id", n => { UserId = n.GetStringValue(); } },
             };
         }
@@ -99,6 +117,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteStringValue("last_contact_agent_name", LastContactAgentName);
             writer.WriteStringValue("last_contact_conversation_id", LastContactConversationId);
             writer.WriteIntValue("last_contact_unix_secs", LastContactUnixSecs);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.FrustratedConversationRef>("most_frustrated_conversations", MostFrustratedConversations);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SentimentAggregate>("sentiment", Sentiment);
             writer.WriteStringValue("user_id", UserId);
             writer.WriteAdditionalData(AdditionalData);
         }

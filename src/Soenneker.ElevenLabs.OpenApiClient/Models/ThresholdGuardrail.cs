@@ -24,6 +24,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public ThresholdGuardrail()
         {
             AdditionalData = new Dictionary<string, object>();
+            IsEnabled = false;
+            Threshold = 0.3;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

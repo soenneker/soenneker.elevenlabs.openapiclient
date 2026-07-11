@@ -14,7 +14,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "shared_with_me")]
         #pragma warning disable CS1591
-        Shared_with_me,
+        SharedWithMe,
         #pragma warning restore CS1591
     }
 }

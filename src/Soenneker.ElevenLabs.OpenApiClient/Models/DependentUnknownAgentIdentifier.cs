@@ -39,7 +39,6 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public DependentUnknownAgentIdentifier()
         {
             AdditionalData = new Dictionary<string, object>();
-            Type = global::Soenneker.ElevenLabs.OpenApiClient.Models.DependentUnknownAgentIdentifier_type.Unknown;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

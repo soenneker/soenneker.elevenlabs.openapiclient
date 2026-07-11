@@ -10,7 +10,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     {
         [EnumMember(Value = "transfer_to_number")]
         #pragma warning disable CS1591
-        Transfer_to_number,
+        TransferToNumber,
         #pragma warning restore CS1591
     }
 }

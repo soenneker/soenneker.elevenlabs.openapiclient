@@ -27,10 +27,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Environment-specific auth connection references. Must include &apos;production&apos; key.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateAuthConnectionEnvironmentVariableRequest_values? Values { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateAuthConnectionEnvironmentVariableRequestValuesProperty? Values { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateAuthConnectionEnvironmentVariableRequest_values Values { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateAuthConnectionEnvironmentVariableRequestValuesProperty Values { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateAuthConnectionEnvironmentVariableRequest"/> and sets the default values.
@@ -59,7 +59,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             {
                 { "label", n => { Label = n.GetStringValue(); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateAuthConnectionEnvironmentVariableRequest_type>(); } },
-                { "values", n => { Values = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateAuthConnectionEnvironmentVariableRequest_values>(global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateAuthConnectionEnvironmentVariableRequest_values.CreateFromDiscriminatorValue); } },
+                { "values", n => { Values = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateAuthConnectionEnvironmentVariableRequestValuesProperty>(global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateAuthConnectionEnvironmentVariableRequestValuesProperty.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -71,7 +71,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("label", Label);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateAuthConnectionEnvironmentVariableRequest_type>("type", Type);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateAuthConnectionEnvironmentVariableRequest_values>("values", Values);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateAuthConnectionEnvironmentVariableRequestValuesProperty>("values", Values);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -22,7 +22,6 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public LeaveMessageParams()
         {
             AdditionalData = new Dictionary<string, object>();
-            SmbToolType = global::Soenneker.ElevenLabs.OpenApiClient.Models.LeaveMessageParams_smb_tool_type.Leave_message;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

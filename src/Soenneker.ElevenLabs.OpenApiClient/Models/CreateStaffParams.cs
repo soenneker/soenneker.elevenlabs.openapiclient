@@ -23,7 +23,6 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public CreateStaffParams()
         {
             AdditionalData = new Dictionary<string, object>();
-            SmbToolType = global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateStaffParams_smb_tool_type.Create_staff;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

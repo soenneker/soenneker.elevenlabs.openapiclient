@@ -19,29 +19,39 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The filters property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Filters? Filters { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyGetWorkspaceUsageV1WorkspaceAnalyticsQueryUsageByProductOverTimePostFilters? Filters { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Filters Filters { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyGetWorkspaceUsageV1WorkspaceAnalyticsQueryUsageByProductOverTimePostFilters Filters { get; set; }
 #endif
         /// <summary>The group_by property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Group_By? GroupBy { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyGetWorkspaceUsageV1WorkspaceAnalyticsQueryUsageByProductOverTimePostGroupBy? GroupBy { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Group_By GroupBy { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyGetWorkspaceUsageV1WorkspaceAnalyticsQueryUsageByProductOverTimePostGroupBy GroupBy { get; set; }
 #endif
-        /// <summary>Bucket size in seconds. Each row in the response covers this many seconds of usage. For example, pass 3600 for hourly buckets or 86400 for daily buckets.</summary>
+        /// <summary>&quot;Bucket size in seconds. Each row in the response covers this many seconds of the selected time range. For example, pass 3600 for hourly buckets or 86400 for daily buckets. Whether `time_zone` shifts bucket boundaries depends on this value: whole-day multiples (e.g. 86400) align to local midnight; whole-hour multiples up to 24 hours (e.g. 3600, 14400) align to local hour boundaries from midnight; sub-hour values and other sizes remain UTC-anchored regardless of `time_zone`.&quot;</summary>
         public int? IntervalSeconds { get; set; }
         /// <summary>Start of the time range as a Unix timestamp in milliseconds. Must be at least 2020-01-01.</summary>
         public int? StartTime { get; set; }
+        /// <summary>IANA time zone identifier (e.g. &apos;America/New_York&apos;, &apos;Europe/London&apos;, &apos;UTC&apos;) used to align bucket boundaries for eligible `interval_seconds` values. Whole-day multiples start at local midnight; whole-hour multiples up to 24 hours align to local hour boundaries from midnight. Sub-hour intervals and other bucket sizes remain UTC-anchored regardless of this setting. Defaults to UTC.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? TimeZone { get; set; }
+#nullable restore
+#else
+        public string TimeZone { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyGetWorkspaceUsageV1WorkspaceAnalyticsQueryUsageByProductOverTimePost"/> and sets the default values.
         /// </summary>
         public BodyGetWorkspaceUsageV1WorkspaceAnalyticsQueryUsageByProductOverTimePost()
         {
             AdditionalData = new Dictionary<string, object>();
+            IntervalSeconds = 60;
+            TimeZone = "UTC";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -62,10 +72,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "end_time", n => { EndTime = n.GetIntValue(); } },
-                { "filters", n => { Filters = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Filters>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Filters.CreateFromDiscriminatorValue); } },
-                { "group_by", n => { GroupBy = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Group_By>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Group_By.CreateFromDiscriminatorValue); } },
+                { "filters", n => { Filters = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyGetWorkspaceUsageV1WorkspaceAnalyticsQueryUsageByProductOverTimePostFilters>(global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyGetWorkspaceUsageV1WorkspaceAnalyticsQueryUsageByProductOverTimePostFilters.CreateFromDiscriminatorValue); } },
+                { "group_by", n => { GroupBy = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyGetWorkspaceUsageV1WorkspaceAnalyticsQueryUsageByProductOverTimePostGroupBy>(global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyGetWorkspaceUsageV1WorkspaceAnalyticsQueryUsageByProductOverTimePostGroupBy.CreateFromDiscriminatorValue); } },
                 { "interval_seconds", n => { IntervalSeconds = n.GetIntValue(); } },
                 { "start_time", n => { StartTime = n.GetIntValue(); } },
+                { "time_zone", n => { TimeZone = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -76,10 +87,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("end_time", EndTime);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Filters>("filters", Filters);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Group_By>("group_by", GroupBy);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyGetWorkspaceUsageV1WorkspaceAnalyticsQueryUsageByProductOverTimePostFilters>("filters", Filters);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyGetWorkspaceUsageV1WorkspaceAnalyticsQueryUsageByProductOverTimePostGroupBy>("group_by", GroupBy);
             writer.WriteIntValue("interval_seconds", IntervalSeconds);
             writer.WriteIntValue("start_time", StartTime);
+            writer.WriteStringValue("time_zone", TimeZone);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -86,10 +86,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The phone_provider property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.TelephonyProvider_Wrapper? PhoneProvider { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.TelephonyProviderWrapper? PhoneProvider { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.TelephonyProvider_Wrapper PhoneProvider { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.TelephonyProviderWrapper PhoneProvider { get; set; }
 #endif
         /// <summary>The recipients property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -132,10 +132,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The whatsapp_params property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BatchCallWhatsAppParams? WhatsappParams { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BatchCallDetailedResponseWhatsappParams? WhatsappParams { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BatchCallWhatsAppParams WhatsappParams { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BatchCallDetailedResponseWhatsappParams WhatsappParams { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.BatchCallDetailedResponse"/> and sets the default values.
@@ -143,6 +143,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public BatchCallDetailedResponse()
         {
             AdditionalData = new Dictionary<string, object>();
+            RetryCount = 0;
+            TotalCallsDispatched = 0;
+            TotalCallsFinished = 0;
+            TotalCallsScheduled = 0;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -172,7 +176,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "last_updated_at_unix", n => { LastUpdatedAtUnix = n.GetIntValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "phone_number_id", n => { PhoneNumberId = n.GetStringValue(); } },
-                { "phone_provider", n => { PhoneProvider = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TelephonyProvider_Wrapper>(global::Soenneker.ElevenLabs.OpenApiClient.Models.TelephonyProvider_Wrapper.CreateFromDiscriminatorValue); } },
+                { "phone_provider", n => { PhoneProvider = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TelephonyProviderWrapper>(global::Soenneker.ElevenLabs.OpenApiClient.Models.TelephonyProviderWrapper.CreateFromDiscriminatorValue); } },
                 { "recipients", n => { Recipients = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.OutboundCallRecipientResponseModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.OutboundCallRecipientResponseModel.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "retry_count", n => { RetryCount = n.GetIntValue(); } },
                 { "scheduled_time_unix", n => { ScheduledTimeUnix = n.GetIntValue(); } },
@@ -183,7 +187,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "total_calls_dispatched", n => { TotalCallsDispatched = n.GetIntValue(); } },
                 { "total_calls_finished", n => { TotalCallsFinished = n.GetIntValue(); } },
                 { "total_calls_scheduled", n => { TotalCallsScheduled = n.GetIntValue(); } },
-                { "whatsapp_params", n => { WhatsappParams = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BatchCallWhatsAppParams>(global::Soenneker.ElevenLabs.OpenApiClient.Models.BatchCallWhatsAppParams.CreateFromDiscriminatorValue); } },
+                { "whatsapp_params", n => { WhatsappParams = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BatchCallDetailedResponseWhatsappParams>(global::Soenneker.ElevenLabs.OpenApiClient.Models.BatchCallDetailedResponseWhatsappParams.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -203,7 +207,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteIntValue("last_updated_at_unix", LastUpdatedAtUnix);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("phone_number_id", PhoneNumberId);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TelephonyProvider_Wrapper>("phone_provider", PhoneProvider);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TelephonyProviderWrapper>("phone_provider", PhoneProvider);
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.OutboundCallRecipientResponseModel>("recipients", Recipients);
             writer.WriteIntValue("retry_count", RetryCount);
             writer.WriteIntValue("scheduled_time_unix", ScheduledTimeUnix);
@@ -214,7 +218,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteIntValue("total_calls_dispatched", TotalCallsDispatched);
             writer.WriteIntValue("total_calls_finished", TotalCallsFinished);
             writer.WriteIntValue("total_calls_scheduled", TotalCallsScheduled);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BatchCallWhatsAppParams>("whatsapp_params", WhatsappParams);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BatchCallDetailedResponseWhatsappParams>("whatsapp_params", WhatsappParams);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -23,7 +23,6 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public GetClientByPhoneParams()
         {
             AdditionalData = new Dictionary<string, object>();
-            SmbToolType = global::Soenneker.ElevenLabs.OpenApiClient.Models.GetClientByPhoneParams_smb_tool_type.Get_client_by_phone;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

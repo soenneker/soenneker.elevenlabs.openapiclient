@@ -22,7 +22,6 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public UpdateLocationParams()
         {
             AdditionalData = new Dictionary<string, object>();
-            SmbToolType = global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateLocationParams_smb_tool_type.Update_location;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

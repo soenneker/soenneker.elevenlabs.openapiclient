@@ -10,7 +10,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     {
         [EnumMember(Value = "custom_header_auth")]
         #pragma warning disable CS1591
-        Custom_header_auth,
+        CustomHeaderAuth,
         #pragma warning restore CS1591
     }
 }

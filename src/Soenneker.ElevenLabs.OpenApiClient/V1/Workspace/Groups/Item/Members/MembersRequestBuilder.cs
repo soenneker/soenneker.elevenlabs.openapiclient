@@ -13,7 +13,7 @@ using System;
 namespace Soenneker.ElevenLabs.OpenApiClient.V1.Workspace.Groups.Item.Members
 {
     /// <summary>
-    /// Builds and executes requests for operations under \v1\workspace\groups\{group_id}\members
+    /// Builds and executes requests for operations under \v1\workspace\groups\{groupId}\members
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class MembersRequestBuilder : BaseRequestBuilder
@@ -28,7 +28,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Workspace.Groups.Item.Members
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public MembersRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/workspace/groups/{group_id}/members", pathParameters)
+        public MembersRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/workspace/groups/{groupId}/members", pathParameters)
         {
         }
         /// <summary>
@@ -36,7 +36,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Workspace.Groups.Item.Members
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public MembersRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/workspace/groups/{group_id}/members", rawUrl)
+        public MembersRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/workspace/groups/{groupId}/members", rawUrl)
         {
         }
         /// <summary>
@@ -46,7 +46,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Workspace.Groups.Item.Members
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.HTTPValidationError">When receiving a 422 status code</exception>
+        /// <exception cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.HttpValidationError">When receiving a 422 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.ElevenLabs.OpenApiClient.Models.AddWorkspaceGroupMemberResponseModel?> PostAsync(global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyAddMemberToUserGroupV1WorkspaceGroupsGroupIdMembersPost body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -60,7 +60,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Workspace.Groups.Item.Members
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "422", global::Soenneker.ElevenLabs.OpenApiClient.Models.HTTPValidationError.CreateFromDiscriminatorValue },
+                { "422", global::Soenneker.ElevenLabs.OpenApiClient.Models.HttpValidationError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.ElevenLabs.OpenApiClient.Models.AddWorkspaceGroupMemberResponseModel>(requestInfo, global::Soenneker.ElevenLabs.OpenApiClient.Models.AddWorkspaceGroupMemberResponseModel.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

@@ -10,7 +10,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     {
         [EnumMember(Value = "list_client_interactions")]
         #pragma warning disable CS1591
-        List_client_interactions,
+        ListClientInteractions,
         #pragma warning restore CS1591
     }
 }

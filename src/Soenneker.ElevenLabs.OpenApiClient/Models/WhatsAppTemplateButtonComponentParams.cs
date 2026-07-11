@@ -40,7 +40,6 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public WhatsAppTemplateButtonComponentParams()
         {
             AdditionalData = new Dictionary<string, object>();
-            Type = global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppTemplateButtonComponentParams_type.Button;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

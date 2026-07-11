@@ -102,6 +102,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public ConversationHistoryTranscriptApiIntegrationWebhookToolsResultCommonModelInput()
         {
             AdditionalData = new Dictionary<string, object>();
+            IsBlocked = false;
+            ToolLatencySecs = 0;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

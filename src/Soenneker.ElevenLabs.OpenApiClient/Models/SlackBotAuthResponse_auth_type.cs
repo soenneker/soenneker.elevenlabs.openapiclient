@@ -10,7 +10,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     {
         [EnumMember(Value = "slack_bot_auth")]
         #pragma warning disable CS1591
-        Slack_bot_auth,
+        SlackBotAuth,
         #pragma warning restore CS1591
     }
 }

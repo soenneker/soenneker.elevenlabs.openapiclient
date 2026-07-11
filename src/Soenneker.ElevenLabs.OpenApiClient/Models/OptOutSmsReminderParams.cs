@@ -22,7 +22,6 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public OptOutSmsReminderParams()
         {
             AdditionalData = new Dictionary<string, object>();
-            SmbToolType = global::Soenneker.ElevenLabs.OpenApiClient.Models.OptOutSmsReminderParams_smb_tool_type.Opt_out_sms_reminder;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

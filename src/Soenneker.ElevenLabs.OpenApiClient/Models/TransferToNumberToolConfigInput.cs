@@ -32,7 +32,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public TransferToNumberToolConfigInput()
         {
             AdditionalData = new Dictionary<string, object>();
-            SystemToolType = global::Soenneker.ElevenLabs.OpenApiClient.Models.TransferToNumberToolConfigInput_system_tool_type.Transfer_to_number;
+            EnableClientMessage = true;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

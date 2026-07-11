@@ -15,13 +15,13 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The composition plan extracted from the uploaded song. Only present if `extract_composition_plan` was True in the request body</summary>
+        /// <summary>The composition plan extracted from the uploaded song. Only present if `extract_composition_plan` was provided in the request body.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.MusicPrompt? CompositionPlan { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.MusicUploadResponseCompositionPlan? CompositionPlan { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.MusicPrompt CompositionPlan { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.MusicUploadResponseCompositionPlan CompositionPlan { get; set; }
 #endif
         /// <summary>Unique identifier for the uploaded song</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -30,6 +30,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #nullable restore
 #else
         public string SongId { get; set; }
+#endif
+        /// <summary>Word-level timestamps transcribed from the uploaded song. Only present if `with_timestamps` was True in the request body</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.MusicUploadResponseWordsTimestamps? WordsTimestamps { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.MusicUploadResponseWordsTimestamps WordsTimestamps { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.MusicUploadResponse"/> and sets the default values.
@@ -56,8 +64,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "composition_plan", n => { CompositionPlan = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.MusicPrompt>(global::Soenneker.ElevenLabs.OpenApiClient.Models.MusicPrompt.CreateFromDiscriminatorValue); } },
+                { "composition_plan", n => { CompositionPlan = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.MusicUploadResponseCompositionPlan>(global::Soenneker.ElevenLabs.OpenApiClient.Models.MusicUploadResponseCompositionPlan.CreateFromDiscriminatorValue); } },
                 { "song_id", n => { SongId = n.GetStringValue(); } },
+                { "words_timestamps", n => { WordsTimestamps = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.MusicUploadResponseWordsTimestamps>(global::Soenneker.ElevenLabs.OpenApiClient.Models.MusicUploadResponseWordsTimestamps.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -67,8 +76,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.MusicPrompt>("composition_plan", CompositionPlan);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.MusicUploadResponseCompositionPlan>("composition_plan", CompositionPlan);
             writer.WriteStringValue("song_id", SongId);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.MusicUploadResponseWordsTimestamps>("words_timestamps", WordsTimestamps);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

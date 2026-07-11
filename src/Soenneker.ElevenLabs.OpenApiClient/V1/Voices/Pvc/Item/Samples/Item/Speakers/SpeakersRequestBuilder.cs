@@ -13,21 +13,21 @@ using System;
 namespace Soenneker.ElevenLabs.OpenApiClient.V1.Voices.Pvc.Item.Samples.Item.Speakers
 {
     /// <summary>
-    /// Builds and executes requests for operations under \v1\voices\pvc\{voice_id}\samples\{sample_id}\speakers
+    /// Builds and executes requests for operations under \v1\voices\pvc\{voiceId}\samples\{sampleId}\speakers
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SpeakersRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.ElevenLabs.OpenApiClient.v1.voices.pvc.item.samples.item.speakers.item collection</summary>
         /// <param name="position">Speaker ID to be used, you can use GET https://api.elevenlabs.io/v1/voices/{voice_id}/samples/{sample_id}/speakers to list all the available speakers for a sample.</param>
-        /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.V1.Voices.Pvc.Item.Samples.Item.Speakers.Item.WithSpeaker_ItemRequestBuilder"/></returns>
-        public global::Soenneker.ElevenLabs.OpenApiClient.V1.Voices.Pvc.Item.Samples.Item.Speakers.Item.WithSpeaker_ItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.V1.Voices.Pvc.Item.Samples.Item.Speakers.Item.WithSpeakerItemRequestBuilder"/></returns>
+        public global::Soenneker.ElevenLabs.OpenApiClient.V1.Voices.Pvc.Item.Samples.Item.Speakers.Item.WithSpeakerItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("speaker_id", position);
-                return new global::Soenneker.ElevenLabs.OpenApiClient.V1.Voices.Pvc.Item.Samples.Item.Speakers.Item.WithSpeaker_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("speakerId", position);
+                return new global::Soenneker.ElevenLabs.OpenApiClient.V1.Voices.Pvc.Item.Samples.Item.Speakers.Item.WithSpeakerItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -35,7 +35,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Voices.Pvc.Item.Samples.Item.Spe
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SpeakersRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/voices/pvc/{voice_id}/samples/{sample_id}/speakers", pathParameters)
+        public SpeakersRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/voices/pvc/{voiceId}/samples/{sampleId}/speakers", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Voices.Pvc.Item.Samples.Item.Spe
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SpeakersRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/voices/pvc/{voice_id}/samples/{sample_id}/speakers", rawUrl)
+        public SpeakersRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/voices/pvc/{voiceId}/samples/{sampleId}/speakers", rawUrl)
         {
         }
         /// <summary>
@@ -52,7 +52,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Voices.Pvc.Item.Samples.Item.Spe
         /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeakerSeparationResponseModel"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.HTTPValidationError">When receiving a 422 status code</exception>
+        /// <exception cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.HttpValidationError">When receiving a 422 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeakerSeparationResponseModel?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -65,7 +65,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Voices.Pvc.Item.Samples.Item.Spe
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "422", global::Soenneker.ElevenLabs.OpenApiClient.Models.HTTPValidationError.CreateFromDiscriminatorValue },
+                { "422", global::Soenneker.ElevenLabs.OpenApiClient.Models.HttpValidationError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeakerSeparationResponseModel>(requestInfo, global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeakerSeparationResponseModel.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

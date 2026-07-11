@@ -31,11 +31,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public string Description { get; set; }
 #endif
-        /// <summary>If true, the user will not be able to interrupt the agent while this tool is running.</summary>
+        /// <summary>&quot;DEPRECATED: use `interruption_mode` instead. If true, the user will not be able to interrupt the agent while this tool is running.&quot;</summary>
+        [Obsolete("")]
         public bool? DisableInterruptions { get; set; }
         /// <summary>&quot;DEPRECATED: use `pre_tool_speech` instead. If true, the agent will speak before the tool call.&quot;</summary>
         [Obsolete("")]
         public bool? ForcePreToolSpeech { get; set; }
+        /// <summary>The interruption_mode property</summary>
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolInterruptionMode? InterruptionMode { get; set; }
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -47,10 +50,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The params property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigInput.SystemToolConfigInput_params? Params { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigInputParams? Params { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigInput.SystemToolConfigInput_params Params { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigInputParams Params { get; set; }
 #endif
         /// <summary>The pre_tool_speech property</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.PreToolSpeechMode? PreToolSpeech { get; set; }
@@ -59,10 +62,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Predefined tool call sound type to play during tool execution. If not specified, no tool call sound will be played.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolCallSoundType_Wrapper? ToolCallSound { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolCallSoundTypeWrapper15? ToolCallSound { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolCallSoundType_Wrapper ToolCallSound { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolCallSoundTypeWrapper15 ToolCallSound { get; set; }
 #endif
         /// <summary>Determines how the tool call sound should be played.</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolCallSoundBehavior? ToolCallSoundBehavior { get; set; }
@@ -76,10 +79,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public SystemToolConfigInput()
         {
             AdditionalData = new Dictionary<string, object>();
-            PreToolSpeech = global::Soenneker.ElevenLabs.OpenApiClient.Models.PreToolSpeechMode.Auto;
-            ToolCallSoundBehavior = global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolCallSoundBehavior.Auto;
-            ToolErrorHandlingMode = global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolErrorHandlingMode.Auto;
-            Type = global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigInput_type.System;
+            DisableInterruptions = false;
+            ForcePreToolSpeech = false;
+            ResponseTimeoutSecs = 20;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -103,11 +105,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "disable_interruptions", n => { DisableInterruptions = n.GetBoolValue(); } },
                 { "force_pre_tool_speech", n => { ForcePreToolSpeech = n.GetBoolValue(); } },
+                { "interruption_mode", n => { InterruptionMode = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolInterruptionMode>(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "params", n => { Params = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigInput.SystemToolConfigInput_params>(global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigInput.SystemToolConfigInput_params.CreateFromDiscriminatorValue); } },
+                { "params", n => { Params = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigInputParams>(global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigInputParams.CreateFromDiscriminatorValue); } },
                 { "pre_tool_speech", n => { PreToolSpeech = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PreToolSpeechMode>(); } },
                 { "response_timeout_secs", n => { ResponseTimeoutSecs = n.GetIntValue(); } },
-                { "tool_call_sound", n => { ToolCallSound = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolCallSoundType_Wrapper>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolCallSoundType_Wrapper.CreateFromDiscriminatorValue); } },
+                { "tool_call_sound", n => { ToolCallSound = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolCallSoundTypeWrapper15>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolCallSoundTypeWrapper15.CreateFromDiscriminatorValue); } },
                 { "tool_call_sound_behavior", n => { ToolCallSoundBehavior = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolCallSoundBehavior>(); } },
                 { "tool_error_handling_mode", n => { ToolErrorHandlingMode = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolErrorHandlingMode>(); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigInput_type>(); } },
@@ -124,230 +127,16 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteStringValue("description", Description);
             writer.WriteBoolValue("disable_interruptions", DisableInterruptions);
             writer.WriteBoolValue("force_pre_tool_speech", ForcePreToolSpeech);
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolInterruptionMode>("interruption_mode", InterruptionMode);
             writer.WriteStringValue("name", Name);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigInput.SystemToolConfigInput_params>("params", Params);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigInputParams>("params", Params);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PreToolSpeechMode>("pre_tool_speech", PreToolSpeech);
             writer.WriteIntValue("response_timeout_secs", ResponseTimeoutSecs);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolCallSoundType_Wrapper>("tool_call_sound", ToolCallSound);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolCallSoundTypeWrapper15>("tool_call_sound", ToolCallSound);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolCallSoundBehavior>("tool_call_sound_behavior", ToolCallSoundBehavior);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolErrorHandlingMode>("tool_error_handling_mode", ToolErrorHandlingMode);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigInput_type>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.EndCallToolConfig"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeBaseRagToolConfig"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.LanguageDetectionToolConfig"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.LoadProcedureToolConfigInput"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.PlayDTMFToolConfig"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.SkipTurnToolConfig"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.TransferToAgentToolConfig"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.TransferToNumberToolConfigInput"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.VoicemailDetectionToolConfig"/>
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class SystemToolConfigInput_params : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.EndCallToolConfig"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.ElevenLabs.OpenApiClient.Models.EndCallToolConfig? EndCallToolConfig { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.ElevenLabs.OpenApiClient.Models.EndCallToolConfig EndCallToolConfig { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeBaseRagToolConfig"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeBaseRagToolConfig? KnowledgeBaseRagToolConfig { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeBaseRagToolConfig KnowledgeBaseRagToolConfig { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.LanguageDetectionToolConfig"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.ElevenLabs.OpenApiClient.Models.LanguageDetectionToolConfig? LanguageDetectionToolConfig { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.ElevenLabs.OpenApiClient.Models.LanguageDetectionToolConfig LanguageDetectionToolConfig { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.LoadProcedureToolConfigInput"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.ElevenLabs.OpenApiClient.Models.LoadProcedureToolConfigInput? LoadProcedureToolConfigInput { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.ElevenLabs.OpenApiClient.Models.LoadProcedureToolConfigInput LoadProcedureToolConfigInput { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.PlayDTMFToolConfig"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.ElevenLabs.OpenApiClient.Models.PlayDTMFToolConfig? PlayDTMFToolConfig { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.ElevenLabs.OpenApiClient.Models.PlayDTMFToolConfig PlayDTMFToolConfig { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.SkipTurnToolConfig"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.ElevenLabs.OpenApiClient.Models.SkipTurnToolConfig? SkipTurnToolConfig { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.ElevenLabs.OpenApiClient.Models.SkipTurnToolConfig SkipTurnToolConfig { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.TransferToAgentToolConfig"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.ElevenLabs.OpenApiClient.Models.TransferToAgentToolConfig? TransferToAgentToolConfig { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.ElevenLabs.OpenApiClient.Models.TransferToAgentToolConfig TransferToAgentToolConfig { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.TransferToNumberToolConfigInput"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.ElevenLabs.OpenApiClient.Models.TransferToNumberToolConfigInput? TransferToNumberToolConfigInput { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.ElevenLabs.OpenApiClient.Models.TransferToNumberToolConfigInput TransferToNumberToolConfigInput { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.VoicemailDetectionToolConfig"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.ElevenLabs.OpenApiClient.Models.VoicemailDetectionToolConfig? VoicemailDetectionToolConfig { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.ElevenLabs.OpenApiClient.Models.VoicemailDetectionToolConfig VoicemailDetectionToolConfig { get; set; }
-#endif
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigInput.SystemToolConfigInput_params"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigInput.SystemToolConfigInput_params CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var mappingValue = parseNode.GetChildNode("system_tool_type")?.GetStringValue();
-                var result = new global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigInput.SystemToolConfigInput_params();
-                if("end_call".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.EndCallToolConfig = new global::Soenneker.ElevenLabs.OpenApiClient.Models.EndCallToolConfig();
-                }
-                else if("knowledge_base_rag".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.KnowledgeBaseRagToolConfig = new global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeBaseRagToolConfig();
-                }
-                else if("language_detection".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.LanguageDetectionToolConfig = new global::Soenneker.ElevenLabs.OpenApiClient.Models.LanguageDetectionToolConfig();
-                }
-                else if("load_procedure".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.LoadProcedureToolConfigInput = new global::Soenneker.ElevenLabs.OpenApiClient.Models.LoadProcedureToolConfigInput();
-                }
-                else if("play_keypad_touch_tone".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.PlayDTMFToolConfig = new global::Soenneker.ElevenLabs.OpenApiClient.Models.PlayDTMFToolConfig();
-                }
-                else if("skip_turn".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.SkipTurnToolConfig = new global::Soenneker.ElevenLabs.OpenApiClient.Models.SkipTurnToolConfig();
-                }
-                else if("transfer_to_agent".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.TransferToAgentToolConfig = new global::Soenneker.ElevenLabs.OpenApiClient.Models.TransferToAgentToolConfig();
-                }
-                else if("transfer_to_number".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.TransferToNumberToolConfigInput = new global::Soenneker.ElevenLabs.OpenApiClient.Models.TransferToNumberToolConfigInput();
-                }
-                else if("voicemail_detection".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.VoicemailDetectionToolConfig = new global::Soenneker.ElevenLabs.OpenApiClient.Models.VoicemailDetectionToolConfig();
-                }
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                if(EndCallToolConfig != null)
-                {
-                    return EndCallToolConfig.GetFieldDeserializers();
-                }
-                else if(KnowledgeBaseRagToolConfig != null)
-                {
-                    return KnowledgeBaseRagToolConfig.GetFieldDeserializers();
-                }
-                else if(LanguageDetectionToolConfig != null)
-                {
-                    return LanguageDetectionToolConfig.GetFieldDeserializers();
-                }
-                else if(LoadProcedureToolConfigInput != null)
-                {
-                    return LoadProcedureToolConfigInput.GetFieldDeserializers();
-                }
-                else if(PlayDTMFToolConfig != null)
-                {
-                    return PlayDTMFToolConfig.GetFieldDeserializers();
-                }
-                else if(SkipTurnToolConfig != null)
-                {
-                    return SkipTurnToolConfig.GetFieldDeserializers();
-                }
-                else if(TransferToAgentToolConfig != null)
-                {
-                    return TransferToAgentToolConfig.GetFieldDeserializers();
-                }
-                else if(TransferToNumberToolConfigInput != null)
-                {
-                    return TransferToNumberToolConfigInput.GetFieldDeserializers();
-                }
-                else if(VoicemailDetectionToolConfig != null)
-                {
-                    return VoicemailDetectionToolConfig.GetFieldDeserializers();
-                }
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                if(EndCallToolConfig != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.EndCallToolConfig>(null, EndCallToolConfig);
-                }
-                else if(KnowledgeBaseRagToolConfig != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeBaseRagToolConfig>(null, KnowledgeBaseRagToolConfig);
-                }
-                else if(LanguageDetectionToolConfig != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.LanguageDetectionToolConfig>(null, LanguageDetectionToolConfig);
-                }
-                else if(LoadProcedureToolConfigInput != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.LoadProcedureToolConfigInput>(null, LoadProcedureToolConfigInput);
-                }
-                else if(PlayDTMFToolConfig != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PlayDTMFToolConfig>(null, PlayDTMFToolConfig);
-                }
-                else if(SkipTurnToolConfig != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SkipTurnToolConfig>(null, SkipTurnToolConfig);
-                }
-                else if(TransferToAgentToolConfig != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TransferToAgentToolConfig>(null, TransferToAgentToolConfig);
-                }
-                else if(TransferToNumberToolConfigInput != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TransferToNumberToolConfigInput>(null, TransferToNumberToolConfigInput);
-                }
-                else if(VoicemailDetectionToolConfig != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.VoicemailDetectionToolConfig>(null, VoicemailDetectionToolConfig);
-                }
-            }
         }
     }
 }

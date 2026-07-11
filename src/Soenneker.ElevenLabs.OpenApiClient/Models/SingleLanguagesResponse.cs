@@ -30,7 +30,6 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public SingleLanguagesResponse()
         {
             AdditionalData = new Dictionary<string, object>();
-            Kind = global::Soenneker.ElevenLabs.OpenApiClient.Models.SingleLanguagesResponse_kind.Single;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

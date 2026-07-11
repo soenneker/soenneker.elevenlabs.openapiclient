@@ -41,7 +41,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public string Label { get; set; }
 #endif
         /// <summary>The type property</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.EnvironmentVariableResponse_type? Type { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.EnvironmentVariableResponseType? Type { get; set; }
         /// <summary>The updated_at_unix_secs property</summary>
         public int? UpdatedAtUnixSecs { get; set; }
         /// <summary>The values property</summary>
@@ -89,7 +89,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "created_by_user_id", n => { CreatedByUserId = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "label", n => { Label = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.EnvironmentVariableResponse_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.EnvironmentVariableResponseType>(); } },
                 { "updated_at_unix_secs", n => { UpdatedAtUnixSecs = n.GetIntValue(); } },
                 { "values", n => { Values = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.EnvironmentVariableResponseValues>(global::Soenneker.ElevenLabs.OpenApiClient.Models.EnvironmentVariableResponseValues.CreateFromDiscriminatorValue); } },
                 { "workspace_id", n => { WorkspaceId = n.GetStringValue(); } },
@@ -106,7 +106,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteStringValue("created_by_user_id", CreatedByUserId);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("label", Label);
-            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.EnvironmentVariableResponse_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.EnvironmentVariableResponseType>("type", Type);
             writer.WriteIntValue("updated_at_unix_secs", UpdatedAtUnixSecs);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.EnvironmentVariableResponseValues>("values", Values);
             writer.WriteStringValue("workspace_id", WorkspaceId);

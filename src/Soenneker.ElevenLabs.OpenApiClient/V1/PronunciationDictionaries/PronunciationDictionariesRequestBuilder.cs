@@ -32,14 +32,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.PronunciationDictionaries
         }
         /// <summary>Gets an item from the Soenneker.ElevenLabs.OpenApiClient.v1.pronunciationDictionaries.item collection</summary>
         /// <param name="position">The id of the pronunciation dictionary</param>
-        /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.V1.PronunciationDictionaries.Item.Dictionary_ItemRequestBuilder"/></returns>
-        public global::Soenneker.ElevenLabs.OpenApiClient.V1.PronunciationDictionaries.Item.Dictionary_ItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.V1.PronunciationDictionaries.Item.DictionaryItemRequestBuilder"/></returns>
+        public global::Soenneker.ElevenLabs.OpenApiClient.V1.PronunciationDictionaries.Item.DictionaryItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("dictionary_%2Did", position);
-                return new global::Soenneker.ElevenLabs.OpenApiClient.V1.PronunciationDictionaries.Item.Dictionary_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("dictionary%2Did", position);
+                return new global::Soenneker.ElevenLabs.OpenApiClient.V1.PronunciationDictionaries.Item.DictionaryItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -64,7 +64,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.PronunciationDictionaries
         /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPronunciationDictionariesMetadataResponseModel"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.HTTPValidationError">When receiving a 422 status code</exception>
+        /// <exception cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.HttpValidationError">When receiving a 422 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPronunciationDictionariesMetadataResponseModel?> GetAsync(Action<RequestConfiguration<global::Soenneker.ElevenLabs.OpenApiClient.V1.PronunciationDictionaries.PronunciationDictionariesRequestBuilder.PronunciationDictionariesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -77,7 +77,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.PronunciationDictionaries
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "422", global::Soenneker.ElevenLabs.OpenApiClient.Models.HTTPValidationError.CreateFromDiscriminatorValue },
+                { "422", global::Soenneker.ElevenLabs.OpenApiClient.Models.HttpValidationError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPronunciationDictionariesMetadataResponseModel>(requestInfo, global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPronunciationDictionariesMetadataResponseModel.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -130,7 +130,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.PronunciationDictionaries
             public int? PageSize { get; set; }
             /// <summary>Which field to sort by, one of &apos;created_at_unix&apos; or &apos;name&apos;.</summary>
             [QueryParameter("sort")]
-            public global::Soenneker.ElevenLabs.OpenApiClient.V1.PronunciationDictionaries.GetSortQueryParameterType? Sort { get; set; }
+            public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPronunciationDictionariesMetadataSortParameter? Sort { get; set; }
             /// <summary>Which direction to sort the voices in. &apos;ascending&apos; or &apos;descending&apos;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

@@ -23,7 +23,6 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public SearchClientsParams()
         {
             AdditionalData = new Dictionary<string, object>();
-            SmbToolType = global::Soenneker.ElevenLabs.OpenApiClient.Models.SearchClientsParams_smb_tool_type.Search_clients;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

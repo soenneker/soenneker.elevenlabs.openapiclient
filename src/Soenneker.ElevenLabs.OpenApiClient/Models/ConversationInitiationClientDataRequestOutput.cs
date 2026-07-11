@@ -33,18 +33,18 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The custom_llm_extra_body property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationClientDataRequestOutput_custom_llm_extra_body? CustomLlmExtraBody { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationClientDataRequestOutputCustomLlmExtraBodyProperty? CustomLlmExtraBody { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationClientDataRequestOutput_custom_llm_extra_body CustomLlmExtraBody { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationClientDataRequestOutputCustomLlmExtraBodyProperty CustomLlmExtraBody { get; set; }
 #endif
         /// <summary>The dynamic_variables property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationClientDataRequestOutput_dynamic_variables? DynamicVariables { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationClientDataRequestOutputDynamicVariablesProperty? DynamicVariables { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationClientDataRequestOutput_dynamic_variables DynamicVariables { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationClientDataRequestOutputDynamicVariablesProperty DynamicVariables { get; set; }
 #endif
         /// <summary>Environment to use for resolving environment variables</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -105,8 +105,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             {
                 { "branch_id", n => { BranchId = n.GetStringValue(); } },
                 { "conversation_config_override", n => { ConversationConfigOverride = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationConfigClientOverrideOutput>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationConfigClientOverrideOutput.CreateFromDiscriminatorValue); } },
-                { "custom_llm_extra_body", n => { CustomLlmExtraBody = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationClientDataRequestOutput_custom_llm_extra_body>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationClientDataRequestOutput_custom_llm_extra_body.CreateFromDiscriminatorValue); } },
-                { "dynamic_variables", n => { DynamicVariables = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationClientDataRequestOutput_dynamic_variables>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationClientDataRequestOutput_dynamic_variables.CreateFromDiscriminatorValue); } },
+                { "custom_llm_extra_body", n => { CustomLlmExtraBody = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationClientDataRequestOutputCustomLlmExtraBodyProperty>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationClientDataRequestOutputCustomLlmExtraBodyProperty.CreateFromDiscriminatorValue); } },
+                { "dynamic_variables", n => { DynamicVariables = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationClientDataRequestOutputDynamicVariablesProperty>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationClientDataRequestOutputDynamicVariablesProperty.CreateFromDiscriminatorValue); } },
                 { "environment", n => { Environment = n.GetStringValue(); } },
                 { "source_info", n => { SourceInfo = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationSourceInfo>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationSourceInfo.CreateFromDiscriminatorValue); } },
                 { "starting_workflow_node_id", n => { StartingWorkflowNodeId = n.GetStringValue(); } },
@@ -122,8 +122,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("branch_id", BranchId);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationConfigClientOverrideOutput>("conversation_config_override", ConversationConfigOverride);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationClientDataRequestOutput_custom_llm_extra_body>("custom_llm_extra_body", CustomLlmExtraBody);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationClientDataRequestOutput_dynamic_variables>("dynamic_variables", DynamicVariables);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationClientDataRequestOutputCustomLlmExtraBodyProperty>("custom_llm_extra_body", CustomLlmExtraBody);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationClientDataRequestOutputDynamicVariablesProperty>("dynamic_variables", DynamicVariables);
             writer.WriteStringValue("environment", Environment);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationSourceInfo>("source_info", SourceInfo);
             writer.WriteStringValue("starting_workflow_node_id", StartingWorkflowNodeId);

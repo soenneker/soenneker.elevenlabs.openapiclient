@@ -10,7 +10,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     {
         [EnumMember(Value = "get_schedule")]
         #pragma warning disable CS1591
-        Get_schedule,
+        GetSchedule,
         #pragma warning restore CS1591
     }
 }

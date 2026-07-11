@@ -13,11 +13,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     #pragma warning restore CS1591
     {
         /// <summary>Why the requesting user has access to this resource. &apos;creator&apos; = caller is the owner. &apos;explicit&apos; = caller (or one of their workspace groups) is listed in role_to_group_ids beyond the workspace-wide everyone group. &apos;workspace_default&apos; = the workspace-wide everyone group is listed in role_to_group_ids (every non-anon workspace member, including admins, sees this resource). &apos;workspace_admin&apos; = caller is a workspace admin and the admin seat is the *only* path to access; reserved for docs nobody else can see. Lets the UI disclose why an admin-bypass viewer sees a doc that wasn&apos;t explicitly shared with them.</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceAccessInfo_access_source? AccessSource { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceAccessInfoAccessSource? AccessSource { get; set; }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The access level for anonymous users. If None, the resource is not shared publicly.</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceAccessInfo_anonymous_access_level_override? AnonymousAccessLevelOverride { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceAccessInfoAnonymousAccessLevelOverride? AnonymousAccessLevelOverride { get; set; }
         /// <summary>Email of the agent&apos;s creator</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -37,7 +37,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Whether the user making the request is the creator of the agent</summary>
         public bool? IsCreator { get; set; }
         /// <summary>The role of the user making the request</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceAccessInfo_role? Role { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceAccessInfoRole? Role { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceAccessInfo"/> and sets the default values.
         /// </summary>
@@ -63,12 +63,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "access_source", n => { AccessSource = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceAccessInfo_access_source>(); } },
-                { "anonymous_access_level_override", n => { AnonymousAccessLevelOverride = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceAccessInfo_anonymous_access_level_override>(); } },
+                { "access_source", n => { AccessSource = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceAccessInfoAccessSource>(); } },
+                { "anonymous_access_level_override", n => { AnonymousAccessLevelOverride = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceAccessInfoAnonymousAccessLevelOverride>(); } },
                 { "creator_email", n => { CreatorEmail = n.GetStringValue(); } },
                 { "creator_name", n => { CreatorName = n.GetStringValue(); } },
                 { "is_creator", n => { IsCreator = n.GetBoolValue(); } },
-                { "role", n => { Role = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceAccessInfo_role>(); } },
+                { "role", n => { Role = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceAccessInfoRole>(); } },
             };
         }
         /// <summary>
@@ -78,12 +78,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceAccessInfo_access_source>("access_source", AccessSource);
-            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceAccessInfo_anonymous_access_level_override>("anonymous_access_level_override", AnonymousAccessLevelOverride);
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceAccessInfoAccessSource>("access_source", AccessSource);
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceAccessInfoAnonymousAccessLevelOverride>("anonymous_access_level_override", AnonymousAccessLevelOverride);
             writer.WriteStringValue("creator_email", CreatorEmail);
             writer.WriteStringValue("creator_name", CreatorName);
             writer.WriteBoolValue("is_creator", IsCreator);
-            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceAccessInfo_role>("role", Role);
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceAccessInfoRole>("role", Role);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

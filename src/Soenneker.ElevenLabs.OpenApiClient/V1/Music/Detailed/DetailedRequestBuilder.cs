@@ -4,6 +4,7 @@ using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.ElevenLabs.OpenApiClient.Models;
+using Soenneker.ElevenLabs.OpenApiClient.V1.Music.Detailed.StreamNamespace;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -17,6 +18,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Music.Detailed
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class DetailedRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The stream property</summary>
+        public global::Soenneker.ElevenLabs.OpenApiClient.V1.Music.Detailed.StreamNamespace.StreamRequestBuilder Stream
+        {
+            get => new global::Soenneker.ElevenLabs.OpenApiClient.V1.Music.Detailed.StreamNamespace.StreamRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.V1.Music.Detailed.DetailedRequestBuilder"/> and sets the default values.
         /// </summary>
@@ -40,7 +46,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Music.Detailed
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.HTTPValidationError">When receiving a 422 status code</exception>
+        /// <exception cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.HttpValidationError">When receiving a 422 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<Stream?> PostAsync(global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyComposeMusicWithADetailedResponseV1MusicDetailedPost body, Action<RequestConfiguration<global::Soenneker.ElevenLabs.OpenApiClient.V1.Music.Detailed.DetailedRequestBuilder.DetailedRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -54,7 +60,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Music.Detailed
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "422", global::Soenneker.ElevenLabs.OpenApiClient.Models.HTTPValidationError.CreateFromDiscriminatorValue },
+                { "422", global::Soenneker.ElevenLabs.OpenApiClient.Models.HttpValidationError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -95,9 +101,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Music.Detailed
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class DetailedRequestBuilderPostQueryParameters 
         {
-            /// <summary>Output format of the generated audio. Formatted as codec_sample_rate_bitrate. So an mp3 with 22.05kHz sample rate at 32kbs is represented as mp3_22050_32. MP3 with 192kbps bitrate requires you to be subscribed to Creator tier or above. PCM with 44.1kHz sample rate requires you to be subscribed to Pro tier or above. Note that the μ-law format (sometimes written mu-law, often approximated as u-law) is commonly used for Twilio audio inputs.</summary>
+            /// <summary>&quot;Output format of the generated audio. Formatted as codec_sample_rate_bitrate. Use \&quot;auto\&quot; (the default) to let the API pick the best format for the selected model: mp3_44100_128 for v1 models and mp3_48000_192 for v2 models. &quot;</summary>
             [QueryParameter("output_format")]
-            public global::Soenneker.ElevenLabs.OpenApiClient.Models.AllowedOutputFormats? OutputFormat { get; set; }
+            public global::Soenneker.ElevenLabs.OpenApiClient.Models.ComposeDetailedOutputFormatParameter? OutputFormat { get; set; }
         }
     }
 }
