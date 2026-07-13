@@ -14,6 +14,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Whether to allow overriding the model_id field.</summary>
+        public bool? ModelId { get; set; }
         /// <summary>Whether to allow overriding the similarity_boost field.</summary>
         public bool? SimilarityBoost { get; set; }
         /// <summary>Whether to allow overriding the speed field.</summary>
@@ -28,6 +30,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public TtsConversationalConfigOverrideConfig()
         {
             AdditionalData = new Dictionary<string, object>();
+            ModelId = false;
             SimilarityBoost = false;
             Speed = false;
             Stability = false;
@@ -51,6 +54,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "model_id", n => { ModelId = n.GetBoolValue(); } },
                 { "similarity_boost", n => { SimilarityBoost = n.GetBoolValue(); } },
                 { "speed", n => { Speed = n.GetBoolValue(); } },
                 { "stability", n => { Stability = n.GetBoolValue(); } },
@@ -64,6 +68,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteBoolValue("model_id", ModelId);
             writer.WriteBoolValue("similarity_boost", SimilarityBoost);
             writer.WriteBoolValue("speed", Speed);
             writer.WriteBoolValue("stability", Stability);

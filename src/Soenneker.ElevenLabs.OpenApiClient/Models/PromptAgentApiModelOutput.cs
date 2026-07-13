@@ -131,7 +131,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public PromptAgentApiModelOutput()
         {
             AdditionalData = new Dictionary<string, object>();
-            CascadeTimeoutSeconds = 8.0;
+            CascadeTimeoutSeconds = 4.0;
             EnableReasoningSummary = false;
             IgnoreDefaultPersonality = false;
             MaxTokens = -1;

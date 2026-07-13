@@ -53,7 +53,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.History
         {
         }
         /// <summary>
-        /// Returns a list of your generated audio.
+        /// Returns a list of your generated audio (e.g. text to speech, speech to speech, Studio, dubbing). Music and SFX generations are not included and cannot currently be retrieved via the API.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.GetSpeechHistoryResponseModel"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -76,7 +76,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.History
             return await RequestAdapter.SendAsync<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetSpeechHistoryResponseModel>(requestInfo, global::Soenneker.ElevenLabs.OpenApiClient.Models.GetSpeechHistoryResponseModel.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Returns a list of your generated audio.
+        /// Returns a list of your generated audio (e.g. text to speech, speech to speech, Studio, dubbing). Music and SFX generations are not included and cannot currently be retrieved via the API.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -104,7 +104,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.History
             return new global::Soenneker.ElevenLabs.OpenApiClient.V1.History.HistoryRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Returns a list of your generated audio.
+        /// Returns a list of your generated audio (e.g. text to speech, speech to speech, Studio, dubbing). Music and SFX generations are not included and cannot currently be retrieved via the API.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class HistoryRequestBuilderGetQueryParameters 

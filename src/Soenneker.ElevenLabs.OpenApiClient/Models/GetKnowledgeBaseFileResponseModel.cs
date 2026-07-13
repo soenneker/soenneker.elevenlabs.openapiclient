@@ -22,6 +22,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Canonical representation of a knowledge base document&apos;s stored content.HTML is the legacy default; documents created before this field existed areinterpreted as HTML.</summary>
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ContentFormat? ContentFormat { get; set; }
         /// <summary>The external_sync_info property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -125,6 +127,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "access_info", n => { AccessInfo = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceAccessInfo>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceAccessInfo.CreateFromDiscriminatorValue); } },
+                { "content_format", n => { ContentFormat = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ContentFormat>(); } },
                 { "external_sync_info", n => { ExternalSyncInfo = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseFileResponseModelExternalSyncInfo>(global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseFileResponseModelExternalSyncInfo.CreateFromDiscriminatorValue); } },
                 { "extracted_inner_html", n => { ExtractedInnerHtml = n.GetStringValue(); } },
                 { "filename", n => { Filename = n.GetStringValue(); } },
@@ -146,6 +149,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceAccessInfo>("access_info", AccessInfo);
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ContentFormat>("content_format", ContentFormat);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseFileResponseModelExternalSyncInfo>("external_sync_info", ExternalSyncInfo);
             writer.WriteStringValue("extracted_inner_html", ExtractedInnerHtml);
             writer.WriteStringValue("filename", Filename);

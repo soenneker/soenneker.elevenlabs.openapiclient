@@ -12,7 +12,7 @@
           "speech-history"
         ],
         "summary": "List Generated Items",
-        "description": "Returns a list of your generated audio.",
+        "description": "Returns a list of your generated audio (e.g. text to speech, speech to speech, Studio, dubbing). Music and SFX generations are not included and cannot currently be retrieved via the API.",
         "operationId": "GetSpeechHistory",
         "parameters": [
           {
@@ -27374,6 +27374,51 @@
           ]
         }
       },
+      "AutoGenerationMetadata": {
+        "title": "AutoGenerationMetadata",
+        "required": [
+          "agent_id",
+          "stable_topic_id",
+          "criteria_id",
+          "topic_label",
+          "source_conversation_id",
+          "generated_at_unix"
+        ],
+        "type": "object",
+        "properties": {
+          "agent_id": {
+            "title": "Agent Id",
+            "type": "string",
+            "description": "Agent whose simulation library this test belongs to."
+          },
+          "stable_topic_id": {
+            "title": "Stable Topic Id",
+            "type": "string",
+            "description": "Stable topic id (from topic discovery) this test covers."
+          },
+          "criteria_id": {
+            "title": "Criteria Id",
+            "type": "string",
+            "description": "Evaluation criterion id this test targets."
+          },
+          "topic_label": {
+            "title": "Topic Label",
+            "type": "string",
+            "description": "Human-readable topic label at generation time."
+          },
+          "source_conversation_id": {
+            "title": "Source Conversation Id",
+            "type": "string",
+            "description": "Conversation the test was generated from."
+          },
+          "generated_at_unix": {
+            "title": "Generated At Unix",
+            "type": "integer",
+            "description": "Unix timestamp (seconds) when the test was generated."
+          }
+        },
+        "description": "provenance for an auto-generated simulation-library test (drives dedup \u002B ui grouping)."
+      },
       "AutoSyncInfo": {
         "title": "AutoSyncInfo",
         "type": "object",
@@ -33835,6 +33880,30 @@
           }
         }
       },
+      "ContentFormat": {
+        "title": "ContentFormat",
+        "enum": [
+          "html",
+          "markdown"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "Canonical representation of a knowledge base document\u0027s stored content.\n\nHTML is the legacy default; documents created before this field existed are\ninterpreted as HTML.",
+        "x-ms-enum": {
+          "name": "ContentFormat",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "html",
+              "name": "Html"
+            },
+            {
+              "value": "markdown",
+              "name": "Markdown"
+            }
+          ]
+        }
+      },
       "ContentGuardrailInput": {
         "title": "ContentGuardrail",
         "type": "object",
@@ -34368,6 +34437,7 @@
             ]
           },
           "tts": {
+            "model_id": "eleven_turbo_v2",
             "similarity_boost": 0.8,
             "speed": 1.0,
             "stability": 0.5,
@@ -34418,6 +34488,7 @@
             ]
           },
           "tts": {
+            "model_id": "eleven_turbo_v2",
             "similarity_boost": 0.8,
             "speed": 1.0,
             "stability": 0.5,
@@ -44350,6 +44421,30 @@
           "otlp_traces": {
             "$ref": "#/components/schemas/GetConversationResponseModelOtlpTraces"
           }
+        },
+        "example": {
+          "agent_id": "agent_3701k3ttaq12ewp8b7qv5rfyszkz",
+          "agent_name": "My agent",
+          "conversation_id": "conv_7401k5m9x2p8ec3rqv6dtnhb0fzw",
+          "environment": "production",
+          "has_audio": true,
+          "has_auxiliary_audio": true,
+          "has_response_audio": true,
+          "has_user_audio": true,
+          "metadata": {
+            "call_duration_secs": 10,
+            "start_time_unix_secs": 1714423232
+          },
+          "status": "processing",
+          "tag_ids": [],
+          "transcript": [
+            {
+              "message": "Hello, how are you?",
+              "role": "user",
+              "time_in_call_secs": 10
+            }
+          ],
+          "version_id": "agtvrsn_5xM3yVvZQKV0EfqQpLr2"
         }
       },
       "GetConversationTagsPageResponseModel": {
@@ -44521,6 +44616,9 @@
           "extracted_inner_html": {
             "title": "Extracted Inner Html",
             "type": "string"
+          },
+          "content_format": {
+            "$ref": "#/components/schemas/ContentFormat"
           },
           "filename": {
             "title": "Filename",
@@ -45031,6 +45129,9 @@
           "extracted_inner_html": {
             "title": "Extracted Inner Html",
             "type": "string"
+          },
+          "content_format": {
+            "$ref": "#/components/schemas/ContentFormat"
           }
         }
       },
@@ -45104,6 +45205,9 @@
           "extracted_inner_html": {
             "title": "Extracted Inner Html",
             "type": "string"
+          },
+          "content_format": {
+            "$ref": "#/components/schemas/ContentFormat"
           },
           "auto_sync_info": {
             "$ref": "#/components/schemas/GetKnowledgeBaseUrlResponseModelAutoSyncInfo"
@@ -56577,7 +56681,7 @@
             "minimum": 2.0,
             "type": "number",
             "description": "Time in seconds before cascading to backup LLM. Must be between 2 and 15 seconds.",
-            "default": 8.0
+            "default": 4.0
           },
           "tools": {
             "title": "Tools",
@@ -56694,7 +56798,7 @@
             "minimum": 2.0,
             "type": "number",
             "description": "Time in seconds before cascading to backup LLM. Must be between 2 and 15 seconds.",
-            "default": 8.0
+            "default": 4.0
           },
           "tools": {
             "title": "Tools",
@@ -60257,6 +60361,10 @@
           }
         }
       },
+      "SimulationLibrarySettings": {
+        "title": "SimulationLibrarySettings",
+        "type": "object"
+      },
       "SimulationTestModel": {
         "title": "SimulationTestModel",
         "type": "object",
@@ -62793,7 +62901,7 @@
             "title": "Enable Phoneme Tags",
             "type": "boolean",
             "description": "Opt-in to SSML phoneme tag handling for V3 models. When enabled, phoneme tags (inline and from pronunciation dictionaries) are parsed into inline IPA before being sent to the model.",
-            "default": false
+            "default": true
           },
           "audio_filter": {
             "$ref": "#/components/schemas/TtsConversationalConfigInputAudioFilter"
@@ -62897,7 +63005,7 @@
             "title": "Enable Phoneme Tags",
             "type": "boolean",
             "description": "Opt-in to SSML phoneme tag handling for V3 models. When enabled, phoneme tags (inline and from pronunciation dictionaries) are parsed into inline IPA before being sent to the model.",
-            "default": false
+            "default": true
           },
           "audio_filter": {
             "$ref": "#/components/schemas/TtsConversationalConfigOutputAudioFilter"
@@ -62918,6 +63026,9 @@
         "title": "TTSConversationalConfigOverride",
         "type": "object",
         "properties": {
+          "model_id": {
+            "$ref": "#/components/schemas/TtsConversationalConfigOverrideModelId"
+          },
           "voice_id": {
             "$ref": "#/components/schemas/TtsConversationalConfigOverrideVoiceId"
           },
@@ -62932,6 +63043,7 @@
           }
         },
         "example": {
+          "model_id": "eleven_turbo_v2",
           "similarity_boost": 0.8,
           "speed": 1.0,
           "stability": 0.5,
@@ -62942,6 +63054,12 @@
         "title": "TTSConversationalConfigOverrideConfig",
         "type": "object",
         "properties": {
+          "model_id": {
+            "title": "Model Id",
+            "type": "boolean",
+            "description": "Whether to allow overriding the model_id field.",
+            "default": false
+          },
           "voice_id": {
             "title": "Voice Id",
             "type": "boolean",
@@ -93958,6 +94076,17 @@
         "nullable": true,
         "x-fern-ignore": true
       },
+      "TtsConversationalConfigOverrideModelId": {
+        "type": "object",
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/TtsConversationalModelWrapper"
+          }
+        ],
+        "description": "The model to use for TTS",
+        "nullable": true,
+        "x-convai-client-override": true
+      },
       "TtsConversationalConfigOverrideVoiceId": {
         "title": "Voice Id",
         "type": "string",
@@ -93991,11 +94120,12 @@
         "type": "object",
         "anyOf": [
           {
-            "$ref": "#/components/schemas/TtsConversationalModelWrapper"
+            "$ref": "#/components/schemas/TtsConversationalModelWrapper2"
           }
         ],
         "description": "The model to use for TTS",
-        "nullable": true
+        "nullable": true,
+        "x-convai-client-override": true
       },
       "TtsConversationalConfigWorkflowOverrideInputVoiceId": {
         "title": "Voice Id",
@@ -94125,11 +94255,12 @@
         "type": "object",
         "anyOf": [
           {
-            "$ref": "#/components/schemas/TtsConversationalModelWrapper2"
+            "$ref": "#/components/schemas/TtsConversationalModelWrapper3"
           }
         ],
         "description": "The model to use for TTS",
-        "nullable": true
+        "nullable": true,
+        "x-convai-client-override": true
       },
       "TtsConversationalConfigWorkflowOverrideOutputVoiceId": {
         "title": "Voice Id",
@@ -103232,6 +103363,17 @@
           }
         }
       },
+      "TtsConversationalModelWrapper2": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "$ref": "#/components/schemas/TtsConversationalModel"
+          }
+        }
+      },
       "TtsOutputFormatWrapper": {
         "required": [
           "value"
@@ -103276,7 +103418,7 @@
           }
         }
       },
-      "TtsConversationalModelWrapper2": {
+      "TtsConversationalModelWrapper3": {
         "required": [
           "value"
         ],

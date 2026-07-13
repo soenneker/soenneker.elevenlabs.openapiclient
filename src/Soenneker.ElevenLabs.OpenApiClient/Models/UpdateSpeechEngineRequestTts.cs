@@ -86,7 +86,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public UpdateSpeechEngineRequestTts()
         {
             AdditionalData = new Dictionary<string, object>();
-            EnablePhonemeTags = false;
+            EnablePhonemeTags = true;
             ExpressiveMode = true;
             SimilarityBoost = 0.8;
             Speed = 1.0;

@@ -15,6 +15,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The model to use for TTS</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.TtsConversationalModelWrapper? ModelId { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.TtsConversationalModelWrapper ModelId { get; set; }
+#endif
         /// <summary>The similarity boost for generated speech</summary>
         public double? SimilarityBoost { get; set; }
         /// <summary>The speed of generated speech</summary>
@@ -62,6 +70,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "model_id", n => { ModelId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TtsConversationalModelWrapper>(global::Soenneker.ElevenLabs.OpenApiClient.Models.TtsConversationalModelWrapper.CreateFromDiscriminatorValue); } },
                 { "similarity_boost", n => { SimilarityBoost = n.GetDoubleValue(); } },
                 { "speed", n => { Speed = n.GetDoubleValue(); } },
                 { "stability", n => { Stability = n.GetDoubleValue(); } },
@@ -76,6 +85,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TtsConversationalModelWrapper>("model_id", ModelId);
             writer.WriteDoubleValue("similarity_boost", SimilarityBoost);
             writer.WriteDoubleValue("speed", Speed);
             writer.WriteDoubleValue("stability", Stability);
