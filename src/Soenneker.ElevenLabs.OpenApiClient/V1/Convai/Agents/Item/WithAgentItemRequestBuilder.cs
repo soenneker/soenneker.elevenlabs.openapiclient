@@ -9,6 +9,7 @@ using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.Branches;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.Deployments;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.Drafts;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.Duplicate;
+using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.KnowledgeBase;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.Link;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.RunTests;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.Topics;
@@ -51,6 +52,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item
         public global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.Duplicate.DuplicateRequestBuilder Duplicate
         {
             get => new global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.Duplicate.DuplicateRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The knowledgeBase property</summary>
+        public global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.KnowledgeBase.KnowledgeBaseRequestBuilder KnowledgeBase
+        {
+            get => new global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.KnowledgeBase.KnowledgeBaseRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The link property</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.Link.LinkRequestBuilder Link

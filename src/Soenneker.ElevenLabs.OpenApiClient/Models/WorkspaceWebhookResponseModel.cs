@@ -18,6 +18,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookAuthMethodType? AuthType { get; set; }
         /// <summary>Original creation time of the webhook.</summary>
         public int? CreatedAtUnix { get; set; }
+        /// <summary>The workspace-level events this webhook is currently subscribed to. Only populated when usages are requested.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceWebhookResponseModelEvents? Events { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceWebhookResponseModelEvents Events { get; set; }
+#endif
         /// <summary>Whether the webhook has been automatically disabled due to repeated consecutive failures over a long period of time.</summary>
         public bool? IsAutoDisabled { get; set; }
         /// <summary>Whether the webhook has been manually disabled by a user.</summary>
@@ -85,6 +93,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             {
                 { "auth_type", n => { AuthType = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookAuthMethodType>(); } },
                 { "created_at_unix", n => { CreatedAtUnix = n.GetIntValue(); } },
+                { "events", n => { Events = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceWebhookResponseModelEvents>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceWebhookResponseModelEvents.CreateFromDiscriminatorValue); } },
                 { "is_auto_disabled", n => { IsAutoDisabled = n.GetBoolValue(); } },
                 { "is_disabled", n => { IsDisabled = n.GetBoolValue(); } },
                 { "most_recent_failure_error_code", n => { MostRecentFailureErrorCode = n.GetIntValue(); } },
@@ -104,6 +113,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookAuthMethodType>("auth_type", AuthType);
             writer.WriteIntValue("created_at_unix", CreatedAtUnix);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceWebhookResponseModelEvents>("events", Events);
             writer.WriteBoolValue("is_auto_disabled", IsAutoDisabled);
             writer.WriteBoolValue("is_disabled", IsDisabled);
             writer.WriteIntValue("most_recent_failure_error_code", MostRecentFailureErrorCode);

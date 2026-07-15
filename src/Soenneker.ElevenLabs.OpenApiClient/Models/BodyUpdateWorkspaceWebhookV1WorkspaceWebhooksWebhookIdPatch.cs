@@ -14,6 +14,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The complete set of workspace-level events this webhook should be subscribed to. The webhook is added to the events in the list and removed from any not in the list. Omit to leave the current event subscriptions unchanged.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyUpdateWorkspaceWebhookV1WorkspaceWebhooksWebhookIdPatchEvents? Events { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyUpdateWorkspaceWebhookV1WorkspaceWebhooksWebhookIdPatchEvents Events { get; set; }
+#endif
         /// <summary>Whether to disable or enable the webhook</summary>
         public bool? IsDisabled { get; set; }
         /// <summary>The display name of the webhook (used for display purposes only).</summary>
@@ -59,6 +67,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "events", n => { Events = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyUpdateWorkspaceWebhookV1WorkspaceWebhooksWebhookIdPatchEvents>(global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyUpdateWorkspaceWebhookV1WorkspaceWebhooksWebhookIdPatchEvents.CreateFromDiscriminatorValue); } },
                 { "is_disabled", n => { IsDisabled = n.GetBoolValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "request_headers", n => { RequestHeaders = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyUpdateWorkspaceWebhookV1WorkspaceWebhooksWebhookIdPatchRequestHeaders>(global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyUpdateWorkspaceWebhookV1WorkspaceWebhooksWebhookIdPatchRequestHeaders.CreateFromDiscriminatorValue); } },
@@ -72,6 +81,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyUpdateWorkspaceWebhookV1WorkspaceWebhooksWebhookIdPatchEvents>("events", Events);
             writer.WriteBoolValue("is_disabled", IsDisabled);
             writer.WriteStringValue("name", Name);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyUpdateWorkspaceWebhookV1WorkspaceWebhooksWebhookIdPatchRequestHeaders>("request_headers", RequestHeaders);

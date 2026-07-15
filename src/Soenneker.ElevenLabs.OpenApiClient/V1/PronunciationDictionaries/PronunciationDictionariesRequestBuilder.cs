@@ -47,7 +47,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.PronunciationDictionaries
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PronunciationDictionariesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/pronunciation-dictionaries{?cursor*,page_size*,sort*,sort_direction*}", pathParameters)
+        public PronunciationDictionariesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/pronunciation-dictionaries{?cursor*,include_archived*,page_size*,sort*,sort_direction*}", pathParameters)
         {
         }
         /// <summary>
@@ -55,7 +55,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.PronunciationDictionaries
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PronunciationDictionariesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/pronunciation-dictionaries{?cursor*,page_size*,sort*,sort_direction*}", rawUrl)
+        public PronunciationDictionariesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/pronunciation-dictionaries{?cursor*,include_archived*,page_size*,sort*,sort_direction*}", rawUrl)
         {
         }
         /// <summary>
@@ -125,6 +125,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.PronunciationDictionaries
             [QueryParameter("cursor")]
             public string Cursor { get; set; }
 #endif
+            /// <summary>Whether to include archived pronunciation dictionaries in the response.</summary>
+            [QueryParameter("include_archived")]
+            public bool? IncludeArchived { get; set; }
             /// <summary>How many pronunciation dictionaries to return at maximum. Can not exceed 100, defaults to 30.</summary>
             [QueryParameter("page_size")]
             public int? PageSize { get; set; }
