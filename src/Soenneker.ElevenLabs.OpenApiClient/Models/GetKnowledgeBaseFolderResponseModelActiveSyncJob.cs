@@ -62,10 +62,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The sync_type property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ExternalSyncJobTypeWrapper? SyncType { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.KbExternalSyncJobSyncType? SyncType { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ExternalSyncJobTypeWrapper SyncType { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.KbExternalSyncJobSyncType SyncType { get; set; }
 #endif
         /// <summary>The triggered_by property</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.ExternalSyncJobTrigger? TriggeredBy { get; set; }
@@ -116,7 +116,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "items_processed", n => { ItemsProcessed = n.GetIntValue(); } },
                 { "started_at", n => { StartedAt = n.GetIntValue(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CrawlStatus>(); } },
-                { "sync_type", n => { SyncType = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ExternalSyncJobTypeWrapper>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ExternalSyncJobTypeWrapper.CreateFromDiscriminatorValue); } },
+                { "sync_type", n => { SyncType = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.KbExternalSyncJobSyncType>(global::Soenneker.ElevenLabs.OpenApiClient.Models.KbExternalSyncJobSyncType.CreateFromDiscriminatorValue); } },
                 { "triggered_by", n => { TriggeredBy = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ExternalSyncJobTrigger>(); } },
                 { "type", n => { Type = n.GetStringValue(); } },
                 { "updated_at", n => { UpdatedAt = n.GetIntValue(); } },
@@ -139,7 +139,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteIntValue("items_processed", ItemsProcessed);
             writer.WriteIntValue("started_at", StartedAt);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CrawlStatus>("status", Status);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ExternalSyncJobTypeWrapper>("sync_type", SyncType);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.KbExternalSyncJobSyncType>("sync_type", SyncType);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ExternalSyncJobTrigger>("triggered_by", TriggeredBy);
             writer.WriteStringValue("type", Type);
             writer.WriteIntValue("updated_at", UpdatedAt);

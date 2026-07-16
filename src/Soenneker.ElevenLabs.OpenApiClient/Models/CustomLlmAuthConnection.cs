@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.ElevenLabs.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.AuthConnectionLocator"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.EnvironmentAuthConnectionLocator"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.AuthConnectionLocator"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomLlmAuthConnectionMember1"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.EnvironmentAuthConnectionLocator"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CustomLlmAuthConnection : IComposedTypeWrapper, IParsable
@@ -20,6 +20,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #nullable restore
 #else
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.AuthConnectionLocator AuthConnectionLocator { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomLlmAuthConnectionMember1"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomLlmAuthConnectionMember1? CustomLlmAuthConnectionMember1 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomLlmAuthConnectionMember1 CustomLlmAuthConnectionMember1 { get; set; }
 #endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.EnvironmentAuthConnectionLocator"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -39,6 +47,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var result = new global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomLlmAuthConnection();
             result.AuthConnectionLocator = new global::Soenneker.ElevenLabs.OpenApiClient.Models.AuthConnectionLocator();
+            result.CustomLlmAuthConnectionMember1 = new global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomLlmAuthConnectionMember1();
             result.EnvironmentAuthConnectionLocator = new global::Soenneker.ElevenLabs.OpenApiClient.Models.EnvironmentAuthConnectionLocator();
             return result;
         }
@@ -48,9 +57,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(AuthConnectionLocator != null || EnvironmentAuthConnectionLocator != null)
+            if(AuthConnectionLocator != null || CustomLlmAuthConnectionMember1 != null || EnvironmentAuthConnectionLocator != null)
             {
-                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(AuthConnectionLocator, EnvironmentAuthConnectionLocator);
+                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(AuthConnectionLocator, CustomLlmAuthConnectionMember1, EnvironmentAuthConnectionLocator);
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -61,7 +70,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AuthConnectionLocator>(null, AuthConnectionLocator, EnvironmentAuthConnectionLocator);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AuthConnectionLocator>(null, AuthConnectionLocator, CustomLlmAuthConnectionMember1, EnvironmentAuthConnectionLocator);
         }
     }
 }

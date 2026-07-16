@@ -37,10 +37,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Optional generation mode hint for prompt-based music generation. Can only be used with `prompt`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.MusicGenerationModeWrapper2? GenerationMode { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyComposeMusicV1MusicPostGenerationMode? GenerationMode { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.MusicGenerationModeWrapper2 GenerationMode { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyComposeMusicV1MusicPostGenerationMode GenerationMode { get; set; }
 #endif
         /// <summary>The lyrics text to use for the generation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -116,7 +116,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "finetune_id", n => { FinetuneId = n.GetStringValue(); } },
                 { "finetune_strength", n => { FinetuneStrength = n.GetDoubleValue(); } },
                 { "force_instrumental", n => { ForceInstrumental = n.GetBoolValue(); } },
-                { "generation_mode", n => { GenerationMode = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.MusicGenerationModeWrapper2>(global::Soenneker.ElevenLabs.OpenApiClient.Models.MusicGenerationModeWrapper2.CreateFromDiscriminatorValue); } },
+                { "generation_mode", n => { GenerationMode = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyComposeMusicV1MusicPostGenerationMode>(global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyComposeMusicV1MusicPostGenerationMode.CreateFromDiscriminatorValue); } },
                 { "lyrics_text", n => { LyricsText = n.GetStringValue(); } },
                 { "model_id", n => { ModelId = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyComposeMusicV1MusicPostModelId>(); } },
                 { "music_length_ms", n => { MusicLengthMs = n.GetIntValue(); } },
@@ -140,7 +140,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteStringValue("finetune_id", FinetuneId);
             writer.WriteDoubleValue("finetune_strength", FinetuneStrength);
             writer.WriteBoolValue("force_instrumental", ForceInstrumental);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.MusicGenerationModeWrapper2>("generation_mode", GenerationMode);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyComposeMusicV1MusicPostGenerationMode>("generation_mode", GenerationMode);
             writer.WriteStringValue("lyrics_text", LyricsText);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyComposeMusicV1MusicPostModelId>("model_id", ModelId);
             writer.WriteIntValue("music_length_ms", MusicLengthMs);

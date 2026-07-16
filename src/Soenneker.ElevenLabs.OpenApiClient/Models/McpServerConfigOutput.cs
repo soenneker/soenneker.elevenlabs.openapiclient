@@ -83,10 +83,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Predefined tool call sound type to play during tool execution for all tools from this MCP server</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolCallSoundTypeWrapper6? ToolCallSound { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.McpServerConfigOutputToolCallSound? ToolCallSound { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolCallSoundTypeWrapper6 ToolCallSound { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.McpServerConfigOutputToolCallSound ToolCallSound { get; set; }
 #endif
         /// <summary>Determines how the tool call sound should be played.</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolCallSoundBehavior? ToolCallSoundBehavior { get; set; }
@@ -151,7 +151,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "response_timeout_secs", n => { ResponseTimeoutSecs = n.GetIntValue(); } },
                 { "secret_token", n => { SecretToken = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.McpServerConfigOutputSecretToken>(global::Soenneker.ElevenLabs.OpenApiClient.Models.McpServerConfigOutputSecretToken.CreateFromDiscriminatorValue); } },
                 { "tool_approval_hashes", n => { ToolApprovalHashes = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.McpToolApprovalHash>(global::Soenneker.ElevenLabs.OpenApiClient.Models.McpToolApprovalHash.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "tool_call_sound", n => { ToolCallSound = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolCallSoundTypeWrapper6>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolCallSoundTypeWrapper6.CreateFromDiscriminatorValue); } },
+                { "tool_call_sound", n => { ToolCallSound = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.McpServerConfigOutputToolCallSound>(global::Soenneker.ElevenLabs.OpenApiClient.Models.McpServerConfigOutputToolCallSound.CreateFromDiscriminatorValue); } },
                 { "tool_call_sound_behavior", n => { ToolCallSoundBehavior = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolCallSoundBehavior>(); } },
                 { "tool_config_overrides", n => { ToolConfigOverrides = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.McpToolConfigOverrideOutput>(global::Soenneker.ElevenLabs.OpenApiClient.Models.McpToolConfigOverrideOutput.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "transport", n => { Transport = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.McpServerTransport>(); } },
@@ -179,7 +179,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteIntValue("response_timeout_secs", ResponseTimeoutSecs);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.McpServerConfigOutputSecretToken>("secret_token", SecretToken);
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.McpToolApprovalHash>("tool_approval_hashes", ToolApprovalHashes);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolCallSoundTypeWrapper6>("tool_call_sound", ToolCallSound);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.McpServerConfigOutputToolCallSound>("tool_call_sound", ToolCallSound);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolCallSoundBehavior>("tool_call_sound_behavior", ToolCallSoundBehavior);
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.McpToolConfigOverrideOutput>("tool_config_overrides", ToolConfigOverrides);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.McpServerTransport>("transport", Transport);

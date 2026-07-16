@@ -33,10 +33,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The seat type of the user</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SeatTypeWrapper? SeatType { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyInviteMultipleUsersV1WorkspaceInvitesAddBulkPostSeatType? SeatType { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SeatTypeWrapper SeatType { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyInviteMultipleUsersV1WorkspaceInvitesAddBulkPostSeatType SeatType { get; set; }
 #endif
         /// <summary>Monthly credit usage limit for the invitee. Omit or set to null for no custom cap.</summary>
         public int? UsageLimit { get; set; }
@@ -67,7 +67,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             {
                 { "emails", n => { Emails = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "group_ids", n => { GroupIds = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyInviteMultipleUsersV1WorkspaceInvitesAddBulkPostGroupIds>(global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyInviteMultipleUsersV1WorkspaceInvitesAddBulkPostGroupIds.CreateFromDiscriminatorValue); } },
-                { "seat_type", n => { SeatType = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SeatTypeWrapper>(global::Soenneker.ElevenLabs.OpenApiClient.Models.SeatTypeWrapper.CreateFromDiscriminatorValue); } },
+                { "seat_type", n => { SeatType = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyInviteMultipleUsersV1WorkspaceInvitesAddBulkPostSeatType>(global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyInviteMultipleUsersV1WorkspaceInvitesAddBulkPostSeatType.CreateFromDiscriminatorValue); } },
                 { "usage_limit", n => { UsageLimit = n.GetIntValue(); } },
             };
         }
@@ -80,7 +80,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<string>("emails", Emails);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyInviteMultipleUsersV1WorkspaceInvitesAddBulkPostGroupIds>("group_ids", GroupIds);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SeatTypeWrapper>("seat_type", SeatType);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyInviteMultipleUsersV1WorkspaceInvitesAddBulkPostSeatType>("seat_type", SeatType);
             writer.WriteIntValue("usage_limit", UsageLimit);
             writer.WriteAdditionalData(AdditionalData);
         }

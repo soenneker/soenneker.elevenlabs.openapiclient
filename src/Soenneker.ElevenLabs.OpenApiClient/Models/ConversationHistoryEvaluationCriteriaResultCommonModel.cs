@@ -39,10 +39,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The scoring_mode property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CriteriaScoringModeWrapper? ScoringMode { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryEvaluationCriteriaResultCommonModelScoringMode? ScoringMode { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CriteriaScoringModeWrapper ScoringMode { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryEvaluationCriteriaResultCommonModelScoringMode ScoringMode { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryEvaluationCriteriaResultCommonModel"/> and sets the default values.
@@ -74,7 +74,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "rationale", n => { Rationale = n.GetStringValue(); } },
                 { "result", n => { Result = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.EvaluationSuccessResult>(); } },
                 { "score", n => { Score = n.GetIntValue(); } },
-                { "scoring_mode", n => { ScoringMode = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CriteriaScoringModeWrapper>(global::Soenneker.ElevenLabs.OpenApiClient.Models.CriteriaScoringModeWrapper.CreateFromDiscriminatorValue); } },
+                { "scoring_mode", n => { ScoringMode = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryEvaluationCriteriaResultCommonModelScoringMode>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryEvaluationCriteriaResultCommonModelScoringMode.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -89,7 +89,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteStringValue("rationale", Rationale);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.EvaluationSuccessResult>("result", Result);
             writer.WriteIntValue("score", Score);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CriteriaScoringModeWrapper>("scoring_mode", ScoringMode);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryEvaluationCriteriaResultCommonModelScoringMode>("scoring_mode", ScoringMode);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.ElevenLabs.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ConvAiEnvVarLocator"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ConvAiSecretLocator"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ConvAiEnvVarLocator"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ConvAiSecretLocator"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomLlmApiKeyMember1"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CustomLlmApiKey : IComposedTypeWrapper, IParsable
@@ -29,6 +29,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConvAiSecretLocator ConvAiSecretLocator { get; set; }
 #endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomLlmApiKeyMember1"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomLlmApiKeyMember1? CustomLlmApiKeyMember1 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomLlmApiKeyMember1 CustomLlmApiKeyMember1 { get; set; }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -40,6 +48,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             var result = new global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomLlmApiKey();
             result.ConvAiEnvVarLocator = new global::Soenneker.ElevenLabs.OpenApiClient.Models.ConvAiEnvVarLocator();
             result.ConvAiSecretLocator = new global::Soenneker.ElevenLabs.OpenApiClient.Models.ConvAiSecretLocator();
+            result.CustomLlmApiKeyMember1 = new global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomLlmApiKeyMember1();
             return result;
         }
         /// <summary>
@@ -48,9 +57,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(ConvAiEnvVarLocator != null || ConvAiSecretLocator != null)
+            if(ConvAiEnvVarLocator != null || ConvAiSecretLocator != null || CustomLlmApiKeyMember1 != null)
             {
-                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(ConvAiEnvVarLocator, ConvAiSecretLocator);
+                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(ConvAiEnvVarLocator, ConvAiSecretLocator, CustomLlmApiKeyMember1);
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -61,7 +70,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConvAiEnvVarLocator>(null, ConvAiEnvVarLocator, ConvAiSecretLocator);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConvAiEnvVarLocator>(null, ConvAiEnvVarLocator, ConvAiSecretLocator, CustomLlmApiKeyMember1);
         }
     }
 }

@@ -15,6 +15,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Evaluate once against the complete non-TTS response instead of cumulative partials. Requires blocking mode.</summary>
+        public bool? EvaluateFullResponseOnly { get; set; }
         /// <summary>The execution_mode property</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.GuardrailExecutionMode? ExecutionMode { get; set; }
         /// <summary>&quot;When enabled, the history also renders the agent&apos;s tool calls, their input arguments, and the tool results, interleaved with the text, so an action between two agent messages is visible. Off by default: history shows only user and agent text. Tool payloads can be large and can mislead smaller evaluator models, so enabling this raises token cost.&quot;</summary>
@@ -55,6 +57,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public CustomGuardrailConfig()
         {
             AdditionalData = new Dictionary<string, object>();
+            EvaluateFullResponseOnly = false;
             HistoryIncludeToolCalls = false;
             HistoryMessageCount = 0;
             IsEnabled = false;
@@ -77,6 +80,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "evaluate_full_response_only", n => { EvaluateFullResponseOnly = n.GetBoolValue(); } },
                 { "execution_mode", n => { ExecutionMode = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GuardrailExecutionMode>(); } },
                 { "history_include_tool_calls", n => { HistoryIncludeToolCalls = n.GetBoolValue(); } },
                 { "history_message_count", n => { HistoryMessageCount = n.GetIntValue(); } },
@@ -94,6 +98,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteBoolValue("evaluate_full_response_only", EvaluateFullResponseOnly);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GuardrailExecutionMode>("execution_mode", ExecutionMode);
             writer.WriteBoolValue("history_include_tool_calls", HistoryIncludeToolCalls);
             writer.WriteIntValue("history_message_count", HistoryMessageCount);

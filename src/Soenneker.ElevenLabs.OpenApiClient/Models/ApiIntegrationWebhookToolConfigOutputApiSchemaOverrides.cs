@@ -26,10 +26,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The response_filter_mode property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ResponseFilterModeWrapper? ResponseFilterMode { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ApiIntegrationWebhookOverridesResponseFilterMode? ResponseFilterMode { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ResponseFilterModeWrapper ResponseFilterMode { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ApiIntegrationWebhookOverridesResponseFilterMode ResponseFilterMode { get; set; }
 #endif
         /// <summary>The response_filters property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -81,7 +81,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "request_headers", n => { RequestHeaders = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ApiIntegrationWebhookOverridesRequestHeaders>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ApiIntegrationWebhookOverridesRequestHeaders.CreateFromDiscriminatorValue); } },
-                { "response_filter_mode", n => { ResponseFilterMode = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ResponseFilterModeWrapper>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ResponseFilterModeWrapper.CreateFromDiscriminatorValue); } },
+                { "response_filter_mode", n => { ResponseFilterMode = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ApiIntegrationWebhookOverridesResponseFilterMode>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ApiIntegrationWebhookOverridesResponseFilterMode.CreateFromDiscriminatorValue); } },
                 { "response_filters", n => { ResponseFilters = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ApiIntegrationWebhookOverridesResponseFilters>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ApiIntegrationWebhookOverridesResponseFilters.CreateFromDiscriminatorValue); } },
                 { "schema_overrides", n => { SchemaOverrides = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ApiIntegrationWebhookOverridesSchemaOverrides>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ApiIntegrationWebhookOverridesSchemaOverrides.CreateFromDiscriminatorValue); } },
                 { "type", n => { Type = n.GetStringValue(); } },
@@ -95,7 +95,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ApiIntegrationWebhookOverridesRequestHeaders>("request_headers", RequestHeaders);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ResponseFilterModeWrapper>("response_filter_mode", ResponseFilterMode);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ApiIntegrationWebhookOverridesResponseFilterMode>("response_filter_mode", ResponseFilterMode);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ApiIntegrationWebhookOverridesResponseFilters>("response_filters", ResponseFilters);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ApiIntegrationWebhookOverridesSchemaOverrides>("schema_overrides", SchemaOverrides);
             writer.WriteStringValue("type", Type);

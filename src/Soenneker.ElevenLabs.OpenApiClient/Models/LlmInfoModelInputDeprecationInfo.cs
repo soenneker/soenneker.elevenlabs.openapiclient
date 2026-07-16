@@ -38,10 +38,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The model that replaces this deprecated model. Traffic will be automatically routed to this model.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmWrapper6? ReplacementModel { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmDeprecationInfoModelReplacementModel? ReplacementModel { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmWrapper6 ReplacementModel { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmDeprecationInfoModelReplacementModel ReplacementModel { get; set; }
 #endif
         /// <summary>Union discriminator</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -86,7 +86,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "is_in_warning_period", n => { IsInWarningPeriod = n.GetBoolValue(); } },
                 { "llm", n => { Llm = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Llm>(); } },
                 { "provider_deprecation_date", n => { ProviderDeprecationDate = n.GetDateTimeOffsetValue(); } },
-                { "replacement_model", n => { ReplacementModel = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmWrapper6>(global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmWrapper6.CreateFromDiscriminatorValue); } },
+                { "replacement_model", n => { ReplacementModel = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmDeprecationInfoModelReplacementModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmDeprecationInfoModelReplacementModel.CreateFromDiscriminatorValue); } },
                 { "type", n => { Type = n.GetStringValue(); } },
             };
         }
@@ -104,7 +104,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteBoolValue("is_in_warning_period", IsInWarningPeriod);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Llm>("llm", Llm);
             writer.WriteDateTimeOffsetValue("provider_deprecation_date", ProviderDeprecationDate);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmWrapper6>("replacement_model", ReplacementModel);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmDeprecationInfoModelReplacementModel>("replacement_model", ReplacementModel);
             writer.WriteStringValue("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }

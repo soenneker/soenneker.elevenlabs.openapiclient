@@ -19,10 +19,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>An optional filter applied to the audio output.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AudioFilterIdWrapper? AudioFilter { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.TtsConversationalConfigInputAudioFilter? AudioFilter { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AudioFilterIdWrapper AudioFilter { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.TtsConversationalConfigInputAudioFilter AudioFilter { get; set; }
 #endif
         /// <summary>Opt-in to SSML phoneme tag handling for V3 models. When enabled, phoneme tags (inline and from pronunciation dictionaries) are parsed into inline IPA before being sent to the model.</summary>
         public bool? EnablePhonemeTags { get; set; }
@@ -112,7 +112,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "agent_output_audio_format", n => { AgentOutputAudioFormat = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TtsOutputFormat>(); } },
-                { "audio_filter", n => { AudioFilter = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AudioFilterIdWrapper>(global::Soenneker.ElevenLabs.OpenApiClient.Models.AudioFilterIdWrapper.CreateFromDiscriminatorValue); } },
+                { "audio_filter", n => { AudioFilter = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TtsConversationalConfigInputAudioFilter>(global::Soenneker.ElevenLabs.OpenApiClient.Models.TtsConversationalConfigInputAudioFilter.CreateFromDiscriminatorValue); } },
                 { "enable_phoneme_tags", n => { EnablePhonemeTags = n.GetBoolValue(); } },
                 { "expressive_mode", n => { ExpressiveMode = n.GetBoolValue(); } },
                 { "model_id", n => { ModelId = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TtsConversationalModel>(); } },
@@ -136,7 +136,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TtsOutputFormat>("agent_output_audio_format", AgentOutputAudioFormat);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AudioFilterIdWrapper>("audio_filter", AudioFilter);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TtsConversationalConfigInputAudioFilter>("audio_filter", AudioFilter);
             writer.WriteBoolValue("enable_phoneme_tags", EnablePhonemeTags);
             writer.WriteBoolValue("expressive_mode", ExpressiveMode);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TtsConversationalModel>("model_id", ModelId);

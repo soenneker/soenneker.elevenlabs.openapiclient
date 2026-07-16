@@ -27,10 +27,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Simulate the test as if the conversation originated from this channel.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationSourceWrapper8? ConversationInitiationSource { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetToolCallUnitTestResponseModelConversationInitiationSource? ConversationInitiationSource { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationSourceWrapper8 ConversationInitiationSource { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetToolCallUnitTestResponseModelConversationInitiationSource ConversationInitiationSource { get; set; }
 #endif
         /// <summary>Dynamic variables to replace in the agent config during testing</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -101,7 +101,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             {
                 { "chat_history", n => { ChatHistory = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptCommonModelOutput>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptCommonModelOutput.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "check_any_tool_matches", n => { CheckAnyToolMatches = n.GetBoolValue(); } },
-                { "conversation_initiation_source", n => { ConversationInitiationSource = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationSourceWrapper8>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationSourceWrapper8.CreateFromDiscriminatorValue); } },
+                { "conversation_initiation_source", n => { ConversationInitiationSource = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetToolCallUnitTestResponseModelConversationInitiationSource>(global::Soenneker.ElevenLabs.OpenApiClient.Models.GetToolCallUnitTestResponseModelConversationInitiationSource.CreateFromDiscriminatorValue); } },
                 { "dynamic_variables", n => { DynamicVariables = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetToolCallUnitTestResponseModelDynamicVariablesProperty>(global::Soenneker.ElevenLabs.OpenApiClient.Models.GetToolCallUnitTestResponseModelDynamicVariablesProperty.CreateFromDiscriminatorValue); } },
                 { "from_conversation_metadata", n => { FromConversationMetadata = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetToolCallUnitTestResponseModelFromConversationMetadata>(global::Soenneker.ElevenLabs.OpenApiClient.Models.GetToolCallUnitTestResponseModelFromConversationMetadata.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetStringValue(); } },
@@ -119,7 +119,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptCommonModelOutput>("chat_history", ChatHistory);
             writer.WriteBoolValue("check_any_tool_matches", CheckAnyToolMatches);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationSourceWrapper8>("conversation_initiation_source", ConversationInitiationSource);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetToolCallUnitTestResponseModelConversationInitiationSource>("conversation_initiation_source", ConversationInitiationSource);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetToolCallUnitTestResponseModelDynamicVariablesProperty>("dynamic_variables", DynamicVariables);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetToolCallUnitTestResponseModelFromConversationMetadata>("from_conversation_metadata", FromConversationMetadata);
             writer.WriteStringValue("id", Id);

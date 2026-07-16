@@ -33,10 +33,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The column_units property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ColumnUnitWrapper>? ColumnUnits { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceAnalyticsQueryResponseModelColumnUnitsItem>? ColumnUnits { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ColumnUnitWrapper> ColumnUnits { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceAnalyticsQueryResponseModelColumnUnitsItem> ColumnUnits { get; set; }
 #endif
         /// <summary>The rows property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -72,7 +72,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "column_types", n => { ColumnTypes = n.GetCollectionOfEnumValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceAnalyticsQueryResponseModelColumnTypesItem>()?.AsList(); } },
-                { "column_units", n => { ColumnUnits = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.ColumnUnitWrapper>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ColumnUnitWrapper.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "column_units", n => { ColumnUnits = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceAnalyticsQueryResponseModelColumnUnitsItem>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceAnalyticsQueryResponseModelColumnUnitsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "columns", n => { Columns = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "rows", n => { Rows = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
             };
@@ -86,7 +86,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<string>("columns", Columns);
             writer.WriteCollectionOfEnumValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceAnalyticsQueryResponseModelColumnTypesItem>("column_types", ColumnTypes);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.ColumnUnitWrapper>("column_units", ColumnUnits);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceAnalyticsQueryResponseModelColumnUnitsItem>("column_units", ColumnUnits);
             writer.WriteObjectValue<UntypedNode>("rows", Rows);
             writer.WriteAdditionalData(AdditionalData);
         }

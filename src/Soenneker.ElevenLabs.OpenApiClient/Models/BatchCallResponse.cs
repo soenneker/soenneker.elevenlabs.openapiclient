@@ -85,10 +85,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The phone_provider property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.TelephonyProviderWrapper2? PhoneProvider { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BatchCallResponsePhoneProvider? PhoneProvider { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.TelephonyProviderWrapper2 PhoneProvider { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BatchCallResponsePhoneProvider PhoneProvider { get; set; }
 #endif
         /// <summary>The retry_count property</summary>
         public int? RetryCount { get; set; }
@@ -167,7 +167,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "last_updated_at_unix", n => { LastUpdatedAtUnix = n.GetIntValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "phone_number_id", n => { PhoneNumberId = n.GetStringValue(); } },
-                { "phone_provider", n => { PhoneProvider = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TelephonyProviderWrapper2>(global::Soenneker.ElevenLabs.OpenApiClient.Models.TelephonyProviderWrapper2.CreateFromDiscriminatorValue); } },
+                { "phone_provider", n => { PhoneProvider = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BatchCallResponsePhoneProvider>(global::Soenneker.ElevenLabs.OpenApiClient.Models.BatchCallResponsePhoneProvider.CreateFromDiscriminatorValue); } },
                 { "retry_count", n => { RetryCount = n.GetIntValue(); } },
                 { "scheduled_time_unix", n => { ScheduledTimeUnix = n.GetIntValue(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BatchCallStatus>(); } },
@@ -197,7 +197,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteIntValue("last_updated_at_unix", LastUpdatedAtUnix);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("phone_number_id", PhoneNumberId);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TelephonyProviderWrapper2>("phone_provider", PhoneProvider);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BatchCallResponsePhoneProvider>("phone_provider", PhoneProvider);
             writer.WriteIntValue("retry_count", RetryCount);
             writer.WriteIntValue("scheduled_time_unix", ScheduledTimeUnix);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BatchCallStatus>("status", Status);

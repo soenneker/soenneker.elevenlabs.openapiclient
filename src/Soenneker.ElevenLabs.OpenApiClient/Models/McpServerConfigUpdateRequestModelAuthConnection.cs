@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.ElevenLabs.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.AuthConnectionLocator"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.EnvironmentAuthConnectionLocator"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.AuthConnectionLocator"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.EnvironmentAuthConnectionLocator"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.McpServerConfigUpdateRequestModelAuthConnectionMember1"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class McpServerConfigUpdateRequestModelAuthConnection : IComposedTypeWrapper, IParsable
@@ -29,6 +29,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.EnvironmentAuthConnectionLocator EnvironmentAuthConnectionLocator { get; set; }
 #endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.McpServerConfigUpdateRequestModelAuthConnectionMember1"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.McpServerConfigUpdateRequestModelAuthConnectionMember1? McpServerConfigUpdateRequestModelAuthConnectionMember1 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.McpServerConfigUpdateRequestModelAuthConnectionMember1 McpServerConfigUpdateRequestModelAuthConnectionMember1 { get; set; }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -40,6 +48,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             var result = new global::Soenneker.ElevenLabs.OpenApiClient.Models.McpServerConfigUpdateRequestModelAuthConnection();
             result.AuthConnectionLocator = new global::Soenneker.ElevenLabs.OpenApiClient.Models.AuthConnectionLocator();
             result.EnvironmentAuthConnectionLocator = new global::Soenneker.ElevenLabs.OpenApiClient.Models.EnvironmentAuthConnectionLocator();
+            result.McpServerConfigUpdateRequestModelAuthConnectionMember1 = new global::Soenneker.ElevenLabs.OpenApiClient.Models.McpServerConfigUpdateRequestModelAuthConnectionMember1();
             return result;
         }
         /// <summary>
@@ -48,9 +57,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(AuthConnectionLocator != null || EnvironmentAuthConnectionLocator != null)
+            if(AuthConnectionLocator != null || EnvironmentAuthConnectionLocator != null || McpServerConfigUpdateRequestModelAuthConnectionMember1 != null)
             {
-                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(AuthConnectionLocator, EnvironmentAuthConnectionLocator);
+                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(AuthConnectionLocator, EnvironmentAuthConnectionLocator, McpServerConfigUpdateRequestModelAuthConnectionMember1);
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -61,7 +70,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AuthConnectionLocator>(null, AuthConnectionLocator, EnvironmentAuthConnectionLocator);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AuthConnectionLocator>(null, AuthConnectionLocator, EnvironmentAuthConnectionLocator, McpServerConfigUpdateRequestModelAuthConnectionMember1);
         }
     }
 }

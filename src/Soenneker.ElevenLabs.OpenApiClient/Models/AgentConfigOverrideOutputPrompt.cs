@@ -26,10 +26,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The LLM to query with the prompt and the chat history. If using data residency, the LLM must be supported in the data residency environment</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmWrapper8? Llm { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentApiModelOverrideOutputLlm? Llm { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmWrapper8 Llm { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentApiModelOverrideOutputLlm Llm { get; set; }
 #endif
         /// <summary>A list of Native MCP server ids to be used by the agent</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -89,7 +89,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "knowledge_base", n => { KnowledgeBase = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentApiModelOverrideOutputKnowledgeBase>(global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentApiModelOverrideOutputKnowledgeBase.CreateFromDiscriminatorValue); } },
-                { "llm", n => { Llm = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmWrapper8>(global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmWrapper8.CreateFromDiscriminatorValue); } },
+                { "llm", n => { Llm = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentApiModelOverrideOutputLlm>(global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentApiModelOverrideOutputLlm.CreateFromDiscriminatorValue); } },
                 { "native_mcp_server_ids", n => { NativeMcpServerIds = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentApiModelOverrideOutputNativeMcpServerIds>(global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentApiModelOverrideOutputNativeMcpServerIds.CreateFromDiscriminatorValue); } },
                 { "prompt", n => { Prompt = n.GetStringValue(); } },
                 { "tool_ids", n => { ToolIds = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentApiModelOverrideOutputToolIds>(global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentApiModelOverrideOutputToolIds.CreateFromDiscriminatorValue); } },
@@ -104,7 +104,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentApiModelOverrideOutputKnowledgeBase>("knowledge_base", KnowledgeBase);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmWrapper8>("llm", Llm);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentApiModelOverrideOutputLlm>("llm", Llm);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentApiModelOverrideOutputNativeMcpServerIds>("native_mcp_server_ids", NativeMcpServerIds);
             writer.WriteStringValue("prompt", Prompt);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentApiModelOverrideOutputToolIds>("tool_ids", ToolIds);

@@ -27,10 +27,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The protection level for the branch</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BranchProtectionStatusWrapper? ProtectionStatus { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyUpdateAgentBranchV1ConvaiAgentsAgentIdBranchesBranchIdPatchProtectionStatus? ProtectionStatus { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BranchProtectionStatusWrapper ProtectionStatus { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyUpdateAgentBranchV1ConvaiAgentsAgentIdBranchesBranchIdPatchProtectionStatus ProtectionStatus { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyUpdateAgentBranchV1ConvaiAgentsAgentIdBranchesBranchIdPatch"/> and sets the default values.
@@ -59,7 +59,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             {
                 { "is_archived", n => { IsArchived = n.GetBoolValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "protection_status", n => { ProtectionStatus = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BranchProtectionStatusWrapper>(global::Soenneker.ElevenLabs.OpenApiClient.Models.BranchProtectionStatusWrapper.CreateFromDiscriminatorValue); } },
+                { "protection_status", n => { ProtectionStatus = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyUpdateAgentBranchV1ConvaiAgentsAgentIdBranchesBranchIdPatchProtectionStatus>(global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyUpdateAgentBranchV1ConvaiAgentsAgentIdBranchesBranchIdPatchProtectionStatus.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -71,7 +71,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("is_archived", IsArchived);
             writer.WriteStringValue("name", Name);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BranchProtectionStatusWrapper>("protection_status", ProtectionStatus);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyUpdateAgentBranchV1ConvaiAgentsAgentIdBranchesBranchIdPatchProtectionStatus>("protection_status", ProtectionStatus);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

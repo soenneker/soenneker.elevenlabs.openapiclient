@@ -34,10 +34,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>LLM model to use for this evaluation criteria. If not set, uses agent&apos;s analysis_llm default.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmWrapper11? Llm { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptEvaluationCriteriaLlm? Llm { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmWrapper11 Llm { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptEvaluationCriteriaLlm Llm { get; set; }
 #endif
         /// <summary>Maximum value of the numeric score scale (minimum is always 0). Only used when scoring_mode is &apos;numeric_uniform&apos;.</summary>
         public int? MaxScore { get; set; }
@@ -94,7 +94,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             {
                 { "conversation_goal_prompt", n => { ConversationGoalPrompt = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "llm", n => { Llm = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmWrapper11>(global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmWrapper11.CreateFromDiscriminatorValue); } },
+                { "llm", n => { Llm = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptEvaluationCriteriaLlm>(global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptEvaluationCriteriaLlm.CreateFromDiscriminatorValue); } },
                 { "max_score", n => { MaxScore = n.GetIntValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "scope", n => { Scope = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AnalysisScope>(); } },
@@ -113,7 +113,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("conversation_goal_prompt", ConversationGoalPrompt);
             writer.WriteStringValue("id", Id);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmWrapper11>("llm", Llm);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptEvaluationCriteriaLlm>("llm", Llm);
             writer.WriteIntValue("max_score", MaxScore);
             writer.WriteStringValue("name", Name);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AnalysisScope>("scope", Scope);

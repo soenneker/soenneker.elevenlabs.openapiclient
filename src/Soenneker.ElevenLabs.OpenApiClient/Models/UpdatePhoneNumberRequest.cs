@@ -57,10 +57,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The livekit_stack property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.LivekitStackTypeWrapper? LivekitStack { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdatePhoneNumberRequestLivekitStack? LivekitStack { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.LivekitStackTypeWrapper LivekitStack { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdatePhoneNumberRequestLivekitStack LivekitStack { get; set; }
 #endif
         /// <summary>The outbound_trunk_config property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -102,7 +102,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "environment", n => { Environment = n.GetStringValue(); } },
                 { "inbound_trunk_config", n => { InboundTrunkConfig = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdatePhoneNumberRequestInboundTrunkConfig>(global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdatePhoneNumberRequestInboundTrunkConfig.CreateFromDiscriminatorValue); } },
                 { "label", n => { Label = n.GetStringValue(); } },
-                { "livekit_stack", n => { LivekitStack = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.LivekitStackTypeWrapper>(global::Soenneker.ElevenLabs.OpenApiClient.Models.LivekitStackTypeWrapper.CreateFromDiscriminatorValue); } },
+                { "livekit_stack", n => { LivekitStack = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdatePhoneNumberRequestLivekitStack>(global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdatePhoneNumberRequestLivekitStack.CreateFromDiscriminatorValue); } },
                 { "outbound_trunk_config", n => { OutboundTrunkConfig = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdatePhoneNumberRequestOutboundTrunkConfig>(global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdatePhoneNumberRequestOutboundTrunkConfig.CreateFromDiscriminatorValue); } },
                 { "store_sip_messages", n => { StoreSipMessages = n.GetBoolValue(); } },
             };
@@ -119,7 +119,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteStringValue("environment", Environment);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdatePhoneNumberRequestInboundTrunkConfig>("inbound_trunk_config", InboundTrunkConfig);
             writer.WriteStringValue("label", Label);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.LivekitStackTypeWrapper>("livekit_stack", LivekitStack);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdatePhoneNumberRequestLivekitStack>("livekit_stack", LivekitStack);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdatePhoneNumberRequestOutboundTrunkConfig>("outbound_trunk_config", OutboundTrunkConfig);
             writer.WriteBoolValue("store_sip_messages", StoreSipMessages);
             writer.WriteAdditionalData(AdditionalData);

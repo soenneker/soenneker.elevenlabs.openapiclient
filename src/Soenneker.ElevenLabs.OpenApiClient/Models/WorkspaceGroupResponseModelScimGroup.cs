@@ -35,10 +35,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The seat_type property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SeatTypeWrapper5? SeatType { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ScimGroupResponseModelSeatType? SeatType { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SeatTypeWrapper5 SeatType { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ScimGroupResponseModelSeatType SeatType { get; set; }
 #endif
         /// <summary>Union discriminator</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -78,7 +78,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "created_at_unix", n => { CreatedAtUnix = n.GetIntValue(); } },
                 { "display_name", n => { DisplayName = n.GetStringValue(); } },
                 { "scim_external_id", n => { ScimExternalId = n.GetStringValue(); } },
-                { "seat_type", n => { SeatType = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SeatTypeWrapper5>(global::Soenneker.ElevenLabs.OpenApiClient.Models.SeatTypeWrapper5.CreateFromDiscriminatorValue); } },
+                { "seat_type", n => { SeatType = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ScimGroupResponseModelSeatType>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ScimGroupResponseModelSeatType.CreateFromDiscriminatorValue); } },
                 { "type", n => { Type = n.GetStringValue(); } },
                 { "updated_at_unix", n => { UpdatedAtUnix = n.GetIntValue(); } },
             };
@@ -93,7 +93,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteIntValue("created_at_unix", CreatedAtUnix);
             writer.WriteStringValue("display_name", DisplayName);
             writer.WriteStringValue("scim_external_id", ScimExternalId);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SeatTypeWrapper5>("seat_type", SeatType);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ScimGroupResponseModelSeatType>("seat_type", SeatType);
             writer.WriteStringValue("type", Type);
             writer.WriteIntValue("updated_at_unix", UpdatedAtUnix);
             writer.WriteAdditionalData(AdditionalData);

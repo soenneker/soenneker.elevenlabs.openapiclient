@@ -19,10 +19,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The billing period of the user&apos;s subscription.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BillingPeriodWrapper2? BillingPeriod { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SubscriptionResponseModelBillingPeriod? BillingPeriod { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BillingPeriodWrapper2 BillingPeriod { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SubscriptionResponseModelBillingPeriod BillingPeriod { get; set; }
 #endif
         /// <summary>Whether the workspace is entitled to enter overages (usage-based billing).</summary>
         public bool? CanExtendCharacterLimit { get; set; }
@@ -39,18 +39,18 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The character refresh period of the user&apos;s subscription.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CharacterRefreshPeriodWrapper2? CharacterRefreshPeriod { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SubscriptionResponseModelCharacterRefreshPeriod? CharacterRefreshPeriod { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CharacterRefreshPeriodWrapper2 CharacterRefreshPeriod { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SubscriptionResponseModelCharacterRefreshPeriod CharacterRefreshPeriod { get; set; }
 #endif
         /// <summary>The currency of the user&apos;s subscription.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CurrencyWrapper2? Currency { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SubscriptionResponseModelCurrency? Currency { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CurrencyWrapper2 Currency { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SubscriptionResponseModelCurrency Currency { get; set; }
 #endif
         /// <summary>Currency/amount pair.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -122,15 +122,15 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "allowed_to_extend_character_limit", n => { AllowedToExtendCharacterLimit = n.GetBoolValue(); } },
-                { "billing_period", n => { BillingPeriod = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BillingPeriodWrapper2>(global::Soenneker.ElevenLabs.OpenApiClient.Models.BillingPeriodWrapper2.CreateFromDiscriminatorValue); } },
+                { "billing_period", n => { BillingPeriod = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SubscriptionResponseModelBillingPeriod>(global::Soenneker.ElevenLabs.OpenApiClient.Models.SubscriptionResponseModelBillingPeriod.CreateFromDiscriminatorValue); } },
                 { "can_extend_character_limit", n => { CanExtendCharacterLimit = n.GetBoolValue(); } },
                 { "can_extend_voice_limit", n => { CanExtendVoiceLimit = n.GetBoolValue(); } },
                 { "can_use_instant_voice_cloning", n => { CanUseInstantVoiceCloning = n.GetBoolValue(); } },
                 { "can_use_professional_voice_cloning", n => { CanUseProfessionalVoiceCloning = n.GetBoolValue(); } },
                 { "character_count", n => { CharacterCount = n.GetIntValue(); } },
                 { "character_limit", n => { CharacterLimit = n.GetIntValue(); } },
-                { "character_refresh_period", n => { CharacterRefreshPeriod = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CharacterRefreshPeriodWrapper2>(global::Soenneker.ElevenLabs.OpenApiClient.Models.CharacterRefreshPeriodWrapper2.CreateFromDiscriminatorValue); } },
-                { "currency", n => { Currency = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CurrencyWrapper2>(global::Soenneker.ElevenLabs.OpenApiClient.Models.CurrencyWrapper2.CreateFromDiscriminatorValue); } },
+                { "character_refresh_period", n => { CharacterRefreshPeriod = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SubscriptionResponseModelCharacterRefreshPeriod>(global::Soenneker.ElevenLabs.OpenApiClient.Models.SubscriptionResponseModelCharacterRefreshPeriod.CreateFromDiscriminatorValue); } },
+                { "currency", n => { Currency = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SubscriptionResponseModelCurrency>(global::Soenneker.ElevenLabs.OpenApiClient.Models.SubscriptionResponseModelCurrency.CreateFromDiscriminatorValue); } },
                 { "current_overage", n => { CurrentOverage = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Price>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Price.CreateFromDiscriminatorValue); } },
                 { "max_character_limit_extension", n => { MaxCharacterLimitExtension = n.GetIntValue(); } },
                 { "max_credit_limit_extension", n => { MaxCreditLimitExtension = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SubscriptionResponseModelMaxCreditLimitExtension>(global::Soenneker.ElevenLabs.OpenApiClient.Models.SubscriptionResponseModelMaxCreditLimitExtension.CreateFromDiscriminatorValue); } },
@@ -154,15 +154,15 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("allowed_to_extend_character_limit", AllowedToExtendCharacterLimit);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BillingPeriodWrapper2>("billing_period", BillingPeriod);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SubscriptionResponseModelBillingPeriod>("billing_period", BillingPeriod);
             writer.WriteBoolValue("can_extend_character_limit", CanExtendCharacterLimit);
             writer.WriteBoolValue("can_extend_voice_limit", CanExtendVoiceLimit);
             writer.WriteBoolValue("can_use_instant_voice_cloning", CanUseInstantVoiceCloning);
             writer.WriteBoolValue("can_use_professional_voice_cloning", CanUseProfessionalVoiceCloning);
             writer.WriteIntValue("character_count", CharacterCount);
             writer.WriteIntValue("character_limit", CharacterLimit);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CharacterRefreshPeriodWrapper2>("character_refresh_period", CharacterRefreshPeriod);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CurrencyWrapper2>("currency", Currency);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SubscriptionResponseModelCharacterRefreshPeriod>("character_refresh_period", CharacterRefreshPeriod);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SubscriptionResponseModelCurrency>("currency", Currency);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Price>("current_overage", CurrentOverage);
             writer.WriteIntValue("max_character_limit_extension", MaxCharacterLimitExtension);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SubscriptionResponseModelMaxCreditLimitExtension>("max_credit_limit_extension", MaxCreditLimitExtension);

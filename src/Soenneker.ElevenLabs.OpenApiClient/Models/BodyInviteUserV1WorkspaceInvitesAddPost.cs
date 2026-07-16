@@ -33,10 +33,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The seat type of the user</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SeatTypeWrapper2? SeatType { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyInviteUserV1WorkspaceInvitesAddPostSeatType? SeatType { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SeatTypeWrapper2 SeatType { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyInviteUserV1WorkspaceInvitesAddPostSeatType SeatType { get; set; }
 #endif
         /// <summary>Monthly credit usage limit for the invitee. Omit or set to null for no custom cap.</summary>
         public int? UsageLimit { get; set; }
@@ -76,7 +76,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             {
                 { "email", n => { Email = n.GetStringValue(); } },
                 { "group_ids", n => { GroupIds = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyInviteUserV1WorkspaceInvitesAddPostGroupIds>(global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyInviteUserV1WorkspaceInvitesAddPostGroupIds.CreateFromDiscriminatorValue); } },
-                { "seat_type", n => { SeatType = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SeatTypeWrapper2>(global::Soenneker.ElevenLabs.OpenApiClient.Models.SeatTypeWrapper2.CreateFromDiscriminatorValue); } },
+                { "seat_type", n => { SeatType = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyInviteUserV1WorkspaceInvitesAddPostSeatType>(global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyInviteUserV1WorkspaceInvitesAddPostSeatType.CreateFromDiscriminatorValue); } },
                 { "usage_limit", n => { UsageLimit = n.GetIntValue(); } },
                 { "workspace_permission", n => { WorkspacePermission = n.GetStringValue(); } },
             };
@@ -90,7 +90,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("email", Email);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyInviteUserV1WorkspaceInvitesAddPostGroupIds>("group_ids", GroupIds);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SeatTypeWrapper2>("seat_type", SeatType);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyInviteUserV1WorkspaceInvitesAddPostSeatType>("seat_type", SeatType);
             writer.WriteIntValue("usage_limit", UsageLimit);
             writer.WriteStringValue("workspace_permission", WorkspacePermission);
             writer.WriteAdditionalData(AdditionalData);

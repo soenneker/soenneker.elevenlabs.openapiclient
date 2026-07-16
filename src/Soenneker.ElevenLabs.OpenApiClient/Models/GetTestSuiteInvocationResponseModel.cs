@@ -33,10 +33,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>None when repeat_count==1 (no bucketing). Otherwise tracks bucketing lifecycle.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BucketingStatusWrapper? BucketingStatus { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetTestSuiteInvocationResponseModelBucketingStatus? BucketingStatus { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BucketingStatusWrapper BucketingStatus { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetTestSuiteInvocationResponseModelBucketingStatus BucketingStatus { get; set; }
 #endif
         /// <summary>The created_at property</summary>
         public int? CreatedAt { get; set; }
@@ -102,7 +102,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             {
                 { "agent_id", n => { AgentId = n.GetStringValue(); } },
                 { "branch_id", n => { BranchId = n.GetStringValue(); } },
-                { "bucketing_status", n => { BucketingStatus = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BucketingStatusWrapper>(global::Soenneker.ElevenLabs.OpenApiClient.Models.BucketingStatusWrapper.CreateFromDiscriminatorValue); } },
+                { "bucketing_status", n => { BucketingStatus = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetTestSuiteInvocationResponseModelBucketingStatus>(global::Soenneker.ElevenLabs.OpenApiClient.Models.GetTestSuiteInvocationResponseModelBucketingStatus.CreateFromDiscriminatorValue); } },
                 { "created_at", n => { CreatedAt = n.GetIntValue(); } },
                 { "folder_id", n => { FolderId = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
@@ -120,7 +120,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("agent_id", AgentId);
             writer.WriteStringValue("branch_id", BranchId);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BucketingStatusWrapper>("bucketing_status", BucketingStatus);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetTestSuiteInvocationResponseModelBucketingStatus>("bucketing_status", BucketingStatus);
             writer.WriteIntValue("created_at", CreatedAt);
             writer.WriteStringValue("folder_id", FolderId);
             writer.WriteStringValue("id", Id);

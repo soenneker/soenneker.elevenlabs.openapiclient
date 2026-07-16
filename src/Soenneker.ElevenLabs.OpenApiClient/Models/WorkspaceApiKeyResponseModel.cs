@@ -31,10 +31,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The disable_reason property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.LockReasonWrapper? DisableReason { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceApiKeyResponseModelDisableReason? DisableReason { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.LockReasonWrapper DisableReason { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceApiKeyResponseModelDisableReason DisableReason { get; set; }
 #endif
         /// <summary>The hashed_xi_api_key property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -118,7 +118,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "character_count", n => { CharacterCount = n.GetIntValue(); } },
                 { "character_limit", n => { CharacterLimit = n.GetIntValue(); } },
                 { "created_at_unix", n => { CreatedAtUnix = n.GetIntValue(); } },
-                { "disable_reason", n => { DisableReason = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.LockReasonWrapper>(global::Soenneker.ElevenLabs.OpenApiClient.Models.LockReasonWrapper.CreateFromDiscriminatorValue); } },
+                { "disable_reason", n => { DisableReason = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceApiKeyResponseModelDisableReason>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceApiKeyResponseModelDisableReason.CreateFromDiscriminatorValue); } },
                 { "hashed_xi_api_key", n => { HashedXiApiKey = n.GetStringValue(); } },
                 { "hint", n => { Hint = n.GetStringValue(); } },
                 { "is_disabled", n => { IsDisabled = n.GetBoolValue(); } },
@@ -140,7 +140,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteIntValue("character_count", CharacterCount);
             writer.WriteIntValue("character_limit", CharacterLimit);
             writer.WriteIntValue("created_at_unix", CreatedAtUnix);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.LockReasonWrapper>("disable_reason", DisableReason);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceApiKeyResponseModelDisableReason>("disable_reason", DisableReason);
             writer.WriteStringValue("hashed_xi_api_key", HashedXiApiKey);
             writer.WriteStringValue("hint", Hint);
             writer.WriteBoolValue("is_disabled", IsDisabled);

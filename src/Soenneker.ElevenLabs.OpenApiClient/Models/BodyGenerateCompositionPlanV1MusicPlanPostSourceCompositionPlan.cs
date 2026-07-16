@@ -8,11 +8,19 @@ using System;
 namespace Soenneker.ElevenLabs.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.CompositionPlan"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.MusicPrompt"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyGenerateCompositionPlanV1MusicPlanPostSourceCompositionPlanMember1"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.CompositionPlan"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.MusicPrompt"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class BodyGenerateCompositionPlanV1MusicPlanPostSourceCompositionPlan : IComposedTypeWrapper, IParsable
     {
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyGenerateCompositionPlanV1MusicPlanPostSourceCompositionPlanMember1"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyGenerateCompositionPlanV1MusicPlanPostSourceCompositionPlanMember1? BodyGenerateCompositionPlanV1MusicPlanPostSourceCompositionPlanMember1 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyGenerateCompositionPlanV1MusicPlanPostSourceCompositionPlanMember1 BodyGenerateCompositionPlanV1MusicPlanPostSourceCompositionPlanMember1 { get; set; }
+#endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.CompositionPlan"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -38,6 +46,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var result = new global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyGenerateCompositionPlanV1MusicPlanPostSourceCompositionPlan();
+            result.BodyGenerateCompositionPlanV1MusicPlanPostSourceCompositionPlanMember1 = new global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyGenerateCompositionPlanV1MusicPlanPostSourceCompositionPlanMember1();
             result.CompositionPlan = new global::Soenneker.ElevenLabs.OpenApiClient.Models.CompositionPlan();
             result.MusicPrompt = new global::Soenneker.ElevenLabs.OpenApiClient.Models.MusicPrompt();
             return result;
@@ -48,9 +57,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(CompositionPlan != null || MusicPrompt != null)
+            if(BodyGenerateCompositionPlanV1MusicPlanPostSourceCompositionPlanMember1 != null || CompositionPlan != null || MusicPrompt != null)
             {
-                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(CompositionPlan, MusicPrompt);
+                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(BodyGenerateCompositionPlanV1MusicPlanPostSourceCompositionPlanMember1, CompositionPlan, MusicPrompt);
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -61,7 +70,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CompositionPlan>(null, CompositionPlan, MusicPrompt);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyGenerateCompositionPlanV1MusicPlanPostSourceCompositionPlanMember1>(null, BodyGenerateCompositionPlanV1MusicPlanPostSourceCompositionPlanMember1, CompositionPlan, MusicPrompt);
         }
     }
 }

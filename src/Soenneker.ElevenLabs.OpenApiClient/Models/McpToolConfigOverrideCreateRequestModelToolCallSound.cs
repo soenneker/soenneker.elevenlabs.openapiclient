@@ -8,11 +8,19 @@ using System;
 namespace Soenneker.ElevenLabs.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolCallSound"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolCallSoundTypeWrapper12"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.McpToolConfigOverrideCreateRequestModelToolCallSoundMember1"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolCallSound"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolCallSoundTypeWrapper12"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class McpToolConfigOverrideCreateRequestModelToolCallSound : IComposedTypeWrapper, IParsable
     {
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.McpToolConfigOverrideCreateRequestModelToolCallSoundMember1"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.McpToolConfigOverrideCreateRequestModelToolCallSoundMember1? McpToolConfigOverrideCreateRequestModelToolCallSoundMember1 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.McpToolConfigOverrideCreateRequestModelToolCallSoundMember1 McpToolConfigOverrideCreateRequestModelToolCallSoundMember1 { get; set; }
+#endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolCallSound"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -38,6 +46,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var result = new global::Soenneker.ElevenLabs.OpenApiClient.Models.McpToolConfigOverrideCreateRequestModelToolCallSound();
+            result.McpToolConfigOverrideCreateRequestModelToolCallSoundMember1 = new global::Soenneker.ElevenLabs.OpenApiClient.Models.McpToolConfigOverrideCreateRequestModelToolCallSoundMember1();
             result.ToolCallSound = new global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolCallSound();
             result.ToolCallSoundTypeWrapper12 = new global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolCallSoundTypeWrapper12();
             return result;
@@ -48,9 +57,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(ToolCallSound != null || ToolCallSoundTypeWrapper12 != null)
+            if(McpToolConfigOverrideCreateRequestModelToolCallSoundMember1 != null || ToolCallSound != null || ToolCallSoundTypeWrapper12 != null)
             {
-                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(ToolCallSound, ToolCallSoundTypeWrapper12);
+                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(McpToolConfigOverrideCreateRequestModelToolCallSoundMember1, ToolCallSound, ToolCallSoundTypeWrapper12);
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -61,7 +70,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolCallSound>(null, ToolCallSound, ToolCallSoundTypeWrapper12);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.McpToolConfigOverrideCreateRequestModelToolCallSoundMember1>(null, McpToolConfigOverrideCreateRequestModelToolCallSoundMember1, ToolCallSound, ToolCallSoundTypeWrapper12);
         }
     }
 }

@@ -38,10 +38,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The seat type (role) of the workspace member.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SeatTypeWrapper6? SeatType { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceMemberResponseModelSeatType? SeatType { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SeatTypeWrapper6 SeatType { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceMemberResponseModelSeatType SeatType { get; set; }
 #endif
         /// <summary>The user ID of the workspace member.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -80,7 +80,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "first_name", n => { FirstName = n.GetStringValue(); } },
                 { "is_locked", n => { IsLocked = n.GetBoolValue(); } },
                 { "is_owner", n => { IsOwner = n.GetBoolValue(); } },
-                { "seat_type", n => { SeatType = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SeatTypeWrapper6>(global::Soenneker.ElevenLabs.OpenApiClient.Models.SeatTypeWrapper6.CreateFromDiscriminatorValue); } },
+                { "seat_type", n => { SeatType = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceMemberResponseModelSeatType>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceMemberResponseModelSeatType.CreateFromDiscriminatorValue); } },
                 { "user_id", n => { UserId = n.GetStringValue(); } },
             };
         }
@@ -95,7 +95,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteStringValue("first_name", FirstName);
             writer.WriteBoolValue("is_locked", IsLocked);
             writer.WriteBoolValue("is_owner", IsOwner);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SeatTypeWrapper6>("seat_type", SeatType);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceMemberResponseModelSeatType>("seat_type", SeatType);
             writer.WriteStringValue("user_id", UserId);
             writer.WriteAdditionalData(AdditionalData);
         }

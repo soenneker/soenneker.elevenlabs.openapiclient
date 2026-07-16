@@ -8,11 +8,19 @@ using System;
 namespace Soenneker.ElevenLabs.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.PendingCancellationResponseModel"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.PendingSubscriptionSwitchResponseModel"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ExtendedSubscriptionResponseModelPendingChangeMember1"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.PendingCancellationResponseModel"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.PendingSubscriptionSwitchResponseModel"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ExtendedSubscriptionResponseModelPendingChange : IComposedTypeWrapper, IParsable
     {
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ExtendedSubscriptionResponseModelPendingChangeMember1"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ExtendedSubscriptionResponseModelPendingChangeMember1? ExtendedSubscriptionResponseModelPendingChangeMember1 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ExtendedSubscriptionResponseModelPendingChangeMember1 ExtendedSubscriptionResponseModelPendingChangeMember1 { get; set; }
+#endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.PendingCancellationResponseModel"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -38,6 +46,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var result = new global::Soenneker.ElevenLabs.OpenApiClient.Models.ExtendedSubscriptionResponseModelPendingChange();
+            result.ExtendedSubscriptionResponseModelPendingChangeMember1 = new global::Soenneker.ElevenLabs.OpenApiClient.Models.ExtendedSubscriptionResponseModelPendingChangeMember1();
             result.PendingCancellationResponseModel = new global::Soenneker.ElevenLabs.OpenApiClient.Models.PendingCancellationResponseModel();
             result.PendingSubscriptionSwitchResponseModel = new global::Soenneker.ElevenLabs.OpenApiClient.Models.PendingSubscriptionSwitchResponseModel();
             return result;
@@ -48,9 +57,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(PendingCancellationResponseModel != null || PendingSubscriptionSwitchResponseModel != null)
+            if(ExtendedSubscriptionResponseModelPendingChangeMember1 != null || PendingCancellationResponseModel != null || PendingSubscriptionSwitchResponseModel != null)
             {
-                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(PendingCancellationResponseModel, PendingSubscriptionSwitchResponseModel);
+                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(ExtendedSubscriptionResponseModelPendingChangeMember1, PendingCancellationResponseModel, PendingSubscriptionSwitchResponseModel);
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -61,7 +70,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PendingCancellationResponseModel>(null, PendingCancellationResponseModel, PendingSubscriptionSwitchResponseModel);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ExtendedSubscriptionResponseModelPendingChangeMember1>(null, ExtendedSubscriptionResponseModelPendingChangeMember1, PendingCancellationResponseModel, PendingSubscriptionSwitchResponseModel);
         }
     }
 }

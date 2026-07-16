@@ -123,10 +123,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The source_medium property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ChatSourceMediumWrapper3? SourceMedium { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptResponseModelSourceMedium? SourceMedium { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ChatSourceMediumWrapper3 SourceMedium { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptResponseModelSourceMedium SourceMedium { get; set; }
 #endif
         /// <summary>The time_in_call_secs property</summary>
         public int? TimeInCallSecs { get; set; }
@@ -207,7 +207,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "reasoning", n => { Reasoning = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationReasoningModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationReasoningModel.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "role", n => { Role = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptResponseModelRole>(); } },
                 { "source_event_id", n => { SourceEventId = n.GetIntValue(); } },
-                { "source_medium", n => { SourceMedium = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ChatSourceMediumWrapper3>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ChatSourceMediumWrapper3.CreateFromDiscriminatorValue); } },
+                { "source_medium", n => { SourceMedium = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptResponseModelSourceMedium>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptResponseModelSourceMedium.CreateFromDiscriminatorValue); } },
                 { "time_in_call_secs", n => { TimeInCallSecs = n.GetIntValue(); } },
                 { "tool_calls", n => { ToolCalls = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptToolCallCommonModelOutput>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptToolCallCommonModelOutput.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "tool_results", n => { ToolResults = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptResponseModelToolResultsItem>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptResponseModelToolResultsItem.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -239,7 +239,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationReasoningModel>("reasoning", Reasoning);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptResponseModelRole>("role", Role);
             writer.WriteIntValue("source_event_id", SourceEventId);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ChatSourceMediumWrapper3>("source_medium", SourceMedium);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptResponseModelSourceMedium>("source_medium", SourceMedium);
             writer.WriteIntValue("time_in_call_secs", TimeInCallSecs);
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptToolCallCommonModelOutput>("tool_calls", ToolCalls);
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptResponseModelToolResultsItem>("tool_results", ToolResults);
