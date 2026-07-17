@@ -171,5 +171,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         #pragma warning disable CS1591
         StudioProjects,
         #pragma warning restore CS1591
+        [EnumMember(Value = "convai_analysis_items")]
+        #pragma warning disable CS1591
+        ConvaiAnalysisItems,
+        #pragma warning restore CS1591
     }
 }

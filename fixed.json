@@ -8597,6 +8597,17 @@
         "operationId": "SpeechToText",
         "parameters": [
           {
+            "name": "token",
+            "in": "query",
+            "description": "A single-use authentication token created via POST /v1/single-use-token/batch_scribe. This token can only be used once and expires after 15 minutes. Alternative to API key or bearer token authentication for frontend clients.",
+            "schema": {
+              "title": "Token",
+              "type": "string",
+              "description": "A single-use authentication token created via POST /v1/single-use-token/batch_scribe. This token can only be used once and expires after 15 minutes. Alternative to API key or bearer token authentication for frontend clients.",
+              "nullable": true
+            }
+          },
+          {
             "name": "enable_logging",
             "in": "query",
             "description": "When enable_logging is set to false zero retention mode will be used for the request. This will mean log and transcript storage features are unavailable for this request. Zero retention mode may only be used by enterprise customers.",
@@ -48053,6 +48064,7 @@
           "claude-sonnet-4-5",
           "claude-opus-4-7",
           "claude-sonnet-4-6",
+          "claude-sonnet-5",
           "claude-sonnet-4",
           "claude-haiku-4-5",
           "claude-3-7-sonnet",
@@ -48247,6 +48259,10 @@
             {
               "value": "claude-sonnet-4-6",
               "name": "ClaudeSonnet46"
+            },
+            {
+              "value": "claude-sonnet-5",
+              "name": "ClaudeSonnet5"
             },
             {
               "value": "claude-sonnet-4",
@@ -60996,6 +61012,7 @@
         "title": "SingleUseTokenType",
         "enum": [
           "realtime_scribe",
+          "batch_scribe",
           "tts_websocket"
         ],
         "type": "string",
@@ -61007,6 +61024,10 @@
             {
               "value": "realtime_scribe",
               "name": "RealtimeScribe"
+            },
+            {
+              "value": "batch_scribe",
+              "name": "BatchScribe"
             },
             {
               "value": "tts_websocket",
@@ -73261,7 +73282,8 @@
           "avatars",
           "avatar_video_generations",
           "resource_collection",
-          "studio_projects"
+          "studio_projects",
+          "convai_analysis_items"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -73433,6 +73455,10 @@
             {
               "value": "studio_projects",
               "name": "StudioProjects"
+            },
+            {
+              "value": "convai_analysis_items",
+              "name": "ConvaiAnalysisItems"
             }
           ]
         }
@@ -79206,23 +79232,10 @@
         "type": "object",
         "anyOf": [
           {
-            "type": "integer"
+            "$ref": "#/components/schemas/CharacterLimit"
           },
           {
-            "enum": [
-              "no_update"
-            ],
-            "type": "string",
-            "x-ms-enum": {
-              "name": "BodyEditServiceAccountApiKeyV1ServiceAccountsServiceAccountUserIdApiKeysApiKeyIdPatchCharacterLimit",
-              "modelAsString": false,
-              "values": [
-                {
-                  "value": "no_update",
-                  "name": "NoUpdate"
-                }
-              ]
-            }
+            "$ref": "#/components/schemas/BodyEditServiceAccountApiKeyV1ServiceAccountsServiceAccountUserIdApiKeysApiKeyIdPatchCharacterLimitWrapper"
           },
           {
             "enum": [
@@ -94684,7 +94697,7 @@
       "ResubmitTestsRequestModelBranchId": {
         "title": "Branch Id",
         "type": "string",
-        "description": "ID of the branch to run the tests on. If not provided, the tests will be run on the agent default configuration.",
+        "description": "ID of the branch to run the tests on. If not provided, the tests will be run on the agent\u0027s main branch.",
         "nullable": true
       },
       "ReviewResponseModelReviewedBy": {
@@ -94780,7 +94793,7 @@
       "RunAgentTestsRequestModelBranchId": {
         "title": "Branch Id",
         "type": "string",
-        "description": "ID of the branch to run the tests on. If not provided, the tests will be run on the agent default configuration.",
+        "description": "ID of the branch to run the tests on. If not provided, the tests will be run on the agent\u0027s main branch.",
         "nullable": true
       },
       "SipTrunkCredentialsRequestModelPassword": {
@@ -105699,6 +105712,17 @@
           }
         }
       },
+      "BodyEditServiceAccountApiKeyV1ServiceAccountsServiceAccountUserIdApiKeysApiKeyIdPatchCharacterLimitWrapper": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "$ref": "#/components/schemas/BodyEditServiceAccountApiKeyV1ServiceAccountsServiceAccountUserIdApiKeysApiKeyIdPatchCharacterLimitWrapperValue"
+          }
+        }
+      },
       "BodyEditServiceAccountApiKeyV1ServiceAccountsServiceAccountUserIdApiKeysApiKeyIdPatchAllowedIpsWrapper": {
         "required": [
           "value"
@@ -107326,6 +107350,17 @@
             "items": {
               "$ref": "#/components/schemas/PermissionType"
             }
+          }
+        }
+      },
+      "CharacterLimit": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "integer"
           }
         }
       },
@@ -112904,6 +112939,28 @@
             {
               "value": "all",
               "name": "All"
+            },
+            {
+              "value": "no_update",
+              "name": "NoUpdate"
+            }
+          ]
+        }
+      },
+      "BodyEditServiceAccountApiKeyV1ServiceAccountsServiceAccountUserIdApiKeysApiKeyIdPatchCharacterLimitWrapperValue": {
+        "enum": [
+          "clear",
+          "no_update"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "BodyEditServiceAccountApiKeyV1ServiceAccountsServiceAccountUserIdApiKeysApiKeyIdPatchCharacterLimitWrapperValue",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "clear",
+              "name": "Clear"
             },
             {
               "value": "no_update",

@@ -28,7 +28,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.SpeechToText
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SpeechToTextRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/speech-to-text{?enable_logging*}", pathParameters)
+        public SpeechToTextRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/speech-to-text{?enable_logging*,token*}", pathParameters)
         {
         }
         /// <summary>
@@ -36,7 +36,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.SpeechToText
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SpeechToTextRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/speech-to-text{?enable_logging*}", rawUrl)
+        public SpeechToTextRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/speech-to-text{?enable_logging*,token*}", rawUrl)
         {
         }
         /// <summary>
@@ -104,6 +104,16 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.SpeechToText
             /// <summary>When enable_logging is set to false zero retention mode will be used for the request. This will mean log and transcript storage features are unavailable for this request. Zero retention mode may only be used by enterprise customers.</summary>
             [QueryParameter("enable_logging")]
             public bool? EnableLogging { get; set; }
+            /// <summary>A single-use authentication token created via POST /v1/single-use-token/batch_scribe. This token can only be used once and expires after 15 minutes. Alternative to API key or bearer token authentication for frontend clients.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("token")]
+            public string? Token { get; set; }
+#nullable restore
+#else
+            [QueryParameter("token")]
+            public string Token { get; set; }
+#endif
         }
     }
 }

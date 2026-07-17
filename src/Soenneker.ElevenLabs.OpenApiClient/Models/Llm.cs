@@ -140,6 +140,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         #pragma warning disable CS1591
         ClaudeSonnet46,
         #pragma warning restore CS1591
+        [EnumMember(Value = "claude-sonnet-5")]
+        #pragma warning disable CS1591
+        ClaudeSonnet5,
+        #pragma warning restore CS1591
         [EnumMember(Value = "claude-sonnet-4")]
         #pragma warning disable CS1591
         ClaudeSonnet4,

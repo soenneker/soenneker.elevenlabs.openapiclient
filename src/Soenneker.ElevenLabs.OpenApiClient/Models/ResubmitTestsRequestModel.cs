@@ -30,7 +30,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public string AgentId { get; set; }
 #endif
-        /// <summary>ID of the branch to run the tests on. If not provided, the tests will be run on the agent default configuration.</summary>
+        /// <summary>ID of the branch to run the tests on. If not provided, the tests will be run on the agent&apos;s main branch.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? BranchId { get; set; }
