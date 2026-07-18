@@ -54,6 +54,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public string AgentWorking { get; set; }
 #endif
+        /// <summary>Text and ARIA label for the attach file button.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? AttachFile { get; set; }
+#nullable restore
+#else
+        public string AttachFile { get; set; }
+#endif
         /// <summary>ARIA label for the change language dropdown.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -158,6 +166,38 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public string Expand { get; set; }
 #endif
+        /// <summary>Error message displayed when the maximum number of files for a conversation is reached.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? FileLimitReached { get; set; }
+#nullable restore
+#else
+        public string FileLimitReached { get; set; }
+#endif
+        /// <summary>Error message displayed when a file exceeds the maximum size limit.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? FileTooLarge { get; set; }
+#nullable restore
+#else
+        public string FileTooLarge { get; set; }
+#endif
+        /// <summary>Error message displayed when an unsupported file type is selected. Followed by the list of accepted types.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? FileTypeUnsupported { get; set; }
+#nullable restore
+#else
+        public string FileTypeUnsupported { get; set; }
+#endif
+        /// <summary>Error message displayed when a file fails to upload.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? FileUploadError { get; set; }
+#nullable restore
+#else
+        public string FileUploadError { get; set; }
+#endif
         /// <summary>Placeholder text for the follow-up feedback input field.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -245,6 +285,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #nullable restore
 #else
         public string NewCall { get; set; }
+#endif
+        /// <summary>ARIA label for the remove file button.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? RemoveFile { get; set; }
+#nullable restore
+#else
+        public string RemoveFile { get; set; }
 #endif
         /// <summary>Text displayed to request additional feedback details.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -334,6 +382,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public string ThanksForFeedbackDetails { get; set; }
 #endif
+        /// <summary>Status text displayed while the agent is typing.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? TypingIndicator { get; set; }
+#nullable restore
+#else
+        public string TypingIndicator { get; set; }
+#endif
         /// <summary>Information message displayed when the user ends the conversation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -388,6 +444,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "agent_ended_conversation", n => { AgentEndedConversation = n.GetStringValue(); } },
                 { "agent_error", n => { AgentError = n.GetStringValue(); } },
                 { "agent_working", n => { AgentWorking = n.GetStringValue(); } },
+                { "attach_file", n => { AttachFile = n.GetStringValue(); } },
                 { "change_language", n => { ChangeLanguage = n.GetStringValue(); } },
                 { "chatting_status", n => { ChattingStatus = n.GetStringValue(); } },
                 { "collapse", n => { Collapse = n.GetStringValue(); } },
@@ -401,6 +458,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "end_call", n => { EndCall = n.GetStringValue(); } },
                 { "error_occurred", n => { ErrorOccurred = n.GetStringValue(); } },
                 { "expand", n => { Expand = n.GetStringValue(); } },
+                { "file_limit_reached", n => { FileLimitReached = n.GetStringValue(); } },
+                { "file_too_large", n => { FileTooLarge = n.GetStringValue(); } },
+                { "file_type_unsupported", n => { FileTypeUnsupported = n.GetStringValue(); } },
+                { "file_upload_error", n => { FileUploadError = n.GetStringValue(); } },
                 { "follow_up_feedback_placeholder", n => { FollowUpFeedbackPlaceholder = n.GetStringValue(); } },
                 { "go_back", n => { GoBack = n.GetStringValue(); } },
                 { "initiate_feedback", n => { InitiateFeedback = n.GetStringValue(); } },
@@ -412,6 +473,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "main_label", n => { MainLabel = n.GetStringValue(); } },
                 { "mute_microphone", n => { MuteMicrophone = n.GetStringValue(); } },
                 { "new_call", n => { NewCall = n.GetStringValue(); } },
+                { "remove_file", n => { RemoveFile = n.GetStringValue(); } },
                 { "request_follow_up_feedback", n => { RequestFollowUpFeedback = n.GetStringValue(); } },
                 { "send_message", n => { SendMessage = n.GetStringValue(); } },
                 { "speaking_status", n => { SpeakingStatus = n.GetStringValue(); } },
@@ -423,6 +485,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "text_mode", n => { TextMode = n.GetStringValue(); } },
                 { "thanks_for_feedback", n => { ThanksForFeedback = n.GetStringValue(); } },
                 { "thanks_for_feedback_details", n => { ThanksForFeedbackDetails = n.GetStringValue(); } },
+                { "typing_indicator", n => { TypingIndicator = n.GetStringValue(); } },
                 { "user_ended_conversation", n => { UserEndedConversation = n.GetStringValue(); } },
                 { "voice_mode", n => { VoiceMode = n.GetStringValue(); } },
                 { "wrap", n => { Wrap = n.GetStringValue(); } },
@@ -440,6 +503,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteStringValue("agent_ended_conversation", AgentEndedConversation);
             writer.WriteStringValue("agent_error", AgentError);
             writer.WriteStringValue("agent_working", AgentWorking);
+            writer.WriteStringValue("attach_file", AttachFile);
             writer.WriteStringValue("change_language", ChangeLanguage);
             writer.WriteStringValue("chatting_status", ChattingStatus);
             writer.WriteStringValue("collapse", Collapse);
@@ -453,6 +517,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteStringValue("end_call", EndCall);
             writer.WriteStringValue("error_occurred", ErrorOccurred);
             writer.WriteStringValue("expand", Expand);
+            writer.WriteStringValue("file_limit_reached", FileLimitReached);
+            writer.WriteStringValue("file_too_large", FileTooLarge);
+            writer.WriteStringValue("file_type_unsupported", FileTypeUnsupported);
+            writer.WriteStringValue("file_upload_error", FileUploadError);
             writer.WriteStringValue("follow_up_feedback_placeholder", FollowUpFeedbackPlaceholder);
             writer.WriteStringValue("go_back", GoBack);
             writer.WriteStringValue("initiate_feedback", InitiateFeedback);
@@ -464,6 +532,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteStringValue("main_label", MainLabel);
             writer.WriteStringValue("mute_microphone", MuteMicrophone);
             writer.WriteStringValue("new_call", NewCall);
+            writer.WriteStringValue("remove_file", RemoveFile);
             writer.WriteStringValue("request_follow_up_feedback", RequestFollowUpFeedback);
             writer.WriteStringValue("send_message", SendMessage);
             writer.WriteStringValue("speaking_status", SpeakingStatus);
@@ -475,6 +544,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteStringValue("text_mode", TextMode);
             writer.WriteStringValue("thanks_for_feedback", ThanksForFeedback);
             writer.WriteStringValue("thanks_for_feedback_details", ThanksForFeedbackDetails);
+            writer.WriteStringValue("typing_indicator", TypingIndicator);
             writer.WriteStringValue("user_ended_conversation", UserEndedConversation);
             writer.WriteStringValue("voice_mode", VoiceMode);
             writer.WriteStringValue("wrap", Wrap);

@@ -11876,6 +11876,73 @@
         }
       }
     },
+    "/v1/convai/conversations/resolve": {
+      "get": {
+        "tags": [
+          "Agents Platform"
+        ],
+        "summary": "Resolve Conversation Reference",
+        "description": "Resolve a conversation URL (a Slack message URL or a Zendesk ticket URL) to the deterministic conversation ID for the given agent, then confirm the conversation exists.",
+        "operationId": "ResolveConversationReferenceRoute",
+        "parameters": [
+          {
+            "name": "agent_id",
+            "in": "query",
+            "description": "Agent id (agent_\u2026) or speech engine external id (seng_), resolved to the same underlying resource.",
+            "required": true,
+            "schema": {
+              "title": "Agent Id",
+              "type": "string",
+              "description": "Agent id (agent_\u2026) or speech engine external id (seng_), resolved to the same underlying resource."
+            }
+          },
+          {
+            "name": "reference",
+            "in": "query",
+            "description": "A Slack message URL or a Zendesk ticket URL.",
+            "required": true,
+            "schema": {
+              "title": "Reference",
+              "type": "string",
+              "description": "A Slack message URL or a Zendesk ticket URL."
+            }
+          },
+          {
+            "name": "xi-api-key",
+            "in": "header",
+            "description": "Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the \u0027Profile\u0027 tab on the website.",
+            "schema": {
+              "title": "Xi-Api-Key",
+              "type": "string",
+              "description": "Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the \u0027Profile\u0027 tab on the website.",
+              "nullable": true
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetConversationResponseModel"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HttpValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/v1/convai/conversations/{conversationId}": {
       "get": {
         "tags": [
@@ -26673,6 +26740,27 @@
         "title": "ArrayJsonSchemaProperty",
         "type": "object",
         "properties": {
+          "property_kind": {
+            "$ref": "#/components/schemas/ArrayJsonSchemaPropertyInputPropertyKind"
+          },
+          "description": {
+            "title": "Description",
+            "type": "string"
+          },
+          "dynamic_variable": {
+            "title": "Dynamic Variable",
+            "type": "string",
+            "description": "When set, the entire parameter is populated from this dynamic variable at runtime. Mutually exclusive with description (LLM-provided value), constant_value, and is_omitted."
+          },
+          "constant_value": {
+            "$ref": "#/components/schemas/ArrayJsonSchemaPropertyInputConstantValue"
+          },
+          "is_omitted": {
+            "title": "Is Omitted",
+            "type": "boolean",
+            "description": "If true, this parameter will be completely omitted from the request. Only valid for optional parameters. Mutually exclusive with description, dynamic_variable, and constant_value.",
+            "default": false
+          },
           "type": {
             "title": "Type",
             "enum": [
@@ -26690,26 +26778,8 @@
               ]
             }
           },
-          "description": {
-            "title": "Description",
-            "type": "string"
-          },
           "items": {
             "$ref": "#/components/schemas/ArrayJsonSchemaPropertyInputItems"
-          },
-          "dynamic_variable": {
-            "title": "Dynamic Variable",
-            "type": "string",
-            "description": "When set, the entire array is populated from this dynamic variable at runtime. Mutually exclusive with description (LLM-provided array), constant_value, and is_omitted."
-          },
-          "constant_value": {
-            "$ref": "#/components/schemas/ArrayJsonSchemaPropertyInputConstantValue"
-          },
-          "is_omitted": {
-            "title": "Is Omitted",
-            "type": "boolean",
-            "description": "If true, this array parameter will be completely omitted from the request. Only valid for optional parameters. Mutually exclusive with description, dynamic_variable, and constant_value.",
-            "default": false
           }
         },
         "additionalProperties": false
@@ -26718,6 +26788,24 @@
         "title": "ArrayJsonSchemaProperty",
         "type": "object",
         "properties": {
+          "description": {
+            "title": "Description",
+            "type": "string"
+          },
+          "dynamic_variable": {
+            "title": "Dynamic Variable",
+            "type": "string",
+            "description": "When set, the entire parameter is populated from this dynamic variable at runtime. Mutually exclusive with description (LLM-provided value), constant_value, and is_omitted."
+          },
+          "constant_value": {
+            "$ref": "#/components/schemas/ArrayJsonSchemaPropertyOutputConstantValue"
+          },
+          "is_omitted": {
+            "title": "Is Omitted",
+            "type": "boolean",
+            "description": "If true, this parameter will be completely omitted from the request. Only valid for optional parameters. Mutually exclusive with description, dynamic_variable, and constant_value.",
+            "default": false
+          },
           "type": {
             "title": "Type",
             "enum": [
@@ -26735,26 +26823,8 @@
               ]
             }
           },
-          "description": {
-            "title": "Description",
-            "type": "string"
-          },
           "items": {
             "$ref": "#/components/schemas/ArrayJsonSchemaPropertyOutputItems"
-          },
-          "dynamic_variable": {
-            "title": "Dynamic Variable",
-            "type": "string",
-            "description": "When set, the entire array is populated from this dynamic variable at runtime. Mutually exclusive with description (LLM-provided array), constant_value, and is_omitted."
-          },
-          "constant_value": {
-            "$ref": "#/components/schemas/ArrayJsonSchemaPropertyOutputConstantValue"
-          },
-          "is_omitted": {
-            "title": "Is Omitted",
-            "type": "boolean",
-            "description": "If true, this array parameter will be completely omitted from the request. Only valid for optional parameters. Mutually exclusive with description, dynamic_variable, and constant_value.",
-            "default": false
           }
         },
         "additionalProperties": false
@@ -52838,6 +52908,27 @@
         "title": "ObjectJsonSchemaProperty",
         "type": "object",
         "properties": {
+          "property_kind": {
+            "$ref": "#/components/schemas/ObjectJsonSchemaPropertyInputPropertyKind"
+          },
+          "description": {
+            "title": "Description",
+            "type": "string"
+          },
+          "dynamic_variable": {
+            "title": "Dynamic Variable",
+            "type": "string",
+            "description": "When set, the entire parameter is populated from this dynamic variable at runtime. Mutually exclusive with description (LLM-provided value), constant_value, and is_omitted."
+          },
+          "constant_value": {
+            "$ref": "#/components/schemas/ObjectJsonSchemaPropertyInputConstantValue"
+          },
+          "is_omitted": {
+            "title": "Is Omitted",
+            "type": "boolean",
+            "description": "If true, this parameter will be completely omitted from the request. Only valid for optional parameters. Mutually exclusive with description, dynamic_variable, and constant_value.",
+            "default": false
+          },
           "type": {
             "title": "Type",
             "enum": [
@@ -52861,10 +52952,6 @@
             "items": {
               "type": "string"
             }
-          },
-          "description": {
-            "title": "Description",
-            "type": "string"
           },
           "properties": {
             "$ref": "#/components/schemas/ObjectJsonSchemaPropertyInputPropertiesProperty"
@@ -52879,6 +52966,24 @@
         "title": "ObjectJsonSchemaProperty",
         "type": "object",
         "properties": {
+          "description": {
+            "title": "Description",
+            "type": "string"
+          },
+          "dynamic_variable": {
+            "title": "Dynamic Variable",
+            "type": "string",
+            "description": "When set, the entire parameter is populated from this dynamic variable at runtime. Mutually exclusive with description (LLM-provided value), constant_value, and is_omitted."
+          },
+          "constant_value": {
+            "$ref": "#/components/schemas/ObjectJsonSchemaPropertyOutputConstantValue"
+          },
+          "is_omitted": {
+            "title": "Is Omitted",
+            "type": "boolean",
+            "description": "If true, this parameter will be completely omitted from the request. Only valid for optional parameters. Mutually exclusive with description, dynamic_variable, and constant_value.",
+            "default": false
+          },
           "type": {
             "title": "Type",
             "enum": [
@@ -52902,10 +53007,6 @@
             "items": {
               "type": "string"
             }
-          },
-          "description": {
-            "title": "Description",
-            "type": "string"
           },
           "properties": {
             "$ref": "#/components/schemas/ObjectJsonSchemaPropertyOutputPropertiesProperty"
@@ -71358,6 +71459,27 @@
           },
           "agent_error": {
             "$ref": "#/components/schemas/WidgetTextContentsAgentError"
+          },
+          "attach_file": {
+            "$ref": "#/components/schemas/WidgetTextContentsAttachFile"
+          },
+          "remove_file": {
+            "$ref": "#/components/schemas/WidgetTextContentsRemoveFile"
+          },
+          "file_upload_error": {
+            "$ref": "#/components/schemas/WidgetTextContentsFileUploadError"
+          },
+          "file_type_unsupported": {
+            "$ref": "#/components/schemas/WidgetTextContentsFileTypeUnsupported"
+          },
+          "file_too_large": {
+            "$ref": "#/components/schemas/WidgetTextContentsFileTooLarge"
+          },
+          "file_limit_reached": {
+            "$ref": "#/components/schemas/WidgetTextContentsFileLimitReached"
+          },
+          "typing_indicator": {
+            "$ref": "#/components/schemas/WidgetTextContentsTypingIndicator"
           }
         }
       },
@@ -75055,6 +75177,24 @@
           }
         }
       },
+      "ArrayJsonSchemaPropertyInputConstantValue": {
+        "title": "Constant Value",
+        "type": "object",
+        "anyOf": [
+          {
+            "type": "array",
+            "items": {
+              "type": "object"
+            }
+          },
+          {
+            "enum": [
+              null
+            ]
+          }
+        ],
+        "description": "When set, the entire array uses this constant value at runtime. Mutually exclusive with description (LLM-provided array), dynamic_variable, and is_omitted."
+      },
       "ArrayJsonSchemaPropertyInputItems": {
         "title": "Items",
         "required": [
@@ -75097,14 +75237,14 @@
           }
         }
       },
-      "ArrayJsonSchemaPropertyInputConstantValue": {
+      "ArrayJsonSchemaPropertyOutputConstantValue": {
         "title": "Constant Value",
         "type": "object",
         "anyOf": [
           {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/ArrayJsonSchemaPropertyInputConstantValueAnyOf1Item"
+              "type": "object"
             }
           },
           {
@@ -75156,24 +75296,6 @@
             "ArrayJsonSchemaPropertyOutput": "#/components/schemas/ArrayJsonSchemaPropertyOutput"
           }
         }
-      },
-      "ArrayJsonSchemaPropertyOutputConstantValue": {
-        "title": "Constant Value",
-        "type": "object",
-        "anyOf": [
-          {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/ArrayJsonSchemaPropertyOutputConstantValueAnyOf1Item"
-            }
-          },
-          {
-            "enum": [
-              null
-            ]
-          }
-        ],
-        "description": "When set, the entire array uses this constant value at runtime. Mutually exclusive with description (LLM-provided array), dynamic_variable, and is_omitted."
       },
       "AssetTranscriptionDataComposed": {
         "required": [
@@ -81492,28 +81614,47 @@
       },
       "ConstantSchemaOverrideConstantValue": {
         "title": "Constant Value",
+        "required": [
+          "type"
+        ],
         "type": "object",
         "anyOf": [
           {
-            "type": "string"
+            "$ref": "#/components/schemas/ConstantSchemaOverrideConstantValueBranch1"
           },
           {
-            "type": "integer"
+            "$ref": "#/components/schemas/ConstantSchemaOverrideConstantValueBranch2"
           },
           {
-            "type": "number"
+            "$ref": "#/components/schemas/ConstantSchemaOverrideConstantValueBranch3"
           },
           {
-            "type": "boolean"
+            "$ref": "#/components/schemas/ConstantSchemaOverrideConstantValueBranch4"
           },
           {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/ConstantSchemaOverrideConstantValueAnyOf5Item"
-            }
+            "$ref": "#/components/schemas/ConstantSchemaOverrideConstantValueBranch5"
+          },
+          {
+            "type": "object"
           }
         ],
-        "description": "The constant value to use"
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "Union discriminator"
+          }
+        },
+        "description": "The constant value to use",
+        "discriminator": {
+          "propertyName": "type",
+          "mapping": {
+            "ConstantSchemaOverrideConstantValue_1": "#/components/schemas/ConstantSchemaOverrideConstantValueBranch1",
+            "ConstantSchemaOverrideConstantValue_2": "#/components/schemas/ConstantSchemaOverrideConstantValueBranch2",
+            "ConstantSchemaOverrideConstantValue_3": "#/components/schemas/ConstantSchemaOverrideConstantValueBranch3",
+            "ConstantSchemaOverrideConstantValue_4": "#/components/schemas/ConstantSchemaOverrideConstantValueBranch4",
+            "ConstantSchemaOverrideConstantValue_5": "#/components/schemas/ConstantSchemaOverrideConstantValueBranch5"
+          }
+        }
       },
       "ContentGuardrailInputTriggerAction": {
         "title": "Trigger Action",
@@ -90884,6 +91025,33 @@
         "type": "string",
         "nullable": true
       },
+      "ObjectJsonSchemaPropertyInputConstantValue": {
+        "title": "Constant Value",
+        "required": [
+          "type"
+        ],
+        "type": "object",
+        "anyOf": [
+          {
+            "type": "object"
+          },
+          {
+            "enum": [
+              null
+            ]
+          }
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "Union discriminator"
+          }
+        },
+        "description": "When set, the entire object uses this constant JSON value at runtime. Mutually exclusive with description (LLM-provided object), dynamic_variable, and is_omitted.",
+        "discriminator": {
+          "propertyName": "type"
+        }
+      },
       "ObjectJsonSchemaPropertyInputPropertiesAdditionalProperties": {
         "required": [
           "type"
@@ -90941,6 +91109,33 @@
           "mapping": {
             "RequiredConstraints": "#/components/schemas/RequiredConstraints"
           }
+        }
+      },
+      "ObjectJsonSchemaPropertyOutputConstantValue": {
+        "title": "Constant Value",
+        "required": [
+          "type"
+        ],
+        "type": "object",
+        "anyOf": [
+          {
+            "type": "object"
+          },
+          {
+            "enum": [
+              null
+            ]
+          }
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "Union discriminator"
+          }
+        },
+        "description": "When set, the entire object uses this constant JSON value at runtime. Mutually exclusive with description (LLM-provided object), dynamic_variable, and is_omitted.",
+        "discriminator": {
+          "propertyName": "type"
         }
       },
       "ObjectJsonSchemaPropertyOutputPropertiesAdditionalProperties": {
@@ -102047,6 +102242,48 @@
         "description": "Status text displayed when the agent encounters an error during a tool call.",
         "nullable": true
       },
+      "WidgetTextContentsAttachFile": {
+        "title": "Attach File",
+        "type": "string",
+        "description": "Text and ARIA label for the attach file button.",
+        "nullable": true
+      },
+      "WidgetTextContentsRemoveFile": {
+        "title": "Remove File",
+        "type": "string",
+        "description": "ARIA label for the remove file button.",
+        "nullable": true
+      },
+      "WidgetTextContentsFileUploadError": {
+        "title": "File Upload Error",
+        "type": "string",
+        "description": "Error message displayed when a file fails to upload.",
+        "nullable": true
+      },
+      "WidgetTextContentsFileTypeUnsupported": {
+        "title": "File Type Unsupported",
+        "type": "string",
+        "description": "Error message displayed when an unsupported file type is selected. Followed by the list of accepted types.",
+        "nullable": true
+      },
+      "WidgetTextContentsFileTooLarge": {
+        "title": "File Too Large",
+        "type": "string",
+        "description": "Error message displayed when a file exceeds the maximum size limit.",
+        "nullable": true
+      },
+      "WidgetTextContentsFileLimitReached": {
+        "title": "File Limit Reached",
+        "type": "string",
+        "description": "Error message displayed when the maximum number of files for a conversation is reached.",
+        "nullable": true
+      },
+      "WidgetTextContentsTypingIndicator": {
+        "title": "Typing Indicator",
+        "type": "string",
+        "description": "Status text displayed while the agent is typing.",
+        "nullable": true
+      },
       "WorkflowEdgeModelInputForwardCondition": {
         "title": "Forward Condition",
         "type": "object",
@@ -103024,40 +103261,6 @@
           }
         }
       },
-      "ArrayJsonSchemaPropertyInputConstantValueAnyOf1Item": {
-        "type": "object",
-        "anyOf": [
-          {
-            "type": "string"
-          },
-          {
-            "type": "integer"
-          },
-          {
-            "type": "number"
-          },
-          {
-            "type": "boolean"
-          }
-        ]
-      },
-      "ArrayJsonSchemaPropertyOutputConstantValueAnyOf1Item": {
-        "type": "object",
-        "anyOf": [
-          {
-            "type": "string"
-          },
-          {
-            "type": "integer"
-          },
-          {
-            "type": "number"
-          },
-          {
-            "type": "boolean"
-          }
-        ]
-      },
       "BodyCreatePodcastV1StudioPodcastsPostSourceAnyOf3Item": {
         "required": [
           "type"
@@ -103084,23 +103287,6 @@
             "PodcastUrlSource": "#/components/schemas/PodcastUrlSource"
           }
         }
-      },
-      "ConstantSchemaOverrideConstantValueAnyOf5Item": {
-        "type": "object",
-        "anyOf": [
-          {
-            "type": "string"
-          },
-          {
-            "type": "integer"
-          },
-          {
-            "type": "number"
-          },
-          {
-            "type": "boolean"
-          }
-        ]
       },
       "GetSecretDependenciesResponseModelDependenciesAnyOf1Item": {
         "required": [
@@ -107167,6 +107353,64 @@
           }
         }
       },
+      "ConstantSchemaOverrideConstantValueBranch1": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string"
+          }
+        }
+      },
+      "ConstantSchemaOverrideConstantValueBranch2": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "integer"
+          }
+        }
+      },
+      "ConstantSchemaOverrideConstantValueBranch3": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "number"
+          }
+        }
+      },
+      "ConstantSchemaOverrideConstantValueBranch4": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "boolean"
+          }
+        }
+      },
+      "ConstantSchemaOverrideConstantValueBranch5": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ConstantSchemaOverrideConstantValueBranch5ValueItem"
+            }
+          }
+        }
+      },
       "ConversationInitiationClientDataWebhookRequestHeadersAdditionalPropertiesBranch1": {
         "required": [
           "value"
@@ -109035,6 +109279,9 @@
         "type": "object",
         "description": "Attributes not mapped to OCSF"
       },
+      "ConstantSchemaOverrideConstantValueBranch5ValueItem": {
+        "type": "object"
+      },
       "AnalysisPropertyType": {
         "title": "Type",
         "enum": [
@@ -109112,6 +109359,29 @@
             {
               "value": ",",
               "name": "Comma"
+            }
+          ]
+        }
+      },
+      "ArrayJsonSchemaPropertyInputPropertyKind": {
+        "title": "Property Kind",
+        "enum": [
+          "array",
+          "object"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "ArrayJsonSchemaPropertyInputPropertyKind",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "array",
+              "name": "Array"
+            },
+            {
+              "value": "object",
+              "name": "ObjectValue"
             }
           ]
         }
@@ -111345,6 +111615,29 @@
           ]
         }
       },
+      "ObjectJsonSchemaPropertyInputPropertyKind": {
+        "title": "Property Kind",
+        "enum": [
+          "array",
+          "object"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "ObjectJsonSchemaPropertyInputPropertyKind",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "array",
+              "name": "Array"
+            },
+            {
+              "value": "object",
+              "name": "ObjectValue"
+            }
+          ]
+        }
+      },
       "OpenAimcpToolRequireApproval": {
         "title": "Require Approval",
         "enum": [
@@ -112572,7 +112865,6 @@
           "voice_multiplier",
           "hashed_xi_api_key",
           "billing_group_id",
-          "modality",
           "surface",
           "actor"
         ],
@@ -112641,10 +112933,6 @@
             {
               "value": "billing_group_id",
               "name": "BillingGroupId"
-            },
-            {
-              "value": "modality",
-              "name": "Modality"
             },
             {
               "value": "surface",

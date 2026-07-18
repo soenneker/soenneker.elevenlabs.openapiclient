@@ -6,6 +6,7 @@ using Microsoft.Kiota.Abstractions;
 using Soenneker.ElevenLabs.OpenApiClient.Models;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Conversations.Item;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Conversations.Messages;
+using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Conversations.Resolve;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -23,6 +24,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Conversations
         public global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Conversations.Messages.MessagesRequestBuilder Messages
         {
             get => new global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Conversations.Messages.MessagesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The resolve property</summary>
+        public global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Conversations.Resolve.ResolveRequestBuilder Resolve
+        {
+            get => new global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Conversations.Resolve.ResolveRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the Soenneker.ElevenLabs.OpenApiClient.v1.convai.conversations.item collection</summary>
         /// <param name="position">The id of the conversation you&apos;re taking the action on.</param>

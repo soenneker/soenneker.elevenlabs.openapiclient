@@ -15,6 +15,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>When set, the entire object uses this constant JSON value at runtime. Mutually exclusive with description (LLM-provided object), dynamic_variable, and is_omitted.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ObjectJsonSchemaPropertyOutputConstantValue? ConstantValue { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ObjectJsonSchemaPropertyOutputConstantValue ConstantValue { get; set; }
+#endif
         /// <summary>The description property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -23,6 +31,16 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public string Description { get; set; }
 #endif
+        /// <summary>When set, the entire parameter is populated from this dynamic variable at runtime. Mutually exclusive with description (LLM-provided value), constant_value, and is_omitted.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? DynamicVariable { get; set; }
+#nullable restore
+#else
+        public string DynamicVariable { get; set; }
+#endif
+        /// <summary>If true, this parameter will be completely omitted from the request. Only valid for optional parameters. Mutually exclusive with description, dynamic_variable, and constant_value.</summary>
+        public bool? IsOmitted { get; set; }
         /// <summary>The properties property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -61,6 +79,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public ClientToolConfigOutputParameters()
         {
             AdditionalData = new Dictionary<string, object>();
+            IsOmitted = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -80,7 +99,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "constant_value", n => { ConstantValue = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ObjectJsonSchemaPropertyOutputConstantValue>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ObjectJsonSchemaPropertyOutputConstantValue.CreateFromDiscriminatorValue); } },
                 { "description", n => { Description = n.GetStringValue(); } },
+                { "dynamic_variable", n => { DynamicVariable = n.GetStringValue(); } },
+                { "is_omitted", n => { IsOmitted = n.GetBoolValue(); } },
                 { "properties", n => { Properties = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ObjectJsonSchemaPropertyOutputPropertiesProperty>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ObjectJsonSchemaPropertyOutputPropertiesProperty.CreateFromDiscriminatorValue); } },
                 { "required", n => { Required = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "required_constraints", n => { RequiredConstraints = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ObjectJsonSchemaPropertyOutputRequiredConstraints>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ObjectJsonSchemaPropertyOutputRequiredConstraints.CreateFromDiscriminatorValue); } },
@@ -94,7 +116,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ObjectJsonSchemaPropertyOutputConstantValue>("constant_value", ConstantValue);
             writer.WriteStringValue("description", Description);
+            writer.WriteStringValue("dynamic_variable", DynamicVariable);
+            writer.WriteBoolValue("is_omitted", IsOmitted);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ObjectJsonSchemaPropertyOutputPropertiesProperty>("properties", Properties);
             writer.WriteCollectionOfPrimitiveValues<string>("required", Required);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ObjectJsonSchemaPropertyOutputRequiredConstraints>("required_constraints", RequiredConstraints);
