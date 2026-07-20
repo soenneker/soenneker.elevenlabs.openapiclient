@@ -16,6 +16,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>How long to ring the recipient before giving up, in seconds. Note that this will also be limited by the provider&apos;s own constraints.</summary>
         public int? RingingTimeoutSecs { get; set; }
+        /// <summary>Whether to record the call using Twilio call recording. Ignored for non-Twilio providers. Recordings are stored in your Twilio account.</summary>
+        public bool? TwilioCallRecordingEnabled { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.TelephonyCallConfig"/> and sets the default values.
         /// </summary>
@@ -23,6 +25,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             AdditionalData = new Dictionary<string, object>();
             RingingTimeoutSecs = 60;
+            TwilioCallRecordingEnabled = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -43,6 +46,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "ringing_timeout_secs", n => { RingingTimeoutSecs = n.GetIntValue(); } },
+                { "twilio_call_recording_enabled", n => { TwilioCallRecordingEnabled = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -53,6 +57,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("ringing_timeout_secs", RingingTimeoutSecs);
+            writer.WriteBoolValue("twilio_call_recording_enabled", TwilioCallRecordingEnabled);
             writer.WriteAdditionalData(AdditionalData);
         }
     }
