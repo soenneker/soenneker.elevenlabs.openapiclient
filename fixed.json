@@ -43413,72 +43413,6 @@
           }
         }
       },
-      "FeedbackResponseModel": {
-        "title": "FeedbackResponseModel",
-        "required": [
-          "thumbs_up",
-          "feedback",
-          "emotions",
-          "inaccurate_clone",
-          "glitches",
-          "audio_quality",
-          "other"
-        ],
-        "type": "object",
-        "properties": {
-          "thumbs_up": {
-            "title": "Thumbs Up",
-            "type": "boolean",
-            "description": "Whether the user liked the generated item."
-          },
-          "feedback": {
-            "title": "Feedback",
-            "type": "string",
-            "description": "The feedback text provided by the user."
-          },
-          "emotions": {
-            "title": "Emotions",
-            "type": "boolean",
-            "description": "Whether the user provided emotions."
-          },
-          "inaccurate_clone": {
-            "title": "Inaccurate Clone",
-            "type": "boolean",
-            "description": "Whether the user thinks the clone is inaccurate."
-          },
-          "glitches": {
-            "title": "Glitches",
-            "type": "boolean",
-            "description": "Whether the user thinks there are glitches in the audio."
-          },
-          "audio_quality": {
-            "title": "Audio Quality",
-            "type": "boolean",
-            "description": "Whether the user thinks the audio quality is good."
-          },
-          "other": {
-            "title": "Other",
-            "type": "boolean",
-            "description": "Whether the user provided other feedback."
-          },
-          "review_status": {
-            "title": "Review Status",
-            "type": "string",
-            "description": "The review status of the item. Defaults to \u0027not_reviewed\u0027.",
-            "default": "not_reviewed"
-          }
-        },
-        "example": {
-          "audio_quality": true,
-          "emotions": true,
-          "feedback": "This is an example of test feedback.",
-          "glitches": true,
-          "inaccurate_clone": false,
-          "other": false,
-          "review_status": "not_reviewed",
-          "thumbs_up": true
-        }
-      },
       "FileInputConfig": {
         "title": "FileInputConfig",
         "type": "object",
@@ -45031,7 +44965,8 @@
           "supported_usages",
           "access_info",
           "type",
-          "children_count"
+          "children_count",
+          "document_count"
         ],
         "type": "object",
         "properties": {
@@ -45087,6 +45022,11 @@
           "children_count": {
             "title": "Children Count",
             "type": "integer"
+          },
+          "document_count": {
+            "title": "Document Count",
+            "type": "integer",
+            "description": "Number of non-folder documents anywhere in this folder\u0027s subtree (recursive). Counting stops past 1000;"
           },
           "auto_sync_info": {
             "$ref": "#/components/schemas/GetKnowledgeBaseFolderResponseModelAutoSyncInfo"
@@ -45219,7 +45159,8 @@
           "access_info",
           "dependent_agents",
           "type",
-          "children_count"
+          "children_count",
+          "document_count"
         ],
         "type": "object",
         "properties": {
@@ -45284,6 +45225,11 @@
           "children_count": {
             "title": "Children Count",
             "type": "integer"
+          },
+          "document_count": {
+            "title": "Document Count",
+            "type": "integer",
+            "description": "Number of non-folder documents anywhere in this folder\u0027s subtree (recursive). Counting stops past 1000;"
           },
           "auto_sync_info": {
             "$ref": "#/components/schemas/GetKnowledgeBaseSummaryFolderResponseModelAutoSyncInfo"
@@ -47024,6 +46970,11 @@
             "type": "boolean",
             "default": true
           },
+          "enable_typing_indicator": {
+            "title": "Enable Typing Indicator",
+            "type": "boolean",
+            "default": true
+          },
           "assigned_agent_name": {
             "$ref": "#/components/schemas/GetWhatsAppAccountResponseAssignedAgentName"
           },
@@ -48116,6 +48067,9 @@
           "gpt-5.4-mini",
           "gpt-5.4-nano",
           "gpt-5.5",
+          "gpt-5.6-sol",
+          "gpt-5.6-terra",
+          "gpt-5.6-luna",
           "gpt-5-mini",
           "gpt-5-nano",
           "gpt-3.5-turbo",
@@ -48258,6 +48212,18 @@
             {
               "value": "gpt-5.5",
               "name": "Gpt55"
+            },
+            {
+              "value": "gpt-5.6-sol",
+              "name": "Gpt56Sol"
+            },
+            {
+              "value": "gpt-5.6-terra",
+              "name": "Gpt56Terra"
+            },
+            {
+              "value": "gpt-5.6-luna",
+              "name": "Gpt56Luna"
             },
             {
               "value": "gpt-5-mini",
@@ -48970,7 +48936,8 @@
           "low",
           "medium",
           "high",
-          "xhigh"
+          "xhigh",
+          "max"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -49001,6 +48968,10 @@
             {
               "value": "xhigh",
               "name": "Xhigh"
+            },
+            {
+              "value": "max",
+              "name": "Max"
             }
           ]
         }
@@ -62056,9 +62027,6 @@
           "settings": {
             "$ref": "#/components/schemas/SpeechHistoryItemResponseModelSettings"
           },
-          "feedback": {
-            "$ref": "#/components/schemas/SpeechHistoryItemResponseModelFeedback"
-          },
           "share_link_id": {
             "$ref": "#/components/schemas/SpeechHistoryItemResponseModelShareLinkId"
           },
@@ -67467,6 +67435,9 @@
           },
           "enable_audio_message_response": {
             "$ref": "#/components/schemas/UpdateWhatsAppAccountRequestEnableAudioMessageResponse"
+          },
+          "enable_typing_indicator": {
+            "$ref": "#/components/schemas/UpdateWhatsAppAccountRequestEnableTypingIndicator"
           }
         }
       },
@@ -96235,35 +96206,6 @@
           "propertyName": "type"
         }
       },
-      "SpeechHistoryItemResponseModelFeedback": {
-        "required": [
-          "type"
-        ],
-        "type": "object",
-        "anyOf": [
-          {
-            "$ref": "#/components/schemas/FeedbackResponseModel"
-          },
-          {
-            "enum": [
-              null
-            ]
-          }
-        ],
-        "properties": {
-          "type": {
-            "type": "string",
-            "description": "Union discriminator"
-          }
-        },
-        "description": "Feedback associated with the generated item. Returns null if no feedback has been provided.",
-        "discriminator": {
-          "propertyName": "type",
-          "mapping": {
-            "FeedbackResponseModel": "#/components/schemas/FeedbackResponseModel"
-          }
-        }
-      },
       "SpeechHistoryItemResponseModelShareLinkId": {
         "title": "Share Link Id",
         "type": "string",
@@ -99587,6 +99529,11 @@
       },
       "UpdateWhatsAppAccountRequestEnableAudioMessageResponse": {
         "title": "Enable Audio Message Response",
+        "type": "boolean",
+        "nullable": true
+      },
+      "UpdateWhatsAppAccountRequestEnableTypingIndicator": {
+        "title": "Enable Typing Indicator",
         "type": "boolean",
         "nullable": true
       },
@@ -115683,6 +115630,10 @@
     {
       "name": "music-generation",
       "description": "Generate music from a text prompt."
+    },
+    {
+      "name": "music-finetunes",
+      "description": "Create and manage music finetunes."
     },
     {
       "name": "video-to-music",

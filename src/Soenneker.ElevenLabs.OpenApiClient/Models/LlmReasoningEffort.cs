@@ -32,5 +32,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         #pragma warning disable CS1591
         Xhigh,
         #pragma warning restore CS1591
+        [EnumMember(Value = "max")]
+        #pragma warning disable CS1591
+        Max,
+        #pragma warning restore CS1591
     }
 }

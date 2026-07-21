@@ -44,14 +44,6 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechHistoryItemResponseModelDialogue Dialogue { get; set; }
 #endif
-        /// <summary>Feedback associated with the generated item. Returns null if no feedback has been provided.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechHistoryItemResponseModelFeedback? Feedback { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechHistoryItemResponseModelFeedback Feedback { get; set; }
-#endif
         /// <summary>The ID of the history item.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -161,7 +153,6 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "content_type", n => { ContentType = n.GetStringValue(); } },
                 { "date_unix", n => { DateUnix = n.GetIntValue(); } },
                 { "dialogue", n => { Dialogue = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechHistoryItemResponseModelDialogue>(global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechHistoryItemResponseModelDialogue.CreateFromDiscriminatorValue); } },
-                { "feedback", n => { Feedback = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechHistoryItemResponseModelFeedback>(global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechHistoryItemResponseModelFeedback.CreateFromDiscriminatorValue); } },
                 { "history_item_id", n => { HistoryItemId = n.GetStringValue(); } },
                 { "model_id", n => { ModelId = n.GetStringValue(); } },
                 { "output_format", n => { OutputFormat = n.GetStringValue(); } },
@@ -189,7 +180,6 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteStringValue("content_type", ContentType);
             writer.WriteIntValue("date_unix", DateUnix);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechHistoryItemResponseModelDialogue>("dialogue", Dialogue);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechHistoryItemResponseModelFeedback>("feedback", Feedback);
             writer.WriteStringValue("history_item_id", HistoryItemId);
             writer.WriteStringValue("model_id", ModelId);
             writer.WriteStringValue("output_format", OutputFormat);

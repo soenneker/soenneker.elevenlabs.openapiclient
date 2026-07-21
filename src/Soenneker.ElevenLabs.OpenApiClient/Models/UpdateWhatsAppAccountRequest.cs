@@ -26,6 +26,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public bool? EnableAudioMessageResponse { get; set; }
         /// <summary>The enable_messaging property</summary>
         public bool? EnableMessaging { get; set; }
+        /// <summary>The enable_typing_indicator property</summary>
+        public bool? EnableTypingIndicator { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateWhatsAppAccountRequest"/> and sets the default values.
         /// </summary>
@@ -54,6 +56,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "assigned_agent_id", n => { AssignedAgentId = n.GetStringValue(); } },
                 { "enable_audio_message_response", n => { EnableAudioMessageResponse = n.GetBoolValue(); } },
                 { "enable_messaging", n => { EnableMessaging = n.GetBoolValue(); } },
+                { "enable_typing_indicator", n => { EnableTypingIndicator = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -66,6 +69,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteStringValue("assigned_agent_id", AssignedAgentId);
             writer.WriteBoolValue("enable_audio_message_response", EnableAudioMessageResponse);
             writer.WriteBoolValue("enable_messaging", EnableMessaging);
+            writer.WriteBoolValue("enable_typing_indicator", EnableTypingIndicator);
             writer.WriteAdditionalData(AdditionalData);
         }
     }
