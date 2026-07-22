@@ -22,7 +22,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Conversations.Messages.Te
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TextSearchRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/convai/conversations/messages/text-search?text_query={text_query}{&agent_id*,branch_id*,call_duration_max_secs*,call_duration_min_secs*,call_start_after_unix*,call_start_before_unix*,call_successful*,conversation_initiation_source*,conversation_product_type*,cursor*,data_collection_params*,evaluation_params*,has_feedback_comment*,main_languages*,page_size*,rating_max*,rating_min*,sort_by*,summary_mode*,text_only*,tool_names*,tool_names_errored*,tool_names_successful*,topic_ids*,user_id*}", pathParameters)
+        public TextSearchRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/convai/conversations/messages/text-search?text_query={text_query}{&agent_id*,branch_id*,call_duration_max_secs*,call_duration_min_secs*,call_start_after_unix*,call_start_before_unix*,call_successful*,conversation_initiation_source*,conversation_product_type*,cursor*,data_collection_params*,evaluation_params*,exclude_statuses*,has_feedback_comment*,main_languages*,page_size*,rating_max*,rating_min*,sort_by*,summary_mode*,termination_reasons*,text_only*,tool_names*,tool_names_errored*,tool_names_successful*,topic_ids*,user_id*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Conversations.Messages.Te
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TextSearchRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/convai/conversations/messages/text-search?text_query={text_query}{&agent_id*,branch_id*,call_duration_max_secs*,call_duration_min_secs*,call_start_after_unix*,call_start_before_unix*,call_successful*,conversation_initiation_source*,conversation_product_type*,cursor*,data_collection_params*,evaluation_params*,has_feedback_comment*,main_languages*,page_size*,rating_max*,rating_min*,sort_by*,summary_mode*,text_only*,tool_names*,tool_names_errored*,tool_names_successful*,topic_ids*,user_id*}", rawUrl)
+        public TextSearchRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/convai/conversations/messages/text-search?text_query={text_query}{&agent_id*,branch_id*,call_duration_max_secs*,call_duration_min_secs*,call_start_after_unix*,call_start_before_unix*,call_successful*,conversation_initiation_source*,conversation_product_type*,cursor*,data_collection_params*,evaluation_params*,exclude_statuses*,has_feedback_comment*,main_languages*,page_size*,rating_max*,rating_min*,sort_by*,summary_mode*,termination_reasons*,text_only*,tool_names*,tool_names_errored*,tool_names_successful*,topic_ids*,user_id*}", rawUrl)
         {
         }
         /// <summary>
@@ -181,6 +181,16 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Conversations.Messages.Te
             [QueryParameter("evaluation_params")]
             public string EvaluationParams { get; set; }
 #endif
+            /// <summary>Exclude conversations with the given statuses. Useful for hiding in-progress / processing conversations from list views.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("exclude_statuses")]
+            public string? ExcludeStatuses { get; set; }
+#nullable restore
+#else
+            [QueryParameter("exclude_statuses")]
+            public string ExcludeStatuses { get; set; }
+#endif
             /// <summary>Filter conversations with user feedback comments.</summary>
             [QueryParameter("has_feedback_comment")]
             public bool? HasFeedbackComment { get; set; }
@@ -209,6 +219,16 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Conversations.Messages.Te
             /// <summary>Whether to include transcript summaries in the response.</summary>
             [QueryParameter("summary_mode")]
             public global::Soenneker.ElevenLabs.OpenApiClient.Models.TextSearchConversationMessagesRouteSummaryModeParameter? SummaryMode { get; set; }
+            /// <summary>Filter conversations by their stored termination_reason (metadata.termination_reason). Repeat param to match any of several.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("termination_reasons")]
+            public string? TerminationReasons { get; set; }
+#nullable restore
+#else
+            [QueryParameter("termination_reasons")]
+            public string TerminationReasons { get; set; }
+#endif
             [QueryParameter("text_only")]
             public bool? TextOnly { get; set; }
             /// <summary>The search query text for full-text and fuzzy matching</summary>

@@ -5,6 +5,7 @@ using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.ElevenLabs.OpenApiClient.Models;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Music.Detailed;
+using Soenneker.ElevenLabs.OpenApiClient.V1.Music.Finetunes;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Music.Plan;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Music.StemSeparation;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Music.StreamNamespace;
@@ -27,6 +28,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Music
         public global::Soenneker.ElevenLabs.OpenApiClient.V1.Music.Detailed.DetailedRequestBuilder Detailed
         {
             get => new global::Soenneker.ElevenLabs.OpenApiClient.V1.Music.Detailed.DetailedRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The finetunes property</summary>
+        public global::Soenneker.ElevenLabs.OpenApiClient.V1.Music.Finetunes.FinetunesRequestBuilder Finetunes
+        {
+            get => new global::Soenneker.ElevenLabs.OpenApiClient.V1.Music.Finetunes.FinetunesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The plan property</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.V1.Music.Plan.PlanRequestBuilder Plan

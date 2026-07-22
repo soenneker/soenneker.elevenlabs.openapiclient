@@ -12546,6 +12546,52 @@
             }
           },
           {
+            "name": "exclude_statuses",
+            "in": "query",
+            "description": "Exclude conversations with the given statuses. Useful for hiding in-progress / processing conversations from list views.",
+            "schema": {
+              "title": "Exclude Statuses",
+              "type": "object",
+              "anyOf": [
+                {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/TextSearchConversationMessagesRouteExcludeStatusesParameterAnyOf1Item"
+                  }
+                },
+                {
+                  "enum": [
+                    null
+                  ]
+                }
+              ],
+              "description": "Exclude conversations with the given statuses. Useful for hiding in-progress / processing conversations from list views."
+            }
+          },
+          {
+            "name": "termination_reasons",
+            "in": "query",
+            "description": "Filter conversations by their stored termination_reason (metadata.termination_reason). Repeat param to match any of several.",
+            "schema": {
+              "title": "Termination Reasons",
+              "type": "object",
+              "anyOf": [
+                {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                {
+                  "enum": [
+                    null
+                  ]
+                }
+              ],
+              "description": "Filter conversations by their stored termination_reason (metadata.termination_reason). Repeat param to match any of several."
+            }
+          },
+          {
             "name": "page_size",
             "in": "query",
             "description": "Number of results per page. Max 50.",
@@ -20331,6 +20377,350 @@
         }
       }
     },
+    "/v1/music/finetunes": {
+      "get": {
+        "tags": [
+          "music-finetunes"
+        ],
+        "summary": "Get Music Finetunes",
+        "description": "List music finetunes accessible to you (your own, workspace-shared, and ElevenLabs-curated), with optional filtering, sorting, and cursor pagination.",
+        "operationId": "GetFinetunes",
+        "parameters": [
+          {
+            "name": "cursor",
+            "in": "query",
+            "description": "Used for fetching the next page. Cursor is returned in the response.",
+            "schema": {
+              "title": "Cursor",
+              "type": "string",
+              "description": "Used for fetching the next page. Cursor is returned in the response.",
+              "nullable": true
+            }
+          },
+          {
+            "name": "page_size",
+            "in": "query",
+            "description": "How many finetunes to return. Max 100, default 50.",
+            "schema": {
+              "title": "Page Size",
+              "maximum": 100,
+              "minimum": 1,
+              "type": "integer",
+              "description": "How many finetunes to return. Max 100, default 50.",
+              "default": 50
+            }
+          },
+          {
+            "name": "visibility",
+            "in": "query",
+            "description": "Filter by visibility. \u0027private\u0027 returns private finetunes; \u0027workspace\u0027 returns workspace-shared finetunes; \u0027public\u0027 returns public finetunes, which are currently ElevenLabs curated finetunes. Omit to return all accessible finetunes.",
+            "schema": {
+              "title": "Visibility",
+              "type": "object",
+              "anyOf": [
+                {
+                  "$ref": "#/components/schemas/FinetuneVisibility"
+                },
+                {
+                  "enum": [
+                    null
+                  ]
+                }
+              ],
+              "description": "Filter by visibility. \u0027private\u0027 returns private finetunes; \u0027workspace\u0027 returns workspace-shared finetunes; \u0027public\u0027 returns public finetunes, which are currently ElevenLabs curated finetunes. Omit to return all accessible finetunes."
+            }
+          },
+          {
+            "name": "created_by",
+            "in": "query",
+            "description": "Filter by creator. \u0027self\u0027 returns finetunes you created; \u0027workspace\u0027 returns finetunes created by workspace teammates; \u0027elevenlabs\u0027 returns ElevenLabs curated finetunes. Omit to return finetunes from all creators.",
+            "schema": {
+              "title": "Created By",
+              "type": "object",
+              "anyOf": [
+                {
+                  "$ref": "#/components/schemas/FinetuneCreatedBy"
+                },
+                {
+                  "enum": [
+                    null
+                  ]
+                }
+              ],
+              "description": "Filter by creator. \u0027self\u0027 returns finetunes you created; \u0027workspace\u0027 returns finetunes created by workspace teammates; \u0027elevenlabs\u0027 returns ElevenLabs curated finetunes. Omit to return finetunes from all creators."
+            }
+          },
+          {
+            "name": "sort",
+            "in": "query",
+            "description": "Sort by field (created_at or name)",
+            "schema": {
+              "$ref": "#/components/schemas/GetFinetunesSortParameter"
+            }
+          },
+          {
+            "name": "sort_direction",
+            "in": "query",
+            "description": "Sort direction (asc or desc)",
+            "schema": {
+              "$ref": "#/components/schemas/GetFinetunesSortDirectionParameter"
+            }
+          },
+          {
+            "name": "xi-api-key",
+            "in": "header",
+            "description": "Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the \u0027Profile\u0027 tab on the website.",
+            "schema": {
+              "title": "Xi-Api-Key",
+              "type": "string",
+              "description": "Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the \u0027Profile\u0027 tab on the website.",
+              "nullable": true
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MusicFinetunePageResponseModel"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HttpValidationError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "music-finetunes"
+        ],
+        "summary": "Create Music Finetune",
+        "description": "Create a new music finetune",
+        "operationId": "CreateFinetune",
+        "parameters": [
+          {
+            "name": "xi-api-key",
+            "in": "header",
+            "description": "Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the \u0027Profile\u0027 tab on the website.",
+            "schema": {
+              "title": "Xi-Api-Key",
+              "type": "string",
+              "description": "Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the \u0027Profile\u0027 tab on the website.",
+              "nullable": true
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "$ref": "#/components/schemas/BodyCreateMusicFinetuneV1MusicFinetunesPost"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MusicFinetuneResponseModel"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HttpValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/music/finetunes/{finetuneId}": {
+      "get": {
+        "tags": [
+          "music-finetunes"
+        ],
+        "summary": "Get Music Finetune",
+        "description": "Get a music finetune.",
+        "operationId": "GetFinetune",
+        "parameters": [
+          {
+            "name": "finetuneId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "title": "Finetune Id",
+              "type": "string"
+            }
+          },
+          {
+            "name": "xi-api-key",
+            "in": "header",
+            "description": "Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the \u0027Profile\u0027 tab on the website.",
+            "schema": {
+              "title": "Xi-Api-Key",
+              "type": "string",
+              "description": "Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the \u0027Profile\u0027 tab on the website.",
+              "nullable": true
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MusicFinetuneResponseModel"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HttpValidationError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "music-finetunes"
+        ],
+        "summary": "Update Music Finetune",
+        "description": "Update a music finetune.",
+        "operationId": "UpdateFinetune",
+        "parameters": [
+          {
+            "name": "finetuneId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "title": "Finetune Id",
+              "type": "string"
+            }
+          },
+          {
+            "name": "xi-api-key",
+            "in": "header",
+            "description": "Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the \u0027Profile\u0027 tab on the website.",
+            "schema": {
+              "title": "Xi-Api-Key",
+              "type": "string",
+              "description": "Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the \u0027Profile\u0027 tab on the website.",
+              "nullable": true
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateMusicFinetuneRequestModel"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MusicFinetuneResponseModel"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HttpValidationError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "music-finetunes"
+        ],
+        "summary": "Delete Music Finetune",
+        "description": "Delete a music finetune",
+        "operationId": "DeleteFinetune",
+        "parameters": [
+          {
+            "name": "finetuneId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "title": "Finetune Id",
+              "type": "string"
+            }
+          },
+          {
+            "name": "xi-api-key",
+            "in": "header",
+            "description": "Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the \u0027Profile\u0027 tab on the website.",
+            "schema": {
+              "title": "Xi-Api-Key",
+              "type": "string",
+              "description": "Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the \u0027Profile\u0027 tab on the website.",
+              "nullable": true
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MusicFinetuneResponseModel"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HttpValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/v1/productions/orders": {
       "post": {
         "tags": [
@@ -24041,6 +24431,46 @@
           }
         }
       },
+      "AgentAnalysisItemsInput": {
+        "title": "AgentAnalysisItems",
+        "type": "object",
+        "properties": {
+          "evaluation_criteria": {
+            "title": "Evaluation Criteria",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AgentAnalysisItemsInputEvaluationCriteriaItem"
+            }
+          },
+          "data_collection": {
+            "title": "Data Collection",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AgentAnalysisItemsInputDataCollectionItem"
+            }
+          }
+        }
+      },
+      "AgentAnalysisItemsOutput": {
+        "title": "AgentAnalysisItems",
+        "type": "object",
+        "properties": {
+          "evaluation_criteria": {
+            "title": "Evaluation Criteria",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AgentAnalysisItemsOutputEvaluationCriteriaItem"
+            }
+          },
+          "data_collection": {
+            "title": "Data Collection",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AgentAnalysisItemsOutputDataCollectionItem"
+            }
+          }
+        }
+      },
       "AgentBranchBasicInfo": {
         "title": "AgentBranchBasicInfo",
         "required": [
@@ -24825,6 +25255,9 @@
           "data_collection_scopes": {
             "$ref": "#/components/schemas/AgentPlatformSettingsRequestModelDataCollectionScopesProperty"
           },
+          "analysis_items": {
+            "$ref": "#/components/schemas/AgentPlatformSettingsRequestModelAnalysisItems"
+          },
           "overrides": {
             "$ref": "#/components/schemas/ConversationInitiationClientDataConfigInput"
           },
@@ -24887,6 +25320,9 @@
           },
           "data_collection_scopes": {
             "$ref": "#/components/schemas/AgentPlatformSettingsResponseModelDataCollectionScopesProperty"
+          },
+          "analysis_items": {
+            "$ref": "#/components/schemas/AgentPlatformSettingsResponseModelAnalysisItems"
           },
           "overrides": {
             "$ref": "#/components/schemas/ConversationInitiationClientDataConfigOutput"
@@ -26963,6 +27399,90 @@
         },
         "description": "Metadata for async conversation delivery (Zendesk, Slack, etc.)."
       },
+      "AttachedSystemDataCollectionRef": {
+        "title": "AttachedSystemDataCollectionRef",
+        "required": [
+          "source",
+          "analysis_item_id"
+        ],
+        "type": "object",
+        "properties": {
+          "source": {
+            "title": "Source",
+            "enum": [
+              "system"
+            ],
+            "type": "string",
+            "x-ms-enum": {
+              "name": "Source",
+              "modelAsString": false,
+              "values": [
+                {
+                  "value": "system",
+                  "name": "System"
+                }
+              ]
+            }
+          },
+          "analysis_item_id": {
+            "title": "Analysis Item Id",
+            "enum": [
+              "__system_data_collection_topic"
+            ],
+            "type": "string",
+            "description": "Id of the referenced built-in system data-collection item.",
+            "x-ms-enum": {
+              "name": "AnalysisItemId",
+              "modelAsString": false,
+              "values": [
+                {
+                  "value": "__system_data_collection_topic",
+                  "name": "SystemDataCollectionTopic"
+                }
+              ]
+            }
+          },
+          "scope": {
+            "$ref": "#/components/schemas/AnalysisScope"
+          }
+        }
+      },
+      "AttachedSystemEvaluationRef": {
+        "title": "AttachedSystemEvaluationRef",
+        "required": [
+          "source",
+          "analysis_item_id"
+        ],
+        "type": "object",
+        "properties": {
+          "source": {
+            "title": "Source",
+            "enum": [
+              "system"
+            ],
+            "type": "string",
+            "x-ms-enum": {
+              "name": "Source",
+              "modelAsString": false,
+              "values": [
+                {
+                  "value": "system",
+                  "name": "System"
+                }
+              ]
+            }
+          },
+          "analysis_item_id": {
+            "$ref": "#/components/schemas/AttachedSystemEvaluationRefAnalysisItemId"
+          },
+          "scope": {
+            "$ref": "#/components/schemas/AnalysisScope"
+          },
+          "weight": {
+            "$ref": "#/components/schemas/AttachedSystemEvaluationRefWeight"
+          }
+        }
+      },
       "AttachedTestModel": {
         "title": "AttachedTestModel",
         "required": [
@@ -26976,6 +27496,93 @@
           },
           "workflow_node_id": {
             "$ref": "#/components/schemas/AttachedTestModelWorkflowNodeId"
+          }
+        }
+      },
+      "AttachedUserDataCollectionRef": {
+        "title": "AttachedUserDataCollectionRef",
+        "required": [
+          "source",
+          "analysis_item_id"
+        ],
+        "type": "object",
+        "properties": {
+          "source": {
+            "title": "Source",
+            "enum": [
+              "user"
+            ],
+            "type": "string",
+            "x-ms-enum": {
+              "name": "Source",
+              "modelAsString": false,
+              "values": [
+                {
+                  "value": "user",
+                  "name": "User"
+                }
+              ]
+            }
+          },
+          "analysis_item_id": {
+            "title": "Analysis Item Id",
+            "type": "string",
+            "description": "Id of the referenced user data-collection item."
+          },
+          "version_id": {
+            "$ref": "#/components/schemas/AttachedUserDataCollectionRefVersionId"
+          },
+          "scope": {
+            "$ref": "#/components/schemas/AnalysisScope"
+          }
+        }
+      },
+      "AttachedUserEvaluationRef": {
+        "title": "AttachedUserEvaluationRef",
+        "required": [
+          "source",
+          "analysis_item_id"
+        ],
+        "type": "object",
+        "properties": {
+          "source": {
+            "title": "Source",
+            "enum": [
+              "user"
+            ],
+            "type": "string",
+            "x-ms-enum": {
+              "name": "Source",
+              "modelAsString": false,
+              "values": [
+                {
+                  "value": "user",
+                  "name": "User"
+                }
+              ]
+            }
+          },
+          "analysis_item_id": {
+            "title": "Analysis Item Id",
+            "type": "string",
+            "description": "Id of the referenced user evaluation item."
+          },
+          "version_id": {
+            "$ref": "#/components/schemas/AttachedUserEvaluationRefVersionId"
+          },
+          "additional_version_ids": {
+            "title": "Additional Version Ids",
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Extra item versions to also run for comparison (A/B). These are executed and stored but excluded from scoring; the primary version_id is the one that scores."
+          },
+          "scope": {
+            "$ref": "#/components/schemas/AnalysisScope"
+          },
+          "weight": {
+            "$ref": "#/components/schemas/AttachedUserEvaluationRefWeight"
           }
         }
       },
@@ -29170,6 +29777,54 @@
           },
           "target_language": {
             "$ref": "#/components/schemas/BodyCreateDubbingProjectV1DubbingProjectPostTargetLanguage"
+          }
+        }
+      },
+      "BodyCreateMusicFinetuneV1MusicFinetunesPost": {
+        "title": "Body_Create_Music_Finetune_v1_music_finetunes_post",
+        "required": [
+          "name",
+          "primary_genre"
+        ],
+        "type": "object",
+        "properties": {
+          "name": {
+            "title": "Name",
+            "maxLength": 200,
+            "minLength": 5,
+            "type": "string",
+            "description": "Name for the finetune (5-200 characters)."
+          },
+          "primary_genre": {
+            "title": "Primary Genre",
+            "type": "string",
+            "description": "Primary musical genre of the finetune."
+          },
+          "files": {
+            "title": "Files",
+            "maxItems": 50,
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "binary"
+            },
+            "description": "Audio files to train on.",
+            "default": []
+          },
+          "tags": {
+            "title": "Tags",
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Tags to associate with the finetune.",
+            "default": []
+          },
+          "visibility": {
+            "$ref": "#/components/schemas/BodyCreateMusicFinetuneV1MusicFinetunesPostVisibility"
+          },
+          "model_id": {
+            "$ref": "#/components/schemas/BodyCreateMusicFinetuneV1MusicFinetunesPostModelId"
           }
         }
       },
@@ -36846,6 +37501,9 @@
           },
           "tool_mock_config": {
             "$ref": "#/components/schemas/OrchestratorToolMockBehaviorConfig"
+          },
+          "tool_mock_overrides": {
+            "$ref": "#/components/schemas/ConversationInitiationClientDataInternalToolMockOverridesProperty"
           }
         }
       },
@@ -43445,6 +44103,31 @@
           }
         }
       },
+      "FileRefreshStatus": {
+        "title": "FileRefreshStatus",
+        "type": "object",
+        "properties": {
+          "status": {
+            "$ref": "#/components/schemas/CrawlStatus"
+          },
+          "enqueued_at": {
+            "$ref": "#/components/schemas/FileRefreshStatusEnqueuedAt"
+          },
+          "started_at": {
+            "$ref": "#/components/schemas/FileRefreshStatusStartedAt"
+          },
+          "completed_at": {
+            "$ref": "#/components/schemas/FileRefreshStatusCompletedAt"
+          },
+          "last_synced_at": {
+            "$ref": "#/components/schemas/FileRefreshStatusLastSyncedAt"
+          },
+          "error_message": {
+            "$ref": "#/components/schemas/FileRefreshStatusErrorMessage"
+          }
+        },
+        "description": "In-flight/last refresh state for an externally-synced KB file."
+      },
       "FineTuningResponseModel": {
         "title": "FineTuningResponseModel",
         "required": [
@@ -43518,6 +44201,62 @@
           },
           "verification_attempts_count": 2,
           "verification_failures": []
+        }
+      },
+      "FinetuneCreatedBy": {
+        "title": "FinetuneCreatedBy",
+        "enum": [
+          "self",
+          "workspace",
+          "elevenlabs"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "FinetuneCreatedBy",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "self",
+              "name": "Self"
+            },
+            {
+              "value": "workspace",
+              "name": "Workspace"
+            },
+            {
+              "value": "elevenlabs",
+              "name": "Elevenlabs"
+            }
+          ]
+        }
+      },
+      "FinetuneVisibility": {
+        "title": "FinetuneVisibility",
+        "enum": [
+          "private",
+          "workspace",
+          "public"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "FinetuneVisibility",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "private",
+              "name": "PrivateValue"
+            },
+            {
+              "value": "workspace",
+              "name": "Workspace"
+            },
+            {
+              "value": "public",
+              "name": "PublicValue"
+            }
+          ]
         }
       },
       "FocusGuardrail": {
@@ -44949,6 +45688,12 @@
           "external_sync_info": {
             "$ref": "#/components/schemas/GetKnowledgeBaseFileResponseModelExternalSyncInfo"
           },
+          "auto_sync_info": {
+            "$ref": "#/components/schemas/GetKnowledgeBaseFileResponseModelAutoSyncInfo"
+          },
+          "refresh_status": {
+            "$ref": "#/components/schemas/GetKnowledgeBaseFileResponseModelRefreshStatus"
+          },
           "is_frozen": {
             "title": "Is Frozen",
             "type": "boolean",
@@ -45141,6 +45886,12 @@
           },
           "external_sync_info": {
             "$ref": "#/components/schemas/GetKnowledgeBaseSummaryFileResponseModelExternalSyncInfo"
+          },
+          "auto_sync_info": {
+            "$ref": "#/components/schemas/GetKnowledgeBaseSummaryFileResponseModelAutoSyncInfo"
+          },
+          "refresh_status": {
+            "$ref": "#/components/schemas/GetKnowledgeBaseSummaryFileResponseModelRefreshStatus"
           },
           "is_frozen": {
             "title": "Is Frozen",
@@ -52453,6 +53204,165 @@
           }
         }
       },
+      "MusicFinetuneFailureReason": {
+        "title": "MusicFinetuneFailureReason",
+        "enum": [
+          "audio_processing_failed",
+          "copyright_violation",
+          "training_failed"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "MusicFinetuneFailureReason",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "audio_processing_failed",
+              "name": "AudioProcessingFailed"
+            },
+            {
+              "value": "copyright_violation",
+              "name": "CopyrightViolation"
+            },
+            {
+              "value": "training_failed",
+              "name": "TrainingFailed"
+            }
+          ]
+        }
+      },
+      "MusicFinetunePageResponseModel": {
+        "title": "MusicFinetunePageResponseModel",
+        "required": [
+          "finetunes",
+          "next_cursor",
+          "has_more"
+        ],
+        "type": "object",
+        "properties": {
+          "finetunes": {
+            "title": "Finetunes",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/MusicFinetuneResponseModel"
+            },
+            "description": "The finetunes in this page."
+          },
+          "next_cursor": {
+            "$ref": "#/components/schemas/MusicFinetunePageResponseModelNextCursor"
+          },
+          "has_more": {
+            "title": "Has More",
+            "type": "boolean",
+            "description": "Whether more finetunes are available beyond this page."
+          }
+        }
+      },
+      "MusicFinetuneResponseModel": {
+        "title": "MusicFinetuneResponseModel",
+        "required": [
+          "id",
+          "name",
+          "tags",
+          "model_id",
+          "created_at",
+          "visibility",
+          "created_by",
+          "status",
+          "training_progress"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "title": "Id",
+            "type": "string",
+            "description": "Unique identifier of the finetune."
+          },
+          "name": {
+            "title": "Name",
+            "type": "string",
+            "description": "Name of the finetune."
+          },
+          "tags": {
+            "title": "Tags",
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Tags associated with the finetune."
+          },
+          "primary_genre": {
+            "$ref": "#/components/schemas/MusicFinetuneResponseModelPrimaryGenre"
+          },
+          "model_id": {
+            "title": "Model Id",
+            "type": "string",
+            "description": "The base music model the finetune was trained on."
+          },
+          "created_at": {
+            "title": "Created At",
+            "type": "string",
+            "description": "When the finetune was created (UTC).",
+            "format": "date-time"
+          },
+          "visibility": {
+            "$ref": "#/components/schemas/FinetuneVisibility"
+          },
+          "created_by": {
+            "$ref": "#/components/schemas/FinetuneCreatedBy"
+          },
+          "status": {
+            "$ref": "#/components/schemas/MusicFinetuneStatus"
+          },
+          "training_progress": {
+            "title": "Training Progress",
+            "type": "number",
+            "description": "Training progress from 0.0 to 1.0."
+          },
+          "failure_reason": {
+            "$ref": "#/components/schemas/MusicFinetuneResponseModelFailureReason"
+          }
+        }
+      },
+      "MusicFinetuneStatus": {
+        "title": "MusicFinetuneStatus",
+        "enum": [
+          "pending",
+          "in_progress",
+          "completed",
+          "failed",
+          "blocked"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "MusicFinetuneStatus",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "pending",
+              "name": "Pending"
+            },
+            {
+              "value": "in_progress",
+              "name": "InProgress"
+            },
+            {
+              "value": "completed",
+              "name": "Completed"
+            },
+            {
+              "value": "failed",
+              "name": "Failed"
+            },
+            {
+              "value": "blocked",
+              "name": "Blocked"
+            }
+          ]
+        }
+      },
       "MusicGenerationMode": {
         "title": "MusicGenerationMode",
         "enum": [
@@ -55645,6 +56555,43 @@
           "type": {
             "$ref": "#/components/schemas/ProcedureType"
           },
+          "trigger": {
+            "title": "Trigger",
+            "type": "string",
+            "description": "When the agent should use this procedure. Empty string means this is a sub-procedure that should only start when another procedure references it."
+          },
+          "referenced_tool_ids": {
+            "title": "Referenced Tool Ids",
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Tool IDs referenced in the procedure content"
+          },
+          "referenced_kb_ids": {
+            "title": "Referenced Kb Ids",
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Knowledge base IDs referenced in the procedure content"
+          },
+          "referenced_procedure_ids": {
+            "title": "Referenced Procedure Ids",
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Procedure IDs referenced in the procedure content"
+          },
+          "referenced_dynamic_variables": {
+            "title": "Referenced Dynamic Variables",
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Dynamic variable names used in the procedure content"
+          },
           "content": {
             "title": "Content",
             "maxLength": 50000,
@@ -55691,6 +56638,43 @@
           },
           "type": {
             "$ref": "#/components/schemas/ProcedureType"
+          },
+          "trigger": {
+            "title": "Trigger",
+            "type": "string",
+            "description": "When the agent should use this procedure. Empty string means this is a sub-procedure that should only start when another procedure references it."
+          },
+          "referenced_tool_ids": {
+            "title": "Referenced Tool Ids",
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Tool IDs referenced in the procedure content"
+          },
+          "referenced_kb_ids": {
+            "title": "Referenced Kb Ids",
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Knowledge base IDs referenced in the procedure content"
+          },
+          "referenced_procedure_ids": {
+            "title": "Referenced Procedure Ids",
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Procedure IDs referenced in the procedure content"
+          },
+          "referenced_dynamic_variables": {
+            "title": "Referenced Dynamic Variables",
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Dynamic variable names used in the procedure content"
           },
           "content": {
             "title": "Content",
@@ -58428,6 +59412,9 @@
             "title": "Is Fallback Name",
             "type": "boolean",
             "default": false
+          },
+          "chapter_id": {
+            "$ref": "#/components/schemas/ReadMetadataChapterDbModelChapterId"
           }
         }
       },
@@ -64436,12 +65423,17 @@
       "TokenResponseModel": {
         "title": "TokenResponseModel",
         "required": [
-          "token"
+          "token",
+          "conversation_id"
         ],
         "type": "object",
         "properties": {
           "token": {
             "title": "Token",
+            "type": "string"
+          },
+          "conversation_id": {
+            "title": "Conversation Id",
             "type": "string"
           }
         }
@@ -66928,6 +67920,24 @@
                 }
               ]
             }
+          }
+        }
+      },
+      "UpdateMusicFinetuneRequestModel": {
+        "title": "UpdateMusicFinetuneRequestModel",
+        "type": "object",
+        "properties": {
+          "name": {
+            "$ref": "#/components/schemas/UpdateMusicFinetuneRequestModelName"
+          },
+          "tags": {
+            "$ref": "#/components/schemas/UpdateMusicFinetuneRequestModelTags"
+          },
+          "primary_genre": {
+            "$ref": "#/components/schemas/UpdateMusicFinetuneRequestModelPrimaryGenre"
+          },
+          "visibility": {
+            "$ref": "#/components/schemas/UpdateMusicFinetuneRequestModelVisibility"
           }
         }
       },
@@ -73959,6 +74969,126 @@
           }
         }
       },
+      "AgentAnalysisItemsInputEvaluationCriteriaItem": {
+        "required": [
+          "source"
+        ],
+        "type": "object",
+        "oneOf": [
+          {
+            "$ref": "#/components/schemas/AttachedUserEvaluationRef"
+          },
+          {
+            "$ref": "#/components/schemas/AttachedSystemEvaluationRef"
+          }
+        ],
+        "properties": {
+          "source": {
+            "title": "source",
+            "type": "string",
+            "description": "Union discriminator"
+          }
+        },
+        "discriminator": {
+          "propertyName": "source",
+          "mapping": {
+            "system": "#/components/schemas/AttachedSystemEvaluationRef",
+            "user": "#/components/schemas/AttachedUserEvaluationRef",
+            "AttachedUserEvaluationRef": "#/components/schemas/AttachedUserEvaluationRef",
+            "AttachedSystemEvaluationRef": "#/components/schemas/AttachedSystemEvaluationRef"
+          }
+        }
+      },
+      "AgentAnalysisItemsInputDataCollectionItem": {
+        "required": [
+          "source"
+        ],
+        "type": "object",
+        "oneOf": [
+          {
+            "$ref": "#/components/schemas/AttachedUserDataCollectionRef"
+          },
+          {
+            "$ref": "#/components/schemas/AttachedSystemDataCollectionRef"
+          }
+        ],
+        "properties": {
+          "source": {
+            "title": "source",
+            "type": "string",
+            "description": "Union discriminator"
+          }
+        },
+        "discriminator": {
+          "propertyName": "source",
+          "mapping": {
+            "system": "#/components/schemas/AttachedSystemDataCollectionRef",
+            "user": "#/components/schemas/AttachedUserDataCollectionRef",
+            "AttachedUserDataCollectionRef": "#/components/schemas/AttachedUserDataCollectionRef",
+            "AttachedSystemDataCollectionRef": "#/components/schemas/AttachedSystemDataCollectionRef"
+          }
+        }
+      },
+      "AgentAnalysisItemsOutputEvaluationCriteriaItem": {
+        "required": [
+          "source"
+        ],
+        "type": "object",
+        "oneOf": [
+          {
+            "$ref": "#/components/schemas/AttachedUserEvaluationRef"
+          },
+          {
+            "$ref": "#/components/schemas/AttachedSystemEvaluationRef"
+          }
+        ],
+        "properties": {
+          "source": {
+            "title": "source",
+            "type": "string",
+            "description": "Union discriminator"
+          }
+        },
+        "discriminator": {
+          "propertyName": "source",
+          "mapping": {
+            "system": "#/components/schemas/AttachedSystemEvaluationRef",
+            "user": "#/components/schemas/AttachedUserEvaluationRef",
+            "AttachedUserEvaluationRef": "#/components/schemas/AttachedUserEvaluationRef",
+            "AttachedSystemEvaluationRef": "#/components/schemas/AttachedSystemEvaluationRef"
+          }
+        }
+      },
+      "AgentAnalysisItemsOutputDataCollectionItem": {
+        "required": [
+          "source"
+        ],
+        "type": "object",
+        "oneOf": [
+          {
+            "$ref": "#/components/schemas/AttachedUserDataCollectionRef"
+          },
+          {
+            "$ref": "#/components/schemas/AttachedSystemDataCollectionRef"
+          }
+        ],
+        "properties": {
+          "source": {
+            "title": "source",
+            "type": "string",
+            "description": "Union discriminator"
+          }
+        },
+        "discriminator": {
+          "propertyName": "source",
+          "mapping": {
+            "system": "#/components/schemas/AttachedSystemDataCollectionRef",
+            "user": "#/components/schemas/AttachedUserDataCollectionRef",
+            "AttachedUserDataCollectionRef": "#/components/schemas/AttachedUserDataCollectionRef",
+            "AttachedSystemDataCollectionRef": "#/components/schemas/AttachedSystemDataCollectionRef"
+          }
+        }
+      },
       "AgentBranchResponseAccessInfo": {
         "required": [
           "type"
@@ -74495,6 +75625,35 @@
         "type": "string",
         "nullable": true
       },
+      "AgentPlatformSettingsRequestModelAnalysisItems": {
+        "required": [
+          "type"
+        ],
+        "type": "object",
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/AgentAnalysisItemsInput"
+          },
+          {
+            "enum": [
+              null
+            ]
+          }
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "Union discriminator"
+          }
+        },
+        "description": "Evaluation \u002B data-collection items attached by reference. None means the agent has not been migrated onto analysis items yet (distinct from an empty, migrated set); reads fall back to the legacy evaluation/data_collection fields in that case.",
+        "discriminator": {
+          "propertyName": "type",
+          "mapping": {
+            "AgentAnalysisItemsInput": "#/components/schemas/AgentAnalysisItemsInput"
+          }
+        }
+      },
       "AgentPlatformSettingsRequestModelSummaryLanguage": {
         "title": "Summary Language",
         "type": "string",
@@ -74506,6 +75665,35 @@
         "type": "boolean",
         "description": "When enabled, a conversation transcript is automatically translated to the viewer\u0027s application language when they open the transcript page. If not set or false, transcripts are shown in their original language unless the viewer manually selects a translation.",
         "nullable": true
+      },
+      "AgentPlatformSettingsResponseModelAnalysisItems": {
+        "required": [
+          "type"
+        ],
+        "type": "object",
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/AgentAnalysisItemsOutput"
+          },
+          {
+            "enum": [
+              null
+            ]
+          }
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "Union discriminator"
+          }
+        },
+        "description": "Evaluation \u002B data-collection items attached by reference. None means the agent has not been migrated onto analysis items yet (distinct from an empty, migrated set); reads fall back to the legacy evaluation/data_collection fields in that case.",
+        "discriminator": {
+          "propertyName": "type",
+          "mapping": {
+            "AgentAnalysisItemsOutput": "#/components/schemas/AgentAnalysisItemsOutput"
+          }
+        }
       },
       "AgentPlatformSettingsResponseModelSummaryLanguage": {
         "title": "Summary Language",
@@ -75331,9 +76519,33 @@
         "type": "string",
         "nullable": true
       },
+      "AttachedSystemEvaluationRefWeight": {
+        "title": "Weight",
+        "type": "number",
+        "description": "Optional relative weight for aggregate scoring.",
+        "nullable": true
+      },
       "AttachedTestModelWorkflowNodeId": {
         "title": "Workflow Node Id",
         "type": "string",
+        "nullable": true
+      },
+      "AttachedUserDataCollectionRefVersionId": {
+        "title": "Version Id",
+        "type": "string",
+        "description": "Pinned item version. None tracks the item\u0027s latest published version.",
+        "nullable": true
+      },
+      "AttachedUserEvaluationRefVersionId": {
+        "title": "Version Id",
+        "type": "string",
+        "description": "Primary item version whose result feeds scoring. None tracks the item\u0027s latest published version.",
+        "nullable": true
+      },
+      "AttachedUserEvaluationRefWeight": {
+        "title": "Weight",
+        "type": "number",
+        "description": "Optional relative weight for aggregate scoring.",
         "nullable": true
       },
       "AudioAnalysisData": {
@@ -76334,8 +77546,7 @@
         "maxLength": 100,
         "type": "string",
         "description": "The ID of the finetune to use for the generation",
-        "nullable": true,
-        "x-fern-ignore": true
+        "nullable": true
       },
       "BodyComposeMusicV1MusicPostPrompt": {
         "title": "Prompt",
@@ -76446,8 +77657,7 @@
         "maxLength": 100,
         "type": "string",
         "description": "The ID of the finetune to use for the generation",
-        "nullable": true,
-        "x-fern-ignore": true
+        "nullable": true
       },
       "BodyCreateAgentV1ConvaiAgentsCreatePostPlatformSettings": {
         "required": [
@@ -76579,6 +77789,31 @@
         "type": "string",
         "description": "\u0022Optional shortcut: also create a language target in this BCP-47 language, queued to start once the project is ready.\u0022",
         "nullable": true
+      },
+      "BodyCreateMusicFinetuneV1MusicFinetunesPostVisibility": {
+        "title": "Visibility",
+        "enum": [
+          "private",
+          "workspace"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "Finetune visibility. Only \u0027private\u0027 and \u0027workspace\u0027 can be set.",
+        "nullable": true,
+        "x-ms-enum": {
+          "name": "BodyCreateMusicFinetuneV1MusicFinetunesPostVisibility",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "private",
+              "name": "PrivateValue"
+            },
+            {
+              "value": "workspace",
+              "name": "Workspace"
+            }
+          ]
+        }
       },
       "BodyCreatePvcVoiceV1VoicesPvcPostDescription": {
         "title": "Description",
@@ -78540,8 +79775,7 @@
         "maxLength": 100,
         "type": "string",
         "description": "The ID of the finetune to use for the generation",
-        "nullable": true,
-        "x-fern-ignore": true
+        "nullable": true
       },
       "BodyStreamComposedMusicWithADetailedResponseV1MusicDetailedStreamPostPrompt": {
         "title": "Prompt",
@@ -78652,8 +79886,7 @@
         "maxLength": 100,
         "type": "string",
         "description": "The ID of the finetune to use for the generation",
-        "nullable": true,
-        "x-fern-ignore": true
+        "nullable": true
       },
       "BodySubmitABatchCallRequestV1ConvaiBatchCallingSubmitPostScheduledTimeUnix": {
         "title": "Scheduled Time Unix",
@@ -86246,6 +87479,31 @@
         "description": "Maximum number of files that can be uploaded per conversation.",
         "nullable": true
       },
+      "FileRefreshStatusEnqueuedAt": {
+        "title": "Enqueued At",
+        "type": "integer",
+        "nullable": true
+      },
+      "FileRefreshStatusStartedAt": {
+        "title": "Started At",
+        "type": "integer",
+        "nullable": true
+      },
+      "FileRefreshStatusCompletedAt": {
+        "title": "Completed At",
+        "type": "integer",
+        "nullable": true
+      },
+      "FileRefreshStatusLastSyncedAt": {
+        "title": "Last Synced At",
+        "type": "integer",
+        "nullable": true
+      },
+      "FileRefreshStatusErrorMessage": {
+        "title": "Error Message",
+        "type": "string",
+        "nullable": true
+      },
       "FineTuningResponseModelLanguage": {
         "title": "Language",
         "type": "string",
@@ -86981,6 +88239,63 @@
           }
         }
       },
+      "GetKnowledgeBaseFileResponseModelAutoSyncInfo": {
+        "required": [
+          "type"
+        ],
+        "type": "object",
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/AutoSyncInfo"
+          },
+          {
+            "enum": [
+              null
+            ]
+          }
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "Union discriminator"
+          }
+        },
+        "discriminator": {
+          "propertyName": "type",
+          "mapping": {
+            "AutoSyncInfo": "#/components/schemas/AutoSyncInfo"
+          }
+        }
+      },
+      "GetKnowledgeBaseFileResponseModelRefreshStatus": {
+        "required": [
+          "type"
+        ],
+        "type": "object",
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/FileRefreshStatus"
+          },
+          {
+            "enum": [
+              null
+            ]
+          }
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "Union discriminator"
+          }
+        },
+        "description": "In-flight or last refresh state for an externally-synced file. Used by clients to render sync progress and disable re-sync while a refresh is queued or processing.",
+        "discriminator": {
+          "propertyName": "type",
+          "mapping": {
+            "FileRefreshStatus": "#/components/schemas/FileRefreshStatus"
+          }
+        }
+      },
       "GetKnowledgeBaseFolderResponseModelFolderParentId": {
         "title": "Folder Parent Id",
         "type": "string",
@@ -87178,6 +88493,62 @@
           "propertyName": "type",
           "mapping": {
             "ExternalFileSyncInfo": "#/components/schemas/ExternalFileSyncInfo"
+          }
+        }
+      },
+      "GetKnowledgeBaseSummaryFileResponseModelAutoSyncInfo": {
+        "required": [
+          "type"
+        ],
+        "type": "object",
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/AutoSyncInfo"
+          },
+          {
+            "enum": [
+              null
+            ]
+          }
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "Union discriminator"
+          }
+        },
+        "discriminator": {
+          "propertyName": "type",
+          "mapping": {
+            "AutoSyncInfo": "#/components/schemas/AutoSyncInfo"
+          }
+        }
+      },
+      "GetKnowledgeBaseSummaryFileResponseModelRefreshStatus": {
+        "required": [
+          "type"
+        ],
+        "type": "object",
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/FileRefreshStatus"
+          },
+          {
+            "enum": [
+              null
+            ]
+          }
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "Union discriminator"
+          }
+        },
+        "discriminator": {
+          "propertyName": "type",
+          "mapping": {
+            "FileRefreshStatus": "#/components/schemas/FileRefreshStatus"
           }
         }
       },
@@ -90863,6 +92234,32 @@
         "type": "string",
         "nullable": true
       },
+      "MusicFinetunePageResponseModelNextCursor": {
+        "title": "Next Cursor",
+        "type": "string",
+        "description": "Cursor to pass as \u0060cursor\u0060 to fetch the next page; \u0060null\u0060 when there are no more results.",
+        "nullable": true
+      },
+      "MusicFinetuneResponseModelPrimaryGenre": {
+        "title": "Primary Genre",
+        "type": "string",
+        "description": "Primary musical genre of the finetune.",
+        "nullable": true
+      },
+      "MusicFinetuneResponseModelFailureReason": {
+        "type": "object",
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/MusicFinetuneFailureReasonWrapper"
+          },
+          {
+            "enum": [
+              null
+            ]
+          }
+        ],
+        "description": "Reason the finetune failed or was blocked, if applicable."
+      },
       "MusicUploadResponseCompositionPlan": {
         "title": "Composition Plan",
         "required": [
@@ -94542,6 +95939,11 @@
       },
       "ReadMetadataChapterDbModelFileNumber": {
         "title": "File Number",
+        "type": "string",
+        "nullable": true
+      },
+      "ReadMetadataChapterDbModelChapterId": {
+        "title": "Chapter Id",
         "type": "string",
         "nullable": true
       },
@@ -98697,6 +100099,64 @@
             "EnvironmentVariableSecretValueRequest": "#/components/schemas/EnvironmentVariableSecretValueRequest",
             "EnvironmentVariableAuthConnectionValueRequest": "#/components/schemas/EnvironmentVariableAuthConnectionValueRequest"
           }
+        }
+      },
+      "UpdateMusicFinetuneRequestModelName": {
+        "title": "Name",
+        "maxLength": 200,
+        "minLength": 5,
+        "type": "string",
+        "description": "Updated name for the finetune.",
+        "nullable": true
+      },
+      "UpdateMusicFinetuneRequestModelTags": {
+        "title": "Tags",
+        "type": "object",
+        "anyOf": [
+          {
+            "maxItems": 5,
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          {
+            "enum": [
+              null
+            ]
+          }
+        ],
+        "description": "Replacement set of tags."
+      },
+      "UpdateMusicFinetuneRequestModelPrimaryGenre": {
+        "title": "Primary Genre",
+        "type": "string",
+        "description": "Updated primary musical genre.",
+        "nullable": true
+      },
+      "UpdateMusicFinetuneRequestModelVisibility": {
+        "title": "Visibility",
+        "enum": [
+          "private",
+          "workspace"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "Finetune visibility. Only \u0027private\u0027 and \u0027workspace\u0027 can be set.",
+        "nullable": true,
+        "x-ms-enum": {
+          "name": "UpdateMusicFinetuneRequestModelVisibility",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "private",
+              "name": "PrivateValue"
+            },
+            {
+              "value": "workspace",
+              "name": "Workspace"
+            }
+          ]
         }
       },
       "UpdateOAuth2ClientCredsRequestProvider": {
@@ -103863,6 +105323,17 @@
         "title": "Dynamic Variables",
         "type": "object"
       },
+      "ConversationInitiationClientDataInternalToolMockOverrides": {
+        "title": "Tool Mock Overrides",
+        "type": "object",
+        "additionalProperties": {
+          "type": "array",
+          "items": {
+            "$ref": "#/components/schemas/ToolResponseMockConfigOutput"
+          }
+        },
+        "description": "Per-tool response mock overrides keyed by resolved tool name, applied ahead of the tool\u0027s shared mocks. Used for test-specific mocks."
+      },
       "ConversationInitiationClientDataRequestInputCustomLlmExtraBody": {
         "title": "Custom Llm Extra Body",
         "type": "object"
@@ -106604,6 +108075,17 @@
           }
         }
       },
+      "MusicFinetuneFailureReasonWrapper": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "$ref": "#/components/schemas/MusicFinetuneFailureReason"
+          }
+        }
+      },
       "EagernessWrapper": {
         "required": [
           "value"
@@ -108733,6 +110215,16 @@
       "ConversationInitiationClientDataInternalDynamicVariablesProperty": {
         "type": "object"
       },
+      "ConversationInitiationClientDataInternalToolMockOverridesProperty": {
+        "type": "object",
+        "additionalProperties": {
+          "type": "array",
+          "items": {
+            "$ref": "#/components/schemas/ToolResponseMockConfigOutput"
+          }
+        },
+        "description": "Per-tool response mock overrides keyed by resolved tool name, applied ahead of the tool\u0027s shared mocks. Used for test-specific mocks."
+      },
       "ConversationInitiationClientDataRequestInputCustomLlmExtraBodyProperty": {
         "type": "object"
       },
@@ -109400,6 +110892,30 @@
           ]
         }
       },
+      "AttachedSystemEvaluationRefAnalysisItemId": {
+        "title": "Analysis Item Id",
+        "enum": [
+          "__system_eval_criteria_sentiment",
+          "__system_eval_criteria_frustration"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "Id of the referenced built-in system evaluation.",
+        "x-ms-enum": {
+          "name": "AttachedSystemEvaluationRefAnalysisItemId",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "__system_eval_criteria_sentiment",
+              "name": "SystemEvalCriteriaSentiment"
+            },
+            {
+              "value": "__system_eval_criteria_frustration",
+              "name": "SystemEvalCriteriaFrustration"
+            }
+          ]
+        }
+      },
       "AudioAnalysisStatus": {
         "title": "Status",
         "enum": [
@@ -109511,6 +111027,30 @@
         "description": "The model to use for the generation.",
         "x-ms-enum": {
           "name": "BodyComposeMusicV1MusicPostModelId",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "music_v1",
+              "name": "MusicV1"
+            },
+            {
+              "value": "music_v2",
+              "name": "MusicV2"
+            }
+          ]
+        }
+      },
+      "BodyCreateMusicFinetuneV1MusicFinetunesPostModelId": {
+        "title": "Model Id",
+        "enum": [
+          "music_v1",
+          "music_v2"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "The model to create a finetune for.",
+        "x-ms-enum": {
+          "name": "BodyCreateMusicFinetuneV1MusicFinetunesPostModelId",
           "modelAsString": false,
           "values": [
             {
@@ -114926,6 +116466,43 @@
           ]
         }
       },
+      "TextSearchConversationMessagesRouteExcludeStatusesParameterAnyOf1Item": {
+        "enum": [
+          "initiated",
+          "in-progress",
+          "processing",
+          "done",
+          "failed"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "TextSearchConversationMessagesRouteExcludeStatusesParameterAnyOf1Item",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "initiated",
+              "name": "Initiated"
+            },
+            {
+              "value": "in-progress",
+              "name": "InProgress"
+            },
+            {
+              "value": "processing",
+              "name": "Processing"
+            },
+            {
+              "value": "done",
+              "name": "Done"
+            },
+            {
+              "value": "failed",
+              "name": "Failed"
+            }
+          ]
+        }
+      },
       "TextSearchConversationMessagesRouteSummaryModeParameter": {
         "title": "Summary Mode",
         "enum": [
@@ -115548,6 +117125,54 @@
             {
               "value": "opus_48000_192",
               "name": "Opus48000192"
+            }
+          ]
+        }
+      },
+      "GetFinetunesSortParameter": {
+        "title": "Sort",
+        "enum": [
+          "created_at",
+          "name"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "Sort by field (created_at or name)",
+        "x-ms-enum": {
+          "name": "GetFinetunesSortParameter",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "created_at",
+              "name": "CreatedAt"
+            },
+            {
+              "value": "name",
+              "name": "Name"
+            }
+          ]
+        }
+      },
+      "GetFinetunesSortDirectionParameter": {
+        "title": "Sort Direction",
+        "enum": [
+          "asc",
+          "desc"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "Sort direction (asc or desc)",
+        "x-ms-enum": {
+          "name": "GetFinetunesSortDirectionParameter",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "asc",
+              "name": "Asc"
+            },
+            {
+              "value": "desc",
+              "name": "Desc"
             }
           ]
         }

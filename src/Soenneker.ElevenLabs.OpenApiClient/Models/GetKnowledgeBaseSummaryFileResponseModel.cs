@@ -22,6 +22,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The auto_sync_info property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseSummaryFileResponseModelAutoSyncInfo? AutoSyncInfo { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseSummaryFileResponseModelAutoSyncInfo AutoSyncInfo { get; set; }
+#endif
         /// <summary>This field is deprecated and will be removed in the future, use the separate endpoint to get dependent agents instead.</summary>
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -81,6 +89,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
+        /// <summary>The refresh_status property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseSummaryFileResponseModelRefreshStatus? RefreshStatus { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseSummaryFileResponseModelRefreshStatus RefreshStatus { get; set; }
+#endif
         /// <summary>The supported_usages property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -118,6 +134,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "access_info", n => { AccessInfo = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceAccessInfo>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceAccessInfo.CreateFromDiscriminatorValue); } },
+                { "auto_sync_info", n => { AutoSyncInfo = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseSummaryFileResponseModelAutoSyncInfo>(global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseSummaryFileResponseModelAutoSyncInfo.CreateFromDiscriminatorValue); } },
                 { "dependent_agents", n => { DependentAgents = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseSummaryFileResponseModelDependentAgentsItem>(global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseSummaryFileResponseModelDependentAgentsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "external_sync_info", n => { ExternalSyncInfo = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseSummaryFileResponseModelExternalSyncInfo>(global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseSummaryFileResponseModelExternalSyncInfo.CreateFromDiscriminatorValue); } },
                 { "folder_parent_id", n => { FolderParentId = n.GetStringValue(); } },
@@ -126,6 +143,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "is_frozen", n => { IsFrozen = n.GetBoolValue(); } },
                 { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeBaseDocumentMetadataResponseModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeBaseDocumentMetadataResponseModel.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
+                { "refresh_status", n => { RefreshStatus = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseSummaryFileResponseModelRefreshStatus>(global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseSummaryFileResponseModelRefreshStatus.CreateFromDiscriminatorValue); } },
                 { "supported_usages", n => { SupportedUsages = n.GetCollectionOfEnumValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.DocumentUsageModeEnum>()?.AsList(); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseSummaryFileResponseModel_type>(); } },
             };
@@ -138,6 +156,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceAccessInfo>("access_info", AccessInfo);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseSummaryFileResponseModelAutoSyncInfo>("auto_sync_info", AutoSyncInfo);
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseSummaryFileResponseModelDependentAgentsItem>("dependent_agents", DependentAgents);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseSummaryFileResponseModelExternalSyncInfo>("external_sync_info", ExternalSyncInfo);
             writer.WriteStringValue("folder_parent_id", FolderParentId);
@@ -146,6 +165,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteBoolValue("is_frozen", IsFrozen);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeBaseDocumentMetadataResponseModel>("metadata", Metadata);
             writer.WriteStringValue("name", Name);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseSummaryFileResponseModelRefreshStatus>("refresh_status", RefreshStatus);
             writer.WriteCollectionOfEnumValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.DocumentUsageModeEnum>("supported_usages", SupportedUsages);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseSummaryFileResponseModel_type>("type", Type);
             writer.WriteAdditionalData(AdditionalData);

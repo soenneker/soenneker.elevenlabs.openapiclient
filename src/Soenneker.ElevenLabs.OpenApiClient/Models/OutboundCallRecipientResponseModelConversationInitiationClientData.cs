@@ -78,6 +78,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.OrchestratorToolMockBehaviorConfig ToolMockConfig { get; set; }
 #endif
+        /// <summary>Per-tool response mock overrides keyed by resolved tool name, applied ahead of the tool&apos;s shared mocks. Used for test-specific mocks.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationClientDataInternalToolMockOverridesProperty? ToolMockOverrides { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationClientDataInternalToolMockOverridesProperty ToolMockOverrides { get; set; }
+#endif
         /// <summary>Union discriminator</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -127,6 +135,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "source_info", n => { SourceInfo = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationSourceInfo>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationSourceInfo.CreateFromDiscriminatorValue); } },
                 { "starting_workflow_node_id", n => { StartingWorkflowNodeId = n.GetStringValue(); } },
                 { "tool_mock_config", n => { ToolMockConfig = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.OrchestratorToolMockBehaviorConfig>(global::Soenneker.ElevenLabs.OpenApiClient.Models.OrchestratorToolMockBehaviorConfig.CreateFromDiscriminatorValue); } },
+                { "tool_mock_overrides", n => { ToolMockOverrides = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationClientDataInternalToolMockOverridesProperty>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationClientDataInternalToolMockOverridesProperty.CreateFromDiscriminatorValue); } },
                 { "type", n => { Type = n.GetStringValue(); } },
                 { "user_id", n => { UserId = n.GetStringValue(); } },
             };
@@ -146,6 +155,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationSourceInfo>("source_info", SourceInfo);
             writer.WriteStringValue("starting_workflow_node_id", StartingWorkflowNodeId);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.OrchestratorToolMockBehaviorConfig>("tool_mock_config", ToolMockConfig);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationClientDataInternalToolMockOverridesProperty>("tool_mock_overrides", ToolMockOverrides);
             writer.WriteStringValue("type", Type);
             writer.WriteStringValue("user_id", UserId);
             writer.WriteAdditionalData(AdditionalData);

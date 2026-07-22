@@ -22,6 +22,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The auto_sync_info property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseFileResponseModelAutoSyncInfo? AutoSyncInfo { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseFileResponseModelAutoSyncInfo AutoSyncInfo { get; set; }
+#endif
         /// <summary>Canonical representation of a knowledge base document&apos;s stored content.HTML is the legacy default; documents created before this field existed areinterpreted as HTML.</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.ContentFormat? ContentFormat { get; set; }
         /// <summary>The external_sync_info property</summary>
@@ -90,6 +98,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
+        /// <summary>In-flight or last refresh state for an externally-synced file. Used by clients to render sync progress and disable re-sync while a refresh is queued or processing.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseFileResponseModelRefreshStatus? RefreshStatus { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseFileResponseModelRefreshStatus RefreshStatus { get; set; }
+#endif
         /// <summary>The supported_usages property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -127,6 +143,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "access_info", n => { AccessInfo = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceAccessInfo>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceAccessInfo.CreateFromDiscriminatorValue); } },
+                { "auto_sync_info", n => { AutoSyncInfo = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseFileResponseModelAutoSyncInfo>(global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseFileResponseModelAutoSyncInfo.CreateFromDiscriminatorValue); } },
                 { "content_format", n => { ContentFormat = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ContentFormat>(); } },
                 { "external_sync_info", n => { ExternalSyncInfo = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseFileResponseModelExternalSyncInfo>(global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseFileResponseModelExternalSyncInfo.CreateFromDiscriminatorValue); } },
                 { "extracted_inner_html", n => { ExtractedInnerHtml = n.GetStringValue(); } },
@@ -137,6 +154,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "is_frozen", n => { IsFrozen = n.GetBoolValue(); } },
                 { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeBaseDocumentMetadataResponseModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeBaseDocumentMetadataResponseModel.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
+                { "refresh_status", n => { RefreshStatus = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseFileResponseModelRefreshStatus>(global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseFileResponseModelRefreshStatus.CreateFromDiscriminatorValue); } },
                 { "supported_usages", n => { SupportedUsages = n.GetCollectionOfEnumValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.DocumentUsageModeEnum>()?.AsList(); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseFileResponseModel_type>(); } },
             };
@@ -149,6 +167,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceAccessInfo>("access_info", AccessInfo);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseFileResponseModelAutoSyncInfo>("auto_sync_info", AutoSyncInfo);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ContentFormat>("content_format", ContentFormat);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseFileResponseModelExternalSyncInfo>("external_sync_info", ExternalSyncInfo);
             writer.WriteStringValue("extracted_inner_html", ExtractedInnerHtml);
@@ -159,6 +178,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteBoolValue("is_frozen", IsFrozen);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeBaseDocumentMetadataResponseModel>("metadata", Metadata);
             writer.WriteStringValue("name", Name);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseFileResponseModelRefreshStatus>("refresh_status", RefreshStatus);
             writer.WriteCollectionOfEnumValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.DocumentUsageModeEnum>("supported_usages", SupportedUsages);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseFileResponseModel_type>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
