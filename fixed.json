@@ -2746,58 +2746,6 @@
         }
       }
     },
-    "/v1/music/video-to-music": {
-      "post": {
-        "tags": [
-          "video-to-music"
-        ],
-        "summary": "Video To Music",
-        "description": "Generate background music from one or more video files. Videos are combined in order. Optional description and style tags influence the generated music.",
-        "operationId": "VideoToMusic",
-        "parameters": [
-          {
-            "name": "output_format",
-            "in": "query",
-            "description": "Output format of the generated audio. Formatted as codec_sample_rate_bitrate. So an mp3 with 22.05kHz sample rate at 32kbs is represented as mp3_22050_32. MP3 with 192kbps bitrate requires you to be subscribed to Creator tier or above. PCM with 44.1kHz sample rate requires you to be subscribed to Pro tier or above. Note that the \u03BC-law format (sometimes written mu-law, often approximated as u-law) is commonly used for Twilio audio inputs.",
-            "schema": {
-              "$ref": "#/components/schemas/AllowedOutputFormats"
-            }
-          },
-          {
-            "name": "xi-api-key",
-            "in": "header",
-            "description": "Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the \u0027Profile\u0027 tab on the website.",
-            "schema": {
-              "title": "Xi-Api-Key",
-              "type": "string",
-              "description": "Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the \u0027Profile\u0027 tab on the website.",
-              "nullable": true
-            }
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "multipart/form-data": {
-              "schema": {
-                "$ref": "#/components/schemas/BodyVideoToMusicV1MusicVideoToMusicPost"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Generated audio file matching the video. Content-Type and file extension depend on the output_format parameter (default mp3).",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/VideoToMusic200ResponseResponseJson"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
     "/v1/studio/projects/{projectId}/pronunciation-dictionaries": {
       "post": {
         "tags": [
@@ -8587,6 +8535,58 @@
         }
       }
     },
+    "/v1/music/video-to-music": {
+      "post": {
+        "tags": [
+          "video-to-music"
+        ],
+        "summary": "Video To Music",
+        "description": "Generate background music from one or more video files. Videos are combined in order. Optional description and style tags influence the generated music.",
+        "operationId": "VideoToMusic",
+        "parameters": [
+          {
+            "name": "output_format",
+            "in": "query",
+            "description": "Output format of the generated audio. Formatted as codec_sample_rate_bitrate. So an mp3 with 22.05kHz sample rate at 32kbs is represented as mp3_22050_32. MP3 with 192kbps bitrate requires you to be subscribed to Creator tier or above. PCM with 44.1kHz sample rate requires you to be subscribed to Pro tier or above. Note that the \u03BC-law format (sometimes written mu-law, often approximated as u-law) is commonly used for Twilio audio inputs.",
+            "schema": {
+              "$ref": "#/components/schemas/AllowedOutputFormats"
+            }
+          },
+          {
+            "name": "xi-api-key",
+            "in": "header",
+            "description": "Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the \u0027Profile\u0027 tab on the website.",
+            "schema": {
+              "title": "Xi-Api-Key",
+              "type": "string",
+              "description": "Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the \u0027Profile\u0027 tab on the website.",
+              "nullable": true
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "$ref": "#/components/schemas/BodyVideoToMusicV1MusicVideoToMusicPost"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Generated audio file matching the video. Content-Type and file extension depend on the output_format parameter (default mp3).",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/VideoToMusic200ResponseResponseJson"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/v1/speech-to-text": {
       "post": {
         "tags": [
@@ -10769,7 +10769,7 @@
     "/v1/convai/agent-testing/summaries": {
       "post": {
         "summary": "Get Agent Response Test Summaries By Ids",
-        "description": "Gets multiple agent response tests by their IDs. Returns a dictionary mapping test IDs to test summaries.",
+        "description": "Gets agent response test summaries for the requested test IDs.",
         "operationId": "GetAgentResponseTestsSummariesRoute",
         "parameters": [
           {
@@ -11252,6 +11252,54 @@
             }
           },
           {
+            "name": "visited_agent_ids",
+            "in": "query",
+            "description": "Filter conversations where any of these agents participated. Can not exceed 50 values.",
+            "schema": {
+              "title": "Visited Agent Ids",
+              "type": "object",
+              "anyOf": [
+                {
+                  "maxItems": 50,
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                {
+                  "enum": [
+                    null
+                  ]
+                }
+              ],
+              "description": "Filter conversations where any of these agents participated. Can not exceed 50 values."
+            }
+          },
+          {
+            "name": "visited_agent_branch_ids",
+            "in": "query",
+            "description": "Filter conversations where any of these agent branches participated. Can not exceed 50 values.",
+            "schema": {
+              "title": "Visited Agent Branch Ids",
+              "type": "object",
+              "anyOf": [
+                {
+                  "maxItems": 50,
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                {
+                  "enum": [
+                    null
+                  ]
+                }
+              ],
+              "description": "Filter conversations where any of these agent branches participated. Can not exceed 50 values."
+            }
+          },
+          {
             "name": "call_successful",
             "in": "query",
             "description": "The result of the success evaluation",
@@ -11411,6 +11459,52 @@
                 }
               ],
               "description": "\u0022Data collection filters. Repeat param. Format: id:op:value where op is one of eq|neq|gt|gte|lt|lte|in|exists|missing. For in, pipe-delimit values.\u0022"
+            }
+          },
+          {
+            "name": "data_collection_ids",
+            "in": "query",
+            "description": "Data collection field IDs to include in each conversation summary. Repeat param. When omitted, data_collection_results is not returned.",
+            "schema": {
+              "title": "Data Collection Ids",
+              "type": "object",
+              "anyOf": [
+                {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                {
+                  "enum": [
+                    null
+                  ]
+                }
+              ],
+              "description": "Data collection field IDs to include in each conversation summary. Repeat param. When omitted, data_collection_results is not returned."
+            }
+          },
+          {
+            "name": "evaluation_criteria_ids",
+            "in": "query",
+            "description": "Evaluation criteria IDs to include in each conversation summary. Repeat param. When omitted, evaluation_criteria_results is not returned.",
+            "schema": {
+              "title": "Evaluation Criteria Ids",
+              "type": "object",
+              "anyOf": [
+                {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                {
+                  "enum": [
+                    null
+                  ]
+                }
+              ],
+              "description": "Evaluation criteria IDs to include in each conversation summary. Repeat param. When omitted, evaluation_criteria_results is not returned."
             }
           },
           {
@@ -12289,6 +12383,54 @@
               "type": "string",
               "description": "Agent id (agent_\u2026) or speech engine external id (seng_), resolved to the same underlying resource.",
               "nullable": true
+            }
+          },
+          {
+            "name": "visited_agent_ids",
+            "in": "query",
+            "description": "Filter conversations where any of these agents participated. Can not exceed 50 values.",
+            "schema": {
+              "title": "Visited Agent Ids",
+              "type": "object",
+              "anyOf": [
+                {
+                  "maxItems": 50,
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                {
+                  "enum": [
+                    null
+                  ]
+                }
+              ],
+              "description": "Filter conversations where any of these agents participated. Can not exceed 50 values."
+            }
+          },
+          {
+            "name": "visited_agent_branch_ids",
+            "in": "query",
+            "description": "Filter conversations where any of these agent branches participated. Can not exceed 50 values.",
+            "schema": {
+              "title": "Visited Agent Branch Ids",
+              "type": "object",
+              "anyOf": [
+                {
+                  "maxItems": 50,
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                {
+                  "enum": [
+                    null
+                  ]
+                }
+              ],
+              "description": "Filter conversations where any of these agent branches participated. Can not exceed 50 values."
             }
           },
           {
@@ -14185,6 +14327,268 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/AddKnowledgeBaseResponseModel"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HttpValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/convai/knowledge-base/crawl": {
+      "post": {
+        "tags": [
+          "Conversational AI"
+        ],
+        "summary": "Create Crawl Job",
+        "description": "Create a crawl job to crawl the given URL with specified depth and page limits.",
+        "operationId": "CreateCrawlJobRoute",
+        "parameters": [
+          {
+            "name": "xi-api-key",
+            "in": "header",
+            "description": "Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the \u0027Profile\u0027 tab on the website.",
+            "schema": {
+              "title": "Xi-Api-Key",
+              "type": "string",
+              "description": "Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the \u0027Profile\u0027 tab on the website.",
+              "nullable": true
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BodyCreateCrawlJobV1ConvaiKnowledgeBaseCrawlPost"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreateCrawlJobResponseModel"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HttpValidationError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Conversational AI"
+        ],
+        "summary": "List Ongoing And Recent Crawl Jobs Created By A User",
+        "description": "Get a list of ongoing and recent crawl jobs for the user.",
+        "operationId": "ListCrawlJobsRoute",
+        "parameters": [
+          {
+            "name": "include_job_ids",
+            "in": "query",
+            "description": "Ids of additional crawl jobs to retrieve",
+            "schema": {
+              "title": "Include Job Ids",
+              "type": "object",
+              "anyOf": [
+                {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                {
+                  "enum": [
+                    null
+                  ]
+                }
+              ],
+              "description": "Ids of additional crawl jobs to retrieve"
+            }
+          },
+          {
+            "name": "page_size",
+            "in": "query",
+            "description": "How many documents to return at maximum. Can not exceed 100, defaults to 30.",
+            "schema": {
+              "title": "Page Size",
+              "maximum": 100,
+              "minimum": 1,
+              "type": "integer",
+              "description": "How many documents to return at maximum. Can not exceed 100, defaults to 30.",
+              "default": 30
+            }
+          },
+          {
+            "name": "cursor",
+            "in": "query",
+            "description": "Used for fetching next page. Cursor is returned in the response.",
+            "schema": {
+              "title": "Cursor",
+              "type": "string",
+              "description": "Used for fetching next page. Cursor is returned in the response.",
+              "nullable": true
+            }
+          },
+          {
+            "name": "xi-api-key",
+            "in": "header",
+            "description": "Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the \u0027Profile\u0027 tab on the website.",
+            "schema": {
+              "title": "Xi-Api-Key",
+              "type": "string",
+              "description": "Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the \u0027Profile\u0027 tab on the website.",
+              "nullable": true
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ListCrawlJobsResponseModel"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HttpValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/convai/knowledge-base/crawl/{crawlJobId}": {
+      "get": {
+        "tags": [
+          "Conversational AI"
+        ],
+        "summary": "Get Crawl Job Details",
+        "description": "Get details about a specific crawl job including status and progress.",
+        "operationId": "GetCrawlJobRoute",
+        "parameters": [
+          {
+            "name": "crawlJobId",
+            "in": "path",
+            "description": "The id of the crawl job to retrieve",
+            "required": true,
+            "schema": {
+              "title": "Crawl Job Id",
+              "type": "string",
+              "description": "The id of the crawl job to retrieve",
+              "unrecognizedKeywords": {
+                "embed": true
+              }
+            }
+          },
+          {
+            "name": "xi-api-key",
+            "in": "header",
+            "description": "Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the \u0027Profile\u0027 tab on the website.",
+            "schema": {
+              "title": "Xi-Api-Key",
+              "type": "string",
+              "description": "Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the \u0027Profile\u0027 tab on the website.",
+              "nullable": true
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetCrawlJobResponseModel"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HttpValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/convai/knowledge-base/crawl/{crawlJobId}/cancel": {
+      "post": {
+        "tags": [
+          "Conversational AI"
+        ],
+        "summary": "Cancel Crawl Job",
+        "description": "Cancel a crawl job and delete all associated documents and folders.",
+        "operationId": "CancelCrawlJobRoute",
+        "parameters": [
+          {
+            "name": "crawlJobId",
+            "in": "path",
+            "description": "The id of the crawl job to retrieve",
+            "required": true,
+            "schema": {
+              "title": "Crawl Job Id",
+              "type": "string",
+              "description": "The id of the crawl job to retrieve",
+              "unrecognizedKeywords": {
+                "embed": true
+              }
+            }
+          },
+          {
+            "name": "xi-api-key",
+            "in": "header",
+            "description": "Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the \u0027Profile\u0027 tab on the website.",
+            "schema": {
+              "title": "Xi-Api-Key",
+              "type": "string",
+              "description": "Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the \u0027Profile\u0027 tab on the website.",
+              "nullable": true
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CancelCrawlJobRoute200ResponseResponseJson"
                 }
               }
             }
@@ -30189,6 +30593,57 @@
           }
         }
       },
+      "BodyCreateCrawlJobV1ConvaiKnowledgeBaseCrawlPost": {
+        "title": "Body_Create_crawl_job_v1_convai_knowledge_base_crawl_post",
+        "required": [
+          "url"
+        ],
+        "type": "object",
+        "properties": {
+          "url": {
+            "title": "Url",
+            "type": "string",
+            "description": "URL to a page of documentation that the agent will have access to in order to interact with users."
+          },
+          "max_depth": {
+            "title": "Max Depth",
+            "maximum": 5.0,
+            "minimum": 1.0,
+            "type": "integer",
+            "description": "Maximum depth for crawling (1-5), defaults to 3.",
+            "default": 3
+          },
+          "max_pages": {
+            "title": "Max Pages",
+            "maximum": 10000.0,
+            "minimum": 1.0,
+            "type": "integer",
+            "description": "Maximum number of pages to crawl (1-10,000), defaults to 1000.",
+            "default": 1000
+          },
+          "pattern": {
+            "$ref": "#/components/schemas/BodyCreateCrawlJobV1ConvaiKnowledgeBaseCrawlPostPattern"
+          },
+          "sitemap_urls": {
+            "$ref": "#/components/schemas/BodyCreateCrawlJobV1ConvaiKnowledgeBaseCrawlPostSitemapUrls"
+          },
+          "parent_folder_id": {
+            "$ref": "#/components/schemas/BodyCreateCrawlJobV1ConvaiKnowledgeBaseCrawlPostParentFolderId"
+          },
+          "enable_auto_sync": {
+            "title": "Enable Auto Sync",
+            "type": "boolean",
+            "description": "Whether to enable auto-sync for this URL document.",
+            "default": false
+          },
+          "auto_remove": {
+            "title": "Auto Remove",
+            "type": "boolean",
+            "description": "Whether to automatically remove the document if the URL becomes unavailable. Only applicable when auto-sync is enabled.",
+            "default": false
+          }
+        }
+      },
       "BodyCreateFileDocumentV1ConvaiKnowledgeBaseFilePost": {
         "title": "Body_Create_file_document_v1_convai_knowledge_base_file_post",
         "required": [
@@ -37975,6 +38430,20 @@
           },
           "sentiment_analysis": {
             "$ref": "#/components/schemas/ConversationSummaryResponseModelSentimentAnalysis"
+          },
+          "data_collection_results": {
+            "$ref": "#/components/schemas/ConversationSummaryResponseModelDataCollectionResults"
+          },
+          "evaluation_criteria_results": {
+            "$ref": "#/components/schemas/ConversationSummaryResponseModelEvaluationCriteriaResults"
+          },
+          "tag_ids": {
+            "title": "Tag Ids",
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Conversation tag ids assigned to this conversation."
           }
         }
       },
@@ -38523,6 +38992,29 @@
           ]
         }
       },
+      "CrawlType": {
+        "title": "CrawlType",
+        "enum": [
+          "discovery",
+          "sitemap"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "CrawlType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "discovery",
+              "name": "Discovery"
+            },
+            {
+              "value": "sitemap",
+              "name": "Sitemap"
+            }
+          ]
+        }
+      },
       "CreateAgentBranchResponseModel": {
         "title": "CreateAgentBranchResponseModel",
         "required": [
@@ -38869,6 +39361,46 @@
           },
           "description": {
             "$ref": "#/components/schemas/CreateConversationTagRequestModelDescription"
+          }
+        }
+      },
+      "CreateCrawlJobResponseModel": {
+        "title": "CreateCrawlJobResponseModel",
+        "required": [
+          "id",
+          "type",
+          "root_folder_id",
+          "status",
+          "created_at"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "title": "Id",
+            "type": "string"
+          },
+          "type": {
+            "$ref": "#/components/schemas/CrawlType"
+          },
+          "root_folder_id": {
+            "title": "Root Folder Id",
+            "type": "string"
+          },
+          "status": {
+            "title": "Status",
+            "type": "string"
+          },
+          "created_at": {
+            "title": "Created At",
+            "type": "integer"
+          },
+          "folder_path": {
+            "title": "Folder Path",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/KnowledgeBaseFolderPathSegmentSummaryResponseModel"
+            },
+            "description": "The folder path segments leading to the root folder, from root to parent folder."
           }
         }
       },
@@ -43435,6 +43967,24 @@
           }
         }
       },
+      "EvaluationCriteriaSummaryResult": {
+        "title": "EvaluationCriteriaSummaryResult",
+        "required": [
+          "result"
+        ],
+        "type": "object",
+        "properties": {
+          "result": {
+            "$ref": "#/components/schemas/EvaluationSuccessResult"
+          },
+          "score": {
+            "$ref": "#/components/schemas/EvaluationCriteriaSummaryResultScore"
+          },
+          "max_score": {
+            "$ref": "#/components/schemas/EvaluationCriteriaSummaryResultMaxScore"
+          }
+        }
+      },
       "EvaluationSettingsInput": {
         "title": "EvaluationSettings",
         "type": "object",
@@ -45577,6 +46127,78 @@
           "has_more": {
             "title": "Has More",
             "type": "boolean"
+          }
+        }
+      },
+      "GetCrawlJobResponseModel": {
+        "title": "GetCrawlJobResponseModel",
+        "required": [
+          "seed_url",
+          "max_depth",
+          "max_pages",
+          "root_folder_id",
+          "updated_at",
+          "id",
+          "created_at"
+        ],
+        "type": "object",
+        "properties": {
+          "type": {
+            "$ref": "#/components/schemas/CrawlType"
+          },
+          "seed_url": {
+            "title": "Seed Url",
+            "type": "string"
+          },
+          "pattern": {
+            "$ref": "#/components/schemas/GetCrawlJobResponseModelPattern"
+          },
+          "max_depth": {
+            "title": "Max Depth",
+            "type": "integer"
+          },
+          "max_pages": {
+            "title": "Max Pages",
+            "type": "integer"
+          },
+          "status": {
+            "$ref": "#/components/schemas/CrawlStatus"
+          },
+          "pages_identified": {
+            "title": "Pages Identified",
+            "type": "integer",
+            "default": 0
+          },
+          "pages_scraped": {
+            "title": "Pages Scraped",
+            "type": "integer",
+            "default": 0
+          },
+          "pages_skipped": {
+            "title": "Pages Skipped",
+            "type": "integer",
+            "default": 0
+          },
+          "pages_failed": {
+            "title": "Pages Failed",
+            "type": "integer",
+            "default": 0
+          },
+          "root_folder_id": {
+            "title": "Root Folder Id",
+            "type": "string"
+          },
+          "updated_at": {
+            "title": "Updated At",
+            "type": "integer"
+          },
+          "id": {
+            "title": "Id",
+            "type": "string"
+          },
+          "created_at": {
+            "title": "Created At",
+            "type": "integer"
           }
         }
       },
@@ -50506,6 +51128,25 @@
         },
         "description": "List clients ordered by most recently updated, with an optional limit."
       },
+      "ListCrawlJobsResponseModel": {
+        "title": "ListCrawlJobsResponseModel",
+        "required": [
+          "crawl_jobs"
+        ],
+        "type": "object",
+        "properties": {
+          "crawl_jobs": {
+            "title": "Crawl Jobs",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/GetCrawlJobResponseModel"
+            }
+          },
+          "next_cursor": {
+            "$ref": "#/components/schemas/ListCrawlJobsResponseModelNextCursor"
+          }
+        }
+      },
       "ListCustomerFacingAgentsParams": {
         "title": "ListCustomerFacingAgentsParams",
         "type": "object",
@@ -50861,7 +51502,7 @@
             "items": {
               "type": "string"
             },
-            "description": "List of test IDs to fetch. No duplicates allowed."
+            "description": "List of test IDs to fetch. No duplicates allowed. Prefer at most 1000 IDs per request."
           }
         }
       },
@@ -56721,11 +57362,61 @@
           },
           "type": {
             "$ref": "#/components/schemas/ProcedureType"
+          },
+          "trigger": {
+            "title": "Trigger",
+            "type": "string",
+            "description": "When the agent should use this procedure. Empty string means this is a sub-procedure that should only start when another procedure references it."
+          },
+          "referenced_tool_ids": {
+            "title": "Referenced Tool Ids",
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Tool IDs referenced in the procedure content"
+          },
+          "referenced_kb_ids": {
+            "title": "Referenced Kb Ids",
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Knowledge base IDs referenced in the procedure content"
+          },
+          "referenced_procedure_ids": {
+            "title": "Referenced Procedure Ids",
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Procedure IDs referenced in the procedure content"
+          },
+          "referenced_dynamic_variables": {
+            "title": "Referenced Dynamic Variables",
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Dynamic variable names used in the procedure content"
           }
         },
         "example": {
           "name": "Customer Support Procedure",
           "procedure_id": "agtprc_6qbpwdq8n01bxhk44bgjy6f10ck3",
+          "referenced_dynamic_variables": [
+            "customer_id"
+          ],
+          "referenced_kb_ids": [
+            "kb_123"
+          ],
+          "referenced_procedure_ids": [
+            "agtprc_other"
+          ],
+          "referenced_tool_ids": [
+            "tool_123"
+          ],
+          "trigger": "When the customer asks for support",
           "type": "free_form",
           "version_id": "agtprcv_7rbqxer9o12cyxi55ckw6sgz1dl4"
         }
@@ -56771,13 +57462,51 @@
             "$ref": "#/components/schemas/ProjectCreationMetaResponseModelStatus"
           },
           "type": {
-            "$ref": "#/components/schemas/ProjectCreationMetaResponseModelType"
+            "$ref": "#/components/schemas/ProjectCreationMetaType"
           }
         },
         "example": {
           "creation_progress": 0.5,
           "status": "pending",
           "type": "blank"
+        }
+      },
+      "ProjectCreationMetaType": {
+        "title": "ProjectCreationMetaType",
+        "enum": [
+          "blank",
+          "generate_podcast",
+          "auto_assign_voices",
+          "dub_video",
+          "import_speech"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "ProjectCreationMetaType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "blank",
+              "name": "Blank"
+            },
+            {
+              "value": "generate_podcast",
+              "name": "GeneratePodcast"
+            },
+            {
+              "value": "auto_assign_voices",
+              "name": "AutoAssignVoices"
+            },
+            {
+              "value": "dub_video",
+              "name": "DubVideo"
+            },
+            {
+              "value": "import_speech",
+              "name": "ImportSpeech"
+            }
+          ]
         }
       },
       "ProjectExtendedResponseModel": {
@@ -72157,6 +72886,9 @@
           "text_contents": {
             "$ref": "#/components/schemas/WidgetLanguagePresetTextContents"
           },
+          "text_contents_translation": {
+            "$ref": "#/components/schemas/WidgetLanguagePresetTextContentsTranslation"
+          },
           "terms_text": {
             "$ref": "#/components/schemas/WidgetLanguagePresetTermsText"
           },
@@ -72472,6 +73204,18 @@
           },
           "typing_indicator": {
             "$ref": "#/components/schemas/WidgetTextContentsTypingIndicator"
+          }
+        }
+      },
+      "WidgetTextContentsTranslation": {
+        "title": "WidgetTextContentsTranslation",
+        "type": "object",
+        "properties": {
+          "source": {
+            "$ref": "#/components/schemas/WidgetTextContentsTranslationSourceProperty"
+          },
+          "text": {
+            "$ref": "#/components/schemas/WidgetTextContentsTranslationTextProperty"
           }
         }
       },
@@ -78303,6 +79047,37 @@
         "title": "From Url",
         "type": "string",
         "description": "An optional URL from which we will extract content to initialize the Studio project. If this is set, \u0027from_url\u0027 and \u0027from_content\u0027 must be null. If neither \u0027from_url\u0027, \u0027from_document\u0027, \u0027from_content\u0027 are provided we will initialize the Studio project as blank.",
+        "nullable": true
+      },
+      "BodyCreateCrawlJobV1ConvaiKnowledgeBaseCrawlPostPattern": {
+        "title": "Pattern",
+        "maxLength": 2048,
+        "type": "string",
+        "description": "If set, only URLs that match this pattern are included.",
+        "nullable": true
+      },
+      "BodyCreateCrawlJobV1ConvaiKnowledgeBaseCrawlPostSitemapUrls": {
+        "title": "Sitemap Urls",
+        "type": "object",
+        "anyOf": [
+          {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          {
+            "enum": [
+              null
+            ]
+          }
+        ],
+        "description": "List of URLs to crawl from sitemap (optional, overrides automatic URL discovery)."
+      },
+      "BodyCreateCrawlJobV1ConvaiKnowledgeBaseCrawlPostParentFolderId": {
+        "title": "Parent Folder Id",
+        "type": "string",
+        "description": "If set, the created document or folder will be placed inside the given folder.",
         "nullable": true
       },
       "BodyCreateFileDocumentV1ConvaiKnowledgeBaseFilePostName": {
@@ -85220,6 +85995,61 @@
           }
         }
       },
+      "ConversationSummaryResponseModelDataCollectionResults": {
+        "title": "Data Collection Results",
+        "required": [
+          "type"
+        ],
+        "type": "object",
+        "anyOf": [
+          {
+            "type": "object"
+          },
+          {
+            "enum": [
+              null
+            ]
+          }
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "Union discriminator"
+          }
+        },
+        "discriminator": {
+          "propertyName": "type"
+        }
+      },
+      "ConversationSummaryResponseModelEvaluationCriteriaResults": {
+        "title": "Evaluation Criteria Results",
+        "required": [
+          "type"
+        ],
+        "type": "object",
+        "anyOf": [
+          {
+            "type": "object",
+            "additionalProperties": {
+              "$ref": "#/components/schemas/EvaluationCriteriaSummaryResult"
+            }
+          },
+          {
+            "enum": [
+              null
+            ]
+          }
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "Union discriminator"
+          }
+        },
+        "discriminator": {
+          "propertyName": "type"
+        }
+      },
       "ConversationTtsUsageModelPrimaryTtsModel": {
         "title": "Primary Tts Model",
         "type": "string",
@@ -87283,6 +88113,16 @@
         "type": "string",
         "nullable": true
       },
+      "EvaluationCriteriaSummaryResultScore": {
+        "title": "Score",
+        "type": "integer",
+        "nullable": true
+      },
+      "EvaluationCriteriaSummaryResultMaxScore": {
+        "title": "Max Score",
+        "type": "integer",
+        "nullable": true
+      },
       "ExotelOutboundCallResponseConversationId": {
         "title": "Conversation Id",
         "type": "string",
@@ -88167,6 +89007,11 @@
       },
       "GetConversationsPageResponseModelNextCursor": {
         "title": "Next Cursor",
+        "type": "string",
+        "nullable": true
+      },
+      "GetCrawlJobResponseModelPattern": {
+        "title": "Pattern",
         "type": "string",
         "nullable": true
       },
@@ -90528,6 +91373,11 @@
             "UrlSecretAuthResponse": "#/components/schemas/UrlSecretAuthResponse"
           }
         }
+      },
+      "ListCrawlJobsResponseModelNextCursor": {
+        "title": "Next Cursor",
+        "type": "string",
+        "nullable": true
       },
       "ListMcpToolsResponseModelErrorMessage": {
         "title": "Error Message",
@@ -103183,6 +104033,35 @@
           }
         }
       },
+      "WidgetLanguagePresetTextContentsTranslation": {
+        "required": [
+          "type"
+        ],
+        "type": "object",
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/WidgetTextContentsTranslation"
+          },
+          {
+            "enum": [
+              null
+            ]
+          }
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "Union discriminator"
+          }
+        },
+        "description": "The translation cache for the text contents",
+        "discriminator": {
+          "propertyName": "type",
+          "mapping": {
+            "WidgetTextContentsTranslation": "#/components/schemas/WidgetTextContentsTranslation"
+          }
+        }
+      },
       "WidgetLanguagePresetTermsText": {
         "title": "Terms Text",
         "type": "string",
@@ -105952,6 +106831,22 @@
         },
         "description": "Language presets for the widget"
       },
+      "WidgetTextContentsTranslationSource": {
+        "title": "Source",
+        "type": "object",
+        "additionalProperties": {
+          "type": "string"
+        },
+        "description": "The source text each translated field was derived from"
+      },
+      "WidgetTextContentsTranslationText": {
+        "title": "Text",
+        "type": "object",
+        "additionalProperties": {
+          "type": "string"
+        },
+        "description": "The last auto-translated output for each translated field"
+      },
       "WorkspaceAuditLogEntryResponseMetadata": {
         "title": "Metadata",
         "type": "object",
@@ -106010,10 +106905,6 @@
         "format": "binary"
       },
       "TextToVoicePreviewStream200Response": {
-        "type": "string",
-        "format": "binary"
-      },
-      "VideoToMusic200Response": {
         "type": "string",
         "format": "binary"
       },
@@ -106345,6 +107236,10 @@
       },
       "UnshareResourceEndpoint200Response": {
         "type": "object"
+      },
+      "VideoToMusic200Response": {
+        "type": "string",
+        "format": "binary"
       },
       "ResponseSpeechToTextV1SpeechToTextPost": {
         "title": "Response Speech To Text V1 Speech To Text Post",
@@ -106693,6 +107588,9 @@
         "additionalProperties": {
           "$ref": "#/components/schemas/ResponseGetKnowledgeBaseSummariesByIdsV1ConvaiKnowledgeBaseSummariesGetAdditionalProperties"
         }
+      },
+      "CancelCrawlJobRoute200Response": {
+        "type": "object"
       },
       "ResponseUpdateDocumentV1ConvaiKnowledgeBaseDocumentationIdPatch": {
         "title": "Response Update Document V1 Convai Knowledge Base  Documentation Id  Patch",
@@ -109166,10 +110064,6 @@
         "type": "string",
         "format": "binary"
       },
-      "VideoToMusic200ResponseResponseJson": {
-        "type": "string",
-        "format": "binary"
-      },
       "StreamProjectSnapshotArchiveEndpoint200ResponseResponseXZip": {
         "type": "string",
         "format": "binary"
@@ -109235,6 +110129,10 @@
       "UnshareResourceEndpoint200ResponseResponseJson": {
         "type": "object"
       },
+      "VideoToMusic200ResponseResponseJson": {
+        "type": "string",
+        "format": "binary"
+      },
       "DeleteTranscriptById200ResponseResponseJson": {
         "type": "object"
       },
@@ -109276,6 +110174,9 @@
         "additionalProperties": {
           "$ref": "#/components/schemas/ResponseGetKnowledgeBaseSummariesByIdsV1ConvaiKnowledgeBaseSummariesGetAdditionalProperties"
         }
+      },
+      "CancelCrawlJobRoute200ResponseResponseJson": {
+        "type": "object"
       },
       "DeleteKnowledgeBaseDocument200ResponseResponseJson": {
         "type": "object"
@@ -110720,6 +111621,20 @@
           "$ref": "#/components/schemas/WidgetLanguagePresetResponse"
         },
         "description": "Language presets for the widget"
+      },
+      "WidgetTextContentsTranslationSourceProperty": {
+        "type": "object",
+        "additionalProperties": {
+          "type": "string"
+        },
+        "description": "The source text each translated field was derived from"
+      },
+      "WidgetTextContentsTranslationTextProperty": {
+        "type": "object",
+        "additionalProperties": {
+          "type": "string"
+        },
+        "description": "The last auto-translated output for each translated field"
       },
       "WorkspaceAuditLogEntryResponseMetadataProperty": {
         "type": "object",
@@ -113308,6 +114223,7 @@
       "ProjectCreationMetaResponseModelStatus": {
         "title": "Status",
         "enum": [
+          "draft",
           "pending",
           "creating",
           "finished",
@@ -113320,6 +114236,10 @@
           "name": "ProjectCreationMetaResponseModelStatus",
           "modelAsString": false,
           "values": [
+            {
+              "value": "draft",
+              "name": "Draft"
+            },
             {
               "value": "pending",
               "name": "Pending"
@@ -113335,45 +114255,6 @@
             {
               "value": "failed",
               "name": "Failed"
-            }
-          ]
-        }
-      },
-      "ProjectCreationMetaResponseModelType": {
-        "title": "Type",
-        "enum": [
-          "blank",
-          "generate_podcast",
-          "auto_assign_voices",
-          "dub_video",
-          "import_speech"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "description": "The type of the project creation action.",
-        "x-ms-enum": {
-          "name": "ProjectCreationMetaResponseModelType",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "blank",
-              "name": "Blank"
-            },
-            {
-              "value": "generate_podcast",
-              "name": "GeneratePodcast"
-            },
-            {
-              "value": "auto_assign_voices",
-              "name": "AutoAssignVoices"
-            },
-            {
-              "value": "dub_video",
-              "name": "DubVideo"
-            },
-            {
-              "value": "import_speech",
-              "name": "ImportSpeech"
             }
           ]
         }

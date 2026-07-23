@@ -68,6 +68,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationSummaryResponseModelConversationInitiationSource ConversationInitiationSource { get; set; }
 #endif
+        /// <summary>The data_collection_results property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationSummaryResponseModelDataCollectionResults? DataCollectionResults { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationSummaryResponseModelDataCollectionResults DataCollectionResults { get; set; }
+#endif
         /// <summary>The direction property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -75,6 +83,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #nullable restore
 #else
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationSummaryResponseModelDirection Direction { get; set; }
+#endif
+        /// <summary>The evaluation_criteria_results property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationSummaryResponseModelEvaluationCriteriaResults? EvaluationCriteriaResults { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationSummaryResponseModelEvaluationCriteriaResults EvaluationCriteriaResults { get; set; }
 #endif
         /// <summary>The main_language property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -100,6 +116,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public int? StartTimeUnixSecs { get; set; }
         /// <summary>The status property</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationSummaryResponseModelStatus? Status { get; set; }
+        /// <summary>Conversation tag ids assigned to this conversation.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? TagIds { get; set; }
+#nullable restore
+#else
+        public List<string> TagIds { get; set; }
+#endif
         /// <summary>The termination_reason property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -166,13 +190,16 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "call_summary_title", n => { CallSummaryTitle = n.GetStringValue(); } },
                 { "conversation_id", n => { ConversationId = n.GetStringValue(); } },
                 { "conversation_initiation_source", n => { ConversationInitiationSource = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationSummaryResponseModelConversationInitiationSource>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationSummaryResponseModelConversationInitiationSource.CreateFromDiscriminatorValue); } },
+                { "data_collection_results", n => { DataCollectionResults = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationSummaryResponseModelDataCollectionResults>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationSummaryResponseModelDataCollectionResults.CreateFromDiscriminatorValue); } },
                 { "direction", n => { Direction = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationSummaryResponseModelDirection>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationSummaryResponseModelDirection.CreateFromDiscriminatorValue); } },
+                { "evaluation_criteria_results", n => { EvaluationCriteriaResults = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationSummaryResponseModelEvaluationCriteriaResults>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationSummaryResponseModelEvaluationCriteriaResults.CreateFromDiscriminatorValue); } },
                 { "main_language", n => { MainLanguage = n.GetStringValue(); } },
                 { "message_count", n => { MessageCount = n.GetIntValue(); } },
                 { "rating", n => { Rating = n.GetDoubleValue(); } },
                 { "sentiment_analysis", n => { SentimentAnalysis = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationSummaryResponseModelSentimentAnalysis>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationSummaryResponseModelSentimentAnalysis.CreateFromDiscriminatorValue); } },
                 { "start_time_unix_secs", n => { StartTimeUnixSecs = n.GetIntValue(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationSummaryResponseModelStatus>(); } },
+                { "tag_ids", n => { TagIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "termination_reason", n => { TerminationReason = n.GetStringValue(); } },
                 { "tool_names", n => { ToolNames = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationSummaryResponseModelToolNames>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationSummaryResponseModelToolNames.CreateFromDiscriminatorValue); } },
                 { "transcript_summary", n => { TranscriptSummary = n.GetStringValue(); } },
@@ -195,13 +222,16 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteStringValue("call_summary_title", CallSummaryTitle);
             writer.WriteStringValue("conversation_id", ConversationId);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationSummaryResponseModelConversationInitiationSource>("conversation_initiation_source", ConversationInitiationSource);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationSummaryResponseModelDataCollectionResults>("data_collection_results", DataCollectionResults);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationSummaryResponseModelDirection>("direction", Direction);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationSummaryResponseModelEvaluationCriteriaResults>("evaluation_criteria_results", EvaluationCriteriaResults);
             writer.WriteStringValue("main_language", MainLanguage);
             writer.WriteIntValue("message_count", MessageCount);
             writer.WriteDoubleValue("rating", Rating);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationSummaryResponseModelSentimentAnalysis>("sentiment_analysis", SentimentAnalysis);
             writer.WriteIntValue("start_time_unix_secs", StartTimeUnixSecs);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationSummaryResponseModelStatus>("status", Status);
+            writer.WriteCollectionOfPrimitiveValues<string>("tag_ids", TagIds);
             writer.WriteStringValue("termination_reason", TerminationReason);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationSummaryResponseModelToolNames>("tool_names", ToolNames);
             writer.WriteStringValue("transcript_summary", TranscriptSummary);

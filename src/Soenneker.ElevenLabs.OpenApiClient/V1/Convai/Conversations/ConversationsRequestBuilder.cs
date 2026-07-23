@@ -47,7 +47,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Conversations
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ConversationsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/convai/conversations{?agent_id*,branch_id*,call_duration_max_secs*,call_duration_min_secs*,call_start_after_unix*,call_start_before_unix*,call_successful*,conversation_initiation_source*,conversation_product_type*,cursor*,data_collection_params*,evaluation_params*,exclude_statuses*,has_feedback_comment*,main_languages*,page_size*,rating_max*,rating_min*,search*,summary_mode*,tag_ids*,termination_reasons*,text_only*,tool_names*,tool_names_errored*,tool_names_successful*,topic_ids*,user_id*,workflow_node_entered_id*}", pathParameters)
+        public ConversationsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/convai/conversations{?agent_id*,branch_id*,call_duration_max_secs*,call_duration_min_secs*,call_start_after_unix*,call_start_before_unix*,call_successful*,conversation_initiation_source*,conversation_product_type*,cursor*,data_collection_ids*,data_collection_params*,evaluation_criteria_ids*,evaluation_params*,exclude_statuses*,has_feedback_comment*,main_languages*,page_size*,rating_max*,rating_min*,search*,summary_mode*,tag_ids*,termination_reasons*,text_only*,tool_names*,tool_names_errored*,tool_names_successful*,topic_ids*,user_id*,visited_agent_branch_ids*,visited_agent_ids*,workflow_node_entered_id*}", pathParameters)
         {
         }
         /// <summary>
@@ -55,7 +55,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Conversations
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ConversationsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/convai/conversations{?agent_id*,branch_id*,call_duration_max_secs*,call_duration_min_secs*,call_start_after_unix*,call_start_before_unix*,call_successful*,conversation_initiation_source*,conversation_product_type*,cursor*,data_collection_params*,evaluation_params*,exclude_statuses*,has_feedback_comment*,main_languages*,page_size*,rating_max*,rating_min*,search*,summary_mode*,tag_ids*,termination_reasons*,text_only*,tool_names*,tool_names_errored*,tool_names_successful*,topic_ids*,user_id*,workflow_node_entered_id*}", rawUrl)
+        public ConversationsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/convai/conversations{?agent_id*,branch_id*,call_duration_max_secs*,call_duration_min_secs*,call_start_after_unix*,call_start_before_unix*,call_successful*,conversation_initiation_source*,conversation_product_type*,cursor*,data_collection_ids*,data_collection_params*,evaluation_criteria_ids*,evaluation_params*,exclude_statuses*,has_feedback_comment*,main_languages*,page_size*,rating_max*,rating_min*,search*,summary_mode*,tag_ids*,termination_reasons*,text_only*,tool_names*,tool_names_errored*,tool_names_successful*,topic_ids*,user_id*,visited_agent_branch_ids*,visited_agent_ids*,workflow_node_entered_id*}", rawUrl)
         {
         }
         /// <summary>
@@ -186,6 +186,16 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Conversations
             [QueryParameter("cursor")]
             public string Cursor { get; set; }
 #endif
+            /// <summary>Data collection field IDs to include in each conversation summary. Repeat param. When omitted, data_collection_results is not returned.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("data_collection_ids")]
+            public string? DataCollectionIds { get; set; }
+#nullable restore
+#else
+            [QueryParameter("data_collection_ids")]
+            public string DataCollectionIds { get; set; }
+#endif
             /// <summary>&quot;Data collection filters. Repeat param. Format: id:op:value where op is one of eq|neq|gt|gte|lt|lte|in|exists|missing. For in, pipe-delimit values.&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -195,6 +205,16 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Conversations
 #else
             [QueryParameter("data_collection_params")]
             public string DataCollectionParams { get; set; }
+#endif
+            /// <summary>Evaluation criteria IDs to include in each conversation summary. Repeat param. When omitted, evaluation_criteria_results is not returned.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("evaluation_criteria_ids")]
+            public string? EvaluationCriteriaIds { get; set; }
+#nullable restore
+#else
+            [QueryParameter("evaluation_criteria_ids")]
+            public string EvaluationCriteriaIds { get; set; }
 #endif
             /// <summary>&quot;Evaluation filters. Repeat param. Format: criteria_id:result. Example: eval=value_framing:success&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -323,6 +343,26 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Conversations
 #else
             [QueryParameter("user_id")]
             public string UserId { get; set; }
+#endif
+            /// <summary>Filter conversations where any of these agent branches participated. Can not exceed 50 values.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("visited_agent_branch_ids")]
+            public string? VisitedAgentBranchIds { get; set; }
+#nullable restore
+#else
+            [QueryParameter("visited_agent_branch_ids")]
+            public string VisitedAgentBranchIds { get; set; }
+#endif
+            /// <summary>Filter conversations where any of these agents participated. Can not exceed 50 values.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("visited_agent_ids")]
+            public string? VisitedAgentIds { get; set; }
+#nullable restore
+#else
+            [QueryParameter("visited_agent_ids")]
+            public string VisitedAgentIds { get; set; }
 #endif
             /// <summary>Filter conversations to only those that entered the given node.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

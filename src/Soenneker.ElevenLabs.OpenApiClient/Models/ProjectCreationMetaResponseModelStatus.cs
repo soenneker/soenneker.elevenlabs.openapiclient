@@ -7,6 +7,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum ProjectCreationMetaResponseModelStatus
     {
+        [EnumMember(Value = "draft")]
+        #pragma warning disable CS1591
+        Draft,
+        #pragma warning restore CS1591
         [EnumMember(Value = "pending")]
         #pragma warning disable CS1591
         Pending,

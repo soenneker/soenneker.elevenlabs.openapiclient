@@ -34,7 +34,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.AgentTesting.Summaries
         {
         }
         /// <summary>
-        /// Gets multiple agent response tests by their IDs. Returns a dictionary mapping test IDs to test summaries.
+        /// Gets agent response test summaries for the requested test IDs.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.GetTestsSummariesByIdsResponseModel"/></returns>
         /// <param name="body">The request body</param>
@@ -59,7 +59,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.AgentTesting.Summaries
             return await RequestAdapter.SendAsync<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetTestsSummariesByIdsResponseModel>(requestInfo, global::Soenneker.ElevenLabs.OpenApiClient.Models.GetTestsSummariesByIdsResponseModel.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Gets multiple agent response tests by their IDs. Returns a dictionary mapping test IDs to test summaries.
+        /// Gets agent response test summaries for the requested test IDs.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

@@ -22,7 +22,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Conversations.Messages.Te
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TextSearchRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/convai/conversations/messages/text-search?text_query={text_query}{&agent_id*,branch_id*,call_duration_max_secs*,call_duration_min_secs*,call_start_after_unix*,call_start_before_unix*,call_successful*,conversation_initiation_source*,conversation_product_type*,cursor*,data_collection_params*,evaluation_params*,exclude_statuses*,has_feedback_comment*,main_languages*,page_size*,rating_max*,rating_min*,sort_by*,summary_mode*,termination_reasons*,text_only*,tool_names*,tool_names_errored*,tool_names_successful*,topic_ids*,user_id*}", pathParameters)
+        public TextSearchRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/convai/conversations/messages/text-search?text_query={text_query}{&agent_id*,branch_id*,call_duration_max_secs*,call_duration_min_secs*,call_start_after_unix*,call_start_before_unix*,call_successful*,conversation_initiation_source*,conversation_product_type*,cursor*,data_collection_params*,evaluation_params*,exclude_statuses*,has_feedback_comment*,main_languages*,page_size*,rating_max*,rating_min*,sort_by*,summary_mode*,termination_reasons*,text_only*,tool_names*,tool_names_errored*,tool_names_successful*,topic_ids*,user_id*,visited_agent_branch_ids*,visited_agent_ids*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Conversations.Messages.Te
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TextSearchRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/convai/conversations/messages/text-search?text_query={text_query}{&agent_id*,branch_id*,call_duration_max_secs*,call_duration_min_secs*,call_start_after_unix*,call_start_before_unix*,call_successful*,conversation_initiation_source*,conversation_product_type*,cursor*,data_collection_params*,evaluation_params*,exclude_statuses*,has_feedback_comment*,main_languages*,page_size*,rating_max*,rating_min*,sort_by*,summary_mode*,termination_reasons*,text_only*,tool_names*,tool_names_errored*,tool_names_successful*,topic_ids*,user_id*}", rawUrl)
+        public TextSearchRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/convai/conversations/messages/text-search?text_query={text_query}{&agent_id*,branch_id*,call_duration_max_secs*,call_duration_min_secs*,call_start_after_unix*,call_start_before_unix*,call_successful*,conversation_initiation_source*,conversation_product_type*,cursor*,data_collection_params*,evaluation_params*,exclude_statuses*,has_feedback_comment*,main_languages*,page_size*,rating_max*,rating_min*,sort_by*,summary_mode*,termination_reasons*,text_only*,tool_names*,tool_names_errored*,tool_names_successful*,topic_ids*,user_id*,visited_agent_branch_ids*,visited_agent_ids*}", rawUrl)
         {
         }
         /// <summary>
@@ -290,6 +290,26 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Conversations.Messages.Te
 #else
             [QueryParameter("user_id")]
             public string UserId { get; set; }
+#endif
+            /// <summary>Filter conversations where any of these agent branches participated. Can not exceed 50 values.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("visited_agent_branch_ids")]
+            public string? VisitedAgentBranchIds { get; set; }
+#nullable restore
+#else
+            [QueryParameter("visited_agent_branch_ids")]
+            public string VisitedAgentBranchIds { get; set; }
+#endif
+            /// <summary>Filter conversations where any of these agents participated. Can not exceed 50 values.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("visited_agent_ids")]
+            public string? VisitedAgentIds { get; set; }
+#nullable restore
+#else
+            [QueryParameter("visited_agent_ids")]
+            public string VisitedAgentIds { get; set; }
 #endif
         }
     }

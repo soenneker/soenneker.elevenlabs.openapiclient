@@ -5,6 +5,7 @@ using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.ElevenLabs.OpenApiClient.Models;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.KnowledgeBase.BulkMove;
+using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.KnowledgeBase.Crawl;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.KnowledgeBase.FileNamespace;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.KnowledgeBase.Folder;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.KnowledgeBase.Item;
@@ -30,6 +31,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.KnowledgeBase
         public global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.KnowledgeBase.BulkMove.BulkMoveRequestBuilder BulkMove
         {
             get => new global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.KnowledgeBase.BulkMove.BulkMoveRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The crawl property</summary>
+        public global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.KnowledgeBase.Crawl.CrawlRequestBuilder Crawl
+        {
+            get => new global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.KnowledgeBase.Crawl.CrawlRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The file property</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.KnowledgeBase.FileNamespace.FileRequestBuilder File

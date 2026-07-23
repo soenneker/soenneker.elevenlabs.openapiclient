@@ -7,37 +7,30 @@ using System.IO;
 using System;
 namespace Soenneker.ElevenLabs.OpenApiClient.Models
 {
+    /// <summary>
+    /// List of URLs to crawl from sitemap (optional, overrides automatic URL discovery).
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
-    public partial class ListTestsByIdsRequestModel : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
+    public partial class BodyCreateCrawlJobV1ConvaiKnowledgeBaseCrawlPostSitemapUrls : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>List of test IDs to fetch. No duplicates allowed. Prefer at most 1000 IDs per request.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<string>? TestIds { get; set; }
-#nullable restore
-#else
-        public List<string> TestIds { get; set; }
-#endif
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ListTestsByIdsRequestModel"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateCrawlJobV1ConvaiKnowledgeBaseCrawlPostSitemapUrls"/> and sets the default values.
         /// </summary>
-        public ListTestsByIdsRequestModel()
+        public BodyCreateCrawlJobV1ConvaiKnowledgeBaseCrawlPostSitemapUrls()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ListTestsByIdsRequestModel"/></returns>
+        /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateCrawlJobV1ConvaiKnowledgeBaseCrawlPostSitemapUrls"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.ElevenLabs.OpenApiClient.Models.ListTestsByIdsRequestModel CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateCrawlJobV1ConvaiKnowledgeBaseCrawlPostSitemapUrls CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.ListTestsByIdsRequestModel();
+            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateCrawlJobV1ConvaiKnowledgeBaseCrawlPostSitemapUrls();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -47,7 +40,6 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "test_ids", n => { TestIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
         }
         /// <summary>
@@ -57,7 +49,6 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfPrimitiveValues<string>("test_ids", TestIds);
             writer.WriteAdditionalData(AdditionalData);
         }
     }
