@@ -5,6 +5,7 @@ using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.ElevenLabs.OpenApiClient.Models;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.BatchCalling.Item.Cancel;
+using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.BatchCalling.Item.Export;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.BatchCalling.Item.Retry;
 using System.Collections.Generic;
 using System.IO;
@@ -23,6 +24,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.BatchCalling.Item
         public global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.BatchCalling.Item.Cancel.CancelRequestBuilder Cancel
         {
             get => new global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.BatchCalling.Item.Cancel.CancelRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The export property</summary>
+        public global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.BatchCalling.Item.Export.ExportRequestBuilder Export
+        {
+            get => new global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.BatchCalling.Item.Export.ExportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The retry property</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.BatchCalling.Item.Retry.RetryRequestBuilder Retry

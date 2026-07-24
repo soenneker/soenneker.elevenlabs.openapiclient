@@ -4,8 +4,10 @@ using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.ElevenLabs.OpenApiClient.Models;
+using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.KnowledgeBase.BulkDelete;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.KnowledgeBase.BulkMove;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.KnowledgeBase.Crawl;
+using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.KnowledgeBase.DependentAgents;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.KnowledgeBase.FileNamespace;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.KnowledgeBase.Folder;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.KnowledgeBase.Item;
@@ -27,6 +29,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.KnowledgeBase
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class KnowledgeBaseRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The bulkDelete property</summary>
+        public global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.KnowledgeBase.BulkDelete.BulkDeleteRequestBuilder BulkDelete
+        {
+            get => new global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.KnowledgeBase.BulkDelete.BulkDeleteRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The bulkMove property</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.KnowledgeBase.BulkMove.BulkMoveRequestBuilder BulkMove
         {
@@ -36,6 +43,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.KnowledgeBase
         public global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.KnowledgeBase.Crawl.CrawlRequestBuilder Crawl
         {
             get => new global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.KnowledgeBase.Crawl.CrawlRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The dependentAgents property</summary>
+        public global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.KnowledgeBase.DependentAgents.DependentAgentsRequestBuilder DependentAgents
+        {
+            get => new global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.KnowledgeBase.DependentAgents.DependentAgentsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The file property</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.KnowledgeBase.FileNamespace.FileRequestBuilder File
