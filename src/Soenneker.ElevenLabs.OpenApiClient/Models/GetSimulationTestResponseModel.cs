@@ -121,6 +121,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.SimulationToolMockBehaviorConfig ToolMockConfig { get; set; }
 #endif
+        /// <summary>Test-specific response mocks, keyed by tool ID. Applied ahead of the tool&apos;s shared mocks and only within this test. Only take effect for tools that are mocked (see tool_mock_config).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetSimulationTestResponseModelToolMockOverridesProperty? ToolMockOverrides { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetSimulationTestResponseModelToolMockOverridesProperty ToolMockOverrides { get; set; }
+#endif
         /// <summary>The type property</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetSimulationTestResponseModel_type? Type { get; set; }
         /// <summary>
@@ -163,6 +171,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "success_condition", n => { SuccessCondition = n.GetStringValue(); } },
                 { "success_conditions", n => { SuccessConditions = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "tool_mock_config", n => { ToolMockConfig = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SimulationToolMockBehaviorConfig>(global::Soenneker.ElevenLabs.OpenApiClient.Models.SimulationToolMockBehaviorConfig.CreateFromDiscriminatorValue); } },
+                { "tool_mock_overrides", n => { ToolMockOverrides = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetSimulationTestResponseModelToolMockOverridesProperty>(global::Soenneker.ElevenLabs.OpenApiClient.Models.GetSimulationTestResponseModelToolMockOverridesProperty.CreateFromDiscriminatorValue); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetSimulationTestResponseModel_type>(); } },
             };
         }
@@ -187,6 +196,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteStringValue("success_condition", SuccessCondition);
             writer.WriteCollectionOfPrimitiveValues<string>("success_conditions", SuccessConditions);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SimulationToolMockBehaviorConfig>("tool_mock_config", ToolMockConfig);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetSimulationTestResponseModelToolMockOverridesProperty>("tool_mock_overrides", ToolMockOverrides);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetSimulationTestResponseModel_type>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }

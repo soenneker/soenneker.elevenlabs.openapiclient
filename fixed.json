@@ -40480,6 +40480,9 @@
           "tool_mock_config": {
             "$ref": "#/components/schemas/SimulationToolMockBehaviorConfig"
           },
+          "tool_mock_overrides": {
+            "$ref": "#/components/schemas/CreateSimulationTestRequestToolMockOverridesProperty"
+          },
           "evaluation_model": {
             "$ref": "#/components/schemas/CreateSimulationTestRequestEvaluationModel"
           },
@@ -48048,6 +48051,9 @@
           },
           "tool_mock_config": {
             "$ref": "#/components/schemas/SimulationToolMockBehaviorConfig"
+          },
+          "tool_mock_overrides": {
+            "$ref": "#/components/schemas/GetSimulationTestResponseModelToolMockOverridesProperty"
           },
           "evaluation_model": {
             "$ref": "#/components/schemas/GetSimulationTestResponseModelEvaluationModel"
@@ -62179,6 +62185,9 @@
             "minLength": 1,
             "type": "string",
             "description": "Literal text message to be spoken by the agent."
+          },
+          "text_translations": {
+            "$ref": "#/components/schemas/SayNodeLiteralMessageInputTextTranslationsProperty"
           }
         }
       },
@@ -62186,7 +62195,8 @@
         "title": "SayNodeLiteralMessage",
         "required": [
           "type",
-          "text"
+          "text",
+          "text_translations"
         ],
         "type": "object",
         "properties": {
@@ -62212,6 +62222,9 @@
             "minLength": 1,
             "type": "string",
             "description": "Literal text message to be spoken by the agent."
+          },
+          "text_translations": {
+            "$ref": "#/components/schemas/SayNodeLiteralMessageOutputTextTranslationsProperty"
           }
         }
       },
@@ -62993,6 +63006,9 @@
           },
           "tool_mock_config": {
             "$ref": "#/components/schemas/SimulationToolMockBehaviorConfig"
+          },
+          "tool_mock_overrides": {
+            "$ref": "#/components/schemas/SimulationTestModelToolMockOverridesProperty"
           },
           "evaluation_model": {
             "$ref": "#/components/schemas/SimulationTestModelEvaluationModel"
@@ -66874,6 +66890,12 @@
             "title": "Mock Result",
             "type": "string",
             "description": "The return value the LLM sees when this mock is active."
+          },
+          "is_error": {
+            "title": "Is Error",
+            "type": "boolean",
+            "description": "If true, the mock result is surfaced to the LLM as a tool error rather than a successful result.",
+            "default": false
           }
         }
       },
@@ -66896,6 +66918,12 @@
             "title": "Mock Result",
             "type": "string",
             "description": "The return value the LLM sees when this mock is active."
+          },
+          "is_error": {
+            "title": "Is Error",
+            "type": "boolean",
+            "description": "If true, the mock result is surfaced to the LLM as a tool error rather than a successful result.",
+            "default": false
           }
         }
       },
@@ -67895,6 +67923,20 @@
               "name": "SipRefer"
             }
           ]
+        }
+      },
+      "TranslatedString": {
+        "title": "TranslatedString",
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "title": "Value",
+            "minLength": 1,
+            "type": "string"
+          }
         }
       },
       "TurnConfig": {
@@ -69341,6 +69383,9 @@
           },
           "tool_mock_config": {
             "$ref": "#/components/schemas/SimulationToolMockBehaviorConfig"
+          },
+          "tool_mock_overrides": {
+            "$ref": "#/components/schemas/UpdateSimulationTestRequestToolMockOverridesProperty"
           },
           "evaluation_model": {
             "$ref": "#/components/schemas/UpdateSimulationTestRequestEvaluationModel"
@@ -106642,6 +106687,17 @@
         "type": "object",
         "description": "Dynamic variables to replace in the agent config during testing"
       },
+      "CreateSimulationTestRequestToolMockOverrides": {
+        "title": "Tool Mock Overrides",
+        "type": "object",
+        "additionalProperties": {
+          "type": "array",
+          "items": {
+            "$ref": "#/components/schemas/ToolResponseMockConfigInput"
+          }
+        },
+        "description": "Test-specific response mocks, keyed by tool ID. Applied ahead of the tool\u0027s shared mocks and only within this test. Only take effect for tools that are mocked (see tool_mock_config)."
+      },
       "CreateStringEnvironmentVariableRequestValues": {
         "title": "Values",
         "type": "object",
@@ -106745,6 +106801,17 @@
         "title": "Dynamic Variables",
         "type": "object",
         "description": "Dynamic variables to replace in the agent config during testing"
+      },
+      "GetSimulationTestResponseModelToolMockOverrides": {
+        "title": "Tool Mock Overrides",
+        "type": "object",
+        "additionalProperties": {
+          "type": "array",
+          "items": {
+            "$ref": "#/components/schemas/ToolResponseMockConfigOutput"
+          }
+        },
+        "description": "Test-specific response mocks, keyed by tool ID. Applied ahead of the tool\u0027s shared mocks and only within this test. Only take effect for tools that are mocked (see tool_mock_config)."
       },
       "GetTestsSummariesByIdsResponseModelTests": {
         "title": "Tests",
@@ -106969,6 +107036,22 @@
         "type": "object",
         "description": "Dynamic variables to replace in the agent config during testing"
       },
+      "SayNodeLiteralMessageInputTextTranslations": {
+        "title": "Text Translations",
+        "type": "object",
+        "additionalProperties": {
+          "$ref": "#/components/schemas/TranslatedString"
+        },
+        "description": "Translations for the text field"
+      },
+      "SayNodeLiteralMessageOutputTextTranslations": {
+        "title": "Text Translations",
+        "type": "object",
+        "additionalProperties": {
+          "$ref": "#/components/schemas/TranslatedString"
+        },
+        "description": "Translations for the text field"
+      },
       "ScopedAnalysisResultEvaluationCriteriaResults": {
         "title": "Evaluation Criteria Results",
         "type": "object",
@@ -106987,6 +107070,17 @@
         "title": "Dynamic Variables",
         "type": "object",
         "description": "Dynamic variables to replace in the agent config during testing"
+      },
+      "SimulationTestModelToolMockOverrides": {
+        "title": "Tool Mock Overrides",
+        "type": "object",
+        "additionalProperties": {
+          "type": "array",
+          "items": {
+            "$ref": "#/components/schemas/ToolResponseMockConfigOutput"
+          }
+        },
+        "description": "Test-specific response mocks, keyed by tool ID. Applied ahead of the tool\u0027s shared mocks and only within this test. Only take effect for tools that are mocked (see tool_mock_config)."
       },
       "SpeakerSegmentDubs": {
         "title": "Dubs",
@@ -107057,6 +107151,17 @@
         "title": "Dynamic Variables",
         "type": "object",
         "description": "Dynamic variables to replace in the agent config during testing"
+      },
+      "UpdateSimulationTestRequestToolMockOverrides": {
+        "title": "Tool Mock Overrides",
+        "type": "object",
+        "additionalProperties": {
+          "type": "array",
+          "items": {
+            "$ref": "#/components/schemas/ToolResponseMockConfigInput"
+          }
+        },
+        "description": "Test-specific response mocks, keyed by tool ID. Applied ahead of the tool\u0027s shared mocks and only within this test. Only take effect for tools that are mocked (see tool_mock_config)."
       },
       "UpdateToolCallUnitTestRequestDynamicVariables": {
         "title": "Dynamic Variables",
@@ -111584,6 +111689,16 @@
         "type": "object",
         "description": "Dynamic variables to replace in the agent config during testing"
       },
+      "CreateSimulationTestRequestToolMockOverridesProperty": {
+        "type": "object",
+        "additionalProperties": {
+          "type": "array",
+          "items": {
+            "$ref": "#/components/schemas/ToolResponseMockConfigInput"
+          }
+        },
+        "description": "Test-specific response mocks, keyed by tool ID. Applied ahead of the tool\u0027s shared mocks and only within this test. Only take effect for tools that are mocked (see tool_mock_config)."
+      },
       "CreateStringEnvironmentVariableRequestValuesProperty": {
         "type": "object",
         "additionalProperties": {
@@ -111676,6 +111791,16 @@
       "GetSimulationTestResponseModelDynamicVariablesProperty": {
         "type": "object",
         "description": "Dynamic variables to replace in the agent config during testing"
+      },
+      "GetSimulationTestResponseModelToolMockOverridesProperty": {
+        "type": "object",
+        "additionalProperties": {
+          "type": "array",
+          "items": {
+            "$ref": "#/components/schemas/ToolResponseMockConfigOutput"
+          }
+        },
+        "description": "Test-specific response mocks, keyed by tool ID. Applied ahead of the tool\u0027s shared mocks and only within this test. Only take effect for tools that are mocked (see tool_mock_config)."
       },
       "GetTestsSummariesByIdsResponseModelTestsProperty": {
         "type": "object",
@@ -111832,6 +111957,20 @@
         "type": "object",
         "description": "Dynamic variables to replace in the agent config during testing"
       },
+      "SayNodeLiteralMessageInputTextTranslationsProperty": {
+        "type": "object",
+        "additionalProperties": {
+          "$ref": "#/components/schemas/TranslatedString"
+        },
+        "description": "Translations for the text field"
+      },
+      "SayNodeLiteralMessageOutputTextTranslationsProperty": {
+        "type": "object",
+        "additionalProperties": {
+          "$ref": "#/components/schemas/TranslatedString"
+        },
+        "description": "Translations for the text field"
+      },
       "ScopedAnalysisResultEvaluationCriteriaResultsProperty": {
         "type": "object",
         "additionalProperties": {
@@ -111847,6 +111986,16 @@
       "SimulationTestModelDynamicVariablesProperty": {
         "type": "object",
         "description": "Dynamic variables to replace in the agent config during testing"
+      },
+      "SimulationTestModelToolMockOverridesProperty": {
+        "type": "object",
+        "additionalProperties": {
+          "type": "array",
+          "items": {
+            "$ref": "#/components/schemas/ToolResponseMockConfigOutput"
+          }
+        },
+        "description": "Test-specific response mocks, keyed by tool ID. Applied ahead of the tool\u0027s shared mocks and only within this test. Only take effect for tools that are mocked (see tool_mock_config)."
       },
       "SpeakerSegmentDubsProperty": {
         "type": "object",
@@ -111906,6 +112055,16 @@
       "UpdateSimulationTestRequestDynamicVariablesProperty": {
         "type": "object",
         "description": "Dynamic variables to replace in the agent config during testing"
+      },
+      "UpdateSimulationTestRequestToolMockOverridesProperty": {
+        "type": "object",
+        "additionalProperties": {
+          "type": "array",
+          "items": {
+            "$ref": "#/components/schemas/ToolResponseMockConfigInput"
+          }
+        },
+        "description": "Test-specific response mocks, keyed by tool ID. Applied ahead of the tool\u0027s shared mocks and only within this test. Only take effect for tools that are mocked (see tool_mock_config)."
       },
       "UpdateToolCallUnitTestRequestDynamicVariablesProperty": {
         "type": "object",
