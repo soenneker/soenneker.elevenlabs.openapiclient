@@ -102,6 +102,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateSpeechEngineRequestTurn Turn { get; set; }
 #endif
+        /// <summary>The vad property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateSpeechEngineRequestVad? Vad { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateSpeechEngineRequestVad Vad { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateSpeechEngineRequest"/> and sets the default values.
         /// </summary>
@@ -138,6 +146,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "tags", n => { Tags = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateSpeechEngineRequestTags>(global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateSpeechEngineRequestTags.CreateFromDiscriminatorValue); } },
                 { "tts", n => { Tts = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateSpeechEngineRequestTts>(global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateSpeechEngineRequestTts.CreateFromDiscriminatorValue); } },
                 { "turn", n => { Turn = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateSpeechEngineRequestTurn>(global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateSpeechEngineRequestTurn.CreateFromDiscriminatorValue); } },
+                { "vad", n => { Vad = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateSpeechEngineRequestVad>(global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateSpeechEngineRequestVad.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -158,6 +167,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateSpeechEngineRequestTags>("tags", Tags);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateSpeechEngineRequestTts>("tts", Tts);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateSpeechEngineRequestTurn>("turn", Turn);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateSpeechEngineRequestVad>("vad", Vad);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

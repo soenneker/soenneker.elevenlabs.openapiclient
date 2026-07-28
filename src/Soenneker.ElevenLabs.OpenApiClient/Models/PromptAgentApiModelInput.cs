@@ -83,10 +83,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The rag property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.RagConfig? Rag { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.RagConfigInput? Rag { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.RagConfig Rag { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.RagConfigInput Rag { get; set; }
 #endif
         /// <summary>Reasoning effort of the model. Only available for some models.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -167,7 +167,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "mcp_server_ids", n => { McpServerIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "native_mcp_server_ids", n => { NativeMcpServerIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "prompt", n => { Prompt = n.GetStringValue(); } },
-                { "rag", n => { Rag = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.RagConfig>(global::Soenneker.ElevenLabs.OpenApiClient.Models.RagConfig.CreateFromDiscriminatorValue); } },
+                { "rag", n => { Rag = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.RagConfigInput>(global::Soenneker.ElevenLabs.OpenApiClient.Models.RagConfigInput.CreateFromDiscriminatorValue); } },
                 { "reasoning_effort", n => { ReasoningEffort = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentApiModelInputReasoningEffort>(global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentApiModelInputReasoningEffort.CreateFromDiscriminatorValue); } },
                 { "temperature", n => { Temperature = n.GetDoubleValue(); } },
                 { "thinking_budget", n => { ThinkingBudget = n.GetIntValue(); } },
@@ -195,7 +195,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("mcp_server_ids", McpServerIds);
             writer.WriteCollectionOfPrimitiveValues<string>("native_mcp_server_ids", NativeMcpServerIds);
             writer.WriteStringValue("prompt", Prompt);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.RagConfig>("rag", Rag);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.RagConfigInput>("rag", Rag);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentApiModelInputReasoningEffort>("reasoning_effort", ReasoningEffort);
             writer.WriteDoubleValue("temperature", Temperature);
             writer.WriteIntValue("thinking_budget", ThinkingBudget);

@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.ElevenLabs.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.EndCallToolConfig"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.EndProcedureToolConfigOutput"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeBaseRagToolConfig"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.LanguageDetectionToolConfig"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.PlayDtmfToolConfig"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.RunSubagentToolConfigOutput"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.SkipTurnToolConfig"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.StartProcedureToolConfigOutput"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.TransferToAgentToolConfigOutput"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.TransferToNumberToolConfigOutput"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.VoicemailDetectionToolConfig"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.EndCallToolConfig"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.EndProcedureToolConfigOutput"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeBaseRagToolConfig"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeBaseToolConfig"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.LanguageDetectionToolConfig"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.PlayDtmfToolConfig"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.RunSubagentToolConfigOutput"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.SkipTurnToolConfig"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.StartProcedureToolConfigOutput"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.TransferToAgentToolConfigOutput"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.TransferToNumberToolConfigOutput"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.VoicemailDetectionToolConfig"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SystemToolConfigOutputParams : IComposedTypeWrapper, IParsable
@@ -36,6 +36,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #nullable restore
 #else
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeBaseRagToolConfig KnowledgeBaseRagToolConfig { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeBaseToolConfig"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeBaseToolConfig? KnowledgeBaseToolConfig { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeBaseToolConfig KnowledgeBaseToolConfig { get; set; }
 #endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.LanguageDetectionToolConfig"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -123,6 +131,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             {
                 result.KnowledgeBaseRagToolConfig = new global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeBaseRagToolConfig();
             }
+            else if("KnowledgeBaseToolConfig".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.KnowledgeBaseToolConfig = new global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeBaseToolConfig();
+            }
             else if("LanguageDetectionToolConfig".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.LanguageDetectionToolConfig = new global::Soenneker.ElevenLabs.OpenApiClient.Models.LanguageDetectionToolConfig();
@@ -174,6 +186,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             else if(KnowledgeBaseRagToolConfig != null)
             {
                 return KnowledgeBaseRagToolConfig.GetFieldDeserializers();
+            }
+            else if(KnowledgeBaseToolConfig != null)
+            {
+                return KnowledgeBaseToolConfig.GetFieldDeserializers();
             }
             else if(LanguageDetectionToolConfig != null)
             {
@@ -227,6 +243,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             else if(KnowledgeBaseRagToolConfig != null)
             {
                 writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeBaseRagToolConfig>(null, KnowledgeBaseRagToolConfig);
+            }
+            else if(KnowledgeBaseToolConfig != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeBaseToolConfig>(null, KnowledgeBaseToolConfig);
             }
             else if(LanguageDetectionToolConfig != null)
             {

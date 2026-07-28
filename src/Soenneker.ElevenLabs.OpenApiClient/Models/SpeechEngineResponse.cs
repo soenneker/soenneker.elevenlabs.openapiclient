@@ -126,6 +126,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.BaseTurnConfig Turn { get; set; }
 #endif
+        /// <summary>The vad property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.VadConfig? Vad { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.VadConfig Vad { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechEngineResponse"/> and sets the default values.
         /// </summary>
@@ -165,6 +173,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "tags", n => { Tags = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "tts", n => { Tts = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TtsConversationalConfigOutput>(global::Soenneker.ElevenLabs.OpenApiClient.Models.TtsConversationalConfigOutput.CreateFromDiscriminatorValue); } },
                 { "turn", n => { Turn = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BaseTurnConfig>(global::Soenneker.ElevenLabs.OpenApiClient.Models.BaseTurnConfig.CreateFromDiscriminatorValue); } },
+                { "vad", n => { Vad = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.VadConfig>(global::Soenneker.ElevenLabs.OpenApiClient.Models.VadConfig.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -188,6 +197,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("tags", Tags);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TtsConversationalConfigOutput>("tts", Tts);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BaseTurnConfig>("turn", Turn);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.VadConfig>("vad", Vad);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -6,6 +6,7 @@ using Microsoft.Kiota.Abstractions;
 using Soenneker.ElevenLabs.OpenApiClient.Models;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.Branches.Item.Merge;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.Branches.Item.MergePreview;
+using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.Branches.Item.Procedures;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.Branches.Item.Rebase;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.Branches.Item.RebasePreview;
 using System.Collections.Generic;
@@ -30,6 +31,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.Branches.Item
         public global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.Branches.Item.MergePreview.MergePreviewRequestBuilder MergePreview
         {
             get => new global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.Branches.Item.MergePreview.MergePreviewRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The procedures property</summary>
+        public global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.Branches.Item.Procedures.ProceduresRequestBuilder Procedures
+        {
+            get => new global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.Branches.Item.Procedures.ProceduresRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The rebase property</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.Branches.Item.Rebase.RebaseRequestBuilder Rebase

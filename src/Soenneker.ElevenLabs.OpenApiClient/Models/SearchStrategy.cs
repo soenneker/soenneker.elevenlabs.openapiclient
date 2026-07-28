@@ -3,21 +3,26 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.ElevenLabs.OpenApiClient.Models
 {
-    /// <summary>Identifiers for audio voice filters.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public enum AudioFilterId
+    #pragma warning disable CS1591
+    public enum SearchStrategy
+    #pragma warning restore CS1591
     {
-        [EnumMember(Value = "phone")]
+        [EnumMember(Value = "cat")]
         #pragma warning disable CS1591
-        Phone,
+        Cat,
         #pragma warning restore CS1591
-        [EnumMember(Value = "low_quality_phone")]
+        [EnumMember(Value = "keyword")]
         #pragma warning disable CS1591
-        LowQualityPhone,
+        Keyword,
         #pragma warning restore CS1591
-        [EnumMember(Value = "bright_phone")]
+        [EnumMember(Value = "semantic")]
         #pragma warning disable CS1591
-        BrightPhone,
+        Semantic,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "ls")]
+        #pragma warning disable CS1591
+        Ls,
         #pragma warning restore CS1591
     }
 }
