@@ -2128,6 +2128,73 @@
         }
       }
     },
+    "/v1/voices/accents": {
+      "get": {
+        "tags": [
+          "voices"
+        ],
+        "summary": "Get Voice Accents",
+        "description": "Gets the list of available accents in the shared voice library.",
+        "operationId": "GetVoiceAccents",
+        "parameters": [
+          {
+            "name": "language",
+            "in": "query",
+            "description": "If provided, only accents for this language code are returned.",
+            "schema": {
+              "title": "Language",
+              "type": "string",
+              "description": "If provided, only accents for this language code are returned.",
+              "nullable": true
+            }
+          },
+          {
+            "name": "model_id",
+            "in": "query",
+            "description": "If provided, returns the accents available for this model. Defaults to the most complete accent list when omitted.",
+            "schema": {
+              "title": "Model Id",
+              "type": "string",
+              "description": "If provided, returns the accents available for this model. Defaults to the most complete accent list when omitted.",
+              "nullable": true
+            }
+          },
+          {
+            "name": "xi-api-key",
+            "in": "header",
+            "description": "Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the \u0027Profile\u0027 tab on the website.",
+            "schema": {
+              "title": "Xi-Api-Key",
+              "type": "string",
+              "description": "Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the \u0027Profile\u0027 tab on the website.",
+              "nullable": true
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetVoiceAccentsResponseModel"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HttpValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/v1/voices": {
       "get": {
         "tags": [
@@ -22064,7 +22131,7 @@
                 {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/OrderRequestState"
+                    "$ref": "#/components/schemas/OrderState"
                   }
                 },
                 {
@@ -26382,6 +26449,12 @@
             "minLength": 1,
             "type": "string",
             "description": "Query to run against the agent\u0027s knowledge base RAG index."
+          },
+          "use_agent_defaults": {
+            "title": "Use Agent Defaults",
+            "type": "boolean",
+            "description": "When true (the default), retrieval uses the agent\u0027s own RAG settings, reproducing exactly what the agent would retrieve. Set to false to retrieve with neutral default RAG settings instead (the agent\u0027s embedding model is always kept, since it determines which vector index exists). Useful for auditing the knowledge base independently of how a particular agent is tuned.",
+            "default": true
           }
         }
       },
@@ -37856,6 +37929,9 @@
           },
           "user_identifier": {
             "$ref": "#/components/schemas/ConversationHistoryTranscriptCommonModelInputUserIdentifier"
+          },
+          "id": {
+            "$ref": "#/components/schemas/ConversationHistoryTranscriptCommonModelInputId"
           }
         }
       },
@@ -37947,6 +38023,9 @@
           },
           "user_identifier": {
             "$ref": "#/components/schemas/ConversationHistoryTranscriptCommonModelOutputUserIdentifier"
+          },
+          "id": {
+            "$ref": "#/components/schemas/ConversationHistoryTranscriptCommonModelOutputId"
           }
         }
       },
@@ -38127,6 +38206,9 @@
           },
           "user_identifier": {
             "$ref": "#/components/schemas/ConversationHistoryTranscriptResponseModelUserIdentifier"
+          },
+          "id": {
+            "$ref": "#/components/schemas/ConversationHistoryTranscriptResponseModelId"
           },
           "file_input": {
             "$ref": "#/components/schemas/ConversationHistoryTranscriptResponseModelFileInput"
@@ -41794,7 +41876,8 @@
         "title": "CustomLLMAPIType",
         "enum": [
           "chat_completions",
-          "responses"
+          "responses",
+          "websocket"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -41809,6 +41892,10 @@
             {
               "value": "responses",
               "name": "Responses"
+            },
+            {
+              "value": "websocket",
+              "name": "Websocket"
             }
           ]
         }
@@ -49105,6 +49192,33 @@
             "title": "Has More",
             "type": "boolean"
           }
+        }
+      },
+      "GetVoiceAccentsResponseModel": {
+        "title": "GetVoiceAccentsResponseModel",
+        "required": [
+          "accents"
+        ],
+        "type": "object",
+        "properties": {
+          "accents": {
+            "title": "Accents",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/VoiceAccentResponseModel"
+            },
+            "description": "A list of available voice accents."
+          }
+        },
+        "example": {
+          "accents": [
+            {
+              "accent": "american",
+              "code": "en-american",
+              "language": "en",
+              "name": "American"
+            }
+          ]
         }
       },
       "GetVoicesResponseModel": {
@@ -56409,49 +56523,6 @@
           "signed_url": "https://storage.googleapis.com/example-bucket/media/example.mp4?X-Goog-Signature=..."
         }
       },
-      "OrderRequestState": {
-        "title": "OrderRequestState",
-        "enum": [
-          "open",
-          "submitted",
-          "paid",
-          "accepted",
-          "rejected",
-          "done"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "x-ms-enum": {
-          "name": "OrderRequestState",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "open",
-              "name": "Open"
-            },
-            {
-              "value": "submitted",
-              "name": "Submitted"
-            },
-            {
-              "value": "paid",
-              "name": "Paid"
-            },
-            {
-              "value": "accepted",
-              "name": "Accepted"
-            },
-            {
-              "value": "rejected",
-              "name": "Rejected"
-            },
-            {
-              "value": "done",
-              "name": "Done"
-            }
-          ]
-        }
-      },
       "OrderResponse": {
         "title": "OrderResponse",
         "required": [
@@ -56509,6 +56580,9 @@
           },
           "completed_at": {
             "$ref": "#/components/schemas/OrderResponseCompletedAt"
+          },
+          "cancel_reason": {
+            "$ref": "#/components/schemas/OrderResponseCancelReason"
           }
         },
         "example": {
@@ -56550,7 +56624,10 @@
           "paid",
           "accepted",
           "rejected",
-          "done"
+          "done",
+          "cancelling",
+          "cancelled",
+          "expired"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -56581,6 +56658,18 @@
             {
               "value": "done",
               "name": "Done"
+            },
+            {
+              "value": "cancelling",
+              "name": "Cancelling"
+            },
+            {
+              "value": "cancelled",
+              "name": "Cancelled"
+            },
+            {
+              "value": "expired",
+              "name": "Expired"
             }
           ]
         }
@@ -56620,6 +56709,9 @@
           },
           "updated_at": {
             "$ref": "#/components/schemas/OrderSummaryUpdatedAt"
+          },
+          "cancel_reason": {
+            "$ref": "#/components/schemas/OrderSummaryCancelReason"
           }
         },
         "example": {
@@ -71590,6 +71682,44 @@
           }
         },
         "description": "An agent (and optional branch) that participated in the call, in first-seen transcript order."
+      },
+      "VoiceAccentResponseModel": {
+        "title": "VoiceAccentResponseModel",
+        "required": [
+          "accent",
+          "language",
+          "code",
+          "name"
+        ],
+        "type": "object",
+        "properties": {
+          "accent": {
+            "title": "Accent",
+            "type": "string",
+            "description": "The accent value used for filtering shared voices via the \u0060accent\u0060 query parameter on \u0060GET /v1/shared-voices\u0060."
+          },
+          "language": {
+            "title": "Language",
+            "type": "string",
+            "description": "The language code this accent belongs to, e.g. \u0060en\u0060."
+          },
+          "code": {
+            "title": "Code",
+            "type": "string",
+            "description": "The full accent code, e.g. \u0060en-american\u0060."
+          },
+          "name": {
+            "title": "Name",
+            "type": "string",
+            "description": "The human-readable accent name, e.g. \u0060American\u0060."
+          }
+        },
+        "example": {
+          "accent": "american",
+          "code": "en-american",
+          "language": "en",
+          "name": "American"
+        }
       },
       "VoiceDesignRequestModel": {
         "title": "VoiceDesignRequestModel",
@@ -86597,6 +86727,11 @@
         "type": "string",
         "nullable": true
       },
+      "ConversationHistoryTranscriptCommonModelInputId": {
+        "title": "Id",
+        "type": "string",
+        "nullable": true
+      },
       "ConversationHistoryTranscriptCommonModelOutputAgentMetadata": {
         "required": [
           "type"
@@ -86835,6 +86970,11 @@
       },
       "ConversationHistoryTranscriptCommonModelOutputUserIdentifier": {
         "title": "User Identifier",
+        "type": "string",
+        "nullable": true
+      },
+      "ConversationHistoryTranscriptCommonModelOutputId": {
+        "title": "Id",
         "type": "string",
         "nullable": true
       },
@@ -87110,6 +87250,11 @@
       },
       "ConversationHistoryTranscriptResponseModelUserIdentifier": {
         "title": "User Identifier",
+        "type": "string",
+        "nullable": true
+      },
+      "ConversationHistoryTranscriptResponseModelId": {
+        "title": "Id",
         "type": "string",
         "nullable": true
       },
@@ -95223,6 +95368,12 @@
         "format": "date-time",
         "nullable": true
       },
+      "OrderResponseCancelReason": {
+        "title": "Cancel Reason",
+        "type": "string",
+        "description": "The reason the order was cancelled, if applicable.",
+        "nullable": true
+      },
       "OrderSummaryTotalAmountUsd": {
         "title": "Total Amount Usd",
         "type": "number",
@@ -95241,6 +95392,12 @@
         "type": "string",
         "description": "The timestamp when the order was last modified, if applicable.",
         "format": "date-time",
+        "nullable": true
+      },
+      "OrderSummaryCancelReason": {
+        "title": "Cancel Reason",
+        "type": "string",
+        "description": "The reason the order was cancelled, if applicable.",
         "nullable": true
       },
       "OutboundCallRecipientId": {

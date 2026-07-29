@@ -22,12 +22,15 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public string Query { get; set; }
 #endif
+        /// <summary>When true (the default), retrieval uses the agent&apos;s own RAG settings, reproducing exactly what the agent would retrieve. Set to false to retrieve with neutral default RAG settings instead (the agent&apos;s embedding model is always kept, since it determines which vector index exists). Useful for auditing the knowledge base independently of how a particular agent is tuned.</summary>
+        public bool? UseAgentDefaults { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentKnowledgeBaseRagQueryRequestModel"/> and sets the default values.
         /// </summary>
         public AgentKnowledgeBaseRagQueryRequestModel()
         {
             AdditionalData = new Dictionary<string, object>();
+            UseAgentDefaults = true;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -48,6 +51,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "query", n => { Query = n.GetStringValue(); } },
+                { "use_agent_defaults", n => { UseAgentDefaults = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -58,6 +62,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("query", Query);
+            writer.WriteBoolValue("use_agent_defaults", UseAgentDefaults);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

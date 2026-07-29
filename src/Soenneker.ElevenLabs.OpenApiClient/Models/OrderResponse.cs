@@ -16,6 +16,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public DateTimeOffset? AcceptedAt { get; set; }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The reason the order was cancelled, if applicable.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CancelReason { get; set; }
+#nullable restore
+#else
+        public string CancelReason { get; set; }
+#endif
         /// <summary>The timestamp when the order was completed, if applicable.</summary>
         public DateTimeOffset? CompletedAt { get; set; }
         /// <summary>The timestamp when the order was created.</summary>
@@ -81,6 +89,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "accepted_at", n => { AcceptedAt = n.GetDateTimeOffsetValue(); } },
+                { "cancel_reason", n => { CancelReason = n.GetStringValue(); } },
                 { "completed_at", n => { CompletedAt = n.GetDateTimeOffsetValue(); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "items", n => { Items = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.OrderItemInfo>(global::Soenneker.ElevenLabs.OpenApiClient.Models.OrderItemInfo.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -101,6 +110,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDateTimeOffsetValue("accepted_at", AcceptedAt);
+            writer.WriteStringValue("cancel_reason", CancelReason);
             writer.WriteDateTimeOffsetValue("completed_at", CompletedAt);
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.OrderItemInfo>("items", Items);

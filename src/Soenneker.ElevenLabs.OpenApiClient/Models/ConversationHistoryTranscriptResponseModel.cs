@@ -54,6 +54,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptResponseModelFileInput FileInput { get; set; }
 #endif
+        /// <summary>The id property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Id { get; set; }
+#nullable restore
+#else
+        public string Id { get; set; }
+#endif
         /// <summary>The ignored_as_backchannel property</summary>
         public bool? IgnoredAsBackchannel { get; set; }
         /// <summary>The interrupted property</summary>
@@ -195,6 +203,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "conversation_turn_metrics", n => { ConversationTurnMetrics = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptResponseModelConversationTurnMetrics>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptResponseModelConversationTurnMetrics.CreateFromDiscriminatorValue); } },
                 { "feedback", n => { Feedback = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptResponseModelFeedback>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptResponseModelFeedback.CreateFromDiscriminatorValue); } },
                 { "file_input", n => { FileInput = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptResponseModelFileInput>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptResponseModelFileInput.CreateFromDiscriminatorValue); } },
+                { "id", n => { Id = n.GetStringValue(); } },
                 { "ignored_as_backchannel", n => { IgnoredAsBackchannel = n.GetBoolValue(); } },
                 { "interrupted", n => { Interrupted = n.GetBoolValue(); } },
                 { "llm_override", n => { LlmOverride = n.GetStringValue(); } },
@@ -227,6 +236,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptResponseModelConversationTurnMetrics>("conversation_turn_metrics", ConversationTurnMetrics);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptResponseModelFeedback>("feedback", Feedback);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptResponseModelFileInput>("file_input", FileInput);
+            writer.WriteStringValue("id", Id);
             writer.WriteBoolValue("ignored_as_backchannel", IgnoredAsBackchannel);
             writer.WriteBoolValue("interrupted", Interrupted);
             writer.WriteStringValue("llm_override", LlmOverride);

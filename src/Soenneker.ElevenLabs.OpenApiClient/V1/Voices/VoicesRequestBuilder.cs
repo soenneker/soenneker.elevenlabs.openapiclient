@@ -4,6 +4,7 @@ using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.ElevenLabs.OpenApiClient.Models;
+using Soenneker.ElevenLabs.OpenApiClient.V1.Voices.Accents;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Voices.Add;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Voices.Item;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Voices.Pvc;
@@ -21,6 +22,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Voices
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class VoicesRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The accents property</summary>
+        public global::Soenneker.ElevenLabs.OpenApiClient.V1.Voices.Accents.AccentsRequestBuilder Accents
+        {
+            get => new global::Soenneker.ElevenLabs.OpenApiClient.V1.Voices.Accents.AccentsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The add property</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.V1.Voices.Add.AddRequestBuilder Add
         {
