@@ -17,6 +17,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>End time of the segment, in seconds.</summary>
         public double? EndS { get; set; }
+        /// <summary>The caller-supplied external id for this segment, if one was provided.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ExternalId { get; set; }
+#nullable restore
+#else
+        public string ExternalId { get; set; }
+#endif
         /// <summary>Stable identifier of the segment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -69,6 +77,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "end_s", n => { EndS = n.GetDoubleValue(); } },
+                { "external_id", n => { ExternalId = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "speaker_id", n => { SpeakerId = n.GetStringValue(); } },
                 { "start_s", n => { StartS = n.GetDoubleValue(); } },
@@ -83,6 +92,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDoubleValue("end_s", EndS);
+            writer.WriteStringValue("external_id", ExternalId);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("speaker_id", SpeakerId);
             writer.WriteDoubleValue("start_s", StartS);

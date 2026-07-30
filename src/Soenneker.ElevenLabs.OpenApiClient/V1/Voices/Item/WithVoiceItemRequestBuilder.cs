@@ -5,6 +5,7 @@ using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.ElevenLabs.OpenApiClient.Models;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Voices.Item.Edit;
+using Soenneker.ElevenLabs.OpenApiClient.V1.Voices.Item.ReplicateToIsolatedEnvironment;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Voices.Item.Samples;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Voices.Item.Settings;
 using System.Collections.Generic;
@@ -24,6 +25,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Voices.Item
         public global::Soenneker.ElevenLabs.OpenApiClient.V1.Voices.Item.Edit.EditRequestBuilder Edit
         {
             get => new global::Soenneker.ElevenLabs.OpenApiClient.V1.Voices.Item.Edit.EditRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The replicateToIsolatedEnvironment property</summary>
+        public global::Soenneker.ElevenLabs.OpenApiClient.V1.Voices.Item.ReplicateToIsolatedEnvironment.ReplicateToIsolatedEnvironmentRequestBuilder ReplicateToIsolatedEnvironment
+        {
+            get => new global::Soenneker.ElevenLabs.OpenApiClient.V1.Voices.Item.ReplicateToIsolatedEnvironment.ReplicateToIsolatedEnvironmentRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The samples property</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.V1.Voices.Item.Samples.SamplesRequestBuilder Samples

@@ -2618,6 +2618,71 @@
         }
       }
     },
+    "/v1/voices/{voiceId}/replicate-to-isolated-environment": {
+      "post": {
+        "tags": [
+          "voices"
+        ],
+        "summary": "Replicate Voice To Isolated Environment",
+        "description": "Replicates an Instant Voice Clone or Voice Design voice to a workspace in a different data residency. The target workspace must belong to the same consolidated billing group. The user must have VOICES_WRITE in the source workspace, and be an admin on the source voice. Human users (i.e. not service accounts) must also have VOICES_WRITE in the target workspace. This endpoint is available on the central environment only.",
+        "operationId": "ReplicateVoiceToIsolatedEnvironment",
+        "parameters": [
+          {
+            "name": "voiceId",
+            "in": "path",
+            "description": "Voice ID to be used, you can use https://api.elevenlabs.io/v1/voices to list all the available voices.",
+            "required": true,
+            "schema": {
+              "title": "Voice Id",
+              "type": "string",
+              "description": "Voice ID to be used, you can use https://api.elevenlabs.io/v1/voices to list all the available voices."
+            }
+          },
+          {
+            "name": "xi-api-key",
+            "in": "header",
+            "description": "Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the \u0027Profile\u0027 tab on the website.",
+            "schema": {
+              "title": "Xi-Api-Key",
+              "type": "string",
+              "description": "Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the \u0027Profile\u0027 tab on the website.",
+              "nullable": true
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ReplicateVoiceToIsolatedEnvironmentRequestModel"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ReplicateVoiceToIsolatedEnvironmentResponseModel"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HttpValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/v1/voices/add": {
       "post": {
         "tags": [
@@ -31061,6 +31126,9 @@
           },
           "voice_settings": {
             "$ref": "#/components/schemas/BodyCreateDubbingLanguageTargetV1DubbingProjectProjectIdLanguagePostVoiceSettings"
+          },
+          "translations": {
+            "$ref": "#/components/schemas/BodyCreateDubbingLanguageTargetV1DubbingProjectProjectIdLanguagePostTranslations"
           }
         }
       },
@@ -31093,6 +31161,9 @@
           },
           "target_language": {
             "$ref": "#/components/schemas/BodyCreateDubbingProjectV1DubbingProjectPostTargetLanguage"
+          },
+          "transcript": {
+            "$ref": "#/components/schemas/BodyCreateDubbingProjectV1DubbingProjectPostTranscript"
           }
         }
       },
@@ -36621,17 +36692,13 @@
       "ConvAiUserSecretDbModel": {
         "title": "ConvAIUserSecretDBModel",
         "required": [
-          "id",
           "name",
           "encrypted_value",
-          "nonce"
+          "nonce",
+          "id"
         ],
         "type": "object",
         "properties": {
-          "id": {
-            "title": "Id",
-            "type": "string"
-          },
           "name": {
             "title": "Name",
             "type": "string"
@@ -36642,6 +36709,10 @@
           },
           "nonce": {
             "title": "Nonce",
+            "type": "string"
+          },
+          "id": {
+            "title": "Id",
             "type": "string"
           }
         },
@@ -42004,6 +42075,12 @@
             "type": "boolean",
             "description": "If true, pressing # immediately completes DTMF input",
             "default": true
+          },
+          "redact_input": {
+            "title": "Redact Input",
+            "type": "boolean",
+            "description": "If true, replace the caller\u0027s DTMF (keypad) entries with a redaction marker in the transcript, conversation log and analysis. Digits the agent repeats back or passes to a tool are not affected.",
+            "default": false
           }
         },
         "description": "Configuration for DTMF (keypad) input collection during phone calls."
@@ -44304,6 +44381,9 @@
             "title": "End S",
             "type": "number",
             "description": "End time of the segment, in seconds."
+          },
+          "external_id": {
+            "$ref": "#/components/schemas/DubbingTranscriptSegmentExternalId"
           }
         },
         "description": "One segment of a source transcript."
@@ -56059,7 +56139,7 @@
           "model": {
             "title": "Model",
             "type": "string",
-            "default": "eleven_realtime_fast"
+            "default": "eleven_realtime_v1_mini"
           },
           "instructions": {
             "title": "Instructions",
@@ -62137,6 +62217,43 @@
               "name": "Zip"
             }
           ]
+        }
+      },
+      "ReplicateVoiceToIsolatedEnvironmentRequestModel": {
+        "title": "ReplicateVoiceToIsolatedEnvironmentRequestModel",
+        "required": [
+          "target_workspace_id"
+        ],
+        "type": "object",
+        "properties": {
+          "target_workspace_id": {
+            "title": "Target Workspace Id",
+            "type": "string",
+            "description": "ID of the workspace to replicate the voice into. It must belong to the same consolidated billing group as the calling workspace; the target\u0027s data residency is derived from that link."
+          },
+          "preserve_voice_id": {
+            "title": "Preserve Voice Id",
+            "type": "boolean",
+            "description": "When true (default) the replicated voice keeps the same voice ID in the target residency; set to false to assign a new voice ID.",
+            "default": true
+          }
+        }
+      },
+      "ReplicateVoiceToIsolatedEnvironmentResponseModel": {
+        "title": "ReplicateVoiceToIsolatedEnvironmentResponseModel",
+        "required": [
+          "voice_id"
+        ],
+        "type": "object",
+        "properties": {
+          "voice_id": {
+            "title": "Voice Id",
+            "type": "string",
+            "description": "Voice ID of the replicated voice in the target residency."
+          }
+        },
+        "example": {
+          "voice_id": "21m00Tcm4TlvDq8ikWAM"
         }
       },
       "ReportKnowledgeGapParams": {
@@ -80167,6 +80284,37 @@
           }
         }
       },
+      "BodyCreateDubbingLanguageTargetV1DubbingProjectProjectIdLanguagePostTranslations": {
+        "title": "Translations",
+        "required": [
+          "type"
+        ],
+        "type": "object",
+        "anyOf": [
+          {
+            "maxProperties": 20000,
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            }
+          },
+          {
+            "enum": [
+              null
+            ]
+          }
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "Union discriminator"
+          }
+        },
+        "description": "Optional translations to use instead of machine translation. A map from each source segment\u0027s external_id (or its id, if you supplied none) to the translated text; every source segment must be covered exactly once. At most 20000 entries, totalling at most 4 MiB of text.",
+        "discriminator": {
+          "propertyName": "type"
+        }
+      },
       "BodyCreateDubbingProjectV1DubbingProjectPostFile": {
         "title": "File",
         "type": "string",
@@ -80202,6 +80350,13 @@
         "title": "Target Language",
         "type": "string",
         "description": "\u0022Optional shortcut: also create a language target in this BCP-47 language, queued to start once the project is ready.\u0022",
+        "nullable": true
+      },
+      "BodyCreateDubbingProjectV1DubbingProjectPostTranscript": {
+        "title": "Transcript",
+        "type": "string",
+        "description": "Optional JSON transcript to use instead of automatic transcription. When provided, source_language is required. Segments may include an optional external_id and an optional translation; if any segment includes a translation, target_language is required and every segment must include one (used to seed the target created via target_language).",
+        "format": "binary",
         "nullable": true
       },
       "BodyCreateMusicFinetuneV1MusicFinetunesPostVisibility": {
@@ -89689,6 +89844,12 @@
         "title": "Translation",
         "type": "string",
         "description": "The translated text, or null if not translated yet (needs translation).",
+        "nullable": true
+      },
+      "DubbingTranscriptSegmentExternalId": {
+        "title": "External Id",
+        "type": "string",
+        "description": "The caller-supplied external id for this segment, if one was provided.",
         "nullable": true
       },
       "DubbingTranscriptsResponseModelSrt": {
