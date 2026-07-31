@@ -11840,6 +11840,17 @@
             }
           },
           {
+            "name": "parent_conversation_id",
+            "in": "query",
+            "description": "Filter conversations by parent conversation ID for subagent conversations.",
+            "schema": {
+              "title": "Parent Conversation Id",
+              "type": "string",
+              "description": "Filter conversations by parent conversation ID for subagent conversations.",
+              "nullable": true
+            }
+          },
+          {
             "name": "topic_ids",
             "in": "query",
             "description": "Filter conversations by topic IDs assigned during topic discovery.",
@@ -38003,6 +38014,13 @@
           },
           "id": {
             "$ref": "#/components/schemas/ConversationHistoryTranscriptCommonModelInputId"
+          },
+          "triggered_guardrails": {
+            "title": "Triggered Guardrails",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/TriggeredGuardrailCommonModel"
+            }
           }
         }
       },
@@ -38097,6 +38115,13 @@
           },
           "id": {
             "$ref": "#/components/schemas/ConversationHistoryTranscriptCommonModelOutputId"
+          },
+          "triggered_guardrails": {
+            "title": "Triggered Guardrails",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/TriggeredGuardrailCommonModel"
+            }
           }
         }
       },
@@ -38280,6 +38305,13 @@
           },
           "id": {
             "$ref": "#/components/schemas/ConversationHistoryTranscriptResponseModelId"
+          },
+          "triggered_guardrails": {
+            "title": "Triggered Guardrails",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/TriggeredGuardrailCommonModel"
+            }
           },
           "file_input": {
             "$ref": "#/components/schemas/ConversationHistoryTranscriptResponseModelFileInput"
@@ -49608,6 +49640,104 @@
             {
               "value": "blocking",
               "name": "Blocking"
+            }
+          ]
+        }
+      },
+      "GuardrailType": {
+        "title": "GuardrailType",
+        "enum": [
+          "custom",
+          "prompt_injection",
+          "self_harm_intent",
+          "violence_graphic",
+          "sexual",
+          "violence",
+          "harassment",
+          "sexual_minors",
+          "self_harm",
+          "self_harm_instructions",
+          "harassment_threatening",
+          "hate",
+          "hate_threatening",
+          "profanity",
+          "religion_or_politics",
+          "medical_and_legal",
+          "guardrail"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "GuardrailType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "custom",
+              "name": "Custom"
+            },
+            {
+              "value": "prompt_injection",
+              "name": "PromptInjection"
+            },
+            {
+              "value": "self_harm_intent",
+              "name": "SelfHarmIntent"
+            },
+            {
+              "value": "violence_graphic",
+              "name": "ViolenceGraphic"
+            },
+            {
+              "value": "sexual",
+              "name": "Sexual"
+            },
+            {
+              "value": "violence",
+              "name": "Violence"
+            },
+            {
+              "value": "harassment",
+              "name": "Harassment"
+            },
+            {
+              "value": "sexual_minors",
+              "name": "SexualMinors"
+            },
+            {
+              "value": "self_harm",
+              "name": "SelfHarm"
+            },
+            {
+              "value": "self_harm_instructions",
+              "name": "SelfHarmInstructions"
+            },
+            {
+              "value": "harassment_threatening",
+              "name": "HarassmentThreatening"
+            },
+            {
+              "value": "hate",
+              "name": "Hate"
+            },
+            {
+              "value": "hate_threatening",
+              "name": "HateThreatening"
+            },
+            {
+              "value": "profanity",
+              "name": "Profanity"
+            },
+            {
+              "value": "religion_or_politics",
+              "name": "ReligionOrPolitics"
+            },
+            {
+              "value": "medical_and_legal",
+              "name": "MedicalAndLegal"
+            },
+            {
+              "value": "guardrail",
+              "name": "Guardrail"
             }
           ]
         }
@@ -69292,6 +69422,21 @@
             "title": "Value",
             "minLength": 1,
             "type": "string"
+          }
+        }
+      },
+      "TriggeredGuardrailCommonModel": {
+        "title": "TriggeredGuardrailCommonModel",
+        "required": [
+          "guardrail_type"
+        ],
+        "type": "object",
+        "properties": {
+          "guardrail_type": {
+            "$ref": "#/components/schemas/GuardrailType"
+          },
+          "guardrail_name": {
+            "$ref": "#/components/schemas/TriggeredGuardrailCommonModelGuardrailName"
           }
         }
       },
@@ -102243,6 +102388,11 @@
       },
       "TransferToNumberResultTwilioSuccessModelNote": {
         "title": "Note",
+        "type": "string",
+        "nullable": true
+      },
+      "TriggeredGuardrailCommonModelGuardrailName": {
+        "title": "Guardrail Name",
         "type": "string",
         "nullable": true
       },

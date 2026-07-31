@@ -136,6 +136,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptCommonModelInputToolResultsItem> ToolResults { get; set; }
 #endif
+        /// <summary>The triggered_guardrails property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.TriggeredGuardrailCommonModel>? TriggeredGuardrails { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.TriggeredGuardrailCommonModel> TriggeredGuardrails { get; set; }
+#endif
         /// <summary>The used_static_kb_document_ids property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -198,6 +206,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "time_in_call_secs", n => { TimeInCallSecs = n.GetIntValue(); } },
                 { "tool_calls", n => { ToolCalls = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptToolCallCommonModelInput>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptToolCallCommonModelInput.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "tool_results", n => { ToolResults = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptCommonModelInputToolResultsItem>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptCommonModelInputToolResultsItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "triggered_guardrails", n => { TriggeredGuardrails = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.TriggeredGuardrailCommonModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.TriggeredGuardrailCommonModel.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "used_static_kb_document_ids", n => { UsedStaticKbDocumentIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "user_identifier", n => { UserIdentifier = n.GetStringValue(); } },
             };
@@ -228,6 +237,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteIntValue("time_in_call_secs", TimeInCallSecs);
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptToolCallCommonModelInput>("tool_calls", ToolCalls);
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptCommonModelInputToolResultsItem>("tool_results", ToolResults);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.TriggeredGuardrailCommonModel>("triggered_guardrails", TriggeredGuardrails);
             writer.WriteCollectionOfPrimitiveValues<string>("used_static_kb_document_ids", UsedStaticKbDocumentIds);
             writer.WriteStringValue("user_identifier", UserIdentifier);
             writer.WriteAdditionalData(AdditionalData);
