@@ -36,18 +36,18 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Workspace.Resources.Item.Share
         /// <summary>
         /// Grants a role (one of &apos;admin&apos;, &apos;editor&apos;, &apos;commenter&apos;, or &apos;viewer&apos;) on a workspace resource to a user, group, or workspace (service account) API key. This overrides any existing role the target has on the resource. To target a user or service account, pass only the user email; the user must be in your workspace. To target a group, pass only the group id. To target a workspace (service account) API key, pass the api key id; the resource will be shared with the service account associated with that key. You must have admin access to the resource to share it.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ShareResourceEndpoint200ResponseResponseJson"/></returns>
+        /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ShareResourceEndpoint200ResponseSchema"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.HttpValidationError">When receiving a 422 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.ElevenLabs.OpenApiClient.Models.ShareResourceEndpoint200ResponseResponseJson?> PostAsync(global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyShareWorkspaceResourceV1WorkspaceResourcesResourceIdSharePost body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.ElevenLabs.OpenApiClient.Models.ShareResourceEndpoint200ResponseSchema?> PostAsync(global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyShareWorkspaceResourceV1WorkspaceResourcesResourceIdSharePost body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.ElevenLabs.OpenApiClient.Models.ShareResourceEndpoint200ResponseResponseJson> PostAsync(global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyShareWorkspaceResourceV1WorkspaceResourcesResourceIdSharePost body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.ElevenLabs.OpenApiClient.Models.ShareResourceEndpoint200ResponseSchema> PostAsync(global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyShareWorkspaceResourceV1WorkspaceResourcesResourceIdSharePost body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -56,7 +56,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Workspace.Resources.Item.Share
             {
                 { "422", global::Soenneker.ElevenLabs.OpenApiClient.Models.HttpValidationError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.ElevenLabs.OpenApiClient.Models.ShareResourceEndpoint200ResponseResponseJson>(requestInfo, global::Soenneker.ElevenLabs.OpenApiClient.Models.ShareResourceEndpoint200ResponseResponseJson.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.ElevenLabs.OpenApiClient.Models.ShareResourceEndpoint200ResponseSchema>(requestInfo, global::Soenneker.ElevenLabs.OpenApiClient.Models.ShareResourceEndpoint200ResponseSchema.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Grants a role (one of &apos;admin&apos;, &apos;editor&apos;, &apos;commenter&apos;, or &apos;viewer&apos;) on a workspace resource to a user, group, or workspace (service account) API key. This overrides any existing role the target has on the resource. To target a user or service account, pass only the user email; the user must be in your workspace. To target a group, pass only the group id. To target a workspace (service account) API key, pass the api key id; the resource will be shared with the service account associated with that key. You must have admin access to the resource to share it.

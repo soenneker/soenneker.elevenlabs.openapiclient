@@ -192,6 +192,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public bool? ShowAvatarWhenCollapsed { get; set; }
         /// <summary>Whether to show the conversation ID after disconnection.</summary>
         public bool? ShowConversationId { get; set; }
+        /// <summary>Whether to show the resize button</summary>
+        public bool? ShowResizeButton { get; set; }
         /// <summary>The text to display when the agent is speaking</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -303,6 +305,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             ShowAgentStatus = false;
             ShowAvatarWhenCollapsed = false;
             ShowConversationId = true;
+            ShowResizeButton = true;
             StripAudioTags = true;
             SupportsTextOnly = false;
             TextColor = "#000000";
@@ -363,6 +366,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "show_agent_status", n => { ShowAgentStatus = n.GetBoolValue(); } },
                 { "show_avatar_when_collapsed", n => { ShowAvatarWhenCollapsed = n.GetBoolValue(); } },
                 { "show_conversation_id", n => { ShowConversationId = n.GetBoolValue(); } },
+                { "show_resize_button", n => { ShowResizeButton = n.GetBoolValue(); } },
                 { "speaking_text", n => { SpeakingText = n.GetStringValue(); } },
                 { "start_call_text", n => { StartCallText = n.GetStringValue(); } },
                 { "strip_audio_tags", n => { StripAudioTags = n.GetBoolValue(); } },
@@ -424,6 +428,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteBoolValue("show_agent_status", ShowAgentStatus);
             writer.WriteBoolValue("show_avatar_when_collapsed", ShowAvatarWhenCollapsed);
             writer.WriteBoolValue("show_conversation_id", ShowConversationId);
+            writer.WriteBoolValue("show_resize_button", ShowResizeButton);
             writer.WriteStringValue("speaking_text", SpeakingText);
             writer.WriteStringValue("start_call_text", StartCallText);
             writer.WriteBoolValue("strip_audio_tags", StripAudioTags);

@@ -36,18 +36,18 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.TestInvocations.Item.Resu
         /// <summary>
         /// Resubmits specific test runs from a test invocation.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ResubmitTestsRoute200ResponseResponseJson"/></returns>
+        /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ResubmitTestsRoute200ResponseSchema"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.HttpValidationError">When receiving a 422 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.ElevenLabs.OpenApiClient.Models.ResubmitTestsRoute200ResponseResponseJson?> PostAsync(global::Soenneker.ElevenLabs.OpenApiClient.Models.ResubmitTestsRequestModel body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.ElevenLabs.OpenApiClient.Models.ResubmitTestsRoute200ResponseSchema?> PostAsync(global::Soenneker.ElevenLabs.OpenApiClient.Models.ResubmitTestsRequestModel body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.ElevenLabs.OpenApiClient.Models.ResubmitTestsRoute200ResponseResponseJson> PostAsync(global::Soenneker.ElevenLabs.OpenApiClient.Models.ResubmitTestsRequestModel body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.ElevenLabs.OpenApiClient.Models.ResubmitTestsRoute200ResponseSchema> PostAsync(global::Soenneker.ElevenLabs.OpenApiClient.Models.ResubmitTestsRequestModel body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -56,7 +56,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.TestInvocations.Item.Resu
             {
                 { "422", global::Soenneker.ElevenLabs.OpenApiClient.Models.HttpValidationError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.ElevenLabs.OpenApiClient.Models.ResubmitTestsRoute200ResponseResponseJson>(requestInfo, global::Soenneker.ElevenLabs.OpenApiClient.Models.ResubmitTestsRoute200ResponseResponseJson.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.ElevenLabs.OpenApiClient.Models.ResubmitTestsRoute200ResponseSchema>(requestInfo, global::Soenneker.ElevenLabs.OpenApiClient.Models.ResubmitTestsRoute200ResponseSchema.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Resubmits specific test runs from a test invocation.

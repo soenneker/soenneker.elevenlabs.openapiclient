@@ -36,17 +36,17 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.KnowledgeBase.Crawl.Item.
         /// <summary>
         /// Cancel a crawl job and delete all associated documents and folders.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.CancelCrawlJobRoute200ResponseResponseJson"/></returns>
+        /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.CancelCrawlJobRoute200ResponseSchema"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.HttpValidationError">When receiving a 422 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.ElevenLabs.OpenApiClient.Models.CancelCrawlJobRoute200ResponseResponseJson?> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.ElevenLabs.OpenApiClient.Models.CancelCrawlJobRoute200ResponseSchema?> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.ElevenLabs.OpenApiClient.Models.CancelCrawlJobRoute200ResponseResponseJson> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.ElevenLabs.OpenApiClient.Models.CancelCrawlJobRoute200ResponseSchema> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToPostRequestInformation(requestConfiguration);
@@ -54,7 +54,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.KnowledgeBase.Crawl.Item.
             {
                 { "422", global::Soenneker.ElevenLabs.OpenApiClient.Models.HttpValidationError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.ElevenLabs.OpenApiClient.Models.CancelCrawlJobRoute200ResponseResponseJson>(requestInfo, global::Soenneker.ElevenLabs.OpenApiClient.Models.CancelCrawlJobRoute200ResponseResponseJson.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.ElevenLabs.OpenApiClient.Models.CancelCrawlJobRoute200ResponseSchema>(requestInfo, global::Soenneker.ElevenLabs.OpenApiClient.Models.CancelCrawlJobRoute200ResponseSchema.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Cancel a crawl job and delete all associated documents and folders.

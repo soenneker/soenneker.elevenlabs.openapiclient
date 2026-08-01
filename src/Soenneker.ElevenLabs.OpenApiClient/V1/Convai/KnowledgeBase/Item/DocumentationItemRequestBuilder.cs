@@ -90,17 +90,17 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.KnowledgeBase.Item
         /// <summary>
         /// Delete a document or folder from the knowledge base.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.DeleteKnowledgeBaseDocument200ResponseResponseJson"/></returns>
+        /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.DeleteKnowledgeBaseDocument200ResponseSchema"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.HttpValidationError">When receiving a 422 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.ElevenLabs.OpenApiClient.Models.DeleteKnowledgeBaseDocument200ResponseResponseJson?> DeleteAsync(Action<RequestConfiguration<global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.KnowledgeBase.Item.DocumentationItemRequestBuilder.DocumentationItemRequestBuilderDeleteQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.ElevenLabs.OpenApiClient.Models.DeleteKnowledgeBaseDocument200ResponseSchema?> DeleteAsync(Action<RequestConfiguration<global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.KnowledgeBase.Item.DocumentationItemRequestBuilder.DocumentationItemRequestBuilderDeleteQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.ElevenLabs.OpenApiClient.Models.DeleteKnowledgeBaseDocument200ResponseResponseJson> DeleteAsync(Action<RequestConfiguration<global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.KnowledgeBase.Item.DocumentationItemRequestBuilder.DocumentationItemRequestBuilderDeleteQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.ElevenLabs.OpenApiClient.Models.DeleteKnowledgeBaseDocument200ResponseSchema> DeleteAsync(Action<RequestConfiguration<global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.KnowledgeBase.Item.DocumentationItemRequestBuilder.DocumentationItemRequestBuilderDeleteQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
@@ -108,7 +108,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.KnowledgeBase.Item
             {
                 { "422", global::Soenneker.ElevenLabs.OpenApiClient.Models.HttpValidationError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.ElevenLabs.OpenApiClient.Models.DeleteKnowledgeBaseDocument200ResponseResponseJson>(requestInfo, global::Soenneker.ElevenLabs.OpenApiClient.Models.DeleteKnowledgeBaseDocument200ResponseResponseJson.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.ElevenLabs.OpenApiClient.Models.DeleteKnowledgeBaseDocument200ResponseSchema>(requestInfo, global::Soenneker.ElevenLabs.OpenApiClient.Models.DeleteKnowledgeBaseDocument200ResponseSchema.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get details about a specific documentation making up the agent&apos;s knowledge base

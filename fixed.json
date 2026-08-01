@@ -292,7 +292,7 @@
             "content": {
               "audio/mpeg": {
                 "schema": {
-                  "$ref": "#/components/schemas/GetAudioFullFromSpeechHistoryItem200ResponseResponseMpeg"
+                  "$ref": "#/components/schemas/GetAudioFullFromSpeechHistoryItem200MpegResponseSchema"
                 }
               }
             }
@@ -346,7 +346,7 @@
             "content": {
               "application/zip": {
                 "schema": {
-                  "$ref": "#/components/schemas/DownloadSpeechHistoryItems200ResponseResponseZip"
+                  "$ref": "#/components/schemas/DownloadSpeechHistoryItems200ZipResponseSchema"
                 }
               }
             }
@@ -422,7 +422,7 @@
             "content": {
               "audio/mpeg": {
                 "schema": {
-                  "$ref": "#/components/schemas/SoundGeneration200ResponseResponseMpeg"
+                  "$ref": "#/components/schemas/SoundGeneration200MpegResponseSchema"
                 }
               }
             }
@@ -858,7 +858,7 @@
             "content": {
               "audio/mpeg": {
                 "schema": {
-                  "$ref": "#/components/schemas/TextToSpeechFull200ResponseResponseMpeg"
+                  "$ref": "#/components/schemas/TextToSpeechFull200MpegResponseSchema"
                 }
               }
             }
@@ -1052,7 +1052,7 @@
             "content": {
               "audio/mpeg": {
                 "schema": {
-                  "$ref": "#/components/schemas/TextToSpeechStream200ResponseResponseMpeg"
+                  "$ref": "#/components/schemas/TextToSpeechStream200MpegResponseSchema"
                 }
               }
             }
@@ -1222,7 +1222,7 @@
             "content": {
               "audio/mpeg": {
                 "schema": {
-                  "$ref": "#/components/schemas/TextToDialogue200ResponseResponseMpeg"
+                  "$ref": "#/components/schemas/TextToDialogue200MpegResponseSchema"
                 }
               }
             }
@@ -1295,7 +1295,7 @@
             "content": {
               "audio/mpeg": {
                 "schema": {
-                  "$ref": "#/components/schemas/TextToDialogueStream200ResponseResponseMpeg"
+                  "$ref": "#/components/schemas/TextToDialogueStream200MpegResponseSchema"
                 }
               }
             }
@@ -1538,7 +1538,7 @@
             "content": {
               "audio/mpeg": {
                 "schema": {
-                  "$ref": "#/components/schemas/SpeechToSpeechFull200ResponseResponseMpeg"
+                  "$ref": "#/components/schemas/SpeechToSpeechFull200MpegResponseSchema"
                 }
               }
             }
@@ -1635,7 +1635,7 @@
             "content": {
               "audio/mpeg": {
                 "schema": {
-                  "$ref": "#/components/schemas/SpeechToSpeechStream200ResponseResponseMpeg"
+                  "$ref": "#/components/schemas/SpeechToSpeechStream200MpegResponseSchema"
                 }
               }
             }
@@ -1883,7 +1883,7 @@
             "content": {
               "audio/mpeg": {
                 "schema": {
-                  "$ref": "#/components/schemas/TextToVoicePreviewStream200ResponseResponseMpeg"
+                  "$ref": "#/components/schemas/TextToVoicePreviewStream200MpegResponseSchema"
                 }
               }
             }
@@ -3583,7 +3583,7 @@
             "content": {
               "application/x-zip": {
                 "schema": {
-                  "$ref": "#/components/schemas/StreamProjectSnapshotArchiveEndpoint200ResponseResponseXZip"
+                  "$ref": "#/components/schemas/StreamProjectSnapshotArchiveEndpoint200XZipResponseSchema"
                 }
               }
             }
@@ -4207,7 +4207,7 @@
             "content": {
               "audio/mpeg": {
                 "schema": {
-                  "$ref": "#/components/schemas/StreamChapterSnapshotAudio200ResponseResponseMpeg"
+                  "$ref": "#/components/schemas/StreamChapterSnapshotAudio200MpegResponseSchema"
                 }
               }
             }
@@ -5680,12 +5680,12 @@
             "content": {
               "audio/mpeg": {
                 "schema": {
-                  "$ref": "#/components/schemas/GetDubbedFile200ResponseResponseMpeg"
+                  "$ref": "#/components/schemas/GetDubbedFile200MpegResponseSchema"
                 }
               },
               "video/mp4": {
                 "schema": {
-                  "$ref": "#/components/schemas/GetDubbedFile200ResponseResponseMp42"
+                  "$ref": "#/components/schemas/GetDubbedFile200Mp4ResponseSchema"
                 }
               }
             }
@@ -6844,7 +6844,7 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/GetPronunciationDictionaryVersionPls200ResponseResponsePlain"
+                  "$ref": "#/components/schemas/GetPronunciationDictionaryVersionPls200PlainResponseSchema"
                 }
               }
             }
@@ -7001,7 +7001,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Disable200ResponseResponseJson"
+                  "$ref": "#/components/schemas/Disable200ResponseSchema"
                 }
               }
             }
@@ -7056,7 +7056,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/SetThirdPartyDisablingPolicy200ResponseResponseJson"
+                  "$ref": "#/components/schemas/SetThirdPartyDisablingPolicy200ResponseSchema"
                 }
               }
             }
@@ -7243,7 +7243,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/EditServiceAccountApiKey200ResponseResponseJson"
+                  "$ref": "#/components/schemas/EditServiceAccountApiKey200ResponseSchema"
                 }
               }
             }
@@ -7304,7 +7304,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DeleteServiceAccountApiKey200ResponseResponseJson"
+                  "$ref": "#/components/schemas/DeleteServiceAccountApiKey200ResponseSchema"
                 }
               }
             }
@@ -7640,7 +7640,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DeleteAuthConnection200ResponseResponseJson"
+                  "$ref": "#/components/schemas/DeleteAuthConnection200ResponseSchema"
                 }
               }
             }
@@ -8357,7 +8357,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ShareResourceEndpoint200ResponseResponseJson"
+                  "$ref": "#/components/schemas/ShareResourceEndpoint200ResponseSchema"
                 }
               }
             }
@@ -8422,7 +8422,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/UnshareResourceEndpoint200ResponseResponseJson"
+                  "$ref": "#/components/schemas/UnshareResourceEndpoint200ResponseSchema"
                 }
               }
             }
@@ -8711,12 +8711,12 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/VideoToMusic200ResponseResponseJson"
+                  "$ref": "#/components/schemas/VideoToMusic200Response"
                 }
               },
               "application/zip": {
                 "schema": {
-                  "$ref": "#/components/schemas/VideoToMusic200ResponseResponseZip2"
+                  "$ref": "#/components/schemas/VideoToMusic200ZipResponseSchema"
                 }
               }
             }
@@ -8951,7 +8951,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DeleteTranscriptById200ResponseResponseJson"
+                  "$ref": "#/components/schemas/DeleteTranscriptById200ResponseSchema"
                 }
               }
             }
@@ -9344,7 +9344,7 @@
             "content": {
               "text/html": {
                 "schema": {
-                  "$ref": "#/components/schemas/RegisterTwilioCall200ResponseResponseHtml"
+                  "$ref": "#/components/schemas/RegisterTwilioCall200HtmlResponseSchema"
                 }
               }
             }
@@ -10712,7 +10712,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AgentTestingBulkMoveRoute200ResponseResponseJson"
+                  "$ref": "#/components/schemas/AgentTestingBulkMoveRoute200ResponseSchema"
                 }
               }
             }
@@ -10885,7 +10885,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DeleteChatResponseTestRoute200ResponseResponseJson"
+                  "$ref": "#/components/schemas/DeleteChatResponseTestRoute200ResponseSchema"
                 }
               }
             }
@@ -11339,7 +11339,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ResubmitTestsRoute200ResponseResponseJson"
+                  "$ref": "#/components/schemas/ResubmitTestsRoute200ResponseSchema"
                 }
               }
             }
@@ -12302,7 +12302,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DeleteConversationRoute200ResponseResponseJson"
+                  "$ref": "#/components/schemas/DeleteConversationRoute200ResponseSchema"
                 }
               }
             }
@@ -12489,7 +12489,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/PostConversationFeedbackRoute200ResponseResponseJson"
+                  "$ref": "#/components/schemas/PostConversationFeedbackRoute200ResponseSchema"
                 }
               }
             }
@@ -13778,7 +13778,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DeletePhoneNumberRoute200ResponseResponseJson"
+                  "$ref": "#/components/schemas/DeletePhoneNumberRoute200ResponseSchema"
                 }
               }
             }
@@ -14758,7 +14758,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/CancelCrawlJobRoute200ResponseResponseJson"
+                  "$ref": "#/components/schemas/CancelCrawlJobRoute200ResponseSchema"
                 }
               }
             }
@@ -15122,7 +15122,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DeleteKnowledgeBaseDocument200ResponseResponseJson"
+                  "$ref": "#/components/schemas/DeleteKnowledgeBaseDocument200ResponseSchema"
                 }
               }
             }
@@ -15962,7 +15962,7 @@
             "content": {
               "text/html": {
                 "schema": {
-                  "$ref": "#/components/schemas/GetKnowledgeBaseContent200ResponseResponseHtml"
+                  "$ref": "#/components/schemas/GetKnowledgeBaseContent200HtmlResponseSchema"
                 }
               }
             }
@@ -16845,7 +16845,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DeleteToolRoute200ResponseResponseJson"
+                  "$ref": "#/components/schemas/DeleteToolRoute200ResponseSchema"
                 }
               }
             }
@@ -17700,7 +17700,7 @@
             "content": {
               "text/csv": {
                 "schema": {
-                  "$ref": "#/components/schemas/ExportBatchCall200ResponseResponseCsv"
+                  "$ref": "#/components/schemas/ExportBatchCall200CsvResponseSchema"
                 }
               }
             }
@@ -18293,7 +18293,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DeleteMcpServerRoute200ResponseResponseJson"
+                  "$ref": "#/components/schemas/DeleteMcpServerRoute200ResponseSchema"
                 }
               }
             }
@@ -18963,7 +18963,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/UpdateWhatsappAccount200ResponseResponseJson"
+                  "$ref": "#/components/schemas/UpdateWhatsappAccount200ResponseSchema"
                 }
               }
             }
@@ -19015,7 +19015,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DeleteWhatsappAccount200ResponseResponseJson"
+                  "$ref": "#/components/schemas/DeleteWhatsappAccount200ResponseSchema"
                 }
               }
             }
@@ -19632,7 +19632,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/MergeBranchIntoTarget200ResponseResponseJson"
+                  "$ref": "#/components/schemas/MergeBranchIntoTarget200ResponseSchema"
                 }
               }
             }
@@ -19778,7 +19778,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/RebaseBranchOntoMain200ResponseResponseJson"
+                  "$ref": "#/components/schemas/RebaseBranchOntoMain200ResponseSchema"
                 }
               }
             }
@@ -19928,7 +19928,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/CreateAgentDraftRoute200ResponseResponseJson"
+                  "$ref": "#/components/schemas/CreateAgentDraftRoute200ResponseSchema"
                 }
               }
             }
@@ -19999,7 +19999,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DeleteAgentDraftRoute200ResponseResponseJson"
+                  "$ref": "#/components/schemas/DeleteAgentDraftRoute200ResponseSchema"
                 }
               }
             }
@@ -20617,7 +20617,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/RemoveProcedureRoute200ResponseResponseJson"
+                  "$ref": "#/components/schemas/RemoveProcedureRoute200ResponseSchema"
                 }
               }
             }
@@ -20943,7 +20943,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DeleteProcedureDraftRoute200ResponseResponseJson"
+                  "$ref": "#/components/schemas/DeleteProcedureDraftRoute200ResponseSchema"
                 }
               }
             }
@@ -21446,7 +21446,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Generate200ResponseResponseJson"
+                  "$ref": "#/components/schemas/Generate200Response"
                 }
               }
             }
@@ -21508,7 +21508,7 @@
             "content": {
               "multipart/mixed": {
                 "schema": {
-                  "$ref": "#/components/schemas/ComposeDetailed200ResponseResponseMixed"
+                  "$ref": "#/components/schemas/ComposeDetailed200MixedResponseSchema"
                 }
               }
             }
@@ -21570,7 +21570,7 @@
             "content": {
               "text/event-stream": {
                 "schema": {
-                  "$ref": "#/components/schemas/ComposeDetailedStream200ResponseResponseEventStream"
+                  "$ref": "#/components/schemas/ComposeDetailedStream200EventStreamResponseSchema"
                 }
               }
             }
@@ -21632,7 +21632,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/StreamCompose200ResponseResponseJson"
+                  "$ref": "#/components/schemas/StreamCompose200Response"
                 }
               }
             }
@@ -21748,7 +21748,7 @@
             "content": {
               "application/zip": {
                 "schema": {
-                  "$ref": "#/components/schemas/SeparateSongStems200ResponseResponseZip"
+                  "$ref": "#/components/schemas/SeparateSongStems200ZipResponseSchema"
                 },
                 "example": "Binary ZIP file containing files like: vocals.mp3, drums.mp3, bass.mp3, guitar.mp3, piano.mp3, other.mp3"
               }
@@ -23850,7 +23850,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/RedirectToMintlify200ResponseResponseJson"
+                  "$ref": "#/components/schemas/RedirectToMintlify200ResponseSchema"
                 }
               }
             }
@@ -44197,16 +44197,13 @@
       },
       "DubbingTargetSegmentUpdateRequest": {
         "title": "DubbingTargetSegmentUpdateRequest",
-        "required": [
-          "translation"
-        ],
         "type": "object",
         "properties": {
           "translation": {
             "$ref": "#/components/schemas/DubbingTargetSegmentUpdateRequestTranslation"
           }
         },
-        "description": "An edit to a target segment\u0027s translation."
+        "description": "A partial edit to a target segment. An omitted field is left unchanged; a provided \u0060\u0060null\u0060\u0060\nclears it (see each field for what clearing means)."
       },
       "DubbingTargetSegmentUpdateResponse": {
         "title": "DubbingTargetSegmentUpdateResponse",
@@ -62981,6 +62978,9 @@
           "error": {
             "title": "Error",
             "type": "string"
+          },
+          "details": {
+            "$ref": "#/components/schemas/RunSubagentToolResultErrorModelDetails"
           }
         }
       },
@@ -63033,6 +63033,9 @@
           "agent_response": {
             "title": "Agent Response",
             "type": "string"
+          },
+          "details": {
+            "$ref": "#/components/schemas/RunSubagentToolResultSuccessModelDetails"
           }
         }
       },
@@ -66300,6 +66303,18 @@
           },
           "parameters": {
             "$ref": "#/components/schemas/SubAgentOutputParameters"
+          }
+        }
+      },
+      "SubagentRunResultDetails": {
+        "title": "SubagentRunResultDetails",
+        "type": "object",
+        "properties": {
+          "sub_conversation_id": {
+            "$ref": "#/components/schemas/SubagentRunResultDetailsSubConversationId"
+          },
+          "agent_id": {
+            "$ref": "#/components/schemas/SubagentRunResultDetailsAgentId"
           }
         }
       },
@@ -74220,6 +74235,12 @@
           "styles": {
             "$ref": "#/components/schemas/WidgetStyles"
           },
+          "show_resize_button": {
+            "title": "Show Resize Button",
+            "type": "boolean",
+            "description": "Whether to show the resize button",
+            "default": true
+          },
           "language_selector": {
             "title": "Language Selector",
             "type": "boolean",
@@ -74444,6 +74465,12 @@
           },
           "styles": {
             "$ref": "#/components/schemas/WidgetStyles"
+          },
+          "show_resize_button": {
+            "title": "Show Resize Button",
+            "type": "boolean",
+            "description": "Whether to show the resize button",
+            "default": true
           },
           "language_selector": {
             "title": "Language Selector",
@@ -74672,6 +74699,12 @@
           },
           "styles": {
             "$ref": "#/components/schemas/WidgetStyles"
+          },
+          "show_resize_button": {
+            "title": "Show Resize Button",
+            "type": "boolean",
+            "description": "Whether to show the resize button",
+            "default": true
           },
           "language": {
             "title": "Language",
@@ -99331,6 +99364,62 @@
         "description": "ID of the branch to run the tests on. If not provided, the tests will be run on the agent\u0027s main branch.",
         "nullable": true
       },
+      "RunSubagentToolResultErrorModelDetails": {
+        "required": [
+          "type"
+        ],
+        "type": "object",
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/SubagentRunResultDetails"
+          },
+          {
+            "enum": [
+              null
+            ]
+          }
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "Union discriminator"
+          }
+        },
+        "discriminator": {
+          "propertyName": "type",
+          "mapping": {
+            "SubagentRunResultDetails": "#/components/schemas/SubagentRunResultDetails"
+          }
+        }
+      },
+      "RunSubagentToolResultSuccessModelDetails": {
+        "required": [
+          "type"
+        ],
+        "type": "object",
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/SubagentRunResultDetails"
+          },
+          {
+            "enum": [
+              null
+            ]
+          }
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "Union discriminator"
+          }
+        },
+        "discriminator": {
+          "propertyName": "type",
+          "mapping": {
+            "SubagentRunResultDetails": "#/components/schemas/SubagentRunResultDetails"
+          }
+        }
+      },
       "SipTrunkCredentialsRequestModelPassword": {
         "title": "Password",
         "type": "string",
@@ -101006,6 +101095,16 @@
             "ObjectJsonSchemaPropertyOutput": "#/components/schemas/ObjectJsonSchemaPropertyOutput"
           }
         }
+      },
+      "SubagentRunResultDetailsSubConversationId": {
+        "title": "Sub Conversation Id",
+        "type": "string",
+        "nullable": true
+      },
+      "SubagentRunResultDetailsAgentId": {
+        "title": "Agent Id",
+        "type": "string",
+        "nullable": true
       },
       "SubscriptionResponseModelMaxCharacterLimitExtension": {
         "title": "Max Character Limit Extension",
@@ -109025,11 +109124,11 @@
         "type": "object",
         "description": "Attributes not mapped to OCSF"
       },
-      "GetAudioFullFromSpeechHistoryItem200Response": {
+      "GetAudioFullFromSpeechHistoryItem200MpegResponse": {
         "type": "string",
         "format": "binary"
       },
-      "DownloadSpeechHistoryItems200Response": {
+      "DownloadSpeechHistoryItems200ZipResponse": {
         "type": "string",
         "format": "binary"
       },
@@ -109044,51 +109143,51 @@
           }
         }
       },
-      "SoundGeneration200Response": {
+      "SoundGeneration200MpegResponse": {
         "type": "string",
         "format": "binary"
       },
-      "TextToSpeechFull200Response": {
+      "TextToSpeechFull200MpegResponse": {
         "type": "string",
         "format": "binary"
       },
-      "TextToSpeechStream200Response": {
+      "TextToSpeechStream200MpegResponse": {
         "type": "string",
         "format": "binary"
       },
-      "TextToDialogue200Response": {
+      "TextToDialogue200MpegResponse": {
         "type": "string",
         "format": "binary"
       },
-      "TextToDialogueStream200Response": {
+      "TextToDialogueStream200MpegResponse": {
         "type": "string",
         "format": "binary"
       },
-      "SpeechToSpeechFull200Response": {
+      "SpeechToSpeechFull200MpegResponse": {
         "type": "string",
         "format": "binary"
       },
-      "SpeechToSpeechStream200Response": {
+      "SpeechToSpeechStream200MpegResponse": {
         "type": "string",
         "format": "binary"
       },
-      "TextToVoicePreviewStream200Response": {
+      "TextToVoicePreviewStream200MpegResponse": {
         "type": "string",
         "format": "binary"
       },
-      "StreamProjectSnapshotArchiveEndpoint200Response": {
+      "StreamProjectSnapshotArchiveEndpoint200XZipResponse": {
         "type": "string",
         "format": "binary"
       },
-      "StreamChapterSnapshotAudio200Response": {
+      "StreamChapterSnapshotAudio200MpegResponse": {
         "type": "string",
         "format": "binary"
       },
-      "GetDubbedFile200Response": {
+      "GetDubbedFile200MpegResponse": {
         "type": "string",
         "format": "binary"
       },
-      "GetDubbedFile200ResponseResponseMp4": {
+      "GetDubbedFile200Mp4Response": {
         "type": "string",
         "format": "binary"
       },
@@ -109099,7 +109198,7 @@
           "$ref": "#/components/schemas/ModelResponseModel"
         }
       },
-      "GetPronunciationDictionaryVersionPls200Response": {
+      "GetPronunciationDictionaryVersionPls200PlainResponse": {
         "type": "string",
         "format": "binary"
       },
@@ -109405,11 +109504,11 @@
       "UnshareResourceEndpoint200Response": {
         "type": "object"
       },
-      "VideoToMusic200Response": {
+      "VideoToMusic200MediaResponse": {
         "type": "string",
         "format": "binary"
       },
-      "VideoToMusic200ResponseResponseZip": {
+      "VideoToMusic200ZipResponse": {
         "type": "string",
         "format": "binary"
       },
@@ -109476,7 +109575,7 @@
       "DeleteTranscriptById200Response": {
         "type": "object"
       },
-      "RegisterTwilioCall200Response": {
+      "RegisterTwilioCall200HtmlResponse": {
         "type": "string"
       },
       "ResponseGetAgentSummariesV1ConvaiAgentsSummariesGet": {
@@ -109938,7 +110037,7 @@
           }
         }
       },
-      "GetKnowledgeBaseContent200Response": {
+      "GetKnowledgeBaseContent200HtmlResponse": {
         "type": "string"
       },
       "ResponseBulkDeleteKnowledgeBaseDocumentsV1ConvaiKnowledgeBaseBulkDeletePost": {
@@ -109951,7 +110050,7 @@
       "DeleteToolRoute200Response": {
         "type": "object"
       },
-      "ExportBatchCall200Response": {
+      "ExportBatchCall200CsvResponse": {
         "type": "string",
         "format": "binary"
       },
@@ -110075,24 +110174,24 @@
           }
         }
       },
-      "Generate200Response": {
+      "Generate200MediaResponse": {
         "type": "string",
         "format": "binary"
       },
-      "ComposeDetailed200Response": {
+      "ComposeDetailed200MixedResponse": {
         "type": "string",
         "description": "\u0022Raw multipart/mixed response data that clients must parse. Contains two parts separated by boundary: 1) application/json part with composition_plan and song_metadata 2) audio/* part with binary audio data and Content-Disposition header\u0022",
         "format": "binary"
       },
-      "ComposeDetailedStream200Response": {
+      "ComposeDetailedStream200EventStreamResponse": {
         "type": "string",
         "description": "SSE stream. Audio chunks are emitted as base64-encoded payloads with optional word timestamps in audio_chunk events."
       },
-      "StreamCompose200Response": {
+      "StreamCompose200MediaResponse": {
         "type": "string",
         "format": "binary"
       },
-      "SeparateSongStems200Response": {
+      "SeparateSongStems200ZipResponse": {
         "type": "string",
         "format": "binary"
       },
@@ -112220,59 +112319,59 @@
           }
         }
       },
-      "GetAudioFullFromSpeechHistoryItem200ResponseResponseMpeg": {
+      "GetAudioFullFromSpeechHistoryItem200MpegResponseSchema": {
         "type": "string",
         "format": "binary"
       },
-      "DownloadSpeechHistoryItems200ResponseResponseZip": {
+      "DownloadSpeechHistoryItems200ZipResponseSchema": {
         "type": "string",
         "format": "binary"
       },
-      "SoundGeneration200ResponseResponseMpeg": {
+      "SoundGeneration200MpegResponseSchema": {
         "type": "string",
         "format": "binary"
       },
-      "TextToSpeechFull200ResponseResponseMpeg": {
+      "TextToSpeechFull200MpegResponseSchema": {
         "type": "string",
         "format": "binary"
       },
-      "TextToSpeechStream200ResponseResponseMpeg": {
+      "TextToSpeechStream200MpegResponseSchema": {
         "type": "string",
         "format": "binary"
       },
-      "TextToDialogue200ResponseResponseMpeg": {
+      "TextToDialogue200MpegResponseSchema": {
         "type": "string",
         "format": "binary"
       },
-      "TextToDialogueStream200ResponseResponseMpeg": {
+      "TextToDialogueStream200MpegResponseSchema": {
         "type": "string",
         "format": "binary"
       },
-      "SpeechToSpeechFull200ResponseResponseMpeg": {
+      "SpeechToSpeechFull200MpegResponseSchema": {
         "type": "string",
         "format": "binary"
       },
-      "SpeechToSpeechStream200ResponseResponseMpeg": {
+      "SpeechToSpeechStream200MpegResponseSchema": {
         "type": "string",
         "format": "binary"
       },
-      "TextToVoicePreviewStream200ResponseResponseMpeg": {
+      "TextToVoicePreviewStream200MpegResponseSchema": {
         "type": "string",
         "format": "binary"
       },
-      "StreamProjectSnapshotArchiveEndpoint200ResponseResponseXZip": {
+      "StreamProjectSnapshotArchiveEndpoint200XZipResponseSchema": {
         "type": "string",
         "format": "binary"
       },
-      "StreamChapterSnapshotAudio200ResponseResponseMpeg": {
+      "StreamChapterSnapshotAudio200MpegResponseSchema": {
         "type": "string",
         "format": "binary"
       },
-      "GetDubbedFile200ResponseResponseMpeg": {
+      "GetDubbedFile200MpegResponseSchema": {
         "type": "string",
         "format": "binary"
       },
-      "GetDubbedFile200ResponseResponseMp42": {
+      "GetDubbedFile200Mp4ResponseSchema": {
         "type": "string",
         "format": "binary"
       },
@@ -112282,23 +112381,23 @@
           "$ref": "#/components/schemas/ModelResponseModel"
         }
       },
-      "GetPronunciationDictionaryVersionPls200ResponseResponsePlain": {
+      "GetPronunciationDictionaryVersionPls200PlainResponseSchema": {
         "type": "string",
         "format": "binary"
       },
-      "Disable200ResponseResponseJson": {
+      "Disable200ResponseSchema": {
         "type": "object"
       },
-      "SetThirdPartyDisablingPolicy200ResponseResponseJson": {
+      "SetThirdPartyDisablingPolicy200ResponseSchema": {
         "type": "object"
       },
-      "EditServiceAccountApiKey200ResponseResponseJson": {
+      "EditServiceAccountApiKey200ResponseSchema": {
         "type": "object"
       },
-      "DeleteServiceAccountApiKey200ResponseResponseJson": {
+      "DeleteServiceAccountApiKey200ResponseSchema": {
         "type": "object"
       },
-      "DeleteAuthConnection200ResponseResponseJson": {
+      "DeleteAuthConnection200ResponseSchema": {
         "type": "object"
       },
       "GetGroupsEndpoint200Response": {
@@ -112319,24 +112418,24 @@
           "$ref": "#/components/schemas/WorkspaceMemberResponseModel"
         }
       },
-      "ShareResourceEndpoint200ResponseResponseJson": {
+      "ShareResourceEndpoint200ResponseSchema": {
         "type": "object"
       },
-      "UnshareResourceEndpoint200ResponseResponseJson": {
+      "UnshareResourceEndpoint200ResponseSchema": {
         "type": "object"
       },
-      "VideoToMusic200ResponseResponseJson": {
+      "VideoToMusic200Response": {
         "type": "string",
         "format": "binary"
       },
-      "VideoToMusic200ResponseResponseZip2": {
+      "VideoToMusic200ZipResponseSchema": {
         "type": "string",
         "format": "binary"
       },
-      "DeleteTranscriptById200ResponseResponseJson": {
+      "DeleteTranscriptById200ResponseSchema": {
         "type": "object"
       },
-      "RegisterTwilioCall200ResponseResponseHtml": {
+      "RegisterTwilioCall200HtmlResponseSchema": {
         "type": "string"
       },
       "GetAgentSummariesRoute200Response": {
@@ -112345,19 +112444,19 @@
           "$ref": "#/components/schemas/ResponseGetAgentSummariesV1ConvaiAgentsSummariesGetAdditionalProperties"
         }
       },
-      "AgentTestingBulkMoveRoute200ResponseResponseJson": {
+      "AgentTestingBulkMoveRoute200ResponseSchema": {
         "type": "object"
       },
-      "DeleteChatResponseTestRoute200ResponseResponseJson": {
+      "DeleteChatResponseTestRoute200ResponseSchema": {
         "type": "object"
       },
-      "ResubmitTestsRoute200ResponseResponseJson": {
+      "ResubmitTestsRoute200ResponseSchema": {
         "type": "object"
       },
-      "DeleteConversationRoute200ResponseResponseJson": {
+      "DeleteConversationRoute200ResponseSchema": {
         "type": "object"
       },
-      "PostConversationFeedbackRoute200ResponseResponseJson": {
+      "PostConversationFeedbackRoute200ResponseSchema": {
         "type": "object"
       },
       "ListPhoneNumbersRoute200Response": {
@@ -112366,7 +112465,7 @@
           "$ref": "#/components/schemas/ResponseListPhoneNumbersV1ConvaiPhoneNumbersGetItem"
         }
       },
-      "DeletePhoneNumberRoute200ResponseResponseJson": {
+      "DeletePhoneNumberRoute200ResponseSchema": {
         "type": "object"
       },
       "GetAgentKnowledgeBaseSummariesRoute200Response": {
@@ -112375,10 +112474,10 @@
           "$ref": "#/components/schemas/ResponseGetKnowledgeBaseSummariesByIdsV1ConvaiKnowledgeBaseSummariesGetAdditionalProperties"
         }
       },
-      "CancelCrawlJobRoute200ResponseResponseJson": {
+      "CancelCrawlJobRoute200ResponseSchema": {
         "type": "object"
       },
-      "DeleteKnowledgeBaseDocument200ResponseResponseJson": {
+      "DeleteKnowledgeBaseDocument200ResponseSchema": {
         "type": "object"
       },
       "GetOrCreateRagIndexes200Response": {
@@ -112387,7 +112486,7 @@
           "$ref": "#/components/schemas/ResponseComputeRagIndexesInBatchV1ConvaiKnowledgeBaseRagIndexPostAdditionalProperties"
         }
       },
-      "GetKnowledgeBaseContent200ResponseResponseHtml": {
+      "GetKnowledgeBaseContent200HtmlResponseSchema": {
         "type": "string"
       },
       "PostKnowledgeBaseBulkDeleteRoute200Response": {
@@ -112396,58 +112495,58 @@
           "$ref": "#/components/schemas/ResponseBulkDeleteKnowledgeBaseDocumentsV1ConvaiKnowledgeBaseBulkDeletePostAdditionalProperties"
         }
       },
-      "DeleteToolRoute200ResponseResponseJson": {
+      "DeleteToolRoute200ResponseSchema": {
         "type": "object"
       },
-      "ExportBatchCall200ResponseResponseCsv": {
+      "ExportBatchCall200CsvResponseSchema": {
         "type": "string",
         "format": "binary"
       },
-      "DeleteMcpServerRoute200ResponseResponseJson": {
+      "DeleteMcpServerRoute200ResponseSchema": {
         "type": "object"
       },
-      "UpdateWhatsappAccount200ResponseResponseJson": {
+      "UpdateWhatsappAccount200ResponseSchema": {
         "type": "object"
       },
-      "DeleteWhatsappAccount200ResponseResponseJson": {
+      "DeleteWhatsappAccount200ResponseSchema": {
         "type": "object"
       },
-      "MergeBranchIntoTarget200ResponseResponseJson": {
+      "MergeBranchIntoTarget200ResponseSchema": {
         "type": "object"
       },
-      "RebaseBranchOntoMain200ResponseResponseJson": {
+      "RebaseBranchOntoMain200ResponseSchema": {
         "type": "object"
       },
-      "CreateAgentDraftRoute200ResponseResponseJson": {
+      "CreateAgentDraftRoute200ResponseSchema": {
         "type": "object"
       },
-      "DeleteAgentDraftRoute200ResponseResponseJson": {
+      "DeleteAgentDraftRoute200ResponseSchema": {
         "type": "object"
       },
-      "RemoveProcedureRoute200ResponseResponseJson": {
+      "RemoveProcedureRoute200ResponseSchema": {
         "type": "object"
       },
-      "DeleteProcedureDraftRoute200ResponseResponseJson": {
+      "DeleteProcedureDraftRoute200ResponseSchema": {
         "type": "object"
       },
-      "Generate200ResponseResponseJson": {
+      "Generate200Response": {
         "type": "string",
         "format": "binary"
       },
-      "ComposeDetailed200ResponseResponseMixed": {
+      "ComposeDetailed200MixedResponseSchema": {
         "type": "string",
         "description": "\u0022Raw multipart/mixed response data that clients must parse. Contains two parts separated by boundary: 1) application/json part with composition_plan and song_metadata 2) audio/* part with binary audio data and Content-Disposition header\u0022",
         "format": "binary"
       },
-      "ComposeDetailedStream200ResponseResponseEventStream": {
+      "ComposeDetailedStream200EventStreamResponseSchema": {
         "type": "string",
         "description": "SSE stream. Audio chunks are emitted as base64-encoded payloads with optional word timestamps in audio_chunk events."
       },
-      "StreamCompose200ResponseResponseJson": {
+      "StreamCompose200Response": {
         "type": "string",
         "format": "binary"
       },
-      "SeparateSongStems200ResponseResponseZip": {
+      "SeparateSongStems200ZipResponseSchema": {
         "type": "string",
         "format": "binary"
       },
@@ -112457,7 +112556,7 @@
           "$ref": "#/components/schemas/SampleResponseModel"
         }
       },
-      "RedirectToMintlify200ResponseResponseJson": {
+      "RedirectToMintlify200ResponseSchema": {
         "type": "object"
       },
       "ConversationHistoryMetadataCommonModelPhoneCallAnyOf1": {

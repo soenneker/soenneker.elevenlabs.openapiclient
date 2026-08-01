@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.ElevenLabs.OpenApiClient.Models
 {
     /// <summary>
-    /// An edit to a target segment&apos;s translation.
+    /// A partial edit to a target segment. An omitted field is left unchanged; a provided ``null``clears it (see each field for what clearing means).
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class DubbingTargetSegmentUpdateRequest : IAdditionalDataHolder, IParsable
