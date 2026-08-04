@@ -28063,6 +28063,22 @@
           }
         }
       },
+      "AnalysisCharging": {
+        "title": "AnalysisCharging",
+        "required": [
+          "total"
+        ],
+        "type": "object",
+        "properties": {
+          "total": {
+            "$ref": "#/components/schemas/AnalysisRunningTotal"
+          },
+          "last_run": {
+            "$ref": "#/components/schemas/AnalysisChargingLastRun"
+          }
+        },
+        "description": "Cost of running post-call analysis on this conversation.\n\nPresent once analysis has incurred a cost. \u0060last_run\u0060 is null when the\nmost recent pass incurred none."
+      },
       "AnalysisProperty": {
         "title": "AnalysisProperty",
         "required": [
@@ -28119,6 +28135,52 @@
           "type": "string"
         }
       },
+      "AnalysisRunSnapshot": {
+        "title": "AnalysisRunSnapshot",
+        "type": "object",
+        "properties": {
+          "price": {
+            "title": "Price",
+            "type": "number",
+            "default": 0.0
+          },
+          "charge": {
+            "title": "Charge",
+            "type": "integer",
+            "default": 0
+          },
+          "price_per_feature": {
+            "$ref": "#/components/schemas/AnalysisRunSnapshotPricePerFeatureProperty"
+          },
+          "charge_per_feature": {
+            "$ref": "#/components/schemas/AnalysisRunSnapshotChargePerFeatureProperty"
+          }
+        },
+        "description": "LLM cost of the most recent post-call analysis pass on this conversation."
+      },
+      "AnalysisRunningTotal": {
+        "title": "AnalysisRunningTotal",
+        "type": "object",
+        "properties": {
+          "price": {
+            "title": "Price",
+            "type": "number",
+            "default": 0.0
+          },
+          "charge": {
+            "title": "Charge",
+            "type": "integer",
+            "default": 0
+          },
+          "price_per_feature": {
+            "$ref": "#/components/schemas/AnalysisRunningTotalPricePerFeatureProperty"
+          },
+          "charge_per_feature": {
+            "$ref": "#/components/schemas/AnalysisRunningTotalChargePerFeatureProperty"
+          }
+        },
+        "description": "Cumulative LLM cost of running post-call analysis on this conversation."
+      },
       "AnalysisScope": {
         "title": "AnalysisScope",
         "enum": [
@@ -28138,6 +28200,29 @@
             {
               "value": "agent",
               "name": "Agent"
+            }
+          ]
+        }
+      },
+      "AnalysisType": {
+        "title": "AnalysisType",
+        "enum": [
+          "evaluation_criteria",
+          "data_collection"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "AnalysisType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "evaluation_criteria",
+              "name": "EvaluationCriteria"
+            },
+            {
+              "value": "data_collection",
+              "name": "DataCollection"
             }
           ]
         }
@@ -29037,34 +29122,6 @@
               "$ref": "#/components/schemas/AudioKeyMoment"
             }
           }
-        }
-      },
-      "AudioFormat": {
-        "title": "AudioFormat",
-        "enum": [
-          "audio/pcm",
-          "audio/pcmu",
-          "audio/pcma"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "x-ms-enum": {
-          "name": "AudioFormat",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "audio/pcm",
-              "name": "AudioPcm"
-            },
-            {
-              "value": "audio/pcmu",
-              "name": "AudioPcmu"
-            },
-            {
-              "value": "audio/pcma",
-              "name": "AudioPcma"
-            }
-          ]
         }
       },
       "AudioIsolationHistoryItemResponseModel": {
@@ -31130,7 +31187,7 @@
           "target_language": {
             "title": "Target Language",
             "type": "string",
-            "description": "BCP-47 language tag to dub the project into (e.g. \u0027fr\u0027, \u0027es-419\u0027)."
+            "description": "BCP-47 language tag to dub the project into (e.g. \u0027fr\u0027, \u0027es-MX\u0027); must be a language the dubbing model supports. A region-qualified tag must be one of the supported dialects."
           },
           "model_id": {
             "$ref": "#/components/schemas/BodyCreateDubbingLanguageTargetV1DubbingProjectProjectIdLanguagePostModelId"
@@ -36413,6 +36470,39 @@
           ]
         }
       },
+      "ConflictSection": {
+        "title": "ConflictSection",
+        "enum": [
+          "conversation_config",
+          "platform_settings",
+          "procedures",
+          "workflow"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "ConflictSection",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "conversation_config",
+              "name": "ConversationConfig"
+            },
+            {
+              "value": "platform_settings",
+              "name": "PlatformSettings"
+            },
+            {
+              "value": "procedures",
+              "name": "Procedures"
+            },
+            {
+              "value": "workflow",
+              "name": "Workflow"
+            }
+          ]
+        }
+      },
       "ConstantSchemaOverride": {
         "title": "ConstantSchemaOverride",
         "required": [
@@ -36865,6 +36955,9 @@
           },
           "asr_usage": {
             "$ref": "#/components/schemas/ConversationChargingCommonModelAsrUsage"
+          },
+          "analysis": {
+            "$ref": "#/components/schemas/ConversationChargingCommonModelAnalysis"
           }
         }
       },
@@ -44502,6 +44595,29 @@
           }
         }
       },
+      "DummyToolResultModel": {
+        "title": "DummyToolResultModel",
+        "type": "object",
+        "properties": {
+          "result_type": {
+            "title": "Result Type",
+            "enum": [
+              "dummy"
+            ],
+            "type": "string",
+            "x-ms-enum": {
+              "name": "ResultType",
+              "modelAsString": false,
+              "values": [
+                {
+                  "value": "dummy",
+                  "name": "Dummy"
+                }
+              ]
+            }
+          }
+        }
+      },
       "DynamicVariableAssignment": {
         "title": "DynamicVariableAssignment",
         "required": [
@@ -44656,34 +44772,6 @@
           "dynamic_variable_placeholders": {
             "user_name": "John Doe"
           }
-        }
-      },
-      "Eagerness": {
-        "title": "Eagerness",
-        "enum": [
-          "low",
-          "medium",
-          "high"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "x-ms-enum": {
-          "name": "Eagerness",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "low",
-              "name": "Low"
-            },
-            {
-              "value": "medium",
-              "name": "Medium"
-            },
-            {
-              "value": "high",
-              "name": "High"
-            }
-          ]
         }
       },
       "EditChapterResponseModel": {
@@ -45802,6 +45890,33 @@
           },
           "file_input": {
             "$ref": "#/components/schemas/FeatureStatusCommonModel"
+          }
+        }
+      },
+      "FieldConflict": {
+        "title": "FieldConflict",
+        "required": [
+          "path",
+          "section"
+        ],
+        "type": "object",
+        "properties": {
+          "path": {
+            "title": "Path",
+            "type": "string",
+            "description": "\u0022Identifier of the conflicting field relative to its section: a dot-path within conversation_config/platform_settings, or a procedure id.\u0022"
+          },
+          "section": {
+            "$ref": "#/components/schemas/ConflictSection"
+          },
+          "base_value": {
+            "$ref": "#/components/schemas/FieldConflictBaseValue"
+          },
+          "source_value": {
+            "$ref": "#/components/schemas/FieldConflictSourceValue"
+          },
+          "target_value": {
+            "$ref": "#/components/schemas/FieldConflictTargetValue"
           }
         }
       },
@@ -54452,6 +54567,14 @@
             },
             "description": "Dot-paths of config fields where both branches modified the same field relative to their common ancestor (conflicts). Present regardless of which side wins the conflict."
           },
+          "conflicts": {
+            "title": "Conflicts",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/FieldConflict"
+            },
+            "description": "Structured view of the same conflicts as overridden_fields, each carrying the value on the base (common ancestor), source branch, and target branch so the divergence can be presented and resolved field-by-field."
+          },
           "source_identical_to_target": {
             "title": "Source Identical To Target",
             "type": "boolean",
@@ -56094,293 +56217,6 @@
                 }
               ]
             }
-          }
-        }
-      },
-      "OpenAiAudioConfig": {
-        "title": "OpenAIAudioConfig",
-        "type": "object",
-        "properties": {
-          "input": {
-            "$ref": "#/components/schemas/OpenAiAudioInputConfig"
-          },
-          "output": {
-            "$ref": "#/components/schemas/OpenAiAudioOutputConfig"
-          }
-        }
-      },
-      "OpenAiAudioInputConfig": {
-        "title": "OpenAIAudioInputConfig",
-        "type": "object",
-        "properties": {
-          "format": {
-            "$ref": "#/components/schemas/OpenAiAudioInputFormat"
-          },
-          "turn_detection": {
-            "$ref": "#/components/schemas/OpenAiAudioInputConfigTurnDetection"
-          }
-        }
-      },
-      "OpenAiAudioInputFormat": {
-        "title": "OpenAIAudioInputFormat",
-        "type": "object",
-        "properties": {
-          "type": {
-            "$ref": "#/components/schemas/AudioFormat"
-          },
-          "rate": {
-            "title": "Rate",
-            "type": "integer",
-            "default": 24000
-          }
-        }
-      },
-      "OpenAiAudioOutputConfig": {
-        "title": "OpenAIAudioOutputConfig",
-        "type": "object",
-        "properties": {
-          "format": {
-            "$ref": "#/components/schemas/OpenAiAudioOutputFormat"
-          },
-          "voice": {
-            "title": "Voice",
-            "type": "string",
-            "default": "brian"
-          }
-        }
-      },
-      "OpenAiAudioOutputFormat": {
-        "title": "OpenAIAudioOutputFormat",
-        "type": "object",
-        "properties": {
-          "type": {
-            "$ref": "#/components/schemas/AudioFormat"
-          }
-        }
-      },
-      "OpenAiFunctionTool": {
-        "title": "OpenAIFunctionTool",
-        "required": [
-          "name"
-        ],
-        "type": "object",
-        "properties": {
-          "type": {
-            "title": "Type",
-            "enum": [
-              "function"
-            ],
-            "type": "string",
-            "x-ms-enum": {
-              "name": "Type",
-              "modelAsString": false,
-              "values": [
-                {
-                  "value": "function",
-                  "name": "Function"
-                }
-              ]
-            }
-          },
-          "name": {
-            "title": "Name",
-            "type": "string"
-          },
-          "description": {
-            "title": "Description",
-            "type": "string"
-          },
-          "parameters": {
-            "$ref": "#/components/schemas/OpenAiFunctionToolParametersProperty"
-          }
-        }
-      },
-      "OpenAimcpTool": {
-        "title": "OpenAIMCPTool",
-        "required": [
-          "server_label",
-          "server_url"
-        ],
-        "type": "object",
-        "properties": {
-          "type": {
-            "title": "Type",
-            "enum": [
-              "mcp"
-            ],
-            "type": "string",
-            "x-ms-enum": {
-              "name": "Type",
-              "modelAsString": false,
-              "values": [
-                {
-                  "value": "mcp",
-                  "name": "Mcp"
-                }
-              ]
-            }
-          },
-          "server_label": {
-            "title": "Server Label",
-            "type": "string"
-          },
-          "server_url": {
-            "title": "Server Url",
-            "type": "string"
-          },
-          "authorization": {
-            "$ref": "#/components/schemas/OpenAimcpToolAuthorization"
-          },
-          "allowed_tools": {
-            "$ref": "#/components/schemas/OpenAimcpToolAllowedTools"
-          },
-          "require_approval": {
-            "$ref": "#/components/schemas/OpenAimcpToolRequireApproval"
-          }
-        }
-      },
-      "OpenAiSessionConfig": {
-        "title": "OpenAISessionConfig",
-        "required": [
-          "output_modalities"
-        ],
-        "type": "object",
-        "properties": {
-          "type": {
-            "title": "Type",
-            "enum": [
-              "realtime"
-            ],
-            "type": "string",
-            "x-ms-enum": {
-              "name": "Type",
-              "modelAsString": false,
-              "values": [
-                {
-                  "value": "realtime",
-                  "name": "Realtime"
-                }
-              ]
-            }
-          },
-          "model": {
-            "title": "Model",
-            "type": "string",
-            "default": "eleven_realtime_v1_mini"
-          },
-          "instructions": {
-            "title": "Instructions",
-            "type": "string"
-          },
-          "modalities": {
-            "title": "Modalities",
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "audio": {
-            "$ref": "#/components/schemas/OpenAiAudioConfig"
-          },
-          "tools": {
-            "title": "Tools",
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/OpenAiSessionConfigToolsItem"
-            }
-          },
-          "tool_choice": {
-            "$ref": "#/components/schemas/OpenAiSessionConfigToolChoice"
-          },
-          "temperature": {
-            "title": "Temperature",
-            "type": "number",
-            "default": 0.7
-          },
-          "max_response_output_tokens": {
-            "$ref": "#/components/schemas/OpenAiSessionConfigMaxResponseOutputTokens"
-          },
-          "output_modalities": {
-            "title": "Output Modalities",
-            "type": "array",
-            "items": {
-              "type": "string"
-            },
-            "readOnly": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "OpenAiToolChoiceFunction": {
-        "title": "OpenAIToolChoiceFunction",
-        "required": [
-          "function"
-        ],
-        "type": "object",
-        "properties": {
-          "type": {
-            "title": "Type",
-            "enum": [
-              "function"
-            ],
-            "type": "string",
-            "x-ms-enum": {
-              "name": "Type",
-              "modelAsString": false,
-              "values": [
-                {
-                  "value": "function",
-                  "name": "Function"
-                }
-              ]
-            }
-          },
-          "function": {
-            "$ref": "#/components/schemas/OpenAiToolChoiceFunctionInner"
-          }
-        }
-      },
-      "OpenAiToolChoiceFunctionInner": {
-        "title": "OpenAIToolChoiceFunctionInner",
-        "required": [
-          "name"
-        ],
-        "type": "object",
-        "properties": {
-          "name": {
-            "title": "Name",
-            "type": "string"
-          }
-        }
-      },
-      "OpenAiTurnDetection": {
-        "title": "OpenAITurnDetection",
-        "type": "object",
-        "properties": {
-          "type": {
-            "$ref": "#/components/schemas/TurnDetectionType"
-          },
-          "eagerness": {
-            "$ref": "#/components/schemas/OpenAiTurnDetectionEagerness"
-          },
-          "create_response": {
-            "title": "Create Response",
-            "type": "boolean",
-            "default": true
-          },
-          "interrupt_response": {
-            "title": "Interrupt Response",
-            "type": "boolean",
-            "default": true
-          },
-          "threshold": {
-            "$ref": "#/components/schemas/OpenAiTurnDetectionThreshold"
-          },
-          "prefix_padding_ms": {
-            "$ref": "#/components/schemas/OpenAiTurnDetectionPrefixPaddingMs"
-          },
-          "silence_duration_ms": {
-            "$ref": "#/components/schemas/OpenAiTurnDetectionSilenceDurationMs"
           }
         }
       },
@@ -61907,75 +61743,6 @@
           "resource_type": "read"
         }
       },
-      "RealtimeConfigSnapshot": {
-        "title": "RealtimeConfigSnapshot",
-        "required": [
-          "_id",
-          "workspace_id",
-          "conversation_id",
-          "seq_no",
-          "time_in_call_secs",
-          "time_committed_secs",
-          "parents",
-          "session_config",
-          "safety"
-        ],
-        "type": "object",
-        "properties": {
-          "_id": {
-            "title": "Id",
-            "type": "string"
-          },
-          "workspace_id": {
-            "title": "Workspace Id",
-            "type": "string"
-          },
-          "conversation_id": {
-            "title": "Conversation Id",
-            "type": "string"
-          },
-          "seq_no": {
-            "title": "Seq No",
-            "type": "integer"
-          },
-          "time_in_call_secs": {
-            "title": "Time In Call Secs",
-            "type": "integer"
-          },
-          "time_committed_secs": {
-            "title": "Time Committed Secs",
-            "type": "integer"
-          },
-          "source_event_id": {
-            "$ref": "#/components/schemas/RealtimeConfigSnapshotSourceEventId"
-          },
-          "parents": {
-            "$ref": "#/components/schemas/RealtimeConfigSnapshotParents"
-          },
-          "session_config": {
-            "$ref": "#/components/schemas/OpenAiSessionConfig"
-          },
-          "safety": {
-            "$ref": "#/components/schemas/SafetyCommonModelOutput"
-          },
-          "changed_paths": {
-            "title": "Changed Paths",
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          }
-        }
-      },
-      "RealtimeConfigSnapshotParents": {
-        "title": "RealtimeConfigSnapshotParents",
-        "type": "object",
-        "properties": {
-          "previous_snapshot_id": {
-            "$ref": "#/components/schemas/RealtimeConfigSnapshotParentsPreviousSnapshotId"
-          }
-        }
-      },
       "RecordingResponseModel": {
         "title": "RecordingResponseModel",
         "required": [
@@ -62934,111 +62701,6 @@
           }
         }
       },
-      "RunSubagentToolResultErrorModel": {
-        "title": "RunSubagentToolResultErrorModel",
-        "required": [
-          "error"
-        ],
-        "type": "object",
-        "properties": {
-          "result_type": {
-            "title": "Result Type",
-            "enum": [
-              "run_subagent_error"
-            ],
-            "type": "string",
-            "x-ms-enum": {
-              "name": "ResultType",
-              "modelAsString": false,
-              "values": [
-                {
-                  "value": "run_subagent_error",
-                  "name": "RunSubagentError"
-                }
-              ]
-            }
-          },
-          "status": {
-            "title": "Status",
-            "enum": [
-              "error"
-            ],
-            "type": "string",
-            "x-ms-enum": {
-              "name": "Status",
-              "modelAsString": false,
-              "values": [
-                {
-                  "value": "error",
-                  "name": "Error"
-                }
-              ]
-            }
-          },
-          "error": {
-            "title": "Error",
-            "type": "string"
-          },
-          "details": {
-            "$ref": "#/components/schemas/RunSubagentToolResultErrorModelDetails"
-          }
-        }
-      },
-      "RunSubagentToolResultSuccessModel": {
-        "title": "RunSubagentToolResultSuccessModel",
-        "required": [
-          "query",
-          "agent_response"
-        ],
-        "type": "object",
-        "properties": {
-          "result_type": {
-            "title": "Result Type",
-            "enum": [
-              "run_subagent_success"
-            ],
-            "type": "string",
-            "x-ms-enum": {
-              "name": "ResultType",
-              "modelAsString": false,
-              "values": [
-                {
-                  "value": "run_subagent_success",
-                  "name": "RunSubagentSuccess"
-                }
-              ]
-            }
-          },
-          "status": {
-            "title": "Status",
-            "enum": [
-              "success"
-            ],
-            "type": "string",
-            "x-ms-enum": {
-              "name": "Status",
-              "modelAsString": false,
-              "values": [
-                {
-                  "value": "success",
-                  "name": "Success"
-                }
-              ]
-            }
-          },
-          "query": {
-            "title": "Query",
-            "type": "string"
-          },
-          "agent_response": {
-            "title": "Agent Response",
-            "type": "string"
-          },
-          "details": {
-            "$ref": "#/components/schemas/RunSubagentToolResultSuccessModelDetails"
-          }
-        }
-      },
       "SipLogMessage": {
         "title": "SIPLogMessage",
         "required": [
@@ -63278,6 +62940,32 @@
           "sip_uri": {
             "title": "Sip Uri",
             "type": "string"
+          }
+        }
+      },
+      "SmbClientAccessConfig": {
+        "title": "SMBClientAccessConfig",
+        "type": "object",
+        "properties": {
+          "enable_secure_mode": {
+            "title": "Enable Secure Mode",
+            "type": "boolean",
+            "default": false
+          },
+          "identity_verification_enabled": {
+            "title": "Identity Verification Enabled",
+            "type": "boolean",
+            "default": false
+          },
+          "identity_verification_email_enabled": {
+            "title": "Identity Verification Email Enabled",
+            "type": "boolean",
+            "default": false
+          },
+          "identity_verification_sms_enabled": {
+            "title": "Identity Verification Sms Enabled",
+            "type": "boolean",
+            "default": false
           }
         }
       },
@@ -69440,6 +69128,29 @@
           }
         }
       },
+      "TriggerUserVerificationParams": {
+        "title": "TriggerUserVerificationParams",
+        "type": "object",
+        "properties": {
+          "smb_tool_type": {
+            "title": "Smb Tool Type",
+            "enum": [
+              "trigger_user_verification"
+            ],
+            "type": "string",
+            "x-ms-enum": {
+              "name": "SmbToolType",
+              "modelAsString": false,
+              "values": [
+                {
+                  "value": "trigger_user_verification",
+                  "name": "TriggerUserVerification"
+                }
+              ]
+            }
+          }
+        }
+      },
       "TriggeredGuardrailCommonModel": {
         "title": "TriggeredGuardrailCommonModel",
         "required": [
@@ -69626,29 +69337,6 @@
           "turn_eagerness": "normal",
           "turn_model": "turn_v3",
           "turn_timeout": 7.0
-        }
-      },
-      "TurnDetectionType": {
-        "title": "TurnDetectionType",
-        "enum": [
-          "semantic_vad",
-          "server_vad"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "x-ms-enum": {
-          "name": "TurnDetectionType",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "semantic_vad",
-              "name": "SemanticVad"
-            },
-            {
-              "value": "server_vad",
-              "name": "ServerVad"
-            }
-          ]
         }
       },
       "TurnEagerness": {
@@ -71623,6 +71311,29 @@
               "name": "Famous"
             }
           ]
+        }
+      },
+      "ValidateUserVerificationCodeParams": {
+        "title": "ValidateUserVerificationCodeParams",
+        "type": "object",
+        "properties": {
+          "smb_tool_type": {
+            "title": "Smb Tool Type",
+            "enum": [
+              "validate_user_verification_code"
+            ],
+            "type": "string",
+            "x-ms-enum": {
+              "name": "SmbToolType",
+              "modelAsString": false,
+              "values": [
+                {
+                  "value": "validate_user_verification_code",
+                  "name": "ValidateUserVerificationCode"
+                }
+              ]
+            }
+          }
         }
       },
       "ValidationError": {
@@ -78753,6 +78464,34 @@
         "description": "Header value. May be null only for a secret header on update.",
         "nullable": true
       },
+      "AnalysisChargingLastRun": {
+        "required": [
+          "type"
+        ],
+        "type": "object",
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/AnalysisRunSnapshot"
+          },
+          {
+            "enum": [
+              null
+            ]
+          }
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "Union discriminator"
+          }
+        },
+        "discriminator": {
+          "propertyName": "type",
+          "mapping": {
+            "AnalysisRunSnapshot": "#/components/schemas/AnalysisRunSnapshot"
+          }
+        }
+      },
       "AnalysisPropertyEnum": {
         "title": "Enum",
         "type": "object",
@@ -80515,7 +80254,7 @@
       "BodyCreateDubbingProjectV1DubbingProjectPostSourceLanguage": {
         "title": "Source Language",
         "type": "string",
-        "description": "BCP-47 language tag of the source media. Omit to auto-detect.",
+        "description": "BCP-47 language tag of the source media; must be a language the transcription model supports. Any region or script subtag is ignored, since transcription is per-language. Omit to auto-detect.",
         "nullable": true
       },
       "BodyCreateDubbingProjectV1DubbingProjectPostModelId": {
@@ -80527,7 +80266,7 @@
       "BodyCreateDubbingProjectV1DubbingProjectPostTargetLanguage": {
         "title": "Target Language",
         "type": "string",
-        "description": "\u0022Optional shortcut: also create a language target in this BCP-47 language, queued to start once the project is ready.\u0022",
+        "description": "\u0022Optional shortcut: also create a language target in this BCP-47 language, queued to start once the project is ready. Must be a language the dubbing model supports, and a region-qualified tag must be one of the supported dialects.\u0022",
         "nullable": true
       },
       "BodyCreateDubbingProjectV1DubbingProjectPostTranscript": {
@@ -85936,6 +85675,34 @@
           "propertyName": "type",
           "mapping": {
             "ConversationAsrUsageModel": "#/components/schemas/ConversationAsrUsageModel"
+          }
+        }
+      },
+      "ConversationChargingCommonModelAnalysis": {
+        "required": [
+          "type"
+        ],
+        "type": "object",
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/AnalysisCharging"
+          },
+          {
+            "enum": [
+              null
+            ]
+          }
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "Union discriminator"
+          }
+        },
+        "discriminator": {
+          "propertyName": "type",
+          "mapping": {
+            "AnalysisCharging": "#/components/schemas/AnalysisCharging"
           }
         }
       },
@@ -95475,169 +95242,6 @@
           }
         }
       },
-      "OpenAiAudioInputConfigTurnDetection": {
-        "required": [
-          "type"
-        ],
-        "type": "object",
-        "anyOf": [
-          {
-            "$ref": "#/components/schemas/OpenAiTurnDetection"
-          },
-          {
-            "enum": [
-              null
-            ]
-          }
-        ],
-        "properties": {
-          "type": {
-            "type": "string",
-            "description": "Union discriminator"
-          }
-        },
-        "discriminator": {
-          "propertyName": "type",
-          "mapping": {
-            "OpenAiTurnDetection": "#/components/schemas/OpenAiTurnDetection"
-          }
-        }
-      },
-      "OpenAimcpToolAuthorization": {
-        "title": "Authorization",
-        "type": "string",
-        "nullable": true
-      },
-      "OpenAimcpToolAllowedTools": {
-        "title": "Allowed Tools",
-        "type": "object",
-        "anyOf": [
-          {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          {
-            "enum": [
-              null
-            ]
-          }
-        ]
-      },
-      "OpenAiSessionConfigToolsItem": {
-        "required": [
-          "type"
-        ],
-        "type": "object",
-        "oneOf": [
-          {
-            "$ref": "#/components/schemas/OpenAiFunctionTool"
-          },
-          {
-            "$ref": "#/components/schemas/OpenAimcpTool"
-          }
-        ],
-        "properties": {
-          "type": {
-            "title": "type",
-            "type": "string",
-            "description": "Union discriminator"
-          }
-        },
-        "discriminator": {
-          "propertyName": "type",
-          "mapping": {
-            "function": "#/components/schemas/OpenAiFunctionTool",
-            "mcp": "#/components/schemas/OpenAimcpTool",
-            "OpenAiFunctionTool": "#/components/schemas/OpenAiFunctionTool",
-            "OpenAimcpTool": "#/components/schemas/OpenAimcpTool"
-          }
-        }
-      },
-      "OpenAiSessionConfigToolChoice": {
-        "title": "Tool Choice",
-        "required": [
-          "type"
-        ],
-        "type": "object",
-        "anyOf": [
-          {
-            "$ref": "#/components/schemas/OpenAiSessionConfigToolChoiceBranch1"
-          },
-          {
-            "$ref": "#/components/schemas/OpenAiToolChoiceFunction"
-          }
-        ],
-        "properties": {
-          "type": {
-            "type": "string",
-            "description": "Union discriminator"
-          }
-        },
-        "discriminator": {
-          "propertyName": "type",
-          "mapping": {
-            "OpenAiSessionConfigToolChoice_1": "#/components/schemas/OpenAiSessionConfigToolChoiceBranch1",
-            "OpenAiToolChoiceFunction": "#/components/schemas/OpenAiToolChoiceFunction"
-          }
-        }
-      },
-      "OpenAiSessionConfigMaxResponseOutputTokens": {
-        "title": "Max Response Output Tokens",
-        "type": "object",
-        "anyOf": [
-          {
-            "maximum": 4096.0,
-            "minimum": 1.0,
-            "type": "integer"
-          },
-          {
-            "enum": [
-              "inf"
-            ],
-            "type": "string",
-            "x-ms-enum": {
-              "name": "OpenAiSessionConfigMaxResponseOutputTokens",
-              "modelAsString": false,
-              "values": [
-                {
-                  "value": "inf",
-                  "name": "Inf"
-                }
-              ]
-            }
-          }
-        ]
-      },
-      "OpenAiTurnDetectionEagerness": {
-        "type": "object",
-        "anyOf": [
-          {
-            "$ref": "#/components/schemas/EagernessWrapper"
-          },
-          {
-            "enum": [
-              null
-            ]
-          }
-        ]
-      },
-      "OpenAiTurnDetectionThreshold": {
-        "title": "Threshold",
-        "type": "number",
-        "nullable": true
-      },
-      "OpenAiTurnDetectionPrefixPaddingMs": {
-        "title": "Prefix Padding Ms",
-        "type": "integer",
-        "nullable": true
-      },
-      "OpenAiTurnDetectionSilenceDurationMs": {
-        "title": "Silence Duration Ms",
-        "type": "integer",
-        "nullable": true
-      },
       "OrderItemInfoQuote": {
         "required": [
           "type"
@@ -98936,16 +98540,6 @@
         "type": "string",
         "nullable": true
       },
-      "RealtimeConfigSnapshotSourceEventId": {
-        "title": "Source Event Id",
-        "type": "integer",
-        "nullable": true
-      },
-      "RealtimeConfigSnapshotParentsPreviousSnapshotId": {
-        "title": "Previous Snapshot Id",
-        "type": "string",
-        "nullable": true
-      },
       "ReferenceVideoGenerationId": {
         "title": "Generation Id",
         "type": "string",
@@ -99364,62 +98958,6 @@
         "description": "ID of the branch to run the tests on. If not provided, the tests will be run on the agent\u0027s main branch.",
         "nullable": true
       },
-      "RunSubagentToolResultErrorModelDetails": {
-        "required": [
-          "type"
-        ],
-        "type": "object",
-        "anyOf": [
-          {
-            "$ref": "#/components/schemas/SubagentRunResultDetails"
-          },
-          {
-            "enum": [
-              null
-            ]
-          }
-        ],
-        "properties": {
-          "type": {
-            "type": "string",
-            "description": "Union discriminator"
-          }
-        },
-        "discriminator": {
-          "propertyName": "type",
-          "mapping": {
-            "SubagentRunResultDetails": "#/components/schemas/SubagentRunResultDetails"
-          }
-        }
-      },
-      "RunSubagentToolResultSuccessModelDetails": {
-        "required": [
-          "type"
-        ],
-        "type": "object",
-        "anyOf": [
-          {
-            "$ref": "#/components/schemas/SubagentRunResultDetails"
-          },
-          {
-            "enum": [
-              null
-            ]
-          }
-        ],
-        "properties": {
-          "type": {
-            "type": "string",
-            "description": "Union discriminator"
-          }
-        },
-        "discriminator": {
-          "propertyName": "type",
-          "mapping": {
-            "SubagentRunResultDetails": "#/components/schemas/SubagentRunResultDetails"
-          }
-        }
-      },
       "SipTrunkCredentialsRequestModelPassword": {
         "title": "Password",
         "type": "string",
@@ -99676,6 +99214,12 @@
           },
           {
             "$ref": "#/components/schemas/OptOutSmsReminderParams"
+          },
+          {
+            "$ref": "#/components/schemas/TriggerUserVerificationParams"
+          },
+          {
+            "$ref": "#/components/schemas/ValidateUserVerificationCodeParams"
           }
         ],
         "properties": {
@@ -99746,6 +99290,7 @@
             "search_clients": "#/components/schemas/SearchClientsParams",
             "set_booking_slug": "#/components/schemas/SetBookingSlugParams",
             "submit_business_info": "#/components/schemas/SubmitBusinessInfoParams",
+            "trigger_user_verification": "#/components/schemas/TriggerUserVerificationParams",
             "update_agent_procedure": "#/components/schemas/UpdateAgentProcedureParams",
             "update_agent_rule": "#/components/schemas/UpdateAgentRuleParams",
             "update_asset": "#/components/schemas/UpdateAssetParams",
@@ -99761,6 +99306,7 @@
             "update_product": "#/components/schemas/UpdateProductParams",
             "update_service": "#/components/schemas/UpdateServiceParams",
             "update_staff": "#/components/schemas/UpdateStaffParams",
+            "validate_user_verification_code": "#/components/schemas/ValidateUserVerificationCodeParams",
             "SearchClientsParams": "#/components/schemas/SearchClientsParams",
             "ListClientsParams": "#/components/schemas/ListClientsParams",
             "GetClientByPhoneParams": "#/components/schemas/GetClientByPhoneParams",
@@ -99833,7 +99379,9 @@
             "LeaveMessageParams": "#/components/schemas/LeaveMessageParams",
             "ReportKnowledgeGapParams": "#/components/schemas/ReportKnowledgeGapParams",
             "OptInSmsReminderParams": "#/components/schemas/OptInSmsReminderParams",
-            "OptOutSmsReminderParams": "#/components/schemas/OptOutSmsReminderParams"
+            "OptOutSmsReminderParams": "#/components/schemas/OptOutSmsReminderParams",
+            "TriggerUserVerificationParams": "#/components/schemas/TriggerUserVerificationParams",
+            "ValidateUserVerificationCodeParams": "#/components/schemas/ValidateUserVerificationCodeParams"
           }
         }
       },
@@ -108329,6 +107877,46 @@
           "$ref": "#/components/schemas/AlertingMonitorConfig"
         }
       },
+      "AnalysisRunSnapshotPricePerFeature": {
+        "title": "Price Per Feature",
+        "type": "object",
+        "additionalProperties": {
+          "type": "number"
+        },
+        "x-jsonschema-propertyNames": {
+          "$ref": "#/components/schemas/AnalysisType"
+        }
+      },
+      "AnalysisRunSnapshotChargePerFeature": {
+        "title": "Charge Per Feature",
+        "type": "object",
+        "additionalProperties": {
+          "type": "integer"
+        },
+        "x-jsonschema-propertyNames": {
+          "$ref": "#/components/schemas/AnalysisType"
+        }
+      },
+      "AnalysisRunningTotalPricePerFeature": {
+        "title": "Price Per Feature",
+        "type": "object",
+        "additionalProperties": {
+          "type": "number"
+        },
+        "x-jsonschema-propertyNames": {
+          "$ref": "#/components/schemas/AnalysisType"
+        }
+      },
+      "AnalysisRunningTotalChargePerFeature": {
+        "title": "Charge Per Feature",
+        "type": "object",
+        "additionalProperties": {
+          "type": "integer"
+        },
+        "x-jsonschema-propertyNames": {
+          "$ref": "#/components/schemas/AnalysisType"
+        }
+      },
       "BodyCreateAgentDraftV1ConvaiAgentsAgentIdDraftsPostConversationConfig": {
         "title": "Conversation Config",
         "type": "object",
@@ -108774,10 +108362,6 @@
         "additionalProperties": {
           "$ref": "#/components/schemas/ObjectJsonSchemaPropertyOutputPropertiesAdditionalProperties"
         }
-      },
-      "OpenAiFunctionToolParameters": {
-        "title": "Parameters",
-        "type": "object"
       },
       "OutboundSipTrunkConfigRequestModelHeaders": {
         "title": "Headers",
@@ -111312,17 +110896,6 @@
           }
         }
       },
-      "EagernessWrapper": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "$ref": "#/components/schemas/Eagerness"
-          }
-        }
-      },
       "LlmReasoningEffortWrapper": {
         "required": [
           "value"
@@ -112110,17 +111683,6 @@
           }
         }
       },
-      "OpenAiSessionConfigToolChoiceBranch1": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "type": "string"
-          }
-        }
-      },
       "SpeechEngineConfigRequestHeadersAdditionalPropertiesBranch1": {
         "required": [
           "value"
@@ -112641,10 +112203,7 @@
             "$ref": "#/components/schemas/KnowledgeBaseToolResultModel"
           },
           {
-            "$ref": "#/components/schemas/RunSubagentToolResultSuccessModel"
-          },
-          {
-            "$ref": "#/components/schemas/RunSubagentToolResultErrorModel"
+            "$ref": "#/components/schemas/DummyToolResultModel"
           }
         ],
         "properties": {
@@ -112655,14 +112214,13 @@
         "discriminator": {
           "propertyName": "result_type",
           "mapping": {
+            "dummy": "#/components/schemas/DummyToolResultModel",
             "end_call_success": "#/components/schemas/EndCallToolResultModel",
             "knowledge_base_rag_success": "#/components/schemas/KnowledgeBaseRagToolResultModel",
             "knowledge_base_success": "#/components/schemas/KnowledgeBaseToolResultModel",
             "language_detection_success": "#/components/schemas/LanguageDetectionToolResultModel",
             "play_dtmf_error": "#/components/schemas/PlayDtmfResultErrorModel",
             "play_dtmf_success": "#/components/schemas/PlayDtmfResultSuccessModel",
-            "run_subagent_error": "#/components/schemas/RunSubagentToolResultErrorModel",
-            "run_subagent_success": "#/components/schemas/RunSubagentToolResultSuccessModel",
             "skip_turn_success": "#/components/schemas/SkipTurnToolResponseModel",
             "testing_tool_result": "#/components/schemas/TestToolResultModel",
             "transfer_to_agent_error": "#/components/schemas/TransferToAgentToolResultErrorModel",
@@ -112727,10 +112285,7 @@
             "$ref": "#/components/schemas/KnowledgeBaseToolResultModel"
           },
           {
-            "$ref": "#/components/schemas/RunSubagentToolResultSuccessModel"
-          },
-          {
-            "$ref": "#/components/schemas/RunSubagentToolResultErrorModel"
+            "$ref": "#/components/schemas/DummyToolResultModel"
           }
         ],
         "properties": {
@@ -112741,14 +112296,13 @@
         "discriminator": {
           "propertyName": "result_type",
           "mapping": {
+            "dummy": "#/components/schemas/DummyToolResultModel",
             "end_call_success": "#/components/schemas/EndCallToolResultModel",
             "knowledge_base_rag_success": "#/components/schemas/KnowledgeBaseRagToolResultModel",
             "knowledge_base_success": "#/components/schemas/KnowledgeBaseToolResultModel",
             "language_detection_success": "#/components/schemas/LanguageDetectionToolResultModel",
             "play_dtmf_error": "#/components/schemas/PlayDtmfResultErrorModel",
             "play_dtmf_success": "#/components/schemas/PlayDtmfResultSuccessModel",
-            "run_subagent_error": "#/components/schemas/RunSubagentToolResultErrorModel",
-            "run_subagent_success": "#/components/schemas/RunSubagentToolResultSuccessModel",
             "skip_turn_success": "#/components/schemas/SkipTurnToolResponseModel",
             "testing_tool_result": "#/components/schemas/TestToolResultModel",
             "transfer_to_agent_error": "#/components/schemas/TransferToAgentToolResultErrorModel",
@@ -113409,6 +112963,30 @@
           "$ref": "#/components/schemas/AlertingMonitorConfig"
         }
       },
+      "AnalysisRunSnapshotPricePerFeatureProperty": {
+        "type": "object",
+        "additionalProperties": {
+          "type": "number"
+        }
+      },
+      "AnalysisRunSnapshotChargePerFeatureProperty": {
+        "type": "object",
+        "additionalProperties": {
+          "type": "integer"
+        }
+      },
+      "AnalysisRunningTotalPricePerFeatureProperty": {
+        "type": "object",
+        "additionalProperties": {
+          "type": "number"
+        }
+      },
+      "AnalysisRunningTotalChargePerFeatureProperty": {
+        "type": "object",
+        "additionalProperties": {
+          "type": "integer"
+        }
+      },
       "BodyCreateAgentDraftV1ConvaiAgentsAgentIdDraftsPostConversationConfigProperty": {
         "type": "object",
         "description": "Conversation config for the draft"
@@ -113649,6 +113227,21 @@
           "$ref": "#/components/schemas/ProcedureAtVersionOutput"
         }
       },
+      "FieldConflictBaseValue": {
+        "title": "Base Value",
+        "type": "object",
+        "description": "Value at the common ancestor (merge base)."
+      },
+      "FieldConflictSourceValue": {
+        "title": "Source Value",
+        "type": "object",
+        "description": "Value on the source branch tip."
+      },
+      "FieldConflictTargetValue": {
+        "title": "Target Value",
+        "type": "object",
+        "description": "Value on the target branch tip."
+      },
       "FineTuningResponseModelStateProperty": {
         "type": "object",
         "additionalProperties": {
@@ -113786,9 +113379,6 @@
         "additionalProperties": {
           "$ref": "#/components/schemas/ObjectJsonSchemaPropertyOutputPropertiesAdditionalProperties"
         }
-      },
-      "OpenAiFunctionToolParametersProperty": {
-        "type": "object"
       },
       "OutboundSipTrunkConfigRequestModelHeadersProperty": {
         "type": "object",
@@ -116461,29 +116051,6 @@
             {
               "value": "object",
               "name": "ObjectValue"
-            }
-          ]
-        }
-      },
-      "OpenAimcpToolRequireApproval": {
-        "title": "Require Approval",
-        "enum": [
-          "never",
-          "always"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "x-ms-enum": {
-          "name": "OpenAimcpToolRequireApproval",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "never",
-              "name": "Never"
-            },
-            {
-              "value": "always",
-              "name": "Always"
             }
           ]
         }

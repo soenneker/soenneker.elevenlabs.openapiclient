@@ -14,6 +14,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The analysis property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationChargingCommonModelAnalysis? Analysis { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationChargingCommonModelAnalysis Analysis { get; set; }
+#endif
         /// <summary>The asr_usage property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -101,6 +109,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "analysis", n => { Analysis = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationChargingCommonModelAnalysis>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationChargingCommonModelAnalysis.CreateFromDiscriminatorValue); } },
                 { "asr_usage", n => { AsrUsage = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationChargingCommonModelAsrUsage>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationChargingCommonModelAsrUsage.CreateFromDiscriminatorValue); } },
                 { "call_charge", n => { CallCharge = n.GetIntValue(); } },
                 { "dev_discount", n => { DevDiscount = n.GetBoolValue(); } },
@@ -124,6 +133,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationChargingCommonModelAnalysis>("analysis", Analysis);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationChargingCommonModelAsrUsage>("asr_usage", AsrUsage);
             writer.WriteIntValue("call_charge", CallCharge);
             writer.WriteBoolValue("dev_discount", DevDiscount);

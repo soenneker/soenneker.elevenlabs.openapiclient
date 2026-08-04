@@ -38,6 +38,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public string BranchId { get; set; }
 #endif
+        /// <summary>Structured view of the same conflicts as overridden_fields, each carrying the value on the base (common ancestor), source branch, and target branch so the divergence can be presented and resolved field-by-field.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.FieldConflict>? Conflicts { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.FieldConflict> Conflicts { get; set; }
+#endif
         /// <summary>The conversation_config property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -157,6 +165,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "access_info", n => { AccessInfo = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.MergePreviewResponseModelAccessInfo>(global::Soenneker.ElevenLabs.OpenApiClient.Models.MergePreviewResponseModelAccessInfo.CreateFromDiscriminatorValue); } },
                 { "agent_id", n => { AgentId = n.GetStringValue(); } },
                 { "branch_id", n => { BranchId = n.GetStringValue(); } },
+                { "conflicts", n => { Conflicts = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.FieldConflict>(global::Soenneker.ElevenLabs.OpenApiClient.Models.FieldConflict.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "conversation_config", n => { ConversationConfig = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationalConfigApiModelOutput>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationalConfigApiModelOutput.CreateFromDiscriminatorValue); } },
                 { "main_branch_id", n => { MainBranchId = n.GetStringValue(); } },
                 { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentMetadataResponseModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentMetadataResponseModel.CreateFromDiscriminatorValue); } },
@@ -181,6 +190,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.MergePreviewResponseModelAccessInfo>("access_info", AccessInfo);
             writer.WriteStringValue("agent_id", AgentId);
             writer.WriteStringValue("branch_id", BranchId);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.FieldConflict>("conflicts", Conflicts);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationalConfigApiModelOutput>("conversation_config", ConversationConfig);
             writer.WriteStringValue("main_branch_id", MainBranchId);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentMetadataResponseModel>("metadata", Metadata);

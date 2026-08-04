@@ -22,7 +22,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public string ModelId { get; set; }
 #endif
-        /// <summary>BCP-47 language tag to dub the project into (e.g. &apos;fr&apos;, &apos;es-419&apos;).</summary>
+        /// <summary>BCP-47 language tag to dub the project into (e.g. &apos;fr&apos;, &apos;es-MX&apos;); must be a language the dubbing model supports. A region-qualified tag must be one of the supported dialects.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TargetLanguage { get; set; }
