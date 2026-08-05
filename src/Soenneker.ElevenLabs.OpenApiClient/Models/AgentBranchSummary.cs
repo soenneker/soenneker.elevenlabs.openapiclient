@@ -32,6 +32,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #endif
         /// <summary>Number of calls in the last 7 days</summary>
         public int? Calls7d { get; set; }
+        /// <summary>Number of commits on this branch not yet on main, relative to their common ancestor. Null if it could not be computed (e.g. no common ancestor, or the branch history exceeds the comparison budget).</summary>
+        public int? CommitsAhead { get; set; }
+        /// <summary>Number of commits on main not yet incorporated into this branch, relative to their common ancestor. Null if it could not be computed (e.g. no common ancestor, or the branch history exceeds the comparison budget).</summary>
+        public int? CommitsBehind { get; set; }
         /// <summary>The created_at property</summary>
         public int? CreatedAt { get; set; }
         /// <summary>Percentage of traffic live on the branch</summary>
@@ -58,6 +62,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public bool? IsArchived { get; set; }
         /// <summary>The last_committed_at property</summary>
         public int? LastCommittedAt { get; set; }
+        /// <summary>ID of the branch this branch&apos;s tip version was merged into, if any</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? MergedIntoBranchId { get; set; }
+#nullable restore
+#else
+        public string MergedIntoBranchId { get; set; }
+#endif
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -107,6 +119,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "access_info", n => { AccessInfo = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentBranchSummaryAccessInfo>(global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentBranchSummaryAccessInfo.CreateFromDiscriminatorValue); } },
                 { "agent_id", n => { AgentId = n.GetStringValue(); } },
                 { "calls_7d", n => { Calls7d = n.GetIntValue(); } },
+                { "commits_ahead", n => { CommitsAhead = n.GetIntValue(); } },
+                { "commits_behind", n => { CommitsBehind = n.GetIntValue(); } },
                 { "created_at", n => { CreatedAt = n.GetIntValue(); } },
                 { "current_live_percentage", n => { CurrentLivePercentage = n.GetDoubleValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
@@ -114,6 +128,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "is_archived", n => { IsArchived = n.GetBoolValue(); } },
                 { "last_committed_at", n => { LastCommittedAt = n.GetIntValue(); } },
+                { "merged_into_branch_id", n => { MergedIntoBranchId = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "parent_branch_id", n => { ParentBranchId = n.GetStringValue(); } },
                 { "protection_status", n => { ProtectionStatus = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BranchProtectionStatus>(); } },
@@ -129,6 +144,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentBranchSummaryAccessInfo>("access_info", AccessInfo);
             writer.WriteStringValue("agent_id", AgentId);
             writer.WriteIntValue("calls_7d", Calls7d);
+            writer.WriteIntValue("commits_ahead", CommitsAhead);
+            writer.WriteIntValue("commits_behind", CommitsBehind);
             writer.WriteIntValue("created_at", CreatedAt);
             writer.WriteDoubleValue("current_live_percentage", CurrentLivePercentage);
             writer.WriteStringValue("description", Description);
@@ -136,6 +153,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteStringValue("id", Id);
             writer.WriteBoolValue("is_archived", IsArchived);
             writer.WriteIntValue("last_committed_at", LastCommittedAt);
+            writer.WriteStringValue("merged_into_branch_id", MergedIntoBranchId);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("parent_branch_id", ParentBranchId);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BranchProtectionStatus>("protection_status", ProtectionStatus);

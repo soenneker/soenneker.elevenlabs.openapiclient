@@ -71,6 +71,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.McpServerConfigUpdateRequestModelRequestHeaders RequestHeaders { get; set; }
 #endif
+        /// <summary>Entries sent in the MCP `_meta` field of tools/call requests. Values may be JSON scalars, or references to a workspace secret, dynamic variable, or environment variable resolved per call.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.McpServerConfigUpdateRequestModelRequestMeta? RequestMeta { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.McpServerConfigUpdateRequestModelRequestMeta RequestMeta { get; set; }
+#endif
         /// <summary>The maximum time in seconds to wait for each MCP tool call to complete.</summary>
         public int? ResponseTimeoutSecs { get; set; }
         /// <summary>Optional secret token for authentication with this MCP server</summary>
@@ -131,6 +139,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "interruption_mode", n => { InterruptionMode = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.McpServerConfigUpdateRequestModelInterruptionMode>(global::Soenneker.ElevenLabs.OpenApiClient.Models.McpServerConfigUpdateRequestModelInterruptionMode.CreateFromDiscriminatorValue); } },
                 { "pre_tool_speech", n => { PreToolSpeech = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.McpServerConfigUpdateRequestModelPreToolSpeech>(global::Soenneker.ElevenLabs.OpenApiClient.Models.McpServerConfigUpdateRequestModelPreToolSpeech.CreateFromDiscriminatorValue); } },
                 { "request_headers", n => { RequestHeaders = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.McpServerConfigUpdateRequestModelRequestHeaders>(global::Soenneker.ElevenLabs.OpenApiClient.Models.McpServerConfigUpdateRequestModelRequestHeaders.CreateFromDiscriminatorValue); } },
+                { "request_meta", n => { RequestMeta = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.McpServerConfigUpdateRequestModelRequestMeta>(global::Soenneker.ElevenLabs.OpenApiClient.Models.McpServerConfigUpdateRequestModelRequestMeta.CreateFromDiscriminatorValue); } },
                 { "response_timeout_secs", n => { ResponseTimeoutSecs = n.GetIntValue(); } },
                 { "secret_token", n => { SecretToken = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.McpServerConfigUpdateRequestModelSecretToken>(global::Soenneker.ElevenLabs.OpenApiClient.Models.McpServerConfigUpdateRequestModelSecretToken.CreateFromDiscriminatorValue); } },
                 { "tool_call_sound", n => { ToolCallSound = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.McpServerConfigUpdateRequestModelToolCallSound>(global::Soenneker.ElevenLabs.OpenApiClient.Models.McpServerConfigUpdateRequestModelToolCallSound.CreateFromDiscriminatorValue); } },
@@ -153,6 +162,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.McpServerConfigUpdateRequestModelInterruptionMode>("interruption_mode", InterruptionMode);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.McpServerConfigUpdateRequestModelPreToolSpeech>("pre_tool_speech", PreToolSpeech);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.McpServerConfigUpdateRequestModelRequestHeaders>("request_headers", RequestHeaders);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.McpServerConfigUpdateRequestModelRequestMeta>("request_meta", RequestMeta);
             writer.WriteIntValue("response_timeout_secs", ResponseTimeoutSecs);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.McpServerConfigUpdateRequestModelSecretToken>("secret_token", SecretToken);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.McpServerConfigUpdateRequestModelToolCallSound>("tool_call_sound", ToolCallSound);

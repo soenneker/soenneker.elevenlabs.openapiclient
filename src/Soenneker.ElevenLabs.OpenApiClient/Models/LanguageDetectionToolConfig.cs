@@ -14,6 +14,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>If no language switch happens in the first 2 user turns, later attempts fail and the conversation stays in the current language. If the language switches during those turns, later switching stays available. Enable to reduce the possibility of false switching.</summary>
+        public bool? OnlyAtConversationStart { get; set; }
         /// <summary>The system_tool_type property</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.LanguageDetectionToolConfig_system_tool_type? SystemToolType { get; set; }
         /// <summary>
@@ -22,6 +24,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public LanguageDetectionToolConfig()
         {
             AdditionalData = new Dictionary<string, object>();
+            OnlyAtConversationStart = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -41,6 +44,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "only_at_conversation_start", n => { OnlyAtConversationStart = n.GetBoolValue(); } },
                 { "system_tool_type", n => { SystemToolType = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.LanguageDetectionToolConfig_system_tool_type>(); } },
             };
         }
@@ -51,6 +55,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteBoolValue("only_at_conversation_start", OnlyAtConversationStart);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.LanguageDetectionToolConfig_system_tool_type>("system_tool_type", SystemToolType);
             writer.WriteAdditionalData(AdditionalData);
         }

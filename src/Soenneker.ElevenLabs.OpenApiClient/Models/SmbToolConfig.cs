@@ -39,6 +39,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>&quot;DEPRECATED: use `pre_tool_speech` instead. If true, the agent will speak before the tool call.&quot;</summary>
         [Obsolete("")]
         public bool? ForcePreToolSpeech { get; set; }
+        /// <summary>User-facing tooltip for the procedure reference picker. Not sent to the LLM.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? HumanDescription { get; set; }
+#nullable restore
+#else
+        public string HumanDescription { get; set; }
+#endif
         /// <summary>The interruption_mode property</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolInterruptionMode? InterruptionMode { get; set; }
         /// <summary>The name property</summary>
@@ -109,6 +117,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "disable_interruptions", n => { DisableInterruptions = n.GetBoolValue(); } },
                 { "enabled", n => { Enabled = n.GetBoolValue(); } },
                 { "force_pre_tool_speech", n => { ForcePreToolSpeech = n.GetBoolValue(); } },
+                { "human_description", n => { HumanDescription = n.GetStringValue(); } },
                 { "interruption_mode", n => { InterruptionMode = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolInterruptionMode>(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "params", n => { Params = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbToolConfigParams>(global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbToolConfigParams.CreateFromDiscriminatorValue); } },
@@ -132,6 +141,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteBoolValue("disable_interruptions", DisableInterruptions);
             writer.WriteBoolValue("enabled", Enabled);
             writer.WriteBoolValue("force_pre_tool_speech", ForcePreToolSpeech);
+            writer.WriteStringValue("human_description", HumanDescription);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolInterruptionMode>("interruption_mode", InterruptionMode);
             writer.WriteStringValue("name", Name);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbToolConfigParams>("params", Params);

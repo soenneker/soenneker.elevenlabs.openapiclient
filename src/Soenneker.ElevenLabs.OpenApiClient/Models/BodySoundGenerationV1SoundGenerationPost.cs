@@ -18,14 +18,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public double? DurationSeconds { get; set; }
         /// <summary>Whether to create a sound effect that loops smoothly. Only available for the &apos;eleven_text_to_sound_v2 model&apos;.</summary>
         public bool? Loop { get; set; }
-        /// <summary>The model ID to use for the sound generation.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ModelId { get; set; }
-#nullable restore
-#else
-        public string ModelId { get; set; }
-#endif
+        /// <summary>The model_id property</summary>
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SfxModelId? ModelId { get; set; }
         /// <summary>A higher prompt influence makes your generation follow the prompt more closely while also making generations less variable. Must be a value between 0 and 1. Defaults to 0.3.</summary>
         public double? PromptInfluence { get; set; }
         /// <summary>The text that will get converted into a sound effect.</summary>
@@ -43,7 +37,6 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             AdditionalData = new Dictionary<string, object>();
             Loop = false;
-            ModelId = "eleven_text_to_sound_v2";
             PromptInfluence = 0.3;
         }
         /// <summary>
@@ -66,7 +59,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             {
                 { "duration_seconds", n => { DurationSeconds = n.GetDoubleValue(); } },
                 { "loop", n => { Loop = n.GetBoolValue(); } },
-                { "model_id", n => { ModelId = n.GetStringValue(); } },
+                { "model_id", n => { ModelId = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SfxModelId>(); } },
                 { "prompt_influence", n => { PromptInfluence = n.GetDoubleValue(); } },
                 { "text", n => { Text = n.GetStringValue(); } },
             };
@@ -80,7 +73,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDoubleValue("duration_seconds", DurationSeconds);
             writer.WriteBoolValue("loop", Loop);
-            writer.WriteStringValue("model_id", ModelId);
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SfxModelId>("model_id", ModelId);
             writer.WriteDoubleValue("prompt_influence", PromptInfluence);
             writer.WriteStringValue("text", Text);
             writer.WriteAdditionalData(AdditionalData);

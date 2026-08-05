@@ -14,14 +14,6 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Dubbing model id for this target; omit to use the project default.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ModelId { get; set; }
-#nullable restore
-#else
-        public string ModelId { get; set; }
-#endif
         /// <summary>BCP-47 language tag to dub the project into (e.g. &apos;fr&apos;, &apos;es-MX&apos;); must be a language the dubbing model supports. A region-qualified tag must be one of the supported dialects.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -71,7 +63,6 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "model_id", n => { ModelId = n.GetStringValue(); } },
                 { "target_language", n => { TargetLanguage = n.GetStringValue(); } },
                 { "translations", n => { Translations = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateDubbingLanguageTargetV1DubbingProjectProjectIdLanguagePostTranslations>(global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateDubbingLanguageTargetV1DubbingProjectProjectIdLanguagePostTranslations.CreateFromDiscriminatorValue); } },
                 { "voice_settings", n => { VoiceSettings = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateDubbingLanguageTargetV1DubbingProjectProjectIdLanguagePostVoiceSettings>(global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateDubbingLanguageTargetV1DubbingProjectProjectIdLanguagePostVoiceSettings.CreateFromDiscriminatorValue); } },
@@ -84,7 +75,6 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("model_id", ModelId);
             writer.WriteStringValue("target_language", TargetLanguage);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateDubbingLanguageTargetV1DubbingProjectProjectIdLanguagePostTranslations>("translations", Translations);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateDubbingLanguageTargetV1DubbingProjectProjectIdLanguagePostVoiceSettings>("voice_settings", VoiceSettings);

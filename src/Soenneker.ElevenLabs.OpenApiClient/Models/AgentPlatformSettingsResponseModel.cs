@@ -14,6 +14,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Agent-level alerting configuration overriding workspace settings.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentPlatformSettingsResponseModelAlerting? Alerting { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentPlatformSettingsResponseModelAlerting Alerting { get; set; }
+#endif
         /// <summary>Evaluation + data-collection items attached by reference. None means the agent has not been migrated onto analysis items yet (distinct from an empty, migrated set); reads fall back to the legacy evaluation/data_collection fields in that case.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -176,6 +184,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "alerting", n => { Alerting = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentPlatformSettingsResponseModelAlerting>(global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentPlatformSettingsResponseModelAlerting.CreateFromDiscriminatorValue); } },
                 { "analysis_items", n => { AnalysisItems = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentPlatformSettingsResponseModelAnalysisItems>(global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentPlatformSettingsResponseModelAnalysisItems.CreateFromDiscriminatorValue); } },
                 { "analysis_llm", n => { AnalysisLlm = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Llm>(); } },
                 { "archived", n => { Archived = n.GetBoolValue(); } },
@@ -205,6 +214,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentPlatformSettingsResponseModelAlerting>("alerting", Alerting);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentPlatformSettingsResponseModelAnalysisItems>("analysis_items", AnalysisItems);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Llm>("analysis_llm", AnalysisLlm);
             writer.WriteBoolValue("archived", Archived);

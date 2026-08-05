@@ -47,7 +47,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Conversations
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ConversationsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/convai/conversations{?agent_id*,branch_id*,call_duration_max_secs*,call_duration_min_secs*,call_start_after_unix*,call_start_before_unix*,call_successful*,conversation_initiation_source*,conversation_product_type*,cursor*,data_collection_ids*,data_collection_params*,evaluation_criteria_ids*,evaluation_params*,exclude_statuses*,has_feedback_comment*,main_languages*,page_size*,parent_conversation_id*,rating_max*,rating_min*,search*,summary_mode*,tag_ids*,termination_reasons*,text_only*,tool_names*,tool_names_errored*,tool_names_successful*,topic_ids*,user_id*,version_id*,visited_agent_branch_ids*,visited_agent_ids*,workflow_node_entered_id*}", pathParameters)
+        public ConversationsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/convai/conversations{?agent_id*,branch_id*,call_duration_max_secs*,call_duration_min_secs*,call_start_after_unix*,call_start_before_unix*,call_successful*,conversation_initiation_source*,conversation_product_type*,cursor*,custom_guardrail_names*,data_collection_ids*,data_collection_params*,evaluation_criteria_ids*,evaluation_params*,exclude_statuses*,guardrail_types*,has_feedback_comment*,main_languages*,page_size*,parent_conversation_id*,rating_max*,rating_min*,search*,summary_mode*,tag_ids*,termination_reasons*,text_only*,tool_names*,tool_names_errored*,tool_names_successful*,topic_ids*,user_id*,version_id*,visited_agent_branch_ids*,visited_agent_ids*,workflow_node_entered_id*}", pathParameters)
         {
         }
         /// <summary>
@@ -55,7 +55,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Conversations
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ConversationsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/convai/conversations{?agent_id*,branch_id*,call_duration_max_secs*,call_duration_min_secs*,call_start_after_unix*,call_start_before_unix*,call_successful*,conversation_initiation_source*,conversation_product_type*,cursor*,data_collection_ids*,data_collection_params*,evaluation_criteria_ids*,evaluation_params*,exclude_statuses*,has_feedback_comment*,main_languages*,page_size*,parent_conversation_id*,rating_max*,rating_min*,search*,summary_mode*,tag_ids*,termination_reasons*,text_only*,tool_names*,tool_names_errored*,tool_names_successful*,topic_ids*,user_id*,version_id*,visited_agent_branch_ids*,visited_agent_ids*,workflow_node_entered_id*}", rawUrl)
+        public ConversationsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/convai/conversations{?agent_id*,branch_id*,call_duration_max_secs*,call_duration_min_secs*,call_start_after_unix*,call_start_before_unix*,call_successful*,conversation_initiation_source*,conversation_product_type*,cursor*,custom_guardrail_names*,data_collection_ids*,data_collection_params*,evaluation_criteria_ids*,evaluation_params*,exclude_statuses*,guardrail_types*,has_feedback_comment*,main_languages*,page_size*,parent_conversation_id*,rating_max*,rating_min*,search*,summary_mode*,tag_ids*,termination_reasons*,text_only*,tool_names*,tool_names_errored*,tool_names_successful*,topic_ids*,user_id*,version_id*,visited_agent_branch_ids*,visited_agent_ids*,workflow_node_entered_id*}", rawUrl)
         {
         }
         /// <summary>
@@ -186,6 +186,16 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Conversations
             [QueryParameter("cursor")]
             public string Cursor { get; set; }
 #endif
+            /// <summary>Filter to conversations where a custom guardrail with any of these names triggered (metadata.triggered_guardrails.guardrail_name). Only custom guardrails carry a name. Repeat param to match any of several.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("custom_guardrail_names")]
+            public string? CustomGuardrailNames { get; set; }
+#nullable restore
+#else
+            [QueryParameter("custom_guardrail_names")]
+            public string CustomGuardrailNames { get; set; }
+#endif
             /// <summary>Data collection field IDs to include in each conversation summary. Repeat param. When omitted, data_collection_results is not returned.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -235,6 +245,16 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Conversations
 #else
             [QueryParameter("exclude_statuses")]
             public string ExcludeStatuses { get; set; }
+#endif
+            /// <summary>Filter to conversations where a guardrail of any of these types triggered (metadata.triggered_guardrails.guardrail_type). Repeat param to match any of several.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("guardrail_types")]
+            public string? GuardrailTypes { get; set; }
+#nullable restore
+#else
+            [QueryParameter("guardrail_types")]
+            public string GuardrailTypes { get; set; }
 #endif
             /// <summary>Filter conversations with user feedback comments.</summary>
             [QueryParameter("has_feedback_comment")]
