@@ -34,7 +34,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Dubbing.Project.Item.Language.It
         {
         }
         /// <summary>
-        /// Edit a segment&apos;s translation for a language target.
+        /// Enterprise only. Edit a segment&apos;s translation for a language target.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingTargetSegmentUpdateResponse"/></returns>
         /// <param name="body">A partial edit to a target segment. An omitted field is left unchanged; a provided ``null``clears it (see each field for what clearing means).</param>
@@ -59,7 +59,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Dubbing.Project.Item.Language.It
             return await RequestAdapter.SendAsync<global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingTargetSegmentUpdateResponse>(requestInfo, global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingTargetSegmentUpdateResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Edit a segment&apos;s translation for a language target.
+        /// Enterprise only. Edit a segment&apos;s translation for a language target.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">A partial edit to a target segment. An omitted field is left unchanged; a provided ``null``clears it (see each field for what clearing means).</param>

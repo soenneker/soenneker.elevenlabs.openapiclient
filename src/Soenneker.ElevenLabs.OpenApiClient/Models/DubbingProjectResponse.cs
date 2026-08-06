@@ -16,6 +16,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>When the project was created.</summary>
         public DateTimeOffset? CreatedAt { get; set; }
+        /// <summary>Why the project failed; null unless `status` is &apos;failed&apos;. Also null for the few projects that failed before failure reporting was introduced.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingProjectResponseError? Error { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingProjectResponseError Error { get; set; }
+#endif
         /// <summary>Identifiers of the language targets created under this project.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -70,6 +78,22 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingProjectResponseStatus? Status { get; set; }
         /// <summary>When the project was last updated.</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
+        /// <summary>Non-fatal conditions raised while preparing the source, empty when there are none. Reflects the latest preparation. Conditions raised while dubbing a particular language are reported on that language instead.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.VoicesNotPermittedWarning>? Warnings { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.VoicesNotPermittedWarning> Warnings { get; set; }
+#endif
+        /// <summary>Workspace webhooks notified when this project becomes ready or fails, and when any of its languages completes or fails.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? WebhookIds { get; set; }
+#nullable restore
+#else
+        public List<string> WebhookIds { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingProjectResponse"/> and sets the default values.
         /// </summary>
@@ -96,6 +120,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
+                { "error", n => { Error = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingProjectResponseError>(global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingProjectResponseError.CreateFromDiscriminatorValue); } },
                 { "language_ids", n => { LanguageIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "media", n => { Media = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingProjectResponseMedia>(global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingProjectResponseMedia.CreateFromDiscriminatorValue); } },
                 { "model_id", n => { ModelId = n.GetStringValue(); } },
@@ -105,6 +130,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "source_language", n => { SourceLanguage = n.GetStringValue(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingProjectResponseStatus>(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
+                { "warnings", n => { Warnings = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.VoicesNotPermittedWarning>(global::Soenneker.ElevenLabs.OpenApiClient.Models.VoicesNotPermittedWarning.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "webhook_ids", n => { WebhookIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
         }
         /// <summary>
@@ -115,6 +142,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingProjectResponseError>("error", Error);
             writer.WriteCollectionOfPrimitiveValues<string>("language_ids", LanguageIds);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingProjectResponseMedia>("media", Media);
             writer.WriteStringValue("model_id", ModelId);
@@ -124,6 +152,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteStringValue("source_language", SourceLanguage);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingProjectResponseStatus>("status", Status);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.VoicesNotPermittedWarning>("warnings", Warnings);
+            writer.WriteCollectionOfPrimitiveValues<string>("webhook_ids", WebhookIds);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

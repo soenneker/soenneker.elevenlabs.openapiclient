@@ -38,7 +38,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateSimulationTestRequestDynamicVariablesProperty DynamicVariables { get; set; }
 #endif
-        /// <summary>LLM model to use for evaluating simulation results. Defaults to Claude Sonnet 4.6.</summary>
+        /// <summary>LLM model to use for evaluating simulation results.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateSimulationTestRequestEvaluationModel? EvaluationModel { get; set; }
@@ -70,7 +70,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public string ParentFolderId { get; set; }
 #endif
-        /// <summary>LLM model for the simulated user. Defaults to Claude Sonnet 4.6.</summary>
+        /// <summary>LLM model for the simulated user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateSimulationTestRequestSimulatedUserModel? SimulatedUserModel { get; set; }

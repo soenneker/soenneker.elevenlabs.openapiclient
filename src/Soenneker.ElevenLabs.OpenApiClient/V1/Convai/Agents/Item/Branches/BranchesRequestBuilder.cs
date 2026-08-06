@@ -35,7 +35,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.Branches
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public BranchesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/convai/agents/{agentId}/branches{?include_archived*,limit*}", pathParameters)
+        public BranchesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/convai/agents/{agentId}/branches{?include_archived*,include_commit_status*,limit*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.Branches
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public BranchesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/convai/agents/{agentId}/branches{?include_archived*,limit*}", rawUrl)
+        public BranchesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/convai/agents/{agentId}/branches{?include_archived*,include_commit_status*,limit*}", rawUrl)
         {
         }
         /// <summary>
@@ -153,6 +153,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.Branches
             /// <summary>Whether archived branches should be included</summary>
             [QueryParameter("include_archived")]
             public bool? IncludeArchived { get; set; }
+            /// <summary>Whether to compute how far each branch has diverged from main (commits_ahead/commits_behind). This walks the version DAG of every branch, so it is slow on agents with long histories and is off by default, leaving those fields null.</summary>
+            [QueryParameter("include_commit_status")]
+            public bool? IncludeCommitStatus { get; set; }
             /// <summary>How many results at most should be returned</summary>
             [QueryParameter("limit")]
             public int? Limit { get; set; }

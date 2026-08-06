@@ -47,7 +47,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Dubbing.Project.Item.Transcript.
         {
         }
         /// <summary>
-        /// Add a new source segment to the transcript.
+        /// Enterprise only. Add a new source segment to the transcript.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingSourceSegmentUpdateResponse"/></returns>
         /// <param name="body">A new source segment; its id and word-level alignment are assigned by the server.</param>
@@ -72,7 +72,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Dubbing.Project.Item.Transcript.
             return await RequestAdapter.SendAsync<global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingSourceSegmentUpdateResponse>(requestInfo, global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingSourceSegmentUpdateResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Add a new source segment to the transcript.
+        /// Enterprise only. Add a new source segment to the transcript.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">A new source segment; its id and word-level alignment are assigned by the server.</param>

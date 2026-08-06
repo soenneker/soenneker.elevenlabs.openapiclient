@@ -5,6 +5,7 @@ using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.ElevenLabs.OpenApiClient.Models;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Dubbing.Project.Item.Transcript.Segment;
+using Soenneker.ElevenLabs.OpenApiClient.V1.Dubbing.Project.Item.Transcript.Segments;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -22,6 +23,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Dubbing.Project.Item.Transcript
         public global::Soenneker.ElevenLabs.OpenApiClient.V1.Dubbing.Project.Item.Transcript.Segment.SegmentRequestBuilder Segment
         {
             get => new global::Soenneker.ElevenLabs.OpenApiClient.V1.Dubbing.Project.Item.Transcript.Segment.SegmentRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The segments property</summary>
+        public global::Soenneker.ElevenLabs.OpenApiClient.V1.Dubbing.Project.Item.Transcript.Segments.SegmentsRequestBuilder Segments
+        {
+            get => new global::Soenneker.ElevenLabs.OpenApiClient.V1.Dubbing.Project.Item.Transcript.Segments.SegmentsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.V1.Dubbing.Project.Item.Transcript.TranscriptRequestBuilder"/> and sets the default values.

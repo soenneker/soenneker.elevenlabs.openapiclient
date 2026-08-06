@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.ElevenLabs.OpenApiClient.Models
 {
     /// <summary>
-    /// LLM model for the simulated user. Defaults to Claude Sonnet 4.6.
+    /// LLM model for the simulated user.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UpdateSimulationTestRequestSimulatedUserModel : IAdditionalDataHolder, IParsable

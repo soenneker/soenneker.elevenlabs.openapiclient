@@ -8,31 +8,37 @@ using System;
 namespace Soenneker.ElevenLabs.OpenApiClient.Models
 {
     /// <summary>
-    /// LLM model to use for evaluating simulation results.
+    /// Edit several target translations at once, applied atomically (all succeed or none do).
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class CreateSimulationTestRequestEvaluationModel : IAdditionalDataHolder, IParsable
+    public partial class DubbingBulkTargetSegmentUpdateRequest : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The value property</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Llm? Value { get; set; }
+        /// <summary>Map of segment id to the translation edit to apply to that segment.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingBulkTargetSegmentUpdateRequestSegmentsProperty? Segments { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingBulkTargetSegmentUpdateRequestSegmentsProperty Segments { get; set; }
+#endif
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateSimulationTestRequestEvaluationModel"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingBulkTargetSegmentUpdateRequest"/> and sets the default values.
         /// </summary>
-        public CreateSimulationTestRequestEvaluationModel()
+        public DubbingBulkTargetSegmentUpdateRequest()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateSimulationTestRequestEvaluationModel"/></returns>
+        /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingBulkTargetSegmentUpdateRequest"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateSimulationTestRequestEvaluationModel CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingBulkTargetSegmentUpdateRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateSimulationTestRequestEvaluationModel();
+            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingBulkTargetSegmentUpdateRequest();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -42,7 +48,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "value", n => { Value = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Llm>(); } },
+                { "segments", n => { Segments = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingBulkTargetSegmentUpdateRequestSegmentsProperty>(global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingBulkTargetSegmentUpdateRequestSegmentsProperty.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -52,7 +58,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Llm>("value", Value);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingBulkTargetSegmentUpdateRequestSegmentsProperty>("segments", Segments);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

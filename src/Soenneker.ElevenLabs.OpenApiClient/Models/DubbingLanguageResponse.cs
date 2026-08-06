@@ -16,6 +16,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>When the language target was created.</summary>
         public DateTimeOffset? CreatedAt { get; set; }
+        /// <summary>Why this language failed; null unless `status` is &apos;failed&apos;, and also null for the few languages that failed before failure reporting was introduced. A code of &apos;project_failed&apos; means the parent project failed, so read the project for the underlying cause.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingLanguageResponseError? Error { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingLanguageResponseError Error { get; set; }
+#endif
         /// <summary>Unique identifier of the language target.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -72,6 +80,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingLanguageResponseVoiceSettings VoiceSettings { get; set; }
 #endif
+        /// <summary>Non-fatal conditions raised while dubbing this language, empty when there are none. Reflects the latest generation. Conditions raised while preparing the source are reported on the project instead.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.VoicesNotPermittedWarning>? Warnings { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.VoicesNotPermittedWarning> Warnings { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingLanguageResponse"/> and sets the default values.
         /// </summary>
@@ -98,6 +114,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
+                { "error", n => { Error = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingLanguageResponseError>(global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingLanguageResponseError.CreateFromDiscriminatorValue); } },
                 { "language_id", n => { LanguageId = n.GetStringValue(); } },
                 { "model_id", n => { ModelId = n.GetStringValue(); } },
                 { "output_revision", n => { OutputRevision = n.GetIntValue(); } },
@@ -108,6 +125,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "target_language", n => { TargetLanguage = n.GetStringValue(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
                 { "voice_settings", n => { VoiceSettings = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingLanguageResponseVoiceSettings>(global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingLanguageResponseVoiceSettings.CreateFromDiscriminatorValue); } },
+                { "warnings", n => { Warnings = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.VoicesNotPermittedWarning>(global::Soenneker.ElevenLabs.OpenApiClient.Models.VoicesNotPermittedWarning.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -118,6 +136,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingLanguageResponseError>("error", Error);
             writer.WriteStringValue("language_id", LanguageId);
             writer.WriteStringValue("model_id", ModelId);
             writer.WriteIntValue("output_revision", OutputRevision);
@@ -128,6 +147,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteStringValue("target_language", TargetLanguage);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingLanguageResponseVoiceSettings>("voice_settings", VoiceSettings);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.VoicesNotPermittedWarning>("warnings", Warnings);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

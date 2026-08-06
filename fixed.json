@@ -4855,7 +4855,7 @@
           "Dubbing"
         ],
         "summary": "Update Dubbing Transcript Segment",
-        "description": "Edit a source segment\u0027s text, speaker, or timing.",
+        "description": "Enterprise only. Edit a source segment\u0027s text, speaker, or timing.",
         "operationId": "DubbingTranscriptSegmentUpdate",
         "parameters": [
           {
@@ -4929,7 +4929,7 @@
           "Dubbing"
         ],
         "summary": "Delete Dubbing Transcript Segment",
-        "description": "Remove a source segment from the transcript.",
+        "description": "Enterprise only. Remove a source segment from the transcript.",
         "operationId": "DubbingTranscriptSegmentDelete",
         "parameters": [
           {
@@ -4990,13 +4990,78 @@
         }
       }
     },
+    "/v1/dubbing/project/{projectId}/transcript/segments": {
+      "patch": {
+        "tags": [
+          "Dubbing"
+        ],
+        "summary": "Update Dubbing Transcript Segments",
+        "description": "Enterprise only. Edit several source segments\u0027 text, speaker, or timing in one atomic request.",
+        "operationId": "DubbingTranscriptSegmentsUpdate",
+        "parameters": [
+          {
+            "name": "projectId",
+            "in": "path",
+            "description": "Identifier of the dubbing project.",
+            "required": true,
+            "schema": {
+              "title": "Project Id",
+              "type": "string",
+              "description": "Identifier of the dubbing project."
+            }
+          },
+          {
+            "name": "xi-api-key",
+            "in": "header",
+            "description": "Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the \u0027Profile\u0027 tab on the website.",
+            "schema": {
+              "title": "Xi-Api-Key",
+              "type": "string",
+              "description": "Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the \u0027Profile\u0027 tab on the website.",
+              "nullable": true
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DubbingBulkSegmentUpdateRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DubbingBulkSourceSegmentUpdateResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HttpValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/v1/dubbing/project/{projectId}/transcript/segment": {
       "post": {
         "tags": [
           "Dubbing"
         ],
         "summary": "Add Dubbing Transcript Segment",
-        "description": "Add a new source segment to the transcript.",
+        "description": "Enterprise only. Add a new source segment to the transcript.",
         "operationId": "DubbingTranscriptSegmentAdd",
         "parameters": [
           {
@@ -5128,7 +5193,7 @@
           "Dubbing"
         ],
         "summary": "Update Dubbing Target Transcript Segment",
-        "description": "Edit a segment\u0027s translation for a language target.",
+        "description": "Enterprise only. Edit a segment\u0027s translation for a language target.",
         "operationId": "DubbingTargetTranscriptSegmentUpdate",
         "parameters": [
           {
@@ -5209,13 +5274,89 @@
         }
       }
     },
+    "/v1/dubbing/project/{projectId}/language/{languageId}/transcript/segments": {
+      "patch": {
+        "tags": [
+          "Dubbing"
+        ],
+        "summary": "Update Dubbing Target Transcript Segments",
+        "description": "Enterprise only. Edit several segments\u0027 translations for a language target in one atomic request.",
+        "operationId": "DubbingTargetTranscriptSegmentsUpdate",
+        "parameters": [
+          {
+            "name": "projectId",
+            "in": "path",
+            "description": "Identifier of the dubbing project.",
+            "required": true,
+            "schema": {
+              "title": "Project Id",
+              "type": "string",
+              "description": "Identifier of the dubbing project."
+            }
+          },
+          {
+            "name": "languageId",
+            "in": "path",
+            "description": "Identifier of the language target.",
+            "required": true,
+            "schema": {
+              "title": "Language Id",
+              "type": "string",
+              "description": "Identifier of the language target."
+            }
+          },
+          {
+            "name": "xi-api-key",
+            "in": "header",
+            "description": "Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the \u0027Profile\u0027 tab on the website.",
+            "schema": {
+              "title": "Xi-Api-Key",
+              "type": "string",
+              "description": "Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the \u0027Profile\u0027 tab on the website.",
+              "nullable": true
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DubbingBulkTargetSegmentUpdateRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DubbingBulkTargetSegmentUpdateResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HttpValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/v1/dubbing/project/{projectId}/language/{languageId}/transcript/regenerate": {
       "post": {
         "tags": [
           "Dubbing"
         ],
         "summary": "Regenerate Dubbing Target",
-        "description": "Re-dub a target from its edited transcript (charged like a generation).",
+        "description": "Enterprise only. Re-dub a target from its edited transcript, re-synthesizing only the edited regions (charged like a generation). Conflicts when the target has no edits to apply -- nothing is dispatched and nothing is charged.",
         "operationId": "DubbingTargetTranscriptRegenerate",
         "parameters": [
           {
@@ -5258,7 +5399,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DubbingLanguageResponse"
+                  "$ref": "#/components/schemas/DubbingRegenerateResponse"
                 }
               }
             }
@@ -17710,60 +17851,6 @@
         }
       }
     },
-    "/v1/convai/batch-calling/{batchId}/export": {
-      "get": {
-        "tags": [
-          "Agents Platform"
-        ],
-        "summary": "Export Batch Call Results",
-        "description": "Download all recipients and conversation results for a terminal batch call as CSV.",
-        "operationId": "ExportBatchCall",
-        "parameters": [
-          {
-            "name": "batchId",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "title": "Batch Id",
-              "type": "string"
-            }
-          },
-          {
-            "name": "xi-api-key",
-            "in": "header",
-            "description": "Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the \u0027Profile\u0027 tab on the website.",
-            "schema": {
-              "title": "Xi-Api-Key",
-              "type": "string",
-              "description": "Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the \u0027Profile\u0027 tab on the website.",
-              "nullable": true
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Batch call results CSV.",
-            "content": {
-              "text/csv": {
-                "schema": {
-                  "$ref": "#/components/schemas/ExportBatchCall200CsvResponseSchema"
-                }
-              }
-            }
-          },
-          "422": {
-            "description": "Validation Error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/HttpValidationError"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
     "/v1/convai/batch-calling/submit": {
       "post": {
         "tags": [
@@ -18079,6 +18166,60 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/BatchCallResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HttpValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/convai/batch-calling/{batchId}/export": {
+      "get": {
+        "tags": [
+          "Agents Platform"
+        ],
+        "summary": "Export Batch Call Results",
+        "description": "Download all recipients and conversation results for a terminal batch call as CSV.",
+        "operationId": "ExportBatchCall",
+        "parameters": [
+          {
+            "name": "batchId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "title": "Batch Id",
+              "type": "string"
+            }
+          },
+          {
+            "name": "xi-api-key",
+            "in": "header",
+            "description": "Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the \u0027Profile\u0027 tab on the website.",
+            "schema": {
+              "title": "Xi-Api-Key",
+              "type": "string",
+              "description": "Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the \u0027Profile\u0027 tab on the website.",
+              "nullable": true
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Batch call results CSV.",
+            "content": {
+              "text/csv": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExportBatchCall200CsvResponseSchema"
                 }
               }
             }
@@ -19247,6 +19388,17 @@
               "type": "integer",
               "description": "How many results at most should be returned",
               "default": 100
+            }
+          },
+          {
+            "name": "include_commit_status",
+            "in": "query",
+            "description": "Whether to compute how far each branch has diverged from main (commits_ahead/commits_behind). This walks the version DAG of every branch, so it is slow on agents with long histories and is off by default, leaving those fields null.",
+            "schema": {
+              "title": "Include Commit Status",
+              "type": "boolean",
+              "description": "Whether to compute how far each branch has diverged from main (commits_ahead/commits_behind). This walks the version DAG of every branch, so it is slow on agents with long histories and is off by default, leaving those fields null.",
+              "default": false
             }
           },
           {
@@ -28697,10 +28849,10 @@
           },
           "response_timeout_secs": {
             "title": "Response Timeout Secs",
-            "maximum": 120.0,
+            "maximum": 300.0,
             "minimum": 5.0,
             "type": "integer",
-            "description": "The maximum time in seconds to wait for the tool call to complete. Must be between 5 and 120 seconds (inclusive).",
+            "description": "The maximum time in seconds to wait for the tool call to complete. Must be between 5 and 300 seconds (inclusive).",
             "default": 20
           },
           "disable_interruptions": {
@@ -28820,10 +28972,10 @@
           },
           "response_timeout_secs": {
             "title": "Response Timeout Secs",
-            "maximum": 120.0,
+            "maximum": 300.0,
             "minimum": 5.0,
             "type": "integer",
-            "description": "The maximum time in seconds to wait for the tool call to complete. Must be between 5 and 120 seconds (inclusive).",
+            "description": "The maximum time in seconds to wait for the tool call to complete. Must be between 5 and 300 seconds (inclusive).",
             "default": 20
           },
           "disable_interruptions": {
@@ -30019,6 +30171,7 @@
           "livekit_token",
           "livekit_token_website",
           "genesys_api_key",
+          "audiocodes_api_key",
           "whatsapp",
           "sms"
         ],
@@ -30059,6 +30212,10 @@
             {
               "value": "genesys_api_key",
               "name": "GenesysApiKey"
+            },
+            {
+              "value": "audiocodes_api_key",
+              "name": "AudiocodesApiKey"
             },
             {
               "value": "whatsapp",
@@ -31665,6 +31822,14 @@
               "type": "string"
             },
             "description": "Key terms to bias transcription/translation toward (e.g. product or brand names). At most 1000 terms; each term at most 50 characters and 5 words; the characters \u0060\u003C\u003E{}[]\\\u0060 are not allowed."
+          },
+          "webhook_ids": {
+            "title": "Webhook Ids",
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Ids of workspace webhooks to notify when this project becomes ready or fails, and when any of its languages completes or fails. At most 3; each must be a webhook configured in your workspace."
           },
           "target_language": {
             "title": "Target Language",
@@ -40575,6 +40740,7 @@
           "twilio",
           "exotel",
           "genesys",
+          "audiocodes",
           "swift_sdk",
           "whatsapp",
           "twilio_sms",
@@ -40643,6 +40809,10 @@
             {
               "value": "genesys",
               "name": "Genesys"
+            },
+            {
+              "value": "audiocodes",
+              "name": "Audiocodes"
             },
             {
               "value": "swift_sdk",
@@ -43623,6 +43793,19 @@
         },
         "description": "Custom SIP header for phone transfers with a dynamic variable reference.\nThe value is a variable name that will be resolved at runtime.\nValue is not validated here since it will be substituted with actual value later."
       },
+      "CustomToolApiSchemaConfig": {
+        "title": "CustomToolApiSchemaConfig",
+        "required": [
+          "request_body_schema"
+        ],
+        "type": "object",
+        "properties": {
+          "request_body_schema": {
+            "$ref": "#/components/schemas/ObjectJsonSchemaPropertyOutput"
+          }
+        },
+        "description": "\u0022Parameter schema for an integration tool the brain answers itself.\n\nUnlike \u0060\u0060WebhookToolApiSchemaConfig\u0060\u0060 there is no HTTP transport: \u0060\u0060handler\u0060\u0060\nreceives the LLM\u0027s parameters and produces the tool result.\u0022"
+      },
       "DtmfInputConfig": {
         "title": "DTMFInputConfig",
         "type": "object",
@@ -45318,6 +45501,106 @@
           }
         }
       },
+      "DubbingBulkSegmentUpdateRequest": {
+        "title": "DubbingBulkSegmentUpdateRequest",
+        "required": [
+          "segments"
+        ],
+        "type": "object",
+        "properties": {
+          "segments": {
+            "$ref": "#/components/schemas/DubbingBulkSegmentUpdateRequestSegmentsProperty"
+          }
+        },
+        "description": "Edit several source segments at once, applied atomically (all succeed or none do)."
+      },
+      "DubbingBulkSourceSegmentUpdateResponse": {
+        "title": "DubbingBulkSourceSegmentUpdateResponse",
+        "required": [
+          "segments",
+          "revision"
+        ],
+        "type": "object",
+        "properties": {
+          "segments": {
+            "title": "Segments",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DubbingTranscriptSegment"
+            },
+            "description": "The edited segments in their updated state."
+          },
+          "revision": {
+            "title": "Revision",
+            "type": "integer",
+            "description": "The project\u0027s source-transcript revision after the edits."
+          }
+        },
+        "description": "\u0022The result of a bulk source edit: the updated segments and the new revision.\u0022"
+      },
+      "DubbingBulkTargetSegmentUpdateRequest": {
+        "title": "DubbingBulkTargetSegmentUpdateRequest",
+        "required": [
+          "segments"
+        ],
+        "type": "object",
+        "properties": {
+          "segments": {
+            "$ref": "#/components/schemas/DubbingBulkTargetSegmentUpdateRequestSegmentsProperty"
+          }
+        },
+        "description": "Edit several target translations at once, applied atomically (all succeed or none do)."
+      },
+      "DubbingBulkTargetSegmentUpdateResponse": {
+        "title": "DubbingBulkTargetSegmentUpdateResponse",
+        "required": [
+          "segments",
+          "revision"
+        ],
+        "type": "object",
+        "properties": {
+          "segments": {
+            "title": "Segments",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DubbingTargetTranscriptSegment"
+            },
+            "description": "The edited target segments in their updated state."
+          },
+          "revision": {
+            "title": "Revision",
+            "type": "integer",
+            "description": "The target\u0027s revision after the edits."
+          }
+        },
+        "description": "\u0022The result of a bulk target edit: the updated segments and the new revision.\u0022"
+      },
+      "DubbingError": {
+        "title": "DubbingError",
+        "required": [
+          "code",
+          "message",
+          "retryable"
+        ],
+        "type": "object",
+        "properties": {
+          "code": {
+            "title": "Code",
+            "type": "string",
+            "description": "Stable identifier for the failure, safe to branch on. New codes are added over time, so treat an unrecognized value as \u0027internal_error\u0027."
+          },
+          "message": {
+            "title": "Message",
+            "type": "string",
+            "description": "Human-readable description of the failure, for display. The wording may change at any time; branch on \u0060code\u0060 instead."
+          },
+          "retryable": {
+            "title": "Retryable",
+            "type": "boolean",
+            "description": "Whether resubmitting the same input could succeed. False means the failure describes the input or the account, so an identical retry will fail the same way."
+          }
+        }
+      },
       "DubbingLanguageListResponse": {
         "title": "DubbingLanguageListResponse",
         "required": [
@@ -45407,6 +45690,17 @@
             "type": "integer",
             "description": "The \u0060revision\u0060 the current dubbed output was generated from; equal to \u0060revision\u0060 when up to date, less than it when \u0027stale\u0027. Null until a generation has completed.",
             "nullable": true
+          },
+          "error": {
+            "$ref": "#/components/schemas/DubbingLanguageResponseError"
+          },
+          "warnings": {
+            "title": "Warnings",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/VoicesNotPermittedWarning"
+            },
+            "description": "Non-fatal conditions raised while dubbing this language, empty when there are none. Reflects the latest generation. Conditions raised while preparing the source are reported on the project instead."
           },
           "created_at": {
             "title": "Created At",
@@ -45665,10 +45959,30 @@
             "description": "Identifiers of the language targets created under this project.",
             "default": []
           },
+          "webhook_ids": {
+            "title": "Webhook Ids",
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Workspace webhooks notified when this project becomes ready or fails, and when any of its languages completes or fails.",
+            "default": []
+          },
           "revision": {
             "title": "Revision",
             "type": "integer",
             "description": "Monotonic counter incremented whenever the source transcript is edited (segment add/edit/delete)."
+          },
+          "error": {
+            "$ref": "#/components/schemas/DubbingProjectResponseError"
+          },
+          "warnings": {
+            "title": "Warnings",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/VoicesNotPermittedWarning"
+            },
+            "description": "Non-fatal conditions raised while preparing the source, empty when there are none. Reflects the latest preparation. Conditions raised while dubbing a particular language are reported on that language instead."
           },
           "created_at": {
             "title": "Created At",
@@ -45683,6 +45997,42 @@
             "format": "date-time"
           }
         }
+      },
+      "DubbingRegenerateResponse": {
+        "title": "DubbingRegenerateResponse",
+        "required": [
+          "regenerated_segment_ids",
+          "regenerated_seconds",
+          "charged_seconds",
+          "free_regeneration_seconds_remaining"
+        ],
+        "type": "object",
+        "properties": {
+          "regenerated_segment_ids": {
+            "title": "Regenerated Segment Ids",
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "\u0022The segments this re-dub re-synthesizes: those with edits to apply.\u0022"
+          },
+          "regenerated_seconds": {
+            "title": "Regenerated Seconds",
+            "type": "number",
+            "description": "Seconds of audio this re-dub covers -- the edited regions only, never the whole target. \u0060charged_seconds\u0060 is the part of it that was billed."
+          },
+          "charged_seconds": {
+            "title": "Charged Seconds",
+            "type": "number",
+            "description": "Seconds actually billed, after the free-regeneration allowance. Zero when the re-dub cost nothing -- the allowance covered all of it, or the project\u0027s included generation did."
+          },
+          "free_regeneration_seconds_remaining": {
+            "title": "Free Regeneration Seconds Remaining",
+            "type": "number",
+            "description": "Free-regeneration seconds left for this language target after this re-dub. The allowance is the source\u0027s own duration."
+          }
+        },
+        "description": "\u0022The accepted re-dub: what it covers and what it cost.\u0022"
       },
       "DubbingRenderResponseModel": {
         "title": "DubbingRenderResponseModel",
@@ -76325,6 +76675,48 @@
         },
         "description": "Allows the agent to detect when a voicemail system is encountered.\n\nThis tool should be invoked by the LLM when it detects that the call has been\nanswered by a voicemail system rather than a human. If a voicemail message\nis configured, it will be played; otherwise the call will end immediately."
       },
+      "VoicesNotPermittedWarning": {
+        "title": "VoicesNotPermittedWarning",
+        "required": [
+          "type",
+          "speaker_ids",
+          "message"
+        ],
+        "type": "object",
+        "properties": {
+          "type": {
+            "title": "Type",
+            "enum": [
+              "voices_not_permitted"
+            ],
+            "type": "string",
+            "description": "Identifies this warning; branch on it to read the fields below.",
+            "x-ms-enum": {
+              "name": "Type",
+              "modelAsString": false,
+              "values": [
+                {
+                  "value": "voices_not_permitted",
+                  "name": "VoicesNotPermitted"
+                }
+              ]
+            }
+          },
+          "speaker_ids": {
+            "title": "Speaker Ids",
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Speakers whose voices were not permitted for cloning. The dub used a replacement voice for each of them; the rest of the speakers are unaffected."
+          },
+          "message": {
+            "title": "Message",
+            "type": "string",
+            "description": "Human-readable description of the warning, for display. The wording may change at any time; branch on \u0060type\u0060 instead."
+          }
+        }
+      },
       "WebhookAuthMethodType": {
         "title": "WebhookAuthMethodType",
         "enum": [
@@ -76618,10 +77010,10 @@
           },
           "response_timeout_secs": {
             "title": "Response Timeout Secs",
-            "maximum": 120.0,
+            "maximum": 300.0,
             "minimum": 5.0,
             "type": "integer",
-            "description": "The maximum time in seconds to wait for the tool call to complete. Must be between 5 and 120 seconds (inclusive).",
+            "description": "The maximum time in seconds to wait for the tool call to complete. Must be between 5 and 300 seconds (inclusive).",
             "default": 20
           },
           "disable_interruptions": {
@@ -76718,10 +77110,10 @@
           },
           "response_timeout_secs": {
             "title": "Response Timeout Secs",
-            "maximum": 120.0,
+            "maximum": 300.0,
             "minimum": 5.0,
             "type": "integer",
-            "description": "The maximum time in seconds to wait for the tool call to complete. Must be between 5 and 120 seconds (inclusive).",
+            "description": "The maximum time in seconds to wait for the tool call to complete. Must be between 5 and 300 seconds (inclusive).",
             "default": 20
           },
           "disable_interruptions": {
@@ -76809,7 +77201,8 @@
           "Speech to Text",
           "Agent QA Evaluations",
           "ConvAI Alerting",
-          "Flows"
+          "Flows",
+          "Dubbing"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -88768,7 +89161,7 @@
             ]
           }
         ],
-        "description": "LLM model to use for evaluating simulation results. Defaults to Claude Sonnet 4.6."
+        "description": "LLM model to use for evaluating simulation results."
       },
       "CreateSimulationTestRequestSimulatedUserModel": {
         "type": "object",
@@ -88782,7 +89175,7 @@
             ]
           }
         ],
-        "description": "LLM model for the simulated user. Defaults to Claude Sonnet 4.6."
+        "description": "LLM model for the simulated user."
       },
       "CreateToolCallUnitTestRequestFromConversationMetadata": {
         "required": [
@@ -89399,6 +89792,35 @@
           }
         }
       },
+      "DubbingLanguageResponseError": {
+        "required": [
+          "type"
+        ],
+        "type": "object",
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/DubbingError"
+          },
+          {
+            "enum": [
+              null
+            ]
+          }
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "Union discriminator"
+          }
+        },
+        "description": "Why this language failed; null unless \u0060status\u0060 is \u0027failed\u0027, and also null for the few languages that failed before failure reporting was introduced. A code of \u0027project_failed\u0027 means the parent project failed, so read the project for the underlying cause.",
+        "discriminator": {
+          "propertyName": "type",
+          "mapping": {
+            "DubbingError": "#/components/schemas/DubbingError"
+          }
+        }
+      },
       "DubbingMetadataResponseMediaMetadata": {
         "required": [
           "type"
@@ -89454,6 +89876,35 @@
           "propertyName": "type",
           "mapping": {
             "DubbingSourceMediaInfo": "#/components/schemas/DubbingSourceMediaInfo"
+          }
+        }
+      },
+      "DubbingProjectResponseError": {
+        "required": [
+          "type"
+        ],
+        "type": "object",
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/DubbingError"
+          },
+          {
+            "enum": [
+              null
+            ]
+          }
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "Union discriminator"
+          }
+        },
+        "description": "Why the project failed; null unless \u0060status\u0060 is \u0027failed\u0027. Also null for the few projects that failed before failure reporting was introduced.",
+        "discriminator": {
+          "propertyName": "type",
+          "mapping": {
+            "DubbingError": "#/components/schemas/DubbingError"
           }
         }
       },
@@ -90987,7 +91438,7 @@
             ]
           }
         ],
-        "description": "LLM model to use for evaluating simulation results. Defaults to Claude Sonnet 4.6."
+        "description": "LLM model to use for evaluating simulation results."
       },
       "GetSimulationTestResponseModelSimulatedUserModel": {
         "type": "object",
@@ -91001,7 +91452,7 @@
             ]
           }
         ],
-        "description": "LLM model for the simulated user. Defaults to Claude Sonnet 4.6."
+        "description": "LLM model for the simulated user."
       },
       "GetTestSuiteInvocationResponseModelBucketingStatus": {
         "type": "object",
@@ -96402,7 +96853,7 @@
             ]
           }
         ],
-        "description": "LLM model to use for evaluating simulation results. Defaults to Claude Sonnet 4.6."
+        "description": "LLM model to use for evaluating simulation results."
       },
       "SimulationTestModelSimulatedUserModel": {
         "type": "object",
@@ -96416,7 +96867,7 @@
             ]
           }
         ],
-        "description": "LLM model for the simulated user. Defaults to Claude Sonnet 4.6."
+        "description": "LLM model for the simulated user."
       },
       "SlackBotAuthResponseUsedBy": {
         "required": [
@@ -98471,7 +98922,7 @@
             ]
           }
         ],
-        "description": "LLM model to use for evaluating simulation results. Defaults to Claude Sonnet 4.6."
+        "description": "LLM model to use for evaluating simulation results."
       },
       "UpdateSimulationTestRequestSimulatedUserModel": {
         "type": "object",
@@ -98485,7 +98936,7 @@
             ]
           }
         ],
-        "description": "LLM model for the simulated user. Defaults to Claude Sonnet 4.6."
+        "description": "LLM model for the simulated user."
       },
       "UpdateSpeechEngineRequestSpeechEngine": {
         "required": [
@@ -101540,6 +101991,26 @@
           "$ref": "#/components/schemas/CustomLlmRequestHeadersAdditionalProperties"
         },
         "description": "Headers that should be included in the request"
+      },
+      "DubbingBulkSegmentUpdateRequestSegments": {
+        "title": "Segments",
+        "maxProperties": 500,
+        "minProperties": 1,
+        "type": "object",
+        "additionalProperties": {
+          "$ref": "#/components/schemas/DubbingSegmentUpdateRequest"
+        },
+        "description": "Map of segment id to the partial update to apply to that segment."
+      },
+      "DubbingBulkTargetSegmentUpdateRequestSegments": {
+        "title": "Segments",
+        "maxProperties": 500,
+        "minProperties": 1,
+        "type": "object",
+        "additionalProperties": {
+          "$ref": "#/components/schemas/DubbingTargetSegmentUpdateRequest"
+        },
+        "description": "Map of segment id to the translation edit to apply to that segment."
       },
       "DubbingResourceSpeakerTracks": {
         "title": "Speaker Tracks",
@@ -107004,6 +107475,20 @@
       "DataCollectionResultCommonModelValue": {
         "title": "Value",
         "type": "object"
+      },
+      "DubbingBulkSegmentUpdateRequestSegmentsProperty": {
+        "type": "object",
+        "additionalProperties": {
+          "$ref": "#/components/schemas/DubbingSegmentUpdateRequest"
+        },
+        "description": "Map of segment id to the partial update to apply to that segment."
+      },
+      "DubbingBulkTargetSegmentUpdateRequestSegmentsProperty": {
+        "type": "object",
+        "additionalProperties": {
+          "$ref": "#/components/schemas/DubbingTargetSegmentUpdateRequest"
+        },
+        "description": "Map of segment id to the translation edit to apply to that segment."
       },
       "DubbingResourceSpeakerTracksProperty": {
         "type": "object",

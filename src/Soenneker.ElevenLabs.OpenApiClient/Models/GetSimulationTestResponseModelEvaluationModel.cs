@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.ElevenLabs.OpenApiClient.Models
 {
     /// <summary>
-    /// LLM model to use for evaluating simulation results. Defaults to Claude Sonnet 4.6.
+    /// LLM model to use for evaluating simulation results.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class GetSimulationTestResponseModelEvaluationModel : IAdditionalDataHolder, IParsable

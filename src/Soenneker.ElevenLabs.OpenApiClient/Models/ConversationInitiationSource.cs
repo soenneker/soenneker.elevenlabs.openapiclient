@@ -55,6 +55,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         #pragma warning disable CS1591
         Genesys,
         #pragma warning restore CS1591
+        [EnumMember(Value = "audiocodes")]
+        #pragma warning disable CS1591
+        Audiocodes,
+        #pragma warning restore CS1591
         [EnumMember(Value = "swift_sdk")]
         #pragma warning disable CS1591
         SwiftSdk,

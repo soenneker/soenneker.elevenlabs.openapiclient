@@ -34,7 +34,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Dubbing.Project.Item.Transcript.
         {
         }
         /// <summary>
-        /// Remove a source segment from the transcript.
+        /// Enterprise only. Remove a source segment from the transcript.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingTranscriptRevisionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -57,7 +57,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Dubbing.Project.Item.Transcript.
             return await RequestAdapter.SendAsync<global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingTranscriptRevisionResponse>(requestInfo, global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingTranscriptRevisionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Edit a source segment&apos;s text, speaker, or timing.
+        /// Enterprise only. Edit a source segment&apos;s text, speaker, or timing.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingSourceSegmentUpdateResponse"/></returns>
         /// <param name="body">A partial update to a source segment; omitted fields are left unchanged.</param>
@@ -82,7 +82,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Dubbing.Project.Item.Transcript.
             return await RequestAdapter.SendAsync<global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingSourceSegmentUpdateResponse>(requestInfo, global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingSourceSegmentUpdateResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Remove a source segment from the transcript.
+        /// Enterprise only. Remove a source segment from the transcript.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -101,7 +101,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Dubbing.Project.Item.Transcript.
             return requestInfo;
         }
         /// <summary>
-        /// Edit a source segment&apos;s text, speaker, or timing.
+        /// Enterprise only. Edit a source segment&apos;s text, speaker, or timing.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">A partial update to a source segment; omitted fields are left unchanged.</param>

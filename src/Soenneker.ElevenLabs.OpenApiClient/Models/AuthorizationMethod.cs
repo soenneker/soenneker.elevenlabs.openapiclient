@@ -40,6 +40,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         #pragma warning disable CS1591
         GenesysApiKey,
         #pragma warning restore CS1591
+        [EnumMember(Value = "audiocodes_api_key")]
+        #pragma warning disable CS1591
+        AudiocodesApiKey,
+        #pragma warning restore CS1591
         [EnumMember(Value = "whatsapp")]
         #pragma warning disable CS1591
         Whatsapp,
