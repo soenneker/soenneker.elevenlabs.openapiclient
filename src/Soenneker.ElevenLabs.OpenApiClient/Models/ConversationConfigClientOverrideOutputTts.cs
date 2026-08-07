@@ -23,6 +23,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.TtsConversationalConfigOverrideModelId ModelId { get; set; }
 #endif
+        /// <summary>The pronunciation dictionary locators</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.TtsConversationalConfigOverridePronunciationDictionaryLocators? PronunciationDictionaryLocators { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.TtsConversationalConfigOverridePronunciationDictionaryLocators PronunciationDictionaryLocators { get; set; }
+#endif
         /// <summary>The similarity boost for generated speech</summary>
         public double? SimilarityBoost { get; set; }
         /// <summary>The speed of generated speech</summary>
@@ -71,6 +79,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "model_id", n => { ModelId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TtsConversationalConfigOverrideModelId>(global::Soenneker.ElevenLabs.OpenApiClient.Models.TtsConversationalConfigOverrideModelId.CreateFromDiscriminatorValue); } },
+                { "pronunciation_dictionary_locators", n => { PronunciationDictionaryLocators = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TtsConversationalConfigOverridePronunciationDictionaryLocators>(global::Soenneker.ElevenLabs.OpenApiClient.Models.TtsConversationalConfigOverridePronunciationDictionaryLocators.CreateFromDiscriminatorValue); } },
                 { "similarity_boost", n => { SimilarityBoost = n.GetDoubleValue(); } },
                 { "speed", n => { Speed = n.GetDoubleValue(); } },
                 { "stability", n => { Stability = n.GetDoubleValue(); } },
@@ -86,6 +95,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TtsConversationalConfigOverrideModelId>("model_id", ModelId);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TtsConversationalConfigOverridePronunciationDictionaryLocators>("pronunciation_dictionary_locators", PronunciationDictionaryLocators);
             writer.WriteDoubleValue("similarity_boost", SimilarityBoost);
             writer.WriteDoubleValue("speed", Speed);
             writer.WriteDoubleValue("stability", Stability);

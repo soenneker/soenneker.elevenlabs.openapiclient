@@ -15,6 +15,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The maximum duration of a conversation in seconds</summary>
+        public int? MaxDurationSeconds { get; set; }
         /// <summary>If enabled audio will not be processed and only text will be used, use to avoid audio pricing.</summary>
         public bool? TextOnly { get; set; }
         /// <summary>Union discriminator</summary>
@@ -50,6 +52,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "max_duration_seconds", n => { MaxDurationSeconds = n.GetIntValue(); } },
                 { "text_only", n => { TextOnly = n.GetBoolValue(); } },
                 { "type", n => { Type = n.GetStringValue(); } },
             };
@@ -61,6 +64,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteIntValue("max_duration_seconds", MaxDurationSeconds);
             writer.WriteBoolValue("text_only", TextOnly);
             writer.WriteStringValue("type", Type);
             writer.WriteAdditionalData(AdditionalData);

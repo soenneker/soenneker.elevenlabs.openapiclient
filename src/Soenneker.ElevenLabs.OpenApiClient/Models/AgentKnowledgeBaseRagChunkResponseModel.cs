@@ -22,6 +22,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public string ChunkId { get; set; }
 #endif
+        /// <summary>Canonical representation of a knowledge base document&apos;s stored content.HTML is the legacy default; documents created before this field existed areinterpreted as HTML.</summary>
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ContentFormat? ContentFormat { get; set; }
         /// <summary>ID of the source knowledge base document.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -38,6 +40,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public string DocumentName { get; set; }
 #endif
+        /// <summary>The document_type property</summary>
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeBaseDocumentType? DocumentType { get; set; }
         /// <summary>Text content of the retrieved chunk.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -74,8 +78,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "chunk_id", n => { ChunkId = n.GetStringValue(); } },
+                { "content_format", n => { ContentFormat = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ContentFormat>(); } },
                 { "document_id", n => { DocumentId = n.GetStringValue(); } },
                 { "document_name", n => { DocumentName = n.GetStringValue(); } },
+                { "document_type", n => { DocumentType = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeBaseDocumentType>(); } },
                 { "text", n => { Text = n.GetStringValue(); } },
                 { "vector_distance", n => { VectorDistance = n.GetDoubleValue(); } },
             };
@@ -88,8 +94,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("chunk_id", ChunkId);
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ContentFormat>("content_format", ContentFormat);
             writer.WriteStringValue("document_id", DocumentId);
             writer.WriteStringValue("document_name", DocumentName);
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeBaseDocumentType>("document_type", DocumentType);
             writer.WriteStringValue("text", Text);
             writer.WriteDoubleValue("vector_distance", VectorDistance);
             writer.WriteAdditionalData(AdditionalData);

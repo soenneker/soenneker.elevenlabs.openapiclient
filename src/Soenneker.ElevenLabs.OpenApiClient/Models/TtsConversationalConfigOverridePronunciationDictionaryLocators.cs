@@ -7,35 +7,30 @@ using System.IO;
 using System;
 namespace Soenneker.ElevenLabs.OpenApiClient.Models
 {
+    /// <summary>
+    /// The pronunciation dictionary locators
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
-    public partial class ConversationConfigOverrideConfig : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
+    public partial class TtsConversationalConfigOverridePronunciationDictionaryLocators : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Whether to allow overriding the max_duration_seconds field.</summary>
-        public bool? MaxDurationSeconds { get; set; }
-        /// <summary>Whether to allow overriding the text_only field.</summary>
-        public bool? TextOnly { get; set; }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationConfigOverrideConfig"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.TtsConversationalConfigOverridePronunciationDictionaryLocators"/> and sets the default values.
         /// </summary>
-        public ConversationConfigOverrideConfig()
+        public TtsConversationalConfigOverridePronunciationDictionaryLocators()
         {
             AdditionalData = new Dictionary<string, object>();
-            MaxDurationSeconds = false;
-            TextOnly = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationConfigOverrideConfig"/></returns>
+        /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.TtsConversationalConfigOverridePronunciationDictionaryLocators"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationConfigOverrideConfig CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.ElevenLabs.OpenApiClient.Models.TtsConversationalConfigOverridePronunciationDictionaryLocators CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationConfigOverrideConfig();
+            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.TtsConversationalConfigOverridePronunciationDictionaryLocators();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -45,8 +40,6 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "max_duration_seconds", n => { MaxDurationSeconds = n.GetBoolValue(); } },
-                { "text_only", n => { TextOnly = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -56,8 +49,6 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteBoolValue("max_duration_seconds", MaxDurationSeconds);
-            writer.WriteBoolValue("text_only", TextOnly);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

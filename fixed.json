@@ -2549,6 +2549,129 @@
             }
           },
           {
+            "name": "gender",
+            "in": "query",
+            "description": "Gender used for filtering, based on the voice\u0027s \u0027gender\u0027 label.",
+            "schema": {
+              "title": "Gender",
+              "type": "string",
+              "description": "Gender used for filtering, based on the voice\u0027s \u0027gender\u0027 label.",
+              "nullable": true
+            }
+          },
+          {
+            "name": "age",
+            "in": "query",
+            "description": "Age used for filtering, based on the voice\u0027s \u0027age\u0027 label.",
+            "schema": {
+              "title": "Age",
+              "type": "string",
+              "description": "Age used for filtering, based on the voice\u0027s \u0027age\u0027 label.",
+              "nullable": true
+            }
+          },
+          {
+            "name": "language",
+            "in": "query",
+            "description": "Languages used for filtering, based on the voice\u0027s \u0027language\u0027 label. Voices matching any of the given languages are returned.",
+            "schema": {
+              "title": "Language",
+              "type": "object",
+              "anyOf": [
+                {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                {
+                  "enum": [
+                    null
+                  ]
+                }
+              ],
+              "description": "Languages used for filtering, based on the voice\u0027s \u0027language\u0027 label. Voices matching any of the given languages are returned."
+            }
+          },
+          {
+            "name": "accent",
+            "in": "query",
+            "description": "Accent used for filtering, based on the voice\u0027s \u0027accent\u0027 label.",
+            "schema": {
+              "title": "Accent",
+              "type": "string",
+              "description": "Accent used for filtering, based on the voice\u0027s \u0027accent\u0027 label.",
+              "nullable": true
+            }
+          },
+          {
+            "name": "use_cases",
+            "in": "query",
+            "description": "Use cases used for filtering, based on the voice\u0027s \u0027use_case\u0027 label. Voices matching any of the given use cases are returned.",
+            "schema": {
+              "title": "Use Cases",
+              "type": "object",
+              "anyOf": [
+                {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                {
+                  "enum": [
+                    null
+                  ]
+                }
+              ],
+              "description": "Use cases used for filtering, based on the voice\u0027s \u0027use_case\u0027 label. Voices matching any of the given use cases are returned."
+            }
+          },
+          {
+            "name": "min_notice_period_days",
+            "in": "query",
+            "description": "Filter to voices whose sharing notice period is at least the given number of days.",
+            "schema": {
+              "title": "Min Notice Period Days",
+              "type": "integer",
+              "description": "Filter to voices whose sharing notice period is at least the given number of days.",
+              "nullable": true
+            }
+          },
+          {
+            "name": "include_custom_rates",
+            "in": "query",
+            "description": "Whether to include voices that have a custom sharing rate. Defaults to including them.",
+            "schema": {
+              "title": "Include Custom Rates",
+              "type": "boolean",
+              "description": "Whether to include voices that have a custom sharing rate. Defaults to including them.",
+              "nullable": true
+            }
+          },
+          {
+            "name": "include_live_moderated",
+            "in": "query",
+            "description": "Whether to include voices that have live moderation enabled. Defaults to including them.",
+            "schema": {
+              "title": "Include Live Moderated",
+              "type": "boolean",
+              "description": "Whether to include voices that have live moderation enabled. Defaults to including them.",
+              "nullable": true
+            }
+          },
+          {
+            "name": "high_quality",
+            "in": "query",
+            "description": "When true, only return studio-quality voices (those whose category is \u0027high_quality\u0027).",
+            "schema": {
+              "title": "High Quality",
+              "type": "boolean",
+              "description": "When true, only return studio-quality voices (those whose category is \u0027high_quality\u0027).",
+              "nullable": true
+            }
+          },
+          {
             "name": "include_total_count",
             "in": "query",
             "description": "\u0022Whether to include the total count of voices found in the response. NOTE: The total_count value is a live snapshot and may change between requests as users create, modify, or delete voices. For pagination, rely on the has_more flag instead. Only enable this when you actually need the total count (e.g., for display purposes), as it incurs a performance cost.\u0022",
@@ -26780,7 +26903,9 @@
           "document_name",
           "chunk_id",
           "text",
-          "vector_distance"
+          "vector_distance",
+          "content_format",
+          "document_type"
         ],
         "type": "object",
         "properties": {
@@ -26809,6 +26934,12 @@
             "type": "number",
             "description": "Similarity distance when exposed by the retrieval strategy.",
             "nullable": true
+          },
+          "content_format": {
+            "$ref": "#/components/schemas/ContentFormat"
+          },
+          "document_type": {
+            "$ref": "#/components/schemas/KnowledgeBaseDocumentType"
           }
         }
       },
@@ -26859,8 +26990,10 @@
           "chunks": [
             {
               "chunk_id": "chunk_498cjVigY5qzO86Huf0OWal",
+              "content_format": "html",
               "document_id": "doc_J3Pbu5gP6NNKBscdCdwB",
               "document_name": "Account FAQ",
+              "document_type": "file",
               "text": "To reset your password, open Settings and choose Security...",
               "vector_distance": 0.21
             }
@@ -38286,7 +38419,8 @@
             "title": "Max Duration Seconds",
             "type": "integer",
             "description": "The maximum duration of a conversation in seconds",
-            "default": 600
+            "default": 600,
+            "x-convai-client-override": true
           },
           "client_events": {
             "title": "Client Events",
@@ -38346,7 +38480,8 @@
             "title": "Max Duration Seconds",
             "type": "integer",
             "description": "The maximum duration of a conversation in seconds",
-            "default": 600
+            "default": 600,
+            "x-convai-client-override": true
           },
           "client_events": {
             "title": "Client Events",
@@ -38428,8 +38563,12 @@
               "world"
             ]
           },
+          "conversation": {
+            "max_duration_seconds": 600
+          },
           "tts": {
             "model_id": "eleven_turbo_v2",
+            "pronunciation_dictionary_locators": [],
             "similarity_boost": 0.8,
             "speed": 1.0,
             "stability": 0.5,
@@ -38479,8 +38618,12 @@
               "world"
             ]
           },
+          "conversation": {
+            "max_duration_seconds": 600
+          },
           "tts": {
             "model_id": "eleven_turbo_v2",
+            "pronunciation_dictionary_locators": [],
             "similarity_boost": 0.8,
             "speed": 1.0,
             "stability": 0.5,
@@ -38545,7 +38688,17 @@
             "description": "If enabled audio will not be processed and only text will be used, use to avoid audio pricing.",
             "nullable": true,
             "x-convai-client-override": true
+          },
+          "max_duration_seconds": {
+            "title": "Max Duration Seconds",
+            "type": "integer",
+            "description": "The maximum duration of a conversation in seconds",
+            "nullable": true,
+            "x-convai-client-override": true
           }
+        },
+        "example": {
+          "max_duration_seconds": 600
         }
       },
       "ConversationConfigOverrideConfig": {
@@ -38556,6 +38709,12 @@
             "title": "Text Only",
             "type": "boolean",
             "description": "Whether to allow overriding the text_only field.",
+            "default": false
+          },
+          "max_duration_seconds": {
+            "title": "Max Duration Seconds",
+            "type": "boolean",
+            "description": "Whether to allow overriding the max_duration_seconds field.",
             "default": false
           }
         }
@@ -38575,7 +38734,8 @@
             "title": "Max Duration Seconds",
             "type": "integer",
             "description": "The maximum duration of a conversation in seconds",
-            "nullable": true
+            "nullable": true,
+            "x-convai-client-override": true
           },
           "client_events": {
             "$ref": "#/components/schemas/ConversationConfigWorkflowOverrideInputClientEvents"
@@ -38625,7 +38785,8 @@
             "title": "Max Duration Seconds",
             "type": "integer",
             "description": "The maximum duration of a conversation in seconds",
-            "nullable": true
+            "nullable": true,
+            "x-convai-client-override": true
           },
           "client_events": {
             "$ref": "#/components/schemas/ConversationConfigWorkflowOverrideOutputClientEvents"
@@ -48479,6 +48640,30 @@
           "extend_video": {
             "$ref": "#/components/schemas/GenerationSourceContextExtendVideo"
           }
+        }
+      },
+      "GenesysBotOutcome": {
+        "title": "GenesysBotOutcome",
+        "enum": [
+          "success",
+          "escalate"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "Exit branch taken when the Genesys Bot Connector session ends.\n\nThese values are the intent names registered in the Genesys bot list, so they are\nwhat the Call Bot Connector node branches on. Adding a value here without also\nregistering the intent in Genesys would produce an exit the flow cannot handle.",
+        "x-ms-enum": {
+          "name": "GenesysBotOutcome",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "success",
+              "name": "Success"
+            },
+            {
+              "value": "escalate",
+              "name": "Escalate"
+            }
+          ]
         }
       },
       "GenesysRegion": {
@@ -69920,7 +70105,8 @@
             "items": {
               "$ref": "#/components/schemas/PydanticPronunciationDictionaryVersionLocator"
             },
-            "description": "The pronunciation dictionary locators"
+            "description": "The pronunciation dictionary locators",
+            "x-convai-client-override": true
           },
           "enable_phoneme_tags": {
             "title": "Enable Phoneme Tags",
@@ -70021,7 +70207,8 @@
             "items": {
               "$ref": "#/components/schemas/PydanticPronunciationDictionaryVersionLocator"
             },
-            "description": "The pronunciation dictionary locators"
+            "description": "The pronunciation dictionary locators",
+            "x-convai-client-override": true
           },
           "enable_phoneme_tags": {
             "title": "Enable Phoneme Tags",
@@ -70076,10 +70263,14 @@
             "description": "The similarity boost for generated speech",
             "nullable": true,
             "x-convai-client-override": true
+          },
+          "pronunciation_dictionary_locators": {
+            "$ref": "#/components/schemas/TtsConversationalConfigOverridePronunciationDictionaryLocators"
           }
         },
         "example": {
           "model_id": "eleven_turbo_v2",
+          "pronunciation_dictionary_locators": [],
           "similarity_boost": 0.8,
           "speed": 1.0,
           "stability": 0.5,
@@ -70118,6 +70309,12 @@
             "title": "Similarity Boost",
             "type": "boolean",
             "description": "Whether to allow overriding the similarity_boost field.",
+            "default": false
+          },
+          "pronunciation_dictionary_locators": {
+            "title": "Pronunciation Dictionary Locators",
+            "type": "boolean",
+            "description": "Whether to allow overriding the pronunciation_dictionary_locators field.",
             "default": false
           }
         }
@@ -97614,6 +97811,25 @@
         "description": "The model to use for TTS",
         "x-convai-client-override": true
       },
+      "TtsConversationalConfigOverridePronunciationDictionaryLocators": {
+        "title": "Pronunciation Dictionary Locators",
+        "type": "object",
+        "anyOf": [
+          {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PydanticPronunciationDictionaryVersionLocator"
+            }
+          },
+          {
+            "enum": [
+              null
+            ]
+          }
+        ],
+        "description": "The pronunciation dictionary locators",
+        "x-convai-client-override": true
+      },
       "TtsConversationalConfigWorkflowOverrideInputModelId": {
         "type": "object",
         "anyOf": [
@@ -97723,7 +97939,8 @@
             ]
           }
         ],
-        "description": "The pronunciation dictionary locators"
+        "description": "The pronunciation dictionary locators",
+        "x-convai-client-override": true
       },
       "TtsConversationalConfigWorkflowOverrideOutputModelId": {
         "type": "object",
@@ -97834,7 +98051,8 @@
             ]
           }
         ],
-        "description": "The pronunciation dictionary locators"
+        "description": "The pronunciation dictionary locators",
+        "x-convai-client-override": true
       },
       "TestConditionResultCommonModelRationale": {
         "required": [

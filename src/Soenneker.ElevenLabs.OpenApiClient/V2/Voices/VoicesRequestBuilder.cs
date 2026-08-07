@@ -22,7 +22,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V2.Voices
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public VoicesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v2/voices{?category*,collection_id*,fine_tuning_state*,include_total_count*,next_page_token*,page_size*,search*,sort*,sort_direction*,voice_ids*,voice_type*}", pathParameters)
+        public VoicesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v2/voices{?accent*,age*,category*,collection_id*,fine_tuning_state*,gender*,high_quality*,include_custom_rates*,include_live_moderated*,include_total_count*,language*,min_notice_period_days*,next_page_token*,page_size*,search*,sort*,sort_direction*,use_cases*,voice_ids*,voice_type*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V2.Voices
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public VoicesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v2/voices{?category*,collection_id*,fine_tuning_state*,include_total_count*,next_page_token*,page_size*,search*,sort*,sort_direction*,voice_ids*,voice_type*}", rawUrl)
+        public VoicesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v2/voices{?accent*,age*,category*,collection_id*,fine_tuning_state*,gender*,high_quality*,include_custom_rates*,include_live_moderated*,include_total_count*,language*,min_notice_period_days*,next_page_token*,page_size*,search*,sort*,sort_direction*,use_cases*,voice_ids*,voice_type*}", rawUrl)
         {
         }
         /// <summary>
@@ -90,6 +90,26 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V2.Voices
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class VoicesRequestBuilderGetQueryParameters 
         {
+            /// <summary>Accent used for filtering, based on the voice&apos;s &apos;accent&apos; label.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("accent")]
+            public string? Accent { get; set; }
+#nullable restore
+#else
+            [QueryParameter("accent")]
+            public string Accent { get; set; }
+#endif
+            /// <summary>Age used for filtering, based on the voice&apos;s &apos;age&apos; label.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("age")]
+            public string? Age { get; set; }
+#nullable restore
+#else
+            [QueryParameter("age")]
+            public string Age { get; set; }
+#endif
             /// <summary>Category of the voice to filter by. One of &apos;premade&apos;, &apos;cloned&apos;, &apos;generated&apos;, &apos;professional&apos;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -120,9 +140,41 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V2.Voices
             [QueryParameter("fine_tuning_state")]
             public string FineTuningState { get; set; }
 #endif
+            /// <summary>Gender used for filtering, based on the voice&apos;s &apos;gender&apos; label.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("gender")]
+            public string? Gender { get; set; }
+#nullable restore
+#else
+            [QueryParameter("gender")]
+            public string Gender { get; set; }
+#endif
+            /// <summary>When true, only return studio-quality voices (those whose category is &apos;high_quality&apos;).</summary>
+            [QueryParameter("high_quality")]
+            public bool? HighQuality { get; set; }
+            /// <summary>Whether to include voices that have a custom sharing rate. Defaults to including them.</summary>
+            [QueryParameter("include_custom_rates")]
+            public bool? IncludeCustomRates { get; set; }
+            /// <summary>Whether to include voices that have live moderation enabled. Defaults to including them.</summary>
+            [QueryParameter("include_live_moderated")]
+            public bool? IncludeLiveModerated { get; set; }
             /// <summary>&quot;Whether to include the total count of voices found in the response. NOTE: The total_count value is a live snapshot and may change between requests as users create, modify, or delete voices. For pagination, rely on the has_more flag instead. Only enable this when you actually need the total count (e.g., for display purposes), as it incurs a performance cost.&quot;</summary>
             [QueryParameter("include_total_count")]
             public bool? IncludeTotalCount { get; set; }
+            /// <summary>Languages used for filtering, based on the voice&apos;s &apos;language&apos; label. Voices matching any of the given languages are returned.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("language")]
+            public string? Language { get; set; }
+#nullable restore
+#else
+            [QueryParameter("language")]
+            public string Language { get; set; }
+#endif
+            /// <summary>Filter to voices whose sharing notice period is at least the given number of days.</summary>
+            [QueryParameter("min_notice_period_days")]
+            public int? MinNoticePeriodDays { get; set; }
             /// <summary>The next page token to use for pagination. Returned from the previous request. Use this in combination with the has_more flag for reliable pagination.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -165,6 +217,16 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V2.Voices
 #else
             [QueryParameter("sort_direction")]
             public string SortDirection { get; set; }
+#endif
+            /// <summary>Use cases used for filtering, based on the voice&apos;s &apos;use_case&apos; label. Voices matching any of the given use cases are returned.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("use_cases")]
+            public string? UseCases { get; set; }
+#nullable restore
+#else
+            [QueryParameter("use_cases")]
+            public string UseCases { get; set; }
 #endif
             /// <summary>Voice IDs to lookup by. Maximum 100 voice IDs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
