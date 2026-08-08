@@ -14,13 +14,13 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The last_run property</summary>
+        /// <summary>LLM cost of the most recent post-call analysis pass on this conversation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AnalysisChargingLastRun? LastRun { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AnalysisRunSnapshot? LastRun { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AnalysisChargingLastRun LastRun { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AnalysisRunSnapshot LastRun { get; set; }
 #endif
         /// <summary>Cumulative LLM cost of running post-call analysis on this conversation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -63,7 +63,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "last_run", n => { LastRun = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AnalysisChargingLastRun>(global::Soenneker.ElevenLabs.OpenApiClient.Models.AnalysisChargingLastRun.CreateFromDiscriminatorValue); } },
+                { "last_run", n => { LastRun = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AnalysisRunSnapshot>(global::Soenneker.ElevenLabs.OpenApiClient.Models.AnalysisRunSnapshot.CreateFromDiscriminatorValue); } },
                 { "total", n => { Total = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AnalysisRunningTotal>(global::Soenneker.ElevenLabs.OpenApiClient.Models.AnalysisRunningTotal.CreateFromDiscriminatorValue); } },
                 { "type", n => { Type = n.GetStringValue(); } },
             };
@@ -75,7 +75,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AnalysisChargingLastRun>("last_run", LastRun);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AnalysisRunSnapshot>("last_run", LastRun);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AnalysisRunningTotal>("total", Total);
             writer.WriteStringValue("type", Type);
             writer.WriteAdditionalData(AdditionalData);

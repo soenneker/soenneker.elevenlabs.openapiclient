@@ -90,6 +90,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public string OriginalMessage { get; set; }
 #endif
+        /// <summary>The producing_llm property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ProducingLlm { get; set; }
+#nullable restore
+#else
+        public string ProducingLlm { get; set; }
+#endif
         /// <summary>The rag_retrieval_info property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -198,6 +206,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "message", n => { Message = n.GetStringValue(); } },
                 { "multivoice_message", n => { MultivoiceMessage = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptCommonModelOutputMultivoiceMessage>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptCommonModelOutputMultivoiceMessage.CreateFromDiscriminatorValue); } },
                 { "original_message", n => { OriginalMessage = n.GetStringValue(); } },
+                { "producing_llm", n => { ProducingLlm = n.GetStringValue(); } },
                 { "rag_retrieval_info", n => { RagRetrievalInfo = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptCommonModelOutputRagRetrievalInfo>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptCommonModelOutputRagRetrievalInfo.CreateFromDiscriminatorValue); } },
                 { "reasoning", n => { Reasoning = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationReasoningModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationReasoningModel.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "role", n => { Role = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptCommonModelOutputRole>(); } },
@@ -229,6 +238,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteStringValue("message", Message);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptCommonModelOutputMultivoiceMessage>("multivoice_message", MultivoiceMessage);
             writer.WriteStringValue("original_message", OriginalMessage);
+            writer.WriteStringValue("producing_llm", ProducingLlm);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptCommonModelOutputRagRetrievalInfo>("rag_retrieval_info", RagRetrievalInfo);
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationReasoningModel>("reasoning", Reasoning);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptCommonModelOutputRole>("role", Role);

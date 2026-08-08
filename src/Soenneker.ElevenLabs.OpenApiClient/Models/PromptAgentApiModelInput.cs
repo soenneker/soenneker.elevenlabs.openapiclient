@@ -133,7 +133,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             AdditionalData = new Dictionary<string, object>();
             CascadeTimeoutSeconds = 4.0;
             EnableReasoningSummary = false;
-            IgnoreDefaultPersonality = false;
+            IgnoreDefaultPersonality = true;
             MaxTokens = -1;
             Temperature = 0.0;
         }

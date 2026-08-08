@@ -7,10 +7,11 @@ using System.IO;
 using System;
 namespace Soenneker.ElevenLabs.OpenApiClient.Models
 {
+    /// <summary>
+    /// LLM cost of the most recent post-call analysis pass on this conversation.
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
-    public partial class AnalysisChargingLastRun : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
+    public partial class AnalysisRunSnapshot : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -34,18 +35,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.AnalysisRunSnapshotPricePerFeatureProperty PricePerFeature { get; set; }
 #endif
-        /// <summary>Union discriminator</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Type { get; set; }
-#nullable restore
-#else
-        public string Type { get; set; }
-#endif
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.AnalysisChargingLastRun"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.AnalysisRunSnapshot"/> and sets the default values.
         /// </summary>
-        public AnalysisChargingLastRun()
+        public AnalysisRunSnapshot()
         {
             AdditionalData = new Dictionary<string, object>();
             Charge = 0;
@@ -54,12 +47,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.AnalysisChargingLastRun"/></returns>
+        /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.AnalysisRunSnapshot"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.ElevenLabs.OpenApiClient.Models.AnalysisChargingLastRun CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.ElevenLabs.OpenApiClient.Models.AnalysisRunSnapshot CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.AnalysisChargingLastRun();
+            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.AnalysisRunSnapshot();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -73,7 +66,6 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "charge_per_feature", n => { ChargePerFeature = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AnalysisRunSnapshotChargePerFeatureProperty>(global::Soenneker.ElevenLabs.OpenApiClient.Models.AnalysisRunSnapshotChargePerFeatureProperty.CreateFromDiscriminatorValue); } },
                 { "price", n => { Price = n.GetDoubleValue(); } },
                 { "price_per_feature", n => { PricePerFeature = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AnalysisRunSnapshotPricePerFeatureProperty>(global::Soenneker.ElevenLabs.OpenApiClient.Models.AnalysisRunSnapshotPricePerFeatureProperty.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -87,7 +79,6 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AnalysisRunSnapshotChargePerFeatureProperty>("charge_per_feature", ChargePerFeature);
             writer.WriteDoubleValue("price", Price);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AnalysisRunSnapshotPricePerFeatureProperty>("price_per_feature", PricePerFeature);
-            writer.WriteStringValue("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

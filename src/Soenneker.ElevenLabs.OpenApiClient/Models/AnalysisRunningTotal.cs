@@ -35,6 +35,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.AnalysisRunningTotalPricePerFeatureProperty PricePerFeature { get; set; }
 #endif
+        /// <summary>The runs property</summary>
+        public int? Runs { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.AnalysisRunningTotal"/> and sets the default values.
         /// </summary>
@@ -43,6 +45,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             AdditionalData = new Dictionary<string, object>();
             Charge = 0;
             Price = 0.0;
+            Runs = 0;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -66,6 +69,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "charge_per_feature", n => { ChargePerFeature = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AnalysisRunningTotalChargePerFeatureProperty>(global::Soenneker.ElevenLabs.OpenApiClient.Models.AnalysisRunningTotalChargePerFeatureProperty.CreateFromDiscriminatorValue); } },
                 { "price", n => { Price = n.GetDoubleValue(); } },
                 { "price_per_feature", n => { PricePerFeature = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AnalysisRunningTotalPricePerFeatureProperty>(global::Soenneker.ElevenLabs.OpenApiClient.Models.AnalysisRunningTotalPricePerFeatureProperty.CreateFromDiscriminatorValue); } },
+                { "runs", n => { Runs = n.GetIntValue(); } },
             };
         }
         /// <summary>
@@ -79,6 +83,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AnalysisRunningTotalChargePerFeatureProperty>("charge_per_feature", ChargePerFeature);
             writer.WriteDoubleValue("price", Price);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AnalysisRunningTotalPricePerFeatureProperty>("price_per_feature", PricePerFeature);
+            writer.WriteIntValue("runs", Runs);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

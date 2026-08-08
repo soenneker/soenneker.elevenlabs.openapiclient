@@ -25607,9 +25607,7 @@
             }
           },
           "value": {
-            "title": "Value",
-            "type": "number",
-            "description": "Value of this literal."
+            "$ref": "#/components/schemas/AstNumberNodeInputValue"
           }
         }
       },
@@ -25639,9 +25637,7 @@
             }
           },
           "value": {
-            "title": "Value",
-            "type": "number",
-            "description": "Value of this literal."
+            "$ref": "#/components/schemas/AstNumberNodeOutputValue"
           }
         }
       },
@@ -28579,7 +28575,8 @@
       "AnalysisCharging": {
         "title": "AnalysisCharging",
         "required": [
-          "total"
+          "total",
+          "last_run"
         ],
         "type": "object",
         "properties": {
@@ -28587,10 +28584,10 @@
             "$ref": "#/components/schemas/AnalysisRunningTotal"
           },
           "last_run": {
-            "$ref": "#/components/schemas/AnalysisChargingLastRun"
+            "$ref": "#/components/schemas/AnalysisRunSnapshot"
           }
         },
-        "description": "Cost of running post-call analysis on this conversation.\n\nPresent once analysis has incurred a cost. \u0060last_run\u0060 is null when the\nmost recent pass incurred none."
+        "description": "Cost of running post-call analysis on this conversation.\nPresent once an analysis pass has run, billed or not."
       },
       "AnalysisProperty": {
         "title": "AnalysisProperty",
@@ -28682,6 +28679,11 @@
           },
           "charge": {
             "title": "Charge",
+            "type": "integer",
+            "default": 0
+          },
+          "runs": {
+            "title": "Runs",
             "type": "integer",
             "default": 0
           },
@@ -31973,7 +31975,7 @@
           "transcript": {
             "title": "Transcript",
             "type": "string",
-            "description": "Optional JSON transcript to use instead of automatic transcription. When provided, source_language is required. Segments may include an optional external_id and an optional translation; if any segment includes a translation, target_language is required and every segment must include one (used to seed the target created via target_language).",
+            "description": "Enterprise only. Optional JSON transcript to use instead of automatic transcription. When provided, source_language is required. Segments may include an optional external_id and an optional translation; if any segment includes a translation, target_language is required and every segment must include one (used to seed the target created via target_language).",
             "format": "binary",
             "nullable": true
           }
@@ -39606,6 +39608,11 @@
             "type": "string",
             "nullable": true
           },
+          "producing_llm": {
+            "title": "Producing Llm",
+            "type": "string",
+            "nullable": true
+          },
           "time_in_call_secs": {
             "title": "Time In Call Secs",
             "type": "integer"
@@ -39716,6 +39723,11 @@
           },
           "llm_override": {
             "title": "Llm Override",
+            "type": "string",
+            "nullable": true
+          },
+          "producing_llm": {
+            "title": "Producing Llm",
             "type": "string",
             "nullable": true
           },
@@ -39918,6 +39930,11 @@
           },
           "llm_override": {
             "title": "Llm Override",
+            "type": "string",
+            "nullable": true
+          },
+          "producing_llm": {
+            "title": "Producing Llm",
             "type": "string",
             "nullable": true
           },
@@ -55353,7 +55370,8 @@
               ]
             }
           }
-        }
+        },
+        "description": "Params \u002B Reception-proxied \u0060\u0060run()\u0060\u0060 for list_locations."
       },
       "ListMcpToolsResponseModel": {
         "title": "ListMCPToolsResponseModel",
@@ -63296,7 +63314,7 @@
             "title": "Ignore Default Personality",
             "type": "boolean",
             "description": "Whether to remove the default personality lines from the system prompt",
-            "default": false,
+            "default": true,
             "nullable": true
           },
           "rag": {
@@ -63427,7 +63445,7 @@
             "title": "Ignore Default Personality",
             "type": "boolean",
             "description": "Whether to remove the default personality lines from the system prompt",
-            "default": false,
+            "default": true,
             "nullable": true
           },
           "rag": {
@@ -81842,6 +81860,32 @@
           }
         }
       },
+      "AstNumberNodeInputValue": {
+        "title": "Value",
+        "type": "object",
+        "anyOf": [
+          {
+            "type": "number"
+          },
+          {
+            "type": "integer"
+          }
+        ],
+        "description": "Value of this literal."
+      },
+      "AstNumberNodeOutputValue": {
+        "title": "Value",
+        "type": "object",
+        "anyOf": [
+          {
+            "type": "number"
+          },
+          {
+            "type": "integer"
+          }
+        ],
+        "description": "Value of this literal."
+      },
       "AdhocAgentConfigOverrideForTestRequestModelWorkflow": {
         "required": [
           "type"
@@ -82578,34 +82622,6 @@
           "propertyName": "type",
           "mapping": {
             "ConversationInitiationClientDataWebhook": "#/components/schemas/ConversationInitiationClientDataWebhook"
-          }
-        }
-      },
-      "AnalysisChargingLastRun": {
-        "required": [
-          "type"
-        ],
-        "type": "object",
-        "anyOf": [
-          {
-            "$ref": "#/components/schemas/AnalysisRunSnapshot"
-          },
-          {
-            "enum": [
-              null
-            ]
-          }
-        ],
-        "properties": {
-          "type": {
-            "type": "string",
-            "description": "Union discriminator"
-          }
-        },
-        "discriminator": {
-          "propertyName": "type",
-          "mapping": {
-            "AnalysisRunSnapshot": "#/components/schemas/AnalysisRunSnapshot"
           }
         }
       },
@@ -101875,7 +101891,7 @@
         "additionalProperties": {
           "type": "string"
         },
-        "description": "Optional translations to use instead of machine translation. A map from each source segment\u0027s external_id (or its id, if you supplied none) to the translated text; every source segment must be covered exactly once. At most 20000 entries, totalling at most 4 MiB of text.",
+        "description": "Enterprise only. Optional translations to use instead of machine translation. A map from each source segment\u0027s external_id (or its id, if you supplied none) to the translated text; every source segment must be covered exactly once. At most 20000 entries, totalling at most 4 MiB of text.",
         "nullable": true
       },
       "BodyCreatePvcVoiceV1VoicesPvcPostLabels": {

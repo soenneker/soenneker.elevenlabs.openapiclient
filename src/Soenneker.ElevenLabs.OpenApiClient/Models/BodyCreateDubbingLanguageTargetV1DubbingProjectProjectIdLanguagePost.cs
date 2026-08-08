@@ -22,7 +22,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public string TargetLanguage { get; set; }
 #endif
-        /// <summary>Optional translations to use instead of machine translation. A map from each source segment&apos;s external_id (or its id, if you supplied none) to the translated text; every source segment must be covered exactly once. At most 20000 entries, totalling at most 4 MiB of text.</summary>
+        /// <summary>Enterprise only. Optional translations to use instead of machine translation. A map from each source segment&apos;s external_id (or its id, if you supplied none) to the translated text; every source segment must be covered exactly once. At most 20000 entries, totalling at most 4 MiB of text.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateDubbingLanguageTargetV1DubbingProjectProjectIdLanguagePostTranslations? Translations { get; set; }

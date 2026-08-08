@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.ElevenLabs.OpenApiClient.Models
 {
     /// <summary>
-    /// Optional translations to use instead of machine translation. A map from each source segment&apos;s external_id (or its id, if you supplied none) to the translated text; every source segment must be covered exactly once. At most 20000 entries, totalling at most 4 MiB of text.
+    /// Enterprise only. Optional translations to use instead of machine translation. A map from each source segment&apos;s external_id (or its id, if you supplied none) to the translated text; every source segment must be covered exactly once. At most 20000 entries, totalling at most 4 MiB of text.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class BodyCreateDubbingLanguageTargetV1DubbingProjectProjectIdLanguagePostTranslations : IAdditionalDataHolder, IParsable
