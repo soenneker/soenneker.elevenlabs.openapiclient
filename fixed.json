@@ -30306,6 +30306,7 @@
           "livekit_token",
           "livekit_token_website",
           "genesys_api_key",
+          "avaya_api_key",
           "audiocodes_api_key",
           "whatsapp",
           "sms"
@@ -30347,6 +30348,10 @@
             {
               "value": "genesys_api_key",
               "name": "GenesysApiKey"
+            },
+            {
+              "value": "avaya_api_key",
+              "name": "AvayaApiKey"
             },
             {
               "value": "audiocodes_api_key",
@@ -30457,13 +30462,13 @@
             "minimum": 0.01,
             "type": "number",
             "description": "Volume level for background sound (0.01 to 1.0).",
-            "default": 0.6
+            "default": 0.15
           },
           "crossfade_loop": {
             "title": "Crossfade Loop",
             "type": "boolean",
             "description": "Apply a crossfade at the loop boundary to avoid audible pops when the sound loops.",
-            "default": false
+            "default": true
           }
         }
       },
@@ -40918,6 +40923,7 @@
           "twilio",
           "exotel",
           "genesys",
+          "avaya",
           "audiocodes",
           "swift_sdk",
           "whatsapp",
@@ -40987,6 +40993,10 @@
             {
               "value": "genesys",
               "name": "Genesys"
+            },
+            {
+              "value": "avaya",
+              "name": "Avaya"
             },
             {
               "value": "audiocodes",
@@ -53515,6 +53525,7 @@
           "gemini-3.1-flash-lite",
           "gemini-3.5-flash",
           "gemini-3.5-flash-lite",
+          "gemini-3.6-flash",
           "claude-sonnet-4-5",
           "claude-opus-4-7",
           "claude-opus-4-8",
@@ -53718,6 +53729,10 @@
             {
               "value": "gemini-3.5-flash-lite",
               "name": "Gemini35FlashLite"
+            },
+            {
+              "value": "gemini-3.6-flash",
+              "name": "Gemini36Flash"
             },
             {
               "value": "claude-sonnet-4-5",

@@ -40,8 +40,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public BackgroundSoundConfig()
         {
             AdditionalData = new Dictionary<string, object>();
-            CrossfadeLoop = false;
-            Volume = 0.6;
+            CrossfadeLoop = true;
+            Volume = 0.15;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

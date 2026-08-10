@@ -144,6 +144,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         #pragma warning disable CS1591
         Gemini35FlashLite,
         #pragma warning restore CS1591
+        [EnumMember(Value = "gemini-3.6-flash")]
+        #pragma warning disable CS1591
+        Gemini36Flash,
+        #pragma warning restore CS1591
         [EnumMember(Value = "claude-sonnet-4-5")]
         #pragma warning disable CS1591
         ClaudeSonnet45,
