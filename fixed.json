@@ -80355,6 +80355,9 @@
           "tool_id": {
             "title": "Tool Id",
             "type": "string"
+          },
+          "schema_overrides": {
+            "$ref": "#/components/schemas/WorkflowToolLocatorSchemaOverrides"
           }
         }
       },
@@ -101037,6 +101040,46 @@
         ],
         "description": "DTMF digits to send after call connects (e.g., \u0027ww1234\u0027 for extension). Can be either a static value or a dynamic variable reference. Use \u0027w\u0027 for 0.5s pause. Only supported for Twilio transfers."
       },
+      "WorkflowToolLocatorSchemaOverridesAdditionalProperties": {
+        "required": [
+          "source"
+        ],
+        "type": "object",
+        "oneOf": [
+          {
+            "$ref": "#/components/schemas/ConstantSchemaOverride"
+          },
+          {
+            "$ref": "#/components/schemas/DynamicVariableSchemaOverride"
+          },
+          {
+            "$ref": "#/components/schemas/LlmSchemaOverride"
+          },
+          {
+            "$ref": "#/components/schemas/OmitSchemaOverride"
+          }
+        ],
+        "properties": {
+          "source": {
+            "title": "source",
+            "type": "string",
+            "description": "Union discriminator"
+          }
+        },
+        "discriminator": {
+          "propertyName": "source",
+          "mapping": {
+            "constant": "#/components/schemas/ConstantSchemaOverride",
+            "dynamic_variable": "#/components/schemas/DynamicVariableSchemaOverride",
+            "llm": "#/components/schemas/LlmSchemaOverride",
+            "omit": "#/components/schemas/OmitSchemaOverride",
+            "ConstantSchemaOverride": "#/components/schemas/ConstantSchemaOverride",
+            "DynamicVariableSchemaOverride": "#/components/schemas/DynamicVariableSchemaOverride",
+            "LlmSchemaOverride": "#/components/schemas/LlmSchemaOverride",
+            "OmitSchemaOverride": "#/components/schemas/OmitSchemaOverride"
+          }
+        }
+      },
       "WorkflowToolNestedToolsStepModelInputResultsItem": {
         "required": [
           "type"
@@ -103075,6 +103118,15 @@
           "type": "string"
         },
         "description": "The last auto-translated output for each translated field"
+      },
+      "WorkflowToolLocatorSchemaOverrides": {
+        "title": "Schema Overrides",
+        "type": "object",
+        "additionalProperties": {
+          "$ref": "#/components/schemas/WorkflowToolLocatorSchemaOverridesAdditionalProperties"
+        },
+        "description": "Per-node parameter overrides applied on top of the tool\u0027s own configuration. Keys are dotted parameter paths (webhook tools prefix keys with path_params./query_params./request_body.). These take precedence over any overrides already defined on the tool itself.",
+        "nullable": true
       },
       "WorkspaceAuditLogEntryResponseMetadata": {
         "title": "Metadata",
