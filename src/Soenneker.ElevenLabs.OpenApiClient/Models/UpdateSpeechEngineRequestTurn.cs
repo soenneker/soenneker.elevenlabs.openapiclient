@@ -32,6 +32,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public List<string> InterruptionIgnoreTerms { get; set; }
 #endif
+        /// <summary>When enabled, the curated default terms for interruption_ignore_term_languages are used in addition to interruption_ignore_terms.</summary>
+        public bool? MergeWithDefaultIgnoreTerms { get; set; }
         /// <summary>The mode property</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.TurnMode? Mode { get; set; }
         /// <summary>When enabled, if VAD detects no speech, attempts to re-transcribe accumulated audio at turn timeout. Disables silence discount billing for affected turns.</summary>
@@ -64,6 +66,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public UpdateSpeechEngineRequestTurn()
         {
             AdditionalData = new Dictionary<string, object>();
+            MergeWithDefaultIgnoreTerms = false;
             RetranscribeOnTurnTimeout = false;
             SilenceEndCallTimeout = -1;
             SpeculativeTurn = false;
@@ -91,6 +94,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "initial_wait_time", n => { InitialWaitTime = n.GetDoubleValue(); } },
                 { "interruption_ignore_term_languages", n => { InterruptionIgnoreTermLanguages = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "interruption_ignore_terms", n => { InterruptionIgnoreTerms = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "merge_with_default_ignore_terms", n => { MergeWithDefaultIgnoreTerms = n.GetBoolValue(); } },
                 { "mode", n => { Mode = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TurnMode>(); } },
                 { "retranscribe_on_turn_timeout", n => { RetranscribeOnTurnTimeout = n.GetBoolValue(); } },
                 { "silence_end_call_timeout", n => { SilenceEndCallTimeout = n.GetDoubleValue(); } },
@@ -113,6 +117,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteDoubleValue("initial_wait_time", InitialWaitTime);
             writer.WriteCollectionOfPrimitiveValues<string>("interruption_ignore_term_languages", InterruptionIgnoreTermLanguages);
             writer.WriteCollectionOfPrimitiveValues<string>("interruption_ignore_terms", InterruptionIgnoreTerms);
+            writer.WriteBoolValue("merge_with_default_ignore_terms", MergeWithDefaultIgnoreTerms);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TurnMode>("mode", Mode);
             writer.WriteBoolValue("retranscribe_on_turn_timeout", RetranscribeOnTurnTimeout);
             writer.WriteDoubleValue("silence_end_call_timeout", SilenceEndCallTimeout);

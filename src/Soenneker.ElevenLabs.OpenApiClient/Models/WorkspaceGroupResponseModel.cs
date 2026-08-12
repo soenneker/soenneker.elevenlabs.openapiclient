@@ -66,14 +66,6 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceGroupResponseModelPermissions Permissions { get; set; }
 #endif
-        /// <summary>The scim_external_id property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ScimExternalId { get; set; }
-#nullable restore
-#else
-        public string ScimExternalId { get; set; }
-#endif
         /// <summary>The scim_frozen property</summary>
         public bool? ScimFrozen { get; set; }
         /// <summary>The scim_group property</summary>
@@ -119,7 +111,6 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "members", n => { Members = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "permissions", n => { Permissions = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceGroupResponseModelPermissions>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceGroupResponseModelPermissions.CreateFromDiscriminatorValue); } },
-                { "scim_external_id", n => { ScimExternalId = n.GetStringValue(); } },
                 { "scim_frozen", n => { ScimFrozen = n.GetBoolValue(); } },
                 { "scim_group", n => { ScimGroup = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceGroupResponseModelScimGroup>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceGroupResponseModelScimGroup.CreateFromDiscriminatorValue); } },
             };
@@ -139,7 +130,6 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("members", Members);
             writer.WriteStringValue("name", Name);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceGroupResponseModelPermissions>("permissions", Permissions);
-            writer.WriteStringValue("scim_external_id", ScimExternalId);
             writer.WriteBoolValue("scim_frozen", ScimFrozen);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceGroupResponseModelScimGroup>("scim_group", ScimGroup);
             writer.WriteAdditionalData(AdditionalData);
