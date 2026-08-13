@@ -2,10 +2,12 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.ElevenLabs.OpenApiClient.V1.Assets;
 using Soenneker.ElevenLabs.OpenApiClient.V1.AudioIsolation;
 using Soenneker.ElevenLabs.OpenApiClient.V1.AudioNative;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Convai;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Dubbing;
+using Soenneker.ElevenLabs.OpenApiClient.V1.Flows;
 using Soenneker.ElevenLabs.OpenApiClient.V1.ForcedAlignment;
 using Soenneker.ElevenLabs.OpenApiClient.V1.History;
 using Soenneker.ElevenLabs.OpenApiClient.V1.ModelsRequests;
@@ -40,6 +42,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class V1RequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The assets property</summary>
+        public global::Soenneker.ElevenLabs.OpenApiClient.V1.Assets.AssetsRequestBuilder Assets
+        {
+            get => new global::Soenneker.ElevenLabs.OpenApiClient.V1.Assets.AssetsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The audioIsolation property</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.V1.AudioIsolation.AudioIsolationRequestBuilder AudioIsolation
         {
@@ -59,6 +66,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1
         public global::Soenneker.ElevenLabs.OpenApiClient.V1.Dubbing.DubbingRequestBuilder Dubbing
         {
             get => new global::Soenneker.ElevenLabs.OpenApiClient.V1.Dubbing.DubbingRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The flows property</summary>
+        public global::Soenneker.ElevenLabs.OpenApiClient.V1.Flows.FlowsRequestBuilder Flows
+        {
+            get => new global::Soenneker.ElevenLabs.OpenApiClient.V1.Flows.FlowsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The forcedAlignment property</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.V1.ForcedAlignment.ForcedAlignmentRequestBuilder ForcedAlignment

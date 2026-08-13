@@ -17,18 +17,18 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Available reasoning effort levels for this model. Null if the model does not support configurable reasoning.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmInfoModelInputAvailableReasoningEfforts? AvailableReasoningEfforts { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmReasoningEffort?>? AvailableReasoningEfforts { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmInfoModelInputAvailableReasoningEfforts AvailableReasoningEfforts { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmReasoningEffort?> AvailableReasoningEfforts { get; set; }
 #endif
         /// <summary>Deprecation information if this model is deprecated or scheduled for deprecation. Null if the model is not affected.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmInfoModelInputDeprecationInfo? DeprecationInfo { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmDeprecationInfoModel? DeprecationInfo { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmInfoModelInputDeprecationInfo DeprecationInfo { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmDeprecationInfoModel DeprecationInfo { get; set; }
 #endif
         /// <summary>Whether this is a pinned checkpoint version of a model rather than a top-level alias.</summary>
         public bool? IsCheckpoint { get; set; }
@@ -41,10 +41,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Regional processing surcharge details if this model has additional costs in the current deployment region. Null if no surcharge applies.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmInfoModelInputRegionalProcessingSurcharge? RegionalProcessingSurcharge { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.RegionalProcessingSurchargeInfo? RegionalProcessingSurcharge { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmInfoModelInputRegionalProcessingSurcharge RegionalProcessingSurcharge { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.RegionalProcessingSurchargeInfo RegionalProcessingSurcharge { get; set; }
 #endif
         /// <summary>Whether the model supports document (PDF) file inputs during conversations.</summary>
         public bool? SupportsDocumentInput { get; set; }
@@ -77,13 +77,13 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "available_reasoning_efforts", n => { AvailableReasoningEfforts = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmInfoModelInputAvailableReasoningEfforts>(global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmInfoModelInputAvailableReasoningEfforts.CreateFromDiscriminatorValue); } },
-                { "deprecation_info", n => { DeprecationInfo = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmInfoModelInputDeprecationInfo>(global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmInfoModelInputDeprecationInfo.CreateFromDiscriminatorValue); } },
+                { "available_reasoning_efforts", n => { AvailableReasoningEfforts = n.GetCollectionOfEnumValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmReasoningEffort>()?.AsList(); } },
+                { "deprecation_info", n => { DeprecationInfo = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmDeprecationInfoModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmDeprecationInfoModel.CreateFromDiscriminatorValue); } },
                 { "is_checkpoint", n => { IsCheckpoint = n.GetBoolValue(); } },
                 { "llm", n => { Llm = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Llm>(); } },
                 { "max_context_limit", n => { MaxContextLimit = n.GetIntValue(); } },
                 { "max_tokens_limit", n => { MaxTokensLimit = n.GetIntValue(); } },
-                { "regional_processing_surcharge", n => { RegionalProcessingSurcharge = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmInfoModelInputRegionalProcessingSurcharge>(global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmInfoModelInputRegionalProcessingSurcharge.CreateFromDiscriminatorValue); } },
+                { "regional_processing_surcharge", n => { RegionalProcessingSurcharge = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.RegionalProcessingSurchargeInfo>(global::Soenneker.ElevenLabs.OpenApiClient.Models.RegionalProcessingSurchargeInfo.CreateFromDiscriminatorValue); } },
                 { "supports_document_input", n => { SupportsDocumentInput = n.GetBoolValue(); } },
                 { "supports_image_input", n => { SupportsImageInput = n.GetBoolValue(); } },
                 { "supports_parallel_tool_calls", n => { SupportsParallelToolCalls = n.GetBoolValue(); } },
@@ -96,13 +96,13 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmInfoModelInputAvailableReasoningEfforts>("available_reasoning_efforts", AvailableReasoningEfforts);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmInfoModelInputDeprecationInfo>("deprecation_info", DeprecationInfo);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmReasoningEffort>("available_reasoning_efforts", AvailableReasoningEfforts);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmDeprecationInfoModel>("deprecation_info", DeprecationInfo);
             writer.WriteBoolValue("is_checkpoint", IsCheckpoint);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Llm>("llm", Llm);
             writer.WriteIntValue("max_context_limit", MaxContextLimit);
             writer.WriteIntValue("max_tokens_limit", MaxTokensLimit);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmInfoModelInputRegionalProcessingSurcharge>("regional_processing_surcharge", RegionalProcessingSurcharge);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.RegionalProcessingSurchargeInfo>("regional_processing_surcharge", RegionalProcessingSurcharge);
             writer.WriteBoolValue("supports_document_input", SupportsDocumentInput);
             writer.WriteBoolValue("supports_image_input", SupportsImageInput);
             writer.WriteBoolValue("supports_parallel_tool_calls", SupportsParallelToolCalls);

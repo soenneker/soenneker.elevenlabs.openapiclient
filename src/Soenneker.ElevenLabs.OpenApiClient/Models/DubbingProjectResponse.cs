@@ -19,10 +19,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Why the project failed; null unless `status` is &apos;failed&apos;. Also null for the few projects that failed before failure reporting was introduced.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingProjectResponseError? Error { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingError? Error { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingProjectResponseError Error { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingError Error { get; set; }
 #endif
         /// <summary>Identifiers of the language targets created under this project.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -35,10 +35,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Source media metadata; null until the project is ready.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingProjectResponseMedia? Media { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingSourceMediaInfo? Media { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingProjectResponseMedia Media { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingSourceMediaInfo Media { get; set; }
 #endif
         /// <summary>Default dubbing model id applied to this project&apos;s language targets.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -120,9 +120,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
-                { "error", n => { Error = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingProjectResponseError>(global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingProjectResponseError.CreateFromDiscriminatorValue); } },
+                { "error", n => { Error = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingError>(global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingError.CreateFromDiscriminatorValue); } },
                 { "language_ids", n => { LanguageIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "media", n => { Media = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingProjectResponseMedia>(global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingProjectResponseMedia.CreateFromDiscriminatorValue); } },
+                { "media", n => { Media = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingSourceMediaInfo>(global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingSourceMediaInfo.CreateFromDiscriminatorValue); } },
                 { "model_id", n => { ModelId = n.GetStringValue(); } },
                 { "project_id", n => { ProjectId = n.GetStringValue(); } },
                 { "reference", n => { Reference = n.GetStringValue(); } },
@@ -142,9 +142,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingProjectResponseError>("error", Error);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingError>("error", Error);
             writer.WriteCollectionOfPrimitiveValues<string>("language_ids", LanguageIds);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingProjectResponseMedia>("media", Media);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingSourceMediaInfo>("media", Media);
             writer.WriteStringValue("model_id", ModelId);
             writer.WriteStringValue("project_id", ProjectId);
             writer.WriteStringValue("reference", Reference);

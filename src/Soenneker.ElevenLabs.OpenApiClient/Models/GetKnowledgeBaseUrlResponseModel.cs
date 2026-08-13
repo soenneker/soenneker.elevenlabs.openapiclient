@@ -25,10 +25,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The auto_sync_info property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseUrlResponseModelAutoSyncInfo? AutoSyncInfo { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AutoSyncInfo? AutoSyncInfo { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseUrlResponseModelAutoSyncInfo AutoSyncInfo { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AutoSyncInfo AutoSyncInfo { get; set; }
 #endif
         /// <summary>Canonical representation of a knowledge base document&apos;s stored content.HTML is the legacy default; documents created before this field existed areinterpreted as HTML.</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.ContentFormat? ContentFormat { get; set; }
@@ -124,7 +124,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "access_info", n => { AccessInfo = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceAccessInfo>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceAccessInfo.CreateFromDiscriminatorValue); } },
-                { "auto_sync_info", n => { AutoSyncInfo = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseUrlResponseModelAutoSyncInfo>(global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseUrlResponseModelAutoSyncInfo.CreateFromDiscriminatorValue); } },
+                { "auto_sync_info", n => { AutoSyncInfo = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AutoSyncInfo>(global::Soenneker.ElevenLabs.OpenApiClient.Models.AutoSyncInfo.CreateFromDiscriminatorValue); } },
                 { "content_format", n => { ContentFormat = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ContentFormat>(); } },
                 { "extracted_inner_html", n => { ExtractedInnerHtml = n.GetStringValue(); } },
                 { "folder_parent_id", n => { FolderParentId = n.GetStringValue(); } },
@@ -145,7 +145,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceAccessInfo>("access_info", AccessInfo);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseUrlResponseModelAutoSyncInfo>("auto_sync_info", AutoSyncInfo);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AutoSyncInfo>("auto_sync_info", AutoSyncInfo);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ContentFormat>("content_format", ContentFormat);
             writer.WriteStringValue("extracted_inner_html", ExtractedInnerHtml);
             writer.WriteStringValue("folder_parent_id", FolderParentId);

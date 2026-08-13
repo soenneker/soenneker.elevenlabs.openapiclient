@@ -33,10 +33,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Voice settings applied to the whole language (e.g. cloning strength).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateDubbingLanguageTargetV1DubbingProjectProjectIdLanguagePostVoiceSettings? VoiceSettings { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceSettings? VoiceSettings { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateDubbingLanguageTargetV1DubbingProjectProjectIdLanguagePostVoiceSettings VoiceSettings { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceSettings VoiceSettings { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateDubbingLanguageTargetV1DubbingProjectProjectIdLanguagePost"/> and sets the default values.
@@ -65,7 +65,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             {
                 { "target_language", n => { TargetLanguage = n.GetStringValue(); } },
                 { "translations", n => { Translations = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateDubbingLanguageTargetV1DubbingProjectProjectIdLanguagePostTranslations>(global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateDubbingLanguageTargetV1DubbingProjectProjectIdLanguagePostTranslations.CreateFromDiscriminatorValue); } },
-                { "voice_settings", n => { VoiceSettings = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateDubbingLanguageTargetV1DubbingProjectProjectIdLanguagePostVoiceSettings>(global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateDubbingLanguageTargetV1DubbingProjectProjectIdLanguagePostVoiceSettings.CreateFromDiscriminatorValue); } },
+                { "voice_settings", n => { VoiceSettings = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceSettings>(global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceSettings.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -77,7 +77,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("target_language", TargetLanguage);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateDubbingLanguageTargetV1DubbingProjectProjectIdLanguagePostTranslations>("translations", Translations);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateDubbingLanguageTargetV1DubbingProjectProjectIdLanguagePostVoiceSettings>("voice_settings", VoiceSettings);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceSettings>("voice_settings", VoiceSettings);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

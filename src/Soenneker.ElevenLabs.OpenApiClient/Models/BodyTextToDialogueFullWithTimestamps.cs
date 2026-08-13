@@ -43,20 +43,20 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>A list of pronunciation dictionary locators (id, version_id) to be applied to the text. They will be applied in order. You may have up to 3 locators per request</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyTextToDialogueFullWithTimestampsPronunciationDictionaryLocators? PronunciationDictionaryLocators { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.PronunciationDictionaryVersionLocatorRequestModel>? PronunciationDictionaryLocators { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyTextToDialogueFullWithTimestampsPronunciationDictionaryLocators PronunciationDictionaryLocators { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.PronunciationDictionaryVersionLocatorRequestModel> PronunciationDictionaryLocators { get; set; }
 #endif
         /// <summary>If specified, our system will make a best effort to sample deterministically, such that repeated requests with the same seed and parameters should return the same result. Determinism is not guaranteed. Must be integer between 0 and 4294967295.</summary>
         public int? Seed { get; set; }
         /// <summary>Settings controlling the dialogue generation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyTextToDialogueFullWithTimestampsSettings? Settings { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ModelSettingsResponseModel? Settings { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyTextToDialogueFullWithTimestampsSettings Settings { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ModelSettingsResponseModel Settings { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyTextToDialogueFullWithTimestamps"/> and sets the default values.
@@ -88,9 +88,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "inputs", n => { Inputs = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.DialogueInput>(global::Soenneker.ElevenLabs.OpenApiClient.Models.DialogueInput.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "language_code", n => { LanguageCode = n.GetStringValue(); } },
                 { "model_id", n => { ModelId = n.GetStringValue(); } },
-                { "pronunciation_dictionary_locators", n => { PronunciationDictionaryLocators = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyTextToDialogueFullWithTimestampsPronunciationDictionaryLocators>(global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyTextToDialogueFullWithTimestampsPronunciationDictionaryLocators.CreateFromDiscriminatorValue); } },
+                { "pronunciation_dictionary_locators", n => { PronunciationDictionaryLocators = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.PronunciationDictionaryVersionLocatorRequestModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.PronunciationDictionaryVersionLocatorRequestModel.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "seed", n => { Seed = n.GetIntValue(); } },
-                { "settings", n => { Settings = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyTextToDialogueFullWithTimestampsSettings>(global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyTextToDialogueFullWithTimestampsSettings.CreateFromDiscriminatorValue); } },
+                { "settings", n => { Settings = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ModelSettingsResponseModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ModelSettingsResponseModel.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -104,9 +104,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.DialogueInput>("inputs", Inputs);
             writer.WriteStringValue("language_code", LanguageCode);
             writer.WriteStringValue("model_id", ModelId);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyTextToDialogueFullWithTimestampsPronunciationDictionaryLocators>("pronunciation_dictionary_locators", PronunciationDictionaryLocators);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.PronunciationDictionaryVersionLocatorRequestModel>("pronunciation_dictionary_locators", PronunciationDictionaryLocators);
             writer.WriteIntValue("seed", Seed);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyTextToDialogueFullWithTimestampsSettings>("settings", Settings);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ModelSettingsResponseModel>("settings", Settings);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

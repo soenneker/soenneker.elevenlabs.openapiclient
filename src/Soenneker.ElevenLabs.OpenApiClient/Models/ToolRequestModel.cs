@@ -17,10 +17,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Mock responses with optional parameter conditions. Evaluated top-to-bottom; first match wins.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolRequestModelResponseMocks? ResponseMocks { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolResponseMockConfigInput>? ResponseMocks { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolRequestModelResponseMocks ResponseMocks { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolResponseMockConfigInput> ResponseMocks { get; set; }
 #endif
         /// <summary>Configuration for the tool</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -55,7 +55,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "response_mocks", n => { ResponseMocks = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolRequestModelResponseMocks>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolRequestModelResponseMocks.CreateFromDiscriminatorValue); } },
+                { "response_mocks", n => { ResponseMocks = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolResponseMockConfigInput>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolResponseMockConfigInput.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "tool_config", n => { ToolConfig = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolRequestModelToolConfig>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolRequestModelToolConfig.CreateFromDiscriminatorValue); } },
             };
         }
@@ -66,7 +66,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolRequestModelResponseMocks>("response_mocks", ResponseMocks);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolResponseMockConfigInput>("response_mocks", ResponseMocks);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolRequestModelToolConfig>("tool_config", ToolConfig);
             writer.WriteAdditionalData(AdditionalData);
         }

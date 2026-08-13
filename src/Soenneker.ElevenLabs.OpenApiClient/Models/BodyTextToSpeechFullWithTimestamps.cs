@@ -90,10 +90,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Voice settings overriding stored settings for the given voice. They are applied only on the given request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyTextToSpeechFullWithTimestampsVoiceSettings? VoiceSettings { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceSettingsResponseModel? VoiceSettings { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyTextToSpeechFullWithTimestampsVoiceSettings VoiceSettings { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceSettingsResponseModel VoiceSettings { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyTextToSpeechFullWithTimestamps"/> and sets the default values.
@@ -135,7 +135,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "seed", n => { Seed = n.GetIntValue(); } },
                 { "text", n => { Text = n.GetStringValue(); } },
                 { "use_pvc_as_ivc", n => { UsePvcAsIvc = n.GetBoolValue(); } },
-                { "voice_settings", n => { VoiceSettings = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyTextToSpeechFullWithTimestampsVoiceSettings>(global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyTextToSpeechFullWithTimestampsVoiceSettings.CreateFromDiscriminatorValue); } },
+                { "voice_settings", n => { VoiceSettings = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceSettingsResponseModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceSettingsResponseModel.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -157,7 +157,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteIntValue("seed", Seed);
             writer.WriteStringValue("text", Text);
             writer.WriteBoolValue("use_pvc_as_ivc", UsePvcAsIvc);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyTextToSpeechFullWithTimestampsVoiceSettings>("voice_settings", VoiceSettings);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceSettingsResponseModel>("voice_settings", VoiceSettings);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

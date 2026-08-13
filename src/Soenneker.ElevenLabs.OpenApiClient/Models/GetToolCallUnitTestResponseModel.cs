@@ -27,10 +27,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Simulate the test as if the conversation originated from this channel.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetToolCallUnitTestResponseModelConversationInitiationSource? ConversationInitiationSource { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationSourceWrapper8? ConversationInitiationSource { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetToolCallUnitTestResponseModelConversationInitiationSource ConversationInitiationSource { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationSourceWrapper8 ConversationInitiationSource { get; set; }
 #endif
         /// <summary>Dynamic variables to replace in the agent config during testing</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -43,10 +43,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Metadata of a conversation this test was created from (if applicable).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetToolCallUnitTestResponseModelFromConversationMetadata? FromConversationMetadata { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.TestFromConversationMetadataOutput? FromConversationMetadata { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetToolCallUnitTestResponseModelFromConversationMetadata FromConversationMetadata { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.TestFromConversationMetadataOutput FromConversationMetadata { get; set; }
 #endif
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -67,10 +67,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>How to evaluate the agent&apos;s tool call (if any). If empty, the tool call is not evaluated.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetToolCallUnitTestResponseModelToolCallParameters? ToolCallParameters { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.UnitTestToolCallEvaluationModelOutput? ToolCallParameters { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetToolCallUnitTestResponseModelToolCallParameters ToolCallParameters { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.UnitTestToolCallEvaluationModelOutput ToolCallParameters { get; set; }
 #endif
         /// <summary>The type property</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetToolCallUnitTestResponseModel_type? Type { get; set; }
@@ -101,12 +101,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             {
                 { "chat_history", n => { ChatHistory = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptCommonModelOutput>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptCommonModelOutput.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "check_any_tool_matches", n => { CheckAnyToolMatches = n.GetBoolValue(); } },
-                { "conversation_initiation_source", n => { ConversationInitiationSource = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetToolCallUnitTestResponseModelConversationInitiationSource>(global::Soenneker.ElevenLabs.OpenApiClient.Models.GetToolCallUnitTestResponseModelConversationInitiationSource.CreateFromDiscriminatorValue); } },
+                { "conversation_initiation_source", n => { ConversationInitiationSource = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationSourceWrapper8>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationSourceWrapper8.CreateFromDiscriminatorValue); } },
                 { "dynamic_variables", n => { DynamicVariables = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetToolCallUnitTestResponseModelDynamicVariablesProperty>(global::Soenneker.ElevenLabs.OpenApiClient.Models.GetToolCallUnitTestResponseModelDynamicVariablesProperty.CreateFromDiscriminatorValue); } },
-                { "from_conversation_metadata", n => { FromConversationMetadata = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetToolCallUnitTestResponseModelFromConversationMetadata>(global::Soenneker.ElevenLabs.OpenApiClient.Models.GetToolCallUnitTestResponseModelFromConversationMetadata.CreateFromDiscriminatorValue); } },
+                { "from_conversation_metadata", n => { FromConversationMetadata = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TestFromConversationMetadataOutput>(global::Soenneker.ElevenLabs.OpenApiClient.Models.TestFromConversationMetadataOutput.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "tool_call_parameters", n => { ToolCallParameters = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetToolCallUnitTestResponseModelToolCallParameters>(global::Soenneker.ElevenLabs.OpenApiClient.Models.GetToolCallUnitTestResponseModelToolCallParameters.CreateFromDiscriminatorValue); } },
+                { "tool_call_parameters", n => { ToolCallParameters = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UnitTestToolCallEvaluationModelOutput>(global::Soenneker.ElevenLabs.OpenApiClient.Models.UnitTestToolCallEvaluationModelOutput.CreateFromDiscriminatorValue); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetToolCallUnitTestResponseModel_type>(); } },
             };
         }
@@ -119,12 +119,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptCommonModelOutput>("chat_history", ChatHistory);
             writer.WriteBoolValue("check_any_tool_matches", CheckAnyToolMatches);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetToolCallUnitTestResponseModelConversationInitiationSource>("conversation_initiation_source", ConversationInitiationSource);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationSourceWrapper8>("conversation_initiation_source", ConversationInitiationSource);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetToolCallUnitTestResponseModelDynamicVariablesProperty>("dynamic_variables", DynamicVariables);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetToolCallUnitTestResponseModelFromConversationMetadata>("from_conversation_metadata", FromConversationMetadata);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TestFromConversationMetadataOutput>("from_conversation_metadata", FromConversationMetadata);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("name", Name);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetToolCallUnitTestResponseModelToolCallParameters>("tool_call_parameters", ToolCallParameters);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UnitTestToolCallEvaluationModelOutput>("tool_call_parameters", ToolCallParameters);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetToolCallUnitTestResponseModel_type>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }

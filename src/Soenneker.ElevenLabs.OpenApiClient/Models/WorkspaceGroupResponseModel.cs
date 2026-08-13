@@ -61,20 +61,20 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The permissions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceGroupResponseModelPermissions? Permissions { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceGroupPermission>? Permissions { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceGroupResponseModelPermissions Permissions { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceGroupPermission> Permissions { get; set; }
 #endif
         /// <summary>The scim_frozen property</summary>
         public bool? ScimFrozen { get; set; }
         /// <summary>The scim_group property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceGroupResponseModelScimGroup? ScimGroup { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ScimGroupResponseModel? ScimGroup { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceGroupResponseModelScimGroup ScimGroup { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ScimGroupResponseModel ScimGroup { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceGroupResponseModel"/> and sets the default values.
@@ -110,9 +110,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "is_scim_synced", n => { IsScimSynced = n.GetBoolValue(); } },
                 { "members", n => { Members = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "permissions", n => { Permissions = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceGroupResponseModelPermissions>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceGroupResponseModelPermissions.CreateFromDiscriminatorValue); } },
+                { "permissions", n => { Permissions = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceGroupPermission>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceGroupPermission.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "scim_frozen", n => { ScimFrozen = n.GetBoolValue(); } },
-                { "scim_group", n => { ScimGroup = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceGroupResponseModelScimGroup>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceGroupResponseModelScimGroup.CreateFromDiscriminatorValue); } },
+                { "scim_group", n => { ScimGroup = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ScimGroupResponseModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ScimGroupResponseModel.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -129,9 +129,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteBoolValue("is_scim_synced", IsScimSynced);
             writer.WriteCollectionOfPrimitiveValues<string>("members", Members);
             writer.WriteStringValue("name", Name);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceGroupResponseModelPermissions>("permissions", Permissions);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceGroupPermission>("permissions", Permissions);
             writer.WriteBoolValue("scim_frozen", ScimFrozen);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceGroupResponseModelScimGroup>("scim_group", ScimGroup);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ScimGroupResponseModel>("scim_group", ScimGroup);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

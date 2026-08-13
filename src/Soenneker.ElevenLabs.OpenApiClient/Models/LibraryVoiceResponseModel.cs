@@ -165,10 +165,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The verified languages of the voice.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.LibraryVoiceResponseModelVerifiedLanguages? VerifiedLanguages { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.VerifiedVoiceLanguageResponseModel>? VerifiedLanguages { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.LibraryVoiceResponseModelVerifiedLanguages VerifiedLanguages { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.VerifiedVoiceLanguageResponseModel> VerifiedLanguages { get; set; }
 #endif
         /// <summary>The id of the voice.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -240,7 +240,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "usage_character_count_1y", n => { UsageCharacterCount1y = n.GetIntValue(); } },
                 { "usage_character_count_7d", n => { UsageCharacterCount7d = n.GetIntValue(); } },
                 { "use_case", n => { UseCase = n.GetStringValue(); } },
-                { "verified_languages", n => { VerifiedLanguages = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.LibraryVoiceResponseModelVerifiedLanguages>(global::Soenneker.ElevenLabs.OpenApiClient.Models.LibraryVoiceResponseModelVerifiedLanguages.CreateFromDiscriminatorValue); } },
+                { "verified_languages", n => { VerifiedLanguages = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.VerifiedVoiceLanguageResponseModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.VerifiedVoiceLanguageResponseModel.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "voice_id", n => { VoiceId = n.GetStringValue(); } },
                 { "youtube_username", n => { YoutubeUsername = n.GetStringValue(); } },
             };
@@ -281,7 +281,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteIntValue("usage_character_count_1y", UsageCharacterCount1y);
             writer.WriteIntValue("usage_character_count_7d", UsageCharacterCount7d);
             writer.WriteStringValue("use_case", UseCase);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.LibraryVoiceResponseModelVerifiedLanguages>("verified_languages", VerifiedLanguages);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.VerifiedVoiceLanguageResponseModel>("verified_languages", VerifiedLanguages);
             writer.WriteStringValue("voice_id", VoiceId);
             writer.WriteStringValue("youtube_username", YoutubeUsername);
             writer.WriteAdditionalData(AdditionalData);

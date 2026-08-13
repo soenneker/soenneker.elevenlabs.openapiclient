@@ -21,10 +21,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The workspace-level events this webhook is currently subscribed to. Only populated when usages are requested.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceWebhookResponseModelEvents? Events { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceWebhookEventType>? Events { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceWebhookResponseModelEvents Events { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceWebhookEventType> Events { get; set; }
 #endif
         /// <summary>Whether the webhook has been automatically disabled due to repeated consecutive failures over a long period of time.</summary>
         public bool? IsAutoDisabled { get; set; }
@@ -45,10 +45,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The list of products that are currently configured to trigger this webhook.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceWebhookResponseModelUsage? Usage { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceWebhookUsageResponseModel>? Usage { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceWebhookResponseModelUsage Usage { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceWebhookUsageResponseModel> Usage { get; set; }
 #endif
         /// <summary>The unique ID for this webhook.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -93,13 +93,13 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             {
                 { "auth_type", n => { AuthType = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookAuthMethodType>(); } },
                 { "created_at_unix", n => { CreatedAtUnix = n.GetIntValue(); } },
-                { "events", n => { Events = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceWebhookResponseModelEvents>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceWebhookResponseModelEvents.CreateFromDiscriminatorValue); } },
+                { "events", n => { Events = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceWebhookEventType>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceWebhookEventType.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "is_auto_disabled", n => { IsAutoDisabled = n.GetBoolValue(); } },
                 { "is_disabled", n => { IsDisabled = n.GetBoolValue(); } },
                 { "most_recent_failure_error_code", n => { MostRecentFailureErrorCode = n.GetIntValue(); } },
                 { "most_recent_failure_timestamp", n => { MostRecentFailureTimestamp = n.GetIntValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "usage", n => { Usage = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceWebhookResponseModelUsage>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceWebhookResponseModelUsage.CreateFromDiscriminatorValue); } },
+                { "usage", n => { Usage = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceWebhookUsageResponseModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceWebhookUsageResponseModel.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "webhook_id", n => { WebhookId = n.GetStringValue(); } },
                 { "webhook_url", n => { WebhookUrl = n.GetStringValue(); } },
             };
@@ -113,13 +113,13 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookAuthMethodType>("auth_type", AuthType);
             writer.WriteIntValue("created_at_unix", CreatedAtUnix);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceWebhookResponseModelEvents>("events", Events);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceWebhookEventType>("events", Events);
             writer.WriteBoolValue("is_auto_disabled", IsAutoDisabled);
             writer.WriteBoolValue("is_disabled", IsDisabled);
             writer.WriteIntValue("most_recent_failure_error_code", MostRecentFailureErrorCode);
             writer.WriteIntValue("most_recent_failure_timestamp", MostRecentFailureTimestamp);
             writer.WriteStringValue("name", Name);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceWebhookResponseModelUsage>("usage", Usage);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceWebhookUsageResponseModel>("usage", Usage);
             writer.WriteStringValue("webhook_id", WebhookId);
             writer.WriteStringValue("webhook_url", WebhookUrl);
             writer.WriteAdditionalData(AdditionalData);

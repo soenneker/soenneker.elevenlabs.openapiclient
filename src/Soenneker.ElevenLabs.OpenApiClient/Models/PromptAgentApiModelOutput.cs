@@ -35,10 +35,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Definition for a custom LLM if LLM field is set to &apos;CUSTOM_LLM&apos;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentApiModelOutputCustomLlm? CustomLlm { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomLlm? CustomLlm { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentApiModelOutputCustomLlm CustomLlm { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomLlm CustomLlm { get; set; }
 #endif
         /// <summary>Enable model reasoning summaries. When disabled, we do not request summaries from provider if possible for faster TTFB. Not ZRM compatible.</summary>
         public bool? EnableReasoningSummary { get; set; }
@@ -91,10 +91,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Reasoning effort of the model. Only available for some models.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentApiModelOutputReasoningEffort? ReasoningEffort { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmReasoningEffortWrapper2? ReasoningEffort { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentApiModelOutputReasoningEffort ReasoningEffort { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmReasoningEffortWrapper2 ReasoningEffort { get; set; }
 #endif
         /// <summary>The temperature for the LLM. Defaults to 0. Set to null to omit the parameter from the LLM request entirely (useful for custom LLMs that reject the temperature field).</summary>
         public double? Temperature { get; set; }
@@ -158,7 +158,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "backup_llm_config", n => { BackupLlmConfig = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentApiModelOutputBackupLlmConfig>(global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentApiModelOutputBackupLlmConfig.CreateFromDiscriminatorValue); } },
                 { "built_in_tools", n => { BuiltInTools = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BuiltInToolsOutput>(global::Soenneker.ElevenLabs.OpenApiClient.Models.BuiltInToolsOutput.CreateFromDiscriminatorValue); } },
                 { "cascade_timeout_seconds", n => { CascadeTimeoutSeconds = n.GetDoubleValue(); } },
-                { "custom_llm", n => { CustomLlm = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentApiModelOutputCustomLlm>(global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentApiModelOutputCustomLlm.CreateFromDiscriminatorValue); } },
+                { "custom_llm", n => { CustomLlm = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomLlm>(global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomLlm.CreateFromDiscriminatorValue); } },
                 { "enable_reasoning_summary", n => { EnableReasoningSummary = n.GetBoolValue(); } },
                 { "ignore_default_personality", n => { IgnoreDefaultPersonality = n.GetBoolValue(); } },
                 { "knowledge_base", n => { KnowledgeBase = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeBaseLocator>(global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeBaseLocator.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -168,7 +168,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "native_mcp_server_ids", n => { NativeMcpServerIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "prompt", n => { Prompt = n.GetStringValue(); } },
                 { "rag", n => { Rag = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.RagConfigOutput>(global::Soenneker.ElevenLabs.OpenApiClient.Models.RagConfigOutput.CreateFromDiscriminatorValue); } },
-                { "reasoning_effort", n => { ReasoningEffort = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentApiModelOutputReasoningEffort>(global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentApiModelOutputReasoningEffort.CreateFromDiscriminatorValue); } },
+                { "reasoning_effort", n => { ReasoningEffort = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmReasoningEffortWrapper2>(global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmReasoningEffortWrapper2.CreateFromDiscriminatorValue); } },
                 { "temperature", n => { Temperature = n.GetDoubleValue(); } },
                 { "thinking_budget", n => { ThinkingBudget = n.GetIntValue(); } },
                 { "timezone", n => { Timezone = n.GetStringValue(); } },
@@ -186,7 +186,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentApiModelOutputBackupLlmConfig>("backup_llm_config", BackupLlmConfig);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BuiltInToolsOutput>("built_in_tools", BuiltInTools);
             writer.WriteDoubleValue("cascade_timeout_seconds", CascadeTimeoutSeconds);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentApiModelOutputCustomLlm>("custom_llm", CustomLlm);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomLlm>("custom_llm", CustomLlm);
             writer.WriteBoolValue("enable_reasoning_summary", EnableReasoningSummary);
             writer.WriteBoolValue("ignore_default_personality", IgnoreDefaultPersonality);
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeBaseLocator>("knowledge_base", KnowledgeBase);
@@ -196,7 +196,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("native_mcp_server_ids", NativeMcpServerIds);
             writer.WriteStringValue("prompt", Prompt);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.RagConfigOutput>("rag", Rag);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentApiModelOutputReasoningEffort>("reasoning_effort", ReasoningEffort);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmReasoningEffortWrapper2>("reasoning_effort", ReasoningEffort);
             writer.WriteDoubleValue("temperature", Temperature);
             writer.WriteIntValue("thinking_budget", ThinkingBudget);
             writer.WriteStringValue("timezone", Timezone);

@@ -17,10 +17,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The audio reference to condition the generation on. The first chunk is the most important as it will influence the generation of all subsequent chunks. Thus, if you want to apply conditioning to the entire song, start conditioning from the first chunk.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GenerationChunkInputConditioningRef? ConditioningRef { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AudioRefChunk? ConditioningRef { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GenerationChunkInputConditioningRef ConditioningRef { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AudioRefChunk ConditioningRef { get; set; }
 #endif
         /// <summary>How strongly the model adheres to the conditioning reference. Low strength means the model will be more creative and deviate from the reference. High strength means the model will be more consistent with the reference.</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.GenerationChunkInputConditionStrength? ConditionStrength { get; set; }
@@ -78,7 +78,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "condition_strength", n => { ConditionStrength = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GenerationChunkInputConditionStrength>(); } },
-                { "conditioning_ref", n => { ConditioningRef = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GenerationChunkInputConditioningRef>(global::Soenneker.ElevenLabs.OpenApiClient.Models.GenerationChunkInputConditioningRef.CreateFromDiscriminatorValue); } },
+                { "conditioning_ref", n => { ConditioningRef = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AudioRefChunk>(global::Soenneker.ElevenLabs.OpenApiClient.Models.AudioRefChunk.CreateFromDiscriminatorValue); } },
                 { "context_adherence", n => { ContextAdherence = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GenerationChunkInputContextAdherence>(); } },
                 { "duration_ms", n => { DurationMs = n.GetIntValue(); } },
                 { "negative_styles", n => { NegativeStyles = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
@@ -93,7 +93,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GenerationChunkInputConditioningRef>("conditioning_ref", ConditioningRef);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AudioRefChunk>("conditioning_ref", ConditioningRef);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GenerationChunkInputConditionStrength>("condition_strength", ConditionStrength);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GenerationChunkInputContextAdherence>("context_adherence", ContextAdherence);
             writer.WriteIntValue("duration_ms", DurationMs);

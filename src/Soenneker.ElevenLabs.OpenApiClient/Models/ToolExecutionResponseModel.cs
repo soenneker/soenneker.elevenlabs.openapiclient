@@ -87,10 +87,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The tool_call_details property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolExecutionResponseModelToolCallDetails? ToolCallDetails { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolExecutionResponseModelToolCallDetailsAnyOf1? ToolCallDetails { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolExecutionResponseModelToolCallDetails ToolCallDetails { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolExecutionResponseModelToolCallDetailsAnyOf1 ToolCallDetails { get; set; }
 #endif
         /// <summary>The ID of the tool that was executed</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -145,7 +145,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "request_payload", n => { RequestPayload = n.GetStringValue(); } },
                 { "response_payload", n => { ResponsePayload = n.GetStringValue(); } },
                 { "timestamp", n => { Timestamp = n.GetDoubleValue(); } },
-                { "tool_call_details", n => { ToolCallDetails = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolExecutionResponseModelToolCallDetails>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolExecutionResponseModelToolCallDetails.CreateFromDiscriminatorValue); } },
+                { "tool_call_details", n => { ToolCallDetails = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolExecutionResponseModelToolCallDetailsAnyOf1>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolExecutionResponseModelToolCallDetailsAnyOf1.CreateFromDiscriminatorValue); } },
                 { "tool_id", n => { ToolId = n.GetStringValue(); } },
                 { "tool_request_id", n => { ToolRequestId = n.GetStringValue(); } },
             };
@@ -168,7 +168,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteStringValue("request_payload", RequestPayload);
             writer.WriteStringValue("response_payload", ResponsePayload);
             writer.WriteDoubleValue("timestamp", Timestamp);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolExecutionResponseModelToolCallDetails>("tool_call_details", ToolCallDetails);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolExecutionResponseModelToolCallDetailsAnyOf1>("tool_call_details", ToolCallDetails);
             writer.WriteStringValue("tool_id", ToolId);
             writer.WriteStringValue("tool_request_id", ToolRequestId);
             writer.WriteAdditionalData(AdditionalData);

@@ -62,10 +62,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The used_by property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.MtlsAuthResponseUsedBy? UsedBy { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AuthConnectionDependencies? UsedBy { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.MtlsAuthResponseUsedBy UsedBy { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AuthConnectionDependencies UsedBy { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.MtlsAuthResponse"/> and sets the default values.
@@ -99,7 +99,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AuthConnectionStatus>(); } },
                 { "status_detail", n => { StatusDetail = n.GetStringValue(); } },
                 { "status_updated_at", n => { StatusUpdatedAt = n.GetStringValue(); } },
-                { "used_by", n => { UsedBy = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.MtlsAuthResponseUsedBy>(global::Soenneker.ElevenLabs.OpenApiClient.Models.MtlsAuthResponseUsedBy.CreateFromDiscriminatorValue); } },
+                { "used_by", n => { UsedBy = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AuthConnectionDependencies>(global::Soenneker.ElevenLabs.OpenApiClient.Models.AuthConnectionDependencies.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -116,7 +116,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AuthConnectionStatus>("status", Status);
             writer.WriteStringValue("status_detail", StatusDetail);
             writer.WriteStringValue("status_updated_at", StatusUpdatedAt);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.MtlsAuthResponseUsedBy>("used_by", UsedBy);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AuthConnectionDependencies>("used_by", UsedBy);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

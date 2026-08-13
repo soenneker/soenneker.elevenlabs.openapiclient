@@ -95,10 +95,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Configuration for feedback collected at the end of the conversation</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigInputEndFeedback? EndFeedback { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetEndFeedbackConfig? EndFeedback { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigInputEndFeedback EndFeedback { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetEndFeedbackConfig EndFeedback { get; set; }
 #endif
         /// <summary>The expandable property</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetExpandable? Expandable { get; set; }
@@ -320,7 +320,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "disable_banner", n => { DisableBanner = n.GetBoolValue(); } },
                 { "dismissible", n => { Dismissible = n.GetBoolValue(); } },
                 { "end_call_text", n => { EndCallText = n.GetStringValue(); } },
-                { "end_feedback", n => { EndFeedback = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigInputEndFeedback>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigInputEndFeedback.CreateFromDiscriminatorValue); } },
+                { "end_feedback", n => { EndFeedback = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetEndFeedbackConfig>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetEndFeedbackConfig.CreateFromDiscriminatorValue); } },
                 { "expand_text", n => { ExpandText = n.GetStringValue(); } },
                 { "expandable", n => { Expandable = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetExpandable>(); } },
                 { "feedback_mode", n => { FeedbackMode = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetFeedbackMode>(); } },
@@ -378,7 +378,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteBoolValue("disable_banner", DisableBanner);
             writer.WriteBoolValue("dismissible", Dismissible);
             writer.WriteStringValue("end_call_text", EndCallText);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigInputEndFeedback>("end_feedback", EndFeedback);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetEndFeedbackConfig>("end_feedback", EndFeedback);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetExpandable>("expandable", Expandable);
             writer.WriteStringValue("expand_text", ExpandText);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetFeedbackMode>("feedback_mode", FeedbackMode);

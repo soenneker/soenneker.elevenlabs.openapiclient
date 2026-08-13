@@ -42,10 +42,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>DTMF digits to send after call connects (e.g., &apos;ww1234&apos; for extension). Can be either a static value or a dynamic variable reference. Use &apos;w&apos; for 0.5s pause. Only supported for Twilio transfers.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberTransferPostDialDigits? PostDialDigits { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberTransferPostDialDigitsAnyOf1? PostDialDigits { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberTransferPostDialDigits PostDialDigits { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberTransferPostDialDigitsAnyOf1 PostDialDigits { get; set; }
 #endif
         /// <summary>The transfer_destination property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -60,10 +60,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>User-to-User Information (RFC 7433) to attach to SIP REFER transfers. Carries call context such as CRM identifiers or escalation reason across the transfer boundary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberTransferUui? Uui { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.UuiTransferConfig? Uui { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberTransferUui Uui { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.UuiTransferConfig Uui { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberTransfer"/> and sets the default values.
@@ -93,10 +93,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "condition", n => { Condition = n.GetStringValue(); } },
                 { "custom_sip_headers", n => { CustomSipHeaders = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberTransferCustomSipHeadersItem>(global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberTransferCustomSipHeadersItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "phone_number", n => { PhoneNumber = n.GetStringValue(); } },
-                { "post_dial_digits", n => { PostDialDigits = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberTransferPostDialDigits>(global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberTransferPostDialDigits.CreateFromDiscriminatorValue); } },
+                { "post_dial_digits", n => { PostDialDigits = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberTransferPostDialDigitsAnyOf1>(global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberTransferPostDialDigitsAnyOf1.CreateFromDiscriminatorValue); } },
                 { "transfer_destination", n => { TransferDestination = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberTransferTransferDestination>(global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberTransferTransferDestination.CreateFromDiscriminatorValue); } },
                 { "transfer_type", n => { TransferType = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TransferTypeEnum>(); } },
-                { "uui", n => { Uui = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberTransferUui>(global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberTransferUui.CreateFromDiscriminatorValue); } },
+                { "uui", n => { Uui = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UuiTransferConfig>(global::Soenneker.ElevenLabs.OpenApiClient.Models.UuiTransferConfig.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -109,10 +109,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteStringValue("condition", Condition);
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberTransferCustomSipHeadersItem>("custom_sip_headers", CustomSipHeaders);
             writer.WriteStringValue("phone_number", PhoneNumber);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberTransferPostDialDigits>("post_dial_digits", PostDialDigits);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberTransferPostDialDigitsAnyOf1>("post_dial_digits", PostDialDigits);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberTransferTransferDestination>("transfer_destination", TransferDestination);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TransferTypeEnum>("transfer_type", TransferType);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberTransferUui>("uui", Uui);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UuiTransferConfig>("uui", Uui);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

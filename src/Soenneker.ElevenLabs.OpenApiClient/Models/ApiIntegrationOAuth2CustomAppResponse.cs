@@ -112,10 +112,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The used_by property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ApiIntegrationOAuth2CustomAppResponseUsedBy? UsedBy { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AuthConnectionDependencies? UsedBy { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ApiIntegrationOAuth2CustomAppResponseUsedBy UsedBy { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AuthConnectionDependencies UsedBy { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ApiIntegrationOAuth2CustomAppResponse"/> and sets the default values.
@@ -156,7 +156,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "status_detail", n => { StatusDetail = n.GetStringValue(); } },
                 { "status_updated_at", n => { StatusUpdatedAt = n.GetStringValue(); } },
                 { "token_url", n => { TokenUrl = n.GetStringValue(); } },
-                { "used_by", n => { UsedBy = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ApiIntegrationOAuth2CustomAppResponseUsedBy>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ApiIntegrationOAuth2CustomAppResponseUsedBy.CreateFromDiscriminatorValue); } },
+                { "used_by", n => { UsedBy = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AuthConnectionDependencies>(global::Soenneker.ElevenLabs.OpenApiClient.Models.AuthConnectionDependencies.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -180,7 +180,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteStringValue("status_detail", StatusDetail);
             writer.WriteStringValue("status_updated_at", StatusUpdatedAt);
             writer.WriteStringValue("token_url", TokenUrl);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ApiIntegrationOAuth2CustomAppResponseUsedBy>("used_by", UsedBy);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AuthConnectionDependencies>("used_by", UsedBy);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

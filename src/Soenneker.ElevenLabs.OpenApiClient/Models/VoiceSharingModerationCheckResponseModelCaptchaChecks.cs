@@ -8,20 +8,27 @@ using System;
 namespace Soenneker.ElevenLabs.OpenApiClient.Models
 {
     /// <summary>
-    /// A list of CAPTCHA check values.
+    /// Composed type wrapper for classes <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceSharingModerationCheckResponseModelCaptchaChecksMember1"/>, List&lt;double&gt;
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class VoiceSharingModerationCheckResponseModelCaptchaChecks : IAdditionalDataHolder, IParsable
+    public partial class VoiceSharingModerationCheckResponseModelCaptchaChecks : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceSharingModerationCheckResponseModelCaptchaChecks"/> and sets the default values.
-        /// </summary>
-        public VoiceSharingModerationCheckResponseModelCaptchaChecks()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
+        /// <summary>Composed type representation for type List&lt;double&gt;</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<double?>? Double { get; set; }
+#nullable restore
+#else
+        public List<double?> Double { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceSharingModerationCheckResponseModelCaptchaChecksMember1"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceSharingModerationCheckResponseModelCaptchaChecksMember1? VoiceSharingModerationCheckResponseModelCaptchaChecksMember1 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceSharingModerationCheckResponseModelCaptchaChecksMember1 VoiceSharingModerationCheckResponseModelCaptchaChecksMember1 { get; set; }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -30,7 +37,15 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceSharingModerationCheckResponseModelCaptchaChecks CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceSharingModerationCheckResponseModelCaptchaChecks();
+            var result = new global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceSharingModerationCheckResponseModelCaptchaChecks();
+            if(parseNode.GetCollectionOfPrimitiveValues<double?>()?.AsList() is List<double?> doubleValue)
+            {
+                result.Double = doubleValue;
+            }
+            else {
+                result.VoiceSharingModerationCheckResponseModelCaptchaChecksMember1 = new global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceSharingModerationCheckResponseModelCaptchaChecksMember1();
+            }
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -38,9 +53,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            if(VoiceSharingModerationCheckResponseModelCaptchaChecksMember1 != null)
             {
-            };
+                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(VoiceSharingModerationCheckResponseModelCaptchaChecksMember1);
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -49,7 +66,13 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteAdditionalData(AdditionalData);
+            if(Double != null)
+            {
+                writer.WriteCollectionOfPrimitiveValues<double?>(null, Double);
+            }
+            else {
+                writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceSharingModerationCheckResponseModelCaptchaChecksMember1>(null, VoiceSharingModerationCheckResponseModelCaptchaChecksMember1);
+            }
         }
     }
 }

@@ -25,20 +25,20 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The auto_sync_info property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseFileResponseModelAutoSyncInfo? AutoSyncInfo { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AutoSyncInfo? AutoSyncInfo { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseFileResponseModelAutoSyncInfo AutoSyncInfo { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AutoSyncInfo AutoSyncInfo { get; set; }
 #endif
         /// <summary>Canonical representation of a knowledge base document&apos;s stored content.HTML is the legacy default; documents created before this field existed areinterpreted as HTML.</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.ContentFormat? ContentFormat { get; set; }
         /// <summary>The external_sync_info property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseFileResponseModelExternalSyncInfo? ExternalSyncInfo { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ExternalFileSyncInfo? ExternalSyncInfo { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseFileResponseModelExternalSyncInfo ExternalSyncInfo { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ExternalFileSyncInfo ExternalSyncInfo { get; set; }
 #endif
         /// <summary>The extracted_inner_html property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -101,10 +101,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>In-flight or last refresh state for an externally-synced file. Used by clients to render sync progress and disable re-sync while a refresh is queued or processing.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseFileResponseModelRefreshStatus? RefreshStatus { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.FileRefreshStatus? RefreshStatus { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseFileResponseModelRefreshStatus RefreshStatus { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.FileRefreshStatus RefreshStatus { get; set; }
 #endif
         /// <summary>The supported_usages property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -143,9 +143,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "access_info", n => { AccessInfo = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceAccessInfo>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceAccessInfo.CreateFromDiscriminatorValue); } },
-                { "auto_sync_info", n => { AutoSyncInfo = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseFileResponseModelAutoSyncInfo>(global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseFileResponseModelAutoSyncInfo.CreateFromDiscriminatorValue); } },
+                { "auto_sync_info", n => { AutoSyncInfo = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AutoSyncInfo>(global::Soenneker.ElevenLabs.OpenApiClient.Models.AutoSyncInfo.CreateFromDiscriminatorValue); } },
                 { "content_format", n => { ContentFormat = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ContentFormat>(); } },
-                { "external_sync_info", n => { ExternalSyncInfo = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseFileResponseModelExternalSyncInfo>(global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseFileResponseModelExternalSyncInfo.CreateFromDiscriminatorValue); } },
+                { "external_sync_info", n => { ExternalSyncInfo = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ExternalFileSyncInfo>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ExternalFileSyncInfo.CreateFromDiscriminatorValue); } },
                 { "extracted_inner_html", n => { ExtractedInnerHtml = n.GetStringValue(); } },
                 { "filename", n => { Filename = n.GetStringValue(); } },
                 { "folder_parent_id", n => { FolderParentId = n.GetStringValue(); } },
@@ -154,7 +154,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "is_frozen", n => { IsFrozen = n.GetBoolValue(); } },
                 { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeBaseDocumentMetadataResponseModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeBaseDocumentMetadataResponseModel.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "refresh_status", n => { RefreshStatus = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseFileResponseModelRefreshStatus>(global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseFileResponseModelRefreshStatus.CreateFromDiscriminatorValue); } },
+                { "refresh_status", n => { RefreshStatus = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.FileRefreshStatus>(global::Soenneker.ElevenLabs.OpenApiClient.Models.FileRefreshStatus.CreateFromDiscriminatorValue); } },
                 { "supported_usages", n => { SupportedUsages = n.GetCollectionOfEnumValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.DocumentUsageModeEnum>()?.AsList(); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseFileResponseModel_type>(); } },
             };
@@ -167,9 +167,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceAccessInfo>("access_info", AccessInfo);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseFileResponseModelAutoSyncInfo>("auto_sync_info", AutoSyncInfo);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AutoSyncInfo>("auto_sync_info", AutoSyncInfo);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ContentFormat>("content_format", ContentFormat);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseFileResponseModelExternalSyncInfo>("external_sync_info", ExternalSyncInfo);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ExternalFileSyncInfo>("external_sync_info", ExternalSyncInfo);
             writer.WriteStringValue("extracted_inner_html", ExtractedInnerHtml);
             writer.WriteStringValue("filename", Filename);
             writer.WriteStringValue("folder_parent_id", FolderParentId);
@@ -178,7 +178,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteBoolValue("is_frozen", IsFrozen);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeBaseDocumentMetadataResponseModel>("metadata", Metadata);
             writer.WriteStringValue("name", Name);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseFileResponseModelRefreshStatus>("refresh_status", RefreshStatus);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.FileRefreshStatus>("refresh_status", RefreshStatus);
             writer.WriteCollectionOfEnumValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.DocumentUsageModeEnum>("supported_usages", SupportedUsages);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseFileResponseModel_type>("type", Type);
             writer.WriteAdditionalData(AdditionalData);

@@ -35,10 +35,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The metrics property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentTopicResponseModelMetrics? Metrics { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.TopicMetricsAggregate? Metrics { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentTopicResponseModelMetrics Metrics { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.TopicMetricsAggregate Metrics { get; set; }
 #endif
         /// <summary>The parent_topic_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -88,7 +88,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "conversation_count", n => { ConversationCount = n.GetIntValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "label", n => { Label = n.GetStringValue(); } },
-                { "metrics", n => { Metrics = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentTopicResponseModelMetrics>(global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentTopicResponseModelMetrics.CreateFromDiscriminatorValue); } },
+                { "metrics", n => { Metrics = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TopicMetricsAggregate>(global::Soenneker.ElevenLabs.OpenApiClient.Models.TopicMetricsAggregate.CreateFromDiscriminatorValue); } },
                 { "parent_topic_id", n => { ParentTopicId = n.GetStringValue(); } },
                 { "topic_id", n => { TopicId = n.GetStringValue(); } },
                 { "x_2d", n => { X2d = n.GetDoubleValue(); } },
@@ -105,7 +105,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteIntValue("conversation_count", ConversationCount);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("label", Label);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentTopicResponseModelMetrics>("metrics", Metrics);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TopicMetricsAggregate>("metrics", Metrics);
             writer.WriteStringValue("parent_topic_id", ParentTopicId);
             writer.WriteStringValue("topic_id", TopicId);
             writer.WriteDoubleValue("x_2d", X2d);

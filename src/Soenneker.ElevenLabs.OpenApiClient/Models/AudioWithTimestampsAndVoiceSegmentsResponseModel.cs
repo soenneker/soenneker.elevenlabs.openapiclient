@@ -17,10 +17,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Timestamp information for each character in the original text</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AudioWithTimestampsAndVoiceSegmentsResponseModelAlignment? Alignment { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CharacterAlignmentResponseModel? Alignment { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AudioWithTimestampsAndVoiceSegmentsResponseModelAlignment Alignment { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CharacterAlignmentResponseModel Alignment { get; set; }
 #endif
         /// <summary>Base64 encoded audio data</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -33,10 +33,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Timestamp information for each character in the normalized text</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AudioWithTimestampsAndVoiceSegmentsResponseModelNormalizedAlignment? NormalizedAlignment { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CharacterAlignmentResponseModel? NormalizedAlignment { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AudioWithTimestampsAndVoiceSegmentsResponseModelNormalizedAlignment NormalizedAlignment { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CharacterAlignmentResponseModel NormalizedAlignment { get; set; }
 #endif
         /// <summary>Voice segments for the audio</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -71,9 +71,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "alignment", n => { Alignment = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AudioWithTimestampsAndVoiceSegmentsResponseModelAlignment>(global::Soenneker.ElevenLabs.OpenApiClient.Models.AudioWithTimestampsAndVoiceSegmentsResponseModelAlignment.CreateFromDiscriminatorValue); } },
+                { "alignment", n => { Alignment = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CharacterAlignmentResponseModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.CharacterAlignmentResponseModel.CreateFromDiscriminatorValue); } },
                 { "audio_base64", n => { AudioBase64 = n.GetStringValue(); } },
-                { "normalized_alignment", n => { NormalizedAlignment = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AudioWithTimestampsAndVoiceSegmentsResponseModelNormalizedAlignment>(global::Soenneker.ElevenLabs.OpenApiClient.Models.AudioWithTimestampsAndVoiceSegmentsResponseModelNormalizedAlignment.CreateFromDiscriminatorValue); } },
+                { "normalized_alignment", n => { NormalizedAlignment = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CharacterAlignmentResponseModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.CharacterAlignmentResponseModel.CreateFromDiscriminatorValue); } },
                 { "voice_segments", n => { VoiceSegments = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceSegment>(global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceSegment.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
@@ -84,9 +84,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AudioWithTimestampsAndVoiceSegmentsResponseModelAlignment>("alignment", Alignment);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CharacterAlignmentResponseModel>("alignment", Alignment);
             writer.WriteStringValue("audio_base64", AudioBase64);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AudioWithTimestampsAndVoiceSegmentsResponseModelNormalizedAlignment>("normalized_alignment", NormalizedAlignment);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CharacterAlignmentResponseModel>("normalized_alignment", NormalizedAlignment);
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceSegment>("voice_segments", VoiceSegments);
             writer.WriteAdditionalData(AdditionalData);
         }

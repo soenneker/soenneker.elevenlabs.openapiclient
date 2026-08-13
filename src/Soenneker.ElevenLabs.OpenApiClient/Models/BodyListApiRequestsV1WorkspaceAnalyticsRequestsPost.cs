@@ -19,10 +19,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The filters property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyListApiRequestsV1WorkspaceAnalyticsRequestsPostFilters? Filters { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ColumnFilter>? Filters { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyListApiRequestsV1WorkspaceAnalyticsRequestsPostFilters Filters { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ColumnFilter> Filters { get; set; }
 #endif
         /// <summary>The limit property</summary>
         public int? Limit { get; set; }
@@ -65,7 +65,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "end_time", n => { EndTime = n.GetIntValue(); } },
-                { "filters", n => { Filters = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyListApiRequestsV1WorkspaceAnalyticsRequestsPostFilters>(global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyListApiRequestsV1WorkspaceAnalyticsRequestsPostFilters.CreateFromDiscriminatorValue); } },
+                { "filters", n => { Filters = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.ColumnFilter>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ColumnFilter.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "limit", n => { Limit = n.GetIntValue(); } },
                 { "search", n => { Search = n.GetStringValue(); } },
                 { "sort", n => { Sort = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyListApiRequestsV1WorkspaceAnalyticsRequestsPostSort>(); } },
@@ -80,7 +80,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("end_time", EndTime);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyListApiRequestsV1WorkspaceAnalyticsRequestsPostFilters>("filters", Filters);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.ColumnFilter>("filters", Filters);
             writer.WriteIntValue("limit", Limit);
             writer.WriteStringValue("search", Search);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyListApiRequestsV1WorkspaceAnalyticsRequestsPostSort>("sort", Sort);

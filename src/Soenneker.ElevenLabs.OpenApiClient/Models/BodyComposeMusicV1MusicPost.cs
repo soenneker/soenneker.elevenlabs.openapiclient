@@ -37,10 +37,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Optional generation mode hint for prompt-based music generation. Can only be used with `prompt`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyComposeMusicV1MusicPostGenerationMode? GenerationMode { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.MusicGenerationModeWrapper2? GenerationMode { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyComposeMusicV1MusicPostGenerationMode GenerationMode { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.MusicGenerationModeWrapper2 GenerationMode { get; set; }
 #endif
         /// <summary>The lyrics text to use for the generation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -58,10 +58,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyComposeMusicV1MusicPostMusicPrompt? MusicPrompt { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.MusicPrompt? MusicPrompt { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyComposeMusicV1MusicPostMusicPrompt MusicPrompt { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.MusicPrompt MusicPrompt { get; set; }
 #endif
         /// <summary>A simple text prompt to generate a song from. Cannot be used in conjunction with `composition_plan`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -116,11 +116,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "finetune_id", n => { FinetuneId = n.GetStringValue(); } },
                 { "finetune_strength", n => { FinetuneStrength = n.GetDoubleValue(); } },
                 { "force_instrumental", n => { ForceInstrumental = n.GetBoolValue(); } },
-                { "generation_mode", n => { GenerationMode = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyComposeMusicV1MusicPostGenerationMode>(global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyComposeMusicV1MusicPostGenerationMode.CreateFromDiscriminatorValue); } },
+                { "generation_mode", n => { GenerationMode = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.MusicGenerationModeWrapper2>(global::Soenneker.ElevenLabs.OpenApiClient.Models.MusicGenerationModeWrapper2.CreateFromDiscriminatorValue); } },
                 { "lyrics_text", n => { LyricsText = n.GetStringValue(); } },
                 { "model_id", n => { ModelId = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyComposeMusicV1MusicPostModelId>(); } },
                 { "music_length_ms", n => { MusicLengthMs = n.GetIntValue(); } },
-                { "music_prompt", n => { MusicPrompt = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyComposeMusicV1MusicPostMusicPrompt>(global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyComposeMusicV1MusicPostMusicPrompt.CreateFromDiscriminatorValue); } },
+                { "music_prompt", n => { MusicPrompt = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.MusicPrompt>(global::Soenneker.ElevenLabs.OpenApiClient.Models.MusicPrompt.CreateFromDiscriminatorValue); } },
                 { "prompt", n => { Prompt = n.GetStringValue(); } },
                 { "respect_sections_durations", n => { RespectSectionsDurations = n.GetBoolValue(); } },
                 { "seed", n => { Seed = n.GetIntValue(); } },
@@ -140,11 +140,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteStringValue("finetune_id", FinetuneId);
             writer.WriteDoubleValue("finetune_strength", FinetuneStrength);
             writer.WriteBoolValue("force_instrumental", ForceInstrumental);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyComposeMusicV1MusicPostGenerationMode>("generation_mode", GenerationMode);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.MusicGenerationModeWrapper2>("generation_mode", GenerationMode);
             writer.WriteStringValue("lyrics_text", LyricsText);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyComposeMusicV1MusicPostModelId>("model_id", ModelId);
             writer.WriteIntValue("music_length_ms", MusicLengthMs);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyComposeMusicV1MusicPostMusicPrompt>("music_prompt", MusicPrompt);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.MusicPrompt>("music_prompt", MusicPrompt);
             writer.WriteStringValue("prompt", Prompt);
             writer.WriteBoolValue("respect_sections_durations", RespectSectionsDurations);
             writer.WriteIntValue("seed", Seed);

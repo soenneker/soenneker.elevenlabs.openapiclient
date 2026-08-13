@@ -107,6 +107,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         #pragma warning disable CS1591
         ConvaiAgentVersionsDeployments,
         #pragma warning restore CS1591
+        [EnumMember(Value = "convai_agent_experiments")]
+        #pragma warning disable CS1591
+        ConvaiAgentExperiments,
+        #pragma warning restore CS1591
         [EnumMember(Value = "convai_memory_entries")]
         #pragma warning disable CS1591
         ConvaiMemoryEntries,
@@ -146,6 +150,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         [EnumMember(Value = "content_templates")]
         #pragma warning disable CS1591
         ContentTemplates,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "content_skills")]
+        #pragma warning disable CS1591
+        ContentSkills,
         #pragma warning restore CS1591
         [EnumMember(Value = "songs")]
         #pragma warning disable CS1591

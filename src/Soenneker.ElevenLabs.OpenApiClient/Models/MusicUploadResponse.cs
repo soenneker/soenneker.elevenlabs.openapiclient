@@ -34,10 +34,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Word-level timestamps transcribed from the uploaded song. Only present if `with_timestamps` was True in the request body</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.MusicUploadResponseWordsTimestamps? WordsTimestamps { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.WordTimestamp>? WordsTimestamps { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.MusicUploadResponseWordsTimestamps WordsTimestamps { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.WordTimestamp> WordsTimestamps { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.MusicUploadResponse"/> and sets the default values.
@@ -66,7 +66,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             {
                 { "composition_plan", n => { CompositionPlan = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.MusicUploadResponseCompositionPlan>(global::Soenneker.ElevenLabs.OpenApiClient.Models.MusicUploadResponseCompositionPlan.CreateFromDiscriminatorValue); } },
                 { "song_id", n => { SongId = n.GetStringValue(); } },
-                { "words_timestamps", n => { WordsTimestamps = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.MusicUploadResponseWordsTimestamps>(global::Soenneker.ElevenLabs.OpenApiClient.Models.MusicUploadResponseWordsTimestamps.CreateFromDiscriminatorValue); } },
+                { "words_timestamps", n => { WordsTimestamps = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.WordTimestamp>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WordTimestamp.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -78,7 +78,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.MusicUploadResponseCompositionPlan>("composition_plan", CompositionPlan);
             writer.WriteStringValue("song_id", SongId);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.MusicUploadResponseWordsTimestamps>("words_timestamps", WordsTimestamps);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.WordTimestamp>("words_timestamps", WordsTimestamps);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

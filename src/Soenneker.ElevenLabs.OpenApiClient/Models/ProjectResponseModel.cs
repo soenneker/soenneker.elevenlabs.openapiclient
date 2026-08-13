@@ -19,10 +19,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Agent-related settings for the project</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectResponseModelAgentSettings? AgentSettings { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.StudioAgentSettingsModel? AgentSettings { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectResponseModelAgentSettings AgentSettings { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.StudioAgentSettingsModel AgentSettings { get; set; }
 #endif
         /// <summary>The aspect ratio of the project.</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectResponseModelAspectRatio? AspectRatio { get; set; }
@@ -41,10 +41,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Global styling to be applied to all captions</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectResponseModelCaptionStyle? CaptionStyle { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CaptionStyleModel? CaptionStyle { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectResponseModelCaptionStyle CaptionStyle { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CaptionStyleModel CaptionStyle { get; set; }
 #endif
         /// <summary>Styling changes that have been made to the provided templates</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -85,10 +85,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The creation meta of the project.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectResponseModelCreationMeta? CreationMeta { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectCreationMetaResponseModel? CreationMeta { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectResponseModelCreationMeta CreationMeta { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectCreationMetaResponseModel CreationMeta { get; set; }
 #endif
         /// <summary>The default model ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -252,11 +252,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "access_level", n => { AccessLevel = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectResponseModelAccessLevel>(); } },
-                { "agent_settings", n => { AgentSettings = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectResponseModelAgentSettings>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectResponseModelAgentSettings.CreateFromDiscriminatorValue); } },
+                { "agent_settings", n => { AgentSettings = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.StudioAgentSettingsModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.StudioAgentSettingsModel.CreateFromDiscriminatorValue); } },
                 { "aspect_ratio", n => { AspectRatio = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectResponseModelAspectRatio>(); } },
                 { "author", n => { Author = n.GetStringValue(); } },
                 { "can_be_downloaded", n => { CanBeDownloaded = n.GetBoolValue(); } },
-                { "caption_style", n => { CaptionStyle = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectResponseModelCaptionStyle>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectResponseModelCaptionStyle.CreateFromDiscriminatorValue); } },
+                { "caption_style", n => { CaptionStyle = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CaptionStyleModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.CaptionStyleModel.CreateFromDiscriminatorValue); } },
                 { "caption_style_template_overrides", n => { CaptionStyleTemplateOverrides = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectResponseModelCaptionStyleTemplateOverrides>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectResponseModelCaptionStyleTemplateOverrides.CreateFromDiscriminatorValue); } },
                 { "captions_enabled", n => { CaptionsEnabled = n.GetBoolValue(); } },
                 { "chapters_enabled", n => { ChaptersEnabled = n.GetBoolValue(); } },
@@ -264,7 +264,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "cover_image_url", n => { CoverImageUrl = n.GetStringValue(); } },
                 { "create_date_unix", n => { CreateDateUnix = n.GetIntValue(); } },
                 { "created_by_user_id", n => { CreatedByUserId = n.GetStringValue(); } },
-                { "creation_meta", n => { CreationMeta = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectResponseModelCreationMeta>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectResponseModelCreationMeta.CreateFromDiscriminatorValue); } },
+                { "creation_meta", n => { CreationMeta = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectCreationMetaResponseModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectCreationMetaResponseModel.CreateFromDiscriminatorValue); } },
                 { "default_model_id", n => { DefaultModelId = n.GetStringValue(); } },
                 { "default_paragraph_voice_id", n => { DefaultParagraphVoiceId = n.GetStringValue(); } },
                 { "default_paragraph_voice_ref_id", n => { DefaultParagraphVoiceRefId = n.GetStringValue(); } },
@@ -298,19 +298,19 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectResponseModelAccessLevel>("access_level", AccessLevel);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectResponseModelAgentSettings>("agent_settings", AgentSettings);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.StudioAgentSettingsModel>("agent_settings", AgentSettings);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectResponseModelAspectRatio>("aspect_ratio", AspectRatio);
             writer.WriteStringValue("author", Author);
             writer.WriteBoolValue("can_be_downloaded", CanBeDownloaded);
             writer.WriteBoolValue("captions_enabled", CaptionsEnabled);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectResponseModelCaptionStyle>("caption_style", CaptionStyle);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CaptionStyleModel>("caption_style", CaptionStyle);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectResponseModelCaptionStyleTemplateOverrides>("caption_style_template_overrides", CaptionStyleTemplateOverrides);
             writer.WriteBoolValue("chapters_enabled", ChaptersEnabled);
             writer.WriteStringValue("content_type", ContentType);
             writer.WriteStringValue("cover_image_url", CoverImageUrl);
             writer.WriteIntValue("create_date_unix", CreateDateUnix);
             writer.WriteStringValue("created_by_user_id", CreatedByUserId);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectResponseModelCreationMeta>("creation_meta", CreationMeta);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectCreationMetaResponseModel>("creation_meta", CreationMeta);
             writer.WriteStringValue("default_model_id", DefaultModelId);
             writer.WriteStringValue("default_paragraph_voice_ref_id", DefaultParagraphVoiceRefId);
             writer.WriteStringValue("default_title_voice_ref_id", DefaultTitleVoiceRefId);

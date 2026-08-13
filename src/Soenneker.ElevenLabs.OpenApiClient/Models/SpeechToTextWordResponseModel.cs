@@ -20,10 +20,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The characters that make up the word and their timing information.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechToTextWordResponseModelCharacters? Characters { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechToTextCharacterResponseModel>? Characters { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechToTextWordResponseModelCharacters Characters { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechToTextCharacterResponseModel> Characters { get; set; }
 #endif
         /// <summary>The end time of the word or sound in seconds.</summary>
         public double? End { get; set; }
@@ -75,7 +75,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "channel_index", n => { ChannelIndex = n.GetIntValue(); } },
-                { "characters", n => { Characters = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechToTextWordResponseModelCharacters>(global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechToTextWordResponseModelCharacters.CreateFromDiscriminatorValue); } },
+                { "characters", n => { Characters = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechToTextCharacterResponseModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechToTextCharacterResponseModel.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "end", n => { End = n.GetDoubleValue(); } },
                 { "logprob", n => { Logprob = n.GetDoubleValue(); } },
                 { "speaker_id", n => { SpeakerId = n.GetStringValue(); } },
@@ -92,7 +92,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("channel_index", ChannelIndex);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechToTextWordResponseModelCharacters>("characters", Characters);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechToTextCharacterResponseModel>("characters", Characters);
             writer.WriteDoubleValue("end", End);
             writer.WriteDoubleValue("logprob", Logprob);
             writer.WriteStringValue("speaker_id", SpeakerId);

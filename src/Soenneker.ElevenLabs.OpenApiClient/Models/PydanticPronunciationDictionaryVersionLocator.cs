@@ -7,30 +7,13 @@ using System.IO;
 using System;
 namespace Soenneker.ElevenLabs.OpenApiClient.Models
 {
-    /// <summary>
-    /// A locator for other documents to be able to reference a specific dictionary and it&apos;s version.This is a pydantic version of PronunciationDictionaryVersionLocatorDBModel.Required to ensure compat with the rest of the agent data models.
-    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+    #pragma warning disable CS1591
     public partial class PydanticPronunciationDictionaryVersionLocator : IAdditionalDataHolder, IParsable
+    #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The ID of the pronunciation dictionary</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? PronunciationDictionaryId { get; set; }
-#nullable restore
-#else
-        public string PronunciationDictionaryId { get; set; }
-#endif
-        /// <summary>The ID of the version of the pronunciation dictionary</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? VersionId { get; set; }
-#nullable restore
-#else
-        public string VersionId { get; set; }
-#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.PydanticPronunciationDictionaryVersionLocator"/> and sets the default values.
         /// </summary>
@@ -56,8 +39,6 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "pronunciation_dictionary_id", n => { PronunciationDictionaryId = n.GetStringValue(); } },
-                { "version_id", n => { VersionId = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -67,8 +48,6 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("pronunciation_dictionary_id", PronunciationDictionaryId);
-            writer.WriteStringValue("version_id", VersionId);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

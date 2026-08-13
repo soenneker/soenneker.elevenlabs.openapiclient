@@ -14,60 +14,6 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The duration_secs property</summary>
-        public double? DurationSecs { get; set; }
-        /// <summary>The name of the sample file.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? FileName { get; set; }
-#nullable restore
-#else
-        public string FileName { get; set; }
-#endif
-        /// <summary>The hash of the sample file.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Hash { get; set; }
-#nullable restore
-#else
-        public string Hash { get; set; }
-#endif
-        /// <summary>The has_isolated_audio property</summary>
-        public bool? HasIsolatedAudio { get; set; }
-        /// <summary>The has_isolated_audio_preview property</summary>
-        public bool? HasIsolatedAudioPreview { get; set; }
-        /// <summary>The MIME type of the sample file.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? MimeType { get; set; }
-#nullable restore
-#else
-        public string MimeType { get; set; }
-#endif
-        /// <summary>The remove_background_noise property</summary>
-        public bool? RemoveBackgroundNoise { get; set; }
-        /// <summary>The ID of the sample.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? SampleId { get; set; }
-#nullable restore
-#else
-        public string SampleId { get; set; }
-#endif
-        /// <summary>The size of the sample file in bytes.</summary>
-        public int? SizeBytes { get; set; }
-        /// <summary>The speaker_separation property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SampleResponseModelSpeakerSeparation? SpeakerSeparation { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SampleResponseModelSpeakerSeparation SpeakerSeparation { get; set; }
-#endif
-        /// <summary>The trim_end property</summary>
-        public int? TrimEnd { get; set; }
-        /// <summary>The trim_start property</summary>
-        public int? TrimStart { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.SampleResponseModel"/> and sets the default values.
         /// </summary>
@@ -93,18 +39,6 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "duration_secs", n => { DurationSecs = n.GetDoubleValue(); } },
-                { "file_name", n => { FileName = n.GetStringValue(); } },
-                { "has_isolated_audio", n => { HasIsolatedAudio = n.GetBoolValue(); } },
-                { "has_isolated_audio_preview", n => { HasIsolatedAudioPreview = n.GetBoolValue(); } },
-                { "hash", n => { Hash = n.GetStringValue(); } },
-                { "mime_type", n => { MimeType = n.GetStringValue(); } },
-                { "remove_background_noise", n => { RemoveBackgroundNoise = n.GetBoolValue(); } },
-                { "sample_id", n => { SampleId = n.GetStringValue(); } },
-                { "size_bytes", n => { SizeBytes = n.GetIntValue(); } },
-                { "speaker_separation", n => { SpeakerSeparation = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SampleResponseModelSpeakerSeparation>(global::Soenneker.ElevenLabs.OpenApiClient.Models.SampleResponseModelSpeakerSeparation.CreateFromDiscriminatorValue); } },
-                { "trim_end", n => { TrimEnd = n.GetIntValue(); } },
-                { "trim_start", n => { TrimStart = n.GetIntValue(); } },
             };
         }
         /// <summary>
@@ -114,18 +48,6 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteDoubleValue("duration_secs", DurationSecs);
-            writer.WriteStringValue("file_name", FileName);
-            writer.WriteStringValue("hash", Hash);
-            writer.WriteBoolValue("has_isolated_audio", HasIsolatedAudio);
-            writer.WriteBoolValue("has_isolated_audio_preview", HasIsolatedAudioPreview);
-            writer.WriteStringValue("mime_type", MimeType);
-            writer.WriteBoolValue("remove_background_noise", RemoveBackgroundNoise);
-            writer.WriteStringValue("sample_id", SampleId);
-            writer.WriteIntValue("size_bytes", SizeBytes);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SampleResponseModelSpeakerSeparation>("speaker_separation", SpeakerSeparation);
-            writer.WriteIntValue("trim_end", TrimEnd);
-            writer.WriteIntValue("trim_start", TrimStart);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

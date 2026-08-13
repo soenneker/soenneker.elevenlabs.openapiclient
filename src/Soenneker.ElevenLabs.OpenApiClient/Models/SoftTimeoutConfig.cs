@@ -23,6 +23,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public List<string> AdditionalSoftTimeoutMessages { get; set; }
 #endif
+        /// <summary>When true, soft timeout fillers are suppressed until the conversation has at least one real user message. Prevents fillers during the agent&apos;s opening turn (e.g. workflow generate-immediately / tool calls before the user speaks).</summary>
+        public bool? DisableUntilFirstUserMessage { get; set; }
         /// <summary>Custom prompt for generating the soft timeout filler message when use_llm_generated_message is enabled. Recent conversation context is provided as a separate user message. If not set, the default prompt will be used. Supports dynamic variables (e.g., {{system__time}}, {{custom_variable}}).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -53,6 +55,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public SoftTimeoutConfig()
         {
             AdditionalData = new Dictionary<string, object>();
+            DisableUntilFirstUserMessage = false;
             MaxSoftTimeoutsPerGeneration = 1;
             Message = "Hhmmmm...yeah.";
             RandomizeFillers = false;
@@ -78,6 +81,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "additional_soft_timeout_messages", n => { AdditionalSoftTimeoutMessages = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "disable_until_first_user_message", n => { DisableUntilFirstUserMessage = n.GetBoolValue(); } },
                 { "llm_generated_message_prompt_override", n => { LlmGeneratedMessagePromptOverride = n.GetStringValue(); } },
                 { "max_soft_timeouts_per_generation", n => { MaxSoftTimeoutsPerGeneration = n.GetIntValue(); } },
                 { "message", n => { Message = n.GetStringValue(); } },
@@ -94,6 +98,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<string>("additional_soft_timeout_messages", AdditionalSoftTimeoutMessages);
+            writer.WriteBoolValue("disable_until_first_user_message", DisableUntilFirstUserMessage);
             writer.WriteStringValue("llm_generated_message_prompt_override", LlmGeneratedMessagePromptOverride);
             writer.WriteIntValue("max_soft_timeouts_per_generation", MaxSoftTimeoutsPerGeneration);
             writer.WriteStringValue("message", Message);

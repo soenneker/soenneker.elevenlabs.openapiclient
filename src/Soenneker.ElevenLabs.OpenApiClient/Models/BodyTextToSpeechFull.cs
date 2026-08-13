@@ -69,10 +69,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>A list of pronunciation dictionary locators (id, version_id) to be applied to the text. They will be applied in order. You may have up to 3 locators per request</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyTextToSpeechFullPronunciationDictionaryLocators? PronunciationDictionaryLocators { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.PronunciationDictionaryVersionLocatorRequestModel>? PronunciationDictionaryLocators { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyTextToSpeechFullPronunciationDictionaryLocators PronunciationDictionaryLocators { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.PronunciationDictionaryVersionLocatorRequestModel> PronunciationDictionaryLocators { get; set; }
 #endif
         /// <summary>If specified, our system will make a best effort to sample deterministically, such that repeated requests with the same seed and parameters should return the same result. Determinism is not guaranteed. Must be integer between 0 and 4294967295.</summary>
         public int? Seed { get; set; }
@@ -90,10 +90,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Voice settings overriding stored settings for the given voice. They are applied only on the given request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyTextToSpeechFullVoiceSettings? VoiceSettings { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceSettingsResponseModel? VoiceSettings { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyTextToSpeechFullVoiceSettings VoiceSettings { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceSettingsResponseModel VoiceSettings { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyTextToSpeechFull"/> and sets the default values.
@@ -131,11 +131,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "next_text", n => { NextText = n.GetStringValue(); } },
                 { "previous_request_ids", n => { PreviousRequestIds = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyTextToSpeechFullPreviousRequestIds>(global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyTextToSpeechFullPreviousRequestIds.CreateFromDiscriminatorValue); } },
                 { "previous_text", n => { PreviousText = n.GetStringValue(); } },
-                { "pronunciation_dictionary_locators", n => { PronunciationDictionaryLocators = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyTextToSpeechFullPronunciationDictionaryLocators>(global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyTextToSpeechFullPronunciationDictionaryLocators.CreateFromDiscriminatorValue); } },
+                { "pronunciation_dictionary_locators", n => { PronunciationDictionaryLocators = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.PronunciationDictionaryVersionLocatorRequestModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.PronunciationDictionaryVersionLocatorRequestModel.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "seed", n => { Seed = n.GetIntValue(); } },
                 { "text", n => { Text = n.GetStringValue(); } },
                 { "use_pvc_as_ivc", n => { UsePvcAsIvc = n.GetBoolValue(); } },
-                { "voice_settings", n => { VoiceSettings = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyTextToSpeechFullVoiceSettings>(global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyTextToSpeechFullVoiceSettings.CreateFromDiscriminatorValue); } },
+                { "voice_settings", n => { VoiceSettings = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceSettingsResponseModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceSettingsResponseModel.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -153,11 +153,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteStringValue("next_text", NextText);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyTextToSpeechFullPreviousRequestIds>("previous_request_ids", PreviousRequestIds);
             writer.WriteStringValue("previous_text", PreviousText);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyTextToSpeechFullPronunciationDictionaryLocators>("pronunciation_dictionary_locators", PronunciationDictionaryLocators);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.PronunciationDictionaryVersionLocatorRequestModel>("pronunciation_dictionary_locators", PronunciationDictionaryLocators);
             writer.WriteIntValue("seed", Seed);
             writer.WriteStringValue("text", Text);
             writer.WriteBoolValue("use_pvc_as_ivc", UsePvcAsIvc);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyTextToSpeechFullVoiceSettings>("voice_settings", VoiceSettings);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceSettingsResponseModel>("voice_settings", VoiceSettings);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

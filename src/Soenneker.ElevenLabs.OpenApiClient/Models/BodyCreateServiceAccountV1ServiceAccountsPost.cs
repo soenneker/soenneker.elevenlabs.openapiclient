@@ -17,10 +17,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>List of groups with their permission levels to share with by default. Each entry should specify a group_id and a permission_level (admin, editor, or viewer).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateServiceAccountV1ServiceAccountsPostDefaultSharingGroups? DefaultSharingGroups { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.DefaultSharingGroupConfig>? DefaultSharingGroups { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateServiceAccountV1ServiceAccountsPostDefaultSharingGroups DefaultSharingGroups { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.DefaultSharingGroupConfig> DefaultSharingGroups { get; set; }
 #endif
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -55,7 +55,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "default_sharing_groups", n => { DefaultSharingGroups = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateServiceAccountV1ServiceAccountsPostDefaultSharingGroups>(global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateServiceAccountV1ServiceAccountsPostDefaultSharingGroups.CreateFromDiscriminatorValue); } },
+                { "default_sharing_groups", n => { DefaultSharingGroups = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.DefaultSharingGroupConfig>(global::Soenneker.ElevenLabs.OpenApiClient.Models.DefaultSharingGroupConfig.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
             };
         }
@@ -66,7 +66,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateServiceAccountV1ServiceAccountsPostDefaultSharingGroups>("default_sharing_groups", DefaultSharingGroups);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.DefaultSharingGroupConfig>("default_sharing_groups", DefaultSharingGroups);
             writer.WriteStringValue("name", Name);
             writer.WriteAdditionalData(AdditionalData);
         }

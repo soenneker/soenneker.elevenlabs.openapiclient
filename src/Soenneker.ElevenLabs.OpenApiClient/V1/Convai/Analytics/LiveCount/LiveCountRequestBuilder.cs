@@ -22,7 +22,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Analytics.LiveCount
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public LiveCountRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/convai/analytics/live-count{?agent_id*}", pathParameters)
+        public LiveCountRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/convai/analytics/live-count{?agent_id*,agent_ids*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Analytics.LiveCount
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public LiveCountRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/convai/analytics/live-count{?agent_id*}", rawUrl)
+        public LiveCountRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/convai/analytics/live-count{?agent_id*,agent_ids*}", rawUrl)
         {
         }
         /// <summary>
@@ -99,6 +99,16 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Analytics.LiveCount
 #else
             [QueryParameter("agent_id")]
             public string AgentId { get; set; }
+#endif
+            /// <summary>Restrict analytics to the union of the given agents. Takes precedence over `agent_id` when both are supplied.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("agent_ids")]
+            public string? AgentIds { get; set; }
+#nullable restore
+#else
+            [QueryParameter("agent_ids")]
+            public string AgentIds { get; set; }
 #endif
         }
     }

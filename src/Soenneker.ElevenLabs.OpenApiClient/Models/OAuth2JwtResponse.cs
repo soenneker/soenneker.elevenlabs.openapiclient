@@ -124,10 +124,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The used_by property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.OAuth2JwtResponseUsedBy? UsedBy { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AuthConnectionDependencies? UsedBy { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.OAuth2JwtResponseUsedBy UsedBy { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AuthConnectionDependencies UsedBy { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.OAuth2JwtResponse"/> and sets the default values.
@@ -172,7 +172,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "subject", n => { Subject = n.GetStringValue(); } },
                 { "token_response_field", n => { TokenResponseField = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.OAuth2JwtResponseTokenResponseField>(); } },
                 { "token_url", n => { TokenUrl = n.GetStringValue(); } },
-                { "used_by", n => { UsedBy = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.OAuth2JwtResponseUsedBy>(global::Soenneker.ElevenLabs.OpenApiClient.Models.OAuth2JwtResponseUsedBy.CreateFromDiscriminatorValue); } },
+                { "used_by", n => { UsedBy = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AuthConnectionDependencies>(global::Soenneker.ElevenLabs.OpenApiClient.Models.AuthConnectionDependencies.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -199,7 +199,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteStringValue("subject", Subject);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.OAuth2JwtResponseTokenResponseField>("token_response_field", TokenResponseField);
             writer.WriteStringValue("token_url", TokenUrl);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.OAuth2JwtResponseUsedBy>("used_by", UsedBy);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AuthConnectionDependencies>("used_by", UsedBy);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

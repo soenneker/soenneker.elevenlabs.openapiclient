@@ -21,10 +21,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The conversation_initiation_client_data_webhook property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetConvAiSettingsResponseModelConversationInitiationClientDataWebhook? ConversationInitiationClientDataWebhook { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationClientDataWebhook? ConversationInitiationClientDataWebhook { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetConvAiSettingsResponseModelConversationInitiationClientDataWebhook ConversationInitiationClientDataWebhook { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationClientDataWebhook ConversationInitiationClientDataWebhook { get; set; }
 #endif
         /// <summary>The default_livekit_stack property</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.LivekitStackType? DefaultLivekitStack { get; set; }
@@ -67,7 +67,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             {
                 { "can_use_mcp_servers", n => { CanUseMcpServers = n.GetBoolValue(); } },
                 { "conversation_embedding_retention_days", n => { ConversationEmbeddingRetentionDays = n.GetIntValue(); } },
-                { "conversation_initiation_client_data_webhook", n => { ConversationInitiationClientDataWebhook = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetConvAiSettingsResponseModelConversationInitiationClientDataWebhook>(global::Soenneker.ElevenLabs.OpenApiClient.Models.GetConvAiSettingsResponseModelConversationInitiationClientDataWebhook.CreateFromDiscriminatorValue); } },
+                { "conversation_initiation_client_data_webhook", n => { ConversationInitiationClientDataWebhook = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationClientDataWebhook>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationClientDataWebhook.CreateFromDiscriminatorValue); } },
                 { "default_livekit_stack", n => { DefaultLivekitStack = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.LivekitStackType>(); } },
                 { "rag_retention_period_days", n => { RagRetentionPeriodDays = n.GetIntValue(); } },
                 { "webhooks", n => { Webhooks = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConvAiWebhooks>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConvAiWebhooks.CreateFromDiscriminatorValue); } },
@@ -82,7 +82,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("can_use_mcp_servers", CanUseMcpServers);
             writer.WriteIntValue("conversation_embedding_retention_days", ConversationEmbeddingRetentionDays);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetConvAiSettingsResponseModelConversationInitiationClientDataWebhook>("conversation_initiation_client_data_webhook", ConversationInitiationClientDataWebhook);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationClientDataWebhook>("conversation_initiation_client_data_webhook", ConversationInitiationClientDataWebhook);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.LivekitStackType>("default_livekit_stack", DefaultLivekitStack);
             writer.WriteIntValue("rag_retention_period_days", RagRetentionPeriodDays);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConvAiWebhooks>("webhooks", Webhooks);
