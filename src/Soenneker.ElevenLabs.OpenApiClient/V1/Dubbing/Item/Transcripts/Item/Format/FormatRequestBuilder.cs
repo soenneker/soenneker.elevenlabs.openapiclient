@@ -18,6 +18,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Dubbing.Item.Transcripts.Item.Fo
         /// <summary>Gets an item from the Soenneker.ElevenLabs.OpenApiClient.v1.dubbing.item.transcripts.item.format.item collection</summary>
         /// <param name="position">Format to return transcript in. For subtitles use either &apos;srt&apos; or &apos;webvtt&apos;, and for a full transcript use &apos;json&apos;. The &apos;json&apos; format is not yet supported for Dubbing Studio.</param>
         /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.V1.Dubbing.Item.Transcripts.Item.Format.Item.WithFormatTypeItemRequestBuilder"/></returns>
+        [Obsolete("")]
         public global::Soenneker.ElevenLabs.OpenApiClient.V1.Dubbing.Item.Transcripts.Item.Format.Item.WithFormatTypeItemRequestBuilder this[string position]
         {
             get

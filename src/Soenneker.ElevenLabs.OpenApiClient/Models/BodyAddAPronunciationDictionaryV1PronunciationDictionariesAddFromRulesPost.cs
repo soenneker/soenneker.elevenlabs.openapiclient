@@ -30,7 +30,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>&quot;List of pronunciation rules. Rule can be either:    an alias rule: {&apos;string_to_replace&apos;: &apos;a&apos;, &apos;type&apos;: &apos;alias&apos;, &apos;alias&apos;: &apos;b&apos;, }    or a phoneme rule: {&apos;string_to_replace&apos;: &apos;a&apos;, &apos;type&apos;: &apos;phoneme&apos;, &apos;phoneme&apos;: &apos;b&apos;, &apos;alphabet&apos;: &apos;ipa&apos; }&quot;</summary>
+        /// <summary>List of pronunciation rules. Rule can be either:    an alias rule: {&apos;string_to_replace&apos;: &apos;a&apos;, &apos;type&apos;: &apos;alias&apos;, &apos;alias&apos;: &apos;b&apos;, }    or a phoneme rule: {&apos;string_to_replace&apos;: &apos;a&apos;, &apos;type&apos;: &apos;phoneme&apos;, &apos;phoneme&apos;: &apos;b&apos;, &apos;alphabet&apos;: &apos;ipa&apos; }</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyAddAPronunciationDictionaryV1PronunciationDictionariesAddFromRulesPostRulesItem>? Rules { get; set; }

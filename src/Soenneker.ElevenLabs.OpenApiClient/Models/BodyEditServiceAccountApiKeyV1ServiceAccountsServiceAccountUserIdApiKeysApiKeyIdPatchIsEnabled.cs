@@ -8,21 +8,15 @@ using System;
 namespace Soenneker.ElevenLabs.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="bool"/>, <see cref="string"/>
+    /// Composed type wrapper for classes <see cref="bool"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyEditServiceAccountApiKeyV1ServiceAccountsServiceAccountUserIdApiKeysApiKeyIdPatchIsEnabledAnyOf2"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class BodyEditServiceAccountApiKeyV1ServiceAccountsServiceAccountUserIdApiKeysApiKeyIdPatchIsEnabled : IComposedTypeWrapper, IParsable
     {
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyEditServiceAccountApiKeyV1ServiceAccountsServiceAccountUserIdApiKeysApiKeyIdPatchIsEnabledAnyOf2"/></summary>
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyEditServiceAccountApiKeyV1ServiceAccountsServiceAccountUserIdApiKeysApiKeyIdPatchIsEnabledAnyOf2? BodyEditServiceAccountApiKeyV1ServiceAccountsServiceAccountUserIdApiKeysApiKeyIdPatchIsEnabledAnyOf2 { get; set; }
         /// <summary>Composed type representation for type <see cref="bool"/></summary>
         public bool? Boolean { get; set; }
-        /// <summary>Composed type representation for type <see cref="string"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? String { get; set; }
-#nullable restore
-#else
-        public string String { get; set; }
-#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -36,9 +30,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             {
                 result.Boolean = booleanValue;
             }
-            else if(parseNode.GetStringValue() is string stringValue)
+            else if(parseNode.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyEditServiceAccountApiKeyV1ServiceAccountsServiceAccountUserIdApiKeysApiKeyIdPatchIsEnabledAnyOf2>() is global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyEditServiceAccountApiKeyV1ServiceAccountsServiceAccountUserIdApiKeysApiKeyIdPatchIsEnabledAnyOf2 bodyEditServiceAccountApiKeyV1ServiceAccountsServiceAccountUserIdApiKeysApiKeyIdPatchIsEnabledAnyOf2Value)
             {
-                result.String = stringValue;
+                result.BodyEditServiceAccountApiKeyV1ServiceAccountsServiceAccountUserIdApiKeysApiKeyIdPatchIsEnabledAnyOf2 = bodyEditServiceAccountApiKeyV1ServiceAccountsServiceAccountUserIdApiKeysApiKeyIdPatchIsEnabledAnyOf2Value;
             }
             return result;
         }
@@ -61,9 +55,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             {
                 writer.WriteBoolValue(null, Boolean);
             }
-            else if(String != null)
+            else if(BodyEditServiceAccountApiKeyV1ServiceAccountsServiceAccountUserIdApiKeysApiKeyIdPatchIsEnabledAnyOf2 != null)
             {
-                writer.WriteStringValue(null, String);
+                writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyEditServiceAccountApiKeyV1ServiceAccountsServiceAccountUserIdApiKeysApiKeyIdPatchIsEnabledAnyOf2>(null, BodyEditServiceAccountApiKeyV1ServiceAccountsServiceAccountUserIdApiKeysApiKeyIdPatchIsEnabledAnyOf2);
             }
         }
     }

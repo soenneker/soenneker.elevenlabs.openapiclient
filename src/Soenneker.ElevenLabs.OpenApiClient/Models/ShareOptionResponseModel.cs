@@ -30,7 +30,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>&quot;The type of the principal: user, group, or service account (under &apos;key&apos;).&quot;</summary>
+        /// <summary>The type of the principal: user, group, or service account (under &apos;key&apos;).</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.ShareOptionResponseModelType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ShareOptionResponseModel"/> and sets the default values.

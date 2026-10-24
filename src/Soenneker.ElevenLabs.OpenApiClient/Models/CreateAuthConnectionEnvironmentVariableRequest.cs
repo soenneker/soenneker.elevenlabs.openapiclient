@@ -23,7 +23,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public string Label { get; set; }
 #endif
         /// <summary>The type property</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateAuthConnectionEnvironmentVariableRequest_type? Type { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AuthConnectionType? Type { get; set; }
         /// <summary>Environment-specific auth connection references. Must include &apos;production&apos; key.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -58,7 +58,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "label", n => { Label = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateAuthConnectionEnvironmentVariableRequest_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AuthConnectionType>(); } },
                 { "values", n => { Values = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateAuthConnectionEnvironmentVariableRequestValuesProperty>(global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateAuthConnectionEnvironmentVariableRequestValuesProperty.CreateFromDiscriminatorValue); } },
             };
         }
@@ -70,7 +70,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("label", Label);
-            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateAuthConnectionEnvironmentVariableRequest_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AuthConnectionType>("type", Type);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateAuthConnectionEnvironmentVariableRequestValuesProperty>("values", Values);
             writer.WriteAdditionalData(AdditionalData);
         }

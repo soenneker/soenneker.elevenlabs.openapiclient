@@ -41,28 +41,28 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The message of the fine-tuning process.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.FineTuningResponseModelMessage? Message { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.FineTuningResponseModelMessageProperty? Message { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.FineTuningResponseModelMessage Message { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.FineTuningResponseModelMessageProperty Message { get; set; }
 #endif
         /// <summary>The next maximum verification attempts reset time in Unix milliseconds.</summary>
         public int? NextMaxVerificationAttemptsResetUnixMs { get; set; }
         /// <summary>The progress of the fine-tuning process.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.FineTuningResponseModelProgress? Progress { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.FineTuningResponseModelProgressProperty? Progress { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.FineTuningResponseModelProgress Progress { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.FineTuningResponseModelProgressProperty Progress { get; set; }
 #endif
         /// <summary>List of slice IDs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.FineTuningResponseModelSliceIds? SliceIds { get; set; }
+        public List<string>? SliceIds { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.FineTuningResponseModelSliceIds SliceIds { get; set; }
+        public List<string> SliceIds { get; set; }
 #endif
         /// <summary>The state of the fine-tuning process for each model.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -121,10 +121,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "manual_verification", n => { ManualVerification = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ManualVerificationResponseModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ManualVerificationResponseModel.CreateFromDiscriminatorValue); } },
                 { "manual_verification_requested", n => { ManualVerificationRequested = n.GetBoolValue(); } },
                 { "max_verification_attempts", n => { MaxVerificationAttempts = n.GetIntValue(); } },
-                { "message", n => { Message = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.FineTuningResponseModelMessage>(global::Soenneker.ElevenLabs.OpenApiClient.Models.FineTuningResponseModelMessage.CreateFromDiscriminatorValue); } },
+                { "message", n => { Message = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.FineTuningResponseModelMessageProperty>(global::Soenneker.ElevenLabs.OpenApiClient.Models.FineTuningResponseModelMessageProperty.CreateFromDiscriminatorValue); } },
                 { "next_max_verification_attempts_reset_unix_ms", n => { NextMaxVerificationAttemptsResetUnixMs = n.GetIntValue(); } },
-                { "progress", n => { Progress = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.FineTuningResponseModelProgress>(global::Soenneker.ElevenLabs.OpenApiClient.Models.FineTuningResponseModelProgress.CreateFromDiscriminatorValue); } },
-                { "slice_ids", n => { SliceIds = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.FineTuningResponseModelSliceIds>(global::Soenneker.ElevenLabs.OpenApiClient.Models.FineTuningResponseModelSliceIds.CreateFromDiscriminatorValue); } },
+                { "progress", n => { Progress = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.FineTuningResponseModelProgressProperty>(global::Soenneker.ElevenLabs.OpenApiClient.Models.FineTuningResponseModelProgressProperty.CreateFromDiscriminatorValue); } },
+                { "slice_ids", n => { SliceIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "state", n => { State = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.FineTuningResponseModelStateProperty>(global::Soenneker.ElevenLabs.OpenApiClient.Models.FineTuningResponseModelStateProperty.CreateFromDiscriminatorValue); } },
                 { "verification_attempts", n => { VerificationAttempts = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.VerificationAttemptResponseModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.VerificationAttemptResponseModel.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "verification_attempts_count", n => { VerificationAttemptsCount = n.GetIntValue(); } },
@@ -144,10 +144,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ManualVerificationResponseModel>("manual_verification", ManualVerification);
             writer.WriteBoolValue("manual_verification_requested", ManualVerificationRequested);
             writer.WriteIntValue("max_verification_attempts", MaxVerificationAttempts);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.FineTuningResponseModelMessage>("message", Message);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.FineTuningResponseModelMessageProperty>("message", Message);
             writer.WriteIntValue("next_max_verification_attempts_reset_unix_ms", NextMaxVerificationAttemptsResetUnixMs);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.FineTuningResponseModelProgress>("progress", Progress);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.FineTuningResponseModelSliceIds>("slice_ids", SliceIds);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.FineTuningResponseModelProgressProperty>("progress", Progress);
+            writer.WriteCollectionOfPrimitiveValues<string>("slice_ids", SliceIds);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.FineTuningResponseModelStateProperty>("state", State);
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.VerificationAttemptResponseModel>("verification_attempts", VerificationAttempts);
             writer.WriteIntValue("verification_attempts_count", VerificationAttemptsCount);

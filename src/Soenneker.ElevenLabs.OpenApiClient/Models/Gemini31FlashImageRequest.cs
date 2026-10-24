@@ -24,7 +24,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ImageReference> Images { get; set; }
 #endif
         /// <summary>The model to use for the generation.</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Gemini31FlashImageRequest_model_id? ModelId { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Gemini31FlashImageModelId? ModelId { get; set; }
         /// <summary>A text description of the image to generate.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -63,7 +63,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             {
                 { "aspect_ratio", n => { AspectRatio = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Gemini31FlashImageRequestAspectRatio>(); } },
                 { "images", n => { Images = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.ImageReference>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ImageReference.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "model_id", n => { ModelId = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Gemini31FlashImageRequest_model_id>(); } },
+                { "model_id", n => { ModelId = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Gemini31FlashImageModelId>(); } },
                 { "prompt", n => { Prompt = n.GetStringValue(); } },
                 { "resolution", n => { Resolution = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Gemini31FlashImageRequestResolution>(); } },
                 { "webhook", n => { Webhook = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookTarget>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookTarget.CreateFromDiscriminatorValue); } },
@@ -78,7 +78,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Gemini31FlashImageRequestAspectRatio>("aspect_ratio", AspectRatio);
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.ImageReference>("images", Images);
-            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Gemini31FlashImageRequest_model_id>("model_id", ModelId);
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Gemini31FlashImageModelId>("model_id", ModelId);
             writer.WriteStringValue("prompt", Prompt);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Gemini31FlashImageRequestResolution>("resolution", Resolution);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookTarget>("webhook", Webhook);

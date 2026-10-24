@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.Branches.Item.MergePreview
 {
     /// <summary>
-    /// Builds and executes requests for operations under \v1\convai\agents\{agentId}\branches\{branch-id}\merge-preview
+    /// Builds and executes requests for operations under \v1\convai\agents\{agentId}\branches\{branchId}\merge-preview
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class MergePreviewRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.Branches.Item
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public MergePreviewRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/convai/agents/{agentId}/branches/{branch%2Did}/merge-preview?target_branch_id={target_branch_id}{&force*}", pathParameters)
+        public MergePreviewRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/convai/agents/{agentId}/branches/{branchId}/merge-preview?target_branch_id={target_branch_id}{&force*,include_procedure_generated_workflow_elements*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.Branches.Item
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public MergePreviewRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/convai/agents/{agentId}/branches/{branch%2Did}/merge-preview?target_branch_id={target_branch_id}{&force*}", rawUrl)
+        public MergePreviewRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/convai/agents/{agentId}/branches/{branchId}/merge-preview?target_branch_id={target_branch_id}{&force*,include_procedure_generated_workflow_elements*}", rawUrl)
         {
         }
         /// <summary>
@@ -93,6 +93,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.Branches.Item
             /// <summary>When true, source branch changes always win conflicts regardless of timestamps</summary>
             [QueryParameter("force")]
             public bool? Force { get; set; }
+            /// <summary>Whether to include the workflow nodes and edges generated from structured procedures. When false, the workflow contains only authored elements.</summary>
+            [QueryParameter("include_procedure_generated_workflow_elements")]
+            public bool? IncludeProcedureGeneratedWorkflowElements { get; set; }
             /// <summary>The ID of the target branch to merge into.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

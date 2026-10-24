@@ -14,7 +14,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>&quot;List of event types to send via webhook. Options: transcript, audio, call_initiation_failure, unredacted_transcript, unredacted_audio.&quot;</summary>
+        /// <summary>List of event types to send via webhook. Options: transcript, audio, call_initiation_failure, answering_machine_detection, unredacted_transcript, unredacted_audio.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookEventType?>? Events { get; set; }
@@ -22,6 +22,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookEventType?> Events { get; set; }
 #endif
+        /// <summary>When true, JSON post-call transcription webhooks omit the turn-by-turn transcript. Analysis, metadata, and other conversation fields are still sent. Ignored for OpenTelemetry transcript format.</summary>
+        public bool? ExcludeTranscript { get; set; }
         /// <summary>The post_call_webhook_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -30,10 +32,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public string PostCallWebhookId { get; set; }
 #endif
-        /// <summary>&quot;DEPRECATED: Use &apos;events&apos; field instead. Whether to send audio data with post-call webhooks for ConvAI conversations&quot;</summary>
+        /// <summary>DEPRECATED: Use &apos;events&apos; field instead. Whether to send audio data with post-call webhooks for ConvAI conversations</summary>
         [Obsolete("")]
         public bool? SendAudio { get; set; }
-        /// <summary>The transcript_format property</summary>
+        /// <summary>Format for transcript webhooks.</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookTranscriptFormat? TranscriptFormat { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ConvAiWebhooks"/> and sets the default values.
@@ -41,6 +43,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public ConvAiWebhooks()
         {
             AdditionalData = new Dictionary<string, object>();
+            ExcludeTranscript = false;
+            TranscriptFormat = global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookTranscriptFormat.Json;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -61,6 +65,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "events", n => { Events = n.GetCollectionOfEnumValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookEventType>()?.AsList(); } },
+                { "exclude_transcript", n => { ExcludeTranscript = n.GetBoolValue(); } },
                 { "post_call_webhook_id", n => { PostCallWebhookId = n.GetStringValue(); } },
                 { "send_audio", n => { SendAudio = n.GetBoolValue(); } },
                 { "transcript_format", n => { TranscriptFormat = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookTranscriptFormat>(); } },
@@ -74,6 +79,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfEnumValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookEventType>("events", Events);
+            writer.WriteBoolValue("exclude_transcript", ExcludeTranscript);
             writer.WriteStringValue("post_call_webhook_id", PostCallWebhookId);
             writer.WriteBoolValue("send_audio", SendAudio);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookTranscriptFormat>("transcript_format", TranscriptFormat);

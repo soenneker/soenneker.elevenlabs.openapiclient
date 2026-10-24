@@ -15,7 +15,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Map of segment id to the partial update to apply to that segment.</summary>
+        /// <summary>Map of segment ID to the partial update to apply to that segment. At least one entry and at most 500.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingBulkSegmentUpdateRequestSegmentsProperty? Segments { get; set; }

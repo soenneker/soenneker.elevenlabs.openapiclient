@@ -15,13 +15,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Either &apos;like&apos; or &apos;dislike&apos; to indicate the feedback for the conversation.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.UserFeedbackScoreWrapper? Feedback { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.UserFeedbackScoreWrapper Feedback { get; set; }
-#endif
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.UserFeedbackScore? Feedback { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationFeedbackRequestModel"/> and sets the default values.
         /// </summary>
@@ -47,7 +41,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "feedback", n => { Feedback = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UserFeedbackScoreWrapper>(global::Soenneker.ElevenLabs.OpenApiClient.Models.UserFeedbackScoreWrapper.CreateFromDiscriminatorValue); } },
+                { "feedback", n => { Feedback = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UserFeedbackScore>(); } },
             };
         }
         /// <summary>
@@ -57,7 +51,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UserFeedbackScoreWrapper>("feedback", Feedback);
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UserFeedbackScore>("feedback", Feedback);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

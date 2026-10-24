@@ -30,6 +30,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentCallLimits CallLimits { get; set; }
 #endif
+        /// <summary>Time in seconds to wait for the upstream speech engine endpoint to respond before the attempt is abandoned and retried. Must be between 2 and 15 seconds.</summary>
+        public double? CascadeTimeoutSeconds { get; set; }
         /// <summary>The conversation property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -81,10 +83,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The tags property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateSpeechEngineRequestTags? Tags { get; set; }
+        public List<string>? Tags { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateSpeechEngineRequestTags Tags { get; set; }
+        public List<string> Tags { get; set; }
 #endif
         /// <summary>The tts property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -137,13 +139,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             {
                 { "asr", n => { Asr = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AsrConversationalConfig>(global::Soenneker.ElevenLabs.OpenApiClient.Models.AsrConversationalConfig.CreateFromDiscriminatorValue); } },
                 { "call_limits", n => { CallLimits = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentCallLimits>(global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentCallLimits.CreateFromDiscriminatorValue); } },
+                { "cascade_timeout_seconds", n => { CascadeTimeoutSeconds = n.GetDoubleValue(); } },
                 { "conversation", n => { Conversation = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationConfigInput>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationConfigInput.CreateFromDiscriminatorValue); } },
                 { "language", n => { Language = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "overrides", n => { Overrides = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechEngineConversationInitiationClientDataConfig>(global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechEngineConversationInitiationClientDataConfig.CreateFromDiscriminatorValue); } },
                 { "privacy", n => { Privacy = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PrivacyConfigInput>(global::Soenneker.ElevenLabs.OpenApiClient.Models.PrivacyConfigInput.CreateFromDiscriminatorValue); } },
                 { "speech_engine", n => { SpeechEngine = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechEngineConfig>(global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechEngineConfig.CreateFromDiscriminatorValue); } },
-                { "tags", n => { Tags = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateSpeechEngineRequestTags>(global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateSpeechEngineRequestTags.CreateFromDiscriminatorValue); } },
+                { "tags", n => { Tags = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "tts", n => { Tts = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TtsConversationalConfigInput>(global::Soenneker.ElevenLabs.OpenApiClient.Models.TtsConversationalConfigInput.CreateFromDiscriminatorValue); } },
                 { "turn", n => { Turn = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BaseTurnConfig>(global::Soenneker.ElevenLabs.OpenApiClient.Models.BaseTurnConfig.CreateFromDiscriminatorValue); } },
                 { "vad", n => { Vad = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.VadConfig>(global::Soenneker.ElevenLabs.OpenApiClient.Models.VadConfig.CreateFromDiscriminatorValue); } },
@@ -158,13 +161,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AsrConversationalConfig>("asr", Asr);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentCallLimits>("call_limits", CallLimits);
+            writer.WriteDoubleValue("cascade_timeout_seconds", CascadeTimeoutSeconds);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationConfigInput>("conversation", Conversation);
             writer.WriteStringValue("language", Language);
             writer.WriteStringValue("name", Name);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechEngineConversationInitiationClientDataConfig>("overrides", Overrides);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PrivacyConfigInput>("privacy", Privacy);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechEngineConfig>("speech_engine", SpeechEngine);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateSpeechEngineRequestTags>("tags", Tags);
+            writer.WriteCollectionOfPrimitiveValues<string>("tags", Tags);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TtsConversationalConfigInput>("tts", Tts);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BaseTurnConfig>("turn", Turn);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.VadConfig>("vad", Vad);

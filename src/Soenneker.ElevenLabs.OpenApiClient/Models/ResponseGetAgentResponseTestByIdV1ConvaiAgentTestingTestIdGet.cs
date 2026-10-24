@@ -47,15 +47,15 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             var result = new global::Soenneker.ElevenLabs.OpenApiClient.Models.ResponseGetAgentResponseTestByIdV1ConvaiAgentTestingTestIdGet();
-            if("GetResponseUnitTestResponseModel".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("llm".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.GetResponseUnitTestResponseModel = new global::Soenneker.ElevenLabs.OpenApiClient.Models.GetResponseUnitTestResponseModel();
             }
-            else if("GetSimulationTestResponseModel".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("simulation".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.GetSimulationTestResponseModel = new global::Soenneker.ElevenLabs.OpenApiClient.Models.GetSimulationTestResponseModel();
             }
-            else if("GetToolCallUnitTestResponseModel".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("tool".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.GetToolCallUnitTestResponseModel = new global::Soenneker.ElevenLabs.OpenApiClient.Models.GetToolCallUnitTestResponseModel();
             }

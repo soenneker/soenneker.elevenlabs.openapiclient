@@ -17,10 +17,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Keywords to boost prediction probability for</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AsrConversationalConfigOverrideKeywords? Keywords { get; set; }
+        public List<string>? Keywords { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AsrConversationalConfigOverrideKeywords Keywords { get; set; }
+        public List<string> Keywords { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.AsrConversationalConfigOverride"/> and sets the default values.
@@ -47,7 +47,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "keywords", n => { Keywords = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AsrConversationalConfigOverrideKeywords>(global::Soenneker.ElevenLabs.OpenApiClient.Models.AsrConversationalConfigOverrideKeywords.CreateFromDiscriminatorValue); } },
+                { "keywords", n => { Keywords = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
         }
         /// <summary>
@@ -57,7 +57,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AsrConversationalConfigOverrideKeywords>("keywords", Keywords);
+            writer.WriteCollectionOfPrimitiveValues<string>("keywords", Keywords);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

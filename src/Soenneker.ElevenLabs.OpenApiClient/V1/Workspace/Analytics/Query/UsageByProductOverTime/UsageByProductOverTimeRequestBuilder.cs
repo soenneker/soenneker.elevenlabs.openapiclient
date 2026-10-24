@@ -34,7 +34,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Workspace.Analytics.Query.UsageB
         {
         }
         /// <summary>
-        /// Returns credit usage broken down by product type over time. The response is a tabular structure with columns, column_types, column_units, and rows.
+        /// Returns credit usage broken down by product type over time. The response is a tabular structure with columns, column_types, column_units, and rows. Some id columns also get a display-name column, such as user_label or voice_name, appended after the existing columns.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceAnalyticsQueryResponseModel"/></returns>
         /// <param name="body">The request body</param>
@@ -59,7 +59,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Workspace.Analytics.Query.UsageB
             return await RequestAdapter.SendAsync<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceAnalyticsQueryResponseModel>(requestInfo, global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceAnalyticsQueryResponseModel.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Returns credit usage broken down by product type over time. The response is a tabular structure with columns, column_types, column_units, and rows.
+        /// Returns credit usage broken down by product type over time. The response is a tabular structure with columns, column_types, column_units, and rows. Some id columns also get a display-name column, such as user_label or voice_name, appended after the existing columns.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

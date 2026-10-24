@@ -23,7 +23,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppTemplateLocationParamDetails Location { get; set; }
 #endif
         /// <summary>The type property</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppTemplateLocationParam_type? Type { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.LocationType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppTemplateLocationParam"/> and sets the default values.
         /// </summary>
@@ -50,7 +50,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "location", n => { Location = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppTemplateLocationParamDetails>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppTemplateLocationParamDetails.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppTemplateLocationParam_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.LocationType>(); } },
             };
         }
         /// <summary>
@@ -61,7 +61,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppTemplateLocationParamDetails>("location", Location);
-            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppTemplateLocationParam_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.LocationType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

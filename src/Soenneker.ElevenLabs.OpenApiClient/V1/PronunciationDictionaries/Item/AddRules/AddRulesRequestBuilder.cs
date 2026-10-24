@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.ElevenLabs.OpenApiClient.V1.PronunciationDictionaries.Item.AddRules
 {
     /// <summary>
-    /// Builds and executes requests for operations under \v1\pronunciation-dictionaries\{dictionary-id}\add-rules
+    /// Builds and executes requests for operations under \v1\pronunciation-dictionaries\{pronunciationDictionaryId}\add-rules
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AddRulesRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.PronunciationDictionaries.Item.A
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AddRulesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/pronunciation-dictionaries/{dictionary%2Did}/add-rules", pathParameters)
+        public AddRulesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/pronunciation-dictionaries/{pronunciationDictionaryId}/add-rules", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.PronunciationDictionaries.Item.A
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AddRulesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/pronunciation-dictionaries/{dictionary%2Did}/add-rules", rawUrl)
+        public AddRulesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/pronunciation-dictionaries/{pronunciationDictionaryId}/add-rules", rawUrl)
         {
         }
         /// <summary>

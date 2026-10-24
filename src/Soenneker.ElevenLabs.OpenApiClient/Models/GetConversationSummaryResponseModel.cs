@@ -23,13 +23,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public string AgentId { get; set; }
 #endif
         /// <summary>The call_successful property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.EvaluationSuccessResultWrapper? CallSuccessful { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.EvaluationSuccessResultWrapper CallSuccessful { get; set; }
-#endif
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.EvaluationSuccessResult? CallSuccessful { get; set; }
         /// <summary>Short generated title for the conversation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -103,7 +97,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "agent_id", n => { AgentId = n.GetStringValue(); } },
-                { "call_successful", n => { CallSuccessful = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.EvaluationSuccessResultWrapper>(global::Soenneker.ElevenLabs.OpenApiClient.Models.EvaluationSuccessResultWrapper.CreateFromDiscriminatorValue); } },
+                { "call_successful", n => { CallSuccessful = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.EvaluationSuccessResult>(); } },
                 { "call_summary_title", n => { CallSummaryTitle = n.GetStringValue(); } },
                 { "conversation_id", n => { ConversationId = n.GetStringValue(); } },
                 { "message_count", n => { MessageCount = n.GetIntValue(); } },
@@ -122,7 +116,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("agent_id", AgentId);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.EvaluationSuccessResultWrapper>("call_successful", CallSuccessful);
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.EvaluationSuccessResult>("call_successful", CallSuccessful);
             writer.WriteStringValue("call_summary_title", CallSummaryTitle);
             writer.WriteStringValue("conversation_id", ConversationId);
             writer.WriteIntValue("message_count", MessageCount);

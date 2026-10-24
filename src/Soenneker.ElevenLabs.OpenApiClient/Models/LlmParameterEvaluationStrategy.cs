@@ -23,7 +23,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public string Description { get; set; }
 #endif
         /// <summary>The type property</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmParameterEvaluationStrategy_type? Type { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmParameterEvaluationStrategyType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmParameterEvaluationStrategy"/> and sets the default values.
         /// </summary>
@@ -50,7 +50,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "description", n => { Description = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmParameterEvaluationStrategy_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmParameterEvaluationStrategyType>(); } },
             };
         }
         /// <summary>
@@ -61,7 +61,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("description", Description);
-            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmParameterEvaluationStrategy_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmParameterEvaluationStrategyType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

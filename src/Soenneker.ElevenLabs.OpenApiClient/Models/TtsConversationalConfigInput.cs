@@ -16,6 +16,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The agent_output_audio_format property</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.TtsOutputFormat? AgentOutputAudioFormat { get; set; }
+        /// <summary>Optional TTS effects spec: filter preset, distance (proximity EQ), and environment (convolution reverb).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.EffectsSpecInput? AudioEffects { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.EffectsSpecInput AudioEffects { get; set; }
+#endif
         /// <summary>Opt-in to SSML phoneme tag handling for V3 models. When enabled, phoneme tags (inline and from pronunciation dictionaries) are parsed into inline IPA before being sent to the model.</summary>
         public bool? EnablePhonemeTags { get; set; }
         /// <summary>When enabled, applies expressive audio tags prompt. Automatically disabled for non-v3 models.</summary>
@@ -54,7 +62,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.SupportedVoice> SupportedVoices { get; set; }
 #endif
-        /// <summary>Method for converting numbers to words before sending to TTS</summary>
+        /// <summary>Method for converting numbers to words before converting text to speech. If set to SYSTEM_PROMPT, the system prompt will be updated to include normalization instructions. If set to ELEVENLABS, the text will be normalized after generation, incurring slight additional latency.</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.TextNormalisationType? TextNormalisationType { get; set; }
         /// <summary>The voice ID to use for TTS</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -75,6 +83,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             SimilarityBoost = 0.8;
             Speed = 1.0;
             Stability = 0.5;
+            TextNormalisationType = global::Soenneker.ElevenLabs.OpenApiClient.Models.TextNormalisationType.SystemPrompt;
             VoiceId = "cjVigY5qzO86Huf0OWal";
         }
         /// <summary>
@@ -96,6 +105,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "agent_output_audio_format", n => { AgentOutputAudioFormat = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TtsOutputFormat>(); } },
+                { "audio_effects", n => { AudioEffects = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.EffectsSpecInput>(global::Soenneker.ElevenLabs.OpenApiClient.Models.EffectsSpecInput.CreateFromDiscriminatorValue); } },
                 { "enable_phoneme_tags", n => { EnablePhonemeTags = n.GetBoolValue(); } },
                 { "expressive_mode", n => { ExpressiveMode = n.GetBoolValue(); } },
                 { "model_id", n => { ModelId = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TtsConversationalModel>(); } },
@@ -118,6 +128,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TtsOutputFormat>("agent_output_audio_format", AgentOutputAudioFormat);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.EffectsSpecInput>("audio_effects", AudioEffects);
             writer.WriteBoolValue("enable_phoneme_tags", EnablePhonemeTags);
             writer.WriteBoolValue("expressive_mode", ExpressiveMode);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TtsConversationalModel>("model_id", ModelId);

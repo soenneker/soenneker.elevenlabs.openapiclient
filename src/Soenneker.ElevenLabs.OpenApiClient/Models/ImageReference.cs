@@ -64,7 +64,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.StaticAssetReference StaticAssetReference { get; set; }
 #endif
-        /// <summary>Union discriminator</summary>
+        /// <summary>The type property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Type { get; set; }
@@ -93,7 +93,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             {
                 result.GenerationReference = new global::Soenneker.ElevenLabs.OpenApiClient.Models.GenerationReference();
             }
-            else if("InlineImageReference".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("inline_base64".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.InlineImageReference = new global::Soenneker.ElevenLabs.OpenApiClient.Models.InlineImageReference();
             }

@@ -14,12 +14,33 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The ID of the knowledge base</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Id { get; set; }
+#nullable restore
+#else
+        public string Id { get; set; }
+#endif
+        /// <summary>The name of the knowledge base</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Name { get; set; }
+#nullable restore
+#else
+        public string Name { get; set; }
+#endif
+        /// <summary>The type of the knowledge base</summary>
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeBaseDocumentType? Type { get; set; }
+        /// <summary>The usage mode of the knowledge base</summary>
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.DocumentUsageModeEnum? UsageMode { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeBaseLocator"/> and sets the default values.
         /// </summary>
         public KnowledgeBaseLocator()
         {
             AdditionalData = new Dictionary<string, object>();
+            UsageMode = global::Soenneker.ElevenLabs.OpenApiClient.Models.DocumentUsageModeEnum.Auto;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -39,6 +60,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "id", n => { Id = n.GetStringValue(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeBaseDocumentType>(); } },
+                { "usage_mode", n => { UsageMode = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DocumentUsageModeEnum>(); } },
             };
         }
         /// <summary>
@@ -48,6 +73,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("id", Id);
+            writer.WriteStringValue("name", Name);
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeBaseDocumentType>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DocumentUsageModeEnum>("usage_mode", UsageMode);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

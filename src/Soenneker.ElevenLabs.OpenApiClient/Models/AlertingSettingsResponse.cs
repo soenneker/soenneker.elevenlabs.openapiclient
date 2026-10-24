@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.ElevenLabs.OpenApiClient.Models
 {
     /// <summary>
-    /// &quot;Customer-facing view of alerting settings. Unlike AdminAlertingSettingsResponse,it has no internal_notifiers field: those are ElevenLabs-internal deliverychannels whose URLs must never be returned outside the admin API.&quot;
+    /// Customer-facing view of alerting settings. Unlike AdminAlertingSettingsResponse,it has no internal_notifiers field: those are ElevenLabs-internal deliverychannels whose URLs must never be returned outside the admin API.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AlertingSettingsResponse : IAdditionalDataHolder, IParsable
@@ -28,10 +28,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The notifiers property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.AlertingWebhookNotifierResponse>? Notifiers { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.AlertingSettingsResponseNotifiersItem>? Notifiers { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.AlertingWebhookNotifierResponse> Notifiers { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.AlertingSettingsResponseNotifiersItem> Notifiers { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.AlertingSettingsResponse"/> and sets the default values.
@@ -60,7 +60,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             {
                 { "auto_resolve_after_inactive_minutes", n => { AutoResolveAfterInactiveMinutes = n.GetIntValue(); } },
                 { "monitor_configs", n => { MonitorConfigs = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AlertingSettingsResponseMonitorConfigsProperty>(global::Soenneker.ElevenLabs.OpenApiClient.Models.AlertingSettingsResponseMonitorConfigsProperty.CreateFromDiscriminatorValue); } },
-                { "notifiers", n => { Notifiers = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.AlertingWebhookNotifierResponse>(global::Soenneker.ElevenLabs.OpenApiClient.Models.AlertingWebhookNotifierResponse.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "notifiers", n => { Notifiers = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.AlertingSettingsResponseNotifiersItem>(global::Soenneker.ElevenLabs.OpenApiClient.Models.AlertingSettingsResponseNotifiersItem.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -72,7 +72,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("auto_resolve_after_inactive_minutes", AutoResolveAfterInactiveMinutes);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AlertingSettingsResponseMonitorConfigsProperty>("monitor_configs", MonitorConfigs);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.AlertingWebhookNotifierResponse>("notifiers", Notifiers);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.AlertingSettingsResponseNotifiersItem>("notifiers", Notifiers);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

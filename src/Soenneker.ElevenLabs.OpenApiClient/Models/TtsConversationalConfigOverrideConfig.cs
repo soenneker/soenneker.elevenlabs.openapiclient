@@ -24,6 +24,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public bool? Speed { get; set; }
         /// <summary>Whether to allow overriding the stability field.</summary>
         public bool? Stability { get; set; }
+        /// <summary>Whether to allow overriding the supported_voices field.</summary>
+        public bool? SupportedVoices { get; set; }
         /// <summary>Whether to allow overriding the voice_id field.</summary>
         public bool? VoiceId { get; set; }
         /// <summary>
@@ -37,6 +39,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             SimilarityBoost = false;
             Speed = false;
             Stability = false;
+            SupportedVoices = false;
             VoiceId = false;
         }
         /// <summary>
@@ -62,6 +65,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "similarity_boost", n => { SimilarityBoost = n.GetBoolValue(); } },
                 { "speed", n => { Speed = n.GetBoolValue(); } },
                 { "stability", n => { Stability = n.GetBoolValue(); } },
+                { "supported_voices", n => { SupportedVoices = n.GetBoolValue(); } },
                 { "voice_id", n => { VoiceId = n.GetBoolValue(); } },
             };
         }
@@ -77,6 +81,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteBoolValue("similarity_boost", SimilarityBoost);
             writer.WriteBoolValue("speed", Speed);
             writer.WriteBoolValue("stability", Stability);
+            writer.WriteBoolValue("supported_voices", SupportedVoices);
             writer.WriteBoolValue("voice_id", VoiceId);
             writer.WriteAdditionalData(AdditionalData);
         }

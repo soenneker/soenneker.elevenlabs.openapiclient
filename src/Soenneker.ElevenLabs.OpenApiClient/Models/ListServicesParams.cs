@@ -23,7 +23,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.ListServicesParamsListKwargsProperty ListKwargs { get; set; }
 #endif
         /// <summary>The smb_tool_type property</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ListServicesParams_smb_tool_type? SmbToolType { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ListServicesSmbToolType? SmbToolType { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ListServicesParams"/> and sets the default values.
         /// </summary>
@@ -50,7 +50,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "list_kwargs", n => { ListKwargs = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ListServicesParamsListKwargsProperty>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ListServicesParamsListKwargsProperty.CreateFromDiscriminatorValue); } },
-                { "smb_tool_type", n => { SmbToolType = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ListServicesParams_smb_tool_type>(); } },
+                { "smb_tool_type", n => { SmbToolType = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ListServicesSmbToolType>(); } },
             };
         }
         /// <summary>
@@ -61,7 +61,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ListServicesParamsListKwargsProperty>("list_kwargs", ListKwargs);
-            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ListServicesParams_smb_tool_type>("smb_tool_type", SmbToolType);
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ListServicesSmbToolType>("smb_tool_type", SmbToolType);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

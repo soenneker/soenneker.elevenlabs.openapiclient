@@ -48,6 +48,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public string ParentTopicId { get; set; }
 #endif
+        /// <summary>Success rate across the topic&apos;s evaluation criteria, weighted by scored conversations. Returned regardless of include_evaluation_criteria.</summary>
+        public double? SuccessRate { get; set; }
         /// <summary>The topic_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -90,6 +92,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "label", n => { Label = n.GetStringValue(); } },
                 { "metrics", n => { Metrics = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TopicMetricsAggregate>(global::Soenneker.ElevenLabs.OpenApiClient.Models.TopicMetricsAggregate.CreateFromDiscriminatorValue); } },
                 { "parent_topic_id", n => { ParentTopicId = n.GetStringValue(); } },
+                { "success_rate", n => { SuccessRate = n.GetDoubleValue(); } },
                 { "topic_id", n => { TopicId = n.GetStringValue(); } },
                 { "x_2d", n => { X2d = n.GetDoubleValue(); } },
                 { "y_2d", n => { Y2d = n.GetDoubleValue(); } },
@@ -107,6 +110,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteStringValue("label", Label);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TopicMetricsAggregate>("metrics", Metrics);
             writer.WriteStringValue("parent_topic_id", ParentTopicId);
+            writer.WriteDoubleValue("success_rate", SuccessRate);
             writer.WriteStringValue("topic_id", TopicId);
             writer.WriteDoubleValue("x_2d", X2d);
             writer.WriteDoubleValue("y_2d", Y2d);

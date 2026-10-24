@@ -7,13 +7,40 @@ using System.IO;
 using System;
 namespace Soenneker.ElevenLabs.OpenApiClient.Models
 {
+    /// <summary>
+    /// An optionally-sized icon for display in a user interface (2025-11-25+).
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class Icon : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The mimeType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? MimeType { get; set; }
+#nullable restore
+#else
+        public string MimeType { get; set; }
+#endif
+        /// <summary>The sizes property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? Sizes { get; set; }
+#nullable restore
+#else
+        public List<string> Sizes { get; set; }
+#endif
+        /// <summary>The src property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Src { get; set; }
+#nullable restore
+#else
+        public string Src { get; set; }
+#endif
+        /// <summary>The theme property</summary>
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.IconTheme? Theme { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.Icon"/> and sets the default values.
         /// </summary>
@@ -39,6 +66,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "mimeType", n => { MimeType = n.GetStringValue(); } },
+                { "sizes", n => { Sizes = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "src", n => { Src = n.GetStringValue(); } },
+                { "theme", n => { Theme = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.IconTheme>(); } },
             };
         }
         /// <summary>
@@ -48,6 +79,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("mimeType", MimeType);
+            writer.WriteCollectionOfPrimitiveValues<string>("sizes", Sizes);
+            writer.WriteStringValue("src", Src);
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.IconTheme>("theme", Theme);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.ElevenLabs.OpenApiClient.Models
 {
-    /// <summary>&quot;Role to grant to the target: one of &apos;admin&apos;, &apos;editor&apos;, &apos;commenter&apos;, or &apos;viewer&apos;.&quot;</summary>
+    /// <summary>Role to grant to the target: one of &apos;admin&apos;, &apos;editor&apos;, &apos;commenter&apos;, or &apos;viewer&apos;.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum BodyShareWorkspaceResourceV1WorkspaceResourcesResourceIdSharePostRole
     {

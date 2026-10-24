@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.ElevenLabs.OpenApiClient.Models
 {
     /// <summary>
-    /// &quot;The result of a target-translation edit: the updated segment and the new revision.&quot;
+    /// The result of a target-translation edit: the updated segment and the new revision.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class DubbingTargetSegmentUpdateResponse : IAdditionalDataHolder, IParsable
@@ -17,7 +17,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The target&apos;s revision after this edit.</summary>
         public int? Revision { get; set; }
-        /// <summary>&quot;One segment of a target transcript: a source segment plus its translation.&quot;</summary>
+        /// <summary>The target segment in its updated state.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingTargetTranscriptSegment? Segment { get; set; }

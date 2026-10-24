@@ -14,7 +14,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The type property</summary>
+        /// <summary>The type of feedback to collect at the end of the conversation</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetEndFeedbackType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetEndFeedbackConfig"/> and sets the default values.
@@ -22,6 +22,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public WidgetEndFeedbackConfig()
         {
             AdditionalData = new Dictionary<string, object>();
+            Type = global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetEndFeedbackType.Rating;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

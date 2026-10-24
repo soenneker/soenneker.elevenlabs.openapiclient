@@ -23,7 +23,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.Llm?> Order { get; set; }
 #endif
         /// <summary>The preference property</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BackupLlmOverride_preference? Preference { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.OverrideValuePreference? Preference { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.BackupLlmOverride"/> and sets the default values.
         /// </summary>
@@ -50,7 +50,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "order", n => { Order = n.GetCollectionOfEnumValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.Llm>()?.AsList(); } },
-                { "preference", n => { Preference = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BackupLlmOverride_preference>(); } },
+                { "preference", n => { Preference = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.OverrideValuePreference>(); } },
             };
         }
         /// <summary>
@@ -61,7 +61,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfEnumValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.Llm>("order", Order);
-            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BackupLlmOverride_preference>("preference", Preference);
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.OverrideValuePreference>("preference", Preference);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

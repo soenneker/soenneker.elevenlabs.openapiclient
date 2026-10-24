@@ -24,7 +24,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public string Key { get; set; }
 #endif
         /// <summary>The type property</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomSipHeaderWithDynamicVariable_type? Type { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.DynamicType? Type { get; set; }
         /// <summary>The dynamic variable name to resolve</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -59,7 +59,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "key", n => { Key = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomSipHeaderWithDynamicVariable_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DynamicType>(); } },
                 { "value", n => { Value = n.GetStringValue(); } },
             };
         }
@@ -71,7 +71,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("key", Key);
-            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomSipHeaderWithDynamicVariable_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DynamicType>("type", Type);
             writer.WriteStringValue("value", Value);
             writer.WriteAdditionalData(AdditionalData);
         }

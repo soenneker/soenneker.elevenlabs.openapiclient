@@ -15,7 +15,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Duration of the source media in seconds.</summary>
+        /// <summary>Duration of the source media, in seconds.</summary>
         public double? DurationS { get; set; }
         /// <summary>Original filename of the uploaded source media (null for URL sources).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -27,7 +27,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #endif
         /// <summary>Whether the source media contains a video stream.</summary>
         public bool? HasVideo { get; set; }
-        /// <summary>MIME type of the uploaded source media.</summary>
+        /// <summary>MIME type of the uploaded source media (null for URL sources).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? MimeType { get; set; }

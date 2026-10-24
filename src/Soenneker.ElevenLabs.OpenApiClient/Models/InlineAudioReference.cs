@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.ElevenLabs.OpenApiClient.Models
 {
     /// <summary>
-    /// &quot;Audio passed inline as base64. The audio is stored as an ephemeralasset with no guaranteed retention: it may be deleted at any time afterthe generation completes. To keep an input and reuse it acrossgenerations, upload it via the assets API (`POST /v1/assets`) and passan `asset` reference instead.&quot;
+    /// Audio passed inline as base64. The audio is stored as an ephemeralasset with no guaranteed retention: it may be deleted at any time afterthe generation completes. To keep an input and reuse it acrossgenerations, upload it via the assets API (`POST /v1/assets`) and passan `asset` reference instead.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class InlineAudioReference : IParsable
@@ -24,7 +24,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The MIME type of the encoded audio.</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.InlineAudioReferenceMimeType? MimeType { get; set; }
         /// <summary>The type property</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.InlineAudioReference_type? Type { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.InlineBase64Type? Type { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -45,7 +45,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             {
                 { "content_base64", n => { ContentBase64 = n.GetStringValue(); } },
                 { "mime_type", n => { MimeType = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.InlineAudioReferenceMimeType>(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.InlineAudioReference_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.InlineBase64Type>(); } },
             };
         }
         /// <summary>
@@ -57,7 +57,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("content_base64", ContentBase64);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.InlineAudioReferenceMimeType>("mime_type", MimeType);
-            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.InlineAudioReference_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.InlineBase64Type>("type", Type);
         }
     }
 }

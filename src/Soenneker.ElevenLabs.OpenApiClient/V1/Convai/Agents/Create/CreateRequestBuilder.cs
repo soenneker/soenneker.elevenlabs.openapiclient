@@ -95,7 +95,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Create
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class CreateRequestBuilderPostQueryParameters 
         {
-            /// <summary>&quot;Deprecated: all agents are versioned. This parameter is ignored.&quot;</summary>
+            /// <summary>Deprecated: all agents are versioned. This parameter is ignored.</summary>
             [Obsolete("")]
             [QueryParameter("enable_versioning")]
             public bool? EnableVersioning { get; set; }

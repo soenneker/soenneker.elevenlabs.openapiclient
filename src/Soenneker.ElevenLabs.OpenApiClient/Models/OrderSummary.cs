@@ -40,7 +40,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #endif
         /// <summary>Whether this is a sandbox order that auto-progresses without producer intervention.</summary>
         public bool? Sandbox { get; set; }
-        /// <summary>The state property</summary>
+        /// <summary>The current state of the order.</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.OrderState? State { get; set; }
         /// <summary>The timestamp when the order was submitted, if applicable.</summary>
         public DateTimeOffset? SubmittedAt { get; set; }

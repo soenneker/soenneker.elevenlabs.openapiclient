@@ -34,13 +34,13 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #endif
         /// <summary>When enabled, the curated default terms for interruption_ignore_term_languages are used in addition to interruption_ignore_terms.</summary>
         public bool? MergeWithDefaultIgnoreTerms { get; set; }
-        /// <summary>The mode property</summary>
+        /// <summary>The mode of turn detection</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.TurnMode? Mode { get; set; }
-        /// <summary>When enabled, if VAD detects no speech, attempts to re-transcribe accumulated audio at turn timeout. Disables silence discount billing for affected turns.</summary>
+        /// <summary>When enabled, if VAD detects no speech, attempts to re-transcribe accumulated audio at turn timeout. Disables silence discount billing while enabled for the active agent or workflow node.</summary>
         public bool? RetranscribeOnTurnTimeout { get; set; }
         /// <summary>Maximum wait time since the user last spoke before terminating the call</summary>
         public double? SilenceEndCallTimeout { get; set; }
-        /// <summary>Configuration for soft timeout functionality during LLM response generation.</summary>
+        /// <summary>Configuration for soft timeout functionality. Provides immediate feedback during longer LLM responses.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.SoftTimeoutConfig? SoftTimeoutConfig { get; set; }
@@ -50,11 +50,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #endif
         /// <summary>When enabled, starts generating LLM responses during silence before full turn confidence is reached, reducing perceived latency. May increase LLM costs.</summary>
         public bool? SpeculativeTurn { get; set; }
-        /// <summary>Controls if the agent should be more patient when user is spelling numbers and named entities.</summary>
+        /// <summary>Controls if the agent should be more patient when user is spelling numbers and named entities. Auto = model based, Off = never wait extra</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.SpellingPatience? SpellingPatience { get; set; }
         /// <summary>When interruptions are disabled, still transcribe what the user says so it can carry into the next turn. When off, user speech during a non-interruptible turn is ignored and won&apos;t trigger a turn.</summary>
         public bool? TranscribeOnDisabledInterruptions { get; set; }
-        /// <summary>Agent&apos;s eagerness to respond. Higher values make agent wait for higher turn probability.</summary>
+        /// <summary>Controls how eager the agent is to respond. Low = less eager (waits longer), Standard = default eagerness, High = more eager (responds sooner)</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.TurnEagerness? TurnEagerness { get; set; }
         /// <summary>Version of the turn detection model to use.</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.TurnModel? TurnModel { get; set; }
@@ -67,10 +67,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             AdditionalData = new Dictionary<string, object>();
             MergeWithDefaultIgnoreTerms = false;
+            Mode = global::Soenneker.ElevenLabs.OpenApiClient.Models.TurnMode.Turn;
             RetranscribeOnTurnTimeout = false;
             SilenceEndCallTimeout = -1;
             SpeculativeTurn = false;
+            SpellingPatience = global::Soenneker.ElevenLabs.OpenApiClient.Models.SpellingPatience.Auto;
             TranscribeOnDisabledInterruptions = false;
+            TurnEagerness = global::Soenneker.ElevenLabs.OpenApiClient.Models.TurnEagerness.Normal;
+            TurnModel = global::Soenneker.ElevenLabs.OpenApiClient.Models.TurnModel.TurnV3;
             TurnTimeout = 7.0;
         }
         /// <summary>

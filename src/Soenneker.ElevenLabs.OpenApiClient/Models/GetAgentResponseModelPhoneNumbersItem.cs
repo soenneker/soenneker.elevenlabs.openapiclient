@@ -51,11 +51,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             {
                 result.GetPhoneNumberExotelResponseModel = new global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPhoneNumberExotelResponseModel();
             }
-            else if("GetPhoneNumberSipTrunkResponseModel".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("sip_trunk".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.GetPhoneNumberSipTrunkResponseModel = new global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPhoneNumberSipTrunkResponseModel();
             }
-            else if("GetPhoneNumberTwilioResponseModel".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("twilio".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.GetPhoneNumberTwilioResponseModel = new global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPhoneNumberTwilioResponseModel();
             }

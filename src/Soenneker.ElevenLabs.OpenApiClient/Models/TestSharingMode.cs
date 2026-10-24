@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.ElevenLabs.OpenApiClient.Models
 {
+    /// <summary>Filter test visibility. Use `shared_with_me` to return only tests/folders shared with the current user that they did not create.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum TestSharingMode
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "all")]
         #pragma warning disable CS1591

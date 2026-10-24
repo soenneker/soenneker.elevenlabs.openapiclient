@@ -6,6 +6,7 @@ using Microsoft.Kiota.Abstractions;
 using Soenneker.ElevenLabs.OpenApiClient.Models;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Voices.Accents;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Voices.Add;
+using Soenneker.ElevenLabs.OpenApiClient.V1.Voices.Collections;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Voices.Item;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Voices.Pvc;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Voices.Settings;
@@ -31,6 +32,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Voices
         public global::Soenneker.ElevenLabs.OpenApiClient.V1.Voices.Add.AddRequestBuilder Add
         {
             get => new global::Soenneker.ElevenLabs.OpenApiClient.V1.Voices.Add.AddRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The collections property</summary>
+        public global::Soenneker.ElevenLabs.OpenApiClient.V1.Voices.Collections.CollectionsRequestBuilder Collections
+        {
+            get => new global::Soenneker.ElevenLabs.OpenApiClient.V1.Voices.Collections.CollectionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The pvc property</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.V1.Voices.Pvc.PvcRequestBuilder Pvc

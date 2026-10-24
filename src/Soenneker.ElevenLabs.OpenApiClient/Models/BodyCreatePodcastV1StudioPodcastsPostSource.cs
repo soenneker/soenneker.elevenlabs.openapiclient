@@ -8,18 +8,18 @@ using System;
 namespace Soenneker.ElevenLabs.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreatePodcastV1StudioPodcastsPostSourceBranch3"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.PodcastTextSource"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.PodcastUrlSource"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.PodcastTextSource"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.PodcastUrlSource"/>, List&lt;global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreatePodcastV1StudioPodcastsPostSourceAnyOf3Item&gt;
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class BodyCreatePodcastV1StudioPodcastsPostSource : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreatePodcastV1StudioPodcastsPostSourceBranch3"/></summary>
+        /// <summary>Composed type representation for type List&lt;global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreatePodcastV1StudioPodcastsPostSourceAnyOf3Item&gt;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreatePodcastV1StudioPodcastsPostSourceBranch3? BodyCreatePodcastV1StudioPodcastsPostSourceBranch3 { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreatePodcastV1StudioPodcastsPostSourceAnyOf3Item>? BodyCreatePodcastV1StudioPodcastsPostSourceAnyOf3Item { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreatePodcastV1StudioPodcastsPostSourceBranch3 BodyCreatePodcastV1StudioPodcastsPostSourceBranch3 { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreatePodcastV1StudioPodcastsPostSourceAnyOf3Item> BodyCreatePodcastV1StudioPodcastsPostSourceAnyOf3Item { get; set; }
 #endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.PodcastTextSource"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -46,9 +46,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var result = new global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreatePodcastV1StudioPodcastsPostSource();
-            result.BodyCreatePodcastV1StudioPodcastsPostSourceBranch3 = new global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreatePodcastV1StudioPodcastsPostSourceBranch3();
-            result.PodcastTextSource = new global::Soenneker.ElevenLabs.OpenApiClient.Models.PodcastTextSource();
-            result.PodcastUrlSource = new global::Soenneker.ElevenLabs.OpenApiClient.Models.PodcastUrlSource();
+            if(parseNode.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreatePodcastV1StudioPodcastsPostSourceAnyOf3Item>(global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreatePodcastV1StudioPodcastsPostSourceAnyOf3Item.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreatePodcastV1StudioPodcastsPostSourceAnyOf3Item> bodyCreatePodcastV1StudioPodcastsPostSourceAnyOf3ItemValue)
+            {
+                result.BodyCreatePodcastV1StudioPodcastsPostSourceAnyOf3Item = bodyCreatePodcastV1StudioPodcastsPostSourceAnyOf3ItemValue;
+            }
+            else {
+                result.PodcastTextSource = new global::Soenneker.ElevenLabs.OpenApiClient.Models.PodcastTextSource();
+                result.PodcastUrlSource = new global::Soenneker.ElevenLabs.OpenApiClient.Models.PodcastUrlSource();
+            }
             return result;
         }
         /// <summary>
@@ -57,9 +62,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(BodyCreatePodcastV1StudioPodcastsPostSourceBranch3 != null || PodcastTextSource != null || PodcastUrlSource != null)
+            if(PodcastTextSource != null || PodcastUrlSource != null)
             {
-                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(BodyCreatePodcastV1StudioPodcastsPostSourceBranch3, PodcastTextSource, PodcastUrlSource);
+                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(PodcastTextSource, PodcastUrlSource);
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -70,7 +75,13 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreatePodcastV1StudioPodcastsPostSourceBranch3>(null, BodyCreatePodcastV1StudioPodcastsPostSourceBranch3, PodcastTextSource, PodcastUrlSource);
+            if(BodyCreatePodcastV1StudioPodcastsPostSourceAnyOf3Item != null)
+            {
+                writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreatePodcastV1StudioPodcastsPostSourceAnyOf3Item>(null, BodyCreatePodcastV1StudioPodcastsPostSourceAnyOf3Item);
+            }
+            else {
+                writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PodcastTextSource>(null, PodcastTextSource, PodcastUrlSource);
+            }
         }
     }
 }

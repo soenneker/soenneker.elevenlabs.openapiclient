@@ -172,11 +172,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Productions.Orders
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("status")]
-            public string? Status { get; set; }
+            public global::Soenneker.ElevenLabs.OpenApiClient.Models.OrderState[]? Status { get; set; }
 #nullable restore
 #else
             [QueryParameter("status")]
-            public string Status { get; set; }
+            public global::Soenneker.ElevenLabs.OpenApiClient.Models.OrderState[] Status { get; set; }
 #endif
         }
     }

@@ -25,18 +25,18 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Optional, metadata to add to the created voice. Defaults to None.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateANewVoiceFromVoicePreviewV1TextToVoicePostLabels? Labels { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateANewVoiceFromVoicePreviewV1TextToVoicePostLabelsAnyOf1? Labels { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateANewVoiceFromVoicePreviewV1TextToVoicePostLabels Labels { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateANewVoiceFromVoicePreviewV1TextToVoicePostLabelsAnyOf1 Labels { get; set; }
 #endif
         /// <summary>List of voice ids that the user has played but not selected. Used for RLHF.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateANewVoiceFromVoicePreviewV1TextToVoicePostPlayedNotSelectedVoiceIds? PlayedNotSelectedVoiceIds { get; set; }
+        public List<string>? PlayedNotSelectedVoiceIds { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateANewVoiceFromVoicePreviewV1TextToVoicePostPlayedNotSelectedVoiceIds PlayedNotSelectedVoiceIds { get; set; }
+        public List<string> PlayedNotSelectedVoiceIds { get; set; }
 #endif
         /// <summary>Description to use for the created voice.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -80,8 +80,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "generated_voice_id", n => { GeneratedVoiceId = n.GetStringValue(); } },
-                { "labels", n => { Labels = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateANewVoiceFromVoicePreviewV1TextToVoicePostLabels>(global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateANewVoiceFromVoicePreviewV1TextToVoicePostLabels.CreateFromDiscriminatorValue); } },
-                { "played_not_selected_voice_ids", n => { PlayedNotSelectedVoiceIds = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateANewVoiceFromVoicePreviewV1TextToVoicePostPlayedNotSelectedVoiceIds>(global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateANewVoiceFromVoicePreviewV1TextToVoicePostPlayedNotSelectedVoiceIds.CreateFromDiscriminatorValue); } },
+                { "labels", n => { Labels = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateANewVoiceFromVoicePreviewV1TextToVoicePostLabelsAnyOf1>(global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateANewVoiceFromVoicePreviewV1TextToVoicePostLabelsAnyOf1.CreateFromDiscriminatorValue); } },
+                { "played_not_selected_voice_ids", n => { PlayedNotSelectedVoiceIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "voice_description", n => { VoiceDescription = n.GetStringValue(); } },
                 { "voice_name", n => { VoiceName = n.GetStringValue(); } },
             };
@@ -94,8 +94,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("generated_voice_id", GeneratedVoiceId);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateANewVoiceFromVoicePreviewV1TextToVoicePostLabels>("labels", Labels);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateANewVoiceFromVoicePreviewV1TextToVoicePostPlayedNotSelectedVoiceIds>("played_not_selected_voice_ids", PlayedNotSelectedVoiceIds);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateANewVoiceFromVoicePreviewV1TextToVoicePostLabelsAnyOf1>("labels", Labels);
+            writer.WriteCollectionOfPrimitiveValues<string>("played_not_selected_voice_ids", PlayedNotSelectedVoiceIds);
             writer.WriteStringValue("voice_description", VoiceDescription);
             writer.WriteStringValue("voice_name", VoiceName);
             writer.WriteAdditionalData(AdditionalData);

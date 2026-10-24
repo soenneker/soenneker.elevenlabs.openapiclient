@@ -16,7 +16,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Whether to apply the privacy settings to existing conversations</summary>
         public bool? ApplyToExistingConversations { get; set; }
-        /// <summary>The conversation_history_redaction property</summary>
+        /// <summary>Config for PII redaction in the conversation history</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryRedactionConfig? ConversationHistoryRedaction { get; set; }

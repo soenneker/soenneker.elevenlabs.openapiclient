@@ -14,7 +14,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>When enabled, users may attach images or PDFs in chat when the LLM supports multimodal input.</summary>
+        /// <summary>When enabled, users may attach images, PDFs, or text files in chat when the LLM supports multimodal input.</summary>
         public bool? Enabled { get; set; }
         /// <summary>Number of most-recent files kept in memory during a conversation. Older files are summarized and their bytes freed.</summary>
         public int? MaxFilesInMemory { get; set; }

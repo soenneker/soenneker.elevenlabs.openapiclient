@@ -84,6 +84,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public string EndCallText { get; set; }
 #endif
+        /// <summary>Whether to ask the user to confirm before ending a chat or call</summary>
+        public bool? EndConfirmationEnabled { get; set; }
         /// <summary>Configuration for feedback collected at the end of the conversation</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -92,7 +94,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetEndFeedbackConfig EndFeedback { get; set; }
 #endif
-        /// <summary>The expandable property</summary>
+        /// <summary>Whether the widget is expandable</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetExpandable? Expandable { get; set; }
         /// <summary>The expand text of the widget</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -102,9 +104,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public string ExpandText { get; set; }
 #endif
-        /// <summary>The feedback_mode property</summary>
+        /// <summary>The feedback mode of the widget</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetFeedbackMode? FeedbackMode { get; set; }
-        /// <summary>The file_input_config property</summary>
+        /// <summary>Configuration for file upload in the widget</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.FileInputConfig? FileInputConfig { get; set; }
@@ -152,7 +154,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public string ListeningText { get; set; }
 #endif
-        /// <summary>&quot;List of allowed hostnames for clickable markdown links. Use { hostname: &apos;*&apos; } to allow any domain. Empty means no links are allowed.&quot;</summary>
+        /// <summary>List of allowed hostnames for clickable markdown links. Use { hostname: &apos;*&apos; } to allow any domain. Empty means no links are allowed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.AllowlistItem>? MarkdownLinkAllowedHosts { get; set; }
@@ -166,6 +168,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public bool? MarkdownLinkIncludeWww { get; set; }
         /// <summary>Whether to enable mic muting</summary>
         public bool? MicMutingEnabled { get; set; }
+        /// <summary>Whether the widget opens fullscreen on mobile</summary>
+        public bool? MobileFullscreen { get; set; }
         /// <summary>The override link for the widget</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -174,7 +178,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public string OverrideLink { get; set; }
 #endif
-        /// <summary>The placement property</summary>
+        /// <summary>The placement of the widget on the screen</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetPlacement? Placement { get; set; }
         /// <summary>Whether to show terms and conditions on the shareable page</summary>
         public bool? ShareablePageShowTerms { get; set; }
@@ -212,7 +216,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #endif
         /// <summary>Whether to strip audio markup from messages.</summary>
         public bool? StripAudioTags { get; set; }
-        /// <summary>The styles property</summary>
+        /// <summary>Styles for the widget</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetStyles? Styles { get; set; }
@@ -223,10 +227,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The supported_language_overrides property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigResponseModelSupportedLanguageOverrides? SupportedLanguageOverrides { get; set; }
+        public List<string>? SupportedLanguageOverrides { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigResponseModelSupportedLanguageOverrides SupportedLanguageOverrides { get; set; }
+        public List<string> SupportedLanguageOverrides { get; set; }
 #endif
         /// <summary>Whether the agent can be switched to text-only mode</summary>
         public bool? SupportsTextOnly { get; set; }
@@ -264,7 +268,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public string TextColor { get; set; }
 #endif
-        /// <summary>The text_contents property</summary>
+        /// <summary>Text contents of the widget</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents? TextContents { get; set; }
@@ -280,7 +284,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public bool? TranscriptEnabled { get; set; }
         /// <summary>Whether to use WebRTC for conversation connections</summary>
         public bool? UseRtc { get; set; }
-        /// <summary>The variant property</summary>
+        /// <summary>The variant of the widget</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.EmbedVariant? Variant { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigResponseModel"/> and sets the default values.
@@ -297,10 +301,15 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             DefaultExpanded = false;
             DisableBanner = false;
             Dismissible = false;
+            EndConfirmationEnabled = false;
+            Expandable = global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetExpandable.Never;
+            FeedbackMode = global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetFeedbackMode.None;
             FocusColor = "#000000";
             MarkdownLinkAllowHttp = true;
             MarkdownLinkIncludeWww = true;
-            MicMutingEnabled = false;
+            MicMutingEnabled = true;
+            MobileFullscreen = true;
+            Placement = global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetPlacement.BottomRight;
             ShareablePageShowTerms = true;
             ShowAgentStatus = false;
             ShowAvatarWhenCollapsed = false;
@@ -311,7 +320,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             TextColor = "#000000";
             TextInputEnabled = true;
             TextOnly = false;
-            TranscriptEnabled = false;
+            TranscriptEnabled = true;
+            Variant = global::Soenneker.ElevenLabs.OpenApiClient.Models.EmbedVariant.Full;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -345,6 +355,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "disable_banner", n => { DisableBanner = n.GetBoolValue(); } },
                 { "dismissible", n => { Dismissible = n.GetBoolValue(); } },
                 { "end_call_text", n => { EndCallText = n.GetStringValue(); } },
+                { "end_confirmation_enabled", n => { EndConfirmationEnabled = n.GetBoolValue(); } },
                 { "end_feedback", n => { EndFeedback = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetEndFeedbackConfig>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetEndFeedbackConfig.CreateFromDiscriminatorValue); } },
                 { "expand_text", n => { ExpandText = n.GetStringValue(); } },
                 { "expandable", n => { Expandable = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetExpandable>(); } },
@@ -359,6 +370,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "markdown_link_allowed_hosts", n => { MarkdownLinkAllowedHosts = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.AllowlistItem>(global::Soenneker.ElevenLabs.OpenApiClient.Models.AllowlistItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "markdown_link_include_www", n => { MarkdownLinkIncludeWww = n.GetBoolValue(); } },
                 { "mic_muting_enabled", n => { MicMutingEnabled = n.GetBoolValue(); } },
+                { "mobile_fullscreen", n => { MobileFullscreen = n.GetBoolValue(); } },
                 { "override_link", n => { OverrideLink = n.GetStringValue(); } },
                 { "placement", n => { Placement = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetPlacement>(); } },
                 { "shareable_page_show_terms", n => { ShareablePageShowTerms = n.GetBoolValue(); } },
@@ -371,7 +383,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "start_call_text", n => { StartCallText = n.GetStringValue(); } },
                 { "strip_audio_tags", n => { StripAudioTags = n.GetBoolValue(); } },
                 { "styles", n => { Styles = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetStyles>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetStyles.CreateFromDiscriminatorValue); } },
-                { "supported_language_overrides", n => { SupportedLanguageOverrides = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigResponseModelSupportedLanguageOverrides>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigResponseModelSupportedLanguageOverrides.CreateFromDiscriminatorValue); } },
+                { "supported_language_overrides", n => { SupportedLanguageOverrides = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "supports_text_only", n => { SupportsTextOnly = n.GetBoolValue(); } },
                 { "syntax_highlight_theme", n => { SyntaxHighlightTheme = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigResponseModelSyntaxHighlightTheme>(); } },
                 { "terms_html", n => { TermsHtml = n.GetStringValue(); } },
@@ -407,6 +419,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteBoolValue("disable_banner", DisableBanner);
             writer.WriteBoolValue("dismissible", Dismissible);
             writer.WriteStringValue("end_call_text", EndCallText);
+            writer.WriteBoolValue("end_confirmation_enabled", EndConfirmationEnabled);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetEndFeedbackConfig>("end_feedback", EndFeedback);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetExpandable>("expandable", Expandable);
             writer.WriteStringValue("expand_text", ExpandText);
@@ -421,6 +434,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteBoolValue("markdown_link_allow_http", MarkdownLinkAllowHttp);
             writer.WriteBoolValue("markdown_link_include_www", MarkdownLinkIncludeWww);
             writer.WriteBoolValue("mic_muting_enabled", MicMutingEnabled);
+            writer.WriteBoolValue("mobile_fullscreen", MobileFullscreen);
             writer.WriteStringValue("override_link", OverrideLink);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetPlacement>("placement", Placement);
             writer.WriteBoolValue("shareable_page_show_terms", ShareablePageShowTerms);
@@ -433,7 +447,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteStringValue("start_call_text", StartCallText);
             writer.WriteBoolValue("strip_audio_tags", StripAudioTags);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetStyles>("styles", Styles);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigResponseModelSupportedLanguageOverrides>("supported_language_overrides", SupportedLanguageOverrides);
+            writer.WriteCollectionOfPrimitiveValues<string>("supported_language_overrides", SupportedLanguageOverrides);
             writer.WriteBoolValue("supports_text_only", SupportsTextOnly);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigResponseModelSyntaxHighlightTheme>("syntax_highlight_theme", SyntaxHighlightTheme);
             writer.WriteStringValue("terms_html", TermsHtml);

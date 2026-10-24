@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Conversation.GetSignedUrl;
+using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Conversation.Get_signed_url;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Conversation.Token;
 using System.Collections.Generic;
 using System.IO;
@@ -16,6 +17,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Conversation
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ConversationRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The get_signed_url property</summary>
+        public global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Conversation.Get_signed_url.Get_signed_urlRequestBuilder Get_signed_url
+        {
+            get => new global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Conversation.Get_signed_url.Get_signed_urlRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The getSignedUrl property</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Conversation.GetSignedUrl.GetSignedUrlRequestBuilder GetSignedUrl
         {

@@ -55,7 +55,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptInjectionGuardrail PromptInjection { get; set; }
 #endif
         /// <summary>The version property</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GuardrailsV1Output_version? Version { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GuardrailsV1OutputVersion? Version { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.GuardrailsV1Output"/> and sets the default values.
         /// </summary>
@@ -86,7 +86,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "focus", n => { Focus = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.FocusGuardrail>(global::Soenneker.ElevenLabs.OpenApiClient.Models.FocusGuardrail.CreateFromDiscriminatorValue); } },
                 { "moderation", n => { Moderation = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ModerationGuardrailOutput>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ModerationGuardrailOutput.CreateFromDiscriminatorValue); } },
                 { "prompt_injection", n => { PromptInjection = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptInjectionGuardrail>(global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptInjectionGuardrail.CreateFromDiscriminatorValue); } },
-                { "version", n => { Version = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GuardrailsV1Output_version>(); } },
+                { "version", n => { Version = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GuardrailsV1OutputVersion>(); } },
             };
         }
         /// <summary>
@@ -101,7 +101,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.FocusGuardrail>("focus", Focus);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ModerationGuardrailOutput>("moderation", Moderation);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptInjectionGuardrail>("prompt_injection", PromptInjection);
-            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GuardrailsV1Output_version>("version", Version);
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GuardrailsV1OutputVersion>("version", Version);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

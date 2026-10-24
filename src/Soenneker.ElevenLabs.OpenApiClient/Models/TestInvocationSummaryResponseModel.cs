@@ -38,8 +38,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public string BranchId { get; set; }
 #endif
+        /// <summary>Whether this test invocation was cancelled</summary>
+        public bool? Cancelled { get; set; }
+        /// <summary>Number of test runs that were cancelled</summary>
+        public int? CancelledCount { get; set; }
         /// <summary>Creation time of the test invocation in unix seconds</summary>
         public int? CreatedAtUnixSecs { get; set; }
+        /// <summary>Total credits billed across test runs in this invocation. None when no run has cost data.</summary>
+        public int? CreditsUsed { get; set; }
         /// <summary>Number of test runs that failed</summary>
         public int? FailedCount { get; set; }
         /// <summary>The ID of the test invocation</summary>
@@ -50,15 +56,27 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
+        /// <summary>The user-provided name of the test invocation, if one was set.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Name { get; set; }
+#nullable restore
+#else
+        public string Name { get; set; }
+#endif
         /// <summary>Number of test runs that passed</summary>
         public int? PassedCount { get; set; }
         /// <summary>Number of test runs that are pending</summary>
         public int? PendingCount { get; set; }
+        /// <summary>Whether the run included uncommitted changes (a saved draft or an ad-hoc config override) layered on top of version_id.</summary>
+        public bool? RanAgainstDraft { get; set; }
         /// <summary>Number of times each test was repeated in this invocation</summary>
         public int? RepeatCount { get; set; }
+        /// <summary>Whether the test runs in this invocation did not all execute against the same version, which happens when a subset of runs was resubmitted after the original run. When true, version_id describes the most recent resubmit rather than every run.</summary>
+        public bool? RunsDivergedFromVersion { get; set; }
         /// <summary>Number of test runs in this invocation</summary>
         public int? TestRunCount { get; set; }
-        /// <summary>Title of the test invocation - the folder name for folder runs, otherwise the single test name or count of tests</summary>
+        /// <summary>Display title of the test invocation: the user-provided name when set, otherwise the folder name, single test name, or test count.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Title { get; set; }
@@ -66,13 +84,26 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public string Title { get; set; }
 #endif
+        /// <summary>Total USD price across test runs in this invocation. None when no run has price data.</summary>
+        public double? TotalPrice { get; set; }
+        /// <summary>The ID of the agent version this test invocation ran against. For draft or config-override runs this is the version those uncommitted changes were applied on top of. None only for runs recorded before this field existed.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? VersionId { get; set; }
+#nullable restore
+#else
+        public string VersionId { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.TestInvocationSummaryResponseModel"/> and sets the default values.
         /// </summary>
         public TestInvocationSummaryResponseModel()
         {
             AdditionalData = new Dictionary<string, object>();
+            Cancelled = false;
+            RanAgainstDraft = false;
             RepeatCount = 1;
+            RunsDivergedFromVersion = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -95,14 +126,22 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "access_info", n => { AccessInfo = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceAccessInfo>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceAccessInfo.CreateFromDiscriminatorValue); } },
                 { "agent_id", n => { AgentId = n.GetStringValue(); } },
                 { "branch_id", n => { BranchId = n.GetStringValue(); } },
+                { "cancelled", n => { Cancelled = n.GetBoolValue(); } },
+                { "cancelled_count", n => { CancelledCount = n.GetIntValue(); } },
                 { "created_at_unix_secs", n => { CreatedAtUnixSecs = n.GetIntValue(); } },
+                { "credits_used", n => { CreditsUsed = n.GetIntValue(); } },
                 { "failed_count", n => { FailedCount = n.GetIntValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
                 { "passed_count", n => { PassedCount = n.GetIntValue(); } },
                 { "pending_count", n => { PendingCount = n.GetIntValue(); } },
+                { "ran_against_draft", n => { RanAgainstDraft = n.GetBoolValue(); } },
                 { "repeat_count", n => { RepeatCount = n.GetIntValue(); } },
+                { "runs_diverged_from_version", n => { RunsDivergedFromVersion = n.GetBoolValue(); } },
                 { "test_run_count", n => { TestRunCount = n.GetIntValue(); } },
                 { "title", n => { Title = n.GetStringValue(); } },
+                { "total_price", n => { TotalPrice = n.GetDoubleValue(); } },
+                { "version_id", n => { VersionId = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -115,14 +154,22 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceAccessInfo>("access_info", AccessInfo);
             writer.WriteStringValue("agent_id", AgentId);
             writer.WriteStringValue("branch_id", BranchId);
+            writer.WriteBoolValue("cancelled", Cancelled);
+            writer.WriteIntValue("cancelled_count", CancelledCount);
             writer.WriteIntValue("created_at_unix_secs", CreatedAtUnixSecs);
+            writer.WriteIntValue("credits_used", CreditsUsed);
             writer.WriteIntValue("failed_count", FailedCount);
             writer.WriteStringValue("id", Id);
+            writer.WriteStringValue("name", Name);
             writer.WriteIntValue("passed_count", PassedCount);
             writer.WriteIntValue("pending_count", PendingCount);
+            writer.WriteBoolValue("ran_against_draft", RanAgainstDraft);
             writer.WriteIntValue("repeat_count", RepeatCount);
+            writer.WriteBoolValue("runs_diverged_from_version", RunsDivergedFromVersion);
             writer.WriteIntValue("test_run_count", TestRunCount);
             writer.WriteStringValue("title", Title);
+            writer.WriteDoubleValue("total_price", TotalPrice);
+            writer.WriteStringValue("version_id", VersionId);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -17,10 +17,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The chapter_ids property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SampleConfigDbModelChapterIds? ChapterIds { get; set; }
+        public List<string>? ChapterIds { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SampleConfigDbModelChapterIds ChapterIds { get; set; }
+        public List<string> ChapterIds { get; set; }
 #endif
         /// <summary>The is_sample property</summary>
         public bool? IsSample { get; set; }
@@ -60,7 +60,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "chapter_ids", n => { ChapterIds = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SampleConfigDbModelChapterIds>(global::Soenneker.ElevenLabs.OpenApiClient.Models.SampleConfigDbModelChapterIds.CreateFromDiscriminatorValue); } },
+                { "chapter_ids", n => { ChapterIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "is_sample", n => { IsSample = n.GetBoolValue(); } },
                 { "parent_id", n => { ParentId = n.GetStringValue(); } },
                 { "parent_type", n => { ParentType = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SampleConfigDbModelParentType>(); } },
@@ -73,7 +73,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SampleConfigDbModelChapterIds>("chapter_ids", ChapterIds);
+            writer.WriteCollectionOfPrimitiveValues<string>("chapter_ids", ChapterIds);
             writer.WriteBoolValue("is_sample", IsSample);
             writer.WriteStringValue("parent_id", ParentId);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SampleConfigDbModelParentType>("parent_type", ParentType);

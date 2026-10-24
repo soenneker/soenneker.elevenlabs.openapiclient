@@ -39,11 +39,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             var result = new global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberTransferCustomSipHeadersItem();
-            if("CustomSipHeader".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("static".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.CustomSipHeader = new global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomSipHeader();
             }
-            else if("CustomSipHeaderWithDynamicVariable".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("dynamic".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.CustomSipHeaderWithDynamicVariable = new global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomSipHeaderWithDynamicVariable();
             }

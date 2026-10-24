@@ -34,7 +34,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.Llm? AnalysisLlm { get; set; }
         /// <summary>Whether the agent is archived</summary>
         public bool? Archived { get; set; }
-        /// <summary>The auth property</summary>
+        /// <summary>Settings for authentication</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.AuthSettings? Auth { get; set; }
@@ -44,7 +44,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #endif
         /// <summary>When enabled, a conversation transcript is automatically translated to the viewer&apos;s application language when they open the transcript page. If not set or false, transcripts are shown in their original language unless the viewer manually selects a translation.</summary>
         public bool? AutoTranslateTranscriptToAppLanguage { get; set; }
-        /// <summary>The call_limits property</summary>
+        /// <summary>Call limits for the agent</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentCallLimits? CallLimits { get; set; }
@@ -100,6 +100,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.PrivacyConfigOutput Privacy { get; set; }
 #endif
+        /// <summary>Concurrency wait-queue config for the agent</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentQueueingConfig? QueueingConfig { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentQueueingConfig QueueingConfig { get; set; }
+#endif
         /// <summary>The safety property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -124,7 +132,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public string SummaryLanguage { get; set; }
 #endif
-        /// <summary>Settings for agent testing configuration.</summary>
+        /// <summary>Testing configuration for the agent</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentTestingSettings? Testing { get; set; }
@@ -140,7 +148,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentPlatformSettingsResponseModelTopicDiscovery TopicDiscovery { get; set; }
 #endif
-        /// <summary>&quot;The trust context in which the agent operates.UNKNOWN: not yet classified (existing agents created before this feature).LOW: serves untrusted external participants (e.g. customer support, sales) —     outputs should be vetted and tool access scoped.HIGH: serves the owner (e.g. personal assistant) — full tool access is appropriate.&quot;</summary>
+        /// <summary>The trust context in which the agent operates.</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentTrustContext? TrustContext { get; set; }
         /// <summary>The widget property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -165,6 +173,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             AdditionalData = new Dictionary<string, object>();
             Archived = false;
+            TrustContext = global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentTrustContext.Unknown;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -197,6 +206,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "guardrails", n => { Guardrails = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GuardrailsV1Output>(global::Soenneker.ElevenLabs.OpenApiClient.Models.GuardrailsV1Output.CreateFromDiscriminatorValue); } },
                 { "overrides", n => { Overrides = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationClientDataConfigOutput>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationClientDataConfigOutput.CreateFromDiscriminatorValue); } },
                 { "privacy", n => { Privacy = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PrivacyConfigOutput>(global::Soenneker.ElevenLabs.OpenApiClient.Models.PrivacyConfigOutput.CreateFromDiscriminatorValue); } },
+                { "queueing_config", n => { QueueingConfig = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentQueueingConfig>(global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentQueueingConfig.CreateFromDiscriminatorValue); } },
                 { "safety", n => { Safety = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SafetyResponseModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.SafetyResponseModel.CreateFromDiscriminatorValue); } },
                 { "sentiment_analysis", n => { SentimentAnalysis = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentPlatformSettingsResponseModelSentimentAnalysis>(global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentPlatformSettingsResponseModelSentimentAnalysis.CreateFromDiscriminatorValue); } },
                 { "summary_language", n => { SummaryLanguage = n.GetStringValue(); } },
@@ -227,6 +237,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GuardrailsV1Output>("guardrails", Guardrails);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationClientDataConfigOutput>("overrides", Overrides);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PrivacyConfigOutput>("privacy", Privacy);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentQueueingConfig>("queueing_config", QueueingConfig);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SafetyResponseModel>("safety", Safety);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentPlatformSettingsResponseModelSentimentAnalysis>("sentiment_analysis", SentimentAnalysis);
             writer.WriteStringValue("summary_language", SummaryLanguage);

@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.ElevenLabs.OpenApiClient.Models
 {
-    /// <summary>&quot;This parameter controls text normalization with three modes: &apos;auto&apos;, &apos;on&apos;, and &apos;off&apos;. When set to &apos;auto&apos;, the system will automatically decide whether to apply text normalization (e.g., spelling out numbers). With &apos;on&apos;, text normalization will always be applied, while with &apos;off&apos;, it will be skipped.&quot;</summary>
+    /// <summary>This parameter controls text normalization with three modes: &apos;auto&apos;, &apos;on&apos;, and &apos;off&apos;. When set to &apos;auto&apos;, the system will automatically decide whether to apply text normalization (e.g., spelling out numbers). With &apos;on&apos;, text normalization will always be applied, while with &apos;off&apos;, it will be skipped.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum BodyTextToDialogueMultiVoiceV1TextToDialoguePostApplyTextNormalization
     {

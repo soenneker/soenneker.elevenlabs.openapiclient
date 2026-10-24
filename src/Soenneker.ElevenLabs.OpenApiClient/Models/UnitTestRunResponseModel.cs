@@ -38,6 +38,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public string BranchId { get; set; }
 #endif
+        /// <summary>Finalized billing and provider-usage breakdown for this test run.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationChargingCommonModel? Charging { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationChargingCommonModel Charging { get; set; }
+#endif
         /// <summary>The condition_result property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -46,6 +54,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.TestConditionResultCommonModel ConditionResult { get; set; }
 #endif
+        /// <summary>Credits billed for this test run. None for runs created before cost tracking.</summary>
+        public int? CreditsUsed { get; set; }
         /// <summary>The environment property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -64,6 +74,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.TestRunMetadata Metadata { get; set; }
 #endif
+        /// <summary>The ran_against_draft property</summary>
+        public bool? RanAgainstDraft { get; set; }
         /// <summary>The root_folder_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -93,10 +105,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The test_info property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.UnitTestRunResponseModelTestInfoAnyOf1? TestInfo { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SimulationTestModel? TestInfo { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.UnitTestRunResponseModelTestInfoAnyOf1 TestInfo { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SimulationTestModel TestInfo { get; set; }
 #endif
         /// <summary>The test_invocation_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -122,6 +134,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public string TestRunId { get; set; }
 #endif
+        /// <summary>The version_id property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? VersionId { get; set; }
+#nullable restore
+#else
+        public string VersionId { get; set; }
+#endif
         /// <summary>The workflow_node_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -136,6 +156,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public UnitTestRunResponseModel()
         {
             AdditionalData = new Dictionary<string, object>();
+            RanAgainstDraft = false;
             TestName = "Unknown Test";
         }
         /// <summary>
@@ -159,18 +180,22 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "agent_id", n => { AgentId = n.GetStringValue(); } },
                 { "agent_responses", n => { AgentResponses = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptCommonModelOutput>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptCommonModelOutput.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "branch_id", n => { BranchId = n.GetStringValue(); } },
+                { "charging", n => { Charging = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationChargingCommonModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationChargingCommonModel.CreateFromDiscriminatorValue); } },
                 { "condition_result", n => { ConditionResult = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TestConditionResultCommonModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.TestConditionResultCommonModel.CreateFromDiscriminatorValue); } },
+                { "credits_used", n => { CreditsUsed = n.GetIntValue(); } },
                 { "environment", n => { Environment = n.GetStringValue(); } },
                 { "last_updated_at_unix", n => { LastUpdatedAtUnix = n.GetIntValue(); } },
                 { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TestRunMetadata>(global::Soenneker.ElevenLabs.OpenApiClient.Models.TestRunMetadata.CreateFromDiscriminatorValue); } },
+                { "ran_against_draft", n => { RanAgainstDraft = n.GetBoolValue(); } },
                 { "root_folder_id", n => { RootFolderId = n.GetStringValue(); } },
                 { "root_folder_name", n => { RootFolderName = n.GetStringValue(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TestRunStatus>(); } },
                 { "test_id", n => { TestId = n.GetStringValue(); } },
-                { "test_info", n => { TestInfo = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UnitTestRunResponseModelTestInfoAnyOf1>(global::Soenneker.ElevenLabs.OpenApiClient.Models.UnitTestRunResponseModelTestInfoAnyOf1.CreateFromDiscriminatorValue); } },
+                { "test_info", n => { TestInfo = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SimulationTestModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.SimulationTestModel.CreateFromDiscriminatorValue); } },
                 { "test_invocation_id", n => { TestInvocationId = n.GetStringValue(); } },
                 { "test_name", n => { TestName = n.GetStringValue(); } },
                 { "test_run_id", n => { TestRunId = n.GetStringValue(); } },
+                { "version_id", n => { VersionId = n.GetStringValue(); } },
                 { "workflow_node_id", n => { WorkflowNodeId = n.GetStringValue(); } },
             };
         }
@@ -184,18 +209,22 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteStringValue("agent_id", AgentId);
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptCommonModelOutput>("agent_responses", AgentResponses);
             writer.WriteStringValue("branch_id", BranchId);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationChargingCommonModel>("charging", Charging);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TestConditionResultCommonModel>("condition_result", ConditionResult);
+            writer.WriteIntValue("credits_used", CreditsUsed);
             writer.WriteStringValue("environment", Environment);
             writer.WriteIntValue("last_updated_at_unix", LastUpdatedAtUnix);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TestRunMetadata>("metadata", Metadata);
+            writer.WriteBoolValue("ran_against_draft", RanAgainstDraft);
             writer.WriteStringValue("root_folder_id", RootFolderId);
             writer.WriteStringValue("root_folder_name", RootFolderName);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TestRunStatus>("status", Status);
             writer.WriteStringValue("test_id", TestId);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UnitTestRunResponseModelTestInfoAnyOf1>("test_info", TestInfo);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SimulationTestModel>("test_info", TestInfo);
             writer.WriteStringValue("test_invocation_id", TestInvocationId);
             writer.WriteStringValue("test_name", TestName);
             writer.WriteStringValue("test_run_id", TestRunId);
+            writer.WriteStringValue("version_id", VersionId);
             writer.WriteStringValue("workflow_node_id", WorkflowNodeId);
             writer.WriteAdditionalData(AdditionalData);
         }

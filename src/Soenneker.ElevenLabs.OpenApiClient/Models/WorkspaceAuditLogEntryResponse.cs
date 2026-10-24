@@ -14,13 +14,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     public partial class WorkspaceAuditLogEntryResponse : IAdditionalDataHolder, IParsable
     {
         /// <summary>Activity ID</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceAuditLogEntryResponseActivityId? ActivityId { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceAuditLogEntryResponseActivityId ActivityId { get; set; }
-#endif
+        public int? ActivityId { get; set; }
         /// <summary>Activity name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -29,7 +23,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public string ActivityName { get; set; }
 #endif
-        /// <summary>&quot;OCSF Actor object - describes the entity that performed the action.Spec: https://schema.ocsf.io/1.6.0/objects/actor&quot;</summary>
+        /// <summary>Actor performing the action</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.ActorModel? Actor { get; set; }
@@ -99,9 +93,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceAuditLogEntryResponseMetadataProperty Metadata { get; set; }
 #endif
-        /// <summary>&quot;OCSF Severity levels.Spec: https://schema.ocsf.io/1.6.0/objects/severity_id&quot;</summary>
+        /// <summary>Severity level</summary>
         public int? SeverityId { get; set; }
-        /// <summary>&quot;OCSF Status levels.Spec: https://schema.ocsf.io/1.6.0/objects/status_id&quot;</summary>
+        /// <summary>Status of the action</summary>
         public int? StatusId { get; set; }
         /// <summary>Event time in milliseconds since epoch</summary>
         public int? Time { get; set; }
@@ -140,6 +134,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             CategoryName = "Identity & Access Management";
             CategoryUid = 3;
             ClassUid = 0;
+            SeverityId = 1;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -159,7 +154,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "activity_id", n => { ActivityId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceAuditLogEntryResponseActivityId>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceAuditLogEntryResponseActivityId.CreateFromDiscriminatorValue); } },
+                { "activity_id", n => { ActivityId = n.GetIntValue(); } },
                 { "activity_name", n => { ActivityName = n.GetStringValue(); } },
                 { "actor", n => { Actor = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ActorModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ActorModel.CreateFromDiscriminatorValue); } },
                 { "category_name", n => { CategoryName = n.GetStringValue(); } },
@@ -187,7 +182,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceAuditLogEntryResponseActivityId>("activity_id", ActivityId);
+            writer.WriteIntValue("activity_id", ActivityId);
             writer.WriteStringValue("activity_name", ActivityName);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ActorModel>("actor", Actor);
             writer.WriteStringValue("category_name", CategoryName);

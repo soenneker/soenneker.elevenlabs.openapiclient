@@ -14,6 +14,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Whether to allow overriding the additional_soft_timeout_messages field.</summary>
+        public bool? AdditionalSoftTimeoutMessages { get; set; }
         /// <summary>Whether to allow overriding the message field.</summary>
         public bool? Message { get; set; }
         /// <summary>
@@ -22,6 +24,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public SoftTimeoutConfigOverrideConfig()
         {
             AdditionalData = new Dictionary<string, object>();
+            AdditionalSoftTimeoutMessages = false;
             Message = false;
         }
         /// <summary>
@@ -42,6 +45,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "additional_soft_timeout_messages", n => { AdditionalSoftTimeoutMessages = n.GetBoolValue(); } },
                 { "message", n => { Message = n.GetBoolValue(); } },
             };
         }
@@ -52,6 +56,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteBoolValue("additional_soft_timeout_messages", AdditionalSoftTimeoutMessages);
             writer.WriteBoolValue("message", Message);
             writer.WriteAdditionalData(AdditionalData);
         }

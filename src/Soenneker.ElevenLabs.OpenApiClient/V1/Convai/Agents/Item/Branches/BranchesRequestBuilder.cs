@@ -20,14 +20,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.Branches
     {
         /// <summary>Gets an item from the Soenneker.ElevenLabs.OpenApiClient.v1.convai.agents.item.branches.item collection</summary>
         /// <param name="position">Unique identifier for the branch.</param>
-        /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.Branches.Item.BranchItemRequestBuilder"/></returns>
-        public global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.Branches.Item.BranchItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.Branches.Item.WithBranchItemRequestBuilder"/></returns>
+        public global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.Branches.Item.WithBranchItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("branch%2Did", position);
-                return new global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.Branches.Item.BranchItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("branchId", position);
+                return new global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.Branches.Item.WithBranchItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>

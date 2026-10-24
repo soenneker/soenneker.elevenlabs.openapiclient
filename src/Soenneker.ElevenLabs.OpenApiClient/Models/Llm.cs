@@ -80,6 +80,22 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         #pragma warning disable CS1591
         Gpt56Luna,
         #pragma warning restore CS1591
+        [EnumMember(Value = "gpt-6-astra")]
+        #pragma warning disable CS1591
+        Gpt6Astra,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "gpt-6-sol")]
+        #pragma warning disable CS1591
+        Gpt6Sol,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "gpt-6-luna")]
+        #pragma warning disable CS1591
+        Gpt6Luna,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "gpt-6.1-sol")]
+        #pragma warning disable CS1591
+        Gpt61Sol,
+        #pragma warning restore CS1591
         [EnumMember(Value = "gpt-5-mini")]
         #pragma warning disable CS1591
         Gpt5Mini,
@@ -148,9 +164,25 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         #pragma warning disable CS1591
         Gemini36Flash,
         #pragma warning restore CS1591
+        [EnumMember(Value = "gemini-3.7-flash")]
+        #pragma warning disable CS1591
+        Gemini37Flash,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "gemini-3.8-flash")]
+        #pragma warning disable CS1591
+        Gemini38Flash,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "gemini-4-argon")]
+        #pragma warning disable CS1591
+        Gemini4Argon,
+        #pragma warning restore CS1591
         [EnumMember(Value = "claude-sonnet-4-5")]
         #pragma warning disable CS1591
         ClaudeSonnet45,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "claude-opus-4-6")]
+        #pragma warning disable CS1591
+        ClaudeOpus46,
         #pragma warning restore CS1591
         [EnumMember(Value = "claude-opus-4-7")]
         #pragma warning disable CS1591
@@ -160,6 +192,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         #pragma warning disable CS1591
         ClaudeOpus48,
         #pragma warning restore CS1591
+        [EnumMember(Value = "claude-opus-5")]
+        #pragma warning disable CS1591
+        ClaudeOpus5,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "claude-opus-5-5")]
+        #pragma warning disable CS1591
+        ClaudeOpus55,
+        #pragma warning restore CS1591
         [EnumMember(Value = "claude-sonnet-4-6")]
         #pragma warning disable CS1591
         ClaudeSonnet46,
@@ -168,6 +208,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         #pragma warning disable CS1591
         ClaudeSonnet5,
         #pragma warning restore CS1591
+        [EnumMember(Value = "claude-sonnet-5-5")]
+        #pragma warning disable CS1591
+        ClaudeSonnet55,
+        #pragma warning restore CS1591
         [EnumMember(Value = "claude-sonnet-4")]
         #pragma warning disable CS1591
         ClaudeSonnet4,
@@ -175,6 +219,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         [EnumMember(Value = "claude-haiku-4-5")]
         #pragma warning disable CS1591
         ClaudeHaiku45,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "claude-haiku-5-5")]
+        #pragma warning disable CS1591
+        ClaudeHaiku55,
         #pragma warning restore CS1591
         [EnumMember(Value = "claude-3-7-sonnet")]
         #pragma warning disable CS1591
@@ -227,6 +275,18 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         [EnumMember(Value = "glm-45-air-fp8")]
         #pragma warning disable CS1591
         Glm45AirFp8,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "glm-52")]
+        #pragma warning disable CS1591
+        Glm52,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "deepseek-v41-flash")]
+        #pragma warning disable CS1591
+        DeepseekV41Flash,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "nemotron-35-super-vl-nvfp4")]
+        #pragma warning disable CS1591
+        Nemotron35SuperVlNvfp4,
         #pragma warning restore CS1591
         [EnumMember(Value = "gemini-2.5-flash-preview-09-2025")]
         #pragma warning disable CS1591

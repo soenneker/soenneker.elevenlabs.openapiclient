@@ -23,13 +23,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptCommonModelInput> ChatHistory { get; set; }
 #endif
         /// <summary>Simulate the test as if the conversation originated from this channel.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationSourceWrapper13? ConversationInitiationSource { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationSourceWrapper13 ConversationInitiationSource { get; set; }
-#endif
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationSource? ConversationInitiationSource { get; set; }
         /// <summary>Dynamic variables to replace in the agent config during testing</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -37,6 +31,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #nullable restore
 #else
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateResponseUnitTestRequestDynamicVariablesProperty DynamicVariables { get; set; }
+#endif
+        /// <summary>The environment to resolve environment-specific variable values against when running this test (URL, headers, auth connections). If not provided, defaults to &apos;production&apos;. For simulation tests, simulation_environment takes precedence when set.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Environment { get; set; }
+#nullable restore
+#else
+        public string Environment { get; set; }
 #endif
         /// <summary>Non-empty list of example responses that should be considered failures</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -87,7 +89,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentSuccessfulResponseExample> SuccessExamples { get; set; }
 #endif
         /// <summary>The type property</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateResponseUnitTestRequest_type? Type { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateResponseUnitTestRequestType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateResponseUnitTestRequest"/> and sets the default values.
         /// </summary>
@@ -114,15 +116,16 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "chat_history", n => { ChatHistory = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptCommonModelInput>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptCommonModelInput.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "conversation_initiation_source", n => { ConversationInitiationSource = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationSourceWrapper13>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationSourceWrapper13.CreateFromDiscriminatorValue); } },
+                { "conversation_initiation_source", n => { ConversationInitiationSource = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationSource>(); } },
                 { "dynamic_variables", n => { DynamicVariables = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateResponseUnitTestRequestDynamicVariablesProperty>(global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateResponseUnitTestRequestDynamicVariablesProperty.CreateFromDiscriminatorValue); } },
+                { "environment", n => { Environment = n.GetStringValue(); } },
                 { "failure_examples", n => { FailureExamples = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentFailureResponseExample>(global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentFailureResponseExample.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "from_conversation_metadata", n => { FromConversationMetadata = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TestFromConversationMetadataInput>(global::Soenneker.ElevenLabs.OpenApiClient.Models.TestFromConversationMetadataInput.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "parent_folder_id", n => { ParentFolderId = n.GetStringValue(); } },
                 { "success_condition", n => { SuccessCondition = n.GetStringValue(); } },
                 { "success_examples", n => { SuccessExamples = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentSuccessfulResponseExample>(global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentSuccessfulResponseExample.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateResponseUnitTestRequest_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateResponseUnitTestRequestType>(); } },
             };
         }
         /// <summary>
@@ -133,15 +136,16 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptCommonModelInput>("chat_history", ChatHistory);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationSourceWrapper13>("conversation_initiation_source", ConversationInitiationSource);
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationSource>("conversation_initiation_source", ConversationInitiationSource);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateResponseUnitTestRequestDynamicVariablesProperty>("dynamic_variables", DynamicVariables);
+            writer.WriteStringValue("environment", Environment);
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentFailureResponseExample>("failure_examples", FailureExamples);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TestFromConversationMetadataInput>("from_conversation_metadata", FromConversationMetadata);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("parent_folder_id", ParentFolderId);
             writer.WriteStringValue("success_condition", SuccessCondition);
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentSuccessfulResponseExample>("success_examples", SuccessExamples);
-            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateResponseUnitTestRequest_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateResponseUnitTestRequestType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

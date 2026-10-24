@@ -43,7 +43,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The step_latency_secs property</summary>
         public double? StepLatencySecs { get; set; }
         /// <summary>The type property</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkflowToolNestedToolsStepModelInput_type? Type { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.NestedToolsType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkflowToolNestedToolsStepModelInput"/> and sets the default values.
         /// </summary>
@@ -74,7 +74,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "requests", n => { Requests = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptToolCallCommonModelInput>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptToolCallCommonModelInput.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "results", n => { Results = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkflowToolNestedToolsStepModelInputResultsItem>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkflowToolNestedToolsStepModelInputResultsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "step_latency_secs", n => { StepLatencySecs = n.GetDoubleValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkflowToolNestedToolsStepModelInput_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.NestedToolsType>(); } },
             };
         }
         /// <summary>
@@ -89,7 +89,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptToolCallCommonModelInput>("requests", Requests);
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkflowToolNestedToolsStepModelInputResultsItem>("results", Results);
             writer.WriteDoubleValue("step_latency_secs", StepLatencySecs);
-            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkflowToolNestedToolsStepModelInput_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.NestedToolsType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

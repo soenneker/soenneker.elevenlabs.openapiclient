@@ -15,7 +15,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The kind property</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PendingCancellationResponseModel_kind? Kind { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CancellationKind? Kind { get; set; }
         /// <summary>The timestamp of the cancellation.</summary>
         public int? TimestampSeconds { get; set; }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "kind", n => { Kind = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PendingCancellationResponseModel_kind>(); } },
+                { "kind", n => { Kind = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CancellationKind>(); } },
                 { "timestamp_seconds", n => { TimestampSeconds = n.GetIntValue(); } },
             };
         }
@@ -54,7 +54,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PendingCancellationResponseModel_kind>("kind", Kind);
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CancellationKind>("kind", Kind);
             writer.WriteIntValue("timestamp_seconds", TimestampSeconds);
             writer.WriteAdditionalData(AdditionalData);
         }

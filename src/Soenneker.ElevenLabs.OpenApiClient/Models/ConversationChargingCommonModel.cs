@@ -80,6 +80,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationTtsUsageModel TtsUsage { get; set; }
 #endif
+        /// <summary>Credits charged as the voice actor reward for the Voice Library voices this conversation used. It is not included in `cost`.</summary>
+        public int? VoiceSurchargeCharge { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationChargingCommonModel"/> and sets the default values.
         /// </summary>
@@ -124,6 +126,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "platform_usage", n => { PlatformUsage = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PlatformUsage>(global::Soenneker.ElevenLabs.OpenApiClient.Models.PlatformUsage.CreateFromDiscriminatorValue); } },
                 { "tier", n => { Tier = n.GetStringValue(); } },
                 { "tts_usage", n => { TtsUsage = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationTtsUsageModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationTtsUsageModel.CreateFromDiscriminatorValue); } },
+                { "voice_surcharge_charge", n => { VoiceSurchargeCharge = n.GetIntValue(); } },
             };
         }
         /// <summary>
@@ -148,6 +151,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PlatformUsage>("platform_usage", PlatformUsage);
             writer.WriteStringValue("tier", Tier);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationTtsUsageModel>("tts_usage", TtsUsage);
+            writer.WriteIntValue("voice_surcharge_charge", VoiceSurchargeCharge);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

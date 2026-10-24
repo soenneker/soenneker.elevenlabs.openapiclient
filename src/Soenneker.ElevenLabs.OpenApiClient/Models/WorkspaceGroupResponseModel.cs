@@ -16,22 +16,16 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The character_count property</summary>
         public int? CharacterCount { get; set; }
+        /// <summary>The group_concurrency_limit property</summary>
+        public int? GroupConcurrencyLimit { get; set; }
+        /// <summary>The group_dubbing_concurrency_limit property</summary>
+        public int? GroupDubbingConcurrencyLimit { get; set; }
+        /// <summary>The group_music_concurrency_limit property</summary>
+        public int? GroupMusicConcurrencyLimit { get; set; }
         /// <summary>The group_pvc_limit property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceGroupResponseModelGroupPvcLimit? GroupPvcLimit { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceGroupResponseModelGroupPvcLimit GroupPvcLimit { get; set; }
-#endif
+        public int? GroupPvcLimit { get; set; }
         /// <summary>The group_usage_limit property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceGroupResponseModelGroupUsageLimit? GroupUsageLimit { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceGroupResponseModelGroupUsageLimit GroupUsageLimit { get; set; }
-#endif
+        public int? GroupUsageLimit { get; set; }
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -61,10 +55,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The permissions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceGroupPermission>? Permissions { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceGroupPermission?>? Permissions { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceGroupPermission> Permissions { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceGroupPermission?> Permissions { get; set; }
 #endif
         /// <summary>The scim_frozen property</summary>
         public bool? ScimFrozen { get; set; }
@@ -104,13 +98,16 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "character_count", n => { CharacterCount = n.GetIntValue(); } },
-                { "group_pvc_limit", n => { GroupPvcLimit = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceGroupResponseModelGroupPvcLimit>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceGroupResponseModelGroupPvcLimit.CreateFromDiscriminatorValue); } },
-                { "group_usage_limit", n => { GroupUsageLimit = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceGroupResponseModelGroupUsageLimit>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceGroupResponseModelGroupUsageLimit.CreateFromDiscriminatorValue); } },
+                { "group_concurrency_limit", n => { GroupConcurrencyLimit = n.GetIntValue(); } },
+                { "group_dubbing_concurrency_limit", n => { GroupDubbingConcurrencyLimit = n.GetIntValue(); } },
+                { "group_music_concurrency_limit", n => { GroupMusicConcurrencyLimit = n.GetIntValue(); } },
+                { "group_pvc_limit", n => { GroupPvcLimit = n.GetIntValue(); } },
+                { "group_usage_limit", n => { GroupUsageLimit = n.GetIntValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "is_scim_synced", n => { IsScimSynced = n.GetBoolValue(); } },
                 { "members", n => { Members = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "permissions", n => { Permissions = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceGroupPermission>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceGroupPermission.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "permissions", n => { Permissions = n.GetCollectionOfEnumValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceGroupPermission>()?.AsList(); } },
                 { "scim_frozen", n => { ScimFrozen = n.GetBoolValue(); } },
                 { "scim_group", n => { ScimGroup = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ScimGroupResponseModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ScimGroupResponseModel.CreateFromDiscriminatorValue); } },
             };
@@ -123,13 +120,16 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("character_count", CharacterCount);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceGroupResponseModelGroupPvcLimit>("group_pvc_limit", GroupPvcLimit);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceGroupResponseModelGroupUsageLimit>("group_usage_limit", GroupUsageLimit);
+            writer.WriteIntValue("group_concurrency_limit", GroupConcurrencyLimit);
+            writer.WriteIntValue("group_dubbing_concurrency_limit", GroupDubbingConcurrencyLimit);
+            writer.WriteIntValue("group_music_concurrency_limit", GroupMusicConcurrencyLimit);
+            writer.WriteIntValue("group_pvc_limit", GroupPvcLimit);
+            writer.WriteIntValue("group_usage_limit", GroupUsageLimit);
             writer.WriteStringValue("id", Id);
             writer.WriteBoolValue("is_scim_synced", IsScimSynced);
             writer.WriteCollectionOfPrimitiveValues<string>("members", Members);
             writer.WriteStringValue("name", Name);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceGroupPermission>("permissions", Permissions);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceGroupPermission>("permissions", Permissions);
             writer.WriteBoolValue("scim_frozen", ScimFrozen);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ScimGroupResponseModel>("scim_group", ScimGroup);
             writer.WriteAdditionalData(AdditionalData);

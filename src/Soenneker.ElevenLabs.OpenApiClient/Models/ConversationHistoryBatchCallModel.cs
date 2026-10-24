@@ -30,6 +30,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public string BatchCallRecipientId { get; set; }
 #endif
+        /// <summary>The campaign property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BatchCallingCampaignInformation? Campaign { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BatchCallingCampaignInformation Campaign { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryBatchCallModel"/> and sets the default values.
         /// </summary>
@@ -57,6 +65,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             {
                 { "batch_call_id", n => { BatchCallId = n.GetStringValue(); } },
                 { "batch_call_recipient_id", n => { BatchCallRecipientId = n.GetStringValue(); } },
+                { "campaign", n => { Campaign = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BatchCallingCampaignInformation>(global::Soenneker.ElevenLabs.OpenApiClient.Models.BatchCallingCampaignInformation.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -68,6 +77,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("batch_call_id", BatchCallId);
             writer.WriteStringValue("batch_call_recipient_id", BatchCallRecipientId);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BatchCallingCampaignInformation>("campaign", Campaign);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -20,5 +20,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         #pragma warning disable CS1591
         Failed,
         #pragma warning restore CS1591
+        [EnumMember(Value = "cancelled")]
+        #pragma warning disable CS1591
+        Cancelled,
+        #pragma warning restore CS1591
     }
 }

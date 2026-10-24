@@ -83,13 +83,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public string PhoneNumberId { get; set; }
 #endif
         /// <summary>The phone_provider property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.TelephonyProviderWrapper2? PhoneProvider { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.TelephonyProviderWrapper2 PhoneProvider { get; set; }
-#endif
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.TelephonyProvider? PhoneProvider { get; set; }
         /// <summary>The retry_count property</summary>
         public int? RetryCount { get; set; }
         /// <summary>The scheduled_time_unix property</summary>
@@ -101,10 +95,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The telephony_call_config property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.TelephonyCallConfig? TelephonyCallConfig { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.TelephonyCallConfigOutput? TelephonyCallConfig { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.TelephonyCallConfig TelephonyCallConfig { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.TelephonyCallConfigOutput TelephonyCallConfig { get; set; }
 #endif
         /// <summary>The timezone property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -167,12 +161,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "last_updated_at_unix", n => { LastUpdatedAtUnix = n.GetIntValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "phone_number_id", n => { PhoneNumberId = n.GetStringValue(); } },
-                { "phone_provider", n => { PhoneProvider = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TelephonyProviderWrapper2>(global::Soenneker.ElevenLabs.OpenApiClient.Models.TelephonyProviderWrapper2.CreateFromDiscriminatorValue); } },
+                { "phone_provider", n => { PhoneProvider = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TelephonyProvider>(); } },
                 { "retry_count", n => { RetryCount = n.GetIntValue(); } },
                 { "scheduled_time_unix", n => { ScheduledTimeUnix = n.GetIntValue(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BatchCallStatus>(); } },
                 { "target_concurrency_limit", n => { TargetConcurrencyLimit = n.GetIntValue(); } },
-                { "telephony_call_config", n => { TelephonyCallConfig = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TelephonyCallConfig>(global::Soenneker.ElevenLabs.OpenApiClient.Models.TelephonyCallConfig.CreateFromDiscriminatorValue); } },
+                { "telephony_call_config", n => { TelephonyCallConfig = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TelephonyCallConfigOutput>(global::Soenneker.ElevenLabs.OpenApiClient.Models.TelephonyCallConfigOutput.CreateFromDiscriminatorValue); } },
                 { "timezone", n => { Timezone = n.GetStringValue(); } },
                 { "total_calls_dispatched", n => { TotalCallsDispatched = n.GetIntValue(); } },
                 { "total_calls_finished", n => { TotalCallsFinished = n.GetIntValue(); } },
@@ -197,12 +191,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteIntValue("last_updated_at_unix", LastUpdatedAtUnix);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("phone_number_id", PhoneNumberId);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TelephonyProviderWrapper2>("phone_provider", PhoneProvider);
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TelephonyProvider>("phone_provider", PhoneProvider);
             writer.WriteIntValue("retry_count", RetryCount);
             writer.WriteIntValue("scheduled_time_unix", ScheduledTimeUnix);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BatchCallStatus>("status", Status);
             writer.WriteIntValue("target_concurrency_limit", TargetConcurrencyLimit);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TelephonyCallConfig>("telephony_call_config", TelephonyCallConfig);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TelephonyCallConfigOutput>("telephony_call_config", TelephonyCallConfig);
             writer.WriteStringValue("timezone", Timezone);
             writer.WriteIntValue("total_calls_dispatched", TotalCallsDispatched);
             writer.WriteIntValue("total_calls_finished", TotalCallsFinished);

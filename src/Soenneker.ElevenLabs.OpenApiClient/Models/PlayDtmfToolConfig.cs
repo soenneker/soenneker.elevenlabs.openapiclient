@@ -18,7 +18,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>If true, the agent will not generate further speech after playing DTMF tones. This prevents the agent&apos;s speech from interfering with IVR systems.</summary>
         public bool? SuppressTurnAfterDtmf { get; set; }
         /// <summary>The system_tool_type property</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PlayDtmfToolConfig_system_tool_type? SystemToolType { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PlayKeypadTouchToneSystemToolType? SystemToolType { get; set; }
         /// <summary>Send DTMF tones as out-of-band RTP events (RFC 4733) instead of in-band audio. Only effective for SIP trunk imported numbers.</summary>
         public bool? UseOutOfBandDtmf { get; set; }
         /// <summary>
@@ -49,7 +49,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "suppress_turn_after_dtmf", n => { SuppressTurnAfterDtmf = n.GetBoolValue(); } },
-                { "system_tool_type", n => { SystemToolType = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PlayDtmfToolConfig_system_tool_type>(); } },
+                { "system_tool_type", n => { SystemToolType = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PlayKeypadTouchToneSystemToolType>(); } },
                 { "use_out_of_band_dtmf", n => { UseOutOfBandDtmf = n.GetBoolValue(); } },
             };
         }
@@ -61,7 +61,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("suppress_turn_after_dtmf", SuppressTurnAfterDtmf);
-            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PlayDtmfToolConfig_system_tool_type>("system_tool_type", SystemToolType);
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PlayKeypadTouchToneSystemToolType>("system_tool_type", SystemToolType);
             writer.WriteBoolValue("use_out_of_band_dtmf", UseOutOfBandDtmf);
             writer.WriteAdditionalData(AdditionalData);
         }

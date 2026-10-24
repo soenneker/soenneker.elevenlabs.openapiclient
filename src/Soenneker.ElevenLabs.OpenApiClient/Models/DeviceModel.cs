@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.ElevenLabs.OpenApiClient.Models
 {
     /// <summary>
-    /// &quot;Device information.Spec: https://schema.ocsf.io/1.6.0/objects/device&quot;
+    /// Device information.Spec: https://schema.ocsf.io/1.6.0/objects/device
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class DeviceModel : IParsable

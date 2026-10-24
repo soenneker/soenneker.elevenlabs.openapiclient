@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.ElevenLabs.OpenApiClient.Models
 {
-    /// <summary>&quot;The type of the principal: user, group, or service account (under &apos;key&apos;).&quot;</summary>
+    /// <summary>The type of the principal: user, group, or service account (under &apos;key&apos;).</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum ShareOptionResponseModelType
     {

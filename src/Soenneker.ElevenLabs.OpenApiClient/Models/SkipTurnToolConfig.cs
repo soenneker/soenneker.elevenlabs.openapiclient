@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.ElevenLabs.OpenApiClient.Models
 {
     /// <summary>
-    /// &quot;Allows the agent to explicitly skip its turn.This tool should be invoked by the LLM when the user indicates they would liketo think or take a short pause before continuing the conversation—e.g. whenthey say: \&quot;Give me a second\&quot;, \&quot;Let me think\&quot;, or \&quot;One moment please\&quot;.  Aftercalling this tool, the assistant should not speak until the user speaksagain, or another normal turn-taking condition is met.  The tool itself hasno parameters and performs no side-effects other than informing the backendthat the current turn generation is complete.&quot;
+    /// Allows the agent to explicitly skip its turn.This tool should be invoked by the LLM when the user indicates they would liketo think or take a short pause before continuing the conversation—e.g. whenthey say: &quot;Give me a second&quot;, &quot;Let me think&quot;, or &quot;One moment please&quot;.  Aftercalling this tool, the assistant should not speak until the user speaksagain, or if wait_timeout_secs is set, until that wait elapses and theagent generates a check-in.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SkipTurnToolConfig : IAdditionalDataHolder, IParsable
@@ -16,13 +16,16 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The system_tool_type property</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SkipTurnToolConfig_system_tool_type? SystemToolType { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SkipTurnSystemToolType? SystemToolType { get; set; }
+        /// <summary>Seconds to wait after skip_turn before the agent generates a contextual check-in. The &quot;End conversation after silence&quot; timer is paused during the wait. -1 disables the wait: after skip_turn the agent stays silent until the caller speaks, and that timer keeps running. Applies to voice conversations only.</summary>
+        public double? WaitTimeoutSecs { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.SkipTurnToolConfig"/> and sets the default values.
         /// </summary>
         public SkipTurnToolConfig()
         {
             AdditionalData = new Dictionary<string, object>();
+            WaitTimeoutSecs = -1;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -42,7 +45,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "system_tool_type", n => { SystemToolType = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SkipTurnToolConfig_system_tool_type>(); } },
+                { "system_tool_type", n => { SystemToolType = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SkipTurnSystemToolType>(); } },
+                { "wait_timeout_secs", n => { WaitTimeoutSecs = n.GetDoubleValue(); } },
             };
         }
         /// <summary>
@@ -52,7 +56,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SkipTurnToolConfig_system_tool_type>("system_tool_type", SystemToolType);
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SkipTurnSystemToolType>("system_tool_type", SystemToolType);
+            writer.WriteDoubleValue("wait_timeout_secs", WaitTimeoutSecs);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

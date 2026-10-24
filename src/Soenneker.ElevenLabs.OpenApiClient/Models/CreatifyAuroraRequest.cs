@@ -13,7 +13,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CreatifyAuroraRequest : IParsable
     {
-        /// <summary>The audio property</summary>
+        /// <summary>The speech audio to drive the character&apos;s lip movements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.AudioReference? Audio { get; set; }
@@ -25,7 +25,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public double? AudioGuidanceScale { get; set; }
         /// <summary>How strongly the generation adheres to the input image. Omit to use the model&apos;s default.</summary>
         public double? GuidanceScale { get; set; }
-        /// <summary>The image property</summary>
+        /// <summary>The image of the character to animate.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.ImageReference? Image { get; set; }
@@ -34,7 +34,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.ImageReference Image { get; set; }
 #endif
         /// <summary>The model to use for the generation.</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CreatifyAuroraRequest_model_id? ModelId { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CreatifyAuroraModelId? ModelId { get; set; }
         /// <summary>The resolution of the output video.</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.CreatifyAuroraRequestResolution? Resolution { get; set; }
         /// <summary>Include to send the generation&apos;s result to the workspace&apos;s configured flows webhooks once it completes or fails. The webhook payload matches the terminal response of the corresponding GET endpoint.</summary>
@@ -67,7 +67,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "audio_guidance_scale", n => { AudioGuidanceScale = n.GetDoubleValue(); } },
                 { "guidance_scale", n => { GuidanceScale = n.GetDoubleValue(); } },
                 { "image", n => { Image = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ImageReference>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ImageReference.CreateFromDiscriminatorValue); } },
-                { "model_id", n => { ModelId = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CreatifyAuroraRequest_model_id>(); } },
+                { "model_id", n => { ModelId = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CreatifyAuroraModelId>(); } },
                 { "resolution", n => { Resolution = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CreatifyAuroraRequestResolution>(); } },
                 { "webhook", n => { Webhook = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookTarget>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookTarget.CreateFromDiscriminatorValue); } },
             };
@@ -83,7 +83,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteDoubleValue("audio_guidance_scale", AudioGuidanceScale);
             writer.WriteDoubleValue("guidance_scale", GuidanceScale);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ImageReference>("image", Image);
-            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CreatifyAuroraRequest_model_id>("model_id", ModelId);
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CreatifyAuroraModelId>("model_id", ModelId);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CreatifyAuroraRequestResolution>("resolution", Resolution);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookTarget>("webhook", Webhook);
         }

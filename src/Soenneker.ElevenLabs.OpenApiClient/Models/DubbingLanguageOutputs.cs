@@ -15,13 +15,21 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Signed URL of the dubbed lossless audio track.</summary>
+        /// <summary>Signed URL for the dubbed lossless audio track, in FLAC. The link expires one hour after it is issued; re-read the language target for a fresh one.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? LosslessAudio { get; set; }
 #nullable restore
 #else
         public string LosslessAudio { get; set; }
+#endif
+        /// <summary>Signed URL for the translated lines as WebVTT subtitles, timed to the source speech. Null when none are available, such as for languages dubbed before subtitles were produced. The link expires one hour after it is issued.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Subtitles { get; set; }
+#nullable restore
+#else
+        public string Subtitles { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingLanguageOutputs"/> and sets the default values.
@@ -49,6 +57,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "lossless_audio", n => { LosslessAudio = n.GetStringValue(); } },
+                { "subtitles", n => { Subtitles = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -59,6 +68,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("lossless_audio", LosslessAudio);
+            writer.WriteStringValue("subtitles", Subtitles);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

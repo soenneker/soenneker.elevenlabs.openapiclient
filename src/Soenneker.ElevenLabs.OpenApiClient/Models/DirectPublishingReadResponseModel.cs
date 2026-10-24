@@ -77,13 +77,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The created_at_unix property</summary>
         public int? CreatedAtUnix { get; set; }
         /// <summary>The currency property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Currency { get; set; }
-#nullable restore
-#else
-        public string Currency { get; set; }
-#endif
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.DirectPublishingReadResponseModelCurrencyAnyOf1? Currency { get; set; }
         /// <summary>The description property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -97,10 +91,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The distribution_territories property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.DirectPublishingReadResponseModelDistributionTerritories? DistributionTerritories { get; set; }
+        public List<string>? DistributionTerritories { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.DirectPublishingReadResponseModelDistributionTerritories DistributionTerritories { get; set; }
+        public List<string> DistributionTerritories { get; set; }
 #endif
         /// <summary>The ean property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -129,10 +123,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The genre property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.DirectPublishingReadResponseModelGenreAnyOf1Item>? Genre { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.DirectPublishingReadResponseModelGenreItem?>? Genre { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.DirectPublishingReadResponseModelGenreAnyOf1Item> Genre { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.DirectPublishingReadResponseModelGenreItem?> Genre { get; set; }
 #endif
         /// <summary>The isbn property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -276,6 +270,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public string ReadSlug { get; set; }
 #endif
+        /// <summary>The restricted_to_user_email_domains property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? RestrictedToUserEmailDomains { get; set; }
+#nullable restore
+#else
+        public List<string> RestrictedToUserEmailDomains { get; set; }
+#endif
         /// <summary>The review property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -372,14 +374,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "contributors", n => { Contributors = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.Contributor>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Contributor.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "copyright", n => { Copyright = n.GetStringValue(); } },
                 { "created_at_unix", n => { CreatedAtUnix = n.GetIntValue(); } },
-                { "currency", n => { Currency = n.GetStringValue(); } },
+                { "currency", n => { Currency = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DirectPublishingReadResponseModelCurrencyAnyOf1>(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "display_mode", n => { DisplayMode = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DirectPublishingReadResponseModelDisplayMode>(); } },
-                { "distribution_territories", n => { DistributionTerritories = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DirectPublishingReadResponseModelDistributionTerritories>(global::Soenneker.ElevenLabs.OpenApiClient.Models.DirectPublishingReadResponseModelDistributionTerritories.CreateFromDiscriminatorValue); } },
+                { "distribution_territories", n => { DistributionTerritories = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "ean", n => { Ean = n.GetStringValue(); } },
                 { "edition", n => { Edition = n.GetStringValue(); } },
                 { "fiction", n => { Fiction = n.GetStringValue(); } },
-                { "genre", n => { Genre = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.DirectPublishingReadResponseModelGenreAnyOf1Item>(global::Soenneker.ElevenLabs.OpenApiClient.Models.DirectPublishingReadResponseModelGenreAnyOf1Item.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "genre", n => { Genre = n.GetCollectionOfEnumValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.DirectPublishingReadResponseModelGenreItem>()?.AsList(); } },
                 { "is_voice_changer_on", n => { IsVoiceChangerOn = n.GetBoolValue(); } },
                 { "isbn", n => { Isbn = n.GetStringValue(); } },
                 { "language", n => { Language = n.GetStringValue(); } },
@@ -403,6 +405,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "quality_score", n => { QualityScore = n.GetIntValue(); } },
                 { "read_id", n => { ReadId = n.GetStringValue(); } },
                 { "read_slug", n => { ReadSlug = n.GetStringValue(); } },
+                { "restricted_to_user_email_domains", n => { RestrictedToUserEmailDomains = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "review", n => { Review = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ReviewResponseModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ReviewResponseModel.CreateFromDiscriminatorValue); } },
                 { "safesearch_adult", n => { SafesearchAdult = n.GetBoolValue(); } },
                 { "sample_config", n => { SampleConfig = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SampleConfigDbModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.SampleConfigDbModel.CreateFromDiscriminatorValue); } },
@@ -433,14 +436,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.Contributor>("contributors", Contributors);
             writer.WriteStringValue("copyright", Copyright);
             writer.WriteIntValue("created_at_unix", CreatedAtUnix);
-            writer.WriteStringValue("currency", Currency);
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DirectPublishingReadResponseModelCurrencyAnyOf1>("currency", Currency);
             writer.WriteStringValue("description", Description);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DirectPublishingReadResponseModelDisplayMode>("display_mode", DisplayMode);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DirectPublishingReadResponseModelDistributionTerritories>("distribution_territories", DistributionTerritories);
+            writer.WriteCollectionOfPrimitiveValues<string>("distribution_territories", DistributionTerritories);
             writer.WriteStringValue("ean", Ean);
             writer.WriteStringValue("edition", Edition);
             writer.WriteStringValue("fiction", Fiction);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.DirectPublishingReadResponseModelGenreAnyOf1Item>("genre", Genre);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.DirectPublishingReadResponseModelGenreItem>("genre", Genre);
             writer.WriteStringValue("isbn", Isbn);
             writer.WriteBoolValue("is_voice_changer_on", IsVoiceChangerOn);
             writer.WriteStringValue("language", Language);
@@ -464,6 +467,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteIntValue("quality_score", QualityScore);
             writer.WriteStringValue("read_id", ReadId);
             writer.WriteStringValue("read_slug", ReadSlug);
+            writer.WriteCollectionOfPrimitiveValues<string>("restricted_to_user_email_domains", RestrictedToUserEmailDomains);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ReviewResponseModel>("review", Review);
             writer.WriteBoolValue("safesearch_adult", SafesearchAdult);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SampleConfigDbModel>("sample_config", SampleConfig);

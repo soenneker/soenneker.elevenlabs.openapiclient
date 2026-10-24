@@ -33,7 +33,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public string TargetNodeId { get; set; }
 #endif
         /// <summary>The type property</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkflowToolEdgeStepModel_type? Type { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.EdgeType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkflowToolEdgeStepModel"/> and sets the default values.
         /// </summary>
@@ -62,7 +62,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "edge_id", n => { EdgeId = n.GetStringValue(); } },
                 { "step_latency_secs", n => { StepLatencySecs = n.GetDoubleValue(); } },
                 { "target_node_id", n => { TargetNodeId = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkflowToolEdgeStepModel_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.EdgeType>(); } },
             };
         }
         /// <summary>
@@ -75,7 +75,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteStringValue("edge_id", EdgeId);
             writer.WriteDoubleValue("step_latency_secs", StepLatencySecs);
             writer.WriteStringValue("target_node_id", TargetNodeId);
-            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkflowToolEdgeStepModel_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.EdgeType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -28,7 +28,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>If true, this assignment&apos;s value will be removed from the tool response before sending to the LLM and transcript, but still processed for variable assignment.</summary>
         public bool? Sanitize { get; set; }
         /// <summary>The source to extract the value from. Currently only &apos;response&apos; is supported.</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.DynamicVariableAssignment_source? Source { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ResponseSource? Source { get; set; }
         /// <summary>Dot notation path to extract the value from the source (e.g., &apos;user.name&apos; or &apos;data.0.id&apos;)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -67,7 +67,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "dynamic_variable", n => { DynamicVariable = n.GetStringValue(); } },
                 { "preserve_native_type", n => { PreserveNativeType = n.GetBoolValue(); } },
                 { "sanitize", n => { Sanitize = n.GetBoolValue(); } },
-                { "source", n => { Source = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DynamicVariableAssignment_source>(); } },
+                { "source", n => { Source = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ResponseSource>(); } },
                 { "value_path", n => { ValuePath = n.GetStringValue(); } },
             };
         }
@@ -81,7 +81,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteStringValue("dynamic_variable", DynamicVariable);
             writer.WriteBoolValue("preserve_native_type", PreserveNativeType);
             writer.WriteBoolValue("sanitize", Sanitize);
-            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DynamicVariableAssignment_source>("source", Source);
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ResponseSource>("source", Source);
             writer.WriteStringValue("value_path", ValuePath);
             writer.WriteAdditionalData(AdditionalData);
         }

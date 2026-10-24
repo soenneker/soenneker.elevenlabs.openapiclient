@@ -15,5 +15,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         #pragma warning disable CS1591
         Value720P,
         #pragma warning restore CS1591
+        [EnumMember(Value = "1080p")]
+        #pragma warning disable CS1591
+        Value1080P,
+        #pragma warning restore CS1591
     }
 }

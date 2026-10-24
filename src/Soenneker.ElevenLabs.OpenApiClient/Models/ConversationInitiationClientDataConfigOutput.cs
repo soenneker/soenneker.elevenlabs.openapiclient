@@ -26,6 +26,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public bool? CustomLlmExtraBody { get; set; }
         /// <summary>Whether to enable conversation initiation client data from webhooks</summary>
         public bool? EnableConversationInitiationClientDataFromWebhook { get; set; }
+        /// <summary>Whether clients may pass procedure_ids and start_procedure_ids in initiation client data. procedure_ids selects which of the agent&apos;s procedures are available. start_procedure_ids starts free-form procedures when the conversation starts. If false, sending either field fails conversation start.</summary>
+        public bool? EnableProcedureIdsFromClient { get; set; }
         /// <summary>Whether clients may pass starting_workflow_node_id in initiation client data; if false, sending it fails conversation start.</summary>
         public bool? EnableStartingWorkflowNodeIdFromClient { get; set; }
         /// <summary>
@@ -36,6 +38,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             AdditionalData = new Dictionary<string, object>();
             CustomLlmExtraBody = false;
             EnableConversationInitiationClientDataFromWebhook = false;
+            EnableProcedureIdsFromClient = false;
             EnableStartingWorkflowNodeIdFromClient = false;
         }
         /// <summary>
@@ -59,6 +62,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "conversation_config_override", n => { ConversationConfigOverride = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationConfigClientOverrideConfigOutput>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationConfigClientOverrideConfigOutput.CreateFromDiscriminatorValue); } },
                 { "custom_llm_extra_body", n => { CustomLlmExtraBody = n.GetBoolValue(); } },
                 { "enable_conversation_initiation_client_data_from_webhook", n => { EnableConversationInitiationClientDataFromWebhook = n.GetBoolValue(); } },
+                { "enable_procedure_ids_from_client", n => { EnableProcedureIdsFromClient = n.GetBoolValue(); } },
                 { "enable_starting_workflow_node_id_from_client", n => { EnableStartingWorkflowNodeIdFromClient = n.GetBoolValue(); } },
             };
         }
@@ -72,6 +76,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationConfigClientOverrideConfigOutput>("conversation_config_override", ConversationConfigOverride);
             writer.WriteBoolValue("custom_llm_extra_body", CustomLlmExtraBody);
             writer.WriteBoolValue("enable_conversation_initiation_client_data_from_webhook", EnableConversationInitiationClientDataFromWebhook);
+            writer.WriteBoolValue("enable_procedure_ids_from_client", EnableProcedureIdsFromClient);
             writer.WriteBoolValue("enable_starting_workflow_node_id_from_client", EnableStartingWorkflowNodeIdFromClient);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.ElevenLabs.OpenApiClient.Models
 {
+    /// <summary>The placement of the widget on the screen</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum WidgetPlacement
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "top-left")]
         #pragma warning disable CS1591

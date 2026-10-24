@@ -111,24 +111,17 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.SharedVoices
             public string Age { get; set; }
 #endif
             /// <summary>Voice category used for filtering</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("category")]
-            public string? Category { get; set; }
-#nullable restore
-#else
-            [QueryParameter("category")]
-            public string Category { get; set; }
-#endif
+            public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetLibraryVoicesCategoryParameter? Category { get; set; }
             /// <summary>Search term used for filtering</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("descriptives")]
-            public string? Descriptives { get; set; }
+            public string[]? Descriptives { get; set; }
 #nullable restore
 #else
             [QueryParameter("descriptives")]
-            public string Descriptives { get; set; }
+            public string[] Descriptives { get; set; }
 #endif
             /// <summary>Filter featured voices</summary>
             [QueryParameter("featured")]
@@ -182,8 +175,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.SharedVoices
             [QueryParameter("owner_id")]
             public string OwnerId { get; set; }
 #endif
+            #pragma warning disable CS1591
             [QueryParameter("page")]
             public int? Page { get; set; }
+            #pragma warning restore CS1591
             /// <summary>How many shared voices to return at maximum. Can not exceed 100, defaults to 30.</summary>
             [QueryParameter("page_size")]
             public int? PageSize { get; set; }
@@ -200,25 +195,18 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.SharedVoices
             [QueryParameter("search")]
             public string Search { get; set; }
 #endif
-            /// <summary>&quot;Sort criteria. Must be one of: created_date, usage_character_count_1y, trending, cloned_by_count.&quot;</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
+            /// <summary>Sort criteria. Must be one of: created_date, usage_character_count_1y, trending, cloned_by_count.</summary>
             [QueryParameter("sort")]
-            public string? Sort { get; set; }
-#nullable restore
-#else
-            [QueryParameter("sort")]
-            public string Sort { get; set; }
-#endif
+            public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetLibraryVoicesSortParameter? Sort { get; set; }
             /// <summary>Use-case used for filtering</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("use_cases")]
-            public string? UseCases { get; set; }
+            public string[]? UseCases { get; set; }
 #nullable restore
 #else
             [QueryParameter("use_cases")]
-            public string UseCases { get; set; }
+            public string[] UseCases { get; set; }
 #endif
         }
     }

@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.ElevenLabs.OpenApiClient.Models
 {
-    /// <summary>Sort by creation time (default &apos;DESCENDING&apos;).</summary>
+    /// <summary>Sort by creation time; newest first by default.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum DubbingProjectListSortDirectionParameter
     {

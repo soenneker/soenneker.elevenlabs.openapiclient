@@ -8,21 +8,15 @@ using System;
 namespace Soenneker.ElevenLabs.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="int"/>, <see cref="string"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.SubscriptionResponseModelMaxCreditLimitExtensionAnyOf2"/>, <see cref="int"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SubscriptionResponseModelMaxCreditLimitExtension : IComposedTypeWrapper, IParsable
     {
         /// <summary>Composed type representation for type <see cref="int"/></summary>
         public int? Integer { get; set; }
-        /// <summary>Composed type representation for type <see cref="string"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? String { get; set; }
-#nullable restore
-#else
-        public string String { get; set; }
-#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.SubscriptionResponseModelMaxCreditLimitExtensionAnyOf2"/></summary>
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SubscriptionResponseModelMaxCreditLimitExtensionAnyOf2? SubscriptionResponseModelMaxCreditLimitExtensionAnyOf2 { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -36,9 +30,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             {
                 result.Integer = integerValue;
             }
-            else if(parseNode.GetStringValue() is string stringValue)
+            else if(parseNode.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SubscriptionResponseModelMaxCreditLimitExtensionAnyOf2>() is global::Soenneker.ElevenLabs.OpenApiClient.Models.SubscriptionResponseModelMaxCreditLimitExtensionAnyOf2 subscriptionResponseModelMaxCreditLimitExtensionAnyOf2Value)
             {
-                result.String = stringValue;
+                result.SubscriptionResponseModelMaxCreditLimitExtensionAnyOf2 = subscriptionResponseModelMaxCreditLimitExtensionAnyOf2Value;
             }
             return result;
         }
@@ -61,9 +55,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             {
                 writer.WriteIntValue(null, Integer);
             }
-            else if(String != null)
+            else if(SubscriptionResponseModelMaxCreditLimitExtensionAnyOf2 != null)
             {
-                writer.WriteStringValue(null, String);
+                writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SubscriptionResponseModelMaxCreditLimitExtensionAnyOf2>(null, SubscriptionResponseModelMaxCreditLimitExtensionAnyOf2);
             }
         }
     }

@@ -14,6 +14,29 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The number of converted characters for this voice.</summary>
+        public int? CharactersConverted { get; set; }
+        /// <summary>The number of unconverted characters for this voice.</summary>
+        public int? CharactersUnconverted { get; set; }
+        /// <summary>The number of credits needed to convert the remaining audio for this voice.</summary>
+        public int? CreditsNeededToConvert { get; set; }
+        /// <summary>The project voice reference ID.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ProjectVoiceRefId { get; set; }
+#nullable restore
+#else
+        public string ProjectVoiceRefId { get; set; }
+#endif
+        /// <summary>The voice ID.</summary>
+        [Obsolete("")]
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? VoiceId { get; private set; }
+#nullable restore
+#else
+        public string VoiceId { get; private set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceStatisticsResponseModel"/> and sets the default values.
         /// </summary>
@@ -39,6 +62,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "characters_converted", n => { CharactersConverted = n.GetIntValue(); } },
+                { "characters_unconverted", n => { CharactersUnconverted = n.GetIntValue(); } },
+                { "credits_needed_to_convert", n => { CreditsNeededToConvert = n.GetIntValue(); } },
+                { "project_voice_ref_id", n => { ProjectVoiceRefId = n.GetStringValue(); } },
+                { "voice_id", n => { VoiceId = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -48,6 +76,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteIntValue("characters_converted", CharactersConverted);
+            writer.WriteIntValue("characters_unconverted", CharactersUnconverted);
+            writer.WriteIntValue("credits_needed_to_convert", CreditsNeededToConvert);
+            writer.WriteStringValue("project_voice_ref_id", ProjectVoiceRefId);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

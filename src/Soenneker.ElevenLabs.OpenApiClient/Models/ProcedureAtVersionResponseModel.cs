@@ -22,6 +22,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public string Content { get; set; }
 #endif
+        /// <summary>Procedure ID of the folder this procedure is placed in. None means root.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? FolderParentId { get; set; }
+#nullable restore
+#else
+        public string FolderParentId { get; set; }
+#endif
         /// <summary>Procedure name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -46,7 +54,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public string Trigger { get; set; }
 #endif
-        /// <summary>The type property</summary>
+        /// <summary>Procedure type</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.ProcedureType? Type { get; set; }
         /// <summary>Version ID of a version of the procedure. None for a procedure never versioned.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -62,6 +70,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public ProcedureAtVersionResponseModel()
         {
             AdditionalData = new Dictionary<string, object>();
+            Type = global::Soenneker.ElevenLabs.OpenApiClient.Models.ProcedureType.FreeForm;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -82,6 +91,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "content", n => { Content = n.GetStringValue(); } },
+                { "folder_parent_id", n => { FolderParentId = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "procedure_id", n => { ProcedureId = n.GetStringValue(); } },
                 { "trigger", n => { Trigger = n.GetStringValue(); } },
@@ -97,6 +107,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("content", Content);
+            writer.WriteStringValue("folder_parent_id", FolderParentId);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("procedure_id", ProcedureId);
             writer.WriteStringValue("trigger", Trigger);

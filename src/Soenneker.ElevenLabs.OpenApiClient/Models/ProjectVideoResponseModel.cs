@@ -225,7 +225,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.AssetTranscription Transcription { get; set; }
 #endif
         /// <summary>The type property</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectVideoResponseModel_type? Type { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.VideoType? Type { get; set; }
         /// <summary>The updated_at_ms property</summary>
         public int? UpdatedAtMs { get; set; }
         /// <summary>The video_id property</summary>
@@ -312,7 +312,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "thumbnail_size", n => { ThumbnailSize = n.GetCollectionOfPrimitiveValues<int?>()?.AsList(); } },
                 { "track_id", n => { TrackId = n.GetStringValue(); } },
                 { "transcription", n => { Transcription = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AssetTranscription>(global::Soenneker.ElevenLabs.OpenApiClient.Models.AssetTranscription.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectVideoResponseModel_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.VideoType>(); } },
                 { "updated_at_ms", n => { UpdatedAtMs = n.GetIntValue(); } },
                 { "video_id", n => { VideoId = n.GetStringValue(); } },
                 { "volume_gain_db", n => { VolumeGainDb = n.GetDoubleValue(); } },
@@ -363,7 +363,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<int?>("thumbnail_size", ThumbnailSize);
             writer.WriteStringValue("track_id", TrackId);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AssetTranscription>("transcription", Transcription);
-            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectVideoResponseModel_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.VideoType>("type", Type);
             writer.WriteIntValue("updated_at_ms", UpdatedAtMs);
             writer.WriteStringValue("video_id", VideoId);
             writer.WriteDoubleValue("volume_gain_db", VolumeGainDb);

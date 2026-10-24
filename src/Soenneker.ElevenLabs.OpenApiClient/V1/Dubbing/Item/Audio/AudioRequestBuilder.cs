@@ -18,6 +18,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Dubbing.Item.Audio
         /// <summary>Gets an item from the Soenneker.ElevenLabs.OpenApiClient.v1.dubbing.item.audio.item collection</summary>
         /// <param name="position">ID of the language.</param>
         /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.V1.Dubbing.Item.Audio.Item.WithLanguageCodeItemRequestBuilder"/></returns>
+        [Obsolete("")]
         public global::Soenneker.ElevenLabs.OpenApiClient.V1.Dubbing.Item.Audio.Item.WithLanguageCodeItemRequestBuilder this[string position]
         {
             get

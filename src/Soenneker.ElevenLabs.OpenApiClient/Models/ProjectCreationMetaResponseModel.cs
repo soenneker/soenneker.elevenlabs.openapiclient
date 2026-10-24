@@ -18,7 +18,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public double? CreationProgress { get; set; }
         /// <summary>The status of the project creation action.</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectCreationMetaResponseModelStatus? Status { get; set; }
-        /// <summary>The type property</summary>
+        /// <summary>The type of the project creation action.</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectCreationMetaType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectCreationMetaResponseModel"/> and sets the default values.

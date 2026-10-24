@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.ElevenLabs.OpenApiClient.Models
 {
-    /// <summary>&quot;Lifecycle status: &apos;queued&apos; (waiting on the project), &apos;processing&apos;, &apos;completed&apos;, &apos;stale&apos; (source/transcript changed), or &apos;failed&apos;.&quot;</summary>
+    /// <summary>Lifecycle status: `queued` (waiting on the project to be ready, or on a worker), `processing` while it is being dubbed, `completed` once its output is available, `stale` when the transcript changed after the output was produced, or `failed`.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum DubbingLanguageResponseStatus
     {

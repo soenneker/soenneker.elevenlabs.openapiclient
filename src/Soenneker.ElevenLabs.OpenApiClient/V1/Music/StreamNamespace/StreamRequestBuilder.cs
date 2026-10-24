@@ -22,7 +22,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Music.StreamNamespace
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public StreamRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/music/stream{?output_format*}", pathParameters)
+        public StreamRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/music/stream{?enable_logging*,output_format*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Music.StreamNamespace
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public StreamRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/music/stream{?output_format*}", rawUrl)
+        public StreamRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/music/stream{?enable_logging*,output_format*}", rawUrl)
         {
         }
         /// <summary>
@@ -76,7 +76,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Music.StreamNamespace
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
-            requestInfo.Headers.TryAdd("Accept", "application/json");
+            requestInfo.Headers.TryAdd("Accept", "audio/*, application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             return requestInfo;
         }
@@ -95,7 +95,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Music.StreamNamespace
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class StreamRequestBuilderPostQueryParameters 
         {
-            /// <summary>&quot;Output format of the generated audio. Formatted as codec_sample_rate_bitrate. Use \&quot;auto\&quot; (the default) to let the API pick the best format for the selected model: mp3_44100_128 for v1 models and mp3_48000_192 for v2 models. &quot;</summary>
+            /// <summary>When enable_logging is set to false zero retention mode will be used for the request. Zero retention mode may only be used by enterprise customers.</summary>
+            [QueryParameter("enable_logging")]
+            public bool? EnableLogging { get; set; }
+            /// <summary>Output format of the generated audio. Formatted as codec_sample_rate_bitrate. Use &quot;auto&quot; (the default) to let the API pick the best format for the selected model: mp3_44100_128 for v1 models and mp3_48000_192 for v2 models. </summary>
             [QueryParameter("output_format")]
             public global::Soenneker.ElevenLabs.OpenApiClient.Models.StreamComposeOutputFormatParameter? OutputFormat { get; set; }
         }

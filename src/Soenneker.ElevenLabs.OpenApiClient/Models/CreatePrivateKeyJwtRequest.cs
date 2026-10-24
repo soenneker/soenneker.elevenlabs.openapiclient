@@ -26,7 +26,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public string Audience { get; set; }
 #endif
         /// <summary>The auth_type property</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CreatePrivateKeyJwtRequest_auth_type? AuthType { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PrivateKeyJwtAuthType? AuthType { get; set; }
         /// <summary>Token expiration time in seconds</summary>
         public int? ExpirationSeconds { get; set; }
         /// <summary>Additional custom claims to include in the JWT</summary>
@@ -113,7 +113,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             {
                 { "algorithm", n => { Algorithm = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CreatePrivateKeyJwtRequestAlgorithm>(); } },
                 { "audience", n => { Audience = n.GetStringValue(); } },
-                { "auth_type", n => { AuthType = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CreatePrivateKeyJwtRequest_auth_type>(); } },
+                { "auth_type", n => { AuthType = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PrivateKeyJwtAuthType>(); } },
                 { "expiration_seconds", n => { ExpirationSeconds = n.GetIntValue(); } },
                 { "extra_params", n => { ExtraParams = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CreatePrivateKeyJwtRequestExtraParamsProperty>(global::Soenneker.ElevenLabs.OpenApiClient.Models.CreatePrivateKeyJwtRequestExtraParamsProperty.CreateFromDiscriminatorValue); } },
                 { "issuer", n => { Issuer = n.GetStringValue(); } },
@@ -133,7 +133,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CreatePrivateKeyJwtRequestAlgorithm>("algorithm", Algorithm);
             writer.WriteStringValue("audience", Audience);
-            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CreatePrivateKeyJwtRequest_auth_type>("auth_type", AuthType);
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PrivateKeyJwtAuthType>("auth_type", AuthType);
             writer.WriteIntValue("expiration_seconds", ExpirationSeconds);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CreatePrivateKeyJwtRequestExtraParamsProperty>("extra_params", ExtraParams);
             writer.WriteStringValue("issuer", Issuer);

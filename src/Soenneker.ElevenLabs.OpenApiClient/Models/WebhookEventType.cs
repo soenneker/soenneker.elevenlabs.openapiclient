@@ -20,6 +20,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         #pragma warning disable CS1591
         CallInitiationFailure,
         #pragma warning restore CS1591
+        [EnumMember(Value = "answering_machine_detection")]
+        #pragma warning disable CS1591
+        AnsweringMachineDetection,
+        #pragma warning restore CS1591
         [EnumMember(Value = "unredacted_transcript")]
         #pragma warning disable CS1591
         UnredactedTranscript,

@@ -22,6 +22,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public string AgentId { get; set; }
 #endif
+        /// <summary>The branch_id property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? BranchId { get; set; }
+#nullable restore
+#else
+        public string BranchId { get; set; }
+#endif
         /// <summary>The condition property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -46,6 +54,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #endif
         /// <summary>Defines whether TTS client overrides should be carried over to the transferred agent.</summary>
         public bool? PreserveClientTtsOverrides { get; set; }
+        /// <summary>Defines whether the base voice, TTS model and voice settings should be carried over to the transferred agent.</summary>
+        public bool? PreserveVoiceSettings { get; set; }
         /// <summary>The transfer_message property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -64,6 +74,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             EnableTransferredAgentFirstMessage = false;
             IsWorkflowNodeTransfer = false;
             PreserveClientTtsOverrides = false;
+            PreserveVoiceSettings = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -84,12 +95,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "agent_id", n => { AgentId = n.GetStringValue(); } },
+                { "branch_id", n => { BranchId = n.GetStringValue(); } },
                 { "condition", n => { Condition = n.GetStringValue(); } },
                 { "delay_ms", n => { DelayMs = n.GetIntValue(); } },
                 { "enable_transferred_agent_first_message", n => { EnableTransferredAgentFirstMessage = n.GetBoolValue(); } },
                 { "is_workflow_node_transfer", n => { IsWorkflowNodeTransfer = n.GetBoolValue(); } },
                 { "node_id", n => { NodeId = n.GetStringValue(); } },
                 { "preserve_client_tts_overrides", n => { PreserveClientTtsOverrides = n.GetBoolValue(); } },
+                { "preserve_voice_settings", n => { PreserveVoiceSettings = n.GetBoolValue(); } },
                 { "transfer_message", n => { TransferMessage = n.GetStringValue(); } },
             };
         }
@@ -101,12 +114,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("agent_id", AgentId);
+            writer.WriteStringValue("branch_id", BranchId);
             writer.WriteStringValue("condition", Condition);
             writer.WriteIntValue("delay_ms", DelayMs);
             writer.WriteBoolValue("enable_transferred_agent_first_message", EnableTransferredAgentFirstMessage);
             writer.WriteBoolValue("is_workflow_node_transfer", IsWorkflowNodeTransfer);
             writer.WriteStringValue("node_id", NodeId);
             writer.WriteBoolValue("preserve_client_tts_overrides", PreserveClientTtsOverrides);
+            writer.WriteBoolValue("preserve_voice_settings", PreserveVoiceSettings);
             writer.WriteStringValue("transfer_message", TransferMessage);
             writer.WriteAdditionalData(AdditionalData);
         }

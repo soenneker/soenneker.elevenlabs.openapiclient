@@ -25,10 +25,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Labels for the voice. Keys can be language, accent, gender, or age.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreatePvcVoiceV1VoicesPvcPostLabels? Labels { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreatePvcVoiceV1VoicesPvcPostLabelsProperty? Labels { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreatePvcVoiceV1VoicesPvcPostLabels Labels { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreatePvcVoiceV1VoicesPvcPostLabelsProperty Labels { get; set; }
 #endif
         /// <summary>Language used in the samples.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -72,7 +72,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "description", n => { Description = n.GetStringValue(); } },
-                { "labels", n => { Labels = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreatePvcVoiceV1VoicesPvcPostLabels>(global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreatePvcVoiceV1VoicesPvcPostLabels.CreateFromDiscriminatorValue); } },
+                { "labels", n => { Labels = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreatePvcVoiceV1VoicesPvcPostLabelsProperty>(global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreatePvcVoiceV1VoicesPvcPostLabelsProperty.CreateFromDiscriminatorValue); } },
                 { "language", n => { Language = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
             };
@@ -85,7 +85,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("description", Description);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreatePvcVoiceV1VoicesPvcPostLabels>("labels", Labels);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreatePvcVoiceV1VoicesPvcPostLabelsProperty>("labels", Labels);
             writer.WriteStringValue("language", Language);
             writer.WriteStringValue("name", Name);
             writer.WriteAdditionalData(AdditionalData);

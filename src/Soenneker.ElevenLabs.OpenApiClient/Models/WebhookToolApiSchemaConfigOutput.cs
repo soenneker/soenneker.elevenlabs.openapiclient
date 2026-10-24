@@ -42,13 +42,13 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookToolApiSchemaConfigOutputPathParamsSchemaProperty PathParamsSchema { get; set; }
 #endif
-        /// <summary>&quot;Schema for any query params, if any. These will be added to end of the URL as query params. Note: properties in a query param must all be literal types&quot;</summary>
+        /// <summary>Schema for any query params, if any. These will be added to end of the URL as query params. Note: properties in a query param must all be literal types</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.QueryParamsJsonSchema? QueryParamsSchema { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.QueryParamsJsonSchemaOutput? QueryParamsSchema { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.QueryParamsJsonSchema QueryParamsSchema { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.QueryParamsJsonSchemaOutput QueryParamsSchema { get; set; }
 #endif
         /// <summary>Schema for the body parameters, if any. Used for POST/PATCH/PUT requests. The schema should be an object which will be sent as the json body</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -120,7 +120,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "content_type", n => { ContentType = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookToolApiSchemaConfigOutputContentType>(); } },
                 { "method", n => { Method = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookToolApiSchemaConfigOutputMethod>(); } },
                 { "path_params_schema", n => { PathParamsSchema = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookToolApiSchemaConfigOutputPathParamsSchemaProperty>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookToolApiSchemaConfigOutputPathParamsSchemaProperty.CreateFromDiscriminatorValue); } },
-                { "query_params_schema", n => { QueryParamsSchema = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.QueryParamsJsonSchema>(global::Soenneker.ElevenLabs.OpenApiClient.Models.QueryParamsJsonSchema.CreateFromDiscriminatorValue); } },
+                { "query_params_schema", n => { QueryParamsSchema = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.QueryParamsJsonSchemaOutput>(global::Soenneker.ElevenLabs.OpenApiClient.Models.QueryParamsJsonSchemaOutput.CreateFromDiscriminatorValue); } },
                 { "request_body_schema", n => { RequestBodySchema = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ObjectJsonSchemaPropertyOutput>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ObjectJsonSchemaPropertyOutput.CreateFromDiscriminatorValue); } },
                 { "request_headers", n => { RequestHeaders = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookToolApiSchemaConfigOutputRequestHeadersProperty>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookToolApiSchemaConfigOutputRequestHeadersProperty.CreateFromDiscriminatorValue); } },
                 { "response_body_schema", n => { ResponseBodySchema = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ObjectJsonSchemaPropertyOutput>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ObjectJsonSchemaPropertyOutput.CreateFromDiscriminatorValue); } },
@@ -140,7 +140,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookToolApiSchemaConfigOutputContentType>("content_type", ContentType);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookToolApiSchemaConfigOutputMethod>("method", Method);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookToolApiSchemaConfigOutputPathParamsSchemaProperty>("path_params_schema", PathParamsSchema);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.QueryParamsJsonSchema>("query_params_schema", QueryParamsSchema);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.QueryParamsJsonSchemaOutput>("query_params_schema", QueryParamsSchema);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ObjectJsonSchemaPropertyOutput>("request_body_schema", RequestBodySchema);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookToolApiSchemaConfigOutputRequestHeadersProperty>("request_headers", RequestHeaders);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ObjectJsonSchemaPropertyOutput>("response_body_schema", ResponseBodySchema);

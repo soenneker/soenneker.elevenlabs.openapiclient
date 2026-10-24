@@ -1,8 +1,8 @@
 {
-  "descriptionHash": "0A58CA2DD34F03E500F0001B363EE2EEC44D5D6F4A31395A955E9AE08DB6EF590500F42982127524BD696BCB8A3083FDBEA8C95BA4F3D30C1C1577AF2CFA3A6A",
+  "descriptionHash": "64F38446F9EA757CADE664BAC403EF6CB7B6A6326502E08CED39B593AE6E08C2B83E0ECC6B5FEA7841ABFCC6CF315B2E1C5E9EA4674A20130F03B5522CCB1867",
   "descriptionLocation": "../../fixed.json",
   "lockFileVersion": "1.0.0",
-  "kiotaVersion": "1.34.1",
+  "kiotaVersion": "1.36.1",
   "clientClassName": "ElevenLabsOpenApiClient",
   "typeAccessModifier": "Public",
   "clientNamespaceName": "Soenneker.ElevenLabs.OpenApiClient",

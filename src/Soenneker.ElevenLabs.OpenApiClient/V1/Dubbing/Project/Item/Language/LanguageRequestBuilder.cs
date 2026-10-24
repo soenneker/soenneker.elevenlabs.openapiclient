@@ -47,7 +47,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Dubbing.Project.Item.Language
         {
         }
         /// <summary>
-        /// List a project&apos;s language targets (cursor-paginated).
+        /// List a project&apos;s language targets, cursor-paginated, each with signed output URLs once it has produced an output.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingLanguageListResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -70,7 +70,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Dubbing.Project.Item.Language
             return await RequestAdapter.SendAsync<global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingLanguageListResponse>(requestInfo, global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingLanguageListResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Queue a language target for a project (starts once the project is ready).
+        /// Add a language to dub a project into, and queue the dub.This is the call that produces dubbed audio, and it is billed per generation. The target is created `queued` and starts as soon as the project is `ready`, so it can be added at any point after the project is created. It inherits the project&apos;s dubbing model and cannot pick another.A project created with `webhook_ids` sends a `dubbing_language_completed` event carrying the output download URLs, so we recommend subscribing rather than polling this target to completion.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingLanguageResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -95,7 +95,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Dubbing.Project.Item.Language
             return await RequestAdapter.SendAsync<global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingLanguageResponse>(requestInfo, global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingLanguageResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List a project&apos;s language targets (cursor-paginated).
+        /// List a project&apos;s language targets, cursor-paginated, each with signed output URLs once it has produced an output.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -114,7 +114,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Dubbing.Project.Item.Language
             return requestInfo;
         }
         /// <summary>
-        /// Queue a language target for a project (starts once the project is ready).
+        /// Add a language to dub a project into, and queue the dub.This is the call that produces dubbed audio, and it is billed per generation. The target is created `queued` and starts as soon as the project is `ready`, so it can be added at any point after the project is created. It inherits the project&apos;s dubbing model and cannot pick another.A project created with `webhook_ids` sends a `dubbing_language_completed` event carrying the output download URLs, so we recommend subscribing rather than polling this target to completion.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -145,12 +145,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Dubbing.Project.Item.Language
             return new global::Soenneker.ElevenLabs.OpenApiClient.V1.Dubbing.Project.Item.Language.LanguageRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List a project&apos;s language targets (cursor-paginated).
+        /// List a project&apos;s language targets, cursor-paginated, each with signed output URLs once it has produced an output.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class LanguageRequestBuilderGetQueryParameters 
         {
-            /// <summary>Pagination cursor from a previous response&apos;s next_cursor.</summary>
+            /// <summary>Pass the `next_cursor` from a previous response to fetch the page after it. Omit for the first page.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("cursor")]
@@ -160,10 +160,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Dubbing.Project.Item.Language
             [QueryParameter("cursor")]
             public string Cursor { get; set; }
 #endif
-            /// <summary>Number of language targets per page (max 100).</summary>
+            /// <summary>Number of language targets per page. Clamped to between 1 and 100 rather than rejected, so a larger value returns a full page.</summary>
             [QueryParameter("page_size")]
             public int? PageSize { get; set; }
-            /// <summary>Filter to targets in this status (queued, processing, completed, stale, failed).</summary>
+            /// <summary>Filter to targets in this status: `queued`, `processing`, `completed`, `stale`, or `failed`. Omit to return every status.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("status")]

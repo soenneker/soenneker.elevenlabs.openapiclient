@@ -57,7 +57,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.EnvironmentVariables.Item
             return await RequestAdapter.SendAsync<global::Soenneker.ElevenLabs.OpenApiClient.Models.EnvironmentVariableResponse>(requestInfo, global::Soenneker.ElevenLabs.OpenApiClient.Models.EnvironmentVariableResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Replace an environment variable&apos;s values. Use null to remove an environment (except production).
+        /// Replace an environment variable&apos;s values. Use null to remove its value for an environment (except production); delete an environment with DELETE /v1/convai/environments/{environment}.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.EnvironmentVariableResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -101,7 +101,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.EnvironmentVariables.Item
             return requestInfo;
         }
         /// <summary>
-        /// Replace an environment variable&apos;s values. Use null to remove an environment (except production).
+        /// Replace an environment variable&apos;s values. Use null to remove its value for an environment (except production); delete an environment with DELETE /v1/convai/environments/{environment}.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

@@ -23,7 +23,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppTemplateImageParamDetails Image { get; set; }
 #endif
         /// <summary>The type property</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppTemplateImageParam_type? Type { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppTemplateImageParamType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppTemplateImageParam"/> and sets the default values.
         /// </summary>
@@ -50,7 +50,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "image", n => { Image = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppTemplateImageParamDetails>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppTemplateImageParamDetails.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppTemplateImageParam_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppTemplateImageParamType>(); } },
             };
         }
         /// <summary>
@@ -61,7 +61,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppTemplateImageParamDetails>("image", Image);
-            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppTemplateImageParam_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppTemplateImageParamType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

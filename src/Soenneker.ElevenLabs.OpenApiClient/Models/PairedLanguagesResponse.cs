@@ -15,7 +15,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Indicates this response contains source-to-destination language pairs.</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PairedLanguagesResponse_kind? Kind { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PairKind? Kind { get; set; }
         /// <summary>The list of available source-to-destination language mappings.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -49,7 +49,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "kind", n => { Kind = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PairedLanguagesResponse_kind>(); } },
+                { "kind", n => { Kind = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PairKind>(); } },
                 { "language_pairs", n => { LanguagePairs = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.LanguagePairInfo>(global::Soenneker.ElevenLabs.OpenApiClient.Models.LanguagePairInfo.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
@@ -60,7 +60,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PairedLanguagesResponse_kind>("kind", Kind);
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PairKind>("kind", Kind);
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.LanguagePairInfo>("language_pairs", LanguagePairs);
             writer.WriteAdditionalData(AdditionalData);
         }

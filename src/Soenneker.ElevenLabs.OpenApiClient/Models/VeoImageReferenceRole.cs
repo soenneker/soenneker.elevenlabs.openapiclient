@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.ElevenLabs.OpenApiClient.Models
 {
-    /// <summary>&quot;How the model uses the image: `subject` places its subject or scene elements into the video; `style` transfers its visual style.&quot;</summary>
+    /// <summary>How the model uses the image: `subject` places its subject or scene elements into the video; `style` transfers its visual style.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum VeoImageReferenceRole
     {

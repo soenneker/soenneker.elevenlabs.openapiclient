@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.ElevenLabs.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ConvAiSecretLocator"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.McpServerConfigOutputUrlBranch1"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ConvAiSecretLocator"/>, <see cref="string"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class McpServerConfigOutputUrl : IComposedTypeWrapper, IParsable
@@ -21,13 +21,13 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConvAiSecretLocator ConvAiSecretLocator { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.McpServerConfigOutputUrlBranch1"/></summary>
+        /// <summary>Composed type representation for type <see cref="string"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.McpServerConfigOutputUrlBranch1? McpServerConfigOutputUrlBranch1 { get; set; }
+        public string? String { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.McpServerConfigOutputUrlBranch1 McpServerConfigOutputUrlBranch1 { get; set; }
+        public string String { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -38,8 +38,13 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var result = new global::Soenneker.ElevenLabs.OpenApiClient.Models.McpServerConfigOutputUrl();
-            result.ConvAiSecretLocator = new global::Soenneker.ElevenLabs.OpenApiClient.Models.ConvAiSecretLocator();
-            result.McpServerConfigOutputUrlBranch1 = new global::Soenneker.ElevenLabs.OpenApiClient.Models.McpServerConfigOutputUrlBranch1();
+            if(parseNode.GetStringValue() is string stringValue)
+            {
+                result.String = stringValue;
+            }
+            else {
+                result.ConvAiSecretLocator = new global::Soenneker.ElevenLabs.OpenApiClient.Models.ConvAiSecretLocator();
+            }
             return result;
         }
         /// <summary>
@@ -48,9 +53,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(ConvAiSecretLocator != null || McpServerConfigOutputUrlBranch1 != null)
+            if(ConvAiSecretLocator != null)
             {
-                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(ConvAiSecretLocator, McpServerConfigOutputUrlBranch1);
+                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(ConvAiSecretLocator);
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -61,7 +66,13 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConvAiSecretLocator>(null, ConvAiSecretLocator, McpServerConfigOutputUrlBranch1);
+            if(String != null)
+            {
+                writer.WriteStringValue(null, String);
+            }
+            else {
+                writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConvAiSecretLocator>(null, ConvAiSecretLocator);
+            }
         }
     }
 }

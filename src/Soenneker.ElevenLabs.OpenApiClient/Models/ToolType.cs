@@ -32,10 +32,6 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         #pragma warning disable CS1591
         ApiIntegrationWebhook,
         #pragma warning restore CS1591
-        [EnumMember(Value = "api_integration_mcp")]
-        #pragma warning disable CS1591
-        ApiIntegrationMcp,
-        #pragma warning restore CS1591
         [EnumMember(Value = "smb")]
         #pragma warning disable CS1591
         Smb,

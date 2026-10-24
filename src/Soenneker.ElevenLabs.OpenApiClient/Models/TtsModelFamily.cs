@@ -24,5 +24,13 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         #pragma warning disable CS1591
         V3Conversational,
         #pragma warning restore CS1591
+        [EnumMember(Value = "v4")]
+        #pragma warning disable CS1591
+        V4,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "v4_turbo")]
+        #pragma warning disable CS1591
+        V4Turbo,
+        #pragma warning restore CS1591
     }
 }

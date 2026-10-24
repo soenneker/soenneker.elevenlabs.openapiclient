@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.ElevenLabs.OpenApiClient.Models
 {
     /// <summary>
-    /// &quot;OCSF URL object.Spec: https://schema.ocsf.io/1.6.0/objects/url&quot;
+    /// OCSF URL object.Spec: https://schema.ocsf.io/1.6.0/objects/url
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UrlModel : IParsable

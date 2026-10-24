@@ -33,10 +33,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The reject_reasons property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ReviewResponseModelRejectReasonsAnyOf1Item>? RejectReasons { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ReviewResponseModelRejectReasonsItem?>? RejectReasons { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ReviewResponseModelRejectReasonsAnyOf1Item> RejectReasons { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ReviewResponseModelRejectReasonsItem?> RejectReasons { get; set; }
 #endif
         /// <summary>The reviewed_at_unix property</summary>
         public int? ReviewedAtUnix { get; set; }
@@ -53,10 +53,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The scores_breakdown property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ReviewResponseModelScoresBreakdown? ScoresBreakdown { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ReviewResponseModelScoresBreakdownProperty? ScoresBreakdown { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ReviewResponseModelScoresBreakdown ScoresBreakdown { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ReviewResponseModelScoresBreakdownProperty ScoresBreakdown { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ReviewResponseModel"/> and sets the default values.
@@ -84,12 +84,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "explanation", n => { Explanation = n.GetStringValue(); } },
-                { "reject_reasons", n => { RejectReasons = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.ReviewResponseModelRejectReasonsAnyOf1Item>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ReviewResponseModelRejectReasonsAnyOf1Item.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "reject_reasons", n => { RejectReasons = n.GetCollectionOfEnumValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.ReviewResponseModelRejectReasonsItem>()?.AsList(); } },
                 { "rejected_details", n => { RejectedDetails = n.GetStringValue(); } },
                 { "review_status", n => { ReviewStatus = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ReviewResponseModelReviewStatus>(); } },
                 { "reviewed_at_unix", n => { ReviewedAtUnix = n.GetIntValue(); } },
                 { "reviewed_by", n => { ReviewedBy = n.GetStringValue(); } },
-                { "scores_breakdown", n => { ScoresBreakdown = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ReviewResponseModelScoresBreakdown>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ReviewResponseModelScoresBreakdown.CreateFromDiscriminatorValue); } },
+                { "scores_breakdown", n => { ScoresBreakdown = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ReviewResponseModelScoresBreakdownProperty>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ReviewResponseModelScoresBreakdownProperty.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -101,11 +101,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("explanation", Explanation);
             writer.WriteStringValue("rejected_details", RejectedDetails);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.ReviewResponseModelRejectReasonsAnyOf1Item>("reject_reasons", RejectReasons);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.ReviewResponseModelRejectReasonsItem>("reject_reasons", RejectReasons);
             writer.WriteIntValue("reviewed_at_unix", ReviewedAtUnix);
             writer.WriteStringValue("reviewed_by", ReviewedBy);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ReviewResponseModelReviewStatus>("review_status", ReviewStatus);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ReviewResponseModelScoresBreakdown>("scores_breakdown", ScoresBreakdown);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ReviewResponseModelScoresBreakdownProperty>("scores_breakdown", ScoresBreakdown);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

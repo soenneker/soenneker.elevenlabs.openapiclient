@@ -30,7 +30,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.ScopedAnalysisResultEvaluationCriteriaResultsProperty EvaluationCriteriaResults { get; set; }
 #endif
-        /// <summary>The scope property</summary>
+        /// <summary>The scope of the analysis. &apos;conversation&apos; uses the full transcript; &apos;agent&apos; uses only the portion where the defining agent was active.</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.AnalysisScope? Scope { get; set; }
         /// <summary>The source_agent_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

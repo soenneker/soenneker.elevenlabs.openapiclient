@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.ElevenLabs.OpenApiClient.Models
 {
     /// <summary>
-    /// Composition plan for the `music_v2` model. Using this field with any other model will result in an error.
+    /// Composition plan for the `music_v2` and `music_v2_5` models. Using this field with any other model will result in an error.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CompositionPlan : IAdditionalDataHolder, IParsable

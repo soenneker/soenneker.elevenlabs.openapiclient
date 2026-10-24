@@ -16,7 +16,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The auth_type property</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateOAuth2ClientCredsRequest_auth_type? AuthType { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.OAuth2ClientCredentialsAuthType? AuthType { get; set; }
         /// <summary>If True, send client credentials in Authorization header as Basic Auth instead of request body</summary>
         public bool? BasicAuthInHeader { get; set; }
         /// <summary>The client_id property</summary>
@@ -109,7 +109,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "auth_type", n => { AuthType = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateOAuth2ClientCredsRequest_auth_type>(); } },
+                { "auth_type", n => { AuthType = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.OAuth2ClientCredentialsAuthType>(); } },
                 { "basic_auth_in_header", n => { BasicAuthInHeader = n.GetBoolValue(); } },
                 { "client_id", n => { ClientId = n.GetStringValue(); } },
                 { "client_secret", n => { ClientSecret = n.GetStringValue(); } },
@@ -128,7 +128,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateOAuth2ClientCredsRequest_auth_type>("auth_type", AuthType);
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.OAuth2ClientCredentialsAuthType>("auth_type", AuthType);
             writer.WriteBoolValue("basic_auth_in_header", BasicAuthInHeader);
             writer.WriteStringValue("client_id", ClientId);
             writer.WriteStringValue("client_secret", ClientSecret);

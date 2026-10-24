@@ -150,7 +150,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Flows.Image
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ImageRequestBuilderGetQueryParameters 
         {
-            /// <summary>&quot;Pagination cursor: the `next_cursor` value of the previous page&apos;s response. Omit it for the first page.&quot;</summary>
+            /// <summary>Pagination cursor: the `next_cursor` value of the previous page&apos;s response. Omit it for the first page.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("cursor")]

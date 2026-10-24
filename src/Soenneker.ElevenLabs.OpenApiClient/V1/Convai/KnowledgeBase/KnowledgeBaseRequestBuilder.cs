@@ -86,14 +86,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.KnowledgeBase
         }
         /// <summary>Gets an item from the Soenneker.ElevenLabs.OpenApiClient.v1.convai.knowledgeBase.item collection</summary>
         /// <param name="position">The id of a document from the knowledge base. This is returned on document addition.</param>
-        /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.KnowledgeBase.Item.DocumentationItemRequestBuilder"/></returns>
-        public global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.KnowledgeBase.Item.DocumentationItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.KnowledgeBase.Item.WithDocumentationItemRequestBuilder"/></returns>
+        public global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.KnowledgeBase.Item.WithDocumentationItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("documentation%2Did", position);
-                return new global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.KnowledgeBase.Item.DocumentationItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("documentationId", position);
+                return new global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.KnowledgeBase.Item.WithDocumentationItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -101,7 +101,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.KnowledgeBase
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public KnowledgeBaseRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/convai/knowledge-base{?ancestor_folder_id*,created_by_user_id*,cursor*,folders_first*,page_size*,parent_folder_id*,search*,show_only_owned_documents*,sort_by*,sort_direction*,types*}", pathParameters)
+        public KnowledgeBaseRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/convai/knowledge-base{?agent_id*,ancestor_folder_id*,created_by_user_id*,cursor*,folders_first*,page_size*,parent_folder_id*,search*,show_only_owned_documents*,sort_by*,sort_direction*,types*}", pathParameters)
         {
         }
         /// <summary>
@@ -109,7 +109,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.KnowledgeBase
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public KnowledgeBaseRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/convai/knowledge-base{?ancestor_folder_id*,created_by_user_id*,cursor*,folders_first*,page_size*,parent_folder_id*,search*,show_only_owned_documents*,sort_by*,sort_direction*,types*}", rawUrl)
+        public KnowledgeBaseRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/convai/knowledge-base{?agent_id*,ancestor_folder_id*,created_by_user_id*,cursor*,folders_first*,page_size*,parent_folder_id*,search*,show_only_owned_documents*,sort_by*,sort_direction*,types*}", rawUrl)
         {
         }
         /// <summary>
@@ -136,6 +136,32 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.KnowledgeBase
             return await RequestAdapter.SendAsync<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseListResponseModel>(requestInfo, global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseListResponseModel.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
+        /// Uploads a file or reference a webpage to use as part of the shared knowledge base
+        /// </summary>
+        /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.AddKnowledgeBaseResponseModel"/></returns>
+        /// <param name="body">The request body</param>
+        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.HttpValidationError">When receiving a 422 status code</exception>
+        [Obsolete("")]
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public async Task<global::Soenneker.ElevenLabs.OpenApiClient.Models.AddKnowledgeBaseResponseModel?> PostAsync(MultipartBody body, Action<RequestConfiguration<global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.KnowledgeBase.KnowledgeBaseRequestBuilder.KnowledgeBaseRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
+#nullable restore
+#else
+        public async Task<global::Soenneker.ElevenLabs.OpenApiClient.Models.AddKnowledgeBaseResponseModel> PostAsync(MultipartBody body, Action<RequestConfiguration<global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.KnowledgeBase.KnowledgeBaseRequestBuilder.KnowledgeBaseRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
+#endif
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
+            var requestInfo = ToPostRequestInformation(body, requestConfiguration);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "422", global::Soenneker.ElevenLabs.OpenApiClient.Models.HttpValidationError.CreateFromDiscriminatorValue },
+            };
+            return await RequestAdapter.SendAsync<global::Soenneker.ElevenLabs.OpenApiClient.Models.AddKnowledgeBaseResponseModel>(requestInfo, global::Soenneker.ElevenLabs.OpenApiClient.Models.AddKnowledgeBaseResponseModel.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+        }
+        /// <summary>
         /// Get a list of available knowledge base documents
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
@@ -152,6 +178,29 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.KnowledgeBase
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
+            return requestInfo;
+        }
+        /// <summary>
+        /// Uploads a file or reference a webpage to use as part of the shared knowledge base
+        /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
+        /// <param name="body">The request body</param>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("")]
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public RequestInformation ToPostRequestInformation(MultipartBody body, Action<RequestConfiguration<global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.KnowledgeBase.KnowledgeBaseRequestBuilder.KnowledgeBaseRequestBuilderPostQueryParameters>>? requestConfiguration = default)
+        {
+#nullable restore
+#else
+        public RequestInformation ToPostRequestInformation(MultipartBody body, Action<RequestConfiguration<global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.KnowledgeBase.KnowledgeBaseRequestBuilder.KnowledgeBaseRequestBuilderPostQueryParameters>> requestConfiguration = default)
+        {
+#endif
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
+            var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
+            requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
+            requestInfo.SetContentFromParsable(RequestAdapter, "multipart/form-data", body);
             return requestInfo;
         }
         /// <summary>
@@ -225,7 +274,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.KnowledgeBase
             [QueryParameter("search")]
             public string Search { get; set; }
 #endif
-            /// <summary>&quot;If set to true, the endpoint will return only documents owned by you (and not shared from somebody else). Deprecated: use created_by_user_id instead.&quot;</summary>
+            /// <summary>If set to true, the endpoint will return only documents owned by you (and not shared from somebody else). Deprecated: use created_by_user_id instead.</summary>
             [Obsolete("")]
             [QueryParameter("show_only_owned_documents")]
             public bool? ShowOnlyOwnedDocuments { get; set; }
@@ -246,11 +295,31 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.KnowledgeBase
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("types")]
-            public string? Types { get; set; }
+            public global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeBaseDocumentType[]? Types { get; set; }
 #nullable restore
 #else
             [QueryParameter("types")]
-            public string Types { get; set; }
+            public global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeBaseDocumentType[] Types { get; set; }
+#endif
+        }
+        /// <summary>
+        /// Uploads a file or reference a webpage to use as part of the shared knowledge base
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class KnowledgeBaseRequestBuilderPostQueryParameters 
+        {
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            #pragma warning disable CS1591
+            [QueryParameter("agent_id")]
+            public string? AgentId { get; set; }
+            #pragma warning restore CS1591
+#nullable restore
+#else
+            #pragma warning disable CS1591
+            [QueryParameter("agent_id")]
+            public string AgentId { get; set; }
+            #pragma warning restore CS1591
 #endif
         }
     }

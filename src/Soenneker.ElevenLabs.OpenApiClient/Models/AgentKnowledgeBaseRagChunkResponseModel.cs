@@ -22,7 +22,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public string ChunkId { get; set; }
 #endif
-        /// <summary>Canonical representation of a knowledge base document&apos;s stored content.HTML is the legacy default; documents created before this field existed areinterpreted as HTML.</summary>
+        /// <summary>Format of the chunk text. Markdown chunks contain raw markdown; HTML chunks contain HTML.</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.ContentFormat? ContentFormat { get; set; }
         /// <summary>ID of the source knowledge base document.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -40,8 +40,16 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public string DocumentName { get; set; }
 #endif
-        /// <summary>The document_type property</summary>
+        /// <summary>Type of the source knowledge base document.</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeBaseDocumentType? DocumentType { get; set; }
+        /// <summary>Tracked source URL for URL documents, or null for other document types.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? SourceUrl { get; set; }
+#nullable restore
+#else
+        public string SourceUrl { get; set; }
+#endif
         /// <summary>Text content of the retrieved chunk.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -82,6 +90,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "document_id", n => { DocumentId = n.GetStringValue(); } },
                 { "document_name", n => { DocumentName = n.GetStringValue(); } },
                 { "document_type", n => { DocumentType = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeBaseDocumentType>(); } },
+                { "source_url", n => { SourceUrl = n.GetStringValue(); } },
                 { "text", n => { Text = n.GetStringValue(); } },
                 { "vector_distance", n => { VectorDistance = n.GetDoubleValue(); } },
             };
@@ -98,6 +107,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteStringValue("document_id", DocumentId);
             writer.WriteStringValue("document_name", DocumentName);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeBaseDocumentType>("document_type", DocumentType);
+            writer.WriteStringValue("source_url", SourceUrl);
             writer.WriteStringValue("text", Text);
             writer.WriteDoubleValue("vector_distance", VectorDistance);
             writer.WriteAdditionalData(AdditionalData);

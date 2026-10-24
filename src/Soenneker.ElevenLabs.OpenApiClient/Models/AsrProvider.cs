@@ -16,5 +16,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         #pragma warning disable CS1591
         ScribeRealtime,
         #pragma warning restore CS1591
+        [EnumMember(Value = "scribe_v2_turbo")]
+        #pragma warning disable CS1591
+        ScribeV2Turbo,
+        #pragma warning restore CS1591
     }
 }

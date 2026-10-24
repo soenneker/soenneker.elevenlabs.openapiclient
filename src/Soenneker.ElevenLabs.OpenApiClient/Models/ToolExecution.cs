@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.ElevenLabs.OpenApiClient.Models
 {
     /// <summary>
-    /// Execution-related properties for a tool.
+    /// Execution-related properties for a tool (2025-11-25 only).
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ToolExecution : IAdditionalDataHolder, IParsable

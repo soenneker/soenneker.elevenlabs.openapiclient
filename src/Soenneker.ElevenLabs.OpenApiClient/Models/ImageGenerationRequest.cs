@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.ElevenLabs.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.BytedanceSeedream5LiteRequest"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.BytedanceSeedream5ProRequest"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.Gemini25FlashImageRequest"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.Gemini31FlashImageRequest"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.Gemini31FlashLiteImageRequest"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.Gemini3ProImageRequest"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.GptImage15Request"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.GptImage1Request"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.GptImage2Request"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.BytedanceSeedream5LiteRequest"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.BytedanceSeedream5ProRequest"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.Gemini25FlashImageRequest"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.Gemini31FlashImageRequest"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.Gemini31FlashLiteImageRequest"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.Gemini3ProImageRequest"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.GptImage15Request"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.GptImage1Request"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.GptImage25FlareRequest"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.GptImage25SunburstRequest"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.GptImage2Request"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ImageGenerationRequest : IComposedTypeWrapper, IParsable
@@ -77,6 +77,22 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.GptImage1Request GptImage1Request { get; set; }
 #endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.GptImage25FlareRequest"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GptImage25FlareRequest? GptImage25FlareRequest { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GptImage25FlareRequest GptImage25FlareRequest { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.GptImage25SunburstRequest"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GptImage25SunburstRequest? GptImage25SunburstRequest { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GptImage25SunburstRequest GptImage25SunburstRequest { get; set; }
+#endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.GptImage2Request"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -127,6 +143,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             {
                 result.GptImage1Request = new global::Soenneker.ElevenLabs.OpenApiClient.Models.GptImage1Request();
             }
+            else if("gpt-image-2.5-flare".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.GptImage25FlareRequest = new global::Soenneker.ElevenLabs.OpenApiClient.Models.GptImage25FlareRequest();
+            }
+            else if("gpt-image-2.5-sunburst".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.GptImage25SunburstRequest = new global::Soenneker.ElevenLabs.OpenApiClient.Models.GptImage25SunburstRequest();
+            }
             else if("gpt-image-2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.GptImage2Request = new global::Soenneker.ElevenLabs.OpenApiClient.Models.GptImage2Request();
@@ -170,6 +194,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             else if(GptImage1Request != null)
             {
                 return GptImage1Request.GetFieldDeserializers();
+            }
+            else if(GptImage25FlareRequest != null)
+            {
+                return GptImage25FlareRequest.GetFieldDeserializers();
+            }
+            else if(GptImage25SunburstRequest != null)
+            {
+                return GptImage25SunburstRequest.GetFieldDeserializers();
             }
             else if(GptImage2Request != null)
             {
@@ -215,6 +247,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             else if(GptImage1Request != null)
             {
                 writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GptImage1Request>(null, GptImage1Request);
+            }
+            else if(GptImage25FlareRequest != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GptImage25FlareRequest>(null, GptImage25FlareRequest);
+            }
+            else if(GptImage25SunburstRequest != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GptImage25SunburstRequest>(null, GptImage25SunburstRequest);
             }
             else if(GptImage2Request != null)
             {

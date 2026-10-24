@@ -25,16 +25,16 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public string Audience { get; set; }
 #endif
         /// <summary>The auth_type property</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateOAuth2JwtRequest_auth_type? AuthType { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateOAuth2JwtRequestAuthType? AuthType { get; set; }
         /// <summary>The expiration_seconds property</summary>
         public int? ExpirationSeconds { get; set; }
         /// <summary>The extra_params property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateOAuth2JwtRequestExtraParams? ExtraParams { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateOAuth2JwtRequestExtraParamsProperty? ExtraParams { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateOAuth2JwtRequestExtraParams ExtraParams { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateOAuth2JwtRequestExtraParamsProperty ExtraParams { get; set; }
 #endif
         /// <summary>The issuer property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -63,10 +63,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The scopes property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateOAuth2JwtRequestScopes? Scopes { get; set; }
+        public List<string>? Scopes { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateOAuth2JwtRequestScopes Scopes { get; set; }
+        public List<string> Scopes { get; set; }
 #endif
         /// <summary>The secret_key property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -113,13 +113,13 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             {
                 { "algorithm", n => { Algorithm = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateOAuth2JwtRequestAlgorithm>(); } },
                 { "audience", n => { Audience = n.GetStringValue(); } },
-                { "auth_type", n => { AuthType = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateOAuth2JwtRequest_auth_type>(); } },
+                { "auth_type", n => { AuthType = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateOAuth2JwtRequestAuthType>(); } },
                 { "expiration_seconds", n => { ExpirationSeconds = n.GetIntValue(); } },
-                { "extra_params", n => { ExtraParams = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateOAuth2JwtRequestExtraParams>(global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateOAuth2JwtRequestExtraParams.CreateFromDiscriminatorValue); } },
+                { "extra_params", n => { ExtraParams = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateOAuth2JwtRequestExtraParamsProperty>(global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateOAuth2JwtRequestExtraParamsProperty.CreateFromDiscriminatorValue); } },
                 { "issuer", n => { Issuer = n.GetStringValue(); } },
                 { "key_id", n => { KeyId = n.GetStringValue(); } },
                 { "provider", n => { Provider = n.GetStringValue(); } },
-                { "scopes", n => { Scopes = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateOAuth2JwtRequestScopes>(global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateOAuth2JwtRequestScopes.CreateFromDiscriminatorValue); } },
+                { "scopes", n => { Scopes = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "secret_key", n => { SecretKey = n.GetStringValue(); } },
                 { "subject", n => { Subject = n.GetStringValue(); } },
                 { "token_response_field", n => { TokenResponseField = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateOAuth2JwtRequestTokenResponseField>(); } },
@@ -134,13 +134,13 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateOAuth2JwtRequestAlgorithm>("algorithm", Algorithm);
             writer.WriteStringValue("audience", Audience);
-            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateOAuth2JwtRequest_auth_type>("auth_type", AuthType);
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateOAuth2JwtRequestAuthType>("auth_type", AuthType);
             writer.WriteIntValue("expiration_seconds", ExpirationSeconds);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateOAuth2JwtRequestExtraParams>("extra_params", ExtraParams);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateOAuth2JwtRequestExtraParamsProperty>("extra_params", ExtraParams);
             writer.WriteStringValue("issuer", Issuer);
             writer.WriteStringValue("key_id", KeyId);
             writer.WriteStringValue("provider", Provider);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateOAuth2JwtRequestScopes>("scopes", Scopes);
+            writer.WriteCollectionOfPrimitiveValues<string>("scopes", Scopes);
             writer.WriteStringValue("secret_key", SecretKey);
             writer.WriteStringValue("subject", Subject);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateOAuth2JwtRequestTokenResponseField>("token_response_field", TokenResponseField);

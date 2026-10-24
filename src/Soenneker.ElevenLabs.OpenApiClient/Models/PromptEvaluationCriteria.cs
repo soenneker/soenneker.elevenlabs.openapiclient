@@ -32,13 +32,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public string Id { get; set; }
 #endif
         /// <summary>LLM model to use for this evaluation criteria. If not set, uses agent&apos;s analysis_llm default.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmWrapper11? Llm { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmWrapper11 Llm { get; set; }
-#endif
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Llm? Llm { get; set; }
         /// <summary>Maximum value of the numeric score scale (minimum is always 0). Only used when scoring_mode is &apos;numeric_uniform&apos;.</summary>
         public int? MaxScore { get; set; }
         /// <summary>The name property</summary>
@@ -49,7 +43,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>The scope property</summary>
+        /// <summary>The scope of transcript context used when evaluating this criterion. &apos;conversation&apos; uses the full transcript; &apos;agent&apos; uses only the portion where the defining agent was active.</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.AnalysisScope? Scope { get; set; }
         /// <summary>Optional free-text instructions describing how to assign values on the numeric scale. Only used when scoring_mode is &apos;numeric_uniform&apos;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -59,10 +53,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public string ScoreInstructions { get; set; }
 #endif
-        /// <summary>The scoring_mode property</summary>
+        /// <summary>How this criterion is scored. &apos;binary&apos; resolves to success/failure/unknown. &apos;numeric_uniform&apos; returns a number on the [0, max_score] scale which is normalized into the aggregate conversation success percentage.</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.CriteriaScoringMode? ScoringMode { get; set; }
         /// <summary>The type of evaluation criteria</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptEvaluationCriteria_type? Type { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptType? Type { get; set; }
         /// <summary>When evaluating the prompt, should the agent&apos;s knowledge base be used.</summary>
         public bool? UseKnowledgeBase { get; set; }
         /// <summary>
@@ -72,6 +66,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             AdditionalData = new Dictionary<string, object>();
             MaxScore = 100;
+            Scope = global::Soenneker.ElevenLabs.OpenApiClient.Models.AnalysisScope.Conversation;
+            ScoringMode = global::Soenneker.ElevenLabs.OpenApiClient.Models.CriteriaScoringMode.Binary;
             UseKnowledgeBase = false;
         }
         /// <summary>
@@ -94,13 +90,13 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             {
                 { "conversation_goal_prompt", n => { ConversationGoalPrompt = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "llm", n => { Llm = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmWrapper11>(global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmWrapper11.CreateFromDiscriminatorValue); } },
+                { "llm", n => { Llm = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Llm>(); } },
                 { "max_score", n => { MaxScore = n.GetIntValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "scope", n => { Scope = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AnalysisScope>(); } },
                 { "score_instructions", n => { ScoreInstructions = n.GetStringValue(); } },
                 { "scoring_mode", n => { ScoringMode = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CriteriaScoringMode>(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptEvaluationCriteria_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptType>(); } },
                 { "use_knowledge_base", n => { UseKnowledgeBase = n.GetBoolValue(); } },
             };
         }
@@ -113,13 +109,13 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("conversation_goal_prompt", ConversationGoalPrompt);
             writer.WriteStringValue("id", Id);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmWrapper11>("llm", Llm);
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Llm>("llm", Llm);
             writer.WriteIntValue("max_score", MaxScore);
             writer.WriteStringValue("name", Name);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AnalysisScope>("scope", Scope);
             writer.WriteStringValue("score_instructions", ScoreInstructions);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CriteriaScoringMode>("scoring_mode", ScoringMode);
-            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptEvaluationCriteria_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptType>("type", Type);
             writer.WriteBoolValue("use_knowledge_base", UseKnowledgeBase);
             writer.WriteAdditionalData(AdditionalData);
         }

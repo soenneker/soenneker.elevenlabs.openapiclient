@@ -14,6 +14,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Optional maximum total character length of document chunks returned. Overrides the selected RAG settings for this query only.</summary>
+        public int? MaxDocumentsLength { get; set; }
+        /// <summary>Optional maximum number of document chunks retrieved. Overrides the selected RAG settings for this query only.</summary>
+        public int? MaxRetrievedRagChunksCount { get; set; }
         /// <summary>Query to run against the agent&apos;s knowledge base RAG index.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -50,6 +54,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "max_documents_length", n => { MaxDocumentsLength = n.GetIntValue(); } },
+                { "max_retrieved_rag_chunks_count", n => { MaxRetrievedRagChunksCount = n.GetIntValue(); } },
                 { "query", n => { Query = n.GetStringValue(); } },
                 { "use_agent_defaults", n => { UseAgentDefaults = n.GetBoolValue(); } },
             };
@@ -61,6 +67,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteIntValue("max_documents_length", MaxDocumentsLength);
+            writer.WriteIntValue("max_retrieved_rag_chunks_count", MaxRetrievedRagChunksCount);
             writer.WriteStringValue("query", Query);
             writer.WriteBoolValue("use_agent_defaults", UseAgentDefaults);
             writer.WriteAdditionalData(AdditionalData);

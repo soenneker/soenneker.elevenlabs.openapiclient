@@ -28,6 +28,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public AgentMetadataDbModel()
         {
             AdditionalData = new Dictionary<string, object>();
+            CreatedFrom = global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentDefinitionSource.Unknown;
+            LastUpdatedFrom = global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentDefinitionSource.Unknown;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

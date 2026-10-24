@@ -32,7 +32,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public List<string> ReferencedResourceIds { get; set; }
 #endif
         /// <summary>The type property</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.DependentUnknownAgentIdentifier_type? Type { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.UnknownType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.DependentUnknownAgentIdentifier"/> and sets the default values.
         /// </summary>
@@ -60,7 +60,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             {
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "referenced_resource_ids", n => { ReferencedResourceIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DependentUnknownAgentIdentifier_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UnknownType>(); } },
             };
         }
         /// <summary>
@@ -72,7 +72,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("id", Id);
             writer.WriteCollectionOfPrimitiveValues<string>("referenced_resource_ids", ReferencedResourceIds);
-            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DependentUnknownAgentIdentifier_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UnknownType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

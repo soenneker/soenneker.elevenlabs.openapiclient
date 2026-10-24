@@ -46,6 +46,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationTurnMetricsMetricsProperty Metrics { get; set; }
 #endif
+        /// <summary>The voice_id property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? VoiceId { get; set; }
+#nullable restore
+#else
+        public string VoiceId { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationTurnMetrics"/> and sets the default values.
         /// </summary>
@@ -75,6 +83,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "convai_tts_cascade", n => { ConvaiTtsCascade = n.GetStringValue(); } },
                 { "convai_tts_model", n => { ConvaiTtsModel = n.GetStringValue(); } },
                 { "metrics", n => { Metrics = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationTurnMetricsMetricsProperty>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationTurnMetricsMetricsProperty.CreateFromDiscriminatorValue); } },
+                { "voice_id", n => { VoiceId = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -88,6 +97,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteStringValue("convai_tts_cascade", ConvaiTtsCascade);
             writer.WriteStringValue("convai_tts_model", ConvaiTtsModel);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationTurnMetricsMetricsProperty>("metrics", Metrics);
+            writer.WriteStringValue("voice_id", VoiceId);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

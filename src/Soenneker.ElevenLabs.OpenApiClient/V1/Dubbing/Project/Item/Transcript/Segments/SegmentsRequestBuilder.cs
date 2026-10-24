@@ -34,7 +34,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Dubbing.Project.Item.Transcript.
         {
         }
         /// <summary>
-        /// Enterprise only. Edit several source segments&apos; text, speaker, or timing in one atomic request.
+        /// Enterprise only. Edit several source segments&apos; text, speaker, or timing in one atomic request: every edit applies or none does. Bumps the project&apos;s `revision`, discards the affected translations in every language target, and marks any target that had already completed `stale`. No audio changes until you regenerate a target.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingBulkSourceSegmentUpdateResponse"/></returns>
         /// <param name="body">Edit several source segments at once, applied atomically (all succeed or none do).</param>
@@ -59,7 +59,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Dubbing.Project.Item.Transcript.
             return await RequestAdapter.SendAsync<global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingBulkSourceSegmentUpdateResponse>(requestInfo, global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingBulkSourceSegmentUpdateResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Enterprise only. Edit several source segments&apos; text, speaker, or timing in one atomic request.
+        /// Enterprise only. Edit several source segments&apos; text, speaker, or timing in one atomic request: every edit applies or none does. Bumps the project&apos;s `revision`, discards the affected translations in every language target, and marks any target that had already completed `stale`. No audio changes until you regenerate a target.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">Edit several source segments at once, applied atomically (all succeed or none do).</param>

@@ -12,6 +12,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     public partial class GetWhatsAppAccountResponse : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Which Embedded Signup flow produced this account.</summary>
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppAccountType? AccountType { get; set; }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The assigned_agent_id property</summary>
@@ -84,6 +86,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public GetWhatsAppAccountResponse()
         {
             AdditionalData = new Dictionary<string, object>();
+            AccountType = global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppAccountType.CloudApi;
             EnableAudioMessageResponse = true;
             EnableMessaging = true;
             EnableTypingIndicator = true;
@@ -107,6 +110,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "account_type", n => { AccountType = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppAccountType>(); } },
                 { "assigned_agent_id", n => { AssignedAgentId = n.GetStringValue(); } },
                 { "assigned_agent_name", n => { AssignedAgentName = n.GetStringValue(); } },
                 { "business_account_id", n => { BusinessAccountId = n.GetStringValue(); } },
@@ -127,6 +131,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppAccountType>("account_type", AccountType);
             writer.WriteStringValue("assigned_agent_id", AssignedAgentId);
             writer.WriteStringValue("assigned_agent_name", AssignedAgentName);
             writer.WriteStringValue("business_account_id", BusinessAccountId);

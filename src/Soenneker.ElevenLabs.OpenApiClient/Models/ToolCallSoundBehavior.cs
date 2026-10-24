@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.ElevenLabs.OpenApiClient.Models
 {
-    /// <summary>Determines how the tool call sound should be played.</summary>
+    /// <summary>Determines when the tool call sound should play. &apos;auto&apos; only plays when there&apos;s pre-tool speech, &apos;always&apos; plays for every tool call.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum ToolCallSoundBehavior
     {

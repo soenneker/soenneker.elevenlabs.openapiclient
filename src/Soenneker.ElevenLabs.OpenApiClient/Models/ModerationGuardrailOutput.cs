@@ -30,6 +30,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public ModerationGuardrailOutput()
         {
             AdditionalData = new Dictionary<string, object>();
+            ExecutionMode = global::Soenneker.ElevenLabs.OpenApiClient.Models.GuardrailExecutionMode.Streaming;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

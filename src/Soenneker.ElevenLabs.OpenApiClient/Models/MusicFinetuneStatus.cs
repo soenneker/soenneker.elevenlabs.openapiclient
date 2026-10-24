@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.ElevenLabs.OpenApiClient.Models
 {
+    /// <summary>Training lifecycle status: pending, in_progress, completed, failed, and blocked.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum MusicFinetuneStatus
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "pending")]
         #pragma warning disable CS1591

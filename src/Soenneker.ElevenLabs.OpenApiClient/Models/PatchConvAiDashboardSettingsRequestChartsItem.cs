@@ -55,7 +55,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             {
                 result.DashboardCriteriaChartModel = new global::Soenneker.ElevenLabs.OpenApiClient.Models.DashboardCriteriaChartModel();
             }
-            else if("DashboardDataCollectionChartModel".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("data_collection".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.DashboardDataCollectionChartModel = new global::Soenneker.ElevenLabs.OpenApiClient.Models.DashboardDataCollectionChartModel();
             }

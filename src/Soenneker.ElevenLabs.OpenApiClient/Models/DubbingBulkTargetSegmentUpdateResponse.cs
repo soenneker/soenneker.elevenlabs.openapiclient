@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.ElevenLabs.OpenApiClient.Models
 {
     /// <summary>
-    /// &quot;The result of a bulk target edit: the updated segments and the new revision.&quot;
+    /// The result of a bulk target edit: the updated segments and the new revision.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class DubbingBulkTargetSegmentUpdateResponse : IAdditionalDataHolder, IParsable

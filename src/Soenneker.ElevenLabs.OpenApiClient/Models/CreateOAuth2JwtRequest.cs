@@ -26,7 +26,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public string Audience { get; set; }
 #endif
         /// <summary>The auth_type property</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateOAuth2JwtRequest_auth_type? AuthType { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.OAuth2JwtAuthType? AuthType { get; set; }
         /// <summary>Token expiration time in seconds</summary>
         public int? ExpirationSeconds { get; set; }
         /// <summary>Additional custom claims to include in the JWT</summary>
@@ -131,7 +131,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             {
                 { "algorithm", n => { Algorithm = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateOAuth2JwtRequestAlgorithm>(); } },
                 { "audience", n => { Audience = n.GetStringValue(); } },
-                { "auth_type", n => { AuthType = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateOAuth2JwtRequest_auth_type>(); } },
+                { "auth_type", n => { AuthType = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.OAuth2JwtAuthType>(); } },
                 { "expiration_seconds", n => { ExpirationSeconds = n.GetIntValue(); } },
                 { "extra_params", n => { ExtraParams = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateOAuth2JwtRequestExtraParamsProperty>(global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateOAuth2JwtRequestExtraParamsProperty.CreateFromDiscriminatorValue); } },
                 { "issuer", n => { Issuer = n.GetStringValue(); } },
@@ -154,7 +154,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateOAuth2JwtRequestAlgorithm>("algorithm", Algorithm);
             writer.WriteStringValue("audience", Audience);
-            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateOAuth2JwtRequest_auth_type>("auth_type", AuthType);
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.OAuth2JwtAuthType>("auth_type", AuthType);
             writer.WriteIntValue("expiration_seconds", ExpirationSeconds);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateOAuth2JwtRequestExtraParamsProperty>("extra_params", ExtraParams);
             writer.WriteStringValue("issuer", Issuer);

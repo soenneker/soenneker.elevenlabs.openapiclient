@@ -10,7 +10,7 @@ using System;
 namespace Soenneker.ElevenLabs.OpenApiClient.V1.PronunciationDictionaries.Item.Item
 {
     /// <summary>
-    /// Builds and executes requests for operations under \v1\pronunciation-dictionaries\{dictionary-id}\{versionId}
+    /// Builds and executes requests for operations under \v1\pronunciation-dictionaries\{pronunciationDictionaryId}\{versionId}
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WithVersionItemRequestBuilder : BaseRequestBuilder
@@ -25,7 +25,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.PronunciationDictionaries.Item.I
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithVersionItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/pronunciation-dictionaries/{dictionary%2Did}/{versionId}", pathParameters)
+        public WithVersionItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/pronunciation-dictionaries/{pronunciationDictionaryId}/{versionId}", pathParameters)
         {
         }
         /// <summary>
@@ -33,7 +33,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.PronunciationDictionaries.Item.I
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithVersionItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/pronunciation-dictionaries/{dictionary%2Did}/{versionId}", rawUrl)
+        public WithVersionItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/pronunciation-dictionaries/{pronunciationDictionaryId}/{versionId}", rawUrl)
         {
         }
     }

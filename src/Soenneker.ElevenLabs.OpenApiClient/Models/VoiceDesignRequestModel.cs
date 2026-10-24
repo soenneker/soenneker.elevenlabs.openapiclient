@@ -20,7 +20,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public double? GuidanceScale { get; set; }
         /// <summary>Controls the volume level of the generated voice. -1 is quietest, 1 is loudest, 0 corresponds to roughly -24 LUFS.</summary>
         public double? Loudness { get; set; }
-        /// <summary>&quot;Model to use for the voice generation. Possible values: eleven_multilingual_ttv_v2, eleven_ttv_v3.&quot;</summary>
+        /// <summary>Model to use for the voice generation. Possible values: eleven_multilingual_ttv_v2, eleven_ttv_v3.</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceDesignRequestModelModelId? ModelId { get; set; }
         /// <summary>Controls the balance of prompt versus reference audio when generating voice samples. 0 means almost no prompt influence, 1 means almost no reference audio influence. Only supported when using the eleven_ttv_v3 model.</summary>
         public double? PromptStrength { get; set; }

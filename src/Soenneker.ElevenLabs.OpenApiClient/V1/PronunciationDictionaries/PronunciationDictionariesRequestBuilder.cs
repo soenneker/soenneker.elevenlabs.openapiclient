@@ -32,14 +32,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.PronunciationDictionaries
         }
         /// <summary>Gets an item from the Soenneker.ElevenLabs.OpenApiClient.v1.pronunciationDictionaries.item collection</summary>
         /// <param name="position">The id of the pronunciation dictionary</param>
-        /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.V1.PronunciationDictionaries.Item.DictionaryItemRequestBuilder"/></returns>
-        public global::Soenneker.ElevenLabs.OpenApiClient.V1.PronunciationDictionaries.Item.DictionaryItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.V1.PronunciationDictionaries.Item.WithPronunciationDictionaryItemRequestBuilder"/></returns>
+        public global::Soenneker.ElevenLabs.OpenApiClient.V1.PronunciationDictionaries.Item.WithPronunciationDictionaryItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("dictionary%2Did", position);
-                return new global::Soenneker.ElevenLabs.OpenApiClient.V1.PronunciationDictionaries.Item.DictionaryItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("pronunciationDictionaryId", position);
+                return new global::Soenneker.ElevenLabs.OpenApiClient.V1.PronunciationDictionaries.Item.WithPronunciationDictionaryItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>

@@ -24,7 +24,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public string Id { get; set; }
 #endif
         /// <summary>A newly created generation is always `pending`.</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.MediaGenerationCreateResponse_status? Status { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PendingStatus? Status { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.MediaGenerationCreateResponse"/> and sets the default values.
         /// </summary>
@@ -51,7 +51,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.MediaGenerationCreateResponse_status>(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PendingStatus>(); } },
             };
         }
         /// <summary>
@@ -62,7 +62,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("id", Id);
-            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.MediaGenerationCreateResponse_status>("status", Status);
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PendingStatus>("status", Status);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

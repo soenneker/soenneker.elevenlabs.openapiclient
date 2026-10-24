@@ -20,6 +20,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public int? PromptLength { get; set; }
         /// <summary>Whether RAG is enabled.</summary>
         public bool? RagEnabled { get; set; }
+        /// <summary>Service tier to price against. Only affects models that offer the tier; others fall back to their standard price.</summary>
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmServiceTier? ServiceTier { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmUsageCalculatorPublicRequestModel"/> and sets the default values.
         /// </summary>
@@ -48,6 +50,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "number_of_pages", n => { NumberOfPages = n.GetIntValue(); } },
                 { "prompt_length", n => { PromptLength = n.GetIntValue(); } },
                 { "rag_enabled", n => { RagEnabled = n.GetBoolValue(); } },
+                { "service_tier", n => { ServiceTier = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmServiceTier>(); } },
             };
         }
         /// <summary>
@@ -60,6 +63,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteIntValue("number_of_pages", NumberOfPages);
             writer.WriteIntValue("prompt_length", PromptLength);
             writer.WriteBoolValue("rag_enabled", RagEnabled);
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmServiceTier>("service_tier", ServiceTier);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

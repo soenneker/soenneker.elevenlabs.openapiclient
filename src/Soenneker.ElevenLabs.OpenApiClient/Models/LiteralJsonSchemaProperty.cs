@@ -8,14 +8,23 @@ using System;
 namespace Soenneker.ElevenLabs.OpenApiClient.Models
 {
     /// <summary>
-    /// &quot;Schema property for literal JSON types. IMPORTANT: Only ONE of the following fields can be set: description (LLM provides value), dynamic_variable (value from variable), is_system_provided (system provides value), constant_value (fixed value), or is_omitted (parameter is omitted). These are mutually exclusive.&quot;
+    /// Schema property for literal JSON types. IMPORTANT: Only ONE of the following fields can be set: description (LLM provides value), dynamic_variable (value from variable), is_system_provided (system provides value), constant_value (fixed value), or is_omitted (parameter is omitted). These are mutually exclusive.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class LiteralJsonSchemaProperty : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>When set, the LLM provides the value but the runtime rejects any value not present in the list held by this dynamic variable. Use to let the LLM pick from a server-verified set (e.g. the IDs the current user is allowed to access). Requires description; mutually exclusive with dynamic_variable, is_system_provided, constant_value, and is_omitted.</summary>
+        /// <summary>Server-side rejection guard for an LLM-provided value: the runtime rejects any value outside the permitted set this object names, and the set is not advertised to the LLM as an enum. Only supported when the value source is `description`; combining it with dynamic_variable, is_system_provided, constant_value, or is_omitted is rejected.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AllowedValues? AllowedValues { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AllowedValues AllowedValues { get; set; }
+#endif
+        /// <summary>DEPRECATED: use `allowed_values` instead. When set, the LLM provides the value but the runtime rejects any value not present in the list held by this dynamic variable (must be a JSON array such as [&quot;ws_alpha&quot;, &quot;ws_beta&quot;]). Use to let the LLM pick from a server-verified set (e.g. the IDs the current user is allowed to access). Requires description; mutually exclusive with dynamic_variable, is_system_provided, constant_value, and is_omitted.</summary>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AllowedValuesDynamicVariable { get; set; }
@@ -50,10 +59,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>List of allowed string values for string type parameters</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.LiteralJsonSchemaPropertyEnum? Enum { get; set; }
+        public List<string>? Enum { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.LiteralJsonSchemaPropertyEnum Enum { get; set; }
+        public List<string> Enum { get; set; }
 #endif
         /// <summary>If true, this parameter will be completely omitted from the request. Only valid for optional parameters. Mutually exclusive with description, dynamic_variable, is_system_provided, and constant_value.</summary>
         public bool? IsOmitted { get; set; }
@@ -94,11 +103,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "allowed_values", n => { AllowedValues = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AllowedValues>(global::Soenneker.ElevenLabs.OpenApiClient.Models.AllowedValues.CreateFromDiscriminatorValue); } },
                 { "allowed_values_dynamic_variable", n => { AllowedValuesDynamicVariable = n.GetStringValue(); } },
                 { "constant_value", n => { ConstantValue = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.LiteralJsonSchemaPropertyConstantValue>(global::Soenneker.ElevenLabs.OpenApiClient.Models.LiteralJsonSchemaPropertyConstantValue.CreateFromDiscriminatorValue); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "dynamic_variable", n => { DynamicVariable = n.GetStringValue(); } },
-                { "enum", n => { Enum = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.LiteralJsonSchemaPropertyEnum>(global::Soenneker.ElevenLabs.OpenApiClient.Models.LiteralJsonSchemaPropertyEnum.CreateFromDiscriminatorValue); } },
+                { "enum", n => { Enum = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "is_omitted", n => { IsOmitted = n.GetBoolValue(); } },
                 { "is_system_provided", n => { IsSystemProvided = n.GetBoolValue(); } },
                 { "type", n => { Type = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.LiteralJsonSchemaPropertyType>(global::Soenneker.ElevenLabs.OpenApiClient.Models.LiteralJsonSchemaPropertyType.CreateFromDiscriminatorValue); } },
@@ -111,11 +121,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AllowedValues>("allowed_values", AllowedValues);
             writer.WriteStringValue("allowed_values_dynamic_variable", AllowedValuesDynamicVariable);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.LiteralJsonSchemaPropertyConstantValue>("constant_value", ConstantValue);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("dynamic_variable", DynamicVariable);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.LiteralJsonSchemaPropertyEnum>("enum", Enum);
+            writer.WriteCollectionOfPrimitiveValues<string>("enum", Enum);
             writer.WriteBoolValue("is_omitted", IsOmitted);
             writer.WriteBoolValue("is_system_provided", IsSystemProvided);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.LiteralJsonSchemaPropertyType>("type", Type);

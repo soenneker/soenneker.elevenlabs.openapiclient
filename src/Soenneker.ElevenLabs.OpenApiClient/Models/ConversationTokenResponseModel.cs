@@ -40,7 +40,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #endif
         /// <summary>The expiration time of the token in unix seconds</summary>
         public int? ExpirationTimeUnixSecs { get; set; }
-        /// <summary>The purpose property</summary>
+        /// <summary>The purpose of the token</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationTokenPurpose? Purpose { get; set; }
         /// <summary>The user ID of the entity who requested the token</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

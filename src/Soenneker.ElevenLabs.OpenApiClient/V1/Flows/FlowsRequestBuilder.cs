@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Flows.Image;
+using Soenneker.ElevenLabs.OpenApiClient.V1.Flows.Templates;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Flows.TextToSpeech;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Flows.Video;
 using System.Collections.Generic;
@@ -21,6 +22,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Flows
         public global::Soenneker.ElevenLabs.OpenApiClient.V1.Flows.Image.ImageRequestBuilder Image
         {
             get => new global::Soenneker.ElevenLabs.OpenApiClient.V1.Flows.Image.ImageRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The templates property</summary>
+        public global::Soenneker.ElevenLabs.OpenApiClient.V1.Flows.Templates.TemplatesRequestBuilder Templates
+        {
+            get => new global::Soenneker.ElevenLabs.OpenApiClient.V1.Flows.Templates.TemplatesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The textToSpeech property</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.V1.Flows.TextToSpeech.TextToSpeechRequestBuilder TextToSpeech

@@ -51,7 +51,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             {
                 result.GenerationReference = new global::Soenneker.ElevenLabs.OpenApiClient.Models.GenerationReference();
             }
-            else if("InlineAudioReference".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("inline_base64".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.InlineAudioReference = new global::Soenneker.ElevenLabs.OpenApiClient.Models.InlineAudioReference();
             }

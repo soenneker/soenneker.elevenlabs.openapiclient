@@ -15,6 +15,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         #pragma warning disable CS1591
         Starter,
         #pragma warning restore CS1591
+        [EnumMember(Value = "go")]
+        #pragma warning disable CS1591
+        Go,
+        #pragma warning restore CS1591
         [EnumMember(Value = "creator")]
         #pragma warning disable CS1591
         Creator,
@@ -38,6 +42,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         [EnumMember(Value = "grant_tier_2_2025_07_23")]
         #pragma warning disable CS1591
         GrantTier220250723,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "grant")]
+        #pragma warning disable CS1591
+        Grant,
         #pragma warning restore CS1591
         [EnumMember(Value = "trial")]
         #pragma warning disable CS1591

@@ -8,26 +8,20 @@ using System;
 namespace Soenneker.ElevenLabs.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.LiteralJsonSchemaPropertyTypeWrapper"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.TypeValue"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.LiteralJsonSchemaPropertyTypeAnyOf1"/>, List&lt;string&gt;
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class LiteralJsonSchemaPropertyType : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.LiteralJsonSchemaPropertyTypeWrapper"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.LiteralJsonSchemaPropertyTypeAnyOf1"/></summary>
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.LiteralJsonSchemaPropertyTypeAnyOf1? LiteralJsonSchemaPropertyTypeAnyOf1 { get; set; }
+        /// <summary>Composed type representation for type List&lt;string&gt;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.LiteralJsonSchemaPropertyTypeWrapper? LiteralJsonSchemaPropertyTypeWrapper { get; set; }
+        public List<string>? String { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.LiteralJsonSchemaPropertyTypeWrapper LiteralJsonSchemaPropertyTypeWrapper { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.TypeValue"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.TypeValue? TypeValue { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.TypeValue TypeValue { get; set; }
+        public List<string> String { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -38,8 +32,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var result = new global::Soenneker.ElevenLabs.OpenApiClient.Models.LiteralJsonSchemaPropertyType();
-            result.LiteralJsonSchemaPropertyTypeWrapper = new global::Soenneker.ElevenLabs.OpenApiClient.Models.LiteralJsonSchemaPropertyTypeWrapper();
-            result.TypeValue = new global::Soenneker.ElevenLabs.OpenApiClient.Models.TypeValue();
+            if(parseNode.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.LiteralJsonSchemaPropertyTypeAnyOf1>() is global::Soenneker.ElevenLabs.OpenApiClient.Models.LiteralJsonSchemaPropertyTypeAnyOf1 literalJsonSchemaPropertyTypeAnyOf1Value)
+            {
+                result.LiteralJsonSchemaPropertyTypeAnyOf1 = literalJsonSchemaPropertyTypeAnyOf1Value;
+            }
+            else if(parseNode.GetCollectionOfPrimitiveValues<string>()?.AsList() is List<string> stringValue)
+            {
+                result.String = stringValue;
+            }
             return result;
         }
         /// <summary>
@@ -48,10 +48,6 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(LiteralJsonSchemaPropertyTypeWrapper != null || TypeValue != null)
-            {
-                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(LiteralJsonSchemaPropertyTypeWrapper, TypeValue);
-            }
             return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
@@ -61,7 +57,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.LiteralJsonSchemaPropertyTypeWrapper>(null, LiteralJsonSchemaPropertyTypeWrapper, TypeValue);
+            if(LiteralJsonSchemaPropertyTypeAnyOf1 != null)
+            {
+                writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.LiteralJsonSchemaPropertyTypeAnyOf1>(null, LiteralJsonSchemaPropertyTypeAnyOf1);
+            }
+            else if(String != null)
+            {
+                writer.WriteCollectionOfPrimitiveValues<string>(null, String);
+            }
         }
     }
 }

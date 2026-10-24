@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.ElevenLabs.OpenApiClient.V1.PronunciationDictionaries.Item.Item.Download
 {
     /// <summary>
-    /// Builds and executes requests for operations under \v1\pronunciation-dictionaries\{dictionary-id}\{versionId}\download
+    /// Builds and executes requests for operations under \v1\pronunciation-dictionaries\{pronunciationDictionaryId}\{versionId}\download
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class DownloadRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.PronunciationDictionaries.Item.I
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DownloadRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/pronunciation-dictionaries/{dictionary%2Did}/{versionId}/download", pathParameters)
+        public DownloadRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/pronunciation-dictionaries/{pronunciationDictionaryId}/{versionId}/download", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.PronunciationDictionaries.Item.I
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DownloadRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/pronunciation-dictionaries/{dictionary%2Did}/{versionId}/download", rawUrl)
+        public DownloadRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/pronunciation-dictionaries/{pronunciationDictionaryId}/{versionId}/download", rawUrl)
         {
         }
         /// <summary>

@@ -22,7 +22,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.LanguageInfo> DestinationLanguages { get; set; }
 #endif
-        /// <summary>The source_language property</summary>
+        /// <summary>The source language.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.LanguageInfo? SourceLanguage { get; set; }

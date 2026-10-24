@@ -34,7 +34,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public string Id { get; set; }
 #endif
         /// <summary>The lifecycle status of the generation.</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.MediaGenerationFailedResponse_status? Status { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.FailedStatus? Status { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.MediaGenerationFailedResponse"/> and sets the default values.
         /// </summary>
@@ -63,7 +63,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "error_message", n => { ErrorMessage = n.GetStringValue(); } },
                 { "failure_reason", n => { FailureReason = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.MediaGenerationFailedResponseFailureReason>(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.MediaGenerationFailedResponse_status>(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.FailedStatus>(); } },
             };
         }
         /// <summary>
@@ -76,7 +76,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteStringValue("error_message", ErrorMessage);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.MediaGenerationFailedResponseFailureReason>("failure_reason", FailureReason);
             writer.WriteStringValue("id", Id);
-            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.MediaGenerationFailedResponse_status>("status", Status);
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.FailedStatus>("status", Status);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

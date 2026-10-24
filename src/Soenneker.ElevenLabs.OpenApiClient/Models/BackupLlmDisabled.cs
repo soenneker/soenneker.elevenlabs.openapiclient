@@ -15,7 +15,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The preference property</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BackupLlmDisabled_preference? Preference { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.DisabledPreference? Preference { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.BackupLlmDisabled"/> and sets the default values.
         /// </summary>
@@ -41,7 +41,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "preference", n => { Preference = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BackupLlmDisabled_preference>(); } },
+                { "preference", n => { Preference = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DisabledPreference>(); } },
             };
         }
         /// <summary>
@@ -51,7 +51,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BackupLlmDisabled_preference>("preference", Preference);
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DisabledPreference>("preference", Preference);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

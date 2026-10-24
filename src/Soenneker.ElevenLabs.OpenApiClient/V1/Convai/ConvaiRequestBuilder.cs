@@ -10,20 +10,24 @@ using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.BatchCalling;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Conversation;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Conversations;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.EnvironmentVariables;
+using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Environments;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Exotel;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.KnowledgeBase;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Llm;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.LlmUsage;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.McpServers;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.PhoneNumbers;
+using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Realtime;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Secrets;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Settings;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.SipTrunk;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Tags;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.TestInvocations;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Tools;
+using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.TriageTickets;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Twilio;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Users;
+using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.V2;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Whatsapp;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.WhatsappAccounts;
 using System.Collections.Generic;
@@ -73,6 +77,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai
         {
             get => new global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Conversations.ConversationsRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The environments property</summary>
+        public global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Environments.EnvironmentsRequestBuilder Environments
+        {
+            get => new global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Environments.EnvironmentsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The environmentVariables property</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.EnvironmentVariables.EnvironmentVariablesRequestBuilder EnvironmentVariables
         {
@@ -108,6 +117,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai
         {
             get => new global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.PhoneNumbers.PhoneNumbersRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The realtime property</summary>
+        public global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Realtime.RealtimeRequestBuilder Realtime
+        {
+            get => new global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Realtime.RealtimeRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The secrets property</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Secrets.SecretsRequestBuilder Secrets
         {
@@ -138,6 +152,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai
         {
             get => new global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Tools.ToolsRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The triageTickets property</summary>
+        public global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.TriageTickets.TriageTicketsRequestBuilder TriageTickets
+        {
+            get => new global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.TriageTickets.TriageTicketsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The twilio property</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Twilio.TwilioRequestBuilder Twilio
         {
@@ -147,6 +166,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai
         public global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Users.UsersRequestBuilder Users
         {
             get => new global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Users.UsersRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The v2 property</summary>
+        public global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.V2.V2RequestBuilder V2
+        {
+            get => new global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.V2.V2RequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The whatsapp property</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Whatsapp.WhatsappRequestBuilder Whatsapp

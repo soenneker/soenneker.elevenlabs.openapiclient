@@ -17,7 +17,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Traffic percentage to deploy</summary>
         public double? TrafficPercentage { get; set; }
         /// <summary>The type property</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentDeploymentPercentageStrategy_type? Type { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PercentageType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentDeploymentPercentageStrategy"/> and sets the default values.
         /// </summary>
@@ -44,7 +44,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "traffic_percentage", n => { TrafficPercentage = n.GetDoubleValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentDeploymentPercentageStrategy_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PercentageType>(); } },
             };
         }
         /// <summary>
@@ -55,7 +55,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDoubleValue("traffic_percentage", TrafficPercentage);
-            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentDeploymentPercentageStrategy_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PercentageType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

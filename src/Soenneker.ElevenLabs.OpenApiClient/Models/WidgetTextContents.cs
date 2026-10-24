@@ -286,6 +286,30 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public string NewCall { get; set; }
 #endif
+        /// <summary>Error message displayed when the queue wait times out.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? QueueTimedOut { get; set; }
+#nullable restore
+#else
+        public string QueueTimedOut { get; set; }
+#endif
+        /// <summary>Status displayed while waiting in the queue for an available agent.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? QueueWaitingStatus { get; set; }
+#nullable restore
+#else
+        public string QueueWaitingStatus { get; set; }
+#endif
+        /// <summary>Short status displayed while waiting for an available agent.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? QueueWaitingStatusShort { get; set; }
+#nullable restore
+#else
+        public string QueueWaitingStatusShort { get; set; }
+#endif
         /// <summary>ARIA label for the remove file button.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -301,6 +325,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #nullable restore
 #else
         public string RequestFollowUpFeedback { get; set; }
+#endif
+        /// <summary>Fallback message displayed when rich content cannot be rendered.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? RichContentUnavailable { get; set; }
+#nullable restore
+#else
+        public string RichContentUnavailable { get; set; }
 #endif
         /// <summary>Text and ARIA label for the send message button.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -473,8 +505,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "main_label", n => { MainLabel = n.GetStringValue(); } },
                 { "mute_microphone", n => { MuteMicrophone = n.GetStringValue(); } },
                 { "new_call", n => { NewCall = n.GetStringValue(); } },
+                { "queue_timed_out", n => { QueueTimedOut = n.GetStringValue(); } },
+                { "queue_waiting_status", n => { QueueWaitingStatus = n.GetStringValue(); } },
+                { "queue_waiting_status_short", n => { QueueWaitingStatusShort = n.GetStringValue(); } },
                 { "remove_file", n => { RemoveFile = n.GetStringValue(); } },
                 { "request_follow_up_feedback", n => { RequestFollowUpFeedback = n.GetStringValue(); } },
+                { "rich_content_unavailable", n => { RichContentUnavailable = n.GetStringValue(); } },
                 { "send_message", n => { SendMessage = n.GetStringValue(); } },
                 { "speaking_status", n => { SpeakingStatus = n.GetStringValue(); } },
                 { "start_call", n => { StartCall = n.GetStringValue(); } },
@@ -532,8 +568,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteStringValue("main_label", MainLabel);
             writer.WriteStringValue("mute_microphone", MuteMicrophone);
             writer.WriteStringValue("new_call", NewCall);
+            writer.WriteStringValue("queue_timed_out", QueueTimedOut);
+            writer.WriteStringValue("queue_waiting_status", QueueWaitingStatus);
+            writer.WriteStringValue("queue_waiting_status_short", QueueWaitingStatusShort);
             writer.WriteStringValue("remove_file", RemoveFile);
             writer.WriteStringValue("request_follow_up_feedback", RequestFollowUpFeedback);
+            writer.WriteStringValue("rich_content_unavailable", RichContentUnavailable);
             writer.WriteStringValue("send_message", SendMessage);
             writer.WriteStringValue("speaking_status", SpeakingStatus);
             writer.WriteStringValue("start_call", StartCall);

@@ -15,10 +15,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>When set, the entire object uses this constant JSON value at runtime. Mutually exclusive with description (LLM-provided object), dynamic_variable, and is_omitted.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ObjectJsonSchemaPropertyInputConstantValue? ConstantValue { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ObjectJsonSchemaPropertyInputConstantValueProperty? ConstantValue { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ObjectJsonSchemaPropertyInputConstantValue ConstantValue { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ObjectJsonSchemaPropertyInputConstantValueProperty ConstantValue { get; set; }
 #endif
         /// <summary>The description property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -41,10 +41,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The properties property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ObjectJsonSchemaPropertyInputPropertiesProperty? Properties { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ObjectJsonSchemaPropertyInputProperties? Properties { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ObjectJsonSchemaPropertyInputPropertiesProperty Properties { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ObjectJsonSchemaPropertyInputProperties Properties { get; set; }
 #endif
         /// <summary>The property_kind property</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.ObjectJsonSchemaPropertyInputPropertyKind? PropertyKind { get; set; }
@@ -65,7 +65,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.RequiredConstraints RequiredConstraints { get; set; }
 #endif
         /// <summary>The type property</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ObjectJsonSchemaPropertyInput_type? Type { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ObjectValueType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ObjectJsonSchemaPropertyInput"/> and sets the default values.
         /// </summary>
@@ -91,15 +91,15 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "constant_value", n => { ConstantValue = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ObjectJsonSchemaPropertyInputConstantValue>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ObjectJsonSchemaPropertyInputConstantValue.CreateFromDiscriminatorValue); } },
+                { "constant_value", n => { ConstantValue = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ObjectJsonSchemaPropertyInputConstantValueProperty>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ObjectJsonSchemaPropertyInputConstantValueProperty.CreateFromDiscriminatorValue); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "dynamic_variable", n => { DynamicVariable = n.GetStringValue(); } },
                 { "is_omitted", n => { IsOmitted = n.GetBoolValue(); } },
-                { "properties", n => { Properties = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ObjectJsonSchemaPropertyInputPropertiesProperty>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ObjectJsonSchemaPropertyInputPropertiesProperty.CreateFromDiscriminatorValue); } },
+                { "properties", n => { Properties = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ObjectJsonSchemaPropertyInputProperties>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ObjectJsonSchemaPropertyInputProperties.CreateFromDiscriminatorValue); } },
                 { "property_kind", n => { PropertyKind = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ObjectJsonSchemaPropertyInputPropertyKind>(); } },
                 { "required", n => { Required = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "required_constraints", n => { RequiredConstraints = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.RequiredConstraints>(global::Soenneker.ElevenLabs.OpenApiClient.Models.RequiredConstraints.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ObjectJsonSchemaPropertyInput_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ObjectValueType>(); } },
             };
         }
         /// <summary>
@@ -109,15 +109,15 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ObjectJsonSchemaPropertyInputConstantValue>("constant_value", ConstantValue);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ObjectJsonSchemaPropertyInputConstantValueProperty>("constant_value", ConstantValue);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("dynamic_variable", DynamicVariable);
             writer.WriteBoolValue("is_omitted", IsOmitted);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ObjectJsonSchemaPropertyInputPropertiesProperty>("properties", Properties);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ObjectJsonSchemaPropertyInputProperties>("properties", Properties);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ObjectJsonSchemaPropertyInputPropertyKind>("property_kind", PropertyKind);
             writer.WriteCollectionOfPrimitiveValues<string>("required", Required);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.RequiredConstraints>("required_constraints", RequiredConstraints);
-            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ObjectJsonSchemaPropertyInput_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ObjectValueType>("type", Type);
         }
     }
 }

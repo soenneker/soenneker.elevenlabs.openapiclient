@@ -31,7 +31,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public string TargetNodeId { get; set; }
 #endif
         /// <summary>The type property</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.UnitTestWorkflowNodeTransitionEvaluationNodeId_type? Type { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.NodeIdType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.UnitTestWorkflowNodeTransitionEvaluationNodeId"/> and sets the default values.
         /// </summary>
@@ -59,7 +59,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             {
                 { "agent_id", n => { AgentId = n.GetStringValue(); } },
                 { "target_node_id", n => { TargetNodeId = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UnitTestWorkflowNodeTransitionEvaluationNodeId_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.NodeIdType>(); } },
             };
         }
         /// <summary>
@@ -71,7 +71,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("agent_id", AgentId);
             writer.WriteStringValue("target_node_id", TargetNodeId);
-            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UnitTestWorkflowNodeTransitionEvaluationNodeId_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.NodeIdType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

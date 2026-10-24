@@ -33,7 +33,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public string StringToReplace { get; set; }
 #endif
         /// <summary>The type property</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PronunciationDictionaryAliasRuleResponseModel_type? Type { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PronunciationDictionaryAliasRuleResponseModelType? Type { get; set; }
         /// <summary>Whether the rule only matches at word boundaries.</summary>
         public bool? WordBoundaries { get; set; }
         /// <summary>
@@ -66,7 +66,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "alias", n => { Alias = n.GetStringValue(); } },
                 { "case_sensitive", n => { CaseSensitive = n.GetBoolValue(); } },
                 { "string_to_replace", n => { StringToReplace = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PronunciationDictionaryAliasRuleResponseModel_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PronunciationDictionaryAliasRuleResponseModelType>(); } },
                 { "word_boundaries", n => { WordBoundaries = n.GetBoolValue(); } },
             };
         }
@@ -80,7 +80,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteStringValue("alias", Alias);
             writer.WriteBoolValue("case_sensitive", CaseSensitive);
             writer.WriteStringValue("string_to_replace", StringToReplace);
-            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PronunciationDictionaryAliasRuleResponseModel_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PronunciationDictionaryAliasRuleResponseModelType>("type", Type);
             writer.WriteBoolValue("word_boundaries", WordBoundaries);
             writer.WriteAdditionalData(AdditionalData);
         }

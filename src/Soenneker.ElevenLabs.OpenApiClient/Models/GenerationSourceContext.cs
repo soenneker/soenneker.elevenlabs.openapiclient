@@ -49,10 +49,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The model_parameters property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GenerationSourceContextModelParameters? ModelParameters { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GenerationSourceContextModelParametersProperty? ModelParameters { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GenerationSourceContextModelParameters ModelParameters { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GenerationSourceContextModelParametersProperty ModelParameters { get; set; }
 #endif
         /// <summary>The model_provider property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -79,7 +79,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public string SessionIterationId { get; set; }
 #endif
         /// <summary>The source_type property</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GenerationSourceContext_source_type? SourceType { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GenerationSourceType? SourceType { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.GenerationSourceContext"/> and sets the default values.
         /// </summary>
@@ -109,11 +109,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "generation_id", n => { GenerationId = n.GetStringValue(); } },
                 { "generation_session_id", n => { GenerationSessionId = n.GetStringValue(); } },
                 { "model_id", n => { ModelId = n.GetStringValue(); } },
-                { "model_parameters", n => { ModelParameters = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GenerationSourceContextModelParameters>(global::Soenneker.ElevenLabs.OpenApiClient.Models.GenerationSourceContextModelParameters.CreateFromDiscriminatorValue); } },
+                { "model_parameters", n => { ModelParameters = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GenerationSourceContextModelParametersProperty>(global::Soenneker.ElevenLabs.OpenApiClient.Models.GenerationSourceContextModelParametersProperty.CreateFromDiscriminatorValue); } },
                 { "model_provider", n => { ModelProvider = n.GetStringValue(); } },
                 { "prompt", n => { Prompt = n.GetStringValue(); } },
                 { "session_iteration_id", n => { SessionIterationId = n.GetStringValue(); } },
-                { "source_type", n => { SourceType = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GenerationSourceContext_source_type>(); } },
+                { "source_type", n => { SourceType = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GenerationSourceType>(); } },
             };
         }
         /// <summary>
@@ -127,11 +127,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteStringValue("generation_id", GenerationId);
             writer.WriteStringValue("generation_session_id", GenerationSessionId);
             writer.WriteStringValue("model_id", ModelId);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GenerationSourceContextModelParameters>("model_parameters", ModelParameters);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GenerationSourceContextModelParametersProperty>("model_parameters", ModelParameters);
             writer.WriteStringValue("model_provider", ModelProvider);
             writer.WriteStringValue("prompt", Prompt);
             writer.WriteStringValue("session_iteration_id", SessionIterationId);
-            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GenerationSourceContext_source_type>("source_type", SourceType);
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GenerationSourceType>("source_type", SourceType);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -25,10 +25,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>A name to make the agent easier to find</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateAgentV1ConvaiAgentsCreatePostName? Name { get; set; }
 #nullable restore
 #else
-        public string Name { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateAgentV1ConvaiAgentsCreatePostName Name { get; set; }
 #endif
         /// <summary>Platform settings for the agent are all settings that aren&apos;t related to the conversation orchestration and content.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -46,7 +46,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateAgentV1ConvaiAgentsCreatePostTags Tags { get; set; }
 #endif
-        /// <summary>The workflow property</summary>
+        /// <summary>Workflow for the agent. This is used to define the flow of the conversation and how the agent interacts with tools.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentWorkflowRequestModel? Workflow { get; set; }
@@ -80,7 +80,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "conversation_config", n => { ConversationConfig = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationalConfigApiModelInput>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationalConfigApiModelInput.CreateFromDiscriminatorValue); } },
-                { "name", n => { Name = n.GetStringValue(); } },
+                { "name", n => { Name = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateAgentV1ConvaiAgentsCreatePostName>(global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateAgentV1ConvaiAgentsCreatePostName.CreateFromDiscriminatorValue); } },
                 { "platform_settings", n => { PlatformSettings = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentPlatformSettingsRequestModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentPlatformSettingsRequestModel.CreateFromDiscriminatorValue); } },
                 { "tags", n => { Tags = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateAgentV1ConvaiAgentsCreatePostTags>(global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateAgentV1ConvaiAgentsCreatePostTags.CreateFromDiscriminatorValue); } },
                 { "workflow", n => { Workflow = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentWorkflowRequestModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentWorkflowRequestModel.CreateFromDiscriminatorValue); } },
@@ -94,7 +94,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationalConfigApiModelInput>("conversation_config", ConversationConfig);
-            writer.WriteStringValue("name", Name);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateAgentV1ConvaiAgentsCreatePostName>("name", Name);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentPlatformSettingsRequestModel>("platform_settings", PlatformSettings);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateAgentV1ConvaiAgentsCreatePostTags>("tags", Tags);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentWorkflowRequestModel>("workflow", Workflow);

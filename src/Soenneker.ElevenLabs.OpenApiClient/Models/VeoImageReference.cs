@@ -13,7 +13,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class VeoImageReference : IParsable
     {
-        /// <summary>The image property</summary>
+        /// <summary>The reference image.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.ImageReference? Image { get; set; }
@@ -21,7 +21,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.ImageReference Image { get; set; }
 #endif
-        /// <summary>&quot;How the model uses the image: `subject` places its subject or scene elements into the video; `style` transfers its visual style.&quot;</summary>
+        /// <summary>How the model uses the image: `subject` places its subject or scene elements into the video; `style` transfers its visual style.</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.VeoImageReferenceRole? Role { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

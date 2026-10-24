@@ -51,11 +51,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             {
                 result.CreateAuthConnectionEnvironmentVariableRequest = new global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateAuthConnectionEnvironmentVariableRequest();
             }
-            else if("CreateSecretEnvironmentVariableRequest".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("secret".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.CreateSecretEnvironmentVariableRequest = new global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateSecretEnvironmentVariableRequest();
             }
-            else if("CreateStringEnvironmentVariableRequest".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("string".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.CreateStringEnvironmentVariableRequest = new global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateStringEnvironmentVariableRequest();
             }

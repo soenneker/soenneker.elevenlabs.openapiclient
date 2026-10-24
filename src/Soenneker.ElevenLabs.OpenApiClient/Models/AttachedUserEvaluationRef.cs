@@ -30,10 +30,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public string AnalysisItemId { get; set; }
 #endif
-        /// <summary>The scope property</summary>
+        /// <summary>Transcript context (&apos;conversation&apos; or &apos;agent&apos;) used when running this item.</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.AnalysisScope? Scope { get; set; }
         /// <summary>The source property</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AttachedUserEvaluationRef_source? Source { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AttachedUserEvaluationRefSource? Source { get; set; }
         /// <summary>Primary item version whose result feeds scoring. None tracks the item&apos;s latest published version.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -50,6 +50,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public AttachedUserEvaluationRef()
         {
             AdditionalData = new Dictionary<string, object>();
+            Scope = global::Soenneker.ElevenLabs.OpenApiClient.Models.AnalysisScope.Conversation;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -72,7 +73,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "additional_version_ids", n => { AdditionalVersionIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "analysis_item_id", n => { AnalysisItemId = n.GetStringValue(); } },
                 { "scope", n => { Scope = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AnalysisScope>(); } },
-                { "source", n => { Source = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AttachedUserEvaluationRef_source>(); } },
+                { "source", n => { Source = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AttachedUserEvaluationRefSource>(); } },
                 { "version_id", n => { VersionId = n.GetStringValue(); } },
                 { "weight", n => { Weight = n.GetDoubleValue(); } },
             };
@@ -87,7 +88,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("additional_version_ids", AdditionalVersionIds);
             writer.WriteStringValue("analysis_item_id", AnalysisItemId);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AnalysisScope>("scope", Scope);
-            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AttachedUserEvaluationRef_source>("source", Source);
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AttachedUserEvaluationRefSource>("source", Source);
             writer.WriteStringValue("version_id", VersionId);
             writer.WriteDoubleValue("weight", Weight);
             writer.WriteAdditionalData(AdditionalData);

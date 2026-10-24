@@ -15,7 +15,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Indicates this response contains single languages (not source-to-destination pairs).</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SingleLanguagesResponse_kind? Kind { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SingleKind? Kind { get; set; }
         /// <summary>The list of available languages.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -49,7 +49,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "kind", n => { Kind = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SingleLanguagesResponse_kind>(); } },
+                { "kind", n => { Kind = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SingleKind>(); } },
                 { "languages", n => { Languages = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.LanguageInfo>(global::Soenneker.ElevenLabs.OpenApiClient.Models.LanguageInfo.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
@@ -60,7 +60,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SingleLanguagesResponse_kind>("kind", Kind);
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SingleKind>("kind", Kind);
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.LanguageInfo>("languages", Languages);
             writer.WriteAdditionalData(AdditionalData);
         }

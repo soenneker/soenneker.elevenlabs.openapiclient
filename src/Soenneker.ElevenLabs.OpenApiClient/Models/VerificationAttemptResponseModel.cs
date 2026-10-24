@@ -12,8 +12,32 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     public partial class VerificationAttemptResponseModel : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Whether the verification attempt was accepted.</summary>
+        public bool? Accepted { get; set; }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The date of the verification attempt in Unix time.</summary>
+        public int? DateUnix { get; set; }
+        /// <summary>The Levenshtein distance of the verification attempt.</summary>
+        public double? LevenshteinDistance { get; set; }
+        /// <summary>The recording of the verification attempt.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.RecordingResponseModel? Recording { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.RecordingResponseModel Recording { get; set; }
+#endif
+        /// <summary>The similarity of the verification attempt.</summary>
+        public double? Similarity { get; set; }
+        /// <summary>The text of the verification attempt.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Text { get; set; }
+#nullable restore
+#else
+        public string Text { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.VerificationAttemptResponseModel"/> and sets the default values.
         /// </summary>
@@ -39,6 +63,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "accepted", n => { Accepted = n.GetBoolValue(); } },
+                { "date_unix", n => { DateUnix = n.GetIntValue(); } },
+                { "levenshtein_distance", n => { LevenshteinDistance = n.GetDoubleValue(); } },
+                { "recording", n => { Recording = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.RecordingResponseModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.RecordingResponseModel.CreateFromDiscriminatorValue); } },
+                { "similarity", n => { Similarity = n.GetDoubleValue(); } },
+                { "text", n => { Text = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -48,6 +78,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteBoolValue("accepted", Accepted);
+            writer.WriteIntValue("date_unix", DateUnix);
+            writer.WriteDoubleValue("levenshtein_distance", LevenshteinDistance);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.RecordingResponseModel>("recording", Recording);
+            writer.WriteDoubleValue("similarity", Similarity);
+            writer.WriteStringValue("text", Text);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

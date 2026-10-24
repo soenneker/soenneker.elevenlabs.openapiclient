@@ -97,10 +97,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>OpenTelemetry trace payload when the request uses format=opentelemetry; otherwise omitted.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetConversationResponseModelOtlpTraces? OtlpTraces { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetConversationResponseModelOtlpTracesProperty? OtlpTraces { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetConversationResponseModelOtlpTraces OtlpTraces { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetConversationResponseModelOtlpTracesProperty OtlpTraces { get; set; }
 #endif
         /// <summary>The status property</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetConversationResponseModelStatus? Status { get; set; }
@@ -184,7 +184,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "has_response_audio", n => { HasResponseAudio = n.GetBoolValue(); } },
                 { "has_user_audio", n => { HasUserAudio = n.GetBoolValue(); } },
                 { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryMetadataCommonModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryMetadataCommonModel.CreateFromDiscriminatorValue); } },
-                { "otlp_traces", n => { OtlpTraces = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetConversationResponseModelOtlpTraces>(global::Soenneker.ElevenLabs.OpenApiClient.Models.GetConversationResponseModelOtlpTraces.CreateFromDiscriminatorValue); } },
+                { "otlp_traces", n => { OtlpTraces = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetConversationResponseModelOtlpTracesProperty>(global::Soenneker.ElevenLabs.OpenApiClient.Models.GetConversationResponseModelOtlpTracesProperty.CreateFromDiscriminatorValue); } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetConversationResponseModelStatus>(); } },
                 { "tag_ids", n => { TagIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "transcript", n => { Transcript = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptResponseModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptResponseModel.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -213,7 +213,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteBoolValue("has_response_audio", HasResponseAudio);
             writer.WriteBoolValue("has_user_audio", HasUserAudio);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryMetadataCommonModel>("metadata", Metadata);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetConversationResponseModelOtlpTraces>("otlp_traces", OtlpTraces);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetConversationResponseModelOtlpTracesProperty>("otlp_traces", OtlpTraces);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetConversationResponseModelStatus>("status", Status);
             writer.WriteCollectionOfPrimitiveValues<string>("tag_ids", TagIds);
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptResponseModel>("transcript", Transcript);

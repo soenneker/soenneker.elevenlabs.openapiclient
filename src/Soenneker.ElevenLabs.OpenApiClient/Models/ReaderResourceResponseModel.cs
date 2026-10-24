@@ -14,6 +14,16 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The ID of the resource.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ResourceId { get; set; }
+#nullable restore
+#else
+        public string ResourceId { get; set; }
+#endif
+        /// <summary>The type of resource.</summary>
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ReaderResourceResponseModelResourceType? ResourceType { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ReaderResourceResponseModel"/> and sets the default values.
         /// </summary>
@@ -39,6 +49,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "resource_id", n => { ResourceId = n.GetStringValue(); } },
+                { "resource_type", n => { ResourceType = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ReaderResourceResponseModelResourceType>(); } },
             };
         }
         /// <summary>
@@ -48,6 +60,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("resource_id", ResourceId);
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ReaderResourceResponseModelResourceType>("resource_type", ResourceType);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

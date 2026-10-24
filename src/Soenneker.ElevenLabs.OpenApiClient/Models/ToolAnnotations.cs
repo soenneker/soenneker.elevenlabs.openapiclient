@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.ElevenLabs.OpenApiClient.Models
 {
     /// <summary>
-    /// &quot;Additional properties describing a Tool to clients.NOTE: all properties in ToolAnnotations are **hints**.They are not guaranteed to provide a faithful description oftool behavior (including descriptive properties like `title`).Clients should never make tool use decisions based on ToolAnnotationsreceived from untrusted servers.&quot;
+    /// Additional properties describing a Tool to clients.NOTE: all properties in ToolAnnotations are **hints**.They are not guaranteed to provide a faithful description oftool behavior (including descriptive properties like `title`).Clients should never make tool use decisions based on ToolAnnotationsreceived from untrusted servers.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ToolAnnotations : IAdditionalDataHolder, IParsable

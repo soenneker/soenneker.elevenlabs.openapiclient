@@ -22,44 +22,26 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.DynamicVariableAssignment> Assignments { get; set; }
 #endif
-        /// <summary>&quot;DEPRECATED: use `interruption_mode` instead. If set, overrides the server&apos;s disable_interruptions setting for this tool.&quot;</summary>
+        /// <summary>DEPRECATED: use `interruption_mode` instead. If set, overrides the server&apos;s disable_interruptions setting for this tool.</summary>
         [Obsolete("")]
         public bool? DisableInterruptions { get; set; }
         /// <summary>If set, overrides the server&apos;s execution_mode setting for this tool</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolExecutionModeWrapper4? ExecutionMode { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolExecutionModeWrapper4 ExecutionMode { get; set; }
-#endif
-        /// <summary>&quot;DEPRECATED: use `pre_tool_speech` instead. If set, overrides the server&apos;s force_pre_tool_speech setting for this tool.&quot;</summary>
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolExecutionMode? ExecutionMode { get; set; }
+        /// <summary>DEPRECATED: use `pre_tool_speech` instead. If set, overrides the server&apos;s force_pre_tool_speech setting for this tool.</summary>
         [Obsolete("")]
         public bool? ForcePreToolSpeech { get; set; }
         /// <summary>Mapping of json path to input override configuration</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.McpToolConfigOverrideCreateRequestModelInputOverrides? InputOverrides { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.McpToolConfigOverrideCreateRequestModelInputOverridesProperty? InputOverrides { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.McpToolConfigOverrideCreateRequestModelInputOverrides InputOverrides { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.McpToolConfigOverrideCreateRequestModelInputOverridesProperty InputOverrides { get; set; }
 #endif
         /// <summary>If set, overrides the server&apos;s interruption_mode setting for this tool.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolInterruptionModeWrapper4? InterruptionMode { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolInterruptionModeWrapper4 InterruptionMode { get; set; }
-#endif
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolInterruptionMode? InterruptionMode { get; set; }
         /// <summary>If set, overrides the server&apos;s pre_tool_speech setting for this tool.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PreToolSpeechModeWrapper4? PreToolSpeech { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PreToolSpeechModeWrapper4 PreToolSpeech { get; set; }
-#endif
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PreToolSpeechMode? PreToolSpeech { get; set; }
         /// <summary>Mock responses with optional parameter conditions. Evaluated top-to-bottom; first match wins.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -79,13 +61,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.McpToolConfigOverrideCreateRequestModelToolCallSound ToolCallSound { get; set; }
 #endif
         /// <summary>If set, overrides the server&apos;s tool_call_sound_behavior setting for this tool</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolCallSoundBehaviorWrapper4? ToolCallSoundBehavior { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolCallSoundBehaviorWrapper4 ToolCallSoundBehavior { get; set; }
-#endif
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolCallSoundBehavior? ToolCallSoundBehavior { get; set; }
         /// <summary>The name of the MCP tool</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -121,15 +97,15 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             {
                 { "assignments", n => { Assignments = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.DynamicVariableAssignment>(global::Soenneker.ElevenLabs.OpenApiClient.Models.DynamicVariableAssignment.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "disable_interruptions", n => { DisableInterruptions = n.GetBoolValue(); } },
-                { "execution_mode", n => { ExecutionMode = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolExecutionModeWrapper4>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolExecutionModeWrapper4.CreateFromDiscriminatorValue); } },
+                { "execution_mode", n => { ExecutionMode = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolExecutionMode>(); } },
                 { "force_pre_tool_speech", n => { ForcePreToolSpeech = n.GetBoolValue(); } },
-                { "input_overrides", n => { InputOverrides = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.McpToolConfigOverrideCreateRequestModelInputOverrides>(global::Soenneker.ElevenLabs.OpenApiClient.Models.McpToolConfigOverrideCreateRequestModelInputOverrides.CreateFromDiscriminatorValue); } },
-                { "interruption_mode", n => { InterruptionMode = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolInterruptionModeWrapper4>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolInterruptionModeWrapper4.CreateFromDiscriminatorValue); } },
-                { "pre_tool_speech", n => { PreToolSpeech = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PreToolSpeechModeWrapper4>(global::Soenneker.ElevenLabs.OpenApiClient.Models.PreToolSpeechModeWrapper4.CreateFromDiscriminatorValue); } },
+                { "input_overrides", n => { InputOverrides = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.McpToolConfigOverrideCreateRequestModelInputOverridesProperty>(global::Soenneker.ElevenLabs.OpenApiClient.Models.McpToolConfigOverrideCreateRequestModelInputOverridesProperty.CreateFromDiscriminatorValue); } },
+                { "interruption_mode", n => { InterruptionMode = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolInterruptionMode>(); } },
+                { "pre_tool_speech", n => { PreToolSpeech = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PreToolSpeechMode>(); } },
                 { "response_mocks", n => { ResponseMocks = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolResponseMockConfigInput>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolResponseMockConfigInput.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "response_timeout_secs", n => { ResponseTimeoutSecs = n.GetIntValue(); } },
                 { "tool_call_sound", n => { ToolCallSound = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.McpToolConfigOverrideCreateRequestModelToolCallSound>(global::Soenneker.ElevenLabs.OpenApiClient.Models.McpToolConfigOverrideCreateRequestModelToolCallSound.CreateFromDiscriminatorValue); } },
-                { "tool_call_sound_behavior", n => { ToolCallSoundBehavior = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolCallSoundBehaviorWrapper4>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolCallSoundBehaviorWrapper4.CreateFromDiscriminatorValue); } },
+                { "tool_call_sound_behavior", n => { ToolCallSoundBehavior = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolCallSoundBehavior>(); } },
                 { "tool_name", n => { ToolName = n.GetStringValue(); } },
             };
         }
@@ -142,15 +118,15 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.DynamicVariableAssignment>("assignments", Assignments);
             writer.WriteBoolValue("disable_interruptions", DisableInterruptions);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolExecutionModeWrapper4>("execution_mode", ExecutionMode);
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolExecutionMode>("execution_mode", ExecutionMode);
             writer.WriteBoolValue("force_pre_tool_speech", ForcePreToolSpeech);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.McpToolConfigOverrideCreateRequestModelInputOverrides>("input_overrides", InputOverrides);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolInterruptionModeWrapper4>("interruption_mode", InterruptionMode);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PreToolSpeechModeWrapper4>("pre_tool_speech", PreToolSpeech);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.McpToolConfigOverrideCreateRequestModelInputOverridesProperty>("input_overrides", InputOverrides);
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolInterruptionMode>("interruption_mode", InterruptionMode);
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PreToolSpeechMode>("pre_tool_speech", PreToolSpeech);
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolResponseMockConfigInput>("response_mocks", ResponseMocks);
             writer.WriteIntValue("response_timeout_secs", ResponseTimeoutSecs);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.McpToolConfigOverrideCreateRequestModelToolCallSound>("tool_call_sound", ToolCallSound);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolCallSoundBehaviorWrapper4>("tool_call_sound_behavior", ToolCallSoundBehavior);
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolCallSoundBehavior>("tool_call_sound_behavior", ToolCallSoundBehavior);
             writer.WriteStringValue("tool_name", ToolName);
             writer.WriteAdditionalData(AdditionalData);
         }

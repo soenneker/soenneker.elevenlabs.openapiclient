@@ -79,10 +79,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The settings of the history item.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechHistoryItemResponseModelSettings? Settings { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechHistoryItemResponseModelSettingsProperty? Settings { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechHistoryItemResponseModelSettings Settings { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechHistoryItemResponseModelSettingsProperty Settings { get; set; }
 #endif
         /// <summary>The ID of the share link.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -157,7 +157,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "model_id", n => { ModelId = n.GetStringValue(); } },
                 { "output_format", n => { OutputFormat = n.GetStringValue(); } },
                 { "request_id", n => { RequestId = n.GetStringValue(); } },
-                { "settings", n => { Settings = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechHistoryItemResponseModelSettings>(global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechHistoryItemResponseModelSettings.CreateFromDiscriminatorValue); } },
+                { "settings", n => { Settings = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechHistoryItemResponseModelSettingsProperty>(global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechHistoryItemResponseModelSettingsProperty.CreateFromDiscriminatorValue); } },
                 { "share_link_id", n => { ShareLinkId = n.GetStringValue(); } },
                 { "source", n => { Source = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechHistoryItemResponseModelSource>(); } },
                 { "state", n => { State = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechHistoryItemResponseModelState>(); } },
@@ -184,7 +184,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteStringValue("model_id", ModelId);
             writer.WriteStringValue("output_format", OutputFormat);
             writer.WriteStringValue("request_id", RequestId);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechHistoryItemResponseModelSettings>("settings", Settings);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechHistoryItemResponseModelSettingsProperty>("settings", Settings);
             writer.WriteStringValue("share_link_id", ShareLinkId);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechHistoryItemResponseModelSource>("source", Source);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechHistoryItemResponseModelState>("state", State);

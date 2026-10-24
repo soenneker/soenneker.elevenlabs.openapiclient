@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.ElevenLabs.OpenApiClient.Models
 {
     /// <summary>
-    /// &quot;One segment of a target transcript: a source segment plus its translation.&quot;
+    /// One segment of a target transcript: a source segment plus its translation.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class DubbingTargetTranscriptSegment : IAdditionalDataHolder, IParsable

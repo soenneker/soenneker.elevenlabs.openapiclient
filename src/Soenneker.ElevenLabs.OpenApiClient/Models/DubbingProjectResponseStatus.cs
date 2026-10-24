@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.ElevenLabs.OpenApiClient.Models
 {
-    /// <summary>&quot;Lifecycle status of the project: &apos;preparing&apos;/&apos;processing&apos; while it transcribes, &apos;ready&apos; once transcription is done, or &apos;failed&apos;.&quot;</summary>
+    /// <summary>Lifecycle status of the project: `queued` before the source is picked up, `preparing` while it is transcribed, `ready` once transcription is done and language targets can start, or `failed`. A project is never reported as `processing` — that value belongs to language targets.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum DubbingProjectResponseStatus
     {

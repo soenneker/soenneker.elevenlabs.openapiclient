@@ -121,11 +121,13 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The phone_call property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryMetadataCommonModelPhoneCallAnyOf1? PhoneCall { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistorySipTrunkingPhoneCallModel? PhoneCall { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryMetadataCommonModelPhoneCallAnyOf1 PhoneCall { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistorySipTrunkingPhoneCallModel PhoneCall { get; set; }
 #endif
+        /// <summary>Seconds the caller was held in the concurrency wait queue. Excluded from call_duration_secs and from billed time. None when the conversation was never queued.</summary>
+        public double? QueueWaitSecs { get; set; }
         /// <summary>The rag_usage property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -192,6 +194,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public ConversationHistoryMetadataCommonModel()
         {
             AdditionalData = new Dictionary<string, object>();
+            AgentCreatedFrom = global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentDefinitionSource.Unknown;
+            AgentLastUpdatedFrom = global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentDefinitionSource.Unknown;
+            AuthorizationMethod = global::Soenneker.ElevenLabs.OpenApiClient.Models.AuthorizationMethod.PublicValue;
+            ConversationInitiationSource = global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationSource.Unknown;
             TextOnly = false;
         }
         /// <summary>
@@ -231,7 +237,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "feedback", n => { Feedback = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryFeedbackCommonModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryFeedbackCommonModel.CreateFromDiscriminatorValue); } },
                 { "initiator_id", n => { InitiatorId = n.GetStringValue(); } },
                 { "main_language", n => { MainLanguage = n.GetStringValue(); } },
-                { "phone_call", n => { PhoneCall = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryMetadataCommonModelPhoneCallAnyOf1>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryMetadataCommonModelPhoneCallAnyOf1.CreateFromDiscriminatorValue); } },
+                { "phone_call", n => { PhoneCall = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistorySipTrunkingPhoneCallModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistorySipTrunkingPhoneCallModel.CreateFromDiscriminatorValue); } },
+                { "queue_wait_secs", n => { QueueWaitSecs = n.GetDoubleValue(); } },
                 { "rag_usage", n => { RagUsage = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryRagUsageCommonModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryRagUsageCommonModel.CreateFromDiscriminatorValue); } },
                 { "sms", n => { Sms = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SmsConversationInfo>(global::Soenneker.ElevenLabs.OpenApiClient.Models.SmsConversationInfo.CreateFromDiscriminatorValue); } },
                 { "start_time_unix_secs", n => { StartTimeUnixSecs = n.GetIntValue(); } },
@@ -268,7 +275,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryFeedbackCommonModel>("feedback", Feedback);
             writer.WriteStringValue("initiator_id", InitiatorId);
             writer.WriteStringValue("main_language", MainLanguage);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryMetadataCommonModelPhoneCallAnyOf1>("phone_call", PhoneCall);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistorySipTrunkingPhoneCallModel>("phone_call", PhoneCall);
+            writer.WriteDoubleValue("queue_wait_secs", QueueWaitSecs);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryRagUsageCommonModel>("rag_usage", RagUsage);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SmsConversationInfo>("sms", Sms);
             writer.WriteIntValue("start_time_unix_secs", StartTimeUnixSecs);

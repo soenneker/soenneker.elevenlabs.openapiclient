@@ -19,7 +19,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public bool? EvaluateFullResponseOnly { get; set; }
         /// <summary>The execution_mode property</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.GuardrailExecutionMode? ExecutionMode { get; set; }
-        /// <summary>&quot;When enabled, the history also renders the agent&apos;s tool calls, their input arguments, and the tool results, interleaved with the text, so an action between two agent messages is visible. Off by default: history shows only user and agent text. Tool payloads can be large and can mislead smaller evaluator models, so enabling this raises token cost.&quot;</summary>
+        /// <summary>When enabled, the history also renders the agent&apos;s tool calls, their input arguments, and the tool results, interleaved with the text, so an action between two agent messages is visible. Off by default: history shows only user and agent text. Tool payloads can be large and can mislead smaller evaluator models, so enabling this raises token cost.</summary>
         public bool? HistoryIncludeToolCalls { get; set; }
         /// <summary>How much recent history the guardrail sees before the reply it evaluates, counted in user messages (the agent replies between them are included too). The guardrail always gets a single &lt;conversation_history&gt; transcript ending in the evaluated reply, marked &apos;AGENT [current reply]:&apos;. 0 (default) adds no prior history (just that line); 1 adds the latest user message onward.</summary>
         public int? HistoryMessageCount { get; set; }
@@ -58,6 +58,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             AdditionalData = new Dictionary<string, object>();
             EvaluateFullResponseOnly = false;
+            ExecutionMode = global::Soenneker.ElevenLabs.OpenApiClient.Models.GuardrailExecutionMode.Streaming;
             HistoryIncludeToolCalls = false;
             HistoryMessageCount = 0;
             IsEnabled = false;

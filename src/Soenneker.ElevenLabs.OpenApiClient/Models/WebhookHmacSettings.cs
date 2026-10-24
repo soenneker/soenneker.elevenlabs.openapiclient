@@ -16,7 +16,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The authentication type for this webhook</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookHmacSettings_auth_type? AuthType { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.HmacAuthType? AuthType { get; set; }
         /// <summary>The display name for this webhook</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -28,10 +28,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Optional custom request headers to include with each webhook delivery</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookHmacSettingsRequestHeaders? RequestHeaders { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookHmacSettingsRequestHeadersProperty? RequestHeaders { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookHmacSettingsRequestHeaders RequestHeaders { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookHmacSettingsRequestHeadersProperty RequestHeaders { get; set; }
 #endif
         /// <summary>The HTTPS callback URL that will be called when this webhook is triggered</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -66,9 +66,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "auth_type", n => { AuthType = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookHmacSettings_auth_type>(); } },
+                { "auth_type", n => { AuthType = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.HmacAuthType>(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "request_headers", n => { RequestHeaders = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookHmacSettingsRequestHeaders>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookHmacSettingsRequestHeaders.CreateFromDiscriminatorValue); } },
+                { "request_headers", n => { RequestHeaders = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookHmacSettingsRequestHeadersProperty>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookHmacSettingsRequestHeadersProperty.CreateFromDiscriminatorValue); } },
                 { "webhook_url", n => { WebhookUrl = n.GetStringValue(); } },
             };
         }
@@ -79,9 +79,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookHmacSettings_auth_type>("auth_type", AuthType);
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.HmacAuthType>("auth_type", AuthType);
             writer.WriteStringValue("name", Name);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookHmacSettingsRequestHeaders>("request_headers", RequestHeaders);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookHmacSettingsRequestHeadersProperty>("request_headers", RequestHeaders);
             writer.WriteStringValue("webhook_url", WebhookUrl);
             writer.WriteAdditionalData(AdditionalData);
         }

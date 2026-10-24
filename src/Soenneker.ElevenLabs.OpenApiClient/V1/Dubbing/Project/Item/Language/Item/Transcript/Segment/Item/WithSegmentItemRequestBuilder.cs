@@ -34,10 +34,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Dubbing.Project.Item.Language.It
         {
         }
         /// <summary>
-        /// Enterprise only. Edit a segment&apos;s translation for a language target.
+        /// Enterprise only. Edit a segment&apos;s translation for a language target. Omitted fields are left unchanged; an explicit null clears the field. Bumps the target&apos;s `revision` and marks it `stale` if it had already completed. The source transcript and the project&apos;s other languages are untouched, and no audio changes until you regenerate the target.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingTargetSegmentUpdateResponse"/></returns>
-        /// <param name="body">A partial edit to a target segment. An omitted field is left unchanged; a provided ``null``clears it (see each field for what clearing means).</param>
+        /// <param name="body">A partial edit to a target segment. An omitted field is left unchanged; a provided `null`clears it (see each field for what clearing means).</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.HttpValidationError">When receiving a 422 status code</exception>
@@ -59,10 +59,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Dubbing.Project.Item.Language.It
             return await RequestAdapter.SendAsync<global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingTargetSegmentUpdateResponse>(requestInfo, global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingTargetSegmentUpdateResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Enterprise only. Edit a segment&apos;s translation for a language target.
+        /// Enterprise only. Edit a segment&apos;s translation for a language target. Omitted fields are left unchanged; an explicit null clears the field. Bumps the target&apos;s `revision` and marks it `stale` if it had already completed. The source transcript and the project&apos;s other languages are untouched, and no audio changes until you regenerate the target.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">A partial edit to a target segment. An omitted field is left unchanged; a provided ``null``clears it (see each field for what clearing means).</param>
+        /// <param name="body">A partial edit to a target segment. An omitted field is left unchanged; a provided `null`clears it (see each field for what clearing means).</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

@@ -38,7 +38,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public string ApiKey { get; set; }
 #endif
-        /// <summary>The api_subdomain property</summary>
+        /// <summary>Exotel region-specific API host</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.ExotelApiSubdomain? ApiSubdomain { get; set; }
         /// <summary>Exotel API Token</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -81,7 +81,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public string PhoneNumber { get; set; }
 #endif
         /// <summary>The provider property</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateExotelPhoneNumberRequest_provider? Provider { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ExotelProvider? Provider { get; set; }
         /// <summary>This field is deprecated and will be removed in the future. Whether this phone number supports inbound calls</summary>
         [Obsolete("")]
         public bool? SupportsInbound { get; set; }
@@ -124,7 +124,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "applet_url", n => { AppletUrl = n.GetStringValue(); } },
                 { "label", n => { Label = n.GetStringValue(); } },
                 { "phone_number", n => { PhoneNumber = n.GetStringValue(); } },
-                { "provider", n => { Provider = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateExotelPhoneNumberRequest_provider>(); } },
+                { "provider", n => { Provider = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ExotelProvider>(); } },
                 { "supports_inbound", n => { SupportsInbound = n.GetBoolValue(); } },
                 { "supports_outbound", n => { SupportsOutbound = n.GetBoolValue(); } },
             };
@@ -145,7 +145,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteStringValue("applet_url", AppletUrl);
             writer.WriteStringValue("label", Label);
             writer.WriteStringValue("phone_number", PhoneNumber);
-            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateExotelPhoneNumberRequest_provider>("provider", Provider);
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ExotelProvider>("provider", Provider);
             writer.WriteBoolValue("supports_inbound", SupportsInbound);
             writer.WriteBoolValue("supports_outbound", SupportsOutbound);
             writer.WriteAdditionalData(AdditionalData);

@@ -54,6 +54,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel FileInput { get; set; }
 #endif
+        /// <summary>The freeform_procedure property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel? FreeformProcedure { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel FreeformProcedure { get; set; }
+#endif
         /// <summary>The is_livekit property</summary>
         public bool? IsLivekit { get; set; }
         /// <summary>The language_detection property</summary>
@@ -76,6 +84,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public bool? PiiZrmAgent { get; set; }
         /// <summary>The pii_zrm_workspace property</summary>
         public bool? PiiZrmWorkspace { get; set; }
+        /// <summary>The structured_procedure property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel? StructuredProcedure { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel StructuredProcedure { get; set; }
+#endif
         /// <summary>The tool_dynamic_variable_updates property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -157,11 +173,13 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "dtmf_tones", n => { DtmfTones = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel.CreateFromDiscriminatorValue); } },
                 { "external_mcp_servers", n => { ExternalMcpServers = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel.CreateFromDiscriminatorValue); } },
                 { "file_input", n => { FileInput = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel.CreateFromDiscriminatorValue); } },
+                { "freeform_procedure", n => { FreeformProcedure = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel.CreateFromDiscriminatorValue); } },
                 { "is_livekit", n => { IsLivekit = n.GetBoolValue(); } },
                 { "language_detection", n => { LanguageDetection = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel.CreateFromDiscriminatorValue); } },
                 { "multivoice", n => { Multivoice = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel.CreateFromDiscriminatorValue); } },
                 { "pii_zrm_agent", n => { PiiZrmAgent = n.GetBoolValue(); } },
                 { "pii_zrm_workspace", n => { PiiZrmWorkspace = n.GetBoolValue(); } },
+                { "structured_procedure", n => { StructuredProcedure = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel.CreateFromDiscriminatorValue); } },
                 { "tool_dynamic_variable_updates", n => { ToolDynamicVariableUpdates = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel.CreateFromDiscriminatorValue); } },
                 { "transfer_to_agent", n => { TransferToAgent = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel.CreateFromDiscriminatorValue); } },
                 { "transfer_to_number", n => { TransferToNumber = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel.CreateFromDiscriminatorValue); } },
@@ -182,11 +200,13 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel>("dtmf_tones", DtmfTones);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel>("external_mcp_servers", ExternalMcpServers);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel>("file_input", FileInput);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel>("freeform_procedure", FreeformProcedure);
             writer.WriteBoolValue("is_livekit", IsLivekit);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel>("language_detection", LanguageDetection);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel>("multivoice", Multivoice);
             writer.WriteBoolValue("pii_zrm_agent", PiiZrmAgent);
             writer.WriteBoolValue("pii_zrm_workspace", PiiZrmWorkspace);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel>("structured_procedure", StructuredProcedure);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel>("tool_dynamic_variable_updates", ToolDynamicVariableUpdates);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel>("transfer_to_agent", TransferToAgent);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel>("transfer_to_number", TransferToNumber);

@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.ElevenLabs.OpenApiClient.V1.PronunciationDictionaries.Item.RemoveRules
 {
     /// <summary>
-    /// Builds and executes requests for operations under \v1\pronunciation-dictionaries\{dictionary-id}\remove-rules
+    /// Builds and executes requests for operations under \v1\pronunciation-dictionaries\{pronunciationDictionaryId}\remove-rules
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class RemoveRulesRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.PronunciationDictionaries.Item.R
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RemoveRulesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/pronunciation-dictionaries/{dictionary%2Did}/remove-rules", pathParameters)
+        public RemoveRulesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/pronunciation-dictionaries/{pronunciationDictionaryId}/remove-rules", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.PronunciationDictionaries.Item.R
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RemoveRulesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/pronunciation-dictionaries/{dictionary%2Did}/remove-rules", rawUrl)
+        public RemoveRulesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/pronunciation-dictionaries/{pronunciationDictionaryId}/remove-rules", rawUrl)
         {
         }
         /// <summary>

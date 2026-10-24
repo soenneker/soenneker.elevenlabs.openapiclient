@@ -46,7 +46,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Dubbing.Project.Item.Transcript
         {
         }
         /// <summary>
-        /// The project&apos;s source transcript, as editable segments.
+        /// The project&apos;s source transcript, as editable segments. Available once the project is `ready`.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingSourceTranscriptResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -69,7 +69,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Dubbing.Project.Item.Transcript
             return await RequestAdapter.SendAsync<global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingSourceTranscriptResponse>(requestInfo, global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingSourceTranscriptResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The project&apos;s source transcript, as editable segments.
+        /// The project&apos;s source transcript, as editable segments. Available once the project is `ready`.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

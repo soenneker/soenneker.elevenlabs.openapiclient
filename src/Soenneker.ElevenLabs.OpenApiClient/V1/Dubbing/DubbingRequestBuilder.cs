@@ -6,6 +6,7 @@ using Microsoft.Kiota.Abstractions;
 using Soenneker.ElevenLabs.OpenApiClient.Models;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Dubbing.Item;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Dubbing.Project;
+using Soenneker.ElevenLabs.OpenApiClient.V1.Dubbing.Resource;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -20,13 +21,21 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Dubbing
     public partial class DubbingRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The project property</summary>
+        [Obsolete("")]
         public global::Soenneker.ElevenLabs.OpenApiClient.V1.Dubbing.Project.ProjectRequestBuilder Project
         {
             get => new global::Soenneker.ElevenLabs.OpenApiClient.V1.Dubbing.Project.ProjectRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The resource property</summary>
+        [Obsolete("")]
+        public global::Soenneker.ElevenLabs.OpenApiClient.V1.Dubbing.Resource.ResourceRequestBuilder Resource
+        {
+            get => new global::Soenneker.ElevenLabs.OpenApiClient.V1.Dubbing.Resource.ResourceRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Gets an item from the Soenneker.ElevenLabs.OpenApiClient.v1.dubbing.item collection</summary>
         /// <param name="position">ID of the dubbing project.</param>
         /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.V1.Dubbing.Item.WithDubbingItemRequestBuilder"/></returns>
+        [Obsolete("")]
         public global::Soenneker.ElevenLabs.OpenApiClient.V1.Dubbing.Item.WithDubbingItemRequestBuilder this[string position]
         {
             get
@@ -59,6 +68,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Dubbing
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.HttpValidationError">When receiving a 422 status code</exception>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingMetadataPageResponseModel?> GetAsync(Action<RequestConfiguration<global::Soenneker.ElevenLabs.OpenApiClient.V1.Dubbing.DubbingRequestBuilder.DubbingRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -83,6 +93,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Dubbing
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.HttpValidationError">When receiving a 422 status code</exception>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.ElevenLabs.OpenApiClient.Models.DoDubbingResponseModel?> PostAsync(MultipartBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -105,6 +116,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Dubbing
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.ElevenLabs.OpenApiClient.V1.Dubbing.DubbingRequestBuilder.DubbingRequestBuilderGetQueryParameters>>? requestConfiguration = default)
@@ -125,6 +137,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Dubbing
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToPostRequestInformation(MultipartBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
@@ -146,6 +159,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Dubbing
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.V1.Dubbing.DubbingRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        [Obsolete("")]
         public global::Soenneker.ElevenLabs.OpenApiClient.V1.Dubbing.DubbingRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Soenneker.ElevenLabs.OpenApiClient.V1.Dubbing.DubbingRequestBuilder(rawUrl, RequestAdapter);
@@ -160,11 +174,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Dubbing
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("creation_sources")]
-            public string? CreationSources { get; set; }
+            public global::Soenneker.ElevenLabs.OpenApiClient.Models.ListDubsCreationSourcesParameterItem[]? CreationSources { get; set; }
 #nullable restore
 #else
             [QueryParameter("creation_sources")]
-            public string CreationSources { get; set; }
+            public global::Soenneker.ElevenLabs.OpenApiClient.Models.ListDubsCreationSourcesParameterItem[] CreationSources { get; set; }
 #endif
             /// <summary>Used for fetching next page. Cursor is returned in the response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -180,11 +194,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Dubbing
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("dubbing_models")]
-            public string? DubbingModels { get; set; }
+            public global::Soenneker.ElevenLabs.OpenApiClient.Models.ListDubsDubbingModelsParameterItem[]? DubbingModels { get; set; }
 #nullable restore
 #else
             [QueryParameter("dubbing_models")]
-            public string DubbingModels { get; set; }
+            public global::Soenneker.ElevenLabs.OpenApiClient.Models.ListDubsDubbingModelsParameterItem[] DubbingModels { get; set; }
 #endif
             /// <summary>What state the dub is currently in.</summary>
             [QueryParameter("dubbing_status")]
@@ -193,11 +207,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Dubbing
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("dubbing_statuses")]
-            public string? DubbingStatuses { get; set; }
+            public global::Soenneker.ElevenLabs.OpenApiClient.Models.ListDubsDubbingStatusesParameterItem[]? DubbingStatuses { get; set; }
 #nullable restore
 #else
             [QueryParameter("dubbing_statuses")]
-            public string DubbingStatuses { get; set; }
+            public global::Soenneker.ElevenLabs.OpenApiClient.Models.ListDubsDubbingStatusesParameterItem[] DubbingStatuses { get; set; }
 #endif
             /// <summary>Filters who created the resources being listed, whether it was the user running the request or someone else that shared the resource with them.</summary>
             [QueryParameter("filter_by_creator")]
@@ -215,11 +229,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Dubbing
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("target_language_codes")]
-            public string? TargetLanguageCodes { get; set; }
+            public string[]? TargetLanguageCodes { get; set; }
 #nullable restore
 #else
             [QueryParameter("target_language_codes")]
-            public string TargetLanguageCodes { get; set; }
+            public string[] TargetLanguageCodes { get; set; }
 #endif
         }
     }

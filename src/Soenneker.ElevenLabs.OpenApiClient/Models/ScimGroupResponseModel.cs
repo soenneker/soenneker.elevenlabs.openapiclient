@@ -33,13 +33,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public string ScimExternalId { get; set; }
 #endif
         /// <summary>The seat_type property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SeatTypeWrapper5? SeatType { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SeatTypeWrapper5 SeatType { get; set; }
-#endif
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SeatType? SeatType { get; set; }
         /// <summary>The updated_at_unix property</summary>
         public int? UpdatedAtUnix { get; set; }
         /// <summary>
@@ -70,7 +64,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "created_at_unix", n => { CreatedAtUnix = n.GetIntValue(); } },
                 { "display_name", n => { DisplayName = n.GetStringValue(); } },
                 { "scim_external_id", n => { ScimExternalId = n.GetStringValue(); } },
-                { "seat_type", n => { SeatType = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SeatTypeWrapper5>(global::Soenneker.ElevenLabs.OpenApiClient.Models.SeatTypeWrapper5.CreateFromDiscriminatorValue); } },
+                { "seat_type", n => { SeatType = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SeatType>(); } },
                 { "updated_at_unix", n => { UpdatedAtUnix = n.GetIntValue(); } },
             };
         }
@@ -84,7 +78,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteIntValue("created_at_unix", CreatedAtUnix);
             writer.WriteStringValue("display_name", DisplayName);
             writer.WriteStringValue("scim_external_id", ScimExternalId);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SeatTypeWrapper5>("seat_type", SeatType);
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SeatType>("seat_type", SeatType);
             writer.WriteIntValue("updated_at_unix", UpdatedAtUnix);
             writer.WriteAdditionalData(AdditionalData);
         }

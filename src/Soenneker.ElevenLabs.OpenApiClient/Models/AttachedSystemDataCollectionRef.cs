@@ -15,17 +15,18 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Id of the referenced built-in system data-collection item.</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AttachedSystemDataCollectionRef_analysis_item_id? AnalysisItemId { get; set; }
-        /// <summary>The scope property</summary>
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemDataCollectionId? AnalysisItemId { get; set; }
+        /// <summary>Transcript context (&apos;conversation&apos; or &apos;agent&apos;) used when running this item.</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.AnalysisScope? Scope { get; set; }
         /// <summary>The source property</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AttachedSystemDataCollectionRef_source? Source { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemSource? Source { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.AttachedSystemDataCollectionRef"/> and sets the default values.
         /// </summary>
         public AttachedSystemDataCollectionRef()
         {
             AdditionalData = new Dictionary<string, object>();
+            Scope = global::Soenneker.ElevenLabs.OpenApiClient.Models.AnalysisScope.Conversation;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -45,9 +46,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "analysis_item_id", n => { AnalysisItemId = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AttachedSystemDataCollectionRef_analysis_item_id>(); } },
+                { "analysis_item_id", n => { AnalysisItemId = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemDataCollectionId>(); } },
                 { "scope", n => { Scope = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AnalysisScope>(); } },
-                { "source", n => { Source = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AttachedSystemDataCollectionRef_source>(); } },
+                { "source", n => { Source = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemSource>(); } },
             };
         }
         /// <summary>
@@ -57,9 +58,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AttachedSystemDataCollectionRef_analysis_item_id>("analysis_item_id", AnalysisItemId);
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemDataCollectionId>("analysis_item_id", AnalysisItemId);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AnalysisScope>("scope", Scope);
-            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AttachedSystemDataCollectionRef_source>("source", Source);
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemSource>("source", Source);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

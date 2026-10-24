@@ -14,7 +14,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The conversation property</summary>
+        /// <summary>The voice settings for the conversation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.PodcastConversationModeData? Conversation { get; set; }
@@ -23,7 +23,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.PodcastConversationModeData Conversation { get; set; }
 #endif
         /// <summary>The type of podcast to create.</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PodcastConversationMode_type? Type { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PodcastConversationModeType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.PodcastConversationMode"/> and sets the default values.
         /// </summary>
@@ -50,7 +50,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "conversation", n => { Conversation = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PodcastConversationModeData>(global::Soenneker.ElevenLabs.OpenApiClient.Models.PodcastConversationModeData.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PodcastConversationMode_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PodcastConversationModeType>(); } },
             };
         }
         /// <summary>
@@ -61,7 +61,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PodcastConversationModeData>("conversation", Conversation);
-            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PodcastConversationMode_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PodcastConversationModeType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

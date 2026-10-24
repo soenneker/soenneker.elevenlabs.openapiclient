@@ -37,7 +37,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public string Instructions { get; set; }
 #endif
         /// <summary>The type of order item.</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.DubOrderItemRequest_kind? Kind { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.DubKind? Kind { get; set; }
         /// <summary>The media_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -84,7 +84,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "include_captions", n => { IncludeCaptions = n.GetBoolValue(); } },
                 { "include_source_captions", n => { IncludeSourceCaptions = n.GetBoolValue(); } },
                 { "instructions", n => { Instructions = n.GetStringValue(); } },
-                { "kind", n => { Kind = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DubOrderItemRequest_kind>(); } },
+                { "kind", n => { Kind = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DubKind>(); } },
                 { "media_id", n => { MediaId = n.GetStringValue(); } },
                 { "source_language", n => { SourceLanguage = n.GetStringValue(); } },
             };
@@ -101,7 +101,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteBoolValue("include_captions", IncludeCaptions);
             writer.WriteBoolValue("include_source_captions", IncludeSourceCaptions);
             writer.WriteStringValue("instructions", Instructions);
-            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DubOrderItemRequest_kind>("kind", Kind);
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DubKind>("kind", Kind);
             writer.WriteStringValue("media_id", MediaId);
             writer.WriteStringValue("source_language", SourceLanguage);
             writer.WriteAdditionalData(AdditionalData);

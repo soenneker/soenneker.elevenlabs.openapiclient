@@ -8,26 +8,20 @@ using System;
 namespace Soenneker.ElevenLabs.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="string"/>, List&lt;global::Soenneker.ElevenLabs.OpenApiClient.Models.PermissionType&gt;
+    /// Composed type wrapper for classes <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateServiceAccountApiKeyV1ServiceAccountsServiceAccountUserIdApiKeysPostPermissionsAnyOf2"/>, List&lt;global::Soenneker.ElevenLabs.OpenApiClient.Models.PermissionType&gt;
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class BodyCreateServiceAccountApiKeyV1ServiceAccountsServiceAccountUserIdApiKeysPostPermissions : IComposedTypeWrapper, IParsable
     {
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateServiceAccountApiKeyV1ServiceAccountsServiceAccountUserIdApiKeysPostPermissionsAnyOf2"/></summary>
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateServiceAccountApiKeyV1ServiceAccountsServiceAccountUserIdApiKeysPostPermissionsAnyOf2? BodyCreateServiceAccountApiKeyV1ServiceAccountsServiceAccountUserIdApiKeysPostPermissionsAnyOf2 { get; set; }
         /// <summary>Composed type representation for type List&lt;global::Soenneker.ElevenLabs.OpenApiClient.Models.PermissionType&gt;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.PermissionType>? PermissionType { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.PermissionType?>? PermissionType { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.PermissionType> PermissionType { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="string"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? String { get; set; }
-#nullable restore
-#else
-        public string String { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.PermissionType?> PermissionType { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -38,11 +32,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var result = new global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateServiceAccountApiKeyV1ServiceAccountsServiceAccountUserIdApiKeysPostPermissions();
-            if(parseNode.GetStringValue() is string stringValue)
+            if(parseNode.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateServiceAccountApiKeyV1ServiceAccountsServiceAccountUserIdApiKeysPostPermissionsAnyOf2>() is global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateServiceAccountApiKeyV1ServiceAccountsServiceAccountUserIdApiKeysPostPermissionsAnyOf2 bodyCreateServiceAccountApiKeyV1ServiceAccountsServiceAccountUserIdApiKeysPostPermissionsAnyOf2Value)
             {
-                result.String = stringValue;
+                result.BodyCreateServiceAccountApiKeyV1ServiceAccountsServiceAccountUserIdApiKeysPostPermissionsAnyOf2 = bodyCreateServiceAccountApiKeyV1ServiceAccountsServiceAccountUserIdApiKeysPostPermissionsAnyOf2Value;
             }
-            else if(parseNode.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.PermissionType>(global::Soenneker.ElevenLabs.OpenApiClient.Models.PermissionType.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.ElevenLabs.OpenApiClient.Models.PermissionType> permissionTypeValue)
+            else if(parseNode.GetCollectionOfEnumValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.PermissionType>()?.AsList() is List<global::Soenneker.ElevenLabs.OpenApiClient.Models.PermissionType?> permissionTypeValue)
             {
                 result.PermissionType = permissionTypeValue;
             }
@@ -63,13 +57,13 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(String != null)
+            if(BodyCreateServiceAccountApiKeyV1ServiceAccountsServiceAccountUserIdApiKeysPostPermissionsAnyOf2 != null)
             {
-                writer.WriteStringValue(null, String);
+                writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateServiceAccountApiKeyV1ServiceAccountsServiceAccountUserIdApiKeysPostPermissionsAnyOf2>(null, BodyCreateServiceAccountApiKeyV1ServiceAccountsServiceAccountUserIdApiKeysPostPermissionsAnyOf2);
             }
             else if(PermissionType != null)
             {
-                writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.PermissionType>(null, PermissionType);
+                writer.WriteCollectionOfEnumValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.PermissionType>(null, PermissionType);
             }
         }
     }

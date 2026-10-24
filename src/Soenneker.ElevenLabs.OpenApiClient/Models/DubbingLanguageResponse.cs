@@ -16,7 +16,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>When the language target was created.</summary>
         public DateTimeOffset? CreatedAt { get; set; }
-        /// <summary>Why this language failed; null unless `status` is &apos;failed&apos;, and also null for the few languages that failed before failure reporting was introduced. A code of &apos;project_failed&apos; means the parent project failed, so read the project for the underlying cause.</summary>
+        /// <summary>Why this language failed; null unless `status` is `failed`, and also null for the few languages that failed before failure reporting was introduced. A code of `project_failed` means the parent project failed, so read the project for the underlying cause.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingError? Error { get; set; }
@@ -32,7 +32,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public string LanguageId { get; set; }
 #endif
-        /// <summary>Effective dubbing model id (target override or project default).</summary>
+        /// <summary>Dubbing model this target is dubbed with, inherited from the project and not selectable per language.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ModelId { get; set; }
@@ -40,9 +40,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public string ModelId { get; set; }
 #endif
-        /// <summary>The `revision` the current dubbed output was generated from; equal to `revision` when up to date, less than it when &apos;stale&apos;. Null until a generation has completed.</summary>
+        /// <summary>The `revision` the current dubbed output was generated from; equal to `revision` when up to date, and lower when `stale`. This is null until a generation has completed.</summary>
         public int? OutputRevision { get; set; }
-        /// <summary>Signed output URLs; null until the target has produced an output (present once &apos;completed&apos;, and kept while &apos;stale&apos; -- compare `output_revision` against `revision` to tell whether the output is up to date).</summary>
+        /// <summary>Signed output URLs; null until the target has produced an output (present once `completed`, and kept while `stale` — compare `output_revision` against `revision` to tell whether the output is up to date).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingLanguageOutputs? Outputs { get; set; }
@@ -60,7 +60,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #endif
         /// <summary>Monotonic counter incremented whenever this target&apos;s transcript changes (a source edit affecting it, or an edit to its translation).</summary>
         public int? Revision { get; set; }
-        /// <summary>&quot;Lifecycle status: &apos;queued&apos; (waiting on the project), &apos;processing&apos;, &apos;completed&apos;, &apos;stale&apos; (source/transcript changed), or &apos;failed&apos;.&quot;</summary>
+        /// <summary>Lifecycle status: `queued` (waiting on the project to be ready, or on a worker), `processing` while it is being dubbed, `completed` once its output is available, `stale` when the transcript changed after the output was produced, or `failed`.</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingLanguageResponseStatus? Status { get; set; }
         /// <summary>BCP-47 language tag this target is dubbed into.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -72,7 +72,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #endif
         /// <summary>When the language target was last updated.</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
-        /// <summary>Voice settings applied to the whole language, or null if unset.</summary>
+        /// <summary>Voice settings applied to every speaker in this language, or null if the defaults apply.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceSettings? VoiceSettings { get; set; }

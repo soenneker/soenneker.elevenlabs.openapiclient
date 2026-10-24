@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.ElevenLabs.OpenApiClient.Models
 {
     /// <summary>
-    /// Map of segment id to the translation edit to apply to that segment.
+    /// Map of segment ID to the translation edit to apply to that segment. At least one entry and at most 500.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class DubbingBulkTargetSegmentUpdateRequestSegmentsProperty : IAdditionalDataHolder, IParsable

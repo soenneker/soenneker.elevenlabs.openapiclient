@@ -24,7 +24,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ImageReference> Images { get; set; }
 #endif
         /// <summary>The model to use for the generation.</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Gemini31FlashLiteImageRequest_model_id? ModelId { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Gemini31FlashLiteImageModelId? ModelId { get; set; }
         /// <summary>A text description of the image to generate.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -34,7 +34,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public string Prompt { get; set; }
 #endif
         /// <summary>The resolution of the output image.</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Gemini31FlashLiteImageRequest_resolution? Resolution { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Value1KResolution? Resolution { get; set; }
         /// <summary>Include to send the generation&apos;s result to the workspace&apos;s configured flows webhooks once it completes or fails. The webhook payload matches the terminal response of the corresponding GET endpoint.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -63,9 +63,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             {
                 { "aspect_ratio", n => { AspectRatio = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Gemini31FlashLiteImageRequestAspectRatio>(); } },
                 { "images", n => { Images = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.ImageReference>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ImageReference.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "model_id", n => { ModelId = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Gemini31FlashLiteImageRequest_model_id>(); } },
+                { "model_id", n => { ModelId = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Gemini31FlashLiteImageModelId>(); } },
                 { "prompt", n => { Prompt = n.GetStringValue(); } },
-                { "resolution", n => { Resolution = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Gemini31FlashLiteImageRequest_resolution>(); } },
+                { "resolution", n => { Resolution = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Value1KResolution>(); } },
                 { "webhook", n => { Webhook = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookTarget>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookTarget.CreateFromDiscriminatorValue); } },
             };
         }
@@ -78,9 +78,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Gemini31FlashLiteImageRequestAspectRatio>("aspect_ratio", AspectRatio);
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.ImageReference>("images", Images);
-            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Gemini31FlashLiteImageRequest_model_id>("model_id", ModelId);
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Gemini31FlashLiteImageModelId>("model_id", ModelId);
             writer.WriteStringValue("prompt", Prompt);
-            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Gemini31FlashLiteImageRequest_resolution>("resolution", Resolution);
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Value1KResolution>("resolution", Resolution);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookTarget>("webhook", Webhook);
         }
     }

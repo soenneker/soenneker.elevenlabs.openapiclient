@@ -24,7 +24,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public string DocumentId { get; set; }
 #endif
-        /// <summary>The model property</summary>
+        /// <summary>Embedding model to use for the RAG index</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.EmbeddingModelEnum? Model { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.GetOrCreateRagIndexRequestModel"/> and sets the default values.

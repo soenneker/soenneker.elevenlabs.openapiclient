@@ -17,18 +17,18 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>A list of CAPTCHA check values.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceSharingModerationCheckResponseModelCaptchaChecks? CaptchaChecks { get; set; }
+        public List<double?>? CaptchaChecks { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceSharingModerationCheckResponseModelCaptchaChecks CaptchaChecks { get; set; }
+        public List<double?> CaptchaChecks { get; set; }
 #endif
         /// <summary>A list of captcha IDs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceSharingModerationCheckResponseModelCaptchaIds? CaptchaIds { get; set; }
+        public List<string>? CaptchaIds { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceSharingModerationCheckResponseModelCaptchaIds CaptchaIds { get; set; }
+        public List<string> CaptchaIds { get; set; }
 #endif
         /// <summary>The date the moderation check was made in Unix time.</summary>
         public int? DateCheckedUnix { get; set; }
@@ -55,18 +55,18 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>A list of sample checks.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceSharingModerationCheckResponseModelSampleChecks? SampleChecks { get; set; }
+        public List<double?>? SampleChecks { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceSharingModerationCheckResponseModelSampleChecks SampleChecks { get; set; }
+        public List<double?> SampleChecks { get; set; }
 #endif
         /// <summary>A list of sample IDs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceSharingModerationCheckResponseModelSampleIds? SampleIds { get; set; }
+        public List<string>? SampleIds { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceSharingModerationCheckResponseModelSampleIds SampleIds { get; set; }
+        public List<string> SampleIds { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceSharingModerationCheckResponseModel"/> and sets the default values.
@@ -93,15 +93,15 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "captcha_checks", n => { CaptchaChecks = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceSharingModerationCheckResponseModelCaptchaChecks>(global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceSharingModerationCheckResponseModelCaptchaChecks.CreateFromDiscriminatorValue); } },
-                { "captcha_ids", n => { CaptchaIds = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceSharingModerationCheckResponseModelCaptchaIds>(global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceSharingModerationCheckResponseModelCaptchaIds.CreateFromDiscriminatorValue); } },
+                { "captcha_checks", n => { CaptchaChecks = n.GetCollectionOfPrimitiveValues<double?>()?.AsList(); } },
+                { "captcha_ids", n => { CaptchaIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "date_checked_unix", n => { DateCheckedUnix = n.GetIntValue(); } },
                 { "description_check", n => { DescriptionCheck = n.GetBoolValue(); } },
                 { "description_value", n => { DescriptionValue = n.GetStringValue(); } },
                 { "name_check", n => { NameCheck = n.GetBoolValue(); } },
                 { "name_value", n => { NameValue = n.GetStringValue(); } },
-                { "sample_checks", n => { SampleChecks = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceSharingModerationCheckResponseModelSampleChecks>(global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceSharingModerationCheckResponseModelSampleChecks.CreateFromDiscriminatorValue); } },
-                { "sample_ids", n => { SampleIds = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceSharingModerationCheckResponseModelSampleIds>(global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceSharingModerationCheckResponseModelSampleIds.CreateFromDiscriminatorValue); } },
+                { "sample_checks", n => { SampleChecks = n.GetCollectionOfPrimitiveValues<double?>()?.AsList(); } },
+                { "sample_ids", n => { SampleIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
         }
         /// <summary>
@@ -111,15 +111,15 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceSharingModerationCheckResponseModelCaptchaChecks>("captcha_checks", CaptchaChecks);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceSharingModerationCheckResponseModelCaptchaIds>("captcha_ids", CaptchaIds);
+            writer.WriteCollectionOfPrimitiveValues<double?>("captcha_checks", CaptchaChecks);
+            writer.WriteCollectionOfPrimitiveValues<string>("captcha_ids", CaptchaIds);
             writer.WriteIntValue("date_checked_unix", DateCheckedUnix);
             writer.WriteBoolValue("description_check", DescriptionCheck);
             writer.WriteStringValue("description_value", DescriptionValue);
             writer.WriteBoolValue("name_check", NameCheck);
             writer.WriteStringValue("name_value", NameValue);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceSharingModerationCheckResponseModelSampleChecks>("sample_checks", SampleChecks);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceSharingModerationCheckResponseModelSampleIds>("sample_ids", SampleIds);
+            writer.WriteCollectionOfPrimitiveValues<double?>("sample_checks", SampleChecks);
+            writer.WriteCollectionOfPrimitiveValues<string>("sample_ids", SampleIds);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

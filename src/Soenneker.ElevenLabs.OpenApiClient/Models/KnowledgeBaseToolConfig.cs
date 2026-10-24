@@ -23,7 +23,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.SearchStrategy?> EnabledStrategies { get; set; }
 #endif
         /// <summary>The system_tool_type property</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeBaseToolConfig_system_tool_type? SystemToolType { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeBaseSystemToolType? SystemToolType { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeBaseToolConfig"/> and sets the default values.
         /// </summary>
@@ -50,7 +50,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "enabled_strategies", n => { EnabledStrategies = n.GetCollectionOfEnumValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.SearchStrategy>()?.AsList(); } },
-                { "system_tool_type", n => { SystemToolType = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeBaseToolConfig_system_tool_type>(); } },
+                { "system_tool_type", n => { SystemToolType = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeBaseSystemToolType>(); } },
             };
         }
         /// <summary>
@@ -61,7 +61,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfEnumValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.SearchStrategy>("enabled_strategies", EnabledStrategies);
-            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeBaseToolConfig_system_tool_type>("system_tool_type", SystemToolType);
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeBaseSystemToolType>("system_tool_type", SystemToolType);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

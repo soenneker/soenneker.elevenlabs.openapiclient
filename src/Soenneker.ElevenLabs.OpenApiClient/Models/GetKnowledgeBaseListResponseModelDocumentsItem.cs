@@ -63,11 +63,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             {
                 result.GetKnowledgeBaseSummaryFolderResponseModel = new global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseSummaryFolderResponseModel();
             }
-            else if("GetKnowledgeBaseSummaryTextResponseModel".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("text".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.GetKnowledgeBaseSummaryTextResponseModel = new global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseSummaryTextResponseModel();
             }
-            else if("GetKnowledgeBaseSummaryUrlResponseModel".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("url".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.GetKnowledgeBaseSummaryUrlResponseModel = new global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseSummaryUrlResponseModel();
             }

@@ -14,6 +14,16 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>When true, rebase this branch onto main automatically after each new main version. Cannot be enabled on the main branch.</summary>
+        public bool? AutoRebase { get; set; }
+        /// <summary>New description for the branch. Pass an empty string to clear it.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Description { get; set; }
+#nullable restore
+#else
+        public string Description { get; set; }
+#endif
         /// <summary>Whether the branch should be archived</summary>
         public bool? IsArchived { get; set; }
         /// <summary>New name for the branch. Must be unique within the agent.</summary>
@@ -25,13 +35,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public string Name { get; set; }
 #endif
         /// <summary>The protection level for the branch</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BranchProtectionStatusWrapper? ProtectionStatus { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BranchProtectionStatusWrapper ProtectionStatus { get; set; }
-#endif
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BranchProtectionStatus? ProtectionStatus { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyUpdateAgentBranchV1ConvaiAgentsAgentIdBranchesBranchIdPatch"/> and sets the default values.
         /// </summary>
@@ -57,9 +61,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "auto_rebase", n => { AutoRebase = n.GetBoolValue(); } },
+                { "description", n => { Description = n.GetStringValue(); } },
                 { "is_archived", n => { IsArchived = n.GetBoolValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "protection_status", n => { ProtectionStatus = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BranchProtectionStatusWrapper>(global::Soenneker.ElevenLabs.OpenApiClient.Models.BranchProtectionStatusWrapper.CreateFromDiscriminatorValue); } },
+                { "protection_status", n => { ProtectionStatus = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BranchProtectionStatus>(); } },
             };
         }
         /// <summary>
@@ -69,9 +75,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteBoolValue("auto_rebase", AutoRebase);
+            writer.WriteStringValue("description", Description);
             writer.WriteBoolValue("is_archived", IsArchived);
             writer.WriteStringValue("name", Name);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BranchProtectionStatusWrapper>("protection_status", ProtectionStatus);
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BranchProtectionStatus>("protection_status", ProtectionStatus);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

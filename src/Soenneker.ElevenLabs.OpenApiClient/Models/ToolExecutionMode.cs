@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.ElevenLabs.OpenApiClient.Models
 {
+    /// <summary>Determines when and how the tool executes: &apos;immediate&apos; executes the tool right away when requested by the LLM, &apos;post_tool_speech&apos; waits for the agent to finish speaking before executing, &apos;async&apos; runs the tool in the background without blocking - best for long-running operations.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum ToolExecutionMode
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "immediate")]
         #pragma warning disable CS1591

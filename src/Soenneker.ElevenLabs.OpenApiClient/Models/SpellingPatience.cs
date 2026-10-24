@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.ElevenLabs.OpenApiClient.Models
 {
-    /// <summary>Controls if the agent should be more patient when user is spelling numbers and named entities.</summary>
+    /// <summary>Controls if the agent should be more patient when user is spelling numbers and named entities. Auto = model based, Off = never wait extra</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum SpellingPatience
     {

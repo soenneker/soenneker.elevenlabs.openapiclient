@@ -51,7 +51,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             {
                 result.DubOrderItemRequest = new global::Soenneker.ElevenLabs.OpenApiClient.Models.DubOrderItemRequest();
             }
-            else if("SubtitleOrderItemRequest".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("subtitles".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.SubtitleOrderItemRequest = new global::Soenneker.ElevenLabs.OpenApiClient.Models.SubtitleOrderItemRequest();
             }

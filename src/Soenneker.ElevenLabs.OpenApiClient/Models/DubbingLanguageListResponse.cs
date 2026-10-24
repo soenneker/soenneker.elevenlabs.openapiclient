@@ -22,7 +22,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingLanguageResponse> Languages { get; set; }
 #endif
-        /// <summary>Cursor for the next page, or null when there are no more results.</summary>
+        /// <summary>Opaque cursor to pass back as `cursor` for the next page, or null when there are no more results.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? NextCursor { get; set; }

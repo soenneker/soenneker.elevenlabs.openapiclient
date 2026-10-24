@@ -8,27 +8,15 @@ using System;
 namespace Soenneker.ElevenLabs.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ContentThresholdGuardrailThresholdWrapper"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.Threshold"/>
+    /// Composed type wrapper for classes <see cref="double"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ContentThresholdGuardrailThresholdAnyOf2"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ContentThresholdGuardrailThreshold : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ContentThresholdGuardrailThresholdWrapper"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ContentThresholdGuardrailThresholdWrapper? ContentThresholdGuardrailThresholdWrapper { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ContentThresholdGuardrailThresholdWrapper ContentThresholdGuardrailThresholdWrapper { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.Threshold"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Threshold? Threshold { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Threshold Threshold { get; set; }
-#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ContentThresholdGuardrailThresholdAnyOf2"/></summary>
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ContentThresholdGuardrailThresholdAnyOf2? ContentThresholdGuardrailThresholdAnyOf2 { get; set; }
+        /// <summary>Composed type representation for type <see cref="double"/></summary>
+        public double? Double { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -38,8 +26,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var result = new global::Soenneker.ElevenLabs.OpenApiClient.Models.ContentThresholdGuardrailThreshold();
-            result.ContentThresholdGuardrailThresholdWrapper = new global::Soenneker.ElevenLabs.OpenApiClient.Models.ContentThresholdGuardrailThresholdWrapper();
-            result.Threshold = new global::Soenneker.ElevenLabs.OpenApiClient.Models.Threshold();
+            if(parseNode.GetDoubleValue() is double doubleValue)
+            {
+                result.Double = doubleValue;
+            }
+            else if(parseNode.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ContentThresholdGuardrailThresholdAnyOf2>() is global::Soenneker.ElevenLabs.OpenApiClient.Models.ContentThresholdGuardrailThresholdAnyOf2 contentThresholdGuardrailThresholdAnyOf2Value)
+            {
+                result.ContentThresholdGuardrailThresholdAnyOf2 = contentThresholdGuardrailThresholdAnyOf2Value;
+            }
             return result;
         }
         /// <summary>
@@ -48,10 +42,6 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(ContentThresholdGuardrailThresholdWrapper != null || Threshold != null)
-            {
-                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(ContentThresholdGuardrailThresholdWrapper, Threshold);
-            }
             return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
@@ -61,7 +51,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ContentThresholdGuardrailThresholdWrapper>(null, ContentThresholdGuardrailThresholdWrapper, Threshold);
+            if(Double != null)
+            {
+                writer.WriteDoubleValue(null, Double);
+            }
+            else if(ContentThresholdGuardrailThresholdAnyOf2 != null)
+            {
+                writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ContentThresholdGuardrailThresholdAnyOf2>(null, ContentThresholdGuardrailThresholdAnyOf2);
+            }
         }
     }
 }

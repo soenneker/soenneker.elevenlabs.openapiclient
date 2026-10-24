@@ -22,7 +22,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Conversations.Messages.Sm
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SmartSearchRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/convai/conversations/messages/smart-search?text_query={text_query}{&agent_id*,cursor*,page_size*}", pathParameters)
+        public SmartSearchRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/convai/conversations/messages/smart-search?text_query={text_query}{&agent_id*,branch_id*,cursor*,page_size*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Conversations.Messages.Sm
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SmartSearchRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/convai/conversations/messages/smart-search?text_query={text_query}{&agent_id*,cursor*,page_size*}", rawUrl)
+        public SmartSearchRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/convai/conversations/messages/smart-search?text_query={text_query}{&agent_id*,branch_id*,cursor*,page_size*}", rawUrl)
         {
         }
         /// <summary>
@@ -99,6 +99,16 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Conversations.Messages.Sm
 #else
             [QueryParameter("agent_id")]
             public string AgentId { get; set; }
+#endif
+            /// <summary>Filter conversations by branch ID.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("branch_id")]
+            public string? BranchId { get; set; }
+#nullable restore
+#else
+            [QueryParameter("branch_id")]
+            public string BranchId { get; set; }
 #endif
             /// <summary>Used for fetching next page. Cursor is returned in the response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

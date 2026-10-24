@@ -36,13 +36,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Whether the member is the workspace owner.</summary>
         public bool? IsOwner { get; set; }
         /// <summary>The seat type (role) of the workspace member.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SeatTypeWrapper6? SeatType { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SeatTypeWrapper6 SeatType { get; set; }
-#endif
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SeatType? SeatType { get; set; }
         /// <summary>The user ID of the workspace member.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -80,7 +74,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "first_name", n => { FirstName = n.GetStringValue(); } },
                 { "is_locked", n => { IsLocked = n.GetBoolValue(); } },
                 { "is_owner", n => { IsOwner = n.GetBoolValue(); } },
-                { "seat_type", n => { SeatType = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SeatTypeWrapper6>(global::Soenneker.ElevenLabs.OpenApiClient.Models.SeatTypeWrapper6.CreateFromDiscriminatorValue); } },
+                { "seat_type", n => { SeatType = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SeatType>(); } },
                 { "user_id", n => { UserId = n.GetStringValue(); } },
             };
         }
@@ -95,7 +89,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteStringValue("first_name", FirstName);
             writer.WriteBoolValue("is_locked", IsLocked);
             writer.WriteBoolValue("is_owner", IsOwner);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SeatTypeWrapper6>("seat_type", SeatType);
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SeatType>("seat_type", SeatType);
             writer.WriteStringValue("user_id", UserId);
             writer.WriteAdditionalData(AdditionalData);
         }

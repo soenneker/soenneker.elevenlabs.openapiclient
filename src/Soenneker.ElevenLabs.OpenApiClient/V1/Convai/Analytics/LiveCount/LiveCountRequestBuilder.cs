@@ -104,11 +104,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Analytics.LiveCount
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("agent_ids")]
-            public string? AgentIds { get; set; }
+            public string[]? AgentIds { get; set; }
 #nullable restore
 #else
             [QueryParameter("agent_ids")]
-            public string AgentIds { get; set; }
+            public string[] AgentIds { get; set; }
 #endif
         }
     }

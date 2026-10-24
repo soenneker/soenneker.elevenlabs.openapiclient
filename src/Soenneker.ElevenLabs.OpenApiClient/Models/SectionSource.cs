@@ -22,7 +22,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.TimeRange> NegativeRanges { get; set; }
 #endif
-        /// <summary>The range property</summary>
+        /// <summary>The range to extract from the source song.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.TimeRange? Range { get; set; }

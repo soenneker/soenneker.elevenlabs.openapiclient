@@ -14,7 +14,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Human-readable description of the warning, for display. The wording may change at any time; branch on `type` instead.</summary>
+        /// <summary>Human-readable description of the warning, for display. The wording may change at any time, so we recommend branching on `type` instead.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Message { get; set; }
@@ -22,7 +22,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public string Message { get; set; }
 #endif
-        /// <summary>Speakers whose voices were not permitted for cloning. The dub used a replacement voice for each of them; the rest of the speakers are unaffected.</summary>
+        /// <summary>Speakers whose voices were not permitted for cloning. The dub used a replacement voice for each of them; all other speakers are unaffected.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? SpeakerIds { get; set; }
@@ -30,8 +30,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public List<string> SpeakerIds { get; set; }
 #endif
-        /// <summary>Identifies this warning; branch on it to read the fields below.</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.VoicesNotPermittedWarning_type? Type { get; set; }
+        /// <summary>Identifies this warning; branch on it to read the other fields.</summary>
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.VoicesNotPermittedType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.VoicesNotPermittedWarning"/> and sets the default values.
         /// </summary>
@@ -59,7 +59,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             {
                 { "message", n => { Message = n.GetStringValue(); } },
                 { "speaker_ids", n => { SpeakerIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.VoicesNotPermittedWarning_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.VoicesNotPermittedType>(); } },
             };
         }
         /// <summary>
@@ -71,7 +71,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("message", Message);
             writer.WriteCollectionOfPrimitiveValues<string>("speaker_ids", SpeakerIds);
-            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.VoicesNotPermittedWarning_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.VoicesNotPermittedType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

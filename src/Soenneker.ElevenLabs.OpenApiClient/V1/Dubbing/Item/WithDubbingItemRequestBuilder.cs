@@ -5,6 +5,7 @@ using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.ElevenLabs.OpenApiClient.Models;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Dubbing.Item.Audio;
+using Soenneker.ElevenLabs.OpenApiClient.V1.Dubbing.Item.Transcript;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Dubbing.Item.Transcripts;
 using System.Collections.Generic;
 using System.IO;
@@ -20,11 +21,19 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Dubbing.Item
     public partial class WithDubbingItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The audio property</summary>
+        [Obsolete("")]
         public global::Soenneker.ElevenLabs.OpenApiClient.V1.Dubbing.Item.Audio.AudioRequestBuilder Audio
         {
             get => new global::Soenneker.ElevenLabs.OpenApiClient.V1.Dubbing.Item.Audio.AudioRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The transcript property</summary>
+        [Obsolete("")]
+        public global::Soenneker.ElevenLabs.OpenApiClient.V1.Dubbing.Item.Transcript.TranscriptRequestBuilder Transcript
+        {
+            get => new global::Soenneker.ElevenLabs.OpenApiClient.V1.Dubbing.Item.Transcript.TranscriptRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The transcripts property</summary>
+        [Obsolete("")]
         public global::Soenneker.ElevenLabs.OpenApiClient.V1.Dubbing.Item.Transcripts.TranscriptsRequestBuilder Transcripts
         {
             get => new global::Soenneker.ElevenLabs.OpenApiClient.V1.Dubbing.Item.Transcripts.TranscriptsRequestBuilder(PathParameters, RequestAdapter);
@@ -52,6 +61,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Dubbing.Item
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.HttpValidationError">When receiving a 422 status code</exception>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.ElevenLabs.OpenApiClient.Models.DeleteDubbingResponseModel?> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -75,6 +85,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Dubbing.Item
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.HttpValidationError">When receiving a 422 status code</exception>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingMetadataResponse?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -96,6 +107,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Dubbing.Item
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
@@ -115,6 +127,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Dubbing.Item
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
@@ -134,6 +147,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Dubbing.Item
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.V1.Dubbing.Item.WithDubbingItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        [Obsolete("")]
         public global::Soenneker.ElevenLabs.OpenApiClient.V1.Dubbing.Item.WithDubbingItemRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Soenneker.ElevenLabs.OpenApiClient.V1.Dubbing.Item.WithDubbingItemRequestBuilder(rawUrl, RequestAdapter);

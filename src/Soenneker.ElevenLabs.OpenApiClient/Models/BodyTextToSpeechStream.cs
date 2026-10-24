@@ -14,10 +14,18 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>&quot;This parameter controls language text normalization. This helps with proper pronunciation of text in some supported languages. WARNING: This parameter can heavily increase the latency of the request. Currently only supported for Japanese.&quot;</summary>
+        /// <summary>This parameter controls language text normalization. This helps with proper pronunciation of text in some supported languages. WARNING: This parameter can heavily increase the latency of the request. Currently only supported for Japanese.</summary>
         public bool? ApplyLanguageTextNormalization { get; set; }
-        /// <summary>&quot;This parameter controls text normalization with three modes: &apos;auto&apos;, &apos;on&apos;, and &apos;off&apos;. When set to &apos;auto&apos;, the system will automatically decide whether to apply text normalization (e.g., spelling out numbers). With &apos;on&apos;, text normalization will always be applied, while with &apos;off&apos;, it will be skipped.&quot;</summary>
+        /// <summary>This parameter controls text normalization with three modes: &apos;auto&apos;, &apos;on&apos;, and &apos;off&apos;. When set to &apos;auto&apos;, the system will automatically decide whether to apply text normalization (e.g., spelling out numbers). With &apos;on&apos;, text normalization will always be applied, while with &apos;off&apos;, it will be skipped.</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyTextToSpeechStreamApplyTextNormalization? ApplyTextNormalization { get; set; }
+        /// <summary>Audio effects applied to the generated audio. Unknown IDs return 404 with `param` naming the field. Reverb (`environment_id` with `send_level` above 0) and a non-zero `pan` produce stereo audio and are rejected with 400 for `ulaw_*`, `alaw_*`, and `pcm_*` output formats. Effects don&apos;t change the cost of the request.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.EffectsSpecInput? AudioEffects { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.EffectsSpecInput AudioEffects { get; set; }
+#endif
         /// <summary>Language code (ISO 639-1) used to enforce a language for the model and text normalization. If the model does not support the provided language code, it will be ignored. This parameter is not supported for multilingual_v2 models.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -37,10 +45,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>A list of request_id of the samples that come after this generation. next_request_ids is especially useful for maintaining the speech&apos;s continuity when regenerating a sample that has had some audio quality issues. For example, if you have generated 3 speech clips, and you want to improve clip 2, passing the request id of clip 3 as a next_request_id (and that of clip 1 as a previous_request_id) will help maintain natural flow in the combined speech. The results will be best when the same model is used across the generations. In case both next_text and next_request_ids is send, next_text will be ignored. A maximum of 3 request_ids can be send.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyTextToSpeechStreamNextRequestIds? NextRequestIds { get; set; }
+        public List<string>? NextRequestIds { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyTextToSpeechStreamNextRequestIds NextRequestIds { get; set; }
+        public List<string> NextRequestIds { get; set; }
 #endif
         /// <summary>The text that comes after the text of the current request. Can be used to improve the speech&apos;s continuity when concatenating together multiple generations or to influence the speech&apos;s continuity in the current generation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -53,10 +61,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>A list of request_id of the samples that were generated before this generation. Can be used to improve the speech&apos;s continuity when splitting up a large task into multiple requests. The results will be best when the same model is used across the generations. In case both previous_text and previous_request_ids is send, previous_text will be ignored. A maximum of 3 request_ids can be send.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyTextToSpeechStreamPreviousRequestIds? PreviousRequestIds { get; set; }
+        public List<string>? PreviousRequestIds { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyTextToSpeechStreamPreviousRequestIds PreviousRequestIds { get; set; }
+        public List<string> PreviousRequestIds { get; set; }
 #endif
         /// <summary>The text that came before the text of the current request. Can be used to improve the speech&apos;s continuity when concatenating together multiple generations or to influence the speech&apos;s continuity in the current generation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -84,8 +92,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public string Text { get; set; }
 #endif
-        /// <summary>If true, we won&apos;t use PVC version of the voice for the generation but the IVC version. This is a temporary workaround for higher latency in PVC versions.</summary>
-        [Obsolete("")]
+        /// <summary>Whether to use the IVC version of a professional voice. This may improve expressiveness and reduce latency.</summary>
         public bool? UsePvcAsIvc { get; set; }
         /// <summary>Voice settings overriding stored settings for the given voice. They are applied only on the given request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -103,7 +110,6 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             AdditionalData = new Dictionary<string, object>();
             ApplyLanguageTextNormalization = false;
             ModelId = "eleven_multilingual_v2";
-            UsePvcAsIvc = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -125,11 +131,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             {
                 { "apply_language_text_normalization", n => { ApplyLanguageTextNormalization = n.GetBoolValue(); } },
                 { "apply_text_normalization", n => { ApplyTextNormalization = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyTextToSpeechStreamApplyTextNormalization>(); } },
+                { "audio_effects", n => { AudioEffects = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.EffectsSpecInput>(global::Soenneker.ElevenLabs.OpenApiClient.Models.EffectsSpecInput.CreateFromDiscriminatorValue); } },
                 { "language_code", n => { LanguageCode = n.GetStringValue(); } },
                 { "model_id", n => { ModelId = n.GetStringValue(); } },
-                { "next_request_ids", n => { NextRequestIds = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyTextToSpeechStreamNextRequestIds>(global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyTextToSpeechStreamNextRequestIds.CreateFromDiscriminatorValue); } },
+                { "next_request_ids", n => { NextRequestIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "next_text", n => { NextText = n.GetStringValue(); } },
-                { "previous_request_ids", n => { PreviousRequestIds = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyTextToSpeechStreamPreviousRequestIds>(global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyTextToSpeechStreamPreviousRequestIds.CreateFromDiscriminatorValue); } },
+                { "previous_request_ids", n => { PreviousRequestIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "previous_text", n => { PreviousText = n.GetStringValue(); } },
                 { "pronunciation_dictionary_locators", n => { PronunciationDictionaryLocators = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.PronunciationDictionaryVersionLocatorRequestModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.PronunciationDictionaryVersionLocatorRequestModel.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "seed", n => { Seed = n.GetIntValue(); } },
@@ -147,11 +154,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("apply_language_text_normalization", ApplyLanguageTextNormalization);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyTextToSpeechStreamApplyTextNormalization>("apply_text_normalization", ApplyTextNormalization);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.EffectsSpecInput>("audio_effects", AudioEffects);
             writer.WriteStringValue("language_code", LanguageCode);
             writer.WriteStringValue("model_id", ModelId);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyTextToSpeechStreamNextRequestIds>("next_request_ids", NextRequestIds);
+            writer.WriteCollectionOfPrimitiveValues<string>("next_request_ids", NextRequestIds);
             writer.WriteStringValue("next_text", NextText);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyTextToSpeechStreamPreviousRequestIds>("previous_request_ids", PreviousRequestIds);
+            writer.WriteCollectionOfPrimitiveValues<string>("previous_request_ids", PreviousRequestIds);
             writer.WriteStringValue("previous_text", PreviousText);
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.PronunciationDictionaryVersionLocatorRequestModel>("pronunciation_dictionary_locators", PronunciationDictionaryLocators);
             writer.WriteIntValue("seed", Seed);

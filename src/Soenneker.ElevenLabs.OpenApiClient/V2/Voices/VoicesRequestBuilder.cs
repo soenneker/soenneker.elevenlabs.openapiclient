@@ -159,18 +159,18 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V2.Voices
             /// <summary>Whether to include voices that have live moderation enabled. Defaults to including them.</summary>
             [QueryParameter("include_live_moderated")]
             public bool? IncludeLiveModerated { get; set; }
-            /// <summary>&quot;Whether to include the total count of voices found in the response. NOTE: The total_count value is a live snapshot and may change between requests as users create, modify, or delete voices. For pagination, rely on the has_more flag instead. Only enable this when you actually need the total count (e.g., for display purposes), as it incurs a performance cost.&quot;</summary>
+            /// <summary>Whether to include the total count of voices found in the response. NOTE: The total_count value is a live snapshot and may change between requests as users create, modify, or delete voices. For pagination, rely on the has_more flag instead. Only enable this when you actually need the total count (e.g., for display purposes), as it incurs a performance cost.</summary>
             [QueryParameter("include_total_count")]
             public bool? IncludeTotalCount { get; set; }
             /// <summary>Languages used for filtering, based on the voice&apos;s &apos;language&apos; label. Voices matching any of the given languages are returned.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("language")]
-            public string? Language { get; set; }
+            public string[]? Language { get; set; }
 #nullable restore
 #else
             [QueryParameter("language")]
-            public string Language { get; set; }
+            public string[] Language { get; set; }
 #endif
             /// <summary>Filter to voices whose sharing notice period is at least the given number of days.</summary>
             [QueryParameter("min_notice_period_days")]
@@ -222,21 +222,21 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V2.Voices
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("use_cases")]
-            public string? UseCases { get; set; }
+            public string[]? UseCases { get; set; }
 #nullable restore
 #else
             [QueryParameter("use_cases")]
-            public string UseCases { get; set; }
+            public string[] UseCases { get; set; }
 #endif
             /// <summary>Voice IDs to lookup by. Maximum 100 voice IDs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("voice_ids")]
-            public string? VoiceIds { get; set; }
+            public string[]? VoiceIds { get; set; }
 #nullable restore
 #else
             [QueryParameter("voice_ids")]
-            public string VoiceIds { get; set; }
+            public string[] VoiceIds { get; set; }
 #endif
             /// <summary>Type of the voice to filter by. One of &apos;personal&apos;, &apos;community&apos;, &apos;default&apos;, &apos;workspace&apos;, &apos;non-default&apos;, &apos;non-community&apos;, &apos;saved&apos;. &apos;non-default&apos; is equal to all but &apos;default&apos;. &apos;non-community&apos; is equal to &apos;personal&apos; and &apos;workspace&apos; combined (excludes library copies). &apos;saved&apos; is equal to non-default, but includes default voices if they have been added to a collection.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

@@ -15,7 +15,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The auth_type property</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppAuthResponse_auth_type? AuthType { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsappAuthAuthType? AuthType { get; set; }
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -41,7 +41,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public string PhoneNumberId { get; set; }
 #endif
         /// <summary>The provider property</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppAuthResponse_provider? Provider { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsappProvider? Provider { get; set; }
         /// <summary>Single status field shared by every auth type&apos;s stored credential.OAuth values (``REFRESH_FAILED``, ``REVOKED``) are written by the OAuthtoken-manager refresh path. ``CREDENTIAL_INVALID`` is written by thetool execution path when an upstream response matches a credential&apos;s``failure_signatures`` entry (Bearer, Basic auth, etc.).</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.AuthConnectionStatus? Status { get; set; }
         /// <summary>The status_detail property</summary>
@@ -74,6 +74,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public WhatsAppAuthResponse()
         {
             AdditionalData = new Dictionary<string, object>();
+            Status = global::Soenneker.ElevenLabs.OpenApiClient.Models.AuthConnectionStatus.Active;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -93,11 +94,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "auth_type", n => { AuthType = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppAuthResponse_auth_type>(); } },
+                { "auth_type", n => { AuthType = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsappAuthAuthType>(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "phone_number_id", n => { PhoneNumberId = n.GetStringValue(); } },
-                { "provider", n => { Provider = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppAuthResponse_provider>(); } },
+                { "provider", n => { Provider = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsappProvider>(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AuthConnectionStatus>(); } },
                 { "status_detail", n => { StatusDetail = n.GetStringValue(); } },
                 { "status_updated_at", n => { StatusUpdatedAt = n.GetStringValue(); } },
@@ -111,11 +112,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppAuthResponse_auth_type>("auth_type", AuthType);
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsappAuthAuthType>("auth_type", AuthType);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("phone_number_id", PhoneNumberId);
-            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppAuthResponse_provider>("provider", Provider);
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsappProvider>("provider", Provider);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AuthConnectionStatus>("status", Status);
             writer.WriteStringValue("status_detail", StatusDetail);
             writer.WriteStringValue("status_updated_at", StatusUpdatedAt);

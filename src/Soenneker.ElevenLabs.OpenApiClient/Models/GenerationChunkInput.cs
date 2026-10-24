@@ -23,7 +23,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.AudioRefChunk ConditioningRef { get; set; }
 #endif
         /// <summary>How strongly the model adheres to the conditioning reference. Low strength means the model will be more creative and deviate from the reference. High strength means the model will be more consistent with the reference.</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GenerationChunkInputConditionStrength? ConditionStrength { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConditionStrength? ConditionStrength { get; set; }
         /// <summary>How much the model adheres to the context of its surrounding chunks. Low adherence means the model can deviate from the context and be more creative. High adherence means the model will be more consistent with the context.</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.GenerationChunkInputContextAdherence? ContextAdherence { get; set; }
         /// <summary>The duration of the chunk in milliseconds. Must be between 3000ms and 120000ms.</summary>
@@ -44,7 +44,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public List<string> PositiveStyles { get; set; }
 #endif
-        /// <summary>The text config to be generated for this chunk. Can contain section name in square brackets, e.g. [Verse 1], lyrics lines, and inline directions in curly braces, e.g. {scratching}.</summary>
+        /// <summary>The text config to be generated for this chunk. Can contain an optional section name in square brackets at the beginning, e.g. [Verse 1], lyrics lines, and inline directions in curly braces, e.g. {scratching}. Section names must be between 1 and 100 characters. At most 30 lines are allowed, each at most 200 characters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Text { get; set; }
@@ -77,7 +77,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "condition_strength", n => { ConditionStrength = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GenerationChunkInputConditionStrength>(); } },
+                { "condition_strength", n => { ConditionStrength = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConditionStrength>(); } },
                 { "conditioning_ref", n => { ConditioningRef = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AudioRefChunk>(global::Soenneker.ElevenLabs.OpenApiClient.Models.AudioRefChunk.CreateFromDiscriminatorValue); } },
                 { "context_adherence", n => { ContextAdherence = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GenerationChunkInputContextAdherence>(); } },
                 { "duration_ms", n => { DurationMs = n.GetIntValue(); } },
@@ -94,7 +94,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AudioRefChunk>("conditioning_ref", ConditioningRef);
-            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GenerationChunkInputConditionStrength>("condition_strength", ConditionStrength);
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConditionStrength>("condition_strength", ConditionStrength);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GenerationChunkInputContextAdherence>("context_adherence", ContextAdherence);
             writer.WriteIntValue("duration_ms", DurationMs);
             writer.WriteCollectionOfPrimitiveValues<string>("negative_styles", NegativeStyles);

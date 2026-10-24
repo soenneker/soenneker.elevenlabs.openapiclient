@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.ElevenLabs.OpenApiClient.Models
 {
+    /// <summary>Controls whether the user can interrupt the agent around this tool call. &apos;allow&apos; (default) lets the user interrupt at any time, &apos;disable_during_tool&apos; suppresses interruptions only while the tool is running, &apos;disable_during_tool_and_turn&apos; suppresses interruptions while the tool runs and for the agent response that follows it.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum ToolInterruptionMode
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "allow")]
         #pragma warning disable CS1591

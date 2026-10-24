@@ -18,6 +18,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public bool? AutoRemove { get; set; }
         /// <summary>Whether to enable auto-sync for this URL document.</summary>
         public bool? EnableAutoSync { get; set; }
+        /// <summary>Minimum frequency (in days) at which the document is refreshed. The actual interval may be shorter, never longer. Defaults to 7, tightened to the parent folder&apos;s frequency if that is stricter. Only applicable when auto-sync is enabled.</summary>
+        public int? MinimumFrequencyDays { get; set; }
         /// <summary>A custom, human-readable name for the document.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -71,6 +73,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             {
                 { "auto_remove", n => { AutoRemove = n.GetBoolValue(); } },
                 { "enable_auto_sync", n => { EnableAutoSync = n.GetBoolValue(); } },
+                { "minimum_frequency_days", n => { MinimumFrequencyDays = n.GetIntValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "parent_folder_id", n => { ParentFolderId = n.GetStringValue(); } },
                 { "url", n => { Url = n.GetStringValue(); } },
@@ -85,6 +88,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("auto_remove", AutoRemove);
             writer.WriteBoolValue("enable_auto_sync", EnableAutoSync);
+            writer.WriteIntValue("minimum_frequency_days", MinimumFrequencyDays);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("parent_folder_id", ParentFolderId);
             writer.WriteStringValue("url", Url);

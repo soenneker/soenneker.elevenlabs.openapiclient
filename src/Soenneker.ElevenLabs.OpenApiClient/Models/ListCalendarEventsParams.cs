@@ -17,7 +17,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The include_cancelled property</summary>
         public bool? IncludeCancelled { get; set; }
         /// <summary>The smb_tool_type property</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ListCalendarEventsParams_smb_tool_type? SmbToolType { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ListCalendarEventsSmbToolType? SmbToolType { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ListCalendarEventsParams"/> and sets the default values.
         /// </summary>
@@ -45,7 +45,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "include_cancelled", n => { IncludeCancelled = n.GetBoolValue(); } },
-                { "smb_tool_type", n => { SmbToolType = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ListCalendarEventsParams_smb_tool_type>(); } },
+                { "smb_tool_type", n => { SmbToolType = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ListCalendarEventsSmbToolType>(); } },
             };
         }
         /// <summary>
@@ -56,7 +56,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("include_cancelled", IncludeCancelled);
-            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ListCalendarEventsParams_smb_tool_type>("smb_tool_type", SmbToolType);
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ListCalendarEventsSmbToolType>("smb_tool_type", SmbToolType);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

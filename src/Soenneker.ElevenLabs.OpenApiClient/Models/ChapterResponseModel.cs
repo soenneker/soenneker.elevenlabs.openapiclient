@@ -61,10 +61,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>List of voice ids used by the chapter</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ChapterResponseModelVoiceIds? VoiceIds { get; set; }
+        public List<string>? VoiceIds { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ChapterResponseModelVoiceIds VoiceIds { get; set; }
+        public List<string> VoiceIds { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ChapterResponseModel"/> and sets the default values.
@@ -101,7 +101,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "state", n => { State = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ChapterResponseModelState>(); } },
                 { "statistics", n => { Statistics = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ChapterStatisticsResponseModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ChapterStatisticsResponseModel.CreateFromDiscriminatorValue); } },
-                { "voice_ids", n => { VoiceIds = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ChapterResponseModelVoiceIds>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ChapterResponseModelVoiceIds.CreateFromDiscriminatorValue); } },
+                { "voice_ids", n => { VoiceIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
         }
         /// <summary>
@@ -121,7 +121,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteStringValue("name", Name);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ChapterResponseModelState>("state", State);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ChapterStatisticsResponseModel>("statistics", Statistics);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ChapterResponseModelVoiceIds>("voice_ids", VoiceIds);
+            writer.WriteCollectionOfPrimitiveValues<string>("voice_ids", VoiceIds);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

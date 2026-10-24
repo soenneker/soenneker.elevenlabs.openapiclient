@@ -46,6 +46,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationalConfigApiModelOutput ConversationConfig { get; set; }
 #endif
+        /// <summary>URL of the default hold tone played to queued callers when no custom hold audio is uploaded, so the dashboard can preview it.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? DefaultHoldAudioUrl { get; set; }
+#nullable restore
+#else
+        public string DefaultHoldAudioUrl { get; set; }
+#endif
         /// <summary>The ID of the main branch for this agent</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -54,7 +62,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public string MainBranchId { get; set; }
 #endif
-        /// <summary>The metadata property</summary>
+        /// <summary>The metadata of the agent</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentMetadataResponseModel? Metadata { get; set; }
@@ -78,13 +86,21 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetAgentResponseModelPhoneNumbersItem> PhoneNumbers { get; set; }
 #endif
-        /// <summary>The platform_settings property</summary>
+        /// <summary>The platform settings of the agent</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentPlatformSettingsResponseModel? PlatformSettings { get; set; }
 #nullable restore
 #else
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentPlatformSettingsResponseModel PlatformSettings { get; set; }
+#endif
+        /// <summary>Procedures keyed by procedure_id.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetAgentResponseModelProceduresProperty? Procedures { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetAgentResponseModelProceduresProperty Procedures { get; set; }
 #endif
         /// <summary>Agent tags used to categorize the agent</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -110,7 +126,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetWhatsAppAccountResponse> WhatsappAccounts { get; set; }
 #endif
-        /// <summary>The workflow property</summary>
+        /// <summary>The workflow of the agent</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentWorkflowResponseModel? Workflow { get; set; }
@@ -124,6 +140,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public GetAgentResponseModel()
         {
             AdditionalData = new Dictionary<string, object>();
+            DefaultHoldAudioUrl = "https://eleven-public-cdn-common.elevenlabs.io/convai/ambient-audio-assets/elevator1.mp3";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -147,11 +164,13 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "agent_id", n => { AgentId = n.GetStringValue(); } },
                 { "branch_id", n => { BranchId = n.GetStringValue(); } },
                 { "conversation_config", n => { ConversationConfig = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationalConfigApiModelOutput>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationalConfigApiModelOutput.CreateFromDiscriminatorValue); } },
+                { "default_hold_audio_url", n => { DefaultHoldAudioUrl = n.GetStringValue(); } },
                 { "main_branch_id", n => { MainBranchId = n.GetStringValue(); } },
                 { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentMetadataResponseModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentMetadataResponseModel.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "phone_numbers", n => { PhoneNumbers = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetAgentResponseModelPhoneNumbersItem>(global::Soenneker.ElevenLabs.OpenApiClient.Models.GetAgentResponseModelPhoneNumbersItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "platform_settings", n => { PlatformSettings = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentPlatformSettingsResponseModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentPlatformSettingsResponseModel.CreateFromDiscriminatorValue); } },
+                { "procedures", n => { Procedures = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetAgentResponseModelProceduresProperty>(global::Soenneker.ElevenLabs.OpenApiClient.Models.GetAgentResponseModelProceduresProperty.CreateFromDiscriminatorValue); } },
                 { "tags", n => { Tags = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "version_id", n => { VersionId = n.GetStringValue(); } },
                 { "whatsapp_accounts", n => { WhatsappAccounts = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetWhatsAppAccountResponse>(global::Soenneker.ElevenLabs.OpenApiClient.Models.GetWhatsAppAccountResponse.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -169,11 +188,13 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteStringValue("agent_id", AgentId);
             writer.WriteStringValue("branch_id", BranchId);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationalConfigApiModelOutput>("conversation_config", ConversationConfig);
+            writer.WriteStringValue("default_hold_audio_url", DefaultHoldAudioUrl);
             writer.WriteStringValue("main_branch_id", MainBranchId);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentMetadataResponseModel>("metadata", Metadata);
             writer.WriteStringValue("name", Name);
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetAgentResponseModelPhoneNumbersItem>("phone_numbers", PhoneNumbers);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentPlatformSettingsResponseModel>("platform_settings", PlatformSettings);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetAgentResponseModelProceduresProperty>("procedures", Procedures);
             writer.WriteCollectionOfPrimitiveValues<string>("tags", Tags);
             writer.WriteStringValue("version_id", VersionId);
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetWhatsAppAccountResponse>("whatsapp_accounts", WhatsappAccounts);

@@ -16,7 +16,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The duration of the sound which will be generated in seconds. Must be at least 0.5 and at most 30. If set to None we will guess the optimal duration using the prompt. Defaults to None.</summary>
         public double? DurationSeconds { get; set; }
-        /// <summary>Whether to create a sound effect that loops smoothly. Only available for the &apos;eleven_text_to_sound_v2 model&apos;.</summary>
+        /// <summary>Whether to create a sound effect that loops smoothly.</summary>
         public bool? Loop { get; set; }
         /// <summary>The model_id property</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.SfxModelId? ModelId { get; set; }

@@ -31,7 +31,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public string Color2 { get; set; }
 #endif
         /// <summary>The type of the avatar</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.OrbAvatar_type? Type { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.OrbType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.OrbAvatar"/> and sets the default values.
         /// </summary>
@@ -61,7 +61,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             {
                 { "color_1", n => { Color1 = n.GetStringValue(); } },
                 { "color_2", n => { Color2 = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.OrbAvatar_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.OrbType>(); } },
             };
         }
         /// <summary>
@@ -73,7 +73,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("color_1", Color1);
             writer.WriteStringValue("color_2", Color2);
-            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.OrbAvatar_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.OrbType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -52,11 +52,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public string ReferralLinkCode { get; set; }
 #endif
-        /// <summary>Seat types for workspace members.</summary>
+        /// <summary>The seat type of the user.</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.SeatType? SeatType { get; set; }
         /// <summary>Whether to show compliance terms (ToS, Privacy Policy, biometric consent) during onboarding. Set for users signing up from the marketing site.</summary>
         public bool? ShowComplianceTerms { get; set; }
-        /// <summary>The subscription property</summary>
+        /// <summary>Details of the user&apos;s subscription.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.SubscriptionResponseModel? Subscription { get; set; }
@@ -72,13 +72,13 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public string UserId { get; set; }
 #endif
-        /// <summary>The API key of the user.</summary>
+        /// <summary>The unique identifier of the workspace this user&apos;s API key belongs to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? XiApiKey { get; set; }
+        public string? WorkspaceId { get; set; }
 #nullable restore
 #else
-        public string XiApiKey { get; set; }
+        public string WorkspaceId { get; set; }
 #endif
         /// <summary>The preview of the user&apos;s API key.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -128,7 +128,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "show_compliance_terms", n => { ShowComplianceTerms = n.GetBoolValue(); } },
                 { "subscription", n => { Subscription = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SubscriptionResponseModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.SubscriptionResponseModel.CreateFromDiscriminatorValue); } },
                 { "user_id", n => { UserId = n.GetStringValue(); } },
-                { "xi_api_key", n => { XiApiKey = n.GetStringValue(); } },
+                { "workspace_id", n => { WorkspaceId = n.GetStringValue(); } },
                 { "xi_api_key_preview", n => { XiApiKeyPreview = n.GetStringValue(); } },
             };
         }
@@ -152,7 +152,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteBoolValue("show_compliance_terms", ShowComplianceTerms);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SubscriptionResponseModel>("subscription", Subscription);
             writer.WriteStringValue("user_id", UserId);
-            writer.WriteStringValue("xi_api_key", XiApiKey);
+            writer.WriteStringValue("workspace_id", WorkspaceId);
             writer.WriteStringValue("xi_api_key_preview", XiApiKeyPreview);
             writer.WriteAdditionalData(AdditionalData);
         }

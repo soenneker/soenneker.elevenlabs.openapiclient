@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.ElevenLabs.OpenApiClient.Models
 {
     /// <summary>
-    /// A new source segment; its id and word-level alignment are assigned by the server.
+    /// A new source segment; its ID and word-level alignment are assigned by the server.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class DubbingSegmentCreateRequest : IAdditionalDataHolder, IParsable

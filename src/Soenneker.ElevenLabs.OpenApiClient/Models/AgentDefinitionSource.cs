@@ -24,6 +24,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         #pragma warning disable CS1591
         Template,
         #pragma warning restore CS1591
+        [EnumMember(Value = "architect")]
+        #pragma warning disable CS1591
+        Architect,
+        #pragma warning restore CS1591
         [EnumMember(Value = "unknown")]
         #pragma warning disable CS1591
         Unknown,

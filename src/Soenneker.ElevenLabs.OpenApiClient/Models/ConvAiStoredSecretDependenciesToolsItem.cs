@@ -43,7 +43,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             {
                 result.DependentAvailableToolIdentifier = new global::Soenneker.ElevenLabs.OpenApiClient.Models.DependentAvailableToolIdentifier();
             }
-            else if("DependentUnknownToolIdentifier".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("unknown".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.DependentUnknownToolIdentifier = new global::Soenneker.ElevenLabs.OpenApiClient.Models.DependentUnknownToolIdentifier();
             }

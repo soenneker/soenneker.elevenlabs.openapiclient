@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.ElevenLabs.OpenApiClient.Models
 {
+    /// <summary>Exotel region-specific API host</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum ExotelApiSubdomain
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "api.in.exotel.com")]
         #pragma warning disable CS1591

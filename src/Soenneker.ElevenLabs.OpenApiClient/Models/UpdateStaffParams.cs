@@ -15,14 +15,17 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Whether to offer a working_hours timezone, set from the workspace&apos;s enable_per_resource_timezones. While that is off every staff member uses the workspace timezone, so the key is not offered.</summary>
+        public bool? PerResourceTimezones { get; set; }
         /// <summary>The smb_tool_type property</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateStaffParams_smb_tool_type? SmbToolType { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateStaffSmbToolType? SmbToolType { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateStaffParams"/> and sets the default values.
         /// </summary>
         public UpdateStaffParams()
         {
             AdditionalData = new Dictionary<string, object>();
+            PerResourceTimezones = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -42,7 +45,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "smb_tool_type", n => { SmbToolType = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateStaffParams_smb_tool_type>(); } },
+                { "per_resource_timezones", n => { PerResourceTimezones = n.GetBoolValue(); } },
+                { "smb_tool_type", n => { SmbToolType = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateStaffSmbToolType>(); } },
             };
         }
         /// <summary>
@@ -52,7 +56,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateStaffParams_smb_tool_type>("smb_tool_type", SmbToolType);
+            writer.WriteBoolValue("per_resource_timezones", PerResourceTimezones);
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateStaffSmbToolType>("smb_tool_type", SmbToolType);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

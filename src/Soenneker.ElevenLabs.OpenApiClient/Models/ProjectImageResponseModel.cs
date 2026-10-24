@@ -107,7 +107,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public string SignedUrl { get; set; }
 #endif
         /// <summary>The source property</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectImageResponseModel_source? Source { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.UploadSource? Source { get; set; }
         /// <summary>The source_asset_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -141,7 +141,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public string TrackId { get; set; }
 #endif
         /// <summary>The type property</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectImageResponseModel_type? Type { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectImageResponseModelType? Type { get; set; }
         /// <summary>The updated_at_ms property</summary>
         public int? UpdatedAtMs { get; set; }
         /// <summary>The width property</summary>
@@ -189,12 +189,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "order", n => { Order = n.GetStringValue(); } },
                 { "pending_task", n => { PendingTask = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PendingClipTask>(global::Soenneker.ElevenLabs.OpenApiClient.Models.PendingClipTask.CreateFromDiscriminatorValue); } },
                 { "signed_url", n => { SignedUrl = n.GetStringValue(); } },
-                { "source", n => { Source = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectImageResponseModel_source>(); } },
+                { "source", n => { Source = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UploadSource>(); } },
                 { "source_asset_id", n => { SourceAssetId = n.GetStringValue(); } },
                 { "source_platform_asset_id", n => { SourcePlatformAssetId = n.GetStringValue(); } },
                 { "thumbnail_signed_url", n => { ThumbnailSignedUrl = n.GetStringValue(); } },
                 { "track_id", n => { TrackId = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectImageResponseModel_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectImageResponseModelType>(); } },
                 { "updated_at_ms", n => { UpdatedAtMs = n.GetIntValue(); } },
                 { "width", n => { Width = n.GetIntValue(); } },
             };
@@ -222,12 +222,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteStringValue("order", Order);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PendingClipTask>("pending_task", PendingTask);
             writer.WriteStringValue("signed_url", SignedUrl);
-            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectImageResponseModel_source>("source", Source);
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UploadSource>("source", Source);
             writer.WriteStringValue("source_asset_id", SourceAssetId);
             writer.WriteStringValue("source_platform_asset_id", SourcePlatformAssetId);
             writer.WriteStringValue("thumbnail_signed_url", ThumbnailSignedUrl);
             writer.WriteStringValue("track_id", TrackId);
-            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectImageResponseModel_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectImageResponseModelType>("type", Type);
             writer.WriteIntValue("updated_at_ms", UpdatedAtMs);
             writer.WriteIntValue("width", Width);
             writer.WriteAdditionalData(AdditionalData);

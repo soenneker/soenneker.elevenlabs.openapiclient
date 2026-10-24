@@ -12,5 +12,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         #pragma warning disable CS1591
         ElevenTextToSoundV2,
         #pragma warning restore CS1591
+        [EnumMember(Value = "eleven_text_to_sound_v3")]
+        #pragma warning disable CS1591
+        ElevenTextToSoundV3,
+        #pragma warning restore CS1591
     }
 }

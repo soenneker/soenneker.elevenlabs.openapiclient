@@ -54,6 +54,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public BodyRegisterATwilioCallAndReturnTwiMlV1ConvaiTwilioRegisterCallPost()
         {
             AdditionalData = new Dictionary<string, object>();
+            Direction = global::Soenneker.ElevenLabs.OpenApiClient.Models.TelephonyDirection.Inbound;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

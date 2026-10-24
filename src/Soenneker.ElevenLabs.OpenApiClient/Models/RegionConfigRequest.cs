@@ -14,9 +14,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Valid Twilio edge locations.</summary>
+        /// <summary>Edge location for this region</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.TwilioEdgeLocation? EdgeLocation { get; set; }
-        /// <summary>Valid Twilio region IDs.</summary>
+        /// <summary>Region ID</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.TwilioRegionId? RegionId { get; set; }
         /// <summary>Auth Token for this region</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

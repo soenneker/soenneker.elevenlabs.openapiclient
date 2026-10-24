@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.ElevenLabs.OpenApiClient.Models
 {
+    /// <summary>The mode of turn detection</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum TurnMode
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "silence")]
         #pragma warning disable CS1591

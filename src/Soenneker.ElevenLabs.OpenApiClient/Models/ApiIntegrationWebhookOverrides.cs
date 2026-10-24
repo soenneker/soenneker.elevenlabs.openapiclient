@@ -7,45 +7,38 @@ using System.IO;
 using System;
 namespace Soenneker.ElevenLabs.OpenApiClient.Models
 {
-    /// <summary>
-    /// A whitelist of fields that can be overridden by users whenconfiguring an API Integration Webhook Tool.
-    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+    #pragma warning disable CS1591
     public partial class ApiIntegrationWebhookOverrides : IAdditionalDataHolder, IParsable
+    #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The request_headers property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ApiIntegrationWebhookOverridesRequestHeaders? RequestHeaders { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ApiIntegrationWebhookOverridesRequestHeadersProperty? RequestHeaders { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ApiIntegrationWebhookOverridesRequestHeaders RequestHeaders { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ApiIntegrationWebhookOverridesRequestHeadersProperty RequestHeaders { get; set; }
 #endif
         /// <summary>The response_filter_mode property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ResponseFilterModeWrapper? ResponseFilterMode { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ResponseFilterModeWrapper ResponseFilterMode { get; set; }
-#endif
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ResponseFilterMode? ResponseFilterMode { get; set; }
         /// <summary>The response_filters property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ApiIntegrationWebhookOverridesResponseFilters? ResponseFilters { get; set; }
+        public List<string>? ResponseFilters { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ApiIntegrationWebhookOverridesResponseFilters ResponseFilters { get; set; }
+        public List<string> ResponseFilters { get; set; }
 #endif
         /// <summary>The schema_overrides property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ApiIntegrationWebhookOverridesSchemaOverrides? SchemaOverrides { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ApiIntegrationWebhookOverridesSchemaOverridesProperty? SchemaOverrides { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ApiIntegrationWebhookOverridesSchemaOverrides SchemaOverrides { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ApiIntegrationWebhookOverridesSchemaOverridesProperty SchemaOverrides { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ApiIntegrationWebhookOverrides"/> and sets the default values.
@@ -72,10 +65,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "request_headers", n => { RequestHeaders = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ApiIntegrationWebhookOverridesRequestHeaders>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ApiIntegrationWebhookOverridesRequestHeaders.CreateFromDiscriminatorValue); } },
-                { "response_filter_mode", n => { ResponseFilterMode = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ResponseFilterModeWrapper>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ResponseFilterModeWrapper.CreateFromDiscriminatorValue); } },
-                { "response_filters", n => { ResponseFilters = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ApiIntegrationWebhookOverridesResponseFilters>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ApiIntegrationWebhookOverridesResponseFilters.CreateFromDiscriminatorValue); } },
-                { "schema_overrides", n => { SchemaOverrides = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ApiIntegrationWebhookOverridesSchemaOverrides>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ApiIntegrationWebhookOverridesSchemaOverrides.CreateFromDiscriminatorValue); } },
+                { "request_headers", n => { RequestHeaders = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ApiIntegrationWebhookOverridesRequestHeadersProperty>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ApiIntegrationWebhookOverridesRequestHeadersProperty.CreateFromDiscriminatorValue); } },
+                { "response_filter_mode", n => { ResponseFilterMode = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ResponseFilterMode>(); } },
+                { "response_filters", n => { ResponseFilters = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "schema_overrides", n => { SchemaOverrides = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ApiIntegrationWebhookOverridesSchemaOverridesProperty>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ApiIntegrationWebhookOverridesSchemaOverridesProperty.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -85,10 +78,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ApiIntegrationWebhookOverridesRequestHeaders>("request_headers", RequestHeaders);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ResponseFilterModeWrapper>("response_filter_mode", ResponseFilterMode);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ApiIntegrationWebhookOverridesResponseFilters>("response_filters", ResponseFilters);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ApiIntegrationWebhookOverridesSchemaOverrides>("schema_overrides", SchemaOverrides);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ApiIntegrationWebhookOverridesRequestHeadersProperty>("request_headers", RequestHeaders);
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ResponseFilterMode>("response_filter_mode", ResponseFilterMode);
+            writer.WriteCollectionOfPrimitiveValues<string>("response_filters", ResponseFilters);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ApiIntegrationWebhookOverridesSchemaOverridesProperty>("schema_overrides", SchemaOverrides);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

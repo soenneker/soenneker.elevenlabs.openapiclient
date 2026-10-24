@@ -16,6 +16,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The llm property</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.Llm? Llm { get; set; }
+        /// <summary>The price_per_message property</summary>
+        public double? PricePerMessage { get; set; }
         /// <summary>The price_per_minute property</summary>
         public double? PricePerMinute { get; set; }
         /// <summary>
@@ -44,6 +46,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "llm", n => { Llm = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Llm>(); } },
+                { "price_per_message", n => { PricePerMessage = n.GetDoubleValue(); } },
                 { "price_per_minute", n => { PricePerMinute = n.GetDoubleValue(); } },
             };
         }
@@ -55,6 +58,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Llm>("llm", Llm);
+            writer.WriteDoubleValue("price_per_message", PricePerMessage);
             writer.WriteDoubleValue("price_per_minute", PricePerMinute);
             writer.WriteAdditionalData(AdditionalData);
         }

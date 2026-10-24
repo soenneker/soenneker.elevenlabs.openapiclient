@@ -39,20 +39,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public string Language { get; set; }
 #endif
         /// <summary>The model_family property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.TtsModelFamilyWrapper? ModelFamily { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.TtsModelFamilyWrapper ModelFamily { get; set; }
-#endif
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.TtsModelFamily? ModelFamily { get; set; }
         /// <summary>The optimize_streaming_latency property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.TtsOptimizeStreamingLatencyWrapper? OptimizeStreamingLatency { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SupportedVoiceOptimizeStreamingLatency? OptimizeStreamingLatency { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.TtsOptimizeStreamingLatencyWrapper OptimizeStreamingLatency { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SupportedVoiceOptimizeStreamingLatency OptimizeStreamingLatency { get; set; }
 #endif
         /// <summary>The similarity_boost property</summary>
         public double? SimilarityBoost { get; set; }
@@ -96,8 +90,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "label", n => { Label = n.GetStringValue(); } },
                 { "language", n => { Language = n.GetStringValue(); } },
-                { "model_family", n => { ModelFamily = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TtsModelFamilyWrapper>(global::Soenneker.ElevenLabs.OpenApiClient.Models.TtsModelFamilyWrapper.CreateFromDiscriminatorValue); } },
-                { "optimize_streaming_latency", n => { OptimizeStreamingLatency = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TtsOptimizeStreamingLatencyWrapper>(global::Soenneker.ElevenLabs.OpenApiClient.Models.TtsOptimizeStreamingLatencyWrapper.CreateFromDiscriminatorValue); } },
+                { "model_family", n => { ModelFamily = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TtsModelFamily>(); } },
+                { "optimize_streaming_latency", n => { OptimizeStreamingLatency = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SupportedVoiceOptimizeStreamingLatency>(global::Soenneker.ElevenLabs.OpenApiClient.Models.SupportedVoiceOptimizeStreamingLatency.CreateFromDiscriminatorValue); } },
                 { "similarity_boost", n => { SimilarityBoost = n.GetDoubleValue(); } },
                 { "speed", n => { Speed = n.GetDoubleValue(); } },
                 { "stability", n => { Stability = n.GetDoubleValue(); } },
@@ -114,8 +108,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("label", Label);
             writer.WriteStringValue("language", Language);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TtsModelFamilyWrapper>("model_family", ModelFamily);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TtsOptimizeStreamingLatencyWrapper>("optimize_streaming_latency", OptimizeStreamingLatency);
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TtsModelFamily>("model_family", ModelFamily);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SupportedVoiceOptimizeStreamingLatency>("optimize_streaming_latency", OptimizeStreamingLatency);
             writer.WriteDoubleValue("similarity_boost", SimilarityBoost);
             writer.WriteDoubleValue("speed", Speed);
             writer.WriteDoubleValue("stability", Stability);

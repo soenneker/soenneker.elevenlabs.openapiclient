@@ -71,7 +71,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             var result = new global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentApiModelInputToolsItem();
-            if("ApiIntegrationWebhookToolConfigInput".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("api_integration_webhook".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.ApiIntegrationWebhookToolConfigInput = new global::Soenneker.ElevenLabs.OpenApiClient.Models.ApiIntegrationWebhookToolConfigInput();
             }

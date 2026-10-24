@@ -23,7 +23,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public string Instructions { get; set; }
 #endif
         /// <summary>The type of order item.</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.TranscriptionOrderItemRequest_kind? Kind { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.TranscriptionKind? Kind { get; set; }
         /// <summary>The IDs of the uploaded media files to transcribe.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -69,7 +69,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "instructions", n => { Instructions = n.GetStringValue(); } },
-                { "kind", n => { Kind = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TranscriptionOrderItemRequest_kind>(); } },
+                { "kind", n => { Kind = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TranscriptionKind>(); } },
                 { "media_ids", n => { MediaIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "source_language", n => { SourceLanguage = n.GetStringValue(); } },
                 { "verbatim", n => { Verbatim = n.GetBoolValue(); } },
@@ -83,7 +83,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("instructions", Instructions);
-            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TranscriptionOrderItemRequest_kind>("kind", Kind);
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TranscriptionKind>("kind", Kind);
             writer.WriteCollectionOfPrimitiveValues<string>("media_ids", MediaIds);
             writer.WriteStringValue("source_language", SourceLanguage);
             writer.WriteBoolValue("verbatim", Verbatim);

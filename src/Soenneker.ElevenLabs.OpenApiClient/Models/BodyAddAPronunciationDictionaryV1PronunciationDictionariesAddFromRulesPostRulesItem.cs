@@ -37,9 +37,16 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyAddAPronunciationDictionaryV1PronunciationDictionariesAddFromRulesPostRulesItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
+            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             var result = new global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyAddAPronunciationDictionaryV1PronunciationDictionariesAddFromRulesPostRulesItem();
-            result.PronunciationDictionaryAliasRuleRequestModel = new global::Soenneker.ElevenLabs.OpenApiClient.Models.PronunciationDictionaryAliasRuleRequestModel();
-            result.PronunciationDictionaryPhonemeRuleRequestModel = new global::Soenneker.ElevenLabs.OpenApiClient.Models.PronunciationDictionaryPhonemeRuleRequestModel();
+            if("alias".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.PronunciationDictionaryAliasRuleRequestModel = new global::Soenneker.ElevenLabs.OpenApiClient.Models.PronunciationDictionaryAliasRuleRequestModel();
+            }
+            else if("phoneme".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.PronunciationDictionaryPhonemeRuleRequestModel = new global::Soenneker.ElevenLabs.OpenApiClient.Models.PronunciationDictionaryPhonemeRuleRequestModel();
+            }
             return result;
         }
         /// <summary>
@@ -48,9 +55,13 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(PronunciationDictionaryAliasRuleRequestModel != null || PronunciationDictionaryPhonemeRuleRequestModel != null)
+            if(PronunciationDictionaryAliasRuleRequestModel != null)
             {
-                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(PronunciationDictionaryAliasRuleRequestModel, PronunciationDictionaryPhonemeRuleRequestModel);
+                return PronunciationDictionaryAliasRuleRequestModel.GetFieldDeserializers();
+            }
+            else if(PronunciationDictionaryPhonemeRuleRequestModel != null)
+            {
+                return PronunciationDictionaryPhonemeRuleRequestModel.GetFieldDeserializers();
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -61,7 +72,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PronunciationDictionaryAliasRuleRequestModel>(null, PronunciationDictionaryAliasRuleRequestModel, PronunciationDictionaryPhonemeRuleRequestModel);
+            if(PronunciationDictionaryAliasRuleRequestModel != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PronunciationDictionaryAliasRuleRequestModel>(null, PronunciationDictionaryAliasRuleRequestModel);
+            }
+            else if(PronunciationDictionaryPhonemeRuleRequestModel != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PronunciationDictionaryPhonemeRuleRequestModel>(null, PronunciationDictionaryPhonemeRuleRequestModel);
+            }
         }
     }
 }

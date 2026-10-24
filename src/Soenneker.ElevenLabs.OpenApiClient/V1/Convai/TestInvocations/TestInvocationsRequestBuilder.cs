@@ -35,7 +35,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.TestInvocations
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TestInvocationsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/convai/test-invocations{?agent_id*,cursor*,page_size*}", pathParameters)
+        public TestInvocationsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/convai/test-invocations{?agent_id*,branch_id*,cursor*,end_time*,page_size*,search*,start_time*,test_id*,version_id*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.TestInvocations
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TestInvocationsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/convai/test-invocations{?agent_id*,cursor*,page_size*}", rawUrl)
+        public TestInvocationsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/convai/test-invocations{?agent_id*,branch_id*,cursor*,end_time*,page_size*,search*,start_time*,test_id*,version_id*}", rawUrl)
         {
         }
         /// <summary>
@@ -113,6 +113,16 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.TestInvocations
             [QueryParameter("agent_id")]
             public string AgentId { get; set; }
 #endif
+            /// <summary>Filter by branch ID</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("branch_id")]
+            public string? BranchId { get; set; }
+#nullable restore
+#else
+            [QueryParameter("branch_id")]
+            public string BranchId { get; set; }
+#endif
             /// <summary>Used for fetching next page. Cursor is returned in the response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -123,9 +133,45 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.TestInvocations
             [QueryParameter("cursor")]
             public string Cursor { get; set; }
 #endif
+            /// <summary>Inclusive upper bound on created_at, in unix seconds</summary>
+            [QueryParameter("end_time")]
+            public int? EndTime { get; set; }
             /// <summary>How many Tests to return at maximum. Can not exceed 100, defaults to 30.</summary>
             [QueryParameter("page_size")]
             public int? PageSize { get; set; }
+            /// <summary>Search query to filter tests and folders by name.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("search")]
+            public string? Search { get; set; }
+#nullable restore
+#else
+            [QueryParameter("search")]
+            public string Search { get; set; }
+#endif
+            /// <summary>Inclusive lower bound on created_at, in unix seconds</summary>
+            [QueryParameter("start_time")]
+            public int? StartTime { get; set; }
+            /// <summary>Filter to invocations that include a run of this test id</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("test_id")]
+            public string? TestId { get; set; }
+#nullable restore
+#else
+            [QueryParameter("test_id")]
+            public string TestId { get; set; }
+#endif
+            /// <summary>Filter by the agent version the tests ran against</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("version_id")]
+            public string? VersionId { get; set; }
+#nullable restore
+#else
+            [QueryParameter("version_id")]
+            public string VersionId { get; set; }
+#endif
         }
     }
 }

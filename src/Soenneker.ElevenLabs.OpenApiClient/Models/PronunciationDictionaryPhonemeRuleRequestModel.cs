@@ -41,7 +41,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public string StringToReplace { get; set; }
 #endif
         /// <summary>The type of the rule.</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PronunciationDictionaryPhonemeRuleRequestModel_type? Type { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PhonemeType? Type { get; set; }
         /// <summary>Whether the rule should only match at word boundaries.</summary>
         public bool? WordBoundaries { get; set; }
         /// <summary>
@@ -75,7 +75,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "case_sensitive", n => { CaseSensitive = n.GetBoolValue(); } },
                 { "phoneme", n => { Phoneme = n.GetStringValue(); } },
                 { "string_to_replace", n => { StringToReplace = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PronunciationDictionaryPhonemeRuleRequestModel_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PhonemeType>(); } },
                 { "word_boundaries", n => { WordBoundaries = n.GetBoolValue(); } },
             };
         }
@@ -90,7 +90,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteBoolValue("case_sensitive", CaseSensitive);
             writer.WriteStringValue("phoneme", Phoneme);
             writer.WriteStringValue("string_to_replace", StringToReplace);
-            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PronunciationDictionaryPhonemeRuleRequestModel_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PhonemeType>("type", Type);
             writer.WriteBoolValue("word_boundaries", WordBoundaries);
             writer.WriteAdditionalData(AdditionalData);
         }

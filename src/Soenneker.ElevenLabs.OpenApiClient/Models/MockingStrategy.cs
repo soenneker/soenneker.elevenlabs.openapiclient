@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.ElevenLabs.OpenApiClient.Models
 {
+    /// <summary>Which tools to mock: &apos;all&apos; mocks every mockable tool, &apos;selected&apos; mocks only those in mocked_tool_names/mocked_tool_ids, &apos;none&apos; disables mocking.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum MockingStrategy
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "all")]
         #pragma warning disable CS1591

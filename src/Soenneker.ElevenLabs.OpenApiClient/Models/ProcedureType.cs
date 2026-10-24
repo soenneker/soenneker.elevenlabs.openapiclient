@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.ElevenLabs.OpenApiClient.Models
 {
+    /// <summary>Procedure type</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum ProcedureType
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "free_form")]
         #pragma warning disable CS1591
@@ -15,6 +14,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         [EnumMember(Value = "deterministic")]
         #pragma warning disable CS1591
         Deterministic,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "folder")]
+        #pragma warning disable CS1591
+        Folder,
         #pragma warning restore CS1591
     }
 }

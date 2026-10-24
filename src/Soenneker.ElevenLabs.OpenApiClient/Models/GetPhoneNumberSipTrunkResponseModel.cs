@@ -38,7 +38,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public string Label { get; set; }
 #endif
-        /// <summary>The livekit_stack property</summary>
+        /// <summary>Type of Livekit stack used for this number.</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.LivekitStackType? LivekitStack { get; set; }
         /// <summary>Configuration of the Outbound SIP trunk - if configured.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -65,7 +65,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public string PhoneNumberId { get; set; }
 #endif
         /// <summary>Phone provider</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPhoneNumberSipTrunkResponseModel_provider? Provider { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPhoneNumberSipTrunkResponseModelProvider? Provider { get; set; }
         /// <summary>The provider_config property</summary>
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -118,7 +118,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "outbound_trunk", n => { OutboundTrunk = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPhoneNumberOutboundSipTrunkConfigResponseModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPhoneNumberOutboundSipTrunkConfigResponseModel.CreateFromDiscriminatorValue); } },
                 { "phone_number", n => { PhoneNumber = n.GetStringValue(); } },
                 { "phone_number_id", n => { PhoneNumberId = n.GetStringValue(); } },
-                { "provider", n => { Provider = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPhoneNumberSipTrunkResponseModel_provider>(); } },
+                { "provider", n => { Provider = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPhoneNumberSipTrunkResponseModelProvider>(); } },
                 { "provider_config", n => { ProviderConfig = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPhoneNumberOutboundSipTrunkConfigResponseModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPhoneNumberOutboundSipTrunkConfigResponseModel.CreateFromDiscriminatorValue); } },
                 { "store_sip_messages", n => { StoreSipMessages = n.GetBoolValue(); } },
                 { "supports_inbound", n => { SupportsInbound = n.GetBoolValue(); } },
@@ -139,7 +139,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPhoneNumberOutboundSipTrunkConfigResponseModel>("outbound_trunk", OutboundTrunk);
             writer.WriteStringValue("phone_number", PhoneNumber);
             writer.WriteStringValue("phone_number_id", PhoneNumberId);
-            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPhoneNumberSipTrunkResponseModel_provider>("provider", Provider);
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPhoneNumberSipTrunkResponseModelProvider>("provider", Provider);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPhoneNumberOutboundSipTrunkConfigResponseModel>("provider_config", ProviderConfig);
             writer.WriteBoolValue("store_sip_messages", StoreSipMessages);
             writer.WriteBoolValue("supports_inbound", SupportsInbound);

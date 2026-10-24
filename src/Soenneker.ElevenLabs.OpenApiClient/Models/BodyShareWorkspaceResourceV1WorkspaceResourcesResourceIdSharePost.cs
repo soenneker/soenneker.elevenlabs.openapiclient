@@ -22,9 +22,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public string GroupId { get; set; }
 #endif
-        /// <summary>Resource types that can be shared in the workspace. The name always need to match the collection names</summary>
+        /// <summary>Resource type of the target resource.</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceResourceType? ResourceType { get; set; }
-        /// <summary>&quot;Role to grant to the target: one of &apos;admin&apos;, &apos;editor&apos;, &apos;commenter&apos;, or &apos;viewer&apos;.&quot;</summary>
+        /// <summary>Role to grant to the target: one of &apos;admin&apos;, &apos;editor&apos;, &apos;commenter&apos;, or &apos;viewer&apos;.</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyShareWorkspaceResourceV1WorkspaceResourcesResourceIdSharePostRole? Role { get; set; }
         /// <summary>The email of the user or service account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

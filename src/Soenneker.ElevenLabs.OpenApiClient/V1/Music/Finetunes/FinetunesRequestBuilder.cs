@@ -170,7 +170,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Music.Finetunes
             [QueryParameter("cursor")]
             public string Cursor { get; set; }
 #endif
-            /// <summary>How many finetunes to return. Max 100, default 50.</summary>
+            /// <summary>How many finetunes to return. Max 150, default 50.</summary>
             [QueryParameter("page_size")]
             public int? PageSize { get; set; }
             /// <summary>Sort by field (created_at or name)</summary>

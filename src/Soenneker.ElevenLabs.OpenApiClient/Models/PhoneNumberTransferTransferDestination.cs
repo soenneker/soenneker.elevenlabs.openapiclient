@@ -55,7 +55,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             var result = new global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberTransferTransferDestination();
-            if("PhoneNumberDynamicVariableTransferDestination".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("phone_dynamic_variable".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.PhoneNumberDynamicVariableTransferDestination = new global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberDynamicVariableTransferDestination();
             }
@@ -63,11 +63,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             {
                 result.PhoneNumberTransferDestination = new global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberTransferDestination();
             }
-            else if("SipUriDynamicVariableTransferDestination".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("sip_uri_dynamic_variable".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.SipUriDynamicVariableTransferDestination = new global::Soenneker.ElevenLabs.OpenApiClient.Models.SipUriDynamicVariableTransferDestination();
             }
-            else if("SipUriTransferDestination".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("sip_uri".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.SipUriTransferDestination = new global::Soenneker.ElevenLabs.OpenApiClient.Models.SipUriTransferDestination();
             }

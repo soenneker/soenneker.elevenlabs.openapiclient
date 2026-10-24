@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.ElevenLabs.OpenApiClient.V1.TextToVoice.Item.Remix
 {
     /// <summary>
-    /// Builds and executes requests for operations under \v1\text-to-voice\{generatedVoice-id}\remix
+    /// Builds and executes requests for operations under \v1\text-to-voice\{voiceId}\remix
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class RemixRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.TextToVoice.Item.Remix
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RemixRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/text-to-voice/{generatedVoice%2Did}/remix{?output_format*}", pathParameters)
+        public RemixRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/text-to-voice/{voiceId}/remix{?output_format*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.TextToVoice.Item.Remix
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RemixRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/text-to-voice/{generatedVoice%2Did}/remix{?output_format*}", rawUrl)
+        public RemixRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/text-to-voice/{voiceId}/remix{?output_format*}", rawUrl)
         {
         }
         /// <summary>

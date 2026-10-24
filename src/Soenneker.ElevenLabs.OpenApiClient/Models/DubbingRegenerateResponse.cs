@@ -8,20 +8,20 @@ using System;
 namespace Soenneker.ElevenLabs.OpenApiClient.Models
 {
     /// <summary>
-    /// &quot;The accepted re-dub: what it covers and what it cost.&quot;
+    /// The accepted re-dub: what it covers and what it cost.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class DubbingRegenerateResponse : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Seconds actually billed, after the free-regeneration allowance. Zero when the re-dub cost nothing -- the allowance covered all of it, or the project&apos;s included generation did.</summary>
+        /// <summary>Seconds actually billed, after the free-regeneration allowance. Zero when the re-dub cost nothing — either the allowance covered all of it, or the project&apos;s included generation did.</summary>
         public double? ChargedSeconds { get; set; }
         /// <summary>Free-regeneration seconds left for this language target after this re-dub. The allowance is the source&apos;s own duration.</summary>
         public double? FreeRegenerationSecondsRemaining { get; set; }
-        /// <summary>Seconds of audio this re-dub covers -- the edited regions only, never the whole target. `charged_seconds` is the part of it that was billed.</summary>
+        /// <summary>Seconds of audio this re-dub covers — the edited regions only, never the whole target. `charged_seconds` is the part of it that was billed.</summary>
         public double? RegeneratedSeconds { get; set; }
-        /// <summary>&quot;The segments this re-dub re-synthesizes: those with edits to apply.&quot;</summary>
+        /// <summary>The segments this re-dub re-synthesizes: those with edits to apply.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? RegeneratedSegmentIds { get; set; }

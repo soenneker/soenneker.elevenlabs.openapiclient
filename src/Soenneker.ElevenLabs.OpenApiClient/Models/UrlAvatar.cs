@@ -23,7 +23,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public string CustomUrl { get; set; }
 #endif
         /// <summary>The type of the avatar</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.UrlAvatar_type? Type { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.UrlAvatarType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.UrlAvatar"/> and sets the default values.
         /// </summary>
@@ -50,7 +50,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "custom_url", n => { CustomUrl = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UrlAvatar_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UrlAvatarType>(); } },
             };
         }
         /// <summary>
@@ -61,7 +61,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("custom_url", CustomUrl);
-            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UrlAvatar_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UrlAvatarType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

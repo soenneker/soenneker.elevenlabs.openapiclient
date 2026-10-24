@@ -47,7 +47,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AgentsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/convai/agents{?archived*,created_by_user_id*,cursor*,page_size*,search*,show_only_owned_agents*,sort_by*,sort_direction*}", pathParameters)
+        public AgentsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/convai/agents{?archived*,created_by_user_id*,cursor*,page_size*,search*,show_only_owned_agents*,sort_by*,sort_direction*,tags*}", pathParameters)
         {
         }
         /// <summary>
@@ -55,7 +55,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AgentsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/convai/agents{?archived*,created_by_user_id*,cursor*,page_size*,search*,show_only_owned_agents*,sort_by*,sort_direction*}", rawUrl)
+        public AgentsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/convai/agents{?archived*,created_by_user_id*,cursor*,page_size*,search*,show_only_owned_agents*,sort_by*,sort_direction*,tags*}", rawUrl)
         {
         }
         /// <summary>
@@ -151,7 +151,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents
             [QueryParameter("search")]
             public string Search { get; set; }
 #endif
-            /// <summary>&quot;If set to true, the endpoint will omit any agents that were shared with you by someone else and include only the ones you own. Deprecated: use created_by_user_id instead.&quot;</summary>
+            /// <summary>If set to true, the endpoint will omit any agents that were shared with you by someone else and include only the ones you own. Deprecated: use created_by_user_id instead.</summary>
             [Obsolete("")]
             [QueryParameter("show_only_owned_agents")]
             public bool? ShowOnlyOwnedAgents { get; set; }
@@ -168,6 +168,16 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents
             /// <summary>The direction to sort the results</summary>
             [QueryParameter("sort_direction")]
             public global::Soenneker.ElevenLabs.OpenApiClient.Models.SortDirection? SortDirection { get; set; }
+            /// <summary>Filter agents by tag. Repeat the parameter to match any of several tags.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("tags")]
+            public string[]? Tags { get; set; }
+#nullable restore
+#else
+            [QueryParameter("tags")]
+            public string[] Tags { get; set; }
+#endif
         }
     }
 }

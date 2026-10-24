@@ -16,7 +16,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>When the project was created.</summary>
         public DateTimeOffset? CreatedAt { get; set; }
-        /// <summary>Why the project failed; null unless `status` is &apos;failed&apos;. Also null for the few projects that failed before failure reporting was introduced.</summary>
+        /// <summary>Why the project failed; null unless `status` is `failed`. Also null for the few projects that failed before failure reporting was introduced.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingError? Error { get; set; }
@@ -24,7 +24,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingError Error { get; set; }
 #endif
-        /// <summary>Identifiers of the language targets created under this project.</summary>
+        /// <summary>Identifiers of the language targets under this project. Populated when a single project is fetched, and on create when `target_language` creates one. Always empty in list responses — list the project&apos;s language targets instead.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? LanguageIds { get; set; }
@@ -32,7 +32,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public List<string> LanguageIds { get; set; }
 #endif
-        /// <summary>Source media metadata; null until the project is ready.</summary>
+        /// <summary>Source media metadata, populated once the source has been fetched and decoded (shortly after create, before the project is `ready`); null until then.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingSourceMediaInfo? Media { get; set; }
@@ -40,7 +40,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingSourceMediaInfo Media { get; set; }
 #endif
-        /// <summary>Default dubbing model id applied to this project&apos;s language targets.</summary>
+        /// <summary>Dubbing model every language target of this project is dubbed with. Fixed at create time and not selectable per language.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ModelId { get; set; }
@@ -56,7 +56,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public string ProjectId { get; set; }
 #endif
-        /// <summary>Optional free-form string the customer can provide to identify the project on their end.</summary>
+        /// <summary>The free-form string you supplied as `reference` when creating the project, or null if you supplied none.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Reference { get; set; }
@@ -74,7 +74,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public string SourceLanguage { get; set; }
 #endif
-        /// <summary>&quot;Lifecycle status of the project: &apos;preparing&apos;/&apos;processing&apos; while it transcribes, &apos;ready&apos; once transcription is done, or &apos;failed&apos;.&quot;</summary>
+        /// <summary>Lifecycle status of the project: `queued` before the source is picked up, `preparing` while it is transcribed, `ready` once transcription is done and language targets can start, or `failed`. A project is never reported as `processing` — that value belongs to language targets.</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingProjectResponseStatus? Status { get; set; }
         /// <summary>When the project was last updated.</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
@@ -86,7 +86,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.VoicesNotPermittedWarning> Warnings { get; set; }
 #endif
-        /// <summary>Workspace webhooks notified when this project becomes ready or fails, and when any of its languages completes or fails.</summary>
+        /// <summary>IDs of the workspace webhooks notified as this project and its languages reach `ready`, `completed`, or `failed`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? WebhookIds { get; set; }

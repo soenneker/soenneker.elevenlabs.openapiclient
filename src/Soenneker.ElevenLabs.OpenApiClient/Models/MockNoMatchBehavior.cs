@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.ElevenLabs.OpenApiClient.Models
 {
+    /// <summary>Behavior when no mock matches a tool call.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum MockNoMatchBehavior
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "call_real_tool")]
         #pragma warning disable CS1591

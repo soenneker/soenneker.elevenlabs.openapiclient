@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.ElevenLabs.OpenApiClient.Models
 {
     /// <summary>
-    /// &quot;OCSF User object.Spec: https://schema.ocsf.io/1.6.0/objects/user&quot;
+    /// OCSF User object.Spec: https://schema.ocsf.io/1.6.0/objects/user
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UserModel : IParsable
@@ -53,7 +53,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public string Type { get; set; }
 #endif
-        /// <summary>&quot;OCSF User type IDs.Spec: https://schema.ocsf.io/1.6.0/objects/user&quot;</summary>
+        /// <summary>Account type identifier</summary>
         public int? TypeId { get; set; }
         /// <summary>Unique user identifier</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -63,6 +63,13 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public string Uid { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.UserModel"/> and sets the default values.
+        /// </summary>
+        public UserModel()
+        {
+            TypeId = 1;
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

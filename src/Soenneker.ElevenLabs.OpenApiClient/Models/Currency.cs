@@ -24,5 +24,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         #pragma warning disable CS1591
         Pln,
         #pragma warning restore CS1591
+        [EnumMember(Value = "gbp")]
+        #pragma warning disable CS1591
+        Gbp,
+        #pragma warning restore CS1591
     }
 }

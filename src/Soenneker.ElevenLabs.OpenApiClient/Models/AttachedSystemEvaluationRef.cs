@@ -15,11 +15,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Id of the referenced built-in system evaluation.</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AttachedSystemEvaluationRefAnalysisItemId? AnalysisItemId { get; set; }
-        /// <summary>The scope property</summary>
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemEvaluationId? AnalysisItemId { get; set; }
+        /// <summary>Transcript context (&apos;conversation&apos; or &apos;agent&apos;) used when running this item.</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.AnalysisScope? Scope { get; set; }
         /// <summary>The source property</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AttachedSystemEvaluationRef_source? Source { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AttachedSystemEvaluationRefSource? Source { get; set; }
         /// <summary>Optional relative weight for aggregate scoring.</summary>
         public double? Weight { get; set; }
         /// <summary>
@@ -28,6 +28,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public AttachedSystemEvaluationRef()
         {
             AdditionalData = new Dictionary<string, object>();
+            Scope = global::Soenneker.ElevenLabs.OpenApiClient.Models.AnalysisScope.Conversation;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -47,9 +48,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "analysis_item_id", n => { AnalysisItemId = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AttachedSystemEvaluationRefAnalysisItemId>(); } },
+                { "analysis_item_id", n => { AnalysisItemId = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemEvaluationId>(); } },
                 { "scope", n => { Scope = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AnalysisScope>(); } },
-                { "source", n => { Source = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AttachedSystemEvaluationRef_source>(); } },
+                { "source", n => { Source = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AttachedSystemEvaluationRefSource>(); } },
                 { "weight", n => { Weight = n.GetDoubleValue(); } },
             };
         }
@@ -60,9 +61,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AttachedSystemEvaluationRefAnalysisItemId>("analysis_item_id", AnalysisItemId);
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemEvaluationId>("analysis_item_id", AnalysisItemId);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AnalysisScope>("scope", Scope);
-            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AttachedSystemEvaluationRef_source>("source", Source);
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AttachedSystemEvaluationRefSource>("source", Source);
             writer.WriteDoubleValue("weight", Weight);
             writer.WriteAdditionalData(AdditionalData);
         }

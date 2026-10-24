@@ -44,5 +44,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         #pragma warning disable CS1591
         Expired,
         #pragma warning restore CS1591
+        [EnumMember(Value = "merged")]
+        #pragma warning disable CS1591
+        Merged,
+        #pragma warning restore CS1591
     }
 }

@@ -22,7 +22,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public string LanguageCode { get; set; }
 #endif
         /// <summary>The model to use for the generation.</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ElevenFlashV25Request_model_id? ModelId { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ElevenFlashV25ModelId? ModelId { get; set; }
         /// <summary>The audio encoding of the output, as `codec_sampleRateHz_bitrateKbps`. `mp3_44100_192` requires the Creator tier or above.</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.ElevenFlashV25RequestOutputFormat? OutputFormat { get; set; }
         /// <summary>Pronunciation dictionaries to apply to the text, in order of precedence. Up to 3.</summary>
@@ -84,7 +84,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "language_code", n => { LanguageCode = n.GetStringValue(); } },
-                { "model_id", n => { ModelId = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ElevenFlashV25Request_model_id>(); } },
+                { "model_id", n => { ModelId = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ElevenFlashV25ModelId>(); } },
                 { "output_format", n => { OutputFormat = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ElevenFlashV25RequestOutputFormat>(); } },
                 { "pronunciation_dictionary_locators", n => { PronunciationDictionaryLocators = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.PronunciationDictionaryVersionLocator>(global::Soenneker.ElevenLabs.OpenApiClient.Models.PronunciationDictionaryVersionLocator.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "text", n => { Text = n.GetStringValue(); } },
@@ -101,7 +101,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("language_code", LanguageCode);
-            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ElevenFlashV25Request_model_id>("model_id", ModelId);
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ElevenFlashV25ModelId>("model_id", ModelId);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ElevenFlashV25RequestOutputFormat>("output_format", OutputFormat);
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.PronunciationDictionaryVersionLocator>("pronunciation_dictionary_locators", PronunciationDictionaryLocators);
             writer.WriteStringValue("text", Text);

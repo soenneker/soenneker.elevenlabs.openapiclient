@@ -9,10 +9,14 @@ using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.Branches;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.Deployments;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.Drafts;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.Duplicate;
+using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.HoldAudio;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.KnowledgeBase;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.Link;
+using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.MergeProposals;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.RunTests;
+using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.SimulateConversation;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.Topics;
+using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.TriageTickets;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.Versions;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.Widget;
 using System.Collections.Generic;
@@ -53,6 +57,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item
         {
             get => new global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.Duplicate.DuplicateRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The holdAudio property</summary>
+        public global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.HoldAudio.HoldAudioRequestBuilder HoldAudio
+        {
+            get => new global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.HoldAudio.HoldAudioRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The knowledgeBase property</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.KnowledgeBase.KnowledgeBaseRequestBuilder KnowledgeBase
         {
@@ -63,15 +72,30 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item
         {
             get => new global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.Link.LinkRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The mergeProposals property</summary>
+        public global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.MergeProposals.MergeProposalsRequestBuilder MergeProposals
+        {
+            get => new global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.MergeProposals.MergeProposalsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The runTests property</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.RunTests.RunTestsRequestBuilder RunTests
         {
             get => new global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.RunTests.RunTestsRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The simulateConversation property</summary>
+        public global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.SimulateConversation.SimulateConversationRequestBuilder SimulateConversation
+        {
+            get => new global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.SimulateConversation.SimulateConversationRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The topics property</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.Topics.TopicsRequestBuilder Topics
         {
             get => new global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.Topics.TopicsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The triageTickets property</summary>
+        public global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.TriageTickets.TriageTicketsRequestBuilder TriageTickets
+        {
+            get => new global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.TriageTickets.TriageTicketsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The versions property</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.Versions.VersionsRequestBuilder Versions
@@ -88,7 +112,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithAgentItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/convai/agents/{agentId}{?branch_id*,enable_versioning_if_not_enabled*,version_id*}", pathParameters)
+        public WithAgentItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/convai/agents/{agentId}{?branch_id*,enable_versioning_if_not_enabled*,force*,include_procedure_generated_workflow_elements*,version_id*}", pathParameters)
         {
         }
         /// <summary>
@@ -96,23 +120,22 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithAgentItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/convai/agents/{agentId}{?branch_id*,enable_versioning_if_not_enabled*,version_id*}", rawUrl)
+        public WithAgentItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/convai/agents/{agentId}{?branch_id*,enable_versioning_if_not_enabled*,force*,include_procedure_generated_workflow_elements*,version_id*}", rawUrl)
         {
         }
         /// <summary>
         /// Delete an agent
         /// </summary>
-        /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.HttpValidationError">When receiving a 422 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Stream?> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task DeleteAsync(Action<RequestConfiguration<global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.WithAgentItemRequestBuilder.WithAgentItemRequestBuilderDeleteQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Stream> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task DeleteAsync(Action<RequestConfiguration<global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.WithAgentItemRequestBuilder.WithAgentItemRequestBuilderDeleteQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
@@ -120,7 +143,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item
             {
                 { "422", global::Soenneker.ElevenLabs.OpenApiClient.Models.HttpValidationError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
+            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieve config for an agent
@@ -177,11 +200,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.WithAgentItemRequestBuilder.WithAgentItemRequestBuilderDeleteQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.WithAgentItemRequestBuilder.WithAgentItemRequestBuilderDeleteQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
@@ -240,6 +263,16 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item
             return new global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.WithAgentItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
+        /// Delete an agent
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class WithAgentItemRequestBuilderDeleteQueryParameters 
+        {
+            /// <summary>If set to true, the agent is deleted even if other agents use it as a subagent, and it is removed from those agents and their branches.</summary>
+            [QueryParameter("force")]
+            public bool? Force { get; set; }
+        }
+        /// <summary>
         /// Retrieve config for an agent
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
@@ -255,6 +288,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item
             [QueryParameter("branch_id")]
             public string BranchId { get; set; }
 #endif
+            /// <summary>Whether to include the workflow nodes and edges generated from structured procedures. When false, the workflow contains only authored elements.</summary>
+            [QueryParameter("include_procedure_generated_workflow_elements")]
+            public bool? IncludeProcedureGeneratedWorkflowElements { get; set; }
             /// <summary>The ID of the agent version to use</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -282,10 +318,13 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item
             [QueryParameter("branch_id")]
             public string BranchId { get; set; }
 #endif
-            /// <summary>&quot;Deprecated: all agents are versioned. This parameter is ignored.&quot;</summary>
+            /// <summary>Deprecated: all agents are versioned. This parameter is ignored.</summary>
             [Obsolete("")]
             [QueryParameter("enable_versioning_if_not_enabled")]
             public bool? EnableVersioningIfNotEnabled { get; set; }
+            /// <summary>Whether to include the workflow nodes and edges generated from structured procedures. When false, the workflow contains only authored elements.</summary>
+            [QueryParameter("include_procedure_generated_workflow_elements")]
+            public bool? IncludeProcedureGeneratedWorkflowElements { get; set; }
         }
     }
 }

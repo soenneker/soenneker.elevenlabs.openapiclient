@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.ElevenLabs.OpenApiClient.Models
 {
-    /// <summary>Resource types that can be shared in the workspace. The name always need to match the collection names</summary>
+    /// <summary>Resource type of the target resource.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum WorkspaceResourceType
     {
@@ -22,6 +22,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         [EnumMember(Value = "dubbing")]
         #pragma warning disable CS1591
         Dubbing,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "dubbing_project")]
+        #pragma warning disable CS1591
+        DubbingProject,
         #pragma warning restore CS1591
         [EnumMember(Value = "project")]
         #pragma warning disable CS1591
@@ -114,10 +118,6 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         [EnumMember(Value = "convai_memory_entries")]
         #pragma warning disable CS1591
         ConvaiMemoryEntries,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "convai_coaching_proposals")]
-        #pragma warning disable CS1591
-        ConvaiCoachingProposals,
         #pragma warning restore CS1591
         [EnumMember(Value = "convai_templates")]
         #pragma warning disable CS1591

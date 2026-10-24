@@ -48,11 +48,13 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.LanguageResponseModel> Languages { get; set; }
 #endif
-        /// <summary>The maximum number of characters that can be requested by a free user.</summary>
+        /// <summary>Deprecated. Not enforced; use `maximum_text_length_per_request` instead.</summary>
+        [Obsolete("")]
         public int? MaxCharactersRequestFreeUser { get; set; }
-        /// <summary>The maximum number of characters that can be requested by a subscribed user.</summary>
+        /// <summary>Deprecated. Not enforced; use `maximum_text_length_per_request` instead.</summary>
+        [Obsolete("")]
         public int? MaxCharactersRequestSubscribedUser { get; set; }
-        /// <summary>The maximum length of text that can be requested for this model.</summary>
+        /// <summary>The maximum number of input text characters accepted per request for this model. Longer requests are rejected.</summary>
         public int? MaximumTextLengthPerRequest { get; set; }
         /// <summary>The unique identifier of the model.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -62,7 +64,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public string ModelId { get; set; }
 #endif
-        /// <summary>The model_rates property</summary>
+        /// <summary>The rates for the model.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.ModelRatesResponseModel? ModelRates { get; set; }

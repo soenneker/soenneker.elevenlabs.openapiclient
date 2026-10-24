@@ -8,14 +8,14 @@ using System;
 namespace Soenneker.ElevenLabs.OpenApiClient.Models
 {
     /// <summary>
-    /// &quot;Simulation/preview-side config: tools are identified by IDs, resolved to names at runtime.&quot;
+    /// Simulation/preview-side config: tools are identified by IDs, resolved to names at runtime.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SimulationToolMockBehaviorConfig : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The fallback_strategy property</summary>
+        /// <summary>Behavior when no mock matches a tool call.</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.MockNoMatchBehavior? FallbackStrategy { get; set; }
         /// <summary>Tool IDs to mock. Resolved to tool names before being passed to the orchestrator.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -25,7 +25,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public List<string> MockedToolIds { get; set; }
 #endif
-        /// <summary>The mocking_strategy property</summary>
+        /// <summary>Which tools to mock: &apos;all&apos; mocks every mockable tool, &apos;selected&apos; mocks only those in mocked_tool_names/mocked_tool_ids, &apos;none&apos; disables mocking.</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.MockingStrategy? MockingStrategy { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.SimulationToolMockBehaviorConfig"/> and sets the default values.
@@ -33,6 +33,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public SimulationToolMockBehaviorConfig()
         {
             AdditionalData = new Dictionary<string, object>();
+            FallbackStrategy = global::Soenneker.ElevenLabs.OpenApiClient.Models.MockNoMatchBehavior.RaiseError;
+            MockingStrategy = global::Soenneker.ElevenLabs.OpenApiClient.Models.MockingStrategy.None;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

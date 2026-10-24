@@ -30,6 +30,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public string AgentId { get; set; }
 #endif
+        /// <summary>The auto_rebase property</summary>
+        public bool? AutoRebase { get; set; }
         /// <summary>The created_at property</summary>
         public int? CreatedAt { get; set; }
         /// <summary>Percentage of traffic live on the branch</summary>
@@ -86,7 +88,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public AgentBranchResponse()
         {
             AdditionalData = new Dictionary<string, object>();
+            AutoRebase = false;
             CurrentLivePercentage = 0.0;
+            ProtectionStatus = global::Soenneker.ElevenLabs.OpenApiClient.Models.BranchProtectionStatus.WriterPermsRequired;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -108,6 +112,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             {
                 { "access_info", n => { AccessInfo = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceAccessInfo>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceAccessInfo.CreateFromDiscriminatorValue); } },
                 { "agent_id", n => { AgentId = n.GetStringValue(); } },
+                { "auto_rebase", n => { AutoRebase = n.GetBoolValue(); } },
                 { "created_at", n => { CreatedAt = n.GetIntValue(); } },
                 { "current_live_percentage", n => { CurrentLivePercentage = n.GetDoubleValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
@@ -129,6 +134,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceAccessInfo>("access_info", AccessInfo);
             writer.WriteStringValue("agent_id", AgentId);
+            writer.WriteBoolValue("auto_rebase", AutoRebase);
             writer.WriteIntValue("created_at", CreatedAt);
             writer.WriteDoubleValue("current_live_percentage", CurrentLivePercentage);
             writer.WriteStringValue("description", Description);

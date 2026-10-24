@@ -33,10 +33,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Replacement set of tags.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateMusicFinetuneRequestModelTags? Tags { get; set; }
+        public List<string>? Tags { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateMusicFinetuneRequestModelTags Tags { get; set; }
+        public List<string> Tags { get; set; }
 #endif
         /// <summary>Finetune visibility. Only &apos;private&apos; and &apos;workspace&apos; can be set.</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateMusicFinetuneRequestModelVisibility? Visibility { get; set; }
@@ -67,7 +67,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             {
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "primary_genre", n => { PrimaryGenre = n.GetStringValue(); } },
-                { "tags", n => { Tags = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateMusicFinetuneRequestModelTags>(global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateMusicFinetuneRequestModelTags.CreateFromDiscriminatorValue); } },
+                { "tags", n => { Tags = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "visibility", n => { Visibility = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateMusicFinetuneRequestModelVisibility>(); } },
             };
         }
@@ -80,7 +80,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("primary_genre", PrimaryGenre);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateMusicFinetuneRequestModelTags>("tags", Tags);
+            writer.WriteCollectionOfPrimitiveValues<string>("tags", Tags);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateMusicFinetuneRequestModelVisibility>("visibility", Visibility);
             writer.WriteAdditionalData(AdditionalData);
         }

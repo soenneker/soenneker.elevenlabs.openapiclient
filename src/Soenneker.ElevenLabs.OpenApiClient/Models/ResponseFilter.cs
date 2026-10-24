@@ -16,7 +16,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Content type for response filtering. Only &apos;application/json&apos; responses are filtered.</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ResponseFilter_content_type? ContentType { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ApplicationJsonContentType? ContentType { get; set; }
         /// <summary>Dot notation paths to include when mode is &apos;allow&apos; (e.g., [&apos;ticket.id&apos;, &apos;ticket.status&apos;]).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -25,7 +25,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public List<string> Filters { get; set; }
 #endif
-        /// <summary>Controls how tool responses are filtered before being visible to the agent.</summary>
+        /// <summary>Controls how tool responses are filtered. &apos;all&apos; returns entire response, &apos;allow&apos; returns only specified paths, &apos;hide_all&apos; hides the entire response.</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.ResponseFilterMode? Mode { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ResponseFilter"/> and sets the default values.
@@ -33,6 +33,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public ResponseFilter()
         {
             AdditionalData = new Dictionary<string, object>();
+            Mode = global::Soenneker.ElevenLabs.OpenApiClient.Models.ResponseFilterMode.All;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -52,7 +53,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "content_type", n => { ContentType = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ResponseFilter_content_type>(); } },
+                { "content_type", n => { ContentType = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ApplicationJsonContentType>(); } },
                 { "filters", n => { Filters = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "mode", n => { Mode = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ResponseFilterMode>(); } },
             };
@@ -64,7 +65,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ResponseFilter_content_type>("content_type", ContentType);
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ApplicationJsonContentType>("content_type", ContentType);
             writer.WriteCollectionOfPrimitiveValues<string>("filters", Filters);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ResponseFilterMode>("mode", Mode);
             writer.WriteAdditionalData(AdditionalData);

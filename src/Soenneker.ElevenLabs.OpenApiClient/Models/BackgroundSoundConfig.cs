@@ -17,21 +17,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Apply a crossfade at the loop boundary to avoid audible pops when the sound loops.</summary>
         public bool? CrossfadeLoop { get; set; }
         /// <summary>Identifier for the sound source.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BackgroundSoundPresetIdWrapper? SourceId { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BackgroundSoundPresetIdWrapper SourceId { get; set; }
-#endif
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BackgroundSoundPresetId? SourceId { get; set; }
         /// <summary>The type of background sound source.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BackgroundSoundSourceTypeWrapper? SourceType { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BackgroundSoundSourceTypeWrapper SourceType { get; set; }
-#endif
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BackgroundSoundSourceType? SourceType { get; set; }
         /// <summary>Volume level for background sound (0.01 to 1.0).</summary>
         public double? Volume { get; set; }
         /// <summary>
@@ -62,8 +50,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "crossfade_loop", n => { CrossfadeLoop = n.GetBoolValue(); } },
-                { "source_id", n => { SourceId = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BackgroundSoundPresetIdWrapper>(global::Soenneker.ElevenLabs.OpenApiClient.Models.BackgroundSoundPresetIdWrapper.CreateFromDiscriminatorValue); } },
-                { "source_type", n => { SourceType = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BackgroundSoundSourceTypeWrapper>(global::Soenneker.ElevenLabs.OpenApiClient.Models.BackgroundSoundSourceTypeWrapper.CreateFromDiscriminatorValue); } },
+                { "source_id", n => { SourceId = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BackgroundSoundPresetId>(); } },
+                { "source_type", n => { SourceType = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BackgroundSoundSourceType>(); } },
                 { "volume", n => { Volume = n.GetDoubleValue(); } },
             };
         }
@@ -75,8 +63,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("crossfade_loop", CrossfadeLoop);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BackgroundSoundPresetIdWrapper>("source_id", SourceId);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BackgroundSoundSourceTypeWrapper>("source_type", SourceType);
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BackgroundSoundPresetId>("source_id", SourceId);
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BackgroundSoundSourceType>("source_type", SourceType);
             writer.WriteDoubleValue("volume", Volume);
             writer.WriteAdditionalData(AdditionalData);
         }

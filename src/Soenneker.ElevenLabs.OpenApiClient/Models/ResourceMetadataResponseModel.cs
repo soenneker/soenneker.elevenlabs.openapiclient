@@ -40,9 +40,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public string ResourceName { get; set; }
 #endif
-        /// <summary>Resource types that can be shared in the workspace. The name always need to match the collection names</summary>
+        /// <summary>The type of the resource.</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceResourceType? ResourceType { get; set; }
-        /// <summary>A mapping of roles to group IDs. When the resource is shared with a user, the group id is the user&apos;s id.</summary>
+        /// <summary>A mapping of grant slots to group IDs. Keys are the preset access roles plus workspace custom-role ids (&apos;role_...&apos;). When the resource is shared with a user, the group id is the user&apos;s id.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceMetadataResponseModelRoleToGroupIdsProperty? RoleToGroupIds { get; set; }

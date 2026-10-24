@@ -14,6 +14,30 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The text of the dialogue input line.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Text { get; set; }
+#nullable restore
+#else
+        public string Text { get; set; }
+#endif
+        /// <summary>The ID of the voice used for this dialogue input line.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? VoiceId { get; set; }
+#nullable restore
+#else
+        public string VoiceId { get; set; }
+#endif
+        /// <summary>The name of the voice used for this dialogue input line.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? VoiceName { get; set; }
+#nullable restore
+#else
+        public string VoiceName { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.DialogueInputResponseModel"/> and sets the default values.
         /// </summary>
@@ -39,6 +63,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "text", n => { Text = n.GetStringValue(); } },
+                { "voice_id", n => { VoiceId = n.GetStringValue(); } },
+                { "voice_name", n => { VoiceName = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -48,6 +75,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("text", Text);
+            writer.WriteStringValue("voice_id", VoiceId);
+            writer.WriteStringValue("voice_name", VoiceName);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -69,10 +69,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The telephony_call_config property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.TelephonyCallConfig? TelephonyCallConfig { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.TelephonyCallConfigInput? TelephonyCallConfig { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.TelephonyCallConfig TelephonyCallConfig { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.TelephonyCallConfigInput TelephonyCallConfig { get; set; }
 #endif
         /// <summary>The timezone property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -123,7 +123,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "recipients", n => { Recipients = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.OutboundCallRecipient>(global::Soenneker.ElevenLabs.OpenApiClient.Models.OutboundCallRecipient.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "scheduled_time_unix", n => { ScheduledTimeUnix = n.GetIntValue(); } },
                 { "target_concurrency_limit", n => { TargetConcurrencyLimit = n.GetIntValue(); } },
-                { "telephony_call_config", n => { TelephonyCallConfig = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TelephonyCallConfig>(global::Soenneker.ElevenLabs.OpenApiClient.Models.TelephonyCallConfig.CreateFromDiscriminatorValue); } },
+                { "telephony_call_config", n => { TelephonyCallConfig = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TelephonyCallConfigInput>(global::Soenneker.ElevenLabs.OpenApiClient.Models.TelephonyCallConfigInput.CreateFromDiscriminatorValue); } },
                 { "timezone", n => { Timezone = n.GetStringValue(); } },
                 { "whatsapp_params", n => { WhatsappParams = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BatchCallWhatsAppParams>(global::Soenneker.ElevenLabs.OpenApiClient.Models.BatchCallWhatsAppParams.CreateFromDiscriminatorValue); } },
             };
@@ -143,7 +143,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.OutboundCallRecipient>("recipients", Recipients);
             writer.WriteIntValue("scheduled_time_unix", ScheduledTimeUnix);
             writer.WriteIntValue("target_concurrency_limit", TargetConcurrencyLimit);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TelephonyCallConfig>("telephony_call_config", TelephonyCallConfig);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TelephonyCallConfigInput>("telephony_call_config", TelephonyCallConfig);
             writer.WriteStringValue("timezone", Timezone);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BatchCallWhatsAppParams>("whatsapp_params", WhatsappParams);
             writer.WriteAdditionalData(AdditionalData);

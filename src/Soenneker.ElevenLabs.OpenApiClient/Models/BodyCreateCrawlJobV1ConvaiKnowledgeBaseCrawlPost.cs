@@ -14,14 +14,27 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Automatically discover and add new pages linked from already-crawled pages during auto-sync. Requires enable_auto_sync=true.</summary>
+        public bool? AutoDiscover { get; set; }
         /// <summary>Whether to automatically remove the document if the URL becomes unavailable. Only applicable when auto-sync is enabled.</summary>
         public bool? AutoRemove { get; set; }
         /// <summary>Whether to enable auto-sync for this URL document.</summary>
         public bool? EnableAutoSync { get; set; }
-        /// <summary>Maximum depth for crawling (1-5), defaults to 3.</summary>
+        /// <summary>If set, URLs that match any of these patterns are skipped, even if they match `pattern`.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? ExcludePatterns { get; set; }
+#nullable restore
+#else
+        public List<string> ExcludePatterns { get; set; }
+#endif
+        /// <summary>Deprecated - this field is a no-op and will be removed in a future version.</summary>
+        [Obsolete("")]
         public int? MaxDepth { get; set; }
         /// <summary>Maximum number of pages to crawl (1-10,000), defaults to 1000.</summary>
         public int? MaxPages { get; set; }
+        /// <summary>Minimum frequency (in days) at which the underlying eligible documents are refreshed. The actual interval may be shorter, never longer. Defaults to 7, tightened to the parent folder&apos;s frequency if that is stricter. Only applicable when auto-sync is enabled.</summary>
+        public int? MinimumFrequencyDays { get; set; }
         /// <summary>If set, the created document or folder will be placed inside the given folder.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -41,10 +54,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>List of URLs to crawl from sitemap (optional, overrides automatic URL discovery).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateCrawlJobV1ConvaiKnowledgeBaseCrawlPostSitemapUrls? SitemapUrls { get; set; }
+        public List<string>? SitemapUrls { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateCrawlJobV1ConvaiKnowledgeBaseCrawlPostSitemapUrls SitemapUrls { get; set; }
+        public List<string> SitemapUrls { get; set; }
 #endif
         /// <summary>URL to a page of documentation that the agent will have access to in order to interact with users.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -60,6 +73,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public BodyCreateCrawlJobV1ConvaiKnowledgeBaseCrawlPost()
         {
             AdditionalData = new Dictionary<string, object>();
+            AutoDiscover = false;
             AutoRemove = false;
             EnableAutoSync = false;
             MaxDepth = 3;
@@ -83,13 +97,16 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "auto_discover", n => { AutoDiscover = n.GetBoolValue(); } },
                 { "auto_remove", n => { AutoRemove = n.GetBoolValue(); } },
                 { "enable_auto_sync", n => { EnableAutoSync = n.GetBoolValue(); } },
+                { "exclude_patterns", n => { ExcludePatterns = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "max_depth", n => { MaxDepth = n.GetIntValue(); } },
                 { "max_pages", n => { MaxPages = n.GetIntValue(); } },
+                { "minimum_frequency_days", n => { MinimumFrequencyDays = n.GetIntValue(); } },
                 { "parent_folder_id", n => { ParentFolderId = n.GetStringValue(); } },
                 { "pattern", n => { Pattern = n.GetStringValue(); } },
-                { "sitemap_urls", n => { SitemapUrls = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateCrawlJobV1ConvaiKnowledgeBaseCrawlPostSitemapUrls>(global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateCrawlJobV1ConvaiKnowledgeBaseCrawlPostSitemapUrls.CreateFromDiscriminatorValue); } },
+                { "sitemap_urls", n => { SitemapUrls = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "url", n => { Url = n.GetStringValue(); } },
             };
         }
@@ -100,13 +117,16 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteBoolValue("auto_discover", AutoDiscover);
             writer.WriteBoolValue("auto_remove", AutoRemove);
             writer.WriteBoolValue("enable_auto_sync", EnableAutoSync);
+            writer.WriteCollectionOfPrimitiveValues<string>("exclude_patterns", ExcludePatterns);
             writer.WriteIntValue("max_depth", MaxDepth);
             writer.WriteIntValue("max_pages", MaxPages);
+            writer.WriteIntValue("minimum_frequency_days", MinimumFrequencyDays);
             writer.WriteStringValue("parent_folder_id", ParentFolderId);
             writer.WriteStringValue("pattern", Pattern);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateCrawlJobV1ConvaiKnowledgeBaseCrawlPostSitemapUrls>("sitemap_urls", SitemapUrls);
+            writer.WriteCollectionOfPrimitiveValues<string>("sitemap_urls", SitemapUrls);
             writer.WriteStringValue("url", Url);
             writer.WriteAdditionalData(AdditionalData);
         }

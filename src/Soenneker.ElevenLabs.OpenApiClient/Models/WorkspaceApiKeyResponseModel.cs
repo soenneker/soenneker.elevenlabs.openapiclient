@@ -17,10 +17,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The allowed_ips property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceApiKeyResponseModelAllowedIps? AllowedIps { get; set; }
+        public List<string>? AllowedIps { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceApiKeyResponseModelAllowedIps AllowedIps { get; set; }
+        public List<string> AllowedIps { get; set; }
 #endif
         /// <summary>Credits already used in the current billing period.</summary>
         public int? CharacterCount { get; set; }
@@ -29,13 +29,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The created_at_unix property</summary>
         public int? CreatedAtUnix { get; set; }
         /// <summary>The disable_reason property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.LockReasonWrapper? DisableReason { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.LockReasonWrapper DisableReason { get; set; }
-#endif
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.LockReason? DisableReason { get; set; }
         /// <summary>The hashed_xi_api_key property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -73,10 +67,18 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The permissions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.PermissionType>? Permissions { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.PermissionType?>? Permissions { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.PermissionType> Permissions { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.PermissionType?> Permissions { get; set; }
+#endif
+        /// <summary>Per-API-key concurrency limits (TTS/dubbing/music). Enterprise-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PlatformLimits? PlatformLimits { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PlatformLimits PlatformLimits { get; set; }
 #endif
         /// <summary>The service_account_user_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -114,17 +116,18 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "allowed_ips", n => { AllowedIps = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceApiKeyResponseModelAllowedIps>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceApiKeyResponseModelAllowedIps.CreateFromDiscriminatorValue); } },
+                { "allowed_ips", n => { AllowedIps = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "character_count", n => { CharacterCount = n.GetIntValue(); } },
                 { "character_limit", n => { CharacterLimit = n.GetIntValue(); } },
                 { "created_at_unix", n => { CreatedAtUnix = n.GetIntValue(); } },
-                { "disable_reason", n => { DisableReason = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.LockReasonWrapper>(global::Soenneker.ElevenLabs.OpenApiClient.Models.LockReasonWrapper.CreateFromDiscriminatorValue); } },
+                { "disable_reason", n => { DisableReason = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.LockReason>(); } },
                 { "hashed_xi_api_key", n => { HashedXiApiKey = n.GetStringValue(); } },
                 { "hint", n => { Hint = n.GetStringValue(); } },
                 { "is_disabled", n => { IsDisabled = n.GetBoolValue(); } },
                 { "key_id", n => { KeyId = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "permissions", n => { Permissions = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.PermissionType>(global::Soenneker.ElevenLabs.OpenApiClient.Models.PermissionType.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "permissions", n => { Permissions = n.GetCollectionOfEnumValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.PermissionType>()?.AsList(); } },
+                { "platform_limits", n => { PlatformLimits = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PlatformLimits>(global::Soenneker.ElevenLabs.OpenApiClient.Models.PlatformLimits.CreateFromDiscriminatorValue); } },
                 { "service_account_user_id", n => { ServiceAccountUserId = n.GetStringValue(); } },
                 { "third_party_disable_allowed", n => { ThirdPartyDisableAllowed = n.GetBoolValue(); } },
             };
@@ -136,17 +139,18 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceApiKeyResponseModelAllowedIps>("allowed_ips", AllowedIps);
+            writer.WriteCollectionOfPrimitiveValues<string>("allowed_ips", AllowedIps);
             writer.WriteIntValue("character_count", CharacterCount);
             writer.WriteIntValue("character_limit", CharacterLimit);
             writer.WriteIntValue("created_at_unix", CreatedAtUnix);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.LockReasonWrapper>("disable_reason", DisableReason);
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.LockReason>("disable_reason", DisableReason);
             writer.WriteStringValue("hashed_xi_api_key", HashedXiApiKey);
             writer.WriteStringValue("hint", Hint);
             writer.WriteBoolValue("is_disabled", IsDisabled);
             writer.WriteStringValue("key_id", KeyId);
             writer.WriteStringValue("name", Name);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.PermissionType>("permissions", Permissions);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.PermissionType>("permissions", Permissions);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PlatformLimits>("platform_limits", PlatformLimits);
             writer.WriteStringValue("service_account_user_id", ServiceAccountUserId);
             writer.WriteBoolValue("third_party_disable_allowed", ThirdPartyDisableAllowed);
             writer.WriteAdditionalData(AdditionalData);

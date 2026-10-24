@@ -14,7 +14,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>&quot;The API key for authentication. Either a workspace secret reference {&apos;secret_id&apos;: &apos;...&apos;} or an environment variable reference {&apos;env_var_label&apos;: &apos;...&apos;}.&quot;</summary>
+        /// <summary>The API key for authentication. Either a workspace secret reference {&apos;secret_id&apos;: &apos;...&apos;} or an environment variable reference {&apos;env_var_label&apos;: &apos;...&apos;}.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomLlmApiKey? ApiKey { get; set; }

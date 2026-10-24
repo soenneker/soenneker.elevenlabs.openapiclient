@@ -47,15 +47,15 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("preference")?.GetStringValue();
             var result = new global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentApiModelOutputBackupLlmConfig();
-            if("BackupLlmDefault".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("default".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.BackupLlmDefault = new global::Soenneker.ElevenLabs.OpenApiClient.Models.BackupLlmDefault();
             }
-            else if("BackupLlmDisabled".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("disabled".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.BackupLlmDisabled = new global::Soenneker.ElevenLabs.OpenApiClient.Models.BackupLlmDisabled();
             }
-            else if("BackupLlmOverride".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("override".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.BackupLlmOverride = new global::Soenneker.ElevenLabs.OpenApiClient.Models.BackupLlmOverride();
             }

@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.ElevenLabs.OpenApiClient.Models
 {
     /// <summary>
-    /// &quot;transcript_index: index of the message in the conversation transcriptchunk_text: text of the transcript; transcript messages if very long could have several chunks.chunk_highlights: chunk_text split into matched/unmatched segments for highlighting.    Only populated for keyword/text search, not semantic search.score: similarity score of the message to the search query&quot;
+    /// transcript_index: index of the message in the conversation transcriptchunk_text: text of the transcript; transcript messages if very long could have several chunks.chunk_highlights: chunk_text split into matched/unmatched segments for highlighting.    Only populated for keyword/text search, not semantic search.score: similarity score of the message to the search query
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class MessagesSearchResult : IAdditionalDataHolder, IParsable

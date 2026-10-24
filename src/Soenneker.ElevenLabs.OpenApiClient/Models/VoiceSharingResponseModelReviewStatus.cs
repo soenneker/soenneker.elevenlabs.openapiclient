@@ -19,6 +19,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         #pragma warning disable CS1591
         Declined,
         #pragma warning restore CS1591
+        [EnumMember(Value = "declined_resubmittable")]
+        #pragma warning disable CS1591
+        DeclinedResubmittable,
+        #pragma warning restore CS1591
         [EnumMember(Value = "allowed")]
         #pragma warning disable CS1591
         Allowed,

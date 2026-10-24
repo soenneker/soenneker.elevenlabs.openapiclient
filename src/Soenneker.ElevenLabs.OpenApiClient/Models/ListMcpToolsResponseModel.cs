@@ -25,6 +25,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #endif
         /// <summary>Indicates if the operation was successful.</summary>
         public bool? Success { get; set; }
+        /// <summary>Derived approval states for currently discovered tools. Populated only for persisted MCP servers using per-tool approval; otherwise empty.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.McpToolApprovalStatus>? ToolApprovalStatuses { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.McpToolApprovalStatus> ToolApprovalStatuses { get; set; }
+#endif
         /// <summary>A list of tools available on the MCP server.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -60,6 +68,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             {
                 { "error_message", n => { ErrorMessage = n.GetStringValue(); } },
                 { "success", n => { Success = n.GetBoolValue(); } },
+                { "tool_approval_statuses", n => { ToolApprovalStatuses = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.McpToolApprovalStatus>(global::Soenneker.ElevenLabs.OpenApiClient.Models.McpToolApprovalStatus.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "tools", n => { Tools = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.Tool>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Tool.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
@@ -72,6 +81,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("error_message", ErrorMessage);
             writer.WriteBoolValue("success", Success);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.McpToolApprovalStatus>("tool_approval_statuses", ToolApprovalStatuses);
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.Tool>("tools", Tools);
             writer.WriteAdditionalData(AdditionalData);
         }

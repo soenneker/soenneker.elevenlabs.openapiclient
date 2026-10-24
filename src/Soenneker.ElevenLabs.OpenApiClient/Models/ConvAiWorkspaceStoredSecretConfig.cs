@@ -31,7 +31,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public string SecretId { get; set; }
 #endif
         /// <summary>The type property</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConvAiWorkspaceStoredSecretConfig_type? Type { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.StoredType? Type { get; set; }
         /// <summary>The used_by property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -67,7 +67,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             {
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "secret_id", n => { SecretId = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConvAiWorkspaceStoredSecretConfig_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.StoredType>(); } },
                 { "used_by", n => { UsedBy = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConvAiStoredSecretDependencies>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConvAiStoredSecretDependencies.CreateFromDiscriminatorValue); } },
             };
         }
@@ -80,7 +80,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("secret_id", SecretId);
-            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConvAiWorkspaceStoredSecretConfig_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.StoredType>("type", Type);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConvAiStoredSecretDependencies>("used_by", UsedBy);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -37,9 +37,16 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.ChapterContentBlockResponseModelNodesItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
+            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             var result = new global::Soenneker.ElevenLabs.OpenApiClient.Models.ChapterContentBlockResponseModelNodesItem();
-            result.ChapterContentBlockExtendableNodeResponseModel = new global::Soenneker.ElevenLabs.OpenApiClient.Models.ChapterContentBlockExtendableNodeResponseModel();
-            result.ChapterContentBlockTtsNodeResponseModel = new global::Soenneker.ElevenLabs.OpenApiClient.Models.ChapterContentBlockTtsNodeResponseModel();
+            if("_other".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.ChapterContentBlockExtendableNodeResponseModel = new global::Soenneker.ElevenLabs.OpenApiClient.Models.ChapterContentBlockExtendableNodeResponseModel();
+            }
+            else if("tts_node".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.ChapterContentBlockTtsNodeResponseModel = new global::Soenneker.ElevenLabs.OpenApiClient.Models.ChapterContentBlockTtsNodeResponseModel();
+            }
             return result;
         }
         /// <summary>
@@ -48,9 +55,13 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(ChapterContentBlockExtendableNodeResponseModel != null || ChapterContentBlockTtsNodeResponseModel != null)
+            if(ChapterContentBlockExtendableNodeResponseModel != null)
             {
-                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(ChapterContentBlockExtendableNodeResponseModel, ChapterContentBlockTtsNodeResponseModel);
+                return ChapterContentBlockExtendableNodeResponseModel.GetFieldDeserializers();
+            }
+            else if(ChapterContentBlockTtsNodeResponseModel != null)
+            {
+                return ChapterContentBlockTtsNodeResponseModel.GetFieldDeserializers();
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -61,7 +72,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ChapterContentBlockExtendableNodeResponseModel>(null, ChapterContentBlockExtendableNodeResponseModel, ChapterContentBlockTtsNodeResponseModel);
+            if(ChapterContentBlockExtendableNodeResponseModel != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ChapterContentBlockExtendableNodeResponseModel>(null, ChapterContentBlockExtendableNodeResponseModel);
+            }
+            else if(ChapterContentBlockTtsNodeResponseModel != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ChapterContentBlockTtsNodeResponseModel>(null, ChapterContentBlockTtsNodeResponseModel);
+            }
         }
     }
 }

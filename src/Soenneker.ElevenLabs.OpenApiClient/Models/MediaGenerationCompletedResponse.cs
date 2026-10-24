@@ -40,7 +40,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public string Id { get; set; }
 #endif
         /// <summary>The lifecycle status of the generation.</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.MediaGenerationCompletedResponse_status? Status { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CompletedStatus? Status { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.MediaGenerationCompletedResponse"/> and sets the default values.
         /// </summary>
@@ -69,7 +69,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "content_mime_type", n => { ContentMimeType = n.GetStringValue(); } },
                 { "content_url", n => { ContentUrl = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.MediaGenerationCompletedResponse_status>(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CompletedStatus>(); } },
             };
         }
         /// <summary>
@@ -82,7 +82,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteStringValue("content_mime_type", ContentMimeType);
             writer.WriteStringValue("content_url", ContentUrl);
             writer.WriteStringValue("id", Id);
-            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.MediaGenerationCompletedResponse_status>("status", Status);
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CompletedStatus>("status", Status);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

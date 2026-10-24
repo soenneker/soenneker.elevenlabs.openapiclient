@@ -27,16 +27,16 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The group_by property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyGetWorkspaceUsageV1WorkspaceAnalyticsQueryUsageByProductOverTimePostGroupByAnyOf1Item>? GroupBy { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyGetWorkspaceUsageV1WorkspaceAnalyticsQueryUsageByProductOverTimePostGroupByItem?>? GroupBy { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyGetWorkspaceUsageV1WorkspaceAnalyticsQueryUsageByProductOverTimePostGroupByAnyOf1Item> GroupBy { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyGetWorkspaceUsageV1WorkspaceAnalyticsQueryUsageByProductOverTimePostGroupByItem?> GroupBy { get; set; }
 #endif
-        /// <summary>&quot;Bucket size in seconds. Each row in the response covers this many seconds of the selected time range. For example, pass 3600 for hourly buckets or 86400 for daily buckets. Whether `time_zone` shifts bucket boundaries depends on this value: whole-day multiples (e.g. 86400) align to local midnight; whole-hour multiples up to 24 hours (e.g. 3600, 14400) align to local hour boundaries from midnight; sub-hour values and other sizes remain UTC-anchored regardless of `time_zone`.&quot;</summary>
+        /// <summary>Bucket size in seconds. Each row in the response covers this many seconds of the selected time range. For example, pass 3600 for hourly buckets, 86400 for daily buckets, or 604800 for weekly buckets. Whether `time_zone` shifts bucket boundaries depends on this value: week multiples (e.g. 604800) are calendar weeks that start Monday at local midnight; whole-day multiples that are not whole weeks (e.g. 86400) align to local midnight; whole-hour multiples up to 24 hours (e.g. 3600, 14400) align to local hour boundaries from midnight; sub-hour values and other sizes remain UTC-anchored regardless of `time_zone`.</summary>
         public int? IntervalSeconds { get; set; }
         /// <summary>Start of the time range as a Unix timestamp in milliseconds. Must be at least 2020-01-01.</summary>
         public int? StartTime { get; set; }
-        /// <summary>IANA time zone identifier (e.g. &apos;America/New_York&apos;, &apos;Europe/London&apos;, &apos;UTC&apos;) used to align bucket boundaries for eligible `interval_seconds` values. Whole-day multiples start at local midnight; whole-hour multiples up to 24 hours align to local hour boundaries from midnight. Sub-hour intervals and other bucket sizes remain UTC-anchored regardless of this setting. Defaults to UTC.</summary>
+        /// <summary>IANA time zone identifier (e.g. &apos;America/New_York&apos;, &apos;Europe/London&apos;, &apos;UTC&apos;) used to align bucket boundaries for eligible `interval_seconds` values. Week multiples (e.g. 604800) are calendar weeks that start Monday at local midnight. Whole-day multiples that are not whole weeks start at local midnight; whole-hour multiples up to 24 hours align to local hour boundaries from midnight. Sub-hour intervals and other bucket sizes remain UTC-anchored regardless of this setting. Defaults to UTC.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TimeZone { get; set; }
@@ -73,7 +73,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             {
                 { "end_time", n => { EndTime = n.GetIntValue(); } },
                 { "filters", n => { Filters = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.ColumnFilter>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ColumnFilter.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "group_by", n => { GroupBy = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyGetWorkspaceUsageV1WorkspaceAnalyticsQueryUsageByProductOverTimePostGroupByAnyOf1Item>(global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyGetWorkspaceUsageV1WorkspaceAnalyticsQueryUsageByProductOverTimePostGroupByAnyOf1Item.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "group_by", n => { GroupBy = n.GetCollectionOfEnumValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyGetWorkspaceUsageV1WorkspaceAnalyticsQueryUsageByProductOverTimePostGroupByItem>()?.AsList(); } },
                 { "interval_seconds", n => { IntervalSeconds = n.GetIntValue(); } },
                 { "start_time", n => { StartTime = n.GetIntValue(); } },
                 { "time_zone", n => { TimeZone = n.GetStringValue(); } },
@@ -88,7 +88,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("end_time", EndTime);
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.ColumnFilter>("filters", Filters);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyGetWorkspaceUsageV1WorkspaceAnalyticsQueryUsageByProductOverTimePostGroupByAnyOf1Item>("group_by", GroupBy);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyGetWorkspaceUsageV1WorkspaceAnalyticsQueryUsageByProductOverTimePostGroupByItem>("group_by", GroupBy);
             writer.WriteIntValue("interval_seconds", IntervalSeconds);
             writer.WriteIntValue("start_time", StartTime);
             writer.WriteStringValue("time_zone", TimeZone);

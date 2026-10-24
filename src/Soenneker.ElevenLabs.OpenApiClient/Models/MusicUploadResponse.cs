@@ -31,6 +31,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public string SongId { get; set; }
 #endif
+        /// <summary>A low-resolution waveform of the uploaded song, for showing a preview of it. Holds 4 values per second of audio, from -1000 to 1000. Stereo is mixed down to a single channel. Only present if `with_waveform_visual` was True in the request body.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<int?>? WaveformVisual { get; set; }
+#nullable restore
+#else
+        public List<int?> WaveformVisual { get; set; }
+#endif
         /// <summary>Word-level timestamps transcribed from the uploaded song. Only present if `with_timestamps` was True in the request body</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -66,6 +74,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             {
                 { "composition_plan", n => { CompositionPlan = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.MusicUploadResponseCompositionPlan>(global::Soenneker.ElevenLabs.OpenApiClient.Models.MusicUploadResponseCompositionPlan.CreateFromDiscriminatorValue); } },
                 { "song_id", n => { SongId = n.GetStringValue(); } },
+                { "waveform_visual", n => { WaveformVisual = n.GetCollectionOfPrimitiveValues<int?>()?.AsList(); } },
                 { "words_timestamps", n => { WordsTimestamps = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.WordTimestamp>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WordTimestamp.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
@@ -78,6 +87,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.MusicUploadResponseCompositionPlan>("composition_plan", CompositionPlan);
             writer.WriteStringValue("song_id", SongId);
+            writer.WriteCollectionOfPrimitiveValues<int?>("waveform_visual", WaveformVisual);
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.WordTimestamp>("words_timestamps", WordsTimestamps);
             writer.WriteAdditionalData(AdditionalData);
         }

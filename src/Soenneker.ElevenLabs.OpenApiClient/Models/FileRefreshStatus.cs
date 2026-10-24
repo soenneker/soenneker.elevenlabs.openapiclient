@@ -39,6 +39,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public FileRefreshStatus()
         {
             AdditionalData = new Dictionary<string, object>();
+            Status = global::Soenneker.ElevenLabs.OpenApiClient.Models.CrawlStatus.Queued;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

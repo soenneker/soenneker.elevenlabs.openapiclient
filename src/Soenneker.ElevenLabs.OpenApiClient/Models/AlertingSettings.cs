@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.ElevenLabs.OpenApiClient.Models
 {
     /// <summary>
-    /// &quot;Alerting configuration used at both per-agent and per-workspace level.All fields are optional overrides; the cascade resolver fills in defaultswhen they are unset. Notifiers stack and dedupe (by webhook_id) across theworkspace and agent layers rather than overriding each other.Cascade order for per-monitor threshold and auto-resolve: agent → workspace →system default.&quot;
+    /// Alerting configuration used at both per-agent and per-workspace level.Cascade order for per-monitor threshold and auto-resolve: agent → workspace →system default.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AlertingSettings : IAdditionalDataHolder, IParsable
@@ -25,13 +25,13 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.AlertingSettingsMonitorConfigsProperty MonitorConfigs { get; set; }
 #endif
-        /// <summary>Delivery channels for alert lifecycle notifications. Stacked and deduped by webhook_id with other layers.</summary>
+        /// <summary>Delivery channels for alert lifecycle notifications. Stacked with other layers and deduped by ``webhook_id``, PagerDuty ``connection_id``, or Slack ``(connection_id, channel_id)``.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.AlertingWebhookNotifier>? Notifiers { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.AlertingSettingsNotifiersItem>? Notifiers { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.AlertingWebhookNotifier> Notifiers { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.AlertingSettingsNotifiersItem> Notifiers { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.AlertingSettings"/> and sets the default values.
@@ -60,7 +60,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             {
                 { "auto_resolve_after_inactive_minutes", n => { AutoResolveAfterInactiveMinutes = n.GetIntValue(); } },
                 { "monitor_configs", n => { MonitorConfigs = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AlertingSettingsMonitorConfigsProperty>(global::Soenneker.ElevenLabs.OpenApiClient.Models.AlertingSettingsMonitorConfigsProperty.CreateFromDiscriminatorValue); } },
-                { "notifiers", n => { Notifiers = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.AlertingWebhookNotifier>(global::Soenneker.ElevenLabs.OpenApiClient.Models.AlertingWebhookNotifier.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "notifiers", n => { Notifiers = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.AlertingSettingsNotifiersItem>(global::Soenneker.ElevenLabs.OpenApiClient.Models.AlertingSettingsNotifiersItem.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -72,7 +72,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("auto_resolve_after_inactive_minutes", AutoResolveAfterInactiveMinutes);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AlertingSettingsMonitorConfigsProperty>("monitor_configs", MonitorConfigs);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.AlertingWebhookNotifier>("notifiers", Notifiers);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.AlertingSettingsNotifiersItem>("notifiers", Notifiers);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

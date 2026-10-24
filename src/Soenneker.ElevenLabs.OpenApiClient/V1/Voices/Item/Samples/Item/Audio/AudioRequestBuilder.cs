@@ -72,7 +72,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Voices.Item.Samples.Item.Audio
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
-            requestInfo.Headers.TryAdd("Accept", "application/json");
+            requestInfo.Headers.TryAdd("Accept", "audio/*, application/json");
             return requestInfo;
         }
         /// <summary>

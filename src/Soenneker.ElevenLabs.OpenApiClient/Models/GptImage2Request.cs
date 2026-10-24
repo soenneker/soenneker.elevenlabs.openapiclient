@@ -32,7 +32,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.ImageReference Mask { get; set; }
 #endif
         /// <summary>The model to use for the generation.</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GptImage2Request_model_id? ModelId { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GptImage2ModelId? ModelId { get; set; }
         /// <summary>A text description of the image to generate.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -74,7 +74,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "aspect_ratio", n => { AspectRatio = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GptImage2RequestAspectRatio>(); } },
                 { "images", n => { Images = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.ImageReference>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ImageReference.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "mask", n => { Mask = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ImageReference>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ImageReference.CreateFromDiscriminatorValue); } },
-                { "model_id", n => { ModelId = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GptImage2Request_model_id>(); } },
+                { "model_id", n => { ModelId = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GptImage2ModelId>(); } },
                 { "prompt", n => { Prompt = n.GetStringValue(); } },
                 { "quality", n => { Quality = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GptImage2RequestQuality>(); } },
                 { "resolution", n => { Resolution = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GptImage2RequestResolution>(); } },
@@ -91,7 +91,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GptImage2RequestAspectRatio>("aspect_ratio", AspectRatio);
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.ImageReference>("images", Images);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ImageReference>("mask", Mask);
-            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GptImage2Request_model_id>("model_id", ModelId);
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GptImage2ModelId>("model_id", ModelId);
             writer.WriteStringValue("prompt", Prompt);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GptImage2RequestQuality>("quality", Quality);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GptImage2RequestResolution>("resolution", Resolution);

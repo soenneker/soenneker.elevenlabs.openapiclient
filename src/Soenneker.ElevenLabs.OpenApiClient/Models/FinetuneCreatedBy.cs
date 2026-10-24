@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.ElevenLabs.OpenApiClient.Models
 {
+    /// <summary>Who created the finetune: `self`, `workspace`, or `elevenlabs`.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum FinetuneCreatedBy
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "self")]
         #pragma warning disable CS1591

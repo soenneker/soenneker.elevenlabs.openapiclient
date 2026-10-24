@@ -17,13 +17,17 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>List of IP addresses or CIDR ranges allowed to use this API key. Each entry may be a CIDR range (e.g. &apos;10.0.0.0/24&apos;) or a bare IP address (normalized to /32 or /128). On create, omit or pass null to allow all IPs. On update, omit to leave the allowlist unchanged, or pass &quot;clear&quot; to remove it.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateServiceAccountApiKeyV1ServiceAccountsServiceAccountUserIdApiKeysPostAllowedIps? AllowedIps { get; set; }
+        public List<string>? AllowedIps { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateServiceAccountApiKeyV1ServiceAccountsServiceAccountUserIdApiKeysPostAllowedIps AllowedIps { get; set; }
+        public List<string> AllowedIps { get; set; }
 #endif
         /// <summary>The character limit of the XI API key. If provided this will limit the usage of this api key to n characters per month where n is the chosen value. Requests that incur charges will fail after reaching this monthly limit.</summary>
         public int? CharacterLimit { get; set; }
+        /// <summary>Maximum concurrent dubbing requests for this API key. Only available for enterprise customers.</summary>
+        public int? DubbingConcurrencyLimit { get; set; }
+        /// <summary>Maximum concurrent music generation requests for this API key. Only available for enterprise customers.</summary>
+        public int? MusicConcurrencyLimit { get; set; }
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -42,6 +46,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #endif
         /// <summary>Whether the holder of this key may disable it via the self-disable endpoint. On create, omit or pass null to use the workspace&apos;s default (enabled for non-Enterprise plans, disabled for Enterprise plans). On update, omit to leave it unchanged, or pass &quot;clear&quot; to reset it to the workspace default. Only honored for workspaces with self-disable access enabled.</summary>
         public bool? ThirdPartyDisableAllowed { get; set; }
+        /// <summary>Maximum concurrent text-to-speech/speech-to-speech requests for this API key. Only available for enterprise customers.</summary>
+        public int? TtsConcurrencyLimit { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateServiceAccountApiKeyV1ServiceAccountsServiceAccountUserIdApiKeysPost"/> and sets the default values.
         /// </summary>
@@ -67,11 +73,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "allowed_ips", n => { AllowedIps = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateServiceAccountApiKeyV1ServiceAccountsServiceAccountUserIdApiKeysPostAllowedIps>(global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateServiceAccountApiKeyV1ServiceAccountsServiceAccountUserIdApiKeysPostAllowedIps.CreateFromDiscriminatorValue); } },
+                { "allowed_ips", n => { AllowedIps = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "character_limit", n => { CharacterLimit = n.GetIntValue(); } },
+                { "dubbing_concurrency_limit", n => { DubbingConcurrencyLimit = n.GetIntValue(); } },
+                { "music_concurrency_limit", n => { MusicConcurrencyLimit = n.GetIntValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "permissions", n => { Permissions = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateServiceAccountApiKeyV1ServiceAccountsServiceAccountUserIdApiKeysPostPermissions>(global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateServiceAccountApiKeyV1ServiceAccountsServiceAccountUserIdApiKeysPostPermissions.CreateFromDiscriminatorValue); } },
                 { "third_party_disable_allowed", n => { ThirdPartyDisableAllowed = n.GetBoolValue(); } },
+                { "tts_concurrency_limit", n => { TtsConcurrencyLimit = n.GetIntValue(); } },
             };
         }
         /// <summary>
@@ -81,11 +90,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateServiceAccountApiKeyV1ServiceAccountsServiceAccountUserIdApiKeysPostAllowedIps>("allowed_ips", AllowedIps);
+            writer.WriteCollectionOfPrimitiveValues<string>("allowed_ips", AllowedIps);
             writer.WriteIntValue("character_limit", CharacterLimit);
+            writer.WriteIntValue("dubbing_concurrency_limit", DubbingConcurrencyLimit);
+            writer.WriteIntValue("music_concurrency_limit", MusicConcurrencyLimit);
             writer.WriteStringValue("name", Name);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateServiceAccountApiKeyV1ServiceAccountsServiceAccountUserIdApiKeysPostPermissions>("permissions", Permissions);
             writer.WriteBoolValue("third_party_disable_allowed", ThirdPartyDisableAllowed);
+            writer.WriteIntValue("tts_concurrency_limit", TtsConcurrencyLimit);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

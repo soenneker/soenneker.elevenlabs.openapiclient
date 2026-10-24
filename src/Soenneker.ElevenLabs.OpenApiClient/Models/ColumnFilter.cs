@@ -14,6 +14,24 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The column property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Column { get; set; }
+#nullable restore
+#else
+        public string Column { get; set; }
+#endif
+        /// <summary>The operation property</summary>
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ColumnFilterOperation? Operation { get; set; }
+        /// <summary>The values property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? Values { get; set; }
+#nullable restore
+#else
+        public List<string> Values { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ColumnFilter"/> and sets the default values.
         /// </summary>
@@ -39,6 +57,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "column", n => { Column = n.GetStringValue(); } },
+                { "operation", n => { Operation = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ColumnFilterOperation>(); } },
+                { "values", n => { Values = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
         }
         /// <summary>
@@ -48,6 +69,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("column", Column);
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ColumnFilterOperation>("operation", Operation);
+            writer.WriteCollectionOfPrimitiveValues<string>("values", Values);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

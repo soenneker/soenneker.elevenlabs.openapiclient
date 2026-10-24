@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.ElevenLabs.OpenApiClient.Models
 {
     /// <summary>
-    /// &quot;Request body for the ByteDance Seedance 2.5 video model.Diverges from the Seedance 2.0 public shape: 480p/720p only, durations upto 30s, larger reference caps, audio-only input allowed, and no ``seed``(Ark tolerates it but does not honour it).&quot;
+    /// Request body for the ByteDance Seedance 2.5 video model.Diverges from the Seedance 2.0 public shape: no 4K, durations up to 30s,larger reference caps, audio-only input allowed, and no ``seed`` (Arktolerates it but does not honour it).ByteDance models are disabled by default and require explicit approvalbefore use. Contact support to request access.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class BytedanceSeedance25Request : IParsable
@@ -44,7 +44,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ImageReference> Images { get; set; }
 #endif
         /// <summary>The model to use for the generation.</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BytedanceSeedance25Request_model_id? ModelId { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BytedanceSeedanceV25ModelId? ModelId { get; set; }
         /// <summary>A text description of the video to generate.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -111,7 +111,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "end_frame", n => { EndFrame = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ImageReference>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ImageReference.CreateFromDiscriminatorValue); } },
                 { "generate_audio", n => { GenerateAudio = n.GetBoolValue(); } },
                 { "images", n => { Images = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.ImageReference>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ImageReference.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "model_id", n => { ModelId = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BytedanceSeedance25Request_model_id>(); } },
+                { "model_id", n => { ModelId = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BytedanceSeedanceV25ModelId>(); } },
                 { "prompt", n => { Prompt = n.GetStringValue(); } },
                 { "resolution", n => { Resolution = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BytedanceSeedance25RequestResolution>(); } },
                 { "start_frame", n => { StartFrame = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ImageReference>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ImageReference.CreateFromDiscriminatorValue); } },
@@ -132,7 +132,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ImageReference>("end_frame", EndFrame);
             writer.WriteBoolValue("generate_audio", GenerateAudio);
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.ImageReference>("images", Images);
-            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BytedanceSeedance25Request_model_id>("model_id", ModelId);
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BytedanceSeedanceV25ModelId>("model_id", ModelId);
             writer.WriteStringValue("prompt", Prompt);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BytedanceSeedance25RequestResolution>("resolution", Resolution);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ImageReference>("start_frame", StartFrame);

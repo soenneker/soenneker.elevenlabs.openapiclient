@@ -37,7 +37,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Voices.Item.Settings.Edit
         /// Edit your settings for a specific voice. &quot;similarity_boost&quot; corresponds to &quot;Clarity + Similarity Enhancement&quot; in the web app and &quot;stability&quot; corresponds to &quot;Stability&quot; slider in the web app.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.EditVoiceSettingsResponseModel"/></returns>
-        /// <param name="body">The request body</param>
+        /// <param name="body">The settings for a specific voice.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.HttpValidationError">When receiving a 422 status code</exception>
@@ -62,7 +62,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Voices.Item.Settings.Edit
         /// Edit your settings for a specific voice. &quot;similarity_boost&quot; corresponds to &quot;Clarity + Similarity Enhancement&quot; in the web app and &quot;stability&quot; corresponds to &quot;Stability&quot; slider in the web app.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">The request body</param>
+        /// <param name="body">The settings for a specific voice.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

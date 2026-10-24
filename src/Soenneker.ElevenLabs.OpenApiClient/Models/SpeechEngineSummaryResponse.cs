@@ -12,7 +12,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     public partial class SpeechEngineSummaryResponse : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The access_info property</summary>
+        /// <summary>The access information of the speech engine for the user</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceAccessInfo? AccessInfo { get; set; }
@@ -48,6 +48,16 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public List<string> Tags { get; set; }
 #endif
+        /// <summary>Last update time in Unix seconds</summary>
+        public int? UpdatedAtUnixSecs { get; set; }
+        /// <summary>Voice ID assigned to this speech engine</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? VoiceId { get; set; }
+#nullable restore
+#else
+        public string VoiceId { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechEngineSummaryResponse"/> and sets the default values.
         /// </summary>
@@ -78,6 +88,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "speech_engine_id", n => { SpeechEngineId = n.GetStringValue(); } },
                 { "tags", n => { Tags = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "updated_at_unix_secs", n => { UpdatedAtUnixSecs = n.GetIntValue(); } },
+                { "voice_id", n => { VoiceId = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -92,6 +104,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("speech_engine_id", SpeechEngineId);
             writer.WriteCollectionOfPrimitiveValues<string>("tags", Tags);
+            writer.WriteIntValue("updated_at_unix_secs", UpdatedAtUnixSecs);
+            writer.WriteStringValue("voice_id", VoiceId);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

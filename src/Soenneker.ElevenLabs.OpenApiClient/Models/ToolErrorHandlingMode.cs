@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.ElevenLabs.OpenApiClient.Models
 {
-    /// <summary>Controls how tool errors are processed before being shared with the agent.</summary>
+    /// <summary>Controls how tool errors are processed before being shared with the agent. &apos;auto&apos; determines handling based on tool type (summarized for native integrations, hide for others), &apos;summarized&apos; sends an LLM-generated summary, &apos;passthrough&apos; sends the raw error, &apos;hide&apos; does not share the error with the agent.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum ToolErrorHandlingMode
     {

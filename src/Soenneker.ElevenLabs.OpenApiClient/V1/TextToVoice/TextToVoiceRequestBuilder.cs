@@ -4,6 +4,7 @@ using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.ElevenLabs.OpenApiClient.Models;
+using Soenneker.ElevenLabs.OpenApiClient.V1.TextToVoice.CreatePreviews;
 using Soenneker.ElevenLabs.OpenApiClient.V1.TextToVoice.Design;
 using Soenneker.ElevenLabs.OpenApiClient.V1.TextToVoice.Item;
 using System.Collections.Generic;
@@ -19,21 +20,26 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.TextToVoice
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class TextToVoiceRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The createPreviews property</summary>
+        public global::Soenneker.ElevenLabs.OpenApiClient.V1.TextToVoice.CreatePreviews.CreatePreviewsRequestBuilder CreatePreviews
+        {
+            get => new global::Soenneker.ElevenLabs.OpenApiClient.V1.TextToVoice.CreatePreviews.CreatePreviewsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The design property</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.V1.TextToVoice.Design.DesignRequestBuilder Design
         {
             get => new global::Soenneker.ElevenLabs.OpenApiClient.V1.TextToVoice.Design.DesignRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the Soenneker.ElevenLabs.OpenApiClient.v1.textToVoice.item collection</summary>
-        /// <param name="position">The generated_voice_id to stream.</param>
-        /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.V1.TextToVoice.Item.GeneratedVoiceItemRequestBuilder"/></returns>
-        public global::Soenneker.ElevenLabs.OpenApiClient.V1.TextToVoice.Item.GeneratedVoiceItemRequestBuilder this[string position]
+        /// <param name="position">Voice ID to be used, you can use https://api.elevenlabs.io/v1/voices to list all the available voices.</param>
+        /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.V1.TextToVoice.Item.WithVoiceItemRequestBuilder"/></returns>
+        public global::Soenneker.ElevenLabs.OpenApiClient.V1.TextToVoice.Item.WithVoiceItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("generatedVoice%2Did", position);
-                return new global::Soenneker.ElevenLabs.OpenApiClient.V1.TextToVoice.Item.GeneratedVoiceItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("voiceId", position);
+                return new global::Soenneker.ElevenLabs.OpenApiClient.V1.TextToVoice.Item.WithVoiceItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>

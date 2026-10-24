@@ -25,19 +25,13 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The group ids of the user</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyInviteUserV1WorkspaceInvitesAddPostGroupIds? GroupIds { get; set; }
+        public List<string>? GroupIds { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyInviteUserV1WorkspaceInvitesAddPostGroupIds GroupIds { get; set; }
+        public List<string> GroupIds { get; set; }
 #endif
         /// <summary>The seat type of the user</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SeatTypeWrapper2? SeatType { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SeatTypeWrapper2 SeatType { get; set; }
-#endif
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SeatType? SeatType { get; set; }
         /// <summary>Monthly credit usage limit for the invitee. Omit or set to null for no custom cap.</summary>
         public int? UsageLimit { get; set; }
         /// <summary>The workspace permission of the user. This is deprecated, use `seat_type` instead.</summary>
@@ -75,8 +69,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "email", n => { Email = n.GetStringValue(); } },
-                { "group_ids", n => { GroupIds = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyInviteUserV1WorkspaceInvitesAddPostGroupIds>(global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyInviteUserV1WorkspaceInvitesAddPostGroupIds.CreateFromDiscriminatorValue); } },
-                { "seat_type", n => { SeatType = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SeatTypeWrapper2>(global::Soenneker.ElevenLabs.OpenApiClient.Models.SeatTypeWrapper2.CreateFromDiscriminatorValue); } },
+                { "group_ids", n => { GroupIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "seat_type", n => { SeatType = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SeatType>(); } },
                 { "usage_limit", n => { UsageLimit = n.GetIntValue(); } },
                 { "workspace_permission", n => { WorkspacePermission = n.GetStringValue(); } },
             };
@@ -89,8 +83,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("email", Email);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyInviteUserV1WorkspaceInvitesAddPostGroupIds>("group_ids", GroupIds);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SeatTypeWrapper2>("seat_type", SeatType);
+            writer.WriteCollectionOfPrimitiveValues<string>("group_ids", GroupIds);
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SeatType>("seat_type", SeatType);
             writer.WriteIntValue("usage_limit", UsageLimit);
             writer.WriteStringValue("workspace_permission", WorkspacePermission);
             writer.WriteAdditionalData(AdditionalData);

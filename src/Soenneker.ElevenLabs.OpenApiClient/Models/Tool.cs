@@ -58,10 +58,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The meta property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolMeta? Meta { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolMetaProperty? Meta { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolMeta Meta { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolMetaProperty Meta { get; set; }
 #endif
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -74,10 +74,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The outputSchema property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolOutputSchema? OutputSchema { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolOutputSchemaProperty? OutputSchema { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolOutputSchema OutputSchema { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolOutputSchemaProperty OutputSchema { get; set; }
 #endif
         /// <summary>The title property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -117,9 +117,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "execution", n => { Execution = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolExecution>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolExecution.CreateFromDiscriminatorValue); } },
                 { "icons", n => { Icons = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.Icon>(global::Soenneker.ElevenLabs.OpenApiClient.Models.Icon.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "inputSchema", n => { InputSchema = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolInputSchemaProperty>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolInputSchemaProperty.CreateFromDiscriminatorValue); } },
-                { "_meta", n => { Meta = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolMeta>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolMeta.CreateFromDiscriminatorValue); } },
+                { "_meta", n => { Meta = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolMetaProperty>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolMetaProperty.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "outputSchema", n => { OutputSchema = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolOutputSchema>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolOutputSchema.CreateFromDiscriminatorValue); } },
+                { "outputSchema", n => { OutputSchema = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolOutputSchemaProperty>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolOutputSchemaProperty.CreateFromDiscriminatorValue); } },
                 { "title", n => { Title = n.GetStringValue(); } },
             };
         }
@@ -135,9 +135,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolExecution>("execution", Execution);
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.Icon>("icons", Icons);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolInputSchemaProperty>("inputSchema", InputSchema);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolMeta>("_meta", Meta);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolMetaProperty>("_meta", Meta);
             writer.WriteStringValue("name", Name);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolOutputSchema>("outputSchema", OutputSchema);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolOutputSchemaProperty>("outputSchema", OutputSchema);
             writer.WriteStringValue("title", Title);
             writer.WriteAdditionalData(AdditionalData);
         }

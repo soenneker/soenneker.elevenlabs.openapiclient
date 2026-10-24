@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Assets;
+using Soenneker.ElevenLabs.OpenApiClient.V1.AudioEffects;
 using Soenneker.ElevenLabs.OpenApiClient.V1.AudioIsolation;
 using Soenneker.ElevenLabs.OpenApiClient.V1.AudioNative;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Convai;
@@ -20,13 +21,14 @@ using Soenneker.ElevenLabs.OpenApiClient.V1.SimilarVoices;
 using Soenneker.ElevenLabs.OpenApiClient.V1.SingleUseToken;
 using Soenneker.ElevenLabs.OpenApiClient.V1.SoundGeneration;
 using Soenneker.ElevenLabs.OpenApiClient.V1.SpeechEngine;
-using Soenneker.ElevenLabs.OpenApiClient.V1.SpeechToSpeech;
 using Soenneker.ElevenLabs.OpenApiClient.V1.SpeechToText;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Studio;
 using Soenneker.ElevenLabs.OpenApiClient.V1.TextToDialogue;
 using Soenneker.ElevenLabs.OpenApiClient.V1.TextToSpeech;
 using Soenneker.ElevenLabs.OpenApiClient.V1.TextToVoice;
+using Soenneker.ElevenLabs.OpenApiClient.V1.Usage;
 using Soenneker.ElevenLabs.OpenApiClient.V1.User;
+using Soenneker.ElevenLabs.OpenApiClient.V1.VoiceChanger;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Voices;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Workspace;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Workspaces;
@@ -46,6 +48,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1
         public global::Soenneker.ElevenLabs.OpenApiClient.V1.Assets.AssetsRequestBuilder Assets
         {
             get => new global::Soenneker.ElevenLabs.OpenApiClient.V1.Assets.AssetsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The audioEffects property</summary>
+        public global::Soenneker.ElevenLabs.OpenApiClient.V1.AudioEffects.AudioEffectsRequestBuilder AudioEffects
+        {
+            get => new global::Soenneker.ElevenLabs.OpenApiClient.V1.AudioEffects.AudioEffectsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The audioIsolation property</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.V1.AudioIsolation.AudioIsolationRequestBuilder AudioIsolation
@@ -132,11 +139,6 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1
         {
             get => new global::Soenneker.ElevenLabs.OpenApiClient.V1.SpeechEngine.SpeechEngineRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The speechToSpeech property</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.V1.SpeechToSpeech.SpeechToSpeechRequestBuilder SpeechToSpeech
-        {
-            get => new global::Soenneker.ElevenLabs.OpenApiClient.V1.SpeechToSpeech.SpeechToSpeechRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>The speechToText property</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.V1.SpeechToText.SpeechToTextRequestBuilder SpeechToText
         {
@@ -162,10 +164,20 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1
         {
             get => new global::Soenneker.ElevenLabs.OpenApiClient.V1.TextToVoice.TextToVoiceRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The usage property</summary>
+        public global::Soenneker.ElevenLabs.OpenApiClient.V1.Usage.UsageRequestBuilder Usage
+        {
+            get => new global::Soenneker.ElevenLabs.OpenApiClient.V1.Usage.UsageRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The user property</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.V1.User.UserRequestBuilder User
         {
             get => new global::Soenneker.ElevenLabs.OpenApiClient.V1.User.UserRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The voiceChanger property</summary>
+        public global::Soenneker.ElevenLabs.OpenApiClient.V1.VoiceChanger.VoiceChangerRequestBuilder VoiceChanger
+        {
+            get => new global::Soenneker.ElevenLabs.OpenApiClient.V1.VoiceChanger.VoiceChangerRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The voices property</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.V1.Voices.VoicesRequestBuilder Voices

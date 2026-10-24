@@ -17,7 +17,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>End time of the segment, in seconds.</summary>
         public double? EndS { get; set; }
-        /// <summary>The caller-supplied external id for this segment, if one was provided.</summary>
+        /// <summary>The caller-supplied external ID for this segment, if one was provided.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ExternalId { get; set; }
@@ -25,7 +25,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public string ExternalId { get; set; }
 #endif
-        /// <summary>Stable identifier of the segment.</summary>
+        /// <summary>Stable identifier of the segment, used to address it in edit requests.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }

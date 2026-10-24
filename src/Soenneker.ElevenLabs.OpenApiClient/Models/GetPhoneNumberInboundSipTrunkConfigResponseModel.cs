@@ -25,10 +25,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>List of phone numbers that are allowed to use the trunk.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPhoneNumberInboundSipTrunkConfigResponseModelAllowedNumbers? AllowedNumbers { get; set; }
+        public List<string>? AllowedNumbers { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPhoneNumberInboundSipTrunkConfigResponseModelAllowedNumbers AllowedNumbers { get; set; }
+        public List<string> AllowedNumbers { get; set; }
 #endif
         /// <summary>Map of dynamic variable name to header name for attributes_to_headers</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -45,10 +45,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Domains of remote SIP servers used to validate TLS certificates.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPhoneNumberInboundSipTrunkConfigResponseModelRemoteDomains? RemoteDomains { get; set; }
+        public List<string>? RemoteDomains { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPhoneNumberInboundSipTrunkConfigResponseModelRemoteDomains RemoteDomains { get; set; }
+        public List<string> RemoteDomains { get; set; }
 #endif
         /// <summary>SIP trunk username (if available)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -84,11 +84,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "allowed_addresses", n => { AllowedAddresses = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "allowed_numbers", n => { AllowedNumbers = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPhoneNumberInboundSipTrunkConfigResponseModelAllowedNumbers>(global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPhoneNumberInboundSipTrunkConfigResponseModelAllowedNumbers.CreateFromDiscriminatorValue); } },
+                { "allowed_numbers", n => { AllowedNumbers = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "attributes_to_headers", n => { AttributesToHeaders = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPhoneNumberInboundSipTrunkConfigResponseModelAttributesToHeadersProperty>(global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPhoneNumberInboundSipTrunkConfigResponseModelAttributesToHeadersProperty.CreateFromDiscriminatorValue); } },
                 { "has_auth_credentials", n => { HasAuthCredentials = n.GetBoolValue(); } },
                 { "media_encryption", n => { MediaEncryption = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SipMediaEncryptionEnum>(); } },
-                { "remote_domains", n => { RemoteDomains = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPhoneNumberInboundSipTrunkConfigResponseModelRemoteDomains>(global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPhoneNumberInboundSipTrunkConfigResponseModelRemoteDomains.CreateFromDiscriminatorValue); } },
+                { "remote_domains", n => { RemoteDomains = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "username", n => { Username = n.GetStringValue(); } },
             };
         }
@@ -100,11 +100,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<string>("allowed_addresses", AllowedAddresses);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPhoneNumberInboundSipTrunkConfigResponseModelAllowedNumbers>("allowed_numbers", AllowedNumbers);
+            writer.WriteCollectionOfPrimitiveValues<string>("allowed_numbers", AllowedNumbers);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPhoneNumberInboundSipTrunkConfigResponseModelAttributesToHeadersProperty>("attributes_to_headers", AttributesToHeaders);
             writer.WriteBoolValue("has_auth_credentials", HasAuthCredentials);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SipMediaEncryptionEnum>("media_encryption", MediaEncryption);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPhoneNumberInboundSipTrunkConfigResponseModelRemoteDomains>("remote_domains", RemoteDomains);
+            writer.WriteCollectionOfPrimitiveValues<string>("remote_domains", RemoteDomains);
             writer.WriteStringValue("username", Username);
             writer.WriteAdditionalData(AdditionalData);
         }

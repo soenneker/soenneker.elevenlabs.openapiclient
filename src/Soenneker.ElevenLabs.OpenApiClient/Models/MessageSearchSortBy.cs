@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.ElevenLabs.OpenApiClient.Models
 {
+    /// <summary>Sort order for search results. &apos;search_score&apos; sorts by search score, &apos;created_at&apos; sorts by conversation start time.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum MessageSearchSortBy
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "search_score")]
         #pragma warning disable CS1591

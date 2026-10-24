@@ -37,9 +37,16 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreatePodcastV1StudioPodcastsPostMode CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
+            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             var result = new global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreatePodcastV1StudioPodcastsPostMode();
-            result.PodcastBulletinMode = new global::Soenneker.ElevenLabs.OpenApiClient.Models.PodcastBulletinMode();
-            result.PodcastConversationMode = new global::Soenneker.ElevenLabs.OpenApiClient.Models.PodcastConversationMode();
+            if("bulletin".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.PodcastBulletinMode = new global::Soenneker.ElevenLabs.OpenApiClient.Models.PodcastBulletinMode();
+            }
+            else if("conversation".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.PodcastConversationMode = new global::Soenneker.ElevenLabs.OpenApiClient.Models.PodcastConversationMode();
+            }
             return result;
         }
         /// <summary>
@@ -48,9 +55,13 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(PodcastBulletinMode != null || PodcastConversationMode != null)
+            if(PodcastBulletinMode != null)
             {
-                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(PodcastBulletinMode, PodcastConversationMode);
+                return PodcastBulletinMode.GetFieldDeserializers();
+            }
+            else if(PodcastConversationMode != null)
+            {
+                return PodcastConversationMode.GetFieldDeserializers();
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -61,7 +72,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PodcastBulletinMode>(null, PodcastBulletinMode, PodcastConversationMode);
+            if(PodcastBulletinMode != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PodcastBulletinMode>(null, PodcastBulletinMode);
+            }
+            else if(PodcastConversationMode != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PodcastConversationMode>(null, PodcastConversationMode);
+            }
         }
     }
 }

@@ -14,8 +14,18 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Whether to automatically discover and enqueue additional pages found while crawling.</summary>
+        public bool? AutoDiscover { get; set; }
         /// <summary>The created_at property</summary>
         public int? CreatedAt { get; set; }
+        /// <summary>URLs matching any of these patterns are skipped, even if they match `pattern`.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? ExcludePatterns { get; set; }
+#nullable restore
+#else
+        public List<string> ExcludePatterns { get; set; }
+#endif
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -24,8 +34,6 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>The max_depth property</summary>
-        public int? MaxDepth { get; set; }
         /// <summary>The max_pages property</summary>
         public int? MaxPages { get; set; }
         /// <summary>The pages_failed property</summary>
@@ -72,10 +80,13 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public GetCrawlJobResponseModel()
         {
             AdditionalData = new Dictionary<string, object>();
+            AutoDiscover = false;
             PagesFailed = 0;
             PagesIdentified = 0;
             PagesScraped = 0;
             PagesSkipped = 0;
+            Status = global::Soenneker.ElevenLabs.OpenApiClient.Models.CrawlStatus.Queued;
+            Type = global::Soenneker.ElevenLabs.OpenApiClient.Models.CrawlType.Discovery;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -95,9 +106,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "auto_discover", n => { AutoDiscover = n.GetBoolValue(); } },
                 { "created_at", n => { CreatedAt = n.GetIntValue(); } },
+                { "exclude_patterns", n => { ExcludePatterns = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "max_depth", n => { MaxDepth = n.GetIntValue(); } },
                 { "max_pages", n => { MaxPages = n.GetIntValue(); } },
                 { "pages_failed", n => { PagesFailed = n.GetIntValue(); } },
                 { "pages_identified", n => { PagesIdentified = n.GetIntValue(); } },
@@ -118,9 +130,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteBoolValue("auto_discover", AutoDiscover);
             writer.WriteIntValue("created_at", CreatedAt);
+            writer.WriteCollectionOfPrimitiveValues<string>("exclude_patterns", ExcludePatterns);
             writer.WriteStringValue("id", Id);
-            writer.WriteIntValue("max_depth", MaxDepth);
             writer.WriteIntValue("max_pages", MaxPages);
             writer.WriteIntValue("pages_failed", PagesFailed);
             writer.WriteIntValue("pages_identified", PagesIdentified);

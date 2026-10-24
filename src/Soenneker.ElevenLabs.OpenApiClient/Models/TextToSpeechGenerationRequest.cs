@@ -47,15 +47,15 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("model_id")?.GetStringValue();
             var result = new global::Soenneker.ElevenLabs.OpenApiClient.Models.TextToSpeechGenerationRequest();
-            if("ElevenFlashV25Request".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("eleven_flash_v2_5".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.ElevenFlashV25Request = new global::Soenneker.ElevenLabs.OpenApiClient.Models.ElevenFlashV25Request();
             }
-            else if("ElevenMultilingualV2Request".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("eleven_multilingual_v2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.ElevenMultilingualV2Request = new global::Soenneker.ElevenLabs.OpenApiClient.Models.ElevenMultilingualV2Request();
             }
-            else if("ElevenV3Request".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("eleven_v3".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.ElevenV3Request = new global::Soenneker.ElevenLabs.OpenApiClient.Models.ElevenV3Request();
             }

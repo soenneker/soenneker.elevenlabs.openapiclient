@@ -12,8 +12,48 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     public partial class VerifiedVoiceLanguageResponseModel : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>The voice&apos;s accent, if applicable.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Accent { get; set; }
+#nullable restore
+#else
+        public string Accent { get; set; }
+#endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The language of the voice.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Language { get; set; }
+#nullable restore
+#else
+        public string Language { get; set; }
+#endif
+        /// <summary>The voice&apos;s locale, if applicable.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Locale { get; set; }
+#nullable restore
+#else
+        public string Locale { get; set; }
+#endif
+        /// <summary>The voice&apos;s model ID.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ModelId { get; set; }
+#nullable restore
+#else
+        public string ModelId { get; set; }
+#endif
+        /// <summary>The voice&apos;s preview URL, if applicable.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? PreviewUrl { get; set; }
+#nullable restore
+#else
+        public string PreviewUrl { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.VerifiedVoiceLanguageResponseModel"/> and sets the default values.
         /// </summary>
@@ -39,6 +79,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "accent", n => { Accent = n.GetStringValue(); } },
+                { "language", n => { Language = n.GetStringValue(); } },
+                { "locale", n => { Locale = n.GetStringValue(); } },
+                { "model_id", n => { ModelId = n.GetStringValue(); } },
+                { "preview_url", n => { PreviewUrl = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -48,6 +93,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("accent", Accent);
+            writer.WriteStringValue("language", Language);
+            writer.WriteStringValue("locale", Locale);
+            writer.WriteStringValue("model_id", ModelId);
+            writer.WriteStringValue("preview_url", PreviewUrl);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

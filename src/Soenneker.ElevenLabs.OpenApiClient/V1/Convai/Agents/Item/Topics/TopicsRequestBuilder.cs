@@ -22,7 +22,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.Topics
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TopicsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/convai/agents/{agentId}/topics{?from_unix_secs*,to_unix_secs*}", pathParameters)
+        public TopicsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/convai/agents/{agentId}/topics{?cursor*,from_unix_secs*,include_evaluation_criteria*,page_size*,sort_by*,sort_direction*,to_unix_secs*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.Topics
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TopicsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/convai/agents/{agentId}/topics{?from_unix_secs*,to_unix_secs*}", rawUrl)
+        public TopicsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/convai/agents/{agentId}/topics{?cursor*,from_unix_secs*,include_evaluation_criteria*,page_size*,sort_by*,sort_direction*,to_unix_secs*}", rawUrl)
         {
         }
         /// <summary>
@@ -90,9 +90,31 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.Topics
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class TopicsRequestBuilderGetQueryParameters 
         {
-            /// <summary>Start of the window to view topics for. When set with to_unix_secs, per-day topics in the range are aggregated together.</summary>
+            /// <summary>Used for fetching next page. Cursor is returned in the response.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("cursor")]
+            public string? Cursor { get; set; }
+#nullable restore
+#else
+            [QueryParameter("cursor")]
+            public string Cursor { get; set; }
+#endif
+            /// <summary>Start of the window to view topics for. When set with to_unix_secs, the completed daily topic-discovery runs in the range are aggregated together, so the window scopes the metrics as well as the topic set. Floored to the start of its UTC day because runs cover whole UTC days; aggregated_run_count reports how many runs were summed. Omit both bounds to get the single latest run.</summary>
             [QueryParameter("from_unix_secs")]
             public int? FromUnixSecs { get; set; }
+            /// <summary>Include the per-criteria evaluation breakdown on each topic&apos;s metrics. Pass false to drop it: it dominates the payload and the weighted success_rate is returned either way.</summary>
+            [QueryParameter("include_evaluation_criteria")]
+            public bool? IncludeEvaluationCriteria { get; set; }
+            /// <summary>Number of top-level topic groups to return.</summary>
+            [QueryParameter("page_size")]
+            public int? PageSize { get; set; }
+            /// <summary>Column to rank topics by. Use conversations for volume, sentiment with sort_direction=asc for the most negative topics, and frustration with sort_direction=desc for the most frustrated ones. Topics with no score are always ranked last.</summary>
+            [QueryParameter("sort_by")]
+            public global::Soenneker.ElevenLabs.OpenApiClient.Models.TopicSortBy? SortBy { get; set; }
+            /// <summary>Direction to sort topics.</summary>
+            [QueryParameter("sort_direction")]
+            public global::Soenneker.ElevenLabs.OpenApiClient.Models.SortDirection? SortDirection { get; set; }
             /// <summary>End of the window to view topics for.</summary>
             [QueryParameter("to_unix_secs")]
             public int? ToUnixSecs { get; set; }

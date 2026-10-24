@@ -16,7 +16,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>If true, the user will not be able to interrupt the agent while the first message is being delivered.</summary>
         public bool? DisableFirstMessageInterruptions { get; set; }
-        /// <summary>The dynamic_variables property</summary>
+        /// <summary>Configuration for dynamic variables</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.DynamicVariablesConfig? DynamicVariables { get; set; }
@@ -32,7 +32,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public string FirstMessage { get; set; }
 #endif
-        /// <summary>When enabled and language is Hindi, the agent will respond in Hinglish</summary>
+        /// <summary>When enabled, the agent mixes English words and phrases into responses in Hindi, Malayalam, Telugu, or Kannada.</summary>
         public bool? HinglishMode { get; set; }
         /// <summary>Language of the agent - used for ASR and TTS</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -61,10 +61,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Per-channel response behavior overrides for text conversations. Built-in channel defaults apply when unset.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentConfigApiModelOutputTextBehaviorOverrides? TextBehaviorOverrides { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentConfigApiModelOutputTextBehaviorOverridesAnyOf1? TextBehaviorOverrides { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentConfigApiModelOutputTextBehaviorOverrides TextBehaviorOverrides { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentConfigApiModelOutputTextBehaviorOverridesAnyOf1 TextBehaviorOverrides { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentConfigApiModelOutput"/> and sets the default values.
@@ -101,7 +101,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "language", n => { Language = n.GetStringValue(); } },
                 { "max_conversation_duration_message", n => { MaxConversationDurationMessage = n.GetStringValue(); } },
                 { "prompt", n => { Prompt = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentApiModelOutput>(global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentApiModelOutput.CreateFromDiscriminatorValue); } },
-                { "text_behavior_overrides", n => { TextBehaviorOverrides = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentConfigApiModelOutputTextBehaviorOverrides>(global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentConfigApiModelOutputTextBehaviorOverrides.CreateFromDiscriminatorValue); } },
+                { "text_behavior_overrides", n => { TextBehaviorOverrides = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentConfigApiModelOutputTextBehaviorOverridesAnyOf1>(global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentConfigApiModelOutputTextBehaviorOverridesAnyOf1.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -118,7 +118,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteStringValue("language", Language);
             writer.WriteStringValue("max_conversation_duration_message", MaxConversationDurationMessage);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentApiModelOutput>("prompt", Prompt);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentConfigApiModelOutputTextBehaviorOverrides>("text_behavior_overrides", TextBehaviorOverrides);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentConfigApiModelOutputTextBehaviorOverridesAnyOf1>("text_behavior_overrides", TextBehaviorOverrides);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

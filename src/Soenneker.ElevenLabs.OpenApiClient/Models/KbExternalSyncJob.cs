@@ -59,13 +59,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The status property</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.CrawlStatus? Status { get; set; }
         /// <summary>The sync_type property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ExternalSyncJobTypeWrapper? SyncType { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ExternalSyncJobTypeWrapper SyncType { get; set; }
-#endif
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ExternalSyncJobType? SyncType { get; set; }
         /// <summary>The triggered_by property</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.ExternalSyncJobTrigger? TriggeredBy { get; set; }
         /// <summary>The type property</summary>
@@ -80,6 +74,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             AdditionalData = new Dictionary<string, object>();
             ItemsIdentified = 0;
             ItemsProcessed = 0;
+            Status = global::Soenneker.ElevenLabs.OpenApiClient.Models.CrawlStatus.Queued;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -109,7 +104,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "items_processed", n => { ItemsProcessed = n.GetIntValue(); } },
                 { "started_at", n => { StartedAt = n.GetIntValue(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CrawlStatus>(); } },
-                { "sync_type", n => { SyncType = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ExternalSyncJobTypeWrapper>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ExternalSyncJobTypeWrapper.CreateFromDiscriminatorValue); } },
+                { "sync_type", n => { SyncType = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ExternalSyncJobType>(); } },
                 { "triggered_by", n => { TriggeredBy = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ExternalSyncJobTrigger>(); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ExternalSyncProvider>(); } },
                 { "updated_at", n => { UpdatedAt = n.GetIntValue(); } },
@@ -132,7 +127,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteIntValue("items_processed", ItemsProcessed);
             writer.WriteIntValue("started_at", StartedAt);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CrawlStatus>("status", Status);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ExternalSyncJobTypeWrapper>("sync_type", SyncType);
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ExternalSyncJobType>("sync_type", SyncType);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ExternalSyncJobTrigger>("triggered_by", TriggeredBy);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ExternalSyncProvider>("type", Type);
             writer.WriteIntValue("updated_at", UpdatedAt);

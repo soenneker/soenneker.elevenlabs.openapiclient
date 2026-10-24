@@ -18,6 +18,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.EmbeddingModelEnum? EmbeddingModel { get; set; }
         /// <summary>The enabled property</summary>
         public bool? Enabled { get; set; }
+        /// <summary>When set, the agent uses the knowledge_base tool instead of the legacy knowledge_base_rag tool. None means the agent is not opted in.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeBaseToolInfo? KnowledgeBaseToolInfo { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeBaseToolInfo KnowledgeBaseToolInfo { get; set; }
+#endif
         /// <summary>Maximum total length of document chunks retrieved from RAG.</summary>
         public int? MaxDocumentsLength { get; set; }
         /// <summary>Maximum number of RAG document chunks to initially retrieve from the vector store. These are then further filtered by vector distance and total length.</summary>
@@ -40,6 +48,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public RagConfigInput()
         {
             AdditionalData = new Dictionary<string, object>();
+            EmbeddingModel = global::Soenneker.ElevenLabs.OpenApiClient.Models.EmbeddingModelEnum.E5Mistral7BInstruct;
             Enabled = false;
             MaxDocumentsLength = 50000;
             MaxRetrievedRagChunksCount = 20;
@@ -65,6 +74,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             {
                 { "embedding_model", n => { EmbeddingModel = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.EmbeddingModelEnum>(); } },
                 { "enabled", n => { Enabled = n.GetBoolValue(); } },
+                { "knowledge_base_tool_info", n => { KnowledgeBaseToolInfo = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeBaseToolInfo>(global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeBaseToolInfo.CreateFromDiscriminatorValue); } },
                 { "max_documents_length", n => { MaxDocumentsLength = n.GetIntValue(); } },
                 { "max_retrieved_rag_chunks_count", n => { MaxRetrievedRagChunksCount = n.GetIntValue(); } },
                 { "max_vector_distance", n => { MaxVectorDistance = n.GetDoubleValue(); } },
@@ -81,6 +91,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.EmbeddingModelEnum>("embedding_model", EmbeddingModel);
             writer.WriteBoolValue("enabled", Enabled);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeBaseToolInfo>("knowledge_base_tool_info", KnowledgeBaseToolInfo);
             writer.WriteIntValue("max_documents_length", MaxDocumentsLength);
             writer.WriteIntValue("max_retrieved_rag_chunks_count", MaxRetrievedRagChunksCount);
             writer.WriteDoubleValue("max_vector_distance", MaxVectorDistance);

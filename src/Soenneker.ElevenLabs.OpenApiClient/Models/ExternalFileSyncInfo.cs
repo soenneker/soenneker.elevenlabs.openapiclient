@@ -57,7 +57,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public string SourceParentEntityId { get; set; }
 #endif
-        /// <summary>The type property</summary>
+        /// <summary>Provider identifier</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.ExternalSyncProvider? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ExternalFileSyncInfo"/> and sets the default values.

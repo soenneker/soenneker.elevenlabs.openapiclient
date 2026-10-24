@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.ElevenLabs.OpenApiClient.Models
 {
+    /// <summary>The usage mode of the knowledge base</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum DocumentUsageModeEnum
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "prompt")]
         #pragma warning disable CS1591

@@ -22,10 +22,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public string AnalysisItemId { get; set; }
 #endif
-        /// <summary>The scope property</summary>
+        /// <summary>Transcript context (&apos;conversation&apos; or &apos;agent&apos;) used when running this item.</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.AnalysisScope? Scope { get; set; }
         /// <summary>The source property</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AttachedUserDataCollectionRef_source? Source { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.UserSource? Source { get; set; }
         /// <summary>Pinned item version. None tracks the item&apos;s latest published version.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -40,6 +40,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public AttachedUserDataCollectionRef()
         {
             AdditionalData = new Dictionary<string, object>();
+            Scope = global::Soenneker.ElevenLabs.OpenApiClient.Models.AnalysisScope.Conversation;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -61,7 +62,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             {
                 { "analysis_item_id", n => { AnalysisItemId = n.GetStringValue(); } },
                 { "scope", n => { Scope = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AnalysisScope>(); } },
-                { "source", n => { Source = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AttachedUserDataCollectionRef_source>(); } },
+                { "source", n => { Source = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UserSource>(); } },
                 { "version_id", n => { VersionId = n.GetStringValue(); } },
             };
         }
@@ -74,7 +75,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("analysis_item_id", AnalysisItemId);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AnalysisScope>("scope", Scope);
-            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AttachedUserDataCollectionRef_source>("source", Source);
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UserSource>("source", Source);
             writer.WriteStringValue("version_id", VersionId);
             writer.WriteAdditionalData(AdditionalData);
         }

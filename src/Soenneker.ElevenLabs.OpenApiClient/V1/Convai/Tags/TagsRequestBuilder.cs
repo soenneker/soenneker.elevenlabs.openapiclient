@@ -73,7 +73,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Tags
         /// Create a new conversation tag for the workspace.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationTagResponseModel"/></returns>
-        /// <param name="body">The request body</param>
+        /// <param name="body">Conversation tag to create.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.HttpValidationError">When receiving a 422 status code</exception>
@@ -117,7 +117,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Tags
         /// Create a new conversation tag for the workspace.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">The request body</param>
+        /// <param name="body">Conversation tag to create.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

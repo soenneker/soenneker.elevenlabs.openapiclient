@@ -39,7 +39,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Dubbing.Item.Audio.Item
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.GetDubbedFile403Response">When receiving a 403 status code</exception>
+        /// <exception cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.GetDubbedFile404Response">When receiving a 404 status code</exception>
         /// <exception cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.HttpValidationError">When receiving a 422 status code</exception>
+        /// <exception cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.GetDubbedFile425Response">When receiving a 425 status code</exception>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<Stream?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -52,7 +56,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Dubbing.Item.Audio.Item
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
+                { "403", global::Soenneker.ElevenLabs.OpenApiClient.Models.GetDubbedFile403Response.CreateFromDiscriminatorValue },
+                { "404", global::Soenneker.ElevenLabs.OpenApiClient.Models.GetDubbedFile404Response.CreateFromDiscriminatorValue },
                 { "422", global::Soenneker.ElevenLabs.OpenApiClient.Models.HttpValidationError.CreateFromDiscriminatorValue },
+                { "425", global::Soenneker.ElevenLabs.OpenApiClient.Models.GetDubbedFile425Response.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -61,6 +68,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Dubbing.Item.Audio.Item
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
@@ -80,6 +88,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Dubbing.Item.Audio.Item
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.V1.Dubbing.Item.Audio.Item.WithLanguageCodeItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        [Obsolete("")]
         public global::Soenneker.ElevenLabs.OpenApiClient.V1.Dubbing.Item.Audio.Item.WithLanguageCodeItemRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Soenneker.ElevenLabs.OpenApiClient.V1.Dubbing.Item.Audio.Item.WithLanguageCodeItemRequestBuilder(rawUrl, RequestAdapter);

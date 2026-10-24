@@ -22,7 +22,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentApiModelOutputBackupLlmConfig BackupLlmConfig { get; set; }
 #endif
-        /// <summary>The built_in_tools property</summary>
+        /// <summary>System tools a conversational agent can be given.Deliberately not named ConversationalBuiltInTools: BuiltInToolsInput andBuiltInToolsOutput are part of the public API spec and the generated SDKs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.BuiltInToolsOutput? BuiltInTools { get; set; }
@@ -40,6 +40,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomLlm CustomLlm { get; set; }
 #endif
+        /// <summary>Enable parallel tool calling. When enabled, the agent can execute multiple tools in parallel within a single turn. Not supported by all models.</summary>
+        public bool? EnableParallelToolCalls { get; set; }
         /// <summary>Enable model reasoning summaries. When disabled, we do not request summaries from provider if possible for faster TTFB. Not ZRM compatible.</summary>
         public bool? EnableReasoningSummary { get; set; }
         /// <summary>Whether to remove the default personality lines from the system prompt</summary>
@@ -89,13 +91,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.RagConfigOutput Rag { get; set; }
 #endif
         /// <summary>Reasoning effort of the model. Only available for some models.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmReasoningEffortWrapper2? ReasoningEffort { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmReasoningEffortWrapper2 ReasoningEffort { get; set; }
-#endif
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmReasoningEffort? ReasoningEffort { get; set; }
+        /// <summary>Request-time processing tier for a model.STANDARD: default price and throughput.FAST: pays a per-token price premium for higher throughput / lower latency.    See OpenAI&apos;s fast mode: https://openai.com/api-fast-mode/</summary>
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmServiceTier? ServiceTier { get; set; }
         /// <summary>The temperature for the LLM. Defaults to 0. Set to null to omit the parameter from the LLM request entirely (useful for custom LLMs that reject the temperature field).</summary>
         public double? Temperature { get; set; }
         /// <summary>Max number of tokens used for thinking. Use 0 to turn off if supported by the model.</summary>
@@ -116,6 +114,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public List<string> ToolIds { get; set; }
 #endif
+        /// <summary>Only applies as a conversation override, allowed whenever tool_ids may be overridden. When true, the overridden tool_ids is the full list of tools allowed in the conversation, including tools on workflow nodes. Ignored when set on the agent.</summary>
+        public bool? ToolIdsStrict { get; set; }
         /// <summary>A list of tools that the agent can use over the course of the conversation, use tool_ids instead</summary>
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -132,10 +132,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             AdditionalData = new Dictionary<string, object>();
             CascadeTimeoutSeconds = 4.0;
+            EnableParallelToolCalls = true;
             EnableReasoningSummary = false;
             IgnoreDefaultPersonality = true;
             MaxTokens = -1;
             Temperature = 0.0;
+            ToolIdsStrict = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -159,6 +161,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "built_in_tools", n => { BuiltInTools = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BuiltInToolsOutput>(global::Soenneker.ElevenLabs.OpenApiClient.Models.BuiltInToolsOutput.CreateFromDiscriminatorValue); } },
                 { "cascade_timeout_seconds", n => { CascadeTimeoutSeconds = n.GetDoubleValue(); } },
                 { "custom_llm", n => { CustomLlm = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomLlm>(global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomLlm.CreateFromDiscriminatorValue); } },
+                { "enable_parallel_tool_calls", n => { EnableParallelToolCalls = n.GetBoolValue(); } },
                 { "enable_reasoning_summary", n => { EnableReasoningSummary = n.GetBoolValue(); } },
                 { "ignore_default_personality", n => { IgnoreDefaultPersonality = n.GetBoolValue(); } },
                 { "knowledge_base", n => { KnowledgeBase = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeBaseLocator>(global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeBaseLocator.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -168,11 +171,13 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "native_mcp_server_ids", n => { NativeMcpServerIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "prompt", n => { Prompt = n.GetStringValue(); } },
                 { "rag", n => { Rag = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.RagConfigOutput>(global::Soenneker.ElevenLabs.OpenApiClient.Models.RagConfigOutput.CreateFromDiscriminatorValue); } },
-                { "reasoning_effort", n => { ReasoningEffort = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmReasoningEffortWrapper2>(global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmReasoningEffortWrapper2.CreateFromDiscriminatorValue); } },
+                { "reasoning_effort", n => { ReasoningEffort = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmReasoningEffort>(); } },
+                { "service_tier", n => { ServiceTier = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmServiceTier>(); } },
                 { "temperature", n => { Temperature = n.GetDoubleValue(); } },
                 { "thinking_budget", n => { ThinkingBudget = n.GetIntValue(); } },
                 { "timezone", n => { Timezone = n.GetStringValue(); } },
                 { "tool_ids", n => { ToolIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "tool_ids_strict", n => { ToolIdsStrict = n.GetBoolValue(); } },
                 { "tools", n => { Tools = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentApiModelOutputToolsItem>(global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentApiModelOutputToolsItem.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
@@ -187,6 +192,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BuiltInToolsOutput>("built_in_tools", BuiltInTools);
             writer.WriteDoubleValue("cascade_timeout_seconds", CascadeTimeoutSeconds);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomLlm>("custom_llm", CustomLlm);
+            writer.WriteBoolValue("enable_parallel_tool_calls", EnableParallelToolCalls);
             writer.WriteBoolValue("enable_reasoning_summary", EnableReasoningSummary);
             writer.WriteBoolValue("ignore_default_personality", IgnoreDefaultPersonality);
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeBaseLocator>("knowledge_base", KnowledgeBase);
@@ -196,11 +202,13 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("native_mcp_server_ids", NativeMcpServerIds);
             writer.WriteStringValue("prompt", Prompt);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.RagConfigOutput>("rag", Rag);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmReasoningEffortWrapper2>("reasoning_effort", ReasoningEffort);
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmReasoningEffort>("reasoning_effort", ReasoningEffort);
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmServiceTier>("service_tier", ServiceTier);
             writer.WriteDoubleValue("temperature", Temperature);
             writer.WriteIntValue("thinking_budget", ThinkingBudget);
             writer.WriteStringValue("timezone", Timezone);
             writer.WriteCollectionOfPrimitiveValues<string>("tool_ids", ToolIds);
+            writer.WriteBoolValue("tool_ids_strict", ToolIdsStrict);
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentApiModelOutputToolsItem>("tools", Tools);
             writer.WriteAdditionalData(AdditionalData);
         }

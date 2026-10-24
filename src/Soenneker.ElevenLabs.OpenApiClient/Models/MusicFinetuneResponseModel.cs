@@ -16,16 +16,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>When the finetune was created (UTC).</summary>
         public DateTimeOffset? CreatedAt { get; set; }
-        /// <summary>The created_by property</summary>
+        /// <summary>Who created the finetune: `self`, `workspace`, or `elevenlabs`.</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.FinetuneCreatedBy? CreatedBy { get; set; }
         /// <summary>Reason the finetune failed or was blocked, if applicable.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.MusicFinetuneFailureReasonWrapper? FailureReason { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.MusicFinetuneFailureReasonWrapper FailureReason { get; set; }
-#endif
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.MusicFinetuneFailureReason? FailureReason { get; set; }
         /// <summary>Unique identifier of the finetune.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -58,7 +52,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public string PrimaryGenre { get; set; }
 #endif
-        /// <summary>The status property</summary>
+        /// <summary>Training lifecycle status: pending, in_progress, completed, failed, and blocked.</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.MusicFinetuneStatus? Status { get; set; }
         /// <summary>Tags associated with the finetune.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -70,7 +64,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #endif
         /// <summary>Training progress from 0.0 to 1.0.</summary>
         public double? TrainingProgress { get; set; }
-        /// <summary>The visibility property</summary>
+        /// <summary>Who can access this finetune: `private` (only you), `workspace` (members of your workspace), `public` (ElevenLabs-curated, available to everyone).</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.FinetuneVisibility? Visibility { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.MusicFinetuneResponseModel"/> and sets the default values.
@@ -99,7 +93,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             {
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "created_by", n => { CreatedBy = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.FinetuneCreatedBy>(); } },
-                { "failure_reason", n => { FailureReason = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.MusicFinetuneFailureReasonWrapper>(global::Soenneker.ElevenLabs.OpenApiClient.Models.MusicFinetuneFailureReasonWrapper.CreateFromDiscriminatorValue); } },
+                { "failure_reason", n => { FailureReason = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.MusicFinetuneFailureReason>(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "model_id", n => { ModelId = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
@@ -119,7 +113,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.FinetuneCreatedBy>("created_by", CreatedBy);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.MusicFinetuneFailureReasonWrapper>("failure_reason", FailureReason);
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.MusicFinetuneFailureReason>("failure_reason", FailureReason);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("model_id", ModelId);
             writer.WriteStringValue("name", Name);

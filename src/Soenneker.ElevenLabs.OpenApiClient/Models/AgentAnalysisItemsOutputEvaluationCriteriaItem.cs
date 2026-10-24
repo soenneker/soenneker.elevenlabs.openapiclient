@@ -39,11 +39,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("source")?.GetStringValue();
             var result = new global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentAnalysisItemsOutputEvaluationCriteriaItem();
-            if("AttachedSystemEvaluationRef".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("system".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.AttachedSystemEvaluationRef = new global::Soenneker.ElevenLabs.OpenApiClient.Models.AttachedSystemEvaluationRef();
             }
-            else if("AttachedUserEvaluationRef".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("user".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.AttachedUserEvaluationRef = new global::Soenneker.ElevenLabs.OpenApiClient.Models.AttachedUserEvaluationRef();
             }

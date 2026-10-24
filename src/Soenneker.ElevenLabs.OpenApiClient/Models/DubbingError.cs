@@ -14,7 +14,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Stable identifier for the failure, safe to branch on. New codes are added over time, so treat an unrecognized value as &apos;internal_error&apos;.</summary>
+        /// <summary>Stable identifier for the failure, safe to branch on. New codes are added over time, so we recommend treating an unrecognized value as `internal_error`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Code { get; set; }
@@ -22,7 +22,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public string Code { get; set; }
 #endif
-        /// <summary>Human-readable description of the failure, for display. The wording may change at any time; branch on `code` instead.</summary>
+        /// <summary>Human-readable description of the failure, for display. The wording may change at any time, so we recommend branching on `code` instead.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Message { get; set; }
@@ -30,7 +30,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public string Message { get; set; }
 #endif
-        /// <summary>Whether resubmitting the same input could succeed. False means the failure describes the input or the account, so an identical retry will fail the same way.</summary>
+        /// <summary>Whether resubmitting the same input could succeed. A value of false means the failure describes the input or the account, so an identical retry will fail the same way.</summary>
         public bool? Retryable { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingError"/> and sets the default values.

@@ -38,7 +38,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.VeoImageReference> Images { get; set; }
 #endif
         /// <summary>The model to use for the generation.</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Veo31FastRequest_model_id? ModelId { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Veo31FastGenerate001ModelId? ModelId { get; set; }
         /// <summary>A text description of what the video should avoid.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -57,7 +57,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #endif
         /// <summary>The resolution of the output video.</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.Veo31FastRequestResolution? Resolution { get; set; }
-        /// <summary>&quot;A seed for reproducible generation: the same seed and inputs give similar output across generations. Omit for random.&quot;</summary>
+        /// <summary>A seed for reproducible generation: the same seed and inputs give similar output across generations. Omit for random.</summary>
         public int? Seed { get; set; }
         /// <summary>The image to use as the video&apos;s first frame.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -108,7 +108,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "enhance_prompt", n => { EnhancePrompt = n.GetBoolValue(); } },
                 { "generate_audio", n => { GenerateAudio = n.GetBoolValue(); } },
                 { "images", n => { Images = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.VeoImageReference>(global::Soenneker.ElevenLabs.OpenApiClient.Models.VeoImageReference.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "model_id", n => { ModelId = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Veo31FastRequest_model_id>(); } },
+                { "model_id", n => { ModelId = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Veo31FastGenerate001ModelId>(); } },
                 { "negative_prompt", n => { NegativePrompt = n.GetStringValue(); } },
                 { "prompt", n => { Prompt = n.GetStringValue(); } },
                 { "resolution", n => { Resolution = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Veo31FastRequestResolution>(); } },
@@ -130,7 +130,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteBoolValue("enhance_prompt", EnhancePrompt);
             writer.WriteBoolValue("generate_audio", GenerateAudio);
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.VeoImageReference>("images", Images);
-            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Veo31FastRequest_model_id>("model_id", ModelId);
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Veo31FastGenerate001ModelId>("model_id", ModelId);
             writer.WriteStringValue("negative_prompt", NegativePrompt);
             writer.WriteStringValue("prompt", Prompt);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Veo31FastRequestResolution>("resolution", Resolution);

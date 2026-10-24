@@ -59,18 +59,18 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.KnowledgeBase.RagIndex
         /// <summary>
         /// Retrieves and/or creates RAG indexes for multiple knowledge base documents in a single request. Maximum 100 items per request.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.GetOrCreateRagIndexes200Response"/></returns>
+        /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ResponseComputeRagIndexesInBatchV1ConvaiKnowledgeBaseRagIndexPostSchema"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.HttpValidationError">When receiving a 422 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetOrCreateRagIndexes200Response?> PostAsync(global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyComputeRagIndexesInBatchV1ConvaiKnowledgeBaseRagIndexPost body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.ElevenLabs.OpenApiClient.Models.ResponseComputeRagIndexesInBatchV1ConvaiKnowledgeBaseRagIndexPostSchema?> PostAsync(global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyComputeRagIndexesInBatchV1ConvaiKnowledgeBaseRagIndexPost body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetOrCreateRagIndexes200Response> PostAsync(global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyComputeRagIndexesInBatchV1ConvaiKnowledgeBaseRagIndexPost body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.ElevenLabs.OpenApiClient.Models.ResponseComputeRagIndexesInBatchV1ConvaiKnowledgeBaseRagIndexPostSchema> PostAsync(global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyComputeRagIndexesInBatchV1ConvaiKnowledgeBaseRagIndexPost body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -79,7 +79,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.KnowledgeBase.RagIndex
             {
                 { "422", global::Soenneker.ElevenLabs.OpenApiClient.Models.HttpValidationError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetOrCreateRagIndexes200Response>(requestInfo, global::Soenneker.ElevenLabs.OpenApiClient.Models.GetOrCreateRagIndexes200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.ElevenLabs.OpenApiClient.Models.ResponseComputeRagIndexesInBatchV1ConvaiKnowledgeBaseRagIndexPostSchema>(requestInfo, global::Soenneker.ElevenLabs.OpenApiClient.Models.ResponseComputeRagIndexesInBatchV1ConvaiKnowledgeBaseRagIndexPostSchema.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Provides total size and other information of RAG indexes used by knowledgebase documents

@@ -30,6 +30,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public string BranchId { get; set; }
 #endif
+        /// <summary>Optional name for the test invocation.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Name { get; set; }
+#nullable restore
+#else
+        public string Name { get; set; }
+#endif
         /// <summary>Number of times to run each test. When greater than 1, results are grouped and summarized.</summary>
         public int? RepeatCount { get; set; }
         /// <summary>List of tests to run on the agent</summary>
@@ -68,6 +76,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             {
                 { "agent_config_override", n => { AgentConfigOverride = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AdhocAgentConfigOverrideForTestRequestModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.AdhocAgentConfigOverrideForTestRequestModel.CreateFromDiscriminatorValue); } },
                 { "branch_id", n => { BranchId = n.GetStringValue(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
                 { "repeat_count", n => { RepeatCount = n.GetIntValue(); } },
                 { "tests", n => { Tests = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.SingleTestRunRequestModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.SingleTestRunRequestModel.CreateFromDiscriminatorValue)?.AsList(); } },
             };
@@ -81,6 +90,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AdhocAgentConfigOverrideForTestRequestModel>("agent_config_override", AgentConfigOverride);
             writer.WriteStringValue("branch_id", BranchId);
+            writer.WriteStringValue("name", Name);
             writer.WriteIntValue("repeat_count", RepeatCount);
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.SingleTestRunRequestModel>("tests", Tests);
             writer.WriteAdditionalData(AdditionalData);

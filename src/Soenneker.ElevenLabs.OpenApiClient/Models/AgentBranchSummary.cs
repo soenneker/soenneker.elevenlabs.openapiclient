@@ -30,6 +30,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public string AgentId { get; set; }
 #endif
+        /// <summary>The auto_rebase property</summary>
+        public bool? AutoRebase { get; set; }
         /// <summary>Number of calls in the last 7 days</summary>
         public int? Calls7d { get; set; }
         /// <summary>Number of commits on this branch not yet on main, relative to their common ancestor. Null if it could not be computed (e.g. no common ancestor, or the branch history exceeds the comparison budget).</summary>
@@ -48,8 +50,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public string Description { get; set; }
 #endif
+        /// <summary>Unix seconds when the caller&apos;s draft on this branch was first created, or null when they have no draft. A draft created before last_committed_at was written against a config the branch has since moved past, so it may not reflect the current one.</summary>
+        public int? DraftCreatedAt { get; set; }
         /// <summary>Whether a draft exists for the branch</summary>
         public bool? DraftExists { get; set; }
+        /// <summary>Whether the caller&apos;s draft on this branch was created before the branch&apos;s last commit, meaning it was written against a config the branch has since moved past and may not reflect the current one.</summary>
+        public bool? DraftIsBehindTip { get; set; }
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -94,9 +100,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public AgentBranchSummary()
         {
             AdditionalData = new Dictionary<string, object>();
+            AutoRebase = false;
             Calls7d = 0;
             CurrentLivePercentage = 0.0;
             DraftExists = false;
+            DraftIsBehindTip = false;
+            ProtectionStatus = global::Soenneker.ElevenLabs.OpenApiClient.Models.BranchProtectionStatus.WriterPermsRequired;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -118,13 +127,16 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             {
                 { "access_info", n => { AccessInfo = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceAccessInfo>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceAccessInfo.CreateFromDiscriminatorValue); } },
                 { "agent_id", n => { AgentId = n.GetStringValue(); } },
+                { "auto_rebase", n => { AutoRebase = n.GetBoolValue(); } },
                 { "calls_7d", n => { Calls7d = n.GetIntValue(); } },
                 { "commits_ahead", n => { CommitsAhead = n.GetIntValue(); } },
                 { "commits_behind", n => { CommitsBehind = n.GetIntValue(); } },
                 { "created_at", n => { CreatedAt = n.GetIntValue(); } },
                 { "current_live_percentage", n => { CurrentLivePercentage = n.GetDoubleValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
+                { "draft_created_at", n => { DraftCreatedAt = n.GetIntValue(); } },
                 { "draft_exists", n => { DraftExists = n.GetBoolValue(); } },
+                { "draft_is_behind_tip", n => { DraftIsBehindTip = n.GetBoolValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "is_archived", n => { IsArchived = n.GetBoolValue(); } },
                 { "last_committed_at", n => { LastCommittedAt = n.GetIntValue(); } },
@@ -143,13 +155,16 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceAccessInfo>("access_info", AccessInfo);
             writer.WriteStringValue("agent_id", AgentId);
+            writer.WriteBoolValue("auto_rebase", AutoRebase);
             writer.WriteIntValue("calls_7d", Calls7d);
             writer.WriteIntValue("commits_ahead", CommitsAhead);
             writer.WriteIntValue("commits_behind", CommitsBehind);
             writer.WriteIntValue("created_at", CreatedAt);
             writer.WriteDoubleValue("current_live_percentage", CurrentLivePercentage);
             writer.WriteStringValue("description", Description);
+            writer.WriteIntValue("draft_created_at", DraftCreatedAt);
             writer.WriteBoolValue("draft_exists", DraftExists);
+            writer.WriteBoolValue("draft_is_behind_tip", DraftIsBehindTip);
             writer.WriteStringValue("id", Id);
             writer.WriteBoolValue("is_archived", IsArchived);
             writer.WriteIntValue("last_committed_at", LastCommittedAt);

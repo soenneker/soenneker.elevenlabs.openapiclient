@@ -17,7 +17,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>New end time, in seconds.</summary>
         public double? EndS { get; set; }
-        /// <summary>New speaker id for the segment.</summary>
+        /// <summary>New speaker ID for the segment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SpeakerId { get; set; }

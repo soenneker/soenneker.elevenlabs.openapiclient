@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.ElevenLabs.OpenApiClient.Models
 {
     /// <summary>
-    /// Values to replace. Set to null to remove an environment (except &apos;production&apos;).
+    /// Values to replace. Set to null to remove the value for an environment (except &apos;production&apos;).
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UpdateEnvironmentVariableRequestValuesProperty : IAdditionalDataHolder, IParsable

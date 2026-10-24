@@ -43,7 +43,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             {
                 result.DependentAvailableAgentIdentifier = new global::Soenneker.ElevenLabs.OpenApiClient.Models.DependentAvailableAgentIdentifier();
             }
-            else if("DependentUnknownAgentIdentifier".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("unknown".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.DependentUnknownAgentIdentifier = new global::Soenneker.ElevenLabs.OpenApiClient.Models.DependentUnknownAgentIdentifier();
             }

@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.ElevenLabs.OpenApiClient.Models
 {
     /// <summary>
-    /// A mapping of roles to group IDs. When the resource is shared with a user, the group id is the user&apos;s id.
+    /// A mapping of grant slots to group IDs. Keys are the preset access roles plus workspace custom-role ids (&apos;role_...&apos;). When the resource is shared with a user, the group id is the user&apos;s id.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ResourceMetadataResponseModelRoleToGroupIdsProperty : IAdditionalDataHolder, IParsable

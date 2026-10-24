@@ -14,6 +14,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Procedure ID of the folder this procedure is placed in. None means root.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? FolderParentId { get; set; }
+#nullable restore
+#else
+        public string FolderParentId { get; set; }
+#endif
         /// <summary>True when the procedure has unpublished draft changes on this branch (a newly created or edited procedure not yet published). When true, the name, type, and trigger reflect that draft.</summary>
         public bool? HasDraft { get; set; }
         /// <summary>Procedure name</summary>
@@ -32,6 +40,38 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public string ProcedureId { get; set; }
 #endif
+        /// <summary>Dynamic variable names used in the procedure content</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? ReferencedDynamicVariables { get; set; }
+#nullable restore
+#else
+        public List<string> ReferencedDynamicVariables { get; set; }
+#endif
+        /// <summary>Knowledge base IDs referenced in the procedure content</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? ReferencedKbIds { get; set; }
+#nullable restore
+#else
+        public List<string> ReferencedKbIds { get; set; }
+#endif
+        /// <summary>Procedure IDs referenced in the procedure content</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? ReferencedProcedureIds { get; set; }
+#nullable restore
+#else
+        public List<string> ReferencedProcedureIds { get; set; }
+#endif
+        /// <summary>Tool IDs referenced in the procedure content</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? ReferencedToolIds { get; set; }
+#nullable restore
+#else
+        public List<string> ReferencedToolIds { get; set; }
+#endif
         /// <summary>When the agent should use this procedure. Empty string means this is a sub-procedure that should only start when another procedure references it.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -40,7 +80,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public string Trigger { get; set; }
 #endif
-        /// <summary>The type property</summary>
+        /// <summary>Procedure type</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.ProcedureType? Type { get; set; }
         /// <summary>Version ID of a version of the procedure. None for a procedure never versioned.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -56,6 +96,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public ProcedureListItemResponseModel()
         {
             AdditionalData = new Dictionary<string, object>();
+            Type = global::Soenneker.ElevenLabs.OpenApiClient.Models.ProcedureType.FreeForm;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -75,9 +116,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "folder_parent_id", n => { FolderParentId = n.GetStringValue(); } },
                 { "has_draft", n => { HasDraft = n.GetBoolValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "procedure_id", n => { ProcedureId = n.GetStringValue(); } },
+                { "referenced_dynamic_variables", n => { ReferencedDynamicVariables = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "referenced_kb_ids", n => { ReferencedKbIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "referenced_procedure_ids", n => { ReferencedProcedureIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "referenced_tool_ids", n => { ReferencedToolIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "trigger", n => { Trigger = n.GetStringValue(); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProcedureType>(); } },
                 { "version_id", n => { VersionId = n.GetStringValue(); } },
@@ -90,9 +136,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("folder_parent_id", FolderParentId);
             writer.WriteBoolValue("has_draft", HasDraft);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("procedure_id", ProcedureId);
+            writer.WriteCollectionOfPrimitiveValues<string>("referenced_dynamic_variables", ReferencedDynamicVariables);
+            writer.WriteCollectionOfPrimitiveValues<string>("referenced_kb_ids", ReferencedKbIds);
+            writer.WriteCollectionOfPrimitiveValues<string>("referenced_procedure_ids", ReferencedProcedureIds);
+            writer.WriteCollectionOfPrimitiveValues<string>("referenced_tool_ids", ReferencedToolIds);
             writer.WriteStringValue("trigger", Trigger);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProcedureType>("type", Type);
             writer.WriteStringValue("version_id", VersionId);

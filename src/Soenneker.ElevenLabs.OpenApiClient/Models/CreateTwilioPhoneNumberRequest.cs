@@ -12,6 +12,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     public partial class CreateTwilioPhoneNumberRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Twilio Account Auth Token, required for API Key imports to validate inbound webhook signatures</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? AccountAuthToken { get; set; }
+#nullable restore
+#else
+        public string AccountAuthToken { get; set; }
+#endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Agent ID to assign the phone number to</summary>
@@ -41,7 +49,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public string PhoneNumber { get; set; }
 #endif
         /// <summary>The provider property</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateTwilioPhoneNumberRequest_provider? Provider { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.TwilioProvider? Provider { get; set; }
         /// <summary>Twilio Additional Region Configuration</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -50,7 +58,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.RegionConfigRequest RegionConfig { get; set; }
 #endif
-        /// <summary>Twilio Account SID</summary>
+        /// <summary>Twilio Account SID (starts with `AC`) or API Key SID (starts with `SK`)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Sid { get; set; }
@@ -64,7 +72,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>This field is deprecated and will be removed in the future. Whether this phone number supports outbound calls</summary>
         [Obsolete("")]
         public bool? SupportsOutbound { get; set; }
-        /// <summary>Twilio Auth Token</summary>
+        /// <summary>Secret paired with `sid`: the Account Auth Token for an Account SID, or the API Key Secret for an API Key SID</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Token { get; set; }
@@ -100,11 +108,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "account_auth_token", n => { AccountAuthToken = n.GetStringValue(); } },
                 { "agent_id", n => { AgentId = n.GetStringValue(); } },
                 { "enable_sms", n => { EnableSms = n.GetBoolValue(); } },
                 { "label", n => { Label = n.GetStringValue(); } },
                 { "phone_number", n => { PhoneNumber = n.GetStringValue(); } },
-                { "provider", n => { Provider = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateTwilioPhoneNumberRequest_provider>(); } },
+                { "provider", n => { Provider = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TwilioProvider>(); } },
                 { "region_config", n => { RegionConfig = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.RegionConfigRequest>(global::Soenneker.ElevenLabs.OpenApiClient.Models.RegionConfigRequest.CreateFromDiscriminatorValue); } },
                 { "sid", n => { Sid = n.GetStringValue(); } },
                 { "supports_inbound", n => { SupportsInbound = n.GetBoolValue(); } },
@@ -119,11 +128,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("account_auth_token", AccountAuthToken);
             writer.WriteStringValue("agent_id", AgentId);
             writer.WriteBoolValue("enable_sms", EnableSms);
             writer.WriteStringValue("label", Label);
             writer.WriteStringValue("phone_number", PhoneNumber);
-            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateTwilioPhoneNumberRequest_provider>("provider", Provider);
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TwilioProvider>("provider", Provider);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.RegionConfigRequest>("region_config", RegionConfig);
             writer.WriteStringValue("sid", Sid);
             writer.WriteBoolValue("supports_inbound", SupportsInbound);

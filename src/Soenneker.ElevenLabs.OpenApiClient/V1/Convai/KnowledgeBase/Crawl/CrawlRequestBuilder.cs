@@ -164,11 +164,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.KnowledgeBase.Crawl
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("include_job_ids")]
-            public string? IncludeJobIds { get; set; }
+            public string[]? IncludeJobIds { get; set; }
 #nullable restore
 #else
             [QueryParameter("include_job_ids")]
-            public string IncludeJobIds { get; set; }
+            public string[] IncludeJobIds { get; set; }
 #endif
             /// <summary>How many documents to return at maximum. Can not exceed 100, defaults to 30.</summary>
             [QueryParameter("page_size")]

@@ -46,7 +46,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateAgentDraftV1ConvaiAgentsAgentIdDraftsPostTags Tags { get; set; }
 #endif
-        /// <summary>The workflow property</summary>
+        /// <summary>Workflow for the draft</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentWorkflowRequestModel? Workflow { get; set; }

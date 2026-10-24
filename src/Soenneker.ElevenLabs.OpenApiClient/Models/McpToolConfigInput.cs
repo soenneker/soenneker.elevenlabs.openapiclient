@@ -33,33 +33,33 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public string Description { get; set; }
 #endif
-        /// <summary>&quot;DEPRECATED: use `interruption_mode` instead. If true, the user will not be able to interrupt the agent while this tool is running.&quot;</summary>
+        /// <summary>DEPRECATED: use `interruption_mode` instead. If true, the user will not be able to interrupt the agent while this tool is running.</summary>
         [Obsolete("")]
         public bool? DisableInterruptions { get; set; }
-        /// <summary>The execution_mode property</summary>
+        /// <summary>Determines when and how the tool executes: &apos;immediate&apos; executes the tool right away when requested by the LLM, &apos;post_tool_speech&apos; waits for the agent to finish speaking before executing, &apos;async&apos; runs the tool in the background without blocking - best for long-running operations.</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolExecutionMode? ExecutionMode { get; set; }
-        /// <summary>&quot;DEPRECATED: use `pre_tool_speech` instead. If true, the agent will speak before the tool call.&quot;</summary>
+        /// <summary>DEPRECATED: use `pre_tool_speech` instead. If true, the agent will speak before the tool call.</summary>
         [Obsolete("")]
         public bool? ForcePreToolSpeech { get; set; }
         /// <summary>Input parameter overrides for this tool</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.McpToolConfigInputInputOverrides? InputOverrides { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.McpToolConfigInputInputOverridesProperty? InputOverrides { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.McpToolConfigInputInputOverrides InputOverrides { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.McpToolConfigInputInputOverridesProperty InputOverrides { get; set; }
 #endif
-        /// <summary>The integration_type property</summary>
+        /// <summary>The type of MCP tool</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.IntegrationType? IntegrationType { get; set; }
-        /// <summary>The interruption_mode property</summary>
+        /// <summary>Controls whether the user can interrupt the agent around this tool call. &apos;allow&apos; (default) lets the user interrupt at any time, &apos;disable_during_tool&apos; suppresses interruptions only while the tool is running, &apos;disable_during_tool_and_turn&apos; suppresses interruptions while the tool runs and for the agent response that follows it.</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolInterruptionMode? InterruptionMode { get; set; }
         /// <summary>Original inputSchema dict for consistent hashing</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.McpToolConfigInputMcpInputSchema? McpInputSchema { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.McpToolConfigInputMcpInputSchemaProperty? McpInputSchema { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.McpToolConfigInputMcpInputSchema McpInputSchema { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.McpToolConfigInputMcpInputSchemaProperty McpInputSchema { get; set; }
 #endif
         /// <summary>The id of the MCP server to call</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -109,24 +109,18 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.ObjectJsonSchemaPropertyInput Parameters { get; set; }
 #endif
-        /// <summary>The pre_tool_speech property</summary>
+        /// <summary>Controls whether the agent speaks before this tool is called. &apos;auto&apos; (default) decides based on recent tool latency, &apos;force&apos; always asks the agent to speak, &apos;off&apos; fully opts out regardless of latency.</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.PreToolSpeechMode? PreToolSpeech { get; set; }
         /// <summary>The maximum time in seconds to wait for the MCP tool call to complete. Must be between 5 and 300 seconds (inclusive).</summary>
         public int? ResponseTimeoutSecs { get; set; }
         /// <summary>Predefined tool call sound type to play during tool execution. If not specified, no tool call sound will be played.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolCallSoundTypeWrapper8? ToolCallSound { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolCallSoundTypeWrapper8 ToolCallSound { get; set; }
-#endif
-        /// <summary>Determines how the tool call sound should be played.</summary>
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolCallSoundType? ToolCallSound { get; set; }
+        /// <summary>Determines when the tool call sound should play. &apos;auto&apos; only plays when there&apos;s pre-tool speech, &apos;always&apos; plays for every tool call.</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolCallSoundBehavior? ToolCallSoundBehavior { get; set; }
-        /// <summary>Controls how tool errors are processed before being shared with the agent.</summary>
+        /// <summary>Controls how tool errors are processed before being shared with the agent. &apos;auto&apos; determines handling based on tool type (summarized for native integrations, hide for others), &apos;summarized&apos; sends an LLM-generated summary, &apos;passthrough&apos; sends the raw error, &apos;hide&apos; does not share the error with the agent.</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolErrorHandlingMode? ToolErrorHandlingMode { get; set; }
         /// <summary>The type property</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.McpToolConfigInput_type? Type { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.McpToolConfigInputType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.McpToolConfigInput"/> and sets the default values.
         /// </summary>
@@ -134,8 +128,13 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             AdditionalData = new Dictionary<string, object>();
             DisableInterruptions = false;
+            ExecutionMode = global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolExecutionMode.Immediate;
             ForcePreToolSpeech = false;
+            InterruptionMode = global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolInterruptionMode.Allow;
+            PreToolSpeech = global::Soenneker.ElevenLabs.OpenApiClient.Models.PreToolSpeechMode.Auto;
             ResponseTimeoutSecs = 30;
+            ToolCallSoundBehavior = global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolCallSoundBehavior.Auto;
+            ToolErrorHandlingMode = global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolErrorHandlingMode.Auto;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -161,10 +160,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "disable_interruptions", n => { DisableInterruptions = n.GetBoolValue(); } },
                 { "execution_mode", n => { ExecutionMode = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolExecutionMode>(); } },
                 { "force_pre_tool_speech", n => { ForcePreToolSpeech = n.GetBoolValue(); } },
-                { "input_overrides", n => { InputOverrides = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.McpToolConfigInputInputOverrides>(global::Soenneker.ElevenLabs.OpenApiClient.Models.McpToolConfigInputInputOverrides.CreateFromDiscriminatorValue); } },
+                { "input_overrides", n => { InputOverrides = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.McpToolConfigInputInputOverridesProperty>(global::Soenneker.ElevenLabs.OpenApiClient.Models.McpToolConfigInputInputOverridesProperty.CreateFromDiscriminatorValue); } },
                 { "integration_type", n => { IntegrationType = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.IntegrationType>(); } },
                 { "interruption_mode", n => { InterruptionMode = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolInterruptionMode>(); } },
-                { "mcp_input_schema", n => { McpInputSchema = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.McpToolConfigInputMcpInputSchema>(global::Soenneker.ElevenLabs.OpenApiClient.Models.McpToolConfigInputMcpInputSchema.CreateFromDiscriminatorValue); } },
+                { "mcp_input_schema", n => { McpInputSchema = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.McpToolConfigInputMcpInputSchemaProperty>(global::Soenneker.ElevenLabs.OpenApiClient.Models.McpToolConfigInputMcpInputSchemaProperty.CreateFromDiscriminatorValue); } },
                 { "mcp_server_id", n => { McpServerId = n.GetStringValue(); } },
                 { "mcp_server_name", n => { McpServerName = n.GetStringValue(); } },
                 { "mcp_tool_description", n => { McpToolDescription = n.GetStringValue(); } },
@@ -173,10 +172,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "parameters", n => { Parameters = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ObjectJsonSchemaPropertyInput>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ObjectJsonSchemaPropertyInput.CreateFromDiscriminatorValue); } },
                 { "pre_tool_speech", n => { PreToolSpeech = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PreToolSpeechMode>(); } },
                 { "response_timeout_secs", n => { ResponseTimeoutSecs = n.GetIntValue(); } },
-                { "tool_call_sound", n => { ToolCallSound = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolCallSoundTypeWrapper8>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolCallSoundTypeWrapper8.CreateFromDiscriminatorValue); } },
+                { "tool_call_sound", n => { ToolCallSound = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolCallSoundType>(); } },
                 { "tool_call_sound_behavior", n => { ToolCallSoundBehavior = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolCallSoundBehavior>(); } },
                 { "tool_error_handling_mode", n => { ToolErrorHandlingMode = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolErrorHandlingMode>(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.McpToolConfigInput_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.McpToolConfigInputType>(); } },
             };
         }
         /// <summary>
@@ -192,10 +191,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteBoolValue("disable_interruptions", DisableInterruptions);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolExecutionMode>("execution_mode", ExecutionMode);
             writer.WriteBoolValue("force_pre_tool_speech", ForcePreToolSpeech);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.McpToolConfigInputInputOverrides>("input_overrides", InputOverrides);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.McpToolConfigInputInputOverridesProperty>("input_overrides", InputOverrides);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.IntegrationType>("integration_type", IntegrationType);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolInterruptionMode>("interruption_mode", InterruptionMode);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.McpToolConfigInputMcpInputSchema>("mcp_input_schema", McpInputSchema);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.McpToolConfigInputMcpInputSchemaProperty>("mcp_input_schema", McpInputSchema);
             writer.WriteStringValue("mcp_server_id", McpServerId);
             writer.WriteStringValue("mcp_server_name", McpServerName);
             writer.WriteStringValue("mcp_tool_description", McpToolDescription);
@@ -204,10 +203,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ObjectJsonSchemaPropertyInput>("parameters", Parameters);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PreToolSpeechMode>("pre_tool_speech", PreToolSpeech);
             writer.WriteIntValue("response_timeout_secs", ResponseTimeoutSecs);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolCallSoundTypeWrapper8>("tool_call_sound", ToolCallSound);
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolCallSoundType>("tool_call_sound", ToolCallSound);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolCallSoundBehavior>("tool_call_sound_behavior", ToolCallSoundBehavior);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolErrorHandlingMode>("tool_error_handling_mode", ToolErrorHandlingMode);
-            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.McpToolConfigInput_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.McpToolConfigInputType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

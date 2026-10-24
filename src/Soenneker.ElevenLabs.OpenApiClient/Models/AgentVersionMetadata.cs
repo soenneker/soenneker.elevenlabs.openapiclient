@@ -46,6 +46,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
+        /// <summary>For a merge into the main branch, the people who published the merged changes on the source branch (access_info is whoever ran the merge). Null when not recorded.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceAccessInfo>? MergedAuthors { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceAccessInfo> MergedAuthors { get; set; }
+#endif
         /// <summary>The parents property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -95,6 +103,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "agent_id", n => { AgentId = n.GetStringValue(); } },
                 { "branch_id", n => { BranchId = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
+                { "merged_authors", n => { MergedAuthors = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceAccessInfo>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceAccessInfo.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "parents", n => { Parents = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentVersionParents>(global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentVersionParents.CreateFromDiscriminatorValue); } },
                 { "seq_no_in_branch", n => { SeqNoInBranch = n.GetIntValue(); } },
                 { "time_committed_secs", n => { TimeCommittedSecs = n.GetIntValue(); } },
@@ -112,6 +121,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteStringValue("agent_id", AgentId);
             writer.WriteStringValue("branch_id", BranchId);
             writer.WriteStringValue("id", Id);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceAccessInfo>("merged_authors", MergedAuthors);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentVersionParents>("parents", Parents);
             writer.WriteIntValue("seq_no_in_branch", SeqNoInBranch);
             writer.WriteIntValue("time_committed_secs", TimeCommittedSecs);

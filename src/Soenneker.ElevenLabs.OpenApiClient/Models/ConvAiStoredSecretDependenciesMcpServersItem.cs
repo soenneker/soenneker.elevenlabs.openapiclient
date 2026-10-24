@@ -43,7 +43,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             {
                 result.DependentAvailableMcpServerIdentifier = new global::Soenneker.ElevenLabs.OpenApiClient.Models.DependentAvailableMcpServerIdentifier();
             }
-            else if("DependentUnknownMcpServerIdentifier".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("unknown".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.DependentUnknownMcpServerIdentifier = new global::Soenneker.ElevenLabs.OpenApiClient.Models.DependentUnknownMcpServerIdentifier();
             }

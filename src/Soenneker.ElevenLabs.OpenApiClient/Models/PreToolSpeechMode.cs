@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.ElevenLabs.OpenApiClient.Models
 {
+    /// <summary>Controls whether the agent speaks before this tool is called. &apos;auto&apos; (default) decides based on recent tool latency, &apos;force&apos; always asks the agent to speak, &apos;off&apos; fully opts out regardless of latency.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum PreToolSpeechMode
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "auto")]
         #pragma warning disable CS1591

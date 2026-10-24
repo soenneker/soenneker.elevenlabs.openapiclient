@@ -34,7 +34,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Dubbing.Project.Item.Language.It
         {
         }
         /// <summary>
-        /// Enterprise only. Edit several segments&apos; translations for a language target in one atomic request.
+        /// Enterprise only. Edit several segments&apos; translations for a language target in one atomic request: every edit applies or none does. Bumps the target&apos;s `revision` and marks it `stale` if it had already completed. The source transcript and the project&apos;s other languages are untouched, and no audio changes until you regenerate the target.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingBulkTargetSegmentUpdateResponse"/></returns>
         /// <param name="body">Edit several target translations at once, applied atomically (all succeed or none do).</param>
@@ -59,7 +59,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Dubbing.Project.Item.Language.It
             return await RequestAdapter.SendAsync<global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingBulkTargetSegmentUpdateResponse>(requestInfo, global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingBulkTargetSegmentUpdateResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Enterprise only. Edit several segments&apos; translations for a language target in one atomic request.
+        /// Enterprise only. Edit several segments&apos; translations for a language target in one atomic request: every edit applies or none does. Bumps the target&apos;s `revision` and marks it `stale` if it had already completed. The source transcript and the project&apos;s other languages are untouched, and no audio changes until you regenerate the target.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">Edit several target translations at once, applied atomically (all succeed or none do).</param>

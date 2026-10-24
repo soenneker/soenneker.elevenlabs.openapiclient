@@ -22,6 +22,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public string Content { get; set; }
 #endif
+        /// <summary>Procedure ID of the folder to create this procedure in, or null for root.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? FolderParentId { get; set; }
+#nullable restore
+#else
+        public string FolderParentId { get; set; }
+#endif
         /// <summary>Procedure name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -30,7 +38,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>When the agent should use this procedure. Empty string means this is a sub-procedure that should only start when another procedure references it. If omitted or null, the trigger is derived from the content instead. Also accepts `description` as an alias.</summary>
+        /// <summary>When the agent should use this procedure. Empty string means this is a sub-procedure that should only start when another procedure references it. Omit this field (or send null) to keep the stored trigger, which is empty on create. Send `&quot;&quot;` to clear it. `description` is accepted as an alias.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Trigger { get; set; }
@@ -38,7 +46,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public string Trigger { get; set; }
 #endif
-        /// <summary>The type property</summary>
+        /// <summary>Procedure type</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.ProcedureType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateProcedureRequestModel"/> and sets the default values.
@@ -46,6 +54,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public CreateProcedureRequestModel()
         {
             AdditionalData = new Dictionary<string, object>();
+            Type = global::Soenneker.ElevenLabs.OpenApiClient.Models.ProcedureType.FreeForm;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -66,6 +75,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "content", n => { Content = n.GetStringValue(); } },
+                { "folder_parent_id", n => { FolderParentId = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "trigger", n => { Trigger = n.GetStringValue(); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProcedureType>(); } },
@@ -79,6 +89,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("content", Content);
+            writer.WriteStringValue("folder_parent_id", FolderParentId);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("trigger", Trigger);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProcedureType>("type", Type);

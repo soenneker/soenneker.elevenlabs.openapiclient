@@ -14,6 +14,18 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Number of daily topic-discovery runs the returned metrics were summed over.</summary>
+        public int? AggregatedRunCount { get; set; }
+        /// <summary>The has_more property</summary>
+        public bool? HasMore { get; set; }
+        /// <summary>The next_cursor property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? NextCursor { get; set; }
+#nullable restore
+#else
+        public string NextCursor { get; set; }
+#endif
         /// <summary>The topics property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -32,6 +44,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public GetAgentTopicsResponseModel()
         {
             AdditionalData = new Dictionary<string, object>();
+            AggregatedRunCount = 0;
+            HasMore = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -51,6 +65,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "aggregated_run_count", n => { AggregatedRunCount = n.GetIntValue(); } },
+                { "has_more", n => { HasMore = n.GetBoolValue(); } },
+                { "next_cursor", n => { NextCursor = n.GetStringValue(); } },
                 { "topics", n => { Topics = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentTopicResponseModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentTopicResponseModel.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "window_end_unix_secs", n => { WindowEndUnixSecs = n.GetIntValue(); } },
                 { "window_start_unix_secs", n => { WindowStartUnixSecs = n.GetIntValue(); } },
@@ -63,6 +80,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteIntValue("aggregated_run_count", AggregatedRunCount);
+            writer.WriteBoolValue("has_more", HasMore);
+            writer.WriteStringValue("next_cursor", NextCursor);
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentTopicResponseModel>("topics", Topics);
             writer.WriteIntValue("window_end_unix_secs", WindowEndUnixSecs);
             writer.WriteIntValue("window_start_unix_secs", WindowStartUnixSecs);

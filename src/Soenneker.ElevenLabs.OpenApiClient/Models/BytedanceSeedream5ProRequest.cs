@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.ElevenLabs.OpenApiClient.Models
 {
     /// <summary>
-    /// Request body for the ByteDance Seedream 5.0 Pro image model.
+    /// Request body for the ByteDance Seedream 5.0 Pro image model.ByteDance models are disabled by default and require explicit approvalbefore use. Contact support to request access.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class BytedanceSeedream5ProRequest : IParsable
@@ -24,7 +24,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ImageReference> Images { get; set; }
 #endif
         /// <summary>The model to use for the generation.</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BytedanceSeedream5ProRequest_model_id? ModelId { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BytedanceSeedream5ProModelId? ModelId { get; set; }
         /// <summary>A text description of the image to generate.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -35,7 +35,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #endif
         /// <summary>The resolution of the output image.</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.BytedanceSeedream5ProRequestResolution? Resolution { get; set; }
-        /// <summary>&quot;A seed for reproducible generation: the same seed and inputs give similar output across generations. Omit for random.&quot;</summary>
+        /// <summary>A seed for reproducible generation: the same seed and inputs give similar output across generations. Omit for random.</summary>
         public int? Seed { get; set; }
         /// <summary>Include to send the generation&apos;s result to the workspace&apos;s configured flows webhooks once it completes or fails. The webhook payload matches the terminal response of the corresponding GET endpoint.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -65,7 +65,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             {
                 { "aspect_ratio", n => { AspectRatio = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BytedanceSeedream5ProRequestAspectRatio>(); } },
                 { "images", n => { Images = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.ImageReference>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ImageReference.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "model_id", n => { ModelId = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BytedanceSeedream5ProRequest_model_id>(); } },
+                { "model_id", n => { ModelId = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BytedanceSeedream5ProModelId>(); } },
                 { "prompt", n => { Prompt = n.GetStringValue(); } },
                 { "resolution", n => { Resolution = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BytedanceSeedream5ProRequestResolution>(); } },
                 { "seed", n => { Seed = n.GetIntValue(); } },
@@ -81,7 +81,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BytedanceSeedream5ProRequestAspectRatio>("aspect_ratio", AspectRatio);
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.ImageReference>("images", Images);
-            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BytedanceSeedream5ProRequest_model_id>("model_id", ModelId);
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BytedanceSeedream5ProModelId>("model_id", ModelId);
             writer.WriteStringValue("prompt", Prompt);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BytedanceSeedream5ProRequestResolution>("resolution", Resolution);
             writer.WriteIntValue("seed", Seed);

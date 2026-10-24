@@ -14,9 +14,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>&quot;    This parameter controls text normalization with four modes: &apos;auto&apos;, &apos;on&apos;, &apos;apply_english&apos; and &apos;off&apos;.    When set to &apos;auto&apos;, the system will automatically decide whether to apply text normalization    (e.g., spelling out numbers). With &apos;on&apos;, text normalization will always be applied, while    with &apos;off&apos;, it will be skipped. &apos;apply_english&apos; is the same as &apos;on&apos; but will assume that text is in English.    &quot;</summary>
+        /// <summary>    This parameter controls text normalization with four modes: &apos;auto&apos;, &apos;on&apos;, &apos;apply_english&apos; and &apos;off&apos;.    When set to &apos;auto&apos;, the system will automatically decide whether to apply text normalization    (e.g., spelling out numbers). With &apos;on&apos;, text normalization will always be applied, while    with &apos;off&apos;, it will be skipped. &apos;apply_english&apos; is the same as &apos;on&apos; but will assume that text is in English.    </summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreatePodcastV1StudioPodcastsPostApplyTextNormalization? ApplyTextNormalization { get; set; }
-        /// <summary>&quot;    A url that will be called by our service when the Studio project is converted. Request will contain a json blob containing the status of the conversion    Messages:    1. When project was converted successfully:    {      type: \&quot;project_conversion_status\&quot;,      event_timestamp: 1234567890,      data: {        request_id: \&quot;1234567890\&quot;,        project_id: \&quot;21m00Tcm4TlvDq8ikWAM\&quot;,        conversion_status: \&quot;success\&quot;,        project_snapshot_id: \&quot;22m00Tcm4TlvDq8ikMAT\&quot;,        error_details: None,      }    }    2. When project conversion failed:    {      type: \&quot;project_conversion_status\&quot;,      event_timestamp: 1234567890,      data: {        request_id: \&quot;1234567890\&quot;,        project_id: \&quot;21m00Tcm4TlvDq8ikWAM\&quot;,        conversion_status: \&quot;error\&quot;,        project_snapshot_id: None,        error_details: \&quot;Error details if conversion failed\&quot;      }    }    3. When chapter was converted successfully:    {      type: \&quot;chapter_conversion_status\&quot;,      event_timestamp: 1234567890,      data: {        request_id: \&quot;1234567890\&quot;,        project_id: \&quot;21m00Tcm4TlvDq8ikWAM\&quot;,        chapter_id: \&quot;22m00Tcm4TlvDq8ikMAT\&quot;,        conversion_status: \&quot;success\&quot;,        chapter_snapshot_id: \&quot;23m00Tcm4TlvDq8ikMAV\&quot;,        error_details: None,      }    }    4. When chapter conversion failed:    {      type: \&quot;chapter_conversion_status\&quot;,      event_timestamp: 1234567890,      data: {        request_id: \&quot;1234567890\&quot;,        project_id: \&quot;21m00Tcm4TlvDq8ikWAM\&quot;,        chapter_id: \&quot;22m00Tcm4TlvDq8ikMAT\&quot;,        conversion_status: \&quot;error\&quot;,        chapter_snapshot_id: None,        error_details: \&quot;Error details if conversion failed\&quot;      }    }    &quot;</summary>
+        /// <summary>    A url that will be called by our service when the Studio project is converted. Request will contain a json blob containing the status of the conversion    Messages:    1. When project was converted successfully:    {      type: &quot;project_conversion_status&quot;,      event_timestamp: 1234567890,      data: {        request_id: &quot;1234567890&quot;,        project_id: &quot;21m00Tcm4TlvDq8ikWAM&quot;,        conversion_status: &quot;success&quot;,        project_snapshot_id: &quot;22m00Tcm4TlvDq8ikMAT&quot;,        error_details: None,      }    }    2. When project conversion failed:    {      type: &quot;project_conversion_status&quot;,      event_timestamp: 1234567890,      data: {        request_id: &quot;1234567890&quot;,        project_id: &quot;21m00Tcm4TlvDq8ikWAM&quot;,        conversion_status: &quot;error&quot;,        project_snapshot_id: None,        error_details: &quot;Error details if conversion failed&quot;      }    }    3. When chapter was converted successfully:    {      type: &quot;chapter_conversion_status&quot;,      event_timestamp: 1234567890,      data: {        request_id: &quot;1234567890&quot;,        project_id: &quot;21m00Tcm4TlvDq8ikWAM&quot;,        chapter_id: &quot;22m00Tcm4TlvDq8ikMAT&quot;,        conversion_status: &quot;success&quot;,        chapter_snapshot_id: &quot;23m00Tcm4TlvDq8ikMAV&quot;,        error_details: None,      }    }    4. When chapter conversion failed:    {      type: &quot;chapter_conversion_status&quot;,      event_timestamp: 1234567890,      data: {        request_id: &quot;1234567890&quot;,        project_id: &quot;21m00Tcm4TlvDq8ikWAM&quot;,        chapter_id: &quot;22m00Tcm4TlvDq8ikMAT&quot;,        conversion_status: &quot;error&quot;,        chapter_snapshot_id: None,        error_details: &quot;Error details if conversion failed&quot;      }    }    </summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CallbackUrl { get; set; }
@@ -29,10 +29,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>A brief summary or highlights of the Studio project&apos;s content, providing key points or themes. This should be between 10 and 70 characters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreatePodcastV1StudioPodcastsPostHighlights? Highlights { get; set; }
+        public List<string>? Highlights { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreatePodcastV1StudioPodcastsPostHighlights Highlights { get; set; }
+        public List<string> Highlights { get; set; }
 #endif
         /// <summary>Additional instructions prompt for the podcast generation used to adjust the podcast&apos;s style and tone.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -82,7 +82,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public string Outro { get; set; }
 #endif
-        /// <summary>The quality_preset property</summary>
+        /// <summary>Output quality of the generated audio. Must be one of:&apos;standard&apos; - standard output format, 128kbps with 44.1kHz sample rate.&apos;high&apos; - high quality output format, 192kbps with 44.1kHz sample rate and major improvements on our side.&apos;ultra&apos; - ultra quality output format, 192kbps with 44.1kHz sample rate and highest improvements on our side.&apos;ultra_lossless&apos; - ultra quality output format, 705.6kbps with 44.1kHz sample rate and highest improvements on our side in a fully lossless format.If not provided, defaults to the highest quality preset available on your subscription tier.</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.QualityPresetType? QualityPreset { get; set; }
         /// <summary>The source content for the Podcast.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -120,7 +120,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "apply_text_normalization", n => { ApplyTextNormalization = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreatePodcastV1StudioPodcastsPostApplyTextNormalization>(); } },
                 { "callback_url", n => { CallbackUrl = n.GetStringValue(); } },
                 { "duration_scale", n => { DurationScale = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreatePodcastV1StudioPodcastsPostDurationScale>(); } },
-                { "highlights", n => { Highlights = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreatePodcastV1StudioPodcastsPostHighlights>(global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreatePodcastV1StudioPodcastsPostHighlights.CreateFromDiscriminatorValue); } },
+                { "highlights", n => { Highlights = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "instructions_prompt", n => { InstructionsPrompt = n.GetStringValue(); } },
                 { "intro", n => { Intro = n.GetStringValue(); } },
                 { "language", n => { Language = n.GetStringValue(); } },
@@ -141,7 +141,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreatePodcastV1StudioPodcastsPostApplyTextNormalization>("apply_text_normalization", ApplyTextNormalization);
             writer.WriteStringValue("callback_url", CallbackUrl);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreatePodcastV1StudioPodcastsPostDurationScale>("duration_scale", DurationScale);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreatePodcastV1StudioPodcastsPostHighlights>("highlights", Highlights);
+            writer.WriteCollectionOfPrimitiveValues<string>("highlights", Highlights);
             writer.WriteStringValue("instructions_prompt", InstructionsPrompt);
             writer.WriteStringValue("intro", Intro);
             writer.WriteStringValue("language", Language);

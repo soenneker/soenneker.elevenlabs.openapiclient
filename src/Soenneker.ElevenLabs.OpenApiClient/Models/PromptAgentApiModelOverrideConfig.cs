@@ -24,6 +24,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public bool? Prompt { get; set; }
         /// <summary>Whether to allow overriding the tool_ids field.</summary>
         public bool? ToolIds { get; set; }
+        /// <summary>Whether to allow overriding the tool_ids_strict field.</summary>
+        public bool? ToolIdsStrict { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentApiModelOverrideConfig"/> and sets the default values.
         /// </summary>
@@ -35,6 +37,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             NativeMcpServerIds = false;
             Prompt = false;
             ToolIds = false;
+            ToolIdsStrict = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -59,6 +62,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "native_mcp_server_ids", n => { NativeMcpServerIds = n.GetBoolValue(); } },
                 { "prompt", n => { Prompt = n.GetBoolValue(); } },
                 { "tool_ids", n => { ToolIds = n.GetBoolValue(); } },
+                { "tool_ids_strict", n => { ToolIdsStrict = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -73,6 +77,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteBoolValue("native_mcp_server_ids", NativeMcpServerIds);
             writer.WriteBoolValue("prompt", Prompt);
             writer.WriteBoolValue("tool_ids", ToolIds);
+            writer.WriteBoolValue("tool_ids_strict", ToolIdsStrict);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

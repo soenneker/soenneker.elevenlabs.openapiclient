@@ -14,6 +14,16 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The ID of the group to share with</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? GroupId { get; set; }
+#nullable restore
+#else
+        public string GroupId { get; set; }
+#endif
+        /// <summary>The permission level to grant to the group</summary>
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.DefaultSharingGroupConfigPermissionLevel? PermissionLevel { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.DefaultSharingGroupConfig"/> and sets the default values.
         /// </summary>
@@ -39,6 +49,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "group_id", n => { GroupId = n.GetStringValue(); } },
+                { "permission_level", n => { PermissionLevel = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DefaultSharingGroupConfigPermissionLevel>(); } },
             };
         }
         /// <summary>
@@ -48,6 +60,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("group_id", GroupId);
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DefaultSharingGroupConfigPermissionLevel>("permission_level", PermissionLevel);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

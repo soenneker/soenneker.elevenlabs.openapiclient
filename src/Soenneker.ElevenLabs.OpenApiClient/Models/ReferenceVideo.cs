@@ -33,10 +33,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The studio_clip property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.StudioClipReference? StudioClip { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.StudioClipLocator? StudioClip { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.StudioClipReference StudioClip { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.StudioClipLocator StudioClip { get; set; }
 #endif
         /// <summary>The template_node_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -73,7 +73,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             {
                 { "content_asset_id", n => { ContentAssetId = n.GetStringValue(); } },
                 { "generation_id", n => { GenerationId = n.GetStringValue(); } },
-                { "studio_clip", n => { StudioClip = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.StudioClipReference>(global::Soenneker.ElevenLabs.OpenApiClient.Models.StudioClipReference.CreateFromDiscriminatorValue); } },
+                { "studio_clip", n => { StudioClip = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.StudioClipLocator>(global::Soenneker.ElevenLabs.OpenApiClient.Models.StudioClipLocator.CreateFromDiscriminatorValue); } },
                 { "template_node_id", n => { TemplateNodeId = n.GetStringValue(); } },
             };
         }
@@ -86,7 +86,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("content_asset_id", ContentAssetId);
             writer.WriteStringValue("generation_id", GenerationId);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.StudioClipReference>("studio_clip", StudioClip);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.StudioClipLocator>("studio_clip", StudioClip);
             writer.WriteStringValue("template_node_id", TemplateNodeId);
             writer.WriteAdditionalData(AdditionalData);
         }

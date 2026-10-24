@@ -30,6 +30,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public RunConversationEvaluationsRequest()
         {
             AdditionalData = new Dictionary<string, object>();
+            Scope = global::Soenneker.ElevenLabs.OpenApiClient.Models.AnalysisScope.Conversation;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

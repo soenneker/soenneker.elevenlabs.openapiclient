@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.ElevenLabs.OpenApiClient.Models
 {
     /// <summary>
-    /// The new revision after a source edit that returns no segment (e.g. a delete).
+    /// The new revision after a source edit that returns no segment, such as a delete.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class DubbingTranscriptRevisionResponse : IAdditionalDataHolder, IParsable

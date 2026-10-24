@@ -14,12 +14,31 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>If true, the mock result is surfaced to the LLM as a tool error rather than a successful result.</summary>
+        public bool? IsError { get; set; }
+        /// <summary>The return value the LLM sees when this mock is active.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? MockResult { get; set; }
+#nullable restore
+#else
+        public string MockResult { get; set; }
+#endif
+        /// <summary>If the list is empty, the mock will always activate.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.UnitTestToolCallParameter>? ParameterConditions { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.UnitTestToolCallParameter> ParameterConditions { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolResponseMockConfigOutput"/> and sets the default values.
         /// </summary>
         public ToolResponseMockConfigOutput()
         {
             AdditionalData = new Dictionary<string, object>();
+            IsError = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -39,6 +58,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "is_error", n => { IsError = n.GetBoolValue(); } },
+                { "mock_result", n => { MockResult = n.GetStringValue(); } },
+                { "parameter_conditions", n => { ParameterConditions = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.UnitTestToolCallParameter>(global::Soenneker.ElevenLabs.OpenApiClient.Models.UnitTestToolCallParameter.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -48,6 +70,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteBoolValue("is_error", IsError);
+            writer.WriteStringValue("mock_result", MockResult);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.UnitTestToolCallParameter>("parameter_conditions", ParameterConditions);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

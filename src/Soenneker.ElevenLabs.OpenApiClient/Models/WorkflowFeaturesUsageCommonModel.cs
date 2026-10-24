@@ -24,6 +24,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel EndNode { get; set; }
 #endif
+        /// <summary>The override_agent_node property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel? OverrideAgentNode { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel OverrideAgentNode { get; set; }
+#endif
         /// <summary>The phone_number_node property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -76,6 +84,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             {
                 { "enabled", n => { Enabled = n.GetBoolValue(); } },
                 { "end_node", n => { EndNode = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel.CreateFromDiscriminatorValue); } },
+                { "override_agent_node", n => { OverrideAgentNode = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel.CreateFromDiscriminatorValue); } },
                 { "phone_number_node", n => { PhoneNumberNode = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel.CreateFromDiscriminatorValue); } },
                 { "standalone_agent_node", n => { StandaloneAgentNode = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel.CreateFromDiscriminatorValue); } },
                 { "tool_node", n => { ToolNode = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel.CreateFromDiscriminatorValue); } },
@@ -90,6 +99,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("enabled", Enabled);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel>("end_node", EndNode);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel>("override_agent_node", OverrideAgentNode);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel>("phone_number_node", PhoneNumberNode);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel>("standalone_agent_node", StandaloneAgentNode);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel>("tool_node", ToolNode);

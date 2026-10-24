@@ -45,6 +45,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             AdditionalData = new Dictionary<string, object>();
             CanUseMcpServers = false;
+            DefaultLivekitStack = global::Soenneker.ElevenLabs.OpenApiClient.Models.LivekitStackType.Standard;
             RagRetentionPeriodDays = 10;
         }
         /// <summary>

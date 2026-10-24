@@ -127,23 +127,23 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("auth_type")?.GetStringValue();
             var result = new global::Soenneker.ElevenLabs.OpenApiClient.Models.ListAuthConnectionsResponseAuthConnectionsItem();
-            if("ApiIntegrationOAuth2AuthCodeResponse".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("api_integration_oauth2_auth_code".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.ApiIntegrationOAuth2AuthCodeResponse = new global::Soenneker.ElevenLabs.OpenApiClient.Models.ApiIntegrationOAuth2AuthCodeResponse();
             }
-            else if("ApiIntegrationOAuth2CustomAppResponse".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("api_integration_oauth2_custom_app".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.ApiIntegrationOAuth2CustomAppResponse = new global::Soenneker.ElevenLabs.OpenApiClient.Models.ApiIntegrationOAuth2CustomAppResponse();
             }
-            else if("BasicAuthResponse".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("basic_auth".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.BasicAuthResponse = new global::Soenneker.ElevenLabs.OpenApiClient.Models.BasicAuthResponse();
             }
-            else if("BearerAuthResponse".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("bearer_auth".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.BearerAuthResponse = new global::Soenneker.ElevenLabs.OpenApiClient.Models.BearerAuthResponse();
             }
-            else if("CustomHeaderAuthResponse".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("custom_header_auth".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.CustomHeaderAuthResponse = new global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomHeaderAuthResponse();
             }
@@ -151,31 +151,31 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             {
                 result.MtlsAuthResponse = new global::Soenneker.ElevenLabs.OpenApiClient.Models.MtlsAuthResponse();
             }
-            else if("OAuth2ClientCredsResponse".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("oauth2_client_credentials".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.OAuth2ClientCredsResponse = new global::Soenneker.ElevenLabs.OpenApiClient.Models.OAuth2ClientCredsResponse();
             }
-            else if("OAuth2JwtResponse".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("oauth2_jwt".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.OAuth2JwtResponse = new global::Soenneker.ElevenLabs.OpenApiClient.Models.OAuth2JwtResponse();
             }
-            else if("PrivateKeyJwtResponse".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("private_key_jwt".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.PrivateKeyJwtResponse = new global::Soenneker.ElevenLabs.OpenApiClient.Models.PrivateKeyJwtResponse();
             }
-            else if("RefreshTokenAuthResponse".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("refresh_token_auth".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.RefreshTokenAuthResponse = new global::Soenneker.ElevenLabs.OpenApiClient.Models.RefreshTokenAuthResponse();
             }
-            else if("SlackBotAuthResponse".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("slack_bot_auth".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.SlackBotAuthResponse = new global::Soenneker.ElevenLabs.OpenApiClient.Models.SlackBotAuthResponse();
             }
-            else if("UrlSecretAuthResponse".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("url_secret".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.UrlSecretAuthResponse = new global::Soenneker.ElevenLabs.OpenApiClient.Models.UrlSecretAuthResponse();
             }
-            else if("WhatsAppAuthResponse".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("whatsapp_auth".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.WhatsAppAuthResponse = new global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppAuthResponse();
             }

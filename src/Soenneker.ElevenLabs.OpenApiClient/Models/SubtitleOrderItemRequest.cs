@@ -14,7 +14,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The cue_options property</summary>
+        /// <summary>Formatting options for subtitle cues such as duration, line count, and character limits.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.CueOptionsRequest? CueOptions { get; set; }
@@ -39,7 +39,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public string Instructions { get; set; }
 #endif
         /// <summary>The type of order item.</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SubtitleOrderItemRequest_kind? Kind { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SubtitlesKind? Kind { get; set; }
         /// <summary>The IDs of the uploaded media files to generate subtitles for.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -87,7 +87,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "cue_options", n => { CueOptions = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CueOptionsRequest>(global::Soenneker.ElevenLabs.OpenApiClient.Models.CueOptionsRequest.CreateFromDiscriminatorValue); } },
                 { "destination_languages", n => { DestinationLanguages = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "instructions", n => { Instructions = n.GetStringValue(); } },
-                { "kind", n => { Kind = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SubtitleOrderItemRequest_kind>(); } },
+                { "kind", n => { Kind = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SubtitlesKind>(); } },
                 { "media_ids", n => { MediaIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "sdh", n => { Sdh = n.GetBoolValue(); } },
                 { "source_language", n => { SourceLanguage = n.GetStringValue(); } },
@@ -103,7 +103,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CueOptionsRequest>("cue_options", CueOptions);
             writer.WriteCollectionOfPrimitiveValues<string>("destination_languages", DestinationLanguages);
             writer.WriteStringValue("instructions", Instructions);
-            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SubtitleOrderItemRequest_kind>("kind", Kind);
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SubtitlesKind>("kind", Kind);
             writer.WriteCollectionOfPrimitiveValues<string>("media_ids", MediaIds);
             writer.WriteBoolValue("sdh", Sdh);
             writer.WriteStringValue("source_language", SourceLanguage);

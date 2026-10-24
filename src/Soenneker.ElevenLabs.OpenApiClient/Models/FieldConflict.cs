@@ -17,12 +17,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Value at the common ancestor (merge base).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.FieldConflictBaseValue? BaseValue { get; set; }
+        public UntypedNode? BaseValue { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.FieldConflictBaseValue BaseValue { get; set; }
+        public UntypedNode BaseValue { get; set; }
 #endif
-        /// <summary>&quot;Identifier of the conflicting field relative to its section: a dot-path within conversation_config/platform_settings, or a procedure id.&quot;</summary>
+        /// <summary>Identifier of the conflicting field relative to its section: a dot-path within conversation_config/platform_settings (e.g. `tts.voice_id`), a procedure id, or a workflow path: `nodes.&lt;id&gt;`, `edges.&lt;id&gt;`, or the name of a top-level workflow setting.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Path { get; set; }
@@ -30,23 +30,23 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public string Path { get; set; }
 #endif
-        /// <summary>The section property</summary>
+        /// <summary>Which config section this path belongs to.</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConflictSection? Section { get; set; }
         /// <summary>Value on the source branch tip.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.FieldConflictSourceValue? SourceValue { get; set; }
+        public UntypedNode? SourceValue { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.FieldConflictSourceValue SourceValue { get; set; }
+        public UntypedNode SourceValue { get; set; }
 #endif
         /// <summary>Value on the target branch tip.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.FieldConflictTargetValue? TargetValue { get; set; }
+        public UntypedNode? TargetValue { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.FieldConflictTargetValue TargetValue { get; set; }
+        public UntypedNode TargetValue { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.FieldConflict"/> and sets the default values.
@@ -73,11 +73,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "base_value", n => { BaseValue = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.FieldConflictBaseValue>(global::Soenneker.ElevenLabs.OpenApiClient.Models.FieldConflictBaseValue.CreateFromDiscriminatorValue); } },
+                { "base_value", n => { BaseValue = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "path", n => { Path = n.GetStringValue(); } },
                 { "section", n => { Section = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConflictSection>(); } },
-                { "source_value", n => { SourceValue = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.FieldConflictSourceValue>(global::Soenneker.ElevenLabs.OpenApiClient.Models.FieldConflictSourceValue.CreateFromDiscriminatorValue); } },
-                { "target_value", n => { TargetValue = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.FieldConflictTargetValue>(global::Soenneker.ElevenLabs.OpenApiClient.Models.FieldConflictTargetValue.CreateFromDiscriminatorValue); } },
+                { "source_value", n => { SourceValue = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "target_value", n => { TargetValue = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -87,11 +87,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.FieldConflictBaseValue>("base_value", BaseValue);
+            writer.WriteObjectValue<UntypedNode>("base_value", BaseValue);
             writer.WriteStringValue("path", Path);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConflictSection>("section", Section);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.FieldConflictSourceValue>("source_value", SourceValue);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.FieldConflictTargetValue>("target_value", TargetValue);
+            writer.WriteObjectValue<UntypedNode>("source_value", SourceValue);
+            writer.WriteObjectValue<UntypedNode>("target_value", TargetValue);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

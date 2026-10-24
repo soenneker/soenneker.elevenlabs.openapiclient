@@ -27,10 +27,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The IDs of collections this voice belongs to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceResponseModelCollectionIds? CollectionIds { get; set; }
+        public List<string>? CollectionIds { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceResponseModelCollectionIds CollectionIds { get; set; }
+        public List<string> CollectionIds { get; set; }
 #endif
         /// <summary>The creation time of the voice in Unix time.</summary>
         public int? CreatedAtUnix { get; set; }
@@ -191,7 +191,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             {
                 { "available_for_tiers", n => { AvailableForTiers = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "category", n => { Category = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceResponseModelCategory>(); } },
-                { "collection_ids", n => { CollectionIds = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceResponseModelCollectionIds>(global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceResponseModelCollectionIds.CreateFromDiscriminatorValue); } },
+                { "collection_ids", n => { CollectionIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "created_at_unix", n => { CreatedAtUnix = n.GetIntValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "favorited_at_unix", n => { FavoritedAtUnix = n.GetIntValue(); } },
@@ -226,7 +226,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<string>("available_for_tiers", AvailableForTiers);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceResponseModelCategory>("category", Category);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceResponseModelCollectionIds>("collection_ids", CollectionIds);
+            writer.WriteCollectionOfPrimitiveValues<string>("collection_ids", CollectionIds);
             writer.WriteIntValue("created_at_unix", CreatedAtUnix);
             writer.WriteStringValue("description", Description);
             writer.WriteIntValue("favorited_at_unix", FavoritedAtUnix);

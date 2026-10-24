@@ -117,11 +117,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.KnowledgeBase.Search
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("types")]
-            public string? Types { get; set; }
+            public global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeBaseDocumentType[]? Types { get; set; }
 #nullable restore
 #else
             [QueryParameter("types")]
-            public string Types { get; set; }
+            public global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeBaseDocumentType[] Types { get; set; }
 #endif
         }
     }

@@ -22,7 +22,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public string OrderId { get; set; }
 #endif
-        /// <summary>The state property</summary>
+        /// <summary>The current state of the order after submission.</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.OrderState? State { get; set; }
         /// <summary>The timestamp when the order was submitted.</summary>
         public DateTimeOffset? SubmittedAt { get; set; }

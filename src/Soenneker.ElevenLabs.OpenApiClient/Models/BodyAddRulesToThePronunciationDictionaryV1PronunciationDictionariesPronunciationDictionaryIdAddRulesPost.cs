@@ -14,7 +14,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>&quot;List of pronunciation rules. Rule can be either:    an alias rule: {&apos;string_to_replace&apos;: &apos;a&apos;, &apos;type&apos;: &apos;alias&apos;, &apos;alias&apos;: &apos;b&apos;, }    or a phoneme rule: {&apos;string_to_replace&apos;: &apos;a&apos;, &apos;type&apos;: &apos;phoneme&apos;, &apos;phoneme&apos;: &apos;b&apos;, &apos;alphabet&apos;: &apos;ipa&apos; }&quot;</summary>
+        /// <summary>List of pronunciation rules. Rule can be either:    an alias rule: {&apos;string_to_replace&apos;: &apos;a&apos;, &apos;type&apos;: &apos;alias&apos;, &apos;alias&apos;: &apos;b&apos;, }    or a phoneme rule: {&apos;string_to_replace&apos;: &apos;a&apos;, &apos;type&apos;: &apos;phoneme&apos;, &apos;phoneme&apos;: &apos;b&apos;, &apos;alphabet&apos;: &apos;ipa&apos; }</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyAddRulesToThePronunciationDictionaryV1PronunciationDictionariesPronunciationDictionaryIdAddRulesPostRulesItem>? Rules { get; set; }

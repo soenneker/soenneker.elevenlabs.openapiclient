@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.ElevenLabs.OpenApiClient.Models
 {
+    /// <summary>Format for transcript webhooks.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum WebhookTranscriptFormat
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "json")]
         #pragma warning disable CS1591

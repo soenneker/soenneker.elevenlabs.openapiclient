@@ -27,10 +27,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Speaker IDs to be used for PVC training. Make sure you send all the speaker IDs you want to use for PVC training in one request because the last request will override the previous ones.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyUpdatePvcVoiceSampleV1VoicesPvcVoiceIdSamplesSampleIdPostSelectedSpeakerIds? SelectedSpeakerIds { get; set; }
+        public List<string>? SelectedSpeakerIds { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyUpdatePvcVoiceSampleV1VoicesPvcVoiceIdSamplesSampleIdPostSelectedSpeakerIds SelectedSpeakerIds { get; set; }
+        public List<string> SelectedSpeakerIds { get; set; }
 #endif
         /// <summary>The end time of the audio to be used for PVC training. Time should be in milliseconds</summary>
         public int? TrimEndTime { get; set; }
@@ -64,7 +64,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             {
                 { "file_name", n => { FileName = n.GetStringValue(); } },
                 { "remove_background_noise", n => { RemoveBackgroundNoise = n.GetBoolValue(); } },
-                { "selected_speaker_ids", n => { SelectedSpeakerIds = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyUpdatePvcVoiceSampleV1VoicesPvcVoiceIdSamplesSampleIdPostSelectedSpeakerIds>(global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyUpdatePvcVoiceSampleV1VoicesPvcVoiceIdSamplesSampleIdPostSelectedSpeakerIds.CreateFromDiscriminatorValue); } },
+                { "selected_speaker_ids", n => { SelectedSpeakerIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "trim_end_time", n => { TrimEndTime = n.GetIntValue(); } },
                 { "trim_start_time", n => { TrimStartTime = n.GetIntValue(); } },
             };
@@ -78,7 +78,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("file_name", FileName);
             writer.WriteBoolValue("remove_background_noise", RemoveBackgroundNoise);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyUpdatePvcVoiceSampleV1VoicesPvcVoiceIdSamplesSampleIdPostSelectedSpeakerIds>("selected_speaker_ids", SelectedSpeakerIds);
+            writer.WriteCollectionOfPrimitiveValues<string>("selected_speaker_ids", SelectedSpeakerIds);
             writer.WriteIntValue("trim_end_time", TrimEndTime);
             writer.WriteIntValue("trim_start_time", TrimStartTime);
             writer.WriteAdditionalData(AdditionalData);

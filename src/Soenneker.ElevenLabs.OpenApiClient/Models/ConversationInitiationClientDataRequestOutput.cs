@@ -54,6 +54,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public string Environment { get; set; }
 #endif
+        /// <summary>If set, only these procedures are available to the starting agent. Each ID must be attached to that agent; unknown IDs fail conversation start. An empty list disables all of that agent&apos;s procedures. Not applied after an agent transfer. Requires enable_procedure_ids_from_client.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? ProcedureIds { get; set; }
+#nullable restore
+#else
+        public List<string> ProcedureIds { get; set; }
+#endif
         /// <summary>Information about the source of conversation initiation</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -69,6 +77,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #nullable restore
 #else
         public string StartingWorkflowNodeId { get; set; }
+#endif
+        /// <summary>If set, these free-form procedures start when the conversation starts. Accepts at most five IDs. Each ID must be available after procedure_ids is applied. Unknown IDs and structured procedures fail conversation start. Requires enable_procedure_ids_from_client.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? StartProcedureIds { get; set; }
+#nullable restore
+#else
+        public List<string> StartProcedureIds { get; set; }
 #endif
         /// <summary>ID of the end user participating in this conversation (for agent owner&apos;s user identification)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -108,7 +124,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "custom_llm_extra_body", n => { CustomLlmExtraBody = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationClientDataRequestOutputCustomLlmExtraBodyProperty>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationClientDataRequestOutputCustomLlmExtraBodyProperty.CreateFromDiscriminatorValue); } },
                 { "dynamic_variables", n => { DynamicVariables = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationClientDataRequestOutputDynamicVariablesProperty>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationClientDataRequestOutputDynamicVariablesProperty.CreateFromDiscriminatorValue); } },
                 { "environment", n => { Environment = n.GetStringValue(); } },
+                { "procedure_ids", n => { ProcedureIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "source_info", n => { SourceInfo = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationSourceInfo>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationSourceInfo.CreateFromDiscriminatorValue); } },
+                { "start_procedure_ids", n => { StartProcedureIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "starting_workflow_node_id", n => { StartingWorkflowNodeId = n.GetStringValue(); } },
                 { "user_id", n => { UserId = n.GetStringValue(); } },
             };
@@ -125,8 +143,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationClientDataRequestOutputCustomLlmExtraBodyProperty>("custom_llm_extra_body", CustomLlmExtraBody);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationClientDataRequestOutputDynamicVariablesProperty>("dynamic_variables", DynamicVariables);
             writer.WriteStringValue("environment", Environment);
+            writer.WriteCollectionOfPrimitiveValues<string>("procedure_ids", ProcedureIds);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationSourceInfo>("source_info", SourceInfo);
             writer.WriteStringValue("starting_workflow_node_id", StartingWorkflowNodeId);
+            writer.WriteCollectionOfPrimitiveValues<string>("start_procedure_ids", StartProcedureIds);
             writer.WriteStringValue("user_id", UserId);
             writer.WriteAdditionalData(AdditionalData);
         }

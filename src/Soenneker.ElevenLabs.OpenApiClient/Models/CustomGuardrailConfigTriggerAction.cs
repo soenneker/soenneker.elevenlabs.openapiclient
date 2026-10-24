@@ -39,7 +39,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             var result = new global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomGuardrailConfigTriggerAction();
-            if("EndCallTriggerAction".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("end_call".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.EndCallTriggerAction = new global::Soenneker.ElevenLabs.OpenApiClient.Models.EndCallTriggerAction();
             }

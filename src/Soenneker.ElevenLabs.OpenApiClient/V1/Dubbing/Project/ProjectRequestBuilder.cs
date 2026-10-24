@@ -47,7 +47,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Dubbing.Project
         {
         }
         /// <summary>
-        /// List the workspace&apos;s dubbing projects (cursor-paginated).
+        /// List the dubbing projects in your workspace that you can access, newest first, cursor-paginated. Listed projects carry no `language_ids`; fetch a project, or list its language targets, to see them.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingProjectListResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -70,7 +70,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Dubbing.Project
             return await RequestAdapter.SendAsync<global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingProjectListResponse>(requestInfo, global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingProjectListResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a dubbing project from an uploaded file or a source URL.
+        /// Create a dubbing project from an uploaded file (`file`) or a source URL (`source_url`).Returns as soon as the project record exists, before the source has been fetched: the project starts `queued` and reaches `ready` once its source has been transcribed. Add a language target to it for each language you want, or pass `target_language` to queue the first one here.Creating a project incurs a minimum charge of one language: you are charged for at least one language&apos;s dubbing when the project is created, before any output exists. This charge prepays the first language target — the first target you add, or the one queued via `target_language`, consumes it — and each additional language is charged separately.Preparation can take minutes on a long source, so we recommend passing `webhook_ids` to be notified when the project turns `ready` or `failed`, rather than polling for it.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingProjectResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -95,7 +95,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Dubbing.Project
             return await RequestAdapter.SendAsync<global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingProjectResponse>(requestInfo, global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingProjectResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List the workspace&apos;s dubbing projects (cursor-paginated).
+        /// List the dubbing projects in your workspace that you can access, newest first, cursor-paginated. Listed projects carry no `language_ids`; fetch a project, or list its language targets, to see them.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -114,7 +114,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Dubbing.Project
             return requestInfo;
         }
         /// <summary>
-        /// Create a dubbing project from an uploaded file or a source URL.
+        /// Create a dubbing project from an uploaded file (`file`) or a source URL (`source_url`).Returns as soon as the project record exists, before the source has been fetched: the project starts `queued` and reaches `ready` once its source has been transcribed. Add a language target to it for each language you want, or pass `target_language` to queue the first one here.Creating a project incurs a minimum charge of one language: you are charged for at least one language&apos;s dubbing when the project is created, before any output exists. This charge prepays the first language target — the first target you add, or the one queued via `target_language`, consumes it — and each additional language is charged separately.Preparation can take minutes on a long source, so we recommend passing `webhook_ids` to be notified when the project turns `ready` or `failed`, rather than polling for it.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -145,12 +145,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Dubbing.Project
             return new global::Soenneker.ElevenLabs.OpenApiClient.V1.Dubbing.Project.ProjectRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List the workspace&apos;s dubbing projects (cursor-paginated).
+        /// List the dubbing projects in your workspace that you can access, newest first, cursor-paginated. Listed projects carry no `language_ids`; fetch a project, or list its language targets, to see them.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ProjectRequestBuilderGetQueryParameters 
         {
-            /// <summary>Pagination cursor from a previous response&apos;s next_cursor.</summary>
+            /// <summary>Pass the `next_cursor` from a previous response to fetch the page after it. Omit for the first page.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("cursor")]
@@ -160,13 +160,13 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Dubbing.Project
             [QueryParameter("cursor")]
             public string Cursor { get; set; }
 #endif
-            /// <summary>Number of projects per page (max 100).</summary>
+            /// <summary>Number of projects per page. Clamped to between 1 and 100 rather than rejected, so a larger value returns a full page.</summary>
             [QueryParameter("page_size")]
             public int? PageSize { get; set; }
-            /// <summary>Sort by creation time (default &apos;DESCENDING&apos;).</summary>
+            /// <summary>Sort by creation time; newest first by default.</summary>
             [QueryParameter("sort_direction")]
             public global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingProjectListSortDirectionParameter? SortDirection { get; set; }
-            /// <summary>Filter to projects in this status (preparing, ready, failed).</summary>
+            /// <summary>Filter to projects in this status: `queued`, `preparing`, `ready`, or `failed`. Omit to return every status.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("status")]

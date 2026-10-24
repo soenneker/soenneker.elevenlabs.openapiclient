@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.ElevenLabs.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.EndCallToolConfig"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.EndProcedureToolConfigInput"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeBaseRagToolConfig"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeBaseToolConfig"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.LanguageDetectionToolConfig"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.PlayDtmfToolConfig"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.RunSubagentToolConfigInput"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.SkipTurnToolConfig"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.StartProcedureToolConfigInput"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.TransferToAgentToolConfigInput"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.TransferToNumberToolConfigInput"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.VoicemailDetectionToolConfig"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.EndCallToolConfig"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.EndProcedureToolConfig"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeBaseRagToolConfig"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeBaseToolConfig"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.LanguageDetectionToolConfig"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.PlayDtmfToolConfig"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.SkipTurnToolConfig"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.StartProcedureToolConfig"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.TransferToAgentToolConfigInput"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.TransferToNumberToolConfigInput"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.VoicemailDetectionToolConfig"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SystemToolConfigInputParams : IComposedTypeWrapper, IParsable
@@ -21,13 +21,13 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.EndCallToolConfig EndCallToolConfig { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.EndProcedureToolConfigInput"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.EndProcedureToolConfig"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.EndProcedureToolConfigInput? EndProcedureToolConfigInput { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.EndProcedureToolConfig? EndProcedureToolConfig { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.EndProcedureToolConfigInput EndProcedureToolConfigInput { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.EndProcedureToolConfig EndProcedureToolConfig { get; set; }
 #endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeBaseRagToolConfig"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -61,14 +61,6 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.PlayDtmfToolConfig PlayDtmfToolConfig { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.RunSubagentToolConfigInput"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.RunSubagentToolConfigInput? RunSubagentToolConfigInput { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.RunSubagentToolConfigInput RunSubagentToolConfigInput { get; set; }
-#endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.SkipTurnToolConfig"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -77,13 +69,13 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.SkipTurnToolConfig SkipTurnToolConfig { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.StartProcedureToolConfigInput"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.StartProcedureToolConfig"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.StartProcedureToolConfigInput? StartProcedureToolConfigInput { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.StartProcedureToolConfig? StartProcedureToolConfig { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.StartProcedureToolConfigInput StartProcedureToolConfigInput { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.StartProcedureToolConfig StartProcedureToolConfig { get; set; }
 #endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.TransferToAgentToolConfigInput"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -119,51 +111,47 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("system_tool_type")?.GetStringValue();
             var result = new global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigInputParams();
-            if("EndCallToolConfig".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("end_call".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.EndCallToolConfig = new global::Soenneker.ElevenLabs.OpenApiClient.Models.EndCallToolConfig();
             }
-            else if("EndProcedureToolConfigInput".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("end_procedure".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.EndProcedureToolConfigInput = new global::Soenneker.ElevenLabs.OpenApiClient.Models.EndProcedureToolConfigInput();
+                result.EndProcedureToolConfig = new global::Soenneker.ElevenLabs.OpenApiClient.Models.EndProcedureToolConfig();
             }
-            else if("KnowledgeBaseRagToolConfig".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("knowledge_base_rag".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.KnowledgeBaseRagToolConfig = new global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeBaseRagToolConfig();
             }
-            else if("KnowledgeBaseToolConfig".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("knowledge_base".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.KnowledgeBaseToolConfig = new global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeBaseToolConfig();
             }
-            else if("LanguageDetectionToolConfig".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("language_detection".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.LanguageDetectionToolConfig = new global::Soenneker.ElevenLabs.OpenApiClient.Models.LanguageDetectionToolConfig();
             }
-            else if("PlayDtmfToolConfig".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("play_keypad_touch_tone".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.PlayDtmfToolConfig = new global::Soenneker.ElevenLabs.OpenApiClient.Models.PlayDtmfToolConfig();
             }
-            else if("RunSubagentToolConfigInput".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.RunSubagentToolConfigInput = new global::Soenneker.ElevenLabs.OpenApiClient.Models.RunSubagentToolConfigInput();
-            }
-            else if("SkipTurnToolConfig".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("skip_turn".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.SkipTurnToolConfig = new global::Soenneker.ElevenLabs.OpenApiClient.Models.SkipTurnToolConfig();
             }
-            else if("StartProcedureToolConfigInput".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("start_procedure".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.StartProcedureToolConfigInput = new global::Soenneker.ElevenLabs.OpenApiClient.Models.StartProcedureToolConfigInput();
+                result.StartProcedureToolConfig = new global::Soenneker.ElevenLabs.OpenApiClient.Models.StartProcedureToolConfig();
             }
-            else if("TransferToAgentToolConfigInput".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("transfer_to_agent".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.TransferToAgentToolConfigInput = new global::Soenneker.ElevenLabs.OpenApiClient.Models.TransferToAgentToolConfigInput();
             }
-            else if("TransferToNumberToolConfigInput".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("transfer_to_number".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.TransferToNumberToolConfigInput = new global::Soenneker.ElevenLabs.OpenApiClient.Models.TransferToNumberToolConfigInput();
             }
-            else if("VoicemailDetectionToolConfig".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("voicemail_detection".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.VoicemailDetectionToolConfig = new global::Soenneker.ElevenLabs.OpenApiClient.Models.VoicemailDetectionToolConfig();
             }
@@ -179,9 +167,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             {
                 return EndCallToolConfig.GetFieldDeserializers();
             }
-            else if(EndProcedureToolConfigInput != null)
+            else if(EndProcedureToolConfig != null)
             {
-                return EndProcedureToolConfigInput.GetFieldDeserializers();
+                return EndProcedureToolConfig.GetFieldDeserializers();
             }
             else if(KnowledgeBaseRagToolConfig != null)
             {
@@ -199,17 +187,13 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             {
                 return PlayDtmfToolConfig.GetFieldDeserializers();
             }
-            else if(RunSubagentToolConfigInput != null)
-            {
-                return RunSubagentToolConfigInput.GetFieldDeserializers();
-            }
             else if(SkipTurnToolConfig != null)
             {
                 return SkipTurnToolConfig.GetFieldDeserializers();
             }
-            else if(StartProcedureToolConfigInput != null)
+            else if(StartProcedureToolConfig != null)
             {
-                return StartProcedureToolConfigInput.GetFieldDeserializers();
+                return StartProcedureToolConfig.GetFieldDeserializers();
             }
             else if(TransferToAgentToolConfigInput != null)
             {
@@ -236,9 +220,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             {
                 writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.EndCallToolConfig>(null, EndCallToolConfig);
             }
-            else if(EndProcedureToolConfigInput != null)
+            else if(EndProcedureToolConfig != null)
             {
-                writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.EndProcedureToolConfigInput>(null, EndProcedureToolConfigInput);
+                writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.EndProcedureToolConfig>(null, EndProcedureToolConfig);
             }
             else if(KnowledgeBaseRagToolConfig != null)
             {
@@ -256,17 +240,13 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             {
                 writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PlayDtmfToolConfig>(null, PlayDtmfToolConfig);
             }
-            else if(RunSubagentToolConfigInput != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.RunSubagentToolConfigInput>(null, RunSubagentToolConfigInput);
-            }
             else if(SkipTurnToolConfig != null)
             {
                 writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SkipTurnToolConfig>(null, SkipTurnToolConfig);
             }
-            else if(StartProcedureToolConfigInput != null)
+            else if(StartProcedureToolConfig != null)
             {
-                writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.StartProcedureToolConfigInput>(null, StartProcedureToolConfigInput);
+                writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.StartProcedureToolConfig>(null, StartProcedureToolConfig);
             }
             else if(TransferToAgentToolConfigInput != null)
             {

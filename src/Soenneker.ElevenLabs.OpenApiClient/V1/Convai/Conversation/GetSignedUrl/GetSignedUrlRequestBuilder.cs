@@ -22,7 +22,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Conversation.GetSignedUrl
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public GetSignedUrlRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/convai/conversation/get-signed-url?agent_id={agent_id}{&branch_id*,environment*,include_conversation_id*}", pathParameters)
+        public GetSignedUrlRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/convai/conversation/get-signed-url?agent_id={agent_id}{&branch_id*,debug_events_request*,environment*,include_conversation_id*,version_id*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Conversation.GetSignedUrl
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public GetSignedUrlRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/convai/conversation/get-signed-url?agent_id={agent_id}{&branch_id*,environment*,include_conversation_id*}", rawUrl)
+        public GetSignedUrlRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/convai/conversation/get-signed-url?agent_id={agent_id}{&branch_id*,debug_events_request*,environment*,include_conversation_id*,version_id*}", rawUrl)
         {
         }
         /// <summary>
@@ -110,6 +110,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Conversation.GetSignedUrl
             [QueryParameter("branch_id")]
             public string BranchId { get; set; }
 #endif
+            /// <summary>Whether to enable debug events. Only available for users with editor access to the agent.</summary>
+            [QueryParameter("debug_events_request")]
+            public bool? DebugEventsRequest { get; set; }
             /// <summary>The environment to use for resolving environment variables (e.g. &apos;production&apos;, &apos;staging&apos;). Defaults to &apos;production&apos;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -123,6 +126,16 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Conversation.GetSignedUrl
             /// <summary>Whether to include a conversation_id with the response. If included, the conversation_signature cannot be used again.</summary>
             [QueryParameter("include_conversation_id")]
             public bool? IncludeConversationId { get; set; }
+            /// <summary>The ID of the version to use</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("version_id")]
+            public string? VersionId { get; set; }
+#nullable restore
+#else
+            [QueryParameter("version_id")]
+            public string VersionId { get; set; }
+#endif
         }
     }
 }

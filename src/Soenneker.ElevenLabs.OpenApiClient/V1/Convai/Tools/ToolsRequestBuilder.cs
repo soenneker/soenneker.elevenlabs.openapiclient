@@ -35,7 +35,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Tools
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ToolsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/convai/tools{?created_by_user_id*,cursor*,page_size*,search*,show_only_owned_documents*,sort_by*,sort_direction*,types*}", pathParameters)
+        public ToolsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/convai/tools{?created_by_user_id*,cursor*,page_size*,search*,show_only_owned_documents*,sort_by*,sort_direction*,types*,used_by_agent_id*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Tools
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ToolsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/convai/tools{?created_by_user_id*,cursor*,page_size*,search*,show_only_owned_documents*,sort_by*,sort_direction*,types*}", rawUrl)
+        public ToolsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/convai/tools{?created_by_user_id*,cursor*,page_size*,search*,show_only_owned_documents*,sort_by*,sort_direction*,types*,used_by_agent_id*}", rawUrl)
         {
         }
         /// <summary>
@@ -73,7 +73,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Tools
         /// Add a new tool to the available tools in the workspace.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolResponseModel"/></returns>
-        /// <param name="body">The request body</param>
+        /// <param name="body">A tool that an agent can provide to LLM.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.HttpValidationError">When receiving a 422 status code</exception>
@@ -117,7 +117,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Tools
         /// Add a new tool to the available tools in the workspace.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">The request body</param>
+        /// <param name="body">A tool that an agent can provide to LLM.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -183,7 +183,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Tools
             [QueryParameter("search")]
             public string Search { get; set; }
 #endif
-            /// <summary>&quot;If set to true, the endpoint will return only tools owned by you (and not shared from somebody else). Deprecated: use created_by_user_id instead.&quot;</summary>
+            /// <summary>If set to true, the endpoint will return only tools owned by you (and not shared from somebody else). Deprecated: use created_by_user_id instead.</summary>
             [Obsolete("")]
             [QueryParameter("show_only_owned_documents")]
             public bool? ShowOnlyOwnedDocuments { get; set; }
@@ -204,11 +204,21 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Tools
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("types")]
-            public string? Types { get; set; }
+            public global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolTypeFilter[]? Types { get; set; }
 #nullable restore
 #else
             [QueryParameter("types")]
-            public string Types { get; set; }
+            public global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolTypeFilter[] Types { get; set; }
+#endif
+            /// <summary>Filter to tools referenced by this agent&apos;s main branch: tools attached to the agent, tools on authored workflow nodes, and tools referenced by procedures.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("used_by_agent_id")]
+            public string? UsedByAgentId { get; set; }
+#nullable restore
+#else
+            [QueryParameter("used_by_agent_id")]
+            public string UsedByAgentId { get; set; }
 #endif
         }
     }

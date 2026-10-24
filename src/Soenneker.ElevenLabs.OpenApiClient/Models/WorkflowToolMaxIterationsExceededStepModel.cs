@@ -19,7 +19,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>The step_latency_secs property</summary>
         public double? StepLatencySecs { get; set; }
         /// <summary>The type property</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkflowToolMaxIterationsExceededStepModel_type? Type { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.MaxIterationsExceededType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkflowToolMaxIterationsExceededStepModel"/> and sets the default values.
         /// </summary>
@@ -47,7 +47,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             {
                 { "max_iterations", n => { MaxIterations = n.GetIntValue(); } },
                 { "step_latency_secs", n => { StepLatencySecs = n.GetDoubleValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkflowToolMaxIterationsExceededStepModel_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.MaxIterationsExceededType>(); } },
             };
         }
         /// <summary>
@@ -59,7 +59,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("max_iterations", MaxIterations);
             writer.WriteDoubleValue("step_latency_secs", StepLatencySecs);
-            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkflowToolMaxIterationsExceededStepModel_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.MaxIterationsExceededType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

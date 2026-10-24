@@ -17,18 +17,18 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>List of IP addresses that are allowed to use the trunk. Each item in the list can be an individual IP address or a Classless Inter-Domain Routing notation representing a CIDR block.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.InboundSipTrunkConfigRequestModelAllowedAddresses? AllowedAddresses { get; set; }
+        public List<string>? AllowedAddresses { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.InboundSipTrunkConfigRequestModelAllowedAddresses AllowedAddresses { get; set; }
+        public List<string> AllowedAddresses { get; set; }
 #endif
         /// <summary>List of phone numbers that are allowed to use the trunk.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.InboundSipTrunkConfigRequestModelAllowedNumbers? AllowedNumbers { get; set; }
+        public List<string>? AllowedNumbers { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.InboundSipTrunkConfigRequestModelAllowedNumbers AllowedNumbers { get; set; }
+        public List<string> AllowedNumbers { get; set; }
 #endif
         /// <summary>Map of dynamic variable name to header name for attributes_to_headers</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -51,10 +51,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <summary>Domains of remote SIP servers used to validate TLS certificates.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.InboundSipTrunkConfigRequestModelRemoteDomains? RemoteDomains { get; set; }
+        public List<string>? RemoteDomains { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.InboundSipTrunkConfigRequestModelRemoteDomains RemoteDomains { get; set; }
+        public List<string> RemoteDomains { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.InboundSipTrunkConfigRequestModel"/> and sets the default values.
@@ -81,12 +81,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "allowed_addresses", n => { AllowedAddresses = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.InboundSipTrunkConfigRequestModelAllowedAddresses>(global::Soenneker.ElevenLabs.OpenApiClient.Models.InboundSipTrunkConfigRequestModelAllowedAddresses.CreateFromDiscriminatorValue); } },
-                { "allowed_numbers", n => { AllowedNumbers = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.InboundSipTrunkConfigRequestModelAllowedNumbers>(global::Soenneker.ElevenLabs.OpenApiClient.Models.InboundSipTrunkConfigRequestModelAllowedNumbers.CreateFromDiscriminatorValue); } },
+                { "allowed_addresses", n => { AllowedAddresses = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "allowed_numbers", n => { AllowedNumbers = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "attributes_to_headers", n => { AttributesToHeaders = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.InboundSipTrunkConfigRequestModelAttributesToHeadersProperty>(global::Soenneker.ElevenLabs.OpenApiClient.Models.InboundSipTrunkConfigRequestModelAttributesToHeadersProperty.CreateFromDiscriminatorValue); } },
                 { "credentials", n => { Credentials = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SipTrunkCredentialsRequestModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.SipTrunkCredentialsRequestModel.CreateFromDiscriminatorValue); } },
                 { "media_encryption", n => { MediaEncryption = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SipMediaEncryptionEnum>(); } },
-                { "remote_domains", n => { RemoteDomains = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.InboundSipTrunkConfigRequestModelRemoteDomains>(global::Soenneker.ElevenLabs.OpenApiClient.Models.InboundSipTrunkConfigRequestModelRemoteDomains.CreateFromDiscriminatorValue); } },
+                { "remote_domains", n => { RemoteDomains = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
         }
         /// <summary>
@@ -96,12 +96,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.InboundSipTrunkConfigRequestModelAllowedAddresses>("allowed_addresses", AllowedAddresses);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.InboundSipTrunkConfigRequestModelAllowedNumbers>("allowed_numbers", AllowedNumbers);
+            writer.WriteCollectionOfPrimitiveValues<string>("allowed_addresses", AllowedAddresses);
+            writer.WriteCollectionOfPrimitiveValues<string>("allowed_numbers", AllowedNumbers);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.InboundSipTrunkConfigRequestModelAttributesToHeadersProperty>("attributes_to_headers", AttributesToHeaders);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SipTrunkCredentialsRequestModel>("credentials", Credentials);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SipMediaEncryptionEnum>("media_encryption", MediaEncryption);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.InboundSipTrunkConfigRequestModelRemoteDomains>("remote_domains", RemoteDomains);
+            writer.WriteCollectionOfPrimitiveValues<string>("remote_domains", RemoteDomains);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

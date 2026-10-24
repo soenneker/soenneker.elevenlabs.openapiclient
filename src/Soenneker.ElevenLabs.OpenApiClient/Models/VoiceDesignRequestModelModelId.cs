@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.ElevenLabs.OpenApiClient.Models
 {
-    /// <summary>&quot;Model to use for the voice generation. Possible values: eleven_multilingual_ttv_v2, eleven_ttv_v3.&quot;</summary>
+    /// <summary>Model to use for the voice generation. Possible values: eleven_multilingual_ttv_v2, eleven_ttv_v3.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum VoiceDesignRequestModelModelId
     {

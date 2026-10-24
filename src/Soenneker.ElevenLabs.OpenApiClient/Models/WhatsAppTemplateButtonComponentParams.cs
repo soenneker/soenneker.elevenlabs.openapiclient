@@ -33,7 +33,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public string SubType { get; set; }
 #endif
         /// <summary>The type property</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppTemplateButtonComponentParams_type? Type { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ButtonType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppTemplateButtonComponentParams"/> and sets the default values.
         /// </summary>
@@ -62,7 +62,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "index", n => { Index = n.GetIntValue(); } },
                 { "parameters", n => { Parameters = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppTemplateTextParam>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppTemplateTextParam.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "sub_type", n => { SubType = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppTemplateButtonComponentParams_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ButtonType>(); } },
             };
         }
         /// <summary>
@@ -75,7 +75,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteIntValue("index", Index);
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppTemplateTextParam>("parameters", Parameters);
             writer.WriteStringValue("sub_type", SubType);
-            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppTemplateButtonComponentParams_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ButtonType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

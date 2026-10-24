@@ -24,6 +24,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConfigEntityType?> Entities { get; set; }
 #endif
+        /// <summary>Data collection item IDs whose extracted values are not redacted. Their rationales are still redacted.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? ExcludedDataCollectionIds { get; set; }
+#nullable restore
+#else
+        public List<string> ExcludedDataCollectionIds { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryRedactionConfig"/> and sets the default values.
         /// </summary>
@@ -52,6 +60,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             {
                 { "enabled", n => { Enabled = n.GetBoolValue(); } },
                 { "entities", n => { Entities = n.GetCollectionOfEnumValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConfigEntityType>()?.AsList(); } },
+                { "excluded_data_collection_ids", n => { ExcludedDataCollectionIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
         }
         /// <summary>
@@ -63,6 +72,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("enabled", Enabled);
             writer.WriteCollectionOfEnumValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConfigEntityType>("entities", Entities);
+            writer.WriteCollectionOfPrimitiveValues<string>("excluded_data_collection_ids", ExcludedDataCollectionIds);
             writer.WriteAdditionalData(AdditionalData);
         }
     }
