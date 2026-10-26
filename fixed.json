@@ -20466,7 +20466,7 @@
       },
       "patch": {
         "summary": "Update Agent Conversation Ticket",
-        "description": "Update a ticket\u0027s title, comment, status, priority, and/or assignee. Requires editor access to the ticket\u0027s agent.",
+        "description": "Update a ticket\u0027s title, comment, status, priority, and/or assignee. Requires viewer access to the ticket\u0027s agent.",
         "operationId": "UpdateAgentConversationTicketRoute",
         "parameters": [
           {
@@ -31100,6 +31100,61 @@
         },
         "x-fern-sdk-group-name": "environment_variables",
         "x-fern-sdk-method-name": "update"
+      },
+      "delete": {
+        "tags": [
+          "Agents Platform"
+        ],
+        "summary": "Delete Environment Variable",
+        "description": "Delete an environment variable and its values in all environments. WARNING: Agents are not checked. A variable that an agent still uses (custom LLM, webhooks or cloud storage export, on any branch or version) is deleted anyway, and that agent\u0027s conversations then fail. The delete is only rejected while tools, MCP servers or the workspace conversation initiation webhook use the variable.",
+        "operationId": "DeleteEnvironmentVariable",
+        "parameters": [
+          {
+            "name": "envVarId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "title": "Env Var Id",
+              "type": "string"
+            }
+          },
+          {
+            "name": "xi-api-key",
+            "in": "header",
+            "description": "Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the \u0027Profile\u0027 tab on the website.",
+            "schema": {
+              "title": "Xi-Api-Key",
+              "type": [
+                "null",
+                "string"
+              ],
+              "description": "Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the \u0027Profile\u0027 tab on the website."
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Environment variable deleted"
+          },
+          "404": {
+            "description": "Environment variable not found"
+          },
+          "409": {
+            "description": "Environment variable is still in use"
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HttpValidationError"
+                }
+              }
+            }
+          }
+        },
+        "x-fern-sdk-group-name": "environment_variables",
+        "x-fern-sdk-method-name": "delete"
       }
     },
     "/v1/convai/environments": {
@@ -42907,13 +42962,6 @@
             "description": "Whether to remove the document if the URL becomes unavailable",
             "default": false
           },
-          "auto_discover": {
-            "title": "Auto Discover",
-            "type": "boolean",
-            "description": "Deprecated. This field no longer has any effect and will be removed in a future release.",
-            "default": false,
-            "deprecated": true
-          },
           "consec_failures": {
             "title": "Consec Failures",
             "minimum": 0.0,
@@ -49007,6 +49055,17 @@
               "integer"
             ],
             "description": "Maximum concurrent music generation requests for this API key. Only available for enterprise customers."
+          },
+          "expires_at_unix": {
+            "examples": [
+              1735689600
+            ],
+            "title": "Expires At Unix",
+            "type": [
+              "null",
+              "integer"
+            ],
+            "description": "Unix timestamp (in seconds) after which this API key stops working. When set, it must be at least 15 minutes and at most 90 days in the future. On create, omit or pass null for a key that never expires. On update, omit to leave it unchanged, or pass \u0022clear\u0022 to remove the expiry (never expires)."
           }
         }
       },
@@ -49072,6 +49131,9 @@
           },
           "music_concurrency_limit": {
             "$ref": "#/components/schemas/BodyEditServiceAccountApiKeyV1ServiceAccountsServiceAccountUserIdApiKeysApiKeyIdPatchMusicConcurrencyLimit"
+          },
+          "expires_at_unix": {
+            "$ref": "#/components/schemas/BodyEditServiceAccountApiKeyV1ServiceAccountsServiceAccountUserIdApiKeysApiKeyIdPatchExpiresAtUnix"
           }
         }
       },
@@ -101975,6 +102037,14 @@
           },
           "platform_limits": {
             "$ref": "#/components/schemas/WorkspaceApiKeyResponseModelPlatformLimits"
+          },
+          "expires_at_unix": {
+            "title": "Expires At Unix",
+            "type": [
+              "null",
+              "integer"
+            ],
+            "description": "Unix timestamp (seconds) after which this API key stops working. Null means the key never expires."
           }
         }
       },
@@ -105106,6 +105176,21 @@
           }
         ],
         "description": "Maximum concurrent music generation requests for this API key. Only available for enterprise customers."
+      },
+      "BodyEditServiceAccountApiKeyV1ServiceAccountsServiceAccountUserIdApiKeysApiKeyIdPatchExpiresAtUnix": {
+        "examples": [
+          1735689600
+        ],
+        "title": "Expires At Unix",
+        "anyOf": [
+          {
+            "type": "integer"
+          },
+          {
+            "$ref": "#/components/schemas/BodyEditServiceAccountApiKeyV1ServiceAccountsServiceAccountUserIdApiKeysApiKeyIdPatchExpiresAtUnixAnyOf2"
+          }
+        ],
+        "description": "Unix timestamp (in seconds) after which this API key stops working. When set, it must be at least 15 minutes and at most 90 days in the future. On create, omit or pass null for a key that never expires. On update, omit to leave it unchanged, or pass \u0022clear\u0022 to remove the expiry (never expires)."
       },
       "BodyTextToDialogueFullWithTimestampsSettings": {
         "examples": [
@@ -137204,6 +137289,27 @@
         "type": "string",
         "x-ms-enum": {
           "name": "BodyEditServiceAccountApiKeyV1ServiceAccountsServiceAccountUserIdApiKeysApiKeyIdPatchMusicConcurrencyLimitAnyOf2",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "clear",
+              "name": "Clear"
+            },
+            {
+              "value": "no_update",
+              "name": "NoUpdate"
+            }
+          ]
+        }
+      },
+      "BodyEditServiceAccountApiKeyV1ServiceAccountsServiceAccountUserIdApiKeysApiKeyIdPatchExpiresAtUnixAnyOf2": {
+        "enum": [
+          "clear",
+          "no_update"
+        ],
+        "type": "string",
+        "x-ms-enum": {
+          "name": "BodyEditServiceAccountApiKeyV1ServiceAccountsServiceAccountUserIdApiKeysApiKeyIdPatchExpiresAtUnixAnyOf2",
           "modelAsString": false,
           "values": [
             {

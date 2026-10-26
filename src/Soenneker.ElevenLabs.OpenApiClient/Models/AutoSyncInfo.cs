@@ -14,9 +14,6 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Deprecated. This field no longer has any effect and will be removed in a future release.</summary>
-        [Obsolete("")]
-        public bool? AutoDiscover { get; set; }
         /// <summary>Whether to remove the document if the URL becomes unavailable</summary>
         public bool? AutoRemove { get; set; }
         /// <summary>Number of consecutive sync failures</summary>
@@ -31,7 +28,6 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public AutoSyncInfo()
         {
             AdditionalData = new Dictionary<string, object>();
-            AutoDiscover = false;
             AutoRemove = false;
             ConsecFailures = 0;
             MinimumFrequencyDays = 7;
@@ -54,7 +50,6 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "auto_discover", n => { AutoDiscover = n.GetBoolValue(); } },
                 { "auto_remove", n => { AutoRemove = n.GetBoolValue(); } },
                 { "consec_failures", n => { ConsecFailures = n.GetIntValue(); } },
                 { "minimum_frequency_days", n => { MinimumFrequencyDays = n.GetIntValue(); } },
@@ -68,7 +63,6 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteBoolValue("auto_discover", AutoDiscover);
             writer.WriteBoolValue("auto_remove", AutoRemove);
             writer.WriteIntValue("consec_failures", ConsecFailures);
             writer.WriteIntValue("minimum_frequency_days", MinimumFrequencyDays);

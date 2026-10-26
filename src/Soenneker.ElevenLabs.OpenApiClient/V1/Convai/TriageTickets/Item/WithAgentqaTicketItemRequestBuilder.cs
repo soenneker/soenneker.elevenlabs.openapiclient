@@ -97,7 +97,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.TriageTickets.Item
             return await RequestAdapter.SendAsync<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentConversationTicketResponseModel>(requestInfo, global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentConversationTicketResponseModel.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update a ticket&apos;s title, comment, status, priority, and/or assignee. Requires editor access to the ticket&apos;s agent.
+        /// Update a ticket&apos;s title, comment, status, priority, and/or assignee. Requires viewer access to the ticket&apos;s agent.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentConversationTicketResponseModel"/></returns>
         /// <param name="body">Fields to update. Omit a field to leave it unchanged.</param>
@@ -160,7 +160,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.TriageTickets.Item
             return requestInfo;
         }
         /// <summary>
-        /// Update a ticket&apos;s title, comment, status, priority, and/or assignee. Requires editor access to the ticket&apos;s agent.
+        /// Update a ticket&apos;s title, comment, status, priority, and/or assignee. Requires viewer access to the ticket&apos;s agent.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">Fields to update. Omit a field to leave it unchanged.</param>

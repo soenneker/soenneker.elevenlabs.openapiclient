@@ -26,6 +26,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public int? CharacterLimit { get; set; }
         /// <summary>Maximum concurrent dubbing requests for this API key. Only available for enterprise customers.</summary>
         public int? DubbingConcurrencyLimit { get; set; }
+        /// <summary>Unix timestamp (in seconds) after which this API key stops working. When set, it must be at least 15 minutes and at most 90 days in the future. On create, omit or pass null for a key that never expires. On update, omit to leave it unchanged, or pass &quot;clear&quot; to remove the expiry (never expires).</summary>
+        public int? ExpiresAtUnix { get; set; }
         /// <summary>Maximum concurrent music generation requests for this API key. Only available for enterprise customers.</summary>
         public int? MusicConcurrencyLimit { get; set; }
         /// <summary>The name property</summary>
@@ -76,6 +78,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "allowed_ips", n => { AllowedIps = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "character_limit", n => { CharacterLimit = n.GetIntValue(); } },
                 { "dubbing_concurrency_limit", n => { DubbingConcurrencyLimit = n.GetIntValue(); } },
+                { "expires_at_unix", n => { ExpiresAtUnix = n.GetIntValue(); } },
                 { "music_concurrency_limit", n => { MusicConcurrencyLimit = n.GetIntValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "permissions", n => { Permissions = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateServiceAccountApiKeyV1ServiceAccountsServiceAccountUserIdApiKeysPostPermissions>(global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateServiceAccountApiKeyV1ServiceAccountsServiceAccountUserIdApiKeysPostPermissions.CreateFromDiscriminatorValue); } },
@@ -93,6 +96,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("allowed_ips", AllowedIps);
             writer.WriteIntValue("character_limit", CharacterLimit);
             writer.WriteIntValue("dubbing_concurrency_limit", DubbingConcurrencyLimit);
+            writer.WriteIntValue("expires_at_unix", ExpiresAtUnix);
             writer.WriteIntValue("music_concurrency_limit", MusicConcurrencyLimit);
             writer.WriteStringValue("name", Name);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateServiceAccountApiKeyV1ServiceAccountsServiceAccountUserIdApiKeysPostPermissions>("permissions", Permissions);

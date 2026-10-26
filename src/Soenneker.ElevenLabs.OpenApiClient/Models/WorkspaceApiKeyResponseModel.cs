@@ -30,6 +30,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public int? CreatedAtUnix { get; set; }
         /// <summary>The disable_reason property</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.LockReason? DisableReason { get; set; }
+        /// <summary>Unix timestamp (seconds) after which this API key stops working. Null means the key never expires.</summary>
+        public int? ExpiresAtUnix { get; set; }
         /// <summary>The hashed_xi_api_key property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -121,6 +123,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "character_limit", n => { CharacterLimit = n.GetIntValue(); } },
                 { "created_at_unix", n => { CreatedAtUnix = n.GetIntValue(); } },
                 { "disable_reason", n => { DisableReason = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.LockReason>(); } },
+                { "expires_at_unix", n => { ExpiresAtUnix = n.GetIntValue(); } },
                 { "hashed_xi_api_key", n => { HashedXiApiKey = n.GetStringValue(); } },
                 { "hint", n => { Hint = n.GetStringValue(); } },
                 { "is_disabled", n => { IsDisabled = n.GetBoolValue(); } },
@@ -144,6 +147,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteIntValue("character_limit", CharacterLimit);
             writer.WriteIntValue("created_at_unix", CreatedAtUnix);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.LockReason>("disable_reason", DisableReason);
+            writer.WriteIntValue("expires_at_unix", ExpiresAtUnix);
             writer.WriteStringValue("hashed_xi_api_key", HashedXiApiKey);
             writer.WriteStringValue("hint", Hint);
             writer.WriteBoolValue("is_disabled", IsDisabled);

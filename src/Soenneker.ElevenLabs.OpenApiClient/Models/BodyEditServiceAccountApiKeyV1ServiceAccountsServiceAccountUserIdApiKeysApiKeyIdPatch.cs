@@ -26,6 +26,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public int? CharacterLimit { get; set; }
         /// <summary>Maximum concurrent dubbing requests for this API key. Only available for enterprise customers.</summary>
         public int? DubbingConcurrencyLimit { get; set; }
+        /// <summary>Unix timestamp (in seconds) after which this API key stops working. When set, it must be at least 15 minutes and at most 90 days in the future. On create, omit or pass null for a key that never expires. On update, omit to leave it unchanged, or pass &quot;clear&quot; to remove the expiry (never expires).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyEditServiceAccountApiKeyV1ServiceAccountsServiceAccountUserIdApiKeysApiKeyIdPatchExpiresAtUnix? ExpiresAtUnix { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyEditServiceAccountApiKeyV1ServiceAccountsServiceAccountUserIdApiKeysApiKeyIdPatchExpiresAtUnix ExpiresAtUnix { get; set; }
+#endif
         /// <summary>Whether to enable or disable the API key.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -90,6 +98,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "allowed_ips", n => { AllowedIps = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyEditServiceAccountApiKeyV1ServiceAccountsServiceAccountUserIdApiKeysApiKeyIdPatchAllowedIps>(global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyEditServiceAccountApiKeyV1ServiceAccountsServiceAccountUserIdApiKeysApiKeyIdPatchAllowedIps.CreateFromDiscriminatorValue); } },
                 { "character_limit", n => { CharacterLimit = n.GetIntValue(); } },
                 { "dubbing_concurrency_limit", n => { DubbingConcurrencyLimit = n.GetIntValue(); } },
+                { "expires_at_unix", n => { ExpiresAtUnix = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyEditServiceAccountApiKeyV1ServiceAccountsServiceAccountUserIdApiKeysApiKeyIdPatchExpiresAtUnix>(global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyEditServiceAccountApiKeyV1ServiceAccountsServiceAccountUserIdApiKeysApiKeyIdPatchExpiresAtUnix.CreateFromDiscriminatorValue); } },
                 { "is_enabled", n => { IsEnabled = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyEditServiceAccountApiKeyV1ServiceAccountsServiceAccountUserIdApiKeysApiKeyIdPatchIsEnabled>(global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyEditServiceAccountApiKeyV1ServiceAccountsServiceAccountUserIdApiKeysApiKeyIdPatchIsEnabled.CreateFromDiscriminatorValue); } },
                 { "music_concurrency_limit", n => { MusicConcurrencyLimit = n.GetIntValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
@@ -108,6 +117,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyEditServiceAccountApiKeyV1ServiceAccountsServiceAccountUserIdApiKeysApiKeyIdPatchAllowedIps>("allowed_ips", AllowedIps);
             writer.WriteIntValue("character_limit", CharacterLimit);
             writer.WriteIntValue("dubbing_concurrency_limit", DubbingConcurrencyLimit);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyEditServiceAccountApiKeyV1ServiceAccountsServiceAccountUserIdApiKeysApiKeyIdPatchExpiresAtUnix>("expires_at_unix", ExpiresAtUnix);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyEditServiceAccountApiKeyV1ServiceAccountsServiceAccountUserIdApiKeysApiKeyIdPatchIsEnabled>("is_enabled", IsEnabled);
             writer.WriteIntValue("music_concurrency_limit", MusicConcurrencyLimit);
             writer.WriteStringValue("name", Name);
