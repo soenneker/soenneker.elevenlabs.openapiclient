@@ -98695,6 +98695,9 @@
           },
           "call_permission_request": {
             "$ref": "#/components/schemas/WhatsAppConversationInfoCallPermissionRequest"
+          },
+          "call_result": {
+            "$ref": "#/components/schemas/WhatsAppConversationInfoCallResult"
           }
         }
       },
@@ -114126,6 +114129,16 @@
         "anyOf": [
           {
             "$ref": "#/components/schemas/WhatsAppCallPermissionRequest"
+          },
+          {
+            "type": "null"
+          }
+        ]
+      },
+      "WhatsAppConversationInfoCallResult": {
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/CallResult"
           },
           {
             "type": "null"

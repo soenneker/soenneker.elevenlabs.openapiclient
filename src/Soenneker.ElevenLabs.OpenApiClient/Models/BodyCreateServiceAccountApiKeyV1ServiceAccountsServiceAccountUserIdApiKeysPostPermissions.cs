@@ -36,7 +36,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             {
                 result.BodyCreateServiceAccountApiKeyV1ServiceAccountsServiceAccountUserIdApiKeysPostPermissionsAnyOf2 = bodyCreateServiceAccountApiKeyV1ServiceAccountsServiceAccountUserIdApiKeysPostPermissionsAnyOf2Value;
             }
-            else if(parseNode.GetCollectionOfEnumValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.PermissionType>()?.AsList() is List<global::Soenneker.ElevenLabs.OpenApiClient.Models.PermissionType?> permissionTypeValue)
+            else if(parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray && parseNode.GetCollectionOfEnumValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.PermissionType>()?.AsList() is List<global::Soenneker.ElevenLabs.OpenApiClient.Models.PermissionType?> permissionTypeValue)
             {
                 result.PermissionType = permissionTypeValue;
             }

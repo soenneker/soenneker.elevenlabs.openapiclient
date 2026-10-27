@@ -24,6 +24,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppCallPermissionRequest CallPermissionRequest { get; set; }
 #endif
+        /// <summary>The call_result property</summary>
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CallResult? CallResult { get; set; }
         /// <summary>The direction property</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppConversationInfoDirection? Direction { get; set; }
         /// <summary>The recipient property</summary>
@@ -77,6 +79,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             {
                 { "awaiting_first_user_message", n => { AwaitingFirstUserMessage = n.GetBoolValue(); } },
                 { "call_permission_request", n => { CallPermissionRequest = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppCallPermissionRequest>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppCallPermissionRequest.CreateFromDiscriminatorValue); } },
+                { "call_result", n => { CallResult = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CallResult>(); } },
                 { "direction", n => { Direction = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppConversationInfoDirection>(); } },
                 { "recipient", n => { Recipient = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppRecipient>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppRecipient.CreateFromDiscriminatorValue); } },
                 { "whatsapp_phone_number_id", n => { WhatsappPhoneNumberId = n.GetStringValue(); } },
@@ -92,6 +95,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("awaiting_first_user_message", AwaitingFirstUserMessage);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppCallPermissionRequest>("call_permission_request", CallPermissionRequest);
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CallResult>("call_result", CallResult);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppConversationInfoDirection>("direction", Direction);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppRecipient>("recipient", Recipient);
             writer.WriteStringValue("whatsapp_phone_number_id", WhatsappPhoneNumberId);

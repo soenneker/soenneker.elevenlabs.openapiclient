@@ -46,7 +46,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var result = new global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreatePodcastV1StudioPodcastsPostSource();
-            if(parseNode.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreatePodcastV1StudioPodcastsPostSourceAnyOf3Item>(global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreatePodcastV1StudioPodcastsPostSourceAnyOf3Item.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreatePodcastV1StudioPodcastsPostSourceAnyOf3Item> bodyCreatePodcastV1StudioPodcastsPostSourceAnyOf3ItemValue)
+            if(parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray && parseNode.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreatePodcastV1StudioPodcastsPostSourceAnyOf3Item>(global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreatePodcastV1StudioPodcastsPostSourceAnyOf3Item.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreatePodcastV1StudioPodcastsPostSourceAnyOf3Item> bodyCreatePodcastV1StudioPodcastsPostSourceAnyOf3ItemValue)
             {
                 result.BodyCreatePodcastV1StudioPodcastsPostSourceAnyOf3Item = bodyCreatePodcastV1StudioPodcastsPostSourceAnyOf3ItemValue;
             }
