@@ -52,6 +52,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         #pragma warning disable CS1591
         ConversationalAiRead,
         #pragma warning restore CS1591
+        [EnumMember(Value = "architect")]
+        #pragma warning disable CS1591
+        Architect,
+        #pragma warning restore CS1591
         [EnumMember(Value = "voice_isolator")]
         #pragma warning disable CS1591
         VoiceIsolator,

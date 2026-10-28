@@ -24,6 +24,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #endif
         /// <summary>If provided, updates how urgently the ticket needs attention. Pass null to clear it. Omit to leave unchanged.</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentConversationTicketPriority? Priority { get; set; }
+        /// <summary>If provided, updates the ticket description. Omit to leave unchanged.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? QaComment { get; set; }
+#nullable restore
+#else
+        public string QaComment { get; set; }
+#endif
         /// <summary>If provided, updates the ticket status. Omit to leave unchanged.</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentConversationTicketStatus? Status { get; set; }
         /// <summary>If provided, updates the ticket title. Omit to leave unchanged.</summary>
@@ -61,6 +69,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             {
                 { "assignee_user_id", n => { AssigneeUserId = n.GetStringValue(); } },
                 { "priority", n => { Priority = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentConversationTicketPriority>(); } },
+                { "qa_comment", n => { QaComment = n.GetStringValue(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentConversationTicketStatus>(); } },
                 { "title", n => { Title = n.GetStringValue(); } },
             };
@@ -74,6 +83,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("assignee_user_id", AssigneeUserId);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentConversationTicketPriority>("priority", Priority);
+            writer.WriteStringValue("qa_comment", QaComment);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentConversationTicketStatus>("status", Status);
             writer.WriteStringValue("title", Title);
             writer.WriteAdditionalData(AdditionalData);

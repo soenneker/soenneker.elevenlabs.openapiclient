@@ -14,6 +14,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Evaluate guardrails triggered by the generated agent turn.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.UnitTestGuardrailTriggerEvaluationModel? GuardrailTrigger { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.UnitTestGuardrailTriggerEvaluationModel GuardrailTrigger { get; set; }
+#endif
         /// <summary>Parameters to evaluate for the agent&apos;s tool call. If empty, the tool call parameters are not evaluated.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -66,6 +74,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "guardrail_trigger", n => { GuardrailTrigger = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UnitTestGuardrailTriggerEvaluationModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.UnitTestGuardrailTriggerEvaluationModel.CreateFromDiscriminatorValue); } },
                 { "parameters", n => { Parameters = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.UnitTestToolCallParameter>(global::Soenneker.ElevenLabs.OpenApiClient.Models.UnitTestToolCallParameter.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "referenced_tool", n => { ReferencedTool = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ReferencedToolCommonModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ReferencedToolCommonModel.CreateFromDiscriminatorValue); } },
                 { "verify_absence", n => { VerifyAbsence = n.GetBoolValue(); } },
@@ -79,6 +88,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UnitTestGuardrailTriggerEvaluationModel>("guardrail_trigger", GuardrailTrigger);
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.UnitTestToolCallParameter>("parameters", Parameters);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ReferencedToolCommonModel>("referenced_tool", ReferencedTool);
             writer.WriteBoolValue("verify_absence", VerifyAbsence);

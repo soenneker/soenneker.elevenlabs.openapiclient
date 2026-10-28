@@ -19,6 +19,7 @@ using Soenneker.ElevenLabs.OpenApiClient.V1.ServiceAccounts;
 using Soenneker.ElevenLabs.OpenApiClient.V1.SharedVoices;
 using Soenneker.ElevenLabs.OpenApiClient.V1.SimilarVoices;
 using Soenneker.ElevenLabs.OpenApiClient.V1.SingleUseToken;
+using Soenneker.ElevenLabs.OpenApiClient.V1.Smb;
 using Soenneker.ElevenLabs.OpenApiClient.V1.SoundGeneration;
 using Soenneker.ElevenLabs.OpenApiClient.V1.SpeechEngine;
 using Soenneker.ElevenLabs.OpenApiClient.V1.SpeechToText;
@@ -128,6 +129,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1
         public global::Soenneker.ElevenLabs.OpenApiClient.V1.SingleUseToken.SingleUseTokenRequestBuilder SingleUseToken
         {
             get => new global::Soenneker.ElevenLabs.OpenApiClient.V1.SingleUseToken.SingleUseTokenRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The smb property</summary>
+        public global::Soenneker.ElevenLabs.OpenApiClient.V1.Smb.SmbRequestBuilder Smb
+        {
+            get => new global::Soenneker.ElevenLabs.OpenApiClient.V1.Smb.SmbRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The soundGeneration property</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.V1.SoundGeneration.SoundGenerationRequestBuilder SoundGeneration

@@ -258,6 +258,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public bool? TextInputEnabled { get; set; }
         /// <summary>Whether the widget should show the conversation transcript as it goes on</summary>
         public bool? TranscriptEnabled { get; set; }
+        /// <summary>Whether voice call transcripts are revealed as the agent speaks</summary>
+        public bool? TranscriptSpeechSyncEnabled { get; set; }
         /// <summary>The variant of the widget</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.EmbedVariant? Variant { get; set; }
         /// <summary>
@@ -295,6 +297,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             TextColor = "#000000";
             TextInputEnabled = true;
             TranscriptEnabled = true;
+            TranscriptSpeechSyncEnabled = true;
             Variant = global::Soenneker.ElevenLabs.OpenApiClient.Models.EmbedVariant.Full;
         }
         /// <summary>
@@ -365,6 +368,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "text_contents", n => { TextContents = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents>(global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents.CreateFromDiscriminatorValue); } },
                 { "text_input_enabled", n => { TextInputEnabled = n.GetBoolValue(); } },
                 { "transcript_enabled", n => { TranscriptEnabled = n.GetBoolValue(); } },
+                { "transcript_speech_sync_enabled", n => { TranscriptSpeechSyncEnabled = n.GetBoolValue(); } },
                 { "variant", n => { Variant = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.EmbedVariant>(); } },
             };
         }
@@ -425,6 +429,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetTextContents>("text_contents", TextContents);
             writer.WriteBoolValue("text_input_enabled", TextInputEnabled);
             writer.WriteBoolValue("transcript_enabled", TranscriptEnabled);
+            writer.WriteBoolValue("transcript_speech_sync_enabled", TranscriptSpeechSyncEnabled);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.EmbedVariant>("variant", Variant);
             writer.WriteAdditionalData(AdditionalData);
         }

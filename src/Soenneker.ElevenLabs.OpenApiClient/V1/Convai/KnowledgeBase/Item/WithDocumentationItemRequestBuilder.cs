@@ -134,7 +134,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.KnowledgeBase.Item
             return await RequestAdapter.SendAsync<global::Soenneker.ElevenLabs.OpenApiClient.Models.ResponseGetDocumentationFromKnowledgeBaseV1ConvaiKnowledgeBaseDocumentationIdGet>(requestInfo, global::Soenneker.ElevenLabs.OpenApiClient.Models.ResponseGetDocumentationFromKnowledgeBaseV1ConvaiKnowledgeBaseDocumentationIdGet.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the name and/or content of a document.
+        /// Update the name, content and/or auto-sync settings of a document.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ResponseUpdateDocumentV1ConvaiKnowledgeBaseDocumentationIdPatch"/></returns>
         /// <param name="body">The request body</param>
@@ -197,7 +197,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.KnowledgeBase.Item
             return requestInfo;
         }
         /// <summary>
-        /// Update the name and/or content of a document.
+        /// Update the name, content and/or auto-sync settings of a document.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

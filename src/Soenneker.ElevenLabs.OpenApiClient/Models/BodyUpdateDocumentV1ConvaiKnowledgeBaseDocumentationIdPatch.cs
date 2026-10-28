@@ -14,6 +14,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Whether to automatically remove the document once its source is no longer available. Only applicable when auto-sync is enabled. Leave unset to keep the current value.</summary>
+        public bool? AutoRemove { get; set; }
         /// <summary>Updated content for the document. Only supported for text documents, URL documents with auto-sync disabled, and file documents that are not synced from an external source.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -22,6 +24,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public string Content { get; set; }
 #endif
+        /// <summary>Whether the document or folder is refreshed automatically. Only applicable to URL documents, folders, and externally-synced files. Leave unset to keep the current value.</summary>
+        public bool? EnableAutoSync { get; set; }
+        /// <summary>Minimum frequency (in days) at which the document is refreshed. The actual interval may be shorter, never longer. Only applicable when auto-sync is enabled. Leave unset to keep the current value.</summary>
+        public int? MinimumFrequencyDays { get; set; }
         /// <summary>A custom, human-readable name for the document.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -30,12 +36,15 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
+        /// <summary>Folders only. When true, items already in the folder are only tightened to stay at least as strict as the folder, and keep any setting that is stricter than the folder&apos;s. When false, they are set to exactly the folder&apos;s auto-sync settings. Ignored for externally synced folders, whose contents always follow the folder&apos;s schedule.</summary>
+        public bool? TightenOnly { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyUpdateDocumentV1ConvaiKnowledgeBaseDocumentationIdPatch"/> and sets the default values.
         /// </summary>
         public BodyUpdateDocumentV1ConvaiKnowledgeBaseDocumentationIdPatch()
         {
             AdditionalData = new Dictionary<string, object>();
+            TightenOnly = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -55,8 +64,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "auto_remove", n => { AutoRemove = n.GetBoolValue(); } },
                 { "content", n => { Content = n.GetStringValue(); } },
+                { "enable_auto_sync", n => { EnableAutoSync = n.GetBoolValue(); } },
+                { "minimum_frequency_days", n => { MinimumFrequencyDays = n.GetIntValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
+                { "tighten_only", n => { TightenOnly = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -66,8 +79,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteBoolValue("auto_remove", AutoRemove);
             writer.WriteStringValue("content", Content);
+            writer.WriteBoolValue("enable_auto_sync", EnableAutoSync);
+            writer.WriteIntValue("minimum_frequency_days", MinimumFrequencyDays);
             writer.WriteStringValue("name", Name);
+            writer.WriteBoolValue("tighten_only", TightenOnly);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

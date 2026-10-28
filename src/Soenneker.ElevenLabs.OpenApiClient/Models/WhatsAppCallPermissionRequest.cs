@@ -14,8 +14,14 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The granted_by_user_call property</summary>
+        public bool? GrantedByUserCall { get; set; }
+        /// <summary>The permanent property</summary>
+        public bool? Permanent { get; set; }
         /// <summary>The requested_at_unix property</summary>
         public int? RequestedAtUnix { get; set; }
+        /// <summary>The responded_at_unix property</summary>
+        public int? RespondedAtUnix { get; set; }
         /// <summary>The state property</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppCallPermissionRequestState? State { get; set; }
         /// <summary>
@@ -43,7 +49,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "granted_by_user_call", n => { GrantedByUserCall = n.GetBoolValue(); } },
+                { "permanent", n => { Permanent = n.GetBoolValue(); } },
                 { "requested_at_unix", n => { RequestedAtUnix = n.GetIntValue(); } },
+                { "responded_at_unix", n => { RespondedAtUnix = n.GetIntValue(); } },
                 { "state", n => { State = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppCallPermissionRequestState>(); } },
             };
         }
@@ -54,7 +63,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteBoolValue("granted_by_user_call", GrantedByUserCall);
+            writer.WriteBoolValue("permanent", Permanent);
             writer.WriteIntValue("requested_at_unix", RequestedAtUnix);
+            writer.WriteIntValue("responded_at_unix", RespondedAtUnix);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppCallPermissionRequestState>("state", State);
             writer.WriteAdditionalData(AdditionalData);
         }

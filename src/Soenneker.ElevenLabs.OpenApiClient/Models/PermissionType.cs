@@ -124,6 +124,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         #pragma warning disable CS1591
         ConvaiWrite,
         #pragma warning restore CS1591
+        [EnumMember(Value = "agents_architect")]
+        #pragma warning disable CS1591
+        AgentsArchitect,
+        #pragma warning restore CS1591
         [EnumMember(Value = "music_generation")]
         #pragma warning disable CS1591
         MusicGeneration,
