@@ -22,6 +22,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public string AgentId { get; set; }
 #endif
+        /// <summary>Number of agent transcript turns with text; tool-only turns are not counted. `null` for older conversations before this field whose transcript was deleted.</summary>
+        public int? AgentMessageCount { get; set; }
         /// <summary>The agent_name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -88,7 +90,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public string MainLanguage { get; set; }
 #endif
-        /// <summary>The message_count property</summary>
+        /// <summary>Number of transcript turns with text; tool-only turns are not counted.</summary>
         public int? MessageCount { get; set; }
         /// <summary>The rating property</summary>
         public double? Rating { get; set; }
@@ -136,6 +138,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public string TranscriptSummary { get; set; }
 #endif
+        /// <summary>Number of user transcript turns with text; tool-only turns are not counted. `null` for older conversations before this field whose transcript was deleted.</summary>
+        public int? UserMessageCount { get; set; }
         /// <summary>The version_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -170,6 +174,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "agent_id", n => { AgentId = n.GetStringValue(); } },
+                { "agent_message_count", n => { AgentMessageCount = n.GetIntValue(); } },
                 { "agent_name", n => { AgentName = n.GetStringValue(); } },
                 { "branch_id", n => { BranchId = n.GetStringValue(); } },
                 { "call_duration_secs", n => { CallDurationSecs = n.GetIntValue(); } },
@@ -191,6 +196,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "termination_reason", n => { TerminationReason = n.GetStringValue(); } },
                 { "tool_names", n => { ToolNames = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "transcript_summary", n => { TranscriptSummary = n.GetStringValue(); } },
+                { "user_message_count", n => { UserMessageCount = n.GetIntValue(); } },
                 { "version_id", n => { VersionId = n.GetStringValue(); } },
             };
         }
@@ -202,6 +208,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("agent_id", AgentId);
+            writer.WriteIntValue("agent_message_count", AgentMessageCount);
             writer.WriteStringValue("agent_name", AgentName);
             writer.WriteStringValue("branch_id", BranchId);
             writer.WriteIntValue("call_duration_secs", CallDurationSecs);
@@ -223,6 +230,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteStringValue("termination_reason", TerminationReason);
             writer.WriteCollectionOfPrimitiveValues<string>("tool_names", ToolNames);
             writer.WriteStringValue("transcript_summary", TranscriptSummary);
+            writer.WriteIntValue("user_message_count", UserMessageCount);
             writer.WriteStringValue("version_id", VersionId);
             writer.WriteAdditionalData(AdditionalData);
         }

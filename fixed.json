@@ -59806,7 +59806,24 @@
           },
           "message_count": {
             "title": "Message Count",
-            "type": "integer"
+            "type": "integer",
+            "description": "Number of transcript turns with text; tool-only turns are not counted."
+          },
+          "user_message_count": {
+            "title": "User Message Count",
+            "type": [
+              "null",
+              "integer"
+            ],
+            "description": "Number of user transcript turns with text; tool-only turns are not counted. \u0060null\u0060 for older conversations before this field whose transcript was deleted."
+          },
+          "agent_message_count": {
+            "title": "Agent Message Count",
+            "type": [
+              "null",
+              "integer"
+            ],
+            "description": "Number of agent transcript turns with text; tool-only turns are not counted. \u0060null\u0060 for older conversations before this field whose transcript was deleted."
           },
           "status": {
             "$ref": "#/components/schemas/ConversationSummaryResponseModelStatus"
@@ -69291,6 +69308,22 @@
           },
           "analysis": {
             "$ref": "#/components/schemas/GetConversationResponseModelAnalysis"
+          },
+          "user_message_count": {
+            "title": "User Message Count",
+            "type": [
+              "null",
+              "integer"
+            ],
+            "description": "Number of user transcript turns with text; tool-only turns are not counted. \u0060null\u0060 for older conversations before this field whose transcript was deleted."
+          },
+          "agent_message_count": {
+            "title": "Agent Message Count",
+            "type": [
+              "null",
+              "integer"
+            ],
+            "description": "Number of agent transcript turns with text; tool-only turns are not counted. \u0060null\u0060 for older conversations before this field whose transcript was deleted."
           },
           "visited_agents": {
             "title": "Visited Agents",

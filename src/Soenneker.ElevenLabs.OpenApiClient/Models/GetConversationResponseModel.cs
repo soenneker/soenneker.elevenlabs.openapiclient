@@ -22,6 +22,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public string AgentId { get; set; }
 #endif
+        /// <summary>Number of agent transcript turns with text; tool-only turns are not counted. `null` for older conversations before this field whose transcript was deleted.</summary>
+        public int? AgentMessageCount { get; set; }
         /// <summary>The agent_name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -128,6 +130,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
 #else
         public string UserId { get; set; }
 #endif
+        /// <summary>Number of user transcript turns with text; tool-only turns are not counted. `null` for older conversations before this field whose transcript was deleted.</summary>
+        public int? UserMessageCount { get; set; }
         /// <summary>The ID of the agent version used for this conversation</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -172,6 +176,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "agent_id", n => { AgentId = n.GetStringValue(); } },
+                { "agent_message_count", n => { AgentMessageCount = n.GetIntValue(); } },
                 { "agent_name", n => { AgentName = n.GetStringValue(); } },
                 { "analysis", n => { Analysis = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryAnalysisCommonModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryAnalysisCommonModel.CreateFromDiscriminatorValue); } },
                 { "branch_id", n => { BranchId = n.GetStringValue(); } },
@@ -189,6 +194,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "tag_ids", n => { TagIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "transcript", n => { Transcript = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptResponseModel>(global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptResponseModel.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "user_id", n => { UserId = n.GetStringValue(); } },
+                { "user_message_count", n => { UserMessageCount = n.GetIntValue(); } },
                 { "version_id", n => { VersionId = n.GetStringValue(); } },
                 { "visited_agents", n => { VisitedAgents = n.GetCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.VisitedAgentRef>(global::Soenneker.ElevenLabs.OpenApiClient.Models.VisitedAgentRef.CreateFromDiscriminatorValue)?.AsList(); } },
             };
@@ -201,6 +207,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("agent_id", AgentId);
+            writer.WriteIntValue("agent_message_count", AgentMessageCount);
             writer.WriteStringValue("agent_name", AgentName);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryAnalysisCommonModel>("analysis", Analysis);
             writer.WriteStringValue("branch_id", BranchId);
@@ -218,6 +225,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("tag_ids", TagIds);
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptResponseModel>("transcript", Transcript);
             writer.WriteStringValue("user_id", UserId);
+            writer.WriteIntValue("user_message_count", UserMessageCount);
             writer.WriteStringValue("version_id", VersionId);
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.VisitedAgentRef>("visited_agents", VisitedAgents);
             writer.WriteAdditionalData(AdditionalData);
