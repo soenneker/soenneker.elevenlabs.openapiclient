@@ -11,24 +11,37 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ToolRequestModel : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("response_mocks") is { } nullNodeResponseMocks && nullNodeResponseMocks.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ResponseMocks = null;
+            if (parseNode.GetChildNode("tool_config") is { } nullNodeToolConfig && nullNodeToolConfig.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ToolConfig = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Mock responses with optional parameter conditions. Evaluated top-to-bottom; first match wins.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolResponseMockConfigInput>? ResponseMocks { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolResponseMockConfigInput>? ResponseMocks { get => _explicitNullValueResponseMocks; set { _explicitNullValueResponseMocks = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("response_mocks"); else _explicitNullProperties?.Remove("response_mocks"); } }
+        private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolResponseMockConfigInput>? _explicitNullValueResponseMocks = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolResponseMockConfigInput> ResponseMocks { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolResponseMockConfigInput> ResponseMocks { get => _explicitNullValueResponseMocks; set { _explicitNullValueResponseMocks = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("response_mocks"); else _explicitNullProperties?.Remove("response_mocks"); } }
+        private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolResponseMockConfigInput> _explicitNullValueResponseMocks = default!;
 #endif
         /// <summary>Configuration for the tool</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolRequestModelToolConfig? ToolConfig { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolRequestModelToolConfig? ToolConfig { get => _explicitNullValueToolConfig; set { _explicitNullValueToolConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tool_config"); else _explicitNullProperties?.Remove("tool_config"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolRequestModelToolConfig? _explicitNullValueToolConfig = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolRequestModelToolConfig ToolConfig { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolRequestModelToolConfig ToolConfig { get => _explicitNullValueToolConfig; set { _explicitNullValueToolConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tool_config"); else _explicitNullProperties?.Remove("tool_config"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolRequestModelToolConfig _explicitNullValueToolConfig = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolRequestModel"/> and sets the default values.
@@ -45,7 +58,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolRequestModel CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolRequestModel();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolRequestModel(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -68,6 +81,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolResponseMockConfigInput>("response_mocks", ResponseMocks);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolRequestModelToolConfig>("tool_config", ToolConfig);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

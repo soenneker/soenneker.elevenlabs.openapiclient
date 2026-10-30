@@ -12,34 +12,52 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ListMcpToolsResponseModel : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("error_message") is { } nullNodeErrorMessage && nullNodeErrorMessage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ErrorMessage = null;
+            if (parseNode.GetChildNode("success") is { } nullNodeSuccess && nullNodeSuccess.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Success = null;
+            if (parseNode.GetChildNode("tool_approval_statuses") is { } nullNodeToolApprovalStatuses && nullNodeToolApprovalStatuses.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ToolApprovalStatuses = null;
+            if (parseNode.GetChildNode("tools") is { } nullNodeTools && nullNodeTools.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Tools = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Error message if the operation was not successful.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ErrorMessage { get; set; }
+        public string? ErrorMessage { get => _explicitNullValueErrorMessage; set { _explicitNullValueErrorMessage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("error_message"); else _explicitNullProperties?.Remove("error_message"); } }
+        private string? _explicitNullValueErrorMessage = default!;
 #nullable restore
 #else
-        public string ErrorMessage { get; set; }
+        public string ErrorMessage { get => _explicitNullValueErrorMessage; set { _explicitNullValueErrorMessage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("error_message"); else _explicitNullProperties?.Remove("error_message"); } }
+        private string _explicitNullValueErrorMessage = default!;
 #endif
         /// <summary>Indicates if the operation was successful.</summary>
-        public bool? Success { get; set; }
+        public bool? Success { get => _explicitNullValueSuccess; set { _explicitNullValueSuccess = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("success"); else _explicitNullProperties?.Remove("success"); } }
+        private bool? _explicitNullValueSuccess = default!;
         /// <summary>Derived approval states for currently discovered tools. Populated only for persisted MCP servers using per-tool approval; otherwise empty.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.McpToolApprovalStatus>? ToolApprovalStatuses { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.McpToolApprovalStatus>? ToolApprovalStatuses { get => _explicitNullValueToolApprovalStatuses; set { _explicitNullValueToolApprovalStatuses = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tool_approval_statuses"); else _explicitNullProperties?.Remove("tool_approval_statuses"); } }
+        private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.McpToolApprovalStatus>? _explicitNullValueToolApprovalStatuses = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.McpToolApprovalStatus> ToolApprovalStatuses { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.McpToolApprovalStatus> ToolApprovalStatuses { get => _explicitNullValueToolApprovalStatuses; set { _explicitNullValueToolApprovalStatuses = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tool_approval_statuses"); else _explicitNullProperties?.Remove("tool_approval_statuses"); } }
+        private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.McpToolApprovalStatus> _explicitNullValueToolApprovalStatuses = default!;
 #endif
         /// <summary>A list of tools available on the MCP server.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.Tool>? Tools { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.Tool>? Tools { get => _explicitNullValueTools; set { _explicitNullValueTools = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tools"); else _explicitNullProperties?.Remove("tools"); } }
+        private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.Tool>? _explicitNullValueTools = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.Tool> Tools { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.Tool> Tools { get => _explicitNullValueTools; set { _explicitNullValueTools = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tools"); else _explicitNullProperties?.Remove("tools"); } }
+        private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.Tool> _explicitNullValueTools = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ListMcpToolsResponseModel"/> and sets the default values.
@@ -56,7 +74,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.ListMcpToolsResponseModel CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.ListMcpToolsResponseModel();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.ListMcpToolsResponseModel(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -83,6 +101,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteBoolValue("success", Success);
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.McpToolApprovalStatus>("tool_approval_statuses", ToolApprovalStatuses);
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.Tool>("tools", Tools);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

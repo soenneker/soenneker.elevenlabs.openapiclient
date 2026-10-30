@@ -11,45 +11,68 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class PromptAgentApiModelOverrideInput : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("knowledge_base") is { } nullNodeKnowledgeBase && nullNodeKnowledgeBase.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) KnowledgeBase = null;
+            if (parseNode.GetChildNode("llm") is { } nullNodeLlm && nullNodeLlm.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Llm = null;
+            if (parseNode.GetChildNode("native_mcp_server_ids") is { } nullNodeNativeMcpServerIds && nullNodeNativeMcpServerIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NativeMcpServerIds = null;
+            if (parseNode.GetChildNode("prompt") is { } nullNodePrompt && nullNodePrompt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Prompt = null;
+            if (parseNode.GetChildNode("tool_ids") is { } nullNodeToolIds && nullNodeToolIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ToolIds = null;
+            if (parseNode.GetChildNode("tool_ids_strict") is { } nullNodeToolIdsStrict && nullNodeToolIdsStrict.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ToolIdsStrict = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>A list of knowledge bases to be used by the agent</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeBaseLocator>? KnowledgeBase { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeBaseLocator>? KnowledgeBase { get => _explicitNullValueKnowledgeBase; set { _explicitNullValueKnowledgeBase = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("knowledge_base"); else _explicitNullProperties?.Remove("knowledge_base"); } }
+        private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeBaseLocator>? _explicitNullValueKnowledgeBase = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeBaseLocator> KnowledgeBase { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeBaseLocator> KnowledgeBase { get => _explicitNullValueKnowledgeBase; set { _explicitNullValueKnowledgeBase = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("knowledge_base"); else _explicitNullProperties?.Remove("knowledge_base"); } }
+        private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeBaseLocator> _explicitNullValueKnowledgeBase = default!;
 #endif
         /// <summary>The LLM to query with the prompt and the chat history. If using data residency, the LLM must be supported in the data residency environment</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Llm? Llm { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Llm? Llm { get => _explicitNullValueLlm; set { _explicitNullValueLlm = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("llm"); else _explicitNullProperties?.Remove("llm"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.Llm? _explicitNullValueLlm = default!;
         /// <summary>A list of Native MCP server ids to be used by the agent</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? NativeMcpServerIds { get; set; }
+        public List<string>? NativeMcpServerIds { get => _explicitNullValueNativeMcpServerIds; set { _explicitNullValueNativeMcpServerIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("native_mcp_server_ids"); else _explicitNullProperties?.Remove("native_mcp_server_ids"); } }
+        private List<string>? _explicitNullValueNativeMcpServerIds = default!;
 #nullable restore
 #else
-        public List<string> NativeMcpServerIds { get; set; }
+        public List<string> NativeMcpServerIds { get => _explicitNullValueNativeMcpServerIds; set { _explicitNullValueNativeMcpServerIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("native_mcp_server_ids"); else _explicitNullProperties?.Remove("native_mcp_server_ids"); } }
+        private List<string> _explicitNullValueNativeMcpServerIds = default!;
 #endif
         /// <summary>The prompt for the agent</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Prompt { get; set; }
+        public string? Prompt { get => _explicitNullValuePrompt; set { _explicitNullValuePrompt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prompt"); else _explicitNullProperties?.Remove("prompt"); } }
+        private string? _explicitNullValuePrompt = default!;
 #nullable restore
 #else
-        public string Prompt { get; set; }
+        public string Prompt { get => _explicitNullValuePrompt; set { _explicitNullValuePrompt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prompt"); else _explicitNullProperties?.Remove("prompt"); } }
+        private string _explicitNullValuePrompt = default!;
 #endif
         /// <summary>A list of IDs of tools used by the agent</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? ToolIds { get; set; }
+        public List<string>? ToolIds { get => _explicitNullValueToolIds; set { _explicitNullValueToolIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tool_ids"); else _explicitNullProperties?.Remove("tool_ids"); } }
+        private List<string>? _explicitNullValueToolIds = default!;
 #nullable restore
 #else
-        public List<string> ToolIds { get; set; }
+        public List<string> ToolIds { get => _explicitNullValueToolIds; set { _explicitNullValueToolIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tool_ids"); else _explicitNullProperties?.Remove("tool_ids"); } }
+        private List<string> _explicitNullValueToolIds = default!;
 #endif
         /// <summary>Only applies as a conversation override, allowed whenever tool_ids may be overridden. When true, the overridden tool_ids is the full list of tools allowed in the conversation, including tools on workflow nodes. Ignored when set on the agent.</summary>
-        public bool? ToolIdsStrict { get; set; }
+        public bool? ToolIdsStrict { get => _explicitNullValueToolIdsStrict; set { _explicitNullValueToolIdsStrict = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tool_ids_strict"); else _explicitNullProperties?.Remove("tool_ids_strict"); } }
+        private bool? _explicitNullValueToolIdsStrict = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentApiModelOverrideInput"/> and sets the default values.
         /// </summary>
@@ -65,7 +88,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentApiModelOverrideInput CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentApiModelOverrideInput();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentApiModelOverrideInput(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -96,6 +119,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteStringValue("prompt", Prompt);
             writer.WriteCollectionOfPrimitiveValues<string>("tool_ids", ToolIds);
             writer.WriteBoolValue("tool_ids_strict", ToolIdsStrict);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

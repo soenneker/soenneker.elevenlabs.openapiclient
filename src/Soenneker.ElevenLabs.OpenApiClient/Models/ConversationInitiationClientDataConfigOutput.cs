@@ -11,25 +11,43 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ConversationInitiationClientDataConfigOutput : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("conversation_config_override") is { } nullNodeConversationConfigOverride && nullNodeConversationConfigOverride.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConversationConfigOverride = null;
+            if (parseNode.GetChildNode("custom_llm_extra_body") is { } nullNodeCustomLlmExtraBody && nullNodeCustomLlmExtraBody.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomLlmExtraBody = null;
+            if (parseNode.GetChildNode("enable_conversation_initiation_client_data_from_webhook") is { } nullNodeEnableConversationInitiationClientDataFromWebhook && nullNodeEnableConversationInitiationClientDataFromWebhook.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EnableConversationInitiationClientDataFromWebhook = null;
+            if (parseNode.GetChildNode("enable_procedure_ids_from_client") is { } nullNodeEnableProcedureIdsFromClient && nullNodeEnableProcedureIdsFromClient.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EnableProcedureIdsFromClient = null;
+            if (parseNode.GetChildNode("enable_starting_workflow_node_id_from_client") is { } nullNodeEnableStartingWorkflowNodeIdFromClient && nullNodeEnableStartingWorkflowNodeIdFromClient.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EnableStartingWorkflowNodeIdFromClient = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The conversation_config_override property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationConfigClientOverrideConfigOutput? ConversationConfigOverride { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationConfigClientOverrideConfigOutput? ConversationConfigOverride { get => _explicitNullValueConversationConfigOverride; set { _explicitNullValueConversationConfigOverride = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conversation_config_override"); else _explicitNullProperties?.Remove("conversation_config_override"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationConfigClientOverrideConfigOutput? _explicitNullValueConversationConfigOverride = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationConfigClientOverrideConfigOutput ConversationConfigOverride { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationConfigClientOverrideConfigOutput ConversationConfigOverride { get => _explicitNullValueConversationConfigOverride; set { _explicitNullValueConversationConfigOverride = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conversation_config_override"); else _explicitNullProperties?.Remove("conversation_config_override"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationConfigClientOverrideConfigOutput _explicitNullValueConversationConfigOverride = default!;
 #endif
         /// <summary>Whether to include custom LLM extra body</summary>
-        public bool? CustomLlmExtraBody { get; set; }
+        public bool? CustomLlmExtraBody { get => _explicitNullValueCustomLlmExtraBody; set { _explicitNullValueCustomLlmExtraBody = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_llm_extra_body"); else _explicitNullProperties?.Remove("custom_llm_extra_body"); } }
+        private bool? _explicitNullValueCustomLlmExtraBody = default!;
         /// <summary>Whether to enable conversation initiation client data from webhooks</summary>
-        public bool? EnableConversationInitiationClientDataFromWebhook { get; set; }
+        public bool? EnableConversationInitiationClientDataFromWebhook { get => _explicitNullValueEnableConversationInitiationClientDataFromWebhook; set { _explicitNullValueEnableConversationInitiationClientDataFromWebhook = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enable_conversation_initiation_client_data_from_webhook"); else _explicitNullProperties?.Remove("enable_conversation_initiation_client_data_from_webhook"); } }
+        private bool? _explicitNullValueEnableConversationInitiationClientDataFromWebhook = default!;
         /// <summary>Whether clients may pass procedure_ids and start_procedure_ids in initiation client data. procedure_ids selects which of the agent&apos;s procedures are available. start_procedure_ids starts free-form procedures when the conversation starts. If false, sending either field fails conversation start.</summary>
-        public bool? EnableProcedureIdsFromClient { get; set; }
+        public bool? EnableProcedureIdsFromClient { get => _explicitNullValueEnableProcedureIdsFromClient; set { _explicitNullValueEnableProcedureIdsFromClient = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enable_procedure_ids_from_client"); else _explicitNullProperties?.Remove("enable_procedure_ids_from_client"); } }
+        private bool? _explicitNullValueEnableProcedureIdsFromClient = default!;
         /// <summary>Whether clients may pass starting_workflow_node_id in initiation client data; if false, sending it fails conversation start.</summary>
-        public bool? EnableStartingWorkflowNodeIdFromClient { get; set; }
+        public bool? EnableStartingWorkflowNodeIdFromClient { get => _explicitNullValueEnableStartingWorkflowNodeIdFromClient; set { _explicitNullValueEnableStartingWorkflowNodeIdFromClient = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enable_starting_workflow_node_id_from_client"); else _explicitNullProperties?.Remove("enable_starting_workflow_node_id_from_client"); } }
+        private bool? _explicitNullValueEnableStartingWorkflowNodeIdFromClient = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationClientDataConfigOutput"/> and sets the default values.
         /// </summary>
@@ -49,7 +67,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationClientDataConfigOutput CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationClientDataConfigOutput();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationClientDataConfigOutput(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -78,6 +96,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteBoolValue("enable_conversation_initiation_client_data_from_webhook", EnableConversationInitiationClientDataFromWebhook);
             writer.WriteBoolValue("enable_procedure_ids_from_client", EnableProcedureIdsFromClient);
             writer.WriteBoolValue("enable_starting_workflow_node_id_from_client", EnableStartingWorkflowNodeIdFromClient);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

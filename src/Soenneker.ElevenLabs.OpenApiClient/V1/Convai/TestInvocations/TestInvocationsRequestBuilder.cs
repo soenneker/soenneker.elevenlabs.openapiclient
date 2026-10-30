@@ -35,7 +35,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.TestInvocations
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TestInvocationsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/convai/test-invocations{?agent_id*,branch_id*,cursor*,end_time*,page_size*,search*,start_time*,test_id*,version_id*}", pathParameters)
+        public TestInvocationsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/convai/test-invocations{?agent_id*,branch_id*,created_by_user_id*,cursor*,end_time*,page_size*,search*,start_time*,test_id*,version_id*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.TestInvocations
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TestInvocationsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/convai/test-invocations{?agent_id*,branch_id*,cursor*,end_time*,page_size*,search*,start_time*,test_id*,version_id*}", rawUrl)
+        public TestInvocationsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/convai/test-invocations{?agent_id*,branch_id*,created_by_user_id*,cursor*,end_time*,page_size*,search*,start_time*,test_id*,version_id*}", rawUrl)
         {
         }
         /// <summary>
@@ -66,6 +66,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.TestInvocations
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "422", global::Soenneker.ElevenLabs.OpenApiClient.Models.HttpValidationError.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetTestInvocationsPageResponseModel>(requestInfo, global::Soenneker.ElevenLabs.OpenApiClient.Models.GetTestInvocationsPageResponseModel.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -122,6 +124,16 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.TestInvocations
 #else
             [QueryParameter("branch_id")]
             public string BranchId { get; set; }
+#endif
+            /// <summary>Filter by test run creator user ID</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("created_by_user_id")]
+            public string? CreatedByUserId { get; set; }
+#nullable restore
+#else
+            [QueryParameter("created_by_user_id")]
+            public string CreatedByUserId { get; set; }
 #endif
             /// <summary>Used for fetching next page. Cursor is returned in the response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

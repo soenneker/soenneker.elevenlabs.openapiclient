@@ -8,34 +8,39 @@ using System;
 namespace Soenneker.ElevenLabs.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.BackupLlmDefault"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.BackupLlmDisabled"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.BackupLlmOverride"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentApiModelInputBackupLlmConfigOneOf1"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentApiModelInputBackupLlmConfigOneOf2"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentApiModelInputBackupLlmConfigOneOf3"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PromptAgentApiModelInputBackupLlmConfig : IComposedTypeWrapper, IParsable
-    {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.BackupLlmDefault"/></summary>
+    , global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder {
+        // Preserve ambiguous union payloads without inventing a discriminator.
+        /// <summary>The complete payload when no unique typed union branch can be selected.</summary>
+        public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode UnrecognizedValue { get; set; } = null!;
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalData { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentApiModelInputBackupLlmConfigOneOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BackupLlmDefault? BackupLlmDefault { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentApiModelInputBackupLlmConfigOneOf1? PromptAgentApiModelInputBackupLlmConfigOneOf1 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BackupLlmDefault BackupLlmDefault { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentApiModelInputBackupLlmConfigOneOf1 PromptAgentApiModelInputBackupLlmConfigOneOf1 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.BackupLlmDisabled"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentApiModelInputBackupLlmConfigOneOf2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BackupLlmDisabled? BackupLlmDisabled { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentApiModelInputBackupLlmConfigOneOf2? PromptAgentApiModelInputBackupLlmConfigOneOf2 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BackupLlmDisabled BackupLlmDisabled { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentApiModelInputBackupLlmConfigOneOf2 PromptAgentApiModelInputBackupLlmConfigOneOf2 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.BackupLlmOverride"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentApiModelInputBackupLlmConfigOneOf3"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BackupLlmOverride? BackupLlmOverride { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentApiModelInputBackupLlmConfigOneOf3? PromptAgentApiModelInputBackupLlmConfigOneOf3 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BackupLlmOverride BackupLlmOverride { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentApiModelInputBackupLlmConfigOneOf3 PromptAgentApiModelInputBackupLlmConfigOneOf3 { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -45,21 +50,30 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentApiModelInputBackupLlmConfig CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("preference")?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
             var result = new global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentApiModelInputBackupLlmConfig();
-            if("default".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("PromptAgentApiModelInputBackupLlmConfigOneOf1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.BackupLlmDefault = new global::Soenneker.ElevenLabs.OpenApiClient.Models.BackupLlmDefault();
+                
             }
-            else if("disabled".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("PromptAgentApiModelInputBackupLlmConfigOneOf2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.BackupLlmDisabled = new global::Soenneker.ElevenLabs.OpenApiClient.Models.BackupLlmDisabled();
+                
             }
-            else if("override".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("PromptAgentApiModelInputBackupLlmConfigOneOf3".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.BackupLlmOverride = new global::Soenneker.ElevenLabs.OpenApiClient.Models.BackupLlmOverride();
+                
             }
-            return result;
+            
+            var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
+            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("preference") != null && (parseNode.GetChildNode("preference")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("default".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal)))))();
+            bool matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("preference") != null && (parseNode.GetChildNode("preference")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("disabled".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal)))))();
+            bool matchesUnionBranch2 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("order") != null && parseNode.GetChildNode("preference") != null && (parseNode.GetChildNode("preference")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag2 && ("override".Equals(tag2.GetValue(), global::System.StringComparison.Ordinal)))))();
+            if (result.PromptAgentApiModelInputBackupLlmConfigOneOf1 == null && result.PromptAgentApiModelInputBackupLlmConfigOneOf2 == null && result.PromptAgentApiModelInputBackupLlmConfigOneOf3 == null && matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2) result.PromptAgentApiModelInputBackupLlmConfigOneOf1 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentApiModelInputBackupLlmConfigOneOf1(), parseNode);
+            if (result.PromptAgentApiModelInputBackupLlmConfigOneOf1 == null && result.PromptAgentApiModelInputBackupLlmConfigOneOf2 == null && result.PromptAgentApiModelInputBackupLlmConfigOneOf3 == null && matchesUnionBranch1 && !matchesUnionBranch0 && !matchesUnionBranch2) result.PromptAgentApiModelInputBackupLlmConfigOneOf2 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentApiModelInputBackupLlmConfigOneOf2(), parseNode);
+            if (result.PromptAgentApiModelInputBackupLlmConfigOneOf1 == null && result.PromptAgentApiModelInputBackupLlmConfigOneOf2 == null && result.PromptAgentApiModelInputBackupLlmConfigOneOf3 == null && matchesUnionBranch2 && !matchesUnionBranch0 && !matchesUnionBranch1) result.PromptAgentApiModelInputBackupLlmConfigOneOf3 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentApiModelInputBackupLlmConfigOneOf3(), parseNode);
+            if (result.PromptAgentApiModelInputBackupLlmConfigOneOf1 == null && result.PromptAgentApiModelInputBackupLlmConfigOneOf2 == null && result.PromptAgentApiModelInputBackupLlmConfigOneOf3 == null) result.UnrecognizedValue = unionPayload;
+return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -67,17 +81,17 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(BackupLlmDefault != null)
+            if(PromptAgentApiModelInputBackupLlmConfigOneOf1 != null)
             {
-                return BackupLlmDefault.GetFieldDeserializers();
+                return PromptAgentApiModelInputBackupLlmConfigOneOf1.GetFieldDeserializers();
             }
-            else if(BackupLlmDisabled != null)
+            else if(PromptAgentApiModelInputBackupLlmConfigOneOf2 != null)
             {
-                return BackupLlmDisabled.GetFieldDeserializers();
+                return PromptAgentApiModelInputBackupLlmConfigOneOf2.GetFieldDeserializers();
             }
-            else if(BackupLlmOverride != null)
+            else if(PromptAgentApiModelInputBackupLlmConfigOneOf3 != null)
             {
-                return BackupLlmOverride.GetFieldDeserializers();
+                return PromptAgentApiModelInputBackupLlmConfigOneOf3.GetFieldDeserializers();
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -87,18 +101,27 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
+            if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
+            if (PromptAgentApiModelInputBackupLlmConfigOneOf1 == null && PromptAgentApiModelInputBackupLlmConfigOneOf2 == null && PromptAgentApiModelInputBackupLlmConfigOneOf3 == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
+            if (PromptAgentApiModelInputBackupLlmConfigOneOf1 != null && PromptAgentApiModelInputBackupLlmConfigOneOf2 == null && PromptAgentApiModelInputBackupLlmConfigOneOf3 == null) { if (PromptAgentApiModelInputBackupLlmConfigOneOf1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, PromptAgentApiModelInputBackupLlmConfigOneOf1); return; }
+            if (PromptAgentApiModelInputBackupLlmConfigOneOf2 != null && PromptAgentApiModelInputBackupLlmConfigOneOf1 == null && PromptAgentApiModelInputBackupLlmConfigOneOf3 == null) { if (PromptAgentApiModelInputBackupLlmConfigOneOf2 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, PromptAgentApiModelInputBackupLlmConfigOneOf2); return; }
+            if (PromptAgentApiModelInputBackupLlmConfigOneOf3 != null && PromptAgentApiModelInputBackupLlmConfigOneOf1 == null && PromptAgentApiModelInputBackupLlmConfigOneOf2 == null) { if (PromptAgentApiModelInputBackupLlmConfigOneOf3 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, PromptAgentApiModelInputBackupLlmConfigOneOf3); return; }
+
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(BackupLlmDefault != null)
+            if(PromptAgentApiModelInputBackupLlmConfigOneOf1 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BackupLlmDefault>(null, BackupLlmDefault);
+                if (PromptAgentApiModelInputBackupLlmConfigOneOf1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentApiModelInputBackupLlmConfigOneOf1>(null, PromptAgentApiModelInputBackupLlmConfigOneOf1);
             }
-            else if(BackupLlmDisabled != null)
+            else if(PromptAgentApiModelInputBackupLlmConfigOneOf2 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BackupLlmDisabled>(null, BackupLlmDisabled);
+                if (PromptAgentApiModelInputBackupLlmConfigOneOf2 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentApiModelInputBackupLlmConfigOneOf2>(null, PromptAgentApiModelInputBackupLlmConfigOneOf2);
             }
-            else if(BackupLlmOverride != null)
+            else if(PromptAgentApiModelInputBackupLlmConfigOneOf3 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BackupLlmOverride>(null, BackupLlmOverride);
+                if (PromptAgentApiModelInputBackupLlmConfigOneOf3 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentApiModelInputBackupLlmConfigOneOf3>(null, PromptAgentApiModelInputBackupLlmConfigOneOf3);
             }
         }
     }

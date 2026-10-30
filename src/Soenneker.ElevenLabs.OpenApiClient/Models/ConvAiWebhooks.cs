@@ -11,32 +11,51 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ConvAiWebhooks : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("events") is { } nullNodeEvents && nullNodeEvents.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Events = null;
+            if (parseNode.GetChildNode("exclude_transcript") is { } nullNodeExcludeTranscript && nullNodeExcludeTranscript.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExcludeTranscript = null;
+            if (parseNode.GetChildNode("post_call_webhook_id") is { } nullNodePostCallWebhookId && nullNodePostCallWebhookId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PostCallWebhookId = null;
+            if (parseNode.GetChildNode("send_audio") is { } nullNodeSendAudio && nullNodeSendAudio.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SendAudio = null;
+            if (parseNode.GetChildNode("transcript_format") is { } nullNodeTranscriptFormat && nullNodeTranscriptFormat.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TranscriptFormat = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>List of event types to send via webhook. Options: transcript, audio, call_initiation_failure, answering_machine_detection, unredacted_transcript, unredacted_audio.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookEventType?>? Events { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookEventType?>? Events { get => _explicitNullValueEvents; set { _explicitNullValueEvents = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("events"); else _explicitNullProperties?.Remove("events"); } }
+        private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookEventType?>? _explicitNullValueEvents = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookEventType?> Events { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookEventType?> Events { get => _explicitNullValueEvents; set { _explicitNullValueEvents = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("events"); else _explicitNullProperties?.Remove("events"); } }
+        private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookEventType?> _explicitNullValueEvents = default!;
 #endif
         /// <summary>When true, JSON post-call transcription webhooks omit the turn-by-turn transcript. Analysis, metadata, and other conversation fields are still sent. Ignored for OpenTelemetry transcript format.</summary>
-        public bool? ExcludeTranscript { get; set; }
+        public bool? ExcludeTranscript { get => _explicitNullValueExcludeTranscript; set { _explicitNullValueExcludeTranscript = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("exclude_transcript"); else _explicitNullProperties?.Remove("exclude_transcript"); } }
+        private bool? _explicitNullValueExcludeTranscript = default!;
         /// <summary>The post_call_webhook_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PostCallWebhookId { get; set; }
+        public string? PostCallWebhookId { get => _explicitNullValuePostCallWebhookId; set { _explicitNullValuePostCallWebhookId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("post_call_webhook_id"); else _explicitNullProperties?.Remove("post_call_webhook_id"); } }
+        private string? _explicitNullValuePostCallWebhookId = default!;
 #nullable restore
 #else
-        public string PostCallWebhookId { get; set; }
+        public string PostCallWebhookId { get => _explicitNullValuePostCallWebhookId; set { _explicitNullValuePostCallWebhookId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("post_call_webhook_id"); else _explicitNullProperties?.Remove("post_call_webhook_id"); } }
+        private string _explicitNullValuePostCallWebhookId = default!;
 #endif
         /// <summary>DEPRECATED: Use &apos;events&apos; field instead. Whether to send audio data with post-call webhooks for ConvAI conversations</summary>
         [Obsolete("")]
-        public bool? SendAudio { get; set; }
+        public bool? SendAudio { get => _explicitNullValueSendAudio; set { _explicitNullValueSendAudio = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("send_audio"); else _explicitNullProperties?.Remove("send_audio"); } }
+        private bool? _explicitNullValueSendAudio = default!;
         /// <summary>Format for transcript webhooks.</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookTranscriptFormat? TranscriptFormat { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookTranscriptFormat? TranscriptFormat { get => _explicitNullValueTranscriptFormat; set { _explicitNullValueTranscriptFormat = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transcript_format"); else _explicitNullProperties?.Remove("transcript_format"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookTranscriptFormat? _explicitNullValueTranscriptFormat = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ConvAiWebhooks"/> and sets the default values.
         /// </summary>
@@ -54,7 +73,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.ConvAiWebhooks CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.ConvAiWebhooks();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.ConvAiWebhooks(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -83,6 +102,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteStringValue("post_call_webhook_id", PostCallWebhookId);
             writer.WriteBoolValue("send_audio", SendAudio);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookTranscriptFormat>("transcript_format", TranscriptFormat);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

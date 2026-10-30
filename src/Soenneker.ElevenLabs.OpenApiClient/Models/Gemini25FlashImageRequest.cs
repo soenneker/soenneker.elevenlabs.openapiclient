@@ -12,34 +12,54 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Gemini25FlashImageRequest : IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("aspect_ratio") is { } nullNodeAspectRatio && nullNodeAspectRatio.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AspectRatio = null;
+            if (parseNode.GetChildNode("images") is { } nullNodeImages && nullNodeImages.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Images = null;
+            if (parseNode.GetChildNode("model_id") is { } nullNodeModelId && nullNodeModelId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ModelId = null;
+            if (parseNode.GetChildNode("prompt") is { } nullNodePrompt && nullNodePrompt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Prompt = null;
+            if (parseNode.GetChildNode("webhook") is { } nullNodeWebhook && nullNodeWebhook.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Webhook = null;
+        }
+
         /// <summary>The aspect ratio of the output image. With `auto`, the model picks an aspect ratio based on the inputs.</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Gemini25FlashImageRequestAspectRatio? AspectRatio { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Gemini25FlashImageRequestAspectRatio? AspectRatio { get => _explicitNullValueAspectRatio; set { _explicitNullValueAspectRatio = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("aspect_ratio"); else _explicitNullProperties?.Remove("aspect_ratio"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.Gemini25FlashImageRequestAspectRatio? _explicitNullValueAspectRatio = default!;
         /// <summary>Up to 5 reference images to edit or draw from.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ImageReference>? Images { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ImageReference>? Images { get => _explicitNullValueImages; set { _explicitNullValueImages = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("images"); else _explicitNullProperties?.Remove("images"); } }
+        private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ImageReference>? _explicitNullValueImages = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ImageReference> Images { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ImageReference> Images { get => _explicitNullValueImages; set { _explicitNullValueImages = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("images"); else _explicitNullProperties?.Remove("images"); } }
+        private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ImageReference> _explicitNullValueImages = default!;
 #endif
         /// <summary>The model to use for the generation.</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Gemini25FlashImageModelId? ModelId { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Gemini25FlashImageModelId? ModelId { get => _explicitNullValueModelId; set { _explicitNullValueModelId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("model_id"); else _explicitNullProperties?.Remove("model_id"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.Gemini25FlashImageModelId? _explicitNullValueModelId = default!;
         /// <summary>A text description of the image to generate.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Prompt { get; set; }
+        public string? Prompt { get => _explicitNullValuePrompt; set { _explicitNullValuePrompt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prompt"); else _explicitNullProperties?.Remove("prompt"); } }
+        private string? _explicitNullValuePrompt = default!;
 #nullable restore
 #else
-        public string Prompt { get; set; }
+        public string Prompt { get => _explicitNullValuePrompt; set { _explicitNullValuePrompt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prompt"); else _explicitNullProperties?.Remove("prompt"); } }
+        private string _explicitNullValuePrompt = default!;
 #endif
         /// <summary>Include to send the generation&apos;s result to the workspace&apos;s configured flows webhooks once it completes or fails. The webhook payload matches the terminal response of the corresponding GET endpoint.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookTarget? Webhook { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookTarget? Webhook { get => _explicitNullValueWebhook; set { _explicitNullValueWebhook = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("webhook"); else _explicitNullProperties?.Remove("webhook"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookTarget? _explicitNullValueWebhook = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookTarget Webhook { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookTarget Webhook { get => _explicitNullValueWebhook; set { _explicitNullValueWebhook = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("webhook"); else _explicitNullProperties?.Remove("webhook"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookTarget _explicitNullValueWebhook = default!;
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -49,7 +69,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.Gemini25FlashImageRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.Gemini25FlashImageRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.Gemini25FlashImageRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -77,7 +97,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.ImageReference>("images", Images);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Gemini25FlashImageModelId>("model_id", ModelId);
             writer.WriteStringValue("prompt", Prompt);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookTarget>("webhook", Webhook);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookTarget>("webhook", Webhook);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

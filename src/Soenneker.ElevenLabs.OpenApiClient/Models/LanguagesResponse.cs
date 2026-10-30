@@ -8,26 +8,31 @@ using System;
 namespace Soenneker.ElevenLabs.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.PairedLanguagesResponse"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.SingleLanguagesResponse"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.LanguagesResponseOneOf1"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.LanguagesResponseOneOf2"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class LanguagesResponse : IComposedTypeWrapper, IParsable
-    {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.PairedLanguagesResponse"/></summary>
+    , global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder {
+        // Preserve ambiguous union payloads without inventing a discriminator.
+        /// <summary>The complete payload when no unique typed union branch can be selected.</summary>
+        public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode UnrecognizedValue { get; set; } = null!;
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalData { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.LanguagesResponseOneOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PairedLanguagesResponse? PairedLanguagesResponse { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.LanguagesResponseOneOf1? LanguagesResponseOneOf1 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PairedLanguagesResponse PairedLanguagesResponse { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.LanguagesResponseOneOf1 LanguagesResponseOneOf1 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.SingleLanguagesResponse"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.LanguagesResponseOneOf2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SingleLanguagesResponse? SingleLanguagesResponse { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.LanguagesResponseOneOf2? LanguagesResponseOneOf2 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SingleLanguagesResponse SingleLanguagesResponse { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.LanguagesResponseOneOf2 LanguagesResponseOneOf2 { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -37,17 +42,24 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.LanguagesResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("kind")?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
             var result = new global::Soenneker.ElevenLabs.OpenApiClient.Models.LanguagesResponse();
-            if("pair".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("LanguagesResponseOneOf1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.PairedLanguagesResponse = new global::Soenneker.ElevenLabs.OpenApiClient.Models.PairedLanguagesResponse();
+                
             }
-            else if("single".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("LanguagesResponseOneOf2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.SingleLanguagesResponse = new global::Soenneker.ElevenLabs.OpenApiClient.Models.SingleLanguagesResponse();
+                
             }
-            return result;
+            
+            var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
+            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("language_pairs") != null && parseNode.GetChildNode("kind") != null && (parseNode.GetChildNode("kind")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag2 && ("pair".Equals(tag2.GetValue(), global::System.StringComparison.Ordinal)))))();
+            bool matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("languages") != null && parseNode.GetChildNode("kind") != null && (parseNode.GetChildNode("kind")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag2 && ("single".Equals(tag2.GetValue(), global::System.StringComparison.Ordinal)))))();
+            if (result.LanguagesResponseOneOf1 == null && result.LanguagesResponseOneOf2 == null && matchesUnionBranch0 && !matchesUnionBranch1) result.LanguagesResponseOneOf1 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.LanguagesResponseOneOf1(), parseNode);
+            if (result.LanguagesResponseOneOf1 == null && result.LanguagesResponseOneOf2 == null && matchesUnionBranch1 && !matchesUnionBranch0) result.LanguagesResponseOneOf2 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.LanguagesResponseOneOf2(), parseNode);
+            if (result.LanguagesResponseOneOf1 == null && result.LanguagesResponseOneOf2 == null) result.UnrecognizedValue = unionPayload;
+return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -55,13 +67,13 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(PairedLanguagesResponse != null)
+            if(LanguagesResponseOneOf1 != null)
             {
-                return PairedLanguagesResponse.GetFieldDeserializers();
+                return LanguagesResponseOneOf1.GetFieldDeserializers();
             }
-            else if(SingleLanguagesResponse != null)
+            else if(LanguagesResponseOneOf2 != null)
             {
-                return SingleLanguagesResponse.GetFieldDeserializers();
+                return LanguagesResponseOneOf2.GetFieldDeserializers();
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -71,14 +83,21 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
+            if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
+            if (LanguagesResponseOneOf1 == null && LanguagesResponseOneOf2 == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
+            if (LanguagesResponseOneOf1 != null && LanguagesResponseOneOf2 == null) { if (LanguagesResponseOneOf1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, LanguagesResponseOneOf1); return; }
+            if (LanguagesResponseOneOf2 != null && LanguagesResponseOneOf1 == null) { if (LanguagesResponseOneOf2 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, LanguagesResponseOneOf2); return; }
+
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(PairedLanguagesResponse != null)
+            if(LanguagesResponseOneOf1 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PairedLanguagesResponse>(null, PairedLanguagesResponse);
+                if (LanguagesResponseOneOf1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.LanguagesResponseOneOf1>(null, LanguagesResponseOneOf1);
             }
-            else if(SingleLanguagesResponse != null)
+            else if(LanguagesResponseOneOf2 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SingleLanguagesResponse>(null, SingleLanguagesResponse);
+                if (LanguagesResponseOneOf2 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.LanguagesResponseOneOf2>(null, LanguagesResponseOneOf2);
             }
         }
     }

@@ -12,48 +12,70 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class McpServerResponseModel : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("access_info") is { } nullNodeAccessInfo && nullNodeAccessInfo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccessInfo = null;
+            if (parseNode.GetChildNode("config") is { } nullNodeConfig && nullNodeConfig.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Config = null;
+            if (parseNode.GetChildNode("dependent_agents") is { } nullNodeDependentAgents && nullNodeDependentAgents.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DependentAgents = null;
+            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("metadata") is { } nullNodeMetadata && nullNodeMetadata.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Metadata = null;
+        }
+
         /// <summary>The access information of the MCP Server</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceAccessInfo? AccessInfo { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceAccessInfo? AccessInfo { get => _explicitNullValueAccessInfo; set { _explicitNullValueAccessInfo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("access_info"); else _explicitNullProperties?.Remove("access_info"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceAccessInfo? _explicitNullValueAccessInfo = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceAccessInfo AccessInfo { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceAccessInfo AccessInfo { get => _explicitNullValueAccessInfo; set { _explicitNullValueAccessInfo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("access_info"); else _explicitNullProperties?.Remove("access_info"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceAccessInfo _explicitNullValueAccessInfo = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The config property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.McpServerConfigOutput? Config { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.McpServerConfigOutput? Config { get => _explicitNullValueConfig; set { _explicitNullValueConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("config"); else _explicitNullProperties?.Remove("config"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.McpServerConfigOutput? _explicitNullValueConfig = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.McpServerConfigOutput Config { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.McpServerConfigOutput Config { get => _explicitNullValueConfig; set { _explicitNullValueConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("config"); else _explicitNullProperties?.Remove("config"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.McpServerConfigOutput _explicitNullValueConfig = default!;
 #endif
         /// <summary>List of agents that depend on this MCP Server.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.McpServerResponseModelDependentAgentsItem>? DependentAgents { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.McpServerResponseModelDependentAgentsItem>? DependentAgents { get => _explicitNullValueDependentAgents; set { _explicitNullValueDependentAgents = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dependent_agents"); else _explicitNullProperties?.Remove("dependent_agents"); } }
+        private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.McpServerResponseModelDependentAgentsItem>? _explicitNullValueDependentAgents = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.McpServerResponseModelDependentAgentsItem> DependentAgents { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.McpServerResponseModelDependentAgentsItem> DependentAgents { get => _explicitNullValueDependentAgents; set { _explicitNullValueDependentAgents = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dependent_agents"); else _explicitNullProperties?.Remove("dependent_agents"); } }
+        private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.McpServerResponseModelDependentAgentsItem> _explicitNullValueDependentAgents = default!;
 #endif
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get; set; }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string _explicitNullValueId = default!;
 #endif
         /// <summary>The metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.McpServerMetadataResponseModel? Metadata { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.McpServerMetadataResponseModel? Metadata { get => _explicitNullValueMetadata; set { _explicitNullValueMetadata = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metadata"); else _explicitNullProperties?.Remove("metadata"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.McpServerMetadataResponseModel? _explicitNullValueMetadata = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.McpServerMetadataResponseModel Metadata { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.McpServerMetadataResponseModel Metadata { get => _explicitNullValueMetadata; set { _explicitNullValueMetadata = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metadata"); else _explicitNullProperties?.Remove("metadata"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.McpServerMetadataResponseModel _explicitNullValueMetadata = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.McpServerResponseModel"/> and sets the default values.
@@ -70,7 +92,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.McpServerResponseModel CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.McpServerResponseModel();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.McpServerResponseModel(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -99,6 +121,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.McpServerResponseModelDependentAgentsItem>("dependent_agents", DependentAgents);
             writer.WriteStringValue("id", Id);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.McpServerMetadataResponseModel>("metadata", Metadata);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

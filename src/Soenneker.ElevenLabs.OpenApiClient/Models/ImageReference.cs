@@ -12,6 +12,10 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     public partial class ImageReference : IAdditionalDataHolder, IComposedTypeWrapper, IParsable
     #pragma warning restore CS1591
     {
+        // Preserve ambiguous union payloads without inventing a discriminator.
+        /// <summary>The complete payload when no unique typed union branch can be selected.</summary>
+        public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode UnrecognizedValue { get; set; } = null!;
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The ID of an asset uploaded via the assets API (`POST /v1/assets`), as returned in that response&apos;s `asset_id`.</summary>
@@ -65,13 +69,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public global::Soenneker.ElevenLabs.OpenApiClient.Models.StaticAssetReference StaticAssetReference { get; set; }
 #endif
         /// <summary>The type property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Type { get; set; }
-#nullable restore
-#else
-        public string Type { get; set; }
-#endif
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GenerationType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ImageReference"/> and sets the default values.
         /// </summary>
@@ -87,41 +85,50 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.ImageReference CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
             var result = new global::Soenneker.ElevenLabs.OpenApiClient.Models.ImageReference();
-            if("generation".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("GenerationReference".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.GenerationReference = new global::Soenneker.ElevenLabs.OpenApiClient.Models.GenerationReference();
+                
             }
-            else if("inline_base64".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("InlineImageReference".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.InlineImageReference = new global::Soenneker.ElevenLabs.OpenApiClient.Models.InlineImageReference();
+                
             }
-            else if(parseNode.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.InlineImageReferenceMimeType>() is global::Soenneker.ElevenLabs.OpenApiClient.Models.InlineImageReferenceMimeType mimeTypeValue)
+            else if(parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString unionEnumValue0 && ("image/jpeg".Equals(unionEnumValue0.GetValue(), global::System.StringComparison.OrdinalIgnoreCase) || "image/png".Equals(unionEnumValue0.GetValue(), global::System.StringComparison.OrdinalIgnoreCase) || "image/webp".Equals(unionEnumValue0.GetValue(), global::System.StringComparison.OrdinalIgnoreCase) || "image/heic".Equals(unionEnumValue0.GetValue(), global::System.StringComparison.OrdinalIgnoreCase) || "image/heif".Equals(unionEnumValue0.GetValue(), global::System.StringComparison.OrdinalIgnoreCase)) && parseNode.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.InlineImageReferenceMimeType>() is global::Soenneker.ElevenLabs.OpenApiClient.Models.InlineImageReferenceMimeType mimeTypeValue)
             {
                 result.MimeType = mimeTypeValue;
             }
-            else if("asset".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("StaticAssetReference".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.StaticAssetReference = new global::Soenneker.ElevenLabs.OpenApiClient.Models.StaticAssetReference();
+                
             }
-            else if(parseNode.GetStringValue() is string assetIdValue)
-            {
-                result.AssetId = assetIdValue;
-            }
-            else if(parseNode.GetStringValue() is string contentBase64Value)
-            {
-                result.ContentBase64 = contentBase64Value;
-            }
-            else if(parseNode.GetStringValue() is string generationIdValue)
-            {
-                result.GenerationId = generationIdValue;
-            }
-            else if(parseNode.GetStringValue() is string typeValue)
+            else if(parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString unionEnumValue1 && ("generation".Equals(unionEnumValue1.GetValue(), global::System.StringComparison.OrdinalIgnoreCase)) && parseNode.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GenerationType>() is global::Soenneker.ElevenLabs.OpenApiClient.Models.GenerationType typeValue)
             {
                 result.Type = typeValue;
             }
-            return result;
+            else if(parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString && parseNode.GetStringValue() is string assetIdValue)
+            {
+                result.AssetId = assetIdValue;
+            }
+            else if(parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString && parseNode.GetStringValue() is string contentBase64Value)
+            {
+                result.ContentBase64 = contentBase64Value;
+            }
+            else if(parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString && parseNode.GetStringValue() is string generationIdValue)
+            {
+                result.GenerationId = generationIdValue;
+            }
+            
+            var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
+            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("generation".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("generation_id") != null))();
+            bool matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("asset".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("asset_id") != null))();
+            bool matchesUnionBranch2 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("inline_base64".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("content_base64") != null && parseNode.GetChildNode("mime_type") != null && (parseNode.GetChildNode("mime_type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag4 && ("image/jpeg".Equals(tag4.GetValue(), global::System.StringComparison.Ordinal) || "image/png".Equals(tag4.GetValue(), global::System.StringComparison.Ordinal) || "image/webp".Equals(tag4.GetValue(), global::System.StringComparison.Ordinal) || "image/heic".Equals(tag4.GetValue(), global::System.StringComparison.Ordinal) || "image/heif".Equals(tag4.GetValue(), global::System.StringComparison.Ordinal)))))();
+            if (result.AssetId == null && result.ContentBase64 == null && result.GenerationId == null && result.GenerationReference == null && result.InlineImageReference == null && result.MimeType == null && result.StaticAssetReference == null && result.Type == null && matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2) result.GenerationReference = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.GenerationReference(), parseNode);
+            if (result.AssetId == null && result.ContentBase64 == null && result.GenerationId == null && result.GenerationReference == null && result.InlineImageReference == null && result.MimeType == null && result.StaticAssetReference == null && result.Type == null && matchesUnionBranch1 && !matchesUnionBranch0 && !matchesUnionBranch2) result.StaticAssetReference = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.StaticAssetReference(), parseNode);
+            if (result.AssetId == null && result.ContentBase64 == null && result.GenerationId == null && result.GenerationReference == null && result.InlineImageReference == null && result.MimeType == null && result.StaticAssetReference == null && result.Type == null && matchesUnionBranch2 && !matchesUnionBranch0 && !matchesUnionBranch1) result.InlineImageReference = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.InlineImageReference(), parseNode);
+            if (result.AssetId == null && result.ContentBase64 == null && result.GenerationId == null && result.GenerationReference == null && result.InlineImageReference == null && result.MimeType == null && result.StaticAssetReference == null && result.Type == null) result.UnrecognizedValue = unionPayload;
+return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -149,13 +156,21 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
+            if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
+            if (AssetId == null && ContentBase64 == null && GenerationId == null && GenerationReference == null && InlineImageReference == null && MimeType == null && StaticAssetReference == null && Type == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
+            if (GenerationReference != null && AssetId == null && ContentBase64 == null && GenerationId == null && InlineImageReference == null && MimeType == null && StaticAssetReference == null && Type == null) { if (GenerationReference is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, GenerationReference); return; }
+            if (InlineImageReference != null && AssetId == null && ContentBase64 == null && GenerationId == null && GenerationReference == null && MimeType == null && StaticAssetReference == null && Type == null) { if (InlineImageReference is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, InlineImageReference); return; }
+            if (StaticAssetReference != null && AssetId == null && ContentBase64 == null && GenerationId == null && GenerationReference == null && InlineImageReference == null && MimeType == null && Type == null) { if (StaticAssetReference is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, StaticAssetReference); return; }
+
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             if(GenerationReference != null)
             {
+                if (GenerationReference is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GenerationReference>(null, GenerationReference);
             }
             else if(InlineImageReference != null)
             {
+                if (InlineImageReference is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.InlineImageReference>(null, InlineImageReference);
             }
             else if(MimeType != null)
@@ -164,7 +179,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             }
             else if(StaticAssetReference != null)
             {
+                if (StaticAssetReference is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.StaticAssetReference>(null, StaticAssetReference);
+            }
+            else if(Type != null)
+            {
+                writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GenerationType>(null, Type);
             }
             else if(AssetId != null)
             {
@@ -178,11 +198,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             {
                 writer.WriteStringValue(null, GenerationId);
             }
-            else if(Type != null)
-            {
-                writer.WriteStringValue(null, Type);
-            }
-            writer.WriteAdditionalData(AdditionalData);
+            
         }
     }
 }

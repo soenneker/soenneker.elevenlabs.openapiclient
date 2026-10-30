@@ -11,17 +11,32 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class AgentMetadataDbModel : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("created_at_unix_secs") is { } nullNodeCreatedAtUnixSecs && nullNodeCreatedAtUnixSecs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedAtUnixSecs = null;
+            if (parseNode.GetChildNode("created_from") is { } nullNodeCreatedFrom && nullNodeCreatedFrom.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedFrom = null;
+            if (parseNode.GetChildNode("last_updated_from") is { } nullNodeLastUpdatedFrom && nullNodeLastUpdatedFrom.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastUpdatedFrom = null;
+            if (parseNode.GetChildNode("updated_at_unix_secs") is { } nullNodeUpdatedAtUnixSecs && nullNodeUpdatedAtUnixSecs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UpdatedAtUnixSecs = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The created_at_unix_secs property</summary>
-        public int? CreatedAtUnixSecs { get; set; }
+        public int? CreatedAtUnixSecs { get => _explicitNullValueCreatedAtUnixSecs; set { _explicitNullValueCreatedAtUnixSecs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_at_unix_secs"); else _explicitNullProperties?.Remove("created_at_unix_secs"); } }
+        private int? _explicitNullValueCreatedAtUnixSecs = default!;
         /// <summary>The created_from property</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentDefinitionSource? CreatedFrom { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentDefinitionSource? CreatedFrom { get => _explicitNullValueCreatedFrom; set { _explicitNullValueCreatedFrom = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_from"); else _explicitNullProperties?.Remove("created_from"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentDefinitionSource? _explicitNullValueCreatedFrom = default!;
         /// <summary>The last_updated_from property</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentDefinitionSource? LastUpdatedFrom { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentDefinitionSource? LastUpdatedFrom { get => _explicitNullValueLastUpdatedFrom; set { _explicitNullValueLastUpdatedFrom = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last_updated_from"); else _explicitNullProperties?.Remove("last_updated_from"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentDefinitionSource? _explicitNullValueLastUpdatedFrom = default!;
         /// <summary>The updated_at_unix_secs property</summary>
-        public int? UpdatedAtUnixSecs { get; set; }
+        public int? UpdatedAtUnixSecs { get => _explicitNullValueUpdatedAtUnixSecs; set { _explicitNullValueUpdatedAtUnixSecs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("updated_at_unix_secs"); else _explicitNullProperties?.Remove("updated_at_unix_secs"); } }
+        private int? _explicitNullValueUpdatedAtUnixSecs = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentMetadataDbModel"/> and sets the default values.
         /// </summary>
@@ -39,7 +54,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentMetadataDbModel CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentMetadataDbModel();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentMetadataDbModel(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -66,6 +81,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentDefinitionSource>("created_from", CreatedFrom);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentDefinitionSource>("last_updated_from", LastUpdatedFrom);
             writer.WriteIntValue("updated_at_unix_secs", UpdatedAtUnixSecs);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

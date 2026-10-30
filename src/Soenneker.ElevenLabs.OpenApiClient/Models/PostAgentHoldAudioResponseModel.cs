@@ -11,24 +11,37 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class PostAgentHoldAudioResponseModel : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("agent_id") is { } nullNodeAgentId && nullNodeAgentId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AgentId = null;
+            if (parseNode.GetChildNode("hold_audio") is { } nullNodeHoldAudio && nullNodeHoldAudio.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HoldAudio = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The agent_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AgentId { get; set; }
+        public string? AgentId { get => _explicitNullValueAgentId; set { _explicitNullValueAgentId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agent_id"); else _explicitNullProperties?.Remove("agent_id"); } }
+        private string? _explicitNullValueAgentId = default!;
 #nullable restore
 #else
-        public string AgentId { get; set; }
+        public string AgentId { get => _explicitNullValueAgentId; set { _explicitNullValueAgentId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agent_id"); else _explicitNullProperties?.Remove("agent_id"); } }
+        private string _explicitNullValueAgentId = default!;
 #endif
         /// <summary>Custom hold audio played on loop to callers waiting in the agent&apos;s queue.Set by uploading a file through the agent hold-audio endpoint. Values sent inagent create or update requests are ignored.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentHoldAudioConfig? HoldAudio { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentHoldAudioConfig? HoldAudio { get => _explicitNullValueHoldAudio; set { _explicitNullValueHoldAudio = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hold_audio"); else _explicitNullProperties?.Remove("hold_audio"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentHoldAudioConfig? _explicitNullValueHoldAudio = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentHoldAudioConfig HoldAudio { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentHoldAudioConfig HoldAudio { get => _explicitNullValueHoldAudio; set { _explicitNullValueHoldAudio = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hold_audio"); else _explicitNullProperties?.Remove("hold_audio"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentHoldAudioConfig _explicitNullValueHoldAudio = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.PostAgentHoldAudioResponseModel"/> and sets the default values.
@@ -45,7 +58,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.PostAgentHoldAudioResponseModel CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.PostAgentHoldAudioResponseModel();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.PostAgentHoldAudioResponseModel(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -68,6 +81,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("agent_id", AgentId);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentHoldAudioConfig>("hold_audio", HoldAudio);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

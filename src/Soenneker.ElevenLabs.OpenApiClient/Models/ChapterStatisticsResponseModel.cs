@@ -11,26 +11,46 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ChapterStatisticsResponseModel : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("characters_converted") is { } nullNodeCharactersConverted && nullNodeCharactersConverted.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CharactersConverted = null;
+            if (parseNode.GetChildNode("characters_unconverted") is { } nullNodeCharactersUnconverted && nullNodeCharactersUnconverted.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CharactersUnconverted = null;
+            if (parseNode.GetChildNode("credits_needed_to_convert") is { } nullNodeCreditsNeededToConvert && nullNodeCreditsNeededToConvert.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreditsNeededToConvert = null;
+            if (parseNode.GetChildNode("paragraphs_converted") is { } nullNodeParagraphsConverted && nullNodeParagraphsConverted.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ParagraphsConverted = null;
+            if (parseNode.GetChildNode("paragraphs_unconverted") is { } nullNodeParagraphsUnconverted && nullNodeParagraphsUnconverted.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ParagraphsUnconverted = null;
+            if (parseNode.GetChildNode("voice_statistics") is { } nullNodeVoiceStatistics && nullNodeVoiceStatistics.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VoiceStatistics = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The number of converted characters.</summary>
-        public int? CharactersConverted { get; set; }
+        public int? CharactersConverted { get => _explicitNullValueCharactersConverted; set { _explicitNullValueCharactersConverted = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("characters_converted"); else _explicitNullProperties?.Remove("characters_converted"); } }
+        private int? _explicitNullValueCharactersConverted = default!;
         /// <summary>The number of unconverted characters.</summary>
-        public int? CharactersUnconverted { get; set; }
+        public int? CharactersUnconverted { get => _explicitNullValueCharactersUnconverted; set { _explicitNullValueCharactersUnconverted = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("characters_unconverted"); else _explicitNullProperties?.Remove("characters_unconverted"); } }
+        private int? _explicitNullValueCharactersUnconverted = default!;
         /// <summary>The number of credits needed to convert the remaining paragraphs.</summary>
-        public int? CreditsNeededToConvert { get; set; }
+        public int? CreditsNeededToConvert { get => _explicitNullValueCreditsNeededToConvert; set { _explicitNullValueCreditsNeededToConvert = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("credits_needed_to_convert"); else _explicitNullProperties?.Remove("credits_needed_to_convert"); } }
+        private int? _explicitNullValueCreditsNeededToConvert = default!;
         /// <summary>The number of converted paragraphs.</summary>
-        public int? ParagraphsConverted { get; set; }
+        public int? ParagraphsConverted { get => _explicitNullValueParagraphsConverted; set { _explicitNullValueParagraphsConverted = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("paragraphs_converted"); else _explicitNullProperties?.Remove("paragraphs_converted"); } }
+        private int? _explicitNullValueParagraphsConverted = default!;
         /// <summary>The number of unconverted paragraphs.</summary>
-        public int? ParagraphsUnconverted { get; set; }
+        public int? ParagraphsUnconverted { get => _explicitNullValueParagraphsUnconverted; set { _explicitNullValueParagraphsUnconverted = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("paragraphs_unconverted"); else _explicitNullProperties?.Remove("paragraphs_unconverted"); } }
+        private int? _explicitNullValueParagraphsUnconverted = default!;
         /// <summary>Per-voice breakdown of character counts.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceStatisticsResponseModel>? VoiceStatistics { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceStatisticsResponseModel>? VoiceStatistics { get => _explicitNullValueVoiceStatistics; set { _explicitNullValueVoiceStatistics = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("voice_statistics"); else _explicitNullProperties?.Remove("voice_statistics"); } }
+        private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceStatisticsResponseModel>? _explicitNullValueVoiceStatistics = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceStatisticsResponseModel> VoiceStatistics { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceStatisticsResponseModel> VoiceStatistics { get => _explicitNullValueVoiceStatistics; set { _explicitNullValueVoiceStatistics = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("voice_statistics"); else _explicitNullProperties?.Remove("voice_statistics"); } }
+        private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceStatisticsResponseModel> _explicitNullValueVoiceStatistics = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ChapterStatisticsResponseModel"/> and sets the default values.
@@ -47,7 +67,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.ChapterStatisticsResponseModel CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.ChapterStatisticsResponseModel();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.ChapterStatisticsResponseModel(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -78,6 +98,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteIntValue("paragraphs_converted", ParagraphsConverted);
             writer.WriteIntValue("paragraphs_unconverted", ParagraphsUnconverted);
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceStatisticsResponseModel>("voice_statistics", VoiceStatistics);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -12,32 +12,48 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class MusicPrompt : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("negative_global_styles") is { } nullNodeNegativeGlobalStyles && nullNodeNegativeGlobalStyles.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NegativeGlobalStyles = null;
+            if (parseNode.GetChildNode("positive_global_styles") is { } nullNodePositiveGlobalStyles && nullNodePositiveGlobalStyles.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PositiveGlobalStyles = null;
+            if (parseNode.GetChildNode("sections") is { } nullNodeSections && nullNodeSections.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Sections = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The styles and musical directions that should not be present in the entire song. Use English language for best result.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? NegativeGlobalStyles { get; set; }
+        public List<string>? NegativeGlobalStyles { get => _explicitNullValueNegativeGlobalStyles; set { _explicitNullValueNegativeGlobalStyles = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("negative_global_styles"); else _explicitNullProperties?.Remove("negative_global_styles"); } }
+        private List<string>? _explicitNullValueNegativeGlobalStyles = default!;
 #nullable restore
 #else
-        public List<string> NegativeGlobalStyles { get; set; }
+        public List<string> NegativeGlobalStyles { get => _explicitNullValueNegativeGlobalStyles; set { _explicitNullValueNegativeGlobalStyles = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("negative_global_styles"); else _explicitNullProperties?.Remove("negative_global_styles"); } }
+        private List<string> _explicitNullValueNegativeGlobalStyles = default!;
 #endif
         /// <summary>The styles and musical directions that should be present in the entire song. Use English language for best result.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? PositiveGlobalStyles { get; set; }
+        public List<string>? PositiveGlobalStyles { get => _explicitNullValuePositiveGlobalStyles; set { _explicitNullValuePositiveGlobalStyles = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("positive_global_styles"); else _explicitNullProperties?.Remove("positive_global_styles"); } }
+        private List<string>? _explicitNullValuePositiveGlobalStyles = default!;
 #nullable restore
 #else
-        public List<string> PositiveGlobalStyles { get; set; }
+        public List<string> PositiveGlobalStyles { get => _explicitNullValuePositiveGlobalStyles; set { _explicitNullValuePositiveGlobalStyles = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("positive_global_styles"); else _explicitNullProperties?.Remove("positive_global_styles"); } }
+        private List<string> _explicitNullValuePositiveGlobalStyles = default!;
 #endif
         /// <summary>The sections of the song.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.SongSection>? Sections { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.SongSection>? Sections { get => _explicitNullValueSections; set { _explicitNullValueSections = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sections"); else _explicitNullProperties?.Remove("sections"); } }
+        private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.SongSection>? _explicitNullValueSections = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.SongSection> Sections { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.SongSection> Sections { get => _explicitNullValueSections; set { _explicitNullValueSections = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sections"); else _explicitNullProperties?.Remove("sections"); } }
+        private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.SongSection> _explicitNullValueSections = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.MusicPrompt"/> and sets the default values.
@@ -54,7 +70,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.MusicPrompt CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.MusicPrompt();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.MusicPrompt(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -79,6 +95,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("negative_global_styles", NegativeGlobalStyles);
             writer.WriteCollectionOfPrimitiveValues<string>("positive_global_styles", PositiveGlobalStyles);
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.SongSection>("sections", Sections);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

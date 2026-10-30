@@ -11,26 +11,41 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ColumnFilter : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("column") is { } nullNodeColumn && nullNodeColumn.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Column = null;
+            if (parseNode.GetChildNode("operation") is { } nullNodeOperation && nullNodeOperation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Operation = null;
+            if (parseNode.GetChildNode("values") is { } nullNodeValues && nullNodeValues.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Values = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The column property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Column { get; set; }
+        public string? Column { get => _explicitNullValueColumn; set { _explicitNullValueColumn = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("column"); else _explicitNullProperties?.Remove("column"); } }
+        private string? _explicitNullValueColumn = default!;
 #nullable restore
 #else
-        public string Column { get; set; }
+        public string Column { get => _explicitNullValueColumn; set { _explicitNullValueColumn = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("column"); else _explicitNullProperties?.Remove("column"); } }
+        private string _explicitNullValueColumn = default!;
 #endif
         /// <summary>The operation property</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ColumnFilterOperation? Operation { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ColumnFilterOperation? Operation { get => _explicitNullValueOperation; set { _explicitNullValueOperation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("operation"); else _explicitNullProperties?.Remove("operation"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ColumnFilterOperation? _explicitNullValueOperation = default!;
         /// <summary>The values property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Values { get; set; }
+        public List<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>? Values { get => _explicitNullValueValues; set { _explicitNullValueValues = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("values"); else _explicitNullProperties?.Remove("values"); } }
+        private List<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>? _explicitNullValueValues = default!;
 #nullable restore
 #else
-        public List<string> Values { get; set; }
+        public List<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode> Values { get => _explicitNullValueValues; set { _explicitNullValueValues = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("values"); else _explicitNullProperties?.Remove("values"); } }
+        private List<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode> _explicitNullValueValues = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ColumnFilter"/> and sets the default values.
@@ -47,7 +62,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.ColumnFilter CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.ColumnFilter();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.ColumnFilter(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -59,7 +74,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             {
                 { "column", n => { Column = n.GetStringValue(); } },
                 { "operation", n => { Operation = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ColumnFilterOperation>(); } },
-                { "values", n => { Values = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "values", n => { Values = n.GetCollectionOfObjectValues<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -71,7 +86,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("column", Column);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ColumnFilterOperation>("operation", Operation);
-            writer.WriteCollectionOfPrimitiveValues<string>("values", Values);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>("values", Values);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -12,7 +12,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ContentSchema : IComposedTypeWrapper, IParsable
-    {
+    , global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder {
+        // Preserve ambiguous union payloads without inventing a discriminator.
+        /// <summary>The complete payload when no unique typed union branch can be selected.</summary>
+        public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode UnrecognizedValue { get; set; } = null!;
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalData { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
         /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ArraySchema"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -105,45 +110,50 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             var result = new global::Soenneker.ElevenLabs.OpenApiClient.Models.ContentSchema();
             if("array".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.ArraySchema = new global::Soenneker.ElevenLabs.OpenApiClient.Models.ArraySchema();
+                
             }
             else if("audio".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.AudioSchema = new global::Soenneker.ElevenLabs.OpenApiClient.Models.AudioSchema();
+                
             }
             else if("boolean".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.BooleanSchema = new global::Soenneker.ElevenLabs.OpenApiClient.Models.BooleanSchema();
+                
             }
             else if("image".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.ImageSchema = new global::Soenneker.ElevenLabs.OpenApiClient.Models.ImageSchema();
+                
             }
             else if("integer".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.IntegerSchema = new global::Soenneker.ElevenLabs.OpenApiClient.Models.IntegerSchema();
+                
             }
             else if("number".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.NumberSchema = new global::Soenneker.ElevenLabs.OpenApiClient.Models.NumberSchema();
+                
             }
             else if("object".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.ObjectSchema = new global::Soenneker.ElevenLabs.OpenApiClient.Models.ObjectSchema();
+                
             }
             else if("string".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.StringSchema = new global::Soenneker.ElevenLabs.OpenApiClient.Models.StringSchema();
+                
             }
             else if("video".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.VideoSchema = new global::Soenneker.ElevenLabs.OpenApiClient.Models.VideoSchema();
+                
             }
             else if("voice".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.VoiceSchema = new global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceSchema();
+                
             }
-            return result;
+            
+            var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
+            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("items") != null && (parseNode.GetChildNode("type") == null || (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString optionalTag1 && ("array".Equals(optionalTag1.GetValue(), global::System.StringComparison.Ordinal))))))();
+            if (result.ArraySchema == null && result.AudioSchema == null && result.BooleanSchema == null && result.ImageSchema == null && result.IntegerSchema == null && result.NumberSchema == null && result.ObjectSchema == null && result.StringSchema == null && result.VideoSchema == null && result.VoiceSchema == null && matchesUnionBranch0) result.ArraySchema = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.ArraySchema(), parseNode);
+            if (result.ArraySchema == null && result.AudioSchema == null && result.BooleanSchema == null && result.ImageSchema == null && result.IntegerSchema == null && result.NumberSchema == null && result.ObjectSchema == null && result.StringSchema == null && result.VideoSchema == null && result.VoiceSchema == null) result.UnrecognizedValue = unionPayload;
+return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -199,45 +209,68 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
+            if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
+            if (ArraySchema == null && AudioSchema == null && BooleanSchema == null && ImageSchema == null && IntegerSchema == null && NumberSchema == null && ObjectSchema == null && StringSchema == null && VideoSchema == null && VoiceSchema == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
+            if (ArraySchema != null && AudioSchema == null && BooleanSchema == null && ImageSchema == null && IntegerSchema == null && NumberSchema == null && ObjectSchema == null && StringSchema == null && VideoSchema == null && VoiceSchema == null) { if (ArraySchema is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, ArraySchema); return; }
+            if (AudioSchema != null && ArraySchema == null && BooleanSchema == null && ImageSchema == null && IntegerSchema == null && NumberSchema == null && ObjectSchema == null && StringSchema == null && VideoSchema == null && VoiceSchema == null) { if (AudioSchema is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, AudioSchema); return; }
+            if (BooleanSchema != null && ArraySchema == null && AudioSchema == null && ImageSchema == null && IntegerSchema == null && NumberSchema == null && ObjectSchema == null && StringSchema == null && VideoSchema == null && VoiceSchema == null) { if (BooleanSchema is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, BooleanSchema); return; }
+            if (ImageSchema != null && ArraySchema == null && AudioSchema == null && BooleanSchema == null && IntegerSchema == null && NumberSchema == null && ObjectSchema == null && StringSchema == null && VideoSchema == null && VoiceSchema == null) { if (ImageSchema is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, ImageSchema); return; }
+            if (IntegerSchema != null && ArraySchema == null && AudioSchema == null && BooleanSchema == null && ImageSchema == null && NumberSchema == null && ObjectSchema == null && StringSchema == null && VideoSchema == null && VoiceSchema == null) { if (IntegerSchema is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, IntegerSchema); return; }
+            if (NumberSchema != null && ArraySchema == null && AudioSchema == null && BooleanSchema == null && ImageSchema == null && IntegerSchema == null && ObjectSchema == null && StringSchema == null && VideoSchema == null && VoiceSchema == null) { if (NumberSchema is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, NumberSchema); return; }
+            if (ObjectSchema != null && ArraySchema == null && AudioSchema == null && BooleanSchema == null && ImageSchema == null && IntegerSchema == null && NumberSchema == null && StringSchema == null && VideoSchema == null && VoiceSchema == null) { if (ObjectSchema is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, ObjectSchema); return; }
+            if (StringSchema != null && ArraySchema == null && AudioSchema == null && BooleanSchema == null && ImageSchema == null && IntegerSchema == null && NumberSchema == null && ObjectSchema == null && VideoSchema == null && VoiceSchema == null) { if (StringSchema is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, StringSchema); return; }
+            if (VideoSchema != null && ArraySchema == null && AudioSchema == null && BooleanSchema == null && ImageSchema == null && IntegerSchema == null && NumberSchema == null && ObjectSchema == null && StringSchema == null && VoiceSchema == null) { if (VideoSchema is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, VideoSchema); return; }
+            if (VoiceSchema != null && ArraySchema == null && AudioSchema == null && BooleanSchema == null && ImageSchema == null && IntegerSchema == null && NumberSchema == null && ObjectSchema == null && StringSchema == null && VideoSchema == null) { if (VoiceSchema is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, VoiceSchema); return; }
+
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             if(ArraySchema != null)
             {
+                if (ArraySchema is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ArraySchema>(null, ArraySchema);
             }
             else if(AudioSchema != null)
             {
+                if (AudioSchema is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AudioSchema>(null, AudioSchema);
             }
             else if(BooleanSchema != null)
             {
+                if (BooleanSchema is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BooleanSchema>(null, BooleanSchema);
             }
             else if(ImageSchema != null)
             {
+                if (ImageSchema is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ImageSchema>(null, ImageSchema);
             }
             else if(IntegerSchema != null)
             {
+                if (IntegerSchema is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.IntegerSchema>(null, IntegerSchema);
             }
             else if(NumberSchema != null)
             {
+                if (NumberSchema is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.NumberSchema>(null, NumberSchema);
             }
             else if(ObjectSchema != null)
             {
+                if (ObjectSchema is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ObjectSchema>(null, ObjectSchema);
             }
             else if(StringSchema != null)
             {
+                if (StringSchema is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.StringSchema>(null, StringSchema);
             }
             else if(VideoSchema != null)
             {
+                if (VideoSchema is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.VideoSchema>(null, VideoSchema);
             }
             else if(VoiceSchema != null)
             {
+                if (VoiceSchema is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceSchema>(null, VoiceSchema);
             }
         }

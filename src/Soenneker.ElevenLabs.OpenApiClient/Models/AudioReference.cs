@@ -12,7 +12,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AudioReference : IComposedTypeWrapper, IParsable
-    {
+    , global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder {
+        // Preserve ambiguous union payloads without inventing a discriminator.
+        /// <summary>The complete payload when no unique typed union branch can be selected.</summary>
+        public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode UnrecognizedValue { get; set; } = null!;
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalData { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
         /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.GenerationReference"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -45,21 +50,30 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.AudioReference CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
             var result = new global::Soenneker.ElevenLabs.OpenApiClient.Models.AudioReference();
-            if("generation".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("GenerationReference".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.GenerationReference = new global::Soenneker.ElevenLabs.OpenApiClient.Models.GenerationReference();
+                
             }
-            else if("inline_base64".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("InlineAudioReference".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.InlineAudioReference = new global::Soenneker.ElevenLabs.OpenApiClient.Models.InlineAudioReference();
+                
             }
-            else if("asset".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("StaticAssetReference".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.StaticAssetReference = new global::Soenneker.ElevenLabs.OpenApiClient.Models.StaticAssetReference();
+                
             }
-            return result;
+            
+            var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
+            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("generation".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("generation_id") != null))();
+            bool matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("asset".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("asset_id") != null))();
+            bool matchesUnionBranch2 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("inline_base64".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("content_base64") != null && parseNode.GetChildNode("mime_type") != null && (parseNode.GetChildNode("mime_type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag4 && ("audio/mpeg".Equals(tag4.GetValue(), global::System.StringComparison.Ordinal) || "audio/wav".Equals(tag4.GetValue(), global::System.StringComparison.Ordinal)))))();
+            if (result.GenerationReference == null && result.InlineAudioReference == null && result.StaticAssetReference == null && matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2) result.GenerationReference = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.GenerationReference(), parseNode);
+            if (result.GenerationReference == null && result.InlineAudioReference == null && result.StaticAssetReference == null && matchesUnionBranch1 && !matchesUnionBranch0 && !matchesUnionBranch2) result.StaticAssetReference = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.StaticAssetReference(), parseNode);
+            if (result.GenerationReference == null && result.InlineAudioReference == null && result.StaticAssetReference == null && matchesUnionBranch2 && !matchesUnionBranch0 && !matchesUnionBranch1) result.InlineAudioReference = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.InlineAudioReference(), parseNode);
+            if (result.GenerationReference == null && result.InlineAudioReference == null && result.StaticAssetReference == null) result.UnrecognizedValue = unionPayload;
+return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -87,17 +101,26 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
+            if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
+            if (GenerationReference == null && InlineAudioReference == null && StaticAssetReference == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
+            if (GenerationReference != null && InlineAudioReference == null && StaticAssetReference == null) { if (GenerationReference is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, GenerationReference); return; }
+            if (InlineAudioReference != null && GenerationReference == null && StaticAssetReference == null) { if (InlineAudioReference is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, InlineAudioReference); return; }
+            if (StaticAssetReference != null && GenerationReference == null && InlineAudioReference == null) { if (StaticAssetReference is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, StaticAssetReference); return; }
+
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             if(GenerationReference != null)
             {
+                if (GenerationReference is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GenerationReference>(null, GenerationReference);
             }
             else if(InlineAudioReference != null)
             {
+                if (InlineAudioReference is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.InlineAudioReference>(null, InlineAudioReference);
             }
             else if(StaticAssetReference != null)
             {
+                if (StaticAssetReference is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.StaticAssetReference>(null, StaticAssetReference);
             }
         }

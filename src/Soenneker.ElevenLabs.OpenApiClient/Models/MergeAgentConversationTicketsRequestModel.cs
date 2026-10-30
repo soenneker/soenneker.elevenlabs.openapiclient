@@ -11,16 +11,26 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class MergeAgentConversationTicketsRequestModel : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("source_ticket_ids") is { } nullNodeSourceTicketIds && nullNodeSourceTicketIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SourceTicketIds = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Open tickets of the same agent to fold into this one. They are kept with status &apos;merged&apos;, pointing at this ticket.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? SourceTicketIds { get; set; }
+        public List<string>? SourceTicketIds { get => _explicitNullValueSourceTicketIds; set { _explicitNullValueSourceTicketIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source_ticket_ids"); else _explicitNullProperties?.Remove("source_ticket_ids"); } }
+        private List<string>? _explicitNullValueSourceTicketIds = default!;
 #nullable restore
 #else
-        public List<string> SourceTicketIds { get; set; }
+        public List<string> SourceTicketIds { get => _explicitNullValueSourceTicketIds; set { _explicitNullValueSourceTicketIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source_ticket_ids"); else _explicitNullProperties?.Remove("source_ticket_ids"); } }
+        private List<string> _explicitNullValueSourceTicketIds = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.MergeAgentConversationTicketsRequestModel"/> and sets the default values.
@@ -37,7 +47,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.MergeAgentConversationTicketsRequestModel CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.MergeAgentConversationTicketsRequestModel();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.MergeAgentConversationTicketsRequestModel(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -58,6 +68,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<string>("source_ticket_ids", SourceTicketIds);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

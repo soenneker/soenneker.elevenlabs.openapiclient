@@ -11,60 +11,89 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class UpdateOAuth2ClientCredsRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("auth_type") is { } nullNodeAuthType && nullNodeAuthType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AuthType = null;
+            if (parseNode.GetChildNode("basic_auth_in_header") is { } nullNodeBasicAuthInHeader && nullNodeBasicAuthInHeader.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BasicAuthInHeader = null;
+            if (parseNode.GetChildNode("client_id") is { } nullNodeClientId && nullNodeClientId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClientId = null;
+            if (parseNode.GetChildNode("client_secret") is { } nullNodeClientSecret && nullNodeClientSecret.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClientSecret = null;
+            if (parseNode.GetChildNode("custom_headers") is { } nullNodeCustomHeaders && nullNodeCustomHeaders.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomHeaders = null;
+            if (parseNode.GetChildNode("extra_params") is { } nullNodeExtraParams && nullNodeExtraParams.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExtraParams = null;
+            if (parseNode.GetChildNode("provider") is { } nullNodeProvider && nullNodeProvider.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Provider = null;
+            if (parseNode.GetChildNode("scopes") is { } nullNodeScopes && nullNodeScopes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Scopes = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The auth_type property</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateOAuth2ClientCredsRequestAuthType? AuthType { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateOAuth2ClientCredsRequestAuthType? AuthType { get => _explicitNullValueAuthType; set { _explicitNullValueAuthType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("auth_type"); else _explicitNullProperties?.Remove("auth_type"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateOAuth2ClientCredsRequestAuthType? _explicitNullValueAuthType = default!;
         /// <summary>The basic_auth_in_header property</summary>
-        public bool? BasicAuthInHeader { get; set; }
+        public bool? BasicAuthInHeader { get => _explicitNullValueBasicAuthInHeader; set { _explicitNullValueBasicAuthInHeader = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("basic_auth_in_header"); else _explicitNullProperties?.Remove("basic_auth_in_header"); } }
+        private bool? _explicitNullValueBasicAuthInHeader = default!;
         /// <summary>The client_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ClientId { get; set; }
+        public string? ClientId { get => _explicitNullValueClientId; set { _explicitNullValueClientId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("client_id"); else _explicitNullProperties?.Remove("client_id"); } }
+        private string? _explicitNullValueClientId = default!;
 #nullable restore
 #else
-        public string ClientId { get; set; }
+        public string ClientId { get => _explicitNullValueClientId; set { _explicitNullValueClientId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("client_id"); else _explicitNullProperties?.Remove("client_id"); } }
+        private string _explicitNullValueClientId = default!;
 #endif
         /// <summary>The client_secret property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ClientSecret { get; set; }
+        public string? ClientSecret { get => _explicitNullValueClientSecret; set { _explicitNullValueClientSecret = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("client_secret"); else _explicitNullProperties?.Remove("client_secret"); } }
+        private string? _explicitNullValueClientSecret = default!;
 #nullable restore
 #else
-        public string ClientSecret { get; set; }
+        public string ClientSecret { get => _explicitNullValueClientSecret; set { _explicitNullValueClientSecret = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("client_secret"); else _explicitNullProperties?.Remove("client_secret"); } }
+        private string _explicitNullValueClientSecret = default!;
 #endif
         /// <summary>The custom_headers property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateOAuth2ClientCredsRequestCustomHeadersProperty? CustomHeaders { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateOAuth2ClientCredsRequestCustomHeadersProperty? CustomHeaders { get => _explicitNullValueCustomHeaders; set { _explicitNullValueCustomHeaders = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_headers"); else _explicitNullProperties?.Remove("custom_headers"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateOAuth2ClientCredsRequestCustomHeadersProperty? _explicitNullValueCustomHeaders = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateOAuth2ClientCredsRequestCustomHeadersProperty CustomHeaders { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateOAuth2ClientCredsRequestCustomHeadersProperty CustomHeaders { get => _explicitNullValueCustomHeaders; set { _explicitNullValueCustomHeaders = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_headers"); else _explicitNullProperties?.Remove("custom_headers"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateOAuth2ClientCredsRequestCustomHeadersProperty _explicitNullValueCustomHeaders = default!;
 #endif
         /// <summary>The extra_params property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateOAuth2ClientCredsRequestExtraParamsProperty? ExtraParams { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateOAuth2ClientCredsRequestExtraParamsProperty? ExtraParams { get => _explicitNullValueExtraParams; set { _explicitNullValueExtraParams = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("extra_params"); else _explicitNullProperties?.Remove("extra_params"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateOAuth2ClientCredsRequestExtraParamsProperty? _explicitNullValueExtraParams = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateOAuth2ClientCredsRequestExtraParamsProperty ExtraParams { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateOAuth2ClientCredsRequestExtraParamsProperty ExtraParams { get => _explicitNullValueExtraParams; set { _explicitNullValueExtraParams = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("extra_params"); else _explicitNullProperties?.Remove("extra_params"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateOAuth2ClientCredsRequestExtraParamsProperty _explicitNullValueExtraParams = default!;
 #endif
         /// <summary>The provider property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Provider { get; set; }
+        public string? Provider { get => _explicitNullValueProvider; set { _explicitNullValueProvider = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("provider"); else _explicitNullProperties?.Remove("provider"); } }
+        private string? _explicitNullValueProvider = default!;
 #nullable restore
 #else
-        public string Provider { get; set; }
+        public string Provider { get => _explicitNullValueProvider; set { _explicitNullValueProvider = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("provider"); else _explicitNullProperties?.Remove("provider"); } }
+        private string _explicitNullValueProvider = default!;
 #endif
         /// <summary>The scopes property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Scopes { get; set; }
+        public List<string>? Scopes { get => _explicitNullValueScopes; set { _explicitNullValueScopes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scopes"); else _explicitNullProperties?.Remove("scopes"); } }
+        private List<string>? _explicitNullValueScopes = default!;
 #nullable restore
 #else
-        public List<string> Scopes { get; set; }
+        public List<string> Scopes { get => _explicitNullValueScopes; set { _explicitNullValueScopes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scopes"); else _explicitNullProperties?.Remove("scopes"); } }
+        private List<string> _explicitNullValueScopes = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateOAuth2ClientCredsRequest"/> and sets the default values.
@@ -81,7 +110,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateOAuth2ClientCredsRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateOAuth2ClientCredsRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateOAuth2ClientCredsRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -116,6 +145,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateOAuth2ClientCredsRequestExtraParamsProperty>("extra_params", ExtraParams);
             writer.WriteStringValue("provider", Provider);
             writer.WriteCollectionOfPrimitiveValues<string>("scopes", Scopes);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

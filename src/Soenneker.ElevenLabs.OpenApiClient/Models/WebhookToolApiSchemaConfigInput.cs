@@ -11,84 +11,122 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class WebhookToolApiSchemaConfigInput : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("auth_connection") is { } nullNodeAuthConnection && nullNodeAuthConnection.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AuthConnection = null;
+            if (parseNode.GetChildNode("auth_resolved_params") is { } nullNodeAuthResolvedParams && nullNodeAuthResolvedParams.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AuthResolvedParams = null;
+            if (parseNode.GetChildNode("content_type") is { } nullNodeContentType && nullNodeContentType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ContentType = null;
+            if (parseNode.GetChildNode("method") is { } nullNodeMethod && nullNodeMethod.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Method = null;
+            if (parseNode.GetChildNode("path_params_schema") is { } nullNodePathParamsSchema && nullNodePathParamsSchema.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PathParamsSchema = null;
+            if (parseNode.GetChildNode("query_params_schema") is { } nullNodeQueryParamsSchema && nullNodeQueryParamsSchema.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) QueryParamsSchema = null;
+            if (parseNode.GetChildNode("request_body_schema") is { } nullNodeRequestBodySchema && nullNodeRequestBodySchema.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequestBodySchema = null;
+            if (parseNode.GetChildNode("request_headers") is { } nullNodeRequestHeaders && nullNodeRequestHeaders.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequestHeaders = null;
+            if (parseNode.GetChildNode("response_body_schema") is { } nullNodeResponseBodySchema && nullNodeResponseBodySchema.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ResponseBodySchema = null;
+            if (parseNode.GetChildNode("response_filter") is { } nullNodeResponseFilter && nullNodeResponseFilter.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ResponseFilter = null;
+            if (parseNode.GetChildNode("url") is { } nullNodeUrl && nullNodeUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Url = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Optional auth connection to use for authentication with this webhook</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookToolApiSchemaConfigInputAuthConnection? AuthConnection { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookToolApiSchemaConfigInputAuthConnection? AuthConnection { get => _explicitNullValueAuthConnection; set { _explicitNullValueAuthConnection = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("auth_connection"); else _explicitNullProperties?.Remove("auth_connection"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookToolApiSchemaConfigInputAuthConnection? _explicitNullValueAuthConnection = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookToolApiSchemaConfigInputAuthConnection AuthConnection { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookToolApiSchemaConfigInputAuthConnection AuthConnection { get => _explicitNullValueAuthConnection; set { _explicitNullValueAuthConnection = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("auth_connection"); else _explicitNullProperties?.Remove("auth_connection"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookToolApiSchemaConfigInputAuthConnection _explicitNullValueAuthConnection = default!;
 #endif
         /// <summary>URL placeholders resolved from the auth connection (e.g. secrets injected via UrlSecretAuthConnection) rather than from path_params_schema.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? AuthResolvedParams { get; set; }
+        public List<string>? AuthResolvedParams { get => _explicitNullValueAuthResolvedParams; set { _explicitNullValueAuthResolvedParams = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("auth_resolved_params"); else _explicitNullProperties?.Remove("auth_resolved_params"); } }
+        private List<string>? _explicitNullValueAuthResolvedParams = default!;
 #nullable restore
 #else
-        public List<string> AuthResolvedParams { get; set; }
+        public List<string> AuthResolvedParams { get => _explicitNullValueAuthResolvedParams; set { _explicitNullValueAuthResolvedParams = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("auth_resolved_params"); else _explicitNullProperties?.Remove("auth_resolved_params"); } }
+        private List<string> _explicitNullValueAuthResolvedParams = default!;
 #endif
         /// <summary>Content type for the request body. Only applies to POST/PUT/PATCH requests.</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookToolApiSchemaConfigInputContentType? ContentType { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookToolApiSchemaConfigInputContentType? ContentType { get => _explicitNullValueContentType; set { _explicitNullValueContentType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("content_type"); else _explicitNullProperties?.Remove("content_type"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookToolApiSchemaConfigInputContentType? _explicitNullValueContentType = default!;
         /// <summary>The HTTP method to use for the webhook</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookToolApiSchemaConfigInputMethod? Method { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookToolApiSchemaConfigInputMethod? Method { get => _explicitNullValueMethod; set { _explicitNullValueMethod = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("method"); else _explicitNullProperties?.Remove("method"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookToolApiSchemaConfigInputMethod? _explicitNullValueMethod = default!;
         /// <summary>Schema for path parameters, if any. The keys should match the placeholders in the URL.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookToolApiSchemaConfigInputPathParamsSchemaProperty? PathParamsSchema { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookToolApiSchemaConfigInputPathParamsSchemaProperty? PathParamsSchema { get => _explicitNullValuePathParamsSchema; set { _explicitNullValuePathParamsSchema = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("path_params_schema"); else _explicitNullProperties?.Remove("path_params_schema"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookToolApiSchemaConfigInputPathParamsSchemaProperty? _explicitNullValuePathParamsSchema = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookToolApiSchemaConfigInputPathParamsSchemaProperty PathParamsSchema { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookToolApiSchemaConfigInputPathParamsSchemaProperty PathParamsSchema { get => _explicitNullValuePathParamsSchema; set { _explicitNullValuePathParamsSchema = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("path_params_schema"); else _explicitNullProperties?.Remove("path_params_schema"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookToolApiSchemaConfigInputPathParamsSchemaProperty _explicitNullValuePathParamsSchema = default!;
 #endif
         /// <summary>Schema for any query params, if any. These will be added to end of the URL as query params. Note: properties in a query param must all be literal types</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.QueryParamsJsonSchemaInput? QueryParamsSchema { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.QueryParamsJsonSchemaInput? QueryParamsSchema { get => _explicitNullValueQueryParamsSchema; set { _explicitNullValueQueryParamsSchema = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("query_params_schema"); else _explicitNullProperties?.Remove("query_params_schema"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.QueryParamsJsonSchemaInput? _explicitNullValueQueryParamsSchema = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.QueryParamsJsonSchemaInput QueryParamsSchema { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.QueryParamsJsonSchemaInput QueryParamsSchema { get => _explicitNullValueQueryParamsSchema; set { _explicitNullValueQueryParamsSchema = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("query_params_schema"); else _explicitNullProperties?.Remove("query_params_schema"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.QueryParamsJsonSchemaInput _explicitNullValueQueryParamsSchema = default!;
 #endif
         /// <summary>Schema for the body parameters, if any. Used for POST/PATCH/PUT requests. The schema should be an object which will be sent as the json body</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ObjectJsonSchemaPropertyInput? RequestBodySchema { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ObjectJsonSchemaPropertyInput? RequestBodySchema { get => _explicitNullValueRequestBodySchema; set { _explicitNullValueRequestBodySchema = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("request_body_schema"); else _explicitNullProperties?.Remove("request_body_schema"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ObjectJsonSchemaPropertyInput? _explicitNullValueRequestBodySchema = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ObjectJsonSchemaPropertyInput RequestBodySchema { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ObjectJsonSchemaPropertyInput RequestBodySchema { get => _explicitNullValueRequestBodySchema; set { _explicitNullValueRequestBodySchema = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("request_body_schema"); else _explicitNullProperties?.Remove("request_body_schema"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ObjectJsonSchemaPropertyInput _explicitNullValueRequestBodySchema = default!;
 #endif
         /// <summary>Headers that should be included in the request</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookToolApiSchemaConfigInputRequestHeadersProperty? RequestHeaders { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookToolApiSchemaConfigInputRequestHeadersProperty? RequestHeaders { get => _explicitNullValueRequestHeaders; set { _explicitNullValueRequestHeaders = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("request_headers"); else _explicitNullProperties?.Remove("request_headers"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookToolApiSchemaConfigInputRequestHeadersProperty? _explicitNullValueRequestHeaders = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookToolApiSchemaConfigInputRequestHeadersProperty RequestHeaders { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookToolApiSchemaConfigInputRequestHeadersProperty RequestHeaders { get => _explicitNullValueRequestHeaders; set { _explicitNullValueRequestHeaders = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("request_headers"); else _explicitNullProperties?.Remove("request_headers"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookToolApiSchemaConfigInputRequestHeadersProperty _explicitNullValueRequestHeaders = default!;
 #endif
         /// <summary>Schema describing the expected response body structure. For documentation only; not surfaced to the LLM.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ObjectJsonSchemaPropertyInput? ResponseBodySchema { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ObjectJsonSchemaPropertyInput? ResponseBodySchema { get => _explicitNullValueResponseBodySchema; set { _explicitNullValueResponseBodySchema = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("response_body_schema"); else _explicitNullProperties?.Remove("response_body_schema"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ObjectJsonSchemaPropertyInput? _explicitNullValueResponseBodySchema = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ObjectJsonSchemaPropertyInput ResponseBodySchema { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ObjectJsonSchemaPropertyInput ResponseBodySchema { get => _explicitNullValueResponseBodySchema; set { _explicitNullValueResponseBodySchema = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("response_body_schema"); else _explicitNullProperties?.Remove("response_body_schema"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ObjectJsonSchemaPropertyInput _explicitNullValueResponseBodySchema = default!;
 #endif
         /// <summary>Optional allow-list filter applied to the response before the LLM sees it, so large responses don&apos;t pollute the context. Defaults to the full response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ResponseFilter? ResponseFilter { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ResponseFilter? ResponseFilter { get => _explicitNullValueResponseFilter; set { _explicitNullValueResponseFilter = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("response_filter"); else _explicitNullProperties?.Remove("response_filter"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ResponseFilter? _explicitNullValueResponseFilter = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ResponseFilter ResponseFilter { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ResponseFilter ResponseFilter { get => _explicitNullValueResponseFilter; set { _explicitNullValueResponseFilter = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("response_filter"); else _explicitNullProperties?.Remove("response_filter"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ResponseFilter _explicitNullValueResponseFilter = default!;
 #endif
         /// <summary>The URL that the webhook will be sent to. May include path parameters, e.g. https://example.com/agents/{agent_id}</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Url { get; set; }
+        public string? Url { get => _explicitNullValueUrl; set { _explicitNullValueUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url"); else _explicitNullProperties?.Remove("url"); } }
+        private string? _explicitNullValueUrl = default!;
 #nullable restore
 #else
-        public string Url { get; set; }
+        public string Url { get => _explicitNullValueUrl; set { _explicitNullValueUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url"); else _explicitNullProperties?.Remove("url"); } }
+        private string _explicitNullValueUrl = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookToolApiSchemaConfigInput"/> and sets the default values.
@@ -105,7 +143,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookToolApiSchemaConfigInput CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookToolApiSchemaConfigInput();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookToolApiSchemaConfigInput(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -146,6 +184,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ObjectJsonSchemaPropertyInput>("response_body_schema", ResponseBodySchema);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ResponseFilter>("response_filter", ResponseFilter);
             writer.WriteStringValue("url", Url);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

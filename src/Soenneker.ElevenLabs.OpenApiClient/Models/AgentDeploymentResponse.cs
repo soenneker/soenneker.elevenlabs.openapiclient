@@ -11,16 +11,26 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class AgentDeploymentResponse : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("traffic_percentage_branch_id_map") is { } nullNodeTrafficPercentageBranchIdMap && nullNodeTrafficPercentageBranchIdMap.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TrafficPercentageBranchIdMap = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Map of branch IDs to traffic percentages</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentDeploymentResponseTrafficPercentageBranchIdMapProperty? TrafficPercentageBranchIdMap { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentDeploymentResponseTrafficPercentageBranchIdMapProperty? TrafficPercentageBranchIdMap { get => _explicitNullValueTrafficPercentageBranchIdMap; set { _explicitNullValueTrafficPercentageBranchIdMap = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("traffic_percentage_branch_id_map"); else _explicitNullProperties?.Remove("traffic_percentage_branch_id_map"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentDeploymentResponseTrafficPercentageBranchIdMapProperty? _explicitNullValueTrafficPercentageBranchIdMap = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentDeploymentResponseTrafficPercentageBranchIdMapProperty TrafficPercentageBranchIdMap { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentDeploymentResponseTrafficPercentageBranchIdMapProperty TrafficPercentageBranchIdMap { get => _explicitNullValueTrafficPercentageBranchIdMap; set { _explicitNullValueTrafficPercentageBranchIdMap = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("traffic_percentage_branch_id_map"); else _explicitNullProperties?.Remove("traffic_percentage_branch_id_map"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentDeploymentResponseTrafficPercentageBranchIdMapProperty _explicitNullValueTrafficPercentageBranchIdMap = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentDeploymentResponse"/> and sets the default values.
@@ -37,7 +47,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentDeploymentResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentDeploymentResponse();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentDeploymentResponse(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -58,6 +68,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentDeploymentResponseTrafficPercentageBranchIdMapProperty>("traffic_percentage_branch_id_map", TrafficPercentageBranchIdMap);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

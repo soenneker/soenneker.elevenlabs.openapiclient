@@ -12,28 +12,45 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class McpToolApprovalStatus : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("approval_policy") is { } nullNodeApprovalPolicy && nullNodeApprovalPolicy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ApprovalPolicy = null;
+            if (parseNode.GetChildNode("approved_definition") is { } nullNodeApprovedDefinition && nullNodeApprovedDefinition.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ApprovedDefinition = null;
+            if (parseNode.GetChildNode("state") is { } nullNodeState && nullNodeState.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) State = null;
+            if (parseNode.GetChildNode("tool_id") is { } nullNodeToolId && nullNodeToolId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ToolId = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Stored execution policy. Set when the tool has an approval.</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.McpToolApprovalPolicy? ApprovalPolicy { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.McpToolApprovalPolicy? ApprovalPolicy { get => _explicitNullValueApprovalPolicy; set { _explicitNullValueApprovalPolicy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("approval_policy"); else _explicitNullProperties?.Remove("approval_policy"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.McpToolApprovalPolicy? _explicitNullValueApprovalPolicy = default!;
         /// <summary>Previously approved definition, included when the tool needs review and a snapshot exists.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.McpApprovedToolDefinition? ApprovedDefinition { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.McpApprovedToolDefinition? ApprovedDefinition { get => _explicitNullValueApprovedDefinition; set { _explicitNullValueApprovedDefinition = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("approved_definition"); else _explicitNullProperties?.Remove("approved_definition"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.McpApprovedToolDefinition? _explicitNullValueApprovedDefinition = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.McpApprovedToolDefinition ApprovedDefinition { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.McpApprovedToolDefinition ApprovedDefinition { get => _explicitNullValueApprovedDefinition; set { _explicitNullValueApprovedDefinition = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("approved_definition"); else _explicitNullProperties?.Remove("approved_definition"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.McpApprovedToolDefinition _explicitNullValueApprovedDefinition = default!;
 #endif
         /// <summary>Whether a discovered MCP tool has an approval and whether it still matches.</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.McpToolApprovalState? State { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.McpToolApprovalState? State { get => _explicitNullValueState; set { _explicitNullValueState = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("state"); else _explicitNullProperties?.Remove("state"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.McpToolApprovalState? _explicitNullValueState = default!;
         /// <summary>Canonical MCP tool identifier in the form mcp:&lt;server_id&gt;:&lt;tool_name&gt;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ToolId { get; set; }
+        public string? ToolId { get => _explicitNullValueToolId; set { _explicitNullValueToolId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tool_id"); else _explicitNullProperties?.Remove("tool_id"); } }
+        private string? _explicitNullValueToolId = default!;
 #nullable restore
 #else
-        public string ToolId { get; set; }
+        public string ToolId { get => _explicitNullValueToolId; set { _explicitNullValueToolId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tool_id"); else _explicitNullProperties?.Remove("tool_id"); } }
+        private string _explicitNullValueToolId = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.McpToolApprovalStatus"/> and sets the default values.
@@ -50,7 +67,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.McpToolApprovalStatus CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.McpToolApprovalStatus();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.McpToolApprovalStatus(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -77,6 +94,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.McpApprovedToolDefinition>("approved_definition", ApprovedDefinition);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.McpToolApprovalState>("state", State);
             writer.WriteStringValue("tool_id", ToolId);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

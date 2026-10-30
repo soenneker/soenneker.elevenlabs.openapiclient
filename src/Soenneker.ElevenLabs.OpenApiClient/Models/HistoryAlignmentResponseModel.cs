@@ -11,32 +11,48 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class HistoryAlignmentResponseModel : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("character_end_times_seconds") is { } nullNodeCharacterEndTimesSeconds && nullNodeCharacterEndTimesSeconds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CharacterEndTimesSeconds = null;
+            if (parseNode.GetChildNode("characters") is { } nullNodeCharacters && nullNodeCharacters.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Characters = null;
+            if (parseNode.GetChildNode("character_start_times_seconds") is { } nullNodeCharacterStartTimesSeconds && nullNodeCharacterStartTimesSeconds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CharacterStartTimesSeconds = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The end times of the characters in seconds.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<double?>? CharacterEndTimesSeconds { get; set; }
+        public List<double?>? CharacterEndTimesSeconds { get => _explicitNullValueCharacterEndTimesSeconds; set { _explicitNullValueCharacterEndTimesSeconds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("character_end_times_seconds"); else _explicitNullProperties?.Remove("character_end_times_seconds"); } }
+        private List<double?>? _explicitNullValueCharacterEndTimesSeconds = default!;
 #nullable restore
 #else
-        public List<double?> CharacterEndTimesSeconds { get; set; }
+        public List<double?> CharacterEndTimesSeconds { get => _explicitNullValueCharacterEndTimesSeconds; set { _explicitNullValueCharacterEndTimesSeconds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("character_end_times_seconds"); else _explicitNullProperties?.Remove("character_end_times_seconds"); } }
+        private List<double?> _explicitNullValueCharacterEndTimesSeconds = default!;
 #endif
         /// <summary>The characters in the alignment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Characters { get; set; }
+        public List<string>? Characters { get => _explicitNullValueCharacters; set { _explicitNullValueCharacters = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("characters"); else _explicitNullProperties?.Remove("characters"); } }
+        private List<string>? _explicitNullValueCharacters = default!;
 #nullable restore
 #else
-        public List<string> Characters { get; set; }
+        public List<string> Characters { get => _explicitNullValueCharacters; set { _explicitNullValueCharacters = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("characters"); else _explicitNullProperties?.Remove("characters"); } }
+        private List<string> _explicitNullValueCharacters = default!;
 #endif
         /// <summary>The start times of the characters in seconds.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<double?>? CharacterStartTimesSeconds { get; set; }
+        public List<double?>? CharacterStartTimesSeconds { get => _explicitNullValueCharacterStartTimesSeconds; set { _explicitNullValueCharacterStartTimesSeconds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("character_start_times_seconds"); else _explicitNullProperties?.Remove("character_start_times_seconds"); } }
+        private List<double?>? _explicitNullValueCharacterStartTimesSeconds = default!;
 #nullable restore
 #else
-        public List<double?> CharacterStartTimesSeconds { get; set; }
+        public List<double?> CharacterStartTimesSeconds { get => _explicitNullValueCharacterStartTimesSeconds; set { _explicitNullValueCharacterStartTimesSeconds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("character_start_times_seconds"); else _explicitNullProperties?.Remove("character_start_times_seconds"); } }
+        private List<double?> _explicitNullValueCharacterStartTimesSeconds = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.HistoryAlignmentResponseModel"/> and sets the default values.
@@ -53,7 +69,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.HistoryAlignmentResponseModel CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.HistoryAlignmentResponseModel();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.HistoryAlignmentResponseModel(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -78,6 +94,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<double?>("character_end_times_seconds", CharacterEndTimesSeconds);
             writer.WriteCollectionOfPrimitiveValues<string>("characters", Characters);
             writer.WriteCollectionOfPrimitiveValues<double?>("character_start_times_seconds", CharacterStartTimesSeconds);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

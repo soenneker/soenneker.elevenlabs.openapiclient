@@ -8,42 +8,47 @@ using System;
 namespace Soenneker.ElevenLabs.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppTemplateDocumentParam"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppTemplateImageParam"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppTemplateLocationParam"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppTemplateTextParam"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppTemplateHeaderComponentParamsParametersItemOneOf1"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppTemplateHeaderComponentParamsParametersItemOneOf2"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppTemplateHeaderComponentParamsParametersItemOneOf3"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppTemplateHeaderComponentParamsParametersItemOneOf4"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WhatsAppTemplateHeaderComponentParamsParametersItem : IComposedTypeWrapper, IParsable
-    {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppTemplateDocumentParam"/></summary>
+    , global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder {
+        // Preserve ambiguous union payloads without inventing a discriminator.
+        /// <summary>The complete payload when no unique typed union branch can be selected.</summary>
+        public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode UnrecognizedValue { get; set; } = null!;
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalData { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppTemplateHeaderComponentParamsParametersItemOneOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppTemplateDocumentParam? WhatsAppTemplateDocumentParam { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppTemplateHeaderComponentParamsParametersItemOneOf1? WhatsAppTemplateHeaderComponentParamsParametersItemOneOf1 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppTemplateDocumentParam WhatsAppTemplateDocumentParam { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppTemplateHeaderComponentParamsParametersItemOneOf1 WhatsAppTemplateHeaderComponentParamsParametersItemOneOf1 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppTemplateImageParam"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppTemplateHeaderComponentParamsParametersItemOneOf2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppTemplateImageParam? WhatsAppTemplateImageParam { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppTemplateHeaderComponentParamsParametersItemOneOf2? WhatsAppTemplateHeaderComponentParamsParametersItemOneOf2 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppTemplateImageParam WhatsAppTemplateImageParam { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppTemplateHeaderComponentParamsParametersItemOneOf2 WhatsAppTemplateHeaderComponentParamsParametersItemOneOf2 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppTemplateLocationParam"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppTemplateHeaderComponentParamsParametersItemOneOf3"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppTemplateLocationParam? WhatsAppTemplateLocationParam { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppTemplateHeaderComponentParamsParametersItemOneOf3? WhatsAppTemplateHeaderComponentParamsParametersItemOneOf3 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppTemplateLocationParam WhatsAppTemplateLocationParam { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppTemplateHeaderComponentParamsParametersItemOneOf3 WhatsAppTemplateHeaderComponentParamsParametersItemOneOf3 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppTemplateTextParam"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppTemplateHeaderComponentParamsParametersItemOneOf4"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppTemplateTextParam? WhatsAppTemplateTextParam { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppTemplateHeaderComponentParamsParametersItemOneOf4? WhatsAppTemplateHeaderComponentParamsParametersItemOneOf4 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppTemplateTextParam WhatsAppTemplateTextParam { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppTemplateHeaderComponentParamsParametersItemOneOf4 WhatsAppTemplateHeaderComponentParamsParametersItemOneOf4 { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -53,25 +58,36 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppTemplateHeaderComponentParamsParametersItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
             var result = new global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppTemplateHeaderComponentParamsParametersItem();
-            if("document".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("WhatsAppTemplateHeaderComponentParamsParametersItemOneOf1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.WhatsAppTemplateDocumentParam = new global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppTemplateDocumentParam();
+                
             }
-            else if("image".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("WhatsAppTemplateHeaderComponentParamsParametersItemOneOf2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.WhatsAppTemplateImageParam = new global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppTemplateImageParam();
+                
             }
-            else if("location".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("WhatsAppTemplateHeaderComponentParamsParametersItemOneOf3".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.WhatsAppTemplateLocationParam = new global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppTemplateLocationParam();
+                
             }
-            else if("text".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("WhatsAppTemplateHeaderComponentParamsParametersItemOneOf4".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.WhatsAppTemplateTextParam = new global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppTemplateTextParam();
+                
             }
-            return result;
+            
+            var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
+            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("text") != null && parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag2 && ("text".Equals(tag2.GetValue(), global::System.StringComparison.Ordinal)))))();
+            bool matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("image") != null && parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag2 && ("image".Equals(tag2.GetValue(), global::System.StringComparison.Ordinal)))))();
+            bool matchesUnionBranch2 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("document") != null && parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag2 && ("document".Equals(tag2.GetValue(), global::System.StringComparison.Ordinal)))))();
+            bool matchesUnionBranch3 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("location") != null && parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag2 && ("location".Equals(tag2.GetValue(), global::System.StringComparison.Ordinal)))))();
+            if (result.WhatsAppTemplateHeaderComponentParamsParametersItemOneOf1 == null && result.WhatsAppTemplateHeaderComponentParamsParametersItemOneOf2 == null && result.WhatsAppTemplateHeaderComponentParamsParametersItemOneOf3 == null && result.WhatsAppTemplateHeaderComponentParamsParametersItemOneOf4 == null && matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2 && !matchesUnionBranch3) result.WhatsAppTemplateHeaderComponentParamsParametersItemOneOf1 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppTemplateHeaderComponentParamsParametersItemOneOf1(), parseNode);
+            if (result.WhatsAppTemplateHeaderComponentParamsParametersItemOneOf1 == null && result.WhatsAppTemplateHeaderComponentParamsParametersItemOneOf2 == null && result.WhatsAppTemplateHeaderComponentParamsParametersItemOneOf3 == null && result.WhatsAppTemplateHeaderComponentParamsParametersItemOneOf4 == null && matchesUnionBranch1 && !matchesUnionBranch0 && !matchesUnionBranch2 && !matchesUnionBranch3) result.WhatsAppTemplateHeaderComponentParamsParametersItemOneOf2 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppTemplateHeaderComponentParamsParametersItemOneOf2(), parseNode);
+            if (result.WhatsAppTemplateHeaderComponentParamsParametersItemOneOf1 == null && result.WhatsAppTemplateHeaderComponentParamsParametersItemOneOf2 == null && result.WhatsAppTemplateHeaderComponentParamsParametersItemOneOf3 == null && result.WhatsAppTemplateHeaderComponentParamsParametersItemOneOf4 == null && matchesUnionBranch2 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch3) result.WhatsAppTemplateHeaderComponentParamsParametersItemOneOf3 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppTemplateHeaderComponentParamsParametersItemOneOf3(), parseNode);
+            if (result.WhatsAppTemplateHeaderComponentParamsParametersItemOneOf1 == null && result.WhatsAppTemplateHeaderComponentParamsParametersItemOneOf2 == null && result.WhatsAppTemplateHeaderComponentParamsParametersItemOneOf3 == null && result.WhatsAppTemplateHeaderComponentParamsParametersItemOneOf4 == null && matchesUnionBranch3 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2) result.WhatsAppTemplateHeaderComponentParamsParametersItemOneOf4 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppTemplateHeaderComponentParamsParametersItemOneOf4(), parseNode);
+            if (result.WhatsAppTemplateHeaderComponentParamsParametersItemOneOf1 == null && result.WhatsAppTemplateHeaderComponentParamsParametersItemOneOf2 == null && result.WhatsAppTemplateHeaderComponentParamsParametersItemOneOf3 == null && result.WhatsAppTemplateHeaderComponentParamsParametersItemOneOf4 == null) result.UnrecognizedValue = unionPayload;
+return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -79,21 +95,21 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(WhatsAppTemplateDocumentParam != null)
+            if(WhatsAppTemplateHeaderComponentParamsParametersItemOneOf1 != null)
             {
-                return WhatsAppTemplateDocumentParam.GetFieldDeserializers();
+                return WhatsAppTemplateHeaderComponentParamsParametersItemOneOf1.GetFieldDeserializers();
             }
-            else if(WhatsAppTemplateImageParam != null)
+            else if(WhatsAppTemplateHeaderComponentParamsParametersItemOneOf2 != null)
             {
-                return WhatsAppTemplateImageParam.GetFieldDeserializers();
+                return WhatsAppTemplateHeaderComponentParamsParametersItemOneOf2.GetFieldDeserializers();
             }
-            else if(WhatsAppTemplateLocationParam != null)
+            else if(WhatsAppTemplateHeaderComponentParamsParametersItemOneOf3 != null)
             {
-                return WhatsAppTemplateLocationParam.GetFieldDeserializers();
+                return WhatsAppTemplateHeaderComponentParamsParametersItemOneOf3.GetFieldDeserializers();
             }
-            else if(WhatsAppTemplateTextParam != null)
+            else if(WhatsAppTemplateHeaderComponentParamsParametersItemOneOf4 != null)
             {
-                return WhatsAppTemplateTextParam.GetFieldDeserializers();
+                return WhatsAppTemplateHeaderComponentParamsParametersItemOneOf4.GetFieldDeserializers();
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -103,22 +119,33 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
+            if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
+            if (WhatsAppTemplateHeaderComponentParamsParametersItemOneOf1 == null && WhatsAppTemplateHeaderComponentParamsParametersItemOneOf2 == null && WhatsAppTemplateHeaderComponentParamsParametersItemOneOf3 == null && WhatsAppTemplateHeaderComponentParamsParametersItemOneOf4 == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
+            if (WhatsAppTemplateHeaderComponentParamsParametersItemOneOf1 != null && WhatsAppTemplateHeaderComponentParamsParametersItemOneOf2 == null && WhatsAppTemplateHeaderComponentParamsParametersItemOneOf3 == null && WhatsAppTemplateHeaderComponentParamsParametersItemOneOf4 == null) { if (WhatsAppTemplateHeaderComponentParamsParametersItemOneOf1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, WhatsAppTemplateHeaderComponentParamsParametersItemOneOf1); return; }
+            if (WhatsAppTemplateHeaderComponentParamsParametersItemOneOf2 != null && WhatsAppTemplateHeaderComponentParamsParametersItemOneOf1 == null && WhatsAppTemplateHeaderComponentParamsParametersItemOneOf3 == null && WhatsAppTemplateHeaderComponentParamsParametersItemOneOf4 == null) { if (WhatsAppTemplateHeaderComponentParamsParametersItemOneOf2 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, WhatsAppTemplateHeaderComponentParamsParametersItemOneOf2); return; }
+            if (WhatsAppTemplateHeaderComponentParamsParametersItemOneOf3 != null && WhatsAppTemplateHeaderComponentParamsParametersItemOneOf1 == null && WhatsAppTemplateHeaderComponentParamsParametersItemOneOf2 == null && WhatsAppTemplateHeaderComponentParamsParametersItemOneOf4 == null) { if (WhatsAppTemplateHeaderComponentParamsParametersItemOneOf3 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, WhatsAppTemplateHeaderComponentParamsParametersItemOneOf3); return; }
+            if (WhatsAppTemplateHeaderComponentParamsParametersItemOneOf4 != null && WhatsAppTemplateHeaderComponentParamsParametersItemOneOf1 == null && WhatsAppTemplateHeaderComponentParamsParametersItemOneOf2 == null && WhatsAppTemplateHeaderComponentParamsParametersItemOneOf3 == null) { if (WhatsAppTemplateHeaderComponentParamsParametersItemOneOf4 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, WhatsAppTemplateHeaderComponentParamsParametersItemOneOf4); return; }
+
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(WhatsAppTemplateDocumentParam != null)
+            if(WhatsAppTemplateHeaderComponentParamsParametersItemOneOf1 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppTemplateDocumentParam>(null, WhatsAppTemplateDocumentParam);
+                if (WhatsAppTemplateHeaderComponentParamsParametersItemOneOf1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppTemplateHeaderComponentParamsParametersItemOneOf1>(null, WhatsAppTemplateHeaderComponentParamsParametersItemOneOf1);
             }
-            else if(WhatsAppTemplateImageParam != null)
+            else if(WhatsAppTemplateHeaderComponentParamsParametersItemOneOf2 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppTemplateImageParam>(null, WhatsAppTemplateImageParam);
+                if (WhatsAppTemplateHeaderComponentParamsParametersItemOneOf2 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppTemplateHeaderComponentParamsParametersItemOneOf2>(null, WhatsAppTemplateHeaderComponentParamsParametersItemOneOf2);
             }
-            else if(WhatsAppTemplateLocationParam != null)
+            else if(WhatsAppTemplateHeaderComponentParamsParametersItemOneOf3 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppTemplateLocationParam>(null, WhatsAppTemplateLocationParam);
+                if (WhatsAppTemplateHeaderComponentParamsParametersItemOneOf3 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppTemplateHeaderComponentParamsParametersItemOneOf3>(null, WhatsAppTemplateHeaderComponentParamsParametersItemOneOf3);
             }
-            else if(WhatsAppTemplateTextParam != null)
+            else if(WhatsAppTemplateHeaderComponentParamsParametersItemOneOf4 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppTemplateTextParam>(null, WhatsAppTemplateTextParam);
+                if (WhatsAppTemplateHeaderComponentParamsParametersItemOneOf4 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppTemplateHeaderComponentParamsParametersItemOneOf4>(null, WhatsAppTemplateHeaderComponentParamsParametersItemOneOf4);
             }
         }
     }

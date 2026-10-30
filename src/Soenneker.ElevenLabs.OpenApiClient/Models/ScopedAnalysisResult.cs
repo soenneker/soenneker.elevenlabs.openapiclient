@@ -11,47 +11,72 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ScopedAnalysisResult : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("data_collection_results") is { } nullNodeDataCollectionResults && nullNodeDataCollectionResults.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DataCollectionResults = null;
+            if (parseNode.GetChildNode("evaluation_criteria_results") is { } nullNodeEvaluationCriteriaResults && nullNodeEvaluationCriteriaResults.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EvaluationCriteriaResults = null;
+            if (parseNode.GetChildNode("scope") is { } nullNodeScope && nullNodeScope.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Scope = null;
+            if (parseNode.GetChildNode("source_agent_id") is { } nullNodeSourceAgentId && nullNodeSourceAgentId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SourceAgentId = null;
+            if (parseNode.GetChildNode("source_branch_id") is { } nullNodeSourceBranchId && nullNodeSourceBranchId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SourceBranchId = null;
+            if (parseNode.GetChildNode("successful") is { } nullNodeSuccessful && nullNodeSuccessful.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Successful = null;
+            if (parseNode.GetChildNode("success_score") is { } nullNodeSuccessScore && nullNodeSuccessScore.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SuccessScore = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The data_collection_results property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ScopedAnalysisResultDataCollectionResultsProperty? DataCollectionResults { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ScopedAnalysisResultDataCollectionResultsProperty? DataCollectionResults { get => _explicitNullValueDataCollectionResults; set { _explicitNullValueDataCollectionResults = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("data_collection_results"); else _explicitNullProperties?.Remove("data_collection_results"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ScopedAnalysisResultDataCollectionResultsProperty? _explicitNullValueDataCollectionResults = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ScopedAnalysisResultDataCollectionResultsProperty DataCollectionResults { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ScopedAnalysisResultDataCollectionResultsProperty DataCollectionResults { get => _explicitNullValueDataCollectionResults; set { _explicitNullValueDataCollectionResults = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("data_collection_results"); else _explicitNullProperties?.Remove("data_collection_results"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ScopedAnalysisResultDataCollectionResultsProperty _explicitNullValueDataCollectionResults = default!;
 #endif
         /// <summary>The evaluation_criteria_results property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ScopedAnalysisResultEvaluationCriteriaResultsProperty? EvaluationCriteriaResults { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ScopedAnalysisResultEvaluationCriteriaResultsProperty? EvaluationCriteriaResults { get => _explicitNullValueEvaluationCriteriaResults; set { _explicitNullValueEvaluationCriteriaResults = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("evaluation_criteria_results"); else _explicitNullProperties?.Remove("evaluation_criteria_results"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ScopedAnalysisResultEvaluationCriteriaResultsProperty? _explicitNullValueEvaluationCriteriaResults = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ScopedAnalysisResultEvaluationCriteriaResultsProperty EvaluationCriteriaResults { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ScopedAnalysisResultEvaluationCriteriaResultsProperty EvaluationCriteriaResults { get => _explicitNullValueEvaluationCriteriaResults; set { _explicitNullValueEvaluationCriteriaResults = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("evaluation_criteria_results"); else _explicitNullProperties?.Remove("evaluation_criteria_results"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ScopedAnalysisResultEvaluationCriteriaResultsProperty _explicitNullValueEvaluationCriteriaResults = default!;
 #endif
         /// <summary>The scope of the analysis. &apos;conversation&apos; uses the full transcript; &apos;agent&apos; uses only the portion where the defining agent was active.</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AnalysisScope? Scope { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AnalysisScope? Scope { get => _explicitNullValueScope; set { _explicitNullValueScope = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scope"); else _explicitNullProperties?.Remove("scope"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.AnalysisScope? _explicitNullValueScope = default!;
         /// <summary>The source_agent_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SourceAgentId { get; set; }
+        public string? SourceAgentId { get => _explicitNullValueSourceAgentId; set { _explicitNullValueSourceAgentId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source_agent_id"); else _explicitNullProperties?.Remove("source_agent_id"); } }
+        private string? _explicitNullValueSourceAgentId = default!;
 #nullable restore
 #else
-        public string SourceAgentId { get; set; }
+        public string SourceAgentId { get => _explicitNullValueSourceAgentId; set { _explicitNullValueSourceAgentId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source_agent_id"); else _explicitNullProperties?.Remove("source_agent_id"); } }
+        private string _explicitNullValueSourceAgentId = default!;
 #endif
         /// <summary>Branch of the agent for this scoped block; disambiguates repeated agent_id.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SourceBranchId { get; set; }
+        public string? SourceBranchId { get => _explicitNullValueSourceBranchId; set { _explicitNullValueSourceBranchId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source_branch_id"); else _explicitNullProperties?.Remove("source_branch_id"); } }
+        private string? _explicitNullValueSourceBranchId = default!;
 #nullable restore
 #else
-        public string SourceBranchId { get; set; }
+        public string SourceBranchId { get => _explicitNullValueSourceBranchId; set { _explicitNullValueSourceBranchId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source_branch_id"); else _explicitNullProperties?.Remove("source_branch_id"); } }
+        private string _explicitNullValueSourceBranchId = default!;
 #endif
         /// <summary>The successful property</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.EvaluationSuccessResult? Successful { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.EvaluationSuccessResult? Successful { get => _explicitNullValueSuccessful; set { _explicitNullValueSuccessful = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("successful"); else _explicitNullProperties?.Remove("successful"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.EvaluationSuccessResult? _explicitNullValueSuccessful = default!;
         /// <summary>The success_score property</summary>
-        public double? SuccessScore { get; set; }
+        public double? SuccessScore { get => _explicitNullValueSuccessScore; set { _explicitNullValueSuccessScore = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("success_score"); else _explicitNullProperties?.Remove("success_score"); } }
+        private double? _explicitNullValueSuccessScore = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ScopedAnalysisResult"/> and sets the default values.
         /// </summary>
@@ -67,7 +92,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.ScopedAnalysisResult CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.ScopedAnalysisResult();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.ScopedAnalysisResult(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -100,6 +125,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteStringValue("source_branch_id", SourceBranchId);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.EvaluationSuccessResult>("successful", Successful);
             writer.WriteDoubleValue("success_score", SuccessScore);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

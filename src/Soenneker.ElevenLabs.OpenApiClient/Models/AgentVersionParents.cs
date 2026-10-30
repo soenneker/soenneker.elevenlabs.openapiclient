@@ -11,56 +11,81 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class AgentVersionParents : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("in_branch_parent_id") is { } nullNodeInBranchParentId && nullNodeInBranchParentId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InBranchParentId = null;
+            if (parseNode.GetChildNode("merged_from_branch_id") is { } nullNodeMergedFromBranchId && nullNodeMergedFromBranchId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MergedFromBranchId = null;
+            if (parseNode.GetChildNode("merged_from_version_id") is { } nullNodeMergedFromVersionId && nullNodeMergedFromVersionId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MergedFromVersionId = null;
+            if (parseNode.GetChildNode("merged_into_branch_id") is { } nullNodeMergedIntoBranchId && nullNodeMergedIntoBranchId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MergedIntoBranchId = null;
+            if (parseNode.GetChildNode("out_of_branch_parent_id") is { } nullNodeOutOfBranchParentId && nullNodeOutOfBranchParentId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OutOfBranchParentId = null;
+            if (parseNode.GetChildNode("rebased_from_version_id") is { } nullNodeRebasedFromVersionId && nullNodeRebasedFromVersionId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RebasedFromVersionId = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The in_branch_parent_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? InBranchParentId { get; set; }
+        public string? InBranchParentId { get => _explicitNullValueInBranchParentId; set { _explicitNullValueInBranchParentId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("in_branch_parent_id"); else _explicitNullProperties?.Remove("in_branch_parent_id"); } }
+        private string? _explicitNullValueInBranchParentId = default!;
 #nullable restore
 #else
-        public string InBranchParentId { get; set; }
+        public string InBranchParentId { get => _explicitNullValueInBranchParentId; set { _explicitNullValueInBranchParentId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("in_branch_parent_id"); else _explicitNullProperties?.Remove("in_branch_parent_id"); } }
+        private string _explicitNullValueInBranchParentId = default!;
 #endif
         /// <summary>The merged_from_branch_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MergedFromBranchId { get; set; }
+        public string? MergedFromBranchId { get => _explicitNullValueMergedFromBranchId; set { _explicitNullValueMergedFromBranchId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merged_from_branch_id"); else _explicitNullProperties?.Remove("merged_from_branch_id"); } }
+        private string? _explicitNullValueMergedFromBranchId = default!;
 #nullable restore
 #else
-        public string MergedFromBranchId { get; set; }
+        public string MergedFromBranchId { get => _explicitNullValueMergedFromBranchId; set { _explicitNullValueMergedFromBranchId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merged_from_branch_id"); else _explicitNullProperties?.Remove("merged_from_branch_id"); } }
+        private string _explicitNullValueMergedFromBranchId = default!;
 #endif
         /// <summary>The merged_from_version_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MergedFromVersionId { get; set; }
+        public string? MergedFromVersionId { get => _explicitNullValueMergedFromVersionId; set { _explicitNullValueMergedFromVersionId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merged_from_version_id"); else _explicitNullProperties?.Remove("merged_from_version_id"); } }
+        private string? _explicitNullValueMergedFromVersionId = default!;
 #nullable restore
 #else
-        public string MergedFromVersionId { get; set; }
+        public string MergedFromVersionId { get => _explicitNullValueMergedFromVersionId; set { _explicitNullValueMergedFromVersionId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merged_from_version_id"); else _explicitNullProperties?.Remove("merged_from_version_id"); } }
+        private string _explicitNullValueMergedFromVersionId = default!;
 #endif
         /// <summary>The merged_into_branch_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MergedIntoBranchId { get; set; }
+        public string? MergedIntoBranchId { get => _explicitNullValueMergedIntoBranchId; set { _explicitNullValueMergedIntoBranchId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merged_into_branch_id"); else _explicitNullProperties?.Remove("merged_into_branch_id"); } }
+        private string? _explicitNullValueMergedIntoBranchId = default!;
 #nullable restore
 #else
-        public string MergedIntoBranchId { get; set; }
+        public string MergedIntoBranchId { get => _explicitNullValueMergedIntoBranchId; set { _explicitNullValueMergedIntoBranchId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merged_into_branch_id"); else _explicitNullProperties?.Remove("merged_into_branch_id"); } }
+        private string _explicitNullValueMergedIntoBranchId = default!;
 #endif
         /// <summary>The out_of_branch_parent_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OutOfBranchParentId { get; set; }
+        public string? OutOfBranchParentId { get => _explicitNullValueOutOfBranchParentId; set { _explicitNullValueOutOfBranchParentId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("out_of_branch_parent_id"); else _explicitNullProperties?.Remove("out_of_branch_parent_id"); } }
+        private string? _explicitNullValueOutOfBranchParentId = default!;
 #nullable restore
 #else
-        public string OutOfBranchParentId { get; set; }
+        public string OutOfBranchParentId { get => _explicitNullValueOutOfBranchParentId; set { _explicitNullValueOutOfBranchParentId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("out_of_branch_parent_id"); else _explicitNullProperties?.Remove("out_of_branch_parent_id"); } }
+        private string _explicitNullValueOutOfBranchParentId = default!;
 #endif
         /// <summary>The rebased_from_version_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RebasedFromVersionId { get; set; }
+        public string? RebasedFromVersionId { get => _explicitNullValueRebasedFromVersionId; set { _explicitNullValueRebasedFromVersionId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rebased_from_version_id"); else _explicitNullProperties?.Remove("rebased_from_version_id"); } }
+        private string? _explicitNullValueRebasedFromVersionId = default!;
 #nullable restore
 #else
-        public string RebasedFromVersionId { get; set; }
+        public string RebasedFromVersionId { get => _explicitNullValueRebasedFromVersionId; set { _explicitNullValueRebasedFromVersionId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rebased_from_version_id"); else _explicitNullProperties?.Remove("rebased_from_version_id"); } }
+        private string _explicitNullValueRebasedFromVersionId = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentVersionParents"/> and sets the default values.
@@ -77,7 +102,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentVersionParents CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentVersionParents();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentVersionParents(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -108,6 +133,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteStringValue("merged_into_branch_id", MergedIntoBranchId);
             writer.WriteStringValue("out_of_branch_parent_id", OutOfBranchParentId);
             writer.WriteStringValue("rebased_from_version_id", RebasedFromVersionId);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

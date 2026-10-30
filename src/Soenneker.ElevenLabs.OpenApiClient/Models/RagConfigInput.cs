@@ -11,36 +11,61 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class RagConfigInput : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("embedding_model") is { } nullNodeEmbeddingModel && nullNodeEmbeddingModel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EmbeddingModel = null;
+            if (parseNode.GetChildNode("enabled") is { } nullNodeEnabled && nullNodeEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Enabled = null;
+            if (parseNode.GetChildNode("knowledge_base_tool_info") is { } nullNodeKnowledgeBaseToolInfo && nullNodeKnowledgeBaseToolInfo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) KnowledgeBaseToolInfo = null;
+            if (parseNode.GetChildNode("max_documents_length") is { } nullNodeMaxDocumentsLength && nullNodeMaxDocumentsLength.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxDocumentsLength = null;
+            if (parseNode.GetChildNode("max_retrieved_rag_chunks_count") is { } nullNodeMaxRetrievedRagChunksCount && nullNodeMaxRetrievedRagChunksCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxRetrievedRagChunksCount = null;
+            if (parseNode.GetChildNode("max_vector_distance") is { } nullNodeMaxVectorDistance && nullNodeMaxVectorDistance.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxVectorDistance = null;
+            if (parseNode.GetChildNode("num_candidates") is { } nullNodeNumCandidates && nullNodeNumCandidates.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NumCandidates = null;
+            if (parseNode.GetChildNode("query_rewrite_prompt_override") is { } nullNodeQueryRewritePromptOverride && nullNodeQueryRewritePromptOverride.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) QueryRewritePromptOverride = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The embedding_model property</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.EmbeddingModelEnum? EmbeddingModel { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.EmbeddingModelEnum? EmbeddingModel { get => _explicitNullValueEmbeddingModel; set { _explicitNullValueEmbeddingModel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("embedding_model"); else _explicitNullProperties?.Remove("embedding_model"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.EmbeddingModelEnum? _explicitNullValueEmbeddingModel = default!;
         /// <summary>The enabled property</summary>
-        public bool? Enabled { get; set; }
+        public bool? Enabled { get => _explicitNullValueEnabled; set { _explicitNullValueEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enabled"); else _explicitNullProperties?.Remove("enabled"); } }
+        private bool? _explicitNullValueEnabled = default!;
         /// <summary>When set, the agent uses the knowledge_base tool instead of the legacy knowledge_base_rag tool. None means the agent is not opted in.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeBaseToolInfo? KnowledgeBaseToolInfo { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeBaseToolInfo? KnowledgeBaseToolInfo { get => _explicitNullValueKnowledgeBaseToolInfo; set { _explicitNullValueKnowledgeBaseToolInfo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("knowledge_base_tool_info"); else _explicitNullProperties?.Remove("knowledge_base_tool_info"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeBaseToolInfo? _explicitNullValueKnowledgeBaseToolInfo = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeBaseToolInfo KnowledgeBaseToolInfo { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeBaseToolInfo KnowledgeBaseToolInfo { get => _explicitNullValueKnowledgeBaseToolInfo; set { _explicitNullValueKnowledgeBaseToolInfo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("knowledge_base_tool_info"); else _explicitNullProperties?.Remove("knowledge_base_tool_info"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeBaseToolInfo _explicitNullValueKnowledgeBaseToolInfo = default!;
 #endif
         /// <summary>Maximum total length of document chunks retrieved from RAG.</summary>
-        public int? MaxDocumentsLength { get; set; }
+        public int? MaxDocumentsLength { get => _explicitNullValueMaxDocumentsLength; set { _explicitNullValueMaxDocumentsLength = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_documents_length"); else _explicitNullProperties?.Remove("max_documents_length"); } }
+        private int? _explicitNullValueMaxDocumentsLength = default!;
         /// <summary>Maximum number of RAG document chunks to initially retrieve from the vector store. These are then further filtered by vector distance and total length.</summary>
-        public int? MaxRetrievedRagChunksCount { get; set; }
+        public int? MaxRetrievedRagChunksCount { get => _explicitNullValueMaxRetrievedRagChunksCount; set { _explicitNullValueMaxRetrievedRagChunksCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_retrieved_rag_chunks_count"); else _explicitNullProperties?.Remove("max_retrieved_rag_chunks_count"); } }
+        private int? _explicitNullValueMaxRetrievedRagChunksCount = default!;
         /// <summary>Maximum vector distance of retrieved chunks.</summary>
-        public double? MaxVectorDistance { get; set; }
+        public double? MaxVectorDistance { get => _explicitNullValueMaxVectorDistance; set { _explicitNullValueMaxVectorDistance = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_vector_distance"); else _explicitNullProperties?.Remove("max_vector_distance"); } }
+        private double? _explicitNullValueMaxVectorDistance = default!;
         /// <summary>Number of candidates evaluated in ANN vector search. Higher number means better results, but higher latency. Minimum recommended value is 100. If disabled, the default value is used.</summary>
-        public int? NumCandidates { get; set; }
+        public int? NumCandidates { get => _explicitNullValueNumCandidates; set { _explicitNullValueNumCandidates = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("num_candidates"); else _explicitNullProperties?.Remove("num_candidates"); } }
+        private int? _explicitNullValueNumCandidates = default!;
         /// <summary>Custom prompt for rewriting user queries before RAG retrieval. The conversation history will be automatically appended at the end. If not set, the default prompt will be used.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? QueryRewritePromptOverride { get; set; }
+        public string? QueryRewritePromptOverride { get => _explicitNullValueQueryRewritePromptOverride; set { _explicitNullValueQueryRewritePromptOverride = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("query_rewrite_prompt_override"); else _explicitNullProperties?.Remove("query_rewrite_prompt_override"); } }
+        private string? _explicitNullValueQueryRewritePromptOverride = default!;
 #nullable restore
 #else
-        public string QueryRewritePromptOverride { get; set; }
+        public string QueryRewritePromptOverride { get => _explicitNullValueQueryRewritePromptOverride; set { _explicitNullValueQueryRewritePromptOverride = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("query_rewrite_prompt_override"); else _explicitNullProperties?.Remove("query_rewrite_prompt_override"); } }
+        private string _explicitNullValueQueryRewritePromptOverride = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.RagConfigInput"/> and sets the default values.
@@ -62,7 +87,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.RagConfigInput CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.RagConfigInput();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.RagConfigInput(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -97,6 +122,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteDoubleValue("max_vector_distance", MaxVectorDistance);
             writer.WriteIntValue("num_candidates", NumCandidates);
             writer.WriteStringValue("query_rewrite_prompt_override", QueryRewritePromptOverride);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

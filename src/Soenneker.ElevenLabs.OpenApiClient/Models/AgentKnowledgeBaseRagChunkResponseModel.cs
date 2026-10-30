@@ -11,55 +11,83 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class AgentKnowledgeBaseRagChunkResponseModel : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("chunk_id") is { } nullNodeChunkId && nullNodeChunkId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ChunkId = null;
+            if (parseNode.GetChildNode("content_format") is { } nullNodeContentFormat && nullNodeContentFormat.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ContentFormat = null;
+            if (parseNode.GetChildNode("document_id") is { } nullNodeDocumentId && nullNodeDocumentId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DocumentId = null;
+            if (parseNode.GetChildNode("document_name") is { } nullNodeDocumentName && nullNodeDocumentName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DocumentName = null;
+            if (parseNode.GetChildNode("document_type") is { } nullNodeDocumentType && nullNodeDocumentType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DocumentType = null;
+            if (parseNode.GetChildNode("source_url") is { } nullNodeSourceUrl && nullNodeSourceUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SourceUrl = null;
+            if (parseNode.GetChildNode("text") is { } nullNodeText && nullNodeText.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Text = null;
+            if (parseNode.GetChildNode("vector_distance") is { } nullNodeVectorDistance && nullNodeVectorDistance.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VectorDistance = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>ID of the retrieved chunk.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ChunkId { get; set; }
+        public string? ChunkId { get => _explicitNullValueChunkId; set { _explicitNullValueChunkId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("chunk_id"); else _explicitNullProperties?.Remove("chunk_id"); } }
+        private string? _explicitNullValueChunkId = default!;
 #nullable restore
 #else
-        public string ChunkId { get; set; }
+        public string ChunkId { get => _explicitNullValueChunkId; set { _explicitNullValueChunkId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("chunk_id"); else _explicitNullProperties?.Remove("chunk_id"); } }
+        private string _explicitNullValueChunkId = default!;
 #endif
         /// <summary>Format of the chunk text. Markdown chunks contain raw markdown; HTML chunks contain HTML.</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ContentFormat? ContentFormat { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ContentFormat? ContentFormat { get => _explicitNullValueContentFormat; set { _explicitNullValueContentFormat = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("content_format"); else _explicitNullProperties?.Remove("content_format"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ContentFormat? _explicitNullValueContentFormat = default!;
         /// <summary>ID of the source knowledge base document.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DocumentId { get; set; }
+        public string? DocumentId { get => _explicitNullValueDocumentId; set { _explicitNullValueDocumentId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("document_id"); else _explicitNullProperties?.Remove("document_id"); } }
+        private string? _explicitNullValueDocumentId = default!;
 #nullable restore
 #else
-        public string DocumentId { get; set; }
+        public string DocumentId { get => _explicitNullValueDocumentId; set { _explicitNullValueDocumentId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("document_id"); else _explicitNullProperties?.Remove("document_id"); } }
+        private string _explicitNullValueDocumentId = default!;
 #endif
         /// <summary>Name of the source knowledge base document.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DocumentName { get; set; }
+        public string? DocumentName { get => _explicitNullValueDocumentName; set { _explicitNullValueDocumentName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("document_name"); else _explicitNullProperties?.Remove("document_name"); } }
+        private string? _explicitNullValueDocumentName = default!;
 #nullable restore
 #else
-        public string DocumentName { get; set; }
+        public string DocumentName { get => _explicitNullValueDocumentName; set { _explicitNullValueDocumentName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("document_name"); else _explicitNullProperties?.Remove("document_name"); } }
+        private string _explicitNullValueDocumentName = default!;
 #endif
         /// <summary>Type of the source knowledge base document.</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeBaseDocumentType? DocumentType { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeBaseDocumentType? DocumentType { get => _explicitNullValueDocumentType; set { _explicitNullValueDocumentType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("document_type"); else _explicitNullProperties?.Remove("document_type"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeBaseDocumentType? _explicitNullValueDocumentType = default!;
         /// <summary>Tracked source URL for URL documents, or null for other document types.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SourceUrl { get; set; }
+        public string? SourceUrl { get => _explicitNullValueSourceUrl; set { _explicitNullValueSourceUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source_url"); else _explicitNullProperties?.Remove("source_url"); } }
+        private string? _explicitNullValueSourceUrl = default!;
 #nullable restore
 #else
-        public string SourceUrl { get; set; }
+        public string SourceUrl { get => _explicitNullValueSourceUrl; set { _explicitNullValueSourceUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source_url"); else _explicitNullProperties?.Remove("source_url"); } }
+        private string _explicitNullValueSourceUrl = default!;
 #endif
         /// <summary>Text content of the retrieved chunk.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Text { get; set; }
+        public string? Text { get => _explicitNullValueText; set { _explicitNullValueText = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("text"); else _explicitNullProperties?.Remove("text"); } }
+        private string? _explicitNullValueText = default!;
 #nullable restore
 #else
-        public string Text { get; set; }
+        public string Text { get => _explicitNullValueText; set { _explicitNullValueText = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("text"); else _explicitNullProperties?.Remove("text"); } }
+        private string _explicitNullValueText = default!;
 #endif
         /// <summary>Similarity distance when exposed by the retrieval strategy.</summary>
-        public double? VectorDistance { get; set; }
+        public double? VectorDistance { get => _explicitNullValueVectorDistance; set { _explicitNullValueVectorDistance = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("vector_distance"); else _explicitNullProperties?.Remove("vector_distance"); } }
+        private double? _explicitNullValueVectorDistance = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentKnowledgeBaseRagChunkResponseModel"/> and sets the default values.
         /// </summary>
@@ -75,7 +103,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentKnowledgeBaseRagChunkResponseModel CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentKnowledgeBaseRagChunkResponseModel();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentKnowledgeBaseRagChunkResponseModel(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -110,6 +138,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteStringValue("source_url", SourceUrl);
             writer.WriteStringValue("text", Text);
             writer.WriteDoubleValue("vector_distance", VectorDistance);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

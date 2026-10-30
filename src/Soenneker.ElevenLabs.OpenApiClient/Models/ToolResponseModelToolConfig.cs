@@ -8,42 +8,47 @@ using System;
 namespace Soenneker.ElevenLabs.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ClientToolConfigOutput"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.McpToolConfigOutput"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigOutput"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookToolConfigOutput"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolResponseModelToolConfigOneOf1"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolResponseModelToolConfigOneOf2"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolResponseModelToolConfigOneOf3"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolResponseModelToolConfigOneOf4"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ToolResponseModelToolConfig : IComposedTypeWrapper, IParsable
-    {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ClientToolConfigOutput"/></summary>
+    , global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder {
+        // Preserve ambiguous union payloads without inventing a discriminator.
+        /// <summary>The complete payload when no unique typed union branch can be selected.</summary>
+        public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode UnrecognizedValue { get; set; } = null!;
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalData { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolResponseModelToolConfigOneOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ClientToolConfigOutput? ClientToolConfigOutput { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolResponseModelToolConfigOneOf1? ToolResponseModelToolConfigOneOf1 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ClientToolConfigOutput ClientToolConfigOutput { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolResponseModelToolConfigOneOf1 ToolResponseModelToolConfigOneOf1 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.McpToolConfigOutput"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolResponseModelToolConfigOneOf2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.McpToolConfigOutput? McpToolConfigOutput { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolResponseModelToolConfigOneOf2? ToolResponseModelToolConfigOneOf2 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.McpToolConfigOutput McpToolConfigOutput { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolResponseModelToolConfigOneOf2 ToolResponseModelToolConfigOneOf2 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigOutput"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolResponseModelToolConfigOneOf3"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigOutput? SystemToolConfigOutput { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolResponseModelToolConfigOneOf3? ToolResponseModelToolConfigOneOf3 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigOutput SystemToolConfigOutput { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolResponseModelToolConfigOneOf3 ToolResponseModelToolConfigOneOf3 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookToolConfigOutput"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolResponseModelToolConfigOneOf4"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookToolConfigOutput? WebhookToolConfigOutput { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolResponseModelToolConfigOneOf4? ToolResponseModelToolConfigOneOf4 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookToolConfigOutput WebhookToolConfigOutput { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolResponseModelToolConfigOneOf4 ToolResponseModelToolConfigOneOf4 { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -53,25 +58,36 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolResponseModelToolConfig CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
             var result = new global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolResponseModelToolConfig();
-            if("client".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("ToolResponseModelToolConfigOneOf1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.ClientToolConfigOutput = new global::Soenneker.ElevenLabs.OpenApiClient.Models.ClientToolConfigOutput();
+                
             }
-            else if("mcp".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("ToolResponseModelToolConfigOneOf2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.McpToolConfigOutput = new global::Soenneker.ElevenLabs.OpenApiClient.Models.McpToolConfigOutput();
+                
             }
-            else if("system".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("ToolResponseModelToolConfigOneOf3".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.SystemToolConfigOutput = new global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigOutput();
+                
             }
-            else if("webhook".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("ToolResponseModelToolConfigOneOf4".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.WebhookToolConfigOutput = new global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookToolConfigOutput();
+                
             }
-            return result;
+            
+            var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
+            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("name") != null && parseNode.GetChildNode("description") != null && parseNode.GetChildNode("api_schema") != null && parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag4 && ("webhook".Equals(tag4.GetValue(), global::System.StringComparison.Ordinal))) && (parseNode.GetChildNode("interruption_mode") == null || (parseNode.GetChildNode("interruption_mode")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString optionalTag5 && ("allow".Equals(optionalTag5.GetValue(), global::System.StringComparison.Ordinal) || "disable_during_tool".Equals(optionalTag5.GetValue(), global::System.StringComparison.Ordinal) || "disable_during_tool_and_turn".Equals(optionalTag5.GetValue(), global::System.StringComparison.Ordinal)))) && (parseNode.GetChildNode("pre_tool_speech") == null || (parseNode.GetChildNode("pre_tool_speech")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString optionalTag6 && ("auto".Equals(optionalTag6.GetValue(), global::System.StringComparison.Ordinal) || "force".Equals(optionalTag6.GetValue(), global::System.StringComparison.Ordinal) || "off".Equals(optionalTag6.GetValue(), global::System.StringComparison.Ordinal)))) && (parseNode.GetChildNode("tool_call_sound_behavior") == null || (parseNode.GetChildNode("tool_call_sound_behavior")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString optionalTag7 && ("auto".Equals(optionalTag7.GetValue(), global::System.StringComparison.Ordinal) || "always".Equals(optionalTag7.GetValue(), global::System.StringComparison.Ordinal)))) && (parseNode.GetChildNode("tool_error_handling_mode") == null || (parseNode.GetChildNode("tool_error_handling_mode")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString optionalTag8 && ("auto".Equals(optionalTag8.GetValue(), global::System.StringComparison.Ordinal) || "summarized".Equals(optionalTag8.GetValue(), global::System.StringComparison.Ordinal) || "passthrough".Equals(optionalTag8.GetValue(), global::System.StringComparison.Ordinal) || "hide".Equals(optionalTag8.GetValue(), global::System.StringComparison.Ordinal)))) && (parseNode.GetChildNode("execution_mode") == null || (parseNode.GetChildNode("execution_mode")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString optionalTag9 && ("immediate".Equals(optionalTag9.GetValue(), global::System.StringComparison.Ordinal) || "post_tool_speech".Equals(optionalTag9.GetValue(), global::System.StringComparison.Ordinal) || "async".Equals(optionalTag9.GetValue(), global::System.StringComparison.Ordinal))))))();
+            bool matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("name") != null && parseNode.GetChildNode("description") != null && parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag3 && ("client".Equals(tag3.GetValue(), global::System.StringComparison.Ordinal))) && (parseNode.GetChildNode("interruption_mode") == null || (parseNode.GetChildNode("interruption_mode")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString optionalTag4 && ("allow".Equals(optionalTag4.GetValue(), global::System.StringComparison.Ordinal) || "disable_during_tool".Equals(optionalTag4.GetValue(), global::System.StringComparison.Ordinal) || "disable_during_tool_and_turn".Equals(optionalTag4.GetValue(), global::System.StringComparison.Ordinal)))) && (parseNode.GetChildNode("pre_tool_speech") == null || (parseNode.GetChildNode("pre_tool_speech")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString optionalTag5 && ("auto".Equals(optionalTag5.GetValue(), global::System.StringComparison.Ordinal) || "force".Equals(optionalTag5.GetValue(), global::System.StringComparison.Ordinal) || "off".Equals(optionalTag5.GetValue(), global::System.StringComparison.Ordinal)))) && (parseNode.GetChildNode("tool_call_sound_behavior") == null || (parseNode.GetChildNode("tool_call_sound_behavior")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString optionalTag6 && ("auto".Equals(optionalTag6.GetValue(), global::System.StringComparison.Ordinal) || "always".Equals(optionalTag6.GetValue(), global::System.StringComparison.Ordinal)))) && (parseNode.GetChildNode("tool_error_handling_mode") == null || (parseNode.GetChildNode("tool_error_handling_mode")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString optionalTag7 && ("auto".Equals(optionalTag7.GetValue(), global::System.StringComparison.Ordinal) || "summarized".Equals(optionalTag7.GetValue(), global::System.StringComparison.Ordinal) || "passthrough".Equals(optionalTag7.GetValue(), global::System.StringComparison.Ordinal) || "hide".Equals(optionalTag7.GetValue(), global::System.StringComparison.Ordinal)))) && (parseNode.GetChildNode("execution_mode") == null || (parseNode.GetChildNode("execution_mode")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString optionalTag8 && ("immediate".Equals(optionalTag8.GetValue(), global::System.StringComparison.Ordinal) || "post_tool_speech".Equals(optionalTag8.GetValue(), global::System.StringComparison.Ordinal) || "async".Equals(optionalTag8.GetValue(), global::System.StringComparison.Ordinal))))))();
+            bool matchesUnionBranch2 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("name") != null && parseNode.GetChildNode("params") != null && parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag3 && ("system".Equals(tag3.GetValue(), global::System.StringComparison.Ordinal))) && (parseNode.GetChildNode("interruption_mode") == null || (parseNode.GetChildNode("interruption_mode")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString optionalTag4 && ("allow".Equals(optionalTag4.GetValue(), global::System.StringComparison.Ordinal) || "disable_during_tool".Equals(optionalTag4.GetValue(), global::System.StringComparison.Ordinal) || "disable_during_tool_and_turn".Equals(optionalTag4.GetValue(), global::System.StringComparison.Ordinal)))) && (parseNode.GetChildNode("pre_tool_speech") == null || (parseNode.GetChildNode("pre_tool_speech")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString optionalTag5 && ("auto".Equals(optionalTag5.GetValue(), global::System.StringComparison.Ordinal) || "force".Equals(optionalTag5.GetValue(), global::System.StringComparison.Ordinal) || "off".Equals(optionalTag5.GetValue(), global::System.StringComparison.Ordinal)))) && (parseNode.GetChildNode("tool_call_sound_behavior") == null || (parseNode.GetChildNode("tool_call_sound_behavior")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString optionalTag6 && ("auto".Equals(optionalTag6.GetValue(), global::System.StringComparison.Ordinal) || "always".Equals(optionalTag6.GetValue(), global::System.StringComparison.Ordinal)))) && (parseNode.GetChildNode("tool_error_handling_mode") == null || (parseNode.GetChildNode("tool_error_handling_mode")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString optionalTag7 && ("auto".Equals(optionalTag7.GetValue(), global::System.StringComparison.Ordinal) || "summarized".Equals(optionalTag7.GetValue(), global::System.StringComparison.Ordinal) || "passthrough".Equals(optionalTag7.GetValue(), global::System.StringComparison.Ordinal) || "hide".Equals(optionalTag7.GetValue(), global::System.StringComparison.Ordinal))))))();
+            bool matchesUnionBranch3 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("name") != null && parseNode.GetChildNode("description") != null && parseNode.GetChildNode("integration_type") != null && (parseNode.GetChildNode("integration_type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag3 && ("mcp_server".Equals(tag3.GetValue(), global::System.StringComparison.Ordinal) || "mcp_integration".Equals(tag3.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("mcp_tool_name") != null && parseNode.GetChildNode("mcp_tool_description") != null && parseNode.GetChildNode("mcp_server_id") != null && parseNode.GetChildNode("mcp_server_name") != null && parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag9 && ("mcp".Equals(tag9.GetValue(), global::System.StringComparison.Ordinal))) && (parseNode.GetChildNode("interruption_mode") == null || (parseNode.GetChildNode("interruption_mode")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString optionalTag10 && ("allow".Equals(optionalTag10.GetValue(), global::System.StringComparison.Ordinal) || "disable_during_tool".Equals(optionalTag10.GetValue(), global::System.StringComparison.Ordinal) || "disable_during_tool_and_turn".Equals(optionalTag10.GetValue(), global::System.StringComparison.Ordinal)))) && (parseNode.GetChildNode("pre_tool_speech") == null || (parseNode.GetChildNode("pre_tool_speech")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString optionalTag11 && ("auto".Equals(optionalTag11.GetValue(), global::System.StringComparison.Ordinal) || "force".Equals(optionalTag11.GetValue(), global::System.StringComparison.Ordinal) || "off".Equals(optionalTag11.GetValue(), global::System.StringComparison.Ordinal)))) && (parseNode.GetChildNode("tool_call_sound_behavior") == null || (parseNode.GetChildNode("tool_call_sound_behavior")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString optionalTag12 && ("auto".Equals(optionalTag12.GetValue(), global::System.StringComparison.Ordinal) || "always".Equals(optionalTag12.GetValue(), global::System.StringComparison.Ordinal)))) && (parseNode.GetChildNode("tool_error_handling_mode") == null || (parseNode.GetChildNode("tool_error_handling_mode")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString optionalTag13 && ("auto".Equals(optionalTag13.GetValue(), global::System.StringComparison.Ordinal) || "summarized".Equals(optionalTag13.GetValue(), global::System.StringComparison.Ordinal) || "passthrough".Equals(optionalTag13.GetValue(), global::System.StringComparison.Ordinal) || "hide".Equals(optionalTag13.GetValue(), global::System.StringComparison.Ordinal)))) && (parseNode.GetChildNode("approval_policy") == null || (parseNode.GetChildNode("approval_policy")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString optionalTag14 && ("auto_approve_all".Equals(optionalTag14.GetValue(), global::System.StringComparison.Ordinal) || "require_approval_all".Equals(optionalTag14.GetValue(), global::System.StringComparison.Ordinal) || "require_approval_per_tool".Equals(optionalTag14.GetValue(), global::System.StringComparison.Ordinal)))) && (parseNode.GetChildNode("execution_mode") == null || (parseNode.GetChildNode("execution_mode")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString optionalTag15 && ("immediate".Equals(optionalTag15.GetValue(), global::System.StringComparison.Ordinal) || "post_tool_speech".Equals(optionalTag15.GetValue(), global::System.StringComparison.Ordinal) || "async".Equals(optionalTag15.GetValue(), global::System.StringComparison.Ordinal))))))();
+            if (result.ToolResponseModelToolConfigOneOf1 == null && result.ToolResponseModelToolConfigOneOf2 == null && result.ToolResponseModelToolConfigOneOf3 == null && result.ToolResponseModelToolConfigOneOf4 == null && matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2 && !matchesUnionBranch3) result.ToolResponseModelToolConfigOneOf1 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolResponseModelToolConfigOneOf1(), parseNode);
+            if (result.ToolResponseModelToolConfigOneOf1 == null && result.ToolResponseModelToolConfigOneOf2 == null && result.ToolResponseModelToolConfigOneOf3 == null && result.ToolResponseModelToolConfigOneOf4 == null && matchesUnionBranch1 && !matchesUnionBranch0 && !matchesUnionBranch2 && !matchesUnionBranch3) result.ToolResponseModelToolConfigOneOf2 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolResponseModelToolConfigOneOf2(), parseNode);
+            if (result.ToolResponseModelToolConfigOneOf1 == null && result.ToolResponseModelToolConfigOneOf2 == null && result.ToolResponseModelToolConfigOneOf3 == null && result.ToolResponseModelToolConfigOneOf4 == null && matchesUnionBranch2 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch3) result.ToolResponseModelToolConfigOneOf3 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolResponseModelToolConfigOneOf3(), parseNode);
+            if (result.ToolResponseModelToolConfigOneOf1 == null && result.ToolResponseModelToolConfigOneOf2 == null && result.ToolResponseModelToolConfigOneOf3 == null && result.ToolResponseModelToolConfigOneOf4 == null && matchesUnionBranch3 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2) result.ToolResponseModelToolConfigOneOf4 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolResponseModelToolConfigOneOf4(), parseNode);
+            if (result.ToolResponseModelToolConfigOneOf1 == null && result.ToolResponseModelToolConfigOneOf2 == null && result.ToolResponseModelToolConfigOneOf3 == null && result.ToolResponseModelToolConfigOneOf4 == null) result.UnrecognizedValue = unionPayload;
+return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -79,21 +95,21 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(ClientToolConfigOutput != null)
+            if(ToolResponseModelToolConfigOneOf1 != null)
             {
-                return ClientToolConfigOutput.GetFieldDeserializers();
+                return ToolResponseModelToolConfigOneOf1.GetFieldDeserializers();
             }
-            else if(McpToolConfigOutput != null)
+            else if(ToolResponseModelToolConfigOneOf2 != null)
             {
-                return McpToolConfigOutput.GetFieldDeserializers();
+                return ToolResponseModelToolConfigOneOf2.GetFieldDeserializers();
             }
-            else if(SystemToolConfigOutput != null)
+            else if(ToolResponseModelToolConfigOneOf3 != null)
             {
-                return SystemToolConfigOutput.GetFieldDeserializers();
+                return ToolResponseModelToolConfigOneOf3.GetFieldDeserializers();
             }
-            else if(WebhookToolConfigOutput != null)
+            else if(ToolResponseModelToolConfigOneOf4 != null)
             {
-                return WebhookToolConfigOutput.GetFieldDeserializers();
+                return ToolResponseModelToolConfigOneOf4.GetFieldDeserializers();
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -103,22 +119,33 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
+            if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
+            if (ToolResponseModelToolConfigOneOf1 == null && ToolResponseModelToolConfigOneOf2 == null && ToolResponseModelToolConfigOneOf3 == null && ToolResponseModelToolConfigOneOf4 == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
+            if (ToolResponseModelToolConfigOneOf1 != null && ToolResponseModelToolConfigOneOf2 == null && ToolResponseModelToolConfigOneOf3 == null && ToolResponseModelToolConfigOneOf4 == null) { if (ToolResponseModelToolConfigOneOf1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, ToolResponseModelToolConfigOneOf1); return; }
+            if (ToolResponseModelToolConfigOneOf2 != null && ToolResponseModelToolConfigOneOf1 == null && ToolResponseModelToolConfigOneOf3 == null && ToolResponseModelToolConfigOneOf4 == null) { if (ToolResponseModelToolConfigOneOf2 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, ToolResponseModelToolConfigOneOf2); return; }
+            if (ToolResponseModelToolConfigOneOf3 != null && ToolResponseModelToolConfigOneOf1 == null && ToolResponseModelToolConfigOneOf2 == null && ToolResponseModelToolConfigOneOf4 == null) { if (ToolResponseModelToolConfigOneOf3 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, ToolResponseModelToolConfigOneOf3); return; }
+            if (ToolResponseModelToolConfigOneOf4 != null && ToolResponseModelToolConfigOneOf1 == null && ToolResponseModelToolConfigOneOf2 == null && ToolResponseModelToolConfigOneOf3 == null) { if (ToolResponseModelToolConfigOneOf4 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, ToolResponseModelToolConfigOneOf4); return; }
+
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(ClientToolConfigOutput != null)
+            if(ToolResponseModelToolConfigOneOf1 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ClientToolConfigOutput>(null, ClientToolConfigOutput);
+                if (ToolResponseModelToolConfigOneOf1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolResponseModelToolConfigOneOf1>(null, ToolResponseModelToolConfigOneOf1);
             }
-            else if(McpToolConfigOutput != null)
+            else if(ToolResponseModelToolConfigOneOf2 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.McpToolConfigOutput>(null, McpToolConfigOutput);
+                if (ToolResponseModelToolConfigOneOf2 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolResponseModelToolConfigOneOf2>(null, ToolResponseModelToolConfigOneOf2);
             }
-            else if(SystemToolConfigOutput != null)
+            else if(ToolResponseModelToolConfigOneOf3 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigOutput>(null, SystemToolConfigOutput);
+                if (ToolResponseModelToolConfigOneOf3 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolResponseModelToolConfigOneOf3>(null, ToolResponseModelToolConfigOneOf3);
             }
-            else if(WebhookToolConfigOutput != null)
+            else if(ToolResponseModelToolConfigOneOf4 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookToolConfigOutput>(null, WebhookToolConfigOutput);
+                if (ToolResponseModelToolConfigOneOf4 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolResponseModelToolConfigOneOf4>(null, ToolResponseModelToolConfigOneOf4);
             }
         }
     }

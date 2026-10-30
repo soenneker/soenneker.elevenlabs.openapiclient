@@ -11,29 +11,51 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class PrivacyConfigOutput : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("apply_to_existing_conversations") is { } nullNodeApplyToExistingConversations && nullNodeApplyToExistingConversations.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ApplyToExistingConversations = null;
+            if (parseNode.GetChildNode("conversation_history_redaction") is { } nullNodeConversationHistoryRedaction && nullNodeConversationHistoryRedaction.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConversationHistoryRedaction = null;
+            if (parseNode.GetChildNode("delete_audio") is { } nullNodeDeleteAudio && nullNodeDeleteAudio.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeleteAudio = null;
+            if (parseNode.GetChildNode("delete_transcript_and_pii") is { } nullNodeDeleteTranscriptAndPii && nullNodeDeleteTranscriptAndPii.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeleteTranscriptAndPii = null;
+            if (parseNode.GetChildNode("record_voice") is { } nullNodeRecordVoice && nullNodeRecordVoice.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RecordVoice = null;
+            if (parseNode.GetChildNode("retention_days") is { } nullNodeRetentionDays && nullNodeRetentionDays.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RetentionDays = null;
+            if (parseNode.GetChildNode("zero_retention_mode") is { } nullNodeZeroRetentionMode && nullNodeZeroRetentionMode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ZeroRetentionMode = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Whether to apply the privacy settings to existing conversations</summary>
-        public bool? ApplyToExistingConversations { get; set; }
+        public bool? ApplyToExistingConversations { get => _explicitNullValueApplyToExistingConversations; set { _explicitNullValueApplyToExistingConversations = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("apply_to_existing_conversations"); else _explicitNullProperties?.Remove("apply_to_existing_conversations"); } }
+        private bool? _explicitNullValueApplyToExistingConversations = default!;
         /// <summary>Config for PII redaction in the conversation history</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryRedactionConfig? ConversationHistoryRedaction { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryRedactionConfig? ConversationHistoryRedaction { get => _explicitNullValueConversationHistoryRedaction; set { _explicitNullValueConversationHistoryRedaction = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conversation_history_redaction"); else _explicitNullProperties?.Remove("conversation_history_redaction"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryRedactionConfig? _explicitNullValueConversationHistoryRedaction = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryRedactionConfig ConversationHistoryRedaction { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryRedactionConfig ConversationHistoryRedaction { get => _explicitNullValueConversationHistoryRedaction; set { _explicitNullValueConversationHistoryRedaction = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conversation_history_redaction"); else _explicitNullProperties?.Remove("conversation_history_redaction"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryRedactionConfig _explicitNullValueConversationHistoryRedaction = default!;
 #endif
         /// <summary>Whether to delete the audio</summary>
-        public bool? DeleteAudio { get; set; }
+        public bool? DeleteAudio { get => _explicitNullValueDeleteAudio; set { _explicitNullValueDeleteAudio = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("delete_audio"); else _explicitNullProperties?.Remove("delete_audio"); } }
+        private bool? _explicitNullValueDeleteAudio = default!;
         /// <summary>Whether to delete the transcript and PII</summary>
-        public bool? DeleteTranscriptAndPii { get; set; }
+        public bool? DeleteTranscriptAndPii { get => _explicitNullValueDeleteTranscriptAndPii; set { _explicitNullValueDeleteTranscriptAndPii = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("delete_transcript_and_pii"); else _explicitNullProperties?.Remove("delete_transcript_and_pii"); } }
+        private bool? _explicitNullValueDeleteTranscriptAndPii = default!;
         /// <summary>Whether to record the conversation</summary>
-        public bool? RecordVoice { get; set; }
+        public bool? RecordVoice { get => _explicitNullValueRecordVoice; set { _explicitNullValueRecordVoice = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("record_voice"); else _explicitNullProperties?.Remove("record_voice"); } }
+        private bool? _explicitNullValueRecordVoice = default!;
         /// <summary>The number of days to retain the conversation. -1 indicates there is no retention limit</summary>
-        public int? RetentionDays { get; set; }
+        public int? RetentionDays { get => _explicitNullValueRetentionDays; set { _explicitNullValueRetentionDays = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("retention_days"); else _explicitNullProperties?.Remove("retention_days"); } }
+        private int? _explicitNullValueRetentionDays = default!;
         /// <summary>Whether to enable zero retention mode - no PII data is stored</summary>
-        public bool? ZeroRetentionMode { get; set; }
+        public bool? ZeroRetentionMode { get => _explicitNullValueZeroRetentionMode; set { _explicitNullValueZeroRetentionMode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("zero_retention_mode"); else _explicitNullProperties?.Remove("zero_retention_mode"); } }
+        private bool? _explicitNullValueZeroRetentionMode = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.PrivacyConfigOutput"/> and sets the default values.
         /// </summary>
@@ -55,7 +77,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.PrivacyConfigOutput CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.PrivacyConfigOutput();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.PrivacyConfigOutput(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -88,6 +110,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteBoolValue("record_voice", RecordVoice);
             writer.WriteIntValue("retention_days", RetentionDays);
             writer.WriteBoolValue("zero_retention_mode", ZeroRetentionMode);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

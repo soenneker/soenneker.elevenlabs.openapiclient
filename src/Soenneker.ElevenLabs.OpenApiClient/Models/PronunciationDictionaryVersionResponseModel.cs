@@ -11,57 +11,87 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class PronunciationDictionaryVersionResponseModel : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("archived_time_unix") is { } nullNodeArchivedTimeUnix && nullNodeArchivedTimeUnix.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ArchivedTimeUnix = null;
+            if (parseNode.GetChildNode("created_by") is { } nullNodeCreatedBy && nullNodeCreatedBy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedBy = null;
+            if (parseNode.GetChildNode("creation_time_unix") is { } nullNodeCreationTimeUnix && nullNodeCreationTimeUnix.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreationTimeUnix = null;
+            if (parseNode.GetChildNode("dictionary_name") is { } nullNodeDictionaryName && nullNodeDictionaryName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DictionaryName = null;
+            if (parseNode.GetChildNode("permission_on_resource") is { } nullNodePermissionOnResource && nullNodePermissionOnResource.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PermissionOnResource = null;
+            if (parseNode.GetChildNode("pronunciation_dictionary_id") is { } nullNodePronunciationDictionaryId && nullNodePronunciationDictionaryId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PronunciationDictionaryId = null;
+            if (parseNode.GetChildNode("version_id") is { } nullNodeVersionId && nullNodeVersionId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VersionId = null;
+            if (parseNode.GetChildNode("version_name") is { } nullNodeVersionName && nullNodeVersionName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VersionName = null;
+            if (parseNode.GetChildNode("version_rules_num") is { } nullNodeVersionRulesNum && nullNodeVersionRulesNum.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VersionRulesNum = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The archived_time_unix property</summary>
-        public int? ArchivedTimeUnix { get; set; }
+        public int? ArchivedTimeUnix { get => _explicitNullValueArchivedTimeUnix; set { _explicitNullValueArchivedTimeUnix = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("archived_time_unix"); else _explicitNullProperties?.Remove("archived_time_unix"); } }
+        private int? _explicitNullValueArchivedTimeUnix = default!;
         /// <summary>The created_by property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CreatedBy { get; set; }
+        public string? CreatedBy { get => _explicitNullValueCreatedBy; set { _explicitNullValueCreatedBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_by"); else _explicitNullProperties?.Remove("created_by"); } }
+        private string? _explicitNullValueCreatedBy = default!;
 #nullable restore
 #else
-        public string CreatedBy { get; set; }
+        public string CreatedBy { get => _explicitNullValueCreatedBy; set { _explicitNullValueCreatedBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_by"); else _explicitNullProperties?.Remove("created_by"); } }
+        private string _explicitNullValueCreatedBy = default!;
 #endif
         /// <summary>The creation_time_unix property</summary>
-        public int? CreationTimeUnix { get; set; }
+        public int? CreationTimeUnix { get => _explicitNullValueCreationTimeUnix; set { _explicitNullValueCreationTimeUnix = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("creation_time_unix"); else _explicitNullProperties?.Remove("creation_time_unix"); } }
+        private int? _explicitNullValueCreationTimeUnix = default!;
         /// <summary>The dictionary_name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DictionaryName { get; set; }
+        public string? DictionaryName { get => _explicitNullValueDictionaryName; set { _explicitNullValueDictionaryName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dictionary_name"); else _explicitNullProperties?.Remove("dictionary_name"); } }
+        private string? _explicitNullValueDictionaryName = default!;
 #nullable restore
 #else
-        public string DictionaryName { get; set; }
+        public string DictionaryName { get => _explicitNullValueDictionaryName; set { _explicitNullValueDictionaryName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dictionary_name"); else _explicitNullProperties?.Remove("dictionary_name"); } }
+        private string _explicitNullValueDictionaryName = default!;
 #endif
         /// <summary>The permission_on_resource property</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PronunciationDictionaryVersionResponseModelPermissionOnResource? PermissionOnResource { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PronunciationDictionaryVersionResponseModelPermissionOnResource? PermissionOnResource { get => _explicitNullValuePermissionOnResource; set { _explicitNullValuePermissionOnResource = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("permission_on_resource"); else _explicitNullProperties?.Remove("permission_on_resource"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.PronunciationDictionaryVersionResponseModelPermissionOnResource? _explicitNullValuePermissionOnResource = default!;
         /// <summary>The pronunciation_dictionary_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PronunciationDictionaryId { get; set; }
+        public string? PronunciationDictionaryId { get => _explicitNullValuePronunciationDictionaryId; set { _explicitNullValuePronunciationDictionaryId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pronunciation_dictionary_id"); else _explicitNullProperties?.Remove("pronunciation_dictionary_id"); } }
+        private string? _explicitNullValuePronunciationDictionaryId = default!;
 #nullable restore
 #else
-        public string PronunciationDictionaryId { get; set; }
+        public string PronunciationDictionaryId { get => _explicitNullValuePronunciationDictionaryId; set { _explicitNullValuePronunciationDictionaryId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pronunciation_dictionary_id"); else _explicitNullProperties?.Remove("pronunciation_dictionary_id"); } }
+        private string _explicitNullValuePronunciationDictionaryId = default!;
 #endif
         /// <summary>The version_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? VersionId { get; set; }
+        public string? VersionId { get => _explicitNullValueVersionId; set { _explicitNullValueVersionId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("version_id"); else _explicitNullProperties?.Remove("version_id"); } }
+        private string? _explicitNullValueVersionId = default!;
 #nullable restore
 #else
-        public string VersionId { get; set; }
+        public string VersionId { get => _explicitNullValueVersionId; set { _explicitNullValueVersionId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("version_id"); else _explicitNullProperties?.Remove("version_id"); } }
+        private string _explicitNullValueVersionId = default!;
 #endif
         /// <summary>The version_name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? VersionName { get; set; }
+        public string? VersionName { get => _explicitNullValueVersionName; set { _explicitNullValueVersionName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("version_name"); else _explicitNullProperties?.Remove("version_name"); } }
+        private string? _explicitNullValueVersionName = default!;
 #nullable restore
 #else
-        public string VersionName { get; set; }
+        public string VersionName { get => _explicitNullValueVersionName; set { _explicitNullValueVersionName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("version_name"); else _explicitNullProperties?.Remove("version_name"); } }
+        private string _explicitNullValueVersionName = default!;
 #endif
         /// <summary>The version_rules_num property</summary>
-        public int? VersionRulesNum { get; set; }
+        public int? VersionRulesNum { get => _explicitNullValueVersionRulesNum; set { _explicitNullValueVersionRulesNum = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("version_rules_num"); else _explicitNullProperties?.Remove("version_rules_num"); } }
+        private int? _explicitNullValueVersionRulesNum = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.PronunciationDictionaryVersionResponseModel"/> and sets the default values.
         /// </summary>
@@ -77,7 +107,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.PronunciationDictionaryVersionResponseModel CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.PronunciationDictionaryVersionResponseModel();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.PronunciationDictionaryVersionResponseModel(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -114,6 +144,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteStringValue("version_id", VersionId);
             writer.WriteStringValue("version_name", VersionName);
             writer.WriteIntValue("version_rules_num", VersionRulesNum);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -21,13 +21,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Dubbing
     public partial class DubbingRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The project property</summary>
-        [Obsolete("")]
         public global::Soenneker.ElevenLabs.OpenApiClient.V1.Dubbing.Project.ProjectRequestBuilder Project
         {
             get => new global::Soenneker.ElevenLabs.OpenApiClient.V1.Dubbing.Project.ProjectRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The resource property</summary>
-        [Obsolete("")]
         public global::Soenneker.ElevenLabs.OpenApiClient.V1.Dubbing.Resource.ResourceRequestBuilder Resource
         {
             get => new global::Soenneker.ElevenLabs.OpenApiClient.V1.Dubbing.Resource.ResourceRequestBuilder(PathParameters, RequestAdapter);
@@ -82,6 +80,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Dubbing
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "422", global::Soenneker.ElevenLabs.OpenApiClient.Models.HttpValidationError.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingMetadataPageResponseModel>(requestInfo, global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingMetadataPageResponseModel.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -96,11 +96,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Dubbing
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.ElevenLabs.OpenApiClient.Models.DoDubbingResponseModel?> PostAsync(MultipartBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.ElevenLabs.OpenApiClient.Models.DoDubbingResponseModel?> PostAsync(global::Microsoft.Kiota.Abstractions.MultipartBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.ElevenLabs.OpenApiClient.Models.DoDubbingResponseModel> PostAsync(MultipartBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.ElevenLabs.OpenApiClient.Models.DoDubbingResponseModel> PostAsync(global::Microsoft.Kiota.Abstractions.MultipartBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -108,6 +108,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Dubbing
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "422", global::Soenneker.ElevenLabs.OpenApiClient.Models.HttpValidationError.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.ElevenLabs.OpenApiClient.Models.DoDubbingResponseModel>(requestInfo, global::Soenneker.ElevenLabs.OpenApiClient.Models.DoDubbingResponseModel.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -140,11 +142,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Dubbing
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(MultipartBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Microsoft.Kiota.Abstractions.MultipartBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(MultipartBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Microsoft.Kiota.Abstractions.MultipartBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

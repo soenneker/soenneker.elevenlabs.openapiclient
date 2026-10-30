@@ -12,42 +12,63 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AssetResponse : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("asset_id") is { } nullNodeAssetId && nullNodeAssetId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AssetId = null;
+            if (parseNode.GetChildNode("content_url") is { } nullNodeContentUrl && nullNodeContentUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ContentUrl = null;
+            if (parseNode.GetChildNode("created_at_unix") is { } nullNodeCreatedAtUnix && nullNodeCreatedAtUnix.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedAtUnix = null;
+            if (parseNode.GetChildNode("mime_type") is { } nullNodeMimeType && nullNodeMimeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MimeType = null;
+            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Unique identifier for the asset.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AssetId { get; set; }
+        public string? AssetId { get => _explicitNullValueAssetId; set { _explicitNullValueAssetId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("asset_id"); else _explicitNullProperties?.Remove("asset_id"); } }
+        private string? _explicitNullValueAssetId = default!;
 #nullable restore
 #else
-        public string AssetId { get; set; }
+        public string AssetId { get => _explicitNullValueAssetId; set { _explicitNullValueAssetId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("asset_id"); else _explicitNullProperties?.Remove("asset_id"); } }
+        private string _explicitNullValueAssetId = default!;
 #endif
         /// <summary>Signed URL to fetch the asset&apos;s content. May be `null` if the asset has not finished processing. Do not rely on it being valid for more than 1 hour; fetch the asset again for a fresh URL.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ContentUrl { get; set; }
+        public string? ContentUrl { get => _explicitNullValueContentUrl; set { _explicitNullValueContentUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("content_url"); else _explicitNullProperties?.Remove("content_url"); } }
+        private string? _explicitNullValueContentUrl = default!;
 #nullable restore
 #else
-        public string ContentUrl { get; set; }
+        public string ContentUrl { get => _explicitNullValueContentUrl; set { _explicitNullValueContentUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("content_url"); else _explicitNullProperties?.Remove("content_url"); } }
+        private string _explicitNullValueContentUrl = default!;
 #endif
         /// <summary>Unix timestamp (seconds) the asset was created.</summary>
-        public int? CreatedAtUnix { get; set; }
+        public int? CreatedAtUnix { get => _explicitNullValueCreatedAtUnix; set { _explicitNullValueCreatedAtUnix = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_at_unix"); else _explicitNullProperties?.Remove("created_at_unix"); } }
+        private int? _explicitNullValueCreatedAtUnix = default!;
         /// <summary>MIME type of the uploaded file (e.g. `audio/mpeg`).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MimeType { get; set; }
+        public string? MimeType { get => _explicitNullValueMimeType; set { _explicitNullValueMimeType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mime_type"); else _explicitNullProperties?.Remove("mime_type"); } }
+        private string? _explicitNullValueMimeType = default!;
 #nullable restore
 #else
-        public string MimeType { get; set; }
+        public string MimeType { get => _explicitNullValueMimeType; set { _explicitNullValueMimeType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mime_type"); else _explicitNullProperties?.Remove("mime_type"); } }
+        private string _explicitNullValueMimeType = default!;
 #endif
         /// <summary>Display name of the asset.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get; set; }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string _explicitNullValueName = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.AssetResponse"/> and sets the default values.
@@ -64,7 +85,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.AssetResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.AssetResponse();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.AssetResponse(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -93,6 +114,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteIntValue("created_at_unix", CreatedAtUnix);
             writer.WriteStringValue("mime_type", MimeType);
             writer.WriteStringValue("name", Name);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

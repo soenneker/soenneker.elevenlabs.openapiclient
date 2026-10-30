@@ -11,56 +11,81 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class BodyCreateAMergeProposalV1ConvaiAgentsAgentIdMergeProposalsPost : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("description") is { } nullNodeDescription && nullNodeDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Description = null;
+            if (parseNode.GetChildNode("requested_reviewer_user_ids") is { } nullNodeRequestedReviewerUserIds && nullNodeRequestedReviewerUserIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequestedReviewerUserIds = null;
+            if (parseNode.GetChildNode("source_branch_id") is { } nullNodeSourceBranchId && nullNodeSourceBranchId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SourceBranchId = null;
+            if (parseNode.GetChildNode("target_branch_id") is { } nullNodeTargetBranchId && nullNodeTargetBranchId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TargetBranchId = null;
+            if (parseNode.GetChildNode("title") is { } nullNodeTitle && nullNodeTitle.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Title = null;
+            if (parseNode.GetChildNode("triage_ticket_id") is { } nullNodeTriageTicketId && nullNodeTriageTicketId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TriageTicketId = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Optional longer description for reviewers.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description { get; set; }
+        public string? Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        private string? _explicitNullValueDescription = default!;
 #nullable restore
 #else
-        public string Description { get; set; }
+        public string Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        private string _explicitNullValueDescription = default!;
 #endif
         /// <summary>User IDs to request a review from.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? RequestedReviewerUserIds { get; set; }
+        public List<string>? RequestedReviewerUserIds { get => _explicitNullValueRequestedReviewerUserIds; set { _explicitNullValueRequestedReviewerUserIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requested_reviewer_user_ids"); else _explicitNullProperties?.Remove("requested_reviewer_user_ids"); } }
+        private List<string>? _explicitNullValueRequestedReviewerUserIds = default!;
 #nullable restore
 #else
-        public List<string> RequestedReviewerUserIds { get; set; }
+        public List<string> RequestedReviewerUserIds { get => _explicitNullValueRequestedReviewerUserIds; set { _explicitNullValueRequestedReviewerUserIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requested_reviewer_user_ids"); else _explicitNullProperties?.Remove("requested_reviewer_user_ids"); } }
+        private List<string> _explicitNullValueRequestedReviewerUserIds = default!;
 #endif
         /// <summary>Branch whose changes should be merged.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SourceBranchId { get; set; }
+        public string? SourceBranchId { get => _explicitNullValueSourceBranchId; set { _explicitNullValueSourceBranchId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source_branch_id"); else _explicitNullProperties?.Remove("source_branch_id"); } }
+        private string? _explicitNullValueSourceBranchId = default!;
 #nullable restore
 #else
-        public string SourceBranchId { get; set; }
+        public string SourceBranchId { get => _explicitNullValueSourceBranchId; set { _explicitNullValueSourceBranchId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source_branch_id"); else _explicitNullProperties?.Remove("source_branch_id"); } }
+        private string _explicitNullValueSourceBranchId = default!;
 #endif
         /// <summary>Branch that should receive the changes.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TargetBranchId { get; set; }
+        public string? TargetBranchId { get => _explicitNullValueTargetBranchId; set { _explicitNullValueTargetBranchId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("target_branch_id"); else _explicitNullProperties?.Remove("target_branch_id"); } }
+        private string? _explicitNullValueTargetBranchId = default!;
 #nullable restore
 #else
-        public string TargetBranchId { get; set; }
+        public string TargetBranchId { get => _explicitNullValueTargetBranchId; set { _explicitNullValueTargetBranchId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("target_branch_id"); else _explicitNullProperties?.Remove("target_branch_id"); } }
+        private string _explicitNullValueTargetBranchId = default!;
 #endif
         /// <summary>Short title for the merge_proposal.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Title { get; set; }
+        public string? Title { get => _explicitNullValueTitle; set { _explicitNullValueTitle = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("title"); else _explicitNullProperties?.Remove("title"); } }
+        private string? _explicitNullValueTitle = default!;
 #nullable restore
 #else
-        public string Title { get; set; }
+        public string Title { get => _explicitNullValueTitle; set { _explicitNullValueTitle = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("title"); else _explicitNullProperties?.Remove("title"); } }
+        private string _explicitNullValueTitle = default!;
 #endif
         /// <summary>Triage ticket of this agent that the merge_proposal resolves. Merging it resolves the ticket if still open.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TriageTicketId { get; set; }
+        public string? TriageTicketId { get => _explicitNullValueTriageTicketId; set { _explicitNullValueTriageTicketId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("triage_ticket_id"); else _explicitNullProperties?.Remove("triage_ticket_id"); } }
+        private string? _explicitNullValueTriageTicketId = default!;
 #nullable restore
 #else
-        public string TriageTicketId { get; set; }
+        public string TriageTicketId { get => _explicitNullValueTriageTicketId; set { _explicitNullValueTriageTicketId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("triage_ticket_id"); else _explicitNullProperties?.Remove("triage_ticket_id"); } }
+        private string _explicitNullValueTriageTicketId = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateAMergeProposalV1ConvaiAgentsAgentIdMergeProposalsPost"/> and sets the default values.
@@ -77,7 +102,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateAMergeProposalV1ConvaiAgentsAgentIdMergeProposalsPost CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateAMergeProposalV1ConvaiAgentsAgentIdMergeProposalsPost();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateAMergeProposalV1ConvaiAgentsAgentIdMergeProposalsPost(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -108,6 +133,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteStringValue("target_branch_id", TargetBranchId);
             writer.WriteStringValue("title", Title);
             writer.WriteStringValue("triage_ticket_id", TriageTicketId);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

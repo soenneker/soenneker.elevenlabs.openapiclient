@@ -11,56 +11,86 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class AgentSummaryResponseModel : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("access_info") is { } nullNodeAccessInfo && nullNodeAccessInfo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccessInfo = null;
+            if (parseNode.GetChildNode("agent_id") is { } nullNodeAgentId && nullNodeAgentId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AgentId = null;
+            if (parseNode.GetChildNode("archived") is { } nullNodeArchived && nullNodeArchived.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Archived = null;
+            if (parseNode.GetChildNode("created_at_unix_secs") is { } nullNodeCreatedAtUnixSecs && nullNodeCreatedAtUnixSecs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedAtUnixSecs = null;
+            if (parseNode.GetChildNode("last_call_time_unix_secs") is { } nullNodeLastCallTimeUnixSecs && nullNodeLastCallTimeUnixSecs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastCallTimeUnixSecs = null;
+            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("tags") is { } nullNodeTags && nullNodeTags.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Tags = null;
+            if (parseNode.GetChildNode("updated_at_unix_secs") is { } nullNodeUpdatedAtUnixSecs && nullNodeUpdatedAtUnixSecs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UpdatedAtUnixSecs = null;
+            if (parseNode.GetChildNode("voice_id") is { } nullNodeVoiceId && nullNodeVoiceId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VoiceId = null;
+        }
+
         /// <summary>The access information of the agent</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceAccessInfo? AccessInfo { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceAccessInfo? AccessInfo { get => _explicitNullValueAccessInfo; set { _explicitNullValueAccessInfo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("access_info"); else _explicitNullProperties?.Remove("access_info"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceAccessInfo? _explicitNullValueAccessInfo = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceAccessInfo AccessInfo { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceAccessInfo AccessInfo { get => _explicitNullValueAccessInfo; set { _explicitNullValueAccessInfo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("access_info"); else _explicitNullProperties?.Remove("access_info"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceAccessInfo _explicitNullValueAccessInfo = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The ID of the agent</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AgentId { get; set; }
+        public string? AgentId { get => _explicitNullValueAgentId; set { _explicitNullValueAgentId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agent_id"); else _explicitNullProperties?.Remove("agent_id"); } }
+        private string? _explicitNullValueAgentId = default!;
 #nullable restore
 #else
-        public string AgentId { get; set; }
+        public string AgentId { get => _explicitNullValueAgentId; set { _explicitNullValueAgentId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agent_id"); else _explicitNullProperties?.Remove("agent_id"); } }
+        private string _explicitNullValueAgentId = default!;
 #endif
         /// <summary>Whether the agent is archived</summary>
-        public bool? Archived { get; set; }
+        public bool? Archived { get => _explicitNullValueArchived; set { _explicitNullValueArchived = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("archived"); else _explicitNullProperties?.Remove("archived"); } }
+        private bool? _explicitNullValueArchived = default!;
         /// <summary>The creation time of the agent in unix seconds</summary>
-        public int? CreatedAtUnixSecs { get; set; }
+        public int? CreatedAtUnixSecs { get => _explicitNullValueCreatedAtUnixSecs; set { _explicitNullValueCreatedAtUnixSecs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_at_unix_secs"); else _explicitNullProperties?.Remove("created_at_unix_secs"); } }
+        private int? _explicitNullValueCreatedAtUnixSecs = default!;
         /// <summary>The time of the most recent call in unix seconds, null if no calls have been made</summary>
-        public int? LastCallTimeUnixSecs { get; set; }
+        public int? LastCallTimeUnixSecs { get => _explicitNullValueLastCallTimeUnixSecs; set { _explicitNullValueLastCallTimeUnixSecs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last_call_time_unix_secs"); else _explicitNullProperties?.Remove("last_call_time_unix_secs"); } }
+        private int? _explicitNullValueLastCallTimeUnixSecs = default!;
         /// <summary>The name of the agent</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get; set; }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string _explicitNullValueName = default!;
 #endif
         /// <summary>Agent tags used to categorize the agent</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Tags { get; set; }
+        public List<string>? Tags { get => _explicitNullValueTags; set { _explicitNullValueTags = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tags"); else _explicitNullProperties?.Remove("tags"); } }
+        private List<string>? _explicitNullValueTags = default!;
 #nullable restore
 #else
-        public List<string> Tags { get; set; }
+        public List<string> Tags { get => _explicitNullValueTags; set { _explicitNullValueTags = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tags"); else _explicitNullProperties?.Remove("tags"); } }
+        private List<string> _explicitNullValueTags = default!;
 #endif
         /// <summary>The last time the agent&apos;s main branch or agent-level settings were updated, in unix seconds</summary>
-        public int? UpdatedAtUnixSecs { get; set; }
+        public int? UpdatedAtUnixSecs { get => _explicitNullValueUpdatedAtUnixSecs; set { _explicitNullValueUpdatedAtUnixSecs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("updated_at_unix_secs"); else _explicitNullProperties?.Remove("updated_at_unix_secs"); } }
+        private int? _explicitNullValueUpdatedAtUnixSecs = default!;
         /// <summary>Voice ID assigned to this agent</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? VoiceId { get; set; }
+        public string? VoiceId { get => _explicitNullValueVoiceId; set { _explicitNullValueVoiceId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("voice_id"); else _explicitNullProperties?.Remove("voice_id"); } }
+        private string? _explicitNullValueVoiceId = default!;
 #nullable restore
 #else
-        public string VoiceId { get; set; }
+        public string VoiceId { get => _explicitNullValueVoiceId; set { _explicitNullValueVoiceId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("voice_id"); else _explicitNullProperties?.Remove("voice_id"); } }
+        private string _explicitNullValueVoiceId = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentSummaryResponseModel"/> and sets the default values.
@@ -78,7 +108,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentSummaryResponseModel CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentSummaryResponseModel();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentSummaryResponseModel(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -115,6 +145,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("tags", Tags);
             writer.WriteIntValue("updated_at_unix_secs", UpdatedAtUnixSecs);
             writer.WriteStringValue("voice_id", VoiceId);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

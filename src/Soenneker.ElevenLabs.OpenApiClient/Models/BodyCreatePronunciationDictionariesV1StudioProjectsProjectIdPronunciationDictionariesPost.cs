@@ -11,18 +11,30 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class BodyCreatePronunciationDictionariesV1StudioProjectsProjectIdPronunciationDictionariesPost : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("invalidate_affected_text") is { } nullNodeInvalidateAffectedText && nullNodeInvalidateAffectedText.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InvalidateAffectedText = null;
+            if (parseNode.GetChildNode("pronunciation_dictionary_locators") is { } nullNodePronunciationDictionaryLocators && nullNodePronunciationDictionaryLocators.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PronunciationDictionaryLocators = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>This will automatically mark text in this project for reconversion when the new dictionary applies or the old one no longer does.</summary>
-        public bool? InvalidateAffectedText { get; set; }
+        public bool? InvalidateAffectedText { get => _explicitNullValueInvalidateAffectedText; set { _explicitNullValueInvalidateAffectedText = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("invalidate_affected_text"); else _explicitNullProperties?.Remove("invalidate_affected_text"); } }
+        private bool? _explicitNullValueInvalidateAffectedText = default!;
         /// <summary>A list of pronunciation dictionary locators (pronunciation_dictionary_id, version_id) encoded as a list of JSON strings for pronunciation dictionaries to be applied to the text. A list of json encoded strings is required as adding projects may occur through formData as opposed to jsonBody. To specify multiple dictionaries use multiple --form lines in your curl, such as --form &apos;pronunciation_dictionary_locators=&quot;{\&quot;pronunciation_dictionary_id\&quot;:\&quot;Vmd4Zor6fplcA7WrINey\&quot;,\&quot;version_id\&quot;:\&quot;hRPaxjlTdR7wFMhV4w0b\&quot;}&quot;&apos; --form &apos;pronunciation_dictionary_locators=&quot;{\&quot;pronunciation_dictionary_id\&quot;:\&quot;JzWtcGQMJ6bnlWwyMo7e\&quot;,\&quot;version_id\&quot;:\&quot;lbmwxiLu4q6txYxgdZqn\&quot;}&quot;&apos;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.PronunciationDictionaryVersionLocatorDbModel>? PronunciationDictionaryLocators { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.PronunciationDictionaryVersionLocatorDbModel>? PronunciationDictionaryLocators { get => _explicitNullValuePronunciationDictionaryLocators; set { _explicitNullValuePronunciationDictionaryLocators = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pronunciation_dictionary_locators"); else _explicitNullProperties?.Remove("pronunciation_dictionary_locators"); } }
+        private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.PronunciationDictionaryVersionLocatorDbModel>? _explicitNullValuePronunciationDictionaryLocators = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.PronunciationDictionaryVersionLocatorDbModel> PronunciationDictionaryLocators { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.PronunciationDictionaryVersionLocatorDbModel> PronunciationDictionaryLocators { get => _explicitNullValuePronunciationDictionaryLocators; set { _explicitNullValuePronunciationDictionaryLocators = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pronunciation_dictionary_locators"); else _explicitNullProperties?.Remove("pronunciation_dictionary_locators"); } }
+        private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.PronunciationDictionaryVersionLocatorDbModel> _explicitNullValuePronunciationDictionaryLocators = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreatePronunciationDictionariesV1StudioProjectsProjectIdPronunciationDictionariesPost"/> and sets the default values.
@@ -40,7 +52,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreatePronunciationDictionariesV1StudioProjectsProjectIdPronunciationDictionariesPost CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreatePronunciationDictionariesV1StudioProjectsProjectIdPronunciationDictionariesPost();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreatePronunciationDictionariesV1StudioProjectsProjectIdPronunciationDictionariesPost(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -63,6 +75,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("invalidate_affected_text", InvalidateAffectedText);
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.PronunciationDictionaryVersionLocatorDbModel>("pronunciation_dictionary_locators", PronunciationDictionaryLocators);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

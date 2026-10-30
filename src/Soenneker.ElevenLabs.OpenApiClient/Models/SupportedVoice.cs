@@ -11,56 +11,86 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class SupportedVoice : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("description") is { } nullNodeDescription && nullNodeDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Description = null;
+            if (parseNode.GetChildNode("label") is { } nullNodeLabel && nullNodeLabel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Label = null;
+            if (parseNode.GetChildNode("language") is { } nullNodeLanguage && nullNodeLanguage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Language = null;
+            if (parseNode.GetChildNode("model_family") is { } nullNodeModelFamily && nullNodeModelFamily.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ModelFamily = null;
+            if (parseNode.GetChildNode("optimize_streaming_latency") is { } nullNodeOptimizeStreamingLatency && nullNodeOptimizeStreamingLatency.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OptimizeStreamingLatency = null;
+            if (parseNode.GetChildNode("similarity_boost") is { } nullNodeSimilarityBoost && nullNodeSimilarityBoost.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SimilarityBoost = null;
+            if (parseNode.GetChildNode("speed") is { } nullNodeSpeed && nullNodeSpeed.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Speed = null;
+            if (parseNode.GetChildNode("stability") is { } nullNodeStability && nullNodeStability.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Stability = null;
+            if (parseNode.GetChildNode("voice_id") is { } nullNodeVoiceId && nullNodeVoiceId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VoiceId = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The description property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description { get; set; }
+        public string? Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        private string? _explicitNullValueDescription = default!;
 #nullable restore
 #else
-        public string Description { get; set; }
+        public string Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        private string _explicitNullValueDescription = default!;
 #endif
         /// <summary>The label property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Label { get; set; }
+        public string? Label { get => _explicitNullValueLabel; set { _explicitNullValueLabel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("label"); else _explicitNullProperties?.Remove("label"); } }
+        private string? _explicitNullValueLabel = default!;
 #nullable restore
 #else
-        public string Label { get; set; }
+        public string Label { get => _explicitNullValueLabel; set { _explicitNullValueLabel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("label"); else _explicitNullProperties?.Remove("label"); } }
+        private string _explicitNullValueLabel = default!;
 #endif
         /// <summary>The language property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Language { get; set; }
+        public string? Language { get => _explicitNullValueLanguage; set { _explicitNullValueLanguage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("language"); else _explicitNullProperties?.Remove("language"); } }
+        private string? _explicitNullValueLanguage = default!;
 #nullable restore
 #else
-        public string Language { get; set; }
+        public string Language { get => _explicitNullValueLanguage; set { _explicitNullValueLanguage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("language"); else _explicitNullProperties?.Remove("language"); } }
+        private string _explicitNullValueLanguage = default!;
 #endif
         /// <summary>The model_family property</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.TtsModelFamily? ModelFamily { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.TtsModelFamily? ModelFamily { get => _explicitNullValueModelFamily; set { _explicitNullValueModelFamily = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("model_family"); else _explicitNullProperties?.Remove("model_family"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.TtsModelFamily? _explicitNullValueModelFamily = default!;
         /// <summary>The optimize_streaming_latency property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SupportedVoiceOptimizeStreamingLatency? OptimizeStreamingLatency { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SupportedVoiceOptimizeStreamingLatency? OptimizeStreamingLatency { get => _explicitNullValueOptimizeStreamingLatency; set { _explicitNullValueOptimizeStreamingLatency = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("optimize_streaming_latency"); else _explicitNullProperties?.Remove("optimize_streaming_latency"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.SupportedVoiceOptimizeStreamingLatency? _explicitNullValueOptimizeStreamingLatency = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SupportedVoiceOptimizeStreamingLatency OptimizeStreamingLatency { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SupportedVoiceOptimizeStreamingLatency OptimizeStreamingLatency { get => _explicitNullValueOptimizeStreamingLatency; set { _explicitNullValueOptimizeStreamingLatency = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("optimize_streaming_latency"); else _explicitNullProperties?.Remove("optimize_streaming_latency"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.SupportedVoiceOptimizeStreamingLatency _explicitNullValueOptimizeStreamingLatency = default!;
 #endif
         /// <summary>The similarity_boost property</summary>
-        public double? SimilarityBoost { get; set; }
+        public double? SimilarityBoost { get => _explicitNullValueSimilarityBoost; set { _explicitNullValueSimilarityBoost = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("similarity_boost"); else _explicitNullProperties?.Remove("similarity_boost"); } }
+        private double? _explicitNullValueSimilarityBoost = default!;
         /// <summary>The speed property</summary>
-        public double? Speed { get; set; }
+        public double? Speed { get => _explicitNullValueSpeed; set { _explicitNullValueSpeed = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("speed"); else _explicitNullProperties?.Remove("speed"); } }
+        private double? _explicitNullValueSpeed = default!;
         /// <summary>The stability property</summary>
-        public double? Stability { get; set; }
+        public double? Stability { get => _explicitNullValueStability; set { _explicitNullValueStability = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stability"); else _explicitNullProperties?.Remove("stability"); } }
+        private double? _explicitNullValueStability = default!;
         /// <summary>The voice_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? VoiceId { get; set; }
+        public string? VoiceId { get => _explicitNullValueVoiceId; set { _explicitNullValueVoiceId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("voice_id"); else _explicitNullProperties?.Remove("voice_id"); } }
+        private string? _explicitNullValueVoiceId = default!;
 #nullable restore
 #else
-        public string VoiceId { get; set; }
+        public string VoiceId { get => _explicitNullValueVoiceId; set { _explicitNullValueVoiceId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("voice_id"); else _explicitNullProperties?.Remove("voice_id"); } }
+        private string _explicitNullValueVoiceId = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.SupportedVoice"/> and sets the default values.
@@ -77,7 +107,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.SupportedVoice CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.SupportedVoice();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.SupportedVoice(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -114,6 +144,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteDoubleValue("speed", Speed);
             writer.WriteDoubleValue("stability", Stability);
             writer.WriteStringValue("voice_id", VoiceId);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

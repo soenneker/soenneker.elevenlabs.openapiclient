@@ -55,6 +55,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.Branches.Item
             {
                 { "400", global::Soenneker.ElevenLabs.OpenApiClient.Models.CompileProceduresValidationErrorResponseModel.CreateFromDiscriminatorValue },
                 { "422", global::Soenneker.ElevenLabs.OpenApiClient.Models.HttpValidationError.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.ElevenLabs.OpenApiClient.Models.CompileProceduresResponseModel>(requestInfo, global::Soenneker.ElevenLabs.OpenApiClient.Models.CompileProceduresResponseModel.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

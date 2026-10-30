@@ -11,60 +11,89 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ProjectSnapshotExtendedResponseModel : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("audio_duration_secs") is { } nullNodeAudioDurationSecs && nullNodeAudioDurationSecs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AudioDurationSecs = null;
+            if (parseNode.GetChildNode("audio_upload") is { } nullNodeAudioUpload && nullNodeAudioUpload.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AudioUpload = null;
+            if (parseNode.GetChildNode("character_alignments") is { } nullNodeCharacterAlignments && nullNodeCharacterAlignments.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CharacterAlignments = null;
+            if (parseNode.GetChildNode("created_at_unix") is { } nullNodeCreatedAtUnix && nullNodeCreatedAtUnix.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedAtUnix = null;
+            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("project_id") is { } nullNodeProjectId && nullNodeProjectId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProjectId = null;
+            if (parseNode.GetChildNode("project_snapshot_id") is { } nullNodeProjectSnapshotId && nullNodeProjectSnapshotId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProjectSnapshotId = null;
+            if (parseNode.GetChildNode("zip_upload") is { } nullNodeZipUpload && nullNodeZipUpload.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ZipUpload = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The total duration of the audio in seconds.</summary>
-        public double? AudioDurationSecs { get; set; }
+        public double? AudioDurationSecs { get => _explicitNullValueAudioDurationSecs; set { _explicitNullValueAudioDurationSecs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("audio_duration_secs"); else _explicitNullProperties?.Remove("audio_duration_secs"); } }
+        private double? _explicitNullValueAudioDurationSecs = default!;
         /// <summary>(Deprecated)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectSnapshotExtendedResponseModelAudioUploadProperty? AudioUpload { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectSnapshotExtendedResponseModelAudioUploadProperty? AudioUpload { get => _explicitNullValueAudioUpload; set { _explicitNullValueAudioUpload = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("audio_upload"); else _explicitNullProperties?.Remove("audio_upload"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectSnapshotExtendedResponseModelAudioUploadProperty? _explicitNullValueAudioUpload = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectSnapshotExtendedResponseModelAudioUploadProperty AudioUpload { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectSnapshotExtendedResponseModelAudioUploadProperty AudioUpload { get => _explicitNullValueAudioUpload; set { _explicitNullValueAudioUpload = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("audio_upload"); else _explicitNullProperties?.Remove("audio_upload"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectSnapshotExtendedResponseModelAudioUploadProperty _explicitNullValueAudioUpload = default!;
 #endif
         /// <summary>The character_alignments property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.CharacterAlignmentModel>? CharacterAlignments { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.CharacterAlignmentModel>? CharacterAlignments { get => _explicitNullValueCharacterAlignments; set { _explicitNullValueCharacterAlignments = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("character_alignments"); else _explicitNullProperties?.Remove("character_alignments"); } }
+        private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.CharacterAlignmentModel>? _explicitNullValueCharacterAlignments = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.CharacterAlignmentModel> CharacterAlignments { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.CharacterAlignmentModel> CharacterAlignments { get => _explicitNullValueCharacterAlignments; set { _explicitNullValueCharacterAlignments = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("character_alignments"); else _explicitNullProperties?.Remove("character_alignments"); } }
+        private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.CharacterAlignmentModel> _explicitNullValueCharacterAlignments = default!;
 #endif
         /// <summary>The creation date of the project snapshot.</summary>
-        public int? CreatedAtUnix { get; set; }
+        public int? CreatedAtUnix { get => _explicitNullValueCreatedAtUnix; set { _explicitNullValueCreatedAtUnix = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_at_unix"); else _explicitNullProperties?.Remove("created_at_unix"); } }
+        private int? _explicitNullValueCreatedAtUnix = default!;
         /// <summary>The name of the project snapshot.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get; set; }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string _explicitNullValueName = default!;
 #endif
         /// <summary>The ID of the project.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProjectId { get; set; }
+        public string? ProjectId { get => _explicitNullValueProjectId; set { _explicitNullValueProjectId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("project_id"); else _explicitNullProperties?.Remove("project_id"); } }
+        private string? _explicitNullValueProjectId = default!;
 #nullable restore
 #else
-        public string ProjectId { get; set; }
+        public string ProjectId { get => _explicitNullValueProjectId; set { _explicitNullValueProjectId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("project_id"); else _explicitNullProperties?.Remove("project_id"); } }
+        private string _explicitNullValueProjectId = default!;
 #endif
         /// <summary>The ID of the project snapshot.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProjectSnapshotId { get; set; }
+        public string? ProjectSnapshotId { get => _explicitNullValueProjectSnapshotId; set { _explicitNullValueProjectSnapshotId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("project_snapshot_id"); else _explicitNullProperties?.Remove("project_snapshot_id"); } }
+        private string? _explicitNullValueProjectSnapshotId = default!;
 #nullable restore
 #else
-        public string ProjectSnapshotId { get; set; }
+        public string ProjectSnapshotId { get => _explicitNullValueProjectSnapshotId; set { _explicitNullValueProjectSnapshotId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("project_snapshot_id"); else _explicitNullProperties?.Remove("project_snapshot_id"); } }
+        private string _explicitNullValueProjectSnapshotId = default!;
 #endif
         /// <summary>(Deprecated)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectSnapshotExtendedResponseModelZipUploadProperty? ZipUpload { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectSnapshotExtendedResponseModelZipUploadProperty? ZipUpload { get => _explicitNullValueZipUpload; set { _explicitNullValueZipUpload = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("zip_upload"); else _explicitNullProperties?.Remove("zip_upload"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectSnapshotExtendedResponseModelZipUploadProperty? _explicitNullValueZipUpload = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectSnapshotExtendedResponseModelZipUploadProperty ZipUpload { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectSnapshotExtendedResponseModelZipUploadProperty ZipUpload { get => _explicitNullValueZipUpload; set { _explicitNullValueZipUpload = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("zip_upload"); else _explicitNullProperties?.Remove("zip_upload"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectSnapshotExtendedResponseModelZipUploadProperty _explicitNullValueZipUpload = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectSnapshotExtendedResponseModel"/> and sets the default values.
@@ -81,7 +110,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectSnapshotExtendedResponseModel CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectSnapshotExtendedResponseModel();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectSnapshotExtendedResponseModel(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -116,6 +145,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteStringValue("project_id", ProjectId);
             writer.WriteStringValue("project_snapshot_id", ProjectSnapshotId);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ProjectSnapshotExtendedResponseModelZipUploadProperty>("zip_upload", ZipUpload);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -11,64 +11,100 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class McpToolConfigOverrideOutput : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("assignments") is { } nullNodeAssignments && nullNodeAssignments.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Assignments = null;
+            if (parseNode.GetChildNode("disable_interruptions") is { } nullNodeDisableInterruptions && nullNodeDisableInterruptions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DisableInterruptions = null;
+            if (parseNode.GetChildNode("execution_mode") is { } nullNodeExecutionMode && nullNodeExecutionMode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExecutionMode = null;
+            if (parseNode.GetChildNode("force_pre_tool_speech") is { } nullNodeForcePreToolSpeech && nullNodeForcePreToolSpeech.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ForcePreToolSpeech = null;
+            if (parseNode.GetChildNode("input_overrides") is { } nullNodeInputOverrides && nullNodeInputOverrides.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InputOverrides = null;
+            if (parseNode.GetChildNode("interruption_mode") is { } nullNodeInterruptionMode && nullNodeInterruptionMode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InterruptionMode = null;
+            if (parseNode.GetChildNode("pre_tool_speech") is { } nullNodePreToolSpeech && nullNodePreToolSpeech.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreToolSpeech = null;
+            if (parseNode.GetChildNode("response_mocks") is { } nullNodeResponseMocks && nullNodeResponseMocks.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ResponseMocks = null;
+            if (parseNode.GetChildNode("response_timeout_secs") is { } nullNodeResponseTimeoutSecs && nullNodeResponseTimeoutSecs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ResponseTimeoutSecs = null;
+            if (parseNode.GetChildNode("tool_call_sound") is { } nullNodeToolCallSound && nullNodeToolCallSound.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ToolCallSound = null;
+            if (parseNode.GetChildNode("tool_call_sound_behavior") is { } nullNodeToolCallSoundBehavior && nullNodeToolCallSoundBehavior.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ToolCallSoundBehavior = null;
+            if (parseNode.GetChildNode("tool_name") is { } nullNodeToolName && nullNodeToolName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ToolName = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Dynamic variable assignments for this MCP tool</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.DynamicVariableAssignment>? Assignments { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.DynamicVariableAssignment>? Assignments { get => _explicitNullValueAssignments; set { _explicitNullValueAssignments = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("assignments"); else _explicitNullProperties?.Remove("assignments"); } }
+        private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.DynamicVariableAssignment>? _explicitNullValueAssignments = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.DynamicVariableAssignment> Assignments { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.DynamicVariableAssignment> Assignments { get => _explicitNullValueAssignments; set { _explicitNullValueAssignments = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("assignments"); else _explicitNullProperties?.Remove("assignments"); } }
+        private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.DynamicVariableAssignment> _explicitNullValueAssignments = default!;
 #endif
         /// <summary>DEPRECATED: use `interruption_mode` instead. If set, overrides the server&apos;s disable_interruptions setting for this tool.</summary>
         [Obsolete("")]
-        public bool? DisableInterruptions { get; set; }
+        public bool? DisableInterruptions { get => _explicitNullValueDisableInterruptions; set { _explicitNullValueDisableInterruptions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("disable_interruptions"); else _explicitNullProperties?.Remove("disable_interruptions"); } }
+        private bool? _explicitNullValueDisableInterruptions = default!;
         /// <summary>If set, overrides the server&apos;s execution_mode setting for this tool</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolExecutionMode? ExecutionMode { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolExecutionMode? ExecutionMode { get => _explicitNullValueExecutionMode; set { _explicitNullValueExecutionMode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("execution_mode"); else _explicitNullProperties?.Remove("execution_mode"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolExecutionMode? _explicitNullValueExecutionMode = default!;
         /// <summary>DEPRECATED: use `pre_tool_speech` instead. If set, overrides the server&apos;s force_pre_tool_speech setting for this tool.</summary>
         [Obsolete("")]
-        public bool? ForcePreToolSpeech { get; set; }
+        public bool? ForcePreToolSpeech { get => _explicitNullValueForcePreToolSpeech; set { _explicitNullValueForcePreToolSpeech = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("force_pre_tool_speech"); else _explicitNullProperties?.Remove("force_pre_tool_speech"); } }
+        private bool? _explicitNullValueForcePreToolSpeech = default!;
         /// <summary>Mapping of json path to input override configuration</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.McpToolConfigOverrideOutputInputOverridesProperty? InputOverrides { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.McpToolConfigOverrideOutputInputOverridesProperty? InputOverrides { get => _explicitNullValueInputOverrides; set { _explicitNullValueInputOverrides = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("input_overrides"); else _explicitNullProperties?.Remove("input_overrides"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.McpToolConfigOverrideOutputInputOverridesProperty? _explicitNullValueInputOverrides = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.McpToolConfigOverrideOutputInputOverridesProperty InputOverrides { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.McpToolConfigOverrideOutputInputOverridesProperty InputOverrides { get => _explicitNullValueInputOverrides; set { _explicitNullValueInputOverrides = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("input_overrides"); else _explicitNullProperties?.Remove("input_overrides"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.McpToolConfigOverrideOutputInputOverridesProperty _explicitNullValueInputOverrides = default!;
 #endif
         /// <summary>If set, overrides the server&apos;s interruption_mode setting for this tool.</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolInterruptionMode? InterruptionMode { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolInterruptionMode? InterruptionMode { get => _explicitNullValueInterruptionMode; set { _explicitNullValueInterruptionMode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("interruption_mode"); else _explicitNullProperties?.Remove("interruption_mode"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolInterruptionMode? _explicitNullValueInterruptionMode = default!;
         /// <summary>If set, overrides the server&apos;s pre_tool_speech setting for this tool.</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PreToolSpeechMode? PreToolSpeech { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PreToolSpeechMode? PreToolSpeech { get => _explicitNullValuePreToolSpeech; set { _explicitNullValuePreToolSpeech = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pre_tool_speech"); else _explicitNullProperties?.Remove("pre_tool_speech"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.PreToolSpeechMode? _explicitNullValuePreToolSpeech = default!;
         /// <summary>Mock responses with optional parameter conditions. Evaluated top-to-bottom; first match wins.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolResponseMockConfigOutput>? ResponseMocks { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolResponseMockConfigOutput>? ResponseMocks { get => _explicitNullValueResponseMocks; set { _explicitNullValueResponseMocks = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("response_mocks"); else _explicitNullProperties?.Remove("response_mocks"); } }
+        private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolResponseMockConfigOutput>? _explicitNullValueResponseMocks = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolResponseMockConfigOutput> ResponseMocks { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolResponseMockConfigOutput> ResponseMocks { get => _explicitNullValueResponseMocks; set { _explicitNullValueResponseMocks = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("response_mocks"); else _explicitNullProperties?.Remove("response_mocks"); } }
+        private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolResponseMockConfigOutput> _explicitNullValueResponseMocks = default!;
 #endif
         /// <summary>If set, overrides the server&apos;s response timeout for this MCP tool (seconds).</summary>
-        public int? ResponseTimeoutSecs { get; set; }
+        public int? ResponseTimeoutSecs { get => _explicitNullValueResponseTimeoutSecs; set { _explicitNullValueResponseTimeoutSecs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("response_timeout_secs"); else _explicitNullProperties?.Remove("response_timeout_secs"); } }
+        private int? _explicitNullValueResponseTimeoutSecs = default!;
         /// <summary>Overrides the server&apos;s tool_call_sound setting for this tool. A sound name plays that sound; &apos;off&apos; overrides to no sound (silence); null means do not override (inherit the server default).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.McpToolConfigOverrideOutputToolCallSound? ToolCallSound { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.McpToolConfigOverrideOutputToolCallSound? ToolCallSound { get => _explicitNullValueToolCallSound; set { _explicitNullValueToolCallSound = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tool_call_sound"); else _explicitNullProperties?.Remove("tool_call_sound"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.McpToolConfigOverrideOutputToolCallSound? _explicitNullValueToolCallSound = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.McpToolConfigOverrideOutputToolCallSound ToolCallSound { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.McpToolConfigOverrideOutputToolCallSound ToolCallSound { get => _explicitNullValueToolCallSound; set { _explicitNullValueToolCallSound = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tool_call_sound"); else _explicitNullProperties?.Remove("tool_call_sound"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.McpToolConfigOverrideOutputToolCallSound _explicitNullValueToolCallSound = default!;
 #endif
         /// <summary>If set, overrides the server&apos;s tool_call_sound_behavior setting for this tool</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolCallSoundBehavior? ToolCallSoundBehavior { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolCallSoundBehavior? ToolCallSoundBehavior { get => _explicitNullValueToolCallSoundBehavior; set { _explicitNullValueToolCallSoundBehavior = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tool_call_sound_behavior"); else _explicitNullProperties?.Remove("tool_call_sound_behavior"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolCallSoundBehavior? _explicitNullValueToolCallSoundBehavior = default!;
         /// <summary>The name of the MCP tool</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ToolName { get; set; }
+        public string? ToolName { get => _explicitNullValueToolName; set { _explicitNullValueToolName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tool_name"); else _explicitNullProperties?.Remove("tool_name"); } }
+        private string? _explicitNullValueToolName = default!;
 #nullable restore
 #else
-        public string ToolName { get; set; }
+        public string ToolName { get => _explicitNullValueToolName; set { _explicitNullValueToolName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tool_name"); else _explicitNullProperties?.Remove("tool_name"); } }
+        private string _explicitNullValueToolName = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.McpToolConfigOverrideOutput"/> and sets the default values.
@@ -85,7 +121,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.McpToolConfigOverrideOutput CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.McpToolConfigOverrideOutput();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.McpToolConfigOverrideOutput(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -128,6 +164,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.McpToolConfigOverrideOutputToolCallSound>("tool_call_sound", ToolCallSound);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolCallSoundBehavior>("tool_call_sound_behavior", ToolCallSoundBehavior);
             writer.WriteStringValue("tool_name", ToolName);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

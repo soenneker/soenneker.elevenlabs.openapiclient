@@ -11,42 +11,63 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class SpeakerSeparationResponseModel : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("sample_id") is { } nullNodeSampleId && nullNodeSampleId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SampleId = null;
+            if (parseNode.GetChildNode("selected_speaker_ids") is { } nullNodeSelectedSpeakerIds && nullNodeSelectedSpeakerIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SelectedSpeakerIds = null;
+            if (parseNode.GetChildNode("speakers") is { } nullNodeSpeakers && nullNodeSpeakers.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Speakers = null;
+            if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
+            if (parseNode.GetChildNode("voice_id") is { } nullNodeVoiceId && nullNodeVoiceId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VoiceId = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The ID of the sample.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SampleId { get; set; }
+        public string? SampleId { get => _explicitNullValueSampleId; set { _explicitNullValueSampleId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sample_id"); else _explicitNullProperties?.Remove("sample_id"); } }
+        private string? _explicitNullValueSampleId = default!;
 #nullable restore
 #else
-        public string SampleId { get; set; }
+        public string SampleId { get => _explicitNullValueSampleId; set { _explicitNullValueSampleId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sample_id"); else _explicitNullProperties?.Remove("sample_id"); } }
+        private string _explicitNullValueSampleId = default!;
 #endif
         /// <summary>The IDs of the selected speakers.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? SelectedSpeakerIds { get; set; }
+        public List<string>? SelectedSpeakerIds { get => _explicitNullValueSelectedSpeakerIds; set { _explicitNullValueSelectedSpeakerIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("selected_speaker_ids"); else _explicitNullProperties?.Remove("selected_speaker_ids"); } }
+        private List<string>? _explicitNullValueSelectedSpeakerIds = default!;
 #nullable restore
 #else
-        public List<string> SelectedSpeakerIds { get; set; }
+        public List<string> SelectedSpeakerIds { get => _explicitNullValueSelectedSpeakerIds; set { _explicitNullValueSelectedSpeakerIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("selected_speaker_ids"); else _explicitNullProperties?.Remove("selected_speaker_ids"); } }
+        private List<string> _explicitNullValueSelectedSpeakerIds = default!;
 #endif
         /// <summary>The speakers of the sample.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeakerSeparationResponseModelSpeakersProperty? Speakers { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeakerSeparationResponseModelSpeakersProperty? Speakers { get => _explicitNullValueSpeakers; set { _explicitNullValueSpeakers = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("speakers"); else _explicitNullProperties?.Remove("speakers"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeakerSeparationResponseModelSpeakersProperty? _explicitNullValueSpeakers = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeakerSeparationResponseModelSpeakersProperty Speakers { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeakerSeparationResponseModelSpeakersProperty Speakers { get => _explicitNullValueSpeakers; set { _explicitNullValueSpeakers = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("speakers"); else _explicitNullProperties?.Remove("speakers"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeakerSeparationResponseModelSpeakersProperty _explicitNullValueSpeakers = default!;
 #endif
         /// <summary>The status of the speaker separation.</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeakerSeparationResponseModelStatus? Status { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeakerSeparationResponseModelStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeakerSeparationResponseModelStatus? _explicitNullValueStatus = default!;
         /// <summary>The ID of the voice.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? VoiceId { get; set; }
+        public string? VoiceId { get => _explicitNullValueVoiceId; set { _explicitNullValueVoiceId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("voice_id"); else _explicitNullProperties?.Remove("voice_id"); } }
+        private string? _explicitNullValueVoiceId = default!;
 #nullable restore
 #else
-        public string VoiceId { get; set; }
+        public string VoiceId { get => _explicitNullValueVoiceId; set { _explicitNullValueVoiceId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("voice_id"); else _explicitNullProperties?.Remove("voice_id"); } }
+        private string _explicitNullValueVoiceId = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeakerSeparationResponseModel"/> and sets the default values.
@@ -63,7 +84,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeakerSeparationResponseModel CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeakerSeparationResponseModel();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeakerSeparationResponseModel(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -92,6 +113,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeakerSeparationResponseModelSpeakersProperty>("speakers", Speakers);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeakerSeparationResponseModelStatus>("status", Status);
             writer.WriteStringValue("voice_id", VoiceId);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

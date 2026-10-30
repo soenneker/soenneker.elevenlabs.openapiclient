@@ -84,6 +84,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.PronunciationDictionaries.Item
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "422", global::Soenneker.ElevenLabs.OpenApiClient.Models.HttpValidationError.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPronunciationDictionaryWithRulesResponseModel>(requestInfo, global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPronunciationDictionaryWithRulesResponseModel.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -109,6 +111,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.PronunciationDictionaries.Item
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "422", global::Soenneker.ElevenLabs.OpenApiClient.Models.HttpValidationError.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPronunciationDictionaryMetadataResponseModel>(requestInfo, global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPronunciationDictionaryMetadataResponseModel.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

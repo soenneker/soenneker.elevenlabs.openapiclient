@@ -12,65 +12,98 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SmbAgentInfoResponse : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("business_country") is { } nullNodeBusinessCountry && nullNodeBusinessCountry.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BusinessCountry = null;
+            if (parseNode.GetChildNode("business_description") is { } nullNodeBusinessDescription && nullNodeBusinessDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BusinessDescription = null;
+            if (parseNode.GetChildNode("business_name") is { } nullNodeBusinessName && nullNodeBusinessName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BusinessName = null;
+            if (parseNode.GetChildNode("created_at_unix") is { } nullNodeCreatedAtUnix && nullNodeCreatedAtUnix.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedAtUnix = null;
+            if (parseNode.GetChildNode("currency") is { } nullNodeCurrency && nullNodeCurrency.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Currency = null;
+            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("operating_hours") is { } nullNodeOperatingHours && nullNodeOperatingHours.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OperatingHours = null;
+            if (parseNode.GetChildNode("timezone") is { } nullNodeTimezone && nullNodeTimezone.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Timezone = null;
+            if (parseNode.GetChildNode("tool_call_sound") is { } nullNodeToolCallSound && nullNodeToolCallSound.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ToolCallSound = null;
+            if (parseNode.GetChildNode("updated_at_unix") is { } nullNodeUpdatedAtUnix && nullNodeUpdatedAtUnix.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UpdatedAtUnix = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>ISO 3166-1 alpha-2 country code where the business is based (e.g. &apos;US&apos;, &apos;PL&apos;, &apos;DE&apos;).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BusinessCountry { get; set; }
+        public string? BusinessCountry { get => _explicitNullValueBusinessCountry; set { _explicitNullValueBusinessCountry = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("business_country"); else _explicitNullProperties?.Remove("business_country"); } }
+        private string? _explicitNullValueBusinessCountry = default!;
 #nullable restore
 #else
-        public string BusinessCountry { get; set; }
+        public string BusinessCountry { get => _explicitNullValueBusinessCountry; set { _explicitNullValueBusinessCountry = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("business_country"); else _explicitNullProperties?.Remove("business_country"); } }
+        private string _explicitNullValueBusinessCountry = default!;
 #endif
         /// <summary>What the business does, given to the receptionist.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BusinessDescription { get; set; }
+        public string? BusinessDescription { get => _explicitNullValueBusinessDescription; set { _explicitNullValueBusinessDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("business_description"); else _explicitNullProperties?.Remove("business_description"); } }
+        private string? _explicitNullValueBusinessDescription = default!;
 #nullable restore
 #else
-        public string BusinessDescription { get; set; }
+        public string BusinessDescription { get => _explicitNullValueBusinessDescription; set { _explicitNullValueBusinessDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("business_description"); else _explicitNullProperties?.Remove("business_description"); } }
+        private string _explicitNullValueBusinessDescription = default!;
 #endif
         /// <summary>Name of the business.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BusinessName { get; set; }
+        public string? BusinessName { get => _explicitNullValueBusinessName; set { _explicitNullValueBusinessName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("business_name"); else _explicitNullProperties?.Remove("business_name"); } }
+        private string? _explicitNullValueBusinessName = default!;
 #nullable restore
 #else
-        public string BusinessName { get; set; }
+        public string BusinessName { get => _explicitNullValueBusinessName; set { _explicitNullValueBusinessName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("business_name"); else _explicitNullProperties?.Remove("business_name"); } }
+        private string _explicitNullValueBusinessName = default!;
 #endif
         /// <summary>The created_at_unix property</summary>
-        public int? CreatedAtUnix { get; set; }
+        public int? CreatedAtUnix { get => _explicitNullValueCreatedAtUnix; set { _explicitNullValueCreatedAtUnix = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_at_unix"); else _explicitNullProperties?.Remove("created_at_unix"); } }
+        private int? _explicitNullValueCreatedAtUnix = default!;
         /// <summary>Currency code for all prices (ISO 4217)</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbAgentInfoResponseCurrency? Currency { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbAgentInfoResponseCurrency? Currency { get => _explicitNullValueCurrency; set { _explicitNullValueCurrency = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("currency"); else _explicitNullProperties?.Remove("currency"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbAgentInfoResponseCurrency? _explicitNullValueCurrency = default!;
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get; set; }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string _explicitNullValueId = default!;
 #endif
         /// <summary>The operating_hours property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkingHours? OperatingHours { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkingHours? OperatingHours { get => _explicitNullValueOperatingHours; set { _explicitNullValueOperatingHours = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("operating_hours"); else _explicitNullProperties?.Remove("operating_hours"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkingHours? _explicitNullValueOperatingHours = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkingHours OperatingHours { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkingHours OperatingHours { get => _explicitNullValueOperatingHours; set { _explicitNullValueOperatingHours = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("operating_hours"); else _explicitNullProperties?.Remove("operating_hours"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkingHours _explicitNullValueOperatingHours = default!;
 #endif
         /// <summary>The timezone property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Timezone { get; set; }
+        public string? Timezone { get => _explicitNullValueTimezone; set { _explicitNullValueTimezone = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timezone"); else _explicitNullProperties?.Remove("timezone"); } }
+        private string? _explicitNullValueTimezone = default!;
 #nullable restore
 #else
-        public string Timezone { get; set; }
+        public string Timezone { get => _explicitNullValueTimezone; set { _explicitNullValueTimezone = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timezone"); else _explicitNullProperties?.Remove("timezone"); } }
+        private string _explicitNullValueTimezone = default!;
 #endif
         /// <summary>Ambient sound played while any receptionist runs a tool (e.g. checking availability or looking up a client), filling the silence callers would otherwise hear. One sound for the whole workspace, because custom webhook and MCP tools are shared by every receptionist. Off when null.</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolCallSoundType? ToolCallSound { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolCallSoundType? ToolCallSound { get => _explicitNullValueToolCallSound; set { _explicitNullValueToolCallSound = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tool_call_sound"); else _explicitNullProperties?.Remove("tool_call_sound"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolCallSoundType? _explicitNullValueToolCallSound = default!;
         /// <summary>The updated_at_unix property</summary>
-        public int? UpdatedAtUnix { get; set; }
+        public int? UpdatedAtUnix { get => _explicitNullValueUpdatedAtUnix; set { _explicitNullValueUpdatedAtUnix = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("updated_at_unix"); else _explicitNullProperties?.Remove("updated_at_unix"); } }
+        private int? _explicitNullValueUpdatedAtUnix = default!;
         /// <summary>Current time in workspace timezone, computed on each request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -94,7 +127,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbAgentInfoResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbAgentInfoResponse();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbAgentInfoResponse(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -134,6 +167,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteStringValue("timezone", Timezone);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolCallSoundType>("tool_call_sound", ToolCallSound);
             writer.WriteIntValue("updated_at_unix", UpdatedAtUnix);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

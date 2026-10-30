@@ -11,31 +11,55 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class LlmDeprecationInfoModel : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("deprecation_config") is { } nullNodeDeprecationConfig && nullNodeDeprecationConfig.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeprecationConfig = null;
+            if (parseNode.GetChildNode("fallback_percentage") is { } nullNodeFallbackPercentage && nullNodeFallbackPercentage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FallbackPercentage = null;
+            if (parseNode.GetChildNode("is_deprecated") is { } nullNodeIsDeprecated && nullNodeIsDeprecated.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsDeprecated = null;
+            if (parseNode.GetChildNode("is_in_fallback_period") is { } nullNodeIsInFallbackPeriod && nullNodeIsInFallbackPeriod.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsInFallbackPeriod = null;
+            if (parseNode.GetChildNode("is_in_warning_period") is { } nullNodeIsInWarningPeriod && nullNodeIsInWarningPeriod.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsInWarningPeriod = null;
+            if (parseNode.GetChildNode("llm") is { } nullNodeLlm && nullNodeLlm.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Llm = null;
+            if (parseNode.GetChildNode("provider_deprecation_date") is { } nullNodeProviderDeprecationDate && nullNodeProviderDeprecationDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProviderDeprecationDate = null;
+            if (parseNode.GetChildNode("replacement_model") is { } nullNodeReplacementModel && nullNodeReplacementModel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReplacementModel = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Custom deprecation timing configuration for this model. Null if using the default configuration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmDeprecationConfigModel? DeprecationConfig { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmDeprecationConfigModel? DeprecationConfig { get => _explicitNullValueDeprecationConfig; set { _explicitNullValueDeprecationConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deprecation_config"); else _explicitNullProperties?.Remove("deprecation_config"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmDeprecationConfigModel? _explicitNullValueDeprecationConfig = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmDeprecationConfigModel DeprecationConfig { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmDeprecationConfigModel DeprecationConfig { get => _explicitNullValueDeprecationConfig; set { _explicitNullValueDeprecationConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deprecation_config"); else _explicitNullProperties?.Remove("deprecation_config"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmDeprecationConfigModel _explicitNullValueDeprecationConfig = default!;
 #endif
         /// <summary>Current percentage of traffic being routed to the replacement model (0-100).</summary>
-        public int? FallbackPercentage { get; set; }
+        public int? FallbackPercentage { get => _explicitNullValueFallbackPercentage; set { _explicitNullValueFallbackPercentage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fallback_percentage"); else _explicitNullProperties?.Remove("fallback_percentage"); } }
+        private int? _explicitNullValueFallbackPercentage = default!;
         /// <summary>Whether this model is currently deprecated. True if the model is immediately deprecated or within the warning period.</summary>
-        public bool? IsDeprecated { get; set; }
+        public bool? IsDeprecated { get => _explicitNullValueIsDeprecated; set { _explicitNullValueIsDeprecated = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_deprecated"); else _explicitNullProperties?.Remove("is_deprecated"); } }
+        private bool? _explicitNullValueIsDeprecated = default!;
         /// <summary>Whether traffic is currently being progressively routed to the replacement model.</summary>
-        public bool? IsInFallbackPeriod { get; set; }
+        public bool? IsInFallbackPeriod { get => _explicitNullValueIsInFallbackPeriod; set { _explicitNullValueIsInFallbackPeriod = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_in_fallback_period"); else _explicitNullProperties?.Remove("is_in_fallback_period"); } }
+        private bool? _explicitNullValueIsInFallbackPeriod = default!;
         /// <summary>Whether this model is currently in the warning period before deprecation.</summary>
-        public bool? IsInWarningPeriod { get; set; }
+        public bool? IsInWarningPeriod { get => _explicitNullValueIsInWarningPeriod; set { _explicitNullValueIsInWarningPeriod = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_in_warning_period"); else _explicitNullProperties?.Remove("is_in_warning_period"); } }
+        private bool? _explicitNullValueIsInWarningPeriod = default!;
         /// <summary>The llm property</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Llm? Llm { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Llm? Llm { get => _explicitNullValueLlm; set { _explicitNullValueLlm = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("llm"); else _explicitNullProperties?.Remove("llm"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.Llm? _explicitNullValueLlm = default!;
         /// <summary>The date when the model provider will deprecate this model. Null for immediately deprecated models.</summary>
-        public DateTimeOffset? ProviderDeprecationDate { get; set; }
+        public DateTimeOffset? ProviderDeprecationDate { get => _explicitNullValueProviderDeprecationDate; set { _explicitNullValueProviderDeprecationDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("provider_deprecation_date"); else _explicitNullProperties?.Remove("provider_deprecation_date"); } }
+        private DateTimeOffset? _explicitNullValueProviderDeprecationDate = default!;
         /// <summary>The model that replaces this deprecated model. Traffic will be automatically routed to this model.</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Llm? ReplacementModel { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Llm? ReplacementModel { get => _explicitNullValueReplacementModel; set { _explicitNullValueReplacementModel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("replacement_model"); else _explicitNullProperties?.Remove("replacement_model"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.Llm? _explicitNullValueReplacementModel = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmDeprecationInfoModel"/> and sets the default values.
         /// </summary>
@@ -54,7 +78,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmDeprecationInfoModel CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmDeprecationInfoModel();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmDeprecationInfoModel(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -89,6 +113,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Llm>("llm", Llm);
             writer.WriteDateTimeOffsetValue("provider_deprecation_date", ProviderDeprecationDate);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Llm>("replacement_model", ReplacementModel);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

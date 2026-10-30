@@ -11,42 +11,63 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class RunAgentTestsRequestModel : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("agent_config_override") is { } nullNodeAgentConfigOverride && nullNodeAgentConfigOverride.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AgentConfigOverride = null;
+            if (parseNode.GetChildNode("branch_id") is { } nullNodeBranchId && nullNodeBranchId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BranchId = null;
+            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("repeat_count") is { } nullNodeRepeatCount && nullNodeRepeatCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RepeatCount = null;
+            if (parseNode.GetChildNode("tests") is { } nullNodeTests && nullNodeTests.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Tests = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Configuration overrides to use for testing. If not provided, the agent&apos;s default configuration will be used.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AdhocAgentConfigOverrideForTestRequestModel? AgentConfigOverride { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AdhocAgentConfigOverrideForTestRequestModel? AgentConfigOverride { get => _explicitNullValueAgentConfigOverride; set { _explicitNullValueAgentConfigOverride = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agent_config_override"); else _explicitNullProperties?.Remove("agent_config_override"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.AdhocAgentConfigOverrideForTestRequestModel? _explicitNullValueAgentConfigOverride = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AdhocAgentConfigOverrideForTestRequestModel AgentConfigOverride { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AdhocAgentConfigOverrideForTestRequestModel AgentConfigOverride { get => _explicitNullValueAgentConfigOverride; set { _explicitNullValueAgentConfigOverride = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agent_config_override"); else _explicitNullProperties?.Remove("agent_config_override"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.AdhocAgentConfigOverrideForTestRequestModel _explicitNullValueAgentConfigOverride = default!;
 #endif
         /// <summary>ID of the branch to run the tests on. If not provided, the tests will be run on the agent&apos;s main branch.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BranchId { get; set; }
+        public string? BranchId { get => _explicitNullValueBranchId; set { _explicitNullValueBranchId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("branch_id"); else _explicitNullProperties?.Remove("branch_id"); } }
+        private string? _explicitNullValueBranchId = default!;
 #nullable restore
 #else
-        public string BranchId { get; set; }
+        public string BranchId { get => _explicitNullValueBranchId; set { _explicitNullValueBranchId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("branch_id"); else _explicitNullProperties?.Remove("branch_id"); } }
+        private string _explicitNullValueBranchId = default!;
 #endif
         /// <summary>Optional name for the test invocation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get; set; }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string _explicitNullValueName = default!;
 #endif
         /// <summary>Number of times to run each test. When greater than 1, results are grouped and summarized.</summary>
-        public int? RepeatCount { get; set; }
+        public int? RepeatCount { get => _explicitNullValueRepeatCount; set { _explicitNullValueRepeatCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("repeat_count"); else _explicitNullProperties?.Remove("repeat_count"); } }
+        private int? _explicitNullValueRepeatCount = default!;
         /// <summary>List of tests to run on the agent</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.SingleTestRunRequestModel>? Tests { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.SingleTestRunRequestModel>? Tests { get => _explicitNullValueTests; set { _explicitNullValueTests = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tests"); else _explicitNullProperties?.Remove("tests"); } }
+        private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.SingleTestRunRequestModel>? _explicitNullValueTests = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.SingleTestRunRequestModel> Tests { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.SingleTestRunRequestModel> Tests { get => _explicitNullValueTests; set { _explicitNullValueTests = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tests"); else _explicitNullProperties?.Remove("tests"); } }
+        private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.SingleTestRunRequestModel> _explicitNullValueTests = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.RunAgentTestsRequestModel"/> and sets the default values.
@@ -64,7 +85,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.RunAgentTestsRequestModel CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.RunAgentTestsRequestModel();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.RunAgentTestsRequestModel(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -93,6 +114,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteStringValue("name", Name);
             writer.WriteIntValue("repeat_count", RepeatCount);
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.SingleTestRunRequestModel>("tests", Tests);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

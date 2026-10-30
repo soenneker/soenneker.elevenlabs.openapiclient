@@ -12,37 +12,72 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CanvasPlacement : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("crop_bottom") is { } nullNodeCropBottom && nullNodeCropBottom.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CropBottom = null;
+            if (parseNode.GetChildNode("crop_left") is { } nullNodeCropLeft && nullNodeCropLeft.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CropLeft = null;
+            if (parseNode.GetChildNode("crop_right") is { } nullNodeCropRight && nullNodeCropRight.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CropRight = null;
+            if (parseNode.GetChildNode("crop_top") is { } nullNodeCropTop && nullNodeCropTop.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CropTop = null;
+            if (parseNode.GetChildNode("flip_x") is { } nullNodeFlipX && nullNodeFlipX.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FlipX = null;
+            if (parseNode.GetChildNode("flip_y") is { } nullNodeFlipY && nullNodeFlipY.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FlipY = null;
+            if (parseNode.GetChildNode("pivot_x") is { } nullNodePivotX && nullNodePivotX.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PivotX = null;
+            if (parseNode.GetChildNode("pivot_y") is { } nullNodePivotY && nullNodePivotY.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PivotY = null;
+            if (parseNode.GetChildNode("scale_x") is { } nullNodeScaleX && nullNodeScaleX.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ScaleX = null;
+            if (parseNode.GetChildNode("scale_y") is { } nullNodeScaleY && nullNodeScaleY.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ScaleY = null;
+            if (parseNode.GetChildNode("skew_x") is { } nullNodeSkewX && nullNodeSkewX.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SkewX = null;
+            if (parseNode.GetChildNode("skew_y") is { } nullNodeSkewY && nullNodeSkewY.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SkewY = null;
+            if (parseNode.GetChildNode("x_relative") is { } nullNodeXRelative && nullNodeXRelative.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) XRelative = null;
+            if (parseNode.GetChildNode("y_relative") is { } nullNodeYRelative && nullNodeYRelative.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) YRelative = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The crop_bottom property</summary>
-        public double? CropBottom { get; set; }
+        public double? CropBottom { get => _explicitNullValueCropBottom; set { _explicitNullValueCropBottom = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("crop_bottom"); else _explicitNullProperties?.Remove("crop_bottom"); } }
+        private double? _explicitNullValueCropBottom = default!;
         /// <summary>The crop_left property</summary>
-        public double? CropLeft { get; set; }
+        public double? CropLeft { get => _explicitNullValueCropLeft; set { _explicitNullValueCropLeft = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("crop_left"); else _explicitNullProperties?.Remove("crop_left"); } }
+        private double? _explicitNullValueCropLeft = default!;
         /// <summary>The crop_right property</summary>
-        public double? CropRight { get; set; }
+        public double? CropRight { get => _explicitNullValueCropRight; set { _explicitNullValueCropRight = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("crop_right"); else _explicitNullProperties?.Remove("crop_right"); } }
+        private double? _explicitNullValueCropRight = default!;
         /// <summary>The crop_top property</summary>
-        public double? CropTop { get; set; }
+        public double? CropTop { get => _explicitNullValueCropTop; set { _explicitNullValueCropTop = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("crop_top"); else _explicitNullProperties?.Remove("crop_top"); } }
+        private double? _explicitNullValueCropTop = default!;
         /// <summary>The flip_x property</summary>
-        public bool? FlipX { get; set; }
+        public bool? FlipX { get => _explicitNullValueFlipX; set { _explicitNullValueFlipX = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("flip_x"); else _explicitNullProperties?.Remove("flip_x"); } }
+        private bool? _explicitNullValueFlipX = default!;
         /// <summary>The flip_y property</summary>
-        public bool? FlipY { get; set; }
+        public bool? FlipY { get => _explicitNullValueFlipY; set { _explicitNullValueFlipY = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("flip_y"); else _explicitNullProperties?.Remove("flip_y"); } }
+        private bool? _explicitNullValueFlipY = default!;
         /// <summary>The pivot_x property</summary>
-        public double? PivotX { get; set; }
+        public double? PivotX { get => _explicitNullValuePivotX; set { _explicitNullValuePivotX = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pivot_x"); else _explicitNullProperties?.Remove("pivot_x"); } }
+        private double? _explicitNullValuePivotX = default!;
         /// <summary>The pivot_y property</summary>
-        public double? PivotY { get; set; }
+        public double? PivotY { get => _explicitNullValuePivotY; set { _explicitNullValuePivotY = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pivot_y"); else _explicitNullProperties?.Remove("pivot_y"); } }
+        private double? _explicitNullValuePivotY = default!;
         /// <summary>The scale_x property</summary>
-        public double? ScaleX { get; set; }
+        public double? ScaleX { get => _explicitNullValueScaleX; set { _explicitNullValueScaleX = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scale_x"); else _explicitNullProperties?.Remove("scale_x"); } }
+        private double? _explicitNullValueScaleX = default!;
         /// <summary>The scale_y property</summary>
-        public double? ScaleY { get; set; }
+        public double? ScaleY { get => _explicitNullValueScaleY; set { _explicitNullValueScaleY = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scale_y"); else _explicitNullProperties?.Remove("scale_y"); } }
+        private double? _explicitNullValueScaleY = default!;
         /// <summary>The skew_x property</summary>
-        public double? SkewX { get; set; }
+        public double? SkewX { get => _explicitNullValueSkewX; set { _explicitNullValueSkewX = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("skew_x"); else _explicitNullProperties?.Remove("skew_x"); } }
+        private double? _explicitNullValueSkewX = default!;
         /// <summary>The skew_y property</summary>
-        public double? SkewY { get; set; }
+        public double? SkewY { get => _explicitNullValueSkewY; set { _explicitNullValueSkewY = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("skew_y"); else _explicitNullProperties?.Remove("skew_y"); } }
+        private double? _explicitNullValueSkewY = default!;
         /// <summary>The x_relative property</summary>
-        public double? XRelative { get; set; }
+        public double? XRelative { get => _explicitNullValueXRelative; set { _explicitNullValueXRelative = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("x_relative"); else _explicitNullProperties?.Remove("x_relative"); } }
+        private double? _explicitNullValueXRelative = default!;
         /// <summary>The y_relative property</summary>
-        public double? YRelative { get; set; }
+        public double? YRelative { get => _explicitNullValueYRelative; set { _explicitNullValueYRelative = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("y_relative"); else _explicitNullProperties?.Remove("y_relative"); } }
+        private double? _explicitNullValueYRelative = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.CanvasPlacement"/> and sets the default values.
         /// </summary>
@@ -72,7 +107,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.CanvasPlacement CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.CanvasPlacement();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.CanvasPlacement(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -119,6 +154,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteDoubleValue("skew_y", SkewY);
             writer.WriteDoubleValue("x_relative", XRelative);
             writer.WriteDoubleValue("y_relative", YRelative);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

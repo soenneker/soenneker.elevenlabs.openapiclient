@@ -11,27 +11,42 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class RagChunkMetadata : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("chunk_id") is { } nullNodeChunkId && nullNodeChunkId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ChunkId = null;
+            if (parseNode.GetChildNode("document_id") is { } nullNodeDocumentId && nullNodeDocumentId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DocumentId = null;
+            if (parseNode.GetChildNode("vector_distance") is { } nullNodeVectorDistance && nullNodeVectorDistance.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VectorDistance = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The chunk_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ChunkId { get; set; }
+        public string? ChunkId { get => _explicitNullValueChunkId; set { _explicitNullValueChunkId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("chunk_id"); else _explicitNullProperties?.Remove("chunk_id"); } }
+        private string? _explicitNullValueChunkId = default!;
 #nullable restore
 #else
-        public string ChunkId { get; set; }
+        public string ChunkId { get => _explicitNullValueChunkId; set { _explicitNullValueChunkId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("chunk_id"); else _explicitNullProperties?.Remove("chunk_id"); } }
+        private string _explicitNullValueChunkId = default!;
 #endif
         /// <summary>The document_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DocumentId { get; set; }
+        public string? DocumentId { get => _explicitNullValueDocumentId; set { _explicitNullValueDocumentId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("document_id"); else _explicitNullProperties?.Remove("document_id"); } }
+        private string? _explicitNullValueDocumentId = default!;
 #nullable restore
 #else
-        public string DocumentId { get; set; }
+        public string DocumentId { get => _explicitNullValueDocumentId; set { _explicitNullValueDocumentId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("document_id"); else _explicitNullProperties?.Remove("document_id"); } }
+        private string _explicitNullValueDocumentId = default!;
 #endif
         /// <summary>The vector_distance property</summary>
-        public double? VectorDistance { get; set; }
+        public double? VectorDistance { get => _explicitNullValueVectorDistance; set { _explicitNullValueVectorDistance = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("vector_distance"); else _explicitNullProperties?.Remove("vector_distance"); } }
+        private double? _explicitNullValueVectorDistance = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.RagChunkMetadata"/> and sets the default values.
         /// </summary>
@@ -47,7 +62,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.RagChunkMetadata CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.RagChunkMetadata();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.RagChunkMetadata(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -72,6 +87,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteStringValue("chunk_id", ChunkId);
             writer.WriteStringValue("document_id", DocumentId);
             writer.WriteDoubleValue("vector_distance", VectorDistance);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

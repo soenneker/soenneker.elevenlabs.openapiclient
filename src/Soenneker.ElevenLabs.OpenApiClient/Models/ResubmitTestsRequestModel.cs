@@ -11,40 +11,59 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ResubmitTestsRequestModel : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("agent_config_override") is { } nullNodeAgentConfigOverride && nullNodeAgentConfigOverride.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AgentConfigOverride = null;
+            if (parseNode.GetChildNode("agent_id") is { } nullNodeAgentId && nullNodeAgentId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AgentId = null;
+            if (parseNode.GetChildNode("branch_id") is { } nullNodeBranchId && nullNodeBranchId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BranchId = null;
+            if (parseNode.GetChildNode("test_run_ids") is { } nullNodeTestRunIds && nullNodeTestRunIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TestRunIds = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Configuration overrides to use for testing. If not provided, the agent&apos;s default configuration will be used.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AdhocAgentConfigOverrideForTestRequestModel? AgentConfigOverride { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AdhocAgentConfigOverrideForTestRequestModel? AgentConfigOverride { get => _explicitNullValueAgentConfigOverride; set { _explicitNullValueAgentConfigOverride = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agent_config_override"); else _explicitNullProperties?.Remove("agent_config_override"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.AdhocAgentConfigOverrideForTestRequestModel? _explicitNullValueAgentConfigOverride = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AdhocAgentConfigOverrideForTestRequestModel AgentConfigOverride { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AdhocAgentConfigOverrideForTestRequestModel AgentConfigOverride { get => _explicitNullValueAgentConfigOverride; set { _explicitNullValueAgentConfigOverride = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agent_config_override"); else _explicitNullProperties?.Remove("agent_config_override"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.AdhocAgentConfigOverrideForTestRequestModel _explicitNullValueAgentConfigOverride = default!;
 #endif
         /// <summary>Agent ID to resubmit tests for</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AgentId { get; set; }
+        public string? AgentId { get => _explicitNullValueAgentId; set { _explicitNullValueAgentId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agent_id"); else _explicitNullProperties?.Remove("agent_id"); } }
+        private string? _explicitNullValueAgentId = default!;
 #nullable restore
 #else
-        public string AgentId { get; set; }
+        public string AgentId { get => _explicitNullValueAgentId; set { _explicitNullValueAgentId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agent_id"); else _explicitNullProperties?.Remove("agent_id"); } }
+        private string _explicitNullValueAgentId = default!;
 #endif
         /// <summary>ID of the branch to run the tests on. If not provided, the tests will be run on the agent&apos;s main branch.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BranchId { get; set; }
+        public string? BranchId { get => _explicitNullValueBranchId; set { _explicitNullValueBranchId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("branch_id"); else _explicitNullProperties?.Remove("branch_id"); } }
+        private string? _explicitNullValueBranchId = default!;
 #nullable restore
 #else
-        public string BranchId { get; set; }
+        public string BranchId { get => _explicitNullValueBranchId; set { _explicitNullValueBranchId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("branch_id"); else _explicitNullProperties?.Remove("branch_id"); } }
+        private string _explicitNullValueBranchId = default!;
 #endif
         /// <summary>List of test run IDs to resubmit</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? TestRunIds { get; set; }
+        public List<string>? TestRunIds { get => _explicitNullValueTestRunIds; set { _explicitNullValueTestRunIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("test_run_ids"); else _explicitNullProperties?.Remove("test_run_ids"); } }
+        private List<string>? _explicitNullValueTestRunIds = default!;
 #nullable restore
 #else
-        public List<string> TestRunIds { get; set; }
+        public List<string> TestRunIds { get => _explicitNullValueTestRunIds; set { _explicitNullValueTestRunIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("test_run_ids"); else _explicitNullProperties?.Remove("test_run_ids"); } }
+        private List<string> _explicitNullValueTestRunIds = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ResubmitTestsRequestModel"/> and sets the default values.
@@ -61,7 +80,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.ResubmitTestsRequestModel CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.ResubmitTestsRequestModel();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.ResubmitTestsRequestModel(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -88,6 +107,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteStringValue("agent_id", AgentId);
             writer.WriteStringValue("branch_id", BranchId);
             writer.WriteCollectionOfPrimitiveValues<string>("test_run_ids", TestRunIds);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

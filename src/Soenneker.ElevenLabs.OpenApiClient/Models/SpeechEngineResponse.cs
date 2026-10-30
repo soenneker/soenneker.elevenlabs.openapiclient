@@ -11,130 +11,184 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class SpeechEngineResponse : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("access_info") is { } nullNodeAccessInfo && nullNodeAccessInfo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccessInfo = null;
+            if (parseNode.GetChildNode("asr") is { } nullNodeAsr && nullNodeAsr.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Asr = null;
+            if (parseNode.GetChildNode("call_limits") is { } nullNodeCallLimits && nullNodeCallLimits.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CallLimits = null;
+            if (parseNode.GetChildNode("cascade_timeout_seconds") is { } nullNodeCascadeTimeoutSeconds && nullNodeCascadeTimeoutSeconds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CascadeTimeoutSeconds = null;
+            if (parseNode.GetChildNode("conversation") is { } nullNodeConversation && nullNodeConversation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Conversation = null;
+            if (parseNode.GetChildNode("language") is { } nullNodeLanguage && nullNodeLanguage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Language = null;
+            if (parseNode.GetChildNode("metadata") is { } nullNodeMetadata && nullNodeMetadata.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Metadata = null;
+            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("overrides") is { } nullNodeOverrides && nullNodeOverrides.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Overrides = null;
+            if (parseNode.GetChildNode("privacy") is { } nullNodePrivacy && nullNodePrivacy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Privacy = null;
+            if (parseNode.GetChildNode("speech_engine") is { } nullNodeSpeechEngine && nullNodeSpeechEngine.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SpeechEngine = null;
+            if (parseNode.GetChildNode("speech_engine_id") is { } nullNodeSpeechEngineId && nullNodeSpeechEngineId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SpeechEngineId = null;
+            if (parseNode.GetChildNode("tags") is { } nullNodeTags && nullNodeTags.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Tags = null;
+            if (parseNode.GetChildNode("tts") is { } nullNodeTts && nullNodeTts.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Tts = null;
+            if (parseNode.GetChildNode("turn") is { } nullNodeTurn && nullNodeTurn.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Turn = null;
+            if (parseNode.GetChildNode("vad") is { } nullNodeVad && nullNodeVad.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Vad = null;
+        }
+
         /// <summary>The access information of the speech engine for the user</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceAccessInfo? AccessInfo { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceAccessInfo? AccessInfo { get => _explicitNullValueAccessInfo; set { _explicitNullValueAccessInfo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("access_info"); else _explicitNullProperties?.Remove("access_info"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceAccessInfo? _explicitNullValueAccessInfo = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceAccessInfo AccessInfo { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceAccessInfo AccessInfo { get => _explicitNullValueAccessInfo; set { _explicitNullValueAccessInfo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("access_info"); else _explicitNullProperties?.Remove("access_info"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceAccessInfo _explicitNullValueAccessInfo = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The asr property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AsrConversationalConfig? Asr { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AsrConversationalConfig? Asr { get => _explicitNullValueAsr; set { _explicitNullValueAsr = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("asr"); else _explicitNullProperties?.Remove("asr"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.AsrConversationalConfig? _explicitNullValueAsr = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AsrConversationalConfig Asr { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AsrConversationalConfig Asr { get => _explicitNullValueAsr; set { _explicitNullValueAsr = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("asr"); else _explicitNullProperties?.Remove("asr"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.AsrConversationalConfig _explicitNullValueAsr = default!;
 #endif
         /// <summary>Concurrency and daily conversation limits for this speech engine</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentCallLimits? CallLimits { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentCallLimits? CallLimits { get => _explicitNullValueCallLimits; set { _explicitNullValueCallLimits = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("call_limits"); else _explicitNullProperties?.Remove("call_limits"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentCallLimits? _explicitNullValueCallLimits = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentCallLimits CallLimits { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentCallLimits CallLimits { get => _explicitNullValueCallLimits; set { _explicitNullValueCallLimits = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("call_limits"); else _explicitNullProperties?.Remove("call_limits"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentCallLimits _explicitNullValueCallLimits = default!;
 #endif
         /// <summary>Time in seconds to wait for the upstream speech engine endpoint to respond before the attempt is abandoned and retried. Must be between 2 and 15 seconds.</summary>
-        public double? CascadeTimeoutSeconds { get; set; }
+        public double? CascadeTimeoutSeconds { get => _explicitNullValueCascadeTimeoutSeconds; set { _explicitNullValueCascadeTimeoutSeconds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cascade_timeout_seconds"); else _explicitNullProperties?.Remove("cascade_timeout_seconds"); } }
+        private double? _explicitNullValueCascadeTimeoutSeconds = default!;
         /// <summary>The conversation property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationConfigOutput? Conversation { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationConfigOutput? Conversation { get => _explicitNullValueConversation; set { _explicitNullValueConversation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conversation"); else _explicitNullProperties?.Remove("conversation"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationConfigOutput? _explicitNullValueConversation = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationConfigOutput Conversation { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationConfigOutput Conversation { get => _explicitNullValueConversation; set { _explicitNullValueConversation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conversation"); else _explicitNullProperties?.Remove("conversation"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationConfigOutput _explicitNullValueConversation = default!;
 #endif
         /// <summary>ISO language code used by the speech engine (e.g. &apos;en&apos;)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Language { get; set; }
+        public string? Language { get => _explicitNullValueLanguage; set { _explicitNullValueLanguage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("language"); else _explicitNullProperties?.Remove("language"); } }
+        private string? _explicitNullValueLanguage = default!;
 #nullable restore
 #else
-        public string Language { get; set; }
+        public string Language { get => _explicitNullValueLanguage; set { _explicitNullValueLanguage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("language"); else _explicitNullProperties?.Remove("language"); } }
+        private string _explicitNullValueLanguage = default!;
 #endif
         /// <summary>The metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentMetadataDbModel? Metadata { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentMetadataDbModel? Metadata { get => _explicitNullValueMetadata; set { _explicitNullValueMetadata = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metadata"); else _explicitNullProperties?.Remove("metadata"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentMetadataDbModel? _explicitNullValueMetadata = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentMetadataDbModel Metadata { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentMetadataDbModel Metadata { get => _explicitNullValueMetadata; set { _explicitNullValueMetadata = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metadata"); else _explicitNullProperties?.Remove("metadata"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentMetadataDbModel _explicitNullValueMetadata = default!;
 #endif
         /// <summary>Human-readable name for the speech engine</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get; set; }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string _explicitNullValueName = default!;
 #endif
         /// <summary>Override settings the client may set during conversation initiation</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechEngineConversationInitiationClientDataConfig? Overrides { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechEngineConversationInitiationClientDataConfig? Overrides { get => _explicitNullValueOverrides; set { _explicitNullValueOverrides = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("overrides"); else _explicitNullProperties?.Remove("overrides"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechEngineConversationInitiationClientDataConfig? _explicitNullValueOverrides = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechEngineConversationInitiationClientDataConfig Overrides { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechEngineConversationInitiationClientDataConfig Overrides { get => _explicitNullValueOverrides; set { _explicitNullValueOverrides = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("overrides"); else _explicitNullProperties?.Remove("overrides"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechEngineConversationInitiationClientDataConfig _explicitNullValueOverrides = default!;
 #endif
         /// <summary>The privacy property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PrivacyConfigOutput? Privacy { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PrivacyConfigOutput? Privacy { get => _explicitNullValuePrivacy; set { _explicitNullValuePrivacy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("privacy"); else _explicitNullProperties?.Remove("privacy"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.PrivacyConfigOutput? _explicitNullValuePrivacy = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PrivacyConfigOutput Privacy { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PrivacyConfigOutput Privacy { get => _explicitNullValuePrivacy; set { _explicitNullValuePrivacy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("privacy"); else _explicitNullProperties?.Remove("privacy"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.PrivacyConfigOutput _explicitNullValuePrivacy = default!;
 #endif
         /// <summary>WebSocket connection settings for the upstream transcript server</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechEngineConfig? SpeechEngine { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechEngineConfig? SpeechEngine { get => _explicitNullValueSpeechEngine; set { _explicitNullValueSpeechEngine = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("speech_engine"); else _explicitNullProperties?.Remove("speech_engine"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechEngineConfig? _explicitNullValueSpeechEngine = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechEngineConfig SpeechEngine { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechEngineConfig SpeechEngine { get => _explicitNullValueSpeechEngine; set { _explicitNullValueSpeechEngine = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("speech_engine"); else _explicitNullProperties?.Remove("speech_engine"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechEngineConfig _explicitNullValueSpeechEngine = default!;
 #endif
         /// <summary>The speech engine resource ID</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SpeechEngineId { get; set; }
+        public string? SpeechEngineId { get => _explicitNullValueSpeechEngineId; set { _explicitNullValueSpeechEngineId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("speech_engine_id"); else _explicitNullProperties?.Remove("speech_engine_id"); } }
+        private string? _explicitNullValueSpeechEngineId = default!;
 #nullable restore
 #else
-        public string SpeechEngineId { get; set; }
+        public string SpeechEngineId { get => _explicitNullValueSpeechEngineId; set { _explicitNullValueSpeechEngineId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("speech_engine_id"); else _explicitNullProperties?.Remove("speech_engine_id"); } }
+        private string _explicitNullValueSpeechEngineId = default!;
 #endif
         /// <summary>Arbitrary tags for categorization and filtering</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Tags { get; set; }
+        public List<string>? Tags { get => _explicitNullValueTags; set { _explicitNullValueTags = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tags"); else _explicitNullProperties?.Remove("tags"); } }
+        private List<string>? _explicitNullValueTags = default!;
 #nullable restore
 #else
-        public List<string> Tags { get; set; }
+        public List<string> Tags { get => _explicitNullValueTags; set { _explicitNullValueTags = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tags"); else _explicitNullProperties?.Remove("tags"); } }
+        private List<string> _explicitNullValueTags = default!;
 #endif
         /// <summary>The tts property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.TtsConversationalConfigOutput? Tts { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.TtsConversationalConfigOutput? Tts { get => _explicitNullValueTts; set { _explicitNullValueTts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tts"); else _explicitNullProperties?.Remove("tts"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.TtsConversationalConfigOutput? _explicitNullValueTts = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.TtsConversationalConfigOutput Tts { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.TtsConversationalConfigOutput Tts { get => _explicitNullValueTts; set { _explicitNullValueTts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tts"); else _explicitNullProperties?.Remove("tts"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.TtsConversationalConfigOutput _explicitNullValueTts = default!;
 #endif
         /// <summary>Turn detection configuration</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BaseTurnConfig? Turn { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BaseTurnConfig? Turn { get => _explicitNullValueTurn; set { _explicitNullValueTurn = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("turn"); else _explicitNullProperties?.Remove("turn"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.BaseTurnConfig? _explicitNullValueTurn = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BaseTurnConfig Turn { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BaseTurnConfig Turn { get => _explicitNullValueTurn; set { _explicitNullValueTurn = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("turn"); else _explicitNullProperties?.Remove("turn"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.BaseTurnConfig _explicitNullValueTurn = default!;
 #endif
         /// <summary>The vad property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.VadConfig? Vad { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.VadConfig? Vad { get => _explicitNullValueVad; set { _explicitNullValueVad = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("vad"); else _explicitNullProperties?.Remove("vad"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.VadConfig? _explicitNullValueVad = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.VadConfig Vad { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.VadConfig Vad { get => _explicitNullValueVad; set { _explicitNullValueVad = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("vad"); else _explicitNullProperties?.Remove("vad"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.VadConfig _explicitNullValueVad = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechEngineResponse"/> and sets the default values.
@@ -151,7 +205,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechEngineResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechEngineResponse();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechEngineResponse(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -202,6 +256,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TtsConversationalConfigOutput>("tts", Tts);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BaseTurnConfig>("turn", Turn);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.VadConfig>("vad", Vad);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

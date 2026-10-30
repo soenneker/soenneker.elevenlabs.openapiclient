@@ -11,61 +11,100 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class KbExternalSyncJob : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("completed_at") is { } nullNodeCompletedAt && nullNodeCompletedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CompletedAt = null;
+            if (parseNode.GetChildNode("created_at") is { } nullNodeCreatedAt && nullNodeCreatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedAt = null;
+            if (parseNode.GetChildNode("error_message") is { } nullNodeErrorMessage && nullNodeErrorMessage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ErrorMessage = null;
+            if (parseNode.GetChildNode("folder_id") is { } nullNodeFolderId && nullNodeFolderId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FolderId = null;
+            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("integration_connection_id") is { } nullNodeIntegrationConnectionId && nullNodeIntegrationConnectionId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IntegrationConnectionId = null;
+            if (parseNode.GetChildNode("items_identified") is { } nullNodeItemsIdentified && nullNodeItemsIdentified.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ItemsIdentified = null;
+            if (parseNode.GetChildNode("items_processed") is { } nullNodeItemsProcessed && nullNodeItemsProcessed.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ItemsProcessed = null;
+            if (parseNode.GetChildNode("started_at") is { } nullNodeStartedAt && nullNodeStartedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StartedAt = null;
+            if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
+            if (parseNode.GetChildNode("sync_type") is { } nullNodeSyncType && nullNodeSyncType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SyncType = null;
+            if (parseNode.GetChildNode("triggered_by") is { } nullNodeTriggeredBy && nullNodeTriggeredBy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TriggeredBy = null;
+            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+            if (parseNode.GetChildNode("updated_at") is { } nullNodeUpdatedAt && nullNodeUpdatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UpdatedAt = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The completed_at property</summary>
-        public int? CompletedAt { get; set; }
+        public int? CompletedAt { get => _explicitNullValueCompletedAt; set { _explicitNullValueCompletedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("completed_at"); else _explicitNullProperties?.Remove("completed_at"); } }
+        private int? _explicitNullValueCompletedAt = default!;
         /// <summary>The created_at property</summary>
-        public int? CreatedAt { get; set; }
+        public int? CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_at"); else _explicitNullProperties?.Remove("created_at"); } }
+        private int? _explicitNullValueCreatedAt = default!;
         /// <summary>The error_message property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ErrorMessage { get; set; }
+        public string? ErrorMessage { get => _explicitNullValueErrorMessage; set { _explicitNullValueErrorMessage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("error_message"); else _explicitNullProperties?.Remove("error_message"); } }
+        private string? _explicitNullValueErrorMessage = default!;
 #nullable restore
 #else
-        public string ErrorMessage { get; set; }
+        public string ErrorMessage { get => _explicitNullValueErrorMessage; set { _explicitNullValueErrorMessage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("error_message"); else _explicitNullProperties?.Remove("error_message"); } }
+        private string _explicitNullValueErrorMessage = default!;
 #endif
         /// <summary>The folder_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FolderId { get; set; }
+        public string? FolderId { get => _explicitNullValueFolderId; set { _explicitNullValueFolderId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("folder_id"); else _explicitNullProperties?.Remove("folder_id"); } }
+        private string? _explicitNullValueFolderId = default!;
 #nullable restore
 #else
-        public string FolderId { get; set; }
+        public string FolderId { get => _explicitNullValueFolderId; set { _explicitNullValueFolderId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("folder_id"); else _explicitNullProperties?.Remove("folder_id"); } }
+        private string _explicitNullValueFolderId = default!;
 #endif
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get; set; }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string _explicitNullValueId = default!;
 #endif
         /// <summary>The integration_connection_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IntegrationConnectionId { get; set; }
+        public string? IntegrationConnectionId { get => _explicitNullValueIntegrationConnectionId; set { _explicitNullValueIntegrationConnectionId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("integration_connection_id"); else _explicitNullProperties?.Remove("integration_connection_id"); } }
+        private string? _explicitNullValueIntegrationConnectionId = default!;
 #nullable restore
 #else
-        public string IntegrationConnectionId { get; set; }
+        public string IntegrationConnectionId { get => _explicitNullValueIntegrationConnectionId; set { _explicitNullValueIntegrationConnectionId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("integration_connection_id"); else _explicitNullProperties?.Remove("integration_connection_id"); } }
+        private string _explicitNullValueIntegrationConnectionId = default!;
 #endif
         /// <summary>The items_identified property</summary>
-        public int? ItemsIdentified { get; set; }
+        public int? ItemsIdentified { get => _explicitNullValueItemsIdentified; set { _explicitNullValueItemsIdentified = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("items_identified"); else _explicitNullProperties?.Remove("items_identified"); } }
+        private int? _explicitNullValueItemsIdentified = default!;
         /// <summary>The items_processed property</summary>
-        public int? ItemsProcessed { get; set; }
+        public int? ItemsProcessed { get => _explicitNullValueItemsProcessed; set { _explicitNullValueItemsProcessed = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("items_processed"); else _explicitNullProperties?.Remove("items_processed"); } }
+        private int? _explicitNullValueItemsProcessed = default!;
         /// <summary>The started_at property</summary>
-        public int? StartedAt { get; set; }
+        public int? StartedAt { get => _explicitNullValueStartedAt; set { _explicitNullValueStartedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("started_at"); else _explicitNullProperties?.Remove("started_at"); } }
+        private int? _explicitNullValueStartedAt = default!;
         /// <summary>The status property</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CrawlStatus? Status { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CrawlStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.CrawlStatus? _explicitNullValueStatus = default!;
         /// <summary>The sync_type property</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ExternalSyncJobType? SyncType { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ExternalSyncJobType? SyncType { get => _explicitNullValueSyncType; set { _explicitNullValueSyncType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sync_type"); else _explicitNullProperties?.Remove("sync_type"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ExternalSyncJobType? _explicitNullValueSyncType = default!;
         /// <summary>The triggered_by property</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ExternalSyncJobTrigger? TriggeredBy { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ExternalSyncJobTrigger? TriggeredBy { get => _explicitNullValueTriggeredBy; set { _explicitNullValueTriggeredBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("triggered_by"); else _explicitNullProperties?.Remove("triggered_by"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ExternalSyncJobTrigger? _explicitNullValueTriggeredBy = default!;
         /// <summary>The type property</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ExternalSyncProvider? Type { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ExternalSyncProvider? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ExternalSyncProvider? _explicitNullValueType = default!;
         /// <summary>The updated_at property</summary>
-        public int? UpdatedAt { get; set; }
+        public int? UpdatedAt { get => _explicitNullValueUpdatedAt; set { _explicitNullValueUpdatedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("updated_at"); else _explicitNullProperties?.Remove("updated_at"); } }
+        private int? _explicitNullValueUpdatedAt = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.KbExternalSyncJob"/> and sets the default values.
         /// </summary>
@@ -84,7 +123,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.KbExternalSyncJob CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.KbExternalSyncJob();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.KbExternalSyncJob(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -131,6 +170,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ExternalSyncJobTrigger>("triggered_by", TriggeredBy);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ExternalSyncProvider>("type", Type);
             writer.WriteIntValue("updated_at", UpdatedAt);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

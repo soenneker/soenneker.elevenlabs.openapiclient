@@ -11,40 +11,59 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ReferenceVideo : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("content_asset_id") is { } nullNodeContentAssetId && nullNodeContentAssetId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ContentAssetId = null;
+            if (parseNode.GetChildNode("generation_id") is { } nullNodeGenerationId && nullNodeGenerationId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GenerationId = null;
+            if (parseNode.GetChildNode("studio_clip") is { } nullNodeStudioClip && nullNodeStudioClip.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StudioClip = null;
+            if (parseNode.GetChildNode("template_node_id") is { } nullNodeTemplateNodeId && nullNodeTemplateNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TemplateNodeId = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The content_asset_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ContentAssetId { get; set; }
+        public string? ContentAssetId { get => _explicitNullValueContentAssetId; set { _explicitNullValueContentAssetId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("content_asset_id"); else _explicitNullProperties?.Remove("content_asset_id"); } }
+        private string? _explicitNullValueContentAssetId = default!;
 #nullable restore
 #else
-        public string ContentAssetId { get; set; }
+        public string ContentAssetId { get => _explicitNullValueContentAssetId; set { _explicitNullValueContentAssetId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("content_asset_id"); else _explicitNullProperties?.Remove("content_asset_id"); } }
+        private string _explicitNullValueContentAssetId = default!;
 #endif
         /// <summary>The generation_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? GenerationId { get; set; }
+        public string? GenerationId { get => _explicitNullValueGenerationId; set { _explicitNullValueGenerationId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("generation_id"); else _explicitNullProperties?.Remove("generation_id"); } }
+        private string? _explicitNullValueGenerationId = default!;
 #nullable restore
 #else
-        public string GenerationId { get; set; }
+        public string GenerationId { get => _explicitNullValueGenerationId; set { _explicitNullValueGenerationId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("generation_id"); else _explicitNullProperties?.Remove("generation_id"); } }
+        private string _explicitNullValueGenerationId = default!;
 #endif
         /// <summary>The studio_clip property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.StudioClipLocator? StudioClip { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.StudioClipLocator? StudioClip { get => _explicitNullValueStudioClip; set { _explicitNullValueStudioClip = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("studio_clip"); else _explicitNullProperties?.Remove("studio_clip"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.StudioClipLocator? _explicitNullValueStudioClip = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.StudioClipLocator StudioClip { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.StudioClipLocator StudioClip { get => _explicitNullValueStudioClip; set { _explicitNullValueStudioClip = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("studio_clip"); else _explicitNullProperties?.Remove("studio_clip"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.StudioClipLocator _explicitNullValueStudioClip = default!;
 #endif
         /// <summary>The template_node_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TemplateNodeId { get; set; }
+        public string? TemplateNodeId { get => _explicitNullValueTemplateNodeId; set { _explicitNullValueTemplateNodeId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("template_node_id"); else _explicitNullProperties?.Remove("template_node_id"); } }
+        private string? _explicitNullValueTemplateNodeId = default!;
 #nullable restore
 #else
-        public string TemplateNodeId { get; set; }
+        public string TemplateNodeId { get => _explicitNullValueTemplateNodeId; set { _explicitNullValueTemplateNodeId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("template_node_id"); else _explicitNullProperties?.Remove("template_node_id"); } }
+        private string _explicitNullValueTemplateNodeId = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ReferenceVideo"/> and sets the default values.
@@ -61,7 +80,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.ReferenceVideo CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.ReferenceVideo();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.ReferenceVideo(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -88,6 +107,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteStringValue("generation_id", GenerationId);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.StudioClipLocator>("studio_clip", StudioClip);
             writer.WriteStringValue("template_node_id", TemplateNodeId);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

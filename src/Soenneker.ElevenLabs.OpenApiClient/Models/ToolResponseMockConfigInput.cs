@@ -11,26 +11,41 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ToolResponseMockConfigInput : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("is_error") is { } nullNodeIsError && nullNodeIsError.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsError = null;
+            if (parseNode.GetChildNode("mock_result") is { } nullNodeMockResult && nullNodeMockResult.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MockResult = null;
+            if (parseNode.GetChildNode("parameter_conditions") is { } nullNodeParameterConditions && nullNodeParameterConditions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ParameterConditions = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>If true, the mock result is surfaced to the LLM as a tool error rather than a successful result.</summary>
-        public bool? IsError { get; set; }
+        public bool? IsError { get => _explicitNullValueIsError; set { _explicitNullValueIsError = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_error"); else _explicitNullProperties?.Remove("is_error"); } }
+        private bool? _explicitNullValueIsError = default!;
         /// <summary>The return value the LLM sees when this mock is active.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MockResult { get; set; }
+        public string? MockResult { get => _explicitNullValueMockResult; set { _explicitNullValueMockResult = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mock_result"); else _explicitNullProperties?.Remove("mock_result"); } }
+        private string? _explicitNullValueMockResult = default!;
 #nullable restore
 #else
-        public string MockResult { get; set; }
+        public string MockResult { get => _explicitNullValueMockResult; set { _explicitNullValueMockResult = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mock_result"); else _explicitNullProperties?.Remove("mock_result"); } }
+        private string _explicitNullValueMockResult = default!;
 #endif
         /// <summary>If the list is empty, the mock will always activate.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.UnitTestToolCallParameter>? ParameterConditions { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.UnitTestToolCallParameter>? ParameterConditions { get => _explicitNullValueParameterConditions; set { _explicitNullValueParameterConditions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("parameter_conditions"); else _explicitNullProperties?.Remove("parameter_conditions"); } }
+        private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.UnitTestToolCallParameter>? _explicitNullValueParameterConditions = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.UnitTestToolCallParameter> ParameterConditions { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.UnitTestToolCallParameter> ParameterConditions { get => _explicitNullValueParameterConditions; set { _explicitNullValueParameterConditions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("parameter_conditions"); else _explicitNullProperties?.Remove("parameter_conditions"); } }
+        private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.UnitTestToolCallParameter> _explicitNullValueParameterConditions = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolResponseMockConfigInput"/> and sets the default values.
@@ -48,7 +63,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolResponseMockConfigInput CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolResponseMockConfigInput();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolResponseMockConfigInput(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -73,6 +88,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteBoolValue("is_error", IsError);
             writer.WriteStringValue("mock_result", MockResult);
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.UnitTestToolCallParameter>("parameter_conditions", ParameterConditions);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

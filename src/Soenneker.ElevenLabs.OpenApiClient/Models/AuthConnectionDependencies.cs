@@ -12,32 +12,48 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AuthConnectionDependencies : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("integration_connections") is { } nullNodeIntegrationConnections && nullNodeIntegrationConnections.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IntegrationConnections = null;
+            if (parseNode.GetChildNode("mcp_servers") is { } nullNodeMcpServers && nullNodeMcpServers.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) McpServers = null;
+            if (parseNode.GetChildNode("tools") is { } nullNodeTools && nullNodeTools.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Tools = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The integration_connections property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.DependentIntegrationConnectionIdentifier>? IntegrationConnections { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.DependentIntegrationConnectionIdentifier>? IntegrationConnections { get => _explicitNullValueIntegrationConnections; set { _explicitNullValueIntegrationConnections = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("integration_connections"); else _explicitNullProperties?.Remove("integration_connections"); } }
+        private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.DependentIntegrationConnectionIdentifier>? _explicitNullValueIntegrationConnections = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.DependentIntegrationConnectionIdentifier> IntegrationConnections { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.DependentIntegrationConnectionIdentifier> IntegrationConnections { get => _explicitNullValueIntegrationConnections; set { _explicitNullValueIntegrationConnections = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("integration_connections"); else _explicitNullProperties?.Remove("integration_connections"); } }
+        private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.DependentIntegrationConnectionIdentifier> _explicitNullValueIntegrationConnections = default!;
 #endif
         /// <summary>The mcp_servers property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.AuthConnectionDependenciesMcpServersItem>? McpServers { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.AuthConnectionDependenciesMcpServersItem>? McpServers { get => _explicitNullValueMcpServers; set { _explicitNullValueMcpServers = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mcp_servers"); else _explicitNullProperties?.Remove("mcp_servers"); } }
+        private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.AuthConnectionDependenciesMcpServersItem>? _explicitNullValueMcpServers = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.AuthConnectionDependenciesMcpServersItem> McpServers { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.AuthConnectionDependenciesMcpServersItem> McpServers { get => _explicitNullValueMcpServers; set { _explicitNullValueMcpServers = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mcp_servers"); else _explicitNullProperties?.Remove("mcp_servers"); } }
+        private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.AuthConnectionDependenciesMcpServersItem> _explicitNullValueMcpServers = default!;
 #endif
         /// <summary>The tools property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.AuthConnectionDependenciesToolsItem>? Tools { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.AuthConnectionDependenciesToolsItem>? Tools { get => _explicitNullValueTools; set { _explicitNullValueTools = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tools"); else _explicitNullProperties?.Remove("tools"); } }
+        private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.AuthConnectionDependenciesToolsItem>? _explicitNullValueTools = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.AuthConnectionDependenciesToolsItem> Tools { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.AuthConnectionDependenciesToolsItem> Tools { get => _explicitNullValueTools; set { _explicitNullValueTools = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tools"); else _explicitNullProperties?.Remove("tools"); } }
+        private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.AuthConnectionDependenciesToolsItem> _explicitNullValueTools = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.AuthConnectionDependencies"/> and sets the default values.
@@ -54,7 +70,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.AuthConnectionDependencies CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.AuthConnectionDependencies();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.AuthConnectionDependencies(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -79,6 +95,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.DependentIntegrationConnectionIdentifier>("integration_connections", IntegrationConnections);
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.AuthConnectionDependenciesMcpServersItem>("mcp_servers", McpServers);
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.AuthConnectionDependenciesToolsItem>("tools", Tools);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

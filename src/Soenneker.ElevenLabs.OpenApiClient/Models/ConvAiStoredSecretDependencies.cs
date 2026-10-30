@@ -11,55 +11,83 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ConvAiStoredSecretDependencies : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("agents") is { } nullNodeAgents && nullNodeAgents.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Agents = null;
+            if (parseNode.GetChildNode("agents_has_more") is { } nullNodeAgentsHasMore && nullNodeAgentsHasMore.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AgentsHasMore = null;
+            if (parseNode.GetChildNode("mcp_servers") is { } nullNodeMcpServers && nullNodeMcpServers.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) McpServers = null;
+            if (parseNode.GetChildNode("others") is { } nullNodeOthers && nullNodeOthers.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Others = null;
+            if (parseNode.GetChildNode("phone_numbers") is { } nullNodePhoneNumbers && nullNodePhoneNumbers.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PhoneNumbers = null;
+            if (parseNode.GetChildNode("phone_numbers_has_more") is { } nullNodePhoneNumbersHasMore && nullNodePhoneNumbersHasMore.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PhoneNumbersHasMore = null;
+            if (parseNode.GetChildNode("tools") is { } nullNodeTools && nullNodeTools.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Tools = null;
+            if (parseNode.GetChildNode("tools_has_more") is { } nullNodeToolsHasMore && nullNodeToolsHasMore.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ToolsHasMore = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The agents property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConvAiStoredSecretDependenciesAgentsItem>? Agents { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConvAiStoredSecretDependenciesAgentsItem>? Agents { get => _explicitNullValueAgents; set { _explicitNullValueAgents = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agents"); else _explicitNullProperties?.Remove("agents"); } }
+        private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConvAiStoredSecretDependenciesAgentsItem>? _explicitNullValueAgents = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConvAiStoredSecretDependenciesAgentsItem> Agents { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConvAiStoredSecretDependenciesAgentsItem> Agents { get => _explicitNullValueAgents; set { _explicitNullValueAgents = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agents"); else _explicitNullProperties?.Remove("agents"); } }
+        private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConvAiStoredSecretDependenciesAgentsItem> _explicitNullValueAgents = default!;
 #endif
         /// <summary>Whether there are more agent dependents beyond the returned preview</summary>
-        public bool? AgentsHasMore { get; set; }
+        public bool? AgentsHasMore { get => _explicitNullValueAgentsHasMore; set { _explicitNullValueAgentsHasMore = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agents_has_more"); else _explicitNullProperties?.Remove("agents_has_more"); } }
+        private bool? _explicitNullValueAgentsHasMore = default!;
         /// <summary>The mcp_servers property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConvAiStoredSecretDependenciesMcpServersItem>? McpServers { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConvAiStoredSecretDependenciesMcpServersItem>? McpServers { get => _explicitNullValueMcpServers; set { _explicitNullValueMcpServers = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mcp_servers"); else _explicitNullProperties?.Remove("mcp_servers"); } }
+        private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConvAiStoredSecretDependenciesMcpServersItem>? _explicitNullValueMcpServers = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConvAiStoredSecretDependenciesMcpServersItem> McpServers { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConvAiStoredSecretDependenciesMcpServersItem> McpServers { get => _explicitNullValueMcpServers; set { _explicitNullValueMcpServers = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mcp_servers"); else _explicitNullProperties?.Remove("mcp_servers"); } }
+        private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConvAiStoredSecretDependenciesMcpServersItem> _explicitNullValueMcpServers = default!;
 #endif
         /// <summary>The others property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.SecretDependencyType?>? Others { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.SecretDependencyType?>? Others { get => _explicitNullValueOthers; set { _explicitNullValueOthers = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("others"); else _explicitNullProperties?.Remove("others"); } }
+        private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.SecretDependencyType?>? _explicitNullValueOthers = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.SecretDependencyType?> Others { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.SecretDependencyType?> Others { get => _explicitNullValueOthers; set { _explicitNullValueOthers = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("others"); else _explicitNullProperties?.Remove("others"); } }
+        private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.SecretDependencyType?> _explicitNullValueOthers = default!;
 #endif
         /// <summary>The phone_numbers property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.DependentPhoneNumberIdentifier>? PhoneNumbers { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.DependentPhoneNumberIdentifier>? PhoneNumbers { get => _explicitNullValuePhoneNumbers; set { _explicitNullValuePhoneNumbers = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("phone_numbers"); else _explicitNullProperties?.Remove("phone_numbers"); } }
+        private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.DependentPhoneNumberIdentifier>? _explicitNullValuePhoneNumbers = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.DependentPhoneNumberIdentifier> PhoneNumbers { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.DependentPhoneNumberIdentifier> PhoneNumbers { get => _explicitNullValuePhoneNumbers; set { _explicitNullValuePhoneNumbers = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("phone_numbers"); else _explicitNullProperties?.Remove("phone_numbers"); } }
+        private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.DependentPhoneNumberIdentifier> _explicitNullValuePhoneNumbers = default!;
 #endif
         /// <summary>Whether there are more phone number dependents beyond the returned preview</summary>
-        public bool? PhoneNumbersHasMore { get; set; }
+        public bool? PhoneNumbersHasMore { get => _explicitNullValuePhoneNumbersHasMore; set { _explicitNullValuePhoneNumbersHasMore = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("phone_numbers_has_more"); else _explicitNullProperties?.Remove("phone_numbers_has_more"); } }
+        private bool? _explicitNullValuePhoneNumbersHasMore = default!;
         /// <summary>The tools property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConvAiStoredSecretDependenciesToolsItem>? Tools { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConvAiStoredSecretDependenciesToolsItem>? Tools { get => _explicitNullValueTools; set { _explicitNullValueTools = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tools"); else _explicitNullProperties?.Remove("tools"); } }
+        private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConvAiStoredSecretDependenciesToolsItem>? _explicitNullValueTools = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConvAiStoredSecretDependenciesToolsItem> Tools { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConvAiStoredSecretDependenciesToolsItem> Tools { get => _explicitNullValueTools; set { _explicitNullValueTools = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tools"); else _explicitNullProperties?.Remove("tools"); } }
+        private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConvAiStoredSecretDependenciesToolsItem> _explicitNullValueTools = default!;
 #endif
         /// <summary>Whether there are more tool dependents beyond the returned preview</summary>
-        public bool? ToolsHasMore { get; set; }
+        public bool? ToolsHasMore { get => _explicitNullValueToolsHasMore; set { _explicitNullValueToolsHasMore = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tools_has_more"); else _explicitNullProperties?.Remove("tools_has_more"); } }
+        private bool? _explicitNullValueToolsHasMore = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ConvAiStoredSecretDependencies"/> and sets the default values.
         /// </summary>
@@ -78,7 +106,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.ConvAiStoredSecretDependencies CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.ConvAiStoredSecretDependencies();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.ConvAiStoredSecretDependencies(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -113,6 +141,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteBoolValue("phone_numbers_has_more", PhoneNumbersHasMore);
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConvAiStoredSecretDependenciesToolsItem>("tools", Tools);
             writer.WriteBoolValue("tools_has_more", ToolsHasMore);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

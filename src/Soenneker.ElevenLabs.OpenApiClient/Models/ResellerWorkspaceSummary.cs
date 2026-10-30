@@ -11,48 +11,75 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ResellerWorkspaceSummary : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("billing_tier") is { } nullNodeBillingTier && nullNodeBillingTier.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BillingTier = null;
+            if (parseNode.GetChildNode("business_name") is { } nullNodeBusinessName && nullNodeBusinessName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BusinessName = null;
+            if (parseNode.GetChildNode("calls_last_30_days") is { } nullNodeCallsLast30Days && nullNodeCallsLast30Days.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CallsLast30Days = null;
+            if (parseNode.GetChildNode("created_at_unix") is { } nullNodeCreatedAtUnix && nullNodeCreatedAtUnix.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedAtUnix = null;
+            if (parseNode.GetChildNode("has_payment_issue") is { } nullNodeHasPaymentIssue && nullNodeHasPaymentIssue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HasPaymentIssue = null;
+            if (parseNode.GetChildNode("receptionist_count") is { } nullNodeReceptionistCount && nullNodeReceptionistCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReceptionistCount = null;
+            if (parseNode.GetChildNode("subscription") is { } nullNodeSubscription && nullNodeSubscription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Subscription = null;
+            if (parseNode.GetChildNode("workspace_id") is { } nullNodeWorkspaceId && nullNodeWorkspaceId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WorkspaceId = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The billing_tier property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BillingTier { get; set; }
+        public string? BillingTier { get => _explicitNullValueBillingTier; set { _explicitNullValueBillingTier = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("billing_tier"); else _explicitNullProperties?.Remove("billing_tier"); } }
+        private string? _explicitNullValueBillingTier = default!;
 #nullable restore
 #else
-        public string BillingTier { get; set; }
+        public string BillingTier { get => _explicitNullValueBillingTier; set { _explicitNullValueBillingTier = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("billing_tier"); else _explicitNullProperties?.Remove("billing_tier"); } }
+        private string _explicitNullValueBillingTier = default!;
 #endif
         /// <summary>The business_name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BusinessName { get; set; }
+        public string? BusinessName { get => _explicitNullValueBusinessName; set { _explicitNullValueBusinessName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("business_name"); else _explicitNullProperties?.Remove("business_name"); } }
+        private string? _explicitNullValueBusinessName = default!;
 #nullable restore
 #else
-        public string BusinessName { get; set; }
+        public string BusinessName { get => _explicitNullValueBusinessName; set { _explicitNullValueBusinessName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("business_name"); else _explicitNullProperties?.Remove("business_name"); } }
+        private string _explicitNullValueBusinessName = default!;
 #endif
         /// <summary>The calls_last_30_days property</summary>
-        public int? CallsLast30Days { get; set; }
+        public int? CallsLast30Days { get => _explicitNullValueCallsLast30Days; set { _explicitNullValueCallsLast30Days = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("calls_last_30_days"); else _explicitNullProperties?.Remove("calls_last_30_days"); } }
+        private int? _explicitNullValueCallsLast30Days = default!;
         /// <summary>The created_at_unix property</summary>
-        public int? CreatedAtUnix { get; set; }
+        public int? CreatedAtUnix { get => _explicitNullValueCreatedAtUnix; set { _explicitNullValueCreatedAtUnix = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_at_unix"); else _explicitNullProperties?.Remove("created_at_unix"); } }
+        private int? _explicitNullValueCreatedAtUnix = default!;
         /// <summary>A charge for this workspace is unpaid. Assigning or changing a tier is refused until it clears, so surface it rather than letting it fail.</summary>
-        public bool? HasPaymentIssue { get; set; }
+        public bool? HasPaymentIssue { get => _explicitNullValueHasPaymentIssue; set { _explicitNullValueHasPaymentIssue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("has_payment_issue"); else _explicitNullProperties?.Remove("has_payment_issue"); } }
+        private bool? _explicitNullValueHasPaymentIssue = default!;
         /// <summary>The receptionist_count property</summary>
-        public int? ReceptionistCount { get; set; }
+        public int? ReceptionistCount { get => _explicitNullValueReceptionistCount; set { _explicitNullValueReceptionistCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("receptionist_count"); else _explicitNullProperties?.Remove("receptionist_count"); } }
+        private int? _explicitNullValueReceptionistCount = default!;
         /// <summary>The reseller-managed subscription, when this workspace has one. None means nothing is sold here yet and a tier can be assigned.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ResellerWorkspaceSubscription? Subscription { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ResellerWorkspaceSubscription? Subscription { get => _explicitNullValueSubscription; set { _explicitNullValueSubscription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subscription"); else _explicitNullProperties?.Remove("subscription"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ResellerWorkspaceSubscription? _explicitNullValueSubscription = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ResellerWorkspaceSubscription Subscription { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ResellerWorkspaceSubscription Subscription { get => _explicitNullValueSubscription; set { _explicitNullValueSubscription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subscription"); else _explicitNullProperties?.Remove("subscription"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ResellerWorkspaceSubscription _explicitNullValueSubscription = default!;
 #endif
         /// <summary>The workspace_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? WorkspaceId { get; set; }
+        public string? WorkspaceId { get => _explicitNullValueWorkspaceId; set { _explicitNullValueWorkspaceId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workspace_id"); else _explicitNullProperties?.Remove("workspace_id"); } }
+        private string? _explicitNullValueWorkspaceId = default!;
 #nullable restore
 #else
-        public string WorkspaceId { get; set; }
+        public string WorkspaceId { get => _explicitNullValueWorkspaceId; set { _explicitNullValueWorkspaceId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workspace_id"); else _explicitNullProperties?.Remove("workspace_id"); } }
+        private string _explicitNullValueWorkspaceId = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ResellerWorkspaceSummary"/> and sets the default values.
@@ -70,7 +97,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.ResellerWorkspaceSummary CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.ResellerWorkspaceSummary();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.ResellerWorkspaceSummary(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -105,6 +132,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteIntValue("receptionist_count", ReceptionistCount);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ResellerWorkspaceSubscription>("subscription", Subscription);
             writer.WriteStringValue("workspace_id", WorkspaceId);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

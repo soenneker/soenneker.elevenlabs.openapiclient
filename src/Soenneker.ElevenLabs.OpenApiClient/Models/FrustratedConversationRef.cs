@@ -11,33 +11,54 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class FrustratedConversationRef : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("agent_id") is { } nullNodeAgentId && nullNodeAgentId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AgentId = null;
+            if (parseNode.GetChildNode("conversation_id") is { } nullNodeConversationId && nullNodeConversationId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConversationId = null;
+            if (parseNode.GetChildNode("overall_frustration_score") is { } nullNodeOverallFrustrationScore && nullNodeOverallFrustrationScore.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OverallFrustrationScore = null;
+            if (parseNode.GetChildNode("overall_label") is { } nullNodeOverallLabel && nullNodeOverallLabel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OverallLabel = null;
+            if (parseNode.GetChildNode("overall_sentiment_score") is { } nullNodeOverallSentimentScore && nullNodeOverallSentimentScore.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OverallSentimentScore = null;
+            if (parseNode.GetChildNode("start_time_unix_secs") is { } nullNodeStartTimeUnixSecs && nullNodeStartTimeUnixSecs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StartTimeUnixSecs = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The agent_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AgentId { get; set; }
+        public string? AgentId { get => _explicitNullValueAgentId; set { _explicitNullValueAgentId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agent_id"); else _explicitNullProperties?.Remove("agent_id"); } }
+        private string? _explicitNullValueAgentId = default!;
 #nullable restore
 #else
-        public string AgentId { get; set; }
+        public string AgentId { get => _explicitNullValueAgentId; set { _explicitNullValueAgentId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agent_id"); else _explicitNullProperties?.Remove("agent_id"); } }
+        private string _explicitNullValueAgentId = default!;
 #endif
         /// <summary>The conversation_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ConversationId { get; set; }
+        public string? ConversationId { get => _explicitNullValueConversationId; set { _explicitNullValueConversationId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conversation_id"); else _explicitNullProperties?.Remove("conversation_id"); } }
+        private string? _explicitNullValueConversationId = default!;
 #nullable restore
 #else
-        public string ConversationId { get; set; }
+        public string ConversationId { get => _explicitNullValueConversationId; set { _explicitNullValueConversationId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conversation_id"); else _explicitNullProperties?.Remove("conversation_id"); } }
+        private string _explicitNullValueConversationId = default!;
 #endif
         /// <summary>The overall_frustration_score property</summary>
-        public double? OverallFrustrationScore { get; set; }
+        public double? OverallFrustrationScore { get => _explicitNullValueOverallFrustrationScore; set { _explicitNullValueOverallFrustrationScore = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("overall_frustration_score"); else _explicitNullProperties?.Remove("overall_frustration_score"); } }
+        private double? _explicitNullValueOverallFrustrationScore = default!;
         /// <summary>The overall_label property</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.FrustratedConversationRefOverallLabel? OverallLabel { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.FrustratedConversationRefOverallLabel? OverallLabel { get => _explicitNullValueOverallLabel; set { _explicitNullValueOverallLabel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("overall_label"); else _explicitNullProperties?.Remove("overall_label"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.FrustratedConversationRefOverallLabel? _explicitNullValueOverallLabel = default!;
         /// <summary>The overall_sentiment_score property</summary>
-        public double? OverallSentimentScore { get; set; }
+        public double? OverallSentimentScore { get => _explicitNullValueOverallSentimentScore; set { _explicitNullValueOverallSentimentScore = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("overall_sentiment_score"); else _explicitNullProperties?.Remove("overall_sentiment_score"); } }
+        private double? _explicitNullValueOverallSentimentScore = default!;
         /// <summary>The start_time_unix_secs property</summary>
-        public int? StartTimeUnixSecs { get; set; }
+        public int? StartTimeUnixSecs { get => _explicitNullValueStartTimeUnixSecs; set { _explicitNullValueStartTimeUnixSecs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("start_time_unix_secs"); else _explicitNullProperties?.Remove("start_time_unix_secs"); } }
+        private int? _explicitNullValueStartTimeUnixSecs = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.FrustratedConversationRef"/> and sets the default values.
         /// </summary>
@@ -53,7 +74,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.FrustratedConversationRef CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.FrustratedConversationRef();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.FrustratedConversationRef(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -84,6 +105,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.FrustratedConversationRefOverallLabel>("overall_label", OverallLabel);
             writer.WriteDoubleValue("overall_sentiment_score", OverallSentimentScore);
             writer.WriteIntValue("start_time_unix_secs", StartTimeUnixSecs);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

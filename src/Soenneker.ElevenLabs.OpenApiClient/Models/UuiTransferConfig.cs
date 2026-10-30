@@ -12,27 +12,42 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UuiTransferConfig : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("data") is { } nullNodeData && nullNodeData.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Data = null;
+            if (parseNode.GetChildNode("protocol_discriminator") is { } nullNodeProtocolDiscriminator && nullNodeProtocolDiscriminator.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProtocolDiscriminator = null;
+            if (parseNode.GetChildNode("protocol_discriminator_mode") is { } nullNodeProtocolDiscriminatorMode && nullNodeProtocolDiscriminatorMode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProtocolDiscriminatorMode = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>UUI payload to send on SIP REFER transfers. Supports inline dynamic variables and is hex-encoded at transfer time.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Data { get; set; }
+        public string? Data { get => _explicitNullValueData; set { _explicitNullValueData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("data"); else _explicitNullProperties?.Remove("data"); } }
+        private string? _explicitNullValueData = default!;
 #nullable restore
 #else
-        public string Data { get; set; }
+        public string Data { get => _explicitNullValueData; set { _explicitNullValueData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("data"); else _explicitNullProperties?.Remove("data"); } }
+        private string _explicitNullValueData = default!;
 #endif
         /// <summary>Optional one-octet protocol discriminator (two hex digits, e.g. &apos;00&apos;). Required by platforms such as Genesys Cloud, which otherwise strip the first octet of the payload. Leave unset for platforms like Talkdesk that expect a bare hex payload.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProtocolDiscriminator { get; set; }
+        public string? ProtocolDiscriminator { get => _explicitNullValueProtocolDiscriminator; set { _explicitNullValueProtocolDiscriminator = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("protocol_discriminator"); else _explicitNullProperties?.Remove("protocol_discriminator"); } }
+        private string? _explicitNullValueProtocolDiscriminator = default!;
 #nullable restore
 #else
-        public string ProtocolDiscriminator { get; set; }
+        public string ProtocolDiscriminator { get => _explicitNullValueProtocolDiscriminator; set { _explicitNullValueProtocolDiscriminator = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("protocol_discriminator"); else _explicitNullProperties?.Remove("protocol_discriminator"); } }
+        private string _explicitNullValueProtocolDiscriminator = default!;
 #endif
         /// <summary>How to attach protocol_discriminator. &apos;prefix&apos; prepends the octet to the hex payload (User-to-User=XX&lt;hex&gt;;encoding=hex). &apos;pd_parameter&apos; sends it as a separate parameter (User-to-User=&lt;hex&gt;;pd=XX;encoding=hex). Ignored when protocol_discriminator is unset.</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.UuiTransferConfigProtocolDiscriminatorMode? ProtocolDiscriminatorMode { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.UuiTransferConfigProtocolDiscriminatorMode? ProtocolDiscriminatorMode { get => _explicitNullValueProtocolDiscriminatorMode; set { _explicitNullValueProtocolDiscriminatorMode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("protocol_discriminator_mode"); else _explicitNullProperties?.Remove("protocol_discriminator_mode"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.UuiTransferConfigProtocolDiscriminatorMode? _explicitNullValueProtocolDiscriminatorMode = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.UuiTransferConfig"/> and sets the default values.
         /// </summary>
@@ -48,7 +63,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.UuiTransferConfig CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.UuiTransferConfig();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.UuiTransferConfig(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -73,6 +88,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteStringValue("data", Data);
             writer.WriteStringValue("protocol_discriminator", ProtocolDiscriminator);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UuiTransferConfigProtocolDiscriminatorMode>("protocol_discriminator_mode", ProtocolDiscriminatorMode);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

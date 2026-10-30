@@ -12,30 +12,46 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class TemplateRunCreateRequest : IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("inputs") is { } nullNodeInputs && nullNodeInputs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Inputs = null;
+            if (parseNode.GetChildNode("version_id") is { } nullNodeVersionId && nullNodeVersionId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VersionId = null;
+            if (parseNode.GetChildNode("webhook") is { } nullNodeWebhook && nullNodeWebhook.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Webhook = null;
+        }
+
         /// <summary>Input values keyed by input port id. Every input port of the version being run must be given; a missing or unknown id is rejected. Pass `{}` for a template with no inputs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.TemplateRunCreateRequestInputsProperty? Inputs { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.TemplateRunCreateRequestInputsProperty? Inputs { get => _explicitNullValueInputs; set { _explicitNullValueInputs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("inputs"); else _explicitNullProperties?.Remove("inputs"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.TemplateRunCreateRequestInputsProperty? _explicitNullValueInputs = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.TemplateRunCreateRequestInputsProperty Inputs { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.TemplateRunCreateRequestInputsProperty Inputs { get => _explicitNullValueInputs; set { _explicitNullValueInputs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("inputs"); else _explicitNullProperties?.Remove("inputs"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.TemplateRunCreateRequestInputsProperty _explicitNullValueInputs = default!;
 #endif
         /// <summary>The template snapshot to run. Pass a specific version id to pin that snapshot, or `latest` (the default when omitted) to run the template&apos;s most recently published version. Only published versions can be pinned, except by the template&apos;s owner, who may also pin an unpublished saved snapshot to try it out before publishing. The live draft is never run through this API.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? VersionId { get; set; }
+        public string? VersionId { get => _explicitNullValueVersionId; set { _explicitNullValueVersionId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("version_id"); else _explicitNullProperties?.Remove("version_id"); } }
+        private string? _explicitNullValueVersionId = default!;
 #nullable restore
 #else
-        public string VersionId { get; set; }
+        public string VersionId { get => _explicitNullValueVersionId; set { _explicitNullValueVersionId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("version_id"); else _explicitNullProperties?.Remove("version_id"); } }
+        private string _explicitNullValueVersionId = default!;
 #endif
         /// <summary>Include to send the run&apos;s result to the workspace&apos;s configured flows webhooks once the run&apos;s `status` reaches `completed` or `failed`. One event for the whole run: the `flows_template_run` event&apos;s `data` matches the terminal response of `GET /v1/flows/templates/{template_id}/runs/{run_id}`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookTarget? Webhook { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookTarget? Webhook { get => _explicitNullValueWebhook; set { _explicitNullValueWebhook = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("webhook"); else _explicitNullProperties?.Remove("webhook"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookTarget? _explicitNullValueWebhook = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookTarget Webhook { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookTarget Webhook { get => _explicitNullValueWebhook; set { _explicitNullValueWebhook = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("webhook"); else _explicitNullProperties?.Remove("webhook"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookTarget _explicitNullValueWebhook = default!;
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -45,7 +61,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.TemplateRunCreateRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.TemplateRunCreateRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.TemplateRunCreateRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -69,7 +85,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TemplateRunCreateRequestInputsProperty>("inputs", Inputs);
             writer.WriteStringValue("version_id", VersionId);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookTarget>("webhook", Webhook);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookTarget>("webhook", Webhook);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

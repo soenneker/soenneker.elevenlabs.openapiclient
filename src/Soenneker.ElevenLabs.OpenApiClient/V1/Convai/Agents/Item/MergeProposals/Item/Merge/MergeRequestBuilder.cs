@@ -55,6 +55,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.MergeProposal
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "422", global::Soenneker.ElevenLabs.OpenApiClient.Models.HttpValidationError.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentMergeProposalResponse>(requestInfo, global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentMergeProposalResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

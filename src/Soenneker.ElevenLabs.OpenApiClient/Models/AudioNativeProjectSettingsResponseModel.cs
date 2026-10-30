@@ -11,70 +11,104 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class AudioNativeProjectSettingsResponseModel : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("audio_path") is { } nullNodeAudioPath && nullNodeAudioPath.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AudioPath = null;
+            if (parseNode.GetChildNode("audio_url") is { } nullNodeAudioUrl && nullNodeAudioUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AudioUrl = null;
+            if (parseNode.GetChildNode("author") is { } nullNodeAuthor && nullNodeAuthor.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Author = null;
+            if (parseNode.GetChildNode("background_color") is { } nullNodeBackgroundColor && nullNodeBackgroundColor.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BackgroundColor = null;
+            if (parseNode.GetChildNode("image") is { } nullNodeImage && nullNodeImage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Image = null;
+            if (parseNode.GetChildNode("sessionization") is { } nullNodeSessionization && nullNodeSessionization.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Sessionization = null;
+            if (parseNode.GetChildNode("small") is { } nullNodeSmall && nullNodeSmall.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Small = null;
+            if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
+            if (parseNode.GetChildNode("text_color") is { } nullNodeTextColor && nullNodeTextColor.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TextColor = null;
+            if (parseNode.GetChildNode("title") is { } nullNodeTitle && nullNodeTitle.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Title = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The path of the audio file.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AudioPath { get; set; }
+        public string? AudioPath { get => _explicitNullValueAudioPath; set { _explicitNullValueAudioPath = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("audio_path"); else _explicitNullProperties?.Remove("audio_path"); } }
+        private string? _explicitNullValueAudioPath = default!;
 #nullable restore
 #else
-        public string AudioPath { get; set; }
+        public string AudioPath { get => _explicitNullValueAudioPath; set { _explicitNullValueAudioPath = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("audio_path"); else _explicitNullProperties?.Remove("audio_path"); } }
+        private string _explicitNullValueAudioPath = default!;
 #endif
         /// <summary>The URL of the audio file.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AudioUrl { get; set; }
+        public string? AudioUrl { get => _explicitNullValueAudioUrl; set { _explicitNullValueAudioUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("audio_url"); else _explicitNullProperties?.Remove("audio_url"); } }
+        private string? _explicitNullValueAudioUrl = default!;
 #nullable restore
 #else
-        public string AudioUrl { get; set; }
+        public string AudioUrl { get => _explicitNullValueAudioUrl; set { _explicitNullValueAudioUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("audio_url"); else _explicitNullProperties?.Remove("audio_url"); } }
+        private string _explicitNullValueAudioUrl = default!;
 #endif
         /// <summary>The author of the project.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Author { get; set; }
+        public string? Author { get => _explicitNullValueAuthor; set { _explicitNullValueAuthor = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("author"); else _explicitNullProperties?.Remove("author"); } }
+        private string? _explicitNullValueAuthor = default!;
 #nullable restore
 #else
-        public string Author { get; set; }
+        public string Author { get => _explicitNullValueAuthor; set { _explicitNullValueAuthor = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("author"); else _explicitNullProperties?.Remove("author"); } }
+        private string _explicitNullValueAuthor = default!;
 #endif
         /// <summary>The background color of the project.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BackgroundColor { get; set; }
+        public string? BackgroundColor { get => _explicitNullValueBackgroundColor; set { _explicitNullValueBackgroundColor = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("background_color"); else _explicitNullProperties?.Remove("background_color"); } }
+        private string? _explicitNullValueBackgroundColor = default!;
 #nullable restore
 #else
-        public string BackgroundColor { get; set; }
+        public string BackgroundColor { get => _explicitNullValueBackgroundColor; set { _explicitNullValueBackgroundColor = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("background_color"); else _explicitNullProperties?.Remove("background_color"); } }
+        private string _explicitNullValueBackgroundColor = default!;
 #endif
         /// <summary>The image of the project.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Image { get; set; }
+        public string? Image { get => _explicitNullValueImage; set { _explicitNullValueImage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("image"); else _explicitNullProperties?.Remove("image"); } }
+        private string? _explicitNullValueImage = default!;
 #nullable restore
 #else
-        public string Image { get; set; }
+        public string Image { get => _explicitNullValueImage; set { _explicitNullValueImage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("image"); else _explicitNullProperties?.Remove("image"); } }
+        private string _explicitNullValueImage = default!;
 #endif
         /// <summary>The sessionization of the project. Specifies for how many minutes to persist the session across page reloads.</summary>
-        public int? Sessionization { get; set; }
+        public int? Sessionization { get => _explicitNullValueSessionization; set { _explicitNullValueSessionization = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sessionization"); else _explicitNullProperties?.Remove("sessionization"); } }
+        private int? _explicitNullValueSessionization = default!;
         /// <summary>Whether the project is small.</summary>
-        public bool? Small { get; set; }
+        public bool? Small { get => _explicitNullValueSmall; set { _explicitNullValueSmall = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("small"); else _explicitNullProperties?.Remove("small"); } }
+        private bool? _explicitNullValueSmall = default!;
         /// <summary>Current state of the project</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AudioNativeProjectSettingsResponseModelStatus? Status { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AudioNativeProjectSettingsResponseModelStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.AudioNativeProjectSettingsResponseModelStatus? _explicitNullValueStatus = default!;
         /// <summary>The text color of the project.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TextColor { get; set; }
+        public string? TextColor { get => _explicitNullValueTextColor; set { _explicitNullValueTextColor = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("text_color"); else _explicitNullProperties?.Remove("text_color"); } }
+        private string? _explicitNullValueTextColor = default!;
 #nullable restore
 #else
-        public string TextColor { get; set; }
+        public string TextColor { get => _explicitNullValueTextColor; set { _explicitNullValueTextColor = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("text_color"); else _explicitNullProperties?.Remove("text_color"); } }
+        private string _explicitNullValueTextColor = default!;
 #endif
         /// <summary>The title of the project.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Title { get; set; }
+        public string? Title { get => _explicitNullValueTitle; set { _explicitNullValueTitle = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("title"); else _explicitNullProperties?.Remove("title"); } }
+        private string? _explicitNullValueTitle = default!;
 #nullable restore
 #else
-        public string Title { get; set; }
+        public string Title { get => _explicitNullValueTitle; set { _explicitNullValueTitle = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("title"); else _explicitNullProperties?.Remove("title"); } }
+        private string _explicitNullValueTitle = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.AudioNativeProjectSettingsResponseModel"/> and sets the default values.
@@ -91,7 +125,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.AudioNativeProjectSettingsResponseModel CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.AudioNativeProjectSettingsResponseModel();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.AudioNativeProjectSettingsResponseModel(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -130,6 +164,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AudioNativeProjectSettingsResponseModelStatus>("status", Status);
             writer.WriteStringValue("text_color", TextColor);
             writer.WriteStringValue("title", Title);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

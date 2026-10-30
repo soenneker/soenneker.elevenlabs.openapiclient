@@ -11,104 +11,147 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ConversationInitiationClientDataInternal : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("branch_id") is { } nullNodeBranchId && nullNodeBranchId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BranchId = null;
+            if (parseNode.GetChildNode("conversation_config_override") is { } nullNodeConversationConfigOverride && nullNodeConversationConfigOverride.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConversationConfigOverride = null;
+            if (parseNode.GetChildNode("custom_llm_extra_body") is { } nullNodeCustomLlmExtraBody && nullNodeCustomLlmExtraBody.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomLlmExtraBody = null;
+            if (parseNode.GetChildNode("dynamic_variables") is { } nullNodeDynamicVariables && nullNodeDynamicVariables.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DynamicVariables = null;
+            if (parseNode.GetChildNode("environment") is { } nullNodeEnvironment && nullNodeEnvironment.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Environment = null;
+            if (parseNode.GetChildNode("procedure_ids") is { } nullNodeProcedureIds && nullNodeProcedureIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProcedureIds = null;
+            if (parseNode.GetChildNode("source_info") is { } nullNodeSourceInfo && nullNodeSourceInfo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SourceInfo = null;
+            if (parseNode.GetChildNode("starting_workflow_node_id") is { } nullNodeStartingWorkflowNodeId && nullNodeStartingWorkflowNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StartingWorkflowNodeId = null;
+            if (parseNode.GetChildNode("start_procedure_ids") is { } nullNodeStartProcedureIds && nullNodeStartProcedureIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StartProcedureIds = null;
+            if (parseNode.GetChildNode("tool_mock_config") is { } nullNodeToolMockConfig && nullNodeToolMockConfig.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ToolMockConfig = null;
+            if (parseNode.GetChildNode("tool_mock_overrides") is { } nullNodeToolMockOverrides && nullNodeToolMockOverrides.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ToolMockOverrides = null;
+            if (parseNode.GetChildNode("user_id") is { } nullNodeUserId && nullNodeUserId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UserId = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>ID of the agent branch to use for this conversation</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BranchId { get; set; }
+        public string? BranchId { get => _explicitNullValueBranchId; set { _explicitNullValueBranchId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("branch_id"); else _explicitNullProperties?.Remove("branch_id"); } }
+        private string? _explicitNullValueBranchId = default!;
 #nullable restore
 #else
-        public string BranchId { get; set; }
+        public string BranchId { get => _explicitNullValueBranchId; set { _explicitNullValueBranchId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("branch_id"); else _explicitNullProperties?.Remove("branch_id"); } }
+        private string _explicitNullValueBranchId = default!;
 #endif
         /// <summary>The conversation_config_override property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationConfigClientOverrideOutput? ConversationConfigOverride { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationConfigClientOverrideOutput? ConversationConfigOverride { get => _explicitNullValueConversationConfigOverride; set { _explicitNullValueConversationConfigOverride = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conversation_config_override"); else _explicitNullProperties?.Remove("conversation_config_override"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationConfigClientOverrideOutput? _explicitNullValueConversationConfigOverride = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationConfigClientOverrideOutput ConversationConfigOverride { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationConfigClientOverrideOutput ConversationConfigOverride { get => _explicitNullValueConversationConfigOverride; set { _explicitNullValueConversationConfigOverride = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conversation_config_override"); else _explicitNullProperties?.Remove("conversation_config_override"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationConfigClientOverrideOutput _explicitNullValueConversationConfigOverride = default!;
 #endif
         /// <summary>The custom_llm_extra_body property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationClientDataInternalCustomLlmExtraBodyProperty? CustomLlmExtraBody { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationClientDataInternalCustomLlmExtraBodyProperty? CustomLlmExtraBody { get => _explicitNullValueCustomLlmExtraBody; set { _explicitNullValueCustomLlmExtraBody = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_llm_extra_body"); else _explicitNullProperties?.Remove("custom_llm_extra_body"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationClientDataInternalCustomLlmExtraBodyProperty? _explicitNullValueCustomLlmExtraBody = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationClientDataInternalCustomLlmExtraBodyProperty CustomLlmExtraBody { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationClientDataInternalCustomLlmExtraBodyProperty CustomLlmExtraBody { get => _explicitNullValueCustomLlmExtraBody; set { _explicitNullValueCustomLlmExtraBody = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_llm_extra_body"); else _explicitNullProperties?.Remove("custom_llm_extra_body"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationClientDataInternalCustomLlmExtraBodyProperty _explicitNullValueCustomLlmExtraBody = default!;
 #endif
         /// <summary>The dynamic_variables property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationClientDataInternalDynamicVariablesProperty? DynamicVariables { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationClientDataInternalDynamicVariablesProperty? DynamicVariables { get => _explicitNullValueDynamicVariables; set { _explicitNullValueDynamicVariables = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dynamic_variables"); else _explicitNullProperties?.Remove("dynamic_variables"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationClientDataInternalDynamicVariablesProperty? _explicitNullValueDynamicVariables = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationClientDataInternalDynamicVariablesProperty DynamicVariables { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationClientDataInternalDynamicVariablesProperty DynamicVariables { get => _explicitNullValueDynamicVariables; set { _explicitNullValueDynamicVariables = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dynamic_variables"); else _explicitNullProperties?.Remove("dynamic_variables"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationClientDataInternalDynamicVariablesProperty _explicitNullValueDynamicVariables = default!;
 #endif
         /// <summary>Environment to use for resolving environment variables</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Environment { get; set; }
+        public string? Environment { get => _explicitNullValueEnvironment; set { _explicitNullValueEnvironment = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("environment"); else _explicitNullProperties?.Remove("environment"); } }
+        private string? _explicitNullValueEnvironment = default!;
 #nullable restore
 #else
-        public string Environment { get; set; }
+        public string Environment { get => _explicitNullValueEnvironment; set { _explicitNullValueEnvironment = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("environment"); else _explicitNullProperties?.Remove("environment"); } }
+        private string _explicitNullValueEnvironment = default!;
 #endif
         /// <summary>If set, only these procedures are available to the starting agent. Each ID must be attached to that agent; unknown IDs fail conversation start. An empty list disables all of that agent&apos;s procedures. Not applied after an agent transfer. Requires enable_procedure_ids_from_client.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? ProcedureIds { get; set; }
+        public List<string>? ProcedureIds { get => _explicitNullValueProcedureIds; set { _explicitNullValueProcedureIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("procedure_ids"); else _explicitNullProperties?.Remove("procedure_ids"); } }
+        private List<string>? _explicitNullValueProcedureIds = default!;
 #nullable restore
 #else
-        public List<string> ProcedureIds { get; set; }
+        public List<string> ProcedureIds { get => _explicitNullValueProcedureIds; set { _explicitNullValueProcedureIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("procedure_ids"); else _explicitNullProperties?.Remove("procedure_ids"); } }
+        private List<string> _explicitNullValueProcedureIds = default!;
 #endif
         /// <summary>Information about the source of conversation initiation</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationSourceInfo? SourceInfo { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationSourceInfo? SourceInfo { get => _explicitNullValueSourceInfo; set { _explicitNullValueSourceInfo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source_info"); else _explicitNullProperties?.Remove("source_info"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationSourceInfo? _explicitNullValueSourceInfo = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationSourceInfo SourceInfo { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationSourceInfo SourceInfo { get => _explicitNullValueSourceInfo; set { _explicitNullValueSourceInfo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source_info"); else _explicitNullProperties?.Remove("source_info"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationSourceInfo _explicitNullValueSourceInfo = default!;
 #endif
         /// <summary>If set, start the workflow at this node id instead of the default entry</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? StartingWorkflowNodeId { get; set; }
+        public string? StartingWorkflowNodeId { get => _explicitNullValueStartingWorkflowNodeId; set { _explicitNullValueStartingWorkflowNodeId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("starting_workflow_node_id"); else _explicitNullProperties?.Remove("starting_workflow_node_id"); } }
+        private string? _explicitNullValueStartingWorkflowNodeId = default!;
 #nullable restore
 #else
-        public string StartingWorkflowNodeId { get; set; }
+        public string StartingWorkflowNodeId { get => _explicitNullValueStartingWorkflowNodeId; set { _explicitNullValueStartingWorkflowNodeId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("starting_workflow_node_id"); else _explicitNullProperties?.Remove("starting_workflow_node_id"); } }
+        private string _explicitNullValueStartingWorkflowNodeId = default!;
 #endif
         /// <summary>If set, these free-form procedures start when the conversation starts. Accepts at most five IDs. Each ID must be available after procedure_ids is applied. Unknown IDs and structured procedures fail conversation start. Requires enable_procedure_ids_from_client.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? StartProcedureIds { get; set; }
+        public List<string>? StartProcedureIds { get => _explicitNullValueStartProcedureIds; set { _explicitNullValueStartProcedureIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("start_procedure_ids"); else _explicitNullProperties?.Remove("start_procedure_ids"); } }
+        private List<string>? _explicitNullValueStartProcedureIds = default!;
 #nullable restore
 #else
-        public List<string> StartProcedureIds { get; set; }
+        public List<string> StartProcedureIds { get => _explicitNullValueStartProcedureIds; set { _explicitNullValueStartProcedureIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("start_procedure_ids"); else _explicitNullProperties?.Remove("start_procedure_ids"); } }
+        private List<string> _explicitNullValueStartProcedureIds = default!;
 #endif
         /// <summary>Configuration for which tools to mock and fallback behavior</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.OrchestratorToolMockBehaviorConfig? ToolMockConfig { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.OrchestratorToolMockBehaviorConfig? ToolMockConfig { get => _explicitNullValueToolMockConfig; set { _explicitNullValueToolMockConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tool_mock_config"); else _explicitNullProperties?.Remove("tool_mock_config"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.OrchestratorToolMockBehaviorConfig? _explicitNullValueToolMockConfig = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.OrchestratorToolMockBehaviorConfig ToolMockConfig { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.OrchestratorToolMockBehaviorConfig ToolMockConfig { get => _explicitNullValueToolMockConfig; set { _explicitNullValueToolMockConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tool_mock_config"); else _explicitNullProperties?.Remove("tool_mock_config"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.OrchestratorToolMockBehaviorConfig _explicitNullValueToolMockConfig = default!;
 #endif
         /// <summary>Per-tool response mock overrides keyed by resolved tool name, applied ahead of the tool&apos;s shared mocks. Used for test-specific mocks.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationClientDataInternalToolMockOverridesProperty? ToolMockOverrides { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationClientDataInternalToolMockOverridesProperty? ToolMockOverrides { get => _explicitNullValueToolMockOverrides; set { _explicitNullValueToolMockOverrides = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tool_mock_overrides"); else _explicitNullProperties?.Remove("tool_mock_overrides"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationClientDataInternalToolMockOverridesProperty? _explicitNullValueToolMockOverrides = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationClientDataInternalToolMockOverridesProperty ToolMockOverrides { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationClientDataInternalToolMockOverridesProperty ToolMockOverrides { get => _explicitNullValueToolMockOverrides; set { _explicitNullValueToolMockOverrides = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tool_mock_overrides"); else _explicitNullProperties?.Remove("tool_mock_overrides"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationClientDataInternalToolMockOverridesProperty _explicitNullValueToolMockOverrides = default!;
 #endif
         /// <summary>ID of the end user participating in this conversation (for agent owner&apos;s user identification)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UserId { get; set; }
+        public string? UserId { get => _explicitNullValueUserId; set { _explicitNullValueUserId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user_id"); else _explicitNullProperties?.Remove("user_id"); } }
+        private string? _explicitNullValueUserId = default!;
 #nullable restore
 #else
-        public string UserId { get; set; }
+        public string UserId { get => _explicitNullValueUserId; set { _explicitNullValueUserId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user_id"); else _explicitNullProperties?.Remove("user_id"); } }
+        private string _explicitNullValueUserId = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationClientDataInternal"/> and sets the default values.
@@ -125,7 +168,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationClientDataInternal CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationClientDataInternal();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationClientDataInternal(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -168,6 +211,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.OrchestratorToolMockBehaviorConfig>("tool_mock_config", ToolMockConfig);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationClientDataInternalToolMockOverridesProperty>("tool_mock_overrides", ToolMockOverrides);
             writer.WriteStringValue("user_id", UserId);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

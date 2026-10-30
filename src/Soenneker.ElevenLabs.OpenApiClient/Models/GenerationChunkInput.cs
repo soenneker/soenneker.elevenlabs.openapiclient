@@ -11,46 +11,71 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class GenerationChunkInput : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("conditioning_ref") is { } nullNodeConditioningRef && nullNodeConditioningRef.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConditioningRef = null;
+            if (parseNode.GetChildNode("condition_strength") is { } nullNodeConditionStrength && nullNodeConditionStrength.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConditionStrength = null;
+            if (parseNode.GetChildNode("context_adherence") is { } nullNodeContextAdherence && nullNodeContextAdherence.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ContextAdherence = null;
+            if (parseNode.GetChildNode("duration_ms") is { } nullNodeDurationMs && nullNodeDurationMs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DurationMs = null;
+            if (parseNode.GetChildNode("negative_styles") is { } nullNodeNegativeStyles && nullNodeNegativeStyles.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NegativeStyles = null;
+            if (parseNode.GetChildNode("positive_styles") is { } nullNodePositiveStyles && nullNodePositiveStyles.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PositiveStyles = null;
+            if (parseNode.GetChildNode("text") is { } nullNodeText && nullNodeText.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Text = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The audio reference to condition the generation on. The first chunk is the most important as it will influence the generation of all subsequent chunks. Thus, if you want to apply conditioning to the entire song, start conditioning from the first chunk.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AudioRefChunk? ConditioningRef { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AudioRefChunk? ConditioningRef { get => _explicitNullValueConditioningRef; set { _explicitNullValueConditioningRef = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conditioning_ref"); else _explicitNullProperties?.Remove("conditioning_ref"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.AudioRefChunk? _explicitNullValueConditioningRef = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AudioRefChunk ConditioningRef { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AudioRefChunk ConditioningRef { get => _explicitNullValueConditioningRef; set { _explicitNullValueConditioningRef = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conditioning_ref"); else _explicitNullProperties?.Remove("conditioning_ref"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.AudioRefChunk _explicitNullValueConditioningRef = default!;
 #endif
         /// <summary>How strongly the model adheres to the conditioning reference. Low strength means the model will be more creative and deviate from the reference. High strength means the model will be more consistent with the reference.</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConditionStrength? ConditionStrength { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConditionStrength? ConditionStrength { get => _explicitNullValueConditionStrength; set { _explicitNullValueConditionStrength = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("condition_strength"); else _explicitNullProperties?.Remove("condition_strength"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ConditionStrength? _explicitNullValueConditionStrength = default!;
         /// <summary>How much the model adheres to the context of its surrounding chunks. Low adherence means the model can deviate from the context and be more creative. High adherence means the model will be more consistent with the context.</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GenerationChunkInputContextAdherence? ContextAdherence { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GenerationChunkInputContextAdherence? ContextAdherence { get => _explicitNullValueContextAdherence; set { _explicitNullValueContextAdherence = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("context_adherence"); else _explicitNullProperties?.Remove("context_adherence"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.GenerationChunkInputContextAdherence? _explicitNullValueContextAdherence = default!;
         /// <summary>The duration of the chunk in milliseconds. Must be between 3000ms and 120000ms.</summary>
-        public int? DurationMs { get; set; }
+        public int? DurationMs { get => _explicitNullValueDurationMs; set { _explicitNullValueDurationMs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("duration_ms"); else _explicitNullProperties?.Remove("duration_ms"); } }
+        private int? _explicitNullValueDurationMs = default!;
         /// <summary>The styles and musical directions that should not be present in this chunk. Use English language for best results. Leaving empty is a good default, only use this field if you want to explicitly avoid a particular style or direction.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? NegativeStyles { get; set; }
+        public List<string>? NegativeStyles { get => _explicitNullValueNegativeStyles; set { _explicitNullValueNegativeStyles = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("negative_styles"); else _explicitNullProperties?.Remove("negative_styles"); } }
+        private List<string>? _explicitNullValueNegativeStyles = default!;
 #nullable restore
 #else
-        public List<string> NegativeStyles { get; set; }
+        public List<string> NegativeStyles { get => _explicitNullValueNegativeStyles; set { _explicitNullValueNegativeStyles = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("negative_styles"); else _explicitNullProperties?.Remove("negative_styles"); } }
+        private List<string> _explicitNullValueNegativeStyles = default!;
 #endif
         /// <summary>The styles and musical directions that should be present in this chunk. Use English language for best results. The styles for the first chunk are the most important as they set the overall tone and genre. Styles for subsequent chunks can be used to add nuance, progression, emphasis, or change the direction of the song. Aim to have at least 6-7 styles in early chunks until the direction is established. Generic styles like &apos;great production quality&apos; are good default styles to append to the list.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? PositiveStyles { get; set; }
+        public List<string>? PositiveStyles { get => _explicitNullValuePositiveStyles; set { _explicitNullValuePositiveStyles = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("positive_styles"); else _explicitNullProperties?.Remove("positive_styles"); } }
+        private List<string>? _explicitNullValuePositiveStyles = default!;
 #nullable restore
 #else
-        public List<string> PositiveStyles { get; set; }
+        public List<string> PositiveStyles { get => _explicitNullValuePositiveStyles; set { _explicitNullValuePositiveStyles = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("positive_styles"); else _explicitNullProperties?.Remove("positive_styles"); } }
+        private List<string> _explicitNullValuePositiveStyles = default!;
 #endif
         /// <summary>The text config to be generated for this chunk. Can contain an optional section name in square brackets at the beginning, e.g. [Verse 1], lyrics lines, and inline directions in curly braces, e.g. {scratching}. Section names must be between 1 and 100 characters. At most 30 lines are allowed, each at most 200 characters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Text { get; set; }
+        public string? Text { get => _explicitNullValueText; set { _explicitNullValueText = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("text"); else _explicitNullProperties?.Remove("text"); } }
+        private string? _explicitNullValueText = default!;
 #nullable restore
 #else
-        public string Text { get; set; }
+        public string Text { get => _explicitNullValueText; set { _explicitNullValueText = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("text"); else _explicitNullProperties?.Remove("text"); } }
+        private string _explicitNullValueText = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.GenerationChunkInput"/> and sets the default values.
@@ -67,7 +92,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.GenerationChunkInput CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.GenerationChunkInput();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.GenerationChunkInput(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -100,6 +125,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("negative_styles", NegativeStyles);
             writer.WriteCollectionOfPrimitiveValues<string>("positive_styles", PositiveStyles);
             writer.WriteStringValue("text", Text);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

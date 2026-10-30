@@ -12,55 +12,83 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class MessagesSearchResult : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("agent_id") is { } nullNodeAgentId && nullNodeAgentId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AgentId = null;
+            if (parseNode.GetChildNode("agent_name") is { } nullNodeAgentName && nullNodeAgentName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AgentName = null;
+            if (parseNode.GetChildNode("chunk_highlights") is { } nullNodeChunkHighlights && nullNodeChunkHighlights.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ChunkHighlights = null;
+            if (parseNode.GetChildNode("chunk_text") is { } nullNodeChunkText && nullNodeChunkText.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ChunkText = null;
+            if (parseNode.GetChildNode("conversation_id") is { } nullNodeConversationId && nullNodeConversationId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConversationId = null;
+            if (parseNode.GetChildNode("conversation_start_time_unix_secs") is { } nullNodeConversationStartTimeUnixSecs && nullNodeConversationStartTimeUnixSecs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConversationStartTimeUnixSecs = null;
+            if (parseNode.GetChildNode("score") is { } nullNodeScore && nullNodeScore.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Score = null;
+            if (parseNode.GetChildNode("transcript_index") is { } nullNodeTranscriptIndex && nullNodeTranscriptIndex.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TranscriptIndex = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The agent_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AgentId { get; set; }
+        public string? AgentId { get => _explicitNullValueAgentId; set { _explicitNullValueAgentId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agent_id"); else _explicitNullProperties?.Remove("agent_id"); } }
+        private string? _explicitNullValueAgentId = default!;
 #nullable restore
 #else
-        public string AgentId { get; set; }
+        public string AgentId { get => _explicitNullValueAgentId; set { _explicitNullValueAgentId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agent_id"); else _explicitNullProperties?.Remove("agent_id"); } }
+        private string _explicitNullValueAgentId = default!;
 #endif
         /// <summary>The agent_name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AgentName { get; set; }
+        public string? AgentName { get => _explicitNullValueAgentName; set { _explicitNullValueAgentName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agent_name"); else _explicitNullProperties?.Remove("agent_name"); } }
+        private string? _explicitNullValueAgentName = default!;
 #nullable restore
 #else
-        public string AgentName { get; set; }
+        public string AgentName { get => _explicitNullValueAgentName; set { _explicitNullValueAgentName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agent_name"); else _explicitNullProperties?.Remove("agent_name"); } }
+        private string _explicitNullValueAgentName = default!;
 #endif
         /// <summary>The chunk_highlights property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.SearchHighlightSegment>? ChunkHighlights { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.SearchHighlightSegment>? ChunkHighlights { get => _explicitNullValueChunkHighlights; set { _explicitNullValueChunkHighlights = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("chunk_highlights"); else _explicitNullProperties?.Remove("chunk_highlights"); } }
+        private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.SearchHighlightSegment>? _explicitNullValueChunkHighlights = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.SearchHighlightSegment> ChunkHighlights { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.SearchHighlightSegment> ChunkHighlights { get => _explicitNullValueChunkHighlights; set { _explicitNullValueChunkHighlights = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("chunk_highlights"); else _explicitNullProperties?.Remove("chunk_highlights"); } }
+        private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.SearchHighlightSegment> _explicitNullValueChunkHighlights = default!;
 #endif
         /// <summary>The chunk_text property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ChunkText { get; set; }
+        public string? ChunkText { get => _explicitNullValueChunkText; set { _explicitNullValueChunkText = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("chunk_text"); else _explicitNullProperties?.Remove("chunk_text"); } }
+        private string? _explicitNullValueChunkText = default!;
 #nullable restore
 #else
-        public string ChunkText { get; set; }
+        public string ChunkText { get => _explicitNullValueChunkText; set { _explicitNullValueChunkText = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("chunk_text"); else _explicitNullProperties?.Remove("chunk_text"); } }
+        private string _explicitNullValueChunkText = default!;
 #endif
         /// <summary>The conversation_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ConversationId { get; set; }
+        public string? ConversationId { get => _explicitNullValueConversationId; set { _explicitNullValueConversationId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conversation_id"); else _explicitNullProperties?.Remove("conversation_id"); } }
+        private string? _explicitNullValueConversationId = default!;
 #nullable restore
 #else
-        public string ConversationId { get; set; }
+        public string ConversationId { get => _explicitNullValueConversationId; set { _explicitNullValueConversationId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conversation_id"); else _explicitNullProperties?.Remove("conversation_id"); } }
+        private string _explicitNullValueConversationId = default!;
 #endif
         /// <summary>The conversation_start_time_unix_secs property</summary>
-        public int? ConversationStartTimeUnixSecs { get; set; }
+        public int? ConversationStartTimeUnixSecs { get => _explicitNullValueConversationStartTimeUnixSecs; set { _explicitNullValueConversationStartTimeUnixSecs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conversation_start_time_unix_secs"); else _explicitNullProperties?.Remove("conversation_start_time_unix_secs"); } }
+        private int? _explicitNullValueConversationStartTimeUnixSecs = default!;
         /// <summary>The score property</summary>
-        public double? Score { get; set; }
+        public double? Score { get => _explicitNullValueScore; set { _explicitNullValueScore = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("score"); else _explicitNullProperties?.Remove("score"); } }
+        private double? _explicitNullValueScore = default!;
         /// <summary>The transcript_index property</summary>
-        public int? TranscriptIndex { get; set; }
+        public int? TranscriptIndex { get => _explicitNullValueTranscriptIndex; set { _explicitNullValueTranscriptIndex = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transcript_index"); else _explicitNullProperties?.Remove("transcript_index"); } }
+        private int? _explicitNullValueTranscriptIndex = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.MessagesSearchResult"/> and sets the default values.
         /// </summary>
@@ -76,7 +104,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.MessagesSearchResult CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.MessagesSearchResult();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.MessagesSearchResult(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -111,6 +139,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteIntValue("conversation_start_time_unix_secs", ConversationStartTimeUnixSecs);
             writer.WriteDoubleValue("score", Score);
             writer.WriteIntValue("transcript_index", TranscriptIndex);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

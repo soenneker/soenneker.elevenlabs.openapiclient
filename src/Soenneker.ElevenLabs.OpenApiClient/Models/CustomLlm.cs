@@ -11,58 +11,85 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class CustomLlm : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("api_key") is { } nullNodeApiKey && nullNodeApiKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ApiKey = null;
+            if (parseNode.GetChildNode("api_type") is { } nullNodeApiType && nullNodeApiType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ApiType = null;
+            if (parseNode.GetChildNode("api_version") is { } nullNodeApiVersion && nullNodeApiVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ApiVersion = null;
+            if (parseNode.GetChildNode("auth_connection") is { } nullNodeAuthConnection && nullNodeAuthConnection.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AuthConnection = null;
+            if (parseNode.GetChildNode("model_id") is { } nullNodeModelId && nullNodeModelId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ModelId = null;
+            if (parseNode.GetChildNode("request_headers") is { } nullNodeRequestHeaders && nullNodeRequestHeaders.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequestHeaders = null;
+            if (parseNode.GetChildNode("url") is { } nullNodeUrl && nullNodeUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Url = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The API key for authentication. Either a workspace secret reference {&apos;secret_id&apos;: &apos;...&apos;} or an environment variable reference {&apos;env_var_label&apos;: &apos;...&apos;}.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomLlmApiKey? ApiKey { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomLlmApiKey? ApiKey { get => _explicitNullValueApiKey; set { _explicitNullValueApiKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("api_key"); else _explicitNullProperties?.Remove("api_key"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomLlmApiKey? _explicitNullValueApiKey = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomLlmApiKey ApiKey { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomLlmApiKey ApiKey { get => _explicitNullValueApiKey; set { _explicitNullValueApiKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("api_key"); else _explicitNullProperties?.Remove("api_key"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomLlmApiKey _explicitNullValueApiKey = default!;
 #endif
         /// <summary>The api_type property</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomLlmapiType? ApiType { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomLlmapiType? ApiType { get => _explicitNullValueApiType; set { _explicitNullValueApiType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("api_type"); else _explicitNullProperties?.Remove("api_type"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomLlmapiType? _explicitNullValueApiType = default!;
         /// <summary>The API version to use for the request</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ApiVersion { get; set; }
+        public string? ApiVersion { get => _explicitNullValueApiVersion; set { _explicitNullValueApiVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("api_version"); else _explicitNullProperties?.Remove("api_version"); } }
+        private string? _explicitNullValueApiVersion = default!;
 #nullable restore
 #else
-        public string ApiVersion { get; set; }
+        public string ApiVersion { get => _explicitNullValueApiVersion; set { _explicitNullValueApiVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("api_version"); else _explicitNullProperties?.Remove("api_version"); } }
+        private string _explicitNullValueApiVersion = default!;
 #endif
         /// <summary>Optional workspace auth connection for authentication. Only auth connections that produce an Authorization Bearer token are supported; Basic auth, mTLS, custom header, and URL secret auth connections are not supported.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomLlmAuthConnection? AuthConnection { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomLlmAuthConnection? AuthConnection { get => _explicitNullValueAuthConnection; set { _explicitNullValueAuthConnection = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("auth_connection"); else _explicitNullProperties?.Remove("auth_connection"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomLlmAuthConnection? _explicitNullValueAuthConnection = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomLlmAuthConnection AuthConnection { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomLlmAuthConnection AuthConnection { get => _explicitNullValueAuthConnection; set { _explicitNullValueAuthConnection = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("auth_connection"); else _explicitNullProperties?.Remove("auth_connection"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomLlmAuthConnection _explicitNullValueAuthConnection = default!;
 #endif
         /// <summary>The model ID to be used if URL serves multiple models</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ModelId { get; set; }
+        public string? ModelId { get => _explicitNullValueModelId; set { _explicitNullValueModelId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("model_id"); else _explicitNullProperties?.Remove("model_id"); } }
+        private string? _explicitNullValueModelId = default!;
 #nullable restore
 #else
-        public string ModelId { get; set; }
+        public string ModelId { get => _explicitNullValueModelId; set { _explicitNullValueModelId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("model_id"); else _explicitNullProperties?.Remove("model_id"); } }
+        private string _explicitNullValueModelId = default!;
 #endif
         /// <summary>Headers that should be included in the request</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomLlmRequestHeadersProperty? RequestHeaders { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomLlmRequestHeadersProperty? RequestHeaders { get => _explicitNullValueRequestHeaders; set { _explicitNullValueRequestHeaders = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("request_headers"); else _explicitNullProperties?.Remove("request_headers"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomLlmRequestHeadersProperty? _explicitNullValueRequestHeaders = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomLlmRequestHeadersProperty RequestHeaders { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomLlmRequestHeadersProperty RequestHeaders { get => _explicitNullValueRequestHeaders; set { _explicitNullValueRequestHeaders = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("request_headers"); else _explicitNullProperties?.Remove("request_headers"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomLlmRequestHeadersProperty _explicitNullValueRequestHeaders = default!;
 #endif
         /// <summary>The URL of the Chat Completions compatible endpoint</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Url { get; set; }
+        public string? Url { get => _explicitNullValueUrl; set { _explicitNullValueUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url"); else _explicitNullProperties?.Remove("url"); } }
+        private string? _explicitNullValueUrl = default!;
 #nullable restore
 #else
-        public string Url { get; set; }
+        public string Url { get => _explicitNullValueUrl; set { _explicitNullValueUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url"); else _explicitNullProperties?.Remove("url"); } }
+        private string _explicitNullValueUrl = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomLlm"/> and sets the default values.
@@ -79,7 +106,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomLlm CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomLlm();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomLlm(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -112,6 +139,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteStringValue("model_id", ModelId);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomLlmRequestHeadersProperty>("request_headers", RequestHeaders);
             writer.WriteStringValue("url", Url);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

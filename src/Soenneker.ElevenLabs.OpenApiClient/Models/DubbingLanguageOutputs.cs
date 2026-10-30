@@ -12,24 +12,37 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class DubbingLanguageOutputs : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("lossless_audio") is { } nullNodeLosslessAudio && nullNodeLosslessAudio.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LosslessAudio = null;
+            if (parseNode.GetChildNode("subtitles") is { } nullNodeSubtitles && nullNodeSubtitles.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Subtitles = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Signed URL for the dubbed lossless audio track, in FLAC. The link expires one hour after it is issued; re-read the language target for a fresh one.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LosslessAudio { get; set; }
+        public string? LosslessAudio { get => _explicitNullValueLosslessAudio; set { _explicitNullValueLosslessAudio = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lossless_audio"); else _explicitNullProperties?.Remove("lossless_audio"); } }
+        private string? _explicitNullValueLosslessAudio = default!;
 #nullable restore
 #else
-        public string LosslessAudio { get; set; }
+        public string LosslessAudio { get => _explicitNullValueLosslessAudio; set { _explicitNullValueLosslessAudio = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lossless_audio"); else _explicitNullProperties?.Remove("lossless_audio"); } }
+        private string _explicitNullValueLosslessAudio = default!;
 #endif
         /// <summary>Signed URL for the translated lines as WebVTT subtitles, timed to the source speech. Null when none are available, such as for languages dubbed before subtitles were produced. The link expires one hour after it is issued.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Subtitles { get; set; }
+        public string? Subtitles { get => _explicitNullValueSubtitles; set { _explicitNullValueSubtitles = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subtitles"); else _explicitNullProperties?.Remove("subtitles"); } }
+        private string? _explicitNullValueSubtitles = default!;
 #nullable restore
 #else
-        public string Subtitles { get; set; }
+        public string Subtitles { get => _explicitNullValueSubtitles; set { _explicitNullValueSubtitles = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subtitles"); else _explicitNullProperties?.Remove("subtitles"); } }
+        private string _explicitNullValueSubtitles = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingLanguageOutputs"/> and sets the default values.
@@ -46,7 +59,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingLanguageOutputs CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingLanguageOutputs();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingLanguageOutputs(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -69,6 +82,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("lossless_audio", LosslessAudio);
             writer.WriteStringValue("subtitles", Subtitles);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

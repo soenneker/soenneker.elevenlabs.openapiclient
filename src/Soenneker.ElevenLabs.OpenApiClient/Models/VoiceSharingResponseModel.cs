@@ -11,170 +11,259 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class VoiceSharingResponseModel : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("ban_reason") is { } nullNodeBanReason && nullNodeBanReason.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BanReason = null;
+            if (parseNode.GetChildNode("category") is { } nullNodeCategory && nullNodeCategory.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Category = null;
+            if (parseNode.GetChildNode("cloned_by_count") is { } nullNodeClonedByCount && nullNodeClonedByCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClonedByCount = null;
+            if (parseNode.GetChildNode("date_unix") is { } nullNodeDateUnix && nullNodeDateUnix.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DateUnix = null;
+            if (parseNode.GetChildNode("description") is { } nullNodeDescription && nullNodeDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Description = null;
+            if (parseNode.GetChildNode("disable_at_unix") is { } nullNodeDisableAtUnix && nullNodeDisableAtUnix.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DisableAtUnix = null;
+            if (parseNode.GetChildNode("enabled_in_library") is { } nullNodeEnabledInLibrary && nullNodeEnabledInLibrary.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EnabledInLibrary = null;
+            if (parseNode.GetChildNode("featured") is { } nullNodeFeatured && nullNodeFeatured.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Featured = null;
+            if (parseNode.GetChildNode("fiat_rate") is { } nullNodeFiatRate && nullNodeFiatRate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FiatRate = null;
+            if (parseNode.GetChildNode("financial_rewards_enabled") is { } nullNodeFinancialRewardsEnabled && nullNodeFinancialRewardsEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FinancialRewardsEnabled = null;
+            if (parseNode.GetChildNode("free_users_allowed") is { } nullNodeFreeUsersAllowed && nullNodeFreeUsersAllowed.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FreeUsersAllowed = null;
+            if (parseNode.GetChildNode("history_item_sample_id") is { } nullNodeHistoryItemSampleId && nullNodeHistoryItemSampleId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HistoryItemSampleId = null;
+            if (parseNode.GetChildNode("image_url") is { } nullNodeImageUrl && nullNodeImageUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ImageUrl = null;
+            if (parseNode.GetChildNode("instagram_username") is { } nullNodeInstagramUsername && nullNodeInstagramUsername.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InstagramUsername = null;
+            if (parseNode.GetChildNode("labels") is { } nullNodeLabels && nullNodeLabels.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Labels = null;
+            if (parseNode.GetChildNode("liked_by_count") is { } nullNodeLikedByCount && nullNodeLikedByCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LikedByCount = null;
+            if (parseNode.GetChildNode("live_moderation_enabled") is { } nullNodeLiveModerationEnabled && nullNodeLiveModerationEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LiveModerationEnabled = null;
+            if (parseNode.GetChildNode("moderation_check") is { } nullNodeModerationCheck && nullNodeModerationCheck.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ModerationCheck = null;
+            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("notice_period") is { } nullNodeNoticePeriod && nullNodeNoticePeriod.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NoticePeriod = null;
+            if (parseNode.GetChildNode("original_voice_id") is { } nullNodeOriginalVoiceId && nullNodeOriginalVoiceId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OriginalVoiceId = null;
+            if (parseNode.GetChildNode("public_owner_id") is { } nullNodePublicOwnerId && nullNodePublicOwnerId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PublicOwnerId = null;
+            if (parseNode.GetChildNode("rate") is { } nullNodeRate && nullNodeRate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Rate = null;
+            if (parseNode.GetChildNode("reader_app_enabled") is { } nullNodeReaderAppEnabled && nullNodeReaderAppEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReaderAppEnabled = null;
+            if (parseNode.GetChildNode("reader_restricted_on") is { } nullNodeReaderRestrictedOn && nullNodeReaderRestrictedOn.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReaderRestrictedOn = null;
+            if (parseNode.GetChildNode("review_message") is { } nullNodeReviewMessage && nullNodeReviewMessage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReviewMessage = null;
+            if (parseNode.GetChildNode("review_status") is { } nullNodeReviewStatus && nullNodeReviewStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReviewStatus = null;
+            if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
+            if (parseNode.GetChildNode("tiktok_username") is { } nullNodeTiktokUsername && nullNodeTiktokUsername.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TiktokUsername = null;
+            if (parseNode.GetChildNode("twitter_username") is { } nullNodeTwitterUsername && nullNodeTwitterUsername.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TwitterUsername = null;
+            if (parseNode.GetChildNode("voice_mixing_allowed") is { } nullNodeVoiceMixingAllowed && nullNodeVoiceMixingAllowed.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VoiceMixingAllowed = null;
+            if (parseNode.GetChildNode("whitelisted_emails") is { } nullNodeWhitelistedEmails && nullNodeWhitelistedEmails.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WhitelistedEmails = null;
+            if (parseNode.GetChildNode("youtube_username") is { } nullNodeYoutubeUsername && nullNodeYoutubeUsername.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) YoutubeUsername = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The ban reason of the voice.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BanReason { get; set; }
+        public string? BanReason { get => _explicitNullValueBanReason; set { _explicitNullValueBanReason = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ban_reason"); else _explicitNullProperties?.Remove("ban_reason"); } }
+        private string? _explicitNullValueBanReason = default!;
 #nullable restore
 #else
-        public string BanReason { get; set; }
+        public string BanReason { get => _explicitNullValueBanReason; set { _explicitNullValueBanReason = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ban_reason"); else _explicitNullProperties?.Remove("ban_reason"); } }
+        private string _explicitNullValueBanReason = default!;
 #endif
         /// <summary>The category of the voice.</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceSharingResponseModelCategory? Category { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceSharingResponseModelCategory? Category { get => _explicitNullValueCategory; set { _explicitNullValueCategory = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("category"); else _explicitNullProperties?.Remove("category"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceSharingResponseModelCategory? _explicitNullValueCategory = default!;
         /// <summary>The number of clones on the voice.</summary>
-        public int? ClonedByCount { get; set; }
+        public int? ClonedByCount { get => _explicitNullValueClonedByCount; set { _explicitNullValueClonedByCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cloned_by_count"); else _explicitNullProperties?.Remove("cloned_by_count"); } }
+        private int? _explicitNullValueClonedByCount = default!;
         /// <summary>The date of the voice sharing in Unix time.</summary>
-        public int? DateUnix { get; set; }
+        public int? DateUnix { get => _explicitNullValueDateUnix; set { _explicitNullValueDateUnix = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("date_unix"); else _explicitNullProperties?.Remove("date_unix"); } }
+        private int? _explicitNullValueDateUnix = default!;
         /// <summary>The description of the voice.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description { get; set; }
+        public string? Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        private string? _explicitNullValueDescription = default!;
 #nullable restore
 #else
-        public string Description { get; set; }
+        public string Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        private string _explicitNullValueDescription = default!;
 #endif
         /// <summary>The date of the voice sharing in Unix time.</summary>
-        public int? DisableAtUnix { get; set; }
+        public int? DisableAtUnix { get => _explicitNullValueDisableAtUnix; set { _explicitNullValueDisableAtUnix = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("disable_at_unix"); else _explicitNullProperties?.Remove("disable_at_unix"); } }
+        private int? _explicitNullValueDisableAtUnix = default!;
         /// <summary>Whether the voice is enabled in the library.</summary>
-        public bool? EnabledInLibrary { get; set; }
+        public bool? EnabledInLibrary { get => _explicitNullValueEnabledInLibrary; set { _explicitNullValueEnabledInLibrary = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enabled_in_library"); else _explicitNullProperties?.Remove("enabled_in_library"); } }
+        private bool? _explicitNullValueEnabledInLibrary = default!;
         /// <summary>Whether the voice is featured.</summary>
-        public bool? Featured { get; set; }
+        public bool? Featured { get => _explicitNullValueFeatured; set { _explicitNullValueFeatured = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("featured"); else _explicitNullProperties?.Remove("featured"); } }
+        private bool? _explicitNullValueFeatured = default!;
         /// <summary>The rate of the voice sharing in USD per 1000 credits.</summary>
-        public double? FiatRate { get; set; }
+        public double? FiatRate { get => _explicitNullValueFiatRate; set { _explicitNullValueFiatRate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fiat_rate"); else _explicitNullProperties?.Remove("fiat_rate"); } }
+        private double? _explicitNullValueFiatRate = default!;
         /// <summary>Whether financial rewards are enabled.</summary>
-        public bool? FinancialRewardsEnabled { get; set; }
+        public bool? FinancialRewardsEnabled { get => _explicitNullValueFinancialRewardsEnabled; set { _explicitNullValueFinancialRewardsEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("financial_rewards_enabled"); else _explicitNullProperties?.Remove("financial_rewards_enabled"); } }
+        private bool? _explicitNullValueFinancialRewardsEnabled = default!;
         /// <summary>Whether free users are allowed.</summary>
-        public bool? FreeUsersAllowed { get; set; }
+        public bool? FreeUsersAllowed { get => _explicitNullValueFreeUsersAllowed; set { _explicitNullValueFreeUsersAllowed = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("free_users_allowed"); else _explicitNullProperties?.Remove("free_users_allowed"); } }
+        private bool? _explicitNullValueFreeUsersAllowed = default!;
         /// <summary>The sample ID of the history item.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? HistoryItemSampleId { get; set; }
+        public string? HistoryItemSampleId { get => _explicitNullValueHistoryItemSampleId; set { _explicitNullValueHistoryItemSampleId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("history_item_sample_id"); else _explicitNullProperties?.Remove("history_item_sample_id"); } }
+        private string? _explicitNullValueHistoryItemSampleId = default!;
 #nullable restore
 #else
-        public string HistoryItemSampleId { get; set; }
+        public string HistoryItemSampleId { get => _explicitNullValueHistoryItemSampleId; set { _explicitNullValueHistoryItemSampleId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("history_item_sample_id"); else _explicitNullProperties?.Remove("history_item_sample_id"); } }
+        private string _explicitNullValueHistoryItemSampleId = default!;
 #endif
         /// <summary>The image URL of the voice.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ImageUrl { get; set; }
+        public string? ImageUrl { get => _explicitNullValueImageUrl; set { _explicitNullValueImageUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("image_url"); else _explicitNullProperties?.Remove("image_url"); } }
+        private string? _explicitNullValueImageUrl = default!;
 #nullable restore
 #else
-        public string ImageUrl { get; set; }
+        public string ImageUrl { get => _explicitNullValueImageUrl; set { _explicitNullValueImageUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("image_url"); else _explicitNullProperties?.Remove("image_url"); } }
+        private string _explicitNullValueImageUrl = default!;
 #endif
         /// <summary>The Instagram username of the voice.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? InstagramUsername { get; set; }
+        public string? InstagramUsername { get => _explicitNullValueInstagramUsername; set { _explicitNullValueInstagramUsername = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("instagram_username"); else _explicitNullProperties?.Remove("instagram_username"); } }
+        private string? _explicitNullValueInstagramUsername = default!;
 #nullable restore
 #else
-        public string InstagramUsername { get; set; }
+        public string InstagramUsername { get => _explicitNullValueInstagramUsername; set { _explicitNullValueInstagramUsername = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("instagram_username"); else _explicitNullProperties?.Remove("instagram_username"); } }
+        private string _explicitNullValueInstagramUsername = default!;
 #endif
         /// <summary>The labels of the voice.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceSharingResponseModelLabelsProperty? Labels { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceSharingResponseModelLabelsProperty? Labels { get => _explicitNullValueLabels; set { _explicitNullValueLabels = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("labels"); else _explicitNullProperties?.Remove("labels"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceSharingResponseModelLabelsProperty? _explicitNullValueLabels = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceSharingResponseModelLabelsProperty Labels { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceSharingResponseModelLabelsProperty Labels { get => _explicitNullValueLabels; set { _explicitNullValueLabels = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("labels"); else _explicitNullProperties?.Remove("labels"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceSharingResponseModelLabelsProperty _explicitNullValueLabels = default!;
 #endif
         /// <summary>The number of likes on the voice.</summary>
-        public int? LikedByCount { get; set; }
+        public int? LikedByCount { get => _explicitNullValueLikedByCount; set { _explicitNullValueLikedByCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("liked_by_count"); else _explicitNullProperties?.Remove("liked_by_count"); } }
+        private int? _explicitNullValueLikedByCount = default!;
         /// <summary>Whether live moderation is enabled.</summary>
-        public bool? LiveModerationEnabled { get; set; }
+        public bool? LiveModerationEnabled { get => _explicitNullValueLiveModerationEnabled; set { _explicitNullValueLiveModerationEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("live_moderation_enabled"); else _explicitNullProperties?.Remove("live_moderation_enabled"); } }
+        private bool? _explicitNullValueLiveModerationEnabled = default!;
         /// <summary>The moderation check of the voice.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceSharingModerationCheckResponseModel? ModerationCheck { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceSharingModerationCheckResponseModel? ModerationCheck { get => _explicitNullValueModerationCheck; set { _explicitNullValueModerationCheck = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("moderation_check"); else _explicitNullProperties?.Remove("moderation_check"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceSharingModerationCheckResponseModel? _explicitNullValueModerationCheck = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceSharingModerationCheckResponseModel ModerationCheck { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceSharingModerationCheckResponseModel ModerationCheck { get => _explicitNullValueModerationCheck; set { _explicitNullValueModerationCheck = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("moderation_check"); else _explicitNullProperties?.Remove("moderation_check"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceSharingModerationCheckResponseModel _explicitNullValueModerationCheck = default!;
 #endif
         /// <summary>The name of the voice.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get; set; }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string _explicitNullValueName = default!;
 #endif
         /// <summary>The notice period of the voice sharing.</summary>
-        public int? NoticePeriod { get; set; }
+        public int? NoticePeriod { get => _explicitNullValueNoticePeriod; set { _explicitNullValueNoticePeriod = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notice_period"); else _explicitNullProperties?.Remove("notice_period"); } }
+        private int? _explicitNullValueNoticePeriod = default!;
         /// <summary>The ID of the original voice.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OriginalVoiceId { get; set; }
+        public string? OriginalVoiceId { get => _explicitNullValueOriginalVoiceId; set { _explicitNullValueOriginalVoiceId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("original_voice_id"); else _explicitNullProperties?.Remove("original_voice_id"); } }
+        private string? _explicitNullValueOriginalVoiceId = default!;
 #nullable restore
 #else
-        public string OriginalVoiceId { get; set; }
+        public string OriginalVoiceId { get => _explicitNullValueOriginalVoiceId; set { _explicitNullValueOriginalVoiceId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("original_voice_id"); else _explicitNullProperties?.Remove("original_voice_id"); } }
+        private string _explicitNullValueOriginalVoiceId = default!;
 #endif
         /// <summary>The ID of the public owner.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PublicOwnerId { get; set; }
+        public string? PublicOwnerId { get => _explicitNullValuePublicOwnerId; set { _explicitNullValuePublicOwnerId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("public_owner_id"); else _explicitNullProperties?.Remove("public_owner_id"); } }
+        private string? _explicitNullValuePublicOwnerId = default!;
 #nullable restore
 #else
-        public string PublicOwnerId { get; set; }
+        public string PublicOwnerId { get => _explicitNullValuePublicOwnerId; set { _explicitNullValuePublicOwnerId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("public_owner_id"); else _explicitNullProperties?.Remove("public_owner_id"); } }
+        private string _explicitNullValuePublicOwnerId = default!;
 #endif
         /// <summary>The rate of the voice sharing.</summary>
-        public double? Rate { get; set; }
+        public double? Rate { get => _explicitNullValueRate; set { _explicitNullValueRate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rate"); else _explicitNullProperties?.Remove("rate"); } }
+        private double? _explicitNullValueRate = default!;
         /// <summary>Whether the reader app is enabled.</summary>
-        public bool? ReaderAppEnabled { get; set; }
+        public bool? ReaderAppEnabled { get => _explicitNullValueReaderAppEnabled; set { _explicitNullValueReaderAppEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reader_app_enabled"); else _explicitNullProperties?.Remove("reader_app_enabled"); } }
+        private bool? _explicitNullValueReaderAppEnabled = default!;
         /// <summary>The reader restricted on of the voice.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ReaderResourceResponseModel>? ReaderRestrictedOn { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ReaderResourceResponseModel>? ReaderRestrictedOn { get => _explicitNullValueReaderRestrictedOn; set { _explicitNullValueReaderRestrictedOn = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reader_restricted_on"); else _explicitNullProperties?.Remove("reader_restricted_on"); } }
+        private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ReaderResourceResponseModel>? _explicitNullValueReaderRestrictedOn = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ReaderResourceResponseModel> ReaderRestrictedOn { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ReaderResourceResponseModel> ReaderRestrictedOn { get => _explicitNullValueReaderRestrictedOn; set { _explicitNullValueReaderRestrictedOn = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reader_restricted_on"); else _explicitNullProperties?.Remove("reader_restricted_on"); } }
+        private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ReaderResourceResponseModel> _explicitNullValueReaderRestrictedOn = default!;
 #endif
         /// <summary>The review message of the voice.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ReviewMessage { get; set; }
+        public string? ReviewMessage { get => _explicitNullValueReviewMessage; set { _explicitNullValueReviewMessage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("review_message"); else _explicitNullProperties?.Remove("review_message"); } }
+        private string? _explicitNullValueReviewMessage = default!;
 #nullable restore
 #else
-        public string ReviewMessage { get; set; }
+        public string ReviewMessage { get => _explicitNullValueReviewMessage; set { _explicitNullValueReviewMessage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("review_message"); else _explicitNullProperties?.Remove("review_message"); } }
+        private string _explicitNullValueReviewMessage = default!;
 #endif
         /// <summary>The review status of the voice.</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceSharingResponseModelReviewStatus? ReviewStatus { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceSharingResponseModelReviewStatus? ReviewStatus { get => _explicitNullValueReviewStatus; set { _explicitNullValueReviewStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("review_status"); else _explicitNullProperties?.Remove("review_status"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceSharingResponseModelReviewStatus? _explicitNullValueReviewStatus = default!;
         /// <summary>The status of the voice sharing.</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceSharingResponseModelStatus? Status { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceSharingResponseModelStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceSharingResponseModelStatus? _explicitNullValueStatus = default!;
         /// <summary>The TikTok username of the voice.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TiktokUsername { get; set; }
+        public string? TiktokUsername { get => _explicitNullValueTiktokUsername; set { _explicitNullValueTiktokUsername = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tiktok_username"); else _explicitNullProperties?.Remove("tiktok_username"); } }
+        private string? _explicitNullValueTiktokUsername = default!;
 #nullable restore
 #else
-        public string TiktokUsername { get; set; }
+        public string TiktokUsername { get => _explicitNullValueTiktokUsername; set { _explicitNullValueTiktokUsername = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tiktok_username"); else _explicitNullProperties?.Remove("tiktok_username"); } }
+        private string _explicitNullValueTiktokUsername = default!;
 #endif
         /// <summary>The Twitter/X username of the voice.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TwitterUsername { get; set; }
+        public string? TwitterUsername { get => _explicitNullValueTwitterUsername; set { _explicitNullValueTwitterUsername = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("twitter_username"); else _explicitNullProperties?.Remove("twitter_username"); } }
+        private string? _explicitNullValueTwitterUsername = default!;
 #nullable restore
 #else
-        public string TwitterUsername { get; set; }
+        public string TwitterUsername { get => _explicitNullValueTwitterUsername; set { _explicitNullValueTwitterUsername = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("twitter_username"); else _explicitNullProperties?.Remove("twitter_username"); } }
+        private string _explicitNullValueTwitterUsername = default!;
 #endif
         /// <summary>Whether voice mixing is allowed.</summary>
-        public bool? VoiceMixingAllowed { get; set; }
+        public bool? VoiceMixingAllowed { get => _explicitNullValueVoiceMixingAllowed; set { _explicitNullValueVoiceMixingAllowed = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("voice_mixing_allowed"); else _explicitNullProperties?.Remove("voice_mixing_allowed"); } }
+        private bool? _explicitNullValueVoiceMixingAllowed = default!;
         /// <summary>A list of whitelisted emails.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? WhitelistedEmails { get; set; }
+        public List<string>? WhitelistedEmails { get => _explicitNullValueWhitelistedEmails; set { _explicitNullValueWhitelistedEmails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("whitelisted_emails"); else _explicitNullProperties?.Remove("whitelisted_emails"); } }
+        private List<string>? _explicitNullValueWhitelistedEmails = default!;
 #nullable restore
 #else
-        public List<string> WhitelistedEmails { get; set; }
+        public List<string> WhitelistedEmails { get => _explicitNullValueWhitelistedEmails; set { _explicitNullValueWhitelistedEmails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("whitelisted_emails"); else _explicitNullProperties?.Remove("whitelisted_emails"); } }
+        private List<string> _explicitNullValueWhitelistedEmails = default!;
 #endif
         /// <summary>The YouTube username of the voice.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? YoutubeUsername { get; set; }
+        public string? YoutubeUsername { get => _explicitNullValueYoutubeUsername; set { _explicitNullValueYoutubeUsername = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("youtube_username"); else _explicitNullProperties?.Remove("youtube_username"); } }
+        private string? _explicitNullValueYoutubeUsername = default!;
 #nullable restore
 #else
-        public string YoutubeUsername { get; set; }
+        public string YoutubeUsername { get => _explicitNullValueYoutubeUsername; set { _explicitNullValueYoutubeUsername = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("youtube_username"); else _explicitNullProperties?.Remove("youtube_username"); } }
+        private string _explicitNullValueYoutubeUsername = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceSharingResponseModel"/> and sets the default values.
@@ -191,7 +280,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceSharingResponseModel CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceSharingResponseModel();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceSharingResponseModel(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -276,6 +365,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteBoolValue("voice_mixing_allowed", VoiceMixingAllowed);
             writer.WriteCollectionOfPrimitiveValues<string>("whitelisted_emails", WhitelistedEmails);
             writer.WriteStringValue("youtube_username", YoutubeUsername);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

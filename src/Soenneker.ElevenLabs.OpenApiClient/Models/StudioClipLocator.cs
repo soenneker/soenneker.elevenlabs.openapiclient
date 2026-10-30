@@ -12,50 +12,74 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class StudioClipLocator : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("block_id") is { } nullNodeBlockId && nullNodeBlockId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BlockId = null;
+            if (parseNode.GetChildNode("chapter_id") is { } nullNodeChapterId && nullNodeChapterId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ChapterId = null;
+            if (parseNode.GetChildNode("clip_id") is { } nullNodeClipId && nullNodeClipId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClipId = null;
+            if (parseNode.GetChildNode("clip_type") is { } nullNodeClipType && nullNodeClipType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClipType = null;
+            if (parseNode.GetChildNode("preview_url") is { } nullNodePreviewUrl && nullNodePreviewUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreviewUrl = null;
+            if (parseNode.GetChildNode("project_id") is { } nullNodeProjectId && nullNodeProjectId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProjectId = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The block_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BlockId { get; set; }
+        public string? BlockId { get => _explicitNullValueBlockId; set { _explicitNullValueBlockId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("block_id"); else _explicitNullProperties?.Remove("block_id"); } }
+        private string? _explicitNullValueBlockId = default!;
 #nullable restore
 #else
-        public string BlockId { get; set; }
+        public string BlockId { get => _explicitNullValueBlockId; set { _explicitNullValueBlockId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("block_id"); else _explicitNullProperties?.Remove("block_id"); } }
+        private string _explicitNullValueBlockId = default!;
 #endif
         /// <summary>The chapter_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ChapterId { get; set; }
+        public string? ChapterId { get => _explicitNullValueChapterId; set { _explicitNullValueChapterId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("chapter_id"); else _explicitNullProperties?.Remove("chapter_id"); } }
+        private string? _explicitNullValueChapterId = default!;
 #nullable restore
 #else
-        public string ChapterId { get; set; }
+        public string ChapterId { get => _explicitNullValueChapterId; set { _explicitNullValueChapterId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("chapter_id"); else _explicitNullProperties?.Remove("chapter_id"); } }
+        private string _explicitNullValueChapterId = default!;
 #endif
         /// <summary>The clip_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ClipId { get; set; }
+        public string? ClipId { get => _explicitNullValueClipId; set { _explicitNullValueClipId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("clip_id"); else _explicitNullProperties?.Remove("clip_id"); } }
+        private string? _explicitNullValueClipId = default!;
 #nullable restore
 #else
-        public string ClipId { get; set; }
+        public string ClipId { get => _explicitNullValueClipId; set { _explicitNullValueClipId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("clip_id"); else _explicitNullProperties?.Remove("clip_id"); } }
+        private string _explicitNullValueClipId = default!;
 #endif
         /// <summary>The clip_type property</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.StudioClipLocatorClipType? ClipType { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.StudioClipLocatorClipType? ClipType { get => _explicitNullValueClipType; set { _explicitNullValueClipType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("clip_type"); else _explicitNullProperties?.Remove("clip_type"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.StudioClipLocatorClipType? _explicitNullValueClipType = default!;
         /// <summary>The preview_url property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PreviewUrl { get; set; }
+        public string? PreviewUrl { get => _explicitNullValuePreviewUrl; set { _explicitNullValuePreviewUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("preview_url"); else _explicitNullProperties?.Remove("preview_url"); } }
+        private string? _explicitNullValuePreviewUrl = default!;
 #nullable restore
 #else
-        public string PreviewUrl { get; set; }
+        public string PreviewUrl { get => _explicitNullValuePreviewUrl; set { _explicitNullValuePreviewUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("preview_url"); else _explicitNullProperties?.Remove("preview_url"); } }
+        private string _explicitNullValuePreviewUrl = default!;
 #endif
         /// <summary>The project_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProjectId { get; set; }
+        public string? ProjectId { get => _explicitNullValueProjectId; set { _explicitNullValueProjectId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("project_id"); else _explicitNullProperties?.Remove("project_id"); } }
+        private string? _explicitNullValueProjectId = default!;
 #nullable restore
 #else
-        public string ProjectId { get; set; }
+        public string ProjectId { get => _explicitNullValueProjectId; set { _explicitNullValueProjectId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("project_id"); else _explicitNullProperties?.Remove("project_id"); } }
+        private string _explicitNullValueProjectId = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.StudioClipLocator"/> and sets the default values.
@@ -72,7 +96,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.StudioClipLocator CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.StudioClipLocator();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.StudioClipLocator(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -103,6 +127,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.StudioClipLocatorClipType>("clip_type", ClipType);
             writer.WriteStringValue("preview_url", PreviewUrl);
             writer.WriteStringValue("project_id", ProjectId);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -12,38 +12,57 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ActorModel : IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("app_name") is { } nullNodeAppName && nullNodeAppName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AppName = null;
+            if (parseNode.GetChildNode("app_uid") is { } nullNodeAppUid && nullNodeAppUid.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AppUid = null;
+            if (parseNode.GetChildNode("session") is { } nullNodeSession && nullNodeSession.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Session = null;
+            if (parseNode.GetChildNode("user") is { } nullNodeUser && nullNodeUser.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) User = null;
+        }
+
         /// <summary>Client application or service name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AppName { get; set; }
+        public string? AppName { get => _explicitNullValueAppName; set { _explicitNullValueAppName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("app_name"); else _explicitNullProperties?.Remove("app_name"); } }
+        private string? _explicitNullValueAppName = default!;
 #nullable restore
 #else
-        public string AppName { get; set; }
+        public string AppName { get => _explicitNullValueAppName; set { _explicitNullValueAppName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("app_name"); else _explicitNullProperties?.Remove("app_name"); } }
+        private string _explicitNullValueAppName = default!;
 #endif
         /// <summary>Client application unique identifier</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AppUid { get; set; }
+        public string? AppUid { get => _explicitNullValueAppUid; set { _explicitNullValueAppUid = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("app_uid"); else _explicitNullProperties?.Remove("app_uid"); } }
+        private string? _explicitNullValueAppUid = default!;
 #nullable restore
 #else
-        public string AppUid { get; set; }
+        public string AppUid { get => _explicitNullValueAppUid; set { _explicitNullValueAppUid = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("app_uid"); else _explicitNullProperties?.Remove("app_uid"); } }
+        private string _explicitNullValueAppUid = default!;
 #endif
         /// <summary>Session information</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ActorModelSessionProperty? Session { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ActorModelSessionProperty? Session { get => _explicitNullValueSession; set { _explicitNullValueSession = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("session"); else _explicitNullProperties?.Remove("session"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ActorModelSessionProperty? _explicitNullValueSession = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ActorModelSessionProperty Session { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ActorModelSessionProperty Session { get => _explicitNullValueSession; set { _explicitNullValueSession = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("session"); else _explicitNullProperties?.Remove("session"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ActorModelSessionProperty _explicitNullValueSession = default!;
 #endif
         /// <summary>User who performed the action</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.UserModel? User { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.UserModel? User { get => _explicitNullValueUser; set { _explicitNullValueUser = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user"); else _explicitNullProperties?.Remove("user"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.UserModel? _explicitNullValueUser = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.UserModel User { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.UserModel User { get => _explicitNullValueUser; set { _explicitNullValueUser = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user"); else _explicitNullProperties?.Remove("user"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.UserModel _explicitNullValueUser = default!;
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -53,7 +72,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.ActorModel CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.ActorModel();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.ActorModel(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -79,7 +98,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteStringValue("app_name", AppName);
             writer.WriteStringValue("app_uid", AppUid);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ActorModelSessionProperty>("session", Session);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UserModel>("user", User);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UserModel>("user", User);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

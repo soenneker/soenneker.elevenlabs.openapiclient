@@ -11,19 +11,31 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class PendingExternalAudiosMetadataModel : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("external_audio_ids") is { } nullNodeExternalAudioIds && nullNodeExternalAudioIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExternalAudioIds = null;
+            if (parseNode.GetChildNode("target_global_offset_ms") is { } nullNodeTargetGlobalOffsetMs && nullNodeTargetGlobalOffsetMs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TargetGlobalOffsetMs = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The external_audio_ids property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? ExternalAudioIds { get; set; }
+        public List<string>? ExternalAudioIds { get => _explicitNullValueExternalAudioIds; set { _explicitNullValueExternalAudioIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("external_audio_ids"); else _explicitNullProperties?.Remove("external_audio_ids"); } }
+        private List<string>? _explicitNullValueExternalAudioIds = default!;
 #nullable restore
 #else
-        public List<string> ExternalAudioIds { get; set; }
+        public List<string> ExternalAudioIds { get => _explicitNullValueExternalAudioIds; set { _explicitNullValueExternalAudioIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("external_audio_ids"); else _explicitNullProperties?.Remove("external_audio_ids"); } }
+        private List<string> _explicitNullValueExternalAudioIds = default!;
 #endif
         /// <summary>The target_global_offset_ms property</summary>
-        public int? TargetGlobalOffsetMs { get; set; }
+        public int? TargetGlobalOffsetMs { get => _explicitNullValueTargetGlobalOffsetMs; set { _explicitNullValueTargetGlobalOffsetMs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("target_global_offset_ms"); else _explicitNullProperties?.Remove("target_global_offset_ms"); } }
+        private int? _explicitNullValueTargetGlobalOffsetMs = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.PendingExternalAudiosMetadataModel"/> and sets the default values.
         /// </summary>
@@ -39,7 +51,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.PendingExternalAudiosMetadataModel CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.PendingExternalAudiosMetadataModel();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.PendingExternalAudiosMetadataModel(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -62,6 +74,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<string>("external_audio_ids", ExternalAudioIds);
             writer.WriteIntValue("target_global_offset_ms", TargetGlobalOffsetMs);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

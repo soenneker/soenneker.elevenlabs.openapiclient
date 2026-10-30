@@ -11,104 +11,160 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class McpServerConfigOutput : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("approval_policy") is { } nullNodeApprovalPolicy && nullNodeApprovalPolicy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ApprovalPolicy = null;
+            if (parseNode.GetChildNode("auth_connection") is { } nullNodeAuthConnection && nullNodeAuthConnection.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AuthConnection = null;
+            if (parseNode.GetChildNode("description") is { } nullNodeDescription && nullNodeDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Description = null;
+            if (parseNode.GetChildNode("disable_compression") is { } nullNodeDisableCompression && nullNodeDisableCompression.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DisableCompression = null;
+            if (parseNode.GetChildNode("disable_interruptions") is { } nullNodeDisableInterruptions && nullNodeDisableInterruptions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DisableInterruptions = null;
+            if (parseNode.GetChildNode("execution_mode") is { } nullNodeExecutionMode && nullNodeExecutionMode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExecutionMode = null;
+            if (parseNode.GetChildNode("force_pre_tool_speech") is { } nullNodeForcePreToolSpeech && nullNodeForcePreToolSpeech.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ForcePreToolSpeech = null;
+            if (parseNode.GetChildNode("interruption_mode") is { } nullNodeInterruptionMode && nullNodeInterruptionMode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InterruptionMode = null;
+            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("pre_tool_speech") is { } nullNodePreToolSpeech && nullNodePreToolSpeech.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreToolSpeech = null;
+            if (parseNode.GetChildNode("request_headers") is { } nullNodeRequestHeaders && nullNodeRequestHeaders.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequestHeaders = null;
+            if (parseNode.GetChildNode("request_meta") is { } nullNodeRequestMeta && nullNodeRequestMeta.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequestMeta = null;
+            if (parseNode.GetChildNode("response_timeout_secs") is { } nullNodeResponseTimeoutSecs && nullNodeResponseTimeoutSecs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ResponseTimeoutSecs = null;
+            if (parseNode.GetChildNode("secret_token") is { } nullNodeSecretToken && nullNodeSecretToken.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SecretToken = null;
+            if (parseNode.GetChildNode("tool_approval_hashes") is { } nullNodeToolApprovalHashes && nullNodeToolApprovalHashes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ToolApprovalHashes = null;
+            if (parseNode.GetChildNode("tool_call_sound") is { } nullNodeToolCallSound && nullNodeToolCallSound.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ToolCallSound = null;
+            if (parseNode.GetChildNode("tool_call_sound_behavior") is { } nullNodeToolCallSoundBehavior && nullNodeToolCallSoundBehavior.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ToolCallSoundBehavior = null;
+            if (parseNode.GetChildNode("tool_config_overrides") is { } nullNodeToolConfigOverrides && nullNodeToolConfigOverrides.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ToolConfigOverrides = null;
+            if (parseNode.GetChildNode("transport") is { } nullNodeTransport && nullNodeTransport.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Transport = null;
+            if (parseNode.GetChildNode("url") is { } nullNodeUrl && nullNodeUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Url = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Defines the MCP server-level approval policy for tool execution.</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.McpApprovalPolicy? ApprovalPolicy { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.McpApprovalPolicy? ApprovalPolicy { get => _explicitNullValueApprovalPolicy; set { _explicitNullValueApprovalPolicy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("approval_policy"); else _explicitNullProperties?.Remove("approval_policy"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.McpApprovalPolicy? _explicitNullValueApprovalPolicy = default!;
         /// <summary>Optional auth connection to use for authentication with this MCP server</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.McpServerConfigOutputAuthConnection? AuthConnection { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.McpServerConfigOutputAuthConnection? AuthConnection { get => _explicitNullValueAuthConnection; set { _explicitNullValueAuthConnection = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("auth_connection"); else _explicitNullProperties?.Remove("auth_connection"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.McpServerConfigOutputAuthConnection? _explicitNullValueAuthConnection = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.McpServerConfigOutputAuthConnection AuthConnection { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.McpServerConfigOutputAuthConnection AuthConnection { get => _explicitNullValueAuthConnection; set { _explicitNullValueAuthConnection = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("auth_connection"); else _explicitNullProperties?.Remove("auth_connection"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.McpServerConfigOutputAuthConnection _explicitNullValueAuthConnection = default!;
 #endif
         /// <summary>The description property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description { get; set; }
+        public string? Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        private string? _explicitNullValueDescription = default!;
 #nullable restore
 #else
-        public string Description { get; set; }
+        public string Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        private string _explicitNullValueDescription = default!;
 #endif
         /// <summary>Whether to disable HTTP compression for this MCP server. Enable this if the server does not support compressed responses.</summary>
-        public bool? DisableCompression { get; set; }
+        public bool? DisableCompression { get => _explicitNullValueDisableCompression; set { _explicitNullValueDisableCompression = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("disable_compression"); else _explicitNullProperties?.Remove("disable_compression"); } }
+        private bool? _explicitNullValueDisableCompression = default!;
         /// <summary>DEPRECATED: use `interruption_mode` instead. If true, the user will not be able to interrupt the agent while any tool from this MCP server is running.</summary>
         [Obsolete("")]
-        public bool? DisableInterruptions { get; set; }
+        public bool? DisableInterruptions { get => _explicitNullValueDisableInterruptions; set { _explicitNullValueDisableInterruptions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("disable_interruptions"); else _explicitNullProperties?.Remove("disable_interruptions"); } }
+        private bool? _explicitNullValueDisableInterruptions = default!;
         /// <summary>Determines when and how all tools from this MCP server execute: &apos;immediate&apos; executes the tool right away when requested by the LLM, &apos;post_tool_speech&apos; waits for the agent to finish speaking before executing, &apos;async&apos; runs the tool in the background without blocking - best for long-running operations.</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolExecutionMode? ExecutionMode { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolExecutionMode? ExecutionMode { get => _explicitNullValueExecutionMode; set { _explicitNullValueExecutionMode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("execution_mode"); else _explicitNullProperties?.Remove("execution_mode"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolExecutionMode? _explicitNullValueExecutionMode = default!;
         /// <summary>DEPRECATED: use `pre_tool_speech` instead. If true, all tools from this MCP server will require pre-tool execution speech.</summary>
         [Obsolete("")]
-        public bool? ForcePreToolSpeech { get; set; }
+        public bool? ForcePreToolSpeech { get => _explicitNullValueForcePreToolSpeech; set { _explicitNullValueForcePreToolSpeech = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("force_pre_tool_speech"); else _explicitNullProperties?.Remove("force_pre_tool_speech"); } }
+        private bool? _explicitNullValueForcePreToolSpeech = default!;
         /// <summary>Controls whether the user can interrupt the agent around this tool call. &apos;allow&apos; (default) lets the user interrupt at any time, &apos;disable_during_tool&apos; suppresses interruptions only while the tool is running, &apos;disable_during_tool_and_turn&apos; suppresses interruptions while the tool runs and for the agent response that follows it. Applies to every tool from this MCP server unless overridden per tool.</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolInterruptionMode? InterruptionMode { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolInterruptionMode? InterruptionMode { get => _explicitNullValueInterruptionMode; set { _explicitNullValueInterruptionMode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("interruption_mode"); else _explicitNullProperties?.Remove("interruption_mode"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolInterruptionMode? _explicitNullValueInterruptionMode = default!;
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get; set; }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string _explicitNullValueName = default!;
 #endif
         /// <summary>Controls whether the agent speaks before this tool is called. &apos;auto&apos; (default) decides based on recent tool latency, &apos;force&apos; always asks the agent to speak, &apos;off&apos; fully opts out regardless of latency. Applies to every tool from this MCP server unless overridden per tool.</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PreToolSpeechMode? PreToolSpeech { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PreToolSpeechMode? PreToolSpeech { get => _explicitNullValuePreToolSpeech; set { _explicitNullValuePreToolSpeech = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pre_tool_speech"); else _explicitNullProperties?.Remove("pre_tool_speech"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.PreToolSpeechMode? _explicitNullValuePreToolSpeech = default!;
         /// <summary>The headers included in the request</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.McpServerConfigOutputRequestHeadersProperty? RequestHeaders { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.McpServerConfigOutputRequestHeadersProperty? RequestHeaders { get => _explicitNullValueRequestHeaders; set { _explicitNullValueRequestHeaders = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("request_headers"); else _explicitNullProperties?.Remove("request_headers"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.McpServerConfigOutputRequestHeadersProperty? _explicitNullValueRequestHeaders = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.McpServerConfigOutputRequestHeadersProperty RequestHeaders { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.McpServerConfigOutputRequestHeadersProperty RequestHeaders { get => _explicitNullValueRequestHeaders; set { _explicitNullValueRequestHeaders = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("request_headers"); else _explicitNullProperties?.Remove("request_headers"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.McpServerConfigOutputRequestHeadersProperty _explicitNullValueRequestHeaders = default!;
 #endif
         /// <summary>Entries sent in the MCP `_meta` field of tools/call requests. Values may be JSON scalars, or references to a workspace secret, dynamic variable, or environment variable resolved per call.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.McpServerConfigOutputRequestMetaProperty? RequestMeta { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.McpServerConfigOutputRequestMetaProperty? RequestMeta { get => _explicitNullValueRequestMeta; set { _explicitNullValueRequestMeta = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("request_meta"); else _explicitNullProperties?.Remove("request_meta"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.McpServerConfigOutputRequestMetaProperty? _explicitNullValueRequestMeta = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.McpServerConfigOutputRequestMetaProperty RequestMeta { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.McpServerConfigOutputRequestMetaProperty RequestMeta { get => _explicitNullValueRequestMeta; set { _explicitNullValueRequestMeta = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("request_meta"); else _explicitNullProperties?.Remove("request_meta"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.McpServerConfigOutputRequestMetaProperty _explicitNullValueRequestMeta = default!;
 #endif
         /// <summary>The maximum time in seconds to wait for each MCP tool call to complete. Must be between 5 and 300 seconds (inclusive).</summary>
-        public int? ResponseTimeoutSecs { get; set; }
+        public int? ResponseTimeoutSecs { get => _explicitNullValueResponseTimeoutSecs; set { _explicitNullValueResponseTimeoutSecs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("response_timeout_secs"); else _explicitNullProperties?.Remove("response_timeout_secs"); } }
+        private int? _explicitNullValueResponseTimeoutSecs = default!;
         /// <summary>The secret token (Authorization header) stored as a workspace secret or in-place secret</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.McpServerConfigOutputSecretToken? SecretToken { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.McpServerConfigOutputSecretToken? SecretToken { get => _explicitNullValueSecretToken; set { _explicitNullValueSecretToken = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("secret_token"); else _explicitNullProperties?.Remove("secret_token"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.McpServerConfigOutputSecretToken? _explicitNullValueSecretToken = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.McpServerConfigOutputSecretToken SecretToken { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.McpServerConfigOutputSecretToken SecretToken { get => _explicitNullValueSecretToken; set { _explicitNullValueSecretToken = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("secret_token"); else _explicitNullProperties?.Remove("secret_token"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.McpServerConfigOutputSecretToken _explicitNullValueSecretToken = default!;
 #endif
         /// <summary>List of tool approval hashes for per-tool approval when approval_policy is REQUIRE_APPROVAL_PER_TOOL</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.McpToolApprovalHash>? ToolApprovalHashes { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.McpToolApprovalHash>? ToolApprovalHashes { get => _explicitNullValueToolApprovalHashes; set { _explicitNullValueToolApprovalHashes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tool_approval_hashes"); else _explicitNullProperties?.Remove("tool_approval_hashes"); } }
+        private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.McpToolApprovalHash>? _explicitNullValueToolApprovalHashes = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.McpToolApprovalHash> ToolApprovalHashes { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.McpToolApprovalHash> ToolApprovalHashes { get => _explicitNullValueToolApprovalHashes; set { _explicitNullValueToolApprovalHashes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tool_approval_hashes"); else _explicitNullProperties?.Remove("tool_approval_hashes"); } }
+        private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.McpToolApprovalHash> _explicitNullValueToolApprovalHashes = default!;
 #endif
         /// <summary>Predefined tool call sound type to play during tool execution for all tools from this MCP server</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolCallSoundType? ToolCallSound { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolCallSoundType? ToolCallSound { get => _explicitNullValueToolCallSound; set { _explicitNullValueToolCallSound = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tool_call_sound"); else _explicitNullProperties?.Remove("tool_call_sound"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolCallSoundType? _explicitNullValueToolCallSound = default!;
         /// <summary>Determines when the tool call sound should play for all tools from this MCP server</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolCallSoundBehavior? ToolCallSoundBehavior { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolCallSoundBehavior? ToolCallSoundBehavior { get => _explicitNullValueToolCallSoundBehavior; set { _explicitNullValueToolCallSoundBehavior = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tool_call_sound_behavior"); else _explicitNullProperties?.Remove("tool_call_sound_behavior"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolCallSoundBehavior? _explicitNullValueToolCallSoundBehavior = default!;
         /// <summary>List of per-tool configuration overrides that override the server-level defaults for specific tools</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.McpToolConfigOverrideOutput>? ToolConfigOverrides { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.McpToolConfigOverrideOutput>? ToolConfigOverrides { get => _explicitNullValueToolConfigOverrides; set { _explicitNullValueToolConfigOverrides = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tool_config_overrides"); else _explicitNullProperties?.Remove("tool_config_overrides"); } }
+        private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.McpToolConfigOverrideOutput>? _explicitNullValueToolConfigOverrides = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.McpToolConfigOverrideOutput> ToolConfigOverrides { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.McpToolConfigOverrideOutput> ToolConfigOverrides { get => _explicitNullValueToolConfigOverrides; set { _explicitNullValueToolConfigOverrides = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tool_config_overrides"); else _explicitNullProperties?.Remove("tool_config_overrides"); } }
+        private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.McpToolConfigOverrideOutput> _explicitNullValueToolConfigOverrides = default!;
 #endif
         /// <summary>Supported MCP server transport types.</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.McpServerTransport? Transport { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.McpServerTransport? Transport { get => _explicitNullValueTransport; set { _explicitNullValueTransport = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transport"); else _explicitNullProperties?.Remove("transport"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.McpServerTransport? _explicitNullValueTransport = default!;
         /// <summary>The URL of the MCP server, if this contains a secret please store as a workspace secret, otherwise store as a plain string. Must use https</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.McpServerConfigOutputUrl? Url { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.McpServerConfigOutputUrl? Url { get => _explicitNullValueUrl; set { _explicitNullValueUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url"); else _explicitNullProperties?.Remove("url"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.McpServerConfigOutputUrl? _explicitNullValueUrl = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.McpServerConfigOutputUrl Url { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.McpServerConfigOutputUrl Url { get => _explicitNullValueUrl; set { _explicitNullValueUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url"); else _explicitNullProperties?.Remove("url"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.McpServerConfigOutputUrl _explicitNullValueUrl = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.McpServerConfigOutput"/> and sets the default values.
@@ -133,7 +189,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.McpServerConfigOutput CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.McpServerConfigOutput();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.McpServerConfigOutput(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -192,6 +248,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.McpToolConfigOverrideOutput>("tool_config_overrides", ToolConfigOverrides);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.McpServerTransport>("transport", Transport);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.McpServerConfigOutputUrl>("url", Url);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

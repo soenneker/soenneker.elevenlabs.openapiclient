@@ -11,58 +11,85 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ConversationHistoryTranscriptToolCallWebhookDetails : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("body") is { } nullNodeBody && nullNodeBody.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Body = null;
+            if (parseNode.GetChildNode("headers") is { } nullNodeHeaders && nullNodeHeaders.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Headers = null;
+            if (parseNode.GetChildNode("method") is { } nullNodeMethod && nullNodeMethod.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Method = null;
+            if (parseNode.GetChildNode("path_params") is { } nullNodePathParams && nullNodePathParams.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PathParams = null;
+            if (parseNode.GetChildNode("query_params") is { } nullNodeQueryParams && nullNodeQueryParams.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) QueryParams = null;
+            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+            if (parseNode.GetChildNode("url") is { } nullNodeUrl && nullNodeUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Url = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The body property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Body { get; set; }
+        public string? Body { get => _explicitNullValueBody; set { _explicitNullValueBody = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("body"); else _explicitNullProperties?.Remove("body"); } }
+        private string? _explicitNullValueBody = default!;
 #nullable restore
 #else
-        public string Body { get; set; }
+        public string Body { get => _explicitNullValueBody; set { _explicitNullValueBody = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("body"); else _explicitNullProperties?.Remove("body"); } }
+        private string _explicitNullValueBody = default!;
 #endif
         /// <summary>The headers property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptToolCallWebhookDetailsHeadersProperty? Headers { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptToolCallWebhookDetailsHeadersProperty? Headers { get => _explicitNullValueHeaders; set { _explicitNullValueHeaders = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("headers"); else _explicitNullProperties?.Remove("headers"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptToolCallWebhookDetailsHeadersProperty? _explicitNullValueHeaders = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptToolCallWebhookDetailsHeadersProperty Headers { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptToolCallWebhookDetailsHeadersProperty Headers { get => _explicitNullValueHeaders; set { _explicitNullValueHeaders = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("headers"); else _explicitNullProperties?.Remove("headers"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptToolCallWebhookDetailsHeadersProperty _explicitNullValueHeaders = default!;
 #endif
         /// <summary>The method property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Method { get; set; }
+        public string? Method { get => _explicitNullValueMethod; set { _explicitNullValueMethod = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("method"); else _explicitNullProperties?.Remove("method"); } }
+        private string? _explicitNullValueMethod = default!;
 #nullable restore
 #else
-        public string Method { get; set; }
+        public string Method { get => _explicitNullValueMethod; set { _explicitNullValueMethod = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("method"); else _explicitNullProperties?.Remove("method"); } }
+        private string _explicitNullValueMethod = default!;
 #endif
         /// <summary>The path_params property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptToolCallWebhookDetailsPathParamsProperty? PathParams { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptToolCallWebhookDetailsPathParamsProperty? PathParams { get => _explicitNullValuePathParams; set { _explicitNullValuePathParams = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("path_params"); else _explicitNullProperties?.Remove("path_params"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptToolCallWebhookDetailsPathParamsProperty? _explicitNullValuePathParams = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptToolCallWebhookDetailsPathParamsProperty PathParams { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptToolCallWebhookDetailsPathParamsProperty PathParams { get => _explicitNullValuePathParams; set { _explicitNullValuePathParams = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("path_params"); else _explicitNullProperties?.Remove("path_params"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptToolCallWebhookDetailsPathParamsProperty _explicitNullValuePathParams = default!;
 #endif
         /// <summary>The query_params property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptToolCallWebhookDetailsQueryParamsProperty? QueryParams { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptToolCallWebhookDetailsQueryParamsProperty? QueryParams { get => _explicitNullValueQueryParams; set { _explicitNullValueQueryParams = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("query_params"); else _explicitNullProperties?.Remove("query_params"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptToolCallWebhookDetailsQueryParamsProperty? _explicitNullValueQueryParams = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptToolCallWebhookDetailsQueryParamsProperty QueryParams { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptToolCallWebhookDetailsQueryParamsProperty QueryParams { get => _explicitNullValueQueryParams; set { _explicitNullValueQueryParams = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("query_params"); else _explicitNullProperties?.Remove("query_params"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptToolCallWebhookDetailsQueryParamsProperty _explicitNullValueQueryParams = default!;
 #endif
         /// <summary>The type property</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptToolCallWebhookDetailsType? Type { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptToolCallWebhookDetailsType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptToolCallWebhookDetailsType? _explicitNullValueType = default!;
         /// <summary>The url property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Url { get; set; }
+        public string? Url { get => _explicitNullValueUrl; set { _explicitNullValueUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url"); else _explicitNullProperties?.Remove("url"); } }
+        private string? _explicitNullValueUrl = default!;
 #nullable restore
 #else
-        public string Url { get; set; }
+        public string Url { get => _explicitNullValueUrl; set { _explicitNullValueUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url"); else _explicitNullProperties?.Remove("url"); } }
+        private string _explicitNullValueUrl = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptToolCallWebhookDetails"/> and sets the default values.
@@ -79,7 +106,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptToolCallWebhookDetails CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptToolCallWebhookDetails();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptToolCallWebhookDetails(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -112,6 +139,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptToolCallWebhookDetailsQueryParamsProperty>("query_params", QueryParams);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptToolCallWebhookDetailsType>("type", Type);
             writer.WriteStringValue("url", Url);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

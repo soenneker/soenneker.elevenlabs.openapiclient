@@ -11,48 +11,70 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ConversationConfigClientOverrideConfigOutput : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("agent") is { } nullNodeAgent && nullNodeAgent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Agent = null;
+            if (parseNode.GetChildNode("asr") is { } nullNodeAsr && nullNodeAsr.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Asr = null;
+            if (parseNode.GetChildNode("conversation") is { } nullNodeConversation && nullNodeConversation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Conversation = null;
+            if (parseNode.GetChildNode("tts") is { } nullNodeTts && nullNodeTts.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Tts = null;
+            if (parseNode.GetChildNode("turn") is { } nullNodeTurn && nullNodeTurn.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Turn = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Configures overrides for nested fields.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentConfigOverrideConfig? Agent { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentConfigOverrideConfig? Agent { get => _explicitNullValueAgent; set { _explicitNullValueAgent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agent"); else _explicitNullProperties?.Remove("agent"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentConfigOverrideConfig? _explicitNullValueAgent = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentConfigOverrideConfig Agent { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentConfigOverrideConfig Agent { get => _explicitNullValueAgent; set { _explicitNullValueAgent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agent"); else _explicitNullProperties?.Remove("agent"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentConfigOverrideConfig _explicitNullValueAgent = default!;
 #endif
         /// <summary>The asr property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AsrConversationalConfigOverrideConfig? Asr { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AsrConversationalConfigOverrideConfig? Asr { get => _explicitNullValueAsr; set { _explicitNullValueAsr = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("asr"); else _explicitNullProperties?.Remove("asr"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.AsrConversationalConfigOverrideConfig? _explicitNullValueAsr = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AsrConversationalConfigOverrideConfig Asr { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AsrConversationalConfigOverrideConfig Asr { get => _explicitNullValueAsr; set { _explicitNullValueAsr = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("asr"); else _explicitNullProperties?.Remove("asr"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.AsrConversationalConfigOverrideConfig _explicitNullValueAsr = default!;
 #endif
         /// <summary>Configures overrides for nested fields.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationConfigOverrideConfig? Conversation { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationConfigOverrideConfig? Conversation { get => _explicitNullValueConversation; set { _explicitNullValueConversation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conversation"); else _explicitNullProperties?.Remove("conversation"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationConfigOverrideConfig? _explicitNullValueConversation = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationConfigOverrideConfig Conversation { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationConfigOverrideConfig Conversation { get => _explicitNullValueConversation; set { _explicitNullValueConversation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conversation"); else _explicitNullProperties?.Remove("conversation"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationConfigOverrideConfig _explicitNullValueConversation = default!;
 #endif
         /// <summary>The tts property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.TtsConversationalConfigOverrideConfig? Tts { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.TtsConversationalConfigOverrideConfig? Tts { get => _explicitNullValueTts; set { _explicitNullValueTts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tts"); else _explicitNullProperties?.Remove("tts"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.TtsConversationalConfigOverrideConfig? _explicitNullValueTts = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.TtsConversationalConfigOverrideConfig Tts { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.TtsConversationalConfigOverrideConfig Tts { get => _explicitNullValueTts; set { _explicitNullValueTts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tts"); else _explicitNullProperties?.Remove("tts"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.TtsConversationalConfigOverrideConfig _explicitNullValueTts = default!;
 #endif
         /// <summary>Configures overrides for nested fields.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.TurnConfigOverrideConfig? Turn { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.TurnConfigOverrideConfig? Turn { get => _explicitNullValueTurn; set { _explicitNullValueTurn = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("turn"); else _explicitNullProperties?.Remove("turn"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.TurnConfigOverrideConfig? _explicitNullValueTurn = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.TurnConfigOverrideConfig Turn { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.TurnConfigOverrideConfig Turn { get => _explicitNullValueTurn; set { _explicitNullValueTurn = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("turn"); else _explicitNullProperties?.Remove("turn"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.TurnConfigOverrideConfig _explicitNullValueTurn = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationConfigClientOverrideConfigOutput"/> and sets the default values.
@@ -69,7 +91,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationConfigClientOverrideConfigOutput CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationConfigClientOverrideConfigOutput();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationConfigClientOverrideConfigOutput(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -98,6 +120,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationConfigOverrideConfig>("conversation", Conversation);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TtsConversationalConfigOverrideConfig>("tts", Tts);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TurnConfigOverrideConfig>("turn", Turn);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

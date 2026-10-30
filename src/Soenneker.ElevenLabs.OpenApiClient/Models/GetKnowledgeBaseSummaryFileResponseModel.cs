@@ -11,102 +11,146 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class GetKnowledgeBaseSummaryFileResponseModel : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("access_info") is { } nullNodeAccessInfo && nullNodeAccessInfo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccessInfo = null;
+            if (parseNode.GetChildNode("auto_sync_info") is { } nullNodeAutoSyncInfo && nullNodeAutoSyncInfo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AutoSyncInfo = null;
+            if (parseNode.GetChildNode("dependent_agents") is { } nullNodeDependentAgents && nullNodeDependentAgents.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DependentAgents = null;
+            if (parseNode.GetChildNode("external_sync_info") is { } nullNodeExternalSyncInfo && nullNodeExternalSyncInfo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExternalSyncInfo = null;
+            if (parseNode.GetChildNode("folder_parent_id") is { } nullNodeFolderParentId && nullNodeFolderParentId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FolderParentId = null;
+            if (parseNode.GetChildNode("folder_path") is { } nullNodeFolderPath && nullNodeFolderPath.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FolderPath = null;
+            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("is_frozen") is { } nullNodeIsFrozen && nullNodeIsFrozen.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsFrozen = null;
+            if (parseNode.GetChildNode("metadata") is { } nullNodeMetadata && nullNodeMetadata.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Metadata = null;
+            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("refresh_status") is { } nullNodeRefreshStatus && nullNodeRefreshStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RefreshStatus = null;
+            if (parseNode.GetChildNode("supported_usages") is { } nullNodeSupportedUsages && nullNodeSupportedUsages.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SupportedUsages = null;
+            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+        }
+
         /// <summary>The access_info property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceAccessInfo? AccessInfo { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceAccessInfo? AccessInfo { get => _explicitNullValueAccessInfo; set { _explicitNullValueAccessInfo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("access_info"); else _explicitNullProperties?.Remove("access_info"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceAccessInfo? _explicitNullValueAccessInfo = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceAccessInfo AccessInfo { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceAccessInfo AccessInfo { get => _explicitNullValueAccessInfo; set { _explicitNullValueAccessInfo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("access_info"); else _explicitNullProperties?.Remove("access_info"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceAccessInfo _explicitNullValueAccessInfo = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The auto_sync_info property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AutoSyncInfo? AutoSyncInfo { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AutoSyncInfo? AutoSyncInfo { get => _explicitNullValueAutoSyncInfo; set { _explicitNullValueAutoSyncInfo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("auto_sync_info"); else _explicitNullProperties?.Remove("auto_sync_info"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.AutoSyncInfo? _explicitNullValueAutoSyncInfo = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AutoSyncInfo AutoSyncInfo { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AutoSyncInfo AutoSyncInfo { get => _explicitNullValueAutoSyncInfo; set { _explicitNullValueAutoSyncInfo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("auto_sync_info"); else _explicitNullProperties?.Remove("auto_sync_info"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.AutoSyncInfo _explicitNullValueAutoSyncInfo = default!;
 #endif
         /// <summary>This field is deprecated and will be removed in the future, use the separate endpoint to get dependent agents instead.</summary>
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseSummaryFileResponseModelDependentAgentsItem>? DependentAgents { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseSummaryFileResponseModelDependentAgentsItem>? DependentAgents { get => _explicitNullValueDependentAgents; set { _explicitNullValueDependentAgents = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dependent_agents"); else _explicitNullProperties?.Remove("dependent_agents"); } }
+        private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseSummaryFileResponseModelDependentAgentsItem>? _explicitNullValueDependentAgents = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseSummaryFileResponseModelDependentAgentsItem> DependentAgents { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseSummaryFileResponseModelDependentAgentsItem> DependentAgents { get => _explicitNullValueDependentAgents; set { _explicitNullValueDependentAgents = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dependent_agents"); else _explicitNullProperties?.Remove("dependent_agents"); } }
+        private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseSummaryFileResponseModelDependentAgentsItem> _explicitNullValueDependentAgents = default!;
 #endif
         /// <summary>The external_sync_info property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ExternalFileSyncInfo? ExternalSyncInfo { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ExternalFileSyncInfo? ExternalSyncInfo { get => _explicitNullValueExternalSyncInfo; set { _explicitNullValueExternalSyncInfo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("external_sync_info"); else _explicitNullProperties?.Remove("external_sync_info"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ExternalFileSyncInfo? _explicitNullValueExternalSyncInfo = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ExternalFileSyncInfo ExternalSyncInfo { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ExternalFileSyncInfo ExternalSyncInfo { get => _explicitNullValueExternalSyncInfo; set { _explicitNullValueExternalSyncInfo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("external_sync_info"); else _explicitNullProperties?.Remove("external_sync_info"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ExternalFileSyncInfo _explicitNullValueExternalSyncInfo = default!;
 #endif
         /// <summary>The ID of the parent folder, or null if the document is at the root level.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FolderParentId { get; set; }
+        public string? FolderParentId { get => _explicitNullValueFolderParentId; set { _explicitNullValueFolderParentId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("folder_parent_id"); else _explicitNullProperties?.Remove("folder_parent_id"); } }
+        private string? _explicitNullValueFolderParentId = default!;
 #nullable restore
 #else
-        public string FolderParentId { get; set; }
+        public string FolderParentId { get => _explicitNullValueFolderParentId; set { _explicitNullValueFolderParentId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("folder_parent_id"); else _explicitNullProperties?.Remove("folder_parent_id"); } }
+        private string _explicitNullValueFolderParentId = default!;
 #endif
         /// <summary>The folder path segments leading to this entity, from root to parent folder.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeBaseFolderPathSegmentSummaryResponseModel>? FolderPath { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeBaseFolderPathSegmentSummaryResponseModel>? FolderPath { get => _explicitNullValueFolderPath; set { _explicitNullValueFolderPath = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("folder_path"); else _explicitNullProperties?.Remove("folder_path"); } }
+        private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeBaseFolderPathSegmentSummaryResponseModel>? _explicitNullValueFolderPath = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeBaseFolderPathSegmentSummaryResponseModel> FolderPath { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeBaseFolderPathSegmentSummaryResponseModel> FolderPath { get => _explicitNullValueFolderPath; set { _explicitNullValueFolderPath = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("folder_path"); else _explicitNullProperties?.Remove("folder_path"); } }
+        private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeBaseFolderPathSegmentSummaryResponseModel> _explicitNullValueFolderPath = default!;
 #endif
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get; set; }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string _explicitNullValueId = default!;
 #endif
         /// <summary>The is_frozen property</summary>
-        public bool? IsFrozen { get; set; }
+        public bool? IsFrozen { get => _explicitNullValueIsFrozen; set { _explicitNullValueIsFrozen = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_frozen"); else _explicitNullProperties?.Remove("is_frozen"); } }
+        private bool? _explicitNullValueIsFrozen = default!;
         /// <summary>The metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeBaseDocumentMetadataResponseModel? Metadata { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeBaseDocumentMetadataResponseModel? Metadata { get => _explicitNullValueMetadata; set { _explicitNullValueMetadata = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metadata"); else _explicitNullProperties?.Remove("metadata"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeBaseDocumentMetadataResponseModel? _explicitNullValueMetadata = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeBaseDocumentMetadataResponseModel Metadata { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeBaseDocumentMetadataResponseModel Metadata { get => _explicitNullValueMetadata; set { _explicitNullValueMetadata = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metadata"); else _explicitNullProperties?.Remove("metadata"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeBaseDocumentMetadataResponseModel _explicitNullValueMetadata = default!;
 #endif
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get; set; }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string _explicitNullValueName = default!;
 #endif
         /// <summary>The refresh_status property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.FileRefreshStatus? RefreshStatus { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.FileRefreshStatus? RefreshStatus { get => _explicitNullValueRefreshStatus; set { _explicitNullValueRefreshStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("refresh_status"); else _explicitNullProperties?.Remove("refresh_status"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.FileRefreshStatus? _explicitNullValueRefreshStatus = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.FileRefreshStatus RefreshStatus { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.FileRefreshStatus RefreshStatus { get => _explicitNullValueRefreshStatus; set { _explicitNullValueRefreshStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("refresh_status"); else _explicitNullProperties?.Remove("refresh_status"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.FileRefreshStatus _explicitNullValueRefreshStatus = default!;
 #endif
         /// <summary>The supported_usages property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.DocumentUsageModeEnum?>? SupportedUsages { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.DocumentUsageModeEnum?>? SupportedUsages { get => _explicitNullValueSupportedUsages; set { _explicitNullValueSupportedUsages = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("supported_usages"); else _explicitNullProperties?.Remove("supported_usages"); } }
+        private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.DocumentUsageModeEnum?>? _explicitNullValueSupportedUsages = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.DocumentUsageModeEnum?> SupportedUsages { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.DocumentUsageModeEnum?> SupportedUsages { get => _explicitNullValueSupportedUsages; set { _explicitNullValueSupportedUsages = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("supported_usages"); else _explicitNullProperties?.Remove("supported_usages"); } }
+        private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.DocumentUsageModeEnum?> _explicitNullValueSupportedUsages = default!;
 #endif
         /// <summary>The type property</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseSummaryFileResponseModelType? Type { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseSummaryFileResponseModelType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseSummaryFileResponseModelType? _explicitNullValueType = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseSummaryFileResponseModel"/> and sets the default values.
         /// </summary>
@@ -123,7 +167,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseSummaryFileResponseModel CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseSummaryFileResponseModel();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseSummaryFileResponseModel(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -168,6 +212,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.FileRefreshStatus>("refresh_status", RefreshStatus);
             writer.WriteCollectionOfEnumValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.DocumentUsageModeEnum>("supported_usages", SupportedUsages);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseSummaryFileResponseModelType>("type", Type);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

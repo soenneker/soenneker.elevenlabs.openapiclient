@@ -11,20 +11,34 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class TelephonyCallConfigOutput : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("ringing_timeout_secs") is { } nullNodeRingingTimeoutSecs && nullNodeRingingTimeoutSecs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RingingTimeoutSecs = null;
+            if (parseNode.GetChildNode("twilio_call_recording_enabled") is { } nullNodeTwilioCallRecordingEnabled && nullNodeTwilioCallRecordingEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TwilioCallRecordingEnabled = null;
+            if (parseNode.GetChildNode("twilio_machine_detection") is { } nullNodeTwilioMachineDetection && nullNodeTwilioMachineDetection.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TwilioMachineDetection = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>How long to ring the recipient before giving up, in seconds. Note that this will also be limited by the provider&apos;s own constraints.</summary>
-        public int? RingingTimeoutSecs { get; set; }
+        public int? RingingTimeoutSecs { get => _explicitNullValueRingingTimeoutSecs; set { _explicitNullValueRingingTimeoutSecs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ringing_timeout_secs"); else _explicitNullProperties?.Remove("ringing_timeout_secs"); } }
+        private int? _explicitNullValueRingingTimeoutSecs = default!;
         /// <summary>Whether to record the call using Twilio call recording. Ignored for non-Twilio providers. Recordings are stored in your Twilio account.</summary>
-        public bool? TwilioCallRecordingEnabled { get; set; }
+        public bool? TwilioCallRecordingEnabled { get => _explicitNullValueTwilioCallRecordingEnabled; set { _explicitNullValueTwilioCallRecordingEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("twilio_call_recording_enabled"); else _explicitNullProperties?.Remove("twilio_call_recording_enabled"); } }
+        private bool? _explicitNullValueTwilioCallRecordingEnabled = default!;
         /// <summary>Configuration for Twilio&apos;s carrier-level answering machine detection (AMD). Omit or set to null to disable it. Ignored for non-Twilio providers and for inbound calls. The resulting verdict is delivered as its own `answering_machine_detection` webhook event, which requires that event to be enabled on the workspace or agent webhook settings; it is not part of the conversation or the post-call webhook. Detection runs asynchronously so it never delays the start of the conversation, and the verdict can arrive at any point during the call -- with `detect_message_end`, even after it has ended. Twilio bills separately for AMD.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.TwilioMachineDetectionConfig? TwilioMachineDetection { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.TwilioMachineDetectionConfig? TwilioMachineDetection { get => _explicitNullValueTwilioMachineDetection; set { _explicitNullValueTwilioMachineDetection = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("twilio_machine_detection"); else _explicitNullProperties?.Remove("twilio_machine_detection"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.TwilioMachineDetectionConfig? _explicitNullValueTwilioMachineDetection = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.TwilioMachineDetectionConfig TwilioMachineDetection { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.TwilioMachineDetectionConfig TwilioMachineDetection { get => _explicitNullValueTwilioMachineDetection; set { _explicitNullValueTwilioMachineDetection = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("twilio_machine_detection"); else _explicitNullProperties?.Remove("twilio_machine_detection"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.TwilioMachineDetectionConfig _explicitNullValueTwilioMachineDetection = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.TelephonyCallConfigOutput"/> and sets the default values.
@@ -43,7 +57,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.TelephonyCallConfigOutput CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.TelephonyCallConfigOutput();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.TelephonyCallConfigOutput(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -68,6 +82,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteIntValue("ringing_timeout_secs", RingingTimeoutSecs);
             writer.WriteBoolValue("twilio_call_recording_enabled", TwilioCallRecordingEnabled);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TwilioMachineDetectionConfig>("twilio_machine_detection", TwilioMachineDetection);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

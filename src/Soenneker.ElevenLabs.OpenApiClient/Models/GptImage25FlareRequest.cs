@@ -12,46 +12,73 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class GptImage25FlareRequest : IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("aspect_ratio") is { } nullNodeAspectRatio && nullNodeAspectRatio.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AspectRatio = null;
+            if (parseNode.GetChildNode("images") is { } nullNodeImages && nullNodeImages.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Images = null;
+            if (parseNode.GetChildNode("mask") is { } nullNodeMask && nullNodeMask.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Mask = null;
+            if (parseNode.GetChildNode("model_id") is { } nullNodeModelId && nullNodeModelId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ModelId = null;
+            if (parseNode.GetChildNode("prompt") is { } nullNodePrompt && nullNodePrompt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Prompt = null;
+            if (parseNode.GetChildNode("quality") is { } nullNodeQuality && nullNodeQuality.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Quality = null;
+            if (parseNode.GetChildNode("resolution") is { } nullNodeResolution && nullNodeResolution.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Resolution = null;
+            if (parseNode.GetChildNode("webhook") is { } nullNodeWebhook && nullNodeWebhook.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Webhook = null;
+        }
+
         /// <summary>The aspect ratio of the output image. With `auto`, the model picks an aspect ratio based on the inputs.</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GptImage25FlareRequestAspectRatio? AspectRatio { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GptImage25FlareRequestAspectRatio? AspectRatio { get => _explicitNullValueAspectRatio; set { _explicitNullValueAspectRatio = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("aspect_ratio"); else _explicitNullProperties?.Remove("aspect_ratio"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.GptImage25FlareRequestAspectRatio? _explicitNullValueAspectRatio = default!;
         /// <summary>Up to 10 reference images to edit or draw from.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ImageReference>? Images { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ImageReference>? Images { get => _explicitNullValueImages; set { _explicitNullValueImages = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("images"); else _explicitNullProperties?.Remove("images"); } }
+        private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ImageReference>? _explicitNullValueImages = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ImageReference> Images { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ImageReference> Images { get => _explicitNullValueImages; set { _explicitNullValueImages = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("images"); else _explicitNullProperties?.Remove("images"); } }
+        private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ImageReference> _explicitNullValueImages = default!;
 #endif
         /// <summary>An image whose fully transparent areas mark where the first reference image may be edited; requires `images`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ImageReference? Mask { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ImageReference? Mask { get => _explicitNullValueMask; set { _explicitNullValueMask = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mask"); else _explicitNullProperties?.Remove("mask"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ImageReference? _explicitNullValueMask = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ImageReference Mask { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ImageReference Mask { get => _explicitNullValueMask; set { _explicitNullValueMask = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mask"); else _explicitNullProperties?.Remove("mask"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ImageReference _explicitNullValueMask = default!;
 #endif
         /// <summary>The model to use for the generation.</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GptImage25FlareModelId? ModelId { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GptImage25FlareModelId? ModelId { get => _explicitNullValueModelId; set { _explicitNullValueModelId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("model_id"); else _explicitNullProperties?.Remove("model_id"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.GptImage25FlareModelId? _explicitNullValueModelId = default!;
         /// <summary>A text description of the image to generate.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Prompt { get; set; }
+        public string? Prompt { get => _explicitNullValuePrompt; set { _explicitNullValuePrompt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prompt"); else _explicitNullProperties?.Remove("prompt"); } }
+        private string? _explicitNullValuePrompt = default!;
 #nullable restore
 #else
-        public string Prompt { get; set; }
+        public string Prompt { get => _explicitNullValuePrompt; set { _explicitNullValuePrompt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prompt"); else _explicitNullProperties?.Remove("prompt"); } }
+        private string _explicitNullValuePrompt = default!;
 #endif
         /// <summary>The quality of the output image.</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GptImage25FlareRequestQuality? Quality { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GptImage25FlareRequestQuality? Quality { get => _explicitNullValueQuality; set { _explicitNullValueQuality = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("quality"); else _explicitNullProperties?.Remove("quality"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.GptImage25FlareRequestQuality? _explicitNullValueQuality = default!;
         /// <summary>The resolution of the output image.</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GptImage25FlareRequestResolution? Resolution { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GptImage25FlareRequestResolution? Resolution { get => _explicitNullValueResolution; set { _explicitNullValueResolution = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resolution"); else _explicitNullProperties?.Remove("resolution"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.GptImage25FlareRequestResolution? _explicitNullValueResolution = default!;
         /// <summary>Include to send the generation&apos;s result to the workspace&apos;s configured flows webhooks once it completes or fails. The webhook payload matches the terminal response of the corresponding GET endpoint.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookTarget? Webhook { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookTarget? Webhook { get => _explicitNullValueWebhook; set { _explicitNullValueWebhook = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("webhook"); else _explicitNullProperties?.Remove("webhook"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookTarget? _explicitNullValueWebhook = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookTarget Webhook { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookTarget Webhook { get => _explicitNullValueWebhook; set { _explicitNullValueWebhook = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("webhook"); else _explicitNullProperties?.Remove("webhook"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookTarget _explicitNullValueWebhook = default!;
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -61,7 +88,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.GptImage25FlareRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.GptImage25FlareRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.GptImage25FlareRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -95,7 +122,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteStringValue("prompt", Prompt);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GptImage25FlareRequestQuality>("quality", Quality);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GptImage25FlareRequestResolution>("resolution", Resolution);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookTarget>("webhook", Webhook);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookTarget>("webhook", Webhook);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

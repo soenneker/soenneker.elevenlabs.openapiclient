@@ -11,34 +11,52 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class GetTestInvocationsPageResponseModel : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("has_more") is { } nullNodeHasMore && nullNodeHasMore.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HasMore = null;
+            if (parseNode.GetChildNode("meta") is { } nullNodeMeta && nullNodeMeta.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Meta = null;
+            if (parseNode.GetChildNode("next_cursor") is { } nullNodeNextCursor && nullNodeNextCursor.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NextCursor = null;
+            if (parseNode.GetChildNode("results") is { } nullNodeResults && nullNodeResults.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Results = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Whether there are more results available</summary>
-        public bool? HasMore { get; set; }
+        public bool? HasMore { get => _explicitNullValueHasMore; set { _explicitNullValueHasMore = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("has_more"); else _explicitNullProperties?.Remove("has_more"); } }
+        private bool? _explicitNullValueHasMore = default!;
         /// <summary>The meta property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ListResponseMeta? Meta { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ListResponseMeta? Meta { get => _explicitNullValueMeta; set { _explicitNullValueMeta = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("meta"); else _explicitNullProperties?.Remove("meta"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ListResponseMeta? _explicitNullValueMeta = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ListResponseMeta Meta { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ListResponseMeta Meta { get => _explicitNullValueMeta; set { _explicitNullValueMeta = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("meta"); else _explicitNullProperties?.Remove("meta"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ListResponseMeta _explicitNullValueMeta = default!;
 #endif
         /// <summary>Cursor for the next page of results</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? NextCursor { get; set; }
+        public string? NextCursor { get => _explicitNullValueNextCursor; set { _explicitNullValueNextCursor = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("next_cursor"); else _explicitNullProperties?.Remove("next_cursor"); } }
+        private string? _explicitNullValueNextCursor = default!;
 #nullable restore
 #else
-        public string NextCursor { get; set; }
+        public string NextCursor { get => _explicitNullValueNextCursor; set { _explicitNullValueNextCursor = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("next_cursor"); else _explicitNullProperties?.Remove("next_cursor"); } }
+        private string _explicitNullValueNextCursor = default!;
 #endif
         /// <summary>The results property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.TestInvocationSummaryResponseModel>? Results { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.TestInvocationSummaryResponseModel>? Results { get => _explicitNullValueResults; set { _explicitNullValueResults = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("results"); else _explicitNullProperties?.Remove("results"); } }
+        private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.TestInvocationSummaryResponseModel>? _explicitNullValueResults = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.TestInvocationSummaryResponseModel> Results { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.TestInvocationSummaryResponseModel> Results { get => _explicitNullValueResults; set { _explicitNullValueResults = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("results"); else _explicitNullProperties?.Remove("results"); } }
+        private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.TestInvocationSummaryResponseModel> _explicitNullValueResults = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.GetTestInvocationsPageResponseModel"/> and sets the default values.
@@ -55,7 +73,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.GetTestInvocationsPageResponseModel CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.GetTestInvocationsPageResponseModel();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.GetTestInvocationsPageResponseModel(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -82,6 +100,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ListResponseMeta>("meta", Meta);
             writer.WriteStringValue("next_cursor", NextCursor);
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.TestInvocationSummaryResponseModel>("results", Results);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

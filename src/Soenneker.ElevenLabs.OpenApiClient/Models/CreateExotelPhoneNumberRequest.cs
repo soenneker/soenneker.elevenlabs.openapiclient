@@ -11,83 +11,122 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class CreateExotelPhoneNumberRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("account_sid") is { } nullNodeAccountSid && nullNodeAccountSid.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccountSid = null;
+            if (parseNode.GetChildNode("agent_id") is { } nullNodeAgentId && nullNodeAgentId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AgentId = null;
+            if (parseNode.GetChildNode("api_key") is { } nullNodeApiKey && nullNodeApiKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ApiKey = null;
+            if (parseNode.GetChildNode("api_subdomain") is { } nullNodeApiSubdomain && nullNodeApiSubdomain.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ApiSubdomain = null;
+            if (parseNode.GetChildNode("api_token") is { } nullNodeApiToken && nullNodeApiToken.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ApiToken = null;
+            if (parseNode.GetChildNode("app_id") is { } nullNodeAppId && nullNodeAppId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AppId = null;
+            if (parseNode.GetChildNode("applet_url") is { } nullNodeAppletUrl && nullNodeAppletUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AppletUrl = null;
+            if (parseNode.GetChildNode("label") is { } nullNodeLabel && nullNodeLabel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Label = null;
+            if (parseNode.GetChildNode("phone_number") is { } nullNodePhoneNumber && nullNodePhoneNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PhoneNumber = null;
+            if (parseNode.GetChildNode("provider") is { } nullNodeProvider && nullNodeProvider.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Provider = null;
+            if (parseNode.GetChildNode("supports_inbound") is { } nullNodeSupportsInbound && nullNodeSupportsInbound.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SupportsInbound = null;
+            if (parseNode.GetChildNode("supports_outbound") is { } nullNodeSupportsOutbound && nullNodeSupportsOutbound.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SupportsOutbound = null;
+        }
+
         /// <summary>Exotel Account SID</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AccountSid { get; set; }
+        public string? AccountSid { get => _explicitNullValueAccountSid; set { _explicitNullValueAccountSid = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("account_sid"); else _explicitNullProperties?.Remove("account_sid"); } }
+        private string? _explicitNullValueAccountSid = default!;
 #nullable restore
 #else
-        public string AccountSid { get; set; }
+        public string AccountSid { get => _explicitNullValueAccountSid; set { _explicitNullValueAccountSid = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("account_sid"); else _explicitNullProperties?.Remove("account_sid"); } }
+        private string _explicitNullValueAccountSid = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Agent ID to assign the phone number to</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AgentId { get; set; }
+        public string? AgentId { get => _explicitNullValueAgentId; set { _explicitNullValueAgentId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agent_id"); else _explicitNullProperties?.Remove("agent_id"); } }
+        private string? _explicitNullValueAgentId = default!;
 #nullable restore
 #else
-        public string AgentId { get; set; }
+        public string AgentId { get => _explicitNullValueAgentId; set { _explicitNullValueAgentId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agent_id"); else _explicitNullProperties?.Remove("agent_id"); } }
+        private string _explicitNullValueAgentId = default!;
 #endif
         /// <summary>Exotel API Key</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ApiKey { get; set; }
+        public string? ApiKey { get => _explicitNullValueApiKey; set { _explicitNullValueApiKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("api_key"); else _explicitNullProperties?.Remove("api_key"); } }
+        private string? _explicitNullValueApiKey = default!;
 #nullable restore
 #else
-        public string ApiKey { get; set; }
+        public string ApiKey { get => _explicitNullValueApiKey; set { _explicitNullValueApiKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("api_key"); else _explicitNullProperties?.Remove("api_key"); } }
+        private string _explicitNullValueApiKey = default!;
 #endif
         /// <summary>Exotel region-specific API host</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ExotelApiSubdomain? ApiSubdomain { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ExotelApiSubdomain? ApiSubdomain { get => _explicitNullValueApiSubdomain; set { _explicitNullValueApiSubdomain = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("api_subdomain"); else _explicitNullProperties?.Remove("api_subdomain"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ExotelApiSubdomain? _explicitNullValueApiSubdomain = default!;
         /// <summary>Exotel API Token</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ApiToken { get; set; }
+        public string? ApiToken { get => _explicitNullValueApiToken; set { _explicitNullValueApiToken = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("api_token"); else _explicitNullProperties?.Remove("api_token"); } }
+        private string? _explicitNullValueApiToken = default!;
 #nullable restore
 #else
-        public string ApiToken { get; set; }
+        public string ApiToken { get => _explicitNullValueApiToken; set { _explicitNullValueApiToken = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("api_token"); else _explicitNullProperties?.Remove("api_token"); } }
+        private string _explicitNullValueApiToken = default!;
 #endif
         /// <summary>Exotel applet identifier used in Calls/connect</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AppId { get; set; }
+        public string? AppId { get => _explicitNullValueAppId; set { _explicitNullValueAppId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("app_id"); else _explicitNullProperties?.Remove("app_id"); } }
+        private string? _explicitNullValueAppId = default!;
 #nullable restore
 #else
-        public string AppId { get; set; }
+        public string AppId { get => _explicitNullValueAppId; set { _explicitNullValueAppId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("app_id"); else _explicitNullProperties?.Remove("app_id"); } }
+        private string _explicitNullValueAppId = default!;
 #endif
         /// <summary>Optional full applet URL override. Defaults to Exotel start_voice URL derived from account SID and app ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AppletUrl { get; set; }
+        public string? AppletUrl { get => _explicitNullValueAppletUrl; set { _explicitNullValueAppletUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("applet_url"); else _explicitNullProperties?.Remove("applet_url"); } }
+        private string? _explicitNullValueAppletUrl = default!;
 #nullable restore
 #else
-        public string AppletUrl { get; set; }
+        public string AppletUrl { get => _explicitNullValueAppletUrl; set { _explicitNullValueAppletUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("applet_url"); else _explicitNullProperties?.Remove("applet_url"); } }
+        private string _explicitNullValueAppletUrl = default!;
 #endif
         /// <summary>Label for the phone number</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Label { get; set; }
+        public string? Label { get => _explicitNullValueLabel; set { _explicitNullValueLabel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("label"); else _explicitNullProperties?.Remove("label"); } }
+        private string? _explicitNullValueLabel = default!;
 #nullable restore
 #else
-        public string Label { get; set; }
+        public string Label { get => _explicitNullValueLabel; set { _explicitNullValueLabel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("label"); else _explicitNullProperties?.Remove("label"); } }
+        private string _explicitNullValueLabel = default!;
 #endif
         /// <summary>Phone number</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PhoneNumber { get; set; }
+        public string? PhoneNumber { get => _explicitNullValuePhoneNumber; set { _explicitNullValuePhoneNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("phone_number"); else _explicitNullProperties?.Remove("phone_number"); } }
+        private string? _explicitNullValuePhoneNumber = default!;
 #nullable restore
 #else
-        public string PhoneNumber { get; set; }
+        public string PhoneNumber { get => _explicitNullValuePhoneNumber; set { _explicitNullValuePhoneNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("phone_number"); else _explicitNullProperties?.Remove("phone_number"); } }
+        private string _explicitNullValuePhoneNumber = default!;
 #endif
         /// <summary>The provider property</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ExotelProvider? Provider { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ExotelProvider? Provider { get => _explicitNullValueProvider; set { _explicitNullValueProvider = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("provider"); else _explicitNullProperties?.Remove("provider"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ExotelProvider? _explicitNullValueProvider = default!;
         /// <summary>This field is deprecated and will be removed in the future. Whether this phone number supports inbound calls</summary>
         [Obsolete("")]
-        public bool? SupportsInbound { get; set; }
+        public bool? SupportsInbound { get => _explicitNullValueSupportsInbound; set { _explicitNullValueSupportsInbound = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("supports_inbound"); else _explicitNullProperties?.Remove("supports_inbound"); } }
+        private bool? _explicitNullValueSupportsInbound = default!;
         /// <summary>This field is deprecated and will be removed in the future. Whether this phone number supports outbound calls</summary>
         [Obsolete("")]
-        public bool? SupportsOutbound { get; set; }
+        public bool? SupportsOutbound { get => _explicitNullValueSupportsOutbound; set { _explicitNullValueSupportsOutbound = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("supports_outbound"); else _explicitNullProperties?.Remove("supports_outbound"); } }
+        private bool? _explicitNullValueSupportsOutbound = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateExotelPhoneNumberRequest"/> and sets the default values.
         /// </summary>
@@ -105,7 +144,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateExotelPhoneNumberRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateExotelPhoneNumberRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateExotelPhoneNumberRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -148,6 +187,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ExotelProvider>("provider", Provider);
             writer.WriteBoolValue("supports_inbound", SupportsInbound);
             writer.WriteBoolValue("supports_outbound", SupportsOutbound);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

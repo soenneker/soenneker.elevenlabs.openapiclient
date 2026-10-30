@@ -11,59 +11,86 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class BodyUpdateStudioProjectV1StudioProjectsProjectIdPost : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("author") is { } nullNodeAuthor && nullNodeAuthor.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Author = null;
+            if (parseNode.GetChildNode("default_paragraph_voice_id") is { } nullNodeDefaultParagraphVoiceId && nullNodeDefaultParagraphVoiceId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DefaultParagraphVoiceId = null;
+            if (parseNode.GetChildNode("default_title_voice_id") is { } nullNodeDefaultTitleVoiceId && nullNodeDefaultTitleVoiceId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DefaultTitleVoiceId = null;
+            if (parseNode.GetChildNode("isbn_number") is { } nullNodeIsbnNumber && nullNodeIsbnNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsbnNumber = null;
+            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("title") is { } nullNodeTitle && nullNodeTitle.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Title = null;
+            if (parseNode.GetChildNode("volume_normalization") is { } nullNodeVolumeNormalization && nullNodeVolumeNormalization.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VolumeNormalization = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>An optional name of the author of the Studio project, this will be added as metadata to the mp3 file on Studio project or chapter download.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Author { get; set; }
+        public string? Author { get => _explicitNullValueAuthor; set { _explicitNullValueAuthor = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("author"); else _explicitNullProperties?.Remove("author"); } }
+        private string? _explicitNullValueAuthor = default!;
 #nullable restore
 #else
-        public string Author { get; set; }
+        public string Author { get => _explicitNullValueAuthor; set { _explicitNullValueAuthor = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("author"); else _explicitNullProperties?.Remove("author"); } }
+        private string _explicitNullValueAuthor = default!;
 #endif
         /// <summary>The voice_id that corresponds to the default voice used for new paragraphs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DefaultParagraphVoiceId { get; set; }
+        public string? DefaultParagraphVoiceId { get => _explicitNullValueDefaultParagraphVoiceId; set { _explicitNullValueDefaultParagraphVoiceId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("default_paragraph_voice_id"); else _explicitNullProperties?.Remove("default_paragraph_voice_id"); } }
+        private string? _explicitNullValueDefaultParagraphVoiceId = default!;
 #nullable restore
 #else
-        public string DefaultParagraphVoiceId { get; set; }
+        public string DefaultParagraphVoiceId { get => _explicitNullValueDefaultParagraphVoiceId; set { _explicitNullValueDefaultParagraphVoiceId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("default_paragraph_voice_id"); else _explicitNullProperties?.Remove("default_paragraph_voice_id"); } }
+        private string _explicitNullValueDefaultParagraphVoiceId = default!;
 #endif
         /// <summary>The voice_id that corresponds to the default voice used for new titles.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DefaultTitleVoiceId { get; set; }
+        public string? DefaultTitleVoiceId { get => _explicitNullValueDefaultTitleVoiceId; set { _explicitNullValueDefaultTitleVoiceId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("default_title_voice_id"); else _explicitNullProperties?.Remove("default_title_voice_id"); } }
+        private string? _explicitNullValueDefaultTitleVoiceId = default!;
 #nullable restore
 #else
-        public string DefaultTitleVoiceId { get; set; }
+        public string DefaultTitleVoiceId { get => _explicitNullValueDefaultTitleVoiceId; set { _explicitNullValueDefaultTitleVoiceId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("default_title_voice_id"); else _explicitNullProperties?.Remove("default_title_voice_id"); } }
+        private string _explicitNullValueDefaultTitleVoiceId = default!;
 #endif
         /// <summary>An optional ISBN number of the Studio project you want to create, this will be added as metadata to the mp3 file on Studio project or chapter download.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IsbnNumber { get; set; }
+        public string? IsbnNumber { get => _explicitNullValueIsbnNumber; set { _explicitNullValueIsbnNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("isbn_number"); else _explicitNullProperties?.Remove("isbn_number"); } }
+        private string? _explicitNullValueIsbnNumber = default!;
 #nullable restore
 #else
-        public string IsbnNumber { get; set; }
+        public string IsbnNumber { get => _explicitNullValueIsbnNumber; set { _explicitNullValueIsbnNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("isbn_number"); else _explicitNullProperties?.Remove("isbn_number"); } }
+        private string _explicitNullValueIsbnNumber = default!;
 #endif
         /// <summary>The name of the Studio project, used for identification only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get; set; }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string _explicitNullValueName = default!;
 #endif
         /// <summary>An optional name of the author of the Studio project, this will be added as metadata to the mp3 file on Studio project or chapter download.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Title { get; set; }
+        public string? Title { get => _explicitNullValueTitle; set { _explicitNullValueTitle = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("title"); else _explicitNullProperties?.Remove("title"); } }
+        private string? _explicitNullValueTitle = default!;
 #nullable restore
 #else
-        public string Title { get; set; }
+        public string Title { get => _explicitNullValueTitle; set { _explicitNullValueTitle = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("title"); else _explicitNullProperties?.Remove("title"); } }
+        private string _explicitNullValueTitle = default!;
 #endif
         /// <summary>When the Studio project is downloaded, should the returned audio have postprocessing in order to make it compliant with audiobook normalized volume requirements</summary>
-        public bool? VolumeNormalization { get; set; }
+        public bool? VolumeNormalization { get => _explicitNullValueVolumeNormalization; set { _explicitNullValueVolumeNormalization = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("volume_normalization"); else _explicitNullProperties?.Remove("volume_normalization"); } }
+        private bool? _explicitNullValueVolumeNormalization = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyUpdateStudioProjectV1StudioProjectsProjectIdPost"/> and sets the default values.
         /// </summary>
@@ -80,7 +107,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyUpdateStudioProjectV1StudioProjectsProjectIdPost CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyUpdateStudioProjectV1StudioProjectsProjectIdPost();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyUpdateStudioProjectV1StudioProjectsProjectIdPost(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -113,6 +140,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("title", Title);
             writer.WriteBoolValue("volume_normalization", VolumeNormalization);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

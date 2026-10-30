@@ -11,23 +11,44 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class TtsConversationalConfigOverrideConfig : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("model_id") is { } nullNodeModelId && nullNodeModelId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ModelId = null;
+            if (parseNode.GetChildNode("pronunciation_dictionary_locators") is { } nullNodePronunciationDictionaryLocators && nullNodePronunciationDictionaryLocators.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PronunciationDictionaryLocators = null;
+            if (parseNode.GetChildNode("similarity_boost") is { } nullNodeSimilarityBoost && nullNodeSimilarityBoost.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SimilarityBoost = null;
+            if (parseNode.GetChildNode("speed") is { } nullNodeSpeed && nullNodeSpeed.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Speed = null;
+            if (parseNode.GetChildNode("stability") is { } nullNodeStability && nullNodeStability.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Stability = null;
+            if (parseNode.GetChildNode("supported_voices") is { } nullNodeSupportedVoices && nullNodeSupportedVoices.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SupportedVoices = null;
+            if (parseNode.GetChildNode("voice_id") is { } nullNodeVoiceId && nullNodeVoiceId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VoiceId = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Whether to allow overriding the model_id field.</summary>
-        public bool? ModelId { get; set; }
+        public bool? ModelId { get => _explicitNullValueModelId; set { _explicitNullValueModelId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("model_id"); else _explicitNullProperties?.Remove("model_id"); } }
+        private bool? _explicitNullValueModelId = default!;
         /// <summary>Whether to allow overriding the pronunciation_dictionary_locators field.</summary>
-        public bool? PronunciationDictionaryLocators { get; set; }
+        public bool? PronunciationDictionaryLocators { get => _explicitNullValuePronunciationDictionaryLocators; set { _explicitNullValuePronunciationDictionaryLocators = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pronunciation_dictionary_locators"); else _explicitNullProperties?.Remove("pronunciation_dictionary_locators"); } }
+        private bool? _explicitNullValuePronunciationDictionaryLocators = default!;
         /// <summary>Whether to allow overriding the similarity_boost field.</summary>
-        public bool? SimilarityBoost { get; set; }
+        public bool? SimilarityBoost { get => _explicitNullValueSimilarityBoost; set { _explicitNullValueSimilarityBoost = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("similarity_boost"); else _explicitNullProperties?.Remove("similarity_boost"); } }
+        private bool? _explicitNullValueSimilarityBoost = default!;
         /// <summary>Whether to allow overriding the speed field.</summary>
-        public bool? Speed { get; set; }
+        public bool? Speed { get => _explicitNullValueSpeed; set { _explicitNullValueSpeed = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("speed"); else _explicitNullProperties?.Remove("speed"); } }
+        private bool? _explicitNullValueSpeed = default!;
         /// <summary>Whether to allow overriding the stability field.</summary>
-        public bool? Stability { get; set; }
+        public bool? Stability { get => _explicitNullValueStability; set { _explicitNullValueStability = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stability"); else _explicitNullProperties?.Remove("stability"); } }
+        private bool? _explicitNullValueStability = default!;
         /// <summary>Whether to allow overriding the supported_voices field.</summary>
-        public bool? SupportedVoices { get; set; }
+        public bool? SupportedVoices { get => _explicitNullValueSupportedVoices; set { _explicitNullValueSupportedVoices = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("supported_voices"); else _explicitNullProperties?.Remove("supported_voices"); } }
+        private bool? _explicitNullValueSupportedVoices = default!;
         /// <summary>Whether to allow overriding the voice_id field.</summary>
-        public bool? VoiceId { get; set; }
+        public bool? VoiceId { get => _explicitNullValueVoiceId; set { _explicitNullValueVoiceId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("voice_id"); else _explicitNullProperties?.Remove("voice_id"); } }
+        private bool? _explicitNullValueVoiceId = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.TtsConversationalConfigOverrideConfig"/> and sets the default values.
         /// </summary>
@@ -50,7 +71,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.TtsConversationalConfigOverrideConfig CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.TtsConversationalConfigOverrideConfig();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.TtsConversationalConfigOverrideConfig(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -83,6 +104,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteBoolValue("stability", Stability);
             writer.WriteBoolValue("supported_voices", SupportedVoices);
             writer.WriteBoolValue("voice_id", VoiceId);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

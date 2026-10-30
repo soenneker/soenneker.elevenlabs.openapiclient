@@ -11,84 +11,127 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class FineTuningResponseModel : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("dataset_duration_seconds") is { } nullNodeDatasetDurationSeconds && nullNodeDatasetDurationSeconds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DatasetDurationSeconds = null;
+            if (parseNode.GetChildNode("is_allowed_to_fine_tune") is { } nullNodeIsAllowedToFineTune && nullNodeIsAllowedToFineTune.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsAllowedToFineTune = null;
+            if (parseNode.GetChildNode("language") is { } nullNodeLanguage && nullNodeLanguage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Language = null;
+            if (parseNode.GetChildNode("manual_verification") is { } nullNodeManualVerification && nullNodeManualVerification.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ManualVerification = null;
+            if (parseNode.GetChildNode("manual_verification_requested") is { } nullNodeManualVerificationRequested && nullNodeManualVerificationRequested.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ManualVerificationRequested = null;
+            if (parseNode.GetChildNode("max_verification_attempts") is { } nullNodeMaxVerificationAttempts && nullNodeMaxVerificationAttempts.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxVerificationAttempts = null;
+            if (parseNode.GetChildNode("message") is { } nullNodeMessage && nullNodeMessage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Message = null;
+            if (parseNode.GetChildNode("next_max_verification_attempts_reset_unix_ms") is { } nullNodeNextMaxVerificationAttemptsResetUnixMs && nullNodeNextMaxVerificationAttemptsResetUnixMs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NextMaxVerificationAttemptsResetUnixMs = null;
+            if (parseNode.GetChildNode("progress") is { } nullNodeProgress && nullNodeProgress.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Progress = null;
+            if (parseNode.GetChildNode("slice_ids") is { } nullNodeSliceIds && nullNodeSliceIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SliceIds = null;
+            if (parseNode.GetChildNode("state") is { } nullNodeState && nullNodeState.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) State = null;
+            if (parseNode.GetChildNode("verification_attempts") is { } nullNodeVerificationAttempts && nullNodeVerificationAttempts.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VerificationAttempts = null;
+            if (parseNode.GetChildNode("verification_attempts_count") is { } nullNodeVerificationAttemptsCount && nullNodeVerificationAttemptsCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VerificationAttemptsCount = null;
+            if (parseNode.GetChildNode("verification_failures") is { } nullNodeVerificationFailures && nullNodeVerificationFailures.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VerificationFailures = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The duration of the dataset in seconds.</summary>
-        public double? DatasetDurationSeconds { get; set; }
+        public double? DatasetDurationSeconds { get => _explicitNullValueDatasetDurationSeconds; set { _explicitNullValueDatasetDurationSeconds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dataset_duration_seconds"); else _explicitNullProperties?.Remove("dataset_duration_seconds"); } }
+        private double? _explicitNullValueDatasetDurationSeconds = default!;
         /// <summary>Whether the user is allowed to fine-tune the voice.</summary>
-        public bool? IsAllowedToFineTune { get; set; }
+        public bool? IsAllowedToFineTune { get => _explicitNullValueIsAllowedToFineTune; set { _explicitNullValueIsAllowedToFineTune = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_allowed_to_fine_tune"); else _explicitNullProperties?.Remove("is_allowed_to_fine_tune"); } }
+        private bool? _explicitNullValueIsAllowedToFineTune = default!;
         /// <summary>The language of the fine-tuning process.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Language { get; set; }
+        public string? Language { get => _explicitNullValueLanguage; set { _explicitNullValueLanguage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("language"); else _explicitNullProperties?.Remove("language"); } }
+        private string? _explicitNullValueLanguage = default!;
 #nullable restore
 #else
-        public string Language { get; set; }
+        public string Language { get => _explicitNullValueLanguage; set { _explicitNullValueLanguage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("language"); else _explicitNullProperties?.Remove("language"); } }
+        private string _explicitNullValueLanguage = default!;
 #endif
         /// <summary>The manual verification of the fine-tuning process.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ManualVerificationResponseModel? ManualVerification { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ManualVerificationResponseModel? ManualVerification { get => _explicitNullValueManualVerification; set { _explicitNullValueManualVerification = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("manual_verification"); else _explicitNullProperties?.Remove("manual_verification"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ManualVerificationResponseModel? _explicitNullValueManualVerification = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ManualVerificationResponseModel ManualVerification { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ManualVerificationResponseModel ManualVerification { get => _explicitNullValueManualVerification; set { _explicitNullValueManualVerification = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("manual_verification"); else _explicitNullProperties?.Remove("manual_verification"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ManualVerificationResponseModel _explicitNullValueManualVerification = default!;
 #endif
         /// <summary>Whether a manual verification was requested for the fine-tuning process.</summary>
-        public bool? ManualVerificationRequested { get; set; }
+        public bool? ManualVerificationRequested { get => _explicitNullValueManualVerificationRequested; set { _explicitNullValueManualVerificationRequested = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("manual_verification_requested"); else _explicitNullProperties?.Remove("manual_verification_requested"); } }
+        private bool? _explicitNullValueManualVerificationRequested = default!;
         /// <summary>The maximum number of verification attempts.</summary>
-        public int? MaxVerificationAttempts { get; set; }
+        public int? MaxVerificationAttempts { get => _explicitNullValueMaxVerificationAttempts; set { _explicitNullValueMaxVerificationAttempts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_verification_attempts"); else _explicitNullProperties?.Remove("max_verification_attempts"); } }
+        private int? _explicitNullValueMaxVerificationAttempts = default!;
         /// <summary>The message of the fine-tuning process.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.FineTuningResponseModelMessageProperty? Message { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.FineTuningResponseModelMessageProperty? Message { get => _explicitNullValueMessage; set { _explicitNullValueMessage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("message"); else _explicitNullProperties?.Remove("message"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.FineTuningResponseModelMessageProperty? _explicitNullValueMessage = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.FineTuningResponseModelMessageProperty Message { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.FineTuningResponseModelMessageProperty Message { get => _explicitNullValueMessage; set { _explicitNullValueMessage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("message"); else _explicitNullProperties?.Remove("message"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.FineTuningResponseModelMessageProperty _explicitNullValueMessage = default!;
 #endif
         /// <summary>The next maximum verification attempts reset time in Unix milliseconds.</summary>
-        public int? NextMaxVerificationAttemptsResetUnixMs { get; set; }
+        public int? NextMaxVerificationAttemptsResetUnixMs { get => _explicitNullValueNextMaxVerificationAttemptsResetUnixMs; set { _explicitNullValueNextMaxVerificationAttemptsResetUnixMs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("next_max_verification_attempts_reset_unix_ms"); else _explicitNullProperties?.Remove("next_max_verification_attempts_reset_unix_ms"); } }
+        private int? _explicitNullValueNextMaxVerificationAttemptsResetUnixMs = default!;
         /// <summary>The progress of the fine-tuning process.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.FineTuningResponseModelProgressProperty? Progress { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.FineTuningResponseModelProgressProperty? Progress { get => _explicitNullValueProgress; set { _explicitNullValueProgress = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("progress"); else _explicitNullProperties?.Remove("progress"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.FineTuningResponseModelProgressProperty? _explicitNullValueProgress = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.FineTuningResponseModelProgressProperty Progress { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.FineTuningResponseModelProgressProperty Progress { get => _explicitNullValueProgress; set { _explicitNullValueProgress = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("progress"); else _explicitNullProperties?.Remove("progress"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.FineTuningResponseModelProgressProperty _explicitNullValueProgress = default!;
 #endif
         /// <summary>List of slice IDs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? SliceIds { get; set; }
+        public List<string>? SliceIds { get => _explicitNullValueSliceIds; set { _explicitNullValueSliceIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("slice_ids"); else _explicitNullProperties?.Remove("slice_ids"); } }
+        private List<string>? _explicitNullValueSliceIds = default!;
 #nullable restore
 #else
-        public List<string> SliceIds { get; set; }
+        public List<string> SliceIds { get => _explicitNullValueSliceIds; set { _explicitNullValueSliceIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("slice_ids"); else _explicitNullProperties?.Remove("slice_ids"); } }
+        private List<string> _explicitNullValueSliceIds = default!;
 #endif
         /// <summary>The state of the fine-tuning process for each model.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.FineTuningResponseModelStateProperty? State { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.FineTuningResponseModelStateProperty? State { get => _explicitNullValueState; set { _explicitNullValueState = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("state"); else _explicitNullProperties?.Remove("state"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.FineTuningResponseModelStateProperty? _explicitNullValueState = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.FineTuningResponseModelStateProperty State { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.FineTuningResponseModelStateProperty State { get => _explicitNullValueState; set { _explicitNullValueState = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("state"); else _explicitNullProperties?.Remove("state"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.FineTuningResponseModelStateProperty _explicitNullValueState = default!;
 #endif
         /// <summary>The number of verification attempts.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.VerificationAttemptResponseModel>? VerificationAttempts { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.VerificationAttemptResponseModel>? VerificationAttempts { get => _explicitNullValueVerificationAttempts; set { _explicitNullValueVerificationAttempts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("verification_attempts"); else _explicitNullProperties?.Remove("verification_attempts"); } }
+        private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.VerificationAttemptResponseModel>? _explicitNullValueVerificationAttempts = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.VerificationAttemptResponseModel> VerificationAttempts { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.VerificationAttemptResponseModel> VerificationAttempts { get => _explicitNullValueVerificationAttempts; set { _explicitNullValueVerificationAttempts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("verification_attempts"); else _explicitNullProperties?.Remove("verification_attempts"); } }
+        private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.VerificationAttemptResponseModel> _explicitNullValueVerificationAttempts = default!;
 #endif
         /// <summary>The number of verification attempts in the fine-tuning process.</summary>
-        public int? VerificationAttemptsCount { get; set; }
+        public int? VerificationAttemptsCount { get => _explicitNullValueVerificationAttemptsCount; set { _explicitNullValueVerificationAttemptsCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("verification_attempts_count"); else _explicitNullProperties?.Remove("verification_attempts_count"); } }
+        private int? _explicitNullValueVerificationAttemptsCount = default!;
         /// <summary>List of verification failures in the fine-tuning process.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? VerificationFailures { get; set; }
+        public List<string>? VerificationFailures { get => _explicitNullValueVerificationFailures; set { _explicitNullValueVerificationFailures = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("verification_failures"); else _explicitNullProperties?.Remove("verification_failures"); } }
+        private List<string>? _explicitNullValueVerificationFailures = default!;
 #nullable restore
 #else
-        public List<string> VerificationFailures { get; set; }
+        public List<string> VerificationFailures { get => _explicitNullValueVerificationFailures; set { _explicitNullValueVerificationFailures = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("verification_failures"); else _explicitNullProperties?.Remove("verification_failures"); } }
+        private List<string> _explicitNullValueVerificationFailures = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.FineTuningResponseModel"/> and sets the default values.
@@ -105,7 +148,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.FineTuningResponseModel CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.FineTuningResponseModel();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.FineTuningResponseModel(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -152,6 +195,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.VerificationAttemptResponseModel>("verification_attempts", VerificationAttempts);
             writer.WriteIntValue("verification_attempts_count", VerificationAttemptsCount);
             writer.WriteCollectionOfPrimitiveValues<string>("verification_failures", VerificationFailures);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

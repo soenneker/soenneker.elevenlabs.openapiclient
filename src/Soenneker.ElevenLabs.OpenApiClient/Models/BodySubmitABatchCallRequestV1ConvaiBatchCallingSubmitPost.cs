@@ -11,84 +11,122 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class BodySubmitABatchCallRequestV1ConvaiBatchCallingSubmitPost : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("agent_id") is { } nullNodeAgentId && nullNodeAgentId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AgentId = null;
+            if (parseNode.GetChildNode("agent_phone_number_id") is { } nullNodeAgentPhoneNumberId && nullNodeAgentPhoneNumberId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AgentPhoneNumberId = null;
+            if (parseNode.GetChildNode("branch_id") is { } nullNodeBranchId && nullNodeBranchId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BranchId = null;
+            if (parseNode.GetChildNode("call_name") is { } nullNodeCallName && nullNodeCallName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CallName = null;
+            if (parseNode.GetChildNode("environment") is { } nullNodeEnvironment && nullNodeEnvironment.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Environment = null;
+            if (parseNode.GetChildNode("recipients") is { } nullNodeRecipients && nullNodeRecipients.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Recipients = null;
+            if (parseNode.GetChildNode("scheduled_time_unix") is { } nullNodeScheduledTimeUnix && nullNodeScheduledTimeUnix.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ScheduledTimeUnix = null;
+            if (parseNode.GetChildNode("target_concurrency_limit") is { } nullNodeTargetConcurrencyLimit && nullNodeTargetConcurrencyLimit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TargetConcurrencyLimit = null;
+            if (parseNode.GetChildNode("telephony_call_config") is { } nullNodeTelephonyCallConfig && nullNodeTelephonyCallConfig.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TelephonyCallConfig = null;
+            if (parseNode.GetChildNode("timezone") is { } nullNodeTimezone && nullNodeTimezone.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Timezone = null;
+            if (parseNode.GetChildNode("whatsapp_params") is { } nullNodeWhatsappParams && nullNodeWhatsappParams.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WhatsappParams = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The agent_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AgentId { get; set; }
+        public string? AgentId { get => _explicitNullValueAgentId; set { _explicitNullValueAgentId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agent_id"); else _explicitNullProperties?.Remove("agent_id"); } }
+        private string? _explicitNullValueAgentId = default!;
 #nullable restore
 #else
-        public string AgentId { get; set; }
+        public string AgentId { get => _explicitNullValueAgentId; set { _explicitNullValueAgentId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agent_id"); else _explicitNullProperties?.Remove("agent_id"); } }
+        private string _explicitNullValueAgentId = default!;
 #endif
         /// <summary>The agent_phone_number_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AgentPhoneNumberId { get; set; }
+        public string? AgentPhoneNumberId { get => _explicitNullValueAgentPhoneNumberId; set { _explicitNullValueAgentPhoneNumberId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agent_phone_number_id"); else _explicitNullProperties?.Remove("agent_phone_number_id"); } }
+        private string? _explicitNullValueAgentPhoneNumberId = default!;
 #nullable restore
 #else
-        public string AgentPhoneNumberId { get; set; }
+        public string AgentPhoneNumberId { get => _explicitNullValueAgentPhoneNumberId; set { _explicitNullValueAgentPhoneNumberId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agent_phone_number_id"); else _explicitNullProperties?.Remove("agent_phone_number_id"); } }
+        private string _explicitNullValueAgentPhoneNumberId = default!;
 #endif
         /// <summary>The branch_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BranchId { get; set; }
+        public string? BranchId { get => _explicitNullValueBranchId; set { _explicitNullValueBranchId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("branch_id"); else _explicitNullProperties?.Remove("branch_id"); } }
+        private string? _explicitNullValueBranchId = default!;
 #nullable restore
 #else
-        public string BranchId { get; set; }
+        public string BranchId { get => _explicitNullValueBranchId; set { _explicitNullValueBranchId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("branch_id"); else _explicitNullProperties?.Remove("branch_id"); } }
+        private string _explicitNullValueBranchId = default!;
 #endif
         /// <summary>The call_name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CallName { get; set; }
+        public string? CallName { get => _explicitNullValueCallName; set { _explicitNullValueCallName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("call_name"); else _explicitNullProperties?.Remove("call_name"); } }
+        private string? _explicitNullValueCallName = default!;
 #nullable restore
 #else
-        public string CallName { get; set; }
+        public string CallName { get => _explicitNullValueCallName; set { _explicitNullValueCallName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("call_name"); else _explicitNullProperties?.Remove("call_name"); } }
+        private string _explicitNullValueCallName = default!;
 #endif
         /// <summary>The environment property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Environment { get; set; }
+        public string? Environment { get => _explicitNullValueEnvironment; set { _explicitNullValueEnvironment = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("environment"); else _explicitNullProperties?.Remove("environment"); } }
+        private string? _explicitNullValueEnvironment = default!;
 #nullable restore
 #else
-        public string Environment { get; set; }
+        public string Environment { get => _explicitNullValueEnvironment; set { _explicitNullValueEnvironment = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("environment"); else _explicitNullProperties?.Remove("environment"); } }
+        private string _explicitNullValueEnvironment = default!;
 #endif
         /// <summary>The recipients property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.OutboundCallRecipient>? Recipients { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.OutboundCallRecipient>? Recipients { get => _explicitNullValueRecipients; set { _explicitNullValueRecipients = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("recipients"); else _explicitNullProperties?.Remove("recipients"); } }
+        private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.OutboundCallRecipient>? _explicitNullValueRecipients = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.OutboundCallRecipient> Recipients { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.OutboundCallRecipient> Recipients { get => _explicitNullValueRecipients; set { _explicitNullValueRecipients = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("recipients"); else _explicitNullProperties?.Remove("recipients"); } }
+        private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.OutboundCallRecipient> _explicitNullValueRecipients = default!;
 #endif
         /// <summary>The scheduled_time_unix property</summary>
-        public int? ScheduledTimeUnix { get; set; }
+        public int? ScheduledTimeUnix { get => _explicitNullValueScheduledTimeUnix; set { _explicitNullValueScheduledTimeUnix = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scheduled_time_unix"); else _explicitNullProperties?.Remove("scheduled_time_unix"); } }
+        private int? _explicitNullValueScheduledTimeUnix = default!;
         /// <summary>Maximum number of simultaneous calls for this batch. When set, dispatch is governed by this limit rather than workspace/agent capacity percentages.</summary>
-        public int? TargetConcurrencyLimit { get; set; }
+        public int? TargetConcurrencyLimit { get => _explicitNullValueTargetConcurrencyLimit; set { _explicitNullValueTargetConcurrencyLimit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("target_concurrency_limit"); else _explicitNullProperties?.Remove("target_concurrency_limit"); } }
+        private int? _explicitNullValueTargetConcurrencyLimit = default!;
         /// <summary>The telephony_call_config property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.TelephonyCallConfigInput? TelephonyCallConfig { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.TelephonyCallConfigInput? TelephonyCallConfig { get => _explicitNullValueTelephonyCallConfig; set { _explicitNullValueTelephonyCallConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("telephony_call_config"); else _explicitNullProperties?.Remove("telephony_call_config"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.TelephonyCallConfigInput? _explicitNullValueTelephonyCallConfig = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.TelephonyCallConfigInput TelephonyCallConfig { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.TelephonyCallConfigInput TelephonyCallConfig { get => _explicitNullValueTelephonyCallConfig; set { _explicitNullValueTelephonyCallConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("telephony_call_config"); else _explicitNullProperties?.Remove("telephony_call_config"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.TelephonyCallConfigInput _explicitNullValueTelephonyCallConfig = default!;
 #endif
         /// <summary>The timezone property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Timezone { get; set; }
+        public string? Timezone { get => _explicitNullValueTimezone; set { _explicitNullValueTimezone = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timezone"); else _explicitNullProperties?.Remove("timezone"); } }
+        private string? _explicitNullValueTimezone = default!;
 #nullable restore
 #else
-        public string Timezone { get; set; }
+        public string Timezone { get => _explicitNullValueTimezone; set { _explicitNullValueTimezone = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timezone"); else _explicitNullProperties?.Remove("timezone"); } }
+        private string _explicitNullValueTimezone = default!;
 #endif
         /// <summary>The whatsapp_params property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BatchCallWhatsAppParams? WhatsappParams { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BatchCallWhatsAppParams? WhatsappParams { get => _explicitNullValueWhatsappParams; set { _explicitNullValueWhatsappParams = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("whatsapp_params"); else _explicitNullProperties?.Remove("whatsapp_params"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.BatchCallWhatsAppParams? _explicitNullValueWhatsappParams = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BatchCallWhatsAppParams WhatsappParams { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BatchCallWhatsAppParams WhatsappParams { get => _explicitNullValueWhatsappParams; set { _explicitNullValueWhatsappParams = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("whatsapp_params"); else _explicitNullProperties?.Remove("whatsapp_params"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.BatchCallWhatsAppParams _explicitNullValueWhatsappParams = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.BodySubmitABatchCallRequestV1ConvaiBatchCallingSubmitPost"/> and sets the default values.
@@ -105,7 +143,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.BodySubmitABatchCallRequestV1ConvaiBatchCallingSubmitPost CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.BodySubmitABatchCallRequestV1ConvaiBatchCallingSubmitPost();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.BodySubmitABatchCallRequestV1ConvaiBatchCallingSubmitPost(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -146,6 +184,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TelephonyCallConfigInput>("telephony_call_config", TelephonyCallConfig);
             writer.WriteStringValue("timezone", Timezone);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BatchCallWhatsAppParams>("whatsapp_params", WhatsappParams);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

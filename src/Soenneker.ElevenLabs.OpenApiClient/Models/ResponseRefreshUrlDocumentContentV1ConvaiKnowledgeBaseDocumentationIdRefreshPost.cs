@@ -12,7 +12,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ResponseRefreshUrlDocumentContentV1ConvaiKnowledgeBaseDocumentationIdRefreshPost : IComposedTypeWrapper, IParsable
-    {
+    , global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder {
+        // Preserve ambiguous union payloads without inventing a discriminator.
+        /// <summary>The complete payload when no unique typed union branch can be selected.</summary>
+        public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode UnrecognizedValue { get; set; } = null!;
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalData { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
         /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseFileResponseModel"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -53,25 +58,36 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.ResponseRefreshUrlDocumentContentV1ConvaiKnowledgeBaseDocumentationIdRefreshPost CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
             var result = new global::Soenneker.ElevenLabs.OpenApiClient.Models.ResponseRefreshUrlDocumentContentV1ConvaiKnowledgeBaseDocumentationIdRefreshPost();
-            if("file".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("GetKnowledgeBaseFileResponseModel".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.GetKnowledgeBaseFileResponseModel = new global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseFileResponseModel();
+                
             }
-            else if("folder".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("GetKnowledgeBaseFolderResponseModel".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.GetKnowledgeBaseFolderResponseModel = new global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseFolderResponseModel();
+                
             }
-            else if("text".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("GetKnowledgeBaseTextResponseModel".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.GetKnowledgeBaseTextResponseModel = new global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseTextResponseModel();
+                
             }
-            else if("url".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("GetKnowledgeBaseUrlResponseModel".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.GetKnowledgeBaseUrlResponseModel = new global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseUrlResponseModel();
+                
             }
-            return result;
+            
+            var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
+            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("id") != null && parseNode.GetChildNode("name") != null && parseNode.GetChildNode("metadata") != null && parseNode.GetChildNode("supported_usages") != null && parseNode.GetChildNode("access_info") != null && parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag6 && ("url".Equals(tag6.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("url") != null && parseNode.GetChildNode("extracted_inner_html") != null && (parseNode.GetChildNode("content_format") == null || (parseNode.GetChildNode("content_format")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString optionalTag9 && ("html".Equals(optionalTag9.GetValue(), global::System.StringComparison.Ordinal) || "markdown".Equals(optionalTag9.GetValue(), global::System.StringComparison.Ordinal))))))();
+            bool matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("id") != null && parseNode.GetChildNode("name") != null && parseNode.GetChildNode("metadata") != null && parseNode.GetChildNode("supported_usages") != null && parseNode.GetChildNode("access_info") != null && parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag6 && ("file".Equals(tag6.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("extracted_inner_html") != null && parseNode.GetChildNode("filename") != null && (parseNode.GetChildNode("content_format") == null || (parseNode.GetChildNode("content_format")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString optionalTag9 && ("html".Equals(optionalTag9.GetValue(), global::System.StringComparison.Ordinal) || "markdown".Equals(optionalTag9.GetValue(), global::System.StringComparison.Ordinal))))))();
+            bool matchesUnionBranch2 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("id") != null && parseNode.GetChildNode("name") != null && parseNode.GetChildNode("metadata") != null && parseNode.GetChildNode("supported_usages") != null && parseNode.GetChildNode("access_info") != null && parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag6 && ("text".Equals(tag6.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("extracted_inner_html") != null && (parseNode.GetChildNode("content_format") == null || (parseNode.GetChildNode("content_format")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString optionalTag8 && ("html".Equals(optionalTag8.GetValue(), global::System.StringComparison.Ordinal) || "markdown".Equals(optionalTag8.GetValue(), global::System.StringComparison.Ordinal))))))();
+            bool matchesUnionBranch3 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("id") != null && parseNode.GetChildNode("name") != null && parseNode.GetChildNode("metadata") != null && parseNode.GetChildNode("supported_usages") != null && parseNode.GetChildNode("access_info") != null && parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag6 && ("folder".Equals(tag6.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("children_count") != null && parseNode.GetChildNode("document_count") != null))();
+            if (result.GetKnowledgeBaseFileResponseModel == null && result.GetKnowledgeBaseFolderResponseModel == null && result.GetKnowledgeBaseTextResponseModel == null && result.GetKnowledgeBaseUrlResponseModel == null && matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2 && !matchesUnionBranch3) result.GetKnowledgeBaseUrlResponseModel = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseUrlResponseModel(), parseNode);
+            if (result.GetKnowledgeBaseFileResponseModel == null && result.GetKnowledgeBaseFolderResponseModel == null && result.GetKnowledgeBaseTextResponseModel == null && result.GetKnowledgeBaseUrlResponseModel == null && matchesUnionBranch1 && !matchesUnionBranch0 && !matchesUnionBranch2 && !matchesUnionBranch3) result.GetKnowledgeBaseFileResponseModel = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseFileResponseModel(), parseNode);
+            if (result.GetKnowledgeBaseFileResponseModel == null && result.GetKnowledgeBaseFolderResponseModel == null && result.GetKnowledgeBaseTextResponseModel == null && result.GetKnowledgeBaseUrlResponseModel == null && matchesUnionBranch2 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch3) result.GetKnowledgeBaseTextResponseModel = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseTextResponseModel(), parseNode);
+            if (result.GetKnowledgeBaseFileResponseModel == null && result.GetKnowledgeBaseFolderResponseModel == null && result.GetKnowledgeBaseTextResponseModel == null && result.GetKnowledgeBaseUrlResponseModel == null && matchesUnionBranch3 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2) result.GetKnowledgeBaseFolderResponseModel = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseFolderResponseModel(), parseNode);
+            if (result.GetKnowledgeBaseFileResponseModel == null && result.GetKnowledgeBaseFolderResponseModel == null && result.GetKnowledgeBaseTextResponseModel == null && result.GetKnowledgeBaseUrlResponseModel == null) result.UnrecognizedValue = unionPayload;
+return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -103,21 +119,32 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
+            if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
+            if (GetKnowledgeBaseFileResponseModel == null && GetKnowledgeBaseFolderResponseModel == null && GetKnowledgeBaseTextResponseModel == null && GetKnowledgeBaseUrlResponseModel == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
+            if (GetKnowledgeBaseFileResponseModel != null && GetKnowledgeBaseFolderResponseModel == null && GetKnowledgeBaseTextResponseModel == null && GetKnowledgeBaseUrlResponseModel == null) { if (GetKnowledgeBaseFileResponseModel is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, GetKnowledgeBaseFileResponseModel); return; }
+            if (GetKnowledgeBaseFolderResponseModel != null && GetKnowledgeBaseFileResponseModel == null && GetKnowledgeBaseTextResponseModel == null && GetKnowledgeBaseUrlResponseModel == null) { if (GetKnowledgeBaseFolderResponseModel is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, GetKnowledgeBaseFolderResponseModel); return; }
+            if (GetKnowledgeBaseTextResponseModel != null && GetKnowledgeBaseFileResponseModel == null && GetKnowledgeBaseFolderResponseModel == null && GetKnowledgeBaseUrlResponseModel == null) { if (GetKnowledgeBaseTextResponseModel is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, GetKnowledgeBaseTextResponseModel); return; }
+            if (GetKnowledgeBaseUrlResponseModel != null && GetKnowledgeBaseFileResponseModel == null && GetKnowledgeBaseFolderResponseModel == null && GetKnowledgeBaseTextResponseModel == null) { if (GetKnowledgeBaseUrlResponseModel is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, GetKnowledgeBaseUrlResponseModel); return; }
+
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             if(GetKnowledgeBaseFileResponseModel != null)
             {
+                if (GetKnowledgeBaseFileResponseModel is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseFileResponseModel>(null, GetKnowledgeBaseFileResponseModel);
             }
             else if(GetKnowledgeBaseFolderResponseModel != null)
             {
+                if (GetKnowledgeBaseFolderResponseModel is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseFolderResponseModel>(null, GetKnowledgeBaseFolderResponseModel);
             }
             else if(GetKnowledgeBaseTextResponseModel != null)
             {
+                if (GetKnowledgeBaseTextResponseModel is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseTextResponseModel>(null, GetKnowledgeBaseTextResponseModel);
             }
             else if(GetKnowledgeBaseUrlResponseModel != null)
             {
+                if (GetKnowledgeBaseUrlResponseModel is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseUrlResponseModel>(null, GetKnowledgeBaseUrlResponseModel);
             }
         }

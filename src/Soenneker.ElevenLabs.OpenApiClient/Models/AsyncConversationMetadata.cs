@@ -12,57 +12,87 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AsyncConversationMetadata : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("delivery_error") is { } nullNodeDeliveryError && nullNodeDeliveryError.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeliveryError = null;
+            if (parseNode.GetChildNode("delivery_status") is { } nullNodeDeliveryStatus && nullNodeDeliveryStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeliveryStatus = null;
+            if (parseNode.GetChildNode("delivery_timestamp") is { } nullNodeDeliveryTimestamp && nullNodeDeliveryTimestamp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeliveryTimestamp = null;
+            if (parseNode.GetChildNode("external_id") is { } nullNodeExternalId && nullNodeExternalId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExternalId = null;
+            if (parseNode.GetChildNode("external_link") is { } nullNodeExternalLink && nullNodeExternalLink.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExternalLink = null;
+            if (parseNode.GetChildNode("external_system") is { } nullNodeExternalSystem && nullNodeExternalSystem.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExternalSystem = null;
+            if (parseNode.GetChildNode("last_processed_external_message_id") is { } nullNodeLastProcessedExternalMessageId && nullNodeLastProcessedExternalMessageId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastProcessedExternalMessageId = null;
+            if (parseNode.GetChildNode("last_retry_timestamp") is { } nullNodeLastRetryTimestamp && nullNodeLastRetryTimestamp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastRetryTimestamp = null;
+            if (parseNode.GetChildNode("retry_count") is { } nullNodeRetryCount && nullNodeRetryCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RetryCount = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The delivery_error property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeliveryError { get; set; }
+        public string? DeliveryError { get => _explicitNullValueDeliveryError; set { _explicitNullValueDeliveryError = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("delivery_error"); else _explicitNullProperties?.Remove("delivery_error"); } }
+        private string? _explicitNullValueDeliveryError = default!;
 #nullable restore
 #else
-        public string DeliveryError { get; set; }
+        public string DeliveryError { get => _explicitNullValueDeliveryError; set { _explicitNullValueDeliveryError = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("delivery_error"); else _explicitNullProperties?.Remove("delivery_error"); } }
+        private string _explicitNullValueDeliveryError = default!;
 #endif
         /// <summary>The delivery_status property</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AsyncConversationMetadataDeliveryStatus? DeliveryStatus { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AsyncConversationMetadataDeliveryStatus? DeliveryStatus { get => _explicitNullValueDeliveryStatus; set { _explicitNullValueDeliveryStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("delivery_status"); else _explicitNullProperties?.Remove("delivery_status"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.AsyncConversationMetadataDeliveryStatus? _explicitNullValueDeliveryStatus = default!;
         /// <summary>The delivery_timestamp property</summary>
-        public int? DeliveryTimestamp { get; set; }
+        public int? DeliveryTimestamp { get => _explicitNullValueDeliveryTimestamp; set { _explicitNullValueDeliveryTimestamp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("delivery_timestamp"); else _explicitNullProperties?.Remove("delivery_timestamp"); } }
+        private int? _explicitNullValueDeliveryTimestamp = default!;
         /// <summary>The external_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ExternalId { get; set; }
+        public string? ExternalId { get => _explicitNullValueExternalId; set { _explicitNullValueExternalId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("external_id"); else _explicitNullProperties?.Remove("external_id"); } }
+        private string? _explicitNullValueExternalId = default!;
 #nullable restore
 #else
-        public string ExternalId { get; set; }
+        public string ExternalId { get => _explicitNullValueExternalId; set { _explicitNullValueExternalId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("external_id"); else _explicitNullProperties?.Remove("external_id"); } }
+        private string _explicitNullValueExternalId = default!;
 #endif
         /// <summary>The external_link property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ExternalLink { get; set; }
+        public string? ExternalLink { get => _explicitNullValueExternalLink; set { _explicitNullValueExternalLink = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("external_link"); else _explicitNullProperties?.Remove("external_link"); } }
+        private string? _explicitNullValueExternalLink = default!;
 #nullable restore
 #else
-        public string ExternalLink { get; set; }
+        public string ExternalLink { get => _explicitNullValueExternalLink; set { _explicitNullValueExternalLink = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("external_link"); else _explicitNullProperties?.Remove("external_link"); } }
+        private string _explicitNullValueExternalLink = default!;
 #endif
         /// <summary>The external_system property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ExternalSystem { get; set; }
+        public string? ExternalSystem { get => _explicitNullValueExternalSystem; set { _explicitNullValueExternalSystem = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("external_system"); else _explicitNullProperties?.Remove("external_system"); } }
+        private string? _explicitNullValueExternalSystem = default!;
 #nullable restore
 #else
-        public string ExternalSystem { get; set; }
+        public string ExternalSystem { get => _explicitNullValueExternalSystem; set { _explicitNullValueExternalSystem = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("external_system"); else _explicitNullProperties?.Remove("external_system"); } }
+        private string _explicitNullValueExternalSystem = default!;
 #endif
         /// <summary>The last_processed_external_message_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LastProcessedExternalMessageId { get; set; }
+        public string? LastProcessedExternalMessageId { get => _explicitNullValueLastProcessedExternalMessageId; set { _explicitNullValueLastProcessedExternalMessageId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last_processed_external_message_id"); else _explicitNullProperties?.Remove("last_processed_external_message_id"); } }
+        private string? _explicitNullValueLastProcessedExternalMessageId = default!;
 #nullable restore
 #else
-        public string LastProcessedExternalMessageId { get; set; }
+        public string LastProcessedExternalMessageId { get => _explicitNullValueLastProcessedExternalMessageId; set { _explicitNullValueLastProcessedExternalMessageId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last_processed_external_message_id"); else _explicitNullProperties?.Remove("last_processed_external_message_id"); } }
+        private string _explicitNullValueLastProcessedExternalMessageId = default!;
 #endif
         /// <summary>The last_retry_timestamp property</summary>
-        public int? LastRetryTimestamp { get; set; }
+        public int? LastRetryTimestamp { get => _explicitNullValueLastRetryTimestamp; set { _explicitNullValueLastRetryTimestamp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last_retry_timestamp"); else _explicitNullProperties?.Remove("last_retry_timestamp"); } }
+        private int? _explicitNullValueLastRetryTimestamp = default!;
         /// <summary>The retry_count property</summary>
-        public int? RetryCount { get; set; }
+        public int? RetryCount { get => _explicitNullValueRetryCount; set { _explicitNullValueRetryCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("retry_count"); else _explicitNullProperties?.Remove("retry_count"); } }
+        private int? _explicitNullValueRetryCount = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.AsyncConversationMetadata"/> and sets the default values.
         /// </summary>
@@ -79,7 +109,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.AsyncConversationMetadata CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.AsyncConversationMetadata();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.AsyncConversationMetadata(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -116,6 +146,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteStringValue("last_processed_external_message_id", LastProcessedExternalMessageId);
             writer.WriteIntValue("last_retry_timestamp", LastRetryTimestamp);
             writer.WriteIntValue("retry_count", RetryCount);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

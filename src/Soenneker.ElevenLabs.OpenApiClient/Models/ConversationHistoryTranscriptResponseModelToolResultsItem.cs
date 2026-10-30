@@ -12,7 +12,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ConversationHistoryTranscriptResponseModelToolResultsItem : IComposedTypeWrapper, IParsable
-    {
+    , global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder {
+        // Preserve ambiguous union payloads without inventing a discriminator.
+        /// <summary>The complete payload when no unique typed union branch can be selected.</summary>
+        public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode UnrecognizedValue { get; set; } = null!;
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalData { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
         /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptApiIntegrationWebhookToolsResultCommonModelOutput"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -57,21 +62,32 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             var result = new global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptResponseModelToolResultsItem();
             if("ConversationHistoryTranscriptApiIntegrationWebhookToolsResultCommonModelOutput".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.ConversationHistoryTranscriptApiIntegrationWebhookToolsResultCommonModelOutput = new global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptApiIntegrationWebhookToolsResultCommonModelOutput();
+                
             }
             else if("ConversationHistoryTranscriptOtherToolsResultCommonModel".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.ConversationHistoryTranscriptOtherToolsResultCommonModel = new global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptOtherToolsResultCommonModel();
+                
             }
             else if("ConversationHistoryTranscriptSystemToolResultCommonModelOutput".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.ConversationHistoryTranscriptSystemToolResultCommonModelOutput = new global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptSystemToolResultCommonModelOutput();
+                
             }
             else if("ConversationHistoryTranscriptWorkflowToolsResultCommonModelOutput".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.ConversationHistoryTranscriptWorkflowToolsResultCommonModelOutput = new global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptWorkflowToolsResultCommonModelOutput();
+                
             }
-            return result;
+            
+            var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
+            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("request_id") != null && parseNode.GetChildNode("tool_name") != null && parseNode.GetChildNode("result_value") != null && parseNode.GetChildNode("is_error") != null && parseNode.GetChildNode("tool_has_been_called") != null))();
+            bool matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("request_id") != null && parseNode.GetChildNode("tool_name") != null && parseNode.GetChildNode("result_value") != null && parseNode.GetChildNode("is_error") != null && parseNode.GetChildNode("tool_has_been_called") != null && parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag6 && ("system".Equals(tag6.GetValue(), global::System.StringComparison.Ordinal)))))();
+            bool matchesUnionBranch2 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("request_id") != null && parseNode.GetChildNode("tool_name") != null && parseNode.GetChildNode("result_value") != null && parseNode.GetChildNode("is_error") != null && parseNode.GetChildNode("is_blocked") != null && parseNode.GetChildNode("tool_has_been_called") != null && parseNode.GetChildNode("tool_latency_secs") != null && parseNode.GetChildNode("error_type") != null && parseNode.GetChildNode("raw_error_message") != null && parseNode.GetChildNode("dynamic_variable_updates") != null && parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag11 && ("api_integration_webhook".Equals(tag11.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("integration_id") != null && parseNode.GetChildNode("credential_id") != null && parseNode.GetChildNode("integration_connection_id") != null))();
+            bool matchesUnionBranch3 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("request_id") != null && parseNode.GetChildNode("tool_name") != null && parseNode.GetChildNode("result_value") != null && parseNode.GetChildNode("is_error") != null && parseNode.GetChildNode("tool_has_been_called") != null && parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag6 && ("workflow".Equals(tag6.GetValue(), global::System.StringComparison.Ordinal)))))();
+            if (result.ConversationHistoryTranscriptApiIntegrationWebhookToolsResultCommonModelOutput == null && result.ConversationHistoryTranscriptOtherToolsResultCommonModel == null && result.ConversationHistoryTranscriptSystemToolResultCommonModelOutput == null && result.ConversationHistoryTranscriptWorkflowToolsResultCommonModelOutput == null && matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2 && !matchesUnionBranch3) result.ConversationHistoryTranscriptOtherToolsResultCommonModel = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptOtherToolsResultCommonModel(), parseNode);
+            if (result.ConversationHistoryTranscriptApiIntegrationWebhookToolsResultCommonModelOutput == null && result.ConversationHistoryTranscriptOtherToolsResultCommonModel == null && result.ConversationHistoryTranscriptSystemToolResultCommonModelOutput == null && result.ConversationHistoryTranscriptWorkflowToolsResultCommonModelOutput == null && matchesUnionBranch1 && !matchesUnionBranch0 && !matchesUnionBranch2 && !matchesUnionBranch3) result.ConversationHistoryTranscriptSystemToolResultCommonModelOutput = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptSystemToolResultCommonModelOutput(), parseNode);
+            if (result.ConversationHistoryTranscriptApiIntegrationWebhookToolsResultCommonModelOutput == null && result.ConversationHistoryTranscriptOtherToolsResultCommonModel == null && result.ConversationHistoryTranscriptSystemToolResultCommonModelOutput == null && result.ConversationHistoryTranscriptWorkflowToolsResultCommonModelOutput == null && matchesUnionBranch2 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch3) result.ConversationHistoryTranscriptApiIntegrationWebhookToolsResultCommonModelOutput = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptApiIntegrationWebhookToolsResultCommonModelOutput(), parseNode);
+            if (result.ConversationHistoryTranscriptApiIntegrationWebhookToolsResultCommonModelOutput == null && result.ConversationHistoryTranscriptOtherToolsResultCommonModel == null && result.ConversationHistoryTranscriptSystemToolResultCommonModelOutput == null && result.ConversationHistoryTranscriptWorkflowToolsResultCommonModelOutput == null && matchesUnionBranch3 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2) result.ConversationHistoryTranscriptWorkflowToolsResultCommonModelOutput = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptWorkflowToolsResultCommonModelOutput(), parseNode);
+            if (result.ConversationHistoryTranscriptApiIntegrationWebhookToolsResultCommonModelOutput == null && result.ConversationHistoryTranscriptOtherToolsResultCommonModel == null && result.ConversationHistoryTranscriptSystemToolResultCommonModelOutput == null && result.ConversationHistoryTranscriptWorkflowToolsResultCommonModelOutput == null) result.UnrecognizedValue = unionPayload;
+return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -103,21 +119,32 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
+            if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
+            if (ConversationHistoryTranscriptApiIntegrationWebhookToolsResultCommonModelOutput == null && ConversationHistoryTranscriptOtherToolsResultCommonModel == null && ConversationHistoryTranscriptSystemToolResultCommonModelOutput == null && ConversationHistoryTranscriptWorkflowToolsResultCommonModelOutput == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
+            if (ConversationHistoryTranscriptApiIntegrationWebhookToolsResultCommonModelOutput != null && ConversationHistoryTranscriptOtherToolsResultCommonModel == null && ConversationHistoryTranscriptSystemToolResultCommonModelOutput == null && ConversationHistoryTranscriptWorkflowToolsResultCommonModelOutput == null) { if (ConversationHistoryTranscriptApiIntegrationWebhookToolsResultCommonModelOutput is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, ConversationHistoryTranscriptApiIntegrationWebhookToolsResultCommonModelOutput); return; }
+            if (ConversationHistoryTranscriptOtherToolsResultCommonModel != null && ConversationHistoryTranscriptApiIntegrationWebhookToolsResultCommonModelOutput == null && ConversationHistoryTranscriptSystemToolResultCommonModelOutput == null && ConversationHistoryTranscriptWorkflowToolsResultCommonModelOutput == null) { if (ConversationHistoryTranscriptOtherToolsResultCommonModel is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, ConversationHistoryTranscriptOtherToolsResultCommonModel); return; }
+            if (ConversationHistoryTranscriptSystemToolResultCommonModelOutput != null && ConversationHistoryTranscriptApiIntegrationWebhookToolsResultCommonModelOutput == null && ConversationHistoryTranscriptOtherToolsResultCommonModel == null && ConversationHistoryTranscriptWorkflowToolsResultCommonModelOutput == null) { if (ConversationHistoryTranscriptSystemToolResultCommonModelOutput is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, ConversationHistoryTranscriptSystemToolResultCommonModelOutput); return; }
+            if (ConversationHistoryTranscriptWorkflowToolsResultCommonModelOutput != null && ConversationHistoryTranscriptApiIntegrationWebhookToolsResultCommonModelOutput == null && ConversationHistoryTranscriptOtherToolsResultCommonModel == null && ConversationHistoryTranscriptSystemToolResultCommonModelOutput == null) { if (ConversationHistoryTranscriptWorkflowToolsResultCommonModelOutput is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, ConversationHistoryTranscriptWorkflowToolsResultCommonModelOutput); return; }
+
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             if(ConversationHistoryTranscriptApiIntegrationWebhookToolsResultCommonModelOutput != null)
             {
+                if (ConversationHistoryTranscriptApiIntegrationWebhookToolsResultCommonModelOutput is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptApiIntegrationWebhookToolsResultCommonModelOutput>(null, ConversationHistoryTranscriptApiIntegrationWebhookToolsResultCommonModelOutput);
             }
             else if(ConversationHistoryTranscriptOtherToolsResultCommonModel != null)
             {
+                if (ConversationHistoryTranscriptOtherToolsResultCommonModel is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptOtherToolsResultCommonModel>(null, ConversationHistoryTranscriptOtherToolsResultCommonModel);
             }
             else if(ConversationHistoryTranscriptSystemToolResultCommonModelOutput != null)
             {
+                if (ConversationHistoryTranscriptSystemToolResultCommonModelOutput is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptSystemToolResultCommonModelOutput>(null, ConversationHistoryTranscriptSystemToolResultCommonModelOutput);
             }
             else if(ConversationHistoryTranscriptWorkflowToolsResultCommonModelOutput != null)
             {
+                if (ConversationHistoryTranscriptWorkflowToolsResultCommonModelOutput is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptWorkflowToolsResultCommonModelOutput>(null, ConversationHistoryTranscriptWorkflowToolsResultCommonModelOutput);
             }
         }

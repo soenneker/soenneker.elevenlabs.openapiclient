@@ -11,29 +11,46 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class BatchCallingCampaignInformation : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("campaign_id") is { } nullNodeCampaignId && nullNodeCampaignId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CampaignId = null;
+            if (parseNode.GetChildNode("campaign_lead_id") is { } nullNodeCampaignLeadId && nullNodeCampaignLeadId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CampaignLeadId = null;
+            if (parseNode.GetChildNode("cold_attempt") is { } nullNodeColdAttempt && nullNodeColdAttempt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ColdAttempt = null;
+            if (parseNode.GetChildNode("conversation_type") is { } nullNodeConversationType && nullNodeConversationType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConversationType = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The campaign_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CampaignId { get; set; }
+        public string? CampaignId { get => _explicitNullValueCampaignId; set { _explicitNullValueCampaignId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("campaign_id"); else _explicitNullProperties?.Remove("campaign_id"); } }
+        private string? _explicitNullValueCampaignId = default!;
 #nullable restore
 #else
-        public string CampaignId { get; set; }
+        public string CampaignId { get => _explicitNullValueCampaignId; set { _explicitNullValueCampaignId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("campaign_id"); else _explicitNullProperties?.Remove("campaign_id"); } }
+        private string _explicitNullValueCampaignId = default!;
 #endif
         /// <summary>The campaign_lead_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CampaignLeadId { get; set; }
+        public string? CampaignLeadId { get => _explicitNullValueCampaignLeadId; set { _explicitNullValueCampaignLeadId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("campaign_lead_id"); else _explicitNullProperties?.Remove("campaign_lead_id"); } }
+        private string? _explicitNullValueCampaignLeadId = default!;
 #nullable restore
 #else
-        public string CampaignLeadId { get; set; }
+        public string CampaignLeadId { get => _explicitNullValueCampaignLeadId; set { _explicitNullValueCampaignLeadId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("campaign_lead_id"); else _explicitNullProperties?.Remove("campaign_lead_id"); } }
+        private string _explicitNullValueCampaignLeadId = default!;
 #endif
         /// <summary>The cold_attempt property</summary>
-        public int? ColdAttempt { get; set; }
+        public int? ColdAttempt { get => _explicitNullValueColdAttempt; set { _explicitNullValueColdAttempt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cold_attempt"); else _explicitNullProperties?.Remove("cold_attempt"); } }
+        private int? _explicitNullValueColdAttempt = default!;
         /// <summary>The conversation_type property</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CampaignConversationType? ConversationType { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CampaignConversationType? ConversationType { get => _explicitNullValueConversationType; set { _explicitNullValueConversationType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conversation_type"); else _explicitNullProperties?.Remove("conversation_type"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.CampaignConversationType? _explicitNullValueConversationType = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.BatchCallingCampaignInformation"/> and sets the default values.
         /// </summary>
@@ -49,7 +66,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.BatchCallingCampaignInformation CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.BatchCallingCampaignInformation();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.BatchCallingCampaignInformation(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -76,6 +93,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteStringValue("campaign_lead_id", CampaignLeadId);
             writer.WriteIntValue("cold_attempt", ColdAttempt);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CampaignConversationType>("conversation_type", ConversationType);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -12,7 +12,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CreatePhoneNumberRouteRequest : IComposedTypeWrapper, IParsable
-    {
+    , global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder {
+        // Preserve ambiguous union payloads without inventing a discriminator.
+        /// <summary>The complete payload when no unique typed union branch can be selected.</summary>
+        public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode UnrecognizedValue { get; set; } = null!;
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalData { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
         /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateExotelPhoneNumberRequest"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -46,10 +51,19 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var result = new global::Soenneker.ElevenLabs.OpenApiClient.Models.CreatePhoneNumberRouteRequest();
-            result.CreateExotelPhoneNumberRequest = new global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateExotelPhoneNumberRequest();
-            result.CreateSipTrunkPhoneNumberRequestV2 = new global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateSipTrunkPhoneNumberRequestV2();
-            result.CreateTwilioPhoneNumberRequest = new global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateTwilioPhoneNumberRequest();
-            return result;
+            
+            
+            
+            
+            var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
+            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("phone_number") != null && parseNode.GetChildNode("label") != null && parseNode.GetChildNode("sid") != null && parseNode.GetChildNode("token") != null && (parseNode.GetChildNode("provider") == null || (parseNode.GetChildNode("provider")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString optionalTag4 && ("twilio".Equals(optionalTag4.GetValue(), global::System.StringComparison.Ordinal))))))();
+            bool matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("phone_number") != null && parseNode.GetChildNode("label") != null && parseNode.GetChildNode("account_sid") != null && parseNode.GetChildNode("api_key") != null && parseNode.GetChildNode("api_token") != null && parseNode.GetChildNode("api_subdomain") != null && (parseNode.GetChildNode("api_subdomain")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag6 && ("api.in.exotel.com".Equals(tag6.GetValue(), global::System.StringComparison.Ordinal) || "api.exotel.com".Equals(tag6.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("app_id") != null && (parseNode.GetChildNode("provider") == null || (parseNode.GetChildNode("provider")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString optionalTag8 && ("exotel".Equals(optionalTag8.GetValue(), global::System.StringComparison.Ordinal))))))();
+            bool matchesUnionBranch2 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("phone_number") != null && parseNode.GetChildNode("label") != null && (parseNode.GetChildNode("provider") == null || (parseNode.GetChildNode("provider")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString optionalTag2 && ("sip_trunk".Equals(optionalTag2.GetValue(), global::System.StringComparison.Ordinal))))))();
+            if (result.CreateExotelPhoneNumberRequest == null && result.CreateSipTrunkPhoneNumberRequestV2 == null && result.CreateTwilioPhoneNumberRequest == null && matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2) result.CreateTwilioPhoneNumberRequest = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateTwilioPhoneNumberRequest(), parseNode);
+            if (result.CreateExotelPhoneNumberRequest == null && result.CreateSipTrunkPhoneNumberRequestV2 == null && result.CreateTwilioPhoneNumberRequest == null && matchesUnionBranch1 && !matchesUnionBranch0 && !matchesUnionBranch2) result.CreateExotelPhoneNumberRequest = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateExotelPhoneNumberRequest(), parseNode);
+            if (result.CreateExotelPhoneNumberRequest == null && result.CreateSipTrunkPhoneNumberRequestV2 == null && result.CreateTwilioPhoneNumberRequest == null && matchesUnionBranch2 && !matchesUnionBranch0 && !matchesUnionBranch1) result.CreateSipTrunkPhoneNumberRequestV2 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateSipTrunkPhoneNumberRequestV2(), parseNode);
+            if (result.CreateExotelPhoneNumberRequest == null && result.CreateSipTrunkPhoneNumberRequestV2 == null && result.CreateTwilioPhoneNumberRequest == null) result.UnrecognizedValue = unionPayload;
+return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -69,6 +83,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
+            if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
+            if (CreateExotelPhoneNumberRequest == null && CreateSipTrunkPhoneNumberRequestV2 == null && CreateTwilioPhoneNumberRequest == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
+            if (CreateExotelPhoneNumberRequest != null && CreateSipTrunkPhoneNumberRequestV2 == null && CreateTwilioPhoneNumberRequest == null) { if (CreateExotelPhoneNumberRequest is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, CreateExotelPhoneNumberRequest); return; }
+            if (CreateSipTrunkPhoneNumberRequestV2 != null && CreateExotelPhoneNumberRequest == null && CreateTwilioPhoneNumberRequest == null) { if (CreateSipTrunkPhoneNumberRequestV2 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, CreateSipTrunkPhoneNumberRequestV2); return; }
+            if (CreateTwilioPhoneNumberRequest != null && CreateExotelPhoneNumberRequest == null && CreateSipTrunkPhoneNumberRequestV2 == null) { if (CreateTwilioPhoneNumberRequest is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, CreateTwilioPhoneNumberRequest); return; }
+
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateExotelPhoneNumberRequest>(null, CreateExotelPhoneNumberRequest, CreateSipTrunkPhoneNumberRequestV2, CreateTwilioPhoneNumberRequest);
         }

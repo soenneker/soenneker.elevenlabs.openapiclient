@@ -11,88 +11,130 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class DubbingProjectResponse : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("created_at") is { } nullNodeCreatedAt && nullNodeCreatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedAt = null;
+            if (parseNode.GetChildNode("error") is { } nullNodeError && nullNodeError.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Error = null;
+            if (parseNode.GetChildNode("language_ids") is { } nullNodeLanguageIds && nullNodeLanguageIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LanguageIds = null;
+            if (parseNode.GetChildNode("media") is { } nullNodeMedia && nullNodeMedia.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Media = null;
+            if (parseNode.GetChildNode("model_id") is { } nullNodeModelId && nullNodeModelId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ModelId = null;
+            if (parseNode.GetChildNode("project_id") is { } nullNodeProjectId && nullNodeProjectId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProjectId = null;
+            if (parseNode.GetChildNode("reference") is { } nullNodeReference && nullNodeReference.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Reference = null;
+            if (parseNode.GetChildNode("revision") is { } nullNodeRevision && nullNodeRevision.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Revision = null;
+            if (parseNode.GetChildNode("source_language") is { } nullNodeSourceLanguage && nullNodeSourceLanguage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SourceLanguage = null;
+            if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
+            if (parseNode.GetChildNode("updated_at") is { } nullNodeUpdatedAt && nullNodeUpdatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UpdatedAt = null;
+            if (parseNode.GetChildNode("warnings") is { } nullNodeWarnings && nullNodeWarnings.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Warnings = null;
+            if (parseNode.GetChildNode("webhook_ids") is { } nullNodeWebhookIds && nullNodeWebhookIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WebhookIds = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>When the project was created.</summary>
-        public DateTimeOffset? CreatedAt { get; set; }
+        public DateTimeOffset? CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_at"); else _explicitNullProperties?.Remove("created_at"); } }
+        private DateTimeOffset? _explicitNullValueCreatedAt = default!;
         /// <summary>Why the project failed; null unless `status` is `failed`. Also null for the few projects that failed before failure reporting was introduced.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingError? Error { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingError? Error { get => _explicitNullValueError; set { _explicitNullValueError = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("error"); else _explicitNullProperties?.Remove("error"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingError? _explicitNullValueError = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingError Error { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingError Error { get => _explicitNullValueError; set { _explicitNullValueError = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("error"); else _explicitNullProperties?.Remove("error"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingError _explicitNullValueError = default!;
 #endif
         /// <summary>Identifiers of the language targets under this project. Populated when a single project is fetched, and on create when `target_language` creates one. Always empty in list responses — list the project&apos;s language targets instead.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? LanguageIds { get; set; }
+        public List<string>? LanguageIds { get => _explicitNullValueLanguageIds; set { _explicitNullValueLanguageIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("language_ids"); else _explicitNullProperties?.Remove("language_ids"); } }
+        private List<string>? _explicitNullValueLanguageIds = default!;
 #nullable restore
 #else
-        public List<string> LanguageIds { get; set; }
+        public List<string> LanguageIds { get => _explicitNullValueLanguageIds; set { _explicitNullValueLanguageIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("language_ids"); else _explicitNullProperties?.Remove("language_ids"); } }
+        private List<string> _explicitNullValueLanguageIds = default!;
 #endif
         /// <summary>Source media metadata, populated once the source has been fetched and decoded (shortly after create, before the project is `ready`); null until then.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingSourceMediaInfo? Media { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingSourceMediaInfo? Media { get => _explicitNullValueMedia; set { _explicitNullValueMedia = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("media"); else _explicitNullProperties?.Remove("media"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingSourceMediaInfo? _explicitNullValueMedia = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingSourceMediaInfo Media { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingSourceMediaInfo Media { get => _explicitNullValueMedia; set { _explicitNullValueMedia = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("media"); else _explicitNullProperties?.Remove("media"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingSourceMediaInfo _explicitNullValueMedia = default!;
 #endif
         /// <summary>Dubbing model every language target of this project is dubbed with. Fixed at create time and not selectable per language.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ModelId { get; set; }
+        public string? ModelId { get => _explicitNullValueModelId; set { _explicitNullValueModelId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("model_id"); else _explicitNullProperties?.Remove("model_id"); } }
+        private string? _explicitNullValueModelId = default!;
 #nullable restore
 #else
-        public string ModelId { get; set; }
+        public string ModelId { get => _explicitNullValueModelId; set { _explicitNullValueModelId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("model_id"); else _explicitNullProperties?.Remove("model_id"); } }
+        private string _explicitNullValueModelId = default!;
 #endif
         /// <summary>Unique identifier of the dubbing project.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProjectId { get; set; }
+        public string? ProjectId { get => _explicitNullValueProjectId; set { _explicitNullValueProjectId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("project_id"); else _explicitNullProperties?.Remove("project_id"); } }
+        private string? _explicitNullValueProjectId = default!;
 #nullable restore
 #else
-        public string ProjectId { get; set; }
+        public string ProjectId { get => _explicitNullValueProjectId; set { _explicitNullValueProjectId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("project_id"); else _explicitNullProperties?.Remove("project_id"); } }
+        private string _explicitNullValueProjectId = default!;
 #endif
         /// <summary>The free-form string you supplied as `reference` when creating the project, or null if you supplied none.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Reference { get; set; }
+        public string? Reference { get => _explicitNullValueReference; set { _explicitNullValueReference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reference"); else _explicitNullProperties?.Remove("reference"); } }
+        private string? _explicitNullValueReference = default!;
 #nullable restore
 #else
-        public string Reference { get; set; }
+        public string Reference { get => _explicitNullValueReference; set { _explicitNullValueReference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reference"); else _explicitNullProperties?.Remove("reference"); } }
+        private string _explicitNullValueReference = default!;
 #endif
         /// <summary>Monotonic counter incremented whenever the source transcript is edited (segment add/edit/delete).</summary>
-        public int? Revision { get; set; }
+        public int? Revision { get => _explicitNullValueRevision; set { _explicitNullValueRevision = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("revision"); else _explicitNullProperties?.Remove("revision"); } }
+        private int? _explicitNullValueRevision = default!;
         /// <summary>BCP-47 language tag of the source media (null if auto-detected).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SourceLanguage { get; set; }
+        public string? SourceLanguage { get => _explicitNullValueSourceLanguage; set { _explicitNullValueSourceLanguage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source_language"); else _explicitNullProperties?.Remove("source_language"); } }
+        private string? _explicitNullValueSourceLanguage = default!;
 #nullable restore
 #else
-        public string SourceLanguage { get; set; }
+        public string SourceLanguage { get => _explicitNullValueSourceLanguage; set { _explicitNullValueSourceLanguage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source_language"); else _explicitNullProperties?.Remove("source_language"); } }
+        private string _explicitNullValueSourceLanguage = default!;
 #endif
         /// <summary>Lifecycle status of the project: `queued` before the source is picked up, `preparing` while it is transcribed, `ready` once transcription is done and language targets can start, or `failed`. A project is never reported as `processing` — that value belongs to language targets.</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingProjectResponseStatus? Status { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingProjectResponseStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingProjectResponseStatus? _explicitNullValueStatus = default!;
         /// <summary>When the project was last updated.</summary>
-        public DateTimeOffset? UpdatedAt { get; set; }
+        public DateTimeOffset? UpdatedAt { get => _explicitNullValueUpdatedAt; set { _explicitNullValueUpdatedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("updated_at"); else _explicitNullProperties?.Remove("updated_at"); } }
+        private DateTimeOffset? _explicitNullValueUpdatedAt = default!;
         /// <summary>Non-fatal conditions raised while preparing the source, empty when there are none. Reflects the latest preparation. Conditions raised while dubbing a particular language are reported on that language instead.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.VoicesNotPermittedWarning>? Warnings { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.VoicesNotPermittedWarning>? Warnings { get => _explicitNullValueWarnings; set { _explicitNullValueWarnings = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("warnings"); else _explicitNullProperties?.Remove("warnings"); } }
+        private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.VoicesNotPermittedWarning>? _explicitNullValueWarnings = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.VoicesNotPermittedWarning> Warnings { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.VoicesNotPermittedWarning> Warnings { get => _explicitNullValueWarnings; set { _explicitNullValueWarnings = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("warnings"); else _explicitNullProperties?.Remove("warnings"); } }
+        private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.VoicesNotPermittedWarning> _explicitNullValueWarnings = default!;
 #endif
         /// <summary>IDs of the workspace webhooks notified as this project and its languages reach `ready`, `completed`, or `failed`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? WebhookIds { get; set; }
+        public List<string>? WebhookIds { get => _explicitNullValueWebhookIds; set { _explicitNullValueWebhookIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("webhook_ids"); else _explicitNullProperties?.Remove("webhook_ids"); } }
+        private List<string>? _explicitNullValueWebhookIds = default!;
 #nullable restore
 #else
-        public List<string> WebhookIds { get; set; }
+        public List<string> WebhookIds { get => _explicitNullValueWebhookIds; set { _explicitNullValueWebhookIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("webhook_ids"); else _explicitNullProperties?.Remove("webhook_ids"); } }
+        private List<string> _explicitNullValueWebhookIds = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingProjectResponse"/> and sets the default values.
@@ -109,7 +151,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingProjectResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingProjectResponse();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingProjectResponse(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -154,6 +196,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.VoicesNotPermittedWarning>("warnings", Warnings);
             writer.WriteCollectionOfPrimitiveValues<string>("webhook_ids", WebhookIds);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

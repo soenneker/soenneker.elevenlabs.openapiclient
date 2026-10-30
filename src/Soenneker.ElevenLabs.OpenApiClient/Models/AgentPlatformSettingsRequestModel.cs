@@ -11,152 +11,218 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class AgentPlatformSettingsRequestModel : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("alerting") is { } nullNodeAlerting && nullNodeAlerting.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Alerting = null;
+            if (parseNode.GetChildNode("analysis_items") is { } nullNodeAnalysisItems && nullNodeAnalysisItems.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AnalysisItems = null;
+            if (parseNode.GetChildNode("analysis_llm") is { } nullNodeAnalysisLlm && nullNodeAnalysisLlm.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AnalysisLlm = null;
+            if (parseNode.GetChildNode("archived") is { } nullNodeArchived && nullNodeArchived.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Archived = null;
+            if (parseNode.GetChildNode("auth") is { } nullNodeAuth && nullNodeAuth.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Auth = null;
+            if (parseNode.GetChildNode("auto_translate_transcript_to_app_language") is { } nullNodeAutoTranslateTranscriptToAppLanguage && nullNodeAutoTranslateTranscriptToAppLanguage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AutoTranslateTranscriptToAppLanguage = null;
+            if (parseNode.GetChildNode("call_limits") is { } nullNodeCallLimits && nullNodeCallLimits.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CallLimits = null;
+            if (parseNode.GetChildNode("data_collection") is { } nullNodeDataCollection && nullNodeDataCollection.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DataCollection = null;
+            if (parseNode.GetChildNode("data_collection_scopes") is { } nullNodeDataCollectionScopes && nullNodeDataCollectionScopes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DataCollectionScopes = null;
+            if (parseNode.GetChildNode("evaluation") is { } nullNodeEvaluation && nullNodeEvaluation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Evaluation = null;
+            if (parseNode.GetChildNode("guardrails") is { } nullNodeGuardrails && nullNodeGuardrails.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Guardrails = null;
+            if (parseNode.GetChildNode("overrides") is { } nullNodeOverrides && nullNodeOverrides.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Overrides = null;
+            if (parseNode.GetChildNode("privacy") is { } nullNodePrivacy && nullNodePrivacy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Privacy = null;
+            if (parseNode.GetChildNode("queueing_config") is { } nullNodeQueueingConfig && nullNodeQueueingConfig.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) QueueingConfig = null;
+            if (parseNode.GetChildNode("sentiment_analysis") is { } nullNodeSentimentAnalysis && nullNodeSentimentAnalysis.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SentimentAnalysis = null;
+            if (parseNode.GetChildNode("summary_language") is { } nullNodeSummaryLanguage && nullNodeSummaryLanguage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SummaryLanguage = null;
+            if (parseNode.GetChildNode("testing") is { } nullNodeTesting && nullNodeTesting.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Testing = null;
+            if (parseNode.GetChildNode("topic_discovery") is { } nullNodeTopicDiscovery && nullNodeTopicDiscovery.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TopicDiscovery = null;
+            if (parseNode.GetChildNode("trust_context") is { } nullNodeTrustContext && nullNodeTrustContext.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TrustContext = null;
+            if (parseNode.GetChildNode("widget") is { } nullNodeWidget && nullNodeWidget.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Widget = null;
+            if (parseNode.GetChildNode("workspace_overrides") is { } nullNodeWorkspaceOverrides && nullNodeWorkspaceOverrides.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WorkspaceOverrides = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Agent-level alerting configuration overriding workspace settings.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AlertingSettings? Alerting { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AlertingSettings? Alerting { get => _explicitNullValueAlerting; set { _explicitNullValueAlerting = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("alerting"); else _explicitNullProperties?.Remove("alerting"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.AlertingSettings? _explicitNullValueAlerting = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AlertingSettings Alerting { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AlertingSettings Alerting { get => _explicitNullValueAlerting; set { _explicitNullValueAlerting = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("alerting"); else _explicitNullProperties?.Remove("alerting"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.AlertingSettings _explicitNullValueAlerting = default!;
 #endif
         /// <summary>Evaluation + data-collection items attached by reference. None means the agent has not been migrated onto analysis items yet (distinct from an empty, migrated set); reads fall back to the legacy evaluation/data_collection fields in that case.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentAnalysisItemsInput? AnalysisItems { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentAnalysisItemsInput? AnalysisItems { get => _explicitNullValueAnalysisItems; set { _explicitNullValueAnalysisItems = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("analysis_items"); else _explicitNullProperties?.Remove("analysis_items"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentAnalysisItemsInput? _explicitNullValueAnalysisItems = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentAnalysisItemsInput AnalysisItems { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentAnalysisItemsInput AnalysisItems { get => _explicitNullValueAnalysisItems; set { _explicitNullValueAnalysisItems = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("analysis_items"); else _explicitNullProperties?.Remove("analysis_items"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentAnalysisItemsInput _explicitNullValueAnalysisItems = default!;
 #endif
         /// <summary>The analysis_llm property</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Llm? AnalysisLlm { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Llm? AnalysisLlm { get => _explicitNullValueAnalysisLlm; set { _explicitNullValueAnalysisLlm = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("analysis_llm"); else _explicitNullProperties?.Remove("analysis_llm"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.Llm? _explicitNullValueAnalysisLlm = default!;
         /// <summary>Whether the agent is archived</summary>
-        public bool? Archived { get; set; }
+        public bool? Archived { get => _explicitNullValueArchived; set { _explicitNullValueArchived = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("archived"); else _explicitNullProperties?.Remove("archived"); } }
+        private bool? _explicitNullValueArchived = default!;
         /// <summary>Settings for authentication</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AuthSettings? Auth { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AuthSettings? Auth { get => _explicitNullValueAuth; set { _explicitNullValueAuth = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("auth"); else _explicitNullProperties?.Remove("auth"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.AuthSettings? _explicitNullValueAuth = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AuthSettings Auth { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AuthSettings Auth { get => _explicitNullValueAuth; set { _explicitNullValueAuth = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("auth"); else _explicitNullProperties?.Remove("auth"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.AuthSettings _explicitNullValueAuth = default!;
 #endif
         /// <summary>When enabled, a conversation transcript is automatically translated to the viewer&apos;s application language when they open the transcript page. If not set or false, transcripts are shown in their original language unless the viewer manually selects a translation.</summary>
-        public bool? AutoTranslateTranscriptToAppLanguage { get; set; }
+        public bool? AutoTranslateTranscriptToAppLanguage { get => _explicitNullValueAutoTranslateTranscriptToAppLanguage; set { _explicitNullValueAutoTranslateTranscriptToAppLanguage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("auto_translate_transcript_to_app_language"); else _explicitNullProperties?.Remove("auto_translate_transcript_to_app_language"); } }
+        private bool? _explicitNullValueAutoTranslateTranscriptToAppLanguage = default!;
         /// <summary>Call limits for the agent</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentCallLimits? CallLimits { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentCallLimits? CallLimits { get => _explicitNullValueCallLimits; set { _explicitNullValueCallLimits = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("call_limits"); else _explicitNullProperties?.Remove("call_limits"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentCallLimits? _explicitNullValueCallLimits = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentCallLimits CallLimits { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentCallLimits CallLimits { get => _explicitNullValueCallLimits; set { _explicitNullValueCallLimits = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("call_limits"); else _explicitNullProperties?.Remove("call_limits"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentCallLimits _explicitNullValueCallLimits = default!;
 #endif
         /// <summary>Data collection settings</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentPlatformSettingsRequestModelDataCollectionProperty? DataCollection { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentPlatformSettingsRequestModelDataCollectionProperty? DataCollection { get => _explicitNullValueDataCollection; set { _explicitNullValueDataCollection = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("data_collection"); else _explicitNullProperties?.Remove("data_collection"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentPlatformSettingsRequestModelDataCollectionProperty? _explicitNullValueDataCollection = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentPlatformSettingsRequestModelDataCollectionProperty DataCollection { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentPlatformSettingsRequestModelDataCollectionProperty DataCollection { get => _explicitNullValueDataCollection; set { _explicitNullValueDataCollection = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("data_collection"); else _explicitNullProperties?.Remove("data_collection"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentPlatformSettingsRequestModelDataCollectionProperty _explicitNullValueDataCollection = default!;
 #endif
         /// <summary>Scope per data collection item ID. Missing keys default to conversation scope.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentPlatformSettingsRequestModelDataCollectionScopesProperty? DataCollectionScopes { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentPlatformSettingsRequestModelDataCollectionScopesProperty? DataCollectionScopes { get => _explicitNullValueDataCollectionScopes; set { _explicitNullValueDataCollectionScopes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("data_collection_scopes"); else _explicitNullProperties?.Remove("data_collection_scopes"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentPlatformSettingsRequestModelDataCollectionScopesProperty? _explicitNullValueDataCollectionScopes = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentPlatformSettingsRequestModelDataCollectionScopesProperty DataCollectionScopes { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentPlatformSettingsRequestModelDataCollectionScopesProperty DataCollectionScopes { get => _explicitNullValueDataCollectionScopes; set { _explicitNullValueDataCollectionScopes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("data_collection_scopes"); else _explicitNullProperties?.Remove("data_collection_scopes"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentPlatformSettingsRequestModelDataCollectionScopesProperty _explicitNullValueDataCollectionScopes = default!;
 #endif
         /// <summary>Settings to evaluate an agent&apos;s performance.Agents are evaluated against a set of criteria, with success being defined as meeting some combination of those criteria.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.EvaluationSettingsInput? Evaluation { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.EvaluationSettingsInput? Evaluation { get => _explicitNullValueEvaluation; set { _explicitNullValueEvaluation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("evaluation"); else _explicitNullProperties?.Remove("evaluation"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.EvaluationSettingsInput? _explicitNullValueEvaluation = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.EvaluationSettingsInput Evaluation { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.EvaluationSettingsInput Evaluation { get => _explicitNullValueEvaluation; set { _explicitNullValueEvaluation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("evaluation"); else _explicitNullProperties?.Remove("evaluation"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.EvaluationSettingsInput _explicitNullValueEvaluation = default!;
 #endif
         /// <summary>The guardrails property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GuardrailsV1Input? Guardrails { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GuardrailsV1Input? Guardrails { get => _explicitNullValueGuardrails; set { _explicitNullValueGuardrails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("guardrails"); else _explicitNullProperties?.Remove("guardrails"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.GuardrailsV1Input? _explicitNullValueGuardrails = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GuardrailsV1Input Guardrails { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GuardrailsV1Input Guardrails { get => _explicitNullValueGuardrails; set { _explicitNullValueGuardrails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("guardrails"); else _explicitNullProperties?.Remove("guardrails"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.GuardrailsV1Input _explicitNullValueGuardrails = default!;
 #endif
         /// <summary>The overrides property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationClientDataConfigInput? Overrides { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationClientDataConfigInput? Overrides { get => _explicitNullValueOverrides; set { _explicitNullValueOverrides = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("overrides"); else _explicitNullProperties?.Remove("overrides"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationClientDataConfigInput? _explicitNullValueOverrides = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationClientDataConfigInput Overrides { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationClientDataConfigInput Overrides { get => _explicitNullValueOverrides; set { _explicitNullValueOverrides = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("overrides"); else _explicitNullProperties?.Remove("overrides"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationClientDataConfigInput _explicitNullValueOverrides = default!;
 #endif
         /// <summary>The privacy property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PrivacyConfigInput? Privacy { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PrivacyConfigInput? Privacy { get => _explicitNullValuePrivacy; set { _explicitNullValuePrivacy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("privacy"); else _explicitNullProperties?.Remove("privacy"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.PrivacyConfigInput? _explicitNullValuePrivacy = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PrivacyConfigInput Privacy { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PrivacyConfigInput Privacy { get => _explicitNullValuePrivacy; set { _explicitNullValuePrivacy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("privacy"); else _explicitNullProperties?.Remove("privacy"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.PrivacyConfigInput _explicitNullValuePrivacy = default!;
 #endif
         /// <summary>Concurrency wait-queue config for the agent</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentQueueingConfig? QueueingConfig { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentQueueingConfig? QueueingConfig { get => _explicitNullValueQueueingConfig; set { _explicitNullValueQueueingConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("queueing_config"); else _explicitNullProperties?.Remove("queueing_config"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentQueueingConfig? _explicitNullValueQueueingConfig = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentQueueingConfig QueueingConfig { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentQueueingConfig QueueingConfig { get => _explicitNullValueQueueingConfig; set { _explicitNullValueQueueingConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("queueing_config"); else _explicitNullProperties?.Remove("queueing_config"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentQueueingConfig _explicitNullValueQueueingConfig = default!;
 #endif
         /// <summary>The sentiment_analysis property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentPlatformSettingsRequestModelSentimentAnalysis? SentimentAnalysis { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentPlatformSettingsRequestModelSentimentAnalysis? SentimentAnalysis { get => _explicitNullValueSentimentAnalysis; set { _explicitNullValueSentimentAnalysis = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sentiment_analysis"); else _explicitNullProperties?.Remove("sentiment_analysis"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentPlatformSettingsRequestModelSentimentAnalysis? _explicitNullValueSentimentAnalysis = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentPlatformSettingsRequestModelSentimentAnalysis SentimentAnalysis { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentPlatformSettingsRequestModelSentimentAnalysis SentimentAnalysis { get => _explicitNullValueSentimentAnalysis; set { _explicitNullValueSentimentAnalysis = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sentiment_analysis"); else _explicitNullProperties?.Remove("sentiment_analysis"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentPlatformSettingsRequestModelSentimentAnalysis _explicitNullValueSentimentAnalysis = default!;
 #endif
         /// <summary>Language for all conversation analysis outputs (summaries, titles, evaluation rationales, data collection rationales). If not set, the language will be inferred from the conversation. Must be one of the supported conversation languages.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SummaryLanguage { get; set; }
+        public string? SummaryLanguage { get => _explicitNullValueSummaryLanguage; set { _explicitNullValueSummaryLanguage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("summary_language"); else _explicitNullProperties?.Remove("summary_language"); } }
+        private string? _explicitNullValueSummaryLanguage = default!;
 #nullable restore
 #else
-        public string SummaryLanguage { get; set; }
+        public string SummaryLanguage { get => _explicitNullValueSummaryLanguage; set { _explicitNullValueSummaryLanguage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("summary_language"); else _explicitNullProperties?.Remove("summary_language"); } }
+        private string _explicitNullValueSummaryLanguage = default!;
 #endif
         /// <summary>Testing configuration for the agent</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentTestingSettings? Testing { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentTestingSettings? Testing { get => _explicitNullValueTesting; set { _explicitNullValueTesting = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("testing"); else _explicitNullProperties?.Remove("testing"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentTestingSettings? _explicitNullValueTesting = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentTestingSettings Testing { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentTestingSettings Testing { get => _explicitNullValueTesting; set { _explicitNullValueTesting = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("testing"); else _explicitNullProperties?.Remove("testing"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentTestingSettings _explicitNullValueTesting = default!;
 #endif
         /// <summary>Per-agent topic-discovery configuration. Cadence and analysis window aremanaged internally; this only exposes the customer-facing on/off toggle.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentPlatformSettingsRequestModelTopicDiscovery? TopicDiscovery { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentPlatformSettingsRequestModelTopicDiscovery? TopicDiscovery { get => _explicitNullValueTopicDiscovery; set { _explicitNullValueTopicDiscovery = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("topic_discovery"); else _explicitNullProperties?.Remove("topic_discovery"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentPlatformSettingsRequestModelTopicDiscovery? _explicitNullValueTopicDiscovery = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentPlatformSettingsRequestModelTopicDiscovery TopicDiscovery { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentPlatformSettingsRequestModelTopicDiscovery TopicDiscovery { get => _explicitNullValueTopicDiscovery; set { _explicitNullValueTopicDiscovery = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("topic_discovery"); else _explicitNullProperties?.Remove("topic_discovery"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentPlatformSettingsRequestModelTopicDiscovery _explicitNullValueTopicDiscovery = default!;
 #endif
         /// <summary>The trust context in which the agent operates.</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentTrustContext? TrustContext { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentTrustContext? TrustContext { get => _explicitNullValueTrustContext; set { _explicitNullValueTrustContext = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("trust_context"); else _explicitNullProperties?.Remove("trust_context"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentTrustContext? _explicitNullValueTrustContext = default!;
         /// <summary>The widget property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigInput? Widget { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigInput? Widget { get => _explicitNullValueWidget; set { _explicitNullValueWidget = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("widget"); else _explicitNullProperties?.Remove("widget"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigInput? _explicitNullValueWidget = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigInput Widget { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigInput Widget { get => _explicitNullValueWidget; set { _explicitNullValueWidget = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("widget"); else _explicitNullProperties?.Remove("widget"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigInput _explicitNullValueWidget = default!;
 #endif
         /// <summary>The workspace_overrides property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentWorkspaceOverridesInput? WorkspaceOverrides { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentWorkspaceOverridesInput? WorkspaceOverrides { get => _explicitNullValueWorkspaceOverrides; set { _explicitNullValueWorkspaceOverrides = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workspace_overrides"); else _explicitNullProperties?.Remove("workspace_overrides"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentWorkspaceOverridesInput? _explicitNullValueWorkspaceOverrides = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentWorkspaceOverridesInput WorkspaceOverrides { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentWorkspaceOverridesInput WorkspaceOverrides { get => _explicitNullValueWorkspaceOverrides; set { _explicitNullValueWorkspaceOverrides = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workspace_overrides"); else _explicitNullProperties?.Remove("workspace_overrides"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentWorkspaceOverridesInput _explicitNullValueWorkspaceOverrides = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentPlatformSettingsRequestModel"/> and sets the default values.
@@ -175,7 +241,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentPlatformSettingsRequestModel CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentPlatformSettingsRequestModel();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentPlatformSettingsRequestModel(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -236,6 +302,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentTrustContext>("trust_context", TrustContext);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetConfigInput>("widget", Widget);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentWorkspaceOverridesInput>("workspace_overrides", WorkspaceOverrides);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

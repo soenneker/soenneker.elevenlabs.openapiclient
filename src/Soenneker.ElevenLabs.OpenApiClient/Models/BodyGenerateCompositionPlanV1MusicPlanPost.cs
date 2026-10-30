@@ -11,28 +11,45 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class BodyGenerateCompositionPlanV1MusicPlanPost : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("model_id") is { } nullNodeModelId && nullNodeModelId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ModelId = null;
+            if (parseNode.GetChildNode("music_length_ms") is { } nullNodeMusicLengthMs && nullNodeMusicLengthMs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MusicLengthMs = null;
+            if (parseNode.GetChildNode("prompt") is { } nullNodePrompt && nullNodePrompt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Prompt = null;
+            if (parseNode.GetChildNode("source_composition_plan") is { } nullNodeSourceCompositionPlan && nullNodeSourceCompositionPlan.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SourceCompositionPlan = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The model_id property</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.MusicModelId? ModelId { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.MusicModelId? ModelId { get => _explicitNullValueModelId; set { _explicitNullValueModelId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("model_id"); else _explicitNullProperties?.Remove("model_id"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.MusicModelId? _explicitNullValueModelId = default!;
         /// <summary>The length of the composition plan to generate in milliseconds. Must be between 3000ms and 600000ms. Optional - if not provided, the model will choose a length based on the prompt.</summary>
-        public int? MusicLengthMs { get; set; }
+        public int? MusicLengthMs { get => _explicitNullValueMusicLengthMs; set { _explicitNullValueMusicLengthMs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("music_length_ms"); else _explicitNullProperties?.Remove("music_length_ms"); } }
+        private int? _explicitNullValueMusicLengthMs = default!;
         /// <summary>A simple text prompt to compose a plan from.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Prompt { get; set; }
+        public string? Prompt { get => _explicitNullValuePrompt; set { _explicitNullValuePrompt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prompt"); else _explicitNullProperties?.Remove("prompt"); } }
+        private string? _explicitNullValuePrompt = default!;
 #nullable restore
 #else
-        public string Prompt { get; set; }
+        public string Prompt { get => _explicitNullValuePrompt; set { _explicitNullValuePrompt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prompt"); else _explicitNullProperties?.Remove("prompt"); } }
+        private string _explicitNullValuePrompt = default!;
 #endif
         /// <summary>An optional composition plan to use as a source for the new composition plan.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyGenerateCompositionPlanV1MusicPlanPostSourceCompositionPlan? SourceCompositionPlan { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyGenerateCompositionPlanV1MusicPlanPostSourceCompositionPlan? SourceCompositionPlan { get => _explicitNullValueSourceCompositionPlan; set { _explicitNullValueSourceCompositionPlan = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source_composition_plan"); else _explicitNullProperties?.Remove("source_composition_plan"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyGenerateCompositionPlanV1MusicPlanPostSourceCompositionPlan? _explicitNullValueSourceCompositionPlan = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyGenerateCompositionPlanV1MusicPlanPostSourceCompositionPlan SourceCompositionPlan { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyGenerateCompositionPlanV1MusicPlanPostSourceCompositionPlan SourceCompositionPlan { get => _explicitNullValueSourceCompositionPlan; set { _explicitNullValueSourceCompositionPlan = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source_composition_plan"); else _explicitNullProperties?.Remove("source_composition_plan"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyGenerateCompositionPlanV1MusicPlanPostSourceCompositionPlan _explicitNullValueSourceCompositionPlan = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyGenerateCompositionPlanV1MusicPlanPost"/> and sets the default values.
@@ -49,7 +66,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyGenerateCompositionPlanV1MusicPlanPost CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyGenerateCompositionPlanV1MusicPlanPost();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyGenerateCompositionPlanV1MusicPlanPost(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -76,6 +93,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteIntValue("music_length_ms", MusicLengthMs);
             writer.WriteStringValue("prompt", Prompt);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyGenerateCompositionPlanV1MusicPlanPostSourceCompositionPlan>("source_composition_plan", SourceCompositionPlan);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

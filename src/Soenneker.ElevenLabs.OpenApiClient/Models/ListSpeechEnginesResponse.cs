@@ -11,26 +11,41 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ListSpeechEnginesResponse : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("has_more") is { } nullNodeHasMore && nullNodeHasMore.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HasMore = null;
+            if (parseNode.GetChildNode("next_cursor") is { } nullNodeNextCursor && nullNodeNextCursor.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NextCursor = null;
+            if (parseNode.GetChildNode("speech_engines") is { } nullNodeSpeechEngines && nullNodeSpeechEngines.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SpeechEngines = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Whether there are more results</summary>
-        public bool? HasMore { get; set; }
+        public bool? HasMore { get => _explicitNullValueHasMore; set { _explicitNullValueHasMore = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("has_more"); else _explicitNullProperties?.Remove("has_more"); } }
+        private bool? _explicitNullValueHasMore = default!;
         /// <summary>Cursor for fetching the next page</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? NextCursor { get; set; }
+        public string? NextCursor { get => _explicitNullValueNextCursor; set { _explicitNullValueNextCursor = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("next_cursor"); else _explicitNullProperties?.Remove("next_cursor"); } }
+        private string? _explicitNullValueNextCursor = default!;
 #nullable restore
 #else
-        public string NextCursor { get; set; }
+        public string NextCursor { get => _explicitNullValueNextCursor; set { _explicitNullValueNextCursor = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("next_cursor"); else _explicitNullProperties?.Remove("next_cursor"); } }
+        private string _explicitNullValueNextCursor = default!;
 #endif
         /// <summary>The speech engines matching the query</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechEngineSummaryResponse>? SpeechEngines { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechEngineSummaryResponse>? SpeechEngines { get => _explicitNullValueSpeechEngines; set { _explicitNullValueSpeechEngines = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("speech_engines"); else _explicitNullProperties?.Remove("speech_engines"); } }
+        private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechEngineSummaryResponse>? _explicitNullValueSpeechEngines = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechEngineSummaryResponse> SpeechEngines { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechEngineSummaryResponse> SpeechEngines { get => _explicitNullValueSpeechEngines; set { _explicitNullValueSpeechEngines = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("speech_engines"); else _explicitNullProperties?.Remove("speech_engines"); } }
+        private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechEngineSummaryResponse> _explicitNullValueSpeechEngines = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ListSpeechEnginesResponse"/> and sets the default values.
@@ -47,7 +62,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.ListSpeechEnginesResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.ListSpeechEnginesResponse();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.ListSpeechEnginesResponse(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -72,6 +87,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteBoolValue("has_more", HasMore);
             writer.WriteStringValue("next_cursor", NextCursor);
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeechEngineSummaryResponse>("speech_engines", SpeechEngines);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

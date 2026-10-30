@@ -12,7 +12,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CreateEnvironmentVariableRequest : IComposedTypeWrapper, IParsable
-    {
+    , global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder {
+        // Preserve ambiguous union payloads without inventing a discriminator.
+        /// <summary>The complete payload when no unique typed union branch can be selected.</summary>
+        public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode UnrecognizedValue { get; set; } = null!;
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalData { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
         /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateAuthConnectionEnvironmentVariableRequest"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -45,21 +50,30 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateEnvironmentVariableRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
             var result = new global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateEnvironmentVariableRequest();
-            if("auth_connection".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("CreateAuthConnectionEnvironmentVariableRequest".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.CreateAuthConnectionEnvironmentVariableRequest = new global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateAuthConnectionEnvironmentVariableRequest();
+                
             }
-            else if("secret".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("CreateSecretEnvironmentVariableRequest".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.CreateSecretEnvironmentVariableRequest = new global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateSecretEnvironmentVariableRequest();
+                
             }
-            else if("string".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("CreateStringEnvironmentVariableRequest".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.CreateStringEnvironmentVariableRequest = new global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateStringEnvironmentVariableRequest();
+                
             }
-            return result;
+            
+            var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
+            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("string".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("label") != null && parseNode.GetChildNode("values") != null))();
+            bool matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("secret".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("label") != null && parseNode.GetChildNode("values") != null))();
+            bool matchesUnionBranch2 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("auth_connection".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("label") != null && parseNode.GetChildNode("values") != null))();
+            if (result.CreateAuthConnectionEnvironmentVariableRequest == null && result.CreateSecretEnvironmentVariableRequest == null && result.CreateStringEnvironmentVariableRequest == null && matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2) result.CreateStringEnvironmentVariableRequest = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateStringEnvironmentVariableRequest(), parseNode);
+            if (result.CreateAuthConnectionEnvironmentVariableRequest == null && result.CreateSecretEnvironmentVariableRequest == null && result.CreateStringEnvironmentVariableRequest == null && matchesUnionBranch1 && !matchesUnionBranch0 && !matchesUnionBranch2) result.CreateSecretEnvironmentVariableRequest = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateSecretEnvironmentVariableRequest(), parseNode);
+            if (result.CreateAuthConnectionEnvironmentVariableRequest == null && result.CreateSecretEnvironmentVariableRequest == null && result.CreateStringEnvironmentVariableRequest == null && matchesUnionBranch2 && !matchesUnionBranch0 && !matchesUnionBranch1) result.CreateAuthConnectionEnvironmentVariableRequest = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateAuthConnectionEnvironmentVariableRequest(), parseNode);
+            if (result.CreateAuthConnectionEnvironmentVariableRequest == null && result.CreateSecretEnvironmentVariableRequest == null && result.CreateStringEnvironmentVariableRequest == null) result.UnrecognizedValue = unionPayload;
+return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -87,17 +101,26 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
+            if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
+            if (CreateAuthConnectionEnvironmentVariableRequest == null && CreateSecretEnvironmentVariableRequest == null && CreateStringEnvironmentVariableRequest == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
+            if (CreateAuthConnectionEnvironmentVariableRequest != null && CreateSecretEnvironmentVariableRequest == null && CreateStringEnvironmentVariableRequest == null) { if (CreateAuthConnectionEnvironmentVariableRequest is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, CreateAuthConnectionEnvironmentVariableRequest); return; }
+            if (CreateSecretEnvironmentVariableRequest != null && CreateAuthConnectionEnvironmentVariableRequest == null && CreateStringEnvironmentVariableRequest == null) { if (CreateSecretEnvironmentVariableRequest is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, CreateSecretEnvironmentVariableRequest); return; }
+            if (CreateStringEnvironmentVariableRequest != null && CreateAuthConnectionEnvironmentVariableRequest == null && CreateSecretEnvironmentVariableRequest == null) { if (CreateStringEnvironmentVariableRequest is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, CreateStringEnvironmentVariableRequest); return; }
+
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             if(CreateAuthConnectionEnvironmentVariableRequest != null)
             {
+                if (CreateAuthConnectionEnvironmentVariableRequest is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateAuthConnectionEnvironmentVariableRequest>(null, CreateAuthConnectionEnvironmentVariableRequest);
             }
             else if(CreateSecretEnvironmentVariableRequest != null)
             {
+                if (CreateSecretEnvironmentVariableRequest is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateSecretEnvironmentVariableRequest>(null, CreateSecretEnvironmentVariableRequest);
             }
             else if(CreateStringEnvironmentVariableRequest != null)
             {
+                if (CreateStringEnvironmentVariableRequest is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateStringEnvironmentVariableRequest>(null, CreateStringEnvironmentVariableRequest);
             }
         }

@@ -12,7 +12,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class TextToSpeechGenerationRequest : IComposedTypeWrapper, IParsable
-    {
+    , global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder {
+        // Preserve ambiguous union payloads without inventing a discriminator.
+        /// <summary>The complete payload when no unique typed union branch can be selected.</summary>
+        public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode UnrecognizedValue { get; set; } = null!;
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalData { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
         /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ElevenFlashV25Request"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -45,21 +50,30 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.TextToSpeechGenerationRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("model_id")?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
             var result = new global::Soenneker.ElevenLabs.OpenApiClient.Models.TextToSpeechGenerationRequest();
-            if("eleven_flash_v2_5".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("ElevenFlashV25Request".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.ElevenFlashV25Request = new global::Soenneker.ElevenLabs.OpenApiClient.Models.ElevenFlashV25Request();
+                
             }
-            else if("eleven_multilingual_v2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("ElevenMultilingualV2Request".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.ElevenMultilingualV2Request = new global::Soenneker.ElevenLabs.OpenApiClient.Models.ElevenMultilingualV2Request();
+                
             }
-            else if("eleven_v3".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("ElevenV3Request".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.ElevenV3Request = new global::Soenneker.ElevenLabs.OpenApiClient.Models.ElevenV3Request();
+                
             }
-            return result;
+            
+            var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
+            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("text") != null && parseNode.GetChildNode("voice") != null && parseNode.GetChildNode("model_id") != null && (parseNode.GetChildNode("model_id")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag3 && ("eleven_flash_v2_5".Equals(tag3.GetValue(), global::System.StringComparison.Ordinal))) && (parseNode.GetChildNode("output_format") == null || (parseNode.GetChildNode("output_format")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString optionalTag4 && ("mp3_22050_32".Equals(optionalTag4.GetValue(), global::System.StringComparison.Ordinal) || "mp3_24000_48".Equals(optionalTag4.GetValue(), global::System.StringComparison.Ordinal) || "mp3_44100_32".Equals(optionalTag4.GetValue(), global::System.StringComparison.Ordinal) || "mp3_44100_64".Equals(optionalTag4.GetValue(), global::System.StringComparison.Ordinal) || "mp3_44100_96".Equals(optionalTag4.GetValue(), global::System.StringComparison.Ordinal) || "mp3_44100_128".Equals(optionalTag4.GetValue(), global::System.StringComparison.Ordinal) || "mp3_44100_192".Equals(optionalTag4.GetValue(), global::System.StringComparison.Ordinal))))))();
+            bool matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("text") != null && parseNode.GetChildNode("voice") != null && parseNode.GetChildNode("model_id") != null && (parseNode.GetChildNode("model_id")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag3 && ("eleven_multilingual_v2".Equals(tag3.GetValue(), global::System.StringComparison.Ordinal))) && (parseNode.GetChildNode("output_format") == null || (parseNode.GetChildNode("output_format")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString optionalTag4 && ("mp3_22050_32".Equals(optionalTag4.GetValue(), global::System.StringComparison.Ordinal) || "mp3_24000_48".Equals(optionalTag4.GetValue(), global::System.StringComparison.Ordinal) || "mp3_44100_32".Equals(optionalTag4.GetValue(), global::System.StringComparison.Ordinal) || "mp3_44100_64".Equals(optionalTag4.GetValue(), global::System.StringComparison.Ordinal) || "mp3_44100_96".Equals(optionalTag4.GetValue(), global::System.StringComparison.Ordinal) || "mp3_44100_128".Equals(optionalTag4.GetValue(), global::System.StringComparison.Ordinal) || "mp3_44100_192".Equals(optionalTag4.GetValue(), global::System.StringComparison.Ordinal))))))();
+            bool matchesUnionBranch2 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("text") != null && parseNode.GetChildNode("voice") != null && parseNode.GetChildNode("model_id") != null && (parseNode.GetChildNode("model_id")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag3 && ("eleven_v3".Equals(tag3.GetValue(), global::System.StringComparison.Ordinal))) && (parseNode.GetChildNode("output_format") == null || (parseNode.GetChildNode("output_format")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString optionalTag4 && ("mp3_22050_32".Equals(optionalTag4.GetValue(), global::System.StringComparison.Ordinal) || "mp3_24000_48".Equals(optionalTag4.GetValue(), global::System.StringComparison.Ordinal) || "mp3_44100_32".Equals(optionalTag4.GetValue(), global::System.StringComparison.Ordinal) || "mp3_44100_64".Equals(optionalTag4.GetValue(), global::System.StringComparison.Ordinal) || "mp3_44100_96".Equals(optionalTag4.GetValue(), global::System.StringComparison.Ordinal) || "mp3_44100_128".Equals(optionalTag4.GetValue(), global::System.StringComparison.Ordinal) || "mp3_44100_192".Equals(optionalTag4.GetValue(), global::System.StringComparison.Ordinal))))))();
+            if (result.ElevenFlashV25Request == null && result.ElevenMultilingualV2Request == null && result.ElevenV3Request == null && matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2) result.ElevenFlashV25Request = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.ElevenFlashV25Request(), parseNode);
+            if (result.ElevenFlashV25Request == null && result.ElevenMultilingualV2Request == null && result.ElevenV3Request == null && matchesUnionBranch1 && !matchesUnionBranch0 && !matchesUnionBranch2) result.ElevenMultilingualV2Request = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.ElevenMultilingualV2Request(), parseNode);
+            if (result.ElevenFlashV25Request == null && result.ElevenMultilingualV2Request == null && result.ElevenV3Request == null && matchesUnionBranch2 && !matchesUnionBranch0 && !matchesUnionBranch1) result.ElevenV3Request = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.ElevenV3Request(), parseNode);
+            if (result.ElevenFlashV25Request == null && result.ElevenMultilingualV2Request == null && result.ElevenV3Request == null) result.UnrecognizedValue = unionPayload;
+return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -87,17 +101,26 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
+            if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
+            if (ElevenFlashV25Request == null && ElevenMultilingualV2Request == null && ElevenV3Request == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
+            if (ElevenFlashV25Request != null && ElevenMultilingualV2Request == null && ElevenV3Request == null) { if (ElevenFlashV25Request is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, ElevenFlashV25Request); return; }
+            if (ElevenMultilingualV2Request != null && ElevenFlashV25Request == null && ElevenV3Request == null) { if (ElevenMultilingualV2Request is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, ElevenMultilingualV2Request); return; }
+            if (ElevenV3Request != null && ElevenFlashV25Request == null && ElevenMultilingualV2Request == null) { if (ElevenV3Request is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, ElevenV3Request); return; }
+
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             if(ElevenFlashV25Request != null)
             {
+                if (ElevenFlashV25Request is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ElevenFlashV25Request>(null, ElevenFlashV25Request);
             }
             else if(ElevenMultilingualV2Request != null)
             {
+                if (ElevenMultilingualV2Request is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ElevenMultilingualV2Request>(null, ElevenMultilingualV2Request);
             }
             else if(ElevenV3Request != null)
             {
+                if (ElevenV3Request is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ElevenV3Request>(null, ElevenV3Request);
             }
         }

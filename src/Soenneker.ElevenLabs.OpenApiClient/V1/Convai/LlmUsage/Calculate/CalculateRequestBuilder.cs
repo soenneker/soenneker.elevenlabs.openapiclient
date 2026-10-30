@@ -55,6 +55,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.LlmUsage.Calculate
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "422", global::Soenneker.ElevenLabs.OpenApiClient.Models.HttpValidationError.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmUsageCalculatorResponseModel>(requestInfo, global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmUsageCalculatorResponseModel.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

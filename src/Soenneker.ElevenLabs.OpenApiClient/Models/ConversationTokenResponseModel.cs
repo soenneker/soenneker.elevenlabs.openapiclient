@@ -11,44 +11,67 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ConversationTokenResponseModel : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("agent_id") is { } nullNodeAgentId && nullNodeAgentId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AgentId = null;
+            if (parseNode.GetChildNode("conversation_id") is { } nullNodeConversationId && nullNodeConversationId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConversationId = null;
+            if (parseNode.GetChildNode("conversation_token") is { } nullNodeConversationToken && nullNodeConversationToken.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConversationToken = null;
+            if (parseNode.GetChildNode("expiration_time_unix_secs") is { } nullNodeExpirationTimeUnixSecs && nullNodeExpirationTimeUnixSecs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExpirationTimeUnixSecs = null;
+            if (parseNode.GetChildNode("purpose") is { } nullNodePurpose && nullNodePurpose.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Purpose = null;
+            if (parseNode.GetChildNode("token_requester_user_id") is { } nullNodeTokenRequesterUserId && nullNodeTokenRequesterUserId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TokenRequesterUserId = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The ID of the agent</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AgentId { get; set; }
+        public string? AgentId { get => _explicitNullValueAgentId; set { _explicitNullValueAgentId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agent_id"); else _explicitNullProperties?.Remove("agent_id"); } }
+        private string? _explicitNullValueAgentId = default!;
 #nullable restore
 #else
-        public string AgentId { get; set; }
+        public string AgentId { get => _explicitNullValueAgentId; set { _explicitNullValueAgentId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agent_id"); else _explicitNullProperties?.Remove("agent_id"); } }
+        private string _explicitNullValueAgentId = default!;
 #endif
         /// <summary>The ID of the conversation</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ConversationId { get; set; }
+        public string? ConversationId { get => _explicitNullValueConversationId; set { _explicitNullValueConversationId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conversation_id"); else _explicitNullProperties?.Remove("conversation_id"); } }
+        private string? _explicitNullValueConversationId = default!;
 #nullable restore
 #else
-        public string ConversationId { get; set; }
+        public string ConversationId { get => _explicitNullValueConversationId; set { _explicitNullValueConversationId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conversation_id"); else _explicitNullProperties?.Remove("conversation_id"); } }
+        private string _explicitNullValueConversationId = default!;
 #endif
         /// <summary>The token for the agent</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ConversationToken { get; set; }
+        public string? ConversationToken { get => _explicitNullValueConversationToken; set { _explicitNullValueConversationToken = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conversation_token"); else _explicitNullProperties?.Remove("conversation_token"); } }
+        private string? _explicitNullValueConversationToken = default!;
 #nullable restore
 #else
-        public string ConversationToken { get; set; }
+        public string ConversationToken { get => _explicitNullValueConversationToken; set { _explicitNullValueConversationToken = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conversation_token"); else _explicitNullProperties?.Remove("conversation_token"); } }
+        private string _explicitNullValueConversationToken = default!;
 #endif
         /// <summary>The expiration time of the token in unix seconds</summary>
-        public int? ExpirationTimeUnixSecs { get; set; }
+        public int? ExpirationTimeUnixSecs { get => _explicitNullValueExpirationTimeUnixSecs; set { _explicitNullValueExpirationTimeUnixSecs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expiration_time_unix_secs"); else _explicitNullProperties?.Remove("expiration_time_unix_secs"); } }
+        private int? _explicitNullValueExpirationTimeUnixSecs = default!;
         /// <summary>The purpose of the token</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationTokenPurpose? Purpose { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationTokenPurpose? Purpose { get => _explicitNullValuePurpose; set { _explicitNullValuePurpose = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("purpose"); else _explicitNullProperties?.Remove("purpose"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationTokenPurpose? _explicitNullValuePurpose = default!;
         /// <summary>The user ID of the entity who requested the token</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TokenRequesterUserId { get; set; }
+        public string? TokenRequesterUserId { get => _explicitNullValueTokenRequesterUserId; set { _explicitNullValueTokenRequesterUserId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("token_requester_user_id"); else _explicitNullProperties?.Remove("token_requester_user_id"); } }
+        private string? _explicitNullValueTokenRequesterUserId = default!;
 #nullable restore
 #else
-        public string TokenRequesterUserId { get; set; }
+        public string TokenRequesterUserId { get => _explicitNullValueTokenRequesterUserId; set { _explicitNullValueTokenRequesterUserId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("token_requester_user_id"); else _explicitNullProperties?.Remove("token_requester_user_id"); } }
+        private string _explicitNullValueTokenRequesterUserId = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationTokenResponseModel"/> and sets the default values.
@@ -65,7 +88,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationTokenResponseModel CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationTokenResponseModel();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationTokenResponseModel(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -96,6 +119,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteIntValue("expiration_time_unix_secs", ExpirationTimeUnixSecs);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationTokenPurpose>("purpose", Purpose);
             writer.WriteStringValue("token_requester_user_id", TokenRequesterUserId);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

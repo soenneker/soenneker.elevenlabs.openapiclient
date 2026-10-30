@@ -12,30 +12,49 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class DynamicVariableAssignment : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("dynamic_variable") is { } nullNodeDynamicVariable && nullNodeDynamicVariable.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DynamicVariable = null;
+            if (parseNode.GetChildNode("preserve_native_type") is { } nullNodePreserveNativeType && nullNodePreserveNativeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreserveNativeType = null;
+            if (parseNode.GetChildNode("sanitize") is { } nullNodeSanitize && nullNodeSanitize.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Sanitize = null;
+            if (parseNode.GetChildNode("source") is { } nullNodeSource && nullNodeSource.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Source = null;
+            if (parseNode.GetChildNode("value_path") is { } nullNodeValuePath && nullNodeValuePath.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ValuePath = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The name of the dynamic variable to assign the extracted value to</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DynamicVariable { get; set; }
+        public string? DynamicVariable { get => _explicitNullValueDynamicVariable; set { _explicitNullValueDynamicVariable = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dynamic_variable"); else _explicitNullProperties?.Remove("dynamic_variable"); } }
+        private string? _explicitNullValueDynamicVariable = default!;
 #nullable restore
 #else
-        public string DynamicVariable { get; set; }
+        public string DynamicVariable { get => _explicitNullValueDynamicVariable; set { _explicitNullValueDynamicVariable = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dynamic_variable"); else _explicitNullProperties?.Remove("dynamic_variable"); } }
+        private string _explicitNullValueDynamicVariable = default!;
 #endif
         /// <summary>If true, non-scalar values (lists, objects) extracted from the tool response are stored as their native type instead of being stringified to JSON. Enable this to use extracted arrays directly as list dynamic variables.</summary>
-        public bool? PreserveNativeType { get; set; }
+        public bool? PreserveNativeType { get => _explicitNullValuePreserveNativeType; set { _explicitNullValuePreserveNativeType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("preserve_native_type"); else _explicitNullProperties?.Remove("preserve_native_type"); } }
+        private bool? _explicitNullValuePreserveNativeType = default!;
         /// <summary>If true, this assignment&apos;s value will be removed from the tool response before sending to the LLM and transcript, but still processed for variable assignment.</summary>
-        public bool? Sanitize { get; set; }
+        public bool? Sanitize { get => _explicitNullValueSanitize; set { _explicitNullValueSanitize = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sanitize"); else _explicitNullProperties?.Remove("sanitize"); } }
+        private bool? _explicitNullValueSanitize = default!;
         /// <summary>The source to extract the value from. Currently only &apos;response&apos; is supported.</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ResponseSource? Source { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ResponseSource? Source { get => _explicitNullValueSource; set { _explicitNullValueSource = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source"); else _explicitNullProperties?.Remove("source"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ResponseSource? _explicitNullValueSource = default!;
         /// <summary>Dot notation path to extract the value from the source (e.g., &apos;user.name&apos; or &apos;data.0.id&apos;)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ValuePath { get; set; }
+        public string? ValuePath { get => _explicitNullValueValuePath; set { _explicitNullValueValuePath = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("value_path"); else _explicitNullProperties?.Remove("value_path"); } }
+        private string? _explicitNullValueValuePath = default!;
 #nullable restore
 #else
-        public string ValuePath { get; set; }
+        public string ValuePath { get => _explicitNullValueValuePath; set { _explicitNullValueValuePath = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("value_path"); else _explicitNullProperties?.Remove("value_path"); } }
+        private string _explicitNullValueValuePath = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.DynamicVariableAssignment"/> and sets the default values.
@@ -54,7 +73,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.DynamicVariableAssignment CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.DynamicVariableAssignment();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.DynamicVariableAssignment(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -83,6 +102,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteBoolValue("sanitize", Sanitize);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ResponseSource>("source", Source);
             writer.WriteStringValue("value_path", ValuePath);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

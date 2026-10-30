@@ -8,42 +8,47 @@ using System;
 namespace Soenneker.ElevenLabs.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberDynamicVariableTransferDestination"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberTransferDestination"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.SipUriDynamicVariableTransferDestination"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.SipUriTransferDestination"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberTransferTransferDestinationOneOf1"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberTransferTransferDestinationOneOf2"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberTransferTransferDestinationOneOf3"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberTransferTransferDestinationOneOf4"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PhoneNumberTransferTransferDestination : IComposedTypeWrapper, IParsable
-    {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberDynamicVariableTransferDestination"/></summary>
+    , global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder {
+        // Preserve ambiguous union payloads without inventing a discriminator.
+        /// <summary>The complete payload when no unique typed union branch can be selected.</summary>
+        public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode UnrecognizedValue { get; set; } = null!;
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalData { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberTransferTransferDestinationOneOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberDynamicVariableTransferDestination? PhoneNumberDynamicVariableTransferDestination { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberTransferTransferDestinationOneOf1? PhoneNumberTransferTransferDestinationOneOf1 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberDynamicVariableTransferDestination PhoneNumberDynamicVariableTransferDestination { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberTransferTransferDestinationOneOf1 PhoneNumberTransferTransferDestinationOneOf1 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberTransferDestination"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberTransferTransferDestinationOneOf2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberTransferDestination? PhoneNumberTransferDestination { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberTransferTransferDestinationOneOf2? PhoneNumberTransferTransferDestinationOneOf2 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberTransferDestination PhoneNumberTransferDestination { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberTransferTransferDestinationOneOf2 PhoneNumberTransferTransferDestinationOneOf2 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.SipUriDynamicVariableTransferDestination"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberTransferTransferDestinationOneOf3"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SipUriDynamicVariableTransferDestination? SipUriDynamicVariableTransferDestination { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberTransferTransferDestinationOneOf3? PhoneNumberTransferTransferDestinationOneOf3 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SipUriDynamicVariableTransferDestination SipUriDynamicVariableTransferDestination { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberTransferTransferDestinationOneOf3 PhoneNumberTransferTransferDestinationOneOf3 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.SipUriTransferDestination"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberTransferTransferDestinationOneOf4"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SipUriTransferDestination? SipUriTransferDestination { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberTransferTransferDestinationOneOf4? PhoneNumberTransferTransferDestinationOneOf4 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SipUriTransferDestination SipUriTransferDestination { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberTransferTransferDestinationOneOf4 PhoneNumberTransferTransferDestinationOneOf4 { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -53,25 +58,36 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberTransferTransferDestination CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
             var result = new global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberTransferTransferDestination();
-            if("phone_dynamic_variable".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("PhoneNumberTransferTransferDestinationOneOf1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.PhoneNumberDynamicVariableTransferDestination = new global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberDynamicVariableTransferDestination();
+                
             }
-            else if("phone".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("PhoneNumberTransferTransferDestinationOneOf2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.PhoneNumberTransferDestination = new global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberTransferDestination();
+                
             }
-            else if("sip_uri_dynamic_variable".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("PhoneNumberTransferTransferDestinationOneOf3".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.SipUriDynamicVariableTransferDestination = new global::Soenneker.ElevenLabs.OpenApiClient.Models.SipUriDynamicVariableTransferDestination();
+                
             }
-            else if("sip_uri".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("PhoneNumberTransferTransferDestinationOneOf4".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.SipUriTransferDestination = new global::Soenneker.ElevenLabs.OpenApiClient.Models.SipUriTransferDestination();
+                
             }
-            return result;
+            
+            var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
+            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("phone_number") != null && parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag2 && ("phone".Equals(tag2.GetValue(), global::System.StringComparison.Ordinal)))))();
+            bool matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("sip_uri") != null && parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag2 && ("sip_uri".Equals(tag2.GetValue(), global::System.StringComparison.Ordinal)))))();
+            bool matchesUnionBranch2 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("phone_number") != null && parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag2 && ("phone_dynamic_variable".Equals(tag2.GetValue(), global::System.StringComparison.Ordinal)))))();
+            bool matchesUnionBranch3 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("sip_uri") != null && parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag2 && ("sip_uri_dynamic_variable".Equals(tag2.GetValue(), global::System.StringComparison.Ordinal)))))();
+            if (result.PhoneNumberTransferTransferDestinationOneOf1 == null && result.PhoneNumberTransferTransferDestinationOneOf2 == null && result.PhoneNumberTransferTransferDestinationOneOf3 == null && result.PhoneNumberTransferTransferDestinationOneOf4 == null && matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2 && !matchesUnionBranch3) result.PhoneNumberTransferTransferDestinationOneOf1 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberTransferTransferDestinationOneOf1(), parseNode);
+            if (result.PhoneNumberTransferTransferDestinationOneOf1 == null && result.PhoneNumberTransferTransferDestinationOneOf2 == null && result.PhoneNumberTransferTransferDestinationOneOf3 == null && result.PhoneNumberTransferTransferDestinationOneOf4 == null && matchesUnionBranch1 && !matchesUnionBranch0 && !matchesUnionBranch2 && !matchesUnionBranch3) result.PhoneNumberTransferTransferDestinationOneOf2 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberTransferTransferDestinationOneOf2(), parseNode);
+            if (result.PhoneNumberTransferTransferDestinationOneOf1 == null && result.PhoneNumberTransferTransferDestinationOneOf2 == null && result.PhoneNumberTransferTransferDestinationOneOf3 == null && result.PhoneNumberTransferTransferDestinationOneOf4 == null && matchesUnionBranch2 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch3) result.PhoneNumberTransferTransferDestinationOneOf3 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberTransferTransferDestinationOneOf3(), parseNode);
+            if (result.PhoneNumberTransferTransferDestinationOneOf1 == null && result.PhoneNumberTransferTransferDestinationOneOf2 == null && result.PhoneNumberTransferTransferDestinationOneOf3 == null && result.PhoneNumberTransferTransferDestinationOneOf4 == null && matchesUnionBranch3 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2) result.PhoneNumberTransferTransferDestinationOneOf4 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberTransferTransferDestinationOneOf4(), parseNode);
+            if (result.PhoneNumberTransferTransferDestinationOneOf1 == null && result.PhoneNumberTransferTransferDestinationOneOf2 == null && result.PhoneNumberTransferTransferDestinationOneOf3 == null && result.PhoneNumberTransferTransferDestinationOneOf4 == null) result.UnrecognizedValue = unionPayload;
+return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -79,21 +95,21 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(PhoneNumberDynamicVariableTransferDestination != null)
+            if(PhoneNumberTransferTransferDestinationOneOf1 != null)
             {
-                return PhoneNumberDynamicVariableTransferDestination.GetFieldDeserializers();
+                return PhoneNumberTransferTransferDestinationOneOf1.GetFieldDeserializers();
             }
-            else if(PhoneNumberTransferDestination != null)
+            else if(PhoneNumberTransferTransferDestinationOneOf2 != null)
             {
-                return PhoneNumberTransferDestination.GetFieldDeserializers();
+                return PhoneNumberTransferTransferDestinationOneOf2.GetFieldDeserializers();
             }
-            else if(SipUriDynamicVariableTransferDestination != null)
+            else if(PhoneNumberTransferTransferDestinationOneOf3 != null)
             {
-                return SipUriDynamicVariableTransferDestination.GetFieldDeserializers();
+                return PhoneNumberTransferTransferDestinationOneOf3.GetFieldDeserializers();
             }
-            else if(SipUriTransferDestination != null)
+            else if(PhoneNumberTransferTransferDestinationOneOf4 != null)
             {
-                return SipUriTransferDestination.GetFieldDeserializers();
+                return PhoneNumberTransferTransferDestinationOneOf4.GetFieldDeserializers();
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -103,22 +119,33 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
+            if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
+            if (PhoneNumberTransferTransferDestinationOneOf1 == null && PhoneNumberTransferTransferDestinationOneOf2 == null && PhoneNumberTransferTransferDestinationOneOf3 == null && PhoneNumberTransferTransferDestinationOneOf4 == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
+            if (PhoneNumberTransferTransferDestinationOneOf1 != null && PhoneNumberTransferTransferDestinationOneOf2 == null && PhoneNumberTransferTransferDestinationOneOf3 == null && PhoneNumberTransferTransferDestinationOneOf4 == null) { if (PhoneNumberTransferTransferDestinationOneOf1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, PhoneNumberTransferTransferDestinationOneOf1); return; }
+            if (PhoneNumberTransferTransferDestinationOneOf2 != null && PhoneNumberTransferTransferDestinationOneOf1 == null && PhoneNumberTransferTransferDestinationOneOf3 == null && PhoneNumberTransferTransferDestinationOneOf4 == null) { if (PhoneNumberTransferTransferDestinationOneOf2 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, PhoneNumberTransferTransferDestinationOneOf2); return; }
+            if (PhoneNumberTransferTransferDestinationOneOf3 != null && PhoneNumberTransferTransferDestinationOneOf1 == null && PhoneNumberTransferTransferDestinationOneOf2 == null && PhoneNumberTransferTransferDestinationOneOf4 == null) { if (PhoneNumberTransferTransferDestinationOneOf3 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, PhoneNumberTransferTransferDestinationOneOf3); return; }
+            if (PhoneNumberTransferTransferDestinationOneOf4 != null && PhoneNumberTransferTransferDestinationOneOf1 == null && PhoneNumberTransferTransferDestinationOneOf2 == null && PhoneNumberTransferTransferDestinationOneOf3 == null) { if (PhoneNumberTransferTransferDestinationOneOf4 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, PhoneNumberTransferTransferDestinationOneOf4); return; }
+
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(PhoneNumberDynamicVariableTransferDestination != null)
+            if(PhoneNumberTransferTransferDestinationOneOf1 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberDynamicVariableTransferDestination>(null, PhoneNumberDynamicVariableTransferDestination);
+                if (PhoneNumberTransferTransferDestinationOneOf1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberTransferTransferDestinationOneOf1>(null, PhoneNumberTransferTransferDestinationOneOf1);
             }
-            else if(PhoneNumberTransferDestination != null)
+            else if(PhoneNumberTransferTransferDestinationOneOf2 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberTransferDestination>(null, PhoneNumberTransferDestination);
+                if (PhoneNumberTransferTransferDestinationOneOf2 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberTransferTransferDestinationOneOf2>(null, PhoneNumberTransferTransferDestinationOneOf2);
             }
-            else if(SipUriDynamicVariableTransferDestination != null)
+            else if(PhoneNumberTransferTransferDestinationOneOf3 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SipUriDynamicVariableTransferDestination>(null, SipUriDynamicVariableTransferDestination);
+                if (PhoneNumberTransferTransferDestinationOneOf3 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberTransferTransferDestinationOneOf3>(null, PhoneNumberTransferTransferDestinationOneOf3);
             }
-            else if(SipUriTransferDestination != null)
+            else if(PhoneNumberTransferTransferDestinationOneOf4 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SipUriTransferDestination>(null, SipUriTransferDestination);
+                if (PhoneNumberTransferTransferDestinationOneOf4 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberTransferTransferDestinationOneOf4>(null, PhoneNumberTransferTransferDestinationOneOf4);
             }
         }
     }

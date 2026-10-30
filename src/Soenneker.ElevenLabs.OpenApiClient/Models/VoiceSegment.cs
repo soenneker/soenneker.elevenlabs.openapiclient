@@ -11,26 +11,46 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class VoiceSegment : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("character_end_index") is { } nullNodeCharacterEndIndex && nullNodeCharacterEndIndex.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CharacterEndIndex = null;
+            if (parseNode.GetChildNode("character_start_index") is { } nullNodeCharacterStartIndex && nullNodeCharacterStartIndex.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CharacterStartIndex = null;
+            if (parseNode.GetChildNode("dialogue_input_index") is { } nullNodeDialogueInputIndex && nullNodeDialogueInputIndex.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DialogueInputIndex = null;
+            if (parseNode.GetChildNode("end_time_seconds") is { } nullNodeEndTimeSeconds && nullNodeEndTimeSeconds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EndTimeSeconds = null;
+            if (parseNode.GetChildNode("start_time_seconds") is { } nullNodeStartTimeSeconds && nullNodeStartTimeSeconds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StartTimeSeconds = null;
+            if (parseNode.GetChildNode("voice_id") is { } nullNodeVoiceId && nullNodeVoiceId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VoiceId = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>End index in the characters array (exclusive)</summary>
-        public int? CharacterEndIndex { get; set; }
+        public int? CharacterEndIndex { get => _explicitNullValueCharacterEndIndex; set { _explicitNullValueCharacterEndIndex = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("character_end_index"); else _explicitNullProperties?.Remove("character_end_index"); } }
+        private int? _explicitNullValueCharacterEndIndex = default!;
         /// <summary>Start index in the characters array</summary>
-        public int? CharacterStartIndex { get; set; }
+        public int? CharacterStartIndex { get => _explicitNullValueCharacterStartIndex; set { _explicitNullValueCharacterStartIndex = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("character_start_index"); else _explicitNullProperties?.Remove("character_start_index"); } }
+        private int? _explicitNullValueCharacterStartIndex = default!;
         /// <summary>Line of the dialogue (script) that this segment is a part of.</summary>
-        public int? DialogueInputIndex { get; set; }
+        public int? DialogueInputIndex { get => _explicitNullValueDialogueInputIndex; set { _explicitNullValueDialogueInputIndex = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dialogue_input_index"); else _explicitNullProperties?.Remove("dialogue_input_index"); } }
+        private int? _explicitNullValueDialogueInputIndex = default!;
         /// <summary>End time of this voice segment</summary>
-        public double? EndTimeSeconds { get; set; }
+        public double? EndTimeSeconds { get => _explicitNullValueEndTimeSeconds; set { _explicitNullValueEndTimeSeconds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("end_time_seconds"); else _explicitNullProperties?.Remove("end_time_seconds"); } }
+        private double? _explicitNullValueEndTimeSeconds = default!;
         /// <summary>Start time of this voice segment</summary>
-        public double? StartTimeSeconds { get; set; }
+        public double? StartTimeSeconds { get => _explicitNullValueStartTimeSeconds; set { _explicitNullValueStartTimeSeconds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("start_time_seconds"); else _explicitNullProperties?.Remove("start_time_seconds"); } }
+        private double? _explicitNullValueStartTimeSeconds = default!;
         /// <summary>The voice ID used for this segment</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? VoiceId { get; set; }
+        public string? VoiceId { get => _explicitNullValueVoiceId; set { _explicitNullValueVoiceId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("voice_id"); else _explicitNullProperties?.Remove("voice_id"); } }
+        private string? _explicitNullValueVoiceId = default!;
 #nullable restore
 #else
-        public string VoiceId { get; set; }
+        public string VoiceId { get => _explicitNullValueVoiceId; set { _explicitNullValueVoiceId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("voice_id"); else _explicitNullProperties?.Remove("voice_id"); } }
+        private string _explicitNullValueVoiceId = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceSegment"/> and sets the default values.
@@ -47,7 +67,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceSegment CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceSegment();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceSegment(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -78,6 +98,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteDoubleValue("end_time_seconds", EndTimeSeconds);
             writer.WriteDoubleValue("start_time_seconds", StartTimeSeconds);
             writer.WriteStringValue("voice_id", VoiceId);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

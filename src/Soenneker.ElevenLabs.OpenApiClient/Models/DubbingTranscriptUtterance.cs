@@ -11,36 +11,56 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class DubbingTranscriptUtterance : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("end_s") is { } nullNodeEndS && nullNodeEndS.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EndS = null;
+            if (parseNode.GetChildNode("speaker_id") is { } nullNodeSpeakerId && nullNodeSpeakerId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SpeakerId = null;
+            if (parseNode.GetChildNode("start_s") is { } nullNodeStartS && nullNodeStartS.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StartS = null;
+            if (parseNode.GetChildNode("text") is { } nullNodeText && nullNodeText.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Text = null;
+            if (parseNode.GetChildNode("words") is { } nullNodeWords && nullNodeWords.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Words = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The end_s property</summary>
-        public double? EndS { get; set; }
+        public double? EndS { get => _explicitNullValueEndS; set { _explicitNullValueEndS = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("end_s"); else _explicitNullProperties?.Remove("end_s"); } }
+        private double? _explicitNullValueEndS = default!;
         /// <summary>The speaker_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SpeakerId { get; set; }
+        public string? SpeakerId { get => _explicitNullValueSpeakerId; set { _explicitNullValueSpeakerId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("speaker_id"); else _explicitNullProperties?.Remove("speaker_id"); } }
+        private string? _explicitNullValueSpeakerId = default!;
 #nullable restore
 #else
-        public string SpeakerId { get; set; }
+        public string SpeakerId { get => _explicitNullValueSpeakerId; set { _explicitNullValueSpeakerId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("speaker_id"); else _explicitNullProperties?.Remove("speaker_id"); } }
+        private string _explicitNullValueSpeakerId = default!;
 #endif
         /// <summary>The start_s property</summary>
-        public double? StartS { get; set; }
+        public double? StartS { get => _explicitNullValueStartS; set { _explicitNullValueStartS = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("start_s"); else _explicitNullProperties?.Remove("start_s"); } }
+        private double? _explicitNullValueStartS = default!;
         /// <summary>The text property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Text { get; set; }
+        public string? Text { get => _explicitNullValueText; set { _explicitNullValueText = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("text"); else _explicitNullProperties?.Remove("text"); } }
+        private string? _explicitNullValueText = default!;
 #nullable restore
 #else
-        public string Text { get; set; }
+        public string Text { get => _explicitNullValueText; set { _explicitNullValueText = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("text"); else _explicitNullProperties?.Remove("text"); } }
+        private string _explicitNullValueText = default!;
 #endif
         /// <summary>The words property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingTranscriptWord>? Words { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingTranscriptWord>? Words { get => _explicitNullValueWords; set { _explicitNullValueWords = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("words"); else _explicitNullProperties?.Remove("words"); } }
+        private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingTranscriptWord>? _explicitNullValueWords = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingTranscriptWord> Words { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingTranscriptWord> Words { get => _explicitNullValueWords; set { _explicitNullValueWords = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("words"); else _explicitNullProperties?.Remove("words"); } }
+        private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingTranscriptWord> _explicitNullValueWords = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingTranscriptUtterance"/> and sets the default values.
@@ -60,7 +80,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingTranscriptUtterance CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingTranscriptUtterance();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingTranscriptUtterance(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -89,6 +109,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteDoubleValue("start_s", StartS);
             writer.WriteStringValue("text", Text);
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingTranscriptWord>("words", Words);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

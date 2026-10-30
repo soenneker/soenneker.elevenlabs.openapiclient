@@ -11,146 +11,216 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class AgentConversationTicketResponseModel : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("agent_id") is { } nullNodeAgentId && nullNodeAgentId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AgentId = null;
+            if (parseNode.GetChildNode("agentqa_ticket_id") is { } nullNodeAgentqaTicketId && nullNodeAgentqaTicketId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AgentqaTicketId = null;
+            if (parseNode.GetChildNode("assignee_user_id") is { } nullNodeAssigneeUserId && nullNodeAssigneeUserId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AssigneeUserId = null;
+            if (parseNode.GetChildNode("conversation_ids") is { } nullNodeConversationIds && nullNodeConversationIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConversationIds = null;
+            if (parseNode.GetChildNode("created_at_unix_secs") is { } nullNodeCreatedAtUnixSecs && nullNodeCreatedAtUnixSecs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedAtUnixSecs = null;
+            if (parseNode.GetChildNode("first_seen_unix_secs") is { } nullNodeFirstSeenUnixSecs && nullNodeFirstSeenUnixSecs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FirstSeenUnixSecs = null;
+            if (parseNode.GetChildNode("issue_type") is { } nullNodeIssueType && nullNodeIssueType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IssueType = null;
+            if (parseNode.GetChildNode("labels") is { } nullNodeLabels && nullNodeLabels.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Labels = null;
+            if (parseNode.GetChildNode("last_seen_unix_secs") is { } nullNodeLastSeenUnixSecs && nullNodeLastSeenUnixSecs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastSeenUnixSecs = null;
+            if (parseNode.GetChildNode("merged_into_ticket_id") is { } nullNodeMergedIntoTicketId && nullNodeMergedIntoTicketId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MergedIntoTicketId = null;
+            if (parseNode.GetChildNode("needs_clustering") is { } nullNodeNeedsClustering && nullNodeNeedsClustering.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NeedsClustering = null;
+            if (parseNode.GetChildNode("owner_user_id") is { } nullNodeOwnerUserId && nullNodeOwnerUserId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OwnerUserId = null;
+            if (parseNode.GetChildNode("priority") is { } nullNodePriority && nullNodePriority.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Priority = null;
+            if (parseNode.GetChildNode("priority_changes") is { } nullNodePriorityChanges && nullNodePriorityChanges.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PriorityChanges = null;
+            if (parseNode.GetChildNode("qa_comment") is { } nullNodeQaComment && nullNodeQaComment.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) QaComment = null;
+            if (parseNode.GetChildNode("search_match") is { } nullNodeSearchMatch && nullNodeSearchMatch.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SearchMatch = null;
+            if (parseNode.GetChildNode("source") is { } nullNodeSource && nullNodeSource.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Source = null;
+            if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
+            if (parseNode.GetChildNode("status_changes") is { } nullNodeStatusChanges && nullNodeStatusChanges.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StatusChanges = null;
+            if (parseNode.GetChildNode("ticket_comments") is { } nullNodeTicketComments && nullNodeTicketComments.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TicketComments = null;
+            if (parseNode.GetChildNode("title") is { } nullNodeTitle && nullNodeTitle.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Title = null;
+            if (parseNode.GetChildNode("turn_comments") is { } nullNodeTurnComments && nullNodeTurnComments.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TurnComments = null;
+            if (parseNode.GetChildNode("updated_at_unix_secs") is { } nullNodeUpdatedAtUnixSecs && nullNodeUpdatedAtUnixSecs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UpdatedAtUnixSecs = null;
+            if (parseNode.GetChildNode("workspace_id") is { } nullNodeWorkspaceId && nullNodeWorkspaceId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WorkspaceId = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The agent_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AgentId { get; set; }
+        public string? AgentId { get => _explicitNullValueAgentId; set { _explicitNullValueAgentId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agent_id"); else _explicitNullProperties?.Remove("agent_id"); } }
+        private string? _explicitNullValueAgentId = default!;
 #nullable restore
 #else
-        public string AgentId { get; set; }
+        public string AgentId { get => _explicitNullValueAgentId; set { _explicitNullValueAgentId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agent_id"); else _explicitNullProperties?.Remove("agent_id"); } }
+        private string _explicitNullValueAgentId = default!;
 #endif
         /// <summary>The agentqa_ticket_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AgentqaTicketId { get; set; }
+        public string? AgentqaTicketId { get => _explicitNullValueAgentqaTicketId; set { _explicitNullValueAgentqaTicketId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agentqa_ticket_id"); else _explicitNullProperties?.Remove("agentqa_ticket_id"); } }
+        private string? _explicitNullValueAgentqaTicketId = default!;
 #nullable restore
 #else
-        public string AgentqaTicketId { get; set; }
+        public string AgentqaTicketId { get => _explicitNullValueAgentqaTicketId; set { _explicitNullValueAgentqaTicketId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agentqa_ticket_id"); else _explicitNullProperties?.Remove("agentqa_ticket_id"); } }
+        private string _explicitNullValueAgentqaTicketId = default!;
 #endif
         /// <summary>The assignee_user_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AssigneeUserId { get; set; }
+        public string? AssigneeUserId { get => _explicitNullValueAssigneeUserId; set { _explicitNullValueAssigneeUserId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("assignee_user_id"); else _explicitNullProperties?.Remove("assignee_user_id"); } }
+        private string? _explicitNullValueAssigneeUserId = default!;
 #nullable restore
 #else
-        public string AssigneeUserId { get; set; }
+        public string AssigneeUserId { get => _explicitNullValueAssigneeUserId; set { _explicitNullValueAssigneeUserId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("assignee_user_id"); else _explicitNullProperties?.Remove("assignee_user_id"); } }
+        private string _explicitNullValueAssigneeUserId = default!;
 #endif
         /// <summary>The conversation_ids property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? ConversationIds { get; set; }
+        public List<string>? ConversationIds { get => _explicitNullValueConversationIds; set { _explicitNullValueConversationIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conversation_ids"); else _explicitNullProperties?.Remove("conversation_ids"); } }
+        private List<string>? _explicitNullValueConversationIds = default!;
 #nullable restore
 #else
-        public List<string> ConversationIds { get; set; }
+        public List<string> ConversationIds { get => _explicitNullValueConversationIds; set { _explicitNullValueConversationIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conversation_ids"); else _explicitNullProperties?.Remove("conversation_ids"); } }
+        private List<string> _explicitNullValueConversationIds = default!;
 #endif
         /// <summary>The created_at_unix_secs property</summary>
-        public int? CreatedAtUnixSecs { get; set; }
+        public int? CreatedAtUnixSecs { get => _explicitNullValueCreatedAtUnixSecs; set { _explicitNullValueCreatedAtUnixSecs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_at_unix_secs"); else _explicitNullProperties?.Remove("created_at_unix_secs"); } }
+        private int? _explicitNullValueCreatedAtUnixSecs = default!;
         /// <summary>The first_seen_unix_secs property</summary>
-        public int? FirstSeenUnixSecs { get; set; }
+        public int? FirstSeenUnixSecs { get => _explicitNullValueFirstSeenUnixSecs; set { _explicitNullValueFirstSeenUnixSecs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("first_seen_unix_secs"); else _explicitNullProperties?.Remove("first_seen_unix_secs"); } }
+        private int? _explicitNullValueFirstSeenUnixSecs = default!;
         /// <summary>The issue_type property</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentConversationTicketIssueType? IssueType { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentConversationTicketIssueType? IssueType { get => _explicitNullValueIssueType; set { _explicitNullValueIssueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("issue_type"); else _explicitNullProperties?.Remove("issue_type"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentConversationTicketIssueType? _explicitNullValueIssueType = default!;
         /// <summary>The labels property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Labels { get; set; }
+        public List<string>? Labels { get => _explicitNullValueLabels; set { _explicitNullValueLabels = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("labels"); else _explicitNullProperties?.Remove("labels"); } }
+        private List<string>? _explicitNullValueLabels = default!;
 #nullable restore
 #else
-        public List<string> Labels { get; set; }
+        public List<string> Labels { get => _explicitNullValueLabels; set { _explicitNullValueLabels = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("labels"); else _explicitNullProperties?.Remove("labels"); } }
+        private List<string> _explicitNullValueLabels = default!;
 #endif
         /// <summary>The last_seen_unix_secs property</summary>
-        public int? LastSeenUnixSecs { get; set; }
+        public int? LastSeenUnixSecs { get => _explicitNullValueLastSeenUnixSecs; set { _explicitNullValueLastSeenUnixSecs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last_seen_unix_secs"); else _explicitNullProperties?.Remove("last_seen_unix_secs"); } }
+        private int? _explicitNullValueLastSeenUnixSecs = default!;
         /// <summary>The ticket this one was merged into, set while its status is &apos;merged&apos;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MergedIntoTicketId { get; set; }
+        public string? MergedIntoTicketId { get => _explicitNullValueMergedIntoTicketId; set { _explicitNullValueMergedIntoTicketId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merged_into_ticket_id"); else _explicitNullProperties?.Remove("merged_into_ticket_id"); } }
+        private string? _explicitNullValueMergedIntoTicketId = default!;
 #nullable restore
 #else
-        public string MergedIntoTicketId { get; set; }
+        public string MergedIntoTicketId { get => _explicitNullValueMergedIntoTicketId; set { _explicitNullValueMergedIntoTicketId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merged_into_ticket_id"); else _explicitNullProperties?.Remove("merged_into_ticket_id"); } }
+        private string _explicitNullValueMergedIntoTicketId = default!;
 #endif
         /// <summary>The needs_clustering property</summary>
-        public bool? NeedsClustering { get; set; }
+        public bool? NeedsClustering { get => _explicitNullValueNeedsClustering; set { _explicitNullValueNeedsClustering = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("needs_clustering"); else _explicitNullProperties?.Remove("needs_clustering"); } }
+        private bool? _explicitNullValueNeedsClustering = default!;
         /// <summary>The owner_user_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OwnerUserId { get; set; }
+        public string? OwnerUserId { get => _explicitNullValueOwnerUserId; set { _explicitNullValueOwnerUserId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("owner_user_id"); else _explicitNullProperties?.Remove("owner_user_id"); } }
+        private string? _explicitNullValueOwnerUserId = default!;
 #nullable restore
 #else
-        public string OwnerUserId { get; set; }
+        public string OwnerUserId { get => _explicitNullValueOwnerUserId; set { _explicitNullValueOwnerUserId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("owner_user_id"); else _explicitNullProperties?.Remove("owner_user_id"); } }
+        private string _explicitNullValueOwnerUserId = default!;
 #endif
         /// <summary>The priority property</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentConversationTicketPriority? Priority { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentConversationTicketPriority? Priority { get => _explicitNullValuePriority; set { _explicitNullValuePriority = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("priority"); else _explicitNullProperties?.Remove("priority"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentConversationTicketPriority? _explicitNullValuePriority = default!;
         /// <summary>The priority_changes property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.TicketPriorityChangeResponseModel>? PriorityChanges { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.TicketPriorityChangeResponseModel>? PriorityChanges { get => _explicitNullValuePriorityChanges; set { _explicitNullValuePriorityChanges = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("priority_changes"); else _explicitNullProperties?.Remove("priority_changes"); } }
+        private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.TicketPriorityChangeResponseModel>? _explicitNullValuePriorityChanges = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.TicketPriorityChangeResponseModel> PriorityChanges { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.TicketPriorityChangeResponseModel> PriorityChanges { get => _explicitNullValuePriorityChanges; set { _explicitNullValuePriorityChanges = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("priority_changes"); else _explicitNullProperties?.Remove("priority_changes"); } }
+        private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.TicketPriorityChangeResponseModel> _explicitNullValuePriorityChanges = default!;
 #endif
         /// <summary>The qa_comment property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? QaComment { get; set; }
+        public string? QaComment { get => _explicitNullValueQaComment; set { _explicitNullValueQaComment = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("qa_comment"); else _explicitNullProperties?.Remove("qa_comment"); } }
+        private string? _explicitNullValueQaComment = default!;
 #nullable restore
 #else
-        public string QaComment { get; set; }
+        public string QaComment { get => _explicitNullValueQaComment; set { _explicitNullValueQaComment = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("qa_comment"); else _explicitNullProperties?.Remove("qa_comment"); } }
+        private string _explicitNullValueQaComment = default!;
 #endif
         /// <summary>Where the list&apos;s `search` query matched. Set only on searched lists.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.TicketSearchMatchResponseModel? SearchMatch { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.TicketSearchMatchResponseModel? SearchMatch { get => _explicitNullValueSearchMatch; set { _explicitNullValueSearchMatch = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("search_match"); else _explicitNullProperties?.Remove("search_match"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.TicketSearchMatchResponseModel? _explicitNullValueSearchMatch = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.TicketSearchMatchResponseModel SearchMatch { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.TicketSearchMatchResponseModel SearchMatch { get => _explicitNullValueSearchMatch; set { _explicitNullValueSearchMatch = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("search_match"); else _explicitNullProperties?.Remove("search_match"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.TicketSearchMatchResponseModel _explicitNullValueSearchMatch = default!;
 #endif
         /// <summary>The source property</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentConversationTicketSource? Source { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentConversationTicketSource? Source { get => _explicitNullValueSource; set { _explicitNullValueSource = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source"); else _explicitNullProperties?.Remove("source"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentConversationTicketSource? _explicitNullValueSource = default!;
         /// <summary>The status property</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentConversationTicketStatus? Status { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentConversationTicketStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentConversationTicketStatus? _explicitNullValueStatus = default!;
         /// <summary>The status_changes property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.TicketStatusChangeResponseModel>? StatusChanges { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.TicketStatusChangeResponseModel>? StatusChanges { get => _explicitNullValueStatusChanges; set { _explicitNullValueStatusChanges = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status_changes"); else _explicitNullProperties?.Remove("status_changes"); } }
+        private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.TicketStatusChangeResponseModel>? _explicitNullValueStatusChanges = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.TicketStatusChangeResponseModel> StatusChanges { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.TicketStatusChangeResponseModel> StatusChanges { get => _explicitNullValueStatusChanges; set { _explicitNullValueStatusChanges = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status_changes"); else _explicitNullProperties?.Remove("status_changes"); } }
+        private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.TicketStatusChangeResponseModel> _explicitNullValueStatusChanges = default!;
 #endif
         /// <summary>The ticket_comments property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.TicketCommentResponseModel>? TicketComments { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.TicketCommentResponseModel>? TicketComments { get => _explicitNullValueTicketComments; set { _explicitNullValueTicketComments = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ticket_comments"); else _explicitNullProperties?.Remove("ticket_comments"); } }
+        private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.TicketCommentResponseModel>? _explicitNullValueTicketComments = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.TicketCommentResponseModel> TicketComments { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.TicketCommentResponseModel> TicketComments { get => _explicitNullValueTicketComments; set { _explicitNullValueTicketComments = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ticket_comments"); else _explicitNullProperties?.Remove("ticket_comments"); } }
+        private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.TicketCommentResponseModel> _explicitNullValueTicketComments = default!;
 #endif
         /// <summary>One-line headline for the ticket. None only on tickets created before titles existed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Title { get; set; }
+        public string? Title { get => _explicitNullValueTitle; set { _explicitNullValueTitle = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("title"); else _explicitNullProperties?.Remove("title"); } }
+        private string? _explicitNullValueTitle = default!;
 #nullable restore
 #else
-        public string Title { get; set; }
+        public string Title { get => _explicitNullValueTitle; set { _explicitNullValueTitle = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("title"); else _explicitNullProperties?.Remove("title"); } }
+        private string _explicitNullValueTitle = default!;
 #endif
         /// <summary>The turn_comments property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.TurnCommentResponseModel>? TurnComments { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.TurnCommentResponseModel>? TurnComments { get => _explicitNullValueTurnComments; set { _explicitNullValueTurnComments = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("turn_comments"); else _explicitNullProperties?.Remove("turn_comments"); } }
+        private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.TurnCommentResponseModel>? _explicitNullValueTurnComments = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.TurnCommentResponseModel> TurnComments { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.TurnCommentResponseModel> TurnComments { get => _explicitNullValueTurnComments; set { _explicitNullValueTurnComments = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("turn_comments"); else _explicitNullProperties?.Remove("turn_comments"); } }
+        private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.TurnCommentResponseModel> _explicitNullValueTurnComments = default!;
 #endif
         /// <summary>The updated_at_unix_secs property</summary>
-        public int? UpdatedAtUnixSecs { get; set; }
+        public int? UpdatedAtUnixSecs { get => _explicitNullValueUpdatedAtUnixSecs; set { _explicitNullValueUpdatedAtUnixSecs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("updated_at_unix_secs"); else _explicitNullProperties?.Remove("updated_at_unix_secs"); } }
+        private int? _explicitNullValueUpdatedAtUnixSecs = default!;
         /// <summary>The workspace_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? WorkspaceId { get; set; }
+        public string? WorkspaceId { get => _explicitNullValueWorkspaceId; set { _explicitNullValueWorkspaceId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workspace_id"); else _explicitNullProperties?.Remove("workspace_id"); } }
+        private string? _explicitNullValueWorkspaceId = default!;
 #nullable restore
 #else
-        public string WorkspaceId { get; set; }
+        public string WorkspaceId { get => _explicitNullValueWorkspaceId; set { _explicitNullValueWorkspaceId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workspace_id"); else _explicitNullProperties?.Remove("workspace_id"); } }
+        private string _explicitNullValueWorkspaceId = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentConversationTicketResponseModel"/> and sets the default values.
@@ -167,7 +237,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentConversationTicketResponseModel CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentConversationTicketResponseModel();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentConversationTicketResponseModel(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -234,6 +304,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.TurnCommentResponseModel>("turn_comments", TurnComments);
             writer.WriteIntValue("updated_at_unix_secs", UpdatedAtUnixSecs);
             writer.WriteStringValue("workspace_id", WorkspaceId);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

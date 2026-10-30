@@ -12,32 +12,53 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ResellerWorkspaceSubscription : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("billing_period") is { } nullNodeBillingPeriod && nullNodeBillingPeriod.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BillingPeriod = null;
+            if (parseNode.GetChildNode("billing_period_end_unix") is { } nullNodeBillingPeriodEndUnix && nullNodeBillingPeriodEndUnix.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BillingPeriodEndUnix = null;
+            if (parseNode.GetChildNode("cancel_at_unix") is { } nullNodeCancelAtUnix && nullNodeCancelAtUnix.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CancelAtUnix = null;
+            if (parseNode.GetChildNode("pending_downgrade_at_unix") is { } nullNodePendingDowngradeAtUnix && nullNodePendingDowngradeAtUnix.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PendingDowngradeAtUnix = null;
+            if (parseNode.GetChildNode("pending_downgrade_tier") is { } nullNodePendingDowngradeTier && nullNodePendingDowngradeTier.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PendingDowngradeTier = null;
+            if (parseNode.GetChildNode("tier_id") is { } nullNodeTierId && nullNodeTierId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TierId = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Cadence being billed. None only for a subscription mid-provisioning.</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ResellerWorkspaceSubscriptionBillingPeriod? BillingPeriod { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ResellerWorkspaceSubscriptionBillingPeriod? BillingPeriod { get => _explicitNullValueBillingPeriod; set { _explicitNullValueBillingPeriod = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("billing_period"); else _explicitNullProperties?.Remove("billing_period"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ResellerWorkspaceSubscriptionBillingPeriod? _explicitNullValueBillingPeriod = default!;
         /// <summary>When the current period ends, and so when a deferred change lands.</summary>
-        public int? BillingPeriodEndUnix { get; set; }
+        public int? BillingPeriodEndUnix { get => _explicitNullValueBillingPeriodEndUnix; set { _explicitNullValueBillingPeriodEndUnix = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("billing_period_end_unix"); else _explicitNullProperties?.Remove("billing_period_end_unix"); } }
+        private int? _explicitNullValueBillingPeriodEndUnix = default!;
         /// <summary>When Stripe will end the subscription. Set means a pending unassignment the reseller can still undo.</summary>
-        public int? CancelAtUnix { get; set; }
+        public int? CancelAtUnix { get => _explicitNullValueCancelAtUnix; set { _explicitNullValueCancelAtUnix = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cancel_at_unix"); else _explicitNullProperties?.Remove("cancel_at_unix"); } }
+        private int? _explicitNullValueCancelAtUnix = default!;
         /// <summary>When that scheduled downgrade takes effect.</summary>
-        public int? PendingDowngradeAtUnix { get; set; }
+        public int? PendingDowngradeAtUnix { get => _explicitNullValuePendingDowngradeAtUnix; set { _explicitNullValuePendingDowngradeAtUnix = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pending_downgrade_at_unix"); else _explicitNullProperties?.Remove("pending_downgrade_at_unix"); } }
+        private int? _explicitNullValuePendingDowngradeAtUnix = default!;
         /// <summary>Tier this workspace drops to at the period boundary, if a downgrade is already scheduled.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PendingDowngradeTier { get; set; }
+        public string? PendingDowngradeTier { get => _explicitNullValuePendingDowngradeTier; set { _explicitNullValuePendingDowngradeTier = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pending_downgrade_tier"); else _explicitNullProperties?.Remove("pending_downgrade_tier"); } }
+        private string? _explicitNullValuePendingDowngradeTier = default!;
 #nullable restore
 #else
-        public string PendingDowngradeTier { get; set; }
+        public string PendingDowngradeTier { get => _explicitNullValuePendingDowngradeTier; set { _explicitNullValuePendingDowngradeTier = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pending_downgrade_tier"); else _explicitNullProperties?.Remove("pending_downgrade_tier"); } }
+        private string _explicitNullValuePendingDowngradeTier = default!;
 #endif
         /// <summary>The tier_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TierId { get; set; }
+        public string? TierId { get => _explicitNullValueTierId; set { _explicitNullValueTierId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tier_id"); else _explicitNullProperties?.Remove("tier_id"); } }
+        private string? _explicitNullValueTierId = default!;
 #nullable restore
 #else
-        public string TierId { get; set; }
+        public string TierId { get => _explicitNullValueTierId; set { _explicitNullValueTierId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tier_id"); else _explicitNullProperties?.Remove("tier_id"); } }
+        private string _explicitNullValueTierId = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ResellerWorkspaceSubscription"/> and sets the default values.
@@ -54,7 +75,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.ResellerWorkspaceSubscription CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.ResellerWorkspaceSubscription();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.ResellerWorkspaceSubscription(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -85,6 +106,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteIntValue("pending_downgrade_at_unix", PendingDowngradeAtUnix);
             writer.WriteStringValue("pending_downgrade_tier", PendingDowngradeTier);
             writer.WriteStringValue("tier_id", TierId);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

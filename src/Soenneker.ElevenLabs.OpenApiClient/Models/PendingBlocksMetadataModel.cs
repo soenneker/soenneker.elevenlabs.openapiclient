@@ -11,19 +11,31 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class PendingBlocksMetadataModel : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("block_ids") is { } nullNodeBlockIds && nullNodeBlockIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BlockIds = null;
+            if (parseNode.GetChildNode("target_global_offset_ms") is { } nullNodeTargetGlobalOffsetMs && nullNodeTargetGlobalOffsetMs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TargetGlobalOffsetMs = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The block_ids property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? BlockIds { get; set; }
+        public List<string>? BlockIds { get => _explicitNullValueBlockIds; set { _explicitNullValueBlockIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("block_ids"); else _explicitNullProperties?.Remove("block_ids"); } }
+        private List<string>? _explicitNullValueBlockIds = default!;
 #nullable restore
 #else
-        public List<string> BlockIds { get; set; }
+        public List<string> BlockIds { get => _explicitNullValueBlockIds; set { _explicitNullValueBlockIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("block_ids"); else _explicitNullProperties?.Remove("block_ids"); } }
+        private List<string> _explicitNullValueBlockIds = default!;
 #endif
         /// <summary>The target_global_offset_ms property</summary>
-        public int? TargetGlobalOffsetMs { get; set; }
+        public int? TargetGlobalOffsetMs { get => _explicitNullValueTargetGlobalOffsetMs; set { _explicitNullValueTargetGlobalOffsetMs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("target_global_offset_ms"); else _explicitNullProperties?.Remove("target_global_offset_ms"); } }
+        private int? _explicitNullValueTargetGlobalOffsetMs = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.PendingBlocksMetadataModel"/> and sets the default values.
         /// </summary>
@@ -39,7 +51,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.PendingBlocksMetadataModel CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.PendingBlocksMetadataModel();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.PendingBlocksMetadataModel(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -62,6 +74,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<string>("block_ids", BlockIds);
             writer.WriteIntValue("target_global_offset_ms", TargetGlobalOffsetMs);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -11,32 +11,48 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ConversationHistoryBatchCallModel : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("batch_call_id") is { } nullNodeBatchCallId && nullNodeBatchCallId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BatchCallId = null;
+            if (parseNode.GetChildNode("batch_call_recipient_id") is { } nullNodeBatchCallRecipientId && nullNodeBatchCallRecipientId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BatchCallRecipientId = null;
+            if (parseNode.GetChildNode("campaign") is { } nullNodeCampaign && nullNodeCampaign.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Campaign = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The batch_call_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BatchCallId { get; set; }
+        public string? BatchCallId { get => _explicitNullValueBatchCallId; set { _explicitNullValueBatchCallId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("batch_call_id"); else _explicitNullProperties?.Remove("batch_call_id"); } }
+        private string? _explicitNullValueBatchCallId = default!;
 #nullable restore
 #else
-        public string BatchCallId { get; set; }
+        public string BatchCallId { get => _explicitNullValueBatchCallId; set { _explicitNullValueBatchCallId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("batch_call_id"); else _explicitNullProperties?.Remove("batch_call_id"); } }
+        private string _explicitNullValueBatchCallId = default!;
 #endif
         /// <summary>The batch_call_recipient_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BatchCallRecipientId { get; set; }
+        public string? BatchCallRecipientId { get => _explicitNullValueBatchCallRecipientId; set { _explicitNullValueBatchCallRecipientId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("batch_call_recipient_id"); else _explicitNullProperties?.Remove("batch_call_recipient_id"); } }
+        private string? _explicitNullValueBatchCallRecipientId = default!;
 #nullable restore
 #else
-        public string BatchCallRecipientId { get; set; }
+        public string BatchCallRecipientId { get => _explicitNullValueBatchCallRecipientId; set { _explicitNullValueBatchCallRecipientId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("batch_call_recipient_id"); else _explicitNullProperties?.Remove("batch_call_recipient_id"); } }
+        private string _explicitNullValueBatchCallRecipientId = default!;
 #endif
         /// <summary>The campaign property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BatchCallingCampaignInformation? Campaign { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BatchCallingCampaignInformation? Campaign { get => _explicitNullValueCampaign; set { _explicitNullValueCampaign = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("campaign"); else _explicitNullProperties?.Remove("campaign"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.BatchCallingCampaignInformation? _explicitNullValueCampaign = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BatchCallingCampaignInformation Campaign { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BatchCallingCampaignInformation Campaign { get => _explicitNullValueCampaign; set { _explicitNullValueCampaign = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("campaign"); else _explicitNullProperties?.Remove("campaign"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.BatchCallingCampaignInformation _explicitNullValueCampaign = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryBatchCallModel"/> and sets the default values.
@@ -53,7 +69,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryBatchCallModel CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryBatchCallModel();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryBatchCallModel(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -78,6 +94,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteStringValue("batch_call_id", BatchCallId);
             writer.WriteStringValue("batch_call_recipient_id", BatchCallRecipientId);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BatchCallingCampaignInformation>("campaign", Campaign);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

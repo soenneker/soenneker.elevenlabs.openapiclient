@@ -8,34 +8,39 @@ using System;
 namespace Soenneker.ElevenLabs.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.DubOrderItemRequest"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.SubtitleOrderItemRequest"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.TranscriptionOrderItemRequest"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.OrderItemRequestOutputOneOf1"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.OrderItemRequestOutputOneOf2"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.OrderItemRequestOutputOneOf3"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class OrderItemRequestOutput : IComposedTypeWrapper, IParsable
-    {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.DubOrderItemRequest"/></summary>
+    , global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder {
+        // Preserve ambiguous union payloads without inventing a discriminator.
+        /// <summary>The complete payload when no unique typed union branch can be selected.</summary>
+        public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode UnrecognizedValue { get; set; } = null!;
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalData { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.OrderItemRequestOutputOneOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.DubOrderItemRequest? DubOrderItemRequest { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.OrderItemRequestOutputOneOf1? OrderItemRequestOutputOneOf1 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.DubOrderItemRequest DubOrderItemRequest { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.OrderItemRequestOutputOneOf1 OrderItemRequestOutputOneOf1 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.SubtitleOrderItemRequest"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.OrderItemRequestOutputOneOf2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SubtitleOrderItemRequest? SubtitleOrderItemRequest { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.OrderItemRequestOutputOneOf2? OrderItemRequestOutputOneOf2 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SubtitleOrderItemRequest SubtitleOrderItemRequest { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.OrderItemRequestOutputOneOf2 OrderItemRequestOutputOneOf2 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.TranscriptionOrderItemRequest"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.OrderItemRequestOutputOneOf3"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.TranscriptionOrderItemRequest? TranscriptionOrderItemRequest { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.OrderItemRequestOutputOneOf3? OrderItemRequestOutputOneOf3 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.TranscriptionOrderItemRequest TranscriptionOrderItemRequest { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.OrderItemRequestOutputOneOf3 OrderItemRequestOutputOneOf3 { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -45,21 +50,30 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.OrderItemRequestOutput CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("kind")?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
             var result = new global::Soenneker.ElevenLabs.OpenApiClient.Models.OrderItemRequestOutput();
-            if("dub".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("OrderItemRequestOutputOneOf1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.DubOrderItemRequest = new global::Soenneker.ElevenLabs.OpenApiClient.Models.DubOrderItemRequest();
+                
             }
-            else if("subtitles".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("OrderItemRequestOutputOneOf2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.SubtitleOrderItemRequest = new global::Soenneker.ElevenLabs.OpenApiClient.Models.SubtitleOrderItemRequest();
+                
             }
-            else if("transcription".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("OrderItemRequestOutputOneOf3".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.TranscriptionOrderItemRequest = new global::Soenneker.ElevenLabs.OpenApiClient.Models.TranscriptionOrderItemRequest();
+                
             }
-            return result;
+            
+            var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
+            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("media_id") != null && parseNode.GetChildNode("source_language") != null && parseNode.GetChildNode("destination_languages") != null && parseNode.GetChildNode("include_captions") != null && parseNode.GetChildNode("include_source_captions") != null && parseNode.GetChildNode("kind") != null && (parseNode.GetChildNode("kind")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag6 && ("dub".Equals(tag6.GetValue(), global::System.StringComparison.Ordinal)))))();
+            bool matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("media_ids") != null && parseNode.GetChildNode("source_language") != null && parseNode.GetChildNode("destination_languages") != null && parseNode.GetChildNode("kind") != null && (parseNode.GetChildNode("kind")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag4 && ("subtitles".Equals(tag4.GetValue(), global::System.StringComparison.Ordinal)))))();
+            bool matchesUnionBranch2 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("media_ids") != null && parseNode.GetChildNode("source_language") != null && parseNode.GetChildNode("kind") != null && (parseNode.GetChildNode("kind")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag3 && ("transcription".Equals(tag3.GetValue(), global::System.StringComparison.Ordinal)))))();
+            if (result.OrderItemRequestOutputOneOf1 == null && result.OrderItemRequestOutputOneOf2 == null && result.OrderItemRequestOutputOneOf3 == null && matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2) result.OrderItemRequestOutputOneOf1 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.OrderItemRequestOutputOneOf1(), parseNode);
+            if (result.OrderItemRequestOutputOneOf1 == null && result.OrderItemRequestOutputOneOf2 == null && result.OrderItemRequestOutputOneOf3 == null && matchesUnionBranch1 && !matchesUnionBranch0 && !matchesUnionBranch2) result.OrderItemRequestOutputOneOf2 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.OrderItemRequestOutputOneOf2(), parseNode);
+            if (result.OrderItemRequestOutputOneOf1 == null && result.OrderItemRequestOutputOneOf2 == null && result.OrderItemRequestOutputOneOf3 == null && matchesUnionBranch2 && !matchesUnionBranch0 && !matchesUnionBranch1) result.OrderItemRequestOutputOneOf3 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.OrderItemRequestOutputOneOf3(), parseNode);
+            if (result.OrderItemRequestOutputOneOf1 == null && result.OrderItemRequestOutputOneOf2 == null && result.OrderItemRequestOutputOneOf3 == null) result.UnrecognizedValue = unionPayload;
+return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -67,17 +81,17 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(DubOrderItemRequest != null)
+            if(OrderItemRequestOutputOneOf1 != null)
             {
-                return DubOrderItemRequest.GetFieldDeserializers();
+                return OrderItemRequestOutputOneOf1.GetFieldDeserializers();
             }
-            else if(SubtitleOrderItemRequest != null)
+            else if(OrderItemRequestOutputOneOf2 != null)
             {
-                return SubtitleOrderItemRequest.GetFieldDeserializers();
+                return OrderItemRequestOutputOneOf2.GetFieldDeserializers();
             }
-            else if(TranscriptionOrderItemRequest != null)
+            else if(OrderItemRequestOutputOneOf3 != null)
             {
-                return TranscriptionOrderItemRequest.GetFieldDeserializers();
+                return OrderItemRequestOutputOneOf3.GetFieldDeserializers();
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -87,18 +101,27 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
+            if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
+            if (OrderItemRequestOutputOneOf1 == null && OrderItemRequestOutputOneOf2 == null && OrderItemRequestOutputOneOf3 == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
+            if (OrderItemRequestOutputOneOf1 != null && OrderItemRequestOutputOneOf2 == null && OrderItemRequestOutputOneOf3 == null) { if (OrderItemRequestOutputOneOf1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, OrderItemRequestOutputOneOf1); return; }
+            if (OrderItemRequestOutputOneOf2 != null && OrderItemRequestOutputOneOf1 == null && OrderItemRequestOutputOneOf3 == null) { if (OrderItemRequestOutputOneOf2 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, OrderItemRequestOutputOneOf2); return; }
+            if (OrderItemRequestOutputOneOf3 != null && OrderItemRequestOutputOneOf1 == null && OrderItemRequestOutputOneOf2 == null) { if (OrderItemRequestOutputOneOf3 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, OrderItemRequestOutputOneOf3); return; }
+
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(DubOrderItemRequest != null)
+            if(OrderItemRequestOutputOneOf1 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DubOrderItemRequest>(null, DubOrderItemRequest);
+                if (OrderItemRequestOutputOneOf1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.OrderItemRequestOutputOneOf1>(null, OrderItemRequestOutputOneOf1);
             }
-            else if(SubtitleOrderItemRequest != null)
+            else if(OrderItemRequestOutputOneOf2 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SubtitleOrderItemRequest>(null, SubtitleOrderItemRequest);
+                if (OrderItemRequestOutputOneOf2 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.OrderItemRequestOutputOneOf2>(null, OrderItemRequestOutputOneOf2);
             }
-            else if(TranscriptionOrderItemRequest != null)
+            else if(OrderItemRequestOutputOneOf3 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TranscriptionOrderItemRequest>(null, TranscriptionOrderItemRequest);
+                if (OrderItemRequestOutputOneOf3 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.OrderItemRequestOutputOneOf3>(null, OrderItemRequestOutputOneOf3);
             }
         }
     }

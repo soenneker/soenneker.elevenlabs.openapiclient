@@ -11,127 +11,187 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class WidgetStyles : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("accent") is { } nullNodeAccent && nullNodeAccent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Accent = null;
+            if (parseNode.GetChildNode("accent_active") is { } nullNodeAccentActive && nullNodeAccentActive.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccentActive = null;
+            if (parseNode.GetChildNode("accent_border") is { } nullNodeAccentBorder && nullNodeAccentBorder.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccentBorder = null;
+            if (parseNode.GetChildNode("accent_hover") is { } nullNodeAccentHover && nullNodeAccentHover.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccentHover = null;
+            if (parseNode.GetChildNode("accent_primary") is { } nullNodeAccentPrimary && nullNodeAccentPrimary.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccentPrimary = null;
+            if (parseNode.GetChildNode("accent_subtle") is { } nullNodeAccentSubtle && nullNodeAccentSubtle.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccentSubtle = null;
+            if (parseNode.GetChildNode("base") is { } nullNodeBase && nullNodeBase.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Base = null;
+            if (parseNode.GetChildNode("base_active") is { } nullNodeBaseActive && nullNodeBaseActive.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BaseActive = null;
+            if (parseNode.GetChildNode("base_border") is { } nullNodeBaseBorder && nullNodeBaseBorder.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BaseBorder = null;
+            if (parseNode.GetChildNode("base_error") is { } nullNodeBaseError && nullNodeBaseError.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BaseError = null;
+            if (parseNode.GetChildNode("base_hover") is { } nullNodeBaseHover && nullNodeBaseHover.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BaseHover = null;
+            if (parseNode.GetChildNode("base_primary") is { } nullNodeBasePrimary && nullNodeBasePrimary.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BasePrimary = null;
+            if (parseNode.GetChildNode("base_subtle") is { } nullNodeBaseSubtle && nullNodeBaseSubtle.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BaseSubtle = null;
+            if (parseNode.GetChildNode("bubble_radius") is { } nullNodeBubbleRadius && nullNodeBubbleRadius.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BubbleRadius = null;
+            if (parseNode.GetChildNode("button_radius") is { } nullNodeButtonRadius && nullNodeButtonRadius.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ButtonRadius = null;
+            if (parseNode.GetChildNode("compact_sheet_radius") is { } nullNodeCompactSheetRadius && nullNodeCompactSheetRadius.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CompactSheetRadius = null;
+            if (parseNode.GetChildNode("dropdown_sheet_radius") is { } nullNodeDropdownSheetRadius && nullNodeDropdownSheetRadius.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DropdownSheetRadius = null;
+            if (parseNode.GetChildNode("input_radius") is { } nullNodeInputRadius && nullNodeInputRadius.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InputRadius = null;
+            if (parseNode.GetChildNode("overlay_padding") is { } nullNodeOverlayPadding && nullNodeOverlayPadding.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OverlayPadding = null;
+            if (parseNode.GetChildNode("sheet_radius") is { } nullNodeSheetRadius && nullNodeSheetRadius.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SheetRadius = null;
+        }
+
         /// <summary>The accent background color.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Accent { get; set; }
+        public string? Accent { get => _explicitNullValueAccent; set { _explicitNullValueAccent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accent"); else _explicitNullProperties?.Remove("accent"); } }
+        private string? _explicitNullValueAccent = default!;
 #nullable restore
 #else
-        public string Accent { get; set; }
+        public string Accent { get => _explicitNullValueAccent; set { _explicitNullValueAccent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accent"); else _explicitNullProperties?.Remove("accent"); } }
+        private string _explicitNullValueAccent = default!;
 #endif
         /// <summary>The color of the accent background when active (clicked).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AccentActive { get; set; }
+        public string? AccentActive { get => _explicitNullValueAccentActive; set { _explicitNullValueAccentActive = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accent_active"); else _explicitNullProperties?.Remove("accent_active"); } }
+        private string? _explicitNullValueAccentActive = default!;
 #nullable restore
 #else
-        public string AccentActive { get; set; }
+        public string AccentActive { get => _explicitNullValueAccentActive; set { _explicitNullValueAccentActive = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accent_active"); else _explicitNullProperties?.Remove("accent_active"); } }
+        private string _explicitNullValueAccentActive = default!;
 #endif
         /// <summary>The color of the border against the accent background.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AccentBorder { get; set; }
+        public string? AccentBorder { get => _explicitNullValueAccentBorder; set { _explicitNullValueAccentBorder = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accent_border"); else _explicitNullProperties?.Remove("accent_border"); } }
+        private string? _explicitNullValueAccentBorder = default!;
 #nullable restore
 #else
-        public string AccentBorder { get; set; }
+        public string AccentBorder { get => _explicitNullValueAccentBorder; set { _explicitNullValueAccentBorder = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accent_border"); else _explicitNullProperties?.Remove("accent_border"); } }
+        private string _explicitNullValueAccentBorder = default!;
 #endif
         /// <summary>The color of the accent background when hovered.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AccentHover { get; set; }
+        public string? AccentHover { get => _explicitNullValueAccentHover; set { _explicitNullValueAccentHover = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accent_hover"); else _explicitNullProperties?.Remove("accent_hover"); } }
+        private string? _explicitNullValueAccentHover = default!;
 #nullable restore
 #else
-        public string AccentHover { get; set; }
+        public string AccentHover { get => _explicitNullValueAccentHover; set { _explicitNullValueAccentHover = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accent_hover"); else _explicitNullProperties?.Remove("accent_hover"); } }
+        private string _explicitNullValueAccentHover = default!;
 #endif
         /// <summary>The color of primary text against the accent background.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AccentPrimary { get; set; }
+        public string? AccentPrimary { get => _explicitNullValueAccentPrimary; set { _explicitNullValueAccentPrimary = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accent_primary"); else _explicitNullProperties?.Remove("accent_primary"); } }
+        private string? _explicitNullValueAccentPrimary = default!;
 #nullable restore
 #else
-        public string AccentPrimary { get; set; }
+        public string AccentPrimary { get => _explicitNullValueAccentPrimary; set { _explicitNullValueAccentPrimary = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accent_primary"); else _explicitNullProperties?.Remove("accent_primary"); } }
+        private string _explicitNullValueAccentPrimary = default!;
 #endif
         /// <summary>The color of subtle text against the accent background.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AccentSubtle { get; set; }
+        public string? AccentSubtle { get => _explicitNullValueAccentSubtle; set { _explicitNullValueAccentSubtle = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accent_subtle"); else _explicitNullProperties?.Remove("accent_subtle"); } }
+        private string? _explicitNullValueAccentSubtle = default!;
 #nullable restore
 #else
-        public string AccentSubtle { get; set; }
+        public string AccentSubtle { get => _explicitNullValueAccentSubtle; set { _explicitNullValueAccentSubtle = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accent_subtle"); else _explicitNullProperties?.Remove("accent_subtle"); } }
+        private string _explicitNullValueAccentSubtle = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The base background color.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Base { get; set; }
+        public string? Base { get => _explicitNullValueBase; set { _explicitNullValueBase = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("base"); else _explicitNullProperties?.Remove("base"); } }
+        private string? _explicitNullValueBase = default!;
 #nullable restore
 #else
-        public string Base { get; set; }
+        public string Base { get => _explicitNullValueBase; set { _explicitNullValueBase = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("base"); else _explicitNullProperties?.Remove("base"); } }
+        private string _explicitNullValueBase = default!;
 #endif
         /// <summary>The color of the base background when active (clicked).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BaseActive { get; set; }
+        public string? BaseActive { get => _explicitNullValueBaseActive; set { _explicitNullValueBaseActive = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("base_active"); else _explicitNullProperties?.Remove("base_active"); } }
+        private string? _explicitNullValueBaseActive = default!;
 #nullable restore
 #else
-        public string BaseActive { get; set; }
+        public string BaseActive { get => _explicitNullValueBaseActive; set { _explicitNullValueBaseActive = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("base_active"); else _explicitNullProperties?.Remove("base_active"); } }
+        private string _explicitNullValueBaseActive = default!;
 #endif
         /// <summary>The color of the border against the base background.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BaseBorder { get; set; }
+        public string? BaseBorder { get => _explicitNullValueBaseBorder; set { _explicitNullValueBaseBorder = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("base_border"); else _explicitNullProperties?.Remove("base_border"); } }
+        private string? _explicitNullValueBaseBorder = default!;
 #nullable restore
 #else
-        public string BaseBorder { get; set; }
+        public string BaseBorder { get => _explicitNullValueBaseBorder; set { _explicitNullValueBaseBorder = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("base_border"); else _explicitNullProperties?.Remove("base_border"); } }
+        private string _explicitNullValueBaseBorder = default!;
 #endif
         /// <summary>The color of error text against the base background.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BaseError { get; set; }
+        public string? BaseError { get => _explicitNullValueBaseError; set { _explicitNullValueBaseError = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("base_error"); else _explicitNullProperties?.Remove("base_error"); } }
+        private string? _explicitNullValueBaseError = default!;
 #nullable restore
 #else
-        public string BaseError { get; set; }
+        public string BaseError { get => _explicitNullValueBaseError; set { _explicitNullValueBaseError = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("base_error"); else _explicitNullProperties?.Remove("base_error"); } }
+        private string _explicitNullValueBaseError = default!;
 #endif
         /// <summary>The color of the base background when hovered.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BaseHover { get; set; }
+        public string? BaseHover { get => _explicitNullValueBaseHover; set { _explicitNullValueBaseHover = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("base_hover"); else _explicitNullProperties?.Remove("base_hover"); } }
+        private string? _explicitNullValueBaseHover = default!;
 #nullable restore
 #else
-        public string BaseHover { get; set; }
+        public string BaseHover { get => _explicitNullValueBaseHover; set { _explicitNullValueBaseHover = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("base_hover"); else _explicitNullProperties?.Remove("base_hover"); } }
+        private string _explicitNullValueBaseHover = default!;
 #endif
         /// <summary>The color of primary text against the base background.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BasePrimary { get; set; }
+        public string? BasePrimary { get => _explicitNullValueBasePrimary; set { _explicitNullValueBasePrimary = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("base_primary"); else _explicitNullProperties?.Remove("base_primary"); } }
+        private string? _explicitNullValueBasePrimary = default!;
 #nullable restore
 #else
-        public string BasePrimary { get; set; }
+        public string BasePrimary { get => _explicitNullValueBasePrimary; set { _explicitNullValueBasePrimary = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("base_primary"); else _explicitNullProperties?.Remove("base_primary"); } }
+        private string _explicitNullValueBasePrimary = default!;
 #endif
         /// <summary>The color of subtle text against the base background.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BaseSubtle { get; set; }
+        public string? BaseSubtle { get => _explicitNullValueBaseSubtle; set { _explicitNullValueBaseSubtle = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("base_subtle"); else _explicitNullProperties?.Remove("base_subtle"); } }
+        private string? _explicitNullValueBaseSubtle = default!;
 #nullable restore
 #else
-        public string BaseSubtle { get; set; }
+        public string BaseSubtle { get => _explicitNullValueBaseSubtle; set { _explicitNullValueBaseSubtle = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("base_subtle"); else _explicitNullProperties?.Remove("base_subtle"); } }
+        private string _explicitNullValueBaseSubtle = default!;
 #endif
         /// <summary>The radius of the chat bubbles.</summary>
-        public double? BubbleRadius { get; set; }
+        public double? BubbleRadius { get => _explicitNullValueBubbleRadius; set { _explicitNullValueBubbleRadius = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bubble_radius"); else _explicitNullProperties?.Remove("bubble_radius"); } }
+        private double? _explicitNullValueBubbleRadius = default!;
         /// <summary>The radius of the buttons.</summary>
-        public double? ButtonRadius { get; set; }
+        public double? ButtonRadius { get => _explicitNullValueButtonRadius; set { _explicitNullValueButtonRadius = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("button_radius"); else _explicitNullProperties?.Remove("button_radius"); } }
+        private double? _explicitNullValueButtonRadius = default!;
         /// <summary>The radius of the sheet in compact mode.</summary>
-        public double? CompactSheetRadius { get; set; }
+        public double? CompactSheetRadius { get => _explicitNullValueCompactSheetRadius; set { _explicitNullValueCompactSheetRadius = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("compact_sheet_radius"); else _explicitNullProperties?.Remove("compact_sheet_radius"); } }
+        private double? _explicitNullValueCompactSheetRadius = default!;
         /// <summary>The radius of the dropdown sheet.</summary>
-        public double? DropdownSheetRadius { get; set; }
+        public double? DropdownSheetRadius { get => _explicitNullValueDropdownSheetRadius; set { _explicitNullValueDropdownSheetRadius = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dropdown_sheet_radius"); else _explicitNullProperties?.Remove("dropdown_sheet_radius"); } }
+        private double? _explicitNullValueDropdownSheetRadius = default!;
         /// <summary>The radius of the input fields.</summary>
-        public double? InputRadius { get; set; }
+        public double? InputRadius { get => _explicitNullValueInputRadius; set { _explicitNullValueInputRadius = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("input_radius"); else _explicitNullProperties?.Remove("input_radius"); } }
+        private double? _explicitNullValueInputRadius = default!;
         /// <summary>The padding around the edges of the viewport.</summary>
-        public double? OverlayPadding { get; set; }
+        public double? OverlayPadding { get => _explicitNullValueOverlayPadding; set { _explicitNullValueOverlayPadding = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("overlay_padding"); else _explicitNullProperties?.Remove("overlay_padding"); } }
+        private double? _explicitNullValueOverlayPadding = default!;
         /// <summary>The default radius of sheets.</summary>
-        public double? SheetRadius { get; set; }
+        public double? SheetRadius { get => _explicitNullValueSheetRadius; set { _explicitNullValueSheetRadius = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sheet_radius"); else _explicitNullProperties?.Remove("sheet_radius"); } }
+        private double? _explicitNullValueSheetRadius = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetStyles"/> and sets the default values.
         /// </summary>
@@ -147,7 +207,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetStyles CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetStyles();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.WidgetStyles(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -206,6 +266,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteDoubleValue("input_radius", InputRadius);
             writer.WriteDoubleValue("overlay_padding", OverlayPadding);
             writer.WriteDoubleValue("sheet_radius", SheetRadius);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

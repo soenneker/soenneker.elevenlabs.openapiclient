@@ -11,34 +11,52 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class DubbingTranscriptsResponseModel : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("json") is { } nullNodeJson && nullNodeJson.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Json = null;
+            if (parseNode.GetChildNode("srt") is { } nullNodeSrt && nullNodeSrt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Srt = null;
+            if (parseNode.GetChildNode("transcript_format") is { } nullNodeTranscriptFormat && nullNodeTranscriptFormat.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TranscriptFormat = null;
+            if (parseNode.GetChildNode("webvtt") is { } nullNodeWebvtt && nullNodeWebvtt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Webvtt = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The json property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingTranscript? Json { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingTranscript? Json { get => _explicitNullValueJson; set { _explicitNullValueJson = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("json"); else _explicitNullProperties?.Remove("json"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingTranscript? _explicitNullValueJson = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingTranscript Json { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingTranscript Json { get => _explicitNullValueJson; set { _explicitNullValueJson = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("json"); else _explicitNullProperties?.Remove("json"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingTranscript _explicitNullValueJson = default!;
 #endif
         /// <summary>The srt property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Srt { get; set; }
+        public string? Srt { get => _explicitNullValueSrt; set { _explicitNullValueSrt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("srt"); else _explicitNullProperties?.Remove("srt"); } }
+        private string? _explicitNullValueSrt = default!;
 #nullable restore
 #else
-        public string Srt { get; set; }
+        public string Srt { get => _explicitNullValueSrt; set { _explicitNullValueSrt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("srt"); else _explicitNullProperties?.Remove("srt"); } }
+        private string _explicitNullValueSrt = default!;
 #endif
         /// <summary>The transcript_format property</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingTranscriptsResponseModelTranscriptFormat? TranscriptFormat { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingTranscriptsResponseModelTranscriptFormat? TranscriptFormat { get => _explicitNullValueTranscriptFormat; set { _explicitNullValueTranscriptFormat = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transcript_format"); else _explicitNullProperties?.Remove("transcript_format"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingTranscriptsResponseModelTranscriptFormat? _explicitNullValueTranscriptFormat = default!;
         /// <summary>The webvtt property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Webvtt { get; set; }
+        public string? Webvtt { get => _explicitNullValueWebvtt; set { _explicitNullValueWebvtt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("webvtt"); else _explicitNullProperties?.Remove("webvtt"); } }
+        private string? _explicitNullValueWebvtt = default!;
 #nullable restore
 #else
-        public string Webvtt { get; set; }
+        public string Webvtt { get => _explicitNullValueWebvtt; set { _explicitNullValueWebvtt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("webvtt"); else _explicitNullProperties?.Remove("webvtt"); } }
+        private string _explicitNullValueWebvtt = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingTranscriptsResponseModel"/> and sets the default values.
@@ -55,7 +73,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingTranscriptsResponseModel CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingTranscriptsResponseModel();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingTranscriptsResponseModel(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -82,6 +100,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteStringValue("srt", Srt);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingTranscriptsResponseModelTranscriptFormat>("transcript_format", TranscriptFormat);
             writer.WriteStringValue("webvtt", Webvtt);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

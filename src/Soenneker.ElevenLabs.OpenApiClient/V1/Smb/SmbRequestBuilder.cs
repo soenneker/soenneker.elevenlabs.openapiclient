@@ -3,9 +3,11 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Smb.AgentInfo;
+using Soenneker.ElevenLabs.OpenApiClient.V1.Smb.CustomerFacingAgents;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Smb.Holidays;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Smb.KnowledgeSources;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Smb.Locations;
+using Soenneker.ElevenLabs.OpenApiClient.V1.Smb.PhoneNumbers;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Smb.Reseller;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Smb.Services;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Smb.Staff;
@@ -26,6 +28,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Smb
         {
             get => new global::Soenneker.ElevenLabs.OpenApiClient.V1.Smb.AgentInfo.AgentInfoRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The customerFacingAgents property</summary>
+        public global::Soenneker.ElevenLabs.OpenApiClient.V1.Smb.CustomerFacingAgents.CustomerFacingAgentsRequestBuilder CustomerFacingAgents
+        {
+            get => new global::Soenneker.ElevenLabs.OpenApiClient.V1.Smb.CustomerFacingAgents.CustomerFacingAgentsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The holidays property</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.V1.Smb.Holidays.HolidaysRequestBuilder Holidays
         {
@@ -40,6 +47,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Smb
         public global::Soenneker.ElevenLabs.OpenApiClient.V1.Smb.Locations.LocationsRequestBuilder Locations
         {
             get => new global::Soenneker.ElevenLabs.OpenApiClient.V1.Smb.Locations.LocationsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The phoneNumbers property</summary>
+        public global::Soenneker.ElevenLabs.OpenApiClient.V1.Smb.PhoneNumbers.PhoneNumbersRequestBuilder PhoneNumbers
+        {
+            get => new global::Soenneker.ElevenLabs.OpenApiClient.V1.Smb.PhoneNumbers.PhoneNumbersRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The reseller property</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.V1.Smb.Reseller.ResellerRequestBuilder Reseller

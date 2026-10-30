@@ -11,29 +11,46 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class BodyInviteMultipleUsersV1WorkspaceInvitesAddBulkPost : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("emails") is { } nullNodeEmails && nullNodeEmails.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Emails = null;
+            if (parseNode.GetChildNode("group_ids") is { } nullNodeGroupIds && nullNodeGroupIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GroupIds = null;
+            if (parseNode.GetChildNode("seat_type") is { } nullNodeSeatType && nullNodeSeatType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SeatType = null;
+            if (parseNode.GetChildNode("usage_limit") is { } nullNodeUsageLimit && nullNodeUsageLimit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UsageLimit = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The email of the customer</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Emails { get; set; }
+        public List<string>? Emails { get => _explicitNullValueEmails; set { _explicitNullValueEmails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("emails"); else _explicitNullProperties?.Remove("emails"); } }
+        private List<string>? _explicitNullValueEmails = default!;
 #nullable restore
 #else
-        public List<string> Emails { get; set; }
+        public List<string> Emails { get => _explicitNullValueEmails; set { _explicitNullValueEmails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("emails"); else _explicitNullProperties?.Remove("emails"); } }
+        private List<string> _explicitNullValueEmails = default!;
 #endif
         /// <summary>The group ids of the user</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? GroupIds { get; set; }
+        public List<string>? GroupIds { get => _explicitNullValueGroupIds; set { _explicitNullValueGroupIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("group_ids"); else _explicitNullProperties?.Remove("group_ids"); } }
+        private List<string>? _explicitNullValueGroupIds = default!;
 #nullable restore
 #else
-        public List<string> GroupIds { get; set; }
+        public List<string> GroupIds { get => _explicitNullValueGroupIds; set { _explicitNullValueGroupIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("group_ids"); else _explicitNullProperties?.Remove("group_ids"); } }
+        private List<string> _explicitNullValueGroupIds = default!;
 #endif
         /// <summary>The seat type of the user</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SeatType? SeatType { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SeatType? SeatType { get => _explicitNullValueSeatType; set { _explicitNullValueSeatType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("seat_type"); else _explicitNullProperties?.Remove("seat_type"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.SeatType? _explicitNullValueSeatType = default!;
         /// <summary>Monthly credit usage limit for the invitee. Omit or set to null for no custom cap.</summary>
-        public int? UsageLimit { get; set; }
+        public int? UsageLimit { get => _explicitNullValueUsageLimit; set { _explicitNullValueUsageLimit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("usage_limit"); else _explicitNullProperties?.Remove("usage_limit"); } }
+        private int? _explicitNullValueUsageLimit = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyInviteMultipleUsersV1WorkspaceInvitesAddBulkPost"/> and sets the default values.
         /// </summary>
@@ -49,7 +66,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyInviteMultipleUsersV1WorkspaceInvitesAddBulkPost CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyInviteMultipleUsersV1WorkspaceInvitesAddBulkPost();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyInviteMultipleUsersV1WorkspaceInvitesAddBulkPost(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -76,6 +93,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("group_ids", GroupIds);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SeatType>("seat_type", SeatType);
             writer.WriteIntValue("usage_limit", UsageLimit);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

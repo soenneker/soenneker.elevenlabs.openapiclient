@@ -11,19 +11,31 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ContextualUpdateInfo : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("context_id") is { } nullNodeContextId && nullNodeContextId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ContextId = null;
+            if (parseNode.GetChildNode("is_superseded") is { } nullNodeIsSuperseded && nullNodeIsSuperseded.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsSuperseded = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Client-supplied identifier grouping related contextual updates.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ContextId { get; set; }
+        public string? ContextId { get => _explicitNullValueContextId; set { _explicitNullValueContextId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("context_id"); else _explicitNullProperties?.Remove("context_id"); } }
+        private string? _explicitNullValueContextId = default!;
 #nullable restore
 #else
-        public string ContextId { get; set; }
+        public string ContextId { get => _explicitNullValueContextId; set { _explicitNullValueContextId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("context_id"); else _explicitNullProperties?.Remove("context_id"); } }
+        private string _explicitNullValueContextId = default!;
 #endif
         /// <summary>True when this contextual update has been replaced by a newer update with the same context_id.</summary>
-        public bool? IsSuperseded { get; set; }
+        public bool? IsSuperseded { get => _explicitNullValueIsSuperseded; set { _explicitNullValueIsSuperseded = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_superseded"); else _explicitNullProperties?.Remove("is_superseded"); } }
+        private bool? _explicitNullValueIsSuperseded = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ContextualUpdateInfo"/> and sets the default values.
         /// </summary>
@@ -40,7 +52,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.ContextualUpdateInfo CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.ContextualUpdateInfo();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.ContextualUpdateInfo(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -63,6 +75,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("context_id", ContextId);
             writer.WriteBoolValue("is_superseded", IsSuperseded);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

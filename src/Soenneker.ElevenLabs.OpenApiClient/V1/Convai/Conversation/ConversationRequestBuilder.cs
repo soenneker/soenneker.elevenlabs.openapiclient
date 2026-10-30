@@ -18,6 +18,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Conversation
     public partial class ConversationRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The get_signed_url property</summary>
+        [Obsolete("")]
         public global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Conversation.Get_signed_url.Get_signed_urlRequestBuilder Get_signed_url
         {
             get => new global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Conversation.Get_signed_url.Get_signed_urlRequestBuilder(PathParameters, RequestAdapter);

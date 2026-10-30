@@ -12,17 +12,29 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class VeoImageReference : IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("image") is { } nullNodeImage && nullNodeImage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Image = null;
+            if (parseNode.GetChildNode("role") is { } nullNodeRole && nullNodeRole.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Role = null;
+        }
+
         /// <summary>The reference image.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ImageReference? Image { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ImageReference? Image { get => _explicitNullValueImage; set { _explicitNullValueImage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("image"); else _explicitNullProperties?.Remove("image"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ImageReference? _explicitNullValueImage = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ImageReference Image { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ImageReference Image { get => _explicitNullValueImage; set { _explicitNullValueImage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("image"); else _explicitNullProperties?.Remove("image"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ImageReference _explicitNullValueImage = default!;
 #endif
         /// <summary>How the model uses the image: `subject` places its subject or scene elements into the video; `style` transfers its visual style.</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.VeoImageReferenceRole? Role { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.VeoImageReferenceRole? Role { get => _explicitNullValueRole; set { _explicitNullValueRole = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("role"); else _explicitNullProperties?.Remove("role"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.VeoImageReferenceRole? _explicitNullValueRole = default!;
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -31,7 +43,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.VeoImageReference CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.VeoImageReference();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.VeoImageReference(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -53,7 +65,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ImageReference>("image", Image);
-            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.VeoImageReferenceRole>("role", Role);
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.VeoImageReferenceRole>("role", Role);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

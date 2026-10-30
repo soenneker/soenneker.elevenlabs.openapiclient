@@ -11,24 +11,37 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class LlmCategoryUsage : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("initiated_generation") is { } nullNodeInitiatedGeneration && nullNodeInitiatedGeneration.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InitiatedGeneration = null;
+            if (parseNode.GetChildNode("irreversible_generation") is { } nullNodeIrreversibleGeneration && nullNodeIrreversibleGeneration.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IrreversibleGeneration = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The initiated_generation property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmUsageOutput? InitiatedGeneration { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmUsageOutput? InitiatedGeneration { get => _explicitNullValueInitiatedGeneration; set { _explicitNullValueInitiatedGeneration = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("initiated_generation"); else _explicitNullProperties?.Remove("initiated_generation"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmUsageOutput? _explicitNullValueInitiatedGeneration = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmUsageOutput InitiatedGeneration { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmUsageOutput InitiatedGeneration { get => _explicitNullValueInitiatedGeneration; set { _explicitNullValueInitiatedGeneration = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("initiated_generation"); else _explicitNullProperties?.Remove("initiated_generation"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmUsageOutput _explicitNullValueInitiatedGeneration = default!;
 #endif
         /// <summary>The irreversible_generation property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmUsageOutput? IrreversibleGeneration { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmUsageOutput? IrreversibleGeneration { get => _explicitNullValueIrreversibleGeneration; set { _explicitNullValueIrreversibleGeneration = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("irreversible_generation"); else _explicitNullProperties?.Remove("irreversible_generation"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmUsageOutput? _explicitNullValueIrreversibleGeneration = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmUsageOutput IrreversibleGeneration { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmUsageOutput IrreversibleGeneration { get => _explicitNullValueIrreversibleGeneration; set { _explicitNullValueIrreversibleGeneration = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("irreversible_generation"); else _explicitNullProperties?.Remove("irreversible_generation"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmUsageOutput _explicitNullValueIrreversibleGeneration = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmCategoryUsage"/> and sets the default values.
@@ -45,7 +58,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmCategoryUsage CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmCategoryUsage();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmCategoryUsage(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -68,6 +81,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmUsageOutput>("initiated_generation", InitiatedGeneration);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmUsageOutput>("irreversible_generation", IrreversibleGeneration);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

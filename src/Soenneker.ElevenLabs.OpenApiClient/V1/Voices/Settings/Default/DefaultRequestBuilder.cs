@@ -49,7 +49,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Voices.Settings.Default
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceSettingsResponseModel>(requestInfo, global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceSettingsResponseModel.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceSettingsResponseModel>(requestInfo, global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceSettingsResponseModel.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Gets the default settings for voices. &quot;similarity_boost&quot; corresponds to&quot;Clarity + Similarity Enhancement&quot; in the web app and &quot;stability&quot; corresponds to &quot;Stability&quot; slider in the web app.

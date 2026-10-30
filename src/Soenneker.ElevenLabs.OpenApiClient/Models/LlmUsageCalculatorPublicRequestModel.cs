@@ -11,17 +11,32 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class LlmUsageCalculatorPublicRequestModel : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("number_of_pages") is { } nullNodeNumberOfPages && nullNodeNumberOfPages.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NumberOfPages = null;
+            if (parseNode.GetChildNode("prompt_length") is { } nullNodePromptLength && nullNodePromptLength.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PromptLength = null;
+            if (parseNode.GetChildNode("rag_enabled") is { } nullNodeRagEnabled && nullNodeRagEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RagEnabled = null;
+            if (parseNode.GetChildNode("service_tier") is { } nullNodeServiceTier && nullNodeServiceTier.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ServiceTier = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Pages of content in PDF documents or URLs in the agent&apos;s knowledge base.</summary>
-        public int? NumberOfPages { get; set; }
+        public int? NumberOfPages { get => _explicitNullValueNumberOfPages; set { _explicitNullValueNumberOfPages = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("number_of_pages"); else _explicitNullProperties?.Remove("number_of_pages"); } }
+        private int? _explicitNullValueNumberOfPages = default!;
         /// <summary>Length of the prompt in characters.</summary>
-        public int? PromptLength { get; set; }
+        public int? PromptLength { get => _explicitNullValuePromptLength; set { _explicitNullValuePromptLength = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prompt_length"); else _explicitNullProperties?.Remove("prompt_length"); } }
+        private int? _explicitNullValuePromptLength = default!;
         /// <summary>Whether RAG is enabled.</summary>
-        public bool? RagEnabled { get; set; }
+        public bool? RagEnabled { get => _explicitNullValueRagEnabled; set { _explicitNullValueRagEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rag_enabled"); else _explicitNullProperties?.Remove("rag_enabled"); } }
+        private bool? _explicitNullValueRagEnabled = default!;
         /// <summary>Service tier to price against. Only affects models that offer the tier; others fall back to their standard price.</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmServiceTier? ServiceTier { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmServiceTier? ServiceTier { get => _explicitNullValueServiceTier; set { _explicitNullValueServiceTier = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("service_tier"); else _explicitNullProperties?.Remove("service_tier"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmServiceTier? _explicitNullValueServiceTier = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmUsageCalculatorPublicRequestModel"/> and sets the default values.
         /// </summary>
@@ -37,7 +52,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmUsageCalculatorPublicRequestModel CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmUsageCalculatorPublicRequestModel();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmUsageCalculatorPublicRequestModel(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -64,6 +79,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteIntValue("prompt_length", PromptLength);
             writer.WriteBoolValue("rag_enabled", RagEnabled);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmServiceTier>("service_tier", ServiceTier);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

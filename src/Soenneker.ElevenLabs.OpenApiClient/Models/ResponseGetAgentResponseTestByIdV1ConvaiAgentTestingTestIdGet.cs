@@ -8,34 +8,39 @@ using System;
 namespace Soenneker.ElevenLabs.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.GetResponseUnitTestResponseModel"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.GetSimulationTestResponseModel"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.GetToolCallUnitTestResponseModel"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ResponseGetAgentResponseTestByIdV1ConvaiAgentTestingTestIdGetOneOf1"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ResponseGetAgentResponseTestByIdV1ConvaiAgentTestingTestIdGetOneOf2"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ResponseGetAgentResponseTestByIdV1ConvaiAgentTestingTestIdGetOneOf3"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ResponseGetAgentResponseTestByIdV1ConvaiAgentTestingTestIdGet : IComposedTypeWrapper, IParsable
-    {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.GetResponseUnitTestResponseModel"/></summary>
+    , global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder {
+        // Preserve ambiguous union payloads without inventing a discriminator.
+        /// <summary>The complete payload when no unique typed union branch can be selected.</summary>
+        public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode UnrecognizedValue { get; set; } = null!;
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalData { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ResponseGetAgentResponseTestByIdV1ConvaiAgentTestingTestIdGetOneOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetResponseUnitTestResponseModel? GetResponseUnitTestResponseModel { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ResponseGetAgentResponseTestByIdV1ConvaiAgentTestingTestIdGetOneOf1? ResponseGetAgentResponseTestByIdV1ConvaiAgentTestingTestIdGetOneOf1 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetResponseUnitTestResponseModel GetResponseUnitTestResponseModel { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ResponseGetAgentResponseTestByIdV1ConvaiAgentTestingTestIdGetOneOf1 ResponseGetAgentResponseTestByIdV1ConvaiAgentTestingTestIdGetOneOf1 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.GetSimulationTestResponseModel"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ResponseGetAgentResponseTestByIdV1ConvaiAgentTestingTestIdGetOneOf2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetSimulationTestResponseModel? GetSimulationTestResponseModel { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ResponseGetAgentResponseTestByIdV1ConvaiAgentTestingTestIdGetOneOf2? ResponseGetAgentResponseTestByIdV1ConvaiAgentTestingTestIdGetOneOf2 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetSimulationTestResponseModel GetSimulationTestResponseModel { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ResponseGetAgentResponseTestByIdV1ConvaiAgentTestingTestIdGetOneOf2 ResponseGetAgentResponseTestByIdV1ConvaiAgentTestingTestIdGetOneOf2 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.GetToolCallUnitTestResponseModel"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ResponseGetAgentResponseTestByIdV1ConvaiAgentTestingTestIdGetOneOf3"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetToolCallUnitTestResponseModel? GetToolCallUnitTestResponseModel { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ResponseGetAgentResponseTestByIdV1ConvaiAgentTestingTestIdGetOneOf3? ResponseGetAgentResponseTestByIdV1ConvaiAgentTestingTestIdGetOneOf3 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetToolCallUnitTestResponseModel GetToolCallUnitTestResponseModel { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ResponseGetAgentResponseTestByIdV1ConvaiAgentTestingTestIdGetOneOf3 ResponseGetAgentResponseTestByIdV1ConvaiAgentTestingTestIdGetOneOf3 { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -45,21 +50,30 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.ResponseGetAgentResponseTestByIdV1ConvaiAgentTestingTestIdGet CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
             var result = new global::Soenneker.ElevenLabs.OpenApiClient.Models.ResponseGetAgentResponseTestByIdV1ConvaiAgentTestingTestIdGet();
-            if("llm".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("ResponseGetAgentResponseTestByIdV1ConvaiAgentTestingTestIdGetOneOf1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.GetResponseUnitTestResponseModel = new global::Soenneker.ElevenLabs.OpenApiClient.Models.GetResponseUnitTestResponseModel();
+                
             }
-            else if("simulation".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("ResponseGetAgentResponseTestByIdV1ConvaiAgentTestingTestIdGetOneOf2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.GetSimulationTestResponseModel = new global::Soenneker.ElevenLabs.OpenApiClient.Models.GetSimulationTestResponseModel();
+                
             }
-            else if("tool".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("ResponseGetAgentResponseTestByIdV1ConvaiAgentTestingTestIdGetOneOf3".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.GetToolCallUnitTestResponseModel = new global::Soenneker.ElevenLabs.OpenApiClient.Models.GetToolCallUnitTestResponseModel();
+                
             }
-            return result;
+            
+            var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
+            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("id") != null && parseNode.GetChildNode("name") != null && parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag3 && ("llm".Equals(tag3.GetValue(), global::System.StringComparison.Ordinal)))))();
+            bool matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("id") != null && parseNode.GetChildNode("name") != null && parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag3 && ("tool".Equals(tag3.GetValue(), global::System.StringComparison.Ordinal)))))();
+            bool matchesUnionBranch2 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("id") != null && parseNode.GetChildNode("name") != null && parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag3 && ("simulation".Equals(tag3.GetValue(), global::System.StringComparison.Ordinal)))))();
+            if (result.ResponseGetAgentResponseTestByIdV1ConvaiAgentTestingTestIdGetOneOf1 == null && result.ResponseGetAgentResponseTestByIdV1ConvaiAgentTestingTestIdGetOneOf2 == null && result.ResponseGetAgentResponseTestByIdV1ConvaiAgentTestingTestIdGetOneOf3 == null && matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2) result.ResponseGetAgentResponseTestByIdV1ConvaiAgentTestingTestIdGetOneOf1 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.ResponseGetAgentResponseTestByIdV1ConvaiAgentTestingTestIdGetOneOf1(), parseNode);
+            if (result.ResponseGetAgentResponseTestByIdV1ConvaiAgentTestingTestIdGetOneOf1 == null && result.ResponseGetAgentResponseTestByIdV1ConvaiAgentTestingTestIdGetOneOf2 == null && result.ResponseGetAgentResponseTestByIdV1ConvaiAgentTestingTestIdGetOneOf3 == null && matchesUnionBranch1 && !matchesUnionBranch0 && !matchesUnionBranch2) result.ResponseGetAgentResponseTestByIdV1ConvaiAgentTestingTestIdGetOneOf2 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.ResponseGetAgentResponseTestByIdV1ConvaiAgentTestingTestIdGetOneOf2(), parseNode);
+            if (result.ResponseGetAgentResponseTestByIdV1ConvaiAgentTestingTestIdGetOneOf1 == null && result.ResponseGetAgentResponseTestByIdV1ConvaiAgentTestingTestIdGetOneOf2 == null && result.ResponseGetAgentResponseTestByIdV1ConvaiAgentTestingTestIdGetOneOf3 == null && matchesUnionBranch2 && !matchesUnionBranch0 && !matchesUnionBranch1) result.ResponseGetAgentResponseTestByIdV1ConvaiAgentTestingTestIdGetOneOf3 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.ResponseGetAgentResponseTestByIdV1ConvaiAgentTestingTestIdGetOneOf3(), parseNode);
+            if (result.ResponseGetAgentResponseTestByIdV1ConvaiAgentTestingTestIdGetOneOf1 == null && result.ResponseGetAgentResponseTestByIdV1ConvaiAgentTestingTestIdGetOneOf2 == null && result.ResponseGetAgentResponseTestByIdV1ConvaiAgentTestingTestIdGetOneOf3 == null) result.UnrecognizedValue = unionPayload;
+return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -67,17 +81,17 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(GetResponseUnitTestResponseModel != null)
+            if(ResponseGetAgentResponseTestByIdV1ConvaiAgentTestingTestIdGetOneOf1 != null)
             {
-                return GetResponseUnitTestResponseModel.GetFieldDeserializers();
+                return ResponseGetAgentResponseTestByIdV1ConvaiAgentTestingTestIdGetOneOf1.GetFieldDeserializers();
             }
-            else if(GetSimulationTestResponseModel != null)
+            else if(ResponseGetAgentResponseTestByIdV1ConvaiAgentTestingTestIdGetOneOf2 != null)
             {
-                return GetSimulationTestResponseModel.GetFieldDeserializers();
+                return ResponseGetAgentResponseTestByIdV1ConvaiAgentTestingTestIdGetOneOf2.GetFieldDeserializers();
             }
-            else if(GetToolCallUnitTestResponseModel != null)
+            else if(ResponseGetAgentResponseTestByIdV1ConvaiAgentTestingTestIdGetOneOf3 != null)
             {
-                return GetToolCallUnitTestResponseModel.GetFieldDeserializers();
+                return ResponseGetAgentResponseTestByIdV1ConvaiAgentTestingTestIdGetOneOf3.GetFieldDeserializers();
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -87,18 +101,27 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
+            if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
+            if (ResponseGetAgentResponseTestByIdV1ConvaiAgentTestingTestIdGetOneOf1 == null && ResponseGetAgentResponseTestByIdV1ConvaiAgentTestingTestIdGetOneOf2 == null && ResponseGetAgentResponseTestByIdV1ConvaiAgentTestingTestIdGetOneOf3 == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
+            if (ResponseGetAgentResponseTestByIdV1ConvaiAgentTestingTestIdGetOneOf1 != null && ResponseGetAgentResponseTestByIdV1ConvaiAgentTestingTestIdGetOneOf2 == null && ResponseGetAgentResponseTestByIdV1ConvaiAgentTestingTestIdGetOneOf3 == null) { if (ResponseGetAgentResponseTestByIdV1ConvaiAgentTestingTestIdGetOneOf1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, ResponseGetAgentResponseTestByIdV1ConvaiAgentTestingTestIdGetOneOf1); return; }
+            if (ResponseGetAgentResponseTestByIdV1ConvaiAgentTestingTestIdGetOneOf2 != null && ResponseGetAgentResponseTestByIdV1ConvaiAgentTestingTestIdGetOneOf1 == null && ResponseGetAgentResponseTestByIdV1ConvaiAgentTestingTestIdGetOneOf3 == null) { if (ResponseGetAgentResponseTestByIdV1ConvaiAgentTestingTestIdGetOneOf2 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, ResponseGetAgentResponseTestByIdV1ConvaiAgentTestingTestIdGetOneOf2); return; }
+            if (ResponseGetAgentResponseTestByIdV1ConvaiAgentTestingTestIdGetOneOf3 != null && ResponseGetAgentResponseTestByIdV1ConvaiAgentTestingTestIdGetOneOf1 == null && ResponseGetAgentResponseTestByIdV1ConvaiAgentTestingTestIdGetOneOf2 == null) { if (ResponseGetAgentResponseTestByIdV1ConvaiAgentTestingTestIdGetOneOf3 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, ResponseGetAgentResponseTestByIdV1ConvaiAgentTestingTestIdGetOneOf3); return; }
+
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(GetResponseUnitTestResponseModel != null)
+            if(ResponseGetAgentResponseTestByIdV1ConvaiAgentTestingTestIdGetOneOf1 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetResponseUnitTestResponseModel>(null, GetResponseUnitTestResponseModel);
+                if (ResponseGetAgentResponseTestByIdV1ConvaiAgentTestingTestIdGetOneOf1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ResponseGetAgentResponseTestByIdV1ConvaiAgentTestingTestIdGetOneOf1>(null, ResponseGetAgentResponseTestByIdV1ConvaiAgentTestingTestIdGetOneOf1);
             }
-            else if(GetSimulationTestResponseModel != null)
+            else if(ResponseGetAgentResponseTestByIdV1ConvaiAgentTestingTestIdGetOneOf2 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetSimulationTestResponseModel>(null, GetSimulationTestResponseModel);
+                if (ResponseGetAgentResponseTestByIdV1ConvaiAgentTestingTestIdGetOneOf2 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ResponseGetAgentResponseTestByIdV1ConvaiAgentTestingTestIdGetOneOf2>(null, ResponseGetAgentResponseTestByIdV1ConvaiAgentTestingTestIdGetOneOf2);
             }
-            else if(GetToolCallUnitTestResponseModel != null)
+            else if(ResponseGetAgentResponseTestByIdV1ConvaiAgentTestingTestIdGetOneOf3 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetToolCallUnitTestResponseModel>(null, GetToolCallUnitTestResponseModel);
+                if (ResponseGetAgentResponseTestByIdV1ConvaiAgentTestingTestIdGetOneOf3 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ResponseGetAgentResponseTestByIdV1ConvaiAgentTestingTestIdGetOneOf3>(null, ResponseGetAgentResponseTestByIdV1ConvaiAgentTestingTestIdGetOneOf3);
             }
         }
     }

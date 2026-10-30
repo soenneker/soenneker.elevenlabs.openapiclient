@@ -12,15 +12,28 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class DtmfInputConfig : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("dtmf_input_timeout") is { } nullNodeDtmfInputTimeout && nullNodeDtmfInputTimeout.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DtmfInputTimeout = null;
+            if (parseNode.GetChildNode("hash_terminator") is { } nullNodeHashTerminator && nullNodeHashTerminator.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HashTerminator = null;
+            if (parseNode.GetChildNode("redact_input") is { } nullNodeRedactInput && nullNodeRedactInput.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RedactInput = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Timeout in seconds to wait for additional DTMF digits</summary>
-        public double? DtmfInputTimeout { get; set; }
+        public double? DtmfInputTimeout { get => _explicitNullValueDtmfInputTimeout; set { _explicitNullValueDtmfInputTimeout = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dtmf_input_timeout"); else _explicitNullProperties?.Remove("dtmf_input_timeout"); } }
+        private double? _explicitNullValueDtmfInputTimeout = default!;
         /// <summary>If true, pressing # immediately completes DTMF input</summary>
-        public bool? HashTerminator { get; set; }
+        public bool? HashTerminator { get => _explicitNullValueHashTerminator; set { _explicitNullValueHashTerminator = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hash_terminator"); else _explicitNullProperties?.Remove("hash_terminator"); } }
+        private bool? _explicitNullValueHashTerminator = default!;
         /// <summary>If true, replace the caller&apos;s DTMF (keypad) entries with a redaction marker in the transcript, conversation log and analysis. Digits the agent repeats back or passes to a tool are not affected.</summary>
-        public bool? RedactInput { get; set; }
+        public bool? RedactInput { get => _explicitNullValueRedactInput; set { _explicitNullValueRedactInput = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("redact_input"); else _explicitNullProperties?.Remove("redact_input"); } }
+        private bool? _explicitNullValueRedactInput = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.DtmfInputConfig"/> and sets the default values.
         /// </summary>
@@ -39,7 +52,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.DtmfInputConfig CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.DtmfInputConfig();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.DtmfInputConfig(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -64,6 +77,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteDoubleValue("dtmf_input_timeout", DtmfInputTimeout);
             writer.WriteBoolValue("hash_terminator", HashTerminator);
             writer.WriteBoolValue("redact_input", RedactInput);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

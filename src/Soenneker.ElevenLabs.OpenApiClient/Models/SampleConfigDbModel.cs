@@ -11,29 +11,46 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class SampleConfigDbModel : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("chapter_ids") is { } nullNodeChapterIds && nullNodeChapterIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ChapterIds = null;
+            if (parseNode.GetChildNode("is_sample") is { } nullNodeIsSample && nullNodeIsSample.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsSample = null;
+            if (parseNode.GetChildNode("parent_id") is { } nullNodeParentId && nullNodeParentId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ParentId = null;
+            if (parseNode.GetChildNode("parent_type") is { } nullNodeParentType && nullNodeParentType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ParentType = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The chapter_ids property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? ChapterIds { get; set; }
+        public List<string>? ChapterIds { get => _explicitNullValueChapterIds; set { _explicitNullValueChapterIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("chapter_ids"); else _explicitNullProperties?.Remove("chapter_ids"); } }
+        private List<string>? _explicitNullValueChapterIds = default!;
 #nullable restore
 #else
-        public List<string> ChapterIds { get; set; }
+        public List<string> ChapterIds { get => _explicitNullValueChapterIds; set { _explicitNullValueChapterIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("chapter_ids"); else _explicitNullProperties?.Remove("chapter_ids"); } }
+        private List<string> _explicitNullValueChapterIds = default!;
 #endif
         /// <summary>The is_sample property</summary>
-        public bool? IsSample { get; set; }
+        public bool? IsSample { get => _explicitNullValueIsSample; set { _explicitNullValueIsSample = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_sample"); else _explicitNullProperties?.Remove("is_sample"); } }
+        private bool? _explicitNullValueIsSample = default!;
         /// <summary>The parent_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ParentId { get; set; }
+        public string? ParentId { get => _explicitNullValueParentId; set { _explicitNullValueParentId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("parent_id"); else _explicitNullProperties?.Remove("parent_id"); } }
+        private string? _explicitNullValueParentId = default!;
 #nullable restore
 #else
-        public string ParentId { get; set; }
+        public string ParentId { get => _explicitNullValueParentId; set { _explicitNullValueParentId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("parent_id"); else _explicitNullProperties?.Remove("parent_id"); } }
+        private string _explicitNullValueParentId = default!;
 #endif
         /// <summary>The parent_type property</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SampleConfigDbModelParentType? ParentType { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SampleConfigDbModelParentType? ParentType { get => _explicitNullValueParentType; set { _explicitNullValueParentType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("parent_type"); else _explicitNullProperties?.Remove("parent_type"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.SampleConfigDbModelParentType? _explicitNullValueParentType = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.SampleConfigDbModel"/> and sets the default values.
         /// </summary>
@@ -50,7 +67,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.SampleConfigDbModel CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.SampleConfigDbModel();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.SampleConfigDbModel(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -77,6 +94,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteBoolValue("is_sample", IsSample);
             writer.WriteStringValue("parent_id", ParentId);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SampleConfigDbModelParentType>("parent_type", ParentType);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

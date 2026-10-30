@@ -12,69 +12,101 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class LiteralJsonSchemaProperty : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("allowed_values") is { } nullNodeAllowedValues && nullNodeAllowedValues.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AllowedValues = null;
+            if (parseNode.GetChildNode("allowed_values_dynamic_variable") is { } nullNodeAllowedValuesDynamicVariable && nullNodeAllowedValuesDynamicVariable.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AllowedValuesDynamicVariable = null;
+            if (parseNode.GetChildNode("constant_value") is { } nullNodeConstantValue && nullNodeConstantValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConstantValue = null;
+            if (parseNode.GetChildNode("description") is { } nullNodeDescription && nullNodeDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Description = null;
+            if (parseNode.GetChildNode("dynamic_variable") is { } nullNodeDynamicVariable && nullNodeDynamicVariable.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DynamicVariable = null;
+            if (parseNode.GetChildNode("enum") is { } nullNodeEnum && nullNodeEnum.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Enum = null;
+            if (parseNode.GetChildNode("is_omitted") is { } nullNodeIsOmitted && nullNodeIsOmitted.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsOmitted = null;
+            if (parseNode.GetChildNode("is_system_provided") is { } nullNodeIsSystemProvided && nullNodeIsSystemProvided.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsSystemProvided = null;
+            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Server-side rejection guard for an LLM-provided value: the runtime rejects any value outside the permitted set this object names, and the set is not advertised to the LLM as an enum. Only supported when the value source is `description`; combining it with dynamic_variable, is_system_provided, constant_value, or is_omitted is rejected.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AllowedValues? AllowedValues { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AllowedValues? AllowedValues { get => _explicitNullValueAllowedValues; set { _explicitNullValueAllowedValues = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allowed_values"); else _explicitNullProperties?.Remove("allowed_values"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.AllowedValues? _explicitNullValueAllowedValues = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AllowedValues AllowedValues { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AllowedValues AllowedValues { get => _explicitNullValueAllowedValues; set { _explicitNullValueAllowedValues = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allowed_values"); else _explicitNullProperties?.Remove("allowed_values"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.AllowedValues _explicitNullValueAllowedValues = default!;
 #endif
         /// <summary>DEPRECATED: use `allowed_values` instead. When set, the LLM provides the value but the runtime rejects any value not present in the list held by this dynamic variable (must be a JSON array such as [&quot;ws_alpha&quot;, &quot;ws_beta&quot;]). Use to let the LLM pick from a server-verified set (e.g. the IDs the current user is allowed to access). Requires description; mutually exclusive with dynamic_variable, is_system_provided, constant_value, and is_omitted.</summary>
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AllowedValuesDynamicVariable { get; set; }
+        public string? AllowedValuesDynamicVariable { get => _explicitNullValueAllowedValuesDynamicVariable; set { _explicitNullValueAllowedValuesDynamicVariable = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allowed_values_dynamic_variable"); else _explicitNullProperties?.Remove("allowed_values_dynamic_variable"); } }
+        private string? _explicitNullValueAllowedValuesDynamicVariable = default!;
 #nullable restore
 #else
-        public string AllowedValuesDynamicVariable { get; set; }
+        public string AllowedValuesDynamicVariable { get => _explicitNullValueAllowedValuesDynamicVariable; set { _explicitNullValueAllowedValuesDynamicVariable = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allowed_values_dynamic_variable"); else _explicitNullProperties?.Remove("allowed_values_dynamic_variable"); } }
+        private string _explicitNullValueAllowedValuesDynamicVariable = default!;
 #endif
         /// <summary>A constant value to use for this property. Mutually exclusive with description, dynamic_variable, is_system_provided, and is_omitted.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.LiteralJsonSchemaPropertyConstantValue? ConstantValue { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.LiteralJsonSchemaPropertyConstantValue? ConstantValue { get => _explicitNullValueConstantValue; set { _explicitNullValueConstantValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("constant_value"); else _explicitNullProperties?.Remove("constant_value"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.LiteralJsonSchemaPropertyConstantValue? _explicitNullValueConstantValue = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.LiteralJsonSchemaPropertyConstantValue ConstantValue { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.LiteralJsonSchemaPropertyConstantValue ConstantValue { get => _explicitNullValueConstantValue; set { _explicitNullValueConstantValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("constant_value"); else _explicitNullProperties?.Remove("constant_value"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.LiteralJsonSchemaPropertyConstantValue _explicitNullValueConstantValue = default!;
 #endif
         /// <summary>The description of the property. When set, the LLM will provide the value based on this description. Mutually exclusive with dynamic_variable, is_system_provided, constant_value, and is_omitted.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description { get; set; }
+        public string? Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        private string? _explicitNullValueDescription = default!;
 #nullable restore
 #else
-        public string Description { get; set; }
+        public string Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        private string _explicitNullValueDescription = default!;
 #endif
         /// <summary>The name of the dynamic variable to use for this property&apos;s value. Mutually exclusive with description, is_system_provided, constant_value, and is_omitted.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DynamicVariable { get; set; }
+        public string? DynamicVariable { get => _explicitNullValueDynamicVariable; set { _explicitNullValueDynamicVariable = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dynamic_variable"); else _explicitNullProperties?.Remove("dynamic_variable"); } }
+        private string? _explicitNullValueDynamicVariable = default!;
 #nullable restore
 #else
-        public string DynamicVariable { get; set; }
+        public string DynamicVariable { get => _explicitNullValueDynamicVariable; set { _explicitNullValueDynamicVariable = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dynamic_variable"); else _explicitNullProperties?.Remove("dynamic_variable"); } }
+        private string _explicitNullValueDynamicVariable = default!;
 #endif
         /// <summary>List of allowed string values for string type parameters</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Enum { get; set; }
+        public List<string>? Enum { get => _explicitNullValueEnum; set { _explicitNullValueEnum = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enum"); else _explicitNullProperties?.Remove("enum"); } }
+        private List<string>? _explicitNullValueEnum = default!;
 #nullable restore
 #else
-        public List<string> Enum { get; set; }
+        public List<string> Enum { get => _explicitNullValueEnum; set { _explicitNullValueEnum = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enum"); else _explicitNullProperties?.Remove("enum"); } }
+        private List<string> _explicitNullValueEnum = default!;
 #endif
         /// <summary>If true, this parameter will be completely omitted from the request. Only valid for optional parameters. Mutually exclusive with description, dynamic_variable, is_system_provided, and constant_value.</summary>
-        public bool? IsOmitted { get; set; }
+        public bool? IsOmitted { get => _explicitNullValueIsOmitted; set { _explicitNullValueIsOmitted = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_omitted"); else _explicitNullProperties?.Remove("is_omitted"); } }
+        private bool? _explicitNullValueIsOmitted = default!;
         /// <summary>If true, the value will be populated by the system at runtime. Used by API Integration Webhook tools for templating. Mutually exclusive with description, dynamic_variable, constant_value, and is_omitted.</summary>
-        public bool? IsSystemProvided { get; set; }
+        public bool? IsSystemProvided { get => _explicitNullValueIsSystemProvided; set { _explicitNullValueIsSystemProvided = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_system_provided"); else _explicitNullProperties?.Remove("is_system_provided"); } }
+        private bool? _explicitNullValueIsSystemProvided = default!;
         /// <summary>The type property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.LiteralJsonSchemaPropertyType? Type { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.LiteralJsonSchemaPropertyType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.LiteralJsonSchemaPropertyType? _explicitNullValueType = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.LiteralJsonSchemaPropertyType Type { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.LiteralJsonSchemaPropertyType Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.LiteralJsonSchemaPropertyType _explicitNullValueType = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.LiteralJsonSchemaProperty"/> and sets the default values.
@@ -93,7 +125,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.LiteralJsonSchemaProperty CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.LiteralJsonSchemaProperty();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.LiteralJsonSchemaProperty(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -130,6 +162,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteBoolValue("is_omitted", IsOmitted);
             writer.WriteBoolValue("is_system_provided", IsSystemProvided);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.LiteralJsonSchemaPropertyType>("type", Type);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

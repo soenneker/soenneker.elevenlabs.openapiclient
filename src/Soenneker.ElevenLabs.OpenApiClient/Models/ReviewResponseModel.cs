@@ -11,52 +11,78 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ReviewResponseModel : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("explanation") is { } nullNodeExplanation && nullNodeExplanation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Explanation = null;
+            if (parseNode.GetChildNode("rejected_details") is { } nullNodeRejectedDetails && nullNodeRejectedDetails.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RejectedDetails = null;
+            if (parseNode.GetChildNode("reject_reasons") is { } nullNodeRejectReasons && nullNodeRejectReasons.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RejectReasons = null;
+            if (parseNode.GetChildNode("reviewed_at_unix") is { } nullNodeReviewedAtUnix && nullNodeReviewedAtUnix.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReviewedAtUnix = null;
+            if (parseNode.GetChildNode("reviewed_by") is { } nullNodeReviewedBy && nullNodeReviewedBy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReviewedBy = null;
+            if (parseNode.GetChildNode("review_status") is { } nullNodeReviewStatus && nullNodeReviewStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReviewStatus = null;
+            if (parseNode.GetChildNode("scores_breakdown") is { } nullNodeScoresBreakdown && nullNodeScoresBreakdown.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ScoresBreakdown = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The explanation property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Explanation { get; set; }
+        public string? Explanation { get => _explicitNullValueExplanation; set { _explicitNullValueExplanation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("explanation"); else _explicitNullProperties?.Remove("explanation"); } }
+        private string? _explicitNullValueExplanation = default!;
 #nullable restore
 #else
-        public string Explanation { get; set; }
+        public string Explanation { get => _explicitNullValueExplanation; set { _explicitNullValueExplanation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("explanation"); else _explicitNullProperties?.Remove("explanation"); } }
+        private string _explicitNullValueExplanation = default!;
 #endif
         /// <summary>The rejected_details property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RejectedDetails { get; set; }
+        public string? RejectedDetails { get => _explicitNullValueRejectedDetails; set { _explicitNullValueRejectedDetails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rejected_details"); else _explicitNullProperties?.Remove("rejected_details"); } }
+        private string? _explicitNullValueRejectedDetails = default!;
 #nullable restore
 #else
-        public string RejectedDetails { get; set; }
+        public string RejectedDetails { get => _explicitNullValueRejectedDetails; set { _explicitNullValueRejectedDetails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rejected_details"); else _explicitNullProperties?.Remove("rejected_details"); } }
+        private string _explicitNullValueRejectedDetails = default!;
 #endif
         /// <summary>The reject_reasons property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ReviewResponseModelRejectReasonsItem?>? RejectReasons { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ReviewResponseModelRejectReasonsItem?>? RejectReasons { get => _explicitNullValueRejectReasons; set { _explicitNullValueRejectReasons = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reject_reasons"); else _explicitNullProperties?.Remove("reject_reasons"); } }
+        private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ReviewResponseModelRejectReasonsItem?>? _explicitNullValueRejectReasons = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ReviewResponseModelRejectReasonsItem?> RejectReasons { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ReviewResponseModelRejectReasonsItem?> RejectReasons { get => _explicitNullValueRejectReasons; set { _explicitNullValueRejectReasons = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reject_reasons"); else _explicitNullProperties?.Remove("reject_reasons"); } }
+        private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ReviewResponseModelRejectReasonsItem?> _explicitNullValueRejectReasons = default!;
 #endif
         /// <summary>The reviewed_at_unix property</summary>
-        public int? ReviewedAtUnix { get; set; }
+        public int? ReviewedAtUnix { get => _explicitNullValueReviewedAtUnix; set { _explicitNullValueReviewedAtUnix = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reviewed_at_unix"); else _explicitNullProperties?.Remove("reviewed_at_unix"); } }
+        private int? _explicitNullValueReviewedAtUnix = default!;
         /// <summary>The reviewed_by property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ReviewedBy { get; set; }
+        public string? ReviewedBy { get => _explicitNullValueReviewedBy; set { _explicitNullValueReviewedBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reviewed_by"); else _explicitNullProperties?.Remove("reviewed_by"); } }
+        private string? _explicitNullValueReviewedBy = default!;
 #nullable restore
 #else
-        public string ReviewedBy { get; set; }
+        public string ReviewedBy { get => _explicitNullValueReviewedBy; set { _explicitNullValueReviewedBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reviewed_by"); else _explicitNullProperties?.Remove("reviewed_by"); } }
+        private string _explicitNullValueReviewedBy = default!;
 #endif
         /// <summary>The review_status property</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ReviewResponseModelReviewStatus? ReviewStatus { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ReviewResponseModelReviewStatus? ReviewStatus { get => _explicitNullValueReviewStatus; set { _explicitNullValueReviewStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("review_status"); else _explicitNullProperties?.Remove("review_status"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ReviewResponseModelReviewStatus? _explicitNullValueReviewStatus = default!;
         /// <summary>The scores_breakdown property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ReviewResponseModelScoresBreakdownProperty? ScoresBreakdown { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ReviewResponseModelScoresBreakdownProperty? ScoresBreakdown { get => _explicitNullValueScoresBreakdown; set { _explicitNullValueScoresBreakdown = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scores_breakdown"); else _explicitNullProperties?.Remove("scores_breakdown"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ReviewResponseModelScoresBreakdownProperty? _explicitNullValueScoresBreakdown = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ReviewResponseModelScoresBreakdownProperty ScoresBreakdown { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ReviewResponseModelScoresBreakdownProperty ScoresBreakdown { get => _explicitNullValueScoresBreakdown; set { _explicitNullValueScoresBreakdown = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scores_breakdown"); else _explicitNullProperties?.Remove("scores_breakdown"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ReviewResponseModelScoresBreakdownProperty _explicitNullValueScoresBreakdown = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ReviewResponseModel"/> and sets the default values.
@@ -73,7 +99,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.ReviewResponseModel CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.ReviewResponseModel();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.ReviewResponseModel(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -106,6 +132,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteStringValue("reviewed_by", ReviewedBy);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ReviewResponseModelReviewStatus>("review_status", ReviewStatus);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ReviewResponseModelScoresBreakdownProperty>("scores_breakdown", ScoresBreakdown);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

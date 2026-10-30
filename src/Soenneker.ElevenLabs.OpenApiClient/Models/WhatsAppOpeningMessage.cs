@@ -12,52 +12,83 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WhatsAppOpeningMessage : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("billable") is { } nullNodeBillable && nullNodeBillable.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Billable = null;
+            if (parseNode.GetChildNode("delivered_at_unix") is { } nullNodeDeliveredAtUnix && nullNodeDeliveredAtUnix.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeliveredAtUnix = null;
+            if (parseNode.GetChildNode("error_code") is { } nullNodeErrorCode && nullNodeErrorCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ErrorCode = null;
+            if (parseNode.GetChildNode("failed_at_unix") is { } nullNodeFailedAtUnix && nullNodeFailedAtUnix.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FailedAtUnix = null;
+            if (parseNode.GetChildNode("pricing_category") is { } nullNodePricingCategory && nullNodePricingCategory.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PricingCategory = null;
+            if (parseNode.GetChildNode("read_at_unix") is { } nullNodeReadAtUnix && nullNodeReadAtUnix.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReadAtUnix = null;
+            if (parseNode.GetChildNode("replied_at_unix") is { } nullNodeRepliedAtUnix && nullNodeRepliedAtUnix.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RepliedAtUnix = null;
+            if (parseNode.GetChildNode("sent_at_unix") is { } nullNodeSentAtUnix && nullNodeSentAtUnix.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SentAtUnix = null;
+            if (parseNode.GetChildNode("template_name") is { } nullNodeTemplateName && nullNodeTemplateName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TemplateName = null;
+            if (parseNode.GetChildNode("wamid") is { } nullNodeWamid && nullNodeWamid.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Wamid = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The billable property</summary>
-        public bool? Billable { get; set; }
+        public bool? Billable { get => _explicitNullValueBillable; set { _explicitNullValueBillable = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("billable"); else _explicitNullProperties?.Remove("billable"); } }
+        private bool? _explicitNullValueBillable = default!;
         /// <summary>The delivered_at_unix property</summary>
-        public int? DeliveredAtUnix { get; set; }
+        public int? DeliveredAtUnix { get => _explicitNullValueDeliveredAtUnix; set { _explicitNullValueDeliveredAtUnix = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("delivered_at_unix"); else _explicitNullProperties?.Remove("delivered_at_unix"); } }
+        private int? _explicitNullValueDeliveredAtUnix = default!;
         /// <summary>The error_code property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ErrorCode { get; set; }
+        public string? ErrorCode { get => _explicitNullValueErrorCode; set { _explicitNullValueErrorCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("error_code"); else _explicitNullProperties?.Remove("error_code"); } }
+        private string? _explicitNullValueErrorCode = default!;
 #nullable restore
 #else
-        public string ErrorCode { get; set; }
+        public string ErrorCode { get => _explicitNullValueErrorCode; set { _explicitNullValueErrorCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("error_code"); else _explicitNullProperties?.Remove("error_code"); } }
+        private string _explicitNullValueErrorCode = default!;
 #endif
         /// <summary>The failed_at_unix property</summary>
-        public int? FailedAtUnix { get; set; }
+        public int? FailedAtUnix { get => _explicitNullValueFailedAtUnix; set { _explicitNullValueFailedAtUnix = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("failed_at_unix"); else _explicitNullProperties?.Remove("failed_at_unix"); } }
+        private int? _explicitNullValueFailedAtUnix = default!;
         /// <summary>The pricing_category property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PricingCategory { get; set; }
+        public string? PricingCategory { get => _explicitNullValuePricingCategory; set { _explicitNullValuePricingCategory = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pricing_category"); else _explicitNullProperties?.Remove("pricing_category"); } }
+        private string? _explicitNullValuePricingCategory = default!;
 #nullable restore
 #else
-        public string PricingCategory { get; set; }
+        public string PricingCategory { get => _explicitNullValuePricingCategory; set { _explicitNullValuePricingCategory = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pricing_category"); else _explicitNullProperties?.Remove("pricing_category"); } }
+        private string _explicitNullValuePricingCategory = default!;
 #endif
         /// <summary>The read_at_unix property</summary>
-        public int? ReadAtUnix { get; set; }
+        public int? ReadAtUnix { get => _explicitNullValueReadAtUnix; set { _explicitNullValueReadAtUnix = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("read_at_unix"); else _explicitNullProperties?.Remove("read_at_unix"); } }
+        private int? _explicitNullValueReadAtUnix = default!;
         /// <summary>The replied_at_unix property</summary>
-        public int? RepliedAtUnix { get; set; }
+        public int? RepliedAtUnix { get => _explicitNullValueRepliedAtUnix; set { _explicitNullValueRepliedAtUnix = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("replied_at_unix"); else _explicitNullProperties?.Remove("replied_at_unix"); } }
+        private int? _explicitNullValueRepliedAtUnix = default!;
         /// <summary>The sent_at_unix property</summary>
-        public int? SentAtUnix { get; set; }
+        public int? SentAtUnix { get => _explicitNullValueSentAtUnix; set { _explicitNullValueSentAtUnix = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sent_at_unix"); else _explicitNullProperties?.Remove("sent_at_unix"); } }
+        private int? _explicitNullValueSentAtUnix = default!;
         /// <summary>The template_name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TemplateName { get; set; }
+        public string? TemplateName { get => _explicitNullValueTemplateName; set { _explicitNullValueTemplateName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("template_name"); else _explicitNullProperties?.Remove("template_name"); } }
+        private string? _explicitNullValueTemplateName = default!;
 #nullable restore
 #else
-        public string TemplateName { get; set; }
+        public string TemplateName { get => _explicitNullValueTemplateName; set { _explicitNullValueTemplateName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("template_name"); else _explicitNullProperties?.Remove("template_name"); } }
+        private string _explicitNullValueTemplateName = default!;
 #endif
         /// <summary>The wamid property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Wamid { get; set; }
+        public string? Wamid { get => _explicitNullValueWamid; set { _explicitNullValueWamid = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("wamid"); else _explicitNullProperties?.Remove("wamid"); } }
+        private string? _explicitNullValueWamid = default!;
 #nullable restore
 #else
-        public string Wamid { get; set; }
+        public string Wamid { get => _explicitNullValueWamid; set { _explicitNullValueWamid = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("wamid"); else _explicitNullProperties?.Remove("wamid"); } }
+        private string _explicitNullValueWamid = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppOpeningMessage"/> and sets the default values.
@@ -74,7 +105,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppOpeningMessage CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppOpeningMessage();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppOpeningMessage(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -113,6 +144,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteIntValue("sent_at_unix", SentAtUnix);
             writer.WriteStringValue("template_name", TemplateName);
             writer.WriteStringValue("wamid", Wamid);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

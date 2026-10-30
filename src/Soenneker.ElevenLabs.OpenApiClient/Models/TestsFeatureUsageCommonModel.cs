@@ -11,15 +11,28 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class TestsFeatureUsageCommonModel : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("enabled") is { } nullNodeEnabled && nullNodeEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Enabled = null;
+            if (parseNode.GetChildNode("tests_ran_after_last_modification") is { } nullNodeTestsRanAfterLastModification && nullNodeTestsRanAfterLastModification.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TestsRanAfterLastModification = null;
+            if (parseNode.GetChildNode("tests_ran_in_last_7_days") is { } nullNodeTestsRanInLast7Days && nullNodeTestsRanInLast7Days.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TestsRanInLast7Days = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The enabled property</summary>
-        public bool? Enabled { get; set; }
+        public bool? Enabled { get => _explicitNullValueEnabled; set { _explicitNullValueEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enabled"); else _explicitNullProperties?.Remove("enabled"); } }
+        private bool? _explicitNullValueEnabled = default!;
         /// <summary>The tests_ran_after_last_modification property</summary>
-        public bool? TestsRanAfterLastModification { get; set; }
+        public bool? TestsRanAfterLastModification { get => _explicitNullValueTestsRanAfterLastModification; set { _explicitNullValueTestsRanAfterLastModification = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tests_ran_after_last_modification"); else _explicitNullProperties?.Remove("tests_ran_after_last_modification"); } }
+        private bool? _explicitNullValueTestsRanAfterLastModification = default!;
         /// <summary>The tests_ran_in_last_7_days property</summary>
-        public bool? TestsRanInLast7Days { get; set; }
+        public bool? TestsRanInLast7Days { get => _explicitNullValueTestsRanInLast7Days; set { _explicitNullValueTestsRanInLast7Days = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tests_ran_in_last_7_days"); else _explicitNullProperties?.Remove("tests_ran_in_last_7_days"); } }
+        private bool? _explicitNullValueTestsRanInLast7Days = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.TestsFeatureUsageCommonModel"/> and sets the default values.
         /// </summary>
@@ -38,7 +51,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.TestsFeatureUsageCommonModel CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.TestsFeatureUsageCommonModel();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.TestsFeatureUsageCommonModel(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -63,6 +76,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteBoolValue("enabled", Enabled);
             writer.WriteBoolValue("tests_ran_after_last_modification", TestsRanAfterLastModification);
             writer.WriteBoolValue("tests_ran_in_last_7_days", TestsRanInLast7Days);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

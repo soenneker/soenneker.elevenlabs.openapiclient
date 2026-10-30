@@ -11,120 +11,189 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class SmbUpdateServiceRequestPatch : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("add_ons") is { } nullNodeAddOns && nullNodeAddOns.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AddOns = null;
+            if (parseNode.GetChildNode("advance_booking_minutes") is { } nullNodeAdvanceBookingMinutes && nullNodeAdvanceBookingMinutes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AdvanceBookingMinutes = null;
+            if (parseNode.GetChildNode("any_staff_member") is { } nullNodeAnyStaffMember && nullNodeAnyStaffMember.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AnyStaffMember = null;
+            if (parseNode.GetChildNode("asset_ids") is { } nullNodeAssetIds && nullNodeAssetIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AssetIds = null;
+            if (parseNode.GetChildNode("buffer_minutes") is { } nullNodeBufferMinutes && nullNodeBufferMinutes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BufferMinutes = null;
+            if (parseNode.GetChildNode("capacity") is { } nullNodeCapacity && nullNodeCapacity.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Capacity = null;
+            if (parseNode.GetChildNode("description") is { } nullNodeDescription && nullNodeDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Description = null;
+            if (parseNode.GetChildNode("display_on_booking_page") is { } nullNodeDisplayOnBookingPage && nullNodeDisplayOnBookingPage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DisplayOnBookingPage = null;
+            if (parseNode.GetChildNode("duration_minutes") is { } nullNodeDurationMinutes && nullNodeDurationMinutes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DurationMinutes = null;
+            if (parseNode.GetChildNode("groups") is { } nullNodeGroups && nullNodeGroups.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Groups = null;
+            if (parseNode.GetChildNode("intake_questions") is { } nullNodeIntakeQuestions && nullNodeIntakeQuestions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IntakeQuestions = null;
+            if (parseNode.GetChildNode("is_active") is { } nullNodeIsActive && nullNodeIsActive.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsActive = null;
+            if (parseNode.GetChildNode("kind") is { } nullNodeKind && nullNodeKind.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Kind = null;
+            if (parseNode.GetChildNode("location_ids") is { } nullNodeLocationIds && nullNodeLocationIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LocationIds = null;
+            if (parseNode.GetChildNode("max_participants") is { } nullNodeMaxParticipants && nullNodeMaxParticipants.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxParticipants = null;
+            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("price") is { } nullNodePrice && nullNodePrice.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Price = null;
+            if (parseNode.GetChildNode("pricing_mode") is { } nullNodePricingMode && nullNodePricingMode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PricingMode = null;
+            if (parseNode.GetChildNode("promotions") is { } nullNodePromotions && nullNodePromotions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Promotions = null;
+            if (parseNode.GetChildNode("service_location") is { } nullNodeServiceLocation && nullNodeServiceLocation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ServiceLocation = null;
+            if (parseNode.GetChildNode("staff_ids") is { } nullNodeStaffIds && nullNodeStaffIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StaffIds = null;
+            if (parseNode.GetChildNode("travel_after") is { } nullNodeTravelAfter && nullNodeTravelAfter.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TravelAfter = null;
+            if (parseNode.GetChildNode("travel_before") is { } nullNodeTravelBefore && nullNodeTravelBefore.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TravelBefore = null;
+            if (parseNode.GetChildNode("travel_minutes") is { } nullNodeTravelMinutes && nullNodeTravelMinutes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TravelMinutes = null;
+            if (parseNode.GetChildNode("ungrouped_rank") is { } nullNodeUngroupedRank && nullNodeUngroupedRank.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UngroupedRank = null;
+            if (parseNode.GetChildNode("variants") is { } nullNodeVariants && nullNodeVariants.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Variants = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Optional extras scraped from the website that can be attached to a booking of this service.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbAddOn>? AddOns { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbAddOn>? AddOns { get => _explicitNullValueAddOns; set { _explicitNullValueAddOns = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("add_ons"); else _explicitNullProperties?.Remove("add_ons"); } }
+        private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbAddOn>? _explicitNullValueAddOns = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbAddOn> AddOns { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbAddOn> AddOns { get => _explicitNullValueAddOns; set { _explicitNullValueAddOns = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("add_ons"); else _explicitNullProperties?.Remove("add_ons"); } }
+        private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbAddOn> _explicitNullValueAddOns = default!;
 #endif
         /// <summary>How far into the future customer-facing channels (public booking page, voice agent) may book this service. Applies to every kind.</summary>
-        public int? AdvanceBookingMinutes { get; set; }
+        public int? AdvanceBookingMinutes { get => _explicitNullValueAdvanceBookingMinutes; set { _explicitNullValueAdvanceBookingMinutes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("advance_booking_minutes"); else _explicitNullProperties?.Remove("advance_booking_minutes"); } }
+        private int? _explicitNullValueAdvanceBookingMinutes = default!;
         /// <summary>The any_staff_member property</summary>
-        public bool? AnyStaffMember { get; set; }
+        public bool? AnyStaffMember { get => _explicitNullValueAnyStaffMember; set { _explicitNullValueAnyStaffMember = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("any_staff_member"); else _explicitNullProperties?.Remove("any_staff_member"); } }
+        private bool? _explicitNullValueAnyStaffMember = default!;
         /// <summary>The asset_ids property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? AssetIds { get; set; }
+        public List<string>? AssetIds { get => _explicitNullValueAssetIds; set { _explicitNullValueAssetIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("asset_ids"); else _explicitNullProperties?.Remove("asset_ids"); } }
+        private List<string>? _explicitNullValueAssetIds = default!;
 #nullable restore
 #else
-        public List<string> AssetIds { get; set; }
+        public List<string> AssetIds { get => _explicitNullValueAssetIds; set { _explicitNullValueAssetIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("asset_ids"); else _explicitNullProperties?.Remove("asset_ids"); } }
+        private List<string> _explicitNullValueAssetIds = default!;
 #endif
         /// <summary>Turnover/cleanup time reserved after each booking. Applies to every service kind; default 0 means no buffer.</summary>
-        public int? BufferMinutes { get; set; }
+        public int? BufferMinutes { get => _explicitNullValueBufferMinutes; set { _explicitNullValueBufferMinutes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("buffer_minutes"); else _explicitNullProperties?.Remove("buffer_minutes"); } }
+        private int? _explicitNullValueBufferMinutes = default!;
         /// <summary>The capacity property</summary>
-        public int? Capacity { get; set; }
+        public int? Capacity { get => _explicitNullValueCapacity; set { _explicitNullValueCapacity = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("capacity"); else _explicitNullProperties?.Remove("capacity"); } }
+        private int? _explicitNullValueCapacity = default!;
         /// <summary>The description property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description { get; set; }
+        public string? Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        private string? _explicitNullValueDescription = default!;
 #nullable restore
 #else
-        public string Description { get; set; }
+        public string Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        private string _explicitNullValueDescription = default!;
 #endif
         /// <summary>The display_on_booking_page property</summary>
-        public bool? DisplayOnBookingPage { get; set; }
+        public bool? DisplayOnBookingPage { get => _explicitNullValueDisplayOnBookingPage; set { _explicitNullValueDisplayOnBookingPage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("display_on_booking_page"); else _explicitNullProperties?.Remove("display_on_booking_page"); } }
+        private bool? _explicitNullValueDisplayOnBookingPage = default!;
         /// <summary>Sets the first variant&apos;s duration. Ignored when `variants` is sent.</summary>
-        public int? DurationMinutes { get; set; }
+        public int? DurationMinutes { get => _explicitNullValueDurationMinutes; set { _explicitNullValueDurationMinutes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("duration_minutes"); else _explicitNullProperties?.Remove("duration_minutes"); } }
+        private int? _explicitNullValueDurationMinutes = default!;
         /// <summary>Group memberships for this item. Each entry carries the group label and the item&apos;s 0-based rank within that group.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbGroupMembership>? Groups { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbGroupMembership>? Groups { get => _explicitNullValueGroups; set { _explicitNullValueGroups = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("groups"); else _explicitNullProperties?.Remove("groups"); } }
+        private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbGroupMembership>? _explicitNullValueGroups = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbGroupMembership> Groups { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbGroupMembership> Groups { get => _explicitNullValueGroups; set { _explicitNullValueGroups = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("groups"); else _explicitNullProperties?.Remove("groups"); } }
+        private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbGroupMembership> _explicitNullValueGroups = default!;
 #endif
         /// <summary>Questions the agent asks before booking or ordering this item. Required for a useful ``pricing_mode=&apos;quote&apos;`` item -- without them a quote request arrives with nothing to price -- but also valid on fixed-price items that need extra detail (current hair color before a dye job, allergies before a treatment).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbIntakeQuestion>? IntakeQuestions { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbIntakeQuestion>? IntakeQuestions { get => _explicitNullValueIntakeQuestions; set { _explicitNullValueIntakeQuestions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("intake_questions"); else _explicitNullProperties?.Remove("intake_questions"); } }
+        private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbIntakeQuestion>? _explicitNullValueIntakeQuestions = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbIntakeQuestion> IntakeQuestions { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbIntakeQuestion> IntakeQuestions { get => _explicitNullValueIntakeQuestions; set { _explicitNullValueIntakeQuestions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("intake_questions"); else _explicitNullProperties?.Remove("intake_questions"); } }
+        private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbIntakeQuestion> _explicitNullValueIntakeQuestions = default!;
 #endif
         /// <summary>The is_active property</summary>
-        public bool? IsActive { get; set; }
+        public bool? IsActive { get => _explicitNullValueIsActive; set { _explicitNullValueIsActive = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_active"); else _explicitNullProperties?.Remove("is_active"); } }
+        private bool? _explicitNullValueIsActive = default!;
         /// <summary>Discriminator for the bookable-service shape.- ``CLASSIC``: staff-delivered service (haircut, consultation, massage, ...).- ``RENTAL``: asset-based reservation (court, room, equipment).- ``GROUP``: multi-participant session (class, workshop, tour).</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbServiceKind? Kind { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbServiceKind? Kind { get => _explicitNullValueKind; set { _explicitNullValueKind = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("kind"); else _explicitNullProperties?.Remove("kind"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbServiceKind? _explicitNullValueKind = default!;
         /// <summary>Locations where this service is offered; empty list means all locations.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? LocationIds { get; set; }
+        public List<string>? LocationIds { get => _explicitNullValueLocationIds; set { _explicitNullValueLocationIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("location_ids"); else _explicitNullProperties?.Remove("location_ids"); } }
+        private List<string>? _explicitNullValueLocationIds = default!;
 #nullable restore
 #else
-        public List<string> LocationIds { get; set; }
+        public List<string> LocationIds { get => _explicitNullValueLocationIds; set { _explicitNullValueLocationIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("location_ids"); else _explicitNullProperties?.Remove("location_ids"); } }
+        private List<string> _explicitNullValueLocationIds = default!;
 #endif
         /// <summary>Capacity for ``kind=&apos;group&apos;``: how many seats a single session can sell across all registrations. Must be ``None`` for classic and rental services (those are always exclusive to one client per booking).</summary>
-        public int? MaxParticipants { get; set; }
+        public int? MaxParticipants { get => _explicitNullValueMaxParticipants; set { _explicitNullValueMaxParticipants = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_participants"); else _explicitNullProperties?.Remove("max_participants"); } }
+        private int? _explicitNullValueMaxParticipants = default!;
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get; set; }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string _explicitNullValueName = default!;
 #endif
         /// <summary>Sets the first variant&apos;s price. Ignored when `variants` is sent.</summary>
-        public double? Price { get; set; }
+        public double? Price { get => _explicitNullValuePrice; set { _explicitNullValuePrice = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("price"); else _explicitNullProperties?.Remove("price"); } }
+        private double? _explicitNullValuePrice = default!;
         /// <summary>&apos;fixed&apos; (default): the item has a known price the agent can quote, and customers can book or order it directly. &apos;quote&apos;: the price depends on the job (renovation, catering, custom work), so no price or slot is offered; the agent collects the intake_questions and files a quote request instead. Takes effect only while quotes are enabled for the business. Group services cannot use &apos;quote&apos;.</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PricingMode? PricingMode { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PricingMode? PricingMode { get => _explicitNullValuePricingMode; set { _explicitNullValuePricingMode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pricing_mode"); else _explicitNullProperties?.Remove("pricing_mode"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.PricingMode? _explicitNullValuePricingMode = default!;
         /// <summary>Time-bound discounts applicable to this service or specific variants.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbServicePromotion>? Promotions { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbServicePromotion>? Promotions { get => _explicitNullValuePromotions; set { _explicitNullValuePromotions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("promotions"); else _explicitNullProperties?.Remove("promotions"); } }
+        private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbServicePromotion>? _explicitNullValuePromotions = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbServicePromotion> Promotions { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbServicePromotion> Promotions { get => _explicitNullValuePromotions; set { _explicitNullValuePromotions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("promotions"); else _explicitNullProperties?.Remove("promotions"); } }
+        private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbServicePromotion> _explicitNullValuePromotions = default!;
 #endif
         /// <summary>Where the service is delivered. ``business`` = client visits the business location (default); ``customer`` = staff travels to the client. Only meaningful for ``kind=&apos;classic&apos;``.</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ServiceLocationType? ServiceLocation { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ServiceLocationType? ServiceLocation { get => _explicitNullValueServiceLocation; set { _explicitNullValueServiceLocation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("service_location"); else _explicitNullProperties?.Remove("service_location"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ServiceLocationType? _explicitNullValueServiceLocation = default!;
         /// <summary>Staff assigned to this service; must be empty for kind=&apos;rental&apos;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? StaffIds { get; set; }
+        public List<string>? StaffIds { get => _explicitNullValueStaffIds; set { _explicitNullValueStaffIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("staff_ids"); else _explicitNullProperties?.Remove("staff_ids"); } }
+        private List<string>? _explicitNullValueStaffIds = default!;
 #nullable restore
 #else
-        public List<string> StaffIds { get; set; }
+        public List<string> StaffIds { get => _explicitNullValueStaffIds; set { _explicitNullValueStaffIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("staff_ids"); else _explicitNullProperties?.Remove("staff_ids"); } }
+        private List<string> _explicitNullValueStaffIds = default!;
 #endif
         /// <summary>Add travel time after the appointment (return trip).</summary>
-        public bool? TravelAfter { get; set; }
+        public bool? TravelAfter { get => _explicitNullValueTravelAfter; set { _explicitNullValueTravelAfter = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("travel_after"); else _explicitNullProperties?.Remove("travel_after"); } }
+        private bool? _explicitNullValueTravelAfter = default!;
         /// <summary>Add travel time before the appointment (outbound trip).</summary>
-        public bool? TravelBefore { get; set; }
+        public bool? TravelBefore { get => _explicitNullValueTravelBefore; set { _explicitNullValueTravelBefore = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("travel_before"); else _explicitNullProperties?.Remove("travel_before"); } }
+        private bool? _explicitNullValueTravelBefore = default!;
         /// <summary>Travel time in minutes added before/after appointments for customer-location services. Blocks the staff member&apos;s calendar but is not visible to the customer. Ignored when ``service_location=&apos;business&apos;``.</summary>
-        public int? TravelMinutes { get; set; }
+        public int? TravelMinutes { get => _explicitNullValueTravelMinutes; set { _explicitNullValueTravelMinutes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("travel_minutes"); else _explicitNullProperties?.Remove("travel_minutes"); } }
+        private int? _explicitNullValueTravelMinutes = default!;
         /// <summary>Display position among items with no group; `null` sorts last. Change it with the reorder endpoint.</summary>
-        public int? UngroupedRank { get; set; }
+        public int? UngroupedRank { get => _explicitNullValueUngroupedRank; set { _explicitNullValueUngroupedRank = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ungrouped_rank"); else _explicitNullProperties?.Remove("ungrouped_rank"); } }
+        private int? _explicitNullValueUngroupedRank = default!;
         /// <summary>Bookable options for this service. Always non-empty; ``variants[0]`` is the default option shown when callers don&apos;t pick a specific variant. Each entry has its own duration and (optional) price, and uniqueness is keyed by duration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbServiceVariant>? Variants { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbServiceVariant>? Variants { get => _explicitNullValueVariants; set { _explicitNullValueVariants = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("variants"); else _explicitNullProperties?.Remove("variants"); } }
+        private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbServiceVariant>? _explicitNullValueVariants = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbServiceVariant> Variants { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbServiceVariant> Variants { get => _explicitNullValueVariants; set { _explicitNullValueVariants = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("variants"); else _explicitNullProperties?.Remove("variants"); } }
+        private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbServiceVariant> _explicitNullValueVariants = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbUpdateServiceRequestPatch"/> and sets the default values.
@@ -141,7 +210,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbUpdateServiceRequestPatch CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbUpdateServiceRequestPatch();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbUpdateServiceRequestPatch(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -212,6 +281,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteIntValue("travel_minutes", TravelMinutes);
             writer.WriteIntValue("ungrouped_rank", UngroupedRank);
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbServiceVariant>("variants", Variants);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

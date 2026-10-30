@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.ElevenLabs.OpenApiClient.Models
 {
-    /// <summary>Controls how tool responses are filtered before being visible to the agent.</summary>
+    /// <summary>Controls how tool responses are filtered. &apos;all&apos; returns entire response, &apos;allow&apos; returns only specified paths, &apos;hide_all&apos; hides the entire response.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum ResponseFilterMode
     {

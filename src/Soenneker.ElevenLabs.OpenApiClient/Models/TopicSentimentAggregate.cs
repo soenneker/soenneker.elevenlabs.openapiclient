@@ -11,30 +11,49 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class TopicSentimentAggregate : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("frustration") is { } nullNodeFrustration && nullNodeFrustration.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Frustration = null;
+            if (parseNode.GetChildNode("negative_count") is { } nullNodeNegativeCount && nullNodeNegativeCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NegativeCount = null;
+            if (parseNode.GetChildNode("neutral_count") is { } nullNodeNeutralCount && nullNodeNeutralCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NeutralCount = null;
+            if (parseNode.GetChildNode("positive_count") is { } nullNodePositiveCount && nullNodePositiveCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PositiveCount = null;
+            if (parseNode.GetChildNode("sentiment") is { } nullNodeSentiment && nullNodeSentiment.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Sentiment = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The frustration property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.NumericDistributionAggregate? Frustration { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.NumericDistributionAggregate? Frustration { get => _explicitNullValueFrustration; set { _explicitNullValueFrustration = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("frustration"); else _explicitNullProperties?.Remove("frustration"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.NumericDistributionAggregate? _explicitNullValueFrustration = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.NumericDistributionAggregate Frustration { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.NumericDistributionAggregate Frustration { get => _explicitNullValueFrustration; set { _explicitNullValueFrustration = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("frustration"); else _explicitNullProperties?.Remove("frustration"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.NumericDistributionAggregate _explicitNullValueFrustration = default!;
 #endif
         /// <summary>The negative_count property</summary>
-        public int? NegativeCount { get; set; }
+        public int? NegativeCount { get => _explicitNullValueNegativeCount; set { _explicitNullValueNegativeCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("negative_count"); else _explicitNullProperties?.Remove("negative_count"); } }
+        private int? _explicitNullValueNegativeCount = default!;
         /// <summary>The neutral_count property</summary>
-        public int? NeutralCount { get; set; }
+        public int? NeutralCount { get => _explicitNullValueNeutralCount; set { _explicitNullValueNeutralCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("neutral_count"); else _explicitNullProperties?.Remove("neutral_count"); } }
+        private int? _explicitNullValueNeutralCount = default!;
         /// <summary>The positive_count property</summary>
-        public int? PositiveCount { get; set; }
+        public int? PositiveCount { get => _explicitNullValuePositiveCount; set { _explicitNullValuePositiveCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("positive_count"); else _explicitNullProperties?.Remove("positive_count"); } }
+        private int? _explicitNullValuePositiveCount = default!;
         /// <summary>The sentiment property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.NumericDistributionAggregate? Sentiment { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.NumericDistributionAggregate? Sentiment { get => _explicitNullValueSentiment; set { _explicitNullValueSentiment = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sentiment"); else _explicitNullProperties?.Remove("sentiment"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.NumericDistributionAggregate? _explicitNullValueSentiment = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.NumericDistributionAggregate Sentiment { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.NumericDistributionAggregate Sentiment { get => _explicitNullValueSentiment; set { _explicitNullValueSentiment = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sentiment"); else _explicitNullProperties?.Remove("sentiment"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.NumericDistributionAggregate _explicitNullValueSentiment = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.TopicSentimentAggregate"/> and sets the default values.
@@ -54,7 +73,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.TopicSentimentAggregate CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.TopicSentimentAggregate();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.TopicSentimentAggregate(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -83,6 +102,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteIntValue("neutral_count", NeutralCount);
             writer.WriteIntValue("positive_count", PositiveCount);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.NumericDistributionAggregate>("sentiment", Sentiment);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

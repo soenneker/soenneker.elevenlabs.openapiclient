@@ -11,50 +11,74 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class BodyHandleAnOutboundCallViaTwilioV1ConvaiTwilioOutboundCallPost : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("agent_id") is { } nullNodeAgentId && nullNodeAgentId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AgentId = null;
+            if (parseNode.GetChildNode("agent_phone_number_id") is { } nullNodeAgentPhoneNumberId && nullNodeAgentPhoneNumberId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AgentPhoneNumberId = null;
+            if (parseNode.GetChildNode("call_recording_enabled") is { } nullNodeCallRecordingEnabled && nullNodeCallRecordingEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CallRecordingEnabled = null;
+            if (parseNode.GetChildNode("conversation_initiation_client_data") is { } nullNodeConversationInitiationClientData && nullNodeConversationInitiationClientData.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConversationInitiationClientData = null;
+            if (parseNode.GetChildNode("telephony_call_config") is { } nullNodeTelephonyCallConfig && nullNodeTelephonyCallConfig.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TelephonyCallConfig = null;
+            if (parseNode.GetChildNode("to_number") is { } nullNodeToNumber && nullNodeToNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ToNumber = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The agent_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AgentId { get; set; }
+        public string? AgentId { get => _explicitNullValueAgentId; set { _explicitNullValueAgentId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agent_id"); else _explicitNullProperties?.Remove("agent_id"); } }
+        private string? _explicitNullValueAgentId = default!;
 #nullable restore
 #else
-        public string AgentId { get; set; }
+        public string AgentId { get => _explicitNullValueAgentId; set { _explicitNullValueAgentId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agent_id"); else _explicitNullProperties?.Remove("agent_id"); } }
+        private string _explicitNullValueAgentId = default!;
 #endif
         /// <summary>The agent_phone_number_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AgentPhoneNumberId { get; set; }
+        public string? AgentPhoneNumberId { get => _explicitNullValueAgentPhoneNumberId; set { _explicitNullValueAgentPhoneNumberId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agent_phone_number_id"); else _explicitNullProperties?.Remove("agent_phone_number_id"); } }
+        private string? _explicitNullValueAgentPhoneNumberId = default!;
 #nullable restore
 #else
-        public string AgentPhoneNumberId { get; set; }
+        public string AgentPhoneNumberId { get => _explicitNullValueAgentPhoneNumberId; set { _explicitNullValueAgentPhoneNumberId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agent_phone_number_id"); else _explicitNullProperties?.Remove("agent_phone_number_id"); } }
+        private string _explicitNullValueAgentPhoneNumberId = default!;
 #endif
         /// <summary>Whether let Twilio record the call.</summary>
-        public bool? CallRecordingEnabled { get; set; }
+        public bool? CallRecordingEnabled { get => _explicitNullValueCallRecordingEnabled; set { _explicitNullValueCallRecordingEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("call_recording_enabled"); else _explicitNullProperties?.Remove("call_recording_enabled"); } }
+        private bool? _explicitNullValueCallRecordingEnabled = default!;
         /// <summary>The conversation_initiation_client_data property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationClientDataRequestInput? ConversationInitiationClientData { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationClientDataRequestInput? ConversationInitiationClientData { get => _explicitNullValueConversationInitiationClientData; set { _explicitNullValueConversationInitiationClientData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conversation_initiation_client_data"); else _explicitNullProperties?.Remove("conversation_initiation_client_data"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationClientDataRequestInput? _explicitNullValueConversationInitiationClientData = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationClientDataRequestInput ConversationInitiationClientData { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationClientDataRequestInput ConversationInitiationClientData { get => _explicitNullValueConversationInitiationClientData; set { _explicitNullValueConversationInitiationClientData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conversation_initiation_client_data"); else _explicitNullProperties?.Remove("conversation_initiation_client_data"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationClientDataRequestInput _explicitNullValueConversationInitiationClientData = default!;
 #endif
         /// <summary>The telephony_call_config property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.TelephonyCallConfigInput? TelephonyCallConfig { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.TelephonyCallConfigInput? TelephonyCallConfig { get => _explicitNullValueTelephonyCallConfig; set { _explicitNullValueTelephonyCallConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("telephony_call_config"); else _explicitNullProperties?.Remove("telephony_call_config"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.TelephonyCallConfigInput? _explicitNullValueTelephonyCallConfig = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.TelephonyCallConfigInput TelephonyCallConfig { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.TelephonyCallConfigInput TelephonyCallConfig { get => _explicitNullValueTelephonyCallConfig; set { _explicitNullValueTelephonyCallConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("telephony_call_config"); else _explicitNullProperties?.Remove("telephony_call_config"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.TelephonyCallConfigInput _explicitNullValueTelephonyCallConfig = default!;
 #endif
         /// <summary>The to_number property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ToNumber { get; set; }
+        public string? ToNumber { get => _explicitNullValueToNumber; set { _explicitNullValueToNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("to_number"); else _explicitNullProperties?.Remove("to_number"); } }
+        private string? _explicitNullValueToNumber = default!;
 #nullable restore
 #else
-        public string ToNumber { get; set; }
+        public string ToNumber { get => _explicitNullValueToNumber; set { _explicitNullValueToNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("to_number"); else _explicitNullProperties?.Remove("to_number"); } }
+        private string _explicitNullValueToNumber = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyHandleAnOutboundCallViaTwilioV1ConvaiTwilioOutboundCallPost"/> and sets the default values.
@@ -71,7 +95,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyHandleAnOutboundCallViaTwilioV1ConvaiTwilioOutboundCallPost CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyHandleAnOutboundCallViaTwilioV1ConvaiTwilioOutboundCallPost();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyHandleAnOutboundCallViaTwilioV1ConvaiTwilioOutboundCallPost(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -102,6 +126,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationClientDataRequestInput>("conversation_initiation_client_data", ConversationInitiationClientData);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TelephonyCallConfigInput>("telephony_call_config", TelephonyCallConfig);
             writer.WriteStringValue("to_number", ToNumber);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

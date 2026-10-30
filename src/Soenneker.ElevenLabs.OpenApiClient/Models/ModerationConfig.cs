@@ -11,96 +11,136 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ModerationConfig : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("harassment") is { } nullNodeHarassment && nullNodeHarassment.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Harassment = null;
+            if (parseNode.GetChildNode("harassment_threatening") is { } nullNodeHarassmentThreatening && nullNodeHarassmentThreatening.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HarassmentThreatening = null;
+            if (parseNode.GetChildNode("hate") is { } nullNodeHate && nullNodeHate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Hate = null;
+            if (parseNode.GetChildNode("hate_threatening") is { } nullNodeHateThreatening && nullNodeHateThreatening.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HateThreatening = null;
+            if (parseNode.GetChildNode("self_harm") is { } nullNodeSelfHarm && nullNodeSelfHarm.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SelfHarm = null;
+            if (parseNode.GetChildNode("self_harm_instructions") is { } nullNodeSelfHarmInstructions && nullNodeSelfHarmInstructions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SelfHarmInstructions = null;
+            if (parseNode.GetChildNode("self_harm_intent") is { } nullNodeSelfHarmIntent && nullNodeSelfHarmIntent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SelfHarmIntent = null;
+            if (parseNode.GetChildNode("sexual") is { } nullNodeSexual && nullNodeSexual.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Sexual = null;
+            if (parseNode.GetChildNode("sexual_minors") is { } nullNodeSexualMinors && nullNodeSexualMinors.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SexualMinors = null;
+            if (parseNode.GetChildNode("violence") is { } nullNodeViolence && nullNodeViolence.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Violence = null;
+            if (parseNode.GetChildNode("violence_graphic") is { } nullNodeViolenceGraphic && nullNodeViolenceGraphic.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ViolenceGraphic = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The harassment property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ThresholdGuardrail? Harassment { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ThresholdGuardrail? Harassment { get => _explicitNullValueHarassment; set { _explicitNullValueHarassment = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("harassment"); else _explicitNullProperties?.Remove("harassment"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ThresholdGuardrail? _explicitNullValueHarassment = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ThresholdGuardrail Harassment { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ThresholdGuardrail Harassment { get => _explicitNullValueHarassment; set { _explicitNullValueHarassment = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("harassment"); else _explicitNullProperties?.Remove("harassment"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ThresholdGuardrail _explicitNullValueHarassment = default!;
 #endif
         /// <summary>The harassment_threatening property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ThresholdGuardrail? HarassmentThreatening { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ThresholdGuardrail? HarassmentThreatening { get => _explicitNullValueHarassmentThreatening; set { _explicitNullValueHarassmentThreatening = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("harassment_threatening"); else _explicitNullProperties?.Remove("harassment_threatening"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ThresholdGuardrail? _explicitNullValueHarassmentThreatening = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ThresholdGuardrail HarassmentThreatening { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ThresholdGuardrail HarassmentThreatening { get => _explicitNullValueHarassmentThreatening; set { _explicitNullValueHarassmentThreatening = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("harassment_threatening"); else _explicitNullProperties?.Remove("harassment_threatening"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ThresholdGuardrail _explicitNullValueHarassmentThreatening = default!;
 #endif
         /// <summary>The hate property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ThresholdGuardrail? Hate { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ThresholdGuardrail? Hate { get => _explicitNullValueHate; set { _explicitNullValueHate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hate"); else _explicitNullProperties?.Remove("hate"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ThresholdGuardrail? _explicitNullValueHate = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ThresholdGuardrail Hate { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ThresholdGuardrail Hate { get => _explicitNullValueHate; set { _explicitNullValueHate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hate"); else _explicitNullProperties?.Remove("hate"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ThresholdGuardrail _explicitNullValueHate = default!;
 #endif
         /// <summary>The hate_threatening property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ThresholdGuardrail? HateThreatening { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ThresholdGuardrail? HateThreatening { get => _explicitNullValueHateThreatening; set { _explicitNullValueHateThreatening = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hate_threatening"); else _explicitNullProperties?.Remove("hate_threatening"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ThresholdGuardrail? _explicitNullValueHateThreatening = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ThresholdGuardrail HateThreatening { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ThresholdGuardrail HateThreatening { get => _explicitNullValueHateThreatening; set { _explicitNullValueHateThreatening = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hate_threatening"); else _explicitNullProperties?.Remove("hate_threatening"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ThresholdGuardrail _explicitNullValueHateThreatening = default!;
 #endif
         /// <summary>The self_harm property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ThresholdGuardrail? SelfHarm { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ThresholdGuardrail? SelfHarm { get => _explicitNullValueSelfHarm; set { _explicitNullValueSelfHarm = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("self_harm"); else _explicitNullProperties?.Remove("self_harm"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ThresholdGuardrail? _explicitNullValueSelfHarm = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ThresholdGuardrail SelfHarm { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ThresholdGuardrail SelfHarm { get => _explicitNullValueSelfHarm; set { _explicitNullValueSelfHarm = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("self_harm"); else _explicitNullProperties?.Remove("self_harm"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ThresholdGuardrail _explicitNullValueSelfHarm = default!;
 #endif
         /// <summary>The self_harm_instructions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ThresholdGuardrail? SelfHarmInstructions { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ThresholdGuardrail? SelfHarmInstructions { get => _explicitNullValueSelfHarmInstructions; set { _explicitNullValueSelfHarmInstructions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("self_harm_instructions"); else _explicitNullProperties?.Remove("self_harm_instructions"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ThresholdGuardrail? _explicitNullValueSelfHarmInstructions = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ThresholdGuardrail SelfHarmInstructions { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ThresholdGuardrail SelfHarmInstructions { get => _explicitNullValueSelfHarmInstructions; set { _explicitNullValueSelfHarmInstructions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("self_harm_instructions"); else _explicitNullProperties?.Remove("self_harm_instructions"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ThresholdGuardrail _explicitNullValueSelfHarmInstructions = default!;
 #endif
         /// <summary>The self_harm_intent property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ThresholdGuardrail? SelfHarmIntent { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ThresholdGuardrail? SelfHarmIntent { get => _explicitNullValueSelfHarmIntent; set { _explicitNullValueSelfHarmIntent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("self_harm_intent"); else _explicitNullProperties?.Remove("self_harm_intent"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ThresholdGuardrail? _explicitNullValueSelfHarmIntent = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ThresholdGuardrail SelfHarmIntent { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ThresholdGuardrail SelfHarmIntent { get => _explicitNullValueSelfHarmIntent; set { _explicitNullValueSelfHarmIntent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("self_harm_intent"); else _explicitNullProperties?.Remove("self_harm_intent"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ThresholdGuardrail _explicitNullValueSelfHarmIntent = default!;
 #endif
         /// <summary>The sexual property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ThresholdGuardrail? Sexual { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ThresholdGuardrail? Sexual { get => _explicitNullValueSexual; set { _explicitNullValueSexual = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sexual"); else _explicitNullProperties?.Remove("sexual"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ThresholdGuardrail? _explicitNullValueSexual = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ThresholdGuardrail Sexual { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ThresholdGuardrail Sexual { get => _explicitNullValueSexual; set { _explicitNullValueSexual = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sexual"); else _explicitNullProperties?.Remove("sexual"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ThresholdGuardrail _explicitNullValueSexual = default!;
 #endif
         /// <summary>The sexual_minors property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ThresholdGuardrail? SexualMinors { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ThresholdGuardrail? SexualMinors { get => _explicitNullValueSexualMinors; set { _explicitNullValueSexualMinors = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sexual_minors"); else _explicitNullProperties?.Remove("sexual_minors"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ThresholdGuardrail? _explicitNullValueSexualMinors = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ThresholdGuardrail SexualMinors { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ThresholdGuardrail SexualMinors { get => _explicitNullValueSexualMinors; set { _explicitNullValueSexualMinors = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sexual_minors"); else _explicitNullProperties?.Remove("sexual_minors"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ThresholdGuardrail _explicitNullValueSexualMinors = default!;
 #endif
         /// <summary>The violence property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ThresholdGuardrail? Violence { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ThresholdGuardrail? Violence { get => _explicitNullValueViolence; set { _explicitNullValueViolence = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("violence"); else _explicitNullProperties?.Remove("violence"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ThresholdGuardrail? _explicitNullValueViolence = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ThresholdGuardrail Violence { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ThresholdGuardrail Violence { get => _explicitNullValueViolence; set { _explicitNullValueViolence = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("violence"); else _explicitNullProperties?.Remove("violence"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ThresholdGuardrail _explicitNullValueViolence = default!;
 #endif
         /// <summary>The violence_graphic property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ThresholdGuardrail? ViolenceGraphic { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ThresholdGuardrail? ViolenceGraphic { get => _explicitNullValueViolenceGraphic; set { _explicitNullValueViolenceGraphic = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("violence_graphic"); else _explicitNullProperties?.Remove("violence_graphic"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ThresholdGuardrail? _explicitNullValueViolenceGraphic = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ThresholdGuardrail ViolenceGraphic { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ThresholdGuardrail ViolenceGraphic { get => _explicitNullValueViolenceGraphic; set { _explicitNullValueViolenceGraphic = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("violence_graphic"); else _explicitNullProperties?.Remove("violence_graphic"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ThresholdGuardrail _explicitNullValueViolenceGraphic = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ModerationConfig"/> and sets the default values.
@@ -117,7 +157,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.ModerationConfig CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.ModerationConfig();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.ModerationConfig(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -158,6 +198,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ThresholdGuardrail>("sexual_minors", SexualMinors);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ThresholdGuardrail>("violence", Violence);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ThresholdGuardrail>("violence_graphic", ViolenceGraphic);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -11,55 +11,88 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class LlmInfoModel : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("available_reasoning_efforts") is { } nullNodeAvailableReasoningEfforts && nullNodeAvailableReasoningEfforts.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AvailableReasoningEfforts = null;
+            if (parseNode.GetChildNode("available_service_tiers") is { } nullNodeAvailableServiceTiers && nullNodeAvailableServiceTiers.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AvailableServiceTiers = null;
+            if (parseNode.GetChildNode("deprecation_info") is { } nullNodeDeprecationInfo && nullNodeDeprecationInfo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeprecationInfo = null;
+            if (parseNode.GetChildNode("is_checkpoint") is { } nullNodeIsCheckpoint && nullNodeIsCheckpoint.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsCheckpoint = null;
+            if (parseNode.GetChildNode("llm") is { } nullNodeLlm && nullNodeLlm.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Llm = null;
+            if (parseNode.GetChildNode("max_context_limit") is { } nullNodeMaxContextLimit && nullNodeMaxContextLimit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxContextLimit = null;
+            if (parseNode.GetChildNode("max_tokens_limit") is { } nullNodeMaxTokensLimit && nullNodeMaxTokensLimit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxTokensLimit = null;
+            if (parseNode.GetChildNode("regional_processing_surcharge") is { } nullNodeRegionalProcessingSurcharge && nullNodeRegionalProcessingSurcharge.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RegionalProcessingSurcharge = null;
+            if (parseNode.GetChildNode("supports_document_input") is { } nullNodeSupportsDocumentInput && nullNodeSupportsDocumentInput.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SupportsDocumentInput = null;
+            if (parseNode.GetChildNode("supports_image_input") is { } nullNodeSupportsImageInput && nullNodeSupportsImageInput.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SupportsImageInput = null;
+            if (parseNode.GetChildNode("supports_parallel_tool_calls") is { } nullNodeSupportsParallelToolCalls && nullNodeSupportsParallelToolCalls.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SupportsParallelToolCalls = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Available reasoning effort levels for this model. Null if the model does not support configurable reasoning.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmReasoningEffort?>? AvailableReasoningEfforts { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmReasoningEffort?>? AvailableReasoningEfforts { get => _explicitNullValueAvailableReasoningEfforts; set { _explicitNullValueAvailableReasoningEfforts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("available_reasoning_efforts"); else _explicitNullProperties?.Remove("available_reasoning_efforts"); } }
+        private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmReasoningEffort?>? _explicitNullValueAvailableReasoningEfforts = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmReasoningEffort?> AvailableReasoningEfforts { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmReasoningEffort?> AvailableReasoningEfforts { get => _explicitNullValueAvailableReasoningEfforts; set { _explicitNullValueAvailableReasoningEfforts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("available_reasoning_efforts"); else _explicitNullProperties?.Remove("available_reasoning_efforts"); } }
+        private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmReasoningEffort?> _explicitNullValueAvailableReasoningEfforts = default!;
 #endif
         /// <summary>Available service tiers for this model. Always includes at least the standard tier.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmServiceTier?>? AvailableServiceTiers { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmServiceTier?>? AvailableServiceTiers { get => _explicitNullValueAvailableServiceTiers; set { _explicitNullValueAvailableServiceTiers = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("available_service_tiers"); else _explicitNullProperties?.Remove("available_service_tiers"); } }
+        private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmServiceTier?>? _explicitNullValueAvailableServiceTiers = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmServiceTier?> AvailableServiceTiers { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmServiceTier?> AvailableServiceTiers { get => _explicitNullValueAvailableServiceTiers; set { _explicitNullValueAvailableServiceTiers = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("available_service_tiers"); else _explicitNullProperties?.Remove("available_service_tiers"); } }
+        private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmServiceTier?> _explicitNullValueAvailableServiceTiers = default!;
 #endif
         /// <summary>Deprecation information if this model is deprecated or scheduled for deprecation. Null if the model is not affected.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmDeprecationInfoModel? DeprecationInfo { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmDeprecationInfoModel? DeprecationInfo { get => _explicitNullValueDeprecationInfo; set { _explicitNullValueDeprecationInfo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deprecation_info"); else _explicitNullProperties?.Remove("deprecation_info"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmDeprecationInfoModel? _explicitNullValueDeprecationInfo = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmDeprecationInfoModel DeprecationInfo { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmDeprecationInfoModel DeprecationInfo { get => _explicitNullValueDeprecationInfo; set { _explicitNullValueDeprecationInfo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deprecation_info"); else _explicitNullProperties?.Remove("deprecation_info"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmDeprecationInfoModel _explicitNullValueDeprecationInfo = default!;
 #endif
         /// <summary>Whether this is a pinned checkpoint version of a model rather than a top-level alias.</summary>
-        public bool? IsCheckpoint { get; set; }
+        public bool? IsCheckpoint { get => _explicitNullValueIsCheckpoint; set { _explicitNullValueIsCheckpoint = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_checkpoint"); else _explicitNullProperties?.Remove("is_checkpoint"); } }
+        private bool? _explicitNullValueIsCheckpoint = default!;
         /// <summary>The llm property</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Llm? Llm { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Llm? Llm { get => _explicitNullValueLlm; set { _explicitNullValueLlm = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("llm"); else _explicitNullProperties?.Remove("llm"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.Llm? _explicitNullValueLlm = default!;
         /// <summary>Maximum number of input context tokens the model supports.</summary>
-        public int? MaxContextLimit { get; set; }
+        public int? MaxContextLimit { get => _explicitNullValueMaxContextLimit; set { _explicitNullValueMaxContextLimit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_context_limit"); else _explicitNullProperties?.Remove("max_context_limit"); } }
+        private int? _explicitNullValueMaxContextLimit = default!;
         /// <summary>Maximum number of output tokens the model can generate.</summary>
-        public int? MaxTokensLimit { get; set; }
+        public int? MaxTokensLimit { get => _explicitNullValueMaxTokensLimit; set { _explicitNullValueMaxTokensLimit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_tokens_limit"); else _explicitNullProperties?.Remove("max_tokens_limit"); } }
+        private int? _explicitNullValueMaxTokensLimit = default!;
         /// <summary>Regional processing surcharge details if this model has additional costs in the current deployment region. Null if no surcharge applies.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.RegionalProcessingSurchargeInfo? RegionalProcessingSurcharge { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.RegionalProcessingSurchargeInfo? RegionalProcessingSurcharge { get => _explicitNullValueRegionalProcessingSurcharge; set { _explicitNullValueRegionalProcessingSurcharge = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("regional_processing_surcharge"); else _explicitNullProperties?.Remove("regional_processing_surcharge"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.RegionalProcessingSurchargeInfo? _explicitNullValueRegionalProcessingSurcharge = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.RegionalProcessingSurchargeInfo RegionalProcessingSurcharge { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.RegionalProcessingSurchargeInfo RegionalProcessingSurcharge { get => _explicitNullValueRegionalProcessingSurcharge; set { _explicitNullValueRegionalProcessingSurcharge = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("regional_processing_surcharge"); else _explicitNullProperties?.Remove("regional_processing_surcharge"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.RegionalProcessingSurchargeInfo _explicitNullValueRegionalProcessingSurcharge = default!;
 #endif
         /// <summary>Whether the model supports document (PDF) file inputs during conversations.</summary>
-        public bool? SupportsDocumentInput { get; set; }
+        public bool? SupportsDocumentInput { get => _explicitNullValueSupportsDocumentInput; set { _explicitNullValueSupportsDocumentInput = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("supports_document_input"); else _explicitNullProperties?.Remove("supports_document_input"); } }
+        private bool? _explicitNullValueSupportsDocumentInput = default!;
         /// <summary>Whether the model supports image file inputs during conversations.</summary>
-        public bool? SupportsImageInput { get; set; }
+        public bool? SupportsImageInput { get => _explicitNullValueSupportsImageInput; set { _explicitNullValueSupportsImageInput = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("supports_image_input"); else _explicitNullProperties?.Remove("supports_image_input"); } }
+        private bool? _explicitNullValueSupportsImageInput = default!;
         /// <summary>Whether the model supports calling multiple tools in parallel.</summary>
-        public bool? SupportsParallelToolCalls { get; set; }
+        public bool? SupportsParallelToolCalls { get => _explicitNullValueSupportsParallelToolCalls; set { _explicitNullValueSupportsParallelToolCalls = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("supports_parallel_tool_calls"); else _explicitNullProperties?.Remove("supports_parallel_tool_calls"); } }
+        private bool? _explicitNullValueSupportsParallelToolCalls = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmInfoModel"/> and sets the default values.
         /// </summary>
@@ -75,7 +108,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmInfoModel CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmInfoModel();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmInfoModel(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -116,6 +149,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteBoolValue("supports_document_input", SupportsDocumentInput);
             writer.WriteBoolValue("supports_image_input", SupportsImageInput);
             writer.WriteBoolValue("supports_parallel_tool_calls", SupportsParallelToolCalls);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

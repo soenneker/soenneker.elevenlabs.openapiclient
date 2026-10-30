@@ -11,23 +11,39 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class AsrConversationalConfig : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("keywords") is { } nullNodeKeywords && nullNodeKeywords.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Keywords = null;
+            if (parseNode.GetChildNode("provider") is { } nullNodeProvider && nullNodeProvider.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Provider = null;
+            if (parseNode.GetChildNode("quality") is { } nullNodeQuality && nullNodeQuality.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Quality = null;
+            if (parseNode.GetChildNode("user_input_audio_format") is { } nullNodeUserInputAudioFormat && nullNodeUserInputAudioFormat.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UserInputAudioFormat = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Keywords to boost prediction probability for</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Keywords { get; set; }
+        public List<string>? Keywords { get => _explicitNullValueKeywords; set { _explicitNullValueKeywords = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("keywords"); else _explicitNullProperties?.Remove("keywords"); } }
+        private List<string>? _explicitNullValueKeywords = default!;
 #nullable restore
 #else
-        public List<string> Keywords { get; set; }
+        public List<string> Keywords { get => _explicitNullValueKeywords; set { _explicitNullValueKeywords = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("keywords"); else _explicitNullProperties?.Remove("keywords"); } }
+        private List<string> _explicitNullValueKeywords = default!;
 #endif
         /// <summary>The provider property</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AsrProvider? Provider { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AsrProvider? Provider { get => _explicitNullValueProvider; set { _explicitNullValueProvider = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("provider"); else _explicitNullProperties?.Remove("provider"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.AsrProvider? _explicitNullValueProvider = default!;
         /// <summary>The quality property</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AsrQuality? Quality { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AsrQuality? Quality { get => _explicitNullValueQuality; set { _explicitNullValueQuality = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("quality"); else _explicitNullProperties?.Remove("quality"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.AsrQuality? _explicitNullValueQuality = default!;
         /// <summary>The user_input_audio_format property</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AsrInputFormat? UserInputAudioFormat { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AsrInputFormat? UserInputAudioFormat { get => _explicitNullValueUserInputAudioFormat; set { _explicitNullValueUserInputAudioFormat = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user_input_audio_format"); else _explicitNullProperties?.Remove("user_input_audio_format"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.AsrInputFormat? _explicitNullValueUserInputAudioFormat = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.AsrConversationalConfig"/> and sets the default values.
         /// </summary>
@@ -43,7 +59,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.AsrConversationalConfig CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.AsrConversationalConfig();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.AsrConversationalConfig(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -70,6 +86,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AsrProvider>("provider", Provider);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AsrQuality>("quality", Quality);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AsrInputFormat>("user_input_audio_format", UserInputAudioFormat);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

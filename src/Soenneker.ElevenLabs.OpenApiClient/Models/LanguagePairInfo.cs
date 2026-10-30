@@ -11,24 +11,37 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class LanguagePairInfo : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("destination_languages") is { } nullNodeDestinationLanguages && nullNodeDestinationLanguages.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DestinationLanguages = null;
+            if (parseNode.GetChildNode("source_language") is { } nullNodeSourceLanguage && nullNodeSourceLanguage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SourceLanguage = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The available destination languages for this source language.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.LanguageInfo>? DestinationLanguages { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.LanguageInfo>? DestinationLanguages { get => _explicitNullValueDestinationLanguages; set { _explicitNullValueDestinationLanguages = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("destination_languages"); else _explicitNullProperties?.Remove("destination_languages"); } }
+        private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.LanguageInfo>? _explicitNullValueDestinationLanguages = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.LanguageInfo> DestinationLanguages { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.LanguageInfo> DestinationLanguages { get => _explicitNullValueDestinationLanguages; set { _explicitNullValueDestinationLanguages = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("destination_languages"); else _explicitNullProperties?.Remove("destination_languages"); } }
+        private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.LanguageInfo> _explicitNullValueDestinationLanguages = default!;
 #endif
         /// <summary>The source language.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.LanguageInfo? SourceLanguage { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.LanguageInfo? SourceLanguage { get => _explicitNullValueSourceLanguage; set { _explicitNullValueSourceLanguage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source_language"); else _explicitNullProperties?.Remove("source_language"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.LanguageInfo? _explicitNullValueSourceLanguage = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.LanguageInfo SourceLanguage { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.LanguageInfo SourceLanguage { get => _explicitNullValueSourceLanguage; set { _explicitNullValueSourceLanguage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source_language"); else _explicitNullProperties?.Remove("source_language"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.LanguageInfo _explicitNullValueSourceLanguage = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.LanguagePairInfo"/> and sets the default values.
@@ -45,7 +58,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.LanguagePairInfo CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.LanguagePairInfo();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.LanguagePairInfo(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -68,6 +81,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.LanguageInfo>("destination_languages", DestinationLanguages);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.LanguageInfo>("source_language", SourceLanguage);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

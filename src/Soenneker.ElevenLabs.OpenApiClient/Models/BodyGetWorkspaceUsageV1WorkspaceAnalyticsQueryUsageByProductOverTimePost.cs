@@ -11,38 +11,60 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class BodyGetWorkspaceUsageV1WorkspaceAnalyticsQueryUsageByProductOverTimePost : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("end_time") is { } nullNodeEndTime && nullNodeEndTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EndTime = null;
+            if (parseNode.GetChildNode("filters") is { } nullNodeFilters && nullNodeFilters.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Filters = null;
+            if (parseNode.GetChildNode("group_by") is { } nullNodeGroupBy && nullNodeGroupBy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GroupBy = null;
+            if (parseNode.GetChildNode("interval_seconds") is { } nullNodeIntervalSeconds && nullNodeIntervalSeconds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IntervalSeconds = null;
+            if (parseNode.GetChildNode("start_time") is { } nullNodeStartTime && nullNodeStartTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StartTime = null;
+            if (parseNode.GetChildNode("time_zone") is { } nullNodeTimeZone && nullNodeTimeZone.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TimeZone = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>End of the time range as a Unix timestamp in milliseconds. Must be at least 2020-01-01.</summary>
-        public int? EndTime { get; set; }
+        public int? EndTime { get => _explicitNullValueEndTime; set { _explicitNullValueEndTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("end_time"); else _explicitNullProperties?.Remove("end_time"); } }
+        private int? _explicitNullValueEndTime = default!;
         /// <summary>The filters property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ColumnFilter>? Filters { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ColumnFilter>? Filters { get => _explicitNullValueFilters; set { _explicitNullValueFilters = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filters"); else _explicitNullProperties?.Remove("filters"); } }
+        private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ColumnFilter>? _explicitNullValueFilters = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ColumnFilter> Filters { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ColumnFilter> Filters { get => _explicitNullValueFilters; set { _explicitNullValueFilters = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filters"); else _explicitNullProperties?.Remove("filters"); } }
+        private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ColumnFilter> _explicitNullValueFilters = default!;
 #endif
         /// <summary>The group_by property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyGetWorkspaceUsageV1WorkspaceAnalyticsQueryUsageByProductOverTimePostGroupByItem?>? GroupBy { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyGetWorkspaceUsageV1WorkspaceAnalyticsQueryUsageByProductOverTimePostGroupByItem?>? GroupBy { get => _explicitNullValueGroupBy; set { _explicitNullValueGroupBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("group_by"); else _explicitNullProperties?.Remove("group_by"); } }
+        private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyGetWorkspaceUsageV1WorkspaceAnalyticsQueryUsageByProductOverTimePostGroupByItem?>? _explicitNullValueGroupBy = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyGetWorkspaceUsageV1WorkspaceAnalyticsQueryUsageByProductOverTimePostGroupByItem?> GroupBy { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyGetWorkspaceUsageV1WorkspaceAnalyticsQueryUsageByProductOverTimePostGroupByItem?> GroupBy { get => _explicitNullValueGroupBy; set { _explicitNullValueGroupBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("group_by"); else _explicitNullProperties?.Remove("group_by"); } }
+        private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyGetWorkspaceUsageV1WorkspaceAnalyticsQueryUsageByProductOverTimePostGroupByItem?> _explicitNullValueGroupBy = default!;
 #endif
         /// <summary>Bucket size in seconds. Each row in the response covers this many seconds of the selected time range. For example, pass 3600 for hourly buckets, 86400 for daily buckets, or 604800 for weekly buckets. Whether `time_zone` shifts bucket boundaries depends on this value: week multiples (e.g. 604800) are calendar weeks that start Monday at local midnight; whole-day multiples that are not whole weeks (e.g. 86400) align to local midnight; whole-hour multiples up to 24 hours (e.g. 3600, 14400) align to local hour boundaries from midnight; sub-hour values and other sizes remain UTC-anchored regardless of `time_zone`.</summary>
-        public int? IntervalSeconds { get; set; }
+        public int? IntervalSeconds { get => _explicitNullValueIntervalSeconds; set { _explicitNullValueIntervalSeconds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("interval_seconds"); else _explicitNullProperties?.Remove("interval_seconds"); } }
+        private int? _explicitNullValueIntervalSeconds = default!;
         /// <summary>Start of the time range as a Unix timestamp in milliseconds. Must be at least 2020-01-01.</summary>
-        public int? StartTime { get; set; }
+        public int? StartTime { get => _explicitNullValueStartTime; set { _explicitNullValueStartTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("start_time"); else _explicitNullProperties?.Remove("start_time"); } }
+        private int? _explicitNullValueStartTime = default!;
         /// <summary>IANA time zone identifier (e.g. &apos;America/New_York&apos;, &apos;Europe/London&apos;, &apos;UTC&apos;) used to align bucket boundaries for eligible `interval_seconds` values. Week multiples (e.g. 604800) are calendar weeks that start Monday at local midnight. Whole-day multiples that are not whole weeks start at local midnight; whole-hour multiples up to 24 hours align to local hour boundaries from midnight. Sub-hour intervals and other bucket sizes remain UTC-anchored regardless of this setting. Defaults to UTC.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TimeZone { get; set; }
+        public string? TimeZone { get => _explicitNullValueTimeZone; set { _explicitNullValueTimeZone = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("time_zone"); else _explicitNullProperties?.Remove("time_zone"); } }
+        private string? _explicitNullValueTimeZone = default!;
 #nullable restore
 #else
-        public string TimeZone { get; set; }
+        public string TimeZone { get => _explicitNullValueTimeZone; set { _explicitNullValueTimeZone = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("time_zone"); else _explicitNullProperties?.Remove("time_zone"); } }
+        private string _explicitNullValueTimeZone = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyGetWorkspaceUsageV1WorkspaceAnalyticsQueryUsageByProductOverTimePost"/> and sets the default values.
@@ -61,7 +83,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyGetWorkspaceUsageV1WorkspaceAnalyticsQueryUsageByProductOverTimePost CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyGetWorkspaceUsageV1WorkspaceAnalyticsQueryUsageByProductOverTimePost();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyGetWorkspaceUsageV1WorkspaceAnalyticsQueryUsageByProductOverTimePost(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -92,6 +114,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteIntValue("interval_seconds", IntervalSeconds);
             writer.WriteIntValue("start_time", StartTime);
             writer.WriteStringValue("time_zone", TimeZone);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

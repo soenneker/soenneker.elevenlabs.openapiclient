@@ -11,42 +11,63 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class FieldConflict : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("base_value") is { } nullNodeBaseValue && nullNodeBaseValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BaseValue = null;
+            if (parseNode.GetChildNode("path") is { } nullNodePath && nullNodePath.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Path = null;
+            if (parseNode.GetChildNode("section") is { } nullNodeSection && nullNodeSection.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Section = null;
+            if (parseNode.GetChildNode("source_value") is { } nullNodeSourceValue && nullNodeSourceValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SourceValue = null;
+            if (parseNode.GetChildNode("target_value") is { } nullNodeTargetValue && nullNodeTargetValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TargetValue = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Value at the common ancestor (merge base).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? BaseValue { get; set; }
+        public UntypedNode? BaseValue { get => _explicitNullValueBaseValue; set { _explicitNullValueBaseValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("base_value"); else _explicitNullProperties?.Remove("base_value"); } }
+        private UntypedNode? _explicitNullValueBaseValue = default!;
 #nullable restore
 #else
-        public UntypedNode BaseValue { get; set; }
+        public UntypedNode BaseValue { get => _explicitNullValueBaseValue; set { _explicitNullValueBaseValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("base_value"); else _explicitNullProperties?.Remove("base_value"); } }
+        private UntypedNode _explicitNullValueBaseValue = default!;
 #endif
         /// <summary>Identifier of the conflicting field relative to its section: a dot-path within conversation_config/platform_settings (e.g. `tts.voice_id`), a procedure id, or a workflow path: `nodes.&lt;id&gt;`, `edges.&lt;id&gt;`, or the name of a top-level workflow setting.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Path { get; set; }
+        public string? Path { get => _explicitNullValuePath; set { _explicitNullValuePath = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("path"); else _explicitNullProperties?.Remove("path"); } }
+        private string? _explicitNullValuePath = default!;
 #nullable restore
 #else
-        public string Path { get; set; }
+        public string Path { get => _explicitNullValuePath; set { _explicitNullValuePath = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("path"); else _explicitNullProperties?.Remove("path"); } }
+        private string _explicitNullValuePath = default!;
 #endif
         /// <summary>Which config section this path belongs to.</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConflictSection? Section { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConflictSection? Section { get => _explicitNullValueSection; set { _explicitNullValueSection = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("section"); else _explicitNullProperties?.Remove("section"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ConflictSection? _explicitNullValueSection = default!;
         /// <summary>Value on the source branch tip.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? SourceValue { get; set; }
+        public UntypedNode? SourceValue { get => _explicitNullValueSourceValue; set { _explicitNullValueSourceValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source_value"); else _explicitNullProperties?.Remove("source_value"); } }
+        private UntypedNode? _explicitNullValueSourceValue = default!;
 #nullable restore
 #else
-        public UntypedNode SourceValue { get; set; }
+        public UntypedNode SourceValue { get => _explicitNullValueSourceValue; set { _explicitNullValueSourceValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source_value"); else _explicitNullProperties?.Remove("source_value"); } }
+        private UntypedNode _explicitNullValueSourceValue = default!;
 #endif
         /// <summary>Value on the target branch tip.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? TargetValue { get; set; }
+        public UntypedNode? TargetValue { get => _explicitNullValueTargetValue; set { _explicitNullValueTargetValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("target_value"); else _explicitNullProperties?.Remove("target_value"); } }
+        private UntypedNode? _explicitNullValueTargetValue = default!;
 #nullable restore
 #else
-        public UntypedNode TargetValue { get; set; }
+        public UntypedNode TargetValue { get => _explicitNullValueTargetValue; set { _explicitNullValueTargetValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("target_value"); else _explicitNullProperties?.Remove("target_value"); } }
+        private UntypedNode _explicitNullValueTargetValue = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.FieldConflict"/> and sets the default values.
@@ -63,7 +84,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.FieldConflict CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.FieldConflict();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.FieldConflict(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -92,6 +113,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConflictSection>("section", Section);
             writer.WriteObjectValue<UntypedNode>("source_value", SourceValue);
             writer.WriteObjectValue<UntypedNode>("target_value", TargetValue);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -11,42 +11,63 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class UnitTestToolCallEvaluationModelOutput : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("guardrail_trigger") is { } nullNodeGuardrailTrigger && nullNodeGuardrailTrigger.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GuardrailTrigger = null;
+            if (parseNode.GetChildNode("parameters") is { } nullNodeParameters && nullNodeParameters.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Parameters = null;
+            if (parseNode.GetChildNode("referenced_tool") is { } nullNodeReferencedTool && nullNodeReferencedTool.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReferencedTool = null;
+            if (parseNode.GetChildNode("verify_absence") is { } nullNodeVerifyAbsence && nullNodeVerifyAbsence.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VerifyAbsence = null;
+            if (parseNode.GetChildNode("workflow_node_transition") is { } nullNodeWorkflowNodeTransition && nullNodeWorkflowNodeTransition.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WorkflowNodeTransition = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Evaluate guardrails triggered by the generated agent turn.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.UnitTestGuardrailTriggerEvaluationModel? GuardrailTrigger { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.UnitTestGuardrailTriggerEvaluationModel? GuardrailTrigger { get => _explicitNullValueGuardrailTrigger; set { _explicitNullValueGuardrailTrigger = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("guardrail_trigger"); else _explicitNullProperties?.Remove("guardrail_trigger"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.UnitTestGuardrailTriggerEvaluationModel? _explicitNullValueGuardrailTrigger = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.UnitTestGuardrailTriggerEvaluationModel GuardrailTrigger { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.UnitTestGuardrailTriggerEvaluationModel GuardrailTrigger { get => _explicitNullValueGuardrailTrigger; set { _explicitNullValueGuardrailTrigger = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("guardrail_trigger"); else _explicitNullProperties?.Remove("guardrail_trigger"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.UnitTestGuardrailTriggerEvaluationModel _explicitNullValueGuardrailTrigger = default!;
 #endif
         /// <summary>Parameters to evaluate for the agent&apos;s tool call. If empty, the tool call parameters are not evaluated.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.UnitTestToolCallParameter>? Parameters { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.UnitTestToolCallParameter>? Parameters { get => _explicitNullValueParameters; set { _explicitNullValueParameters = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("parameters"); else _explicitNullProperties?.Remove("parameters"); } }
+        private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.UnitTestToolCallParameter>? _explicitNullValueParameters = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.UnitTestToolCallParameter> Parameters { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.UnitTestToolCallParameter> Parameters { get => _explicitNullValueParameters; set { _explicitNullValueParameters = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("parameters"); else _explicitNullProperties?.Remove("parameters"); } }
+        private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.UnitTestToolCallParameter> _explicitNullValueParameters = default!;
 #endif
         /// <summary>The tool to evaluate a call against.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ReferencedToolCommonModel? ReferencedTool { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ReferencedToolCommonModel? ReferencedTool { get => _explicitNullValueReferencedTool; set { _explicitNullValueReferencedTool = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("referenced_tool"); else _explicitNullProperties?.Remove("referenced_tool"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ReferencedToolCommonModel? _explicitNullValueReferencedTool = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ReferencedToolCommonModel ReferencedTool { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ReferencedToolCommonModel ReferencedTool { get => _explicitNullValueReferencedTool; set { _explicitNullValueReferencedTool = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("referenced_tool"); else _explicitNullProperties?.Remove("referenced_tool"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ReferencedToolCommonModel _explicitNullValueReferencedTool = default!;
 #endif
         /// <summary>Whether to verify that the tool was NOT called.</summary>
-        public bool? VerifyAbsence { get; set; }
+        public bool? VerifyAbsence { get => _explicitNullValueVerifyAbsence; set { _explicitNullValueVerifyAbsence = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("verify_absence"); else _explicitNullProperties?.Remove("verify_absence"); } }
+        private bool? _explicitNullValueVerifyAbsence = default!;
         /// <summary>Configuration for testing workflow node transitions. When set, the test will verify the agent transitions to the specified workflow node.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.UnitTestWorkflowNodeTransitionEvaluationNodeId? WorkflowNodeTransition { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.UnitTestWorkflowNodeTransitionEvaluationNodeId? WorkflowNodeTransition { get => _explicitNullValueWorkflowNodeTransition; set { _explicitNullValueWorkflowNodeTransition = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workflow_node_transition"); else _explicitNullProperties?.Remove("workflow_node_transition"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.UnitTestWorkflowNodeTransitionEvaluationNodeId? _explicitNullValueWorkflowNodeTransition = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.UnitTestWorkflowNodeTransitionEvaluationNodeId WorkflowNodeTransition { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.UnitTestWorkflowNodeTransitionEvaluationNodeId WorkflowNodeTransition { get => _explicitNullValueWorkflowNodeTransition; set { _explicitNullValueWorkflowNodeTransition = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workflow_node_transition"); else _explicitNullProperties?.Remove("workflow_node_transition"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.UnitTestWorkflowNodeTransitionEvaluationNodeId _explicitNullValueWorkflowNodeTransition = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.UnitTestToolCallEvaluationModelOutput"/> and sets the default values.
@@ -64,7 +85,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.UnitTestToolCallEvaluationModelOutput CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.UnitTestToolCallEvaluationModelOutput();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.UnitTestToolCallEvaluationModelOutput(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -93,6 +114,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ReferencedToolCommonModel>("referenced_tool", ReferencedTool);
             writer.WriteBoolValue("verify_absence", VerifyAbsence);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UnitTestWorkflowNodeTransitionEvaluationNodeId>("workflow_node_transition", WorkflowNodeTransition);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -12,22 +12,38 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class DubbingRegenerateResponse : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("charged_seconds") is { } nullNodeChargedSeconds && nullNodeChargedSeconds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ChargedSeconds = null;
+            if (parseNode.GetChildNode("free_regeneration_seconds_remaining") is { } nullNodeFreeRegenerationSecondsRemaining && nullNodeFreeRegenerationSecondsRemaining.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FreeRegenerationSecondsRemaining = null;
+            if (parseNode.GetChildNode("regenerated_seconds") is { } nullNodeRegeneratedSeconds && nullNodeRegeneratedSeconds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RegeneratedSeconds = null;
+            if (parseNode.GetChildNode("regenerated_segment_ids") is { } nullNodeRegeneratedSegmentIds && nullNodeRegeneratedSegmentIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RegeneratedSegmentIds = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Seconds actually billed, after the free-regeneration allowance. Zero when the re-dub cost nothing — either the allowance covered all of it, or the project&apos;s included generation did.</summary>
-        public double? ChargedSeconds { get; set; }
+        public double? ChargedSeconds { get => _explicitNullValueChargedSeconds; set { _explicitNullValueChargedSeconds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("charged_seconds"); else _explicitNullProperties?.Remove("charged_seconds"); } }
+        private double? _explicitNullValueChargedSeconds = default!;
         /// <summary>Free-regeneration seconds left for this language target after this re-dub. The allowance is the source&apos;s own duration.</summary>
-        public double? FreeRegenerationSecondsRemaining { get; set; }
+        public double? FreeRegenerationSecondsRemaining { get => _explicitNullValueFreeRegenerationSecondsRemaining; set { _explicitNullValueFreeRegenerationSecondsRemaining = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("free_regeneration_seconds_remaining"); else _explicitNullProperties?.Remove("free_regeneration_seconds_remaining"); } }
+        private double? _explicitNullValueFreeRegenerationSecondsRemaining = default!;
         /// <summary>Seconds of audio this re-dub covers — the edited regions only, never the whole target. `charged_seconds` is the part of it that was billed.</summary>
-        public double? RegeneratedSeconds { get; set; }
+        public double? RegeneratedSeconds { get => _explicitNullValueRegeneratedSeconds; set { _explicitNullValueRegeneratedSeconds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("regenerated_seconds"); else _explicitNullProperties?.Remove("regenerated_seconds"); } }
+        private double? _explicitNullValueRegeneratedSeconds = default!;
         /// <summary>The segments this re-dub re-synthesizes: those with edits to apply.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? RegeneratedSegmentIds { get; set; }
+        public List<string>? RegeneratedSegmentIds { get => _explicitNullValueRegeneratedSegmentIds; set { _explicitNullValueRegeneratedSegmentIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("regenerated_segment_ids"); else _explicitNullProperties?.Remove("regenerated_segment_ids"); } }
+        private List<string>? _explicitNullValueRegeneratedSegmentIds = default!;
 #nullable restore
 #else
-        public List<string> RegeneratedSegmentIds { get; set; }
+        public List<string> RegeneratedSegmentIds { get => _explicitNullValueRegeneratedSegmentIds; set { _explicitNullValueRegeneratedSegmentIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("regenerated_segment_ids"); else _explicitNullProperties?.Remove("regenerated_segment_ids"); } }
+        private List<string> _explicitNullValueRegeneratedSegmentIds = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingRegenerateResponse"/> and sets the default values.
@@ -44,7 +60,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingRegenerateResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingRegenerateResponse();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingRegenerateResponse(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -71,6 +87,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteDoubleValue("free_regeneration_seconds_remaining", FreeRegenerationSecondsRemaining);
             writer.WriteDoubleValue("regenerated_seconds", RegeneratedSeconds);
             writer.WriteCollectionOfPrimitiveValues<string>("regenerated_segment_ids", RegeneratedSegmentIds);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

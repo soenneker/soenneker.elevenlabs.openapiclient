@@ -8,98 +8,103 @@ using System;
 namespace Soenneker.ElevenLabs.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.EndCallToolConfig"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.EndProcedureToolConfig"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeBaseRagToolConfig"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeBaseToolConfig"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.LanguageDetectionToolConfig"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.PlayDtmfToolConfig"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.SkipTurnToolConfig"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.StartProcedureToolConfig"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.TransferToAgentToolConfigOutput"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.TransferToNumberToolConfigOutput"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.VoicemailDetectionToolConfig"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigOutputParamsOneOf1"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigOutputParamsOneOf10"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigOutputParamsOneOf11"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigOutputParamsOneOf2"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigOutputParamsOneOf3"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigOutputParamsOneOf4"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigOutputParamsOneOf5"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigOutputParamsOneOf6"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigOutputParamsOneOf7"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigOutputParamsOneOf8"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigOutputParamsOneOf9"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SystemToolConfigOutputParams : IComposedTypeWrapper, IParsable
-    {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.EndCallToolConfig"/></summary>
+    , global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder {
+        // Preserve ambiguous union payloads without inventing a discriminator.
+        /// <summary>The complete payload when no unique typed union branch can be selected.</summary>
+        public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode UnrecognizedValue { get; set; } = null!;
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalData { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigOutputParamsOneOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.EndCallToolConfig? EndCallToolConfig { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigOutputParamsOneOf1? SystemToolConfigOutputParamsOneOf1 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.EndCallToolConfig EndCallToolConfig { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigOutputParamsOneOf1 SystemToolConfigOutputParamsOneOf1 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.EndProcedureToolConfig"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigOutputParamsOneOf10"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.EndProcedureToolConfig? EndProcedureToolConfig { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigOutputParamsOneOf10? SystemToolConfigOutputParamsOneOf10 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.EndProcedureToolConfig EndProcedureToolConfig { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigOutputParamsOneOf10 SystemToolConfigOutputParamsOneOf10 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeBaseRagToolConfig"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigOutputParamsOneOf11"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeBaseRagToolConfig? KnowledgeBaseRagToolConfig { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigOutputParamsOneOf11? SystemToolConfigOutputParamsOneOf11 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeBaseRagToolConfig KnowledgeBaseRagToolConfig { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigOutputParamsOneOf11 SystemToolConfigOutputParamsOneOf11 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeBaseToolConfig"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigOutputParamsOneOf2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeBaseToolConfig? KnowledgeBaseToolConfig { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigOutputParamsOneOf2? SystemToolConfigOutputParamsOneOf2 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeBaseToolConfig KnowledgeBaseToolConfig { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigOutputParamsOneOf2 SystemToolConfigOutputParamsOneOf2 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.LanguageDetectionToolConfig"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigOutputParamsOneOf3"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.LanguageDetectionToolConfig? LanguageDetectionToolConfig { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigOutputParamsOneOf3? SystemToolConfigOutputParamsOneOf3 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.LanguageDetectionToolConfig LanguageDetectionToolConfig { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigOutputParamsOneOf3 SystemToolConfigOutputParamsOneOf3 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.PlayDtmfToolConfig"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigOutputParamsOneOf4"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PlayDtmfToolConfig? PlayDtmfToolConfig { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigOutputParamsOneOf4? SystemToolConfigOutputParamsOneOf4 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PlayDtmfToolConfig PlayDtmfToolConfig { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigOutputParamsOneOf4 SystemToolConfigOutputParamsOneOf4 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.SkipTurnToolConfig"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigOutputParamsOneOf5"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SkipTurnToolConfig? SkipTurnToolConfig { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigOutputParamsOneOf5? SystemToolConfigOutputParamsOneOf5 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SkipTurnToolConfig SkipTurnToolConfig { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigOutputParamsOneOf5 SystemToolConfigOutputParamsOneOf5 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.StartProcedureToolConfig"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigOutputParamsOneOf6"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.StartProcedureToolConfig? StartProcedureToolConfig { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigOutputParamsOneOf6? SystemToolConfigOutputParamsOneOf6 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.StartProcedureToolConfig StartProcedureToolConfig { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigOutputParamsOneOf6 SystemToolConfigOutputParamsOneOf6 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.TransferToAgentToolConfigOutput"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigOutputParamsOneOf7"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.TransferToAgentToolConfigOutput? TransferToAgentToolConfigOutput { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigOutputParamsOneOf7? SystemToolConfigOutputParamsOneOf7 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.TransferToAgentToolConfigOutput TransferToAgentToolConfigOutput { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigOutputParamsOneOf7 SystemToolConfigOutputParamsOneOf7 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.TransferToNumberToolConfigOutput"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigOutputParamsOneOf8"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.TransferToNumberToolConfigOutput? TransferToNumberToolConfigOutput { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigOutputParamsOneOf8? SystemToolConfigOutputParamsOneOf8 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.TransferToNumberToolConfigOutput TransferToNumberToolConfigOutput { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigOutputParamsOneOf8 SystemToolConfigOutputParamsOneOf8 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.VoicemailDetectionToolConfig"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigOutputParamsOneOf9"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.VoicemailDetectionToolConfig? VoicemailDetectionToolConfig { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigOutputParamsOneOf9? SystemToolConfigOutputParamsOneOf9 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.VoicemailDetectionToolConfig VoicemailDetectionToolConfig { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigOutputParamsOneOf9 SystemToolConfigOutputParamsOneOf9 { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -109,53 +114,78 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigOutputParams CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("system_tool_type")?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
             var result = new global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigOutputParams();
-            if("end_call".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("SystemToolConfigOutputParamsOneOf1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.EndCallToolConfig = new global::Soenneker.ElevenLabs.OpenApiClient.Models.EndCallToolConfig();
+                
             }
-            else if("end_procedure".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("SystemToolConfigOutputParamsOneOf10".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.EndProcedureToolConfig = new global::Soenneker.ElevenLabs.OpenApiClient.Models.EndProcedureToolConfig();
+                
             }
-            else if("knowledge_base_rag".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("SystemToolConfigOutputParamsOneOf11".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.KnowledgeBaseRagToolConfig = new global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeBaseRagToolConfig();
+                
             }
-            else if("knowledge_base".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("SystemToolConfigOutputParamsOneOf2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.KnowledgeBaseToolConfig = new global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeBaseToolConfig();
+                
             }
-            else if("language_detection".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("SystemToolConfigOutputParamsOneOf3".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.LanguageDetectionToolConfig = new global::Soenneker.ElevenLabs.OpenApiClient.Models.LanguageDetectionToolConfig();
+                
             }
-            else if("play_keypad_touch_tone".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("SystemToolConfigOutputParamsOneOf4".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.PlayDtmfToolConfig = new global::Soenneker.ElevenLabs.OpenApiClient.Models.PlayDtmfToolConfig();
+                
             }
-            else if("skip_turn".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("SystemToolConfigOutputParamsOneOf5".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.SkipTurnToolConfig = new global::Soenneker.ElevenLabs.OpenApiClient.Models.SkipTurnToolConfig();
+                
             }
-            else if("start_procedure".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("SystemToolConfigOutputParamsOneOf6".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.StartProcedureToolConfig = new global::Soenneker.ElevenLabs.OpenApiClient.Models.StartProcedureToolConfig();
+                
             }
-            else if("transfer_to_agent".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("SystemToolConfigOutputParamsOneOf7".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.TransferToAgentToolConfigOutput = new global::Soenneker.ElevenLabs.OpenApiClient.Models.TransferToAgentToolConfigOutput();
+                
             }
-            else if("transfer_to_number".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("SystemToolConfigOutputParamsOneOf8".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.TransferToNumberToolConfigOutput = new global::Soenneker.ElevenLabs.OpenApiClient.Models.TransferToNumberToolConfigOutput();
+                
             }
-            else if("voicemail_detection".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("SystemToolConfigOutputParamsOneOf9".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.VoicemailDetectionToolConfig = new global::Soenneker.ElevenLabs.OpenApiClient.Models.VoicemailDetectionToolConfig();
+                
             }
-            return result;
+            
+            var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
+            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("system_tool_type") != null && (parseNode.GetChildNode("system_tool_type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("end_call".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal)))))();
+            bool matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("system_tool_type") != null && (parseNode.GetChildNode("system_tool_type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("language_detection".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal)))))();
+            bool matchesUnionBranch2 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("transfers") != null && parseNode.GetChildNode("system_tool_type") != null && (parseNode.GetChildNode("system_tool_type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag2 && ("transfer_to_agent".Equals(tag2.GetValue(), global::System.StringComparison.Ordinal)))))();
+            bool matchesUnionBranch3 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("transfers") != null && parseNode.GetChildNode("system_tool_type") != null && (parseNode.GetChildNode("system_tool_type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag2 && ("transfer_to_number".Equals(tag2.GetValue(), global::System.StringComparison.Ordinal)))))();
+            bool matchesUnionBranch4 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("system_tool_type") != null && (parseNode.GetChildNode("system_tool_type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("skip_turn".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal)))))();
+            bool matchesUnionBranch5 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("system_tool_type") != null && (parseNode.GetChildNode("system_tool_type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("play_keypad_touch_tone".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal)))))();
+            bool matchesUnionBranch6 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("system_tool_type") != null && (parseNode.GetChildNode("system_tool_type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("voicemail_detection".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal)))))();
+            bool matchesUnionBranch7 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("system_tool_type") != null && (parseNode.GetChildNode("system_tool_type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("knowledge_base_rag".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal)))))();
+            bool matchesUnionBranch8 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("system_tool_type") != null && (parseNode.GetChildNode("system_tool_type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("knowledge_base".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal)))))();
+            bool matchesUnionBranch9 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("system_tool_type") != null && (parseNode.GetChildNode("system_tool_type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("start_procedure".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal)))))();
+            bool matchesUnionBranch10 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("system_tool_type") != null && (parseNode.GetChildNode("system_tool_type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("end_procedure".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal)))))();
+            if (result.SystemToolConfigOutputParamsOneOf1 == null && result.SystemToolConfigOutputParamsOneOf10 == null && result.SystemToolConfigOutputParamsOneOf11 == null && result.SystemToolConfigOutputParamsOneOf2 == null && result.SystemToolConfigOutputParamsOneOf3 == null && result.SystemToolConfigOutputParamsOneOf4 == null && result.SystemToolConfigOutputParamsOneOf5 == null && result.SystemToolConfigOutputParamsOneOf6 == null && result.SystemToolConfigOutputParamsOneOf7 == null && result.SystemToolConfigOutputParamsOneOf8 == null && result.SystemToolConfigOutputParamsOneOf9 == null && matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2 && !matchesUnionBranch3 && !matchesUnionBranch4 && !matchesUnionBranch5 && !matchesUnionBranch6 && !matchesUnionBranch7 && !matchesUnionBranch8 && !matchesUnionBranch9 && !matchesUnionBranch10) result.SystemToolConfigOutputParamsOneOf1 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigOutputParamsOneOf1(), parseNode);
+            if (result.SystemToolConfigOutputParamsOneOf1 == null && result.SystemToolConfigOutputParamsOneOf10 == null && result.SystemToolConfigOutputParamsOneOf11 == null && result.SystemToolConfigOutputParamsOneOf2 == null && result.SystemToolConfigOutputParamsOneOf3 == null && result.SystemToolConfigOutputParamsOneOf4 == null && result.SystemToolConfigOutputParamsOneOf5 == null && result.SystemToolConfigOutputParamsOneOf6 == null && result.SystemToolConfigOutputParamsOneOf7 == null && result.SystemToolConfigOutputParamsOneOf8 == null && result.SystemToolConfigOutputParamsOneOf9 == null && matchesUnionBranch1 && !matchesUnionBranch0 && !matchesUnionBranch2 && !matchesUnionBranch3 && !matchesUnionBranch4 && !matchesUnionBranch5 && !matchesUnionBranch6 && !matchesUnionBranch7 && !matchesUnionBranch8 && !matchesUnionBranch9 && !matchesUnionBranch10) result.SystemToolConfigOutputParamsOneOf2 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigOutputParamsOneOf2(), parseNode);
+            if (result.SystemToolConfigOutputParamsOneOf1 == null && result.SystemToolConfigOutputParamsOneOf10 == null && result.SystemToolConfigOutputParamsOneOf11 == null && result.SystemToolConfigOutputParamsOneOf2 == null && result.SystemToolConfigOutputParamsOneOf3 == null && result.SystemToolConfigOutputParamsOneOf4 == null && result.SystemToolConfigOutputParamsOneOf5 == null && result.SystemToolConfigOutputParamsOneOf6 == null && result.SystemToolConfigOutputParamsOneOf7 == null && result.SystemToolConfigOutputParamsOneOf8 == null && result.SystemToolConfigOutputParamsOneOf9 == null && matchesUnionBranch2 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch3 && !matchesUnionBranch4 && !matchesUnionBranch5 && !matchesUnionBranch6 && !matchesUnionBranch7 && !matchesUnionBranch8 && !matchesUnionBranch9 && !matchesUnionBranch10) result.SystemToolConfigOutputParamsOneOf3 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigOutputParamsOneOf3(), parseNode);
+            if (result.SystemToolConfigOutputParamsOneOf1 == null && result.SystemToolConfigOutputParamsOneOf10 == null && result.SystemToolConfigOutputParamsOneOf11 == null && result.SystemToolConfigOutputParamsOneOf2 == null && result.SystemToolConfigOutputParamsOneOf3 == null && result.SystemToolConfigOutputParamsOneOf4 == null && result.SystemToolConfigOutputParamsOneOf5 == null && result.SystemToolConfigOutputParamsOneOf6 == null && result.SystemToolConfigOutputParamsOneOf7 == null && result.SystemToolConfigOutputParamsOneOf8 == null && result.SystemToolConfigOutputParamsOneOf9 == null && matchesUnionBranch3 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2 && !matchesUnionBranch4 && !matchesUnionBranch5 && !matchesUnionBranch6 && !matchesUnionBranch7 && !matchesUnionBranch8 && !matchesUnionBranch9 && !matchesUnionBranch10) result.SystemToolConfigOutputParamsOneOf4 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigOutputParamsOneOf4(), parseNode);
+            if (result.SystemToolConfigOutputParamsOneOf1 == null && result.SystemToolConfigOutputParamsOneOf10 == null && result.SystemToolConfigOutputParamsOneOf11 == null && result.SystemToolConfigOutputParamsOneOf2 == null && result.SystemToolConfigOutputParamsOneOf3 == null && result.SystemToolConfigOutputParamsOneOf4 == null && result.SystemToolConfigOutputParamsOneOf5 == null && result.SystemToolConfigOutputParamsOneOf6 == null && result.SystemToolConfigOutputParamsOneOf7 == null && result.SystemToolConfigOutputParamsOneOf8 == null && result.SystemToolConfigOutputParamsOneOf9 == null && matchesUnionBranch4 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2 && !matchesUnionBranch3 && !matchesUnionBranch5 && !matchesUnionBranch6 && !matchesUnionBranch7 && !matchesUnionBranch8 && !matchesUnionBranch9 && !matchesUnionBranch10) result.SystemToolConfigOutputParamsOneOf5 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigOutputParamsOneOf5(), parseNode);
+            if (result.SystemToolConfigOutputParamsOneOf1 == null && result.SystemToolConfigOutputParamsOneOf10 == null && result.SystemToolConfigOutputParamsOneOf11 == null && result.SystemToolConfigOutputParamsOneOf2 == null && result.SystemToolConfigOutputParamsOneOf3 == null && result.SystemToolConfigOutputParamsOneOf4 == null && result.SystemToolConfigOutputParamsOneOf5 == null && result.SystemToolConfigOutputParamsOneOf6 == null && result.SystemToolConfigOutputParamsOneOf7 == null && result.SystemToolConfigOutputParamsOneOf8 == null && result.SystemToolConfigOutputParamsOneOf9 == null && matchesUnionBranch5 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2 && !matchesUnionBranch3 && !matchesUnionBranch4 && !matchesUnionBranch6 && !matchesUnionBranch7 && !matchesUnionBranch8 && !matchesUnionBranch9 && !matchesUnionBranch10) result.SystemToolConfigOutputParamsOneOf6 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigOutputParamsOneOf6(), parseNode);
+            if (result.SystemToolConfigOutputParamsOneOf1 == null && result.SystemToolConfigOutputParamsOneOf10 == null && result.SystemToolConfigOutputParamsOneOf11 == null && result.SystemToolConfigOutputParamsOneOf2 == null && result.SystemToolConfigOutputParamsOneOf3 == null && result.SystemToolConfigOutputParamsOneOf4 == null && result.SystemToolConfigOutputParamsOneOf5 == null && result.SystemToolConfigOutputParamsOneOf6 == null && result.SystemToolConfigOutputParamsOneOf7 == null && result.SystemToolConfigOutputParamsOneOf8 == null && result.SystemToolConfigOutputParamsOneOf9 == null && matchesUnionBranch6 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2 && !matchesUnionBranch3 && !matchesUnionBranch4 && !matchesUnionBranch5 && !matchesUnionBranch7 && !matchesUnionBranch8 && !matchesUnionBranch9 && !matchesUnionBranch10) result.SystemToolConfigOutputParamsOneOf7 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigOutputParamsOneOf7(), parseNode);
+            if (result.SystemToolConfigOutputParamsOneOf1 == null && result.SystemToolConfigOutputParamsOneOf10 == null && result.SystemToolConfigOutputParamsOneOf11 == null && result.SystemToolConfigOutputParamsOneOf2 == null && result.SystemToolConfigOutputParamsOneOf3 == null && result.SystemToolConfigOutputParamsOneOf4 == null && result.SystemToolConfigOutputParamsOneOf5 == null && result.SystemToolConfigOutputParamsOneOf6 == null && result.SystemToolConfigOutputParamsOneOf7 == null && result.SystemToolConfigOutputParamsOneOf8 == null && result.SystemToolConfigOutputParamsOneOf9 == null && matchesUnionBranch7 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2 && !matchesUnionBranch3 && !matchesUnionBranch4 && !matchesUnionBranch5 && !matchesUnionBranch6 && !matchesUnionBranch8 && !matchesUnionBranch9 && !matchesUnionBranch10) result.SystemToolConfigOutputParamsOneOf8 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigOutputParamsOneOf8(), parseNode);
+            if (result.SystemToolConfigOutputParamsOneOf1 == null && result.SystemToolConfigOutputParamsOneOf10 == null && result.SystemToolConfigOutputParamsOneOf11 == null && result.SystemToolConfigOutputParamsOneOf2 == null && result.SystemToolConfigOutputParamsOneOf3 == null && result.SystemToolConfigOutputParamsOneOf4 == null && result.SystemToolConfigOutputParamsOneOf5 == null && result.SystemToolConfigOutputParamsOneOf6 == null && result.SystemToolConfigOutputParamsOneOf7 == null && result.SystemToolConfigOutputParamsOneOf8 == null && result.SystemToolConfigOutputParamsOneOf9 == null && matchesUnionBranch8 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2 && !matchesUnionBranch3 && !matchesUnionBranch4 && !matchesUnionBranch5 && !matchesUnionBranch6 && !matchesUnionBranch7 && !matchesUnionBranch9 && !matchesUnionBranch10) result.SystemToolConfigOutputParamsOneOf9 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigOutputParamsOneOf9(), parseNode);
+            if (result.SystemToolConfigOutputParamsOneOf1 == null && result.SystemToolConfigOutputParamsOneOf10 == null && result.SystemToolConfigOutputParamsOneOf11 == null && result.SystemToolConfigOutputParamsOneOf2 == null && result.SystemToolConfigOutputParamsOneOf3 == null && result.SystemToolConfigOutputParamsOneOf4 == null && result.SystemToolConfigOutputParamsOneOf5 == null && result.SystemToolConfigOutputParamsOneOf6 == null && result.SystemToolConfigOutputParamsOneOf7 == null && result.SystemToolConfigOutputParamsOneOf8 == null && result.SystemToolConfigOutputParamsOneOf9 == null && matchesUnionBranch9 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2 && !matchesUnionBranch3 && !matchesUnionBranch4 && !matchesUnionBranch5 && !matchesUnionBranch6 && !matchesUnionBranch7 && !matchesUnionBranch8 && !matchesUnionBranch10) result.SystemToolConfigOutputParamsOneOf10 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigOutputParamsOneOf10(), parseNode);
+            if (result.SystemToolConfigOutputParamsOneOf1 == null && result.SystemToolConfigOutputParamsOneOf10 == null && result.SystemToolConfigOutputParamsOneOf11 == null && result.SystemToolConfigOutputParamsOneOf2 == null && result.SystemToolConfigOutputParamsOneOf3 == null && result.SystemToolConfigOutputParamsOneOf4 == null && result.SystemToolConfigOutputParamsOneOf5 == null && result.SystemToolConfigOutputParamsOneOf6 == null && result.SystemToolConfigOutputParamsOneOf7 == null && result.SystemToolConfigOutputParamsOneOf8 == null && result.SystemToolConfigOutputParamsOneOf9 == null && matchesUnionBranch10 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2 && !matchesUnionBranch3 && !matchesUnionBranch4 && !matchesUnionBranch5 && !matchesUnionBranch6 && !matchesUnionBranch7 && !matchesUnionBranch8 && !matchesUnionBranch9) result.SystemToolConfigOutputParamsOneOf11 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigOutputParamsOneOf11(), parseNode);
+            if (result.SystemToolConfigOutputParamsOneOf1 == null && result.SystemToolConfigOutputParamsOneOf10 == null && result.SystemToolConfigOutputParamsOneOf11 == null && result.SystemToolConfigOutputParamsOneOf2 == null && result.SystemToolConfigOutputParamsOneOf3 == null && result.SystemToolConfigOutputParamsOneOf4 == null && result.SystemToolConfigOutputParamsOneOf5 == null && result.SystemToolConfigOutputParamsOneOf6 == null && result.SystemToolConfigOutputParamsOneOf7 == null && result.SystemToolConfigOutputParamsOneOf8 == null && result.SystemToolConfigOutputParamsOneOf9 == null) result.UnrecognizedValue = unionPayload;
+return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -163,49 +193,49 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(EndCallToolConfig != null)
+            if(SystemToolConfigOutputParamsOneOf1 != null)
             {
-                return EndCallToolConfig.GetFieldDeserializers();
+                return SystemToolConfigOutputParamsOneOf1.GetFieldDeserializers();
             }
-            else if(EndProcedureToolConfig != null)
+            else if(SystemToolConfigOutputParamsOneOf10 != null)
             {
-                return EndProcedureToolConfig.GetFieldDeserializers();
+                return SystemToolConfigOutputParamsOneOf10.GetFieldDeserializers();
             }
-            else if(KnowledgeBaseRagToolConfig != null)
+            else if(SystemToolConfigOutputParamsOneOf11 != null)
             {
-                return KnowledgeBaseRagToolConfig.GetFieldDeserializers();
+                return SystemToolConfigOutputParamsOneOf11.GetFieldDeserializers();
             }
-            else if(KnowledgeBaseToolConfig != null)
+            else if(SystemToolConfigOutputParamsOneOf2 != null)
             {
-                return KnowledgeBaseToolConfig.GetFieldDeserializers();
+                return SystemToolConfigOutputParamsOneOf2.GetFieldDeserializers();
             }
-            else if(LanguageDetectionToolConfig != null)
+            else if(SystemToolConfigOutputParamsOneOf3 != null)
             {
-                return LanguageDetectionToolConfig.GetFieldDeserializers();
+                return SystemToolConfigOutputParamsOneOf3.GetFieldDeserializers();
             }
-            else if(PlayDtmfToolConfig != null)
+            else if(SystemToolConfigOutputParamsOneOf4 != null)
             {
-                return PlayDtmfToolConfig.GetFieldDeserializers();
+                return SystemToolConfigOutputParamsOneOf4.GetFieldDeserializers();
             }
-            else if(SkipTurnToolConfig != null)
+            else if(SystemToolConfigOutputParamsOneOf5 != null)
             {
-                return SkipTurnToolConfig.GetFieldDeserializers();
+                return SystemToolConfigOutputParamsOneOf5.GetFieldDeserializers();
             }
-            else if(StartProcedureToolConfig != null)
+            else if(SystemToolConfigOutputParamsOneOf6 != null)
             {
-                return StartProcedureToolConfig.GetFieldDeserializers();
+                return SystemToolConfigOutputParamsOneOf6.GetFieldDeserializers();
             }
-            else if(TransferToAgentToolConfigOutput != null)
+            else if(SystemToolConfigOutputParamsOneOf7 != null)
             {
-                return TransferToAgentToolConfigOutput.GetFieldDeserializers();
+                return SystemToolConfigOutputParamsOneOf7.GetFieldDeserializers();
             }
-            else if(TransferToNumberToolConfigOutput != null)
+            else if(SystemToolConfigOutputParamsOneOf8 != null)
             {
-                return TransferToNumberToolConfigOutput.GetFieldDeserializers();
+                return SystemToolConfigOutputParamsOneOf8.GetFieldDeserializers();
             }
-            else if(VoicemailDetectionToolConfig != null)
+            else if(SystemToolConfigOutputParamsOneOf9 != null)
             {
-                return VoicemailDetectionToolConfig.GetFieldDeserializers();
+                return SystemToolConfigOutputParamsOneOf9.GetFieldDeserializers();
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -215,50 +245,75 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
+            if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
+            if (SystemToolConfigOutputParamsOneOf1 == null && SystemToolConfigOutputParamsOneOf10 == null && SystemToolConfigOutputParamsOneOf11 == null && SystemToolConfigOutputParamsOneOf2 == null && SystemToolConfigOutputParamsOneOf3 == null && SystemToolConfigOutputParamsOneOf4 == null && SystemToolConfigOutputParamsOneOf5 == null && SystemToolConfigOutputParamsOneOf6 == null && SystemToolConfigOutputParamsOneOf7 == null && SystemToolConfigOutputParamsOneOf8 == null && SystemToolConfigOutputParamsOneOf9 == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
+            if (SystemToolConfigOutputParamsOneOf1 != null && SystemToolConfigOutputParamsOneOf10 == null && SystemToolConfigOutputParamsOneOf11 == null && SystemToolConfigOutputParamsOneOf2 == null && SystemToolConfigOutputParamsOneOf3 == null && SystemToolConfigOutputParamsOneOf4 == null && SystemToolConfigOutputParamsOneOf5 == null && SystemToolConfigOutputParamsOneOf6 == null && SystemToolConfigOutputParamsOneOf7 == null && SystemToolConfigOutputParamsOneOf8 == null && SystemToolConfigOutputParamsOneOf9 == null) { if (SystemToolConfigOutputParamsOneOf1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, SystemToolConfigOutputParamsOneOf1); return; }
+            if (SystemToolConfigOutputParamsOneOf10 != null && SystemToolConfigOutputParamsOneOf1 == null && SystemToolConfigOutputParamsOneOf11 == null && SystemToolConfigOutputParamsOneOf2 == null && SystemToolConfigOutputParamsOneOf3 == null && SystemToolConfigOutputParamsOneOf4 == null && SystemToolConfigOutputParamsOneOf5 == null && SystemToolConfigOutputParamsOneOf6 == null && SystemToolConfigOutputParamsOneOf7 == null && SystemToolConfigOutputParamsOneOf8 == null && SystemToolConfigOutputParamsOneOf9 == null) { if (SystemToolConfigOutputParamsOneOf10 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, SystemToolConfigOutputParamsOneOf10); return; }
+            if (SystemToolConfigOutputParamsOneOf11 != null && SystemToolConfigOutputParamsOneOf1 == null && SystemToolConfigOutputParamsOneOf10 == null && SystemToolConfigOutputParamsOneOf2 == null && SystemToolConfigOutputParamsOneOf3 == null && SystemToolConfigOutputParamsOneOf4 == null && SystemToolConfigOutputParamsOneOf5 == null && SystemToolConfigOutputParamsOneOf6 == null && SystemToolConfigOutputParamsOneOf7 == null && SystemToolConfigOutputParamsOneOf8 == null && SystemToolConfigOutputParamsOneOf9 == null) { if (SystemToolConfigOutputParamsOneOf11 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, SystemToolConfigOutputParamsOneOf11); return; }
+            if (SystemToolConfigOutputParamsOneOf2 != null && SystemToolConfigOutputParamsOneOf1 == null && SystemToolConfigOutputParamsOneOf10 == null && SystemToolConfigOutputParamsOneOf11 == null && SystemToolConfigOutputParamsOneOf3 == null && SystemToolConfigOutputParamsOneOf4 == null && SystemToolConfigOutputParamsOneOf5 == null && SystemToolConfigOutputParamsOneOf6 == null && SystemToolConfigOutputParamsOneOf7 == null && SystemToolConfigOutputParamsOneOf8 == null && SystemToolConfigOutputParamsOneOf9 == null) { if (SystemToolConfigOutputParamsOneOf2 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, SystemToolConfigOutputParamsOneOf2); return; }
+            if (SystemToolConfigOutputParamsOneOf3 != null && SystemToolConfigOutputParamsOneOf1 == null && SystemToolConfigOutputParamsOneOf10 == null && SystemToolConfigOutputParamsOneOf11 == null && SystemToolConfigOutputParamsOneOf2 == null && SystemToolConfigOutputParamsOneOf4 == null && SystemToolConfigOutputParamsOneOf5 == null && SystemToolConfigOutputParamsOneOf6 == null && SystemToolConfigOutputParamsOneOf7 == null && SystemToolConfigOutputParamsOneOf8 == null && SystemToolConfigOutputParamsOneOf9 == null) { if (SystemToolConfigOutputParamsOneOf3 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, SystemToolConfigOutputParamsOneOf3); return; }
+            if (SystemToolConfigOutputParamsOneOf4 != null && SystemToolConfigOutputParamsOneOf1 == null && SystemToolConfigOutputParamsOneOf10 == null && SystemToolConfigOutputParamsOneOf11 == null && SystemToolConfigOutputParamsOneOf2 == null && SystemToolConfigOutputParamsOneOf3 == null && SystemToolConfigOutputParamsOneOf5 == null && SystemToolConfigOutputParamsOneOf6 == null && SystemToolConfigOutputParamsOneOf7 == null && SystemToolConfigOutputParamsOneOf8 == null && SystemToolConfigOutputParamsOneOf9 == null) { if (SystemToolConfigOutputParamsOneOf4 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, SystemToolConfigOutputParamsOneOf4); return; }
+            if (SystemToolConfigOutputParamsOneOf5 != null && SystemToolConfigOutputParamsOneOf1 == null && SystemToolConfigOutputParamsOneOf10 == null && SystemToolConfigOutputParamsOneOf11 == null && SystemToolConfigOutputParamsOneOf2 == null && SystemToolConfigOutputParamsOneOf3 == null && SystemToolConfigOutputParamsOneOf4 == null && SystemToolConfigOutputParamsOneOf6 == null && SystemToolConfigOutputParamsOneOf7 == null && SystemToolConfigOutputParamsOneOf8 == null && SystemToolConfigOutputParamsOneOf9 == null) { if (SystemToolConfigOutputParamsOneOf5 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, SystemToolConfigOutputParamsOneOf5); return; }
+            if (SystemToolConfigOutputParamsOneOf6 != null && SystemToolConfigOutputParamsOneOf1 == null && SystemToolConfigOutputParamsOneOf10 == null && SystemToolConfigOutputParamsOneOf11 == null && SystemToolConfigOutputParamsOneOf2 == null && SystemToolConfigOutputParamsOneOf3 == null && SystemToolConfigOutputParamsOneOf4 == null && SystemToolConfigOutputParamsOneOf5 == null && SystemToolConfigOutputParamsOneOf7 == null && SystemToolConfigOutputParamsOneOf8 == null && SystemToolConfigOutputParamsOneOf9 == null) { if (SystemToolConfigOutputParamsOneOf6 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, SystemToolConfigOutputParamsOneOf6); return; }
+            if (SystemToolConfigOutputParamsOneOf7 != null && SystemToolConfigOutputParamsOneOf1 == null && SystemToolConfigOutputParamsOneOf10 == null && SystemToolConfigOutputParamsOneOf11 == null && SystemToolConfigOutputParamsOneOf2 == null && SystemToolConfigOutputParamsOneOf3 == null && SystemToolConfigOutputParamsOneOf4 == null && SystemToolConfigOutputParamsOneOf5 == null && SystemToolConfigOutputParamsOneOf6 == null && SystemToolConfigOutputParamsOneOf8 == null && SystemToolConfigOutputParamsOneOf9 == null) { if (SystemToolConfigOutputParamsOneOf7 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, SystemToolConfigOutputParamsOneOf7); return; }
+            if (SystemToolConfigOutputParamsOneOf8 != null && SystemToolConfigOutputParamsOneOf1 == null && SystemToolConfigOutputParamsOneOf10 == null && SystemToolConfigOutputParamsOneOf11 == null && SystemToolConfigOutputParamsOneOf2 == null && SystemToolConfigOutputParamsOneOf3 == null && SystemToolConfigOutputParamsOneOf4 == null && SystemToolConfigOutputParamsOneOf5 == null && SystemToolConfigOutputParamsOneOf6 == null && SystemToolConfigOutputParamsOneOf7 == null && SystemToolConfigOutputParamsOneOf9 == null) { if (SystemToolConfigOutputParamsOneOf8 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, SystemToolConfigOutputParamsOneOf8); return; }
+            if (SystemToolConfigOutputParamsOneOf9 != null && SystemToolConfigOutputParamsOneOf1 == null && SystemToolConfigOutputParamsOneOf10 == null && SystemToolConfigOutputParamsOneOf11 == null && SystemToolConfigOutputParamsOneOf2 == null && SystemToolConfigOutputParamsOneOf3 == null && SystemToolConfigOutputParamsOneOf4 == null && SystemToolConfigOutputParamsOneOf5 == null && SystemToolConfigOutputParamsOneOf6 == null && SystemToolConfigOutputParamsOneOf7 == null && SystemToolConfigOutputParamsOneOf8 == null) { if (SystemToolConfigOutputParamsOneOf9 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, SystemToolConfigOutputParamsOneOf9); return; }
+
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(EndCallToolConfig != null)
+            if(SystemToolConfigOutputParamsOneOf1 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.EndCallToolConfig>(null, EndCallToolConfig);
+                if (SystemToolConfigOutputParamsOneOf1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigOutputParamsOneOf1>(null, SystemToolConfigOutputParamsOneOf1);
             }
-            else if(EndProcedureToolConfig != null)
+            else if(SystemToolConfigOutputParamsOneOf10 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.EndProcedureToolConfig>(null, EndProcedureToolConfig);
+                if (SystemToolConfigOutputParamsOneOf10 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigOutputParamsOneOf10>(null, SystemToolConfigOutputParamsOneOf10);
             }
-            else if(KnowledgeBaseRagToolConfig != null)
+            else if(SystemToolConfigOutputParamsOneOf11 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeBaseRagToolConfig>(null, KnowledgeBaseRagToolConfig);
+                if (SystemToolConfigOutputParamsOneOf11 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigOutputParamsOneOf11>(null, SystemToolConfigOutputParamsOneOf11);
             }
-            else if(KnowledgeBaseToolConfig != null)
+            else if(SystemToolConfigOutputParamsOneOf2 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeBaseToolConfig>(null, KnowledgeBaseToolConfig);
+                if (SystemToolConfigOutputParamsOneOf2 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigOutputParamsOneOf2>(null, SystemToolConfigOutputParamsOneOf2);
             }
-            else if(LanguageDetectionToolConfig != null)
+            else if(SystemToolConfigOutputParamsOneOf3 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.LanguageDetectionToolConfig>(null, LanguageDetectionToolConfig);
+                if (SystemToolConfigOutputParamsOneOf3 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigOutputParamsOneOf3>(null, SystemToolConfigOutputParamsOneOf3);
             }
-            else if(PlayDtmfToolConfig != null)
+            else if(SystemToolConfigOutputParamsOneOf4 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PlayDtmfToolConfig>(null, PlayDtmfToolConfig);
+                if (SystemToolConfigOutputParamsOneOf4 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigOutputParamsOneOf4>(null, SystemToolConfigOutputParamsOneOf4);
             }
-            else if(SkipTurnToolConfig != null)
+            else if(SystemToolConfigOutputParamsOneOf5 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SkipTurnToolConfig>(null, SkipTurnToolConfig);
+                if (SystemToolConfigOutputParamsOneOf5 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigOutputParamsOneOf5>(null, SystemToolConfigOutputParamsOneOf5);
             }
-            else if(StartProcedureToolConfig != null)
+            else if(SystemToolConfigOutputParamsOneOf6 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.StartProcedureToolConfig>(null, StartProcedureToolConfig);
+                if (SystemToolConfigOutputParamsOneOf6 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigOutputParamsOneOf6>(null, SystemToolConfigOutputParamsOneOf6);
             }
-            else if(TransferToAgentToolConfigOutput != null)
+            else if(SystemToolConfigOutputParamsOneOf7 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TransferToAgentToolConfigOutput>(null, TransferToAgentToolConfigOutput);
+                if (SystemToolConfigOutputParamsOneOf7 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigOutputParamsOneOf7>(null, SystemToolConfigOutputParamsOneOf7);
             }
-            else if(TransferToNumberToolConfigOutput != null)
+            else if(SystemToolConfigOutputParamsOneOf8 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TransferToNumberToolConfigOutput>(null, TransferToNumberToolConfigOutput);
+                if (SystemToolConfigOutputParamsOneOf8 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigOutputParamsOneOf8>(null, SystemToolConfigOutputParamsOneOf8);
             }
-            else if(VoicemailDetectionToolConfig != null)
+            else if(SystemToolConfigOutputParamsOneOf9 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.VoicemailDetectionToolConfig>(null, VoicemailDetectionToolConfig);
+                if (SystemToolConfigOutputParamsOneOf9 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SystemToolConfigOutputParamsOneOf9>(null, SystemToolConfigOutputParamsOneOf9);
             }
         }
     }

@@ -12,68 +12,107 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Veo31FastRequest : IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("aspect_ratio") is { } nullNodeAspectRatio && nullNodeAspectRatio.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AspectRatio = null;
+            if (parseNode.GetChildNode("duration_secs") is { } nullNodeDurationSecs && nullNodeDurationSecs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DurationSecs = null;
+            if (parseNode.GetChildNode("end_frame") is { } nullNodeEndFrame && nullNodeEndFrame.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EndFrame = null;
+            if (parseNode.GetChildNode("enhance_prompt") is { } nullNodeEnhancePrompt && nullNodeEnhancePrompt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EnhancePrompt = null;
+            if (parseNode.GetChildNode("generate_audio") is { } nullNodeGenerateAudio && nullNodeGenerateAudio.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GenerateAudio = null;
+            if (parseNode.GetChildNode("images") is { } nullNodeImages && nullNodeImages.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Images = null;
+            if (parseNode.GetChildNode("model_id") is { } nullNodeModelId && nullNodeModelId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ModelId = null;
+            if (parseNode.GetChildNode("negative_prompt") is { } nullNodeNegativePrompt && nullNodeNegativePrompt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NegativePrompt = null;
+            if (parseNode.GetChildNode("prompt") is { } nullNodePrompt && nullNodePrompt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Prompt = null;
+            if (parseNode.GetChildNode("resolution") is { } nullNodeResolution && nullNodeResolution.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Resolution = null;
+            if (parseNode.GetChildNode("seed") is { } nullNodeSeed && nullNodeSeed.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Seed = null;
+            if (parseNode.GetChildNode("start_frame") is { } nullNodeStartFrame && nullNodeStartFrame.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StartFrame = null;
+            if (parseNode.GetChildNode("webhook") is { } nullNodeWebhook && nullNodeWebhook.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Webhook = null;
+        }
+
         /// <summary>The aspect ratio of the output video.</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Veo31FastRequestAspectRatio? AspectRatio { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Veo31FastRequestAspectRatio? AspectRatio { get => _explicitNullValueAspectRatio; set { _explicitNullValueAspectRatio = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("aspect_ratio"); else _explicitNullProperties?.Remove("aspect_ratio"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.Veo31FastRequestAspectRatio? _explicitNullValueAspectRatio = default!;
         /// <summary>The duration of the output video in seconds.</summary>
-        public int? DurationSecs { get; set; }
+        public int? DurationSecs { get => _explicitNullValueDurationSecs; set { _explicitNullValueDurationSecs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("duration_secs"); else _explicitNullProperties?.Remove("duration_secs"); } }
+        private int? _explicitNullValueDurationSecs = default!;
         /// <summary>The image to use as the video&apos;s last frame.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ImageReference? EndFrame { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ImageReference? EndFrame { get => _explicitNullValueEndFrame; set { _explicitNullValueEndFrame = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("end_frame"); else _explicitNullProperties?.Remove("end_frame"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ImageReference? _explicitNullValueEndFrame = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ImageReference EndFrame { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ImageReference EndFrame { get => _explicitNullValueEndFrame; set { _explicitNullValueEndFrame = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("end_frame"); else _explicitNullProperties?.Remove("end_frame"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ImageReference _explicitNullValueEndFrame = default!;
 #endif
         /// <summary>Whether the model may rewrite the prompt to improve results.</summary>
-        public bool? EnhancePrompt { get; set; }
+        public bool? EnhancePrompt { get => _explicitNullValueEnhancePrompt; set { _explicitNullValueEnhancePrompt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enhance_prompt"); else _explicitNullProperties?.Remove("enhance_prompt"); } }
+        private bool? _explicitNullValueEnhancePrompt = default!;
         /// <summary>Whether to generate audio with the video.</summary>
-        public bool? GenerateAudio { get; set; }
+        public bool? GenerateAudio { get => _explicitNullValueGenerateAudio; set { _explicitNullValueGenerateAudio = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("generate_audio"); else _explicitNullProperties?.Remove("generate_audio"); } }
+        private bool? _explicitNullValueGenerateAudio = default!;
         /// <summary>Up to 3 reference images to draw subjects or style from. Cannot be combined with `start_frame`/`end_frame`, and requires the 8-second duration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.VeoImageReference>? Images { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.VeoImageReference>? Images { get => _explicitNullValueImages; set { _explicitNullValueImages = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("images"); else _explicitNullProperties?.Remove("images"); } }
+        private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.VeoImageReference>? _explicitNullValueImages = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.VeoImageReference> Images { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.VeoImageReference> Images { get => _explicitNullValueImages; set { _explicitNullValueImages = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("images"); else _explicitNullProperties?.Remove("images"); } }
+        private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.VeoImageReference> _explicitNullValueImages = default!;
 #endif
         /// <summary>The model to use for the generation.</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Veo31FastGenerate001ModelId? ModelId { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Veo31FastGenerate001ModelId? ModelId { get => _explicitNullValueModelId; set { _explicitNullValueModelId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("model_id"); else _explicitNullProperties?.Remove("model_id"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.Veo31FastGenerate001ModelId? _explicitNullValueModelId = default!;
         /// <summary>A text description of what the video should avoid.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? NegativePrompt { get; set; }
+        public string? NegativePrompt { get => _explicitNullValueNegativePrompt; set { _explicitNullValueNegativePrompt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("negative_prompt"); else _explicitNullProperties?.Remove("negative_prompt"); } }
+        private string? _explicitNullValueNegativePrompt = default!;
 #nullable restore
 #else
-        public string NegativePrompt { get; set; }
+        public string NegativePrompt { get => _explicitNullValueNegativePrompt; set { _explicitNullValueNegativePrompt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("negative_prompt"); else _explicitNullProperties?.Remove("negative_prompt"); } }
+        private string _explicitNullValueNegativePrompt = default!;
 #endif
         /// <summary>A text description of the video to generate.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Prompt { get; set; }
+        public string? Prompt { get => _explicitNullValuePrompt; set { _explicitNullValuePrompt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prompt"); else _explicitNullProperties?.Remove("prompt"); } }
+        private string? _explicitNullValuePrompt = default!;
 #nullable restore
 #else
-        public string Prompt { get; set; }
+        public string Prompt { get => _explicitNullValuePrompt; set { _explicitNullValuePrompt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prompt"); else _explicitNullProperties?.Remove("prompt"); } }
+        private string _explicitNullValuePrompt = default!;
 #endif
         /// <summary>The resolution of the output video.</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Veo31FastRequestResolution? Resolution { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Veo31FastRequestResolution? Resolution { get => _explicitNullValueResolution; set { _explicitNullValueResolution = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resolution"); else _explicitNullProperties?.Remove("resolution"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.Veo31FastRequestResolution? _explicitNullValueResolution = default!;
         /// <summary>A seed for reproducible generation: the same seed and inputs give similar output across generations. Omit for random.</summary>
-        public int? Seed { get; set; }
+        public int? Seed { get => _explicitNullValueSeed; set { _explicitNullValueSeed = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("seed"); else _explicitNullProperties?.Remove("seed"); } }
+        private int? _explicitNullValueSeed = default!;
         /// <summary>The image to use as the video&apos;s first frame.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ImageReference? StartFrame { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ImageReference? StartFrame { get => _explicitNullValueStartFrame; set { _explicitNullValueStartFrame = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("start_frame"); else _explicitNullProperties?.Remove("start_frame"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ImageReference? _explicitNullValueStartFrame = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ImageReference StartFrame { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ImageReference StartFrame { get => _explicitNullValueStartFrame; set { _explicitNullValueStartFrame = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("start_frame"); else _explicitNullProperties?.Remove("start_frame"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ImageReference _explicitNullValueStartFrame = default!;
 #endif
         /// <summary>Include to send the generation&apos;s result to the workspace&apos;s configured flows webhooks once it completes or fails. The webhook payload matches the terminal response of the corresponding GET endpoint.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookTarget? Webhook { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookTarget? Webhook { get => _explicitNullValueWebhook; set { _explicitNullValueWebhook = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("webhook"); else _explicitNullProperties?.Remove("webhook"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookTarget? _explicitNullValueWebhook = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookTarget Webhook { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookTarget Webhook { get => _explicitNullValueWebhook; set { _explicitNullValueWebhook = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("webhook"); else _explicitNullProperties?.Remove("webhook"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookTarget _explicitNullValueWebhook = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.Veo31FastRequest"/> and sets the default values.
@@ -92,7 +131,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.Veo31FastRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.Veo31FastRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.Veo31FastRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -136,7 +175,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.Veo31FastRequestResolution>("resolution", Resolution);
             writer.WriteIntValue("seed", Seed);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ImageReference>("start_frame", StartFrame);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookTarget>("webhook", Webhook);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookTarget>("webhook", Webhook);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

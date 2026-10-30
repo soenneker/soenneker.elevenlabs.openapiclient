@@ -11,34 +11,52 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class DubbingTargetTranscriptResponse : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("revision") is { } nullNodeRevision && nullNodeRevision.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Revision = null;
+            if (parseNode.GetChildNode("segments") is { } nullNodeSegments && nullNodeSegments.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Segments = null;
+            if (parseNode.GetChildNode("source_language") is { } nullNodeSourceLanguage && nullNodeSourceLanguage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SourceLanguage = null;
+            if (parseNode.GetChildNode("target_language") is { } nullNodeTargetLanguage && nullNodeTargetLanguage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TargetLanguage = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The target&apos;s revision at read time.</summary>
-        public int? Revision { get; set; }
+        public int? Revision { get => _explicitNullValueRevision; set { _explicitNullValueRevision = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("revision"); else _explicitNullProperties?.Remove("revision"); } }
+        private int? _explicitNullValueRevision = default!;
         /// <summary>The target segments, in playback order.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingTargetTranscriptSegment>? Segments { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingTargetTranscriptSegment>? Segments { get => _explicitNullValueSegments; set { _explicitNullValueSegments = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("segments"); else _explicitNullProperties?.Remove("segments"); } }
+        private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingTargetTranscriptSegment>? _explicitNullValueSegments = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingTargetTranscriptSegment> Segments { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingTargetTranscriptSegment> Segments { get => _explicitNullValueSegments; set { _explicitNullValueSegments = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("segments"); else _explicitNullProperties?.Remove("segments"); } }
+        private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingTargetTranscriptSegment> _explicitNullValueSegments = default!;
 #endif
         /// <summary>BCP-47 language tag of the source transcript.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SourceLanguage { get; set; }
+        public string? SourceLanguage { get => _explicitNullValueSourceLanguage; set { _explicitNullValueSourceLanguage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source_language"); else _explicitNullProperties?.Remove("source_language"); } }
+        private string? _explicitNullValueSourceLanguage = default!;
 #nullable restore
 #else
-        public string SourceLanguage { get; set; }
+        public string SourceLanguage { get => _explicitNullValueSourceLanguage; set { _explicitNullValueSourceLanguage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source_language"); else _explicitNullProperties?.Remove("source_language"); } }
+        private string _explicitNullValueSourceLanguage = default!;
 #endif
         /// <summary>BCP-47 language tag this target is translated into.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TargetLanguage { get; set; }
+        public string? TargetLanguage { get => _explicitNullValueTargetLanguage; set { _explicitNullValueTargetLanguage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("target_language"); else _explicitNullProperties?.Remove("target_language"); } }
+        private string? _explicitNullValueTargetLanguage = default!;
 #nullable restore
 #else
-        public string TargetLanguage { get; set; }
+        public string TargetLanguage { get => _explicitNullValueTargetLanguage; set { _explicitNullValueTargetLanguage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("target_language"); else _explicitNullProperties?.Remove("target_language"); } }
+        private string _explicitNullValueTargetLanguage = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingTargetTranscriptResponse"/> and sets the default values.
@@ -55,7 +73,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingTargetTranscriptResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingTargetTranscriptResponse();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingTargetTranscriptResponse(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -82,6 +100,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingTargetTranscriptSegment>("segments", Segments);
             writer.WriteStringValue("source_language", SourceLanguage);
             writer.WriteStringValue("target_language", TargetLanguage);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

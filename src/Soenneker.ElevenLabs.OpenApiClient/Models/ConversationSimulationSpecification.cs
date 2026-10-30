@@ -12,40 +12,59 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ConversationSimulationSpecification : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("dynamic_variables") is { } nullNodeDynamicVariables && nullNodeDynamicVariables.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DynamicVariables = null;
+            if (parseNode.GetChildNode("partial_conversation_history") is { } nullNodePartialConversationHistory && nullNodePartialConversationHistory.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PartialConversationHistory = null;
+            if (parseNode.GetChildNode("simulated_user_config") is { } nullNodeSimulatedUserConfig && nullNodeSimulatedUserConfig.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SimulatedUserConfig = null;
+            if (parseNode.GetChildNode("tool_mock_config") is { } nullNodeToolMockConfig && nullNodeToolMockConfig.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ToolMockConfig = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The dynamic_variables property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationSimulationSpecificationDynamicVariablesProperty? DynamicVariables { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationSimulationSpecificationDynamicVariablesProperty? DynamicVariables { get => _explicitNullValueDynamicVariables; set { _explicitNullValueDynamicVariables = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dynamic_variables"); else _explicitNullProperties?.Remove("dynamic_variables"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationSimulationSpecificationDynamicVariablesProperty? _explicitNullValueDynamicVariables = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationSimulationSpecificationDynamicVariablesProperty DynamicVariables { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationSimulationSpecificationDynamicVariablesProperty DynamicVariables { get => _explicitNullValueDynamicVariables; set { _explicitNullValueDynamicVariables = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dynamic_variables"); else _explicitNullProperties?.Remove("dynamic_variables"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationSimulationSpecificationDynamicVariablesProperty _explicitNullValueDynamicVariables = default!;
 #endif
         /// <summary>A partial conversation history to start the simulation from. If empty, simulation starts fresh.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptCommonModelInput>? PartialConversationHistory { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptCommonModelInput>? PartialConversationHistory { get => _explicitNullValuePartialConversationHistory; set { _explicitNullValuePartialConversationHistory = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("partial_conversation_history"); else _explicitNullProperties?.Remove("partial_conversation_history"); } }
+        private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptCommonModelInput>? _explicitNullValuePartialConversationHistory = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptCommonModelInput> PartialConversationHistory { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptCommonModelInput> PartialConversationHistory { get => _explicitNullValuePartialConversationHistory; set { _explicitNullValuePartialConversationHistory = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("partial_conversation_history"); else _explicitNullProperties?.Remove("partial_conversation_history"); } }
+        private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptCommonModelInput> _explicitNullValuePartialConversationHistory = default!;
 #endif
         /// <summary>The simulated_user_config property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentConfigApiModelInput? SimulatedUserConfig { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentConfigApiModelInput? SimulatedUserConfig { get => _explicitNullValueSimulatedUserConfig; set { _explicitNullValueSimulatedUserConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("simulated_user_config"); else _explicitNullProperties?.Remove("simulated_user_config"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentConfigApiModelInput? _explicitNullValueSimulatedUserConfig = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentConfigApiModelInput SimulatedUserConfig { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentConfigApiModelInput SimulatedUserConfig { get => _explicitNullValueSimulatedUserConfig; set { _explicitNullValueSimulatedUserConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("simulated_user_config"); else _explicitNullProperties?.Remove("simulated_user_config"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentConfigApiModelInput _explicitNullValueSimulatedUserConfig = default!;
 #endif
         /// <summary>The tool_mock_config property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationSimulationSpecificationToolMockConfigProperty? ToolMockConfig { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationSimulationSpecificationToolMockConfigProperty? ToolMockConfig { get => _explicitNullValueToolMockConfig; set { _explicitNullValueToolMockConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tool_mock_config"); else _explicitNullProperties?.Remove("tool_mock_config"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationSimulationSpecificationToolMockConfigProperty? _explicitNullValueToolMockConfig = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationSimulationSpecificationToolMockConfigProperty ToolMockConfig { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationSimulationSpecificationToolMockConfigProperty ToolMockConfig { get => _explicitNullValueToolMockConfig; set { _explicitNullValueToolMockConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tool_mock_config"); else _explicitNullProperties?.Remove("tool_mock_config"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationSimulationSpecificationToolMockConfigProperty _explicitNullValueToolMockConfig = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationSimulationSpecification"/> and sets the default values.
@@ -62,7 +81,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationSimulationSpecification CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationSimulationSpecification();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationSimulationSpecification(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -89,6 +108,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptCommonModelInput>("partial_conversation_history", PartialConversationHistory);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentConfigApiModelInput>("simulated_user_config", SimulatedUserConfig);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationSimulationSpecificationToolMockConfigProperty>("tool_mock_config", ToolMockConfig);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

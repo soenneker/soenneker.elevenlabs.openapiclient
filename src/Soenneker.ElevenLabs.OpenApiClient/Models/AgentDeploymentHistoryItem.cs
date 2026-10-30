@@ -11,38 +11,60 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class AgentDeploymentHistoryItem : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("access_info") is { } nullNodeAccessInfo && nullNodeAccessInfo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccessInfo = null;
+            if (parseNode.GetChildNode("deployed_at_unix_secs") is { } nullNodeDeployedAtUnixSecs && nullNodeDeployedAtUnixSecs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeployedAtUnixSecs = null;
+            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("is_active") is { } nullNodeIsActive && nullNodeIsActive.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsActive = null;
+            if (parseNode.GetChildNode("source") is { } nullNodeSource && nullNodeSource.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Source = null;
+            if (parseNode.GetChildNode("traffic_percentage_branch_id_map") is { } nullNodeTrafficPercentageBranchIdMap && nullNodeTrafficPercentageBranchIdMap.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TrafficPercentageBranchIdMap = null;
+        }
+
         /// <summary>Access information for the deployment, including who created it</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceAccessInfo? AccessInfo { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceAccessInfo? AccessInfo { get => _explicitNullValueAccessInfo; set { _explicitNullValueAccessInfo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("access_info"); else _explicitNullProperties?.Remove("access_info"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceAccessInfo? _explicitNullValueAccessInfo = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceAccessInfo AccessInfo { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceAccessInfo AccessInfo { get => _explicitNullValueAccessInfo; set { _explicitNullValueAccessInfo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("access_info"); else _explicitNullProperties?.Remove("access_info"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceAccessInfo _explicitNullValueAccessInfo = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Unix timestamp of when the traffic split was applied</summary>
-        public int? DeployedAtUnixSecs { get; set; }
+        public int? DeployedAtUnixSecs { get => _explicitNullValueDeployedAtUnixSecs; set { _explicitNullValueDeployedAtUnixSecs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deployed_at_unix_secs"); else _explicitNullProperties?.Remove("deployed_at_unix_secs"); } }
+        private int? _explicitNullValueDeployedAtUnixSecs = default!;
         /// <summary>ID of the deployment</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get; set; }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string _explicitNullValueId = default!;
 #endif
         /// <summary>Whether this is the live traffic split</summary>
-        public bool? IsActive { get; set; }
+        public bool? IsActive { get => _explicitNullValueIsActive; set { _explicitNullValueIsActive = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_active"); else _explicitNullProperties?.Remove("is_active"); } }
+        private bool? _explicitNullValueIsActive = default!;
         /// <summary>What caused this traffic split change. Null for deployments created before this was recorded.</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentDeploymentSource? Source { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentDeploymentSource? Source { get => _explicitNullValueSource; set { _explicitNullValueSource = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source"); else _explicitNullProperties?.Remove("source"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentDeploymentSource? _explicitNullValueSource = default!;
         /// <summary>Map of branch IDs to traffic percentages</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentDeploymentHistoryItemTrafficPercentageBranchIdMapProperty? TrafficPercentageBranchIdMap { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentDeploymentHistoryItemTrafficPercentageBranchIdMapProperty? TrafficPercentageBranchIdMap { get => _explicitNullValueTrafficPercentageBranchIdMap; set { _explicitNullValueTrafficPercentageBranchIdMap = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("traffic_percentage_branch_id_map"); else _explicitNullProperties?.Remove("traffic_percentage_branch_id_map"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentDeploymentHistoryItemTrafficPercentageBranchIdMapProperty? _explicitNullValueTrafficPercentageBranchIdMap = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentDeploymentHistoryItemTrafficPercentageBranchIdMapProperty TrafficPercentageBranchIdMap { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentDeploymentHistoryItemTrafficPercentageBranchIdMapProperty TrafficPercentageBranchIdMap { get => _explicitNullValueTrafficPercentageBranchIdMap; set { _explicitNullValueTrafficPercentageBranchIdMap = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("traffic_percentage_branch_id_map"); else _explicitNullProperties?.Remove("traffic_percentage_branch_id_map"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentDeploymentHistoryItemTrafficPercentageBranchIdMapProperty _explicitNullValueTrafficPercentageBranchIdMap = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentDeploymentHistoryItem"/> and sets the default values.
@@ -59,7 +81,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentDeploymentHistoryItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentDeploymentHistoryItem();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentDeploymentHistoryItem(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -90,6 +112,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteBoolValue("is_active", IsActive);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentDeploymentSource>("source", Source);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentDeploymentHistoryItemTrafficPercentageBranchIdMapProperty>("traffic_percentage_branch_id_map", TrafficPercentageBranchIdMap);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

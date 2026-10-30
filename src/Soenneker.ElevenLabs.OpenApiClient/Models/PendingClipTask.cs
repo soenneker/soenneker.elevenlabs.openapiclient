@@ -11,25 +11,43 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class PendingClipTask : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("metadata") is { } nullNodeMetadata && nullNodeMetadata.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Metadata = null;
+            if (parseNode.GetChildNode("progress") is { } nullNodeProgress && nullNodeProgress.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Progress = null;
+            if (parseNode.GetChildNode("started_at_ms") is { } nullNodeStartedAtMs && nullNodeStartedAtMs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StartedAtMs = null;
+            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+            if (parseNode.GetChildNode("updated_at_ms") is { } nullNodeUpdatedAtMs && nullNodeUpdatedAtMs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UpdatedAtMs = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PendingClipTaskMetadataProperty? Metadata { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PendingClipTaskMetadataProperty? Metadata { get => _explicitNullValueMetadata; set { _explicitNullValueMetadata = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metadata"); else _explicitNullProperties?.Remove("metadata"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.PendingClipTaskMetadataProperty? _explicitNullValueMetadata = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PendingClipTaskMetadataProperty Metadata { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PendingClipTaskMetadataProperty Metadata { get => _explicitNullValueMetadata; set { _explicitNullValueMetadata = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metadata"); else _explicitNullProperties?.Remove("metadata"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.PendingClipTaskMetadataProperty _explicitNullValueMetadata = default!;
 #endif
         /// <summary>The progress property</summary>
-        public double? Progress { get; set; }
+        public double? Progress { get => _explicitNullValueProgress; set { _explicitNullValueProgress = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("progress"); else _explicitNullProperties?.Remove("progress"); } }
+        private double? _explicitNullValueProgress = default!;
         /// <summary>The started_at_ms property</summary>
-        public int? StartedAtMs { get; set; }
+        public int? StartedAtMs { get => _explicitNullValueStartedAtMs; set { _explicitNullValueStartedAtMs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("started_at_ms"); else _explicitNullProperties?.Remove("started_at_ms"); } }
+        private int? _explicitNullValueStartedAtMs = default!;
         /// <summary>The type property</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PendingClipTaskType? Type { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PendingClipTaskType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.PendingClipTaskType? _explicitNullValueType = default!;
         /// <summary>The updated_at_ms property</summary>
-        public int? UpdatedAtMs { get; set; }
+        public int? UpdatedAtMs { get => _explicitNullValueUpdatedAtMs; set { _explicitNullValueUpdatedAtMs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("updated_at_ms"); else _explicitNullProperties?.Remove("updated_at_ms"); } }
+        private int? _explicitNullValueUpdatedAtMs = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.PendingClipTask"/> and sets the default values.
         /// </summary>
@@ -46,7 +64,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.PendingClipTask CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.PendingClipTask();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.PendingClipTask(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -75,6 +93,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteIntValue("started_at_ms", StartedAtMs);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PendingClipTaskType>("type", Type);
             writer.WriteIntValue("updated_at_ms", UpdatedAtMs);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

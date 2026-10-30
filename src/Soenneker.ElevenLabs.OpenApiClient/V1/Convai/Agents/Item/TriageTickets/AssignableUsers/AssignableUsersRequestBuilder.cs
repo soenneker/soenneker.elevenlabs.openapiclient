@@ -53,6 +53,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.TriageTickets
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "422", global::Soenneker.ElevenLabs.OpenApiClient.Models.HttpValidationError.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             var collectionResult = await RequestAdapter.SendCollectionAsync<global::Soenneker.ElevenLabs.OpenApiClient.Models.AssignableUserResponseModel>(requestInfo, global::Soenneker.ElevenLabs.OpenApiClient.Models.AssignableUserResponseModel.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
             return collectionResult?.AsList();

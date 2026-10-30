@@ -8,34 +8,39 @@ using System;
 namespace Soenneker.ElevenLabs.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPhoneNumberExotelResponseModel"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPhoneNumberSipTrunkResponseModel"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPhoneNumberTwilioResponseModel"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.GetAgentResponseModelPhoneNumbersItemOneOf1"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.GetAgentResponseModelPhoneNumbersItemOneOf2"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.GetAgentResponseModelPhoneNumbersItemOneOf3"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class GetAgentResponseModelPhoneNumbersItem : IComposedTypeWrapper, IParsable
-    {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPhoneNumberExotelResponseModel"/></summary>
+    , global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder {
+        // Preserve ambiguous union payloads without inventing a discriminator.
+        /// <summary>The complete payload when no unique typed union branch can be selected.</summary>
+        public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode UnrecognizedValue { get; set; } = null!;
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalData { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.GetAgentResponseModelPhoneNumbersItemOneOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPhoneNumberExotelResponseModel? GetPhoneNumberExotelResponseModel { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetAgentResponseModelPhoneNumbersItemOneOf1? GetAgentResponseModelPhoneNumbersItemOneOf1 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPhoneNumberExotelResponseModel GetPhoneNumberExotelResponseModel { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetAgentResponseModelPhoneNumbersItemOneOf1 GetAgentResponseModelPhoneNumbersItemOneOf1 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPhoneNumberSipTrunkResponseModel"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.GetAgentResponseModelPhoneNumbersItemOneOf2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPhoneNumberSipTrunkResponseModel? GetPhoneNumberSipTrunkResponseModel { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetAgentResponseModelPhoneNumbersItemOneOf2? GetAgentResponseModelPhoneNumbersItemOneOf2 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPhoneNumberSipTrunkResponseModel GetPhoneNumberSipTrunkResponseModel { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetAgentResponseModelPhoneNumbersItemOneOf2 GetAgentResponseModelPhoneNumbersItemOneOf2 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPhoneNumberTwilioResponseModel"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.GetAgentResponseModelPhoneNumbersItemOneOf3"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPhoneNumberTwilioResponseModel? GetPhoneNumberTwilioResponseModel { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetAgentResponseModelPhoneNumbersItemOneOf3? GetAgentResponseModelPhoneNumbersItemOneOf3 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPhoneNumberTwilioResponseModel GetPhoneNumberTwilioResponseModel { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetAgentResponseModelPhoneNumbersItemOneOf3 GetAgentResponseModelPhoneNumbersItemOneOf3 { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -45,21 +50,30 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.GetAgentResponseModelPhoneNumbersItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("provider")?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
             var result = new global::Soenneker.ElevenLabs.OpenApiClient.Models.GetAgentResponseModelPhoneNumbersItem();
-            if("exotel".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("GetAgentResponseModelPhoneNumbersItemOneOf1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.GetPhoneNumberExotelResponseModel = new global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPhoneNumberExotelResponseModel();
+                
             }
-            else if("sip_trunk".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("GetAgentResponseModelPhoneNumbersItemOneOf2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.GetPhoneNumberSipTrunkResponseModel = new global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPhoneNumberSipTrunkResponseModel();
+                
             }
-            else if("twilio".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("GetAgentResponseModelPhoneNumbersItemOneOf3".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.GetPhoneNumberTwilioResponseModel = new global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPhoneNumberTwilioResponseModel();
+                
             }
-            return result;
+            
+            var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
+            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("phone_number") != null && parseNode.GetChildNode("label") != null && parseNode.GetChildNode("phone_number_id") != null && parseNode.GetChildNode("provider") != null && (parseNode.GetChildNode("provider")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag4 && ("twilio".Equals(tag4.GetValue(), global::System.StringComparison.Ordinal)))))();
+            bool matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("phone_number") != null && parseNode.GetChildNode("label") != null && parseNode.GetChildNode("phone_number_id") != null && parseNode.GetChildNode("provider") != null && (parseNode.GetChildNode("provider")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag4 && ("exotel".Equals(tag4.GetValue(), global::System.StringComparison.Ordinal)))))();
+            bool matchesUnionBranch2 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("phone_number") != null && parseNode.GetChildNode("label") != null && parseNode.GetChildNode("phone_number_id") != null && parseNode.GetChildNode("livekit_stack") != null && (parseNode.GetChildNode("livekit_stack")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag4 && ("standard".Equals(tag4.GetValue(), global::System.StringComparison.Ordinal) || "static".Equals(tag4.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("provider") != null && (parseNode.GetChildNode("provider")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag6 && ("sip_trunk".Equals(tag6.GetValue(), global::System.StringComparison.Ordinal)))))();
+            if (result.GetAgentResponseModelPhoneNumbersItemOneOf1 == null && result.GetAgentResponseModelPhoneNumbersItemOneOf2 == null && result.GetAgentResponseModelPhoneNumbersItemOneOf3 == null && matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2) result.GetAgentResponseModelPhoneNumbersItemOneOf1 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.GetAgentResponseModelPhoneNumbersItemOneOf1(), parseNode);
+            if (result.GetAgentResponseModelPhoneNumbersItemOneOf1 == null && result.GetAgentResponseModelPhoneNumbersItemOneOf2 == null && result.GetAgentResponseModelPhoneNumbersItemOneOf3 == null && matchesUnionBranch1 && !matchesUnionBranch0 && !matchesUnionBranch2) result.GetAgentResponseModelPhoneNumbersItemOneOf2 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.GetAgentResponseModelPhoneNumbersItemOneOf2(), parseNode);
+            if (result.GetAgentResponseModelPhoneNumbersItemOneOf1 == null && result.GetAgentResponseModelPhoneNumbersItemOneOf2 == null && result.GetAgentResponseModelPhoneNumbersItemOneOf3 == null && matchesUnionBranch2 && !matchesUnionBranch0 && !matchesUnionBranch1) result.GetAgentResponseModelPhoneNumbersItemOneOf3 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.GetAgentResponseModelPhoneNumbersItemOneOf3(), parseNode);
+            if (result.GetAgentResponseModelPhoneNumbersItemOneOf1 == null && result.GetAgentResponseModelPhoneNumbersItemOneOf2 == null && result.GetAgentResponseModelPhoneNumbersItemOneOf3 == null) result.UnrecognizedValue = unionPayload;
+return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -67,17 +81,17 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(GetPhoneNumberExotelResponseModel != null)
+            if(GetAgentResponseModelPhoneNumbersItemOneOf1 != null)
             {
-                return GetPhoneNumberExotelResponseModel.GetFieldDeserializers();
+                return GetAgentResponseModelPhoneNumbersItemOneOf1.GetFieldDeserializers();
             }
-            else if(GetPhoneNumberSipTrunkResponseModel != null)
+            else if(GetAgentResponseModelPhoneNumbersItemOneOf2 != null)
             {
-                return GetPhoneNumberSipTrunkResponseModel.GetFieldDeserializers();
+                return GetAgentResponseModelPhoneNumbersItemOneOf2.GetFieldDeserializers();
             }
-            else if(GetPhoneNumberTwilioResponseModel != null)
+            else if(GetAgentResponseModelPhoneNumbersItemOneOf3 != null)
             {
-                return GetPhoneNumberTwilioResponseModel.GetFieldDeserializers();
+                return GetAgentResponseModelPhoneNumbersItemOneOf3.GetFieldDeserializers();
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -87,18 +101,27 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
+            if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
+            if (GetAgentResponseModelPhoneNumbersItemOneOf1 == null && GetAgentResponseModelPhoneNumbersItemOneOf2 == null && GetAgentResponseModelPhoneNumbersItemOneOf3 == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
+            if (GetAgentResponseModelPhoneNumbersItemOneOf1 != null && GetAgentResponseModelPhoneNumbersItemOneOf2 == null && GetAgentResponseModelPhoneNumbersItemOneOf3 == null) { if (GetAgentResponseModelPhoneNumbersItemOneOf1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, GetAgentResponseModelPhoneNumbersItemOneOf1); return; }
+            if (GetAgentResponseModelPhoneNumbersItemOneOf2 != null && GetAgentResponseModelPhoneNumbersItemOneOf1 == null && GetAgentResponseModelPhoneNumbersItemOneOf3 == null) { if (GetAgentResponseModelPhoneNumbersItemOneOf2 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, GetAgentResponseModelPhoneNumbersItemOneOf2); return; }
+            if (GetAgentResponseModelPhoneNumbersItemOneOf3 != null && GetAgentResponseModelPhoneNumbersItemOneOf1 == null && GetAgentResponseModelPhoneNumbersItemOneOf2 == null) { if (GetAgentResponseModelPhoneNumbersItemOneOf3 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, GetAgentResponseModelPhoneNumbersItemOneOf3); return; }
+
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(GetPhoneNumberExotelResponseModel != null)
+            if(GetAgentResponseModelPhoneNumbersItemOneOf1 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPhoneNumberExotelResponseModel>(null, GetPhoneNumberExotelResponseModel);
+                if (GetAgentResponseModelPhoneNumbersItemOneOf1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetAgentResponseModelPhoneNumbersItemOneOf1>(null, GetAgentResponseModelPhoneNumbersItemOneOf1);
             }
-            else if(GetPhoneNumberSipTrunkResponseModel != null)
+            else if(GetAgentResponseModelPhoneNumbersItemOneOf2 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPhoneNumberSipTrunkResponseModel>(null, GetPhoneNumberSipTrunkResponseModel);
+                if (GetAgentResponseModelPhoneNumbersItemOneOf2 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetAgentResponseModelPhoneNumbersItemOneOf2>(null, GetAgentResponseModelPhoneNumbersItemOneOf2);
             }
-            else if(GetPhoneNumberTwilioResponseModel != null)
+            else if(GetAgentResponseModelPhoneNumbersItemOneOf3 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPhoneNumberTwilioResponseModel>(null, GetPhoneNumberTwilioResponseModel);
+                if (GetAgentResponseModelPhoneNumbersItemOneOf3 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetAgentResponseModelPhoneNumbersItemOneOf3>(null, GetAgentResponseModelPhoneNumbersItemOneOf3);
             }
         }
     }

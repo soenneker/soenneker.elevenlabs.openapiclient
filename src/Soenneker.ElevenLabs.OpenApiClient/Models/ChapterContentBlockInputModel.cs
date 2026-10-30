@@ -11,27 +11,42 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ChapterContentBlockInputModel : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("block_id") is { } nullNodeBlockId && nullNodeBlockId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BlockId = null;
+            if (parseNode.GetChildNode("nodes") is { } nullNodeNodes && nullNodeNodes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Nodes = null;
+            if (parseNode.GetChildNode("sub_type") is { } nullNodeSubType && nullNodeSubType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SubType = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The block_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BlockId { get; set; }
+        public string? BlockId { get => _explicitNullValueBlockId; set { _explicitNullValueBlockId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("block_id"); else _explicitNullProperties?.Remove("block_id"); } }
+        private string? _explicitNullValueBlockId = default!;
 #nullable restore
 #else
-        public string BlockId { get; set; }
+        public string BlockId { get => _explicitNullValueBlockId; set { _explicitNullValueBlockId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("block_id"); else _explicitNullProperties?.Remove("block_id"); } }
+        private string _explicitNullValueBlockId = default!;
 #endif
         /// <summary>The nodes property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ChapterContentParagraphTtsNodeInputModel>? Nodes { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ChapterContentParagraphTtsNodeInputModel>? Nodes { get => _explicitNullValueNodes; set { _explicitNullValueNodes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nodes"); else _explicitNullProperties?.Remove("nodes"); } }
+        private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ChapterContentParagraphTtsNodeInputModel>? _explicitNullValueNodes = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ChapterContentParagraphTtsNodeInputModel> Nodes { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ChapterContentParagraphTtsNodeInputModel> Nodes { get => _explicitNullValueNodes; set { _explicitNullValueNodes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nodes"); else _explicitNullProperties?.Remove("nodes"); } }
+        private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ChapterContentParagraphTtsNodeInputModel> _explicitNullValueNodes = default!;
 #endif
         /// <summary>The sub_type property</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ChapterContentBlockInputModelSubType? SubType { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ChapterContentBlockInputModelSubType? SubType { get => _explicitNullValueSubType; set { _explicitNullValueSubType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sub_type"); else _explicitNullProperties?.Remove("sub_type"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ChapterContentBlockInputModelSubType? _explicitNullValueSubType = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ChapterContentBlockInputModel"/> and sets the default values.
         /// </summary>
@@ -47,7 +62,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.ChapterContentBlockInputModel CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.ChapterContentBlockInputModel();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.ChapterContentBlockInputModel(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -72,6 +87,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteStringValue("block_id", BlockId);
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.ChapterContentParagraphTtsNodeInputModel>("nodes", Nodes);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ChapterContentBlockInputModelSubType>("sub_type", SubType);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

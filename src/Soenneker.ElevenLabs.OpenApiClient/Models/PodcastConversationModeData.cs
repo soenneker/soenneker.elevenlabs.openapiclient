@@ -11,24 +11,37 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class PodcastConversationModeData : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("guest_voice_id") is { } nullNodeGuestVoiceId && nullNodeGuestVoiceId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GuestVoiceId = null;
+            if (parseNode.GetChildNode("host_voice_id") is { } nullNodeHostVoiceId && nullNodeHostVoiceId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HostVoiceId = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The ID of the guest voice.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? GuestVoiceId { get; set; }
+        public string? GuestVoiceId { get => _explicitNullValueGuestVoiceId; set { _explicitNullValueGuestVoiceId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("guest_voice_id"); else _explicitNullProperties?.Remove("guest_voice_id"); } }
+        private string? _explicitNullValueGuestVoiceId = default!;
 #nullable restore
 #else
-        public string GuestVoiceId { get; set; }
+        public string GuestVoiceId { get => _explicitNullValueGuestVoiceId; set { _explicitNullValueGuestVoiceId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("guest_voice_id"); else _explicitNullProperties?.Remove("guest_voice_id"); } }
+        private string _explicitNullValueGuestVoiceId = default!;
 #endif
         /// <summary>The ID of the host voice.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? HostVoiceId { get; set; }
+        public string? HostVoiceId { get => _explicitNullValueHostVoiceId; set { _explicitNullValueHostVoiceId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("host_voice_id"); else _explicitNullProperties?.Remove("host_voice_id"); } }
+        private string? _explicitNullValueHostVoiceId = default!;
 #nullable restore
 #else
-        public string HostVoiceId { get; set; }
+        public string HostVoiceId { get => _explicitNullValueHostVoiceId; set { _explicitNullValueHostVoiceId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("host_voice_id"); else _explicitNullProperties?.Remove("host_voice_id"); } }
+        private string _explicitNullValueHostVoiceId = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.PodcastConversationModeData"/> and sets the default values.
@@ -45,7 +58,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.PodcastConversationModeData CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.PodcastConversationModeData();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.PodcastConversationModeData(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -68,6 +81,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("guest_voice_id", GuestVoiceId);
             writer.WriteStringValue("host_voice_id", HostVoiceId);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

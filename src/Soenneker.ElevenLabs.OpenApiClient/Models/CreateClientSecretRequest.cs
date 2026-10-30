@@ -11,24 +11,37 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class CreateClientSecretRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("expires_after") is { } nullNodeExpiresAfter && nullNodeExpiresAfter.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExpiresAfter = null;
+            if (parseNode.GetChildNode("session") is { } nullNodeSession && nullNodeSession.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Session = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The expires_after property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ExpiresAfter? ExpiresAfter { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ExpiresAfter? ExpiresAfter { get => _explicitNullValueExpiresAfter; set { _explicitNullValueExpiresAfter = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expires_after"); else _explicitNullProperties?.Remove("expires_after"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ExpiresAfter? _explicitNullValueExpiresAfter = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ExpiresAfter ExpiresAfter { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ExpiresAfter ExpiresAfter { get => _explicitNullValueExpiresAfter; set { _explicitNullValueExpiresAfter = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expires_after"); else _explicitNullProperties?.Remove("expires_after"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ExpiresAfter _explicitNullValueExpiresAfter = default!;
 #endif
         /// <summary>The session property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.OpenAiSessionConfigInput? Session { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.OpenAiSessionConfigInput? Session { get => _explicitNullValueSession; set { _explicitNullValueSession = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("session"); else _explicitNullProperties?.Remove("session"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.OpenAiSessionConfigInput? _explicitNullValueSession = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.OpenAiSessionConfigInput Session { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.OpenAiSessionConfigInput Session { get => _explicitNullValueSession; set { _explicitNullValueSession = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("session"); else _explicitNullProperties?.Remove("session"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.OpenAiSessionConfigInput _explicitNullValueSession = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateClientSecretRequest"/> and sets the default values.
@@ -45,7 +58,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateClientSecretRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateClientSecretRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.CreateClientSecretRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -68,6 +81,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ExpiresAfter>("expires_after", ExpiresAfter);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.OpenAiSessionConfigInput>("session", Session);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

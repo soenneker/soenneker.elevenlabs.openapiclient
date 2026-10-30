@@ -11,19 +11,31 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class TriggeredGuardrailCommonModel : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("guardrail_name") is { } nullNodeGuardrailName && nullNodeGuardrailName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GuardrailName = null;
+            if (parseNode.GetChildNode("guardrail_type") is { } nullNodeGuardrailType && nullNodeGuardrailType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GuardrailType = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The guardrail_name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? GuardrailName { get; set; }
+        public string? GuardrailName { get => _explicitNullValueGuardrailName; set { _explicitNullValueGuardrailName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("guardrail_name"); else _explicitNullProperties?.Remove("guardrail_name"); } }
+        private string? _explicitNullValueGuardrailName = default!;
 #nullable restore
 #else
-        public string GuardrailName { get; set; }
+        public string GuardrailName { get => _explicitNullValueGuardrailName; set { _explicitNullValueGuardrailName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("guardrail_name"); else _explicitNullProperties?.Remove("guardrail_name"); } }
+        private string _explicitNullValueGuardrailName = default!;
 #endif
         /// <summary>The guardrail_type property</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GuardrailType? GuardrailType { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GuardrailType? GuardrailType { get => _explicitNullValueGuardrailType; set { _explicitNullValueGuardrailType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("guardrail_type"); else _explicitNullProperties?.Remove("guardrail_type"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.GuardrailType? _explicitNullValueGuardrailType = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.TriggeredGuardrailCommonModel"/> and sets the default values.
         /// </summary>
@@ -39,7 +51,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.TriggeredGuardrailCommonModel CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.TriggeredGuardrailCommonModel();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.TriggeredGuardrailCommonModel(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -62,6 +74,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("guardrail_name", GuardrailName);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GuardrailType>("guardrail_type", GuardrailType);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -11,21 +11,35 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class TicketPriorityChangeResponseModel : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("changed_at_unix_secs") is { } nullNodeChangedAtUnixSecs && nullNodeChangedAtUnixSecs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ChangedAtUnixSecs = null;
+            if (parseNode.GetChildNode("changed_by_user_id") is { } nullNodeChangedByUserId && nullNodeChangedByUserId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ChangedByUserId = null;
+            if (parseNode.GetChildNode("priority") is { } nullNodePriority && nullNodePriority.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Priority = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The changed_at_unix_secs property</summary>
-        public int? ChangedAtUnixSecs { get; set; }
+        public int? ChangedAtUnixSecs { get => _explicitNullValueChangedAtUnixSecs; set { _explicitNullValueChangedAtUnixSecs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("changed_at_unix_secs"); else _explicitNullProperties?.Remove("changed_at_unix_secs"); } }
+        private int? _explicitNullValueChangedAtUnixSecs = default!;
         /// <summary>The changed_by_user_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ChangedByUserId { get; set; }
+        public string? ChangedByUserId { get => _explicitNullValueChangedByUserId; set { _explicitNullValueChangedByUserId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("changed_by_user_id"); else _explicitNullProperties?.Remove("changed_by_user_id"); } }
+        private string? _explicitNullValueChangedByUserId = default!;
 #nullable restore
 #else
-        public string ChangedByUserId { get; set; }
+        public string ChangedByUserId { get => _explicitNullValueChangedByUserId; set { _explicitNullValueChangedByUserId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("changed_by_user_id"); else _explicitNullProperties?.Remove("changed_by_user_id"); } }
+        private string _explicitNullValueChangedByUserId = default!;
 #endif
         /// <summary>The priority property</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentConversationTicketPriority? Priority { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentConversationTicketPriority? Priority { get => _explicitNullValuePriority; set { _explicitNullValuePriority = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("priority"); else _explicitNullProperties?.Remove("priority"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentConversationTicketPriority? _explicitNullValuePriority = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.TicketPriorityChangeResponseModel"/> and sets the default values.
         /// </summary>
@@ -41,7 +55,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.TicketPriorityChangeResponseModel CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.TicketPriorityChangeResponseModel();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.TicketPriorityChangeResponseModel(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -66,6 +80,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteIntValue("changed_at_unix_secs", ChangedAtUnixSecs);
             writer.WriteStringValue("changed_by_user_id", ChangedByUserId);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentConversationTicketPriority>("priority", Priority);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

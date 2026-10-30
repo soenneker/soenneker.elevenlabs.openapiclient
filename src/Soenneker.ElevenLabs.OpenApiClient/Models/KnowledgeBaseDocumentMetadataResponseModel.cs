@@ -11,15 +11,28 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class KnowledgeBaseDocumentMetadataResponseModel : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("created_at_unix_secs") is { } nullNodeCreatedAtUnixSecs && nullNodeCreatedAtUnixSecs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedAtUnixSecs = null;
+            if (parseNode.GetChildNode("last_updated_at_unix_secs") is { } nullNodeLastUpdatedAtUnixSecs && nullNodeLastUpdatedAtUnixSecs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastUpdatedAtUnixSecs = null;
+            if (parseNode.GetChildNode("size_bytes") is { } nullNodeSizeBytes && nullNodeSizeBytes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SizeBytes = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The created_at_unix_secs property</summary>
-        public int? CreatedAtUnixSecs { get; set; }
+        public int? CreatedAtUnixSecs { get => _explicitNullValueCreatedAtUnixSecs; set { _explicitNullValueCreatedAtUnixSecs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_at_unix_secs"); else _explicitNullProperties?.Remove("created_at_unix_secs"); } }
+        private int? _explicitNullValueCreatedAtUnixSecs = default!;
         /// <summary>The last_updated_at_unix_secs property</summary>
-        public int? LastUpdatedAtUnixSecs { get; set; }
+        public int? LastUpdatedAtUnixSecs { get => _explicitNullValueLastUpdatedAtUnixSecs; set { _explicitNullValueLastUpdatedAtUnixSecs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last_updated_at_unix_secs"); else _explicitNullProperties?.Remove("last_updated_at_unix_secs"); } }
+        private int? _explicitNullValueLastUpdatedAtUnixSecs = default!;
         /// <summary>The size_bytes property</summary>
-        public int? SizeBytes { get; set; }
+        public int? SizeBytes { get => _explicitNullValueSizeBytes; set { _explicitNullValueSizeBytes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("size_bytes"); else _explicitNullProperties?.Remove("size_bytes"); } }
+        private int? _explicitNullValueSizeBytes = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeBaseDocumentMetadataResponseModel"/> and sets the default values.
         /// </summary>
@@ -35,7 +48,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeBaseDocumentMetadataResponseModel CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeBaseDocumentMetadataResponseModel();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeBaseDocumentMetadataResponseModel(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -60,6 +73,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteIntValue("created_at_unix_secs", CreatedAtUnixSecs);
             writer.WriteIntValue("last_updated_at_unix_secs", LastUpdatedAtUnixSecs);
             writer.WriteIntValue("size_bytes", SizeBytes);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

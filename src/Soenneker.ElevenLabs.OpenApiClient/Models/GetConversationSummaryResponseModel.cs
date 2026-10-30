@@ -11,64 +11,97 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class GetConversationSummaryResponseModel : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("agent_id") is { } nullNodeAgentId && nullNodeAgentId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AgentId = null;
+            if (parseNode.GetChildNode("call_successful") is { } nullNodeCallSuccessful && nullNodeCallSuccessful.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CallSuccessful = null;
+            if (parseNode.GetChildNode("call_summary_title") is { } nullNodeCallSummaryTitle && nullNodeCallSummaryTitle.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CallSummaryTitle = null;
+            if (parseNode.GetChildNode("conversation_id") is { } nullNodeConversationId && nullNodeConversationId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConversationId = null;
+            if (parseNode.GetChildNode("message_count") is { } nullNodeMessageCount && nullNodeMessageCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MessageCount = null;
+            if (parseNode.GetChildNode("messages") is { } nullNodeMessages && nullNodeMessages.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Messages = null;
+            if (parseNode.GetChildNode("messages_omitted") is { } nullNodeMessagesOmitted && nullNodeMessagesOmitted.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MessagesOmitted = null;
+            if (parseNode.GetChildNode("note") is { } nullNodeNote && nullNodeNote.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Note = null;
+            if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
+            if (parseNode.GetChildNode("transcript_summary") is { } nullNodeTranscriptSummary && nullNodeTranscriptSummary.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TranscriptSummary = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The agent_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AgentId { get; set; }
+        public string? AgentId { get => _explicitNullValueAgentId; set { _explicitNullValueAgentId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agent_id"); else _explicitNullProperties?.Remove("agent_id"); } }
+        private string? _explicitNullValueAgentId = default!;
 #nullable restore
 #else
-        public string AgentId { get; set; }
+        public string AgentId { get => _explicitNullValueAgentId; set { _explicitNullValueAgentId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agent_id"); else _explicitNullProperties?.Remove("agent_id"); } }
+        private string _explicitNullValueAgentId = default!;
 #endif
         /// <summary>The call_successful property</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.EvaluationSuccessResult? CallSuccessful { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.EvaluationSuccessResult? CallSuccessful { get => _explicitNullValueCallSuccessful; set { _explicitNullValueCallSuccessful = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("call_successful"); else _explicitNullProperties?.Remove("call_successful"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.EvaluationSuccessResult? _explicitNullValueCallSuccessful = default!;
         /// <summary>Short generated title for the conversation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CallSummaryTitle { get; set; }
+        public string? CallSummaryTitle { get => _explicitNullValueCallSummaryTitle; set { _explicitNullValueCallSummaryTitle = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("call_summary_title"); else _explicitNullProperties?.Remove("call_summary_title"); } }
+        private string? _explicitNullValueCallSummaryTitle = default!;
 #nullable restore
 #else
-        public string CallSummaryTitle { get; set; }
+        public string CallSummaryTitle { get => _explicitNullValueCallSummaryTitle; set { _explicitNullValueCallSummaryTitle = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("call_summary_title"); else _explicitNullProperties?.Remove("call_summary_title"); } }
+        private string _explicitNullValueCallSummaryTitle = default!;
 #endif
         /// <summary>The conversation_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ConversationId { get; set; }
+        public string? ConversationId { get => _explicitNullValueConversationId; set { _explicitNullValueConversationId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conversation_id"); else _explicitNullProperties?.Remove("conversation_id"); } }
+        private string? _explicitNullValueConversationId = default!;
 #nullable restore
 #else
-        public string ConversationId { get; set; }
+        public string ConversationId { get => _explicitNullValueConversationId; set { _explicitNullValueConversationId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conversation_id"); else _explicitNullProperties?.Remove("conversation_id"); } }
+        private string _explicitNullValueConversationId = default!;
 #endif
         /// <summary>Number of plain chat message turns in the conversation.</summary>
-        public int? MessageCount { get; set; }
+        public int? MessageCount { get => _explicitNullValueMessageCount; set { _explicitNullValueMessageCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("message_count"); else _explicitNullProperties?.Remove("message_count"); } }
+        private int? _explicitNullValueMessageCount = default!;
         /// <summary>The plain chat messages (role and text only). Included only when message_count does not exceed the requested max_messages; otherwise null and messages_omitted is true.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationSummaryMessageModel>? Messages { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationSummaryMessageModel>? Messages { get => _explicitNullValueMessages; set { _explicitNullValueMessages = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("messages"); else _explicitNullProperties?.Remove("messages"); } }
+        private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationSummaryMessageModel>? _explicitNullValueMessages = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationSummaryMessageModel> Messages { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationSummaryMessageModel> Messages { get => _explicitNullValueMessages; set { _explicitNullValueMessages = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("messages"); else _explicitNullProperties?.Remove("messages"); } }
+        private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationSummaryMessageModel> _explicitNullValueMessages = default!;
 #endif
         /// <summary>True when the chat messages were omitted because the conversation was too long. Fetch the full transcript for the messages.</summary>
-        public bool? MessagesOmitted { get; set; }
+        public bool? MessagesOmitted { get => _explicitNullValueMessagesOmitted; set { _explicitNullValueMessagesOmitted = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("messages_omitted"); else _explicitNullProperties?.Remove("messages_omitted"); } }
+        private bool? _explicitNullValueMessagesOmitted = default!;
         /// <summary>Guidance telling the agent how to get the full transcript.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Note { get; set; }
+        public string? Note { get => _explicitNullValueNote; set { _explicitNullValueNote = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("note"); else _explicitNullProperties?.Remove("note"); } }
+        private string? _explicitNullValueNote = default!;
 #nullable restore
 #else
-        public string Note { get; set; }
+        public string Note { get => _explicitNullValueNote; set { _explicitNullValueNote = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("note"); else _explicitNullProperties?.Remove("note"); } }
+        private string _explicitNullValueNote = default!;
 #endif
         /// <summary>The status property</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetConversationSummaryResponseModelStatus? Status { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetConversationSummaryResponseModelStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.GetConversationSummaryResponseModelStatus? _explicitNullValueStatus = default!;
         /// <summary>Generated natural-language summary of the call.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TranscriptSummary { get; set; }
+        public string? TranscriptSummary { get => _explicitNullValueTranscriptSummary; set { _explicitNullValueTranscriptSummary = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transcript_summary"); else _explicitNullProperties?.Remove("transcript_summary"); } }
+        private string? _explicitNullValueTranscriptSummary = default!;
 #nullable restore
 #else
-        public string TranscriptSummary { get; set; }
+        public string TranscriptSummary { get => _explicitNullValueTranscriptSummary; set { _explicitNullValueTranscriptSummary = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transcript_summary"); else _explicitNullProperties?.Remove("transcript_summary"); } }
+        private string _explicitNullValueTranscriptSummary = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.GetConversationSummaryResponseModel"/> and sets the default values.
@@ -86,7 +119,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.GetConversationSummaryResponseModel CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.GetConversationSummaryResponseModel();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.GetConversationSummaryResponseModel(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -125,6 +158,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteStringValue("note", Note);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetConversationSummaryResponseModelStatus>("status", Status);
             writer.WriteStringValue("transcript_summary", TranscriptSummary);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

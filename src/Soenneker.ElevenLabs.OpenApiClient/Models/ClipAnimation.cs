@@ -11,17 +11,32 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ClipAnimation : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("enter_duration_ms") is { } nullNodeEnterDurationMs && nullNodeEnterDurationMs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EnterDurationMs = null;
+            if (parseNode.GetChildNode("enter_effect") is { } nullNodeEnterEffect && nullNodeEnterEffect.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EnterEffect = null;
+            if (parseNode.GetChildNode("exit_duration_ms") is { } nullNodeExitDurationMs && nullNodeExitDurationMs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExitDurationMs = null;
+            if (parseNode.GetChildNode("exit_effect") is { } nullNodeExitEffect && nullNodeExitEffect.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExitEffect = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The enter_duration_ms property</summary>
-        public int? EnterDurationMs { get; set; }
+        public int? EnterDurationMs { get => _explicitNullValueEnterDurationMs; set { _explicitNullValueEnterDurationMs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enter_duration_ms"); else _explicitNullProperties?.Remove("enter_duration_ms"); } }
+        private int? _explicitNullValueEnterDurationMs = default!;
         /// <summary>The enter_effect property</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ClipAnimationEnterEffect? EnterEffect { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ClipAnimationEnterEffect? EnterEffect { get => _explicitNullValueEnterEffect; set { _explicitNullValueEnterEffect = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enter_effect"); else _explicitNullProperties?.Remove("enter_effect"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ClipAnimationEnterEffect? _explicitNullValueEnterEffect = default!;
         /// <summary>The exit_duration_ms property</summary>
-        public int? ExitDurationMs { get; set; }
+        public int? ExitDurationMs { get => _explicitNullValueExitDurationMs; set { _explicitNullValueExitDurationMs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("exit_duration_ms"); else _explicitNullProperties?.Remove("exit_duration_ms"); } }
+        private int? _explicitNullValueExitDurationMs = default!;
         /// <summary>The exit_effect property</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ClipAnimationExitEffect? ExitEffect { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ClipAnimationExitEffect? ExitEffect { get => _explicitNullValueExitEffect; set { _explicitNullValueExitEffect = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("exit_effect"); else _explicitNullProperties?.Remove("exit_effect"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ClipAnimationExitEffect? _explicitNullValueExitEffect = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ClipAnimation"/> and sets the default values.
         /// </summary>
@@ -39,7 +54,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.ClipAnimation CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.ClipAnimation();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.ClipAnimation(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -66,6 +81,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ClipAnimationEnterEffect>("enter_effect", EnterEffect);
             writer.WriteIntValue("exit_duration_ms", ExitDurationMs);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ClipAnimationExitEffect>("exit_effect", ExitEffect);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

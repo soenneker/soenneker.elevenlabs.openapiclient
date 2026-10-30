@@ -132,6 +132,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.KnowledgeBase
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "422", global::Soenneker.ElevenLabs.OpenApiClient.Models.HttpValidationError.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseListResponseModel>(requestInfo, global::Soenneker.ElevenLabs.OpenApiClient.Models.GetKnowledgeBaseListResponseModel.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -146,11 +148,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.KnowledgeBase
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.ElevenLabs.OpenApiClient.Models.AddKnowledgeBaseResponseModel?> PostAsync(MultipartBody body, Action<RequestConfiguration<global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.KnowledgeBase.KnowledgeBaseRequestBuilder.KnowledgeBaseRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.ElevenLabs.OpenApiClient.Models.AddKnowledgeBaseResponseModel?> PostAsync(global::Microsoft.Kiota.Abstractions.MultipartBody body, Action<RequestConfiguration<global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.KnowledgeBase.KnowledgeBaseRequestBuilder.KnowledgeBaseRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.ElevenLabs.OpenApiClient.Models.AddKnowledgeBaseResponseModel> PostAsync(MultipartBody body, Action<RequestConfiguration<global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.KnowledgeBase.KnowledgeBaseRequestBuilder.KnowledgeBaseRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.ElevenLabs.OpenApiClient.Models.AddKnowledgeBaseResponseModel> PostAsync(global::Microsoft.Kiota.Abstractions.MultipartBody body, Action<RequestConfiguration<global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.KnowledgeBase.KnowledgeBaseRequestBuilder.KnowledgeBaseRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -158,6 +160,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.KnowledgeBase
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "422", global::Soenneker.ElevenLabs.OpenApiClient.Models.HttpValidationError.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.ElevenLabs.OpenApiClient.Models.AddKnowledgeBaseResponseModel>(requestInfo, global::Soenneker.ElevenLabs.OpenApiClient.Models.AddKnowledgeBaseResponseModel.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -189,11 +193,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.KnowledgeBase
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(MultipartBody body, Action<RequestConfiguration<global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.KnowledgeBase.KnowledgeBaseRequestBuilder.KnowledgeBaseRequestBuilderPostQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Microsoft.Kiota.Abstractions.MultipartBody body, Action<RequestConfiguration<global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.KnowledgeBase.KnowledgeBaseRequestBuilder.KnowledgeBaseRequestBuilderPostQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(MultipartBody body, Action<RequestConfiguration<global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.KnowledgeBase.KnowledgeBaseRequestBuilder.KnowledgeBaseRequestBuilderPostQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Microsoft.Kiota.Abstractions.MultipartBody body, Action<RequestConfiguration<global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.KnowledgeBase.KnowledgeBaseRequestBuilder.KnowledgeBaseRequestBuilderPostQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

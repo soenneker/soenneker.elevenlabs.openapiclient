@@ -11,16 +11,26 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class GetTestsSummariesByIdsResponseModel : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("tests") is { } nullNodeTests && nullNodeTests.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Tests = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Dictionary mapping test IDs to their summary information</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetTestsSummariesByIdsResponseModelTestsProperty? Tests { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetTestsSummariesByIdsResponseModelTestsProperty? Tests { get => _explicitNullValueTests; set { _explicitNullValueTests = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tests"); else _explicitNullProperties?.Remove("tests"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.GetTestsSummariesByIdsResponseModelTestsProperty? _explicitNullValueTests = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetTestsSummariesByIdsResponseModelTestsProperty Tests { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetTestsSummariesByIdsResponseModelTestsProperty Tests { get => _explicitNullValueTests; set { _explicitNullValueTests = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tests"); else _explicitNullProperties?.Remove("tests"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.GetTestsSummariesByIdsResponseModelTestsProperty _explicitNullValueTests = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.GetTestsSummariesByIdsResponseModel"/> and sets the default values.
@@ -37,7 +47,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.GetTestsSummariesByIdsResponseModel CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.GetTestsSummariesByIdsResponseModel();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.GetTestsSummariesByIdsResponseModel(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -58,6 +68,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetTestsSummariesByIdsResponseModelTestsProperty>("tests", Tests);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

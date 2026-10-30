@@ -8,26 +8,31 @@ using System;
 namespace Soenneker.ElevenLabs.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.DependentAvailableToolIdentifier"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.DependentUnknownToolIdentifier"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.AuthConnectionDependenciesToolsItemOneOf1"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.AuthConnectionDependenciesToolsItemOneOf2"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AuthConnectionDependenciesToolsItem : IComposedTypeWrapper, IParsable
-    {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.DependentAvailableToolIdentifier"/></summary>
+    , global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder {
+        // Preserve ambiguous union payloads without inventing a discriminator.
+        /// <summary>The complete payload when no unique typed union branch can be selected.</summary>
+        public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode UnrecognizedValue { get; set; } = null!;
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalData { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.AuthConnectionDependenciesToolsItemOneOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.DependentAvailableToolIdentifier? DependentAvailableToolIdentifier { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AuthConnectionDependenciesToolsItemOneOf1? AuthConnectionDependenciesToolsItemOneOf1 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.DependentAvailableToolIdentifier DependentAvailableToolIdentifier { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AuthConnectionDependenciesToolsItemOneOf1 AuthConnectionDependenciesToolsItemOneOf1 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.DependentUnknownToolIdentifier"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.AuthConnectionDependenciesToolsItemOneOf2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.DependentUnknownToolIdentifier? DependentUnknownToolIdentifier { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AuthConnectionDependenciesToolsItemOneOf2? AuthConnectionDependenciesToolsItemOneOf2 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.DependentUnknownToolIdentifier DependentUnknownToolIdentifier { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AuthConnectionDependenciesToolsItemOneOf2 AuthConnectionDependenciesToolsItemOneOf2 { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -37,17 +42,24 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.AuthConnectionDependenciesToolsItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
             var result = new global::Soenneker.ElevenLabs.OpenApiClient.Models.AuthConnectionDependenciesToolsItem();
-            if("available".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("AuthConnectionDependenciesToolsItemOneOf1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.DependentAvailableToolIdentifier = new global::Soenneker.ElevenLabs.OpenApiClient.Models.DependentAvailableToolIdentifier();
+                
             }
-            else if("unknown".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("AuthConnectionDependenciesToolsItemOneOf2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.DependentUnknownToolIdentifier = new global::Soenneker.ElevenLabs.OpenApiClient.Models.DependentUnknownToolIdentifier();
+                
             }
-            return result;
+            
+            var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
+            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("id") != null && parseNode.GetChildNode("name") != null && parseNode.GetChildNode("created_at_unix_secs") != null && parseNode.GetChildNode("access_level") != null && (parseNode.GetChildNode("access_level")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag4 && ("admin".Equals(tag4.GetValue(), global::System.StringComparison.Ordinal) || "editor".Equals(tag4.GetValue(), global::System.StringComparison.Ordinal) || "commenter".Equals(tag4.GetValue(), global::System.StringComparison.Ordinal) || "viewer".Equals(tag4.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag6 && ("available".Equals(tag6.GetValue(), global::System.StringComparison.Ordinal)))))();
+            bool matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("id") != null && parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag2 && ("unknown".Equals(tag2.GetValue(), global::System.StringComparison.Ordinal)))))();
+            if (result.AuthConnectionDependenciesToolsItemOneOf1 == null && result.AuthConnectionDependenciesToolsItemOneOf2 == null && matchesUnionBranch0 && !matchesUnionBranch1) result.AuthConnectionDependenciesToolsItemOneOf1 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.AuthConnectionDependenciesToolsItemOneOf1(), parseNode);
+            if (result.AuthConnectionDependenciesToolsItemOneOf1 == null && result.AuthConnectionDependenciesToolsItemOneOf2 == null && matchesUnionBranch1 && !matchesUnionBranch0) result.AuthConnectionDependenciesToolsItemOneOf2 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.AuthConnectionDependenciesToolsItemOneOf2(), parseNode);
+            if (result.AuthConnectionDependenciesToolsItemOneOf1 == null && result.AuthConnectionDependenciesToolsItemOneOf2 == null) result.UnrecognizedValue = unionPayload;
+return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -55,13 +67,13 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(DependentAvailableToolIdentifier != null)
+            if(AuthConnectionDependenciesToolsItemOneOf1 != null)
             {
-                return DependentAvailableToolIdentifier.GetFieldDeserializers();
+                return AuthConnectionDependenciesToolsItemOneOf1.GetFieldDeserializers();
             }
-            else if(DependentUnknownToolIdentifier != null)
+            else if(AuthConnectionDependenciesToolsItemOneOf2 != null)
             {
-                return DependentUnknownToolIdentifier.GetFieldDeserializers();
+                return AuthConnectionDependenciesToolsItemOneOf2.GetFieldDeserializers();
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -71,14 +83,21 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
+            if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
+            if (AuthConnectionDependenciesToolsItemOneOf1 == null && AuthConnectionDependenciesToolsItemOneOf2 == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
+            if (AuthConnectionDependenciesToolsItemOneOf1 != null && AuthConnectionDependenciesToolsItemOneOf2 == null) { if (AuthConnectionDependenciesToolsItemOneOf1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, AuthConnectionDependenciesToolsItemOneOf1); return; }
+            if (AuthConnectionDependenciesToolsItemOneOf2 != null && AuthConnectionDependenciesToolsItemOneOf1 == null) { if (AuthConnectionDependenciesToolsItemOneOf2 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, AuthConnectionDependenciesToolsItemOneOf2); return; }
+
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(DependentAvailableToolIdentifier != null)
+            if(AuthConnectionDependenciesToolsItemOneOf1 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DependentAvailableToolIdentifier>(null, DependentAvailableToolIdentifier);
+                if (AuthConnectionDependenciesToolsItemOneOf1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AuthConnectionDependenciesToolsItemOneOf1>(null, AuthConnectionDependenciesToolsItemOneOf1);
             }
-            else if(DependentUnknownToolIdentifier != null)
+            else if(AuthConnectionDependenciesToolsItemOneOf2 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DependentUnknownToolIdentifier>(null, DependentUnknownToolIdentifier);
+                if (AuthConnectionDependenciesToolsItemOneOf2 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AuthConnectionDependenciesToolsItemOneOf2>(null, AuthConnectionDependenciesToolsItemOneOf2);
             }
         }
     }

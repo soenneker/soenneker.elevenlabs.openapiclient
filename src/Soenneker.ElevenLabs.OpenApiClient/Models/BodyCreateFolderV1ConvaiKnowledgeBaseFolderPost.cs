@@ -11,30 +11,49 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class BodyCreateFolderV1ConvaiKnowledgeBaseFolderPost : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("auto_remove") is { } nullNodeAutoRemove && nullNodeAutoRemove.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AutoRemove = null;
+            if (parseNode.GetChildNode("enable_auto_sync") is { } nullNodeEnableAutoSync && nullNodeEnableAutoSync.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EnableAutoSync = null;
+            if (parseNode.GetChildNode("minimum_frequency_days") is { } nullNodeMinimumFrequencyDays && nullNodeMinimumFrequencyDays.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MinimumFrequencyDays = null;
+            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("parent_folder_id") is { } nullNodeParentFolderId && nullNodeParentFolderId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ParentFolderId = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Whether to automatically remove the document if the URL becomes unavailable. Only applicable when auto-sync is enabled.</summary>
-        public bool? AutoRemove { get; set; }
+        public bool? AutoRemove { get => _explicitNullValueAutoRemove; set { _explicitNullValueAutoRemove = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("auto_remove"); else _explicitNullProperties?.Remove("auto_remove"); } }
+        private bool? _explicitNullValueAutoRemove = default!;
         /// <summary>Whether to enable auto-sync for this URL document.</summary>
-        public bool? EnableAutoSync { get; set; }
+        public bool? EnableAutoSync { get => _explicitNullValueEnableAutoSync; set { _explicitNullValueEnableAutoSync = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enable_auto_sync"); else _explicitNullProperties?.Remove("enable_auto_sync"); } }
+        private bool? _explicitNullValueEnableAutoSync = default!;
         /// <summary>Minimum frequency (in days) at which the underlying eligible documents are refreshed. The actual interval may be shorter, never longer. Defaults to 7, tightened to the parent folder&apos;s frequency if that is stricter. Only applicable when auto-sync is enabled.</summary>
-        public int? MinimumFrequencyDays { get; set; }
+        public int? MinimumFrequencyDays { get => _explicitNullValueMinimumFrequencyDays; set { _explicitNullValueMinimumFrequencyDays = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("minimum_frequency_days"); else _explicitNullProperties?.Remove("minimum_frequency_days"); } }
+        private int? _explicitNullValueMinimumFrequencyDays = default!;
         /// <summary>A custom, human-readable name for the document.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get; set; }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string _explicitNullValueName = default!;
 #endif
         /// <summary>If set, the created document or folder will be placed inside the given folder.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ParentFolderId { get; set; }
+        public string? ParentFolderId { get => _explicitNullValueParentFolderId; set { _explicitNullValueParentFolderId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("parent_folder_id"); else _explicitNullProperties?.Remove("parent_folder_id"); } }
+        private string? _explicitNullValueParentFolderId = default!;
 #nullable restore
 #else
-        public string ParentFolderId { get; set; }
+        public string ParentFolderId { get => _explicitNullValueParentFolderId; set { _explicitNullValueParentFolderId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("parent_folder_id"); else _explicitNullProperties?.Remove("parent_folder_id"); } }
+        private string _explicitNullValueParentFolderId = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateFolderV1ConvaiKnowledgeBaseFolderPost"/> and sets the default values.
@@ -53,7 +72,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateFolderV1ConvaiKnowledgeBaseFolderPost CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateFolderV1ConvaiKnowledgeBaseFolderPost();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateFolderV1ConvaiKnowledgeBaseFolderPost(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -82,6 +101,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteIntValue("minimum_frequency_days", MinimumFrequencyDays);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("parent_folder_id", ParentFolderId);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

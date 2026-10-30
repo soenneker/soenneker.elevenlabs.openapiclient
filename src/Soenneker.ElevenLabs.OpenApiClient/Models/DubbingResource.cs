@@ -11,83 +11,119 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class DubbingResource : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("background") is { } nullNodeBackground && nullNodeBackground.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Background = null;
+            if (parseNode.GetChildNode("foreground") is { } nullNodeForeground && nullNodeForeground.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Foreground = null;
+            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("input") is { } nullNodeInput && nullNodeInput.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Input = null;
+            if (parseNode.GetChildNode("renders") is { } nullNodeRenders && nullNodeRenders.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Renders = null;
+            if (parseNode.GetChildNode("source_language") is { } nullNodeSourceLanguage && nullNodeSourceLanguage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SourceLanguage = null;
+            if (parseNode.GetChildNode("speaker_segments") is { } nullNodeSpeakerSegments && nullNodeSpeakerSegments.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SpeakerSegments = null;
+            if (parseNode.GetChildNode("speaker_tracks") is { } nullNodeSpeakerTracks && nullNodeSpeakerTracks.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SpeakerTracks = null;
+            if (parseNode.GetChildNode("target_languages") is { } nullNodeTargetLanguages && nullNodeTargetLanguages.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TargetLanguages = null;
+            if (parseNode.GetChildNode("version") is { } nullNodeVersion && nullNodeVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Version = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The background property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingMediaReference? Background { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingMediaReference? Background { get => _explicitNullValueBackground; set { _explicitNullValueBackground = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("background"); else _explicitNullProperties?.Remove("background"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingMediaReference? _explicitNullValueBackground = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingMediaReference Background { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingMediaReference Background { get => _explicitNullValueBackground; set { _explicitNullValueBackground = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("background"); else _explicitNullProperties?.Remove("background"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingMediaReference _explicitNullValueBackground = default!;
 #endif
         /// <summary>The foreground property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingMediaReference? Foreground { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingMediaReference? Foreground { get => _explicitNullValueForeground; set { _explicitNullValueForeground = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("foreground"); else _explicitNullProperties?.Remove("foreground"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingMediaReference? _explicitNullValueForeground = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingMediaReference Foreground { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingMediaReference Foreground { get => _explicitNullValueForeground; set { _explicitNullValueForeground = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("foreground"); else _explicitNullProperties?.Remove("foreground"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingMediaReference _explicitNullValueForeground = default!;
 #endif
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get; set; }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string _explicitNullValueId = default!;
 #endif
         /// <summary>The input property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingMediaReference? Input { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingMediaReference? Input { get => _explicitNullValueInput; set { _explicitNullValueInput = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("input"); else _explicitNullProperties?.Remove("input"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingMediaReference? _explicitNullValueInput = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingMediaReference Input { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingMediaReference Input { get => _explicitNullValueInput; set { _explicitNullValueInput = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("input"); else _explicitNullProperties?.Remove("input"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingMediaReference _explicitNullValueInput = default!;
 #endif
         /// <summary>The renders property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingResourceRendersProperty? Renders { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingResourceRendersProperty? Renders { get => _explicitNullValueRenders; set { _explicitNullValueRenders = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("renders"); else _explicitNullProperties?.Remove("renders"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingResourceRendersProperty? _explicitNullValueRenders = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingResourceRendersProperty Renders { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingResourceRendersProperty Renders { get => _explicitNullValueRenders; set { _explicitNullValueRenders = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("renders"); else _explicitNullProperties?.Remove("renders"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingResourceRendersProperty _explicitNullValueRenders = default!;
 #endif
         /// <summary>The source_language property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SourceLanguage { get; set; }
+        public string? SourceLanguage { get => _explicitNullValueSourceLanguage; set { _explicitNullValueSourceLanguage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source_language"); else _explicitNullProperties?.Remove("source_language"); } }
+        private string? _explicitNullValueSourceLanguage = default!;
 #nullable restore
 #else
-        public string SourceLanguage { get; set; }
+        public string SourceLanguage { get => _explicitNullValueSourceLanguage; set { _explicitNullValueSourceLanguage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source_language"); else _explicitNullProperties?.Remove("source_language"); } }
+        private string _explicitNullValueSourceLanguage = default!;
 #endif
         /// <summary>The speaker_segments property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingResourceSpeakerSegmentsProperty? SpeakerSegments { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingResourceSpeakerSegmentsProperty? SpeakerSegments { get => _explicitNullValueSpeakerSegments; set { _explicitNullValueSpeakerSegments = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("speaker_segments"); else _explicitNullProperties?.Remove("speaker_segments"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingResourceSpeakerSegmentsProperty? _explicitNullValueSpeakerSegments = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingResourceSpeakerSegmentsProperty SpeakerSegments { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingResourceSpeakerSegmentsProperty SpeakerSegments { get => _explicitNullValueSpeakerSegments; set { _explicitNullValueSpeakerSegments = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("speaker_segments"); else _explicitNullProperties?.Remove("speaker_segments"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingResourceSpeakerSegmentsProperty _explicitNullValueSpeakerSegments = default!;
 #endif
         /// <summary>The speaker_tracks property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingResourceSpeakerTracksProperty? SpeakerTracks { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingResourceSpeakerTracksProperty? SpeakerTracks { get => _explicitNullValueSpeakerTracks; set { _explicitNullValueSpeakerTracks = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("speaker_tracks"); else _explicitNullProperties?.Remove("speaker_tracks"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingResourceSpeakerTracksProperty? _explicitNullValueSpeakerTracks = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingResourceSpeakerTracksProperty SpeakerTracks { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingResourceSpeakerTracksProperty SpeakerTracks { get => _explicitNullValueSpeakerTracks; set { _explicitNullValueSpeakerTracks = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("speaker_tracks"); else _explicitNullProperties?.Remove("speaker_tracks"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingResourceSpeakerTracksProperty _explicitNullValueSpeakerTracks = default!;
 #endif
         /// <summary>The target_languages property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? TargetLanguages { get; set; }
+        public List<string>? TargetLanguages { get => _explicitNullValueTargetLanguages; set { _explicitNullValueTargetLanguages = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("target_languages"); else _explicitNullProperties?.Remove("target_languages"); } }
+        private List<string>? _explicitNullValueTargetLanguages = default!;
 #nullable restore
 #else
-        public List<string> TargetLanguages { get; set; }
+        public List<string> TargetLanguages { get => _explicitNullValueTargetLanguages; set { _explicitNullValueTargetLanguages = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("target_languages"); else _explicitNullProperties?.Remove("target_languages"); } }
+        private List<string> _explicitNullValueTargetLanguages = default!;
 #endif
         /// <summary>The version property</summary>
-        public int? Version { get; set; }
+        public int? Version { get => _explicitNullValueVersion; set { _explicitNullValueVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("version"); else _explicitNullProperties?.Remove("version"); } }
+        private int? _explicitNullValueVersion = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingResource"/> and sets the default values.
         /// </summary>
@@ -103,7 +139,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingResource CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingResource();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingResource(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -142,6 +178,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingResourceSpeakerTracksProperty>("speaker_tracks", SpeakerTracks);
             writer.WriteCollectionOfPrimitiveValues<string>("target_languages", TargetLanguages);
             writer.WriteIntValue("version", Version);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

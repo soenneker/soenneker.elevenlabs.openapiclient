@@ -12,56 +12,86 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class GetPhoneNumberOutboundSipTrunkConfigResponseModel : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("address") is { } nullNodeAddress && nullNodeAddress.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Address = null;
+            if (parseNode.GetChildNode("attributes_to_headers") is { } nullNodeAttributesToHeaders && nullNodeAttributesToHeaders.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AttributesToHeaders = null;
+            if (parseNode.GetChildNode("enabled_codecs") is { } nullNodeEnabledCodecs && nullNodeEnabledCodecs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EnabledCodecs = null;
+            if (parseNode.GetChildNode("has_auth_credentials") is { } nullNodeHasAuthCredentials && nullNodeHasAuthCredentials.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HasAuthCredentials = null;
+            if (parseNode.GetChildNode("has_outbound_trunk") is { } nullNodeHasOutboundTrunk && nullNodeHasOutboundTrunk.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HasOutboundTrunk = null;
+            if (parseNode.GetChildNode("headers") is { } nullNodeHeaders && nullNodeHeaders.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Headers = null;
+            if (parseNode.GetChildNode("media_encryption") is { } nullNodeMediaEncryption && nullNodeMediaEncryption.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MediaEncryption = null;
+            if (parseNode.GetChildNode("transport") is { } nullNodeTransport && nullNodeTransport.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Transport = null;
+            if (parseNode.GetChildNode("username") is { } nullNodeUsername && nullNodeUsername.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Username = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Hostname or IP the SIP INVITE is sent to</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Address { get; set; }
+        public string? Address { get => _explicitNullValueAddress; set { _explicitNullValueAddress = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("address"); else _explicitNullProperties?.Remove("address"); } }
+        private string? _explicitNullValueAddress = default!;
 #nullable restore
 #else
-        public string Address { get; set; }
+        public string Address { get => _explicitNullValueAddress; set { _explicitNullValueAddress = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("address"); else _explicitNullProperties?.Remove("address"); } }
+        private string _explicitNullValueAddress = default!;
 #endif
         /// <summary>Map of dynamic variable name to header name for attributes_to_headers</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPhoneNumberOutboundSipTrunkConfigResponseModelAttributesToHeadersProperty? AttributesToHeaders { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPhoneNumberOutboundSipTrunkConfigResponseModelAttributesToHeadersProperty? AttributesToHeaders { get => _explicitNullValueAttributesToHeaders; set { _explicitNullValueAttributesToHeaders = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("attributes_to_headers"); else _explicitNullProperties?.Remove("attributes_to_headers"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPhoneNumberOutboundSipTrunkConfigResponseModelAttributesToHeadersProperty? _explicitNullValueAttributesToHeaders = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPhoneNumberOutboundSipTrunkConfigResponseModelAttributesToHeadersProperty AttributesToHeaders { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPhoneNumberOutboundSipTrunkConfigResponseModelAttributesToHeadersProperty AttributesToHeaders { get => _explicitNullValueAttributesToHeaders; set { _explicitNullValueAttributesToHeaders = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("attributes_to_headers"); else _explicitNullProperties?.Remove("attributes_to_headers"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPhoneNumberOutboundSipTrunkConfigResponseModelAttributesToHeadersProperty _explicitNullValueAttributesToHeaders = default!;
 #endif
         /// <summary>Media codecs that are offered in the SDP for outbound calls. If empty, all supported codecs are offered.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.MediaCodec?>? EnabledCodecs { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.MediaCodec?>? EnabledCodecs { get => _explicitNullValueEnabledCodecs; set { _explicitNullValueEnabledCodecs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enabled_codecs"); else _explicitNullProperties?.Remove("enabled_codecs"); } }
+        private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.MediaCodec?>? _explicitNullValueEnabledCodecs = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.MediaCodec?> EnabledCodecs { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.MediaCodec?> EnabledCodecs { get => _explicitNullValueEnabledCodecs; set { _explicitNullValueEnabledCodecs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enabled_codecs"); else _explicitNullProperties?.Remove("enabled_codecs"); } }
+        private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.MediaCodec?> _explicitNullValueEnabledCodecs = default!;
 #endif
         /// <summary>Whether authentication credentials are configured</summary>
-        public bool? HasAuthCredentials { get; set; }
+        public bool? HasAuthCredentials { get => _explicitNullValueHasAuthCredentials; set { _explicitNullValueHasAuthCredentials = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("has_auth_credentials"); else _explicitNullProperties?.Remove("has_auth_credentials"); } }
+        private bool? _explicitNullValueHasAuthCredentials = default!;
         /// <summary>Whether a LiveKit SIP outbound trunk is configured</summary>
-        public bool? HasOutboundTrunk { get; set; }
+        public bool? HasOutboundTrunk { get => _explicitNullValueHasOutboundTrunk; set { _explicitNullValueHasOutboundTrunk = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("has_outbound_trunk"); else _explicitNullProperties?.Remove("has_outbound_trunk"); } }
+        private bool? _explicitNullValueHasOutboundTrunk = default!;
         /// <summary>SIP headers for INVITE request</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPhoneNumberOutboundSipTrunkConfigResponseModelHeadersProperty? Headers { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPhoneNumberOutboundSipTrunkConfigResponseModelHeadersProperty? Headers { get => _explicitNullValueHeaders; set { _explicitNullValueHeaders = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("headers"); else _explicitNullProperties?.Remove("headers"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPhoneNumberOutboundSipTrunkConfigResponseModelHeadersProperty? _explicitNullValueHeaders = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPhoneNumberOutboundSipTrunkConfigResponseModelHeadersProperty Headers { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPhoneNumberOutboundSipTrunkConfigResponseModelHeadersProperty Headers { get => _explicitNullValueHeaders; set { _explicitNullValueHeaders = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("headers"); else _explicitNullProperties?.Remove("headers"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPhoneNumberOutboundSipTrunkConfigResponseModelHeadersProperty _explicitNullValueHeaders = default!;
 #endif
         /// <summary>The media_encryption property</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SipMediaEncryptionEnum? MediaEncryption { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SipMediaEncryptionEnum? MediaEncryption { get => _explicitNullValueMediaEncryption; set { _explicitNullValueMediaEncryption = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("media_encryption"); else _explicitNullProperties?.Remove("media_encryption"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.SipMediaEncryptionEnum? _explicitNullValueMediaEncryption = default!;
         /// <summary>The transport property</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SipTrunkTransportEnum? Transport { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SipTrunkTransportEnum? Transport { get => _explicitNullValueTransport; set { _explicitNullValueTransport = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transport"); else _explicitNullProperties?.Remove("transport"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.SipTrunkTransportEnum? _explicitNullValueTransport = default!;
         /// <summary>SIP trunk username (if available)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Username { get; set; }
+        public string? Username { get => _explicitNullValueUsername; set { _explicitNullValueUsername = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("username"); else _explicitNullProperties?.Remove("username"); } }
+        private string? _explicitNullValueUsername = default!;
 #nullable restore
 #else
-        public string Username { get; set; }
+        public string Username { get => _explicitNullValueUsername; set { _explicitNullValueUsername = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("username"); else _explicitNullProperties?.Remove("username"); } }
+        private string _explicitNullValueUsername = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPhoneNumberOutboundSipTrunkConfigResponseModel"/> and sets the default values.
@@ -79,7 +109,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPhoneNumberOutboundSipTrunkConfigResponseModel CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPhoneNumberOutboundSipTrunkConfigResponseModel();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.GetPhoneNumberOutboundSipTrunkConfigResponseModel(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -116,6 +146,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SipMediaEncryptionEnum>("media_encryption", MediaEncryption);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SipTrunkTransportEnum>("transport", Transport);
             writer.WriteStringValue("username", Username);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

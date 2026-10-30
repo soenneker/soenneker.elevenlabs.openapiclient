@@ -8,34 +8,39 @@ using System;
 namespace Soenneker.ElevenLabs.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkflowToolEdgeStepModel"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkflowToolMaxIterationsExceededStepModel"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkflowToolNestedToolsStepModelOutput"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkflowToolResponseModelOutputStepsItemOneOf1"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkflowToolResponseModelOutputStepsItemOneOf2"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkflowToolResponseModelOutputStepsItemOneOf3"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WorkflowToolResponseModelOutputStepsItem : IComposedTypeWrapper, IParsable
-    {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkflowToolEdgeStepModel"/></summary>
+    , global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder {
+        // Preserve ambiguous union payloads without inventing a discriminator.
+        /// <summary>The complete payload when no unique typed union branch can be selected.</summary>
+        public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode UnrecognizedValue { get; set; } = null!;
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalData { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkflowToolResponseModelOutputStepsItemOneOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkflowToolEdgeStepModel? WorkflowToolEdgeStepModel { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkflowToolResponseModelOutputStepsItemOneOf1? WorkflowToolResponseModelOutputStepsItemOneOf1 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkflowToolEdgeStepModel WorkflowToolEdgeStepModel { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkflowToolResponseModelOutputStepsItemOneOf1 WorkflowToolResponseModelOutputStepsItemOneOf1 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkflowToolMaxIterationsExceededStepModel"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkflowToolResponseModelOutputStepsItemOneOf2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkflowToolMaxIterationsExceededStepModel? WorkflowToolMaxIterationsExceededStepModel { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkflowToolResponseModelOutputStepsItemOneOf2? WorkflowToolResponseModelOutputStepsItemOneOf2 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkflowToolMaxIterationsExceededStepModel WorkflowToolMaxIterationsExceededStepModel { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkflowToolResponseModelOutputStepsItemOneOf2 WorkflowToolResponseModelOutputStepsItemOneOf2 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkflowToolNestedToolsStepModelOutput"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkflowToolResponseModelOutputStepsItemOneOf3"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkflowToolNestedToolsStepModelOutput? WorkflowToolNestedToolsStepModelOutput { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkflowToolResponseModelOutputStepsItemOneOf3? WorkflowToolResponseModelOutputStepsItemOneOf3 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkflowToolNestedToolsStepModelOutput WorkflowToolNestedToolsStepModelOutput { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkflowToolResponseModelOutputStepsItemOneOf3 WorkflowToolResponseModelOutputStepsItemOneOf3 { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -45,21 +50,30 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkflowToolResponseModelOutputStepsItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
             var result = new global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkflowToolResponseModelOutputStepsItem();
-            if("edge".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("WorkflowToolResponseModelOutputStepsItemOneOf1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.WorkflowToolEdgeStepModel = new global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkflowToolEdgeStepModel();
+                
             }
-            else if("max_iterations_exceeded".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("WorkflowToolResponseModelOutputStepsItemOneOf2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.WorkflowToolMaxIterationsExceededStepModel = new global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkflowToolMaxIterationsExceededStepModel();
+                
             }
-            else if("nested_tools".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("WorkflowToolResponseModelOutputStepsItemOneOf3".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.WorkflowToolNestedToolsStepModelOutput = new global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkflowToolNestedToolsStepModelOutput();
+                
             }
-            return result;
+            
+            var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
+            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("step_latency_secs") != null && parseNode.GetChildNode("edge_id") != null && parseNode.GetChildNode("target_node_id") != null && parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag4 && ("edge".Equals(tag4.GetValue(), global::System.StringComparison.Ordinal)))))();
+            bool matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("step_latency_secs") != null && parseNode.GetChildNode("node_id") != null && parseNode.GetChildNode("requests") != null && parseNode.GetChildNode("results") != null && parseNode.GetChildNode("is_successful") != null && parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag6 && ("nested_tools".Equals(tag6.GetValue(), global::System.StringComparison.Ordinal)))))();
+            bool matchesUnionBranch2 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("step_latency_secs") != null && parseNode.GetChildNode("max_iterations") != null && parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag3 && ("max_iterations_exceeded".Equals(tag3.GetValue(), global::System.StringComparison.Ordinal)))))();
+            if (result.WorkflowToolResponseModelOutputStepsItemOneOf1 == null && result.WorkflowToolResponseModelOutputStepsItemOneOf2 == null && result.WorkflowToolResponseModelOutputStepsItemOneOf3 == null && matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2) result.WorkflowToolResponseModelOutputStepsItemOneOf1 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkflowToolResponseModelOutputStepsItemOneOf1(), parseNode);
+            if (result.WorkflowToolResponseModelOutputStepsItemOneOf1 == null && result.WorkflowToolResponseModelOutputStepsItemOneOf2 == null && result.WorkflowToolResponseModelOutputStepsItemOneOf3 == null && matchesUnionBranch1 && !matchesUnionBranch0 && !matchesUnionBranch2) result.WorkflowToolResponseModelOutputStepsItemOneOf2 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkflowToolResponseModelOutputStepsItemOneOf2(), parseNode);
+            if (result.WorkflowToolResponseModelOutputStepsItemOneOf1 == null && result.WorkflowToolResponseModelOutputStepsItemOneOf2 == null && result.WorkflowToolResponseModelOutputStepsItemOneOf3 == null && matchesUnionBranch2 && !matchesUnionBranch0 && !matchesUnionBranch1) result.WorkflowToolResponseModelOutputStepsItemOneOf3 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkflowToolResponseModelOutputStepsItemOneOf3(), parseNode);
+            if (result.WorkflowToolResponseModelOutputStepsItemOneOf1 == null && result.WorkflowToolResponseModelOutputStepsItemOneOf2 == null && result.WorkflowToolResponseModelOutputStepsItemOneOf3 == null) result.UnrecognizedValue = unionPayload;
+return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -67,17 +81,17 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(WorkflowToolEdgeStepModel != null)
+            if(WorkflowToolResponseModelOutputStepsItemOneOf1 != null)
             {
-                return WorkflowToolEdgeStepModel.GetFieldDeserializers();
+                return WorkflowToolResponseModelOutputStepsItemOneOf1.GetFieldDeserializers();
             }
-            else if(WorkflowToolMaxIterationsExceededStepModel != null)
+            else if(WorkflowToolResponseModelOutputStepsItemOneOf2 != null)
             {
-                return WorkflowToolMaxIterationsExceededStepModel.GetFieldDeserializers();
+                return WorkflowToolResponseModelOutputStepsItemOneOf2.GetFieldDeserializers();
             }
-            else if(WorkflowToolNestedToolsStepModelOutput != null)
+            else if(WorkflowToolResponseModelOutputStepsItemOneOf3 != null)
             {
-                return WorkflowToolNestedToolsStepModelOutput.GetFieldDeserializers();
+                return WorkflowToolResponseModelOutputStepsItemOneOf3.GetFieldDeserializers();
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -87,18 +101,27 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
+            if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
+            if (WorkflowToolResponseModelOutputStepsItemOneOf1 == null && WorkflowToolResponseModelOutputStepsItemOneOf2 == null && WorkflowToolResponseModelOutputStepsItemOneOf3 == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
+            if (WorkflowToolResponseModelOutputStepsItemOneOf1 != null && WorkflowToolResponseModelOutputStepsItemOneOf2 == null && WorkflowToolResponseModelOutputStepsItemOneOf3 == null) { if (WorkflowToolResponseModelOutputStepsItemOneOf1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, WorkflowToolResponseModelOutputStepsItemOneOf1); return; }
+            if (WorkflowToolResponseModelOutputStepsItemOneOf2 != null && WorkflowToolResponseModelOutputStepsItemOneOf1 == null && WorkflowToolResponseModelOutputStepsItemOneOf3 == null) { if (WorkflowToolResponseModelOutputStepsItemOneOf2 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, WorkflowToolResponseModelOutputStepsItemOneOf2); return; }
+            if (WorkflowToolResponseModelOutputStepsItemOneOf3 != null && WorkflowToolResponseModelOutputStepsItemOneOf1 == null && WorkflowToolResponseModelOutputStepsItemOneOf2 == null) { if (WorkflowToolResponseModelOutputStepsItemOneOf3 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, WorkflowToolResponseModelOutputStepsItemOneOf3); return; }
+
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(WorkflowToolEdgeStepModel != null)
+            if(WorkflowToolResponseModelOutputStepsItemOneOf1 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkflowToolEdgeStepModel>(null, WorkflowToolEdgeStepModel);
+                if (WorkflowToolResponseModelOutputStepsItemOneOf1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkflowToolResponseModelOutputStepsItemOneOf1>(null, WorkflowToolResponseModelOutputStepsItemOneOf1);
             }
-            else if(WorkflowToolMaxIterationsExceededStepModel != null)
+            else if(WorkflowToolResponseModelOutputStepsItemOneOf2 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkflowToolMaxIterationsExceededStepModel>(null, WorkflowToolMaxIterationsExceededStepModel);
+                if (WorkflowToolResponseModelOutputStepsItemOneOf2 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkflowToolResponseModelOutputStepsItemOneOf2>(null, WorkflowToolResponseModelOutputStepsItemOneOf2);
             }
-            else if(WorkflowToolNestedToolsStepModelOutput != null)
+            else if(WorkflowToolResponseModelOutputStepsItemOneOf3 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkflowToolNestedToolsStepModelOutput>(null, WorkflowToolNestedToolsStepModelOutput);
+                if (WorkflowToolResponseModelOutputStepsItemOneOf3 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkflowToolResponseModelOutputStepsItemOneOf3>(null, WorkflowToolResponseModelOutputStepsItemOneOf3);
             }
         }
     }

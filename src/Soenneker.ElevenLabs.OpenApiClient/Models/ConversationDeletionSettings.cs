@@ -11,21 +11,40 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ConversationDeletionSettings : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("delete_audio") is { } nullNodeDeleteAudio && nullNodeDeleteAudio.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeleteAudio = null;
+            if (parseNode.GetChildNode("deleted_audio_at_time_unix_secs") is { } nullNodeDeletedAudioAtTimeUnixSecs && nullNodeDeletedAudioAtTimeUnixSecs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeletedAudioAtTimeUnixSecs = null;
+            if (parseNode.GetChildNode("deleted_logs_at_time_unix_secs") is { } nullNodeDeletedLogsAtTimeUnixSecs && nullNodeDeletedLogsAtTimeUnixSecs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeletedLogsAtTimeUnixSecs = null;
+            if (parseNode.GetChildNode("deleted_transcript_at_time_unix_secs") is { } nullNodeDeletedTranscriptAtTimeUnixSecs && nullNodeDeletedTranscriptAtTimeUnixSecs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeletedTranscriptAtTimeUnixSecs = null;
+            if (parseNode.GetChildNode("delete_transcript_and_pii") is { } nullNodeDeleteTranscriptAndPii && nullNodeDeleteTranscriptAndPii.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeleteTranscriptAndPii = null;
+            if (parseNode.GetChildNode("deletion_time_unix_secs") is { } nullNodeDeletionTimeUnixSecs && nullNodeDeletionTimeUnixSecs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeletionTimeUnixSecs = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The delete_audio property</summary>
-        public bool? DeleteAudio { get; set; }
+        public bool? DeleteAudio { get => _explicitNullValueDeleteAudio; set { _explicitNullValueDeleteAudio = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("delete_audio"); else _explicitNullProperties?.Remove("delete_audio"); } }
+        private bool? _explicitNullValueDeleteAudio = default!;
         /// <summary>The deleted_audio_at_time_unix_secs property</summary>
-        public int? DeletedAudioAtTimeUnixSecs { get; set; }
+        public int? DeletedAudioAtTimeUnixSecs { get => _explicitNullValueDeletedAudioAtTimeUnixSecs; set { _explicitNullValueDeletedAudioAtTimeUnixSecs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deleted_audio_at_time_unix_secs"); else _explicitNullProperties?.Remove("deleted_audio_at_time_unix_secs"); } }
+        private int? _explicitNullValueDeletedAudioAtTimeUnixSecs = default!;
         /// <summary>The deleted_logs_at_time_unix_secs property</summary>
-        public int? DeletedLogsAtTimeUnixSecs { get; set; }
+        public int? DeletedLogsAtTimeUnixSecs { get => _explicitNullValueDeletedLogsAtTimeUnixSecs; set { _explicitNullValueDeletedLogsAtTimeUnixSecs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deleted_logs_at_time_unix_secs"); else _explicitNullProperties?.Remove("deleted_logs_at_time_unix_secs"); } }
+        private int? _explicitNullValueDeletedLogsAtTimeUnixSecs = default!;
         /// <summary>The deleted_transcript_at_time_unix_secs property</summary>
-        public int? DeletedTranscriptAtTimeUnixSecs { get; set; }
+        public int? DeletedTranscriptAtTimeUnixSecs { get => _explicitNullValueDeletedTranscriptAtTimeUnixSecs; set { _explicitNullValueDeletedTranscriptAtTimeUnixSecs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deleted_transcript_at_time_unix_secs"); else _explicitNullProperties?.Remove("deleted_transcript_at_time_unix_secs"); } }
+        private int? _explicitNullValueDeletedTranscriptAtTimeUnixSecs = default!;
         /// <summary>The delete_transcript_and_pii property</summary>
-        public bool? DeleteTranscriptAndPii { get; set; }
+        public bool? DeleteTranscriptAndPii { get => _explicitNullValueDeleteTranscriptAndPii; set { _explicitNullValueDeleteTranscriptAndPii = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("delete_transcript_and_pii"); else _explicitNullProperties?.Remove("delete_transcript_and_pii"); } }
+        private bool? _explicitNullValueDeleteTranscriptAndPii = default!;
         /// <summary>The deletion_time_unix_secs property</summary>
-        public int? DeletionTimeUnixSecs { get; set; }
+        public int? DeletionTimeUnixSecs { get => _explicitNullValueDeletionTimeUnixSecs; set { _explicitNullValueDeletionTimeUnixSecs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deletion_time_unix_secs"); else _explicitNullProperties?.Remove("deletion_time_unix_secs"); } }
+        private int? _explicitNullValueDeletionTimeUnixSecs = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationDeletionSettings"/> and sets the default values.
         /// </summary>
@@ -43,7 +62,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationDeletionSettings CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationDeletionSettings();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationDeletionSettings(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -74,6 +93,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteIntValue("deleted_transcript_at_time_unix_secs", DeletedTranscriptAtTimeUnixSecs);
             writer.WriteBoolValue("delete_transcript_and_pii", DeleteTranscriptAndPii);
             writer.WriteIntValue("deletion_time_unix_secs", DeletionTimeUnixSecs);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -11,56 +11,81 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class AssetTranscriptionData : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("language_code") is { } nullNodeLanguageCode && nullNodeLanguageCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LanguageCode = null;
+            if (parseNode.GetChildNode("text") is { } nullNodeText && nullNodeText.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Text = null;
+            if (parseNode.GetChildNode("word_end_times_ms") is { } nullNodeWordEndTimesMs && nullNodeWordEndTimesMs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WordEndTimesMs = null;
+            if (parseNode.GetChildNode("words") is { } nullNodeWords && nullNodeWords.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Words = null;
+            if (parseNode.GetChildNode("word_speaker_ids") is { } nullNodeWordSpeakerIds && nullNodeWordSpeakerIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WordSpeakerIds = null;
+            if (parseNode.GetChildNode("word_start_times_ms") is { } nullNodeWordStartTimesMs && nullNodeWordStartTimesMs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WordStartTimesMs = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The language_code property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LanguageCode { get; set; }
+        public string? LanguageCode { get => _explicitNullValueLanguageCode; set { _explicitNullValueLanguageCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("language_code"); else _explicitNullProperties?.Remove("language_code"); } }
+        private string? _explicitNullValueLanguageCode = default!;
 #nullable restore
 #else
-        public string LanguageCode { get; set; }
+        public string LanguageCode { get => _explicitNullValueLanguageCode; set { _explicitNullValueLanguageCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("language_code"); else _explicitNullProperties?.Remove("language_code"); } }
+        private string _explicitNullValueLanguageCode = default!;
 #endif
         /// <summary>The text property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Text { get; set; }
+        public string? Text { get => _explicitNullValueText; set { _explicitNullValueText = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("text"); else _explicitNullProperties?.Remove("text"); } }
+        private string? _explicitNullValueText = default!;
 #nullable restore
 #else
-        public string Text { get; set; }
+        public string Text { get => _explicitNullValueText; set { _explicitNullValueText = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("text"); else _explicitNullProperties?.Remove("text"); } }
+        private string _explicitNullValueText = default!;
 #endif
         /// <summary>The word_end_times_ms property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<int?>? WordEndTimesMs { get; set; }
+        public List<int?>? WordEndTimesMs { get => _explicitNullValueWordEndTimesMs; set { _explicitNullValueWordEndTimesMs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("word_end_times_ms"); else _explicitNullProperties?.Remove("word_end_times_ms"); } }
+        private List<int?>? _explicitNullValueWordEndTimesMs = default!;
 #nullable restore
 #else
-        public List<int?> WordEndTimesMs { get; set; }
+        public List<int?> WordEndTimesMs { get => _explicitNullValueWordEndTimesMs; set { _explicitNullValueWordEndTimesMs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("word_end_times_ms"); else _explicitNullProperties?.Remove("word_end_times_ms"); } }
+        private List<int?> _explicitNullValueWordEndTimesMs = default!;
 #endif
         /// <summary>The words property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Words { get; set; }
+        public List<string>? Words { get => _explicitNullValueWords; set { _explicitNullValueWords = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("words"); else _explicitNullProperties?.Remove("words"); } }
+        private List<string>? _explicitNullValueWords = default!;
 #nullable restore
 #else
-        public List<string> Words { get; set; }
+        public List<string> Words { get => _explicitNullValueWords; set { _explicitNullValueWords = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("words"); else _explicitNullProperties?.Remove("words"); } }
+        private List<string> _explicitNullValueWords = default!;
 #endif
         /// <summary>The word_speaker_ids property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? WordSpeakerIds { get; set; }
+        public List<string>? WordSpeakerIds { get => _explicitNullValueWordSpeakerIds; set { _explicitNullValueWordSpeakerIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("word_speaker_ids"); else _explicitNullProperties?.Remove("word_speaker_ids"); } }
+        private List<string>? _explicitNullValueWordSpeakerIds = default!;
 #nullable restore
 #else
-        public List<string> WordSpeakerIds { get; set; }
+        public List<string> WordSpeakerIds { get => _explicitNullValueWordSpeakerIds; set { _explicitNullValueWordSpeakerIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("word_speaker_ids"); else _explicitNullProperties?.Remove("word_speaker_ids"); } }
+        private List<string> _explicitNullValueWordSpeakerIds = default!;
 #endif
         /// <summary>The word_start_times_ms property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<int?>? WordStartTimesMs { get; set; }
+        public List<int?>? WordStartTimesMs { get => _explicitNullValueWordStartTimesMs; set { _explicitNullValueWordStartTimesMs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("word_start_times_ms"); else _explicitNullProperties?.Remove("word_start_times_ms"); } }
+        private List<int?>? _explicitNullValueWordStartTimesMs = default!;
 #nullable restore
 #else
-        public List<int?> WordStartTimesMs { get; set; }
+        public List<int?> WordStartTimesMs { get => _explicitNullValueWordStartTimesMs; set { _explicitNullValueWordStartTimesMs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("word_start_times_ms"); else _explicitNullProperties?.Remove("word_start_times_ms"); } }
+        private List<int?> _explicitNullValueWordStartTimesMs = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.AssetTranscriptionData"/> and sets the default values.
@@ -77,7 +102,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.AssetTranscriptionData CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.AssetTranscriptionData();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.AssetTranscriptionData(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -108,6 +133,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("words", Words);
             writer.WriteCollectionOfPrimitiveValues<string>("word_speaker_ids", WordSpeakerIds);
             writer.WriteCollectionOfPrimitiveValues<int?>("word_start_times_ms", WordStartTimesMs);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

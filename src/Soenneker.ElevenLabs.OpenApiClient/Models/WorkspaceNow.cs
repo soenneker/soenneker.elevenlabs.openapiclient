@@ -11,22 +11,38 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class WorkspaceNow : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("fetched_at_ms") is { } nullNodeFetchedAtMs && nullNodeFetchedAtMs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FetchedAtMs = null;
+            if (parseNode.GetChildNode("hour") is { } nullNodeHour && nullNodeHour.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Hour = null;
+            if (parseNode.GetChildNode("minute") is { } nullNodeMinute && nullNodeMinute.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Minute = null;
+            if (parseNode.GetChildNode("today") is { } nullNodeToday && nullNodeToday.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Today = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Unix timestamp in milliseconds when this was generated</summary>
-        public int? FetchedAtMs { get; set; }
+        public int? FetchedAtMs { get => _explicitNullValueFetchedAtMs; set { _explicitNullValueFetchedAtMs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fetched_at_ms"); else _explicitNullProperties?.Remove("fetched_at_ms"); } }
+        private int? _explicitNullValueFetchedAtMs = default!;
         /// <summary>Current hour (0-23)</summary>
-        public int? Hour { get; set; }
+        public int? Hour { get => _explicitNullValueHour; set { _explicitNullValueHour = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hour"); else _explicitNullProperties?.Remove("hour"); } }
+        private int? _explicitNullValueHour = default!;
         /// <summary>Current minute (0-59)</summary>
-        public int? Minute { get; set; }
+        public int? Minute { get => _explicitNullValueMinute; set { _explicitNullValueMinute = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("minute"); else _explicitNullProperties?.Remove("minute"); } }
+        private int? _explicitNullValueMinute = default!;
         /// <summary>Represents a calendar date as individual numeric components.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.DateModel? Today { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.DateModel? Today { get => _explicitNullValueToday; set { _explicitNullValueToday = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("today"); else _explicitNullProperties?.Remove("today"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.DateModel? _explicitNullValueToday = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.DateModel Today { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.DateModel Today { get => _explicitNullValueToday; set { _explicitNullValueToday = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("today"); else _explicitNullProperties?.Remove("today"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.DateModel _explicitNullValueToday = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceNow"/> and sets the default values.
@@ -43,7 +59,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceNow CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceNow();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceNow(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -70,6 +86,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteIntValue("hour", Hour);
             writer.WriteIntValue("minute", Minute);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DateModel>("today", Today);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

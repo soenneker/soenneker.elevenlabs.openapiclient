@@ -11,21 +11,35 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class GetOrCreateRagIndexRequestModel : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("create_if_missing") is { } nullNodeCreateIfMissing && nullNodeCreateIfMissing.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreateIfMissing = null;
+            if (parseNode.GetChildNode("document_id") is { } nullNodeDocumentId && nullNodeDocumentId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DocumentId = null;
+            if (parseNode.GetChildNode("model") is { } nullNodeModel && nullNodeModel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Model = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Whether to create the RAG index if it does not exist</summary>
-        public bool? CreateIfMissing { get; set; }
+        public bool? CreateIfMissing { get => _explicitNullValueCreateIfMissing; set { _explicitNullValueCreateIfMissing = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("create_if_missing"); else _explicitNullProperties?.Remove("create_if_missing"); } }
+        private bool? _explicitNullValueCreateIfMissing = default!;
         /// <summary>ID of the knowledgebase document for which to retrieve the index</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DocumentId { get; set; }
+        public string? DocumentId { get => _explicitNullValueDocumentId; set { _explicitNullValueDocumentId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("document_id"); else _explicitNullProperties?.Remove("document_id"); } }
+        private string? _explicitNullValueDocumentId = default!;
 #nullable restore
 #else
-        public string DocumentId { get; set; }
+        public string DocumentId { get => _explicitNullValueDocumentId; set { _explicitNullValueDocumentId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("document_id"); else _explicitNullProperties?.Remove("document_id"); } }
+        private string _explicitNullValueDocumentId = default!;
 #endif
         /// <summary>Embedding model to use for the RAG index</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.EmbeddingModelEnum? Model { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.EmbeddingModelEnum? Model { get => _explicitNullValueModel; set { _explicitNullValueModel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("model"); else _explicitNullProperties?.Remove("model"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.EmbeddingModelEnum? _explicitNullValueModel = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.GetOrCreateRagIndexRequestModel"/> and sets the default values.
         /// </summary>
@@ -41,7 +55,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.GetOrCreateRagIndexRequestModel CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.GetOrCreateRagIndexRequestModel();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.GetOrCreateRagIndexRequestModel(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -66,6 +80,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteBoolValue("create_if_missing", CreateIfMissing);
             writer.WriteStringValue("document_id", DocumentId);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.EmbeddingModelEnum>("model", Model);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -11,51 +11,75 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class GuardrailsV1Output : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("content") is { } nullNodeContent && nullNodeContent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Content = null;
+            if (parseNode.GetChildNode("custom") is { } nullNodeCustom && nullNodeCustom.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Custom = null;
+            if (parseNode.GetChildNode("focus") is { } nullNodeFocus && nullNodeFocus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Focus = null;
+            if (parseNode.GetChildNode("moderation") is { } nullNodeModeration && nullNodeModeration.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Moderation = null;
+            if (parseNode.GetChildNode("prompt_injection") is { } nullNodePromptInjection && nullNodePromptInjection.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PromptInjection = null;
+            if (parseNode.GetChildNode("version") is { } nullNodeVersion && nullNodeVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Version = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The content property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ContentGuardrailOutput? Content { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ContentGuardrailOutput? Content { get => _explicitNullValueContent; set { _explicitNullValueContent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("content"); else _explicitNullProperties?.Remove("content"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ContentGuardrailOutput? _explicitNullValueContent = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ContentGuardrailOutput Content { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ContentGuardrailOutput Content { get => _explicitNullValueContent; set { _explicitNullValueContent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("content"); else _explicitNullProperties?.Remove("content"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ContentGuardrailOutput _explicitNullValueContent = default!;
 #endif
         /// <summary>Container for custom guardrails, matching ModerationGuardrail pattern</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomGuardrailOutput? Custom { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomGuardrailOutput? Custom { get => _explicitNullValueCustom; set { _explicitNullValueCustom = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom"); else _explicitNullProperties?.Remove("custom"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomGuardrailOutput? _explicitNullValueCustom = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomGuardrailOutput Custom { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomGuardrailOutput Custom { get => _explicitNullValueCustom; set { _explicitNullValueCustom = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom"); else _explicitNullProperties?.Remove("custom"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomGuardrailOutput _explicitNullValueCustom = default!;
 #endif
         /// <summary>The focus property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.FocusGuardrail? Focus { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.FocusGuardrail? Focus { get => _explicitNullValueFocus; set { _explicitNullValueFocus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("focus"); else _explicitNullProperties?.Remove("focus"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.FocusGuardrail? _explicitNullValueFocus = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.FocusGuardrail Focus { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.FocusGuardrail Focus { get => _explicitNullValueFocus; set { _explicitNullValueFocus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("focus"); else _explicitNullProperties?.Remove("focus"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.FocusGuardrail _explicitNullValueFocus = default!;
 #endif
         /// <summary>The moderation property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ModerationGuardrailOutput? Moderation { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ModerationGuardrailOutput? Moderation { get => _explicitNullValueModeration; set { _explicitNullValueModeration = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("moderation"); else _explicitNullProperties?.Remove("moderation"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ModerationGuardrailOutput? _explicitNullValueModeration = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ModerationGuardrailOutput Moderation { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ModerationGuardrailOutput Moderation { get => _explicitNullValueModeration; set { _explicitNullValueModeration = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("moderation"); else _explicitNullProperties?.Remove("moderation"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ModerationGuardrailOutput _explicitNullValueModeration = default!;
 #endif
         /// <summary>The prompt_injection property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptInjectionGuardrail? PromptInjection { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptInjectionGuardrail? PromptInjection { get => _explicitNullValuePromptInjection; set { _explicitNullValuePromptInjection = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prompt_injection"); else _explicitNullProperties?.Remove("prompt_injection"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptInjectionGuardrail? _explicitNullValuePromptInjection = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptInjectionGuardrail PromptInjection { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptInjectionGuardrail PromptInjection { get => _explicitNullValuePromptInjection; set { _explicitNullValuePromptInjection = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prompt_injection"); else _explicitNullProperties?.Remove("prompt_injection"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptInjectionGuardrail _explicitNullValuePromptInjection = default!;
 #endif
         /// <summary>The version property</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GuardrailsV1OutputVersion? Version { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GuardrailsV1OutputVersion? Version { get => _explicitNullValueVersion; set { _explicitNullValueVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("version"); else _explicitNullProperties?.Remove("version"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.GuardrailsV1OutputVersion? _explicitNullValueVersion = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.GuardrailsV1Output"/> and sets the default values.
         /// </summary>
@@ -71,7 +95,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.GuardrailsV1Output CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.GuardrailsV1Output();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.GuardrailsV1Output(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -102,6 +126,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ModerationGuardrailOutput>("moderation", Moderation);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptInjectionGuardrail>("prompt_injection", PromptInjection);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.GuardrailsV1OutputVersion>("version", Version);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

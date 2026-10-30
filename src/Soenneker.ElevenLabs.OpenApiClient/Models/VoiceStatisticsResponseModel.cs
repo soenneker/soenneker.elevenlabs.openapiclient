@@ -11,22 +11,38 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class VoiceStatisticsResponseModel : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("characters_converted") is { } nullNodeCharactersConverted && nullNodeCharactersConverted.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CharactersConverted = null;
+            if (parseNode.GetChildNode("characters_unconverted") is { } nullNodeCharactersUnconverted && nullNodeCharactersUnconverted.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CharactersUnconverted = null;
+            if (parseNode.GetChildNode("credits_needed_to_convert") is { } nullNodeCreditsNeededToConvert && nullNodeCreditsNeededToConvert.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreditsNeededToConvert = null;
+            if (parseNode.GetChildNode("project_voice_ref_id") is { } nullNodeProjectVoiceRefId && nullNodeProjectVoiceRefId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProjectVoiceRefId = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The number of converted characters for this voice.</summary>
-        public int? CharactersConverted { get; set; }
+        public int? CharactersConverted { get => _explicitNullValueCharactersConverted; set { _explicitNullValueCharactersConverted = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("characters_converted"); else _explicitNullProperties?.Remove("characters_converted"); } }
+        private int? _explicitNullValueCharactersConverted = default!;
         /// <summary>The number of unconverted characters for this voice.</summary>
-        public int? CharactersUnconverted { get; set; }
+        public int? CharactersUnconverted { get => _explicitNullValueCharactersUnconverted; set { _explicitNullValueCharactersUnconverted = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("characters_unconverted"); else _explicitNullProperties?.Remove("characters_unconverted"); } }
+        private int? _explicitNullValueCharactersUnconverted = default!;
         /// <summary>The number of credits needed to convert the remaining audio for this voice.</summary>
-        public int? CreditsNeededToConvert { get; set; }
+        public int? CreditsNeededToConvert { get => _explicitNullValueCreditsNeededToConvert; set { _explicitNullValueCreditsNeededToConvert = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("credits_needed_to_convert"); else _explicitNullProperties?.Remove("credits_needed_to_convert"); } }
+        private int? _explicitNullValueCreditsNeededToConvert = default!;
         /// <summary>The project voice reference ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProjectVoiceRefId { get; set; }
+        public string? ProjectVoiceRefId { get => _explicitNullValueProjectVoiceRefId; set { _explicitNullValueProjectVoiceRefId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("project_voice_ref_id"); else _explicitNullProperties?.Remove("project_voice_ref_id"); } }
+        private string? _explicitNullValueProjectVoiceRefId = default!;
 #nullable restore
 #else
-        public string ProjectVoiceRefId { get; set; }
+        public string ProjectVoiceRefId { get => _explicitNullValueProjectVoiceRefId; set { _explicitNullValueProjectVoiceRefId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("project_voice_ref_id"); else _explicitNullProperties?.Remove("project_voice_ref_id"); } }
+        private string _explicitNullValueProjectVoiceRefId = default!;
 #endif
         /// <summary>The voice ID.</summary>
         [Obsolete("")]
@@ -52,7 +68,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceStatisticsResponseModel CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceStatisticsResponseModel();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceStatisticsResponseModel(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -80,6 +96,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteIntValue("characters_unconverted", CharactersUnconverted);
             writer.WriteIntValue("credits_needed_to_convert", CreditsNeededToConvert);
             writer.WriteStringValue("project_voice_ref_id", ProjectVoiceRefId);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

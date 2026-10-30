@@ -11,86 +11,126 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class BodyCreatePodcastV1StudioPodcastsPost : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("apply_text_normalization") is { } nullNodeApplyTextNormalization && nullNodeApplyTextNormalization.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ApplyTextNormalization = null;
+            if (parseNode.GetChildNode("callback_url") is { } nullNodeCallbackUrl && nullNodeCallbackUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CallbackUrl = null;
+            if (parseNode.GetChildNode("duration_scale") is { } nullNodeDurationScale && nullNodeDurationScale.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DurationScale = null;
+            if (parseNode.GetChildNode("highlights") is { } nullNodeHighlights && nullNodeHighlights.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Highlights = null;
+            if (parseNode.GetChildNode("instructions_prompt") is { } nullNodeInstructionsPrompt && nullNodeInstructionsPrompt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InstructionsPrompt = null;
+            if (parseNode.GetChildNode("intro") is { } nullNodeIntro && nullNodeIntro.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Intro = null;
+            if (parseNode.GetChildNode("language") is { } nullNodeLanguage && nullNodeLanguage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Language = null;
+            if (parseNode.GetChildNode("mode") is { } nullNodeMode && nullNodeMode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Mode = null;
+            if (parseNode.GetChildNode("model_id") is { } nullNodeModelId && nullNodeModelId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ModelId = null;
+            if (parseNode.GetChildNode("outro") is { } nullNodeOutro && nullNodeOutro.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Outro = null;
+            if (parseNode.GetChildNode("quality_preset") is { } nullNodeQualityPreset && nullNodeQualityPreset.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) QualityPreset = null;
+            if (parseNode.GetChildNode("source") is { } nullNodeSource && nullNodeSource.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Source = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>    This parameter controls text normalization with four modes: &apos;auto&apos;, &apos;on&apos;, &apos;apply_english&apos; and &apos;off&apos;.    When set to &apos;auto&apos;, the system will automatically decide whether to apply text normalization    (e.g., spelling out numbers). With &apos;on&apos;, text normalization will always be applied, while    with &apos;off&apos;, it will be skipped. &apos;apply_english&apos; is the same as &apos;on&apos; but will assume that text is in English.    </summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreatePodcastV1StudioPodcastsPostApplyTextNormalization? ApplyTextNormalization { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreatePodcastV1StudioPodcastsPostApplyTextNormalization? ApplyTextNormalization { get => _explicitNullValueApplyTextNormalization; set { _explicitNullValueApplyTextNormalization = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("apply_text_normalization"); else _explicitNullProperties?.Remove("apply_text_normalization"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreatePodcastV1StudioPodcastsPostApplyTextNormalization? _explicitNullValueApplyTextNormalization = default!;
         /// <summary>    A url that will be called by our service when the Studio project is converted. Request will contain a json blob containing the status of the conversion    Messages:    1. When project was converted successfully:    {      type: &quot;project_conversion_status&quot;,      event_timestamp: 1234567890,      data: {        request_id: &quot;1234567890&quot;,        project_id: &quot;21m00Tcm4TlvDq8ikWAM&quot;,        conversion_status: &quot;success&quot;,        project_snapshot_id: &quot;22m00Tcm4TlvDq8ikMAT&quot;,        error_details: None,      }    }    2. When project conversion failed:    {      type: &quot;project_conversion_status&quot;,      event_timestamp: 1234567890,      data: {        request_id: &quot;1234567890&quot;,        project_id: &quot;21m00Tcm4TlvDq8ikWAM&quot;,        conversion_status: &quot;error&quot;,        project_snapshot_id: None,        error_details: &quot;Error details if conversion failed&quot;      }    }    3. When chapter was converted successfully:    {      type: &quot;chapter_conversion_status&quot;,      event_timestamp: 1234567890,      data: {        request_id: &quot;1234567890&quot;,        project_id: &quot;21m00Tcm4TlvDq8ikWAM&quot;,        chapter_id: &quot;22m00Tcm4TlvDq8ikMAT&quot;,        conversion_status: &quot;success&quot;,        chapter_snapshot_id: &quot;23m00Tcm4TlvDq8ikMAV&quot;,        error_details: None,      }    }    4. When chapter conversion failed:    {      type: &quot;chapter_conversion_status&quot;,      event_timestamp: 1234567890,      data: {        request_id: &quot;1234567890&quot;,        project_id: &quot;21m00Tcm4TlvDq8ikWAM&quot;,        chapter_id: &quot;22m00Tcm4TlvDq8ikMAT&quot;,        conversion_status: &quot;error&quot;,        chapter_snapshot_id: None,        error_details: &quot;Error details if conversion failed&quot;      }    }    </summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CallbackUrl { get; set; }
+        public string? CallbackUrl { get => _explicitNullValueCallbackUrl; set { _explicitNullValueCallbackUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("callback_url"); else _explicitNullProperties?.Remove("callback_url"); } }
+        private string? _explicitNullValueCallbackUrl = default!;
 #nullable restore
 #else
-        public string CallbackUrl { get; set; }
+        public string CallbackUrl { get => _explicitNullValueCallbackUrl; set { _explicitNullValueCallbackUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("callback_url"); else _explicitNullProperties?.Remove("callback_url"); } }
+        private string _explicitNullValueCallbackUrl = default!;
 #endif
         /// <summary>Duration of the generated podcast. Must be one of:short - produces podcasts shorter than 3 minutes.default - produces podcasts roughly between 3-7 minutes.long - produces podcasts longer than 7 minutes.</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreatePodcastV1StudioPodcastsPostDurationScale? DurationScale { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreatePodcastV1StudioPodcastsPostDurationScale? DurationScale { get => _explicitNullValueDurationScale; set { _explicitNullValueDurationScale = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("duration_scale"); else _explicitNullProperties?.Remove("duration_scale"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreatePodcastV1StudioPodcastsPostDurationScale? _explicitNullValueDurationScale = default!;
         /// <summary>A brief summary or highlights of the Studio project&apos;s content, providing key points or themes. This should be between 10 and 70 characters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Highlights { get; set; }
+        public List<string>? Highlights { get => _explicitNullValueHighlights; set { _explicitNullValueHighlights = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("highlights"); else _explicitNullProperties?.Remove("highlights"); } }
+        private List<string>? _explicitNullValueHighlights = default!;
 #nullable restore
 #else
-        public List<string> Highlights { get; set; }
+        public List<string> Highlights { get => _explicitNullValueHighlights; set { _explicitNullValueHighlights = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("highlights"); else _explicitNullProperties?.Remove("highlights"); } }
+        private List<string> _explicitNullValueHighlights = default!;
 #endif
         /// <summary>Additional instructions prompt for the podcast generation used to adjust the podcast&apos;s style and tone.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? InstructionsPrompt { get; set; }
+        public string? InstructionsPrompt { get => _explicitNullValueInstructionsPrompt; set { _explicitNullValueInstructionsPrompt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("instructions_prompt"); else _explicitNullProperties?.Remove("instructions_prompt"); } }
+        private string? _explicitNullValueInstructionsPrompt = default!;
 #nullable restore
 #else
-        public string InstructionsPrompt { get; set; }
+        public string InstructionsPrompt { get => _explicitNullValueInstructionsPrompt; set { _explicitNullValueInstructionsPrompt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("instructions_prompt"); else _explicitNullProperties?.Remove("instructions_prompt"); } }
+        private string _explicitNullValueInstructionsPrompt = default!;
 #endif
         /// <summary>The intro text that will always be added to the beginning of the podcast.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Intro { get; set; }
+        public string? Intro { get => _explicitNullValueIntro; set { _explicitNullValueIntro = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("intro"); else _explicitNullProperties?.Remove("intro"); } }
+        private string? _explicitNullValueIntro = default!;
 #nullable restore
 #else
-        public string Intro { get; set; }
+        public string Intro { get => _explicitNullValueIntro; set { _explicitNullValueIntro = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("intro"); else _explicitNullProperties?.Remove("intro"); } }
+        private string _explicitNullValueIntro = default!;
 #endif
         /// <summary>An optional language of the Studio project. Two-letter language code (ISO 639-1).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Language { get; set; }
+        public string? Language { get => _explicitNullValueLanguage; set { _explicitNullValueLanguage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("language"); else _explicitNullProperties?.Remove("language"); } }
+        private string? _explicitNullValueLanguage = default!;
 #nullable restore
 #else
-        public string Language { get; set; }
+        public string Language { get => _explicitNullValueLanguage; set { _explicitNullValueLanguage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("language"); else _explicitNullProperties?.Remove("language"); } }
+        private string _explicitNullValueLanguage = default!;
 #endif
         /// <summary>The type of podcast to generate. Can be &apos;conversation&apos;, an interaction between two voices, or &apos;bulletin&apos;, a monologue.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreatePodcastV1StudioPodcastsPostMode? Mode { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreatePodcastV1StudioPodcastsPostMode? Mode { get => _explicitNullValueMode; set { _explicitNullValueMode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mode"); else _explicitNullProperties?.Remove("mode"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreatePodcastV1StudioPodcastsPostMode? _explicitNullValueMode = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreatePodcastV1StudioPodcastsPostMode Mode { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreatePodcastV1StudioPodcastsPostMode Mode { get => _explicitNullValueMode; set { _explicitNullValueMode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mode"); else _explicitNullProperties?.Remove("mode"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreatePodcastV1StudioPodcastsPostMode _explicitNullValueMode = default!;
 #endif
         /// <summary>The ID of the model to be used for this Studio project, you can query GET /v1/models to list all available models.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ModelId { get; set; }
+        public string? ModelId { get => _explicitNullValueModelId; set { _explicitNullValueModelId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("model_id"); else _explicitNullProperties?.Remove("model_id"); } }
+        private string? _explicitNullValueModelId = default!;
 #nullable restore
 #else
-        public string ModelId { get; set; }
+        public string ModelId { get => _explicitNullValueModelId; set { _explicitNullValueModelId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("model_id"); else _explicitNullProperties?.Remove("model_id"); } }
+        private string _explicitNullValueModelId = default!;
 #endif
         /// <summary>The outro text that will always be added to the end of the podcast.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Outro { get; set; }
+        public string? Outro { get => _explicitNullValueOutro; set { _explicitNullValueOutro = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("outro"); else _explicitNullProperties?.Remove("outro"); } }
+        private string? _explicitNullValueOutro = default!;
 #nullable restore
 #else
-        public string Outro { get; set; }
+        public string Outro { get => _explicitNullValueOutro; set { _explicitNullValueOutro = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("outro"); else _explicitNullProperties?.Remove("outro"); } }
+        private string _explicitNullValueOutro = default!;
 #endif
         /// <summary>Output quality of the generated audio. Must be one of:&apos;standard&apos; - standard output format, 128kbps with 44.1kHz sample rate.&apos;high&apos; - high quality output format, 192kbps with 44.1kHz sample rate and major improvements on our side.&apos;ultra&apos; - ultra quality output format, 192kbps with 44.1kHz sample rate and highest improvements on our side.&apos;ultra_lossless&apos; - ultra quality output format, 705.6kbps with 44.1kHz sample rate and highest improvements on our side in a fully lossless format.If not provided, defaults to the highest quality preset available on your subscription tier.</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.QualityPresetType? QualityPreset { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.QualityPresetType? QualityPreset { get => _explicitNullValueQualityPreset; set { _explicitNullValueQualityPreset = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("quality_preset"); else _explicitNullProperties?.Remove("quality_preset"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.QualityPresetType? _explicitNullValueQualityPreset = default!;
         /// <summary>The source content for the Podcast.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreatePodcastV1StudioPodcastsPostSource? Source { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreatePodcastV1StudioPodcastsPostSource? Source { get => _explicitNullValueSource; set { _explicitNullValueSource = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source"); else _explicitNullProperties?.Remove("source"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreatePodcastV1StudioPodcastsPostSource? _explicitNullValueSource = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreatePodcastV1StudioPodcastsPostSource Source { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreatePodcastV1StudioPodcastsPostSource Source { get => _explicitNullValueSource; set { _explicitNullValueSource = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source"); else _explicitNullProperties?.Remove("source"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreatePodcastV1StudioPodcastsPostSource _explicitNullValueSource = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreatePodcastV1StudioPodcastsPost"/> and sets the default values.
@@ -107,7 +147,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreatePodcastV1StudioPodcastsPost CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreatePodcastV1StudioPodcastsPost();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreatePodcastV1StudioPodcastsPost(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -150,6 +190,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteStringValue("outro", Outro);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.QualityPresetType>("quality_preset", QualityPreset);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreatePodcastV1StudioPodcastsPostSource>("source", Source);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

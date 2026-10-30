@@ -11,13 +11,24 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ModelRatesResponseModel : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("character_cost_multiplier") is { } nullNodeCharacterCostMultiplier && nullNodeCharacterCostMultiplier.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CharacterCostMultiplier = null;
+            if (parseNode.GetChildNode("cost_discount_multiplier") is { } nullNodeCostDiscountMultiplier && nullNodeCostDiscountMultiplier.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CostDiscountMultiplier = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The cost multiplier for characters.</summary>
-        public double? CharacterCostMultiplier { get; set; }
+        public double? CharacterCostMultiplier { get => _explicitNullValueCharacterCostMultiplier; set { _explicitNullValueCharacterCostMultiplier = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("character_cost_multiplier"); else _explicitNullProperties?.Remove("character_cost_multiplier"); } }
+        private double? _explicitNullValueCharacterCostMultiplier = default!;
         /// <summary>Discount multiplier applied to cost estimates. Defaults to 1.0 (no discount).</summary>
-        public double? CostDiscountMultiplier { get; set; }
+        public double? CostDiscountMultiplier { get => _explicitNullValueCostDiscountMultiplier; set { _explicitNullValueCostDiscountMultiplier = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cost_discount_multiplier"); else _explicitNullProperties?.Remove("cost_discount_multiplier"); } }
+        private double? _explicitNullValueCostDiscountMultiplier = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ModelRatesResponseModel"/> and sets the default values.
         /// </summary>
@@ -34,7 +45,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.ModelRatesResponseModel CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.ModelRatesResponseModel();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.ModelRatesResponseModel(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -57,6 +68,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDoubleValue("character_cost_multiplier", CharacterCostMultiplier);
             writer.WriteDoubleValue("cost_discount_multiplier", CostDiscountMultiplier);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

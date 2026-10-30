@@ -11,119 +11,181 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class PromptAgentApiModelOutput : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("backup_llm_config") is { } nullNodeBackupLlmConfig && nullNodeBackupLlmConfig.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BackupLlmConfig = null;
+            if (parseNode.GetChildNode("built_in_tools") is { } nullNodeBuiltInTools && nullNodeBuiltInTools.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BuiltInTools = null;
+            if (parseNode.GetChildNode("cascade_timeout_seconds") is { } nullNodeCascadeTimeoutSeconds && nullNodeCascadeTimeoutSeconds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CascadeTimeoutSeconds = null;
+            if (parseNode.GetChildNode("custom_llm") is { } nullNodeCustomLlm && nullNodeCustomLlm.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomLlm = null;
+            if (parseNode.GetChildNode("enable_parallel_tool_calls") is { } nullNodeEnableParallelToolCalls && nullNodeEnableParallelToolCalls.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EnableParallelToolCalls = null;
+            if (parseNode.GetChildNode("enable_reasoning_summary") is { } nullNodeEnableReasoningSummary && nullNodeEnableReasoningSummary.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EnableReasoningSummary = null;
+            if (parseNode.GetChildNode("ignore_default_personality") is { } nullNodeIgnoreDefaultPersonality && nullNodeIgnoreDefaultPersonality.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IgnoreDefaultPersonality = null;
+            if (parseNode.GetChildNode("knowledge_base") is { } nullNodeKnowledgeBase && nullNodeKnowledgeBase.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) KnowledgeBase = null;
+            if (parseNode.GetChildNode("llm") is { } nullNodeLlm && nullNodeLlm.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Llm = null;
+            if (parseNode.GetChildNode("max_tokens") is { } nullNodeMaxTokens && nullNodeMaxTokens.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxTokens = null;
+            if (parseNode.GetChildNode("mcp_server_ids") is { } nullNodeMcpServerIds && nullNodeMcpServerIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) McpServerIds = null;
+            if (parseNode.GetChildNode("native_mcp_server_ids") is { } nullNodeNativeMcpServerIds && nullNodeNativeMcpServerIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NativeMcpServerIds = null;
+            if (parseNode.GetChildNode("prompt") is { } nullNodePrompt && nullNodePrompt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Prompt = null;
+            if (parseNode.GetChildNode("rag") is { } nullNodeRag && nullNodeRag.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Rag = null;
+            if (parseNode.GetChildNode("reasoning_effort") is { } nullNodeReasoningEffort && nullNodeReasoningEffort.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReasoningEffort = null;
+            if (parseNode.GetChildNode("service_tier") is { } nullNodeServiceTier && nullNodeServiceTier.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ServiceTier = null;
+            if (parseNode.GetChildNode("temperature") is { } nullNodeTemperature && nullNodeTemperature.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Temperature = null;
+            if (parseNode.GetChildNode("thinking_budget") is { } nullNodeThinkingBudget && nullNodeThinkingBudget.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ThinkingBudget = null;
+            if (parseNode.GetChildNode("timezone") is { } nullNodeTimezone && nullNodeTimezone.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Timezone = null;
+            if (parseNode.GetChildNode("tool_ids") is { } nullNodeToolIds && nullNodeToolIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ToolIds = null;
+            if (parseNode.GetChildNode("tool_ids_strict") is { } nullNodeToolIdsStrict && nullNodeToolIdsStrict.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ToolIdsStrict = null;
+            if (parseNode.GetChildNode("tools") is { } nullNodeTools && nullNodeTools.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Tools = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Configuration for backup LLM cascading. Can be disabled, use system defaults, or specify custom order.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentApiModelOutputBackupLlmConfig? BackupLlmConfig { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentApiModelOutputBackupLlmConfig? BackupLlmConfig { get => _explicitNullValueBackupLlmConfig; set { _explicitNullValueBackupLlmConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("backup_llm_config"); else _explicitNullProperties?.Remove("backup_llm_config"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentApiModelOutputBackupLlmConfig? _explicitNullValueBackupLlmConfig = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentApiModelOutputBackupLlmConfig BackupLlmConfig { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentApiModelOutputBackupLlmConfig BackupLlmConfig { get => _explicitNullValueBackupLlmConfig; set { _explicitNullValueBackupLlmConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("backup_llm_config"); else _explicitNullProperties?.Remove("backup_llm_config"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentApiModelOutputBackupLlmConfig _explicitNullValueBackupLlmConfig = default!;
 #endif
         /// <summary>System tools a conversational agent can be given.Deliberately not named ConversationalBuiltInTools: BuiltInToolsInput andBuiltInToolsOutput are part of the public API spec and the generated SDKs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BuiltInToolsOutput? BuiltInTools { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BuiltInToolsOutput? BuiltInTools { get => _explicitNullValueBuiltInTools; set { _explicitNullValueBuiltInTools = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("built_in_tools"); else _explicitNullProperties?.Remove("built_in_tools"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.BuiltInToolsOutput? _explicitNullValueBuiltInTools = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BuiltInToolsOutput BuiltInTools { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BuiltInToolsOutput BuiltInTools { get => _explicitNullValueBuiltInTools; set { _explicitNullValueBuiltInTools = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("built_in_tools"); else _explicitNullProperties?.Remove("built_in_tools"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.BuiltInToolsOutput _explicitNullValueBuiltInTools = default!;
 #endif
         /// <summary>Time in seconds before cascading to backup LLM. Must be between 2 and 15 seconds.</summary>
-        public double? CascadeTimeoutSeconds { get; set; }
+        public double? CascadeTimeoutSeconds { get => _explicitNullValueCascadeTimeoutSeconds; set { _explicitNullValueCascadeTimeoutSeconds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cascade_timeout_seconds"); else _explicitNullProperties?.Remove("cascade_timeout_seconds"); } }
+        private double? _explicitNullValueCascadeTimeoutSeconds = default!;
         /// <summary>Definition for a custom LLM if LLM field is set to &apos;CUSTOM_LLM&apos;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomLlm? CustomLlm { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomLlm? CustomLlm { get => _explicitNullValueCustomLlm; set { _explicitNullValueCustomLlm = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_llm"); else _explicitNullProperties?.Remove("custom_llm"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomLlm? _explicitNullValueCustomLlm = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomLlm CustomLlm { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomLlm CustomLlm { get => _explicitNullValueCustomLlm; set { _explicitNullValueCustomLlm = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_llm"); else _explicitNullProperties?.Remove("custom_llm"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomLlm _explicitNullValueCustomLlm = default!;
 #endif
         /// <summary>Enable parallel tool calling. When enabled, the agent can execute multiple tools in parallel within a single turn. Not supported by all models.</summary>
-        public bool? EnableParallelToolCalls { get; set; }
+        public bool? EnableParallelToolCalls { get => _explicitNullValueEnableParallelToolCalls; set { _explicitNullValueEnableParallelToolCalls = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enable_parallel_tool_calls"); else _explicitNullProperties?.Remove("enable_parallel_tool_calls"); } }
+        private bool? _explicitNullValueEnableParallelToolCalls = default!;
         /// <summary>Enable model reasoning summaries. When disabled, we do not request summaries from provider if possible for faster TTFB. Not ZRM compatible.</summary>
-        public bool? EnableReasoningSummary { get; set; }
+        public bool? EnableReasoningSummary { get => _explicitNullValueEnableReasoningSummary; set { _explicitNullValueEnableReasoningSummary = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enable_reasoning_summary"); else _explicitNullProperties?.Remove("enable_reasoning_summary"); } }
+        private bool? _explicitNullValueEnableReasoningSummary = default!;
         /// <summary>Whether to remove the default personality lines from the system prompt</summary>
-        public bool? IgnoreDefaultPersonality { get; set; }
+        public bool? IgnoreDefaultPersonality { get => _explicitNullValueIgnoreDefaultPersonality; set { _explicitNullValueIgnoreDefaultPersonality = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ignore_default_personality"); else _explicitNullProperties?.Remove("ignore_default_personality"); } }
+        private bool? _explicitNullValueIgnoreDefaultPersonality = default!;
         /// <summary>A list of knowledge bases to be used by the agent</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeBaseLocator>? KnowledgeBase { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeBaseLocator>? KnowledgeBase { get => _explicitNullValueKnowledgeBase; set { _explicitNullValueKnowledgeBase = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("knowledge_base"); else _explicitNullProperties?.Remove("knowledge_base"); } }
+        private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeBaseLocator>? _explicitNullValueKnowledgeBase = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeBaseLocator> KnowledgeBase { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeBaseLocator> KnowledgeBase { get => _explicitNullValueKnowledgeBase; set { _explicitNullValueKnowledgeBase = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("knowledge_base"); else _explicitNullProperties?.Remove("knowledge_base"); } }
+        private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeBaseLocator> _explicitNullValueKnowledgeBase = default!;
 #endif
         /// <summary>The llm property</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Llm? Llm { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Llm? Llm { get => _explicitNullValueLlm; set { _explicitNullValueLlm = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("llm"); else _explicitNullProperties?.Remove("llm"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.Llm? _explicitNullValueLlm = default!;
         /// <summary>If greater than 0, maximum number of tokens the LLM can predict</summary>
-        public int? MaxTokens { get; set; }
+        public int? MaxTokens { get => _explicitNullValueMaxTokens; set { _explicitNullValueMaxTokens = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_tokens"); else _explicitNullProperties?.Remove("max_tokens"); } }
+        private int? _explicitNullValueMaxTokens = default!;
         /// <summary>A list of MCP server ids to be used by the agent</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? McpServerIds { get; set; }
+        public List<string>? McpServerIds { get => _explicitNullValueMcpServerIds; set { _explicitNullValueMcpServerIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mcp_server_ids"); else _explicitNullProperties?.Remove("mcp_server_ids"); } }
+        private List<string>? _explicitNullValueMcpServerIds = default!;
 #nullable restore
 #else
-        public List<string> McpServerIds { get; set; }
+        public List<string> McpServerIds { get => _explicitNullValueMcpServerIds; set { _explicitNullValueMcpServerIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mcp_server_ids"); else _explicitNullProperties?.Remove("mcp_server_ids"); } }
+        private List<string> _explicitNullValueMcpServerIds = default!;
 #endif
         /// <summary>A list of Native MCP server ids to be used by the agent</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? NativeMcpServerIds { get; set; }
+        public List<string>? NativeMcpServerIds { get => _explicitNullValueNativeMcpServerIds; set { _explicitNullValueNativeMcpServerIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("native_mcp_server_ids"); else _explicitNullProperties?.Remove("native_mcp_server_ids"); } }
+        private List<string>? _explicitNullValueNativeMcpServerIds = default!;
 #nullable restore
 #else
-        public List<string> NativeMcpServerIds { get; set; }
+        public List<string> NativeMcpServerIds { get => _explicitNullValueNativeMcpServerIds; set { _explicitNullValueNativeMcpServerIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("native_mcp_server_ids"); else _explicitNullProperties?.Remove("native_mcp_server_ids"); } }
+        private List<string> _explicitNullValueNativeMcpServerIds = default!;
 #endif
         /// <summary>The prompt for the agent</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Prompt { get; set; }
+        public string? Prompt { get => _explicitNullValuePrompt; set { _explicitNullValuePrompt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prompt"); else _explicitNullProperties?.Remove("prompt"); } }
+        private string? _explicitNullValuePrompt = default!;
 #nullable restore
 #else
-        public string Prompt { get; set; }
+        public string Prompt { get => _explicitNullValuePrompt; set { _explicitNullValuePrompt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prompt"); else _explicitNullProperties?.Remove("prompt"); } }
+        private string _explicitNullValuePrompt = default!;
 #endif
         /// <summary>The rag property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.RagConfigOutput? Rag { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.RagConfigOutput? Rag { get => _explicitNullValueRag; set { _explicitNullValueRag = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rag"); else _explicitNullProperties?.Remove("rag"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.RagConfigOutput? _explicitNullValueRag = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.RagConfigOutput Rag { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.RagConfigOutput Rag { get => _explicitNullValueRag; set { _explicitNullValueRag = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rag"); else _explicitNullProperties?.Remove("rag"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.RagConfigOutput _explicitNullValueRag = default!;
 #endif
         /// <summary>Reasoning effort of the model. Only available for some models.</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmReasoningEffort? ReasoningEffort { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmReasoningEffort? ReasoningEffort { get => _explicitNullValueReasoningEffort; set { _explicitNullValueReasoningEffort = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reasoning_effort"); else _explicitNullProperties?.Remove("reasoning_effort"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmReasoningEffort? _explicitNullValueReasoningEffort = default!;
         /// <summary>Request-time processing tier for a model.STANDARD: default price and throughput.FAST: pays a per-token price premium for higher throughput / lower latency.    See OpenAI&apos;s fast mode: https://openai.com/api-fast-mode/</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmServiceTier? ServiceTier { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmServiceTier? ServiceTier { get => _explicitNullValueServiceTier; set { _explicitNullValueServiceTier = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("service_tier"); else _explicitNullProperties?.Remove("service_tier"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmServiceTier? _explicitNullValueServiceTier = default!;
         /// <summary>The temperature for the LLM. Defaults to 0. Set to null to omit the parameter from the LLM request entirely (useful for custom LLMs that reject the temperature field).</summary>
-        public double? Temperature { get; set; }
+        public double? Temperature { get => _explicitNullValueTemperature; set { _explicitNullValueTemperature = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("temperature"); else _explicitNullProperties?.Remove("temperature"); } }
+        private double? _explicitNullValueTemperature = default!;
         /// <summary>Max number of tokens used for thinking. Use 0 to turn off if supported by the model.</summary>
-        public int? ThinkingBudget { get; set; }
+        public int? ThinkingBudget { get => _explicitNullValueThinkingBudget; set { _explicitNullValueThinkingBudget = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("thinking_budget"); else _explicitNullProperties?.Remove("thinking_budget"); } }
+        private int? _explicitNullValueThinkingBudget = default!;
         /// <summary>Timezone for displaying current time in system prompt. If set, the current time will be included in the system prompt using this timezone. Must be a valid timezone name (e.g., &apos;America/New_York&apos;, &apos;Europe/London&apos;, &apos;UTC&apos;). Recommended for accurate time-aware responses; without this, the agent has no knowledge of the current date/time unless you provide it via dynamic variables or tools, which can lead to incorrect or hallucinated time references.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Timezone { get; set; }
+        public string? Timezone { get => _explicitNullValueTimezone; set { _explicitNullValueTimezone = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timezone"); else _explicitNullProperties?.Remove("timezone"); } }
+        private string? _explicitNullValueTimezone = default!;
 #nullable restore
 #else
-        public string Timezone { get; set; }
+        public string Timezone { get => _explicitNullValueTimezone; set { _explicitNullValueTimezone = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timezone"); else _explicitNullProperties?.Remove("timezone"); } }
+        private string _explicitNullValueTimezone = default!;
 #endif
         /// <summary>A list of IDs of tools used by the agent</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? ToolIds { get; set; }
+        public List<string>? ToolIds { get => _explicitNullValueToolIds; set { _explicitNullValueToolIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tool_ids"); else _explicitNullProperties?.Remove("tool_ids"); } }
+        private List<string>? _explicitNullValueToolIds = default!;
 #nullable restore
 #else
-        public List<string> ToolIds { get; set; }
+        public List<string> ToolIds { get => _explicitNullValueToolIds; set { _explicitNullValueToolIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tool_ids"); else _explicitNullProperties?.Remove("tool_ids"); } }
+        private List<string> _explicitNullValueToolIds = default!;
 #endif
         /// <summary>Only applies as a conversation override, allowed whenever tool_ids may be overridden. When true, the overridden tool_ids is the full list of tools allowed in the conversation, including tools on workflow nodes. Ignored when set on the agent.</summary>
-        public bool? ToolIdsStrict { get; set; }
+        public bool? ToolIdsStrict { get => _explicitNullValueToolIdsStrict; set { _explicitNullValueToolIdsStrict = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tool_ids_strict"); else _explicitNullProperties?.Remove("tool_ids_strict"); } }
+        private bool? _explicitNullValueToolIdsStrict = default!;
         /// <summary>A list of tools that the agent can use over the course of the conversation, use tool_ids instead</summary>
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentApiModelOutputToolsItem>? Tools { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentApiModelOutputToolsItem>? Tools { get => _explicitNullValueTools; set { _explicitNullValueTools = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tools"); else _explicitNullProperties?.Remove("tools"); } }
+        private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentApiModelOutputToolsItem>? _explicitNullValueTools = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentApiModelOutputToolsItem> Tools { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentApiModelOutputToolsItem> Tools { get => _explicitNullValueTools; set { _explicitNullValueTools = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tools"); else _explicitNullProperties?.Remove("tools"); } }
+        private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentApiModelOutputToolsItem> _explicitNullValueTools = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentApiModelOutput"/> and sets the default values.
@@ -147,7 +209,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentApiModelOutput CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentApiModelOutput();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentApiModelOutput(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -210,6 +272,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("tool_ids", ToolIds);
             writer.WriteBoolValue("tool_ids_strict", ToolIdsStrict);
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentApiModelOutputToolsItem>("tools", Tools);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

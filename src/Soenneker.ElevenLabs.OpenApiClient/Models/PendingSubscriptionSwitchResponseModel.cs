@@ -11,17 +11,32 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class PendingSubscriptionSwitchResponseModel : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("kind") is { } nullNodeKind && nullNodeKind.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Kind = null;
+            if (parseNode.GetChildNode("next_billing_period") is { } nullNodeNextBillingPeriod && nullNodeNextBillingPeriod.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NextBillingPeriod = null;
+            if (parseNode.GetChildNode("next_tier") is { } nullNodeNextTier && nullNodeNextTier.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NextTier = null;
+            if (parseNode.GetChildNode("timestamp_seconds") is { } nullNodeTimestampSeconds && nullNodeTimestampSeconds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TimestampSeconds = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The kind property</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ChangeKind? Kind { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ChangeKind? Kind { get => _explicitNullValueKind; set { _explicitNullValueKind = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("kind"); else _explicitNullProperties?.Remove("kind"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ChangeKind? _explicitNullValueKind = default!;
         /// <summary>The billing period to change to.</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BillingPeriod? NextBillingPeriod { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BillingPeriod? NextBillingPeriod { get => _explicitNullValueNextBillingPeriod; set { _explicitNullValueNextBillingPeriod = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("next_billing_period"); else _explicitNullProperties?.Remove("next_billing_period"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.BillingPeriod? _explicitNullValueNextBillingPeriod = default!;
         /// <summary>The tier to change to.</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PendingSubscriptionSwitchResponseModelNextTier? NextTier { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PendingSubscriptionSwitchResponseModelNextTier? NextTier { get => _explicitNullValueNextTier; set { _explicitNullValueNextTier = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("next_tier"); else _explicitNullProperties?.Remove("next_tier"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.PendingSubscriptionSwitchResponseModelNextTier? _explicitNullValueNextTier = default!;
         /// <summary>The timestamp of the change.</summary>
-        public int? TimestampSeconds { get; set; }
+        public int? TimestampSeconds { get => _explicitNullValueTimestampSeconds; set { _explicitNullValueTimestampSeconds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timestamp_seconds"); else _explicitNullProperties?.Remove("timestamp_seconds"); } }
+        private int? _explicitNullValueTimestampSeconds = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.PendingSubscriptionSwitchResponseModel"/> and sets the default values.
         /// </summary>
@@ -37,7 +52,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.PendingSubscriptionSwitchResponseModel CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.PendingSubscriptionSwitchResponseModel();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.PendingSubscriptionSwitchResponseModel(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -64,6 +79,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BillingPeriod>("next_billing_period", NextBillingPeriod);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PendingSubscriptionSwitchResponseModelNextTier>("next_tier", NextTier);
             writer.WriteIntValue("timestamp_seconds", TimestampSeconds);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

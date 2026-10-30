@@ -12,18 +12,30 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class TwilioMachineDetectionRule : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("action") is { } nullNodeAction && nullNodeAction.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Action = null;
+            if (parseNode.GetChildNode("answered_by") is { } nullNodeAnsweredBy && nullNodeAnsweredBy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AnsweredBy = null;
+        }
+
         /// <summary>The action property</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.TwilioMachineDetectionAction? Action { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.TwilioMachineDetectionAction? Action { get => _explicitNullValueAction; set { _explicitNullValueAction = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("action"); else _explicitNullProperties?.Remove("action"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.TwilioMachineDetectionAction? _explicitNullValueAction = default!;
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Verdicts that trigger the action.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.TwilioAnsweredBy?>? AnsweredBy { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.TwilioAnsweredBy?>? AnsweredBy { get => _explicitNullValueAnsweredBy; set { _explicitNullValueAnsweredBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("answered_by"); else _explicitNullProperties?.Remove("answered_by"); } }
+        private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.TwilioAnsweredBy?>? _explicitNullValueAnsweredBy = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.TwilioAnsweredBy?> AnsweredBy { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.TwilioAnsweredBy?> AnsweredBy { get => _explicitNullValueAnsweredBy; set { _explicitNullValueAnsweredBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("answered_by"); else _explicitNullProperties?.Remove("answered_by"); } }
+        private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.TwilioAnsweredBy?> _explicitNullValueAnsweredBy = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.TwilioMachineDetectionRule"/> and sets the default values.
@@ -40,7 +52,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.TwilioMachineDetectionRule CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.TwilioMachineDetectionRule();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.TwilioMachineDetectionRule(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -63,6 +75,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TwilioMachineDetectionAction>("action", Action);
             writer.WriteCollectionOfEnumValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.TwilioAnsweredBy>("answered_by", AnsweredBy);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

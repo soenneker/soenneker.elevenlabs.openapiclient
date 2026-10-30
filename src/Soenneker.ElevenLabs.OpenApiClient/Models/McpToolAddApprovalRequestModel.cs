@@ -12,34 +12,52 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class McpToolAddApprovalRequestModel : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("approval_policy") is { } nullNodeApprovalPolicy && nullNodeApprovalPolicy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ApprovalPolicy = null;
+            if (parseNode.GetChildNode("input_schema") is { } nullNodeInputSchema && nullNodeInputSchema.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InputSchema = null;
+            if (parseNode.GetChildNode("tool_description") is { } nullNodeToolDescription && nullNodeToolDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ToolDescription = null;
+            if (parseNode.GetChildNode("tool_name") is { } nullNodeToolName && nullNodeToolName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ToolName = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Defines the tool-level approval policy.</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.McpToolApprovalPolicy? ApprovalPolicy { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.McpToolApprovalPolicy? ApprovalPolicy { get => _explicitNullValueApprovalPolicy; set { _explicitNullValueApprovalPolicy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("approval_policy"); else _explicitNullProperties?.Remove("approval_policy"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.McpToolApprovalPolicy? _explicitNullValueApprovalPolicy = default!;
         /// <summary>The input schema of the MCP tool (the schema defined on the MCP server before ElevenLabs does any extra processing)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.McpToolAddApprovalRequestModelInputSchemaProperty? InputSchema { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.McpToolAddApprovalRequestModelInputSchemaProperty? InputSchema { get => _explicitNullValueInputSchema; set { _explicitNullValueInputSchema = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("input_schema"); else _explicitNullProperties?.Remove("input_schema"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.McpToolAddApprovalRequestModelInputSchemaProperty? _explicitNullValueInputSchema = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.McpToolAddApprovalRequestModelInputSchemaProperty InputSchema { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.McpToolAddApprovalRequestModelInputSchemaProperty InputSchema { get => _explicitNullValueInputSchema; set { _explicitNullValueInputSchema = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("input_schema"); else _explicitNullProperties?.Remove("input_schema"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.McpToolAddApprovalRequestModelInputSchemaProperty _explicitNullValueInputSchema = default!;
 #endif
         /// <summary>The description of the MCP tool</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ToolDescription { get; set; }
+        public string? ToolDescription { get => _explicitNullValueToolDescription; set { _explicitNullValueToolDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tool_description"); else _explicitNullProperties?.Remove("tool_description"); } }
+        private string? _explicitNullValueToolDescription = default!;
 #nullable restore
 #else
-        public string ToolDescription { get; set; }
+        public string ToolDescription { get => _explicitNullValueToolDescription; set { _explicitNullValueToolDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tool_description"); else _explicitNullProperties?.Remove("tool_description"); } }
+        private string _explicitNullValueToolDescription = default!;
 #endif
         /// <summary>The name of the MCP tool</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ToolName { get; set; }
+        public string? ToolName { get => _explicitNullValueToolName; set { _explicitNullValueToolName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tool_name"); else _explicitNullProperties?.Remove("tool_name"); } }
+        private string? _explicitNullValueToolName = default!;
 #nullable restore
 #else
-        public string ToolName { get; set; }
+        public string ToolName { get => _explicitNullValueToolName; set { _explicitNullValueToolName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tool_name"); else _explicitNullProperties?.Remove("tool_name"); } }
+        private string _explicitNullValueToolName = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.McpToolAddApprovalRequestModel"/> and sets the default values.
@@ -56,7 +74,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.McpToolAddApprovalRequestModel CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.McpToolAddApprovalRequestModel();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.McpToolAddApprovalRequestModel(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -83,6 +101,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.McpToolAddApprovalRequestModelInputSchemaProperty>("input_schema", InputSchema);
             writer.WriteStringValue("tool_description", ToolDescription);
             writer.WriteStringValue("tool_name", ToolName);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

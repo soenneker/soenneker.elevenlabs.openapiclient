@@ -11,40 +11,59 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class AgentConfigOverrideInput : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("first_message") is { } nullNodeFirstMessage && nullNodeFirstMessage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FirstMessage = null;
+            if (parseNode.GetChildNode("language") is { } nullNodeLanguage && nullNodeLanguage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Language = null;
+            if (parseNode.GetChildNode("max_conversation_duration_message") is { } nullNodeMaxConversationDurationMessage && nullNodeMaxConversationDurationMessage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxConversationDurationMessage = null;
+            if (parseNode.GetChildNode("prompt") is { } nullNodePrompt && nullNodePrompt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Prompt = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>If non-empty, the first message the agent will say. If empty, the agent waits for the user to start the discussion.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FirstMessage { get; set; }
+        public string? FirstMessage { get => _explicitNullValueFirstMessage; set { _explicitNullValueFirstMessage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("first_message"); else _explicitNullProperties?.Remove("first_message"); } }
+        private string? _explicitNullValueFirstMessage = default!;
 #nullable restore
 #else
-        public string FirstMessage { get; set; }
+        public string FirstMessage { get => _explicitNullValueFirstMessage; set { _explicitNullValueFirstMessage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("first_message"); else _explicitNullProperties?.Remove("first_message"); } }
+        private string _explicitNullValueFirstMessage = default!;
 #endif
         /// <summary>Language of the agent - used for ASR and TTS</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Language { get; set; }
+        public string? Language { get => _explicitNullValueLanguage; set { _explicitNullValueLanguage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("language"); else _explicitNullProperties?.Remove("language"); } }
+        private string? _explicitNullValueLanguage = default!;
 #nullable restore
 #else
-        public string Language { get; set; }
+        public string Language { get => _explicitNullValueLanguage; set { _explicitNullValueLanguage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("language"); else _explicitNullProperties?.Remove("language"); } }
+        private string _explicitNullValueLanguage = default!;
 #endif
         /// <summary>If non-empty, the message the agent will send when max conversation duration is reached.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MaxConversationDurationMessage { get; set; }
+        public string? MaxConversationDurationMessage { get => _explicitNullValueMaxConversationDurationMessage; set { _explicitNullValueMaxConversationDurationMessage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_conversation_duration_message"); else _explicitNullProperties?.Remove("max_conversation_duration_message"); } }
+        private string? _explicitNullValueMaxConversationDurationMessage = default!;
 #nullable restore
 #else
-        public string MaxConversationDurationMessage { get; set; }
+        public string MaxConversationDurationMessage { get => _explicitNullValueMaxConversationDurationMessage; set { _explicitNullValueMaxConversationDurationMessage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_conversation_duration_message"); else _explicitNullProperties?.Remove("max_conversation_duration_message"); } }
+        private string _explicitNullValueMaxConversationDurationMessage = default!;
 #endif
         /// <summary>The prompt for the agent</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentApiModelOverrideInput? Prompt { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentApiModelOverrideInput? Prompt { get => _explicitNullValuePrompt; set { _explicitNullValuePrompt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prompt"); else _explicitNullProperties?.Remove("prompt"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentApiModelOverrideInput? _explicitNullValuePrompt = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentApiModelOverrideInput Prompt { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentApiModelOverrideInput Prompt { get => _explicitNullValuePrompt; set { _explicitNullValuePrompt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prompt"); else _explicitNullProperties?.Remove("prompt"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentApiModelOverrideInput _explicitNullValuePrompt = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentConfigOverrideInput"/> and sets the default values.
@@ -61,7 +80,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentConfigOverrideInput CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentConfigOverrideInput();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentConfigOverrideInput(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -88,6 +107,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteStringValue("language", Language);
             writer.WriteStringValue("max_conversation_duration_message", MaxConversationDurationMessage);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentApiModelOverrideInput>("prompt", Prompt);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

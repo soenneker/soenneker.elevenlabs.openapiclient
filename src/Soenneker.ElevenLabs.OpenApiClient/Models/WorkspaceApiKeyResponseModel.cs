@@ -11,87 +11,132 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class WorkspaceApiKeyResponseModel : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("allowed_ips") is { } nullNodeAllowedIps && nullNodeAllowedIps.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AllowedIps = null;
+            if (parseNode.GetChildNode("character_count") is { } nullNodeCharacterCount && nullNodeCharacterCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CharacterCount = null;
+            if (parseNode.GetChildNode("character_limit") is { } nullNodeCharacterLimit && nullNodeCharacterLimit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CharacterLimit = null;
+            if (parseNode.GetChildNode("created_at_unix") is { } nullNodeCreatedAtUnix && nullNodeCreatedAtUnix.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedAtUnix = null;
+            if (parseNode.GetChildNode("disable_reason") is { } nullNodeDisableReason && nullNodeDisableReason.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DisableReason = null;
+            if (parseNode.GetChildNode("expires_at_unix") is { } nullNodeExpiresAtUnix && nullNodeExpiresAtUnix.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExpiresAtUnix = null;
+            if (parseNode.GetChildNode("hashed_xi_api_key") is { } nullNodeHashedXiApiKey && nullNodeHashedXiApiKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HashedXiApiKey = null;
+            if (parseNode.GetChildNode("hint") is { } nullNodeHint && nullNodeHint.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Hint = null;
+            if (parseNode.GetChildNode("is_disabled") is { } nullNodeIsDisabled && nullNodeIsDisabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsDisabled = null;
+            if (parseNode.GetChildNode("key_id") is { } nullNodeKeyId && nullNodeKeyId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) KeyId = null;
+            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("permissions") is { } nullNodePermissions && nullNodePermissions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Permissions = null;
+            if (parseNode.GetChildNode("platform_limits") is { } nullNodePlatformLimits && nullNodePlatformLimits.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PlatformLimits = null;
+            if (parseNode.GetChildNode("service_account_user_id") is { } nullNodeServiceAccountUserId && nullNodeServiceAccountUserId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ServiceAccountUserId = null;
+            if (parseNode.GetChildNode("third_party_disable_allowed") is { } nullNodeThirdPartyDisableAllowed && nullNodeThirdPartyDisableAllowed.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ThirdPartyDisableAllowed = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The allowed_ips property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? AllowedIps { get; set; }
+        public List<string>? AllowedIps { get => _explicitNullValueAllowedIps; set { _explicitNullValueAllowedIps = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allowed_ips"); else _explicitNullProperties?.Remove("allowed_ips"); } }
+        private List<string>? _explicitNullValueAllowedIps = default!;
 #nullable restore
 #else
-        public List<string> AllowedIps { get; set; }
+        public List<string> AllowedIps { get => _explicitNullValueAllowedIps; set { _explicitNullValueAllowedIps = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allowed_ips"); else _explicitNullProperties?.Remove("allowed_ips"); } }
+        private List<string> _explicitNullValueAllowedIps = default!;
 #endif
         /// <summary>Credits already used in the current billing period.</summary>
-        public int? CharacterCount { get; set; }
+        public int? CharacterCount { get => _explicitNullValueCharacterCount; set { _explicitNullValueCharacterCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("character_count"); else _explicitNullProperties?.Remove("character_count"); } }
+        private int? _explicitNullValueCharacterCount = default!;
         /// <summary>Maximum number of credits allowed in the current billing period.</summary>
-        public int? CharacterLimit { get; set; }
+        public int? CharacterLimit { get => _explicitNullValueCharacterLimit; set { _explicitNullValueCharacterLimit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("character_limit"); else _explicitNullProperties?.Remove("character_limit"); } }
+        private int? _explicitNullValueCharacterLimit = default!;
         /// <summary>The created_at_unix property</summary>
-        public int? CreatedAtUnix { get; set; }
+        public int? CreatedAtUnix { get => _explicitNullValueCreatedAtUnix; set { _explicitNullValueCreatedAtUnix = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_at_unix"); else _explicitNullProperties?.Remove("created_at_unix"); } }
+        private int? _explicitNullValueCreatedAtUnix = default!;
         /// <summary>The disable_reason property</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.LockReason? DisableReason { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.LockReason? DisableReason { get => _explicitNullValueDisableReason; set { _explicitNullValueDisableReason = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("disable_reason"); else _explicitNullProperties?.Remove("disable_reason"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.LockReason? _explicitNullValueDisableReason = default!;
         /// <summary>Unix timestamp (seconds) after which this API key stops working. Null means the key never expires.</summary>
-        public int? ExpiresAtUnix { get; set; }
+        public int? ExpiresAtUnix { get => _explicitNullValueExpiresAtUnix; set { _explicitNullValueExpiresAtUnix = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expires_at_unix"); else _explicitNullProperties?.Remove("expires_at_unix"); } }
+        private int? _explicitNullValueExpiresAtUnix = default!;
         /// <summary>The hashed_xi_api_key property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? HashedXiApiKey { get; set; }
+        public string? HashedXiApiKey { get => _explicitNullValueHashedXiApiKey; set { _explicitNullValueHashedXiApiKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hashed_xi_api_key"); else _explicitNullProperties?.Remove("hashed_xi_api_key"); } }
+        private string? _explicitNullValueHashedXiApiKey = default!;
 #nullable restore
 #else
-        public string HashedXiApiKey { get; set; }
+        public string HashedXiApiKey { get => _explicitNullValueHashedXiApiKey; set { _explicitNullValueHashedXiApiKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hashed_xi_api_key"); else _explicitNullProperties?.Remove("hashed_xi_api_key"); } }
+        private string _explicitNullValueHashedXiApiKey = default!;
 #endif
         /// <summary>The hint property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Hint { get; set; }
+        public string? Hint { get => _explicitNullValueHint; set { _explicitNullValueHint = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hint"); else _explicitNullProperties?.Remove("hint"); } }
+        private string? _explicitNullValueHint = default!;
 #nullable restore
 #else
-        public string Hint { get; set; }
+        public string Hint { get => _explicitNullValueHint; set { _explicitNullValueHint = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hint"); else _explicitNullProperties?.Remove("hint"); } }
+        private string _explicitNullValueHint = default!;
 #endif
         /// <summary>The is_disabled property</summary>
-        public bool? IsDisabled { get; set; }
+        public bool? IsDisabled { get => _explicitNullValueIsDisabled; set { _explicitNullValueIsDisabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_disabled"); else _explicitNullProperties?.Remove("is_disabled"); } }
+        private bool? _explicitNullValueIsDisabled = default!;
         /// <summary>The key_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? KeyId { get; set; }
+        public string? KeyId { get => _explicitNullValueKeyId; set { _explicitNullValueKeyId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("key_id"); else _explicitNullProperties?.Remove("key_id"); } }
+        private string? _explicitNullValueKeyId = default!;
 #nullable restore
 #else
-        public string KeyId { get; set; }
+        public string KeyId { get => _explicitNullValueKeyId; set { _explicitNullValueKeyId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("key_id"); else _explicitNullProperties?.Remove("key_id"); } }
+        private string _explicitNullValueKeyId = default!;
 #endif
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get; set; }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string _explicitNullValueName = default!;
 #endif
         /// <summary>The permissions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.PermissionType?>? Permissions { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.PermissionType?>? Permissions { get => _explicitNullValuePermissions; set { _explicitNullValuePermissions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("permissions"); else _explicitNullProperties?.Remove("permissions"); } }
+        private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.PermissionType?>? _explicitNullValuePermissions = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.PermissionType?> Permissions { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.PermissionType?> Permissions { get => _explicitNullValuePermissions; set { _explicitNullValuePermissions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("permissions"); else _explicitNullProperties?.Remove("permissions"); } }
+        private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.PermissionType?> _explicitNullValuePermissions = default!;
 #endif
         /// <summary>Per-API-key concurrency limits (TTS/dubbing/music). Enterprise-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PlatformLimits? PlatformLimits { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PlatformLimits? PlatformLimits { get => _explicitNullValuePlatformLimits; set { _explicitNullValuePlatformLimits = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("platform_limits"); else _explicitNullProperties?.Remove("platform_limits"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.PlatformLimits? _explicitNullValuePlatformLimits = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PlatformLimits PlatformLimits { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PlatformLimits PlatformLimits { get => _explicitNullValuePlatformLimits; set { _explicitNullValuePlatformLimits = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("platform_limits"); else _explicitNullProperties?.Remove("platform_limits"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.PlatformLimits _explicitNullValuePlatformLimits = default!;
 #endif
         /// <summary>The service_account_user_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ServiceAccountUserId { get; set; }
+        public string? ServiceAccountUserId { get => _explicitNullValueServiceAccountUserId; set { _explicitNullValueServiceAccountUserId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("service_account_user_id"); else _explicitNullProperties?.Remove("service_account_user_id"); } }
+        private string? _explicitNullValueServiceAccountUserId = default!;
 #nullable restore
 #else
-        public string ServiceAccountUserId { get; set; }
+        public string ServiceAccountUserId { get => _explicitNullValueServiceAccountUserId; set { _explicitNullValueServiceAccountUserId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("service_account_user_id"); else _explicitNullProperties?.Remove("service_account_user_id"); } }
+        private string _explicitNullValueServiceAccountUserId = default!;
 #endif
         /// <summary>The third_party_disable_allowed property</summary>
-        public bool? ThirdPartyDisableAllowed { get; set; }
+        public bool? ThirdPartyDisableAllowed { get => _explicitNullValueThirdPartyDisableAllowed; set { _explicitNullValueThirdPartyDisableAllowed = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("third_party_disable_allowed"); else _explicitNullProperties?.Remove("third_party_disable_allowed"); } }
+        private bool? _explicitNullValueThirdPartyDisableAllowed = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceApiKeyResponseModel"/> and sets the default values.
         /// </summary>
@@ -108,7 +153,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceApiKeyResponseModel CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceApiKeyResponseModel();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceApiKeyResponseModel(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -157,6 +202,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PlatformLimits>("platform_limits", PlatformLimits);
             writer.WriteStringValue("service_account_user_id", ServiceAccountUserId);
             writer.WriteBoolValue("third_party_disable_allowed", ThirdPartyDisableAllowed);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

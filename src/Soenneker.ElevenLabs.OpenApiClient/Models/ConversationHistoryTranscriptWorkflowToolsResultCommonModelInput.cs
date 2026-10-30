@@ -11,75 +11,113 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ConversationHistoryTranscriptWorkflowToolsResultCommonModelInput : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("dynamic_variable_updates") is { } nullNodeDynamicVariableUpdates && nullNodeDynamicVariableUpdates.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DynamicVariableUpdates = null;
+            if (parseNode.GetChildNode("error_type") is { } nullNodeErrorType && nullNodeErrorType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ErrorType = null;
+            if (parseNode.GetChildNode("is_blocked") is { } nullNodeIsBlocked && nullNodeIsBlocked.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsBlocked = null;
+            if (parseNode.GetChildNode("is_error") is { } nullNodeIsError && nullNodeIsError.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsError = null;
+            if (parseNode.GetChildNode("raw_error_message") is { } nullNodeRawErrorMessage && nullNodeRawErrorMessage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RawErrorMessage = null;
+            if (parseNode.GetChildNode("request_id") is { } nullNodeRequestId && nullNodeRequestId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequestId = null;
+            if (parseNode.GetChildNode("result") is { } nullNodeResult && nullNodeResult.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Result = null;
+            if (parseNode.GetChildNode("result_value") is { } nullNodeResultValue && nullNodeResultValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ResultValue = null;
+            if (parseNode.GetChildNode("tool_has_been_called") is { } nullNodeToolHasBeenCalled && nullNodeToolHasBeenCalled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ToolHasBeenCalled = null;
+            if (parseNode.GetChildNode("tool_latency_secs") is { } nullNodeToolLatencySecs && nullNodeToolLatencySecs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ToolLatencySecs = null;
+            if (parseNode.GetChildNode("tool_name") is { } nullNodeToolName && nullNodeToolName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ToolName = null;
+            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The dynamic_variable_updates property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.DynamicVariableUpdateCommonModel>? DynamicVariableUpdates { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.DynamicVariableUpdateCommonModel>? DynamicVariableUpdates { get => _explicitNullValueDynamicVariableUpdates; set { _explicitNullValueDynamicVariableUpdates = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dynamic_variable_updates"); else _explicitNullProperties?.Remove("dynamic_variable_updates"); } }
+        private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.DynamicVariableUpdateCommonModel>? _explicitNullValueDynamicVariableUpdates = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.DynamicVariableUpdateCommonModel> DynamicVariableUpdates { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.DynamicVariableUpdateCommonModel> DynamicVariableUpdates { get => _explicitNullValueDynamicVariableUpdates; set { _explicitNullValueDynamicVariableUpdates = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dynamic_variable_updates"); else _explicitNullProperties?.Remove("dynamic_variable_updates"); } }
+        private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.DynamicVariableUpdateCommonModel> _explicitNullValueDynamicVariableUpdates = default!;
 #endif
         /// <summary>The error_type property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ErrorType { get; set; }
+        public string? ErrorType { get => _explicitNullValueErrorType; set { _explicitNullValueErrorType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("error_type"); else _explicitNullProperties?.Remove("error_type"); } }
+        private string? _explicitNullValueErrorType = default!;
 #nullable restore
 #else
-        public string ErrorType { get; set; }
+        public string ErrorType { get => _explicitNullValueErrorType; set { _explicitNullValueErrorType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("error_type"); else _explicitNullProperties?.Remove("error_type"); } }
+        private string _explicitNullValueErrorType = default!;
 #endif
         /// <summary>The is_blocked property</summary>
-        public bool? IsBlocked { get; set; }
+        public bool? IsBlocked { get => _explicitNullValueIsBlocked; set { _explicitNullValueIsBlocked = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_blocked"); else _explicitNullProperties?.Remove("is_blocked"); } }
+        private bool? _explicitNullValueIsBlocked = default!;
         /// <summary>The is_error property</summary>
-        public bool? IsError { get; set; }
+        public bool? IsError { get => _explicitNullValueIsError; set { _explicitNullValueIsError = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_error"); else _explicitNullProperties?.Remove("is_error"); } }
+        private bool? _explicitNullValueIsError = default!;
         /// <summary>The raw_error_message property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RawErrorMessage { get; set; }
+        public string? RawErrorMessage { get => _explicitNullValueRawErrorMessage; set { _explicitNullValueRawErrorMessage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("raw_error_message"); else _explicitNullProperties?.Remove("raw_error_message"); } }
+        private string? _explicitNullValueRawErrorMessage = default!;
 #nullable restore
 #else
-        public string RawErrorMessage { get; set; }
+        public string RawErrorMessage { get => _explicitNullValueRawErrorMessage; set { _explicitNullValueRawErrorMessage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("raw_error_message"); else _explicitNullProperties?.Remove("raw_error_message"); } }
+        private string _explicitNullValueRawErrorMessage = default!;
 #endif
         /// <summary>The request_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RequestId { get; set; }
+        public string? RequestId { get => _explicitNullValueRequestId; set { _explicitNullValueRequestId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("request_id"); else _explicitNullProperties?.Remove("request_id"); } }
+        private string? _explicitNullValueRequestId = default!;
 #nullable restore
 #else
-        public string RequestId { get; set; }
+        public string RequestId { get => _explicitNullValueRequestId; set { _explicitNullValueRequestId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("request_id"); else _explicitNullProperties?.Remove("request_id"); } }
+        private string _explicitNullValueRequestId = default!;
 #endif
         /// <summary>The result property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkflowToolResponseModelInput? Result { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkflowToolResponseModelInput? Result { get => _explicitNullValueResult; set { _explicitNullValueResult = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("result"); else _explicitNullProperties?.Remove("result"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkflowToolResponseModelInput? _explicitNullValueResult = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkflowToolResponseModelInput Result { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkflowToolResponseModelInput Result { get => _explicitNullValueResult; set { _explicitNullValueResult = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("result"); else _explicitNullProperties?.Remove("result"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkflowToolResponseModelInput _explicitNullValueResult = default!;
 #endif
         /// <summary>The result_value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ResultValue { get; set; }
+        public string? ResultValue { get => _explicitNullValueResultValue; set { _explicitNullValueResultValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("result_value"); else _explicitNullProperties?.Remove("result_value"); } }
+        private string? _explicitNullValueResultValue = default!;
 #nullable restore
 #else
-        public string ResultValue { get; set; }
+        public string ResultValue { get => _explicitNullValueResultValue; set { _explicitNullValueResultValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("result_value"); else _explicitNullProperties?.Remove("result_value"); } }
+        private string _explicitNullValueResultValue = default!;
 #endif
         /// <summary>The tool_has_been_called property</summary>
-        public bool? ToolHasBeenCalled { get; set; }
+        public bool? ToolHasBeenCalled { get => _explicitNullValueToolHasBeenCalled; set { _explicitNullValueToolHasBeenCalled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tool_has_been_called"); else _explicitNullProperties?.Remove("tool_has_been_called"); } }
+        private bool? _explicitNullValueToolHasBeenCalled = default!;
         /// <summary>The tool_latency_secs property</summary>
-        public double? ToolLatencySecs { get; set; }
+        public double? ToolLatencySecs { get => _explicitNullValueToolLatencySecs; set { _explicitNullValueToolLatencySecs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tool_latency_secs"); else _explicitNullProperties?.Remove("tool_latency_secs"); } }
+        private double? _explicitNullValueToolLatencySecs = default!;
         /// <summary>The tool_name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ToolName { get; set; }
+        public string? ToolName { get => _explicitNullValueToolName; set { _explicitNullValueToolName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tool_name"); else _explicitNullProperties?.Remove("tool_name"); } }
+        private string? _explicitNullValueToolName = default!;
 #nullable restore
 #else
-        public string ToolName { get; set; }
+        public string ToolName { get => _explicitNullValueToolName; set { _explicitNullValueToolName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tool_name"); else _explicitNullProperties?.Remove("tool_name"); } }
+        private string _explicitNullValueToolName = default!;
 #endif
         /// <summary>The type property</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkflowType? Type { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkflowType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkflowType? _explicitNullValueType = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptWorkflowToolsResultCommonModelInput"/> and sets the default values.
         /// </summary>
@@ -97,7 +135,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptWorkflowToolsResultCommonModelInput CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptWorkflowToolsResultCommonModelInput();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationHistoryTranscriptWorkflowToolsResultCommonModelInput(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -140,6 +178,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteDoubleValue("tool_latency_secs", ToolLatencySecs);
             writer.WriteStringValue("tool_name", ToolName);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkflowType>("type", Type);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

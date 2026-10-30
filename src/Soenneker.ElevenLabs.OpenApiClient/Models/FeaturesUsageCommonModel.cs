@@ -11,134 +11,192 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class FeaturesUsageCommonModel : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("agent_testing") is { } nullNodeAgentTesting && nullNodeAgentTesting.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AgentTesting = null;
+            if (parseNode.GetChildNode("dtmf_input") is { } nullNodeDtmfInput && nullNodeDtmfInput.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DtmfInput = null;
+            if (parseNode.GetChildNode("dtmf_tones") is { } nullNodeDtmfTones && nullNodeDtmfTones.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DtmfTones = null;
+            if (parseNode.GetChildNode("external_mcp_servers") is { } nullNodeExternalMcpServers && nullNodeExternalMcpServers.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExternalMcpServers = null;
+            if (parseNode.GetChildNode("file_input") is { } nullNodeFileInput && nullNodeFileInput.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FileInput = null;
+            if (parseNode.GetChildNode("freeform_procedure") is { } nullNodeFreeformProcedure && nullNodeFreeformProcedure.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FreeformProcedure = null;
+            if (parseNode.GetChildNode("is_livekit") is { } nullNodeIsLivekit && nullNodeIsLivekit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsLivekit = null;
+            if (parseNode.GetChildNode("language_detection") is { } nullNodeLanguageDetection && nullNodeLanguageDetection.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LanguageDetection = null;
+            if (parseNode.GetChildNode("multivoice") is { } nullNodeMultivoice && nullNodeMultivoice.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Multivoice = null;
+            if (parseNode.GetChildNode("pii_zrm_agent") is { } nullNodePiiZrmAgent && nullNodePiiZrmAgent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PiiZrmAgent = null;
+            if (parseNode.GetChildNode("pii_zrm_workspace") is { } nullNodePiiZrmWorkspace && nullNodePiiZrmWorkspace.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PiiZrmWorkspace = null;
+            if (parseNode.GetChildNode("structured_procedure") is { } nullNodeStructuredProcedure && nullNodeStructuredProcedure.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StructuredProcedure = null;
+            if (parseNode.GetChildNode("tool_dynamic_variable_updates") is { } nullNodeToolDynamicVariableUpdates && nullNodeToolDynamicVariableUpdates.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ToolDynamicVariableUpdates = null;
+            if (parseNode.GetChildNode("transfer_to_agent") is { } nullNodeTransferToAgent && nullNodeTransferToAgent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TransferToAgent = null;
+            if (parseNode.GetChildNode("transfer_to_number") is { } nullNodeTransferToNumber && nullNodeTransferToNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TransferToNumber = null;
+            if (parseNode.GetChildNode("versioning") is { } nullNodeVersioning && nullNodeVersioning.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Versioning = null;
+            if (parseNode.GetChildNode("voicemail_detection") is { } nullNodeVoicemailDetection && nullNodeVoicemailDetection.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VoicemailDetection = null;
+            if (parseNode.GetChildNode("workflow") is { } nullNodeWorkflow && nullNodeWorkflow.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Workflow = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The agent_testing property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.TestsFeatureUsageCommonModel? AgentTesting { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.TestsFeatureUsageCommonModel? AgentTesting { get => _explicitNullValueAgentTesting; set { _explicitNullValueAgentTesting = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agent_testing"); else _explicitNullProperties?.Remove("agent_testing"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.TestsFeatureUsageCommonModel? _explicitNullValueAgentTesting = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.TestsFeatureUsageCommonModel AgentTesting { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.TestsFeatureUsageCommonModel AgentTesting { get => _explicitNullValueAgentTesting; set { _explicitNullValueAgentTesting = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agent_testing"); else _explicitNullProperties?.Remove("agent_testing"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.TestsFeatureUsageCommonModel _explicitNullValueAgentTesting = default!;
 #endif
         /// <summary>The dtmf_input property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel? DtmfInput { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel? DtmfInput { get => _explicitNullValueDtmfInput; set { _explicitNullValueDtmfInput = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dtmf_input"); else _explicitNullProperties?.Remove("dtmf_input"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel? _explicitNullValueDtmfInput = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel DtmfInput { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel DtmfInput { get => _explicitNullValueDtmfInput; set { _explicitNullValueDtmfInput = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dtmf_input"); else _explicitNullProperties?.Remove("dtmf_input"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel _explicitNullValueDtmfInput = default!;
 #endif
         /// <summary>The dtmf_tones property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel? DtmfTones { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel? DtmfTones { get => _explicitNullValueDtmfTones; set { _explicitNullValueDtmfTones = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dtmf_tones"); else _explicitNullProperties?.Remove("dtmf_tones"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel? _explicitNullValueDtmfTones = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel DtmfTones { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel DtmfTones { get => _explicitNullValueDtmfTones; set { _explicitNullValueDtmfTones = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dtmf_tones"); else _explicitNullProperties?.Remove("dtmf_tones"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel _explicitNullValueDtmfTones = default!;
 #endif
         /// <summary>The external_mcp_servers property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel? ExternalMcpServers { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel? ExternalMcpServers { get => _explicitNullValueExternalMcpServers; set { _explicitNullValueExternalMcpServers = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("external_mcp_servers"); else _explicitNullProperties?.Remove("external_mcp_servers"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel? _explicitNullValueExternalMcpServers = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel ExternalMcpServers { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel ExternalMcpServers { get => _explicitNullValueExternalMcpServers; set { _explicitNullValueExternalMcpServers = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("external_mcp_servers"); else _explicitNullProperties?.Remove("external_mcp_servers"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel _explicitNullValueExternalMcpServers = default!;
 #endif
         /// <summary>The file_input property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel? FileInput { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel? FileInput { get => _explicitNullValueFileInput; set { _explicitNullValueFileInput = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("file_input"); else _explicitNullProperties?.Remove("file_input"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel? _explicitNullValueFileInput = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel FileInput { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel FileInput { get => _explicitNullValueFileInput; set { _explicitNullValueFileInput = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("file_input"); else _explicitNullProperties?.Remove("file_input"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel _explicitNullValueFileInput = default!;
 #endif
         /// <summary>The freeform_procedure property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel? FreeformProcedure { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel? FreeformProcedure { get => _explicitNullValueFreeformProcedure; set { _explicitNullValueFreeformProcedure = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("freeform_procedure"); else _explicitNullProperties?.Remove("freeform_procedure"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel? _explicitNullValueFreeformProcedure = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel FreeformProcedure { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel FreeformProcedure { get => _explicitNullValueFreeformProcedure; set { _explicitNullValueFreeformProcedure = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("freeform_procedure"); else _explicitNullProperties?.Remove("freeform_procedure"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel _explicitNullValueFreeformProcedure = default!;
 #endif
         /// <summary>The is_livekit property</summary>
-        public bool? IsLivekit { get; set; }
+        public bool? IsLivekit { get => _explicitNullValueIsLivekit; set { _explicitNullValueIsLivekit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_livekit"); else _explicitNullProperties?.Remove("is_livekit"); } }
+        private bool? _explicitNullValueIsLivekit = default!;
         /// <summary>The language_detection property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel? LanguageDetection { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel? LanguageDetection { get => _explicitNullValueLanguageDetection; set { _explicitNullValueLanguageDetection = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("language_detection"); else _explicitNullProperties?.Remove("language_detection"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel? _explicitNullValueLanguageDetection = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel LanguageDetection { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel LanguageDetection { get => _explicitNullValueLanguageDetection; set { _explicitNullValueLanguageDetection = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("language_detection"); else _explicitNullProperties?.Remove("language_detection"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel _explicitNullValueLanguageDetection = default!;
 #endif
         /// <summary>The multivoice property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel? Multivoice { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel? Multivoice { get => _explicitNullValueMultivoice; set { _explicitNullValueMultivoice = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("multivoice"); else _explicitNullProperties?.Remove("multivoice"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel? _explicitNullValueMultivoice = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel Multivoice { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel Multivoice { get => _explicitNullValueMultivoice; set { _explicitNullValueMultivoice = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("multivoice"); else _explicitNullProperties?.Remove("multivoice"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel _explicitNullValueMultivoice = default!;
 #endif
         /// <summary>The pii_zrm_agent property</summary>
-        public bool? PiiZrmAgent { get; set; }
+        public bool? PiiZrmAgent { get => _explicitNullValuePiiZrmAgent; set { _explicitNullValuePiiZrmAgent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pii_zrm_agent"); else _explicitNullProperties?.Remove("pii_zrm_agent"); } }
+        private bool? _explicitNullValuePiiZrmAgent = default!;
         /// <summary>The pii_zrm_workspace property</summary>
-        public bool? PiiZrmWorkspace { get; set; }
+        public bool? PiiZrmWorkspace { get => _explicitNullValuePiiZrmWorkspace; set { _explicitNullValuePiiZrmWorkspace = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pii_zrm_workspace"); else _explicitNullProperties?.Remove("pii_zrm_workspace"); } }
+        private bool? _explicitNullValuePiiZrmWorkspace = default!;
         /// <summary>The structured_procedure property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel? StructuredProcedure { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel? StructuredProcedure { get => _explicitNullValueStructuredProcedure; set { _explicitNullValueStructuredProcedure = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("structured_procedure"); else _explicitNullProperties?.Remove("structured_procedure"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel? _explicitNullValueStructuredProcedure = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel StructuredProcedure { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel StructuredProcedure { get => _explicitNullValueStructuredProcedure; set { _explicitNullValueStructuredProcedure = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("structured_procedure"); else _explicitNullProperties?.Remove("structured_procedure"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel _explicitNullValueStructuredProcedure = default!;
 #endif
         /// <summary>The tool_dynamic_variable_updates property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel? ToolDynamicVariableUpdates { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel? ToolDynamicVariableUpdates { get => _explicitNullValueToolDynamicVariableUpdates; set { _explicitNullValueToolDynamicVariableUpdates = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tool_dynamic_variable_updates"); else _explicitNullProperties?.Remove("tool_dynamic_variable_updates"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel? _explicitNullValueToolDynamicVariableUpdates = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel ToolDynamicVariableUpdates { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel ToolDynamicVariableUpdates { get => _explicitNullValueToolDynamicVariableUpdates; set { _explicitNullValueToolDynamicVariableUpdates = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tool_dynamic_variable_updates"); else _explicitNullProperties?.Remove("tool_dynamic_variable_updates"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel _explicitNullValueToolDynamicVariableUpdates = default!;
 #endif
         /// <summary>The transfer_to_agent property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel? TransferToAgent { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel? TransferToAgent { get => _explicitNullValueTransferToAgent; set { _explicitNullValueTransferToAgent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transfer_to_agent"); else _explicitNullProperties?.Remove("transfer_to_agent"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel? _explicitNullValueTransferToAgent = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel TransferToAgent { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel TransferToAgent { get => _explicitNullValueTransferToAgent; set { _explicitNullValueTransferToAgent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transfer_to_agent"); else _explicitNullProperties?.Remove("transfer_to_agent"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel _explicitNullValueTransferToAgent = default!;
 #endif
         /// <summary>The transfer_to_number property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel? TransferToNumber { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel? TransferToNumber { get => _explicitNullValueTransferToNumber; set { _explicitNullValueTransferToNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transfer_to_number"); else _explicitNullProperties?.Remove("transfer_to_number"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel? _explicitNullValueTransferToNumber = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel TransferToNumber { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel TransferToNumber { get => _explicitNullValueTransferToNumber; set { _explicitNullValueTransferToNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transfer_to_number"); else _explicitNullProperties?.Remove("transfer_to_number"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel _explicitNullValueTransferToNumber = default!;
 #endif
         /// <summary>The versioning property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel? Versioning { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel? Versioning { get => _explicitNullValueVersioning; set { _explicitNullValueVersioning = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("versioning"); else _explicitNullProperties?.Remove("versioning"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel? _explicitNullValueVersioning = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel Versioning { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel Versioning { get => _explicitNullValueVersioning; set { _explicitNullValueVersioning = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("versioning"); else _explicitNullProperties?.Remove("versioning"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel _explicitNullValueVersioning = default!;
 #endif
         /// <summary>The voicemail_detection property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel? VoicemailDetection { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel? VoicemailDetection { get => _explicitNullValueVoicemailDetection; set { _explicitNullValueVoicemailDetection = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("voicemail_detection"); else _explicitNullProperties?.Remove("voicemail_detection"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel? _explicitNullValueVoicemailDetection = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel VoicemailDetection { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel VoicemailDetection { get => _explicitNullValueVoicemailDetection; set { _explicitNullValueVoicemailDetection = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("voicemail_detection"); else _explicitNullProperties?.Remove("voicemail_detection"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel _explicitNullValueVoicemailDetection = default!;
 #endif
         /// <summary>The workflow property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkflowFeaturesUsageCommonModel? Workflow { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkflowFeaturesUsageCommonModel? Workflow { get => _explicitNullValueWorkflow; set { _explicitNullValueWorkflow = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workflow"); else _explicitNullProperties?.Remove("workflow"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkflowFeaturesUsageCommonModel? _explicitNullValueWorkflow = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkflowFeaturesUsageCommonModel Workflow { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkflowFeaturesUsageCommonModel Workflow { get => _explicitNullValueWorkflow; set { _explicitNullValueWorkflow = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workflow"); else _explicitNullProperties?.Remove("workflow"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkflowFeaturesUsageCommonModel _explicitNullValueWorkflow = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.FeaturesUsageCommonModel"/> and sets the default values.
@@ -158,7 +216,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.FeaturesUsageCommonModel CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.FeaturesUsageCommonModel();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.FeaturesUsageCommonModel(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -213,6 +271,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel>("versioning", Versioning);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.FeatureStatusCommonModel>("voicemail_detection", VoicemailDetection);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkflowFeaturesUsageCommonModel>("workflow", Workflow);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

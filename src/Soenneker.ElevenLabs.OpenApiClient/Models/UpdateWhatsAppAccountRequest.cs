@@ -11,23 +11,39 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class UpdateWhatsAppAccountRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("assigned_agent_id") is { } nullNodeAssignedAgentId && nullNodeAssignedAgentId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AssignedAgentId = null;
+            if (parseNode.GetChildNode("enable_audio_message_response") is { } nullNodeEnableAudioMessageResponse && nullNodeEnableAudioMessageResponse.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EnableAudioMessageResponse = null;
+            if (parseNode.GetChildNode("enable_messaging") is { } nullNodeEnableMessaging && nullNodeEnableMessaging.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EnableMessaging = null;
+            if (parseNode.GetChildNode("enable_typing_indicator") is { } nullNodeEnableTypingIndicator && nullNodeEnableTypingIndicator.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EnableTypingIndicator = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The assigned_agent_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AssignedAgentId { get; set; }
+        public string? AssignedAgentId { get => _explicitNullValueAssignedAgentId; set { _explicitNullValueAssignedAgentId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("assigned_agent_id"); else _explicitNullProperties?.Remove("assigned_agent_id"); } }
+        private string? _explicitNullValueAssignedAgentId = default!;
 #nullable restore
 #else
-        public string AssignedAgentId { get; set; }
+        public string AssignedAgentId { get => _explicitNullValueAssignedAgentId; set { _explicitNullValueAssignedAgentId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("assigned_agent_id"); else _explicitNullProperties?.Remove("assigned_agent_id"); } }
+        private string _explicitNullValueAssignedAgentId = default!;
 #endif
         /// <summary>The enable_audio_message_response property</summary>
-        public bool? EnableAudioMessageResponse { get; set; }
+        public bool? EnableAudioMessageResponse { get => _explicitNullValueEnableAudioMessageResponse; set { _explicitNullValueEnableAudioMessageResponse = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enable_audio_message_response"); else _explicitNullProperties?.Remove("enable_audio_message_response"); } }
+        private bool? _explicitNullValueEnableAudioMessageResponse = default!;
         /// <summary>The enable_messaging property</summary>
-        public bool? EnableMessaging { get; set; }
+        public bool? EnableMessaging { get => _explicitNullValueEnableMessaging; set { _explicitNullValueEnableMessaging = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enable_messaging"); else _explicitNullProperties?.Remove("enable_messaging"); } }
+        private bool? _explicitNullValueEnableMessaging = default!;
         /// <summary>The enable_typing_indicator property</summary>
-        public bool? EnableTypingIndicator { get; set; }
+        public bool? EnableTypingIndicator { get => _explicitNullValueEnableTypingIndicator; set { _explicitNullValueEnableTypingIndicator = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enable_typing_indicator"); else _explicitNullProperties?.Remove("enable_typing_indicator"); } }
+        private bool? _explicitNullValueEnableTypingIndicator = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateWhatsAppAccountRequest"/> and sets the default values.
         /// </summary>
@@ -43,7 +59,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateWhatsAppAccountRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateWhatsAppAccountRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.UpdateWhatsAppAccountRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -70,6 +86,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteBoolValue("enable_audio_message_response", EnableAudioMessageResponse);
             writer.WriteBoolValue("enable_messaging", EnableMessaging);
             writer.WriteBoolValue("enable_typing_indicator", EnableTypingIndicator);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

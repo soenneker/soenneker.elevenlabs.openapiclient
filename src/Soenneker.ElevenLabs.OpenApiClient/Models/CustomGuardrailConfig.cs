@@ -12,44 +12,72 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CustomGuardrailConfig : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("evaluate_full_response_only") is { } nullNodeEvaluateFullResponseOnly && nullNodeEvaluateFullResponseOnly.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EvaluateFullResponseOnly = null;
+            if (parseNode.GetChildNode("execution_mode") is { } nullNodeExecutionMode && nullNodeExecutionMode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExecutionMode = null;
+            if (parseNode.GetChildNode("history_include_tool_calls") is { } nullNodeHistoryIncludeToolCalls && nullNodeHistoryIncludeToolCalls.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HistoryIncludeToolCalls = null;
+            if (parseNode.GetChildNode("history_message_count") is { } nullNodeHistoryMessageCount && nullNodeHistoryMessageCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HistoryMessageCount = null;
+            if (parseNode.GetChildNode("is_enabled") is { } nullNodeIsEnabled && nullNodeIsEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsEnabled = null;
+            if (parseNode.GetChildNode("model") is { } nullNodeModel && nullNodeModel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Model = null;
+            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("prompt") is { } nullNodePrompt && nullNodePrompt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Prompt = null;
+            if (parseNode.GetChildNode("trigger_action") is { } nullNodeTriggerAction && nullNodeTriggerAction.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TriggerAction = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Evaluate once against the complete non-TTS response instead of cumulative partials. Requires blocking mode.</summary>
-        public bool? EvaluateFullResponseOnly { get; set; }
+        public bool? EvaluateFullResponseOnly { get => _explicitNullValueEvaluateFullResponseOnly; set { _explicitNullValueEvaluateFullResponseOnly = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("evaluate_full_response_only"); else _explicitNullProperties?.Remove("evaluate_full_response_only"); } }
+        private bool? _explicitNullValueEvaluateFullResponseOnly = default!;
         /// <summary>The execution_mode property</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GuardrailExecutionMode? ExecutionMode { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GuardrailExecutionMode? ExecutionMode { get => _explicitNullValueExecutionMode; set { _explicitNullValueExecutionMode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("execution_mode"); else _explicitNullProperties?.Remove("execution_mode"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.GuardrailExecutionMode? _explicitNullValueExecutionMode = default!;
         /// <summary>When enabled, the history also renders the agent&apos;s tool calls, their input arguments, and the tool results, interleaved with the text, so an action between two agent messages is visible. Off by default: history shows only user and agent text. Tool payloads can be large and can mislead smaller evaluator models, so enabling this raises token cost.</summary>
-        public bool? HistoryIncludeToolCalls { get; set; }
+        public bool? HistoryIncludeToolCalls { get => _explicitNullValueHistoryIncludeToolCalls; set { _explicitNullValueHistoryIncludeToolCalls = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("history_include_tool_calls"); else _explicitNullProperties?.Remove("history_include_tool_calls"); } }
+        private bool? _explicitNullValueHistoryIncludeToolCalls = default!;
         /// <summary>How much recent history the guardrail sees before the reply it evaluates, counted in user messages (the agent replies between them are included too). The guardrail always gets a single &lt;conversation_history&gt; transcript ending in the evaluated reply, marked &apos;AGENT [current reply]:&apos;. 0 (default) adds no prior history (just that line); 1 adds the latest user message onward.</summary>
-        public int? HistoryMessageCount { get; set; }
+        public int? HistoryMessageCount { get => _explicitNullValueHistoryMessageCount; set { _explicitNullValueHistoryMessageCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("history_message_count"); else _explicitNullProperties?.Remove("history_message_count"); } }
+        private int? _explicitNullValueHistoryMessageCount = default!;
         /// <summary>The is_enabled property</summary>
-        public bool? IsEnabled { get; set; }
+        public bool? IsEnabled { get => _explicitNullValueIsEnabled; set { _explicitNullValueIsEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_enabled"); else _explicitNullProperties?.Remove("is_enabled"); } }
+        private bool? _explicitNullValueIsEnabled = default!;
         /// <summary>LLM model to use for custom guardrail evaluation</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomGuardrailConfigModel? Model { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomGuardrailConfigModel? Model { get => _explicitNullValueModel; set { _explicitNullValueModel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("model"); else _explicitNullProperties?.Remove("model"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomGuardrailConfigModel? _explicitNullValueModel = default!;
         /// <summary>User-facing name for this guardrail</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get; set; }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string _explicitNullValueName = default!;
 #endif
         /// <summary>Instruction describing what to block, e.g. &apos;don&apos;t talk about politics&apos;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Prompt { get; set; }
+        public string? Prompt { get => _explicitNullValuePrompt; set { _explicitNullValuePrompt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prompt"); else _explicitNullProperties?.Remove("prompt"); } }
+        private string? _explicitNullValuePrompt = default!;
 #nullable restore
 #else
-        public string Prompt { get; set; }
+        public string Prompt { get => _explicitNullValuePrompt; set { _explicitNullValuePrompt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prompt"); else _explicitNullProperties?.Remove("prompt"); } }
+        private string _explicitNullValuePrompt = default!;
 #endif
         /// <summary>The trigger_action property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomGuardrailConfigTriggerAction? TriggerAction { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomGuardrailConfigTriggerAction? TriggerAction { get => _explicitNullValueTriggerAction; set { _explicitNullValueTriggerAction = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("trigger_action"); else _explicitNullProperties?.Remove("trigger_action"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomGuardrailConfigTriggerAction? _explicitNullValueTriggerAction = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomGuardrailConfigTriggerAction TriggerAction { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomGuardrailConfigTriggerAction TriggerAction { get => _explicitNullValueTriggerAction; set { _explicitNullValueTriggerAction = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("trigger_action"); else _explicitNullProperties?.Remove("trigger_action"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomGuardrailConfigTriggerAction _explicitNullValueTriggerAction = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomGuardrailConfig"/> and sets the default values.
@@ -71,7 +99,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomGuardrailConfig CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomGuardrailConfig();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomGuardrailConfig(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -108,6 +136,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("prompt", Prompt);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomGuardrailConfigTriggerAction>("trigger_action", TriggerAction);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

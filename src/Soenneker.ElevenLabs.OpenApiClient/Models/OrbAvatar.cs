@@ -11,27 +11,42 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class OrbAvatar : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("color_1") is { } nullNodeColor1 && nullNodeColor1.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Color1 = null;
+            if (parseNode.GetChildNode("color_2") is { } nullNodeColor2 && nullNodeColor2.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Color2 = null;
+            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The first color of the avatar</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Color1 { get; set; }
+        public string? Color1 { get => _explicitNullValueColor1; set { _explicitNullValueColor1 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("color_1"); else _explicitNullProperties?.Remove("color_1"); } }
+        private string? _explicitNullValueColor1 = default!;
 #nullable restore
 #else
-        public string Color1 { get; set; }
+        public string Color1 { get => _explicitNullValueColor1; set { _explicitNullValueColor1 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("color_1"); else _explicitNullProperties?.Remove("color_1"); } }
+        private string _explicitNullValueColor1 = default!;
 #endif
         /// <summary>The second color of the avatar</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Color2 { get; set; }
+        public string? Color2 { get => _explicitNullValueColor2; set { _explicitNullValueColor2 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("color_2"); else _explicitNullProperties?.Remove("color_2"); } }
+        private string? _explicitNullValueColor2 = default!;
 #nullable restore
 #else
-        public string Color2 { get; set; }
+        public string Color2 { get => _explicitNullValueColor2; set { _explicitNullValueColor2 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("color_2"); else _explicitNullProperties?.Remove("color_2"); } }
+        private string _explicitNullValueColor2 = default!;
 #endif
         /// <summary>The type of the avatar</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.OrbType? Type { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.OrbType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.OrbType? _explicitNullValueType = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.OrbAvatar"/> and sets the default values.
         /// </summary>
@@ -49,7 +64,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.OrbAvatar CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.OrbAvatar();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.OrbAvatar(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -74,6 +89,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteStringValue("color_1", Color1);
             writer.WriteStringValue("color_2", Color2);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.OrbType>("type", Type);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

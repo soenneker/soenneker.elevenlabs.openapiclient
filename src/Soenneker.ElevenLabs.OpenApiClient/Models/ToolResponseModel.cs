@@ -11,48 +11,70 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ToolResponseModel : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("access_info") is { } nullNodeAccessInfo && nullNodeAccessInfo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccessInfo = null;
+            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("response_mocks") is { } nullNodeResponseMocks && nullNodeResponseMocks.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ResponseMocks = null;
+            if (parseNode.GetChildNode("tool_config") is { } nullNodeToolConfig && nullNodeToolConfig.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ToolConfig = null;
+            if (parseNode.GetChildNode("usage_stats") is { } nullNodeUsageStats && nullNodeUsageStats.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UsageStats = null;
+        }
+
         /// <summary>The access_info property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceAccessInfo? AccessInfo { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceAccessInfo? AccessInfo { get => _explicitNullValueAccessInfo; set { _explicitNullValueAccessInfo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("access_info"); else _explicitNullProperties?.Remove("access_info"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceAccessInfo? _explicitNullValueAccessInfo = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceAccessInfo AccessInfo { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceAccessInfo AccessInfo { get => _explicitNullValueAccessInfo; set { _explicitNullValueAccessInfo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("access_info"); else _explicitNullProperties?.Remove("access_info"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceAccessInfo _explicitNullValueAccessInfo = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get; set; }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string _explicitNullValueId = default!;
 #endif
         /// <summary>Mock responses with optional parameter conditions. Evaluated top-to-bottom; first match wins.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolResponseMockConfigOutput>? ResponseMocks { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolResponseMockConfigOutput>? ResponseMocks { get => _explicitNullValueResponseMocks; set { _explicitNullValueResponseMocks = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("response_mocks"); else _explicitNullProperties?.Remove("response_mocks"); } }
+        private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolResponseMockConfigOutput>? _explicitNullValueResponseMocks = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolResponseMockConfigOutput> ResponseMocks { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolResponseMockConfigOutput> ResponseMocks { get => _explicitNullValueResponseMocks; set { _explicitNullValueResponseMocks = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("response_mocks"); else _explicitNullProperties?.Remove("response_mocks"); } }
+        private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolResponseMockConfigOutput> _explicitNullValueResponseMocks = default!;
 #endif
         /// <summary>The type of tool</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolResponseModelToolConfig? ToolConfig { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolResponseModelToolConfig? ToolConfig { get => _explicitNullValueToolConfig; set { _explicitNullValueToolConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tool_config"); else _explicitNullProperties?.Remove("tool_config"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolResponseModelToolConfig? _explicitNullValueToolConfig = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolResponseModelToolConfig ToolConfig { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolResponseModelToolConfig ToolConfig { get => _explicitNullValueToolConfig; set { _explicitNullValueToolConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tool_config"); else _explicitNullProperties?.Remove("tool_config"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolResponseModelToolConfig _explicitNullValueToolConfig = default!;
 #endif
         /// <summary>The usage_stats property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolUsageStatsResponseModel? UsageStats { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolUsageStatsResponseModel? UsageStats { get => _explicitNullValueUsageStats; set { _explicitNullValueUsageStats = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("usage_stats"); else _explicitNullProperties?.Remove("usage_stats"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolUsageStatsResponseModel? _explicitNullValueUsageStats = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolUsageStatsResponseModel UsageStats { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolUsageStatsResponseModel UsageStats { get => _explicitNullValueUsageStats; set { _explicitNullValueUsageStats = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("usage_stats"); else _explicitNullProperties?.Remove("usage_stats"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolUsageStatsResponseModel _explicitNullValueUsageStats = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolResponseModel"/> and sets the default values.
@@ -69,7 +91,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolResponseModel CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolResponseModel();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolResponseModel(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -98,6 +120,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolResponseMockConfigOutput>("response_mocks", ResponseMocks);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolResponseModelToolConfig>("tool_config", ToolConfig);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ToolUsageStatsResponseModel>("usage_stats", UsageStats);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -21,6 +21,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.TextToVoice
     public partial class TextToVoiceRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The createPreviews property</summary>
+        [Obsolete("")]
         public global::Soenneker.ElevenLabs.OpenApiClient.V1.TextToVoice.CreatePreviews.CreatePreviewsRequestBuilder CreatePreviews
         {
             get => new global::Soenneker.ElevenLabs.OpenApiClient.V1.TextToVoice.CreatePreviews.CreatePreviewsRequestBuilder(PathParameters, RequestAdapter);
@@ -80,6 +81,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.TextToVoice
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "422", global::Soenneker.ElevenLabs.OpenApiClient.Models.HttpValidationError.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceResponseModel>(requestInfo, global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceResponseModel.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

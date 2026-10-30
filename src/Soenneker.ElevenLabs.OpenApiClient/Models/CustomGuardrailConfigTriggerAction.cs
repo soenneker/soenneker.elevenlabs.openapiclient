@@ -8,26 +8,31 @@ using System;
 namespace Soenneker.ElevenLabs.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.EndCallTriggerAction"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.RetryTriggerAction"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomGuardrailConfigTriggerActionOneOf1"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomGuardrailConfigTriggerActionOneOf2"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CustomGuardrailConfigTriggerAction : IComposedTypeWrapper, IParsable
-    {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.EndCallTriggerAction"/></summary>
+    , global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder {
+        // Preserve ambiguous union payloads without inventing a discriminator.
+        /// <summary>The complete payload when no unique typed union branch can be selected.</summary>
+        public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode UnrecognizedValue { get; set; } = null!;
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalData { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomGuardrailConfigTriggerActionOneOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.EndCallTriggerAction? EndCallTriggerAction { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomGuardrailConfigTriggerActionOneOf1? CustomGuardrailConfigTriggerActionOneOf1 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.EndCallTriggerAction EndCallTriggerAction { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomGuardrailConfigTriggerActionOneOf1 CustomGuardrailConfigTriggerActionOneOf1 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.RetryTriggerAction"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomGuardrailConfigTriggerActionOneOf2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.RetryTriggerAction? RetryTriggerAction { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomGuardrailConfigTriggerActionOneOf2? CustomGuardrailConfigTriggerActionOneOf2 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.RetryTriggerAction RetryTriggerAction { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomGuardrailConfigTriggerActionOneOf2 CustomGuardrailConfigTriggerActionOneOf2 { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -37,17 +42,24 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomGuardrailConfigTriggerAction CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
             var result = new global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomGuardrailConfigTriggerAction();
-            if("end_call".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("CustomGuardrailConfigTriggerActionOneOf1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.EndCallTriggerAction = new global::Soenneker.ElevenLabs.OpenApiClient.Models.EndCallTriggerAction();
+                
             }
-            else if("retry".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("CustomGuardrailConfigTriggerActionOneOf2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.RetryTriggerAction = new global::Soenneker.ElevenLabs.OpenApiClient.Models.RetryTriggerAction();
+                
             }
-            return result;
+            
+            var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
+            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("end_call".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal)))))();
+            bool matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("retry".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal)))))();
+            if (result.CustomGuardrailConfigTriggerActionOneOf1 == null && result.CustomGuardrailConfigTriggerActionOneOf2 == null && matchesUnionBranch0 && !matchesUnionBranch1) result.CustomGuardrailConfigTriggerActionOneOf1 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomGuardrailConfigTriggerActionOneOf1(), parseNode);
+            if (result.CustomGuardrailConfigTriggerActionOneOf1 == null && result.CustomGuardrailConfigTriggerActionOneOf2 == null && matchesUnionBranch1 && !matchesUnionBranch0) result.CustomGuardrailConfigTriggerActionOneOf2 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomGuardrailConfigTriggerActionOneOf2(), parseNode);
+            if (result.CustomGuardrailConfigTriggerActionOneOf1 == null && result.CustomGuardrailConfigTriggerActionOneOf2 == null) result.UnrecognizedValue = unionPayload;
+return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -55,13 +67,13 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(EndCallTriggerAction != null)
+            if(CustomGuardrailConfigTriggerActionOneOf1 != null)
             {
-                return EndCallTriggerAction.GetFieldDeserializers();
+                return CustomGuardrailConfigTriggerActionOneOf1.GetFieldDeserializers();
             }
-            else if(RetryTriggerAction != null)
+            else if(CustomGuardrailConfigTriggerActionOneOf2 != null)
             {
-                return RetryTriggerAction.GetFieldDeserializers();
+                return CustomGuardrailConfigTriggerActionOneOf2.GetFieldDeserializers();
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -71,14 +83,21 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
+            if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
+            if (CustomGuardrailConfigTriggerActionOneOf1 == null && CustomGuardrailConfigTriggerActionOneOf2 == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
+            if (CustomGuardrailConfigTriggerActionOneOf1 != null && CustomGuardrailConfigTriggerActionOneOf2 == null) { if (CustomGuardrailConfigTriggerActionOneOf1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, CustomGuardrailConfigTriggerActionOneOf1); return; }
+            if (CustomGuardrailConfigTriggerActionOneOf2 != null && CustomGuardrailConfigTriggerActionOneOf1 == null) { if (CustomGuardrailConfigTriggerActionOneOf2 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, CustomGuardrailConfigTriggerActionOneOf2); return; }
+
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(EndCallTriggerAction != null)
+            if(CustomGuardrailConfigTriggerActionOneOf1 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.EndCallTriggerAction>(null, EndCallTriggerAction);
+                if (CustomGuardrailConfigTriggerActionOneOf1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomGuardrailConfigTriggerActionOneOf1>(null, CustomGuardrailConfigTriggerActionOneOf1);
             }
-            else if(RetryTriggerAction != null)
+            else if(CustomGuardrailConfigTriggerActionOneOf2 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.RetryTriggerAction>(null, RetryTriggerAction);
+                if (CustomGuardrailConfigTriggerActionOneOf2 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CustomGuardrailConfigTriggerActionOneOf2>(null, CustomGuardrailConfigTriggerActionOneOf2);
             }
         }
     }

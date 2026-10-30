@@ -11,21 +11,40 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ConversationSentimentAnalysis : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("max_user_frustration_score") is { } nullNodeMaxUserFrustrationScore && nullNodeMaxUserFrustrationScore.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxUserFrustrationScore = null;
+            if (parseNode.GetChildNode("min_user_sentiment_score") is { } nullNodeMinUserSentimentScore && nullNodeMinUserSentimentScore.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MinUserSentimentScore = null;
+            if (parseNode.GetChildNode("num_scored_user_turns") is { } nullNodeNumScoredUserTurns && nullNodeNumScoredUserTurns.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NumScoredUserTurns = null;
+            if (parseNode.GetChildNode("overall_frustration_score") is { } nullNodeOverallFrustrationScore && nullNodeOverallFrustrationScore.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OverallFrustrationScore = null;
+            if (parseNode.GetChildNode("overall_label") is { } nullNodeOverallLabel && nullNodeOverallLabel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OverallLabel = null;
+            if (parseNode.GetChildNode("overall_sentiment_score") is { } nullNodeOverallSentimentScore && nullNodeOverallSentimentScore.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OverallSentimentScore = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The max_user_frustration_score property</summary>
-        public double? MaxUserFrustrationScore { get; set; }
+        public double? MaxUserFrustrationScore { get => _explicitNullValueMaxUserFrustrationScore; set { _explicitNullValueMaxUserFrustrationScore = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_user_frustration_score"); else _explicitNullProperties?.Remove("max_user_frustration_score"); } }
+        private double? _explicitNullValueMaxUserFrustrationScore = default!;
         /// <summary>The min_user_sentiment_score property</summary>
-        public double? MinUserSentimentScore { get; set; }
+        public double? MinUserSentimentScore { get => _explicitNullValueMinUserSentimentScore; set { _explicitNullValueMinUserSentimentScore = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("min_user_sentiment_score"); else _explicitNullProperties?.Remove("min_user_sentiment_score"); } }
+        private double? _explicitNullValueMinUserSentimentScore = default!;
         /// <summary>The num_scored_user_turns property</summary>
-        public int? NumScoredUserTurns { get; set; }
+        public int? NumScoredUserTurns { get => _explicitNullValueNumScoredUserTurns; set { _explicitNullValueNumScoredUserTurns = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("num_scored_user_turns"); else _explicitNullProperties?.Remove("num_scored_user_turns"); } }
+        private int? _explicitNullValueNumScoredUserTurns = default!;
         /// <summary>The overall_frustration_score property</summary>
-        public double? OverallFrustrationScore { get; set; }
+        public double? OverallFrustrationScore { get => _explicitNullValueOverallFrustrationScore; set { _explicitNullValueOverallFrustrationScore = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("overall_frustration_score"); else _explicitNullProperties?.Remove("overall_frustration_score"); } }
+        private double? _explicitNullValueOverallFrustrationScore = default!;
         /// <summary>The overall_label property</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationSentimentAnalysisOverallLabel? OverallLabel { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationSentimentAnalysisOverallLabel? OverallLabel { get => _explicitNullValueOverallLabel; set { _explicitNullValueOverallLabel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("overall_label"); else _explicitNullProperties?.Remove("overall_label"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationSentimentAnalysisOverallLabel? _explicitNullValueOverallLabel = default!;
         /// <summary>The overall_sentiment_score property</summary>
-        public double? OverallSentimentScore { get; set; }
+        public double? OverallSentimentScore { get => _explicitNullValueOverallSentimentScore; set { _explicitNullValueOverallSentimentScore = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("overall_sentiment_score"); else _explicitNullProperties?.Remove("overall_sentiment_score"); } }
+        private double? _explicitNullValueOverallSentimentScore = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationSentimentAnalysis"/> and sets the default values.
         /// </summary>
@@ -41,7 +60,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationSentimentAnalysis CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationSentimentAnalysis();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationSentimentAnalysis(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -72,6 +91,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteDoubleValue("overall_frustration_score", OverallFrustrationScore);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationSentimentAnalysisOverallLabel>("overall_label", OverallLabel);
             writer.WriteDoubleValue("overall_sentiment_score", OverallSentimentScore);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

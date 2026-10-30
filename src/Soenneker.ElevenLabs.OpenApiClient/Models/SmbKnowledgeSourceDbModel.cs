@@ -12,77 +12,122 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SmbKnowledgeSourceDbModel : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("content_preview") is { } nullNodeContentPreview && nullNodeContentPreview.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ContentPreview = null;
+            if (parseNode.GetChildNode("content_type") is { } nullNodeContentType && nullNodeContentType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ContentType = null;
+            if (parseNode.GetChildNode("crawl_entire_site") is { } nullNodeCrawlEntireSite && nullNodeCrawlEntireSite.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CrawlEntireSite = null;
+            if (parseNode.GetChildNode("created_at_unix") is { } nullNodeCreatedAtUnix && nullNodeCreatedAtUnix.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedAtUnix = null;
+            if (parseNode.GetChildNode("error_message") is { } nullNodeErrorMessage && nullNodeErrorMessage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ErrorMessage = null;
+            if (parseNode.GetChildNode("failure_reason") is { } nullNodeFailureReason && nullNodeFailureReason.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FailureReason = null;
+            if (parseNode.GetChildNode("file_size_bytes") is { } nullNodeFileSizeBytes && nullNodeFileSizeBytes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FileSizeBytes = null;
+            if (parseNode.GetChildNode("_id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("last_scraped_at_unix") is { } nullNodeLastScrapedAtUnix && nullNodeLastScrapedAtUnix.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastScrapedAtUnix = null;
+            if (parseNode.GetChildNode("original_filename") is { } nullNodeOriginalFilename && nullNodeOriginalFilename.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OriginalFilename = null;
+            if (parseNode.GetChildNode("processing_started_at_unix") is { } nullNodeProcessingStartedAtUnix && nullNodeProcessingStartedAtUnix.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProcessingStartedAtUnix = null;
+            if (parseNode.GetChildNode("scraped_pages_count") is { } nullNodeScrapedPagesCount && nullNodeScrapedPagesCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ScrapedPagesCount = null;
+            if (parseNode.GetChildNode("source_type") is { } nullNodeSourceType && nullNodeSourceType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SourceType = null;
+            if (parseNode.GetChildNode("source_url") is { } nullNodeSourceUrl && nullNodeSourceUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SourceUrl = null;
+            if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
+            if (parseNode.GetChildNode("updated_at_unix") is { } nullNodeUpdatedAtUnix && nullNodeUpdatedAtUnix.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UpdatedAtUnix = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The content_preview property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ContentPreview { get; set; }
+        public string? ContentPreview { get => _explicitNullValueContentPreview; set { _explicitNullValueContentPreview = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("content_preview"); else _explicitNullProperties?.Remove("content_preview"); } }
+        private string? _explicitNullValueContentPreview = default!;
 #nullable restore
 #else
-        public string ContentPreview { get; set; }
+        public string ContentPreview { get => _explicitNullValueContentPreview; set { _explicitNullValueContentPreview = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("content_preview"); else _explicitNullProperties?.Remove("content_preview"); } }
+        private string _explicitNullValueContentPreview = default!;
 #endif
         /// <summary>The content_type property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ContentType { get; set; }
+        public string? ContentType { get => _explicitNullValueContentType; set { _explicitNullValueContentType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("content_type"); else _explicitNullProperties?.Remove("content_type"); } }
+        private string? _explicitNullValueContentType = default!;
 #nullable restore
 #else
-        public string ContentType { get; set; }
+        public string ContentType { get => _explicitNullValueContentType; set { _explicitNullValueContentType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("content_type"); else _explicitNullProperties?.Remove("content_type"); } }
+        private string _explicitNullValueContentType = default!;
 #endif
         /// <summary>The crawl_entire_site property</summary>
-        public bool? CrawlEntireSite { get; set; }
+        public bool? CrawlEntireSite { get => _explicitNullValueCrawlEntireSite; set { _explicitNullValueCrawlEntireSite = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("crawl_entire_site"); else _explicitNullProperties?.Remove("crawl_entire_site"); } }
+        private bool? _explicitNullValueCrawlEntireSite = default!;
         /// <summary>Unix timestamp (seconds since epoch)</summary>
-        public int? CreatedAtUnix { get; set; }
+        public int? CreatedAtUnix { get => _explicitNullValueCreatedAtUnix; set { _explicitNullValueCreatedAtUnix = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_at_unix"); else _explicitNullProperties?.Remove("created_at_unix"); } }
+        private int? _explicitNullValueCreatedAtUnix = default!;
         /// <summary>The error_message property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ErrorMessage { get; set; }
+        public string? ErrorMessage { get => _explicitNullValueErrorMessage; set { _explicitNullValueErrorMessage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("error_message"); else _explicitNullProperties?.Remove("error_message"); } }
+        private string? _explicitNullValueErrorMessage = default!;
 #nullable restore
 #else
-        public string ErrorMessage { get; set; }
+        public string ErrorMessage { get => _explicitNullValueErrorMessage; set { _explicitNullValueErrorMessage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("error_message"); else _explicitNullProperties?.Remove("error_message"); } }
+        private string _explicitNullValueErrorMessage = default!;
 #endif
         /// <summary>The failure_reason property</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.IngestFailure? FailureReason { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.IngestFailure? FailureReason { get => _explicitNullValueFailureReason; set { _explicitNullValueFailureReason = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("failure_reason"); else _explicitNullProperties?.Remove("failure_reason"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.IngestFailure? _explicitNullValueFailureReason = default!;
         /// <summary>The file_size_bytes property</summary>
-        public int? FileSizeBytes { get; set; }
+        public int? FileSizeBytes { get => _explicitNullValueFileSizeBytes; set { _explicitNullValueFileSizeBytes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("file_size_bytes"); else _explicitNullProperties?.Remove("file_size_bytes"); } }
+        private int? _explicitNullValueFileSizeBytes = default!;
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("_id"); else _explicitNullProperties?.Remove("_id"); } }
+        private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get; set; }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("_id"); else _explicitNullProperties?.Remove("_id"); } }
+        private string _explicitNullValueId = default!;
 #endif
         /// <summary>The last_scraped_at_unix property</summary>
-        public int? LastScrapedAtUnix { get; set; }
+        public int? LastScrapedAtUnix { get => _explicitNullValueLastScrapedAtUnix; set { _explicitNullValueLastScrapedAtUnix = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last_scraped_at_unix"); else _explicitNullProperties?.Remove("last_scraped_at_unix"); } }
+        private int? _explicitNullValueLastScrapedAtUnix = default!;
         /// <summary>The original_filename property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OriginalFilename { get; set; }
+        public string? OriginalFilename { get => _explicitNullValueOriginalFilename; set { _explicitNullValueOriginalFilename = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("original_filename"); else _explicitNullProperties?.Remove("original_filename"); } }
+        private string? _explicitNullValueOriginalFilename = default!;
 #nullable restore
 #else
-        public string OriginalFilename { get; set; }
+        public string OriginalFilename { get => _explicitNullValueOriginalFilename; set { _explicitNullValueOriginalFilename = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("original_filename"); else _explicitNullProperties?.Remove("original_filename"); } }
+        private string _explicitNullValueOriginalFilename = default!;
 #endif
         /// <summary>The processing_started_at_unix property</summary>
-        public int? ProcessingStartedAtUnix { get; set; }
+        public int? ProcessingStartedAtUnix { get => _explicitNullValueProcessingStartedAtUnix; set { _explicitNullValueProcessingStartedAtUnix = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("processing_started_at_unix"); else _explicitNullProperties?.Remove("processing_started_at_unix"); } }
+        private int? _explicitNullValueProcessingStartedAtUnix = default!;
         /// <summary>The scraped_pages_count property</summary>
-        public int? ScrapedPagesCount { get; set; }
+        public int? ScrapedPagesCount { get => _explicitNullValueScrapedPagesCount; set { _explicitNullValueScrapedPagesCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scraped_pages_count"); else _explicitNullProperties?.Remove("scraped_pages_count"); } }
+        private int? _explicitNullValueScrapedPagesCount = default!;
         /// <summary>Type of knowledge source.</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeSourceType? SourceType { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeSourceType? SourceType { get => _explicitNullValueSourceType; set { _explicitNullValueSourceType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source_type"); else _explicitNullProperties?.Remove("source_type"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeSourceType? _explicitNullValueSourceType = default!;
         /// <summary>The source_url property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SourceUrl { get; set; }
+        public string? SourceUrl { get => _explicitNullValueSourceUrl; set { _explicitNullValueSourceUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source_url"); else _explicitNullProperties?.Remove("source_url"); } }
+        private string? _explicitNullValueSourceUrl = default!;
 #nullable restore
 #else
-        public string SourceUrl { get; set; }
+        public string SourceUrl { get => _explicitNullValueSourceUrl; set { _explicitNullValueSourceUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source_url"); else _explicitNullProperties?.Remove("source_url"); } }
+        private string _explicitNullValueSourceUrl = default!;
 #endif
         /// <summary>Processing status for knowledge sources.Simple three-state machine:- PROCESSING: Any active work (uploading, crawling, extracting, etc.)- READY: Processing complete, results available- ERROR: Something went wrong (user can retry)Detailed progress is tracked via the `progress` field.</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeSourceStatus? Status { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeSourceStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeSourceStatus? _explicitNullValueStatus = default!;
         /// <summary>Unix timestamp (seconds since epoch)</summary>
-        public int? UpdatedAtUnix { get; set; }
+        public int? UpdatedAtUnix { get => _explicitNullValueUpdatedAtUnix; set { _explicitNullValueUpdatedAtUnix = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("updated_at_unix"); else _explicitNullProperties?.Remove("updated_at_unix"); } }
+        private int? _explicitNullValueUpdatedAtUnix = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbKnowledgeSourceDbModel"/> and sets the default values.
         /// </summary>
@@ -103,7 +148,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbKnowledgeSourceDbModel CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbKnowledgeSourceDbModel();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbKnowledgeSourceDbModel(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -154,6 +199,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteStringValue("source_url", SourceUrl);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.KnowledgeSourceStatus>("status", Status);
             writer.WriteIntValue("updated_at_unix", UpdatedAtUnix);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

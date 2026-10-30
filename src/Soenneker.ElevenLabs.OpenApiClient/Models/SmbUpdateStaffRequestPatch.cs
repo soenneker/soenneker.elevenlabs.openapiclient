@@ -11,88 +11,130 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class SmbUpdateStaffRequestPatch : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("customer_facing_name") is { } nullNodeCustomerFacingName && nullNodeCustomerFacingName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomerFacingName = null;
+            if (parseNode.GetChildNode("description") is { } nullNodeDescription && nullNodeDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Description = null;
+            if (parseNode.GetChildNode("display_on_booking_page") is { } nullNodeDisplayOnBookingPage && nullNodeDisplayOnBookingPage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DisplayOnBookingPage = null;
+            if (parseNode.GetChildNode("email") is { } nullNodeEmail && nullNodeEmail.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Email = null;
+            if (parseNode.GetChildNode("groups") is { } nullNodeGroups && nullNodeGroups.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Groups = null;
+            if (parseNode.GetChildNode("is_active") is { } nullNodeIsActive && nullNodeIsActive.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsActive = null;
+            if (parseNode.GetChildNode("location_id") is { } nullNodeLocationId && nullNodeLocationId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LocationId = null;
+            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("phone") is { } nullNodePhone && nullNodePhone.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Phone = null;
+            if (parseNode.GetChildNode("photo_url") is { } nullNodePhotoUrl && nullNodePhotoUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PhotoUrl = null;
+            if (parseNode.GetChildNode("sms_notifications_opted_in") is { } nullNodeSmsNotificationsOptedIn && nullNodeSmsNotificationsOptedIn.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SmsNotificationsOptedIn = null;
+            if (parseNode.GetChildNode("ungrouped_rank") is { } nullNodeUngroupedRank && nullNodeUngroupedRank.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UngroupedRank = null;
+            if (parseNode.GetChildNode("working_hours") is { } nullNodeWorkingHours && nullNodeWorkingHours.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WorkingHours = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The customer_facing_name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CustomerFacingName { get; set; }
+        public string? CustomerFacingName { get => _explicitNullValueCustomerFacingName; set { _explicitNullValueCustomerFacingName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customer_facing_name"); else _explicitNullProperties?.Remove("customer_facing_name"); } }
+        private string? _explicitNullValueCustomerFacingName = default!;
 #nullable restore
 #else
-        public string CustomerFacingName { get; set; }
+        public string CustomerFacingName { get => _explicitNullValueCustomerFacingName; set { _explicitNullValueCustomerFacingName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customer_facing_name"); else _explicitNullProperties?.Remove("customer_facing_name"); } }
+        private string _explicitNullValueCustomerFacingName = default!;
 #endif
         /// <summary>The description property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description { get; set; }
+        public string? Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        private string? _explicitNullValueDescription = default!;
 #nullable restore
 #else
-        public string Description { get; set; }
+        public string Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        private string _explicitNullValueDescription = default!;
 #endif
         /// <summary>Whether customers can see and pick this staff member by name on the booking page. False keeps them bookable, just not shown by name.</summary>
-        public bool? DisplayOnBookingPage { get; set; }
+        public bool? DisplayOnBookingPage { get => _explicitNullValueDisplayOnBookingPage; set { _explicitNullValueDisplayOnBookingPage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("display_on_booking_page"); else _explicitNullProperties?.Remove("display_on_booking_page"); } }
+        private bool? _explicitNullValueDisplayOnBookingPage = default!;
         /// <summary>Email address of the staff member.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Email { get; set; }
+        public string? Email { get => _explicitNullValueEmail; set { _explicitNullValueEmail = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("email"); else _explicitNullProperties?.Remove("email"); } }
+        private string? _explicitNullValueEmail = default!;
 #nullable restore
 #else
-        public string Email { get; set; }
+        public string Email { get => _explicitNullValueEmail; set { _explicitNullValueEmail = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("email"); else _explicitNullProperties?.Remove("email"); } }
+        private string _explicitNullValueEmail = default!;
 #endif
         /// <summary>Group memberships for this item. Each entry carries the group label and the item&apos;s 0-based rank within that group.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbGroupMembership>? Groups { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbGroupMembership>? Groups { get => _explicitNullValueGroups; set { _explicitNullValueGroups = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("groups"); else _explicitNullProperties?.Remove("groups"); } }
+        private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbGroupMembership>? _explicitNullValueGroups = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbGroupMembership> Groups { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbGroupMembership> Groups { get => _explicitNullValueGroups; set { _explicitNullValueGroups = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("groups"); else _explicitNullProperties?.Remove("groups"); } }
+        private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbGroupMembership> _explicitNullValueGroups = default!;
 #endif
         /// <summary>Whether the staff member can be booked. Inactive staff keep their booking history.</summary>
-        public bool? IsActive { get; set; }
+        public bool? IsActive { get => _explicitNullValueIsActive; set { _explicitNullValueIsActive = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_active"); else _explicitNullProperties?.Remove("is_active"); } }
+        private bool? _explicitNullValueIsActive = default!;
         /// <summary>Location this staff member is assigned to; empty means available at all locations.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LocationId { get; set; }
+        public string? LocationId { get => _explicitNullValueLocationId; set { _explicitNullValueLocationId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("location_id"); else _explicitNullProperties?.Remove("location_id"); } }
+        private string? _explicitNullValueLocationId = default!;
 #nullable restore
 #else
-        public string LocationId { get; set; }
+        public string LocationId { get => _explicitNullValueLocationId; set { _explicitNullValueLocationId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("location_id"); else _explicitNullProperties?.Remove("location_id"); } }
+        private string _explicitNullValueLocationId = default!;
 #endif
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get; set; }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string _explicitNullValueName = default!;
 #endif
         /// <summary>The phone property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Phone { get; set; }
+        public string? Phone { get => _explicitNullValuePhone; set { _explicitNullValuePhone = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("phone"); else _explicitNullProperties?.Remove("phone"); } }
+        private string? _explicitNullValuePhone = default!;
 #nullable restore
 #else
-        public string Phone { get; set; }
+        public string Phone { get => _explicitNullValuePhone; set { _explicitNullValuePhone = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("phone"); else _explicitNullProperties?.Remove("phone"); } }
+        private string _explicitNullValuePhone = default!;
 #endif
         /// <summary>The photo_url property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PhotoUrl { get; set; }
+        public string? PhotoUrl { get => _explicitNullValuePhotoUrl; set { _explicitNullValuePhotoUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("photo_url"); else _explicitNullProperties?.Remove("photo_url"); } }
+        private string? _explicitNullValuePhotoUrl = default!;
 #nullable restore
 #else
-        public string PhotoUrl { get; set; }
+        public string PhotoUrl { get => _explicitNullValuePhotoUrl; set { _explicitNullValuePhotoUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("photo_url"); else _explicitNullProperties?.Remove("photo_url"); } }
+        private string _explicitNullValuePhotoUrl = default!;
 #endif
         /// <summary>Whether this staff member currently receives SMS booking notifications. Defaults to opted out — a staff member must be explicitly opted in (mirroring the client SMS default); flipped to False automatically when they reply STOP to the workspace number.</summary>
-        public bool? SmsNotificationsOptedIn { get; set; }
+        public bool? SmsNotificationsOptedIn { get => _explicitNullValueSmsNotificationsOptedIn; set { _explicitNullValueSmsNotificationsOptedIn = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sms_notifications_opted_in"); else _explicitNullProperties?.Remove("sms_notifications_opted_in"); } }
+        private bool? _explicitNullValueSmsNotificationsOptedIn = default!;
         /// <summary>Display position among items with no group; `null` sorts last. Change it with the reorder endpoint.</summary>
-        public int? UngroupedRank { get; set; }
+        public int? UngroupedRank { get => _explicitNullValueUngroupedRank; set { _explicitNullValueUngroupedRank = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ungrouped_rank"); else _explicitNullProperties?.Remove("ungrouped_rank"); } }
+        private int? _explicitNullValueUngroupedRank = default!;
         /// <summary>Custom working hours for this staff member. None means follow the assigned location&apos;s operating_hours (requires location_id).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkingHours? WorkingHours { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkingHours? WorkingHours { get => _explicitNullValueWorkingHours; set { _explicitNullValueWorkingHours = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("working_hours"); else _explicitNullProperties?.Remove("working_hours"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkingHours? _explicitNullValueWorkingHours = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkingHours WorkingHours { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkingHours WorkingHours { get => _explicitNullValueWorkingHours; set { _explicitNullValueWorkingHours = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("working_hours"); else _explicitNullProperties?.Remove("working_hours"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkingHours _explicitNullValueWorkingHours = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbUpdateStaffRequestPatch"/> and sets the default values.
@@ -109,7 +151,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbUpdateStaffRequestPatch CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbUpdateStaffRequestPatch();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbUpdateStaffRequestPatch(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -154,6 +196,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteBoolValue("sms_notifications_opted_in", SmsNotificationsOptedIn);
             writer.WriteIntValue("ungrouped_rank", UngroupedRank);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkingHours>("working_hours", WorkingHours);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

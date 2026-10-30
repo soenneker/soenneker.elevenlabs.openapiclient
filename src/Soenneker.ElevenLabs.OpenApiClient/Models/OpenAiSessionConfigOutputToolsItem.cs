@@ -8,26 +8,31 @@ using System;
 namespace Soenneker.ElevenLabs.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.OpenAiFunctionTool"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.OpenAimcpTool"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.OpenAiSessionConfigOutputToolsItemOneOf1"/>, <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.OpenAiSessionConfigOutputToolsItemOneOf2"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class OpenAiSessionConfigOutputToolsItem : IComposedTypeWrapper, IParsable
-    {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.OpenAiFunctionTool"/></summary>
+    , global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder {
+        // Preserve ambiguous union payloads without inventing a discriminator.
+        /// <summary>The complete payload when no unique typed union branch can be selected.</summary>
+        public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode UnrecognizedValue { get; set; } = null!;
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalData { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.OpenAiSessionConfigOutputToolsItemOneOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.OpenAiFunctionTool? OpenAiFunctionTool { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.OpenAiSessionConfigOutputToolsItemOneOf1? OpenAiSessionConfigOutputToolsItemOneOf1 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.OpenAiFunctionTool OpenAiFunctionTool { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.OpenAiSessionConfigOutputToolsItemOneOf1 OpenAiSessionConfigOutputToolsItemOneOf1 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.OpenAimcpTool"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.OpenAiSessionConfigOutputToolsItemOneOf2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.OpenAimcpTool? OpenAimcpTool { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.OpenAiSessionConfigOutputToolsItemOneOf2? OpenAiSessionConfigOutputToolsItemOneOf2 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.OpenAimcpTool OpenAimcpTool { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.OpenAiSessionConfigOutputToolsItemOneOf2 OpenAiSessionConfigOutputToolsItemOneOf2 { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -37,17 +42,24 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.OpenAiSessionConfigOutputToolsItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
             var result = new global::Soenneker.ElevenLabs.OpenApiClient.Models.OpenAiSessionConfigOutputToolsItem();
-            if("function".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("OpenAiSessionConfigOutputToolsItemOneOf1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.OpenAiFunctionTool = new global::Soenneker.ElevenLabs.OpenApiClient.Models.OpenAiFunctionTool();
+                
             }
-            else if("mcp".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("OpenAiSessionConfigOutputToolsItemOneOf2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.OpenAimcpTool = new global::Soenneker.ElevenLabs.OpenApiClient.Models.OpenAimcpTool();
+                
             }
-            return result;
+            
+            var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
+            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("name") != null && parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag2 && ("function".Equals(tag2.GetValue(), global::System.StringComparison.Ordinal)))))();
+            bool matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("server_label") != null && parseNode.GetChildNode("server_url") != null && parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag3 && ("mcp".Equals(tag3.GetValue(), global::System.StringComparison.Ordinal))) && (parseNode.GetChildNode("require_approval") == null || (parseNode.GetChildNode("require_approval")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString optionalTag4 && ("never".Equals(optionalTag4.GetValue(), global::System.StringComparison.Ordinal) || "always".Equals(optionalTag4.GetValue(), global::System.StringComparison.Ordinal))))))();
+            if (result.OpenAiSessionConfigOutputToolsItemOneOf1 == null && result.OpenAiSessionConfigOutputToolsItemOneOf2 == null && matchesUnionBranch0 && !matchesUnionBranch1) result.OpenAiSessionConfigOutputToolsItemOneOf1 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.OpenAiSessionConfigOutputToolsItemOneOf1(), parseNode);
+            if (result.OpenAiSessionConfigOutputToolsItemOneOf1 == null && result.OpenAiSessionConfigOutputToolsItemOneOf2 == null && matchesUnionBranch1 && !matchesUnionBranch0) result.OpenAiSessionConfigOutputToolsItemOneOf2 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.OpenAiSessionConfigOutputToolsItemOneOf2(), parseNode);
+            if (result.OpenAiSessionConfigOutputToolsItemOneOf1 == null && result.OpenAiSessionConfigOutputToolsItemOneOf2 == null) result.UnrecognizedValue = unionPayload;
+return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -55,13 +67,13 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(OpenAiFunctionTool != null)
+            if(OpenAiSessionConfigOutputToolsItemOneOf1 != null)
             {
-                return OpenAiFunctionTool.GetFieldDeserializers();
+                return OpenAiSessionConfigOutputToolsItemOneOf1.GetFieldDeserializers();
             }
-            else if(OpenAimcpTool != null)
+            else if(OpenAiSessionConfigOutputToolsItemOneOf2 != null)
             {
-                return OpenAimcpTool.GetFieldDeserializers();
+                return OpenAiSessionConfigOutputToolsItemOneOf2.GetFieldDeserializers();
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -71,14 +83,21 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
+            if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
+            if (OpenAiSessionConfigOutputToolsItemOneOf1 == null && OpenAiSessionConfigOutputToolsItemOneOf2 == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
+            if (OpenAiSessionConfigOutputToolsItemOneOf1 != null && OpenAiSessionConfigOutputToolsItemOneOf2 == null) { if (OpenAiSessionConfigOutputToolsItemOneOf1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, OpenAiSessionConfigOutputToolsItemOneOf1); return; }
+            if (OpenAiSessionConfigOutputToolsItemOneOf2 != null && OpenAiSessionConfigOutputToolsItemOneOf1 == null) { if (OpenAiSessionConfigOutputToolsItemOneOf2 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, OpenAiSessionConfigOutputToolsItemOneOf2); return; }
+
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(OpenAiFunctionTool != null)
+            if(OpenAiSessionConfigOutputToolsItemOneOf1 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.OpenAiFunctionTool>(null, OpenAiFunctionTool);
+                if (OpenAiSessionConfigOutputToolsItemOneOf1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.OpenAiSessionConfigOutputToolsItemOneOf1>(null, OpenAiSessionConfigOutputToolsItemOneOf1);
             }
-            else if(OpenAimcpTool != null)
+            else if(OpenAiSessionConfigOutputToolsItemOneOf2 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.OpenAimcpTool>(null, OpenAimcpTool);
+                if (OpenAiSessionConfigOutputToolsItemOneOf2 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.OpenAiSessionConfigOutputToolsItemOneOf2>(null, OpenAiSessionConfigOutputToolsItemOneOf2);
             }
         }
     }

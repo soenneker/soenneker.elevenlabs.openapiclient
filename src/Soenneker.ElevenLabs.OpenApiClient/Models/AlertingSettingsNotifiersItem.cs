@@ -12,7 +12,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AlertingSettingsNotifiersItem : IComposedTypeWrapper, IParsable
-    {
+    , global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder {
+        // Preserve ambiguous union payloads without inventing a discriminator.
+        /// <summary>The complete payload when no unique typed union branch can be selected.</summary>
+        public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode UnrecognizedValue { get; set; } = null!;
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalData { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
         /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.AlertingPagerDutyNotifier"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -49,17 +54,26 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             var result = new global::Soenneker.ElevenLabs.OpenApiClient.Models.AlertingSettingsNotifiersItem();
             if("AlertingPagerDutyNotifier".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.AlertingPagerDutyNotifier = new global::Soenneker.ElevenLabs.OpenApiClient.Models.AlertingPagerDutyNotifier();
+                
             }
             else if("AlertingSlackNotifier".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.AlertingSlackNotifier = new global::Soenneker.ElevenLabs.OpenApiClient.Models.AlertingSlackNotifier();
+                
             }
             else if("AlertingWebhookNotifier".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.AlertingWebhookNotifier = new global::Soenneker.ElevenLabs.OpenApiClient.Models.AlertingWebhookNotifier();
+                
             }
-            return result;
+            
+            var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
+            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("webhook_id") != null && (parseNode.GetChildNode("type") == null || (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString optionalTag1 && ("webhook".Equals(optionalTag1.GetValue(), global::System.StringComparison.Ordinal))))))();
+            bool matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("connection_id") != null && (parseNode.GetChildNode("type") == null || (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString optionalTag1 && ("integration".Equals(optionalTag1.GetValue(), global::System.StringComparison.Ordinal)))) && (parseNode.GetChildNode("integration_type") == null || (parseNode.GetChildNode("integration_type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString optionalTag2 && ("pagerduty".Equals(optionalTag2.GetValue(), global::System.StringComparison.Ordinal))))))();
+            bool matchesUnionBranch2 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("connection_id") != null && parseNode.GetChildNode("channel_id") != null && (parseNode.GetChildNode("type") == null || (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString optionalTag2 && ("integration".Equals(optionalTag2.GetValue(), global::System.StringComparison.Ordinal)))) && (parseNode.GetChildNode("integration_type") == null || (parseNode.GetChildNode("integration_type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString optionalTag3 && ("slack".Equals(optionalTag3.GetValue(), global::System.StringComparison.Ordinal))))))();
+            if (result.AlertingPagerDutyNotifier == null && result.AlertingSlackNotifier == null && result.AlertingWebhookNotifier == null && matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2) result.AlertingWebhookNotifier = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.AlertingWebhookNotifier(), parseNode);
+            if (result.AlertingPagerDutyNotifier == null && result.AlertingSlackNotifier == null && result.AlertingWebhookNotifier == null && matchesUnionBranch1 && !matchesUnionBranch0 && !matchesUnionBranch2) result.AlertingPagerDutyNotifier = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.AlertingPagerDutyNotifier(), parseNode);
+            if (result.AlertingPagerDutyNotifier == null && result.AlertingSlackNotifier == null && result.AlertingWebhookNotifier == null && matchesUnionBranch2 && !matchesUnionBranch0 && !matchesUnionBranch1) result.AlertingSlackNotifier = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.AlertingSlackNotifier(), parseNode);
+            if (result.AlertingPagerDutyNotifier == null && result.AlertingSlackNotifier == null && result.AlertingWebhookNotifier == null) result.UnrecognizedValue = unionPayload;
+return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -87,17 +101,26 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
+            if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
+            if (AlertingPagerDutyNotifier == null && AlertingSlackNotifier == null && AlertingWebhookNotifier == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
+            if (AlertingPagerDutyNotifier != null && AlertingSlackNotifier == null && AlertingWebhookNotifier == null) { if (AlertingPagerDutyNotifier is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, AlertingPagerDutyNotifier); return; }
+            if (AlertingSlackNotifier != null && AlertingPagerDutyNotifier == null && AlertingWebhookNotifier == null) { if (AlertingSlackNotifier is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, AlertingSlackNotifier); return; }
+            if (AlertingWebhookNotifier != null && AlertingPagerDutyNotifier == null && AlertingSlackNotifier == null) { if (AlertingWebhookNotifier is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, AlertingWebhookNotifier); return; }
+
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             if(AlertingPagerDutyNotifier != null)
             {
+                if (AlertingPagerDutyNotifier is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AlertingPagerDutyNotifier>(null, AlertingPagerDutyNotifier);
             }
             else if(AlertingSlackNotifier != null)
             {
+                if (AlertingSlackNotifier is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AlertingSlackNotifier>(null, AlertingSlackNotifier);
             }
             else if(AlertingWebhookNotifier != null)
             {
+                if (AlertingWebhookNotifier is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AlertingWebhookNotifier>(null, AlertingWebhookNotifier);
             }
         }

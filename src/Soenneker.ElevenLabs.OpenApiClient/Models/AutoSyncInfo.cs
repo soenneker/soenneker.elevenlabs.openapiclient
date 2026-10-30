@@ -11,17 +11,32 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class AutoSyncInfo : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("auto_remove") is { } nullNodeAutoRemove && nullNodeAutoRemove.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AutoRemove = null;
+            if (parseNode.GetChildNode("consec_failures") is { } nullNodeConsecFailures && nullNodeConsecFailures.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConsecFailures = null;
+            if (parseNode.GetChildNode("minimum_frequency_days") is { } nullNodeMinimumFrequencyDays && nullNodeMinimumFrequencyDays.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MinimumFrequencyDays = null;
+            if (parseNode.GetChildNode("next_refresh_by") is { } nullNodeNextRefreshBy && nullNodeNextRefreshBy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NextRefreshBy = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Whether to remove the document if the URL becomes unavailable</summary>
-        public bool? AutoRemove { get; set; }
+        public bool? AutoRemove { get => _explicitNullValueAutoRemove; set { _explicitNullValueAutoRemove = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("auto_remove"); else _explicitNullProperties?.Remove("auto_remove"); } }
+        private bool? _explicitNullValueAutoRemove = default!;
         /// <summary>Number of consecutive sync failures</summary>
-        public int? ConsecFailures { get; set; }
+        public int? ConsecFailures { get => _explicitNullValueConsecFailures; set { _explicitNullValueConsecFailures = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("consec_failures"); else _explicitNullProperties?.Remove("consec_failures"); } }
+        private int? _explicitNullValueConsecFailures = default!;
         /// <summary>Minimum frequency (in days) at which the document is refreshed. The actual interval may be shorter, never longer.</summary>
-        public int? MinimumFrequencyDays { get; set; }
+        public int? MinimumFrequencyDays { get => _explicitNullValueMinimumFrequencyDays; set { _explicitNullValueMinimumFrequencyDays = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("minimum_frequency_days"); else _explicitNullProperties?.Remove("minimum_frequency_days"); } }
+        private int? _explicitNullValueMinimumFrequencyDays = default!;
         /// <summary>Unix timestamp for the next scheduled sync or None (in case of folders)</summary>
-        public int? NextRefreshBy { get; set; }
+        public int? NextRefreshBy { get => _explicitNullValueNextRefreshBy; set { _explicitNullValueNextRefreshBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("next_refresh_by"); else _explicitNullProperties?.Remove("next_refresh_by"); } }
+        private int? _explicitNullValueNextRefreshBy = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.AutoSyncInfo"/> and sets the default values.
         /// </summary>
@@ -40,7 +55,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.AutoSyncInfo CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.AutoSyncInfo();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.AutoSyncInfo(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -67,6 +82,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteIntValue("consec_failures", ConsecFailures);
             writer.WriteIntValue("minimum_frequency_days", MinimumFrequencyDays);
             writer.WriteIntValue("next_refresh_by", NextRefreshBy);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

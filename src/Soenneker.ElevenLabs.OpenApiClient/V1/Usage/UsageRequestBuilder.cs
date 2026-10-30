@@ -16,6 +16,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Usage
     public partial class UsageRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The characterStats property</summary>
+        [Obsolete("")]
         public global::Soenneker.ElevenLabs.OpenApiClient.V1.Usage.CharacterStats.CharacterStatsRequestBuilder CharacterStats
         {
             get => new global::Soenneker.ElevenLabs.OpenApiClient.V1.Usage.CharacterStats.CharacterStatsRequestBuilder(PathParameters, RequestAdapter);

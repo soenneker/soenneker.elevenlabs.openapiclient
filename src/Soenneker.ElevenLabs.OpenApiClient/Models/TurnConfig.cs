@@ -11,55 +11,108 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class TurnConfig : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("initial_wait_time") is { } nullNodeInitialWaitTime && nullNodeInitialWaitTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InitialWaitTime = null;
+            if (parseNode.GetChildNode("interruption_ignore_term_languages") is { } nullNodeInterruptionIgnoreTermLanguages && nullNodeInterruptionIgnoreTermLanguages.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InterruptionIgnoreTermLanguages = null;
+            if (parseNode.GetChildNode("interruption_ignore_terms") is { } nullNodeInterruptionIgnoreTerms && nullNodeInterruptionIgnoreTerms.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InterruptionIgnoreTerms = null;
+            if (parseNode.GetChildNode("merge_with_default_ignore_terms") is { } nullNodeMergeWithDefaultIgnoreTerms && nullNodeMergeWithDefaultIgnoreTerms.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MergeWithDefaultIgnoreTerms = null;
+            if (parseNode.GetChildNode("mode") is { } nullNodeMode && nullNodeMode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Mode = null;
+            if (parseNode.GetChildNode("noisy_environment_detection") is { } nullNodeNoisyEnvironmentDetection && nullNodeNoisyEnvironmentDetection.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NoisyEnvironmentDetection = null;
+            if (parseNode.GetChildNode("noisy_environment_message") is { } nullNodeNoisyEnvironmentMessage && nullNodeNoisyEnvironmentMessage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NoisyEnvironmentMessage = null;
+            if (parseNode.GetChildNode("retranscribe_on_turn_timeout") is { } nullNodeRetranscribeOnTurnTimeout && nullNodeRetranscribeOnTurnTimeout.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RetranscribeOnTurnTimeout = null;
+            if (parseNode.GetChildNode("silence_end_call_timeout") is { } nullNodeSilenceEndCallTimeout && nullNodeSilenceEndCallTimeout.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SilenceEndCallTimeout = null;
+            if (parseNode.GetChildNode("soft_timeout_config") is { } nullNodeSoftTimeoutConfig && nullNodeSoftTimeoutConfig.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SoftTimeoutConfig = null;
+            if (parseNode.GetChildNode("speculative_turn") is { } nullNodeSpeculativeTurn && nullNodeSpeculativeTurn.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SpeculativeTurn = null;
+            if (parseNode.GetChildNode("spelling_patience") is { } nullNodeSpellingPatience && nullNodeSpellingPatience.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SpellingPatience = null;
+            if (parseNode.GetChildNode("transcribe_on_disabled_interruptions") is { } nullNodeTranscribeOnDisabledInterruptions && nullNodeTranscribeOnDisabledInterruptions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TranscribeOnDisabledInterruptions = null;
+            if (parseNode.GetChildNode("turn_eagerness") is { } nullNodeTurnEagerness && nullNodeTurnEagerness.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TurnEagerness = null;
+            if (parseNode.GetChildNode("turn_model") is { } nullNodeTurnModel && nullNodeTurnModel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TurnModel = null;
+            if (parseNode.GetChildNode("turn_timeout") is { } nullNodeTurnTimeout && nullNodeTurnTimeout.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TurnTimeout = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>How long the agent will wait for the user to start the conversation if the first message is empty. If not set, uses the regular turn_timeout.</summary>
-        public double? InitialWaitTime { get; set; }
+        public double? InitialWaitTime { get => _explicitNullValueInitialWaitTime; set { _explicitNullValueInitialWaitTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("initial_wait_time"); else _explicitNullProperties?.Remove("initial_wait_time"); } }
+        private double? _explicitNullValueInitialWaitTime = default!;
         /// <summary>Language codes for which preset ignore-term categories have been activated. Stored explicitly so display is not inferred from term overlap.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? InterruptionIgnoreTermLanguages { get; set; }
+        public List<string>? InterruptionIgnoreTermLanguages { get => _explicitNullValueInterruptionIgnoreTermLanguages; set { _explicitNullValueInterruptionIgnoreTermLanguages = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("interruption_ignore_term_languages"); else _explicitNullProperties?.Remove("interruption_ignore_term_languages"); } }
+        private List<string>? _explicitNullValueInterruptionIgnoreTermLanguages = default!;
 #nullable restore
 #else
-        public List<string> InterruptionIgnoreTermLanguages { get; set; }
+        public List<string> InterruptionIgnoreTermLanguages { get => _explicitNullValueInterruptionIgnoreTermLanguages; set { _explicitNullValueInterruptionIgnoreTermLanguages = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("interruption_ignore_term_languages"); else _explicitNullProperties?.Remove("interruption_ignore_term_languages"); } }
+        private List<string> _explicitNullValueInterruptionIgnoreTermLanguages = default!;
 #endif
         /// <summary>List of terms that should not trigger an interruption when spoken by the user (e.g. &apos;gotcha&apos;, &apos;understood&apos;). Uses case-insensitive exact matching.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? InterruptionIgnoreTerms { get; set; }
+        public List<string>? InterruptionIgnoreTerms { get => _explicitNullValueInterruptionIgnoreTerms; set { _explicitNullValueInterruptionIgnoreTerms = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("interruption_ignore_terms"); else _explicitNullProperties?.Remove("interruption_ignore_terms"); } }
+        private List<string>? _explicitNullValueInterruptionIgnoreTerms = default!;
 #nullable restore
 #else
-        public List<string> InterruptionIgnoreTerms { get; set; }
+        public List<string> InterruptionIgnoreTerms { get => _explicitNullValueInterruptionIgnoreTerms; set { _explicitNullValueInterruptionIgnoreTerms = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("interruption_ignore_terms"); else _explicitNullProperties?.Remove("interruption_ignore_terms"); } }
+        private List<string> _explicitNullValueInterruptionIgnoreTerms = default!;
 #endif
         /// <summary>When enabled, the curated default terms for interruption_ignore_term_languages are used in addition to interruption_ignore_terms.</summary>
-        public bool? MergeWithDefaultIgnoreTerms { get; set; }
+        public bool? MergeWithDefaultIgnoreTerms { get => _explicitNullValueMergeWithDefaultIgnoreTerms; set { _explicitNullValueMergeWithDefaultIgnoreTerms = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merge_with_default_ignore_terms"); else _explicitNullProperties?.Remove("merge_with_default_ignore_terms"); } }
+        private bool? _explicitNullValueMergeWithDefaultIgnoreTerms = default!;
         /// <summary>The mode of turn detection</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.TurnMode? Mode { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.TurnMode? Mode { get => _explicitNullValueMode; set { _explicitNullValueMode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mode"); else _explicitNullProperties?.Remove("mode"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.TurnMode? _explicitNullValueMode = default!;
+        /// <summary>When enabled, the agent politely suggests the user move somewhere quieter when it hears other voices in the background. This improves transcription and turn-taking accuracy.</summary>
+        public bool? NoisyEnvironmentDetection { get => _explicitNullValueNoisyEnvironmentDetection; set { _explicitNullValueNoisyEnvironmentDetection = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("noisy_environment_detection"); else _explicitNullProperties?.Remove("noisy_environment_detection"); } }
+        private bool? _explicitNullValueNoisyEnvironmentDetection = default!;
+        /// <summary>What the agent says when it detects a noisy environment.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? NoisyEnvironmentMessage { get => _explicitNullValueNoisyEnvironmentMessage; set { _explicitNullValueNoisyEnvironmentMessage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("noisy_environment_message"); else _explicitNullProperties?.Remove("noisy_environment_message"); } }
+        private string? _explicitNullValueNoisyEnvironmentMessage = default!;
+#nullable restore
+#else
+        public string NoisyEnvironmentMessage { get => _explicitNullValueNoisyEnvironmentMessage; set { _explicitNullValueNoisyEnvironmentMessage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("noisy_environment_message"); else _explicitNullProperties?.Remove("noisy_environment_message"); } }
+        private string _explicitNullValueNoisyEnvironmentMessage = default!;
+#endif
         /// <summary>When enabled, if VAD detects no speech, attempts to re-transcribe accumulated audio at turn timeout. Disables silence discount billing while enabled for the active agent or workflow node.</summary>
-        public bool? RetranscribeOnTurnTimeout { get; set; }
+        public bool? RetranscribeOnTurnTimeout { get => _explicitNullValueRetranscribeOnTurnTimeout; set { _explicitNullValueRetranscribeOnTurnTimeout = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("retranscribe_on_turn_timeout"); else _explicitNullProperties?.Remove("retranscribe_on_turn_timeout"); } }
+        private bool? _explicitNullValueRetranscribeOnTurnTimeout = default!;
         /// <summary>Maximum wait time since the user last spoke before terminating the call</summary>
-        public double? SilenceEndCallTimeout { get; set; }
+        public double? SilenceEndCallTimeout { get => _explicitNullValueSilenceEndCallTimeout; set { _explicitNullValueSilenceEndCallTimeout = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("silence_end_call_timeout"); else _explicitNullProperties?.Remove("silence_end_call_timeout"); } }
+        private double? _explicitNullValueSilenceEndCallTimeout = default!;
         /// <summary>Configuration for soft timeout functionality. Provides immediate feedback during longer LLM responses.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SoftTimeoutConfig? SoftTimeoutConfig { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SoftTimeoutConfig? SoftTimeoutConfig { get => _explicitNullValueSoftTimeoutConfig; set { _explicitNullValueSoftTimeoutConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("soft_timeout_config"); else _explicitNullProperties?.Remove("soft_timeout_config"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.SoftTimeoutConfig? _explicitNullValueSoftTimeoutConfig = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SoftTimeoutConfig SoftTimeoutConfig { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SoftTimeoutConfig SoftTimeoutConfig { get => _explicitNullValueSoftTimeoutConfig; set { _explicitNullValueSoftTimeoutConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("soft_timeout_config"); else _explicitNullProperties?.Remove("soft_timeout_config"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.SoftTimeoutConfig _explicitNullValueSoftTimeoutConfig = default!;
 #endif
         /// <summary>When enabled, starts generating LLM responses during silence before full turn confidence is reached, reducing perceived latency. May increase LLM costs.</summary>
-        public bool? SpeculativeTurn { get; set; }
+        public bool? SpeculativeTurn { get => _explicitNullValueSpeculativeTurn; set { _explicitNullValueSpeculativeTurn = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("speculative_turn"); else _explicitNullProperties?.Remove("speculative_turn"); } }
+        private bool? _explicitNullValueSpeculativeTurn = default!;
         /// <summary>Controls if the agent should be more patient when user is spelling numbers and named entities. Auto = model based, Off = never wait extra</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SpellingPatience? SpellingPatience { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SpellingPatience? SpellingPatience { get => _explicitNullValueSpellingPatience; set { _explicitNullValueSpellingPatience = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("spelling_patience"); else _explicitNullProperties?.Remove("spelling_patience"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.SpellingPatience? _explicitNullValueSpellingPatience = default!;
         /// <summary>When interruptions are disabled, still transcribe what the user says so it can carry into the next turn. When off, user speech during a non-interruptible turn is ignored and won&apos;t trigger a turn.</summary>
-        public bool? TranscribeOnDisabledInterruptions { get; set; }
+        public bool? TranscribeOnDisabledInterruptions { get => _explicitNullValueTranscribeOnDisabledInterruptions; set { _explicitNullValueTranscribeOnDisabledInterruptions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transcribe_on_disabled_interruptions"); else _explicitNullProperties?.Remove("transcribe_on_disabled_interruptions"); } }
+        private bool? _explicitNullValueTranscribeOnDisabledInterruptions = default!;
         /// <summary>Controls how eager the agent is to respond. Low = less eager (waits longer), Standard = default eagerness, High = more eager (responds sooner)</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.TurnEagerness? TurnEagerness { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.TurnEagerness? TurnEagerness { get => _explicitNullValueTurnEagerness; set { _explicitNullValueTurnEagerness = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("turn_eagerness"); else _explicitNullProperties?.Remove("turn_eagerness"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.TurnEagerness? _explicitNullValueTurnEagerness = default!;
         /// <summary>Version of the turn detection model to use.</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.TurnModel? TurnModel { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.TurnModel? TurnModel { get => _explicitNullValueTurnModel; set { _explicitNullValueTurnModel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("turn_model"); else _explicitNullProperties?.Remove("turn_model"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.TurnModel? _explicitNullValueTurnModel = default!;
         /// <summary>Maximum wait time for the user&apos;s reply before re-engaging the user</summary>
-        public double? TurnTimeout { get; set; }
+        public double? TurnTimeout { get => _explicitNullValueTurnTimeout; set { _explicitNullValueTurnTimeout = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("turn_timeout"); else _explicitNullProperties?.Remove("turn_timeout"); } }
+        private double? _explicitNullValueTurnTimeout = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.TurnConfig"/> and sets the default values.
         /// </summary>
@@ -68,6 +121,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             AdditionalData = new Dictionary<string, object>();
             MergeWithDefaultIgnoreTerms = false;
             Mode = global::Soenneker.ElevenLabs.OpenApiClient.Models.TurnMode.Turn;
+            NoisyEnvironmentDetection = false;
+            NoisyEnvironmentMessage = "Uhh ... sorry, I'm picking up some noise in the background. Could you move somewhere quieter?";
             RetranscribeOnTurnTimeout = false;
             SilenceEndCallTimeout = -1;
             SpeculativeTurn = false;
@@ -85,7 +140,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.TurnConfig CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.TurnConfig();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.TurnConfig(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -100,6 +155,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
                 { "interruption_ignore_terms", n => { InterruptionIgnoreTerms = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "merge_with_default_ignore_terms", n => { MergeWithDefaultIgnoreTerms = n.GetBoolValue(); } },
                 { "mode", n => { Mode = n.GetEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TurnMode>(); } },
+                { "noisy_environment_detection", n => { NoisyEnvironmentDetection = n.GetBoolValue(); } },
+                { "noisy_environment_message", n => { NoisyEnvironmentMessage = n.GetStringValue(); } },
                 { "retranscribe_on_turn_timeout", n => { RetranscribeOnTurnTimeout = n.GetBoolValue(); } },
                 { "silence_end_call_timeout", n => { SilenceEndCallTimeout = n.GetDoubleValue(); } },
                 { "soft_timeout_config", n => { SoftTimeoutConfig = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SoftTimeoutConfig>(global::Soenneker.ElevenLabs.OpenApiClient.Models.SoftTimeoutConfig.CreateFromDiscriminatorValue); } },
@@ -123,6 +180,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("interruption_ignore_terms", InterruptionIgnoreTerms);
             writer.WriteBoolValue("merge_with_default_ignore_terms", MergeWithDefaultIgnoreTerms);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TurnMode>("mode", Mode);
+            writer.WriteBoolValue("noisy_environment_detection", NoisyEnvironmentDetection);
+            writer.WriteStringValue("noisy_environment_message", NoisyEnvironmentMessage);
             writer.WriteBoolValue("retranscribe_on_turn_timeout", RetranscribeOnTurnTimeout);
             writer.WriteDoubleValue("silence_end_call_timeout", SilenceEndCallTimeout);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SoftTimeoutConfig>("soft_timeout_config", SoftTimeoutConfig);
@@ -132,6 +191,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TurnEagerness>("turn_eagerness", TurnEagerness);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TurnModel>("turn_model", TurnModel);
             writer.WriteDoubleValue("turn_timeout", TurnTimeout);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -11,24 +11,37 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class UpsertOrderItemResponse : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("item_id") is { } nullNodeItemId && nullNodeItemId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ItemId = null;
+            if (parseNode.GetChildNode("quote") is { } nullNodeQuote && nullNodeQuote.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Quote = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The item_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ItemId { get; set; }
+        public string? ItemId { get => _explicitNullValueItemId; set { _explicitNullValueItemId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("item_id"); else _explicitNullProperties?.Remove("item_id"); } }
+        private string? _explicitNullValueItemId = default!;
 #nullable restore
 #else
-        public string ItemId { get; set; }
+        public string ItemId { get => _explicitNullValueItemId; set { _explicitNullValueItemId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("item_id"); else _explicitNullProperties?.Remove("item_id"); } }
+        private string _explicitNullValueItemId = default!;
 #endif
         /// <summary>The quoted price for this item.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.QuoteInfo? Quote { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.QuoteInfo? Quote { get => _explicitNullValueQuote; set { _explicitNullValueQuote = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("quote"); else _explicitNullProperties?.Remove("quote"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.QuoteInfo? _explicitNullValueQuote = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.QuoteInfo Quote { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.QuoteInfo Quote { get => _explicitNullValueQuote; set { _explicitNullValueQuote = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("quote"); else _explicitNullProperties?.Remove("quote"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.QuoteInfo _explicitNullValueQuote = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.UpsertOrderItemResponse"/> and sets the default values.
@@ -45,7 +58,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.UpsertOrderItemResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.UpsertOrderItemResponse();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.UpsertOrderItemResponse(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -68,6 +81,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("item_id", ItemId);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.QuoteInfo>("quote", Quote);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

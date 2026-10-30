@@ -11,77 +11,122 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ConversationChargingCommonModel : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("analysis") is { } nullNodeAnalysis && nullNodeAnalysis.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Analysis = null;
+            if (parseNode.GetChildNode("asr_usage") is { } nullNodeAsrUsage && nullNodeAsrUsage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AsrUsage = null;
+            if (parseNode.GetChildNode("call_charge") is { } nullNodeCallCharge && nullNodeCallCharge.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CallCharge = null;
+            if (parseNode.GetChildNode("dev_discount") is { } nullNodeDevDiscount && nullNodeDevDiscount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DevDiscount = null;
+            if (parseNode.GetChildNode("free_llm_dollars_consumed") is { } nullNodeFreeLlmDollarsConsumed && nullNodeFreeLlmDollarsConsumed.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FreeLlmDollarsConsumed = null;
+            if (parseNode.GetChildNode("free_minutes_consumed") is { } nullNodeFreeMinutesConsumed && nullNodeFreeMinutesConsumed.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FreeMinutesConsumed = null;
+            if (parseNode.GetChildNode("is_burst") is { } nullNodeIsBurst && nullNodeIsBurst.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsBurst = null;
+            if (parseNode.GetChildNode("llm_charge") is { } nullNodeLlmCharge && nullNodeLlmCharge.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LlmCharge = null;
+            if (parseNode.GetChildNode("llm_price") is { } nullNodeLlmPrice && nullNodeLlmPrice.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LlmPrice = null;
+            if (parseNode.GetChildNode("llm_usage") is { } nullNodeLlmUsage && nullNodeLlmUsage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LlmUsage = null;
+            if (parseNode.GetChildNode("platform_charge") is { } nullNodePlatformCharge && nullNodePlatformCharge.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PlatformCharge = null;
+            if (parseNode.GetChildNode("platform_price") is { } nullNodePlatformPrice && nullNodePlatformPrice.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PlatformPrice = null;
+            if (parseNode.GetChildNode("platform_usage") is { } nullNodePlatformUsage && nullNodePlatformUsage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PlatformUsage = null;
+            if (parseNode.GetChildNode("tier") is { } nullNodeTier && nullNodeTier.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Tier = null;
+            if (parseNode.GetChildNode("tts_usage") is { } nullNodeTtsUsage && nullNodeTtsUsage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TtsUsage = null;
+            if (parseNode.GetChildNode("voice_surcharge_charge") is { } nullNodeVoiceSurchargeCharge && nullNodeVoiceSurchargeCharge.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VoiceSurchargeCharge = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The analysis property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AnalysisCharging? Analysis { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AnalysisCharging? Analysis { get => _explicitNullValueAnalysis; set { _explicitNullValueAnalysis = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("analysis"); else _explicitNullProperties?.Remove("analysis"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.AnalysisCharging? _explicitNullValueAnalysis = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AnalysisCharging Analysis { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AnalysisCharging Analysis { get => _explicitNullValueAnalysis; set { _explicitNullValueAnalysis = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("analysis"); else _explicitNullProperties?.Remove("analysis"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.AnalysisCharging _explicitNullValueAnalysis = default!;
 #endif
         /// <summary>The asr_usage property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationAsrUsageModel? AsrUsage { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationAsrUsageModel? AsrUsage { get => _explicitNullValueAsrUsage; set { _explicitNullValueAsrUsage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("asr_usage"); else _explicitNullProperties?.Remove("asr_usage"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationAsrUsageModel? _explicitNullValueAsrUsage = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationAsrUsageModel AsrUsage { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationAsrUsageModel AsrUsage { get => _explicitNullValueAsrUsage; set { _explicitNullValueAsrUsage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("asr_usage"); else _explicitNullProperties?.Remove("asr_usage"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationAsrUsageModel _explicitNullValueAsrUsage = default!;
 #endif
         /// <summary>The call_charge property</summary>
-        public int? CallCharge { get; set; }
+        public int? CallCharge { get => _explicitNullValueCallCharge; set { _explicitNullValueCallCharge = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("call_charge"); else _explicitNullProperties?.Remove("call_charge"); } }
+        private int? _explicitNullValueCallCharge = default!;
         /// <summary>The dev_discount property</summary>
-        public bool? DevDiscount { get; set; }
+        public bool? DevDiscount { get => _explicitNullValueDevDiscount; set { _explicitNullValueDevDiscount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dev_discount"); else _explicitNullProperties?.Remove("dev_discount"); } }
+        private bool? _explicitNullValueDevDiscount = default!;
         /// <summary>The free_llm_dollars_consumed property</summary>
-        public double? FreeLlmDollarsConsumed { get; set; }
+        public double? FreeLlmDollarsConsumed { get => _explicitNullValueFreeLlmDollarsConsumed; set { _explicitNullValueFreeLlmDollarsConsumed = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("free_llm_dollars_consumed"); else _explicitNullProperties?.Remove("free_llm_dollars_consumed"); } }
+        private double? _explicitNullValueFreeLlmDollarsConsumed = default!;
         /// <summary>The free_minutes_consumed property</summary>
-        public double? FreeMinutesConsumed { get; set; }
+        public double? FreeMinutesConsumed { get => _explicitNullValueFreeMinutesConsumed; set { _explicitNullValueFreeMinutesConsumed = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("free_minutes_consumed"); else _explicitNullProperties?.Remove("free_minutes_consumed"); } }
+        private double? _explicitNullValueFreeMinutesConsumed = default!;
         /// <summary>The is_burst property</summary>
-        public bool? IsBurst { get; set; }
+        public bool? IsBurst { get => _explicitNullValueIsBurst; set { _explicitNullValueIsBurst = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_burst"); else _explicitNullProperties?.Remove("is_burst"); } }
+        private bool? _explicitNullValueIsBurst = default!;
         /// <summary>The llm_charge property</summary>
-        public int? LlmCharge { get; set; }
+        public int? LlmCharge { get => _explicitNullValueLlmCharge; set { _explicitNullValueLlmCharge = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("llm_charge"); else _explicitNullProperties?.Remove("llm_charge"); } }
+        private int? _explicitNullValueLlmCharge = default!;
         /// <summary>The llm_price property</summary>
-        public double? LlmPrice { get; set; }
+        public double? LlmPrice { get => _explicitNullValueLlmPrice; set { _explicitNullValueLlmPrice = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("llm_price"); else _explicitNullProperties?.Remove("llm_price"); } }
+        private double? _explicitNullValueLlmPrice = default!;
         /// <summary>The llm_usage property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmCategoryUsage? LlmUsage { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmCategoryUsage? LlmUsage { get => _explicitNullValueLlmUsage; set { _explicitNullValueLlmUsage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("llm_usage"); else _explicitNullProperties?.Remove("llm_usage"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmCategoryUsage? _explicitNullValueLlmUsage = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmCategoryUsage LlmUsage { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmCategoryUsage LlmUsage { get => _explicitNullValueLlmUsage; set { _explicitNullValueLlmUsage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("llm_usage"); else _explicitNullProperties?.Remove("llm_usage"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmCategoryUsage _explicitNullValueLlmUsage = default!;
 #endif
         /// <summary>The platform_charge property</summary>
-        public int? PlatformCharge { get; set; }
+        public int? PlatformCharge { get => _explicitNullValuePlatformCharge; set { _explicitNullValuePlatformCharge = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("platform_charge"); else _explicitNullProperties?.Remove("platform_charge"); } }
+        private int? _explicitNullValuePlatformCharge = default!;
         /// <summary>The platform_price property</summary>
-        public double? PlatformPrice { get; set; }
+        public double? PlatformPrice { get => _explicitNullValuePlatformPrice; set { _explicitNullValuePlatformPrice = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("platform_price"); else _explicitNullProperties?.Remove("platform_price"); } }
+        private double? _explicitNullValuePlatformPrice = default!;
         /// <summary>Per-category breakdown of ``platform_charge`` (the analogue of ``llm_usage``).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PlatformUsage? PlatformUsage { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PlatformUsage? PlatformUsage { get => _explicitNullValuePlatformUsage; set { _explicitNullValuePlatformUsage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("platform_usage"); else _explicitNullProperties?.Remove("platform_usage"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.PlatformUsage? _explicitNullValuePlatformUsage = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PlatformUsage PlatformUsage { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PlatformUsage PlatformUsage { get => _explicitNullValuePlatformUsage; set { _explicitNullValuePlatformUsage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("platform_usage"); else _explicitNullProperties?.Remove("platform_usage"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.PlatformUsage _explicitNullValuePlatformUsage = default!;
 #endif
         /// <summary>The tier property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Tier { get; set; }
+        public string? Tier { get => _explicitNullValueTier; set { _explicitNullValueTier = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tier"); else _explicitNullProperties?.Remove("tier"); } }
+        private string? _explicitNullValueTier = default!;
 #nullable restore
 #else
-        public string Tier { get; set; }
+        public string Tier { get => _explicitNullValueTier; set { _explicitNullValueTier = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tier"); else _explicitNullProperties?.Remove("tier"); } }
+        private string _explicitNullValueTier = default!;
 #endif
         /// <summary>The tts_usage property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationTtsUsageModel? TtsUsage { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationTtsUsageModel? TtsUsage { get => _explicitNullValueTtsUsage; set { _explicitNullValueTtsUsage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tts_usage"); else _explicitNullProperties?.Remove("tts_usage"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationTtsUsageModel? _explicitNullValueTtsUsage = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationTtsUsageModel TtsUsage { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationTtsUsageModel TtsUsage { get => _explicitNullValueTtsUsage; set { _explicitNullValueTtsUsage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tts_usage"); else _explicitNullProperties?.Remove("tts_usage"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationTtsUsageModel _explicitNullValueTtsUsage = default!;
 #endif
         /// <summary>Credits charged as the voice actor reward for the Voice Library voices this conversation used. It is not included in `cost`.</summary>
-        public int? VoiceSurchargeCharge { get; set; }
+        public int? VoiceSurchargeCharge { get => _explicitNullValueVoiceSurchargeCharge; set { _explicitNullValueVoiceSurchargeCharge = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("voice_surcharge_charge"); else _explicitNullProperties?.Remove("voice_surcharge_charge"); } }
+        private int? _explicitNullValueVoiceSurchargeCharge = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationChargingCommonModel"/> and sets the default values.
         /// </summary>
@@ -101,7 +146,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationChargingCommonModel CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationChargingCommonModel();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationChargingCommonModel(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -152,6 +197,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteStringValue("tier", Tier);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationTtsUsageModel>("tts_usage", TtsUsage);
             writer.WriteIntValue("voice_surcharge_charge", VoiceSurchargeCharge);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

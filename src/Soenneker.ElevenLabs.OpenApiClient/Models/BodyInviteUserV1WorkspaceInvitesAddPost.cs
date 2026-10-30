@@ -11,37 +11,57 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class BodyInviteUserV1WorkspaceInvitesAddPost : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("email") is { } nullNodeEmail && nullNodeEmail.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Email = null;
+            if (parseNode.GetChildNode("group_ids") is { } nullNodeGroupIds && nullNodeGroupIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GroupIds = null;
+            if (parseNode.GetChildNode("seat_type") is { } nullNodeSeatType && nullNodeSeatType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SeatType = null;
+            if (parseNode.GetChildNode("usage_limit") is { } nullNodeUsageLimit && nullNodeUsageLimit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UsageLimit = null;
+            if (parseNode.GetChildNode("workspace_permission") is { } nullNodeWorkspacePermission && nullNodeWorkspacePermission.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WorkspacePermission = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The email of the customer</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Email { get; set; }
+        public string? Email { get => _explicitNullValueEmail; set { _explicitNullValueEmail = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("email"); else _explicitNullProperties?.Remove("email"); } }
+        private string? _explicitNullValueEmail = default!;
 #nullable restore
 #else
-        public string Email { get; set; }
+        public string Email { get => _explicitNullValueEmail; set { _explicitNullValueEmail = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("email"); else _explicitNullProperties?.Remove("email"); } }
+        private string _explicitNullValueEmail = default!;
 #endif
         /// <summary>The group ids of the user</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? GroupIds { get; set; }
+        public List<string>? GroupIds { get => _explicitNullValueGroupIds; set { _explicitNullValueGroupIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("group_ids"); else _explicitNullProperties?.Remove("group_ids"); } }
+        private List<string>? _explicitNullValueGroupIds = default!;
 #nullable restore
 #else
-        public List<string> GroupIds { get; set; }
+        public List<string> GroupIds { get => _explicitNullValueGroupIds; set { _explicitNullValueGroupIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("group_ids"); else _explicitNullProperties?.Remove("group_ids"); } }
+        private List<string> _explicitNullValueGroupIds = default!;
 #endif
         /// <summary>The seat type of the user</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SeatType? SeatType { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SeatType? SeatType { get => _explicitNullValueSeatType; set { _explicitNullValueSeatType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("seat_type"); else _explicitNullProperties?.Remove("seat_type"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.SeatType? _explicitNullValueSeatType = default!;
         /// <summary>Monthly credit usage limit for the invitee. Omit or set to null for no custom cap.</summary>
-        public int? UsageLimit { get; set; }
+        public int? UsageLimit { get => _explicitNullValueUsageLimit; set { _explicitNullValueUsageLimit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("usage_limit"); else _explicitNullProperties?.Remove("usage_limit"); } }
+        private int? _explicitNullValueUsageLimit = default!;
         /// <summary>The workspace permission of the user. This is deprecated, use `seat_type` instead.</summary>
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? WorkspacePermission { get; set; }
+        public string? WorkspacePermission { get => _explicitNullValueWorkspacePermission; set { _explicitNullValueWorkspacePermission = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workspace_permission"); else _explicitNullProperties?.Remove("workspace_permission"); } }
+        private string? _explicitNullValueWorkspacePermission = default!;
 #nullable restore
 #else
-        public string WorkspacePermission { get; set; }
+        public string WorkspacePermission { get => _explicitNullValueWorkspacePermission; set { _explicitNullValueWorkspacePermission = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workspace_permission"); else _explicitNullProperties?.Remove("workspace_permission"); } }
+        private string _explicitNullValueWorkspacePermission = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyInviteUserV1WorkspaceInvitesAddPost"/> and sets the default values.
@@ -58,7 +78,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyInviteUserV1WorkspaceInvitesAddPost CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyInviteUserV1WorkspaceInvitesAddPost();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyInviteUserV1WorkspaceInvitesAddPost(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -87,6 +107,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SeatType>("seat_type", SeatType);
             writer.WriteIntValue("usage_limit", UsageLimit);
             writer.WriteStringValue("workspace_permission", WorkspacePermission);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

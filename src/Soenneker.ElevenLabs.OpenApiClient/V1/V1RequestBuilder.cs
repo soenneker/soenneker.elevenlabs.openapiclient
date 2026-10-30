@@ -71,6 +71,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1
             get => new global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.ConvaiRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The dubbing property</summary>
+        [Obsolete("")]
         public global::Soenneker.ElevenLabs.OpenApiClient.V1.Dubbing.DubbingRequestBuilder Dubbing
         {
             get => new global::Soenneker.ElevenLabs.OpenApiClient.V1.Dubbing.DubbingRequestBuilder(PathParameters, RequestAdapter);

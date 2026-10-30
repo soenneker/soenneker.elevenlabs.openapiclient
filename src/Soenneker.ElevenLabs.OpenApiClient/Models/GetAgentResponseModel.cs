@@ -11,128 +11,180 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class GetAgentResponseModel : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("access_info") is { } nullNodeAccessInfo && nullNodeAccessInfo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccessInfo = null;
+            if (parseNode.GetChildNode("agent_id") is { } nullNodeAgentId && nullNodeAgentId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AgentId = null;
+            if (parseNode.GetChildNode("branch_id") is { } nullNodeBranchId && nullNodeBranchId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BranchId = null;
+            if (parseNode.GetChildNode("conversation_config") is { } nullNodeConversationConfig && nullNodeConversationConfig.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConversationConfig = null;
+            if (parseNode.GetChildNode("default_hold_audio_url") is { } nullNodeDefaultHoldAudioUrl && nullNodeDefaultHoldAudioUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DefaultHoldAudioUrl = null;
+            if (parseNode.GetChildNode("main_branch_id") is { } nullNodeMainBranchId && nullNodeMainBranchId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MainBranchId = null;
+            if (parseNode.GetChildNode("metadata") is { } nullNodeMetadata && nullNodeMetadata.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Metadata = null;
+            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("phone_numbers") is { } nullNodePhoneNumbers && nullNodePhoneNumbers.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PhoneNumbers = null;
+            if (parseNode.GetChildNode("platform_settings") is { } nullNodePlatformSettings && nullNodePlatformSettings.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PlatformSettings = null;
+            if (parseNode.GetChildNode("procedures") is { } nullNodeProcedures && nullNodeProcedures.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Procedures = null;
+            if (parseNode.GetChildNode("tags") is { } nullNodeTags && nullNodeTags.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Tags = null;
+            if (parseNode.GetChildNode("version_id") is { } nullNodeVersionId && nullNodeVersionId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VersionId = null;
+            if (parseNode.GetChildNode("whatsapp_accounts") is { } nullNodeWhatsappAccounts && nullNodeWhatsappAccounts.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WhatsappAccounts = null;
+            if (parseNode.GetChildNode("workflow") is { } nullNodeWorkflow && nullNodeWorkflow.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Workflow = null;
+        }
+
         /// <summary>The access information of the agent for the user</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceAccessInfo? AccessInfo { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceAccessInfo? AccessInfo { get => _explicitNullValueAccessInfo; set { _explicitNullValueAccessInfo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("access_info"); else _explicitNullProperties?.Remove("access_info"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceAccessInfo? _explicitNullValueAccessInfo = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceAccessInfo AccessInfo { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceAccessInfo AccessInfo { get => _explicitNullValueAccessInfo; set { _explicitNullValueAccessInfo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("access_info"); else _explicitNullProperties?.Remove("access_info"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ResourceAccessInfo _explicitNullValueAccessInfo = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The ID of the agent</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AgentId { get; set; }
+        public string? AgentId { get => _explicitNullValueAgentId; set { _explicitNullValueAgentId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agent_id"); else _explicitNullProperties?.Remove("agent_id"); } }
+        private string? _explicitNullValueAgentId = default!;
 #nullable restore
 #else
-        public string AgentId { get; set; }
+        public string AgentId { get => _explicitNullValueAgentId; set { _explicitNullValueAgentId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agent_id"); else _explicitNullProperties?.Remove("agent_id"); } }
+        private string _explicitNullValueAgentId = default!;
 #endif
         /// <summary>The ID of the branch the agent is on</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BranchId { get; set; }
+        public string? BranchId { get => _explicitNullValueBranchId; set { _explicitNullValueBranchId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("branch_id"); else _explicitNullProperties?.Remove("branch_id"); } }
+        private string? _explicitNullValueBranchId = default!;
 #nullable restore
 #else
-        public string BranchId { get; set; }
+        public string BranchId { get => _explicitNullValueBranchId; set { _explicitNullValueBranchId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("branch_id"); else _explicitNullProperties?.Remove("branch_id"); } }
+        private string _explicitNullValueBranchId = default!;
 #endif
         /// <summary>The conversation_config property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationalConfigApiModelOutput? ConversationConfig { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationalConfigApiModelOutput? ConversationConfig { get => _explicitNullValueConversationConfig; set { _explicitNullValueConversationConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conversation_config"); else _explicitNullProperties?.Remove("conversation_config"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationalConfigApiModelOutput? _explicitNullValueConversationConfig = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationalConfigApiModelOutput ConversationConfig { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationalConfigApiModelOutput ConversationConfig { get => _explicitNullValueConversationConfig; set { _explicitNullValueConversationConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conversation_config"); else _explicitNullProperties?.Remove("conversation_config"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationalConfigApiModelOutput _explicitNullValueConversationConfig = default!;
 #endif
         /// <summary>URL of the default hold tone played to queued callers when no custom hold audio is uploaded, so the dashboard can preview it.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DefaultHoldAudioUrl { get; set; }
+        public string? DefaultHoldAudioUrl { get => _explicitNullValueDefaultHoldAudioUrl; set { _explicitNullValueDefaultHoldAudioUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("default_hold_audio_url"); else _explicitNullProperties?.Remove("default_hold_audio_url"); } }
+        private string? _explicitNullValueDefaultHoldAudioUrl = default!;
 #nullable restore
 #else
-        public string DefaultHoldAudioUrl { get; set; }
+        public string DefaultHoldAudioUrl { get => _explicitNullValueDefaultHoldAudioUrl; set { _explicitNullValueDefaultHoldAudioUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("default_hold_audio_url"); else _explicitNullProperties?.Remove("default_hold_audio_url"); } }
+        private string _explicitNullValueDefaultHoldAudioUrl = default!;
 #endif
         /// <summary>The ID of the main branch for this agent</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MainBranchId { get; set; }
+        public string? MainBranchId { get => _explicitNullValueMainBranchId; set { _explicitNullValueMainBranchId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("main_branch_id"); else _explicitNullProperties?.Remove("main_branch_id"); } }
+        private string? _explicitNullValueMainBranchId = default!;
 #nullable restore
 #else
-        public string MainBranchId { get; set; }
+        public string MainBranchId { get => _explicitNullValueMainBranchId; set { _explicitNullValueMainBranchId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("main_branch_id"); else _explicitNullProperties?.Remove("main_branch_id"); } }
+        private string _explicitNullValueMainBranchId = default!;
 #endif
         /// <summary>The metadata of the agent</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentMetadataResponseModel? Metadata { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentMetadataResponseModel? Metadata { get => _explicitNullValueMetadata; set { _explicitNullValueMetadata = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metadata"); else _explicitNullProperties?.Remove("metadata"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentMetadataResponseModel? _explicitNullValueMetadata = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentMetadataResponseModel Metadata { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentMetadataResponseModel Metadata { get => _explicitNullValueMetadata; set { _explicitNullValueMetadata = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metadata"); else _explicitNullProperties?.Remove("metadata"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentMetadataResponseModel _explicitNullValueMetadata = default!;
 #endif
         /// <summary>The name of the agent</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get; set; }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string _explicitNullValueName = default!;
 #endif
         /// <summary>The phone numbers of the agent</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetAgentResponseModelPhoneNumbersItem>? PhoneNumbers { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetAgentResponseModelPhoneNumbersItem>? PhoneNumbers { get => _explicitNullValuePhoneNumbers; set { _explicitNullValuePhoneNumbers = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("phone_numbers"); else _explicitNullProperties?.Remove("phone_numbers"); } }
+        private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetAgentResponseModelPhoneNumbersItem>? _explicitNullValuePhoneNumbers = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetAgentResponseModelPhoneNumbersItem> PhoneNumbers { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetAgentResponseModelPhoneNumbersItem> PhoneNumbers { get => _explicitNullValuePhoneNumbers; set { _explicitNullValuePhoneNumbers = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("phone_numbers"); else _explicitNullProperties?.Remove("phone_numbers"); } }
+        private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetAgentResponseModelPhoneNumbersItem> _explicitNullValuePhoneNumbers = default!;
 #endif
         /// <summary>The platform settings of the agent</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentPlatformSettingsResponseModel? PlatformSettings { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentPlatformSettingsResponseModel? PlatformSettings { get => _explicitNullValuePlatformSettings; set { _explicitNullValuePlatformSettings = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("platform_settings"); else _explicitNullProperties?.Remove("platform_settings"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentPlatformSettingsResponseModel? _explicitNullValuePlatformSettings = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentPlatformSettingsResponseModel PlatformSettings { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentPlatformSettingsResponseModel PlatformSettings { get => _explicitNullValuePlatformSettings; set { _explicitNullValuePlatformSettings = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("platform_settings"); else _explicitNullProperties?.Remove("platform_settings"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentPlatformSettingsResponseModel _explicitNullValuePlatformSettings = default!;
 #endif
         /// <summary>Procedures keyed by procedure_id.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetAgentResponseModelProceduresProperty? Procedures { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetAgentResponseModelProceduresProperty? Procedures { get => _explicitNullValueProcedures; set { _explicitNullValueProcedures = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("procedures"); else _explicitNullProperties?.Remove("procedures"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.GetAgentResponseModelProceduresProperty? _explicitNullValueProcedures = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetAgentResponseModelProceduresProperty Procedures { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.GetAgentResponseModelProceduresProperty Procedures { get => _explicitNullValueProcedures; set { _explicitNullValueProcedures = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("procedures"); else _explicitNullProperties?.Remove("procedures"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.GetAgentResponseModelProceduresProperty _explicitNullValueProcedures = default!;
 #endif
         /// <summary>Agent tags used to categorize the agent</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Tags { get; set; }
+        public List<string>? Tags { get => _explicitNullValueTags; set { _explicitNullValueTags = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tags"); else _explicitNullProperties?.Remove("tags"); } }
+        private List<string>? _explicitNullValueTags = default!;
 #nullable restore
 #else
-        public List<string> Tags { get; set; }
+        public List<string> Tags { get => _explicitNullValueTags; set { _explicitNullValueTags = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tags"); else _explicitNullProperties?.Remove("tags"); } }
+        private List<string> _explicitNullValueTags = default!;
 #endif
         /// <summary>The ID of the version the agent is on</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? VersionId { get; set; }
+        public string? VersionId { get => _explicitNullValueVersionId; set { _explicitNullValueVersionId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("version_id"); else _explicitNullProperties?.Remove("version_id"); } }
+        private string? _explicitNullValueVersionId = default!;
 #nullable restore
 #else
-        public string VersionId { get; set; }
+        public string VersionId { get => _explicitNullValueVersionId; set { _explicitNullValueVersionId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("version_id"); else _explicitNullProperties?.Remove("version_id"); } }
+        private string _explicitNullValueVersionId = default!;
 #endif
         /// <summary>WhatsApp accounts assigned to the agent</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetWhatsAppAccountResponse>? WhatsappAccounts { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetWhatsAppAccountResponse>? WhatsappAccounts { get => _explicitNullValueWhatsappAccounts; set { _explicitNullValueWhatsappAccounts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("whatsapp_accounts"); else _explicitNullProperties?.Remove("whatsapp_accounts"); } }
+        private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetWhatsAppAccountResponse>? _explicitNullValueWhatsappAccounts = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetWhatsAppAccountResponse> WhatsappAccounts { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetWhatsAppAccountResponse> WhatsappAccounts { get => _explicitNullValueWhatsappAccounts; set { _explicitNullValueWhatsappAccounts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("whatsapp_accounts"); else _explicitNullProperties?.Remove("whatsapp_accounts"); } }
+        private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetWhatsAppAccountResponse> _explicitNullValueWhatsappAccounts = default!;
 #endif
         /// <summary>The workflow of the agent</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentWorkflowResponseModel? Workflow { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentWorkflowResponseModel? Workflow { get => _explicitNullValueWorkflow; set { _explicitNullValueWorkflow = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workflow"); else _explicitNullProperties?.Remove("workflow"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentWorkflowResponseModel? _explicitNullValueWorkflow = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentWorkflowResponseModel Workflow { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentWorkflowResponseModel Workflow { get => _explicitNullValueWorkflow; set { _explicitNullValueWorkflow = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workflow"); else _explicitNullProperties?.Remove("workflow"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentWorkflowResponseModel _explicitNullValueWorkflow = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.GetAgentResponseModel"/> and sets the default values.
@@ -150,7 +202,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.GetAgentResponseModel CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.GetAgentResponseModel();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.GetAgentResponseModel(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -199,6 +251,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteStringValue("version_id", VersionId);
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetWhatsAppAccountResponse>("whatsapp_accounts", WhatsappAccounts);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentWorkflowResponseModel>("workflow", Workflow);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -12,35 +12,68 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SmbTierEconomics : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("annual_price_usd") is { } nullNodeAnnualPriceUsd && nullNodeAnnualPriceUsd.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AnnualPriceUsd = null;
+            if (parseNode.GetChildNode("assistant_daily_messages") is { } nullNodeAssistantDailyMessages && nullNodeAssistantDailyMessages.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AssistantDailyMessages = null;
+            if (parseNode.GetChildNode("concurrent_calls") is { } nullNodeConcurrentCalls && nullNodeConcurrentCalls.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConcurrentCalls = null;
+            if (parseNode.GetChildNode("included_minutes_per_month") is { } nullNodeIncludedMinutesPerMonth && nullNodeIncludedMinutesPerMonth.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IncludedMinutesPerMonth = null;
+            if (parseNode.GetChildNode("ivc_voice_limit") is { } nullNodeIvcVoiceLimit && nullNodeIvcVoiceLimit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IvcVoiceLimit = null;
+            if (parseNode.GetChildNode("knowledge_source_limit") is { } nullNodeKnowledgeSourceLimit && nullNodeKnowledgeSourceLimit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) KnowledgeSourceLimit = null;
+            if (parseNode.GetChildNode("max_active_locations") is { } nullNodeMaxActiveLocations && nullNodeMaxActiveLocations.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxActiveLocations = null;
+            if (parseNode.GetChildNode("max_customer_facing_agents") is { } nullNodeMaxCustomerFacingAgents && nullNodeMaxCustomerFacingAgents.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxCustomerFacingAgents = null;
+            if (parseNode.GetChildNode("max_phone_numbers") is { } nullNodeMaxPhoneNumbers && nullNodeMaxPhoneNumbers.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxPhoneNumbers = null;
+            if (parseNode.GetChildNode("max_team_members") is { } nullNodeMaxTeamMembers && nullNodeMaxTeamMembers.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxTeamMembers = null;
+            if (parseNode.GetChildNode("monthly_price_usd") is { } nullNodeMonthlyPriceUsd && nullNodeMonthlyPriceUsd.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MonthlyPriceUsd = null;
+            if (parseNode.GetChildNode("overage_price_per_minute_usd") is { } nullNodeOveragePricePerMinuteUsd && nullNodeOveragePricePerMinuteUsd.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OveragePricePerMinuteUsd = null;
+            if (parseNode.GetChildNode("pool_outbound_sms_daily_limit") is { } nullNodePoolOutboundSmsDailyLimit && nullNodePoolOutboundSmsDailyLimit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PoolOutboundSmsDailyLimit = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>What a year up front is sold for, at a discount on twelve months. Required for a tier on the ladder, omitted for the trial</summary>
-        public double? AnnualPriceUsd { get; set; }
+        public double? AnnualPriceUsd { get => _explicitNullValueAnnualPriceUsd; set { _explicitNullValueAnnualPriceUsd = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("annual_price_usd"); else _explicitNullProperties?.Remove("annual_price_usd"); } }
+        private double? _explicitNullValueAnnualPriceUsd = default!;
         /// <summary>The assistant_daily_messages property</summary>
-        public int? AssistantDailyMessages { get; set; }
+        public int? AssistantDailyMessages { get => _explicitNullValueAssistantDailyMessages; set { _explicitNullValueAssistantDailyMessages = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("assistant_daily_messages"); else _explicitNullProperties?.Remove("assistant_daily_messages"); } }
+        private int? _explicitNullValueAssistantDailyMessages = default!;
         /// <summary>The concurrent_calls property</summary>
-        public int? ConcurrentCalls { get; set; }
+        public int? ConcurrentCalls { get => _explicitNullValueConcurrentCalls; set { _explicitNullValueConcurrentCalls = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("concurrent_calls"); else _explicitNullProperties?.Remove("concurrent_calls"); } }
+        private int? _explicitNullValueConcurrentCalls = default!;
         /// <summary>Phone minutes included each month. Other channels draw on the same allowance more cheaply — a web minute costs half a phone minute, a chat message a tenth</summary>
-        public double? IncludedMinutesPerMonth { get; set; }
+        public double? IncludedMinutesPerMonth { get => _explicitNullValueIncludedMinutesPerMonth; set { _explicitNullValueIncludedMinutesPerMonth = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("included_minutes_per_month"); else _explicitNullProperties?.Remove("included_minutes_per_month"); } }
+        private double? _explicitNullValueIncludedMinutesPerMonth = default!;
         /// <summary>The ivc_voice_limit property</summary>
-        public int? IvcVoiceLimit { get; set; }
+        public int? IvcVoiceLimit { get => _explicitNullValueIvcVoiceLimit; set { _explicitNullValueIvcVoiceLimit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ivc_voice_limit"); else _explicitNullProperties?.Remove("ivc_voice_limit"); } }
+        private int? _explicitNullValueIvcVoiceLimit = default!;
         /// <summary>The knowledge_source_limit property</summary>
-        public int? KnowledgeSourceLimit { get; set; }
+        public int? KnowledgeSourceLimit { get => _explicitNullValueKnowledgeSourceLimit; set { _explicitNullValueKnowledgeSourceLimit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("knowledge_source_limit"); else _explicitNullProperties?.Remove("knowledge_source_limit"); } }
+        private int? _explicitNullValueKnowledgeSourceLimit = default!;
         /// <summary>The max_active_locations property</summary>
-        public int? MaxActiveLocations { get; set; }
+        public int? MaxActiveLocations { get => _explicitNullValueMaxActiveLocations; set { _explicitNullValueMaxActiveLocations = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_active_locations"); else _explicitNullProperties?.Remove("max_active_locations"); } }
+        private int? _explicitNullValueMaxActiveLocations = default!;
         /// <summary>The max_customer_facing_agents property</summary>
-        public int? MaxCustomerFacingAgents { get; set; }
+        public int? MaxCustomerFacingAgents { get => _explicitNullValueMaxCustomerFacingAgents; set { _explicitNullValueMaxCustomerFacingAgents = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_customer_facing_agents"); else _explicitNullProperties?.Remove("max_customer_facing_agents"); } }
+        private int? _explicitNullValueMaxCustomerFacingAgents = default!;
         /// <summary>The max_phone_numbers property</summary>
-        public int? MaxPhoneNumbers { get; set; }
+        public int? MaxPhoneNumbers { get => _explicitNullValueMaxPhoneNumbers; set { _explicitNullValueMaxPhoneNumbers = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_phone_numbers"); else _explicitNullProperties?.Remove("max_phone_numbers"); } }
+        private int? _explicitNullValueMaxPhoneNumbers = default!;
         /// <summary>The max_team_members property</summary>
-        public int? MaxTeamMembers { get; set; }
+        public int? MaxTeamMembers { get => _explicitNullValueMaxTeamMembers; set { _explicitNullValueMaxTeamMembers = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_team_members"); else _explicitNullProperties?.Remove("max_team_members"); } }
+        private int? _explicitNullValueMaxTeamMembers = default!;
         /// <summary>What one month is sold for. Also values an included minute, at this price over the included minutes</summary>
-        public double? MonthlyPriceUsd { get; set; }
+        public double? MonthlyPriceUsd { get => _explicitNullValueMonthlyPriceUsd; set { _explicitNullValueMonthlyPriceUsd = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("monthly_price_usd"); else _explicitNullProperties?.Remove("monthly_price_usd"); } }
+        private double? _explicitNullValueMonthlyPriceUsd = default!;
         /// <summary>Charged per minute past the included ones, and may not undercut their value. Required for a tier on the ladder, omitted for the trial</summary>
-        public double? OveragePricePerMinuteUsd { get; set; }
+        public double? OveragePricePerMinuteUsd { get => _explicitNullValueOveragePricePerMinuteUsd; set { _explicitNullValueOveragePricePerMinuteUsd = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("overage_price_per_minute_usd"); else _explicitNullProperties?.Remove("overage_price_per_minute_usd"); } }
+        private double? _explicitNullValueOveragePricePerMinuteUsd = default!;
         /// <summary>The pool_outbound_sms_daily_limit property</summary>
-        public int? PoolOutboundSmsDailyLimit { get; set; }
+        public int? PoolOutboundSmsDailyLimit { get => _explicitNullValuePoolOutboundSmsDailyLimit; set { _explicitNullValuePoolOutboundSmsDailyLimit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pool_outbound_sms_daily_limit"); else _explicitNullProperties?.Remove("pool_outbound_sms_daily_limit"); } }
+        private int? _explicitNullValuePoolOutboundSmsDailyLimit = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbTierEconomics"/> and sets the default values.
         /// </summary>
@@ -56,7 +89,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbTierEconomics CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbTierEconomics();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.SmbTierEconomics(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -101,6 +134,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteDoubleValue("monthly_price_usd", MonthlyPriceUsd);
             writer.WriteDoubleValue("overage_price_per_minute_usd", OveragePricePerMinuteUsd);
             writer.WriteIntValue("pool_outbound_sms_daily_limit", PoolOutboundSmsDailyLimit);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

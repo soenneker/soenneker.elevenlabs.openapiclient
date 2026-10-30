@@ -11,13 +11,24 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class AgentMetadataResponseModel : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("created_at_unix_secs") is { } nullNodeCreatedAtUnixSecs && nullNodeCreatedAtUnixSecs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedAtUnixSecs = null;
+            if (parseNode.GetChildNode("updated_at_unix_secs") is { } nullNodeUpdatedAtUnixSecs && nullNodeUpdatedAtUnixSecs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UpdatedAtUnixSecs = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The creation time of the agent in unix seconds</summary>
-        public int? CreatedAtUnixSecs { get; set; }
+        public int? CreatedAtUnixSecs { get => _explicitNullValueCreatedAtUnixSecs; set { _explicitNullValueCreatedAtUnixSecs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_at_unix_secs"); else _explicitNullProperties?.Remove("created_at_unix_secs"); } }
+        private int? _explicitNullValueCreatedAtUnixSecs = default!;
         /// <summary>The last update time of the agent in unix seconds</summary>
-        public int? UpdatedAtUnixSecs { get; set; }
+        public int? UpdatedAtUnixSecs { get => _explicitNullValueUpdatedAtUnixSecs; set { _explicitNullValueUpdatedAtUnixSecs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("updated_at_unix_secs"); else _explicitNullProperties?.Remove("updated_at_unix_secs"); } }
+        private int? _explicitNullValueUpdatedAtUnixSecs = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentMetadataResponseModel"/> and sets the default values.
         /// </summary>
@@ -33,7 +44,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentMetadataResponseModel CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentMetadataResponseModel();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentMetadataResponseModel(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -56,6 +67,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("created_at_unix_secs", CreatedAtUnixSecs);
             writer.WriteIntValue("updated_at_unix_secs", UpdatedAtUnixSecs);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

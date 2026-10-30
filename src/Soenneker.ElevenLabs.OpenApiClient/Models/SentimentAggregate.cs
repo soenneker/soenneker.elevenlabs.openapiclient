@@ -11,33 +11,64 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class SentimentAggregate : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("average_frustration_score") is { } nullNodeAverageFrustrationScore && nullNodeAverageFrustrationScore.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AverageFrustrationScore = null;
+            if (parseNode.GetChildNode("average_sentiment_score") is { } nullNodeAverageSentimentScore && nullNodeAverageSentimentScore.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AverageSentimentScore = null;
+            if (parseNode.GetChildNode("negative_count") is { } nullNodeNegativeCount && nullNodeNegativeCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NegativeCount = null;
+            if (parseNode.GetChildNode("neutral_count") is { } nullNodeNeutralCount && nullNodeNeutralCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NeutralCount = null;
+            if (parseNode.GetChildNode("positive_count") is { } nullNodePositiveCount && nullNodePositiveCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PositiveCount = null;
+            if (parseNode.GetChildNode("recent_average_frustration_score") is { } nullNodeRecentAverageFrustrationScore && nullNodeRecentAverageFrustrationScore.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RecentAverageFrustrationScore = null;
+            if (parseNode.GetChildNode("recent_average_sentiment_score") is { } nullNodeRecentAverageSentimentScore && nullNodeRecentAverageSentimentScore.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RecentAverageSentimentScore = null;
+            if (parseNode.GetChildNode("recent_negative_count") is { } nullNodeRecentNegativeCount && nullNodeRecentNegativeCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RecentNegativeCount = null;
+            if (parseNode.GetChildNode("recent_neutral_count") is { } nullNodeRecentNeutralCount && nullNodeRecentNeutralCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RecentNeutralCount = null;
+            if (parseNode.GetChildNode("recent_positive_count") is { } nullNodeRecentPositiveCount && nullNodeRecentPositiveCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RecentPositiveCount = null;
+            if (parseNode.GetChildNode("recent_scored_conversation_count") is { } nullNodeRecentScoredConversationCount && nullNodeRecentScoredConversationCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RecentScoredConversationCount = null;
+            if (parseNode.GetChildNode("scored_conversation_count") is { } nullNodeScoredConversationCount && nullNodeScoredConversationCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ScoredConversationCount = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The average_frustration_score property</summary>
-        public double? AverageFrustrationScore { get; set; }
+        public double? AverageFrustrationScore { get => _explicitNullValueAverageFrustrationScore; set { _explicitNullValueAverageFrustrationScore = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("average_frustration_score"); else _explicitNullProperties?.Remove("average_frustration_score"); } }
+        private double? _explicitNullValueAverageFrustrationScore = default!;
         /// <summary>The average_sentiment_score property</summary>
-        public double? AverageSentimentScore { get; set; }
+        public double? AverageSentimentScore { get => _explicitNullValueAverageSentimentScore; set { _explicitNullValueAverageSentimentScore = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("average_sentiment_score"); else _explicitNullProperties?.Remove("average_sentiment_score"); } }
+        private double? _explicitNullValueAverageSentimentScore = default!;
         /// <summary>The negative_count property</summary>
-        public int? NegativeCount { get; set; }
+        public int? NegativeCount { get => _explicitNullValueNegativeCount; set { _explicitNullValueNegativeCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("negative_count"); else _explicitNullProperties?.Remove("negative_count"); } }
+        private int? _explicitNullValueNegativeCount = default!;
         /// <summary>The neutral_count property</summary>
-        public int? NeutralCount { get; set; }
+        public int? NeutralCount { get => _explicitNullValueNeutralCount; set { _explicitNullValueNeutralCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("neutral_count"); else _explicitNullProperties?.Remove("neutral_count"); } }
+        private int? _explicitNullValueNeutralCount = default!;
         /// <summary>The positive_count property</summary>
-        public int? PositiveCount { get; set; }
+        public int? PositiveCount { get => _explicitNullValuePositiveCount; set { _explicitNullValuePositiveCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("positive_count"); else _explicitNullProperties?.Remove("positive_count"); } }
+        private int? _explicitNullValuePositiveCount = default!;
         /// <summary>The recent_average_frustration_score property</summary>
-        public double? RecentAverageFrustrationScore { get; set; }
+        public double? RecentAverageFrustrationScore { get => _explicitNullValueRecentAverageFrustrationScore; set { _explicitNullValueRecentAverageFrustrationScore = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("recent_average_frustration_score"); else _explicitNullProperties?.Remove("recent_average_frustration_score"); } }
+        private double? _explicitNullValueRecentAverageFrustrationScore = default!;
         /// <summary>The recent_average_sentiment_score property</summary>
-        public double? RecentAverageSentimentScore { get; set; }
+        public double? RecentAverageSentimentScore { get => _explicitNullValueRecentAverageSentimentScore; set { _explicitNullValueRecentAverageSentimentScore = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("recent_average_sentiment_score"); else _explicitNullProperties?.Remove("recent_average_sentiment_score"); } }
+        private double? _explicitNullValueRecentAverageSentimentScore = default!;
         /// <summary>The recent_negative_count property</summary>
-        public int? RecentNegativeCount { get; set; }
+        public int? RecentNegativeCount { get => _explicitNullValueRecentNegativeCount; set { _explicitNullValueRecentNegativeCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("recent_negative_count"); else _explicitNullProperties?.Remove("recent_negative_count"); } }
+        private int? _explicitNullValueRecentNegativeCount = default!;
         /// <summary>The recent_neutral_count property</summary>
-        public int? RecentNeutralCount { get; set; }
+        public int? RecentNeutralCount { get => _explicitNullValueRecentNeutralCount; set { _explicitNullValueRecentNeutralCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("recent_neutral_count"); else _explicitNullProperties?.Remove("recent_neutral_count"); } }
+        private int? _explicitNullValueRecentNeutralCount = default!;
         /// <summary>The recent_positive_count property</summary>
-        public int? RecentPositiveCount { get; set; }
+        public int? RecentPositiveCount { get => _explicitNullValueRecentPositiveCount; set { _explicitNullValueRecentPositiveCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("recent_positive_count"); else _explicitNullProperties?.Remove("recent_positive_count"); } }
+        private int? _explicitNullValueRecentPositiveCount = default!;
         /// <summary>The recent_scored_conversation_count property</summary>
-        public int? RecentScoredConversationCount { get; set; }
+        public int? RecentScoredConversationCount { get => _explicitNullValueRecentScoredConversationCount; set { _explicitNullValueRecentScoredConversationCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("recent_scored_conversation_count"); else _explicitNullProperties?.Remove("recent_scored_conversation_count"); } }
+        private int? _explicitNullValueRecentScoredConversationCount = default!;
         /// <summary>The scored_conversation_count property</summary>
-        public int? ScoredConversationCount { get; set; }
+        public int? ScoredConversationCount { get => _explicitNullValueScoredConversationCount; set { _explicitNullValueScoredConversationCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scored_conversation_count"); else _explicitNullProperties?.Remove("scored_conversation_count"); } }
+        private int? _explicitNullValueScoredConversationCount = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.SentimentAggregate"/> and sets the default values.
         /// </summary>
@@ -53,7 +84,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.SentimentAggregate CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.SentimentAggregate();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.SentimentAggregate(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -96,6 +127,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteIntValue("recent_positive_count", RecentPositiveCount);
             writer.WriteIntValue("recent_scored_conversation_count", RecentScoredConversationCount);
             writer.WriteIntValue("scored_conversation_count", ScoredConversationCount);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

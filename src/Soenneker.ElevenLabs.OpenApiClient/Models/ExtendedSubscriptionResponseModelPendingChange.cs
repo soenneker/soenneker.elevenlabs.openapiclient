@@ -12,7 +12,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ExtendedSubscriptionResponseModelPendingChange : IComposedTypeWrapper, IParsable
-    {
+    , global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder {
+        // Preserve ambiguous union payloads without inventing a discriminator.
+        /// <summary>The complete payload when no unique typed union branch can be selected.</summary>
+        public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode UnrecognizedValue { get; set; } = null!;
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalData { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
         /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ExtendedSubscriptionResponseModelPendingChangeMember1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -46,10 +51,17 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var result = new global::Soenneker.ElevenLabs.OpenApiClient.Models.ExtendedSubscriptionResponseModelPendingChange();
-            result.ExtendedSubscriptionResponseModelPendingChangeMember1 = new global::Soenneker.ElevenLabs.OpenApiClient.Models.ExtendedSubscriptionResponseModelPendingChangeMember1();
-            result.PendingCancellationResponseModel = new global::Soenneker.ElevenLabs.OpenApiClient.Models.PendingCancellationResponseModel();
-            result.PendingSubscriptionSwitchResponseModel = new global::Soenneker.ElevenLabs.OpenApiClient.Models.PendingSubscriptionSwitchResponseModel();
-            return result;
+            
+            
+            
+            
+            var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
+            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("next_tier") != null && (parseNode.GetChildNode("next_tier")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("free".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal) || "starter".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal) || "go".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal) || "creator".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal) || "pro".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal) || "growing_business".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal) || "scale_2024_08_10".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal) || "grant_tier_1_2025_07_23".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal) || "grant_tier_2_2025_07_23".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal) || "grant".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal) || "trial".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal) || "enterprise".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("next_billing_period") != null && (parseNode.GetChildNode("next_billing_period")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag3 && ("monthly_period".Equals(tag3.GetValue(), global::System.StringComparison.Ordinal) || "3_month_period".Equals(tag3.GetValue(), global::System.StringComparison.Ordinal) || "6_month_period".Equals(tag3.GetValue(), global::System.StringComparison.Ordinal) || "annual_period".Equals(tag3.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("timestamp_seconds") != null && (parseNode.GetChildNode("kind") == null || (parseNode.GetChildNode("kind")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString optionalTag5 && ("change".Equals(optionalTag5.GetValue(), global::System.StringComparison.Ordinal))))))();
+            bool matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("timestamp_seconds") != null && (parseNode.GetChildNode("kind") == null || (parseNode.GetChildNode("kind")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString optionalTag1 && ("cancellation".Equals(optionalTag1.GetValue(), global::System.StringComparison.Ordinal))))))();
+            if (result.ExtendedSubscriptionResponseModelPendingChangeMember1 == null && result.PendingCancellationResponseModel == null && result.PendingSubscriptionSwitchResponseModel == null && matchesUnionBranch0 && !matchesUnionBranch1) result.PendingSubscriptionSwitchResponseModel = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.PendingSubscriptionSwitchResponseModel(), parseNode);
+            if (result.ExtendedSubscriptionResponseModelPendingChangeMember1 == null && result.PendingCancellationResponseModel == null && result.PendingSubscriptionSwitchResponseModel == null && matchesUnionBranch1 && !matchesUnionBranch0) result.PendingCancellationResponseModel = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.PendingCancellationResponseModel(), parseNode);
+            if (result.ExtendedSubscriptionResponseModelPendingChangeMember1 == null && result.PendingCancellationResponseModel == null && result.PendingSubscriptionSwitchResponseModel == null) result.UnrecognizedValue = unionPayload;
+return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -69,6 +81,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
+            if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
+            if (ExtendedSubscriptionResponseModelPendingChangeMember1 == null && PendingCancellationResponseModel == null && PendingSubscriptionSwitchResponseModel == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
+            if (ExtendedSubscriptionResponseModelPendingChangeMember1 != null && PendingCancellationResponseModel == null && PendingSubscriptionSwitchResponseModel == null) { if (ExtendedSubscriptionResponseModelPendingChangeMember1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, ExtendedSubscriptionResponseModelPendingChangeMember1); return; }
+            if (PendingCancellationResponseModel != null && ExtendedSubscriptionResponseModelPendingChangeMember1 == null && PendingSubscriptionSwitchResponseModel == null) { if (PendingCancellationResponseModel is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, PendingCancellationResponseModel); return; }
+            if (PendingSubscriptionSwitchResponseModel != null && ExtendedSubscriptionResponseModelPendingChangeMember1 == null && PendingCancellationResponseModel == null) { if (PendingSubscriptionSwitchResponseModel is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, PendingSubscriptionSwitchResponseModel); return; }
+
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ExtendedSubscriptionResponseModelPendingChangeMember1>(null, ExtendedSubscriptionResponseModelPendingChangeMember1, PendingCancellationResponseModel, PendingSubscriptionSwitchResponseModel);
         }

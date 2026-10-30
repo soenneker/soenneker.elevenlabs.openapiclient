@@ -11,16 +11,37 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class TurnConfigOverride : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("noisy_environment_message") is { } nullNodeNoisyEnvironmentMessage && nullNodeNoisyEnvironmentMessage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NoisyEnvironmentMessage = null;
+            if (parseNode.GetChildNode("soft_timeout_config") is { } nullNodeSoftTimeoutConfig && nullNodeSoftTimeoutConfig.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SoftTimeoutConfig = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>What the agent says when it detects a noisy environment.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? NoisyEnvironmentMessage { get => _explicitNullValueNoisyEnvironmentMessage; set { _explicitNullValueNoisyEnvironmentMessage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("noisy_environment_message"); else _explicitNullProperties?.Remove("noisy_environment_message"); } }
+        private string? _explicitNullValueNoisyEnvironmentMessage = default!;
+#nullable restore
+#else
+        public string NoisyEnvironmentMessage { get => _explicitNullValueNoisyEnvironmentMessage; set { _explicitNullValueNoisyEnvironmentMessage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("noisy_environment_message"); else _explicitNullProperties?.Remove("noisy_environment_message"); } }
+        private string _explicitNullValueNoisyEnvironmentMessage = default!;
+#endif
         /// <summary>Configuration for soft timeout functionality. Provides immediate feedback during longer LLM responses.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SoftTimeoutConfigOverride? SoftTimeoutConfig { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SoftTimeoutConfigOverride? SoftTimeoutConfig { get => _explicitNullValueSoftTimeoutConfig; set { _explicitNullValueSoftTimeoutConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("soft_timeout_config"); else _explicitNullProperties?.Remove("soft_timeout_config"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.SoftTimeoutConfigOverride? _explicitNullValueSoftTimeoutConfig = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SoftTimeoutConfigOverride SoftTimeoutConfig { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SoftTimeoutConfigOverride SoftTimeoutConfig { get => _explicitNullValueSoftTimeoutConfig; set { _explicitNullValueSoftTimeoutConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("soft_timeout_config"); else _explicitNullProperties?.Remove("soft_timeout_config"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.SoftTimeoutConfigOverride _explicitNullValueSoftTimeoutConfig = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.TurnConfigOverride"/> and sets the default values.
@@ -37,7 +58,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.TurnConfigOverride CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.TurnConfigOverride();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.TurnConfigOverride(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -47,6 +68,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "noisy_environment_message", n => { NoisyEnvironmentMessage = n.GetStringValue(); } },
                 { "soft_timeout_config", n => { SoftTimeoutConfig = n.GetObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SoftTimeoutConfigOverride>(global::Soenneker.ElevenLabs.OpenApiClient.Models.SoftTimeoutConfigOverride.CreateFromDiscriminatorValue); } },
             };
         }
@@ -57,7 +79,9 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("noisy_environment_message", NoisyEnvironmentMessage);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SoftTimeoutConfigOverride>("soft_timeout_config", SoftTimeoutConfig);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

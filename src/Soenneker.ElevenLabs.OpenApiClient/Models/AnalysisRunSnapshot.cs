@@ -12,28 +12,45 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AnalysisRunSnapshot : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("charge") is { } nullNodeCharge && nullNodeCharge.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Charge = null;
+            if (parseNode.GetChildNode("charge_per_feature") is { } nullNodeChargePerFeature && nullNodeChargePerFeature.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ChargePerFeature = null;
+            if (parseNode.GetChildNode("price") is { } nullNodePrice && nullNodePrice.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Price = null;
+            if (parseNode.GetChildNode("price_per_feature") is { } nullNodePricePerFeature && nullNodePricePerFeature.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PricePerFeature = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The charge property</summary>
-        public int? Charge { get; set; }
+        public int? Charge { get => _explicitNullValueCharge; set { _explicitNullValueCharge = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("charge"); else _explicitNullProperties?.Remove("charge"); } }
+        private int? _explicitNullValueCharge = default!;
         /// <summary>The charge_per_feature property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AnalysisRunSnapshotChargePerFeatureProperty? ChargePerFeature { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AnalysisRunSnapshotChargePerFeatureProperty? ChargePerFeature { get => _explicitNullValueChargePerFeature; set { _explicitNullValueChargePerFeature = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("charge_per_feature"); else _explicitNullProperties?.Remove("charge_per_feature"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.AnalysisRunSnapshotChargePerFeatureProperty? _explicitNullValueChargePerFeature = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AnalysisRunSnapshotChargePerFeatureProperty ChargePerFeature { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AnalysisRunSnapshotChargePerFeatureProperty ChargePerFeature { get => _explicitNullValueChargePerFeature; set { _explicitNullValueChargePerFeature = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("charge_per_feature"); else _explicitNullProperties?.Remove("charge_per_feature"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.AnalysisRunSnapshotChargePerFeatureProperty _explicitNullValueChargePerFeature = default!;
 #endif
         /// <summary>The price property</summary>
-        public double? Price { get; set; }
+        public double? Price { get => _explicitNullValuePrice; set { _explicitNullValuePrice = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("price"); else _explicitNullProperties?.Remove("price"); } }
+        private double? _explicitNullValuePrice = default!;
         /// <summary>The price_per_feature property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AnalysisRunSnapshotPricePerFeatureProperty? PricePerFeature { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AnalysisRunSnapshotPricePerFeatureProperty? PricePerFeature { get => _explicitNullValuePricePerFeature; set { _explicitNullValuePricePerFeature = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("price_per_feature"); else _explicitNullProperties?.Remove("price_per_feature"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.AnalysisRunSnapshotPricePerFeatureProperty? _explicitNullValuePricePerFeature = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AnalysisRunSnapshotPricePerFeatureProperty PricePerFeature { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AnalysisRunSnapshotPricePerFeatureProperty PricePerFeature { get => _explicitNullValuePricePerFeature; set { _explicitNullValuePricePerFeature = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("price_per_feature"); else _explicitNullProperties?.Remove("price_per_feature"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.AnalysisRunSnapshotPricePerFeatureProperty _explicitNullValuePricePerFeature = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.AnalysisRunSnapshot"/> and sets the default values.
@@ -52,7 +69,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.AnalysisRunSnapshot CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.AnalysisRunSnapshot();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.AnalysisRunSnapshot(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -79,6 +96,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AnalysisRunSnapshotChargePerFeatureProperty>("charge_per_feature", ChargePerFeature);
             writer.WriteDoubleValue("price", Price);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AnalysisRunSnapshotPricePerFeatureProperty>("price_per_feature", PricePerFeature);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

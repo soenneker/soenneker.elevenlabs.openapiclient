@@ -11,32 +11,53 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class PatchConvAiSettingsRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("can_use_mcp_servers") is { } nullNodeCanUseMcpServers && nullNodeCanUseMcpServers.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CanUseMcpServers = null;
+            if (parseNode.GetChildNode("conversation_embedding_retention_days") is { } nullNodeConversationEmbeddingRetentionDays && nullNodeConversationEmbeddingRetentionDays.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConversationEmbeddingRetentionDays = null;
+            if (parseNode.GetChildNode("conversation_initiation_client_data_webhook") is { } nullNodeConversationInitiationClientDataWebhook && nullNodeConversationInitiationClientDataWebhook.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConversationInitiationClientDataWebhook = null;
+            if (parseNode.GetChildNode("default_livekit_stack") is { } nullNodeDefaultLivekitStack && nullNodeDefaultLivekitStack.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DefaultLivekitStack = null;
+            if (parseNode.GetChildNode("rag_retention_period_days") is { } nullNodeRagRetentionPeriodDays && nullNodeRagRetentionPeriodDays.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RagRetentionPeriodDays = null;
+            if (parseNode.GetChildNode("webhooks") is { } nullNodeWebhooks && nullNodeWebhooks.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Webhooks = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Whether the workspace can use MCP servers</summary>
-        public bool? CanUseMcpServers { get; set; }
+        public bool? CanUseMcpServers { get => _explicitNullValueCanUseMcpServers; set { _explicitNullValueCanUseMcpServers = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("can_use_mcp_servers"); else _explicitNullProperties?.Remove("can_use_mcp_servers"); } }
+        private bool? _explicitNullValueCanUseMcpServers = default!;
         /// <summary>Days to retain conversation embeddings. None means use the system default (30 days).</summary>
-        public int? ConversationEmbeddingRetentionDays { get; set; }
+        public int? ConversationEmbeddingRetentionDays { get => _explicitNullValueConversationEmbeddingRetentionDays; set { _explicitNullValueConversationEmbeddingRetentionDays = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conversation_embedding_retention_days"); else _explicitNullProperties?.Remove("conversation_embedding_retention_days"); } }
+        private int? _explicitNullValueConversationEmbeddingRetentionDays = default!;
         /// <summary>The conversation_initiation_client_data_webhook property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationClientDataWebhook? ConversationInitiationClientDataWebhook { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationClientDataWebhook? ConversationInitiationClientDataWebhook { get => _explicitNullValueConversationInitiationClientDataWebhook; set { _explicitNullValueConversationInitiationClientDataWebhook = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conversation_initiation_client_data_webhook"); else _explicitNullProperties?.Remove("conversation_initiation_client_data_webhook"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationClientDataWebhook? _explicitNullValueConversationInitiationClientDataWebhook = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationClientDataWebhook ConversationInitiationClientDataWebhook { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationClientDataWebhook ConversationInitiationClientDataWebhook { get => _explicitNullValueConversationInitiationClientDataWebhook; set { _explicitNullValueConversationInitiationClientDataWebhook = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conversation_initiation_client_data_webhook"); else _explicitNullProperties?.Remove("conversation_initiation_client_data_webhook"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationInitiationClientDataWebhook _explicitNullValueConversationInitiationClientDataWebhook = default!;
 #endif
         /// <summary>The default_livekit_stack property</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.LivekitStackType? DefaultLivekitStack { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.LivekitStackType? DefaultLivekitStack { get => _explicitNullValueDefaultLivekitStack; set { _explicitNullValueDefaultLivekitStack = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("default_livekit_stack"); else _explicitNullProperties?.Remove("default_livekit_stack"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.LivekitStackType? _explicitNullValueDefaultLivekitStack = default!;
         /// <summary>The rag_retention_period_days property</summary>
-        public int? RagRetentionPeriodDays { get; set; }
+        public int? RagRetentionPeriodDays { get => _explicitNullValueRagRetentionPeriodDays; set { _explicitNullValueRagRetentionPeriodDays = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rag_retention_period_days"); else _explicitNullProperties?.Remove("rag_retention_period_days"); } }
+        private int? _explicitNullValueRagRetentionPeriodDays = default!;
         /// <summary>The webhooks property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConvAiWebhooks? Webhooks { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConvAiWebhooks? Webhooks { get => _explicitNullValueWebhooks; set { _explicitNullValueWebhooks = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("webhooks"); else _explicitNullProperties?.Remove("webhooks"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ConvAiWebhooks? _explicitNullValueWebhooks = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConvAiWebhooks Webhooks { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConvAiWebhooks Webhooks { get => _explicitNullValueWebhooks; set { _explicitNullValueWebhooks = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("webhooks"); else _explicitNullProperties?.Remove("webhooks"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ConvAiWebhooks _explicitNullValueWebhooks = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.PatchConvAiSettingsRequest"/> and sets the default values.
@@ -56,7 +77,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.PatchConvAiSettingsRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.PatchConvAiSettingsRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.PatchConvAiSettingsRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -87,6 +108,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.LivekitStackType>("default_livekit_stack", DefaultLivekitStack);
             writer.WriteIntValue("rag_retention_period_days", RagRetentionPeriodDays);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConvAiWebhooks>("webhooks", Webhooks);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

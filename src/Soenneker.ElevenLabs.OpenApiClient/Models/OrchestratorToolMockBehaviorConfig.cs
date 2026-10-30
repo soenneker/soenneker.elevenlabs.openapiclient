@@ -12,21 +12,35 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class OrchestratorToolMockBehaviorConfig : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("fallback_strategy") is { } nullNodeFallbackStrategy && nullNodeFallbackStrategy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FallbackStrategy = null;
+            if (parseNode.GetChildNode("mocked_tool_names") is { } nullNodeMockedToolNames && nullNodeMockedToolNames.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MockedToolNames = null;
+            if (parseNode.GetChildNode("mocking_strategy") is { } nullNodeMockingStrategy && nullNodeMockingStrategy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MockingStrategy = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Behavior when no mock matches a tool call.</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.MockNoMatchBehavior? FallbackStrategy { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.MockNoMatchBehavior? FallbackStrategy { get => _explicitNullValueFallbackStrategy; set { _explicitNullValueFallbackStrategy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fallback_strategy"); else _explicitNullProperties?.Remove("fallback_strategy"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.MockNoMatchBehavior? _explicitNullValueFallbackStrategy = default!;
         /// <summary>Tool names to mock. Only used when mocking_strategy is &apos;selected&apos;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? MockedToolNames { get; set; }
+        public List<string>? MockedToolNames { get => _explicitNullValueMockedToolNames; set { _explicitNullValueMockedToolNames = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mocked_tool_names"); else _explicitNullProperties?.Remove("mocked_tool_names"); } }
+        private List<string>? _explicitNullValueMockedToolNames = default!;
 #nullable restore
 #else
-        public List<string> MockedToolNames { get; set; }
+        public List<string> MockedToolNames { get => _explicitNullValueMockedToolNames; set { _explicitNullValueMockedToolNames = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mocked_tool_names"); else _explicitNullProperties?.Remove("mocked_tool_names"); } }
+        private List<string> _explicitNullValueMockedToolNames = default!;
 #endif
         /// <summary>Which tools to mock: &apos;all&apos; mocks every mockable tool, &apos;selected&apos; mocks only those in mocked_tool_names/mocked_tool_ids, &apos;none&apos; disables mocking.</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.MockingStrategy? MockingStrategy { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.MockingStrategy? MockingStrategy { get => _explicitNullValueMockingStrategy; set { _explicitNullValueMockingStrategy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mocking_strategy"); else _explicitNullProperties?.Remove("mocking_strategy"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.MockingStrategy? _explicitNullValueMockingStrategy = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.OrchestratorToolMockBehaviorConfig"/> and sets the default values.
         /// </summary>
@@ -44,7 +58,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.OrchestratorToolMockBehaviorConfig CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.OrchestratorToolMockBehaviorConfig();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.OrchestratorToolMockBehaviorConfig(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -69,6 +83,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.MockNoMatchBehavior>("fallback_strategy", FallbackStrategy);
             writer.WriteCollectionOfPrimitiveValues<string>("mocked_tool_names", MockedToolNames);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.MockingStrategy>("mocking_strategy", MockingStrategy);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

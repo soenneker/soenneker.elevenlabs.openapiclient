@@ -11,19 +11,36 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class WhatsAppCallPermissionRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("granted_by_user_call") is { } nullNodeGrantedByUserCall && nullNodeGrantedByUserCall.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GrantedByUserCall = null;
+            if (parseNode.GetChildNode("permanent") is { } nullNodePermanent && nullNodePermanent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Permanent = null;
+            if (parseNode.GetChildNode("requested_at_unix") is { } nullNodeRequestedAtUnix && nullNodeRequestedAtUnix.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequestedAtUnix = null;
+            if (parseNode.GetChildNode("responded_at_unix") is { } nullNodeRespondedAtUnix && nullNodeRespondedAtUnix.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RespondedAtUnix = null;
+            if (parseNode.GetChildNode("state") is { } nullNodeState && nullNodeState.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) State = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The granted_by_user_call property</summary>
-        public bool? GrantedByUserCall { get; set; }
+        public bool? GrantedByUserCall { get => _explicitNullValueGrantedByUserCall; set { _explicitNullValueGrantedByUserCall = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("granted_by_user_call"); else _explicitNullProperties?.Remove("granted_by_user_call"); } }
+        private bool? _explicitNullValueGrantedByUserCall = default!;
         /// <summary>The permanent property</summary>
-        public bool? Permanent { get; set; }
+        public bool? Permanent { get => _explicitNullValuePermanent; set { _explicitNullValuePermanent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("permanent"); else _explicitNullProperties?.Remove("permanent"); } }
+        private bool? _explicitNullValuePermanent = default!;
         /// <summary>The requested_at_unix property</summary>
-        public int? RequestedAtUnix { get; set; }
+        public int? RequestedAtUnix { get => _explicitNullValueRequestedAtUnix; set { _explicitNullValueRequestedAtUnix = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requested_at_unix"); else _explicitNullProperties?.Remove("requested_at_unix"); } }
+        private int? _explicitNullValueRequestedAtUnix = default!;
         /// <summary>The responded_at_unix property</summary>
-        public int? RespondedAtUnix { get; set; }
+        public int? RespondedAtUnix { get => _explicitNullValueRespondedAtUnix; set { _explicitNullValueRespondedAtUnix = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("responded_at_unix"); else _explicitNullProperties?.Remove("responded_at_unix"); } }
+        private int? _explicitNullValueRespondedAtUnix = default!;
         /// <summary>The state property</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppCallPermissionRequestState? State { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppCallPermissionRequestState? State { get => _explicitNullValueState; set { _explicitNullValueState = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("state"); else _explicitNullProperties?.Remove("state"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppCallPermissionRequestState? _explicitNullValueState = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppCallPermissionRequest"/> and sets the default values.
         /// </summary>
@@ -39,7 +56,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppCallPermissionRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppCallPermissionRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppCallPermissionRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -68,6 +85,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteIntValue("requested_at_unix", RequestedAtUnix);
             writer.WriteIntValue("responded_at_unix", RespondedAtUnix);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WhatsAppCallPermissionRequestState>("state", State);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

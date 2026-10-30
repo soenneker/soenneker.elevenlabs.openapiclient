@@ -11,15 +11,28 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class AgentCallLimits : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("agent_concurrency_limit") is { } nullNodeAgentConcurrencyLimit && nullNodeAgentConcurrencyLimit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AgentConcurrencyLimit = null;
+            if (parseNode.GetChildNode("bursting_enabled") is { } nullNodeBurstingEnabled && nullNodeBurstingEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BurstingEnabled = null;
+            if (parseNode.GetChildNode("daily_limit") is { } nullNodeDailyLimit && nullNodeDailyLimit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DailyLimit = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The maximum number of concurrent conversations. -1 indicates that there is no maximum</summary>
-        public int? AgentConcurrencyLimit { get; set; }
+        public int? AgentConcurrencyLimit { get => _explicitNullValueAgentConcurrencyLimit; set { _explicitNullValueAgentConcurrencyLimit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agent_concurrency_limit"); else _explicitNullProperties?.Remove("agent_concurrency_limit"); } }
+        private int? _explicitNullValueAgentConcurrencyLimit = default!;
         /// <summary>Whether to enable bursting. If true, exceeding workspace concurrency limit will be allowed up to 3 times the limit. Calls will be charged at double rate when exceeding the limit.</summary>
-        public bool? BurstingEnabled { get; set; }
+        public bool? BurstingEnabled { get => _explicitNullValueBurstingEnabled; set { _explicitNullValueBurstingEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bursting_enabled"); else _explicitNullProperties?.Remove("bursting_enabled"); } }
+        private bool? _explicitNullValueBurstingEnabled = default!;
         /// <summary>The maximum number of conversations per day</summary>
-        public int? DailyLimit { get; set; }
+        public int? DailyLimit { get => _explicitNullValueDailyLimit; set { _explicitNullValueDailyLimit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("daily_limit"); else _explicitNullProperties?.Remove("daily_limit"); } }
+        private int? _explicitNullValueDailyLimit = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentCallLimits"/> and sets the default values.
         /// </summary>
@@ -38,7 +51,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentCallLimits CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentCallLimits();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentCallLimits(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -63,6 +76,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteIntValue("agent_concurrency_limit", AgentConcurrencyLimit);
             writer.WriteBoolValue("bursting_enabled", BurstingEnabled);
             writer.WriteIntValue("daily_limit", DailyLimit);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

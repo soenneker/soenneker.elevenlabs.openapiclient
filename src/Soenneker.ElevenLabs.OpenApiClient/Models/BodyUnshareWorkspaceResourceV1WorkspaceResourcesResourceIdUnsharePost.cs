@@ -11,34 +11,52 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class BodyUnshareWorkspaceResourceV1WorkspaceResourcesResourceIdUnsharePost : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("group_id") is { } nullNodeGroupId && nullNodeGroupId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GroupId = null;
+            if (parseNode.GetChildNode("resource_type") is { } nullNodeResourceType && nullNodeResourceType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ResourceType = null;
+            if (parseNode.GetChildNode("user_email") is { } nullNodeUserEmail && nullNodeUserEmail.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UserEmail = null;
+            if (parseNode.GetChildNode("workspace_api_key_id") is { } nullNodeWorkspaceApiKeyId && nullNodeWorkspaceApiKeyId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WorkspaceApiKeyId = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The ID of the target group. Use &apos;default&apos; to set the resource&apos;s baseline role — every workspace member receives this role unless they hold a higher one through a direct user grant, group membership, or workspace (service account) API key.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? GroupId { get; set; }
+        public string? GroupId { get => _explicitNullValueGroupId; set { _explicitNullValueGroupId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("group_id"); else _explicitNullProperties?.Remove("group_id"); } }
+        private string? _explicitNullValueGroupId = default!;
 #nullable restore
 #else
-        public string GroupId { get; set; }
+        public string GroupId { get => _explicitNullValueGroupId; set { _explicitNullValueGroupId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("group_id"); else _explicitNullProperties?.Remove("group_id"); } }
+        private string _explicitNullValueGroupId = default!;
 #endif
         /// <summary>Resource type of the target resource.</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceResourceType? ResourceType { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceResourceType? ResourceType { get => _explicitNullValueResourceType; set { _explicitNullValueResourceType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resource_type"); else _explicitNullProperties?.Remove("resource_type"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceResourceType? _explicitNullValueResourceType = default!;
         /// <summary>The email of the user or service account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UserEmail { get; set; }
+        public string? UserEmail { get => _explicitNullValueUserEmail; set { _explicitNullValueUserEmail = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user_email"); else _explicitNullProperties?.Remove("user_email"); } }
+        private string? _explicitNullValueUserEmail = default!;
 #nullable restore
 #else
-        public string UserEmail { get; set; }
+        public string UserEmail { get => _explicitNullValueUserEmail; set { _explicitNullValueUserEmail = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user_email"); else _explicitNullProperties?.Remove("user_email"); } }
+        private string _explicitNullValueUserEmail = default!;
 #endif
         /// <summary>The ID of the target workspace (service account) API key. This is not the API key string itself that you pass in the header for authentication — it is the key&apos;s ID, which workspace admins can find under Developers → Service Accounts.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? WorkspaceApiKeyId { get; set; }
+        public string? WorkspaceApiKeyId { get => _explicitNullValueWorkspaceApiKeyId; set { _explicitNullValueWorkspaceApiKeyId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workspace_api_key_id"); else _explicitNullProperties?.Remove("workspace_api_key_id"); } }
+        private string? _explicitNullValueWorkspaceApiKeyId = default!;
 #nullable restore
 #else
-        public string WorkspaceApiKeyId { get; set; }
+        public string WorkspaceApiKeyId { get => _explicitNullValueWorkspaceApiKeyId; set { _explicitNullValueWorkspaceApiKeyId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workspace_api_key_id"); else _explicitNullProperties?.Remove("workspace_api_key_id"); } }
+        private string _explicitNullValueWorkspaceApiKeyId = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyUnshareWorkspaceResourceV1WorkspaceResourcesResourceIdUnsharePost"/> and sets the default values.
@@ -55,7 +73,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyUnshareWorkspaceResourceV1WorkspaceResourcesResourceIdUnsharePost CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyUnshareWorkspaceResourceV1WorkspaceResourcesResourceIdUnsharePost();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyUnshareWorkspaceResourceV1WorkspaceResourcesResourceIdUnsharePost(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -82,6 +100,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceResourceType>("resource_type", ResourceType);
             writer.WriteStringValue("user_email", UserEmail);
             writer.WriteStringValue("workspace_api_key_id", WorkspaceApiKeyId);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

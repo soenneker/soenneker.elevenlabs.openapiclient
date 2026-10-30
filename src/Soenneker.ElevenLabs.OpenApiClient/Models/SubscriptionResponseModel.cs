@@ -11,73 +11,129 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class SubscriptionResponseModel : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("allowed_to_extend_character_limit") is { } nullNodeAllowedToExtendCharacterLimit && nullNodeAllowedToExtendCharacterLimit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AllowedToExtendCharacterLimit = null;
+            if (parseNode.GetChildNode("billing_period") is { } nullNodeBillingPeriod && nullNodeBillingPeriod.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BillingPeriod = null;
+            if (parseNode.GetChildNode("can_extend_character_limit") is { } nullNodeCanExtendCharacterLimit && nullNodeCanExtendCharacterLimit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CanExtendCharacterLimit = null;
+            if (parseNode.GetChildNode("can_extend_voice_limit") is { } nullNodeCanExtendVoiceLimit && nullNodeCanExtendVoiceLimit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CanExtendVoiceLimit = null;
+            if (parseNode.GetChildNode("can_use_instant_voice_cloning") is { } nullNodeCanUseInstantVoiceCloning && nullNodeCanUseInstantVoiceCloning.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CanUseInstantVoiceCloning = null;
+            if (parseNode.GetChildNode("can_use_professional_voice_cloning") is { } nullNodeCanUseProfessionalVoiceCloning && nullNodeCanUseProfessionalVoiceCloning.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CanUseProfessionalVoiceCloning = null;
+            if (parseNode.GetChildNode("character_count") is { } nullNodeCharacterCount && nullNodeCharacterCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CharacterCount = null;
+            if (parseNode.GetChildNode("character_limit") is { } nullNodeCharacterLimit && nullNodeCharacterLimit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CharacterLimit = null;
+            if (parseNode.GetChildNode("character_refresh_period") is { } nullNodeCharacterRefreshPeriod && nullNodeCharacterRefreshPeriod.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CharacterRefreshPeriod = null;
+            if (parseNode.GetChildNode("currency") is { } nullNodeCurrency && nullNodeCurrency.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Currency = null;
+            if (parseNode.GetChildNode("current_overage") is { } nullNodeCurrentOverage && nullNodeCurrentOverage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CurrentOverage = null;
+            if (parseNode.GetChildNode("max_character_limit_extension") is { } nullNodeMaxCharacterLimitExtension && nullNodeMaxCharacterLimitExtension.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxCharacterLimitExtension = null;
+            if (parseNode.GetChildNode("max_credit_limit_extension") is { } nullNodeMaxCreditLimitExtension && nullNodeMaxCreditLimitExtension.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxCreditLimitExtension = null;
+            if (parseNode.GetChildNode("max_voice_add_edits") is { } nullNodeMaxVoiceAddEdits && nullNodeMaxVoiceAddEdits.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxVoiceAddEdits = null;
+            if (parseNode.GetChildNode("next_character_count_reset_unix") is { } nullNodeNextCharacterCountResetUnix && nullNodeNextCharacterCountResetUnix.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NextCharacterCountResetUnix = null;
+            if (parseNode.GetChildNode("professional_voice_limit") is { } nullNodeProfessionalVoiceLimit && nullNodeProfessionalVoiceLimit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProfessionalVoiceLimit = null;
+            if (parseNode.GetChildNode("professional_voice_slots_used") is { } nullNodeProfessionalVoiceSlotsUsed && nullNodeProfessionalVoiceSlotsUsed.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProfessionalVoiceSlotsUsed = null;
+            if (parseNode.GetChildNode("professional_voice_slots_used_in_workspace") is { } nullNodeProfessionalVoiceSlotsUsedInWorkspace && nullNodeProfessionalVoiceSlotsUsedInWorkspace.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProfessionalVoiceSlotsUsedInWorkspace = null;
+            if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
+            if (parseNode.GetChildNode("tier") is { } nullNodeTier && nullNodeTier.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Tier = null;
+            if (parseNode.GetChildNode("voice_add_edit_counter") is { } nullNodeVoiceAddEditCounter && nullNodeVoiceAddEditCounter.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VoiceAddEditCounter = null;
+            if (parseNode.GetChildNode("voice_limit") is { } nullNodeVoiceLimit && nullNodeVoiceLimit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VoiceLimit = null;
+            if (parseNode.GetChildNode("voice_slots_used") is { } nullNodeVoiceSlotsUsed && nullNodeVoiceSlotsUsed.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VoiceSlotsUsed = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Deprecated: use `max_credit_limit_extension != 0`. Whether the user is allowed to extend their character limit.</summary>
-        public bool? AllowedToExtendCharacterLimit { get; set; }
+        public bool? AllowedToExtendCharacterLimit { get => _explicitNullValueAllowedToExtendCharacterLimit; set { _explicitNullValueAllowedToExtendCharacterLimit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allowed_to_extend_character_limit"); else _explicitNullProperties?.Remove("allowed_to_extend_character_limit"); } }
+        private bool? _explicitNullValueAllowedToExtendCharacterLimit = default!;
         /// <summary>The billing period of the user&apos;s subscription.</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BillingPeriod? BillingPeriod { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BillingPeriod? BillingPeriod { get => _explicitNullValueBillingPeriod; set { _explicitNullValueBillingPeriod = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("billing_period"); else _explicitNullProperties?.Remove("billing_period"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.BillingPeriod? _explicitNullValueBillingPeriod = default!;
         /// <summary>Whether the workspace is entitled to enter overages (usage-based billing).</summary>
-        public bool? CanExtendCharacterLimit { get; set; }
+        public bool? CanExtendCharacterLimit { get => _explicitNullValueCanExtendCharacterLimit; set { _explicitNullValueCanExtendCharacterLimit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("can_extend_character_limit"); else _explicitNullProperties?.Remove("can_extend_character_limit"); } }
+        private bool? _explicitNullValueCanExtendCharacterLimit = default!;
         /// <summary>Whether the user can extend their voice limit.</summary>
-        public bool? CanExtendVoiceLimit { get; set; }
+        public bool? CanExtendVoiceLimit { get => _explicitNullValueCanExtendVoiceLimit; set { _explicitNullValueCanExtendVoiceLimit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("can_extend_voice_limit"); else _explicitNullProperties?.Remove("can_extend_voice_limit"); } }
+        private bool? _explicitNullValueCanExtendVoiceLimit = default!;
         /// <summary>Whether the user can use instant voice cloning.</summary>
-        public bool? CanUseInstantVoiceCloning { get; set; }
+        public bool? CanUseInstantVoiceCloning { get => _explicitNullValueCanUseInstantVoiceCloning; set { _explicitNullValueCanUseInstantVoiceCloning = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("can_use_instant_voice_cloning"); else _explicitNullProperties?.Remove("can_use_instant_voice_cloning"); } }
+        private bool? _explicitNullValueCanUseInstantVoiceCloning = default!;
         /// <summary>Whether the user can use professional voice cloning.</summary>
-        public bool? CanUseProfessionalVoiceCloning { get; set; }
+        public bool? CanUseProfessionalVoiceCloning { get => _explicitNullValueCanUseProfessionalVoiceCloning; set { _explicitNullValueCanUseProfessionalVoiceCloning = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("can_use_professional_voice_cloning"); else _explicitNullProperties?.Remove("can_use_professional_voice_cloning"); } }
+        private bool? _explicitNullValueCanUseProfessionalVoiceCloning = default!;
         /// <summary>The number of characters used by the user.</summary>
-        public int? CharacterCount { get; set; }
+        public int? CharacterCount { get => _explicitNullValueCharacterCount; set { _explicitNullValueCharacterCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("character_count"); else _explicitNullProperties?.Remove("character_count"); } }
+        private int? _explicitNullValueCharacterCount = default!;
         /// <summary>The maximum number of characters allowed in the current billing period.</summary>
-        public int? CharacterLimit { get; set; }
+        public int? CharacterLimit { get => _explicitNullValueCharacterLimit; set { _explicitNullValueCharacterLimit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("character_limit"); else _explicitNullProperties?.Remove("character_limit"); } }
+        private int? _explicitNullValueCharacterLimit = default!;
         /// <summary>The character refresh period of the user&apos;s subscription.</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CharacterRefreshPeriod? CharacterRefreshPeriod { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CharacterRefreshPeriod? CharacterRefreshPeriod { get => _explicitNullValueCharacterRefreshPeriod; set { _explicitNullValueCharacterRefreshPeriod = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("character_refresh_period"); else _explicitNullProperties?.Remove("character_refresh_period"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.CharacterRefreshPeriod? _explicitNullValueCharacterRefreshPeriod = default!;
         /// <summary>The currency of the user&apos;s subscription.</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Currency? Currency { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Currency? Currency { get => _explicitNullValueCurrency; set { _explicitNullValueCurrency = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("currency"); else _explicitNullProperties?.Remove("currency"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.Currency? _explicitNullValueCurrency = default!;
         /// <summary>The current usage-based overage cost.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Price? CurrentOverage { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Price? CurrentOverage { get => _explicitNullValueCurrentOverage; set { _explicitNullValueCurrentOverage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("current_overage"); else _explicitNullProperties?.Remove("current_overage"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.Price? _explicitNullValueCurrentOverage = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Price CurrentOverage { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.Price CurrentOverage { get => _explicitNullValueCurrentOverage; set { _explicitNullValueCurrentOverage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("current_overage"); else _explicitNullProperties?.Remove("current_overage"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.Price _explicitNullValueCurrentOverage = default!;
 #endif
         /// <summary>Deprecated: use `max_credit_limit_extension`. Maximum number of characters that the character limit can be exceeded by. Managed by the workspace admin.</summary>
-        public int? MaxCharacterLimitExtension { get; set; }
+        public int? MaxCharacterLimitExtension { get => _explicitNullValueMaxCharacterLimitExtension; set { _explicitNullValueMaxCharacterLimitExtension = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_character_limit_extension"); else _explicitNullProperties?.Remove("max_character_limit_extension"); } }
+        private int? _explicitNullValueMaxCharacterLimitExtension = default!;
         /// <summary>Maximum number of credits that the credit limit can be exceeded by. Managed by the workspace admin. `&quot;unlimited&quot;` means no cap, `0` means usage-based billing is disabled.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SubscriptionResponseModelMaxCreditLimitExtension? MaxCreditLimitExtension { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SubscriptionResponseModelMaxCreditLimitExtension? MaxCreditLimitExtension { get => _explicitNullValueMaxCreditLimitExtension; set { _explicitNullValueMaxCreditLimitExtension = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_credit_limit_extension"); else _explicitNullProperties?.Remove("max_credit_limit_extension"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.SubscriptionResponseModelMaxCreditLimitExtension? _explicitNullValueMaxCreditLimitExtension = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SubscriptionResponseModelMaxCreditLimitExtension MaxCreditLimitExtension { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SubscriptionResponseModelMaxCreditLimitExtension MaxCreditLimitExtension { get => _explicitNullValueMaxCreditLimitExtension; set { _explicitNullValueMaxCreditLimitExtension = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_credit_limit_extension"); else _explicitNullProperties?.Remove("max_credit_limit_extension"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.SubscriptionResponseModelMaxCreditLimitExtension _explicitNullValueMaxCreditLimitExtension = default!;
 #endif
         /// <summary>The maximum number of voice add/edits allowed for the user.</summary>
-        public int? MaxVoiceAddEdits { get; set; }
+        public int? MaxVoiceAddEdits { get => _explicitNullValueMaxVoiceAddEdits; set { _explicitNullValueMaxVoiceAddEdits = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_voice_add_edits"); else _explicitNullProperties?.Remove("max_voice_add_edits"); } }
+        private int? _explicitNullValueMaxVoiceAddEdits = default!;
         /// <summary>The Unix timestamp of the next character count reset.</summary>
-        public int? NextCharacterCountResetUnix { get; set; }
+        public int? NextCharacterCountResetUnix { get => _explicitNullValueNextCharacterCountResetUnix; set { _explicitNullValueNextCharacterCountResetUnix = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("next_character_count_reset_unix"); else _explicitNullProperties?.Remove("next_character_count_reset_unix"); } }
+        private int? _explicitNullValueNextCharacterCountResetUnix = default!;
         /// <summary>The maximum number of professional voices allowed for the user.</summary>
-        public int? ProfessionalVoiceLimit { get; set; }
+        public int? ProfessionalVoiceLimit { get => _explicitNullValueProfessionalVoiceLimit; set { _explicitNullValueProfessionalVoiceLimit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("professional_voice_limit"); else _explicitNullProperties?.Remove("professional_voice_limit"); } }
+        private int? _explicitNullValueProfessionalVoiceLimit = default!;
         /// <summary>The number of professional voice slots used. For consolidated billing this is the group-wide count across all workspaces in the group; see professional_voice_slots_used_in_workspace for the current workspace only.</summary>
-        public int? ProfessionalVoiceSlotsUsed { get; set; }
+        public int? ProfessionalVoiceSlotsUsed { get => _explicitNullValueProfessionalVoiceSlotsUsed; set { _explicitNullValueProfessionalVoiceSlotsUsed = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("professional_voice_slots_used"); else _explicitNullProperties?.Remove("professional_voice_slots_used"); } }
+        private int? _explicitNullValueProfessionalVoiceSlotsUsed = default!;
         /// <summary>The number of professional voice slots used in the current workspace. For consolidated billing, professional_voice_slots_used counts across all workspaces in the group, while this counts only the current workspace.</summary>
-        public int? ProfessionalVoiceSlotsUsedInWorkspace { get; set; }
+        public int? ProfessionalVoiceSlotsUsedInWorkspace { get => _explicitNullValueProfessionalVoiceSlotsUsedInWorkspace; set { _explicitNullValueProfessionalVoiceSlotsUsedInWorkspace = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("professional_voice_slots_used_in_workspace"); else _explicitNullProperties?.Remove("professional_voice_slots_used_in_workspace"); } }
+        private int? _explicitNullValueProfessionalVoiceSlotsUsedInWorkspace = default!;
         /// <summary>The status of the user&apos;s subscription.</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SubscriptionStatusType? Status { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SubscriptionStatusType? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.SubscriptionStatusType? _explicitNullValueStatus = default!;
         /// <summary>The tier of the user&apos;s subscription.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Tier { get; set; }
+        public string? Tier { get => _explicitNullValueTier; set { _explicitNullValueTier = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tier"); else _explicitNullProperties?.Remove("tier"); } }
+        private string? _explicitNullValueTier = default!;
 #nullable restore
 #else
-        public string Tier { get; set; }
+        public string Tier { get => _explicitNullValueTier; set { _explicitNullValueTier = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tier"); else _explicitNullProperties?.Remove("tier"); } }
+        private string _explicitNullValueTier = default!;
 #endif
         /// <summary>The number of voice add/edits used by the user.</summary>
-        public int? VoiceAddEditCounter { get; set; }
+        public int? VoiceAddEditCounter { get => _explicitNullValueVoiceAddEditCounter; set { _explicitNullValueVoiceAddEditCounter = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("voice_add_edit_counter"); else _explicitNullProperties?.Remove("voice_add_edit_counter"); } }
+        private int? _explicitNullValueVoiceAddEditCounter = default!;
         /// <summary>The maximum number of voice slots allowed for the user.</summary>
-        public int? VoiceLimit { get; set; }
+        public int? VoiceLimit { get => _explicitNullValueVoiceLimit; set { _explicitNullValueVoiceLimit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("voice_limit"); else _explicitNullProperties?.Remove("voice_limit"); } }
+        private int? _explicitNullValueVoiceLimit = default!;
         /// <summary>The number of voice slots used by the user.</summary>
-        public int? VoiceSlotsUsed { get; set; }
+        public int? VoiceSlotsUsed { get => _explicitNullValueVoiceSlotsUsed; set { _explicitNullValueVoiceSlotsUsed = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("voice_slots_used"); else _explicitNullProperties?.Remove("voice_slots_used"); } }
+        private int? _explicitNullValueVoiceSlotsUsed = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.SubscriptionResponseModel"/> and sets the default values.
         /// </summary>
@@ -93,7 +149,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.SubscriptionResponseModel CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.SubscriptionResponseModel();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.SubscriptionResponseModel(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -158,6 +214,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteIntValue("voice_add_edit_counter", VoiceAddEditCounter);
             writer.WriteIntValue("voice_limit", VoiceLimit);
             writer.WriteIntValue("voice_slots_used", VoiceSlotsUsed);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

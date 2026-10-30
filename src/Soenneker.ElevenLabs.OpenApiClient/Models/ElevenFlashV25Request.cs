@@ -12,58 +12,87 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ElevenFlashV25Request : IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("language_code") is { } nullNodeLanguageCode && nullNodeLanguageCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LanguageCode = null;
+            if (parseNode.GetChildNode("model_id") is { } nullNodeModelId && nullNodeModelId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ModelId = null;
+            if (parseNode.GetChildNode("output_format") is { } nullNodeOutputFormat && nullNodeOutputFormat.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OutputFormat = null;
+            if (parseNode.GetChildNode("pronunciation_dictionary_locators") is { } nullNodePronunciationDictionaryLocators && nullNodePronunciationDictionaryLocators.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PronunciationDictionaryLocators = null;
+            if (parseNode.GetChildNode("text") is { } nullNodeText && nullNodeText.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Text = null;
+            if (parseNode.GetChildNode("voice") is { } nullNodeVoice && nullNodeVoice.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Voice = null;
+            if (parseNode.GetChildNode("voice_settings") is { } nullNodeVoiceSettings && nullNodeVoiceSettings.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VoiceSettings = null;
+            if (parseNode.GetChildNode("webhook") is { } nullNodeWebhook && nullNodeWebhook.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Webhook = null;
+        }
+
         /// <summary>ISO 639-1 language code to enforce on the output. Omit to detect the language from the text.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LanguageCode { get; set; }
+        public string? LanguageCode { get => _explicitNullValueLanguageCode; set { _explicitNullValueLanguageCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("language_code"); else _explicitNullProperties?.Remove("language_code"); } }
+        private string? _explicitNullValueLanguageCode = default!;
 #nullable restore
 #else
-        public string LanguageCode { get; set; }
+        public string LanguageCode { get => _explicitNullValueLanguageCode; set { _explicitNullValueLanguageCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("language_code"); else _explicitNullProperties?.Remove("language_code"); } }
+        private string _explicitNullValueLanguageCode = default!;
 #endif
         /// <summary>The model to use for the generation.</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ElevenFlashV25ModelId? ModelId { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ElevenFlashV25ModelId? ModelId { get => _explicitNullValueModelId; set { _explicitNullValueModelId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("model_id"); else _explicitNullProperties?.Remove("model_id"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ElevenFlashV25ModelId? _explicitNullValueModelId = default!;
         /// <summary>The audio encoding of the output, as `codec_sampleRateHz_bitrateKbps`. `mp3_44100_192` requires the Creator tier or above.</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ElevenFlashV25RequestOutputFormat? OutputFormat { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ElevenFlashV25RequestOutputFormat? OutputFormat { get => _explicitNullValueOutputFormat; set { _explicitNullValueOutputFormat = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("output_format"); else _explicitNullProperties?.Remove("output_format"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ElevenFlashV25RequestOutputFormat? _explicitNullValueOutputFormat = default!;
         /// <summary>Pronunciation dictionaries to apply to the text, in order of precedence. Up to 3.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.PronunciationDictionaryVersionLocator>? PronunciationDictionaryLocators { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.PronunciationDictionaryVersionLocator>? PronunciationDictionaryLocators { get => _explicitNullValuePronunciationDictionaryLocators; set { _explicitNullValuePronunciationDictionaryLocators = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pronunciation_dictionary_locators"); else _explicitNullProperties?.Remove("pronunciation_dictionary_locators"); } }
+        private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.PronunciationDictionaryVersionLocator>? _explicitNullValuePronunciationDictionaryLocators = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.PronunciationDictionaryVersionLocator> PronunciationDictionaryLocators { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.PronunciationDictionaryVersionLocator> PronunciationDictionaryLocators { get => _explicitNullValuePronunciationDictionaryLocators; set { _explicitNullValuePronunciationDictionaryLocators = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pronunciation_dictionary_locators"); else _explicitNullProperties?.Remove("pronunciation_dictionary_locators"); } }
+        private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.PronunciationDictionaryVersionLocator> _explicitNullValuePronunciationDictionaryLocators = default!;
 #endif
         /// <summary>The text to synthesize into speech.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Text { get; set; }
+        public string? Text { get => _explicitNullValueText; set { _explicitNullValueText = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("text"); else _explicitNullProperties?.Remove("text"); } }
+        private string? _explicitNullValueText = default!;
 #nullable restore
 #else
-        public string Text { get; set; }
+        public string Text { get => _explicitNullValueText; set { _explicitNullValueText = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("text"); else _explicitNullProperties?.Remove("text"); } }
+        private string _explicitNullValueText = default!;
 #endif
         /// <summary>The ID of the voice to speak with.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Voice { get; set; }
+        public string? Voice { get => _explicitNullValueVoice; set { _explicitNullValueVoice = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("voice"); else _explicitNullProperties?.Remove("voice"); } }
+        private string? _explicitNullValueVoice = default!;
 #nullable restore
 #else
-        public string Voice { get; set; }
+        public string Voice { get => _explicitNullValueVoice; set { _explicitNullValueVoice = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("voice"); else _explicitNullProperties?.Remove("voice"); } }
+        private string _explicitNullValueVoice = default!;
 #endif
         /// <summary>Overrides for the voice&apos;s saved settings, applied to this generation only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ElevenFlashV25VoiceSettings? VoiceSettings { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ElevenFlashV25VoiceSettings? VoiceSettings { get => _explicitNullValueVoiceSettings; set { _explicitNullValueVoiceSettings = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("voice_settings"); else _explicitNullProperties?.Remove("voice_settings"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ElevenFlashV25VoiceSettings? _explicitNullValueVoiceSettings = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ElevenFlashV25VoiceSettings VoiceSettings { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ElevenFlashV25VoiceSettings VoiceSettings { get => _explicitNullValueVoiceSettings; set { _explicitNullValueVoiceSettings = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("voice_settings"); else _explicitNullProperties?.Remove("voice_settings"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ElevenFlashV25VoiceSettings _explicitNullValueVoiceSettings = default!;
 #endif
         /// <summary>Include to send the generation&apos;s result to the workspace&apos;s configured flows webhooks once it completes or fails. The webhook payload matches the terminal response of the corresponding GET endpoint.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookTarget? Webhook { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookTarget? Webhook { get => _explicitNullValueWebhook; set { _explicitNullValueWebhook = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("webhook"); else _explicitNullProperties?.Remove("webhook"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookTarget? _explicitNullValueWebhook = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookTarget Webhook { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookTarget Webhook { get => _explicitNullValueWebhook; set { _explicitNullValueWebhook = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("webhook"); else _explicitNullProperties?.Remove("webhook"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookTarget _explicitNullValueWebhook = default!;
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -73,7 +102,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.ElevenFlashV25Request CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.ElevenFlashV25Request();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.ElevenFlashV25Request(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -107,7 +136,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteStringValue("text", Text);
             writer.WriteStringValue("voice", Voice);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ElevenFlashV25VoiceSettings>("voice_settings", VoiceSettings);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookTarget>("webhook", Webhook);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookTarget>("webhook", Webhook);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

@@ -11,60 +11,89 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class AgentConfigApiModelOutput : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("disable_first_message_interruptions") is { } nullNodeDisableFirstMessageInterruptions && nullNodeDisableFirstMessageInterruptions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DisableFirstMessageInterruptions = null;
+            if (parseNode.GetChildNode("dynamic_variables") is { } nullNodeDynamicVariables && nullNodeDynamicVariables.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DynamicVariables = null;
+            if (parseNode.GetChildNode("first_message") is { } nullNodeFirstMessage && nullNodeFirstMessage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FirstMessage = null;
+            if (parseNode.GetChildNode("hinglish_mode") is { } nullNodeHinglishMode && nullNodeHinglishMode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HinglishMode = null;
+            if (parseNode.GetChildNode("language") is { } nullNodeLanguage && nullNodeLanguage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Language = null;
+            if (parseNode.GetChildNode("max_conversation_duration_message") is { } nullNodeMaxConversationDurationMessage && nullNodeMaxConversationDurationMessage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxConversationDurationMessage = null;
+            if (parseNode.GetChildNode("prompt") is { } nullNodePrompt && nullNodePrompt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Prompt = null;
+            if (parseNode.GetChildNode("text_behavior_overrides") is { } nullNodeTextBehaviorOverrides && nullNodeTextBehaviorOverrides.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TextBehaviorOverrides = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>If true, the user will not be able to interrupt the agent while the first message is being delivered.</summary>
-        public bool? DisableFirstMessageInterruptions { get; set; }
+        public bool? DisableFirstMessageInterruptions { get => _explicitNullValueDisableFirstMessageInterruptions; set { _explicitNullValueDisableFirstMessageInterruptions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("disable_first_message_interruptions"); else _explicitNullProperties?.Remove("disable_first_message_interruptions"); } }
+        private bool? _explicitNullValueDisableFirstMessageInterruptions = default!;
         /// <summary>Configuration for dynamic variables</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.DynamicVariablesConfig? DynamicVariables { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.DynamicVariablesConfig? DynamicVariables { get => _explicitNullValueDynamicVariables; set { _explicitNullValueDynamicVariables = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dynamic_variables"); else _explicitNullProperties?.Remove("dynamic_variables"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.DynamicVariablesConfig? _explicitNullValueDynamicVariables = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.DynamicVariablesConfig DynamicVariables { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.DynamicVariablesConfig DynamicVariables { get => _explicitNullValueDynamicVariables; set { _explicitNullValueDynamicVariables = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dynamic_variables"); else _explicitNullProperties?.Remove("dynamic_variables"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.DynamicVariablesConfig _explicitNullValueDynamicVariables = default!;
 #endif
         /// <summary>If non-empty, the first message the agent will say. If empty, the agent waits for the user to start the discussion.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FirstMessage { get; set; }
+        public string? FirstMessage { get => _explicitNullValueFirstMessage; set { _explicitNullValueFirstMessage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("first_message"); else _explicitNullProperties?.Remove("first_message"); } }
+        private string? _explicitNullValueFirstMessage = default!;
 #nullable restore
 #else
-        public string FirstMessage { get; set; }
+        public string FirstMessage { get => _explicitNullValueFirstMessage; set { _explicitNullValueFirstMessage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("first_message"); else _explicitNullProperties?.Remove("first_message"); } }
+        private string _explicitNullValueFirstMessage = default!;
 #endif
         /// <summary>When enabled, the agent mixes English words and phrases into responses in Hindi, Malayalam, Telugu, or Kannada.</summary>
-        public bool? HinglishMode { get; set; }
+        public bool? HinglishMode { get => _explicitNullValueHinglishMode; set { _explicitNullValueHinglishMode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hinglish_mode"); else _explicitNullProperties?.Remove("hinglish_mode"); } }
+        private bool? _explicitNullValueHinglishMode = default!;
         /// <summary>Language of the agent - used for ASR and TTS</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Language { get; set; }
+        public string? Language { get => _explicitNullValueLanguage; set { _explicitNullValueLanguage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("language"); else _explicitNullProperties?.Remove("language"); } }
+        private string? _explicitNullValueLanguage = default!;
 #nullable restore
 #else
-        public string Language { get; set; }
+        public string Language { get => _explicitNullValueLanguage; set { _explicitNullValueLanguage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("language"); else _explicitNullProperties?.Remove("language"); } }
+        private string _explicitNullValueLanguage = default!;
 #endif
         /// <summary>If non-empty, the message the agent will send when max conversation duration is reached.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MaxConversationDurationMessage { get; set; }
+        public string? MaxConversationDurationMessage { get => _explicitNullValueMaxConversationDurationMessage; set { _explicitNullValueMaxConversationDurationMessage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_conversation_duration_message"); else _explicitNullProperties?.Remove("max_conversation_duration_message"); } }
+        private string? _explicitNullValueMaxConversationDurationMessage = default!;
 #nullable restore
 #else
-        public string MaxConversationDurationMessage { get; set; }
+        public string MaxConversationDurationMessage { get => _explicitNullValueMaxConversationDurationMessage; set { _explicitNullValueMaxConversationDurationMessage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_conversation_duration_message"); else _explicitNullProperties?.Remove("max_conversation_duration_message"); } }
+        private string _explicitNullValueMaxConversationDurationMessage = default!;
 #endif
         /// <summary>The prompt property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentApiModelOutput? Prompt { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentApiModelOutput? Prompt { get => _explicitNullValuePrompt; set { _explicitNullValuePrompt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prompt"); else _explicitNullProperties?.Remove("prompt"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentApiModelOutput? _explicitNullValuePrompt = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentApiModelOutput Prompt { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentApiModelOutput Prompt { get => _explicitNullValuePrompt; set { _explicitNullValuePrompt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prompt"); else _explicitNullProperties?.Remove("prompt"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentApiModelOutput _explicitNullValuePrompt = default!;
 #endif
         /// <summary>Per-channel response behavior overrides for text conversations. Built-in channel defaults apply when unset.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentConfigApiModelOutputTextBehaviorOverridesAnyOf1? TextBehaviorOverrides { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentConfigApiModelOutputTextBehaviorOverridesAnyOf1? TextBehaviorOverrides { get => _explicitNullValueTextBehaviorOverrides; set { _explicitNullValueTextBehaviorOverrides = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("text_behavior_overrides"); else _explicitNullProperties?.Remove("text_behavior_overrides"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentConfigApiModelOutputTextBehaviorOverridesAnyOf1? _explicitNullValueTextBehaviorOverrides = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentConfigApiModelOutputTextBehaviorOverridesAnyOf1 TextBehaviorOverrides { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentConfigApiModelOutputTextBehaviorOverridesAnyOf1 TextBehaviorOverrides { get => _explicitNullValueTextBehaviorOverrides; set { _explicitNullValueTextBehaviorOverrides = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("text_behavior_overrides"); else _explicitNullProperties?.Remove("text_behavior_overrides"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentConfigApiModelOutputTextBehaviorOverridesAnyOf1 _explicitNullValueTextBehaviorOverrides = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentConfigApiModelOutput"/> and sets the default values.
@@ -84,7 +113,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentConfigApiModelOutput CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentConfigApiModelOutput();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentConfigApiModelOutput(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -119,6 +148,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteStringValue("max_conversation_duration_message", MaxConversationDurationMessage);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentApiModelOutput>("prompt", Prompt);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentConfigApiModelOutputTextBehaviorOverridesAnyOf1>("text_behavior_overrides", TextBehaviorOverrides);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

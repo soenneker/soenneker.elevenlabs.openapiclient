@@ -11,39 +11,66 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class InvoiceResponseModel : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("amount_due_cents") is { } nullNodeAmountDueCents && nullNodeAmountDueCents.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AmountDueCents = null;
+            if (parseNode.GetChildNode("discount_amount_off") is { } nullNodeDiscountAmountOff && nullNodeDiscountAmountOff.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DiscountAmountOff = null;
+            if (parseNode.GetChildNode("discount_percent_off") is { } nullNodeDiscountPercentOff && nullNodeDiscountPercentOff.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DiscountPercentOff = null;
+            if (parseNode.GetChildNode("discounts") is { } nullNodeDiscounts && nullNodeDiscounts.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Discounts = null;
+            if (parseNode.GetChildNode("next_payment_attempt_unix") is { } nullNodeNextPaymentAttemptUnix && nullNodeNextPaymentAttemptUnix.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NextPaymentAttemptUnix = null;
+            if (parseNode.GetChildNode("payment_intent_status") is { } nullNodePaymentIntentStatus && nullNodePaymentIntentStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PaymentIntentStatus = null;
+            if (parseNode.GetChildNode("payment_intent_statusses") is { } nullNodePaymentIntentStatusses && nullNodePaymentIntentStatusses.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PaymentIntentStatusses = null;
+            if (parseNode.GetChildNode("subtotal_cents") is { } nullNodeSubtotalCents && nullNodeSubtotalCents.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SubtotalCents = null;
+            if (parseNode.GetChildNode("tax_cents") is { } nullNodeTaxCents && nullNodeTaxCents.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TaxCents = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The amount due in cents.</summary>
-        public int? AmountDueCents { get; set; }
+        public int? AmountDueCents { get => _explicitNullValueAmountDueCents; set { _explicitNullValueAmountDueCents = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("amount_due_cents"); else _explicitNullProperties?.Remove("amount_due_cents"); } }
+        private int? _explicitNullValueAmountDueCents = default!;
         /// <summary>Deprecated. Use [discounts] instead. The discount applied to the invoice. E.g. [20.0f] for 20 cents off.</summary>
-        public double? DiscountAmountOff { get; set; }
+        public double? DiscountAmountOff { get => _explicitNullValueDiscountAmountOff; set { _explicitNullValueDiscountAmountOff = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("discount_amount_off"); else _explicitNullProperties?.Remove("discount_amount_off"); } }
+        private double? _explicitNullValueDiscountAmountOff = default!;
         /// <summary>Deprecated. Use [discounts] instead. The discount applied to the invoice. E.g. [20.0f] for 20% off.</summary>
-        public double? DiscountPercentOff { get; set; }
+        public double? DiscountPercentOff { get => _explicitNullValueDiscountPercentOff; set { _explicitNullValueDiscountPercentOff = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("discount_percent_off"); else _explicitNullProperties?.Remove("discount_percent_off"); } }
+        private double? _explicitNullValueDiscountPercentOff = default!;
         /// <summary>The discounts applied to the invoice.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.DiscountResponseModel>? Discounts { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.DiscountResponseModel>? Discounts { get => _explicitNullValueDiscounts; set { _explicitNullValueDiscounts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("discounts"); else _explicitNullProperties?.Remove("discounts"); } }
+        private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.DiscountResponseModel>? _explicitNullValueDiscounts = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.DiscountResponseModel> Discounts { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.DiscountResponseModel> Discounts { get => _explicitNullValueDiscounts; set { _explicitNullValueDiscounts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("discounts"); else _explicitNullProperties?.Remove("discounts"); } }
+        private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.DiscountResponseModel> _explicitNullValueDiscounts = default!;
 #endif
         /// <summary>The Unix timestamp of the next payment attempt. -1 when there is no next payment attempt.</summary>
-        public int? NextPaymentAttemptUnix { get; set; }
+        public int? NextPaymentAttemptUnix { get => _explicitNullValueNextPaymentAttemptUnix; set { _explicitNullValueNextPaymentAttemptUnix = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("next_payment_attempt_unix"); else _explicitNullProperties?.Remove("next_payment_attempt_unix"); } }
+        private int? _explicitNullValueNextPaymentAttemptUnix = default!;
         /// <summary>Deprecated. Use [payment_intent_statusses] instead. The status of this invoice&apos;s first payment intent. None when there is no payment intent.</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.InvoiceResponseModelPaymentIntentStatus? PaymentIntentStatus { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.InvoiceResponseModelPaymentIntentStatus? PaymentIntentStatus { get => _explicitNullValuePaymentIntentStatus; set { _explicitNullValuePaymentIntentStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payment_intent_status"); else _explicitNullProperties?.Remove("payment_intent_status"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.InvoiceResponseModelPaymentIntentStatus? _explicitNullValuePaymentIntentStatus = default!;
         /// <summary>The statuses of this invoice&apos;s payment intents. Empty list when there are no payment intents.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.InvoiceResponseModelPaymentIntentStatussesItem?>? PaymentIntentStatusses { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.InvoiceResponseModelPaymentIntentStatussesItem?>? PaymentIntentStatusses { get => _explicitNullValuePaymentIntentStatusses; set { _explicitNullValuePaymentIntentStatusses = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payment_intent_statusses"); else _explicitNullProperties?.Remove("payment_intent_statusses"); } }
+        private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.InvoiceResponseModelPaymentIntentStatussesItem?>? _explicitNullValuePaymentIntentStatusses = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.InvoiceResponseModelPaymentIntentStatussesItem?> PaymentIntentStatusses { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.InvoiceResponseModelPaymentIntentStatussesItem?> PaymentIntentStatusses { get => _explicitNullValuePaymentIntentStatusses; set { _explicitNullValuePaymentIntentStatusses = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payment_intent_statusses"); else _explicitNullProperties?.Remove("payment_intent_statusses"); } }
+        private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.InvoiceResponseModelPaymentIntentStatussesItem?> _explicitNullValuePaymentIntentStatusses = default!;
 #endif
         /// <summary>The subtotal amount in cents before tax (exclusive of tax and discounts).</summary>
-        public int? SubtotalCents { get; set; }
+        public int? SubtotalCents { get => _explicitNullValueSubtotalCents; set { _explicitNullValueSubtotalCents = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subtotal_cents"); else _explicitNullProperties?.Remove("subtotal_cents"); } }
+        private int? _explicitNullValueSubtotalCents = default!;
         /// <summary>The tax amount in cents.</summary>
-        public int? TaxCents { get; set; }
+        public int? TaxCents { get => _explicitNullValueTaxCents; set { _explicitNullValueTaxCents = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tax_cents"); else _explicitNullProperties?.Remove("tax_cents"); } }
+        private int? _explicitNullValueTaxCents = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.InvoiceResponseModel"/> and sets the default values.
         /// </summary>
@@ -59,7 +86,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.InvoiceResponseModel CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.InvoiceResponseModel();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.InvoiceResponseModel(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -96,6 +123,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteCollectionOfEnumValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.InvoiceResponseModelPaymentIntentStatussesItem>("payment_intent_statusses", PaymentIntentStatusses);
             writer.WriteIntValue("subtotal_cents", SubtotalCents);
             writer.WriteIntValue("tax_cents", TaxCents);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

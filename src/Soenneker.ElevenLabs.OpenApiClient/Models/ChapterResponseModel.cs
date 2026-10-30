@@ -11,60 +11,94 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ChapterResponseModel : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("can_be_downloaded") is { } nullNodeCanBeDownloaded && nullNodeCanBeDownloaded.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CanBeDownloaded = null;
+            if (parseNode.GetChildNode("chapter_id") is { } nullNodeChapterId && nullNodeChapterId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ChapterId = null;
+            if (parseNode.GetChildNode("conversion_progress") is { } nullNodeConversionProgress && nullNodeConversionProgress.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConversionProgress = null;
+            if (parseNode.GetChildNode("has_video") is { } nullNodeHasVideo && nullNodeHasVideo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HasVideo = null;
+            if (parseNode.GetChildNode("has_visual_content") is { } nullNodeHasVisualContent && nullNodeHasVisualContent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HasVisualContent = null;
+            if (parseNode.GetChildNode("last_conversion_date_unix") is { } nullNodeLastConversionDateUnix && nullNodeLastConversionDateUnix.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastConversionDateUnix = null;
+            if (parseNode.GetChildNode("last_conversion_error") is { } nullNodeLastConversionError && nullNodeLastConversionError.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastConversionError = null;
+            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("state") is { } nullNodeState && nullNodeState.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) State = null;
+            if (parseNode.GetChildNode("statistics") is { } nullNodeStatistics && nullNodeStatistics.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Statistics = null;
+            if (parseNode.GetChildNode("voice_ids") is { } nullNodeVoiceIds && nullNodeVoiceIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VoiceIds = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Whether the chapter can be downloaded.</summary>
-        public bool? CanBeDownloaded { get; set; }
+        public bool? CanBeDownloaded { get => _explicitNullValueCanBeDownloaded; set { _explicitNullValueCanBeDownloaded = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("can_be_downloaded"); else _explicitNullProperties?.Remove("can_be_downloaded"); } }
+        private bool? _explicitNullValueCanBeDownloaded = default!;
         /// <summary>The ID of the chapter.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ChapterId { get; set; }
+        public string? ChapterId { get => _explicitNullValueChapterId; set { _explicitNullValueChapterId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("chapter_id"); else _explicitNullProperties?.Remove("chapter_id"); } }
+        private string? _explicitNullValueChapterId = default!;
 #nullable restore
 #else
-        public string ChapterId { get; set; }
+        public string ChapterId { get => _explicitNullValueChapterId; set { _explicitNullValueChapterId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("chapter_id"); else _explicitNullProperties?.Remove("chapter_id"); } }
+        private string _explicitNullValueChapterId = default!;
 #endif
         /// <summary>The conversion progress of the chapter.</summary>
-        public double? ConversionProgress { get; set; }
+        public double? ConversionProgress { get => _explicitNullValueConversionProgress; set { _explicitNullValueConversionProgress = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conversion_progress"); else _explicitNullProperties?.Remove("conversion_progress"); } }
+        private double? _explicitNullValueConversionProgress = default!;
         /// <summary>Whether the chapter has a video.</summary>
-        public bool? HasVideo { get; set; }
+        public bool? HasVideo { get => _explicitNullValueHasVideo; set { _explicitNullValueHasVideo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("has_video"); else _explicitNullProperties?.Remove("has_video"); } }
+        private bool? _explicitNullValueHasVideo = default!;
         /// <summary>Whether the chapter has any visual content (video, image, or text clips).</summary>
-        public bool? HasVisualContent { get; set; }
+        public bool? HasVisualContent { get => _explicitNullValueHasVisualContent; set { _explicitNullValueHasVisualContent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("has_visual_content"); else _explicitNullProperties?.Remove("has_visual_content"); } }
+        private bool? _explicitNullValueHasVisualContent = default!;
         /// <summary>The last conversion date of the chapter.</summary>
-        public int? LastConversionDateUnix { get; set; }
+        public int? LastConversionDateUnix { get => _explicitNullValueLastConversionDateUnix; set { _explicitNullValueLastConversionDateUnix = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last_conversion_date_unix"); else _explicitNullProperties?.Remove("last_conversion_date_unix"); } }
+        private int? _explicitNullValueLastConversionDateUnix = default!;
         /// <summary>The last conversion error of the chapter.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LastConversionError { get; set; }
+        public string? LastConversionError { get => _explicitNullValueLastConversionError; set { _explicitNullValueLastConversionError = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last_conversion_error"); else _explicitNullProperties?.Remove("last_conversion_error"); } }
+        private string? _explicitNullValueLastConversionError = default!;
 #nullable restore
 #else
-        public string LastConversionError { get; set; }
+        public string LastConversionError { get => _explicitNullValueLastConversionError; set { _explicitNullValueLastConversionError = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last_conversion_error"); else _explicitNullProperties?.Remove("last_conversion_error"); } }
+        private string _explicitNullValueLastConversionError = default!;
 #endif
         /// <summary>The name of the chapter.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get; set; }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string _explicitNullValueName = default!;
 #endif
         /// <summary>The state of the chapter.</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ChapterResponseModelState? State { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ChapterResponseModelState? State { get => _explicitNullValueState; set { _explicitNullValueState = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("state"); else _explicitNullProperties?.Remove("state"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ChapterResponseModelState? _explicitNullValueState = default!;
         /// <summary>The statistics of the chapter.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ChapterStatisticsResponseModel? Statistics { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ChapterStatisticsResponseModel? Statistics { get => _explicitNullValueStatistics; set { _explicitNullValueStatistics = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("statistics"); else _explicitNullProperties?.Remove("statistics"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ChapterStatisticsResponseModel? _explicitNullValueStatistics = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ChapterStatisticsResponseModel Statistics { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ChapterStatisticsResponseModel Statistics { get => _explicitNullValueStatistics; set { _explicitNullValueStatistics = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("statistics"); else _explicitNullProperties?.Remove("statistics"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ChapterStatisticsResponseModel _explicitNullValueStatistics = default!;
 #endif
         /// <summary>List of voice ids used by the chapter</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? VoiceIds { get; set; }
+        public List<string>? VoiceIds { get => _explicitNullValueVoiceIds; set { _explicitNullValueVoiceIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("voice_ids"); else _explicitNullProperties?.Remove("voice_ids"); } }
+        private List<string>? _explicitNullValueVoiceIds = default!;
 #nullable restore
 #else
-        public List<string> VoiceIds { get; set; }
+        public List<string> VoiceIds { get => _explicitNullValueVoiceIds; set { _explicitNullValueVoiceIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("voice_ids"); else _explicitNullProperties?.Remove("voice_ids"); } }
+        private List<string> _explicitNullValueVoiceIds = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ChapterResponseModel"/> and sets the default values.
@@ -81,7 +115,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.ChapterResponseModel CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.ChapterResponseModel();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.ChapterResponseModel(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -122,6 +156,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ChapterResponseModelState>("state", State);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ChapterStatisticsResponseModel>("statistics", Statistics);
             writer.WriteCollectionOfPrimitiveValues<string>("voice_ids", VoiceIds);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

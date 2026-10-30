@@ -11,48 +11,70 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class BodyCreateANewVoiceFromVoicePreviewV1TextToVoicePost : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("generated_voice_id") is { } nullNodeGeneratedVoiceId && nullNodeGeneratedVoiceId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GeneratedVoiceId = null;
+            if (parseNode.GetChildNode("labels") is { } nullNodeLabels && nullNodeLabels.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Labels = null;
+            if (parseNode.GetChildNode("played_not_selected_voice_ids") is { } nullNodePlayedNotSelectedVoiceIds && nullNodePlayedNotSelectedVoiceIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PlayedNotSelectedVoiceIds = null;
+            if (parseNode.GetChildNode("voice_description") is { } nullNodeVoiceDescription && nullNodeVoiceDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VoiceDescription = null;
+            if (parseNode.GetChildNode("voice_name") is { } nullNodeVoiceName && nullNodeVoiceName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VoiceName = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The generated_voice_id to create; obtain it from POST /v1/text-to-voice/design, POST /v1/text-to-voice/:voice_id/remix, or the response headers when generating previews.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? GeneratedVoiceId { get; set; }
+        public string? GeneratedVoiceId { get => _explicitNullValueGeneratedVoiceId; set { _explicitNullValueGeneratedVoiceId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("generated_voice_id"); else _explicitNullProperties?.Remove("generated_voice_id"); } }
+        private string? _explicitNullValueGeneratedVoiceId = default!;
 #nullable restore
 #else
-        public string GeneratedVoiceId { get; set; }
+        public string GeneratedVoiceId { get => _explicitNullValueGeneratedVoiceId; set { _explicitNullValueGeneratedVoiceId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("generated_voice_id"); else _explicitNullProperties?.Remove("generated_voice_id"); } }
+        private string _explicitNullValueGeneratedVoiceId = default!;
 #endif
         /// <summary>Optional, metadata to add to the created voice. Defaults to None.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateANewVoiceFromVoicePreviewV1TextToVoicePostLabelsAnyOf1? Labels { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateANewVoiceFromVoicePreviewV1TextToVoicePostLabelsAnyOf1? Labels { get => _explicitNullValueLabels; set { _explicitNullValueLabels = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("labels"); else _explicitNullProperties?.Remove("labels"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateANewVoiceFromVoicePreviewV1TextToVoicePostLabelsAnyOf1? _explicitNullValueLabels = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateANewVoiceFromVoicePreviewV1TextToVoicePostLabelsAnyOf1 Labels { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateANewVoiceFromVoicePreviewV1TextToVoicePostLabelsAnyOf1 Labels { get => _explicitNullValueLabels; set { _explicitNullValueLabels = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("labels"); else _explicitNullProperties?.Remove("labels"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateANewVoiceFromVoicePreviewV1TextToVoicePostLabelsAnyOf1 _explicitNullValueLabels = default!;
 #endif
         /// <summary>List of voice ids that the user has played but not selected. Used for RLHF.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? PlayedNotSelectedVoiceIds { get; set; }
+        public List<string>? PlayedNotSelectedVoiceIds { get => _explicitNullValuePlayedNotSelectedVoiceIds; set { _explicitNullValuePlayedNotSelectedVoiceIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("played_not_selected_voice_ids"); else _explicitNullProperties?.Remove("played_not_selected_voice_ids"); } }
+        private List<string>? _explicitNullValuePlayedNotSelectedVoiceIds = default!;
 #nullable restore
 #else
-        public List<string> PlayedNotSelectedVoiceIds { get; set; }
+        public List<string> PlayedNotSelectedVoiceIds { get => _explicitNullValuePlayedNotSelectedVoiceIds; set { _explicitNullValuePlayedNotSelectedVoiceIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("played_not_selected_voice_ids"); else _explicitNullProperties?.Remove("played_not_selected_voice_ids"); } }
+        private List<string> _explicitNullValuePlayedNotSelectedVoiceIds = default!;
 #endif
         /// <summary>Description to use for the created voice.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? VoiceDescription { get; set; }
+        public string? VoiceDescription { get => _explicitNullValueVoiceDescription; set { _explicitNullValueVoiceDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("voice_description"); else _explicitNullProperties?.Remove("voice_description"); } }
+        private string? _explicitNullValueVoiceDescription = default!;
 #nullable restore
 #else
-        public string VoiceDescription { get; set; }
+        public string VoiceDescription { get => _explicitNullValueVoiceDescription; set { _explicitNullValueVoiceDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("voice_description"); else _explicitNullProperties?.Remove("voice_description"); } }
+        private string _explicitNullValueVoiceDescription = default!;
 #endif
         /// <summary>Name to use for the created voice.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? VoiceName { get; set; }
+        public string? VoiceName { get => _explicitNullValueVoiceName; set { _explicitNullValueVoiceName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("voice_name"); else _explicitNullProperties?.Remove("voice_name"); } }
+        private string? _explicitNullValueVoiceName = default!;
 #nullable restore
 #else
-        public string VoiceName { get; set; }
+        public string VoiceName { get => _explicitNullValueVoiceName; set { _explicitNullValueVoiceName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("voice_name"); else _explicitNullProperties?.Remove("voice_name"); } }
+        private string _explicitNullValueVoiceName = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateANewVoiceFromVoicePreviewV1TextToVoicePost"/> and sets the default values.
@@ -69,7 +91,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateANewVoiceFromVoicePreviewV1TextToVoicePost CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateANewVoiceFromVoicePreviewV1TextToVoicePost();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyCreateANewVoiceFromVoicePreviewV1TextToVoicePost(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -98,6 +120,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("played_not_selected_voice_ids", PlayedNotSelectedVoiceIds);
             writer.WriteStringValue("voice_description", VoiceDescription);
             writer.WriteStringValue("voice_name", VoiceName);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

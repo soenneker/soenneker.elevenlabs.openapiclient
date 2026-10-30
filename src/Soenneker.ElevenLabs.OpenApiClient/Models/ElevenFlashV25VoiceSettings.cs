@@ -12,13 +12,26 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ElevenFlashV25VoiceSettings : IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("similarity_boost") is { } nullNodeSimilarityBoost && nullNodeSimilarityBoost.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SimilarityBoost = null;
+            if (parseNode.GetChildNode("speed") is { } nullNodeSpeed && nullNodeSpeed.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Speed = null;
+            if (parseNode.GetChildNode("stability") is { } nullNodeStability && nullNodeStability.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Stability = null;
+        }
+
         /// <summary>How closely the output adheres to the original voice.</summary>
-        public double? SimilarityBoost { get; set; }
+        public double? SimilarityBoost { get => _explicitNullValueSimilarityBoost; set { _explicitNullValueSimilarityBoost = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("similarity_boost"); else _explicitNullProperties?.Remove("similarity_boost"); } }
+        private double? _explicitNullValueSimilarityBoost = default!;
         /// <summary>The speed of the generated speech, where 1.0 is the voice&apos;s natural pace.</summary>
-        public double? Speed { get; set; }
+        public double? Speed { get => _explicitNullValueSpeed; set { _explicitNullValueSpeed = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("speed"); else _explicitNullProperties?.Remove("speed"); } }
+        private double? _explicitNullValueSpeed = default!;
         /// <summary>How consistent the voice stays across generations. Lower values give more expressive, varied speech.</summary>
-        public double? Stability { get; set; }
+        public double? Stability { get => _explicitNullValueStability; set { _explicitNullValueStability = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stability"); else _explicitNullProperties?.Remove("stability"); } }
+        private double? _explicitNullValueStability = default!;
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -27,7 +40,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.ElevenFlashV25VoiceSettings CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.ElevenFlashV25VoiceSettings();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.ElevenFlashV25VoiceSettings(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -51,7 +64,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDoubleValue("similarity_boost", SimilarityBoost);
             writer.WriteDoubleValue("speed", Speed);
-            writer.WriteDoubleValue("stability", Stability);
+            writer.WriteDoubleValue("stability", Stability);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

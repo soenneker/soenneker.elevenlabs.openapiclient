@@ -11,19 +11,31 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class DefaultSharingGroupResponseModel : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("group") is { } nullNodeGroup && nullNodeGroup.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Group = null;
+            if (parseNode.GetChildNode("permission_level") is { } nullNodePermissionLevel && nullNodePermissionLevel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PermissionLevel = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The group to share with by default</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceGroupResponseModel? Group { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceGroupResponseModel? Group { get => _explicitNullValueGroup; set { _explicitNullValueGroup = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("group"); else _explicitNullProperties?.Remove("group"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceGroupResponseModel? _explicitNullValueGroup = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceGroupResponseModel Group { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceGroupResponseModel Group { get => _explicitNullValueGroup; set { _explicitNullValueGroup = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("group"); else _explicitNullProperties?.Remove("group"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceGroupResponseModel _explicitNullValueGroup = default!;
 #endif
         /// <summary>The permission level to grant to the group</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.DefaultSharingGroupResponseModelPermissionLevel? PermissionLevel { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.DefaultSharingGroupResponseModelPermissionLevel? PermissionLevel { get => _explicitNullValuePermissionLevel; set { _explicitNullValuePermissionLevel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("permission_level"); else _explicitNullProperties?.Remove("permission_level"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.DefaultSharingGroupResponseModelPermissionLevel? _explicitNullValuePermissionLevel = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.DefaultSharingGroupResponseModel"/> and sets the default values.
         /// </summary>
@@ -39,7 +51,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.DefaultSharingGroupResponseModel CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.DefaultSharingGroupResponseModel();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.DefaultSharingGroupResponseModel(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -62,6 +74,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceGroupResponseModel>("group", Group);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.DefaultSharingGroupResponseModelPermissionLevel>("permission_level", PermissionLevel);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -11,63 +11,99 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class SampleResponseModel : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("duration_secs") is { } nullNodeDurationSecs && nullNodeDurationSecs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DurationSecs = null;
+            if (parseNode.GetChildNode("file_name") is { } nullNodeFileName && nullNodeFileName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FileName = null;
+            if (parseNode.GetChildNode("hash") is { } nullNodeHash && nullNodeHash.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Hash = null;
+            if (parseNode.GetChildNode("has_isolated_audio") is { } nullNodeHasIsolatedAudio && nullNodeHasIsolatedAudio.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HasIsolatedAudio = null;
+            if (parseNode.GetChildNode("has_isolated_audio_preview") is { } nullNodeHasIsolatedAudioPreview && nullNodeHasIsolatedAudioPreview.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HasIsolatedAudioPreview = null;
+            if (parseNode.GetChildNode("mime_type") is { } nullNodeMimeType && nullNodeMimeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MimeType = null;
+            if (parseNode.GetChildNode("remove_background_noise") is { } nullNodeRemoveBackgroundNoise && nullNodeRemoveBackgroundNoise.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RemoveBackgroundNoise = null;
+            if (parseNode.GetChildNode("sample_id") is { } nullNodeSampleId && nullNodeSampleId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SampleId = null;
+            if (parseNode.GetChildNode("size_bytes") is { } nullNodeSizeBytes && nullNodeSizeBytes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SizeBytes = null;
+            if (parseNode.GetChildNode("speaker_separation") is { } nullNodeSpeakerSeparation && nullNodeSpeakerSeparation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SpeakerSeparation = null;
+            if (parseNode.GetChildNode("trim_end") is { } nullNodeTrimEnd && nullNodeTrimEnd.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TrimEnd = null;
+            if (parseNode.GetChildNode("trim_start") is { } nullNodeTrimStart && nullNodeTrimStart.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TrimStart = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The duration_secs property</summary>
-        public double? DurationSecs { get; set; }
+        public double? DurationSecs { get => _explicitNullValueDurationSecs; set { _explicitNullValueDurationSecs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("duration_secs"); else _explicitNullProperties?.Remove("duration_secs"); } }
+        private double? _explicitNullValueDurationSecs = default!;
         /// <summary>The name of the sample file.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FileName { get; set; }
+        public string? FileName { get => _explicitNullValueFileName; set { _explicitNullValueFileName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("file_name"); else _explicitNullProperties?.Remove("file_name"); } }
+        private string? _explicitNullValueFileName = default!;
 #nullable restore
 #else
-        public string FileName { get; set; }
+        public string FileName { get => _explicitNullValueFileName; set { _explicitNullValueFileName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("file_name"); else _explicitNullProperties?.Remove("file_name"); } }
+        private string _explicitNullValueFileName = default!;
 #endif
         /// <summary>The hash of the sample file.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Hash { get; set; }
+        public string? Hash { get => _explicitNullValueHash; set { _explicitNullValueHash = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hash"); else _explicitNullProperties?.Remove("hash"); } }
+        private string? _explicitNullValueHash = default!;
 #nullable restore
 #else
-        public string Hash { get; set; }
+        public string Hash { get => _explicitNullValueHash; set { _explicitNullValueHash = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hash"); else _explicitNullProperties?.Remove("hash"); } }
+        private string _explicitNullValueHash = default!;
 #endif
         /// <summary>The has_isolated_audio property</summary>
-        public bool? HasIsolatedAudio { get; set; }
+        public bool? HasIsolatedAudio { get => _explicitNullValueHasIsolatedAudio; set { _explicitNullValueHasIsolatedAudio = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("has_isolated_audio"); else _explicitNullProperties?.Remove("has_isolated_audio"); } }
+        private bool? _explicitNullValueHasIsolatedAudio = default!;
         /// <summary>The has_isolated_audio_preview property</summary>
-        public bool? HasIsolatedAudioPreview { get; set; }
+        public bool? HasIsolatedAudioPreview { get => _explicitNullValueHasIsolatedAudioPreview; set { _explicitNullValueHasIsolatedAudioPreview = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("has_isolated_audio_preview"); else _explicitNullProperties?.Remove("has_isolated_audio_preview"); } }
+        private bool? _explicitNullValueHasIsolatedAudioPreview = default!;
         /// <summary>The MIME type of the sample file.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MimeType { get; set; }
+        public string? MimeType { get => _explicitNullValueMimeType; set { _explicitNullValueMimeType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mime_type"); else _explicitNullProperties?.Remove("mime_type"); } }
+        private string? _explicitNullValueMimeType = default!;
 #nullable restore
 #else
-        public string MimeType { get; set; }
+        public string MimeType { get => _explicitNullValueMimeType; set { _explicitNullValueMimeType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mime_type"); else _explicitNullProperties?.Remove("mime_type"); } }
+        private string _explicitNullValueMimeType = default!;
 #endif
         /// <summary>The remove_background_noise property</summary>
-        public bool? RemoveBackgroundNoise { get; set; }
+        public bool? RemoveBackgroundNoise { get => _explicitNullValueRemoveBackgroundNoise; set { _explicitNullValueRemoveBackgroundNoise = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("remove_background_noise"); else _explicitNullProperties?.Remove("remove_background_noise"); } }
+        private bool? _explicitNullValueRemoveBackgroundNoise = default!;
         /// <summary>The ID of the sample.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SampleId { get; set; }
+        public string? SampleId { get => _explicitNullValueSampleId; set { _explicitNullValueSampleId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sample_id"); else _explicitNullProperties?.Remove("sample_id"); } }
+        private string? _explicitNullValueSampleId = default!;
 #nullable restore
 #else
-        public string SampleId { get; set; }
+        public string SampleId { get => _explicitNullValueSampleId; set { _explicitNullValueSampleId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sample_id"); else _explicitNullProperties?.Remove("sample_id"); } }
+        private string _explicitNullValueSampleId = default!;
 #endif
         /// <summary>The size of the sample file in bytes.</summary>
-        public int? SizeBytes { get; set; }
+        public int? SizeBytes { get => _explicitNullValueSizeBytes; set { _explicitNullValueSizeBytes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("size_bytes"); else _explicitNullProperties?.Remove("size_bytes"); } }
+        private int? _explicitNullValueSizeBytes = default!;
         /// <summary>The speaker_separation property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeakerSeparationResponseModel? SpeakerSeparation { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeakerSeparationResponseModel? SpeakerSeparation { get => _explicitNullValueSpeakerSeparation; set { _explicitNullValueSpeakerSeparation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("speaker_separation"); else _explicitNullProperties?.Remove("speaker_separation"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeakerSeparationResponseModel? _explicitNullValueSpeakerSeparation = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeakerSeparationResponseModel SpeakerSeparation { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeakerSeparationResponseModel SpeakerSeparation { get => _explicitNullValueSpeakerSeparation; set { _explicitNullValueSpeakerSeparation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("speaker_separation"); else _explicitNullProperties?.Remove("speaker_separation"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeakerSeparationResponseModel _explicitNullValueSpeakerSeparation = default!;
 #endif
         /// <summary>The trim_end property</summary>
-        public int? TrimEnd { get; set; }
+        public int? TrimEnd { get => _explicitNullValueTrimEnd; set { _explicitNullValueTrimEnd = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("trim_end"); else _explicitNullProperties?.Remove("trim_end"); } }
+        private int? _explicitNullValueTrimEnd = default!;
         /// <summary>The trim_start property</summary>
-        public int? TrimStart { get; set; }
+        public int? TrimStart { get => _explicitNullValueTrimStart; set { _explicitNullValueTrimStart = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("trim_start"); else _explicitNullProperties?.Remove("trim_start"); } }
+        private int? _explicitNullValueTrimStart = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.SampleResponseModel"/> and sets the default values.
         /// </summary>
@@ -83,7 +119,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.SampleResponseModel CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.SampleResponseModel();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.SampleResponseModel(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -126,6 +162,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.SpeakerSeparationResponseModel>("speaker_separation", SpeakerSeparation);
             writer.WriteIntValue("trim_end", TrimEnd);
             writer.WriteIntValue("trim_start", TrimStart);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

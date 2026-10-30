@@ -12,26 +12,41 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AssignResellerTierRequest : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("billing_period") is { } nullNodeBillingPeriod && nullNodeBillingPeriod.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BillingPeriod = null;
+            if (parseNode.GetChildNode("idempotency_key") is { } nullNodeIdempotencyKey && nullNodeIdempotencyKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IdempotencyKey = null;
+            if (parseNode.GetChildNode("tier_id") is { } nullNodeTierId && nullNodeTierId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TierId = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The billing_period property</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AssignResellerTierRequestBillingPeriod? BillingPeriod { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AssignResellerTierRequestBillingPeriod? BillingPeriod { get => _explicitNullValueBillingPeriod; set { _explicitNullValueBillingPeriod = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("billing_period"); else _explicitNullProperties?.Remove("billing_period"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.AssignResellerTierRequestBillingPeriod? _explicitNullValueBillingPeriod = default!;
         /// <summary>Client-generated key so a retried request cannot create or apply the same subscription change twice.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IdempotencyKey { get; set; }
+        public string? IdempotencyKey { get => _explicitNullValueIdempotencyKey; set { _explicitNullValueIdempotencyKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("idempotency_key"); else _explicitNullProperties?.Remove("idempotency_key"); } }
+        private string? _explicitNullValueIdempotencyKey = default!;
 #nullable restore
 #else
-        public string IdempotencyKey { get; set; }
+        public string IdempotencyKey { get => _explicitNullValueIdempotencyKey; set { _explicitNullValueIdempotencyKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("idempotency_key"); else _explicitNullProperties?.Remove("idempotency_key"); } }
+        private string _explicitNullValueIdempotencyKey = default!;
 #endif
         /// <summary>The tier_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TierId { get; set; }
+        public string? TierId { get => _explicitNullValueTierId; set { _explicitNullValueTierId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tier_id"); else _explicitNullProperties?.Remove("tier_id"); } }
+        private string? _explicitNullValueTierId = default!;
 #nullable restore
 #else
-        public string TierId { get; set; }
+        public string TierId { get => _explicitNullValueTierId; set { _explicitNullValueTierId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tier_id"); else _explicitNullProperties?.Remove("tier_id"); } }
+        private string _explicitNullValueTierId = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.AssignResellerTierRequest"/> and sets the default values.
@@ -48,7 +63,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.AssignResellerTierRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.AssignResellerTierRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.AssignResellerTierRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -73,6 +88,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.AssignResellerTierRequestBillingPeriod>("billing_period", BillingPeriod);
             writer.WriteStringValue("idempotency_key", IdempotencyKey);
             writer.WriteStringValue("tier_id", TierId);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

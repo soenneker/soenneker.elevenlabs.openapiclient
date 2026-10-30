@@ -11,36 +11,61 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class VoicePreviewsRequestModel : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("auto_generate_text") is { } nullNodeAutoGenerateText && nullNodeAutoGenerateText.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AutoGenerateText = null;
+            if (parseNode.GetChildNode("guidance_scale") is { } nullNodeGuidanceScale && nullNodeGuidanceScale.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GuidanceScale = null;
+            if (parseNode.GetChildNode("loudness") is { } nullNodeLoudness && nullNodeLoudness.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Loudness = null;
+            if (parseNode.GetChildNode("quality") is { } nullNodeQuality && nullNodeQuality.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Quality = null;
+            if (parseNode.GetChildNode("seed") is { } nullNodeSeed && nullNodeSeed.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Seed = null;
+            if (parseNode.GetChildNode("should_enhance") is { } nullNodeShouldEnhance && nullNodeShouldEnhance.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ShouldEnhance = null;
+            if (parseNode.GetChildNode("text") is { } nullNodeText && nullNodeText.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Text = null;
+            if (parseNode.GetChildNode("voice_description") is { } nullNodeVoiceDescription && nullNodeVoiceDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VoiceDescription = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Whether to automatically generate a text suitable for the voice description.</summary>
-        public bool? AutoGenerateText { get; set; }
+        public bool? AutoGenerateText { get => _explicitNullValueAutoGenerateText; set { _explicitNullValueAutoGenerateText = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("auto_generate_text"); else _explicitNullProperties?.Remove("auto_generate_text"); } }
+        private bool? _explicitNullValueAutoGenerateText = default!;
         /// <summary>Controls how closely the AI follows the prompt. Lower numbers give the AI more freedom to be creative, while higher numbers force it to stick more to the prompt. High numbers can cause voice to sound artificial or robotic. We recommend to use longer, more detailed prompts at lower Guidance Scale.</summary>
-        public double? GuidanceScale { get; set; }
+        public double? GuidanceScale { get => _explicitNullValueGuidanceScale; set { _explicitNullValueGuidanceScale = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("guidance_scale"); else _explicitNullProperties?.Remove("guidance_scale"); } }
+        private double? _explicitNullValueGuidanceScale = default!;
         /// <summary>Controls the volume level of the generated voice. -1 is quietest, 1 is loudest, 0 corresponds to roughly -24 LUFS.</summary>
-        public double? Loudness { get; set; }
+        public double? Loudness { get => _explicitNullValueLoudness; set { _explicitNullValueLoudness = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("loudness"); else _explicitNullProperties?.Remove("loudness"); } }
+        private double? _explicitNullValueLoudness = default!;
         /// <summary>Higher quality results in better voice output but less variety.</summary>
-        public double? Quality { get; set; }
+        public double? Quality { get => _explicitNullValueQuality; set { _explicitNullValueQuality = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("quality"); else _explicitNullProperties?.Remove("quality"); } }
+        private double? _explicitNullValueQuality = default!;
         /// <summary>Random number that controls the voice generation. Same seed with same inputs produces same voice.</summary>
-        public int? Seed { get; set; }
+        public int? Seed { get => _explicitNullValueSeed; set { _explicitNullValueSeed = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("seed"); else _explicitNullProperties?.Remove("seed"); } }
+        private int? _explicitNullValueSeed = default!;
         /// <summary>Whether to enhance the voice description using AI to add more detail and improve voice generation quality. When enabled, the system will automatically expand simple prompts into more detailed voice descriptions. Defaults to False</summary>
-        public bool? ShouldEnhance { get; set; }
+        public bool? ShouldEnhance { get => _explicitNullValueShouldEnhance; set { _explicitNullValueShouldEnhance = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("should_enhance"); else _explicitNullProperties?.Remove("should_enhance"); } }
+        private bool? _explicitNullValueShouldEnhance = default!;
         /// <summary>Text to generate, text length has to be between 100 and 1000.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Text { get; set; }
+        public string? Text { get => _explicitNullValueText; set { _explicitNullValueText = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("text"); else _explicitNullProperties?.Remove("text"); } }
+        private string? _explicitNullValueText = default!;
 #nullable restore
 #else
-        public string Text { get; set; }
+        public string Text { get => _explicitNullValueText; set { _explicitNullValueText = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("text"); else _explicitNullProperties?.Remove("text"); } }
+        private string _explicitNullValueText = default!;
 #endif
         /// <summary>Description to use for the created voice.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? VoiceDescription { get; set; }
+        public string? VoiceDescription { get => _explicitNullValueVoiceDescription; set { _explicitNullValueVoiceDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("voice_description"); else _explicitNullProperties?.Remove("voice_description"); } }
+        private string? _explicitNullValueVoiceDescription = default!;
 #nullable restore
 #else
-        public string VoiceDescription { get; set; }
+        public string VoiceDescription { get => _explicitNullValueVoiceDescription; set { _explicitNullValueVoiceDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("voice_description"); else _explicitNullProperties?.Remove("voice_description"); } }
+        private string _explicitNullValueVoiceDescription = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.VoicePreviewsRequestModel"/> and sets the default values.
@@ -62,7 +87,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.VoicePreviewsRequestModel CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.VoicePreviewsRequestModel();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.VoicePreviewsRequestModel(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -97,6 +122,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteBoolValue("should_enhance", ShouldEnhance);
             writer.WriteStringValue("text", Text);
             writer.WriteStringValue("voice_description", VoiceDescription);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

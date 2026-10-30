@@ -11,32 +11,48 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class BatchCallWhatsAppParams : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("whatsapp_call_permission_request_template_language_code") is { } nullNodeWhatsappCallPermissionRequestTemplateLanguageCode && nullNodeWhatsappCallPermissionRequestTemplateLanguageCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WhatsappCallPermissionRequestTemplateLanguageCode = null;
+            if (parseNode.GetChildNode("whatsapp_call_permission_request_template_name") is { } nullNodeWhatsappCallPermissionRequestTemplateName && nullNodeWhatsappCallPermissionRequestTemplateName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WhatsappCallPermissionRequestTemplateName = null;
+            if (parseNode.GetChildNode("whatsapp_phone_number_id") is { } nullNodeWhatsappPhoneNumberId && nullNodeWhatsappPhoneNumberId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WhatsappPhoneNumberId = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The whatsapp_call_permission_request_template_language_code property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? WhatsappCallPermissionRequestTemplateLanguageCode { get; set; }
+        public string? WhatsappCallPermissionRequestTemplateLanguageCode { get => _explicitNullValueWhatsappCallPermissionRequestTemplateLanguageCode; set { _explicitNullValueWhatsappCallPermissionRequestTemplateLanguageCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("whatsapp_call_permission_request_template_language_code"); else _explicitNullProperties?.Remove("whatsapp_call_permission_request_template_language_code"); } }
+        private string? _explicitNullValueWhatsappCallPermissionRequestTemplateLanguageCode = default!;
 #nullable restore
 #else
-        public string WhatsappCallPermissionRequestTemplateLanguageCode { get; set; }
+        public string WhatsappCallPermissionRequestTemplateLanguageCode { get => _explicitNullValueWhatsappCallPermissionRequestTemplateLanguageCode; set { _explicitNullValueWhatsappCallPermissionRequestTemplateLanguageCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("whatsapp_call_permission_request_template_language_code"); else _explicitNullProperties?.Remove("whatsapp_call_permission_request_template_language_code"); } }
+        private string _explicitNullValueWhatsappCallPermissionRequestTemplateLanguageCode = default!;
 #endif
         /// <summary>The whatsapp_call_permission_request_template_name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? WhatsappCallPermissionRequestTemplateName { get; set; }
+        public string? WhatsappCallPermissionRequestTemplateName { get => _explicitNullValueWhatsappCallPermissionRequestTemplateName; set { _explicitNullValueWhatsappCallPermissionRequestTemplateName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("whatsapp_call_permission_request_template_name"); else _explicitNullProperties?.Remove("whatsapp_call_permission_request_template_name"); } }
+        private string? _explicitNullValueWhatsappCallPermissionRequestTemplateName = default!;
 #nullable restore
 #else
-        public string WhatsappCallPermissionRequestTemplateName { get; set; }
+        public string WhatsappCallPermissionRequestTemplateName { get => _explicitNullValueWhatsappCallPermissionRequestTemplateName; set { _explicitNullValueWhatsappCallPermissionRequestTemplateName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("whatsapp_call_permission_request_template_name"); else _explicitNullProperties?.Remove("whatsapp_call_permission_request_template_name"); } }
+        private string _explicitNullValueWhatsappCallPermissionRequestTemplateName = default!;
 #endif
         /// <summary>The whatsapp_phone_number_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? WhatsappPhoneNumberId { get; set; }
+        public string? WhatsappPhoneNumberId { get => _explicitNullValueWhatsappPhoneNumberId; set { _explicitNullValueWhatsappPhoneNumberId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("whatsapp_phone_number_id"); else _explicitNullProperties?.Remove("whatsapp_phone_number_id"); } }
+        private string? _explicitNullValueWhatsappPhoneNumberId = default!;
 #nullable restore
 #else
-        public string WhatsappPhoneNumberId { get; set; }
+        public string WhatsappPhoneNumberId { get => _explicitNullValueWhatsappPhoneNumberId; set { _explicitNullValueWhatsappPhoneNumberId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("whatsapp_phone_number_id"); else _explicitNullProperties?.Remove("whatsapp_phone_number_id"); } }
+        private string _explicitNullValueWhatsappPhoneNumberId = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.BatchCallWhatsAppParams"/> and sets the default values.
@@ -53,7 +69,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.BatchCallWhatsAppParams CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.BatchCallWhatsAppParams();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.BatchCallWhatsAppParams(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -78,6 +94,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteStringValue("whatsapp_call_permission_request_template_language_code", WhatsappCallPermissionRequestTemplateLanguageCode);
             writer.WriteStringValue("whatsapp_call_permission_request_template_name", WhatsappCallPermissionRequestTemplateName);
             writer.WriteStringValue("whatsapp_phone_number_id", WhatsappPhoneNumberId);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

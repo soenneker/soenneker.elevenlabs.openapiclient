@@ -11,24 +11,37 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class BodyBulkMoveTestsToFolderV1ConvaiAgentTestingBulkMovePost : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("entity_ids") is { } nullNodeEntityIds && nullNodeEntityIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EntityIds = null;
+            if (parseNode.GetChildNode("move_to") is { } nullNodeMoveTo && nullNodeMoveTo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MoveTo = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The IDs of tests or folders to move.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? EntityIds { get; set; }
+        public List<string>? EntityIds { get => _explicitNullValueEntityIds; set { _explicitNullValueEntityIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entity_ids"); else _explicitNullProperties?.Remove("entity_ids"); } }
+        private List<string>? _explicitNullValueEntityIds = default!;
 #nullable restore
 #else
-        public List<string> EntityIds { get; set; }
+        public List<string> EntityIds { get => _explicitNullValueEntityIds; set { _explicitNullValueEntityIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entity_ids"); else _explicitNullProperties?.Remove("entity_ids"); } }
+        private List<string> _explicitNullValueEntityIds = default!;
 #endif
         /// <summary>The folder to move the entities to. If not set, the entities will be moved to the root folder.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MoveTo { get; set; }
+        public string? MoveTo { get => _explicitNullValueMoveTo; set { _explicitNullValueMoveTo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("move_to"); else _explicitNullProperties?.Remove("move_to"); } }
+        private string? _explicitNullValueMoveTo = default!;
 #nullable restore
 #else
-        public string MoveTo { get; set; }
+        public string MoveTo { get => _explicitNullValueMoveTo; set { _explicitNullValueMoveTo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("move_to"); else _explicitNullProperties?.Remove("move_to"); } }
+        private string _explicitNullValueMoveTo = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyBulkMoveTestsToFolderV1ConvaiAgentTestingBulkMovePost"/> and sets the default values.
@@ -45,7 +58,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyBulkMoveTestsToFolderV1ConvaiAgentTestingBulkMovePost CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyBulkMoveTestsToFolderV1ConvaiAgentTestingBulkMovePost();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyBulkMoveTestsToFolderV1ConvaiAgentTestingBulkMovePost(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -68,6 +81,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<string>("entity_ids", EntityIds);
             writer.WriteStringValue("move_to", MoveTo);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -11,15 +11,28 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class FileInputConfig : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("enabled") is { } nullNodeEnabled && nullNodeEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Enabled = null;
+            if (parseNode.GetChildNode("max_files_in_memory") is { } nullNodeMaxFilesInMemory && nullNodeMaxFilesInMemory.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxFilesInMemory = null;
+            if (parseNode.GetChildNode("max_files_per_conversation") is { } nullNodeMaxFilesPerConversation && nullNodeMaxFilesPerConversation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxFilesPerConversation = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>When enabled, users may attach images, PDFs, or text files in chat when the LLM supports multimodal input.</summary>
-        public bool? Enabled { get; set; }
+        public bool? Enabled { get => _explicitNullValueEnabled; set { _explicitNullValueEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enabled"); else _explicitNullProperties?.Remove("enabled"); } }
+        private bool? _explicitNullValueEnabled = default!;
         /// <summary>Number of most-recent files kept in memory during a conversation. Older files are summarized and their bytes freed.</summary>
-        public int? MaxFilesInMemory { get; set; }
+        public int? MaxFilesInMemory { get => _explicitNullValueMaxFilesInMemory; set { _explicitNullValueMaxFilesInMemory = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_files_in_memory"); else _explicitNullProperties?.Remove("max_files_in_memory"); } }
+        private int? _explicitNullValueMaxFilesInMemory = default!;
         /// <summary>Total files a user can upload in one conversation. Uploads are billed per file. Use -1 for no limit, or a value &gt;= max_files_in_memory.</summary>
-        public int? MaxFilesPerConversation { get; set; }
+        public int? MaxFilesPerConversation { get => _explicitNullValueMaxFilesPerConversation; set { _explicitNullValueMaxFilesPerConversation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_files_per_conversation"); else _explicitNullProperties?.Remove("max_files_per_conversation"); } }
+        private int? _explicitNullValueMaxFilesPerConversation = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.FileInputConfig"/> and sets the default values.
         /// </summary>
@@ -38,7 +51,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.FileInputConfig CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.FileInputConfig();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.FileInputConfig(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -63,6 +76,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteBoolValue("enabled", Enabled);
             writer.WriteIntValue("max_files_in_memory", MaxFilesInMemory);
             writer.WriteIntValue("max_files_per_conversation", MaxFilesPerConversation);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

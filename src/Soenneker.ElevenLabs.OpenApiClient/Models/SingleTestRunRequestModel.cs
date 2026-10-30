@@ -11,40 +11,59 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class SingleTestRunRequestModel : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("root_folder_id") is { } nullNodeRootFolderId && nullNodeRootFolderId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RootFolderId = null;
+            if (parseNode.GetChildNode("root_folder_name") is { } nullNodeRootFolderName && nullNodeRootFolderName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RootFolderName = null;
+            if (parseNode.GetChildNode("test_id") is { } nullNodeTestId && nullNodeTestId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TestId = null;
+            if (parseNode.GetChildNode("workflow_node_id") is { } nullNodeWorkflowNodeId && nullNodeWorkflowNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WorkflowNodeId = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>ID of the root folder to run the test on. If not provided, the test will be run on the agent&apos;s default folder.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RootFolderId { get; set; }
+        public string? RootFolderId { get => _explicitNullValueRootFolderId; set { _explicitNullValueRootFolderId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("root_folder_id"); else _explicitNullProperties?.Remove("root_folder_id"); } }
+        private string? _explicitNullValueRootFolderId = default!;
 #nullable restore
 #else
-        public string RootFolderId { get; set; }
+        public string RootFolderId { get => _explicitNullValueRootFolderId; set { _explicitNullValueRootFolderId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("root_folder_id"); else _explicitNullProperties?.Remove("root_folder_id"); } }
+        private string _explicitNullValueRootFolderId = default!;
 #endif
         /// <summary>Name of the root folder to run the test on. If not provided, the test will be run on the agent&apos;s default folder.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RootFolderName { get; set; }
+        public string? RootFolderName { get => _explicitNullValueRootFolderName; set { _explicitNullValueRootFolderName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("root_folder_name"); else _explicitNullProperties?.Remove("root_folder_name"); } }
+        private string? _explicitNullValueRootFolderName = default!;
 #nullable restore
 #else
-        public string RootFolderName { get; set; }
+        public string RootFolderName { get => _explicitNullValueRootFolderName; set { _explicitNullValueRootFolderName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("root_folder_name"); else _explicitNullProperties?.Remove("root_folder_name"); } }
+        private string _explicitNullValueRootFolderName = default!;
 #endif
         /// <summary>ID of the test to run</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TestId { get; set; }
+        public string? TestId { get => _explicitNullValueTestId; set { _explicitNullValueTestId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("test_id"); else _explicitNullProperties?.Remove("test_id"); } }
+        private string? _explicitNullValueTestId = default!;
 #nullable restore
 #else
-        public string TestId { get; set; }
+        public string TestId { get => _explicitNullValueTestId; set { _explicitNullValueTestId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("test_id"); else _explicitNullProperties?.Remove("test_id"); } }
+        private string _explicitNullValueTestId = default!;
 #endif
         /// <summary>ID of the workflow node to run the test on. If not provided, the test will be run on the agent&apos;s default workflow node.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? WorkflowNodeId { get; set; }
+        public string? WorkflowNodeId { get => _explicitNullValueWorkflowNodeId; set { _explicitNullValueWorkflowNodeId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workflow_node_id"); else _explicitNullProperties?.Remove("workflow_node_id"); } }
+        private string? _explicitNullValueWorkflowNodeId = default!;
 #nullable restore
 #else
-        public string WorkflowNodeId { get; set; }
+        public string WorkflowNodeId { get => _explicitNullValueWorkflowNodeId; set { _explicitNullValueWorkflowNodeId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workflow_node_id"); else _explicitNullProperties?.Remove("workflow_node_id"); } }
+        private string _explicitNullValueWorkflowNodeId = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.SingleTestRunRequestModel"/> and sets the default values.
@@ -61,7 +80,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.SingleTestRunRequestModel CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.SingleTestRunRequestModel();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.SingleTestRunRequestModel(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -88,6 +107,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteStringValue("root_folder_name", RootFolderName);
             writer.WriteStringValue("test_id", TestId);
             writer.WriteStringValue("workflow_node_id", WorkflowNodeId);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -11,151 +11,235 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class CaptionStyleModel : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("auto_break_enabled") is { } nullNodeAutoBreakEnabled && nullNodeAutoBreakEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AutoBreakEnabled = null;
+            if (parseNode.GetChildNode("background_blur") is { } nullNodeBackgroundBlur && nullNodeBackgroundBlur.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BackgroundBlur = null;
+            if (parseNode.GetChildNode("background_border_radius") is { } nullNodeBackgroundBorderRadius && nullNodeBackgroundBorderRadius.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BackgroundBorderRadius = null;
+            if (parseNode.GetChildNode("background_color") is { } nullNodeBackgroundColor && nullNodeBackgroundColor.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BackgroundColor = null;
+            if (parseNode.GetChildNode("background_enabled") is { } nullNodeBackgroundEnabled && nullNodeBackgroundEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BackgroundEnabled = null;
+            if (parseNode.GetChildNode("background_opacity") is { } nullNodeBackgroundOpacity && nullNodeBackgroundOpacity.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BackgroundOpacity = null;
+            if (parseNode.GetChildNode("character_animation") is { } nullNodeCharacterAnimation && nullNodeCharacterAnimation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CharacterAnimation = null;
+            if (parseNode.GetChildNode("cursor_enabled") is { } nullNodeCursorEnabled && nullNodeCursorEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CursorEnabled = null;
+            if (parseNode.GetChildNode("horizontal_placement") is { } nullNodeHorizontalPlacement && nullNodeHorizontalPlacement.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HorizontalPlacement = null;
+            if (parseNode.GetChildNode("max_lines_per_section") is { } nullNodeMaxLinesPerSection && nullNodeMaxLinesPerSection.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxLinesPerSection = null;
+            if (parseNode.GetChildNode("max_words_per_line") is { } nullNodeMaxWordsPerLine && nullNodeMaxWordsPerLine.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxWordsPerLine = null;
+            if (parseNode.GetChildNode("section_animation") is { } nullNodeSectionAnimation && nullNodeSectionAnimation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SectionAnimation = null;
+            if (parseNode.GetChildNode("template") is { } nullNodeTemplate && nullNodeTemplate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Template = null;
+            if (parseNode.GetChildNode("text_align") is { } nullNodeTextAlign && nullNodeTextAlign.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TextAlign = null;
+            if (parseNode.GetChildNode("text_blend_mode") is { } nullNodeTextBlendMode && nullNodeTextBlendMode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TextBlendMode = null;
+            if (parseNode.GetChildNode("text_color") is { } nullNodeTextColor && nullNodeTextColor.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TextColor = null;
+            if (parseNode.GetChildNode("text_font") is { } nullNodeTextFont && nullNodeTextFont.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TextFont = null;
+            if (parseNode.GetChildNode("text_outline") is { } nullNodeTextOutline && nullNodeTextOutline.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TextOutline = null;
+            if (parseNode.GetChildNode("text_scale") is { } nullNodeTextScale && nullNodeTextScale.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TextScale = null;
+            if (parseNode.GetChildNode("text_shadow") is { } nullNodeTextShadow && nullNodeTextShadow.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TextShadow = null;
+            if (parseNode.GetChildNode("text_style") is { } nullNodeTextStyle && nullNodeTextStyle.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TextStyle = null;
+            if (parseNode.GetChildNode("text_transform") is { } nullNodeTextTransform && nullNodeTextTransform.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TextTransform = null;
+            if (parseNode.GetChildNode("text_weight") is { } nullNodeTextWeight && nullNodeTextWeight.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TextWeight = null;
+            if (parseNode.GetChildNode("vertical_placement") is { } nullNodeVerticalPlacement && nullNodeVerticalPlacement.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VerticalPlacement = null;
+            if (parseNode.GetChildNode("width_pct") is { } nullNodeWidthPct && nullNodeWidthPct.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WidthPct = null;
+            if (parseNode.GetChildNode("word_animation") is { } nullNodeWordAnimation && nullNodeWordAnimation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WordAnimation = null;
+            if (parseNode.GetChildNode("word_highlights_background_color") is { } nullNodeWordHighlightsBackgroundColor && nullNodeWordHighlightsBackgroundColor.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WordHighlightsBackgroundColor = null;
+            if (parseNode.GetChildNode("word_highlights_blur") is { } nullNodeWordHighlightsBlur && nullNodeWordHighlightsBlur.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WordHighlightsBlur = null;
+            if (parseNode.GetChildNode("word_highlights_border_radius") is { } nullNodeWordHighlightsBorderRadius && nullNodeWordHighlightsBorderRadius.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WordHighlightsBorderRadius = null;
+            if (parseNode.GetChildNode("word_highlights_color") is { } nullNodeWordHighlightsColor && nullNodeWordHighlightsColor.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WordHighlightsColor = null;
+            if (parseNode.GetChildNode("word_highlights_enabled") is { } nullNodeWordHighlightsEnabled && nullNodeWordHighlightsEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WordHighlightsEnabled = null;
+            if (parseNode.GetChildNode("word_highlights_opacity") is { } nullNodeWordHighlightsOpacity && nullNodeWordHighlightsOpacity.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WordHighlightsOpacity = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The auto_break_enabled property</summary>
-        public bool? AutoBreakEnabled { get; set; }
+        public bool? AutoBreakEnabled { get => _explicitNullValueAutoBreakEnabled; set { _explicitNullValueAutoBreakEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("auto_break_enabled"); else _explicitNullProperties?.Remove("auto_break_enabled"); } }
+        private bool? _explicitNullValueAutoBreakEnabled = default!;
         /// <summary>The background_blur property</summary>
-        public double? BackgroundBlur { get; set; }
+        public double? BackgroundBlur { get => _explicitNullValueBackgroundBlur; set { _explicitNullValueBackgroundBlur = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("background_blur"); else _explicitNullProperties?.Remove("background_blur"); } }
+        private double? _explicitNullValueBackgroundBlur = default!;
         /// <summary>The background_border_radius property</summary>
-        public double? BackgroundBorderRadius { get; set; }
+        public double? BackgroundBorderRadius { get => _explicitNullValueBackgroundBorderRadius; set { _explicitNullValueBackgroundBorderRadius = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("background_border_radius"); else _explicitNullProperties?.Remove("background_border_radius"); } }
+        private double? _explicitNullValueBackgroundBorderRadius = default!;
         /// <summary>The background_color property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BackgroundColor { get; set; }
+        public string? BackgroundColor { get => _explicitNullValueBackgroundColor; set { _explicitNullValueBackgroundColor = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("background_color"); else _explicitNullProperties?.Remove("background_color"); } }
+        private string? _explicitNullValueBackgroundColor = default!;
 #nullable restore
 #else
-        public string BackgroundColor { get; set; }
+        public string BackgroundColor { get => _explicitNullValueBackgroundColor; set { _explicitNullValueBackgroundColor = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("background_color"); else _explicitNullProperties?.Remove("background_color"); } }
+        private string _explicitNullValueBackgroundColor = default!;
 #endif
         /// <summary>The background_enabled property</summary>
-        public bool? BackgroundEnabled { get; set; }
+        public bool? BackgroundEnabled { get => _explicitNullValueBackgroundEnabled; set { _explicitNullValueBackgroundEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("background_enabled"); else _explicitNullProperties?.Remove("background_enabled"); } }
+        private bool? _explicitNullValueBackgroundEnabled = default!;
         /// <summary>The background_opacity property</summary>
-        public double? BackgroundOpacity { get; set; }
+        public double? BackgroundOpacity { get => _explicitNullValueBackgroundOpacity; set { _explicitNullValueBackgroundOpacity = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("background_opacity"); else _explicitNullProperties?.Remove("background_opacity"); } }
+        private double? _explicitNullValueBackgroundOpacity = default!;
         /// <summary>The character_animation property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CaptionStyleCharacterAnimationModel? CharacterAnimation { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CaptionStyleCharacterAnimationModel? CharacterAnimation { get => _explicitNullValueCharacterAnimation; set { _explicitNullValueCharacterAnimation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("character_animation"); else _explicitNullProperties?.Remove("character_animation"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.CaptionStyleCharacterAnimationModel? _explicitNullValueCharacterAnimation = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CaptionStyleCharacterAnimationModel CharacterAnimation { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CaptionStyleCharacterAnimationModel CharacterAnimation { get => _explicitNullValueCharacterAnimation; set { _explicitNullValueCharacterAnimation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("character_animation"); else _explicitNullProperties?.Remove("character_animation"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.CaptionStyleCharacterAnimationModel _explicitNullValueCharacterAnimation = default!;
 #endif
         /// <summary>The cursor_enabled property</summary>
-        public bool? CursorEnabled { get; set; }
+        public bool? CursorEnabled { get => _explicitNullValueCursorEnabled; set { _explicitNullValueCursorEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cursor_enabled"); else _explicitNullProperties?.Remove("cursor_enabled"); } }
+        private bool? _explicitNullValueCursorEnabled = default!;
         /// <summary>The horizontal_placement property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CaptionStyleHorizontalPlacementModel? HorizontalPlacement { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CaptionStyleHorizontalPlacementModel? HorizontalPlacement { get => _explicitNullValueHorizontalPlacement; set { _explicitNullValueHorizontalPlacement = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("horizontal_placement"); else _explicitNullProperties?.Remove("horizontal_placement"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.CaptionStyleHorizontalPlacementModel? _explicitNullValueHorizontalPlacement = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CaptionStyleHorizontalPlacementModel HorizontalPlacement { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CaptionStyleHorizontalPlacementModel HorizontalPlacement { get => _explicitNullValueHorizontalPlacement; set { _explicitNullValueHorizontalPlacement = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("horizontal_placement"); else _explicitNullProperties?.Remove("horizontal_placement"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.CaptionStyleHorizontalPlacementModel _explicitNullValueHorizontalPlacement = default!;
 #endif
         /// <summary>The max_lines_per_section property</summary>
-        public int? MaxLinesPerSection { get; set; }
+        public int? MaxLinesPerSection { get => _explicitNullValueMaxLinesPerSection; set { _explicitNullValueMaxLinesPerSection = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_lines_per_section"); else _explicitNullProperties?.Remove("max_lines_per_section"); } }
+        private int? _explicitNullValueMaxLinesPerSection = default!;
         /// <summary>The max_words_per_line property</summary>
-        public int? MaxWordsPerLine { get; set; }
+        public int? MaxWordsPerLine { get => _explicitNullValueMaxWordsPerLine; set { _explicitNullValueMaxWordsPerLine = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_words_per_line"); else _explicitNullProperties?.Remove("max_words_per_line"); } }
+        private int? _explicitNullValueMaxWordsPerLine = default!;
         /// <summary>The section_animation property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CaptionStyleSectionAnimationModel? SectionAnimation { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CaptionStyleSectionAnimationModel? SectionAnimation { get => _explicitNullValueSectionAnimation; set { _explicitNullValueSectionAnimation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("section_animation"); else _explicitNullProperties?.Remove("section_animation"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.CaptionStyleSectionAnimationModel? _explicitNullValueSectionAnimation = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CaptionStyleSectionAnimationModel SectionAnimation { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CaptionStyleSectionAnimationModel SectionAnimation { get => _explicitNullValueSectionAnimation; set { _explicitNullValueSectionAnimation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("section_animation"); else _explicitNullProperties?.Remove("section_animation"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.CaptionStyleSectionAnimationModel _explicitNullValueSectionAnimation = default!;
 #endif
         /// <summary>The template property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CaptionStyleTemplateModel? Template { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CaptionStyleTemplateModel? Template { get => _explicitNullValueTemplate; set { _explicitNullValueTemplate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("template"); else _explicitNullProperties?.Remove("template"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.CaptionStyleTemplateModel? _explicitNullValueTemplate = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CaptionStyleTemplateModel Template { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CaptionStyleTemplateModel Template { get => _explicitNullValueTemplate; set { _explicitNullValueTemplate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("template"); else _explicitNullProperties?.Remove("template"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.CaptionStyleTemplateModel _explicitNullValueTemplate = default!;
 #endif
         /// <summary>The text_align property</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CaptionStyleModelTextAlign? TextAlign { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CaptionStyleModelTextAlign? TextAlign { get => _explicitNullValueTextAlign; set { _explicitNullValueTextAlign = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("text_align"); else _explicitNullProperties?.Remove("text_align"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.CaptionStyleModelTextAlign? _explicitNullValueTextAlign = default!;
         /// <summary>The text_blend_mode property</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CaptionStyleModelTextBlendMode? TextBlendMode { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CaptionStyleModelTextBlendMode? TextBlendMode { get => _explicitNullValueTextBlendMode; set { _explicitNullValueTextBlendMode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("text_blend_mode"); else _explicitNullProperties?.Remove("text_blend_mode"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.CaptionStyleModelTextBlendMode? _explicitNullValueTextBlendMode = default!;
         /// <summary>The text_color property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TextColor { get; set; }
+        public string? TextColor { get => _explicitNullValueTextColor; set { _explicitNullValueTextColor = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("text_color"); else _explicitNullProperties?.Remove("text_color"); } }
+        private string? _explicitNullValueTextColor = default!;
 #nullable restore
 #else
-        public string TextColor { get; set; }
+        public string TextColor { get => _explicitNullValueTextColor; set { _explicitNullValueTextColor = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("text_color"); else _explicitNullProperties?.Remove("text_color"); } }
+        private string _explicitNullValueTextColor = default!;
 #endif
         /// <summary>The text_font property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TextFont { get; set; }
+        public string? TextFont { get => _explicitNullValueTextFont; set { _explicitNullValueTextFont = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("text_font"); else _explicitNullProperties?.Remove("text_font"); } }
+        private string? _explicitNullValueTextFont = default!;
 #nullable restore
 #else
-        public string TextFont { get; set; }
+        public string TextFont { get => _explicitNullValueTextFont; set { _explicitNullValueTextFont = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("text_font"); else _explicitNullProperties?.Remove("text_font"); } }
+        private string _explicitNullValueTextFont = default!;
 #endif
         /// <summary>The text_outline property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.StudioTextStyleOutlineModel? TextOutline { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.StudioTextStyleOutlineModel? TextOutline { get => _explicitNullValueTextOutline; set { _explicitNullValueTextOutline = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("text_outline"); else _explicitNullProperties?.Remove("text_outline"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.StudioTextStyleOutlineModel? _explicitNullValueTextOutline = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.StudioTextStyleOutlineModel TextOutline { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.StudioTextStyleOutlineModel TextOutline { get => _explicitNullValueTextOutline; set { _explicitNullValueTextOutline = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("text_outline"); else _explicitNullProperties?.Remove("text_outline"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.StudioTextStyleOutlineModel _explicitNullValueTextOutline = default!;
 #endif
         /// <summary>The text_scale property</summary>
-        public double? TextScale { get; set; }
+        public double? TextScale { get => _explicitNullValueTextScale; set { _explicitNullValueTextScale = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("text_scale"); else _explicitNullProperties?.Remove("text_scale"); } }
+        private double? _explicitNullValueTextScale = default!;
         /// <summary>The text_shadow property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.StudioTextStyleShadowModel? TextShadow { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.StudioTextStyleShadowModel? TextShadow { get => _explicitNullValueTextShadow; set { _explicitNullValueTextShadow = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("text_shadow"); else _explicitNullProperties?.Remove("text_shadow"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.StudioTextStyleShadowModel? _explicitNullValueTextShadow = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.StudioTextStyleShadowModel TextShadow { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.StudioTextStyleShadowModel TextShadow { get => _explicitNullValueTextShadow; set { _explicitNullValueTextShadow = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("text_shadow"); else _explicitNullProperties?.Remove("text_shadow"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.StudioTextStyleShadowModel _explicitNullValueTextShadow = default!;
 #endif
         /// <summary>The text_style property</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CaptionStyleModelTextStyle? TextStyle { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CaptionStyleModelTextStyle? TextStyle { get => _explicitNullValueTextStyle; set { _explicitNullValueTextStyle = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("text_style"); else _explicitNullProperties?.Remove("text_style"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.CaptionStyleModelTextStyle? _explicitNullValueTextStyle = default!;
         /// <summary>The text_transform property</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CaptionStyleModelTextTransform? TextTransform { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CaptionStyleModelTextTransform? TextTransform { get => _explicitNullValueTextTransform; set { _explicitNullValueTextTransform = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("text_transform"); else _explicitNullProperties?.Remove("text_transform"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.CaptionStyleModelTextTransform? _explicitNullValueTextTransform = default!;
         /// <summary>The text_weight property</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CaptionStyleModelTextWeight? TextWeight { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CaptionStyleModelTextWeight? TextWeight { get => _explicitNullValueTextWeight; set { _explicitNullValueTextWeight = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("text_weight"); else _explicitNullProperties?.Remove("text_weight"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.CaptionStyleModelTextWeight? _explicitNullValueTextWeight = default!;
         /// <summary>The vertical_placement property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CaptionStyleVerticalPlacementModel? VerticalPlacement { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CaptionStyleVerticalPlacementModel? VerticalPlacement { get => _explicitNullValueVerticalPlacement; set { _explicitNullValueVerticalPlacement = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("vertical_placement"); else _explicitNullProperties?.Remove("vertical_placement"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.CaptionStyleVerticalPlacementModel? _explicitNullValueVerticalPlacement = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CaptionStyleVerticalPlacementModel VerticalPlacement { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CaptionStyleVerticalPlacementModel VerticalPlacement { get => _explicitNullValueVerticalPlacement; set { _explicitNullValueVerticalPlacement = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("vertical_placement"); else _explicitNullProperties?.Remove("vertical_placement"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.CaptionStyleVerticalPlacementModel _explicitNullValueVerticalPlacement = default!;
 #endif
         /// <summary>The width_pct property</summary>
-        public double? WidthPct { get; set; }
+        public double? WidthPct { get => _explicitNullValueWidthPct; set { _explicitNullValueWidthPct = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("width_pct"); else _explicitNullProperties?.Remove("width_pct"); } }
+        private double? _explicitNullValueWidthPct = default!;
         /// <summary>The word_animation property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CaptionStyleWordAnimationModel? WordAnimation { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CaptionStyleWordAnimationModel? WordAnimation { get => _explicitNullValueWordAnimation; set { _explicitNullValueWordAnimation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("word_animation"); else _explicitNullProperties?.Remove("word_animation"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.CaptionStyleWordAnimationModel? _explicitNullValueWordAnimation = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CaptionStyleWordAnimationModel WordAnimation { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CaptionStyleWordAnimationModel WordAnimation { get => _explicitNullValueWordAnimation; set { _explicitNullValueWordAnimation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("word_animation"); else _explicitNullProperties?.Remove("word_animation"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.CaptionStyleWordAnimationModel _explicitNullValueWordAnimation = default!;
 #endif
         /// <summary>The word_highlights_background_color property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? WordHighlightsBackgroundColor { get; set; }
+        public string? WordHighlightsBackgroundColor { get => _explicitNullValueWordHighlightsBackgroundColor; set { _explicitNullValueWordHighlightsBackgroundColor = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("word_highlights_background_color"); else _explicitNullProperties?.Remove("word_highlights_background_color"); } }
+        private string? _explicitNullValueWordHighlightsBackgroundColor = default!;
 #nullable restore
 #else
-        public string WordHighlightsBackgroundColor { get; set; }
+        public string WordHighlightsBackgroundColor { get => _explicitNullValueWordHighlightsBackgroundColor; set { _explicitNullValueWordHighlightsBackgroundColor = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("word_highlights_background_color"); else _explicitNullProperties?.Remove("word_highlights_background_color"); } }
+        private string _explicitNullValueWordHighlightsBackgroundColor = default!;
 #endif
         /// <summary>The word_highlights_blur property</summary>
-        public double? WordHighlightsBlur { get; set; }
+        public double? WordHighlightsBlur { get => _explicitNullValueWordHighlightsBlur; set { _explicitNullValueWordHighlightsBlur = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("word_highlights_blur"); else _explicitNullProperties?.Remove("word_highlights_blur"); } }
+        private double? _explicitNullValueWordHighlightsBlur = default!;
         /// <summary>The word_highlights_border_radius property</summary>
-        public double? WordHighlightsBorderRadius { get; set; }
+        public double? WordHighlightsBorderRadius { get => _explicitNullValueWordHighlightsBorderRadius; set { _explicitNullValueWordHighlightsBorderRadius = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("word_highlights_border_radius"); else _explicitNullProperties?.Remove("word_highlights_border_radius"); } }
+        private double? _explicitNullValueWordHighlightsBorderRadius = default!;
         /// <summary>The word_highlights_color property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? WordHighlightsColor { get; set; }
+        public string? WordHighlightsColor { get => _explicitNullValueWordHighlightsColor; set { _explicitNullValueWordHighlightsColor = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("word_highlights_color"); else _explicitNullProperties?.Remove("word_highlights_color"); } }
+        private string? _explicitNullValueWordHighlightsColor = default!;
 #nullable restore
 #else
-        public string WordHighlightsColor { get; set; }
+        public string WordHighlightsColor { get => _explicitNullValueWordHighlightsColor; set { _explicitNullValueWordHighlightsColor = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("word_highlights_color"); else _explicitNullProperties?.Remove("word_highlights_color"); } }
+        private string _explicitNullValueWordHighlightsColor = default!;
 #endif
         /// <summary>The word_highlights_enabled property</summary>
-        public bool? WordHighlightsEnabled { get; set; }
+        public bool? WordHighlightsEnabled { get => _explicitNullValueWordHighlightsEnabled; set { _explicitNullValueWordHighlightsEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("word_highlights_enabled"); else _explicitNullProperties?.Remove("word_highlights_enabled"); } }
+        private bool? _explicitNullValueWordHighlightsEnabled = default!;
         /// <summary>The word_highlights_opacity property</summary>
-        public double? WordHighlightsOpacity { get; set; }
+        public double? WordHighlightsOpacity { get => _explicitNullValueWordHighlightsOpacity; set { _explicitNullValueWordHighlightsOpacity = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("word_highlights_opacity"); else _explicitNullProperties?.Remove("word_highlights_opacity"); } }
+        private double? _explicitNullValueWordHighlightsOpacity = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.CaptionStyleModel"/> and sets the default values.
         /// </summary>
@@ -171,7 +255,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.CaptionStyleModel CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.CaptionStyleModel();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.CaptionStyleModel(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -254,6 +338,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteStringValue("word_highlights_color", WordHighlightsColor);
             writer.WriteBoolValue("word_highlights_enabled", WordHighlightsEnabled);
             writer.WriteDoubleValue("word_highlights_opacity", WordHighlightsOpacity);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

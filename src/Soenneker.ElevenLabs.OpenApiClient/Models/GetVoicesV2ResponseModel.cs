@@ -11,28 +11,45 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class GetVoicesV2ResponseModel : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("has_more") is { } nullNodeHasMore && nullNodeHasMore.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HasMore = null;
+            if (parseNode.GetChildNode("next_page_token") is { } nullNodeNextPageToken && nullNodeNextPageToken.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NextPageToken = null;
+            if (parseNode.GetChildNode("total_count") is { } nullNodeTotalCount && nullNodeTotalCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TotalCount = null;
+            if (parseNode.GetChildNode("voices") is { } nullNodeVoices && nullNodeVoices.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Voices = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Indicates whether there are more voices available in subsequent pages. Use this flag (and next_page_token) for reliable pagination instead of relying on total_count.</summary>
-        public bool? HasMore { get; set; }
+        public bool? HasMore { get => _explicitNullValueHasMore; set { _explicitNullValueHasMore = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("has_more"); else _explicitNullProperties?.Remove("has_more"); } }
+        private bool? _explicitNullValueHasMore = default!;
         /// <summary>Token to retrieve the next page of results. Pass this value to the next request to continue pagination. Null if there are no more results.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? NextPageToken { get; set; }
+        public string? NextPageToken { get => _explicitNullValueNextPageToken; set { _explicitNullValueNextPageToken = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("next_page_token"); else _explicitNullProperties?.Remove("next_page_token"); } }
+        private string? _explicitNullValueNextPageToken = default!;
 #nullable restore
 #else
-        public string NextPageToken { get; set; }
+        public string NextPageToken { get => _explicitNullValueNextPageToken; set { _explicitNullValueNextPageToken = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("next_page_token"); else _explicitNullProperties?.Remove("next_page_token"); } }
+        private string _explicitNullValueNextPageToken = default!;
 #endif
         /// <summary>The total count of voices matching the query. This value is a live snapshot that reflects the current state of the database and may change between requests as users create, modify, or delete voices. For reliable pagination, use the has_more flag instead of relying on this value. Only request this field when you actually need the total count (e.g., for display purposes), as calculating it incurs a performance cost.</summary>
-        public int? TotalCount { get; set; }
+        public int? TotalCount { get => _explicitNullValueTotalCount; set { _explicitNullValueTotalCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total_count"); else _explicitNullProperties?.Remove("total_count"); } }
+        private int? _explicitNullValueTotalCount = default!;
         /// <summary>The list of voices matching the query.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceResponseModel>? Voices { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceResponseModel>? Voices { get => _explicitNullValueVoices; set { _explicitNullValueVoices = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("voices"); else _explicitNullProperties?.Remove("voices"); } }
+        private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceResponseModel>? _explicitNullValueVoices = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceResponseModel> Voices { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceResponseModel> Voices { get => _explicitNullValueVoices; set { _explicitNullValueVoices = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("voices"); else _explicitNullProperties?.Remove("voices"); } }
+        private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceResponseModel> _explicitNullValueVoices = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.GetVoicesV2ResponseModel"/> and sets the default values.
@@ -49,7 +66,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.GetVoicesV2ResponseModel CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.GetVoicesV2ResponseModel();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.GetVoicesV2ResponseModel(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -76,6 +93,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteStringValue("next_page_token", NextPageToken);
             writer.WriteIntValue("total_count", TotalCount);
             writer.WriteCollectionOfObjectValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceResponseModel>("voices", Voices);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

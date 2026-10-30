@@ -11,65 +11,98 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class BodyEditServiceAccountApiKeyV1ServiceAccountsServiceAccountUserIdApiKeysApiKeyIdPatch : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("allowed_ips") is { } nullNodeAllowedIps && nullNodeAllowedIps.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AllowedIps = null;
+            if (parseNode.GetChildNode("character_limit") is { } nullNodeCharacterLimit && nullNodeCharacterLimit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CharacterLimit = null;
+            if (parseNode.GetChildNode("dubbing_concurrency_limit") is { } nullNodeDubbingConcurrencyLimit && nullNodeDubbingConcurrencyLimit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DubbingConcurrencyLimit = null;
+            if (parseNode.GetChildNode("expires_at_unix") is { } nullNodeExpiresAtUnix && nullNodeExpiresAtUnix.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExpiresAtUnix = null;
+            if (parseNode.GetChildNode("is_enabled") is { } nullNodeIsEnabled && nullNodeIsEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsEnabled = null;
+            if (parseNode.GetChildNode("music_concurrency_limit") is { } nullNodeMusicConcurrencyLimit && nullNodeMusicConcurrencyLimit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MusicConcurrencyLimit = null;
+            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("permissions") is { } nullNodePermissions && nullNodePermissions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Permissions = null;
+            if (parseNode.GetChildNode("third_party_disable_allowed") is { } nullNodeThirdPartyDisableAllowed && nullNodeThirdPartyDisableAllowed.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ThirdPartyDisableAllowed = null;
+            if (parseNode.GetChildNode("tts_concurrency_limit") is { } nullNodeTtsConcurrencyLimit && nullNodeTtsConcurrencyLimit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TtsConcurrencyLimit = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>List of IP addresses or CIDR ranges allowed to use this API key. Each entry may be a CIDR range (e.g. &apos;10.0.0.0/24&apos;) or a bare IP address (normalized to /32 or /128). On create, omit or pass null to allow all IPs. On update, omit to leave the allowlist unchanged, or pass &quot;clear&quot; to remove it.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyEditServiceAccountApiKeyV1ServiceAccountsServiceAccountUserIdApiKeysApiKeyIdPatchAllowedIps? AllowedIps { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyEditServiceAccountApiKeyV1ServiceAccountsServiceAccountUserIdApiKeysApiKeyIdPatchAllowedIps? AllowedIps { get => _explicitNullValueAllowedIps; set { _explicitNullValueAllowedIps = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allowed_ips"); else _explicitNullProperties?.Remove("allowed_ips"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyEditServiceAccountApiKeyV1ServiceAccountsServiceAccountUserIdApiKeysApiKeyIdPatchAllowedIps? _explicitNullValueAllowedIps = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyEditServiceAccountApiKeyV1ServiceAccountsServiceAccountUserIdApiKeysApiKeyIdPatchAllowedIps AllowedIps { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyEditServiceAccountApiKeyV1ServiceAccountsServiceAccountUserIdApiKeysApiKeyIdPatchAllowedIps AllowedIps { get => _explicitNullValueAllowedIps; set { _explicitNullValueAllowedIps = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allowed_ips"); else _explicitNullProperties?.Remove("allowed_ips"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyEditServiceAccountApiKeyV1ServiceAccountsServiceAccountUserIdApiKeysApiKeyIdPatchAllowedIps _explicitNullValueAllowedIps = default!;
 #endif
         /// <summary>The character limit of the XI API key. If provided this will limit the usage of this api key to n characters per month where n is the chosen value. Requests that incur charges will fail after reaching this monthly limit.</summary>
-        public int? CharacterLimit { get; set; }
+        public int? CharacterLimit { get => _explicitNullValueCharacterLimit; set { _explicitNullValueCharacterLimit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("character_limit"); else _explicitNullProperties?.Remove("character_limit"); } }
+        private int? _explicitNullValueCharacterLimit = default!;
         /// <summary>Maximum concurrent dubbing requests for this API key. Only available for enterprise customers.</summary>
-        public int? DubbingConcurrencyLimit { get; set; }
-        /// <summary>Unix timestamp (in seconds) after which this API key stops working. When set, it must be at least 15 minutes and at most 90 days in the future. On create, omit or pass null for a key that never expires. On update, omit to leave it unchanged, or pass &quot;clear&quot; to remove the expiry (never expires).</summary>
+        public int? DubbingConcurrencyLimit { get => _explicitNullValueDubbingConcurrencyLimit; set { _explicitNullValueDubbingConcurrencyLimit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dubbing_concurrency_limit"); else _explicitNullProperties?.Remove("dubbing_concurrency_limit"); } }
+        private int? _explicitNullValueDubbingConcurrencyLimit = default!;
+        /// <summary>Unix timestamp (in seconds) after which this API key stops working. When set, it must be at least 15 minutes and at most 90 days in the future. On create, omit or pass null for a key that never expires. On update, omit to leave it unchanged, or pass &quot;clear&quot; to remove the expiry (never expires). A workspace may disallow never-expiring keys, or allow them only on service account API keys; creating one or clearing an expiry then fails.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyEditServiceAccountApiKeyV1ServiceAccountsServiceAccountUserIdApiKeysApiKeyIdPatchExpiresAtUnix? ExpiresAtUnix { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyEditServiceAccountApiKeyV1ServiceAccountsServiceAccountUserIdApiKeysApiKeyIdPatchExpiresAtUnix? ExpiresAtUnix { get => _explicitNullValueExpiresAtUnix; set { _explicitNullValueExpiresAtUnix = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expires_at_unix"); else _explicitNullProperties?.Remove("expires_at_unix"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyEditServiceAccountApiKeyV1ServiceAccountsServiceAccountUserIdApiKeysApiKeyIdPatchExpiresAtUnix? _explicitNullValueExpiresAtUnix = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyEditServiceAccountApiKeyV1ServiceAccountsServiceAccountUserIdApiKeysApiKeyIdPatchExpiresAtUnix ExpiresAtUnix { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyEditServiceAccountApiKeyV1ServiceAccountsServiceAccountUserIdApiKeysApiKeyIdPatchExpiresAtUnix ExpiresAtUnix { get => _explicitNullValueExpiresAtUnix; set { _explicitNullValueExpiresAtUnix = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expires_at_unix"); else _explicitNullProperties?.Remove("expires_at_unix"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyEditServiceAccountApiKeyV1ServiceAccountsServiceAccountUserIdApiKeysApiKeyIdPatchExpiresAtUnix _explicitNullValueExpiresAtUnix = default!;
 #endif
         /// <summary>Whether to enable or disable the API key.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyEditServiceAccountApiKeyV1ServiceAccountsServiceAccountUserIdApiKeysApiKeyIdPatchIsEnabled? IsEnabled { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyEditServiceAccountApiKeyV1ServiceAccountsServiceAccountUserIdApiKeysApiKeyIdPatchIsEnabled? IsEnabled { get => _explicitNullValueIsEnabled; set { _explicitNullValueIsEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_enabled"); else _explicitNullProperties?.Remove("is_enabled"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyEditServiceAccountApiKeyV1ServiceAccountsServiceAccountUserIdApiKeysApiKeyIdPatchIsEnabled? _explicitNullValueIsEnabled = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyEditServiceAccountApiKeyV1ServiceAccountsServiceAccountUserIdApiKeysApiKeyIdPatchIsEnabled IsEnabled { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyEditServiceAccountApiKeyV1ServiceAccountsServiceAccountUserIdApiKeysApiKeyIdPatchIsEnabled IsEnabled { get => _explicitNullValueIsEnabled; set { _explicitNullValueIsEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_enabled"); else _explicitNullProperties?.Remove("is_enabled"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyEditServiceAccountApiKeyV1ServiceAccountsServiceAccountUserIdApiKeysApiKeyIdPatchIsEnabled _explicitNullValueIsEnabled = default!;
 #endif
         /// <summary>Maximum concurrent music generation requests for this API key. Only available for enterprise customers.</summary>
-        public int? MusicConcurrencyLimit { get; set; }
+        public int? MusicConcurrencyLimit { get => _explicitNullValueMusicConcurrencyLimit; set { _explicitNullValueMusicConcurrencyLimit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("music_concurrency_limit"); else _explicitNullProperties?.Remove("music_concurrency_limit"); } }
+        private int? _explicitNullValueMusicConcurrencyLimit = default!;
         /// <summary>The name of the XI API key to use (used for identification purposes only).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get; set; }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string _explicitNullValueName = default!;
 #endif
         /// <summary>The permissions of the XI API.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyEditServiceAccountApiKeyV1ServiceAccountsServiceAccountUserIdApiKeysApiKeyIdPatchPermissions? Permissions { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyEditServiceAccountApiKeyV1ServiceAccountsServiceAccountUserIdApiKeysApiKeyIdPatchPermissions? Permissions { get => _explicitNullValuePermissions; set { _explicitNullValuePermissions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("permissions"); else _explicitNullProperties?.Remove("permissions"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyEditServiceAccountApiKeyV1ServiceAccountsServiceAccountUserIdApiKeysApiKeyIdPatchPermissions? _explicitNullValuePermissions = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyEditServiceAccountApiKeyV1ServiceAccountsServiceAccountUserIdApiKeysApiKeyIdPatchPermissions Permissions { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyEditServiceAccountApiKeyV1ServiceAccountsServiceAccountUserIdApiKeysApiKeyIdPatchPermissions Permissions { get => _explicitNullValuePermissions; set { _explicitNullValuePermissions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("permissions"); else _explicitNullProperties?.Remove("permissions"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyEditServiceAccountApiKeyV1ServiceAccountsServiceAccountUserIdApiKeysApiKeyIdPatchPermissions _explicitNullValuePermissions = default!;
 #endif
         /// <summary>Whether the holder of this key may disable it via the self-disable endpoint. On create, omit or pass null to use the workspace&apos;s default (enabled for non-Enterprise plans, disabled for Enterprise plans). On update, omit to leave it unchanged, or pass &quot;clear&quot; to reset it to the workspace default. Only honored for workspaces with self-disable access enabled.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyEditServiceAccountApiKeyV1ServiceAccountsServiceAccountUserIdApiKeysApiKeyIdPatchThirdPartyDisableAllowed? ThirdPartyDisableAllowed { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyEditServiceAccountApiKeyV1ServiceAccountsServiceAccountUserIdApiKeysApiKeyIdPatchThirdPartyDisableAllowed? ThirdPartyDisableAllowed { get => _explicitNullValueThirdPartyDisableAllowed; set { _explicitNullValueThirdPartyDisableAllowed = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("third_party_disable_allowed"); else _explicitNullProperties?.Remove("third_party_disable_allowed"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyEditServiceAccountApiKeyV1ServiceAccountsServiceAccountUserIdApiKeysApiKeyIdPatchThirdPartyDisableAllowed? _explicitNullValueThirdPartyDisableAllowed = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyEditServiceAccountApiKeyV1ServiceAccountsServiceAccountUserIdApiKeysApiKeyIdPatchThirdPartyDisableAllowed ThirdPartyDisableAllowed { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyEditServiceAccountApiKeyV1ServiceAccountsServiceAccountUserIdApiKeysApiKeyIdPatchThirdPartyDisableAllowed ThirdPartyDisableAllowed { get => _explicitNullValueThirdPartyDisableAllowed; set { _explicitNullValueThirdPartyDisableAllowed = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("third_party_disable_allowed"); else _explicitNullProperties?.Remove("third_party_disable_allowed"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyEditServiceAccountApiKeyV1ServiceAccountsServiceAccountUserIdApiKeysApiKeyIdPatchThirdPartyDisableAllowed _explicitNullValueThirdPartyDisableAllowed = default!;
 #endif
         /// <summary>Maximum concurrent text-to-speech/speech-to-speech requests for this API key. Only available for enterprise customers.</summary>
-        public int? TtsConcurrencyLimit { get; set; }
+        public int? TtsConcurrencyLimit { get => _explicitNullValueTtsConcurrencyLimit; set { _explicitNullValueTtsConcurrencyLimit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tts_concurrency_limit"); else _explicitNullProperties?.Remove("tts_concurrency_limit"); } }
+        private int? _explicitNullValueTtsConcurrencyLimit = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyEditServiceAccountApiKeyV1ServiceAccountsServiceAccountUserIdApiKeysApiKeyIdPatch"/> and sets the default values.
         /// </summary>
@@ -85,7 +118,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyEditServiceAccountApiKeyV1ServiceAccountsServiceAccountUserIdApiKeysApiKeyIdPatch CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyEditServiceAccountApiKeyV1ServiceAccountsServiceAccountUserIdApiKeysApiKeyIdPatch();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyEditServiceAccountApiKeyV1ServiceAccountsServiceAccountUserIdApiKeysApiKeyIdPatch(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -124,6 +157,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyEditServiceAccountApiKeyV1ServiceAccountsServiceAccountUserIdApiKeysApiKeyIdPatchPermissions>("permissions", Permissions);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyEditServiceAccountApiKeyV1ServiceAccountsServiceAccountUserIdApiKeysApiKeyIdPatchThirdPartyDisableAllowed>("third_party_disable_allowed", ThirdPartyDisableAllowed);
             writer.WriteIntValue("tts_concurrency_limit", TtsConcurrencyLimit);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

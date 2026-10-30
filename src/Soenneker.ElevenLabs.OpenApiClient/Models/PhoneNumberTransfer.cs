@@ -11,61 +11,90 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class PhoneNumberTransfer : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("condition") is { } nullNodeCondition && nullNodeCondition.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Condition = null;
+            if (parseNode.GetChildNode("custom_sip_headers") is { } nullNodeCustomSipHeaders && nullNodeCustomSipHeaders.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomSipHeaders = null;
+            if (parseNode.GetChildNode("phone_number") is { } nullNodePhoneNumber && nullNodePhoneNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PhoneNumber = null;
+            if (parseNode.GetChildNode("post_dial_digits") is { } nullNodePostDialDigits && nullNodePostDialDigits.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PostDialDigits = null;
+            if (parseNode.GetChildNode("sip_refer_play_dialtone") is { } nullNodeSipReferPlayDialtone && nullNodeSipReferPlayDialtone.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SipReferPlayDialtone = null;
+            if (parseNode.GetChildNode("transfer_destination") is { } nullNodeTransferDestination && nullNodeTransferDestination.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TransferDestination = null;
+            if (parseNode.GetChildNode("transfer_type") is { } nullNodeTransferType && nullNodeTransferType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TransferType = null;
+            if (parseNode.GetChildNode("uui") is { } nullNodeUui && nullNodeUui.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Uui = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The condition property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Condition { get; set; }
+        public string? Condition { get => _explicitNullValueCondition; set { _explicitNullValueCondition = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("condition"); else _explicitNullProperties?.Remove("condition"); } }
+        private string? _explicitNullValueCondition = default!;
 #nullable restore
 #else
-        public string Condition { get; set; }
+        public string Condition { get => _explicitNullValueCondition; set { _explicitNullValueCondition = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("condition"); else _explicitNullProperties?.Remove("condition"); } }
+        private string _explicitNullValueCondition = default!;
 #endif
         /// <summary>Custom SIP headers to include when transferring the call. Each header can be either a static value or a dynamic variable reference.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberTransferCustomSipHeadersItem>? CustomSipHeaders { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberTransferCustomSipHeadersItem>? CustomSipHeaders { get => _explicitNullValueCustomSipHeaders; set { _explicitNullValueCustomSipHeaders = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_sip_headers"); else _explicitNullProperties?.Remove("custom_sip_headers"); } }
+        private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberTransferCustomSipHeadersItem>? _explicitNullValueCustomSipHeaders = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberTransferCustomSipHeadersItem> CustomSipHeaders { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberTransferCustomSipHeadersItem> CustomSipHeaders { get => _explicitNullValueCustomSipHeaders; set { _explicitNullValueCustomSipHeaders = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_sip_headers"); else _explicitNullProperties?.Remove("custom_sip_headers"); } }
+        private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberTransferCustomSipHeadersItem> _explicitNullValueCustomSipHeaders = default!;
 #endif
         /// <summary>The phone_number property</summary>
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PhoneNumber { get; set; }
+        public string? PhoneNumber { get => _explicitNullValuePhoneNumber; set { _explicitNullValuePhoneNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("phone_number"); else _explicitNullProperties?.Remove("phone_number"); } }
+        private string? _explicitNullValuePhoneNumber = default!;
 #nullable restore
 #else
-        public string PhoneNumber { get; set; }
+        public string PhoneNumber { get => _explicitNullValuePhoneNumber; set { _explicitNullValuePhoneNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("phone_number"); else _explicitNullProperties?.Remove("phone_number"); } }
+        private string _explicitNullValuePhoneNumber = default!;
 #endif
         /// <summary>DTMF digits to send after call connects (e.g., &apos;ww1234&apos; for extension). Can be either a static value or a dynamic variable reference. Use &apos;w&apos; for 0.5s pause. Only supported for Twilio transfers.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PostDialDigitsDynamicVariable? PostDialDigits { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PostDialDigitsDynamicVariable? PostDialDigits { get => _explicitNullValuePostDialDigits; set { _explicitNullValuePostDialDigits = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("post_dial_digits"); else _explicitNullProperties?.Remove("post_dial_digits"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.PostDialDigitsDynamicVariable? _explicitNullValuePostDialDigits = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PostDialDigitsDynamicVariable PostDialDigits { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PostDialDigitsDynamicVariable PostDialDigits { get => _explicitNullValuePostDialDigits; set { _explicitNullValuePostDialDigits = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("post_dial_digits"); else _explicitNullProperties?.Remove("post_dial_digits"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.PostDialDigitsDynamicVariable _explicitNullValuePostDialDigits = default!;
 #endif
         /// <summary>When True, a ringing tone is played on the original call leg while a SIP REFER transfer completes. The tone is carried over RTP to the SIP peer executing the REFER, so disable this if the receiving system (e.g. an SBC or contact center) should not hear it. When disabled the caller hears silence until the transfer completes. SIP REFER transfers only.</summary>
-        public bool? SipReferPlayDialtone { get; set; }
+        public bool? SipReferPlayDialtone { get => _explicitNullValueSipReferPlayDialtone; set { _explicitNullValueSipReferPlayDialtone = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sip_refer_play_dialtone"); else _explicitNullProperties?.Remove("sip_refer_play_dialtone"); } }
+        private bool? _explicitNullValueSipReferPlayDialtone = default!;
         /// <summary>The transfer_destination property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberTransferTransferDestination? TransferDestination { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberTransferTransferDestination? TransferDestination { get => _explicitNullValueTransferDestination; set { _explicitNullValueTransferDestination = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transfer_destination"); else _explicitNullProperties?.Remove("transfer_destination"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberTransferTransferDestination? _explicitNullValueTransferDestination = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberTransferTransferDestination TransferDestination { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberTransferTransferDestination TransferDestination { get => _explicitNullValueTransferDestination; set { _explicitNullValueTransferDestination = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transfer_destination"); else _explicitNullProperties?.Remove("transfer_destination"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberTransferTransferDestination _explicitNullValueTransferDestination = default!;
 #endif
         /// <summary>The transfer_type property</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.TransferTypeEnum? TransferType { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.TransferTypeEnum? TransferType { get => _explicitNullValueTransferType; set { _explicitNullValueTransferType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transfer_type"); else _explicitNullProperties?.Remove("transfer_type"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.TransferTypeEnum? _explicitNullValueTransferType = default!;
         /// <summary>User-to-User Information (RFC 7433) to attach to SIP REFER transfers. Carries call context such as CRM identifiers or escalation reason across the transfer boundary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.UuiTransferConfig? Uui { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.UuiTransferConfig? Uui { get => _explicitNullValueUui; set { _explicitNullValueUui = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("uui"); else _explicitNullProperties?.Remove("uui"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.UuiTransferConfig? _explicitNullValueUui = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.UuiTransferConfig Uui { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.UuiTransferConfig Uui { get => _explicitNullValueUui; set { _explicitNullValueUui = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("uui"); else _explicitNullProperties?.Remove("uui"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.UuiTransferConfig _explicitNullValueUui = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberTransfer"/> and sets the default values.
@@ -84,7 +113,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberTransfer CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberTransfer();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberTransfer(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -119,6 +148,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.PhoneNumberTransferTransferDestination>("transfer_destination", TransferDestination);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.TransferTypeEnum>("transfer_type", TransferType);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.UuiTransferConfig>("uui", Uui);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

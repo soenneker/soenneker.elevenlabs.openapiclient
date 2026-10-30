@@ -11,48 +11,70 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ConversationTurnMetrics : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("convai_asr_provider") is { } nullNodeConvaiAsrProvider && nullNodeConvaiAsrProvider.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConvaiAsrProvider = null;
+            if (parseNode.GetChildNode("convai_tts_cascade") is { } nullNodeConvaiTtsCascade && nullNodeConvaiTtsCascade.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConvaiTtsCascade = null;
+            if (parseNode.GetChildNode("convai_tts_model") is { } nullNodeConvaiTtsModel && nullNodeConvaiTtsModel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConvaiTtsModel = null;
+            if (parseNode.GetChildNode("metrics") is { } nullNodeMetrics && nullNodeMetrics.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Metrics = null;
+            if (parseNode.GetChildNode("voice_id") is { } nullNodeVoiceId && nullNodeVoiceId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VoiceId = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The convai_asr_provider property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ConvaiAsrProvider { get; set; }
+        public string? ConvaiAsrProvider { get => _explicitNullValueConvaiAsrProvider; set { _explicitNullValueConvaiAsrProvider = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("convai_asr_provider"); else _explicitNullProperties?.Remove("convai_asr_provider"); } }
+        private string? _explicitNullValueConvaiAsrProvider = default!;
 #nullable restore
 #else
-        public string ConvaiAsrProvider { get; set; }
+        public string ConvaiAsrProvider { get => _explicitNullValueConvaiAsrProvider; set { _explicitNullValueConvaiAsrProvider = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("convai_asr_provider"); else _explicitNullProperties?.Remove("convai_asr_provider"); } }
+        private string _explicitNullValueConvaiAsrProvider = default!;
 #endif
         /// <summary>The convai_tts_cascade property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ConvaiTtsCascade { get; set; }
+        public string? ConvaiTtsCascade { get => _explicitNullValueConvaiTtsCascade; set { _explicitNullValueConvaiTtsCascade = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("convai_tts_cascade"); else _explicitNullProperties?.Remove("convai_tts_cascade"); } }
+        private string? _explicitNullValueConvaiTtsCascade = default!;
 #nullable restore
 #else
-        public string ConvaiTtsCascade { get; set; }
+        public string ConvaiTtsCascade { get => _explicitNullValueConvaiTtsCascade; set { _explicitNullValueConvaiTtsCascade = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("convai_tts_cascade"); else _explicitNullProperties?.Remove("convai_tts_cascade"); } }
+        private string _explicitNullValueConvaiTtsCascade = default!;
 #endif
         /// <summary>The convai_tts_model property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ConvaiTtsModel { get; set; }
+        public string? ConvaiTtsModel { get => _explicitNullValueConvaiTtsModel; set { _explicitNullValueConvaiTtsModel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("convai_tts_model"); else _explicitNullProperties?.Remove("convai_tts_model"); } }
+        private string? _explicitNullValueConvaiTtsModel = default!;
 #nullable restore
 #else
-        public string ConvaiTtsModel { get; set; }
+        public string ConvaiTtsModel { get => _explicitNullValueConvaiTtsModel; set { _explicitNullValueConvaiTtsModel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("convai_tts_model"); else _explicitNullProperties?.Remove("convai_tts_model"); } }
+        private string _explicitNullValueConvaiTtsModel = default!;
 #endif
         /// <summary>The metrics property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationTurnMetricsMetricsProperty? Metrics { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationTurnMetricsMetricsProperty? Metrics { get => _explicitNullValueMetrics; set { _explicitNullValueMetrics = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metrics"); else _explicitNullProperties?.Remove("metrics"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationTurnMetricsMetricsProperty? _explicitNullValueMetrics = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationTurnMetricsMetricsProperty Metrics { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationTurnMetricsMetricsProperty Metrics { get => _explicitNullValueMetrics; set { _explicitNullValueMetrics = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metrics"); else _explicitNullProperties?.Remove("metrics"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationTurnMetricsMetricsProperty _explicitNullValueMetrics = default!;
 #endif
         /// <summary>The voice_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? VoiceId { get; set; }
+        public string? VoiceId { get => _explicitNullValueVoiceId; set { _explicitNullValueVoiceId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("voice_id"); else _explicitNullProperties?.Remove("voice_id"); } }
+        private string? _explicitNullValueVoiceId = default!;
 #nullable restore
 #else
-        public string VoiceId { get; set; }
+        public string VoiceId { get => _explicitNullValueVoiceId; set { _explicitNullValueVoiceId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("voice_id"); else _explicitNullProperties?.Remove("voice_id"); } }
+        private string _explicitNullValueVoiceId = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationTurnMetrics"/> and sets the default values.
@@ -69,7 +91,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationTurnMetrics CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationTurnMetrics();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationTurnMetrics(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -98,6 +120,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteStringValue("convai_tts_model", ConvaiTtsModel);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationTurnMetricsMetricsProperty>("metrics", Metrics);
             writer.WriteStringValue("voice_id", VoiceId);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

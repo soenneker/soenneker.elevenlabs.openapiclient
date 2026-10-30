@@ -11,23 +11,39 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class TopicEvaluationCriteriaAggregate : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("criteria_id") is { } nullNodeCriteriaId && nullNodeCriteriaId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CriteriaId = null;
+            if (parseNode.GetChildNode("failure_count") is { } nullNodeFailureCount && nullNodeFailureCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FailureCount = null;
+            if (parseNode.GetChildNode("success_count") is { } nullNodeSuccessCount && nullNodeSuccessCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SuccessCount = null;
+            if (parseNode.GetChildNode("unknown_count") is { } nullNodeUnknownCount && nullNodeUnknownCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UnknownCount = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The criteria_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CriteriaId { get; set; }
+        public string? CriteriaId { get => _explicitNullValueCriteriaId; set { _explicitNullValueCriteriaId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("criteria_id"); else _explicitNullProperties?.Remove("criteria_id"); } }
+        private string? _explicitNullValueCriteriaId = default!;
 #nullable restore
 #else
-        public string CriteriaId { get; set; }
+        public string CriteriaId { get => _explicitNullValueCriteriaId; set { _explicitNullValueCriteriaId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("criteria_id"); else _explicitNullProperties?.Remove("criteria_id"); } }
+        private string _explicitNullValueCriteriaId = default!;
 #endif
         /// <summary>The failure_count property</summary>
-        public int? FailureCount { get; set; }
+        public int? FailureCount { get => _explicitNullValueFailureCount; set { _explicitNullValueFailureCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("failure_count"); else _explicitNullProperties?.Remove("failure_count"); } }
+        private int? _explicitNullValueFailureCount = default!;
         /// <summary>The success_count property</summary>
-        public int? SuccessCount { get; set; }
+        public int? SuccessCount { get => _explicitNullValueSuccessCount; set { _explicitNullValueSuccessCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("success_count"); else _explicitNullProperties?.Remove("success_count"); } }
+        private int? _explicitNullValueSuccessCount = default!;
         /// <summary>The unknown_count property</summary>
-        public int? UnknownCount { get; set; }
+        public int? UnknownCount { get => _explicitNullValueUnknownCount; set { _explicitNullValueUnknownCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unknown_count"); else _explicitNullProperties?.Remove("unknown_count"); } }
+        private int? _explicitNullValueUnknownCount = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.TopicEvaluationCriteriaAggregate"/> and sets the default values.
         /// </summary>
@@ -46,7 +62,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.TopicEvaluationCriteriaAggregate CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.TopicEvaluationCriteriaAggregate();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.TopicEvaluationCriteriaAggregate(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -73,6 +89,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteIntValue("failure_count", FailureCount);
             writer.WriteIntValue("success_count", SuccessCount);
             writer.WriteIntValue("unknown_count", UnknownCount);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

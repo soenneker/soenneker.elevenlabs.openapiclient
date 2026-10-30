@@ -11,57 +11,87 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ConversationConfigInput : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("background_sound") is { } nullNodeBackgroundSound && nullNodeBackgroundSound.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BackgroundSound = null;
+            if (parseNode.GetChildNode("client_events") is { } nullNodeClientEvents && nullNodeClientEvents.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClientEvents = null;
+            if (parseNode.GetChildNode("dtmf_input_settings") is { } nullNodeDtmfInputSettings && nullNodeDtmfInputSettings.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DtmfInputSettings = null;
+            if (parseNode.GetChildNode("file_input") is { } nullNodeFileInput && nullNodeFileInput.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FileInput = null;
+            if (parseNode.GetChildNode("max_duration_seconds") is { } nullNodeMaxDurationSeconds && nullNodeMaxDurationSeconds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxDurationSeconds = null;
+            if (parseNode.GetChildNode("monitoring_enabled") is { } nullNodeMonitoringEnabled && nullNodeMonitoringEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MonitoringEnabled = null;
+            if (parseNode.GetChildNode("monitoring_events") is { } nullNodeMonitoringEvents && nullNodeMonitoringEvents.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MonitoringEvents = null;
+            if (parseNode.GetChildNode("source_attribution") is { } nullNodeSourceAttribution && nullNodeSourceAttribution.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SourceAttribution = null;
+            if (parseNode.GetChildNode("text_only") is { } nullNodeTextOnly && nullNodeTextOnly.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TextOnly = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Configuration for background sound during conversations.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BackgroundSoundConfig? BackgroundSound { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BackgroundSoundConfig? BackgroundSound { get => _explicitNullValueBackgroundSound; set { _explicitNullValueBackgroundSound = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("background_sound"); else _explicitNullProperties?.Remove("background_sound"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.BackgroundSoundConfig? _explicitNullValueBackgroundSound = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BackgroundSoundConfig BackgroundSound { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BackgroundSoundConfig BackgroundSound { get => _explicitNullValueBackgroundSound; set { _explicitNullValueBackgroundSound = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("background_sound"); else _explicitNullProperties?.Remove("background_sound"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.BackgroundSoundConfig _explicitNullValueBackgroundSound = default!;
 #endif
         /// <summary>The events that will be sent to the client</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ClientEvent?>? ClientEvents { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ClientEvent?>? ClientEvents { get => _explicitNullValueClientEvents; set { _explicitNullValueClientEvents = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("client_events"); else _explicitNullProperties?.Remove("client_events"); } }
+        private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ClientEvent?>? _explicitNullValueClientEvents = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ClientEvent?> ClientEvents { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ClientEvent?> ClientEvents { get => _explicitNullValueClientEvents; set { _explicitNullValueClientEvents = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("client_events"); else _explicitNullProperties?.Remove("client_events"); } }
+        private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ClientEvent?> _explicitNullValueClientEvents = default!;
 #endif
         /// <summary>Configure DTMF (keypad) input collection during phone calls</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.DtmfInputConfig? DtmfInputSettings { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.DtmfInputConfig? DtmfInputSettings { get => _explicitNullValueDtmfInputSettings; set { _explicitNullValueDtmfInputSettings = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dtmf_input_settings"); else _explicitNullProperties?.Remove("dtmf_input_settings"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.DtmfInputConfig? _explicitNullValueDtmfInputSettings = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.DtmfInputConfig DtmfInputSettings { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.DtmfInputConfig DtmfInputSettings { get => _explicitNullValueDtmfInputSettings; set { _explicitNullValueDtmfInputSettings = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dtmf_input_settings"); else _explicitNullProperties?.Remove("dtmf_input_settings"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.DtmfInputConfig _explicitNullValueDtmfInputSettings = default!;
 #endif
         /// <summary>Configuration for file input (image/PDF uploads) during conversations.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.FileInputConfig? FileInput { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.FileInputConfig? FileInput { get => _explicitNullValueFileInput; set { _explicitNullValueFileInput = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("file_input"); else _explicitNullProperties?.Remove("file_input"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.FileInputConfig? _explicitNullValueFileInput = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.FileInputConfig FileInput { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.FileInputConfig FileInput { get => _explicitNullValueFileInput; set { _explicitNullValueFileInput = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("file_input"); else _explicitNullProperties?.Remove("file_input"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.FileInputConfig _explicitNullValueFileInput = default!;
 #endif
         /// <summary>The maximum duration of a conversation in seconds</summary>
-        public int? MaxDurationSeconds { get; set; }
+        public int? MaxDurationSeconds { get => _explicitNullValueMaxDurationSeconds; set { _explicitNullValueMaxDurationSeconds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_duration_seconds"); else _explicitNullProperties?.Remove("max_duration_seconds"); } }
+        private int? _explicitNullValueMaxDurationSeconds = default!;
         /// <summary>Enable real-time monitoring of conversations via WebSocket</summary>
-        public bool? MonitoringEnabled { get; set; }
+        public bool? MonitoringEnabled { get => _explicitNullValueMonitoringEnabled; set { _explicitNullValueMonitoringEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("monitoring_enabled"); else _explicitNullProperties?.Remove("monitoring_enabled"); } }
+        private bool? _explicitNullValueMonitoringEnabled = default!;
         /// <summary>The events that will be sent to monitoring connections.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ClientEvent?>? MonitoringEvents { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ClientEvent?>? MonitoringEvents { get => _explicitNullValueMonitoringEvents; set { _explicitNullValueMonitoringEvents = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("monitoring_events"); else _explicitNullProperties?.Remove("monitoring_events"); } }
+        private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ClientEvent?>? _explicitNullValueMonitoringEvents = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ClientEvent?> MonitoringEvents { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ClientEvent?> MonitoringEvents { get => _explicitNullValueMonitoringEvents; set { _explicitNullValueMonitoringEvents = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("monitoring_events"); else _explicitNullProperties?.Remove("monitoring_events"); } }
+        private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.ClientEvent?> _explicitNullValueMonitoringEvents = default!;
 #endif
         /// <summary>When enabled and knowledge base content is present, the LLM is instructed to report which sources it used.</summary>
-        public bool? SourceAttribution { get; set; }
+        public bool? SourceAttribution { get => _explicitNullValueSourceAttribution; set { _explicitNullValueSourceAttribution = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source_attribution"); else _explicitNullProperties?.Remove("source_attribution"); } }
+        private bool? _explicitNullValueSourceAttribution = default!;
         /// <summary>If enabled audio will not be processed and only text will be used, use to avoid audio pricing.</summary>
-        public bool? TextOnly { get; set; }
+        public bool? TextOnly { get => _explicitNullValueTextOnly; set { _explicitNullValueTextOnly = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("text_only"); else _explicitNullProperties?.Remove("text_only"); } }
+        private bool? _explicitNullValueTextOnly = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationConfigInput"/> and sets the default values.
         /// </summary>
@@ -81,7 +111,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationConfigInput CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationConfigInput();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.ConversationConfigInput(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -118,6 +148,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteCollectionOfEnumValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.ClientEvent>("monitoring_events", MonitoringEvents);
             writer.WriteBoolValue("source_attribution", SourceAttribution);
             writer.WriteBoolValue("text_only", TextOnly);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

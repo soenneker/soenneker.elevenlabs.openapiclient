@@ -2,6 +2,7 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.ElevenLabs.OpenApiClient.V1.Smb.Reseller.Billing;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Smb.Reseller.TierLadder;
 using Soenneker.ElevenLabs.OpenApiClient.V1.Smb.Reseller.Workspaces;
 using System.Collections.Generic;
@@ -16,6 +17,11 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Smb.Reseller
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ResellerRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The billing property</summary>
+        public global::Soenneker.ElevenLabs.OpenApiClient.V1.Smb.Reseller.Billing.BillingRequestBuilder Billing
+        {
+            get => new global::Soenneker.ElevenLabs.OpenApiClient.V1.Smb.Reseller.Billing.BillingRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The tierLadder property</summary>
         public global::Soenneker.ElevenLabs.OpenApiClient.V1.Smb.Reseller.TierLadder.TierLadderRequestBuilder TierLadder
         {

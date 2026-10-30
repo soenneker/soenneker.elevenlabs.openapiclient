@@ -12,19 +12,33 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class InlineImageReference : IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("content_base64") is { } nullNodeContentBase64 && nullNodeContentBase64.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ContentBase64 = null;
+            if (parseNode.GetChildNode("mime_type") is { } nullNodeMimeType && nullNodeMimeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MimeType = null;
+            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+        }
+
         /// <summary>The media file&apos;s bytes, base64-encoded (standard alphabet). Up to 25MB decoded.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ContentBase64 { get; set; }
+        public string? ContentBase64 { get => _explicitNullValueContentBase64; set { _explicitNullValueContentBase64 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("content_base64"); else _explicitNullProperties?.Remove("content_base64"); } }
+        private string? _explicitNullValueContentBase64 = default!;
 #nullable restore
 #else
-        public string ContentBase64 { get; set; }
+        public string ContentBase64 { get => _explicitNullValueContentBase64; set { _explicitNullValueContentBase64 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("content_base64"); else _explicitNullProperties?.Remove("content_base64"); } }
+        private string _explicitNullValueContentBase64 = default!;
 #endif
         /// <summary>The MIME type of the encoded image.</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.InlineImageReferenceMimeType? MimeType { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.InlineImageReferenceMimeType? MimeType { get => _explicitNullValueMimeType; set { _explicitNullValueMimeType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mime_type"); else _explicitNullProperties?.Remove("mime_type"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.InlineImageReferenceMimeType? _explicitNullValueMimeType = default!;
         /// <summary>The type property</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.InlineImageReferenceType? Type { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.InlineImageReferenceType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.InlineImageReferenceType? _explicitNullValueType = default!;
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -33,7 +47,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.InlineImageReference CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.InlineImageReference();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.InlineImageReference(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -57,7 +71,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("content_base64", ContentBase64);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.InlineImageReferenceMimeType>("mime_type", MimeType);
-            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.InlineImageReferenceType>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.InlineImageReferenceType>("type", Type);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

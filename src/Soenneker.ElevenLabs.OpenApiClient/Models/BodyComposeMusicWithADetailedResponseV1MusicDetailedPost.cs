@@ -11,76 +11,124 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class BodyComposeMusicWithADetailedResponseV1MusicDetailedPost : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("composition_plan") is { } nullNodeCompositionPlan && nullNodeCompositionPlan.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CompositionPlan = null;
+            if (parseNode.GetChildNode("finetune_id") is { } nullNodeFinetuneId && nullNodeFinetuneId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FinetuneId = null;
+            if (parseNode.GetChildNode("finetune_strength") is { } nullNodeFinetuneStrength && nullNodeFinetuneStrength.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FinetuneStrength = null;
+            if (parseNode.GetChildNode("force_instrumental") is { } nullNodeForceInstrumental && nullNodeForceInstrumental.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ForceInstrumental = null;
+            if (parseNode.GetChildNode("generation_mode") is { } nullNodeGenerationMode && nullNodeGenerationMode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GenerationMode = null;
+            if (parseNode.GetChildNode("lyrics_text") is { } nullNodeLyricsText && nullNodeLyricsText.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LyricsText = null;
+            if (parseNode.GetChildNode("model_id") is { } nullNodeModelId && nullNodeModelId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ModelId = null;
+            if (parseNode.GetChildNode("model_style_prefix") is { } nullNodeModelStylePrefix && nullNodeModelStylePrefix.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ModelStylePrefix = null;
+            if (parseNode.GetChildNode("music_length_ms") is { } nullNodeMusicLengthMs && nullNodeMusicLengthMs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MusicLengthMs = null;
+            if (parseNode.GetChildNode("music_prompt") is { } nullNodeMusicPrompt && nullNodeMusicPrompt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MusicPrompt = null;
+            if (parseNode.GetChildNode("prompt") is { } nullNodePrompt && nullNodePrompt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Prompt = null;
+            if (parseNode.GetChildNode("respect_sections_durations") is { } nullNodeRespectSectionsDurations && nullNodeRespectSectionsDurations.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RespectSectionsDurations = null;
+            if (parseNode.GetChildNode("seed") is { } nullNodeSeed && nullNodeSeed.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Seed = null;
+            if (parseNode.GetChildNode("sign_with_c2pa") is { } nullNodeSignWithC2pa && nullNodeSignWithC2pa.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SignWithC2pa = null;
+            if (parseNode.GetChildNode("store_for_inpainting") is { } nullNodeStoreForInpainting && nullNodeStoreForInpainting.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StoreForInpainting = null;
+            if (parseNode.GetChildNode("use_phonetic_names") is { } nullNodeUsePhoneticNames && nullNodeUsePhoneticNames.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UsePhoneticNames = null;
+            if (parseNode.GetChildNode("with_timestamps") is { } nullNodeWithTimestamps && nullNodeWithTimestamps.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WithTimestamps = null;
+            if (parseNode.GetChildNode("with_waveform_visual") is { } nullNodeWithWaveformVisual && nullNodeWithWaveformVisual.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WithWaveformVisual = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>A detailed composition plan to guide music generation. Cannot be used in conjunction with `prompt`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? CompositionPlan { get; set; }
+        public UntypedNode? CompositionPlan { get => _explicitNullValueCompositionPlan; set { _explicitNullValueCompositionPlan = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("composition_plan"); else _explicitNullProperties?.Remove("composition_plan"); } }
+        private UntypedNode? _explicitNullValueCompositionPlan = default!;
 #nullable restore
 #else
-        public UntypedNode CompositionPlan { get; set; }
+        public UntypedNode CompositionPlan { get => _explicitNullValueCompositionPlan; set { _explicitNullValueCompositionPlan = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("composition_plan"); else _explicitNullProperties?.Remove("composition_plan"); } }
+        private UntypedNode _explicitNullValueCompositionPlan = default!;
 #endif
         /// <summary>The ID of the finetune to use for the generation</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FinetuneId { get; set; }
+        public string? FinetuneId { get => _explicitNullValueFinetuneId; set { _explicitNullValueFinetuneId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("finetune_id"); else _explicitNullProperties?.Remove("finetune_id"); } }
+        private string? _explicitNullValueFinetuneId = default!;
 #nullable restore
 #else
-        public string FinetuneId { get; set; }
+        public string FinetuneId { get => _explicitNullValueFinetuneId; set { _explicitNullValueFinetuneId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("finetune_id"); else _explicitNullProperties?.Remove("finetune_id"); } }
+        private string _explicitNullValueFinetuneId = default!;
 #endif
         /// <summary>How strongly the finetune influences the generation. Defaults to 1.0 (full strength). Lower values soften the influence of the finetune, leaving more room for prompt-level steering. Only meaningful when `finetune_id` is also provided.</summary>
-        public double? FinetuneStrength { get; set; }
+        public double? FinetuneStrength { get => _explicitNullValueFinetuneStrength; set { _explicitNullValueFinetuneStrength = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("finetune_strength"); else _explicitNullProperties?.Remove("finetune_strength"); } }
+        private double? _explicitNullValueFinetuneStrength = default!;
         /// <summary>If true, guarantees that the generated song will be instrumental. If false, the song may or may not be instrumental depending on the `prompt`. Can only be used with `prompt`.</summary>
-        public bool? ForceInstrumental { get; set; }
+        public bool? ForceInstrumental { get => _explicitNullValueForceInstrumental; set { _explicitNullValueForceInstrumental = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("force_instrumental"); else _explicitNullProperties?.Remove("force_instrumental"); } }
+        private bool? _explicitNullValueForceInstrumental = default!;
         /// <summary>Optional generation mode hint for prompt-based music generation. Can only be used with `prompt`.</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.MusicGenerationMode? GenerationMode { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.MusicGenerationMode? GenerationMode { get => _explicitNullValueGenerationMode; set { _explicitNullValueGenerationMode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("generation_mode"); else _explicitNullProperties?.Remove("generation_mode"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.MusicGenerationMode? _explicitNullValueGenerationMode = default!;
         /// <summary>The lyrics text to use for the generation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LyricsText { get; set; }
+        public string? LyricsText { get => _explicitNullValueLyricsText; set { _explicitNullValueLyricsText = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lyrics_text"); else _explicitNullProperties?.Remove("lyrics_text"); } }
+        private string? _explicitNullValueLyricsText = default!;
 #nullable restore
 #else
-        public string LyricsText { get; set; }
+        public string LyricsText { get => _explicitNullValueLyricsText; set { _explicitNullValueLyricsText = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lyrics_text"); else _explicitNullProperties?.Remove("lyrics_text"); } }
+        private string _explicitNullValueLyricsText = default!;
 #endif
         /// <summary>The model_id property</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.MusicModelId? ModelId { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.MusicModelId? ModelId { get => _explicitNullValueModelId; set { _explicitNullValueModelId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("model_id"); else _explicitNullProperties?.Remove("model_id"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.MusicModelId? _explicitNullValueModelId = default!;
         /// <summary>The model_style_prefix property</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyComposeMusicWithADetailedResponseV1MusicDetailedPostModelStylePrefix? ModelStylePrefix { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyComposeMusicWithADetailedResponseV1MusicDetailedPostModelStylePrefix? ModelStylePrefix { get => _explicitNullValueModelStylePrefix; set { _explicitNullValueModelStylePrefix = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("model_style_prefix"); else _explicitNullProperties?.Remove("model_style_prefix"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyComposeMusicWithADetailedResponseV1MusicDetailedPostModelStylePrefix? _explicitNullValueModelStylePrefix = default!;
         /// <summary>The length of the song to generate in milliseconds. Used only in conjunction with `prompt`. Must be between 3000ms and 600000ms. Optional - if not provided, the model will choose a length based on the prompt.</summary>
-        public int? MusicLengthMs { get; set; }
+        public int? MusicLengthMs { get => _explicitNullValueMusicLengthMs; set { _explicitNullValueMusicLengthMs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("music_length_ms"); else _explicitNullProperties?.Remove("music_length_ms"); } }
+        private int? _explicitNullValueMusicLengthMs = default!;
         /// <summary>A music prompt. Deprecated. Use `composition_plan` instead.</summary>
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.MusicPrompt? MusicPrompt { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.MusicPrompt? MusicPrompt { get => _explicitNullValueMusicPrompt; set { _explicitNullValueMusicPrompt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("music_prompt"); else _explicitNullProperties?.Remove("music_prompt"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.MusicPrompt? _explicitNullValueMusicPrompt = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.MusicPrompt MusicPrompt { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.MusicPrompt MusicPrompt { get => _explicitNullValueMusicPrompt; set { _explicitNullValueMusicPrompt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("music_prompt"); else _explicitNullProperties?.Remove("music_prompt"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.MusicPrompt _explicitNullValueMusicPrompt = default!;
 #endif
         /// <summary>A simple text prompt to generate a song from. Cannot be used in conjunction with `composition_plan`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Prompt { get; set; }
+        public string? Prompt { get => _explicitNullValuePrompt; set { _explicitNullValuePrompt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prompt"); else _explicitNullProperties?.Remove("prompt"); } }
+        private string? _explicitNullValuePrompt = default!;
 #nullable restore
 #else
-        public string Prompt { get; set; }
+        public string Prompt { get => _explicitNullValuePrompt; set { _explicitNullValuePrompt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prompt"); else _explicitNullProperties?.Remove("prompt"); } }
+        private string _explicitNullValuePrompt = default!;
 #endif
         /// <summary>Controls how strictly section durations in the `composition_plan` are enforced. Only used with `composition_plan` and only applies to `music_v1`; for `music_v2` and `music_v2_5` section durations are always enforced and this is ignored. When false for `music_v1`, the model may adjust individual section durations for better quality and latency, while preserving the total song duration from the plan.</summary>
-        public bool? RespectSectionsDurations { get; set; }
+        public bool? RespectSectionsDurations { get => _explicitNullValueRespectSectionsDurations; set { _explicitNullValueRespectSectionsDurations = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("respect_sections_durations"); else _explicitNullProperties?.Remove("respect_sections_durations"); } }
+        private bool? _explicitNullValueRespectSectionsDurations = default!;
         /// <summary>Random seed to initialize the music generation process. Providing the same seed with the same parameters can help achieve more consistent results, but exact reproducibility is not guaranteed and outputs may change across system updates. Cannot be used in conjunction with prompt.</summary>
-        public int? Seed { get; set; }
+        public int? Seed { get => _explicitNullValueSeed; set { _explicitNullValueSeed = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("seed"); else _explicitNullProperties?.Remove("seed"); } }
+        private int? _explicitNullValueSeed = default!;
         /// <summary>Whether to sign the generated song with C2PA. Applicable only for mp3 files.</summary>
-        public bool? SignWithC2pa { get; set; }
+        public bool? SignWithC2pa { get => _explicitNullValueSignWithC2pa; set { _explicitNullValueSignWithC2pa = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sign_with_c2pa"); else _explicitNullProperties?.Remove("sign_with_c2pa"); } }
+        private bool? _explicitNullValueSignWithC2pa = default!;
         /// <summary>Whether to store the generated song for inpainting.</summary>
-        public bool? StoreForInpainting { get; set; }
+        public bool? StoreForInpainting { get => _explicitNullValueStoreForInpainting; set { _explicitNullValueStoreForInpainting = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("store_for_inpainting"); else _explicitNullProperties?.Remove("store_for_inpainting"); } }
+        private bool? _explicitNullValueStoreForInpainting = default!;
         /// <summary>If true, proper names in the prompt will be phonetically spelled in the lyrics for better pronunciation by the music model. The original names will be restored in word timestamps.</summary>
-        public bool? UsePhoneticNames { get; set; }
+        public bool? UsePhoneticNames { get => _explicitNullValueUsePhoneticNames; set { _explicitNullValueUsePhoneticNames = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("use_phonetic_names"); else _explicitNullProperties?.Remove("use_phonetic_names"); } }
+        private bool? _explicitNullValueUsePhoneticNames = default!;
         /// <summary>Whether to return the timestamps of the words in the generated song.</summary>
-        public bool? WithTimestamps { get; set; }
+        public bool? WithTimestamps { get => _explicitNullValueWithTimestamps; set { _explicitNullValueWithTimestamps = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("with_timestamps"); else _explicitNullProperties?.Remove("with_timestamps"); } }
+        private bool? _explicitNullValueWithTimestamps = default!;
         /// <summary>Whether to return the visual waveform of the generated song.</summary>
-        public bool? WithWaveformVisual { get; set; }
+        public bool? WithWaveformVisual { get => _explicitNullValueWithWaveformVisual; set { _explicitNullValueWithWaveformVisual = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("with_waveform_visual"); else _explicitNullProperties?.Remove("with_waveform_visual"); } }
+        private bool? _explicitNullValueWithWaveformVisual = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyComposeMusicWithADetailedResponseV1MusicDetailedPost"/> and sets the default values.
         /// </summary>
@@ -104,7 +152,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyComposeMusicWithADetailedResponseV1MusicDetailedPost CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyComposeMusicWithADetailedResponseV1MusicDetailedPost();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyComposeMusicWithADetailedResponseV1MusicDetailedPost(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -159,6 +207,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteBoolValue("use_phonetic_names", UsePhoneticNames);
             writer.WriteBoolValue("with_timestamps", WithTimestamps);
             writer.WriteBoolValue("with_waveform_visual", WithWaveformVisual);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

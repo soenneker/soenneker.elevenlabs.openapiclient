@@ -12,43 +12,69 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SoftTimeoutConfig : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("additional_soft_timeout_messages") is { } nullNodeAdditionalSoftTimeoutMessages && nullNodeAdditionalSoftTimeoutMessages.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AdditionalSoftTimeoutMessages = null;
+            if (parseNode.GetChildNode("disable_until_first_user_message") is { } nullNodeDisableUntilFirstUserMessage && nullNodeDisableUntilFirstUserMessage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DisableUntilFirstUserMessage = null;
+            if (parseNode.GetChildNode("llm_generated_message_prompt_override") is { } nullNodeLlmGeneratedMessagePromptOverride && nullNodeLlmGeneratedMessagePromptOverride.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LlmGeneratedMessagePromptOverride = null;
+            if (parseNode.GetChildNode("max_soft_timeouts_per_generation") is { } nullNodeMaxSoftTimeoutsPerGeneration && nullNodeMaxSoftTimeoutsPerGeneration.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxSoftTimeoutsPerGeneration = null;
+            if (parseNode.GetChildNode("message") is { } nullNodeMessage && nullNodeMessage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Message = null;
+            if (parseNode.GetChildNode("randomize_fillers") is { } nullNodeRandomizeFillers && nullNodeRandomizeFillers.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RandomizeFillers = null;
+            if (parseNode.GetChildNode("timeout_seconds") is { } nullNodeTimeoutSeconds && nullNodeTimeoutSeconds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TimeoutSeconds = null;
+            if (parseNode.GetChildNode("use_llm_generated_message") is { } nullNodeUseLlmGeneratedMessage && nullNodeUseLlmGeneratedMessage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UseLlmGeneratedMessage = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Extra static filler messages for subsequent soft timeouts in the same LLM generation. The first timeout uses `message`. If fewer messages are configured than `max_soft_timeouts_per_generation`, the last configured message is repeated; otherwise a built-in filler is used.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? AdditionalSoftTimeoutMessages { get; set; }
+        public List<string>? AdditionalSoftTimeoutMessages { get => _explicitNullValueAdditionalSoftTimeoutMessages; set { _explicitNullValueAdditionalSoftTimeoutMessages = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("additional_soft_timeout_messages"); else _explicitNullProperties?.Remove("additional_soft_timeout_messages"); } }
+        private List<string>? _explicitNullValueAdditionalSoftTimeoutMessages = default!;
 #nullable restore
 #else
-        public List<string> AdditionalSoftTimeoutMessages { get; set; }
+        public List<string> AdditionalSoftTimeoutMessages { get => _explicitNullValueAdditionalSoftTimeoutMessages; set { _explicitNullValueAdditionalSoftTimeoutMessages = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("additional_soft_timeout_messages"); else _explicitNullProperties?.Remove("additional_soft_timeout_messages"); } }
+        private List<string> _explicitNullValueAdditionalSoftTimeoutMessages = default!;
 #endif
         /// <summary>When true, soft timeout fillers are suppressed until the conversation has at least one real user message. Prevents fillers during the agent&apos;s opening turn (e.g. workflow generate-immediately / tool calls before the user speaks).</summary>
-        public bool? DisableUntilFirstUserMessage { get; set; }
+        public bool? DisableUntilFirstUserMessage { get => _explicitNullValueDisableUntilFirstUserMessage; set { _explicitNullValueDisableUntilFirstUserMessage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("disable_until_first_user_message"); else _explicitNullProperties?.Remove("disable_until_first_user_message"); } }
+        private bool? _explicitNullValueDisableUntilFirstUserMessage = default!;
         /// <summary>Custom prompt for generating the soft timeout filler message when use_llm_generated_message is enabled. Recent conversation context is provided as a separate user message. If not set, the default prompt will be used. Supports dynamic variables (e.g., {{system__time}}, {{custom_variable}}).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LlmGeneratedMessagePromptOverride { get; set; }
+        public string? LlmGeneratedMessagePromptOverride { get => _explicitNullValueLlmGeneratedMessagePromptOverride; set { _explicitNullValueLlmGeneratedMessagePromptOverride = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("llm_generated_message_prompt_override"); else _explicitNullProperties?.Remove("llm_generated_message_prompt_override"); } }
+        private string? _explicitNullValueLlmGeneratedMessagePromptOverride = default!;
 #nullable restore
 #else
-        public string LlmGeneratedMessagePromptOverride { get; set; }
+        public string LlmGeneratedMessagePromptOverride { get => _explicitNullValueLlmGeneratedMessagePromptOverride; set { _explicitNullValueLlmGeneratedMessagePromptOverride = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("llm_generated_message_prompt_override"); else _explicitNullProperties?.Remove("llm_generated_message_prompt_override"); } }
+        private string _explicitNullValueLlmGeneratedMessagePromptOverride = default!;
 #endif
         /// <summary>Maximum filler messages while waiting for a single LLM response. Fires every timeout_seconds until the LLM streams content or this limit is reached.</summary>
-        public int? MaxSoftTimeoutsPerGeneration { get; set; }
+        public int? MaxSoftTimeoutsPerGeneration { get => _explicitNullValueMaxSoftTimeoutsPerGeneration; set { _explicitNullValueMaxSoftTimeoutsPerGeneration = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_soft_timeouts_per_generation"); else _explicitNullProperties?.Remove("max_soft_timeouts_per_generation"); } }
+        private int? _explicitNullValueMaxSoftTimeoutsPerGeneration = default!;
         /// <summary>Message to show when the first soft timeout is reached while waiting for LLM response. Supports dynamic variables (e.g., {{system__time}}, {{custom_variable}}).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Message { get; set; }
+        public string? Message { get => _explicitNullValueMessage; set { _explicitNullValueMessage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("message"); else _explicitNullProperties?.Remove("message"); } }
+        private string? _explicitNullValueMessage = default!;
 #nullable restore
 #else
-        public string Message { get; set; }
+        public string Message { get => _explicitNullValueMessage; set { _explicitNullValueMessage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("message"); else _explicitNullProperties?.Remove("message"); } }
+        private string _explicitNullValueMessage = default!;
 #endif
         /// <summary>If enabled, shuffle the order of static soft timeout messages once at the start of each turn. Only applies when use_llm_generated_message is false.</summary>
-        public bool? RandomizeFillers { get; set; }
+        public bool? RandomizeFillers { get => _explicitNullValueRandomizeFillers; set { _explicitNullValueRandomizeFillers = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("randomize_fillers"); else _explicitNullProperties?.Remove("randomize_fillers"); } }
+        private bool? _explicitNullValueRandomizeFillers = default!;
         /// <summary>Time in seconds before showing the predefined message while waiting for LLM response. Set to -1 to disable.</summary>
-        public double? TimeoutSeconds { get; set; }
+        public double? TimeoutSeconds { get => _explicitNullValueTimeoutSeconds; set { _explicitNullValueTimeoutSeconds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timeout_seconds"); else _explicitNullProperties?.Remove("timeout_seconds"); } }
+        private double? _explicitNullValueTimeoutSeconds = default!;
         /// <summary>If enabled, the soft timeout message will be generated dynamically instead of using the static message.</summary>
-        public bool? UseLlmGeneratedMessage { get; set; }
+        public bool? UseLlmGeneratedMessage { get => _explicitNullValueUseLlmGeneratedMessage; set { _explicitNullValueUseLlmGeneratedMessage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("use_llm_generated_message"); else _explicitNullProperties?.Remove("use_llm_generated_message"); } }
+        private bool? _explicitNullValueUseLlmGeneratedMessage = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.SoftTimeoutConfig"/> and sets the default values.
         /// </summary>
@@ -70,7 +96,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.SoftTimeoutConfig CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.SoftTimeoutConfig();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.SoftTimeoutConfig(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -105,6 +131,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteBoolValue("randomize_fillers", RandomizeFillers);
             writer.WriteDoubleValue("timeout_seconds", TimeoutSeconds);
             writer.WriteBoolValue("use_llm_generated_message", UseLlmGeneratedMessage);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -11,21 +11,40 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class VoiceSettingsResponseModel : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("clone_strength") is { } nullNodeCloneStrength && nullNodeCloneStrength.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CloneStrength = null;
+            if (parseNode.GetChildNode("similarity_boost") is { } nullNodeSimilarityBoost && nullNodeSimilarityBoost.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SimilarityBoost = null;
+            if (parseNode.GetChildNode("speed") is { } nullNodeSpeed && nullNodeSpeed.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Speed = null;
+            if (parseNode.GetChildNode("stability") is { } nullNodeStability && nullNodeStability.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Stability = null;
+            if (parseNode.GetChildNode("style") is { } nullNodeStyle && nullNodeStyle.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Style = null;
+            if (parseNode.GetChildNode("use_speaker_boost") is { } nullNodeUseSpeakerBoost && nullNodeUseSpeakerBoost.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UseSpeakerBoost = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Controls how closely the voice matches the professional voice clone samples, from 0 (low) to 1 (high). We recommend 0 for most use cases. Increase this value only if you experience issues with the default settings. Only applies to professional voice clones fine-tuned for the selected v4 model.</summary>
-        public double? CloneStrength { get; set; }
+        public double? CloneStrength { get => _explicitNullValueCloneStrength; set { _explicitNullValueCloneStrength = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("clone_strength"); else _explicitNullProperties?.Remove("clone_strength"); } }
+        private double? _explicitNullValueCloneStrength = default!;
         /// <summary>Determines how closely the AI should adhere to the original voice when attempting to replicate it.</summary>
-        public double? SimilarityBoost { get; set; }
+        public double? SimilarityBoost { get => _explicitNullValueSimilarityBoost; set { _explicitNullValueSimilarityBoost = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("similarity_boost"); else _explicitNullProperties?.Remove("similarity_boost"); } }
+        private double? _explicitNullValueSimilarityBoost = default!;
         /// <summary>Adjusts the speed of the voice. A value of 1.0 is the default speed, while values less than 1.0 slow down the speech, and values greater than 1.0 speed it up.</summary>
-        public double? Speed { get; set; }
+        public double? Speed { get => _explicitNullValueSpeed; set { _explicitNullValueSpeed = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("speed"); else _explicitNullProperties?.Remove("speed"); } }
+        private double? _explicitNullValueSpeed = default!;
         /// <summary>Determines how stable the voice is and the randomness between each generation. Lower values introduce broader emotional range for the voice. Higher values can result in a monotonous voice with limited emotion.</summary>
-        public double? Stability { get; set; }
+        public double? Stability { get => _explicitNullValueStability; set { _explicitNullValueStability = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stability"); else _explicitNullProperties?.Remove("stability"); } }
+        private double? _explicitNullValueStability = default!;
         /// <summary>Determines the style exaggeration of the voice. This setting attempts to amplify the style of the original speaker. It does consume additional computational resources and might increase latency if set to anything other than 0.</summary>
-        public double? Style { get; set; }
+        public double? Style { get => _explicitNullValueStyle; set { _explicitNullValueStyle = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("style"); else _explicitNullProperties?.Remove("style"); } }
+        private double? _explicitNullValueStyle = default!;
         /// <summary>This setting boosts the similarity to the original speaker. Using this setting requires a slightly higher computational load, which in turn increases latency.</summary>
-        public bool? UseSpeakerBoost { get; set; }
+        public bool? UseSpeakerBoost { get => _explicitNullValueUseSpeakerBoost; set { _explicitNullValueUseSpeakerBoost = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("use_speaker_boost"); else _explicitNullProperties?.Remove("use_speaker_boost"); } }
+        private bool? _explicitNullValueUseSpeakerBoost = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceSettingsResponseModel"/> and sets the default values.
         /// </summary>
@@ -46,7 +65,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceSettingsResponseModel CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceSettingsResponseModel();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.VoiceSettingsResponseModel(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -77,6 +96,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteDoubleValue("stability", Stability);
             writer.WriteDoubleValue("style", Style);
             writer.WriteBoolValue("use_speaker_boost", UseSpeakerBoost);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

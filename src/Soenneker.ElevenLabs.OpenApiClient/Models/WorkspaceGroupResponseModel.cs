@@ -11,64 +11,102 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class WorkspaceGroupResponseModel : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("character_count") is { } nullNodeCharacterCount && nullNodeCharacterCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CharacterCount = null;
+            if (parseNode.GetChildNode("group_concurrency_limit") is { } nullNodeGroupConcurrencyLimit && nullNodeGroupConcurrencyLimit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GroupConcurrencyLimit = null;
+            if (parseNode.GetChildNode("group_dubbing_concurrency_limit") is { } nullNodeGroupDubbingConcurrencyLimit && nullNodeGroupDubbingConcurrencyLimit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GroupDubbingConcurrencyLimit = null;
+            if (parseNode.GetChildNode("group_music_concurrency_limit") is { } nullNodeGroupMusicConcurrencyLimit && nullNodeGroupMusicConcurrencyLimit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GroupMusicConcurrencyLimit = null;
+            if (parseNode.GetChildNode("group_pvc_limit") is { } nullNodeGroupPvcLimit && nullNodeGroupPvcLimit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GroupPvcLimit = null;
+            if (parseNode.GetChildNode("group_usage_limit") is { } nullNodeGroupUsageLimit && nullNodeGroupUsageLimit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GroupUsageLimit = null;
+            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("is_scim_synced") is { } nullNodeIsScimSynced && nullNodeIsScimSynced.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsScimSynced = null;
+            if (parseNode.GetChildNode("members") is { } nullNodeMembers && nullNodeMembers.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Members = null;
+            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("permissions") is { } nullNodePermissions && nullNodePermissions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Permissions = null;
+            if (parseNode.GetChildNode("scim_frozen") is { } nullNodeScimFrozen && nullNodeScimFrozen.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ScimFrozen = null;
+            if (parseNode.GetChildNode("scim_group") is { } nullNodeScimGroup && nullNodeScimGroup.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ScimGroup = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The character_count property</summary>
-        public int? CharacterCount { get; set; }
+        public int? CharacterCount { get => _explicitNullValueCharacterCount; set { _explicitNullValueCharacterCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("character_count"); else _explicitNullProperties?.Remove("character_count"); } }
+        private int? _explicitNullValueCharacterCount = default!;
         /// <summary>The group_concurrency_limit property</summary>
-        public int? GroupConcurrencyLimit { get; set; }
+        public int? GroupConcurrencyLimit { get => _explicitNullValueGroupConcurrencyLimit; set { _explicitNullValueGroupConcurrencyLimit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("group_concurrency_limit"); else _explicitNullProperties?.Remove("group_concurrency_limit"); } }
+        private int? _explicitNullValueGroupConcurrencyLimit = default!;
         /// <summary>The group_dubbing_concurrency_limit property</summary>
-        public int? GroupDubbingConcurrencyLimit { get; set; }
+        public int? GroupDubbingConcurrencyLimit { get => _explicitNullValueGroupDubbingConcurrencyLimit; set { _explicitNullValueGroupDubbingConcurrencyLimit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("group_dubbing_concurrency_limit"); else _explicitNullProperties?.Remove("group_dubbing_concurrency_limit"); } }
+        private int? _explicitNullValueGroupDubbingConcurrencyLimit = default!;
         /// <summary>The group_music_concurrency_limit property</summary>
-        public int? GroupMusicConcurrencyLimit { get; set; }
+        public int? GroupMusicConcurrencyLimit { get => _explicitNullValueGroupMusicConcurrencyLimit; set { _explicitNullValueGroupMusicConcurrencyLimit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("group_music_concurrency_limit"); else _explicitNullProperties?.Remove("group_music_concurrency_limit"); } }
+        private int? _explicitNullValueGroupMusicConcurrencyLimit = default!;
         /// <summary>The group_pvc_limit property</summary>
-        public int? GroupPvcLimit { get; set; }
+        public int? GroupPvcLimit { get => _explicitNullValueGroupPvcLimit; set { _explicitNullValueGroupPvcLimit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("group_pvc_limit"); else _explicitNullProperties?.Remove("group_pvc_limit"); } }
+        private int? _explicitNullValueGroupPvcLimit = default!;
         /// <summary>The group_usage_limit property</summary>
-        public int? GroupUsageLimit { get; set; }
+        public int? GroupUsageLimit { get => _explicitNullValueGroupUsageLimit; set { _explicitNullValueGroupUsageLimit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("group_usage_limit"); else _explicitNullProperties?.Remove("group_usage_limit"); } }
+        private int? _explicitNullValueGroupUsageLimit = default!;
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get; set; }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string _explicitNullValueId = default!;
 #endif
         /// <summary>The is_scim_synced property</summary>
-        public bool? IsScimSynced { get; set; }
+        public bool? IsScimSynced { get => _explicitNullValueIsScimSynced; set { _explicitNullValueIsScimSynced = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_scim_synced"); else _explicitNullProperties?.Remove("is_scim_synced"); } }
+        private bool? _explicitNullValueIsScimSynced = default!;
         /// <summary>The members property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Members { get; set; }
+        public List<string>? Members { get => _explicitNullValueMembers; set { _explicitNullValueMembers = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("members"); else _explicitNullProperties?.Remove("members"); } }
+        private List<string>? _explicitNullValueMembers = default!;
 #nullable restore
 #else
-        public List<string> Members { get; set; }
+        public List<string> Members { get => _explicitNullValueMembers; set { _explicitNullValueMembers = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("members"); else _explicitNullProperties?.Remove("members"); } }
+        private List<string> _explicitNullValueMembers = default!;
 #endif
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get; set; }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string _explicitNullValueName = default!;
 #endif
         /// <summary>The permissions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceGroupPermission?>? Permissions { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceGroupPermission?>? Permissions { get => _explicitNullValuePermissions; set { _explicitNullValuePermissions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("permissions"); else _explicitNullProperties?.Remove("permissions"); } }
+        private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceGroupPermission?>? _explicitNullValuePermissions = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceGroupPermission?> Permissions { get; set; }
+        public List<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceGroupPermission?> Permissions { get => _explicitNullValuePermissions; set { _explicitNullValuePermissions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("permissions"); else _explicitNullProperties?.Remove("permissions"); } }
+        private List<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceGroupPermission?> _explicitNullValuePermissions = default!;
 #endif
         /// <summary>The scim_frozen property</summary>
-        public bool? ScimFrozen { get; set; }
+        public bool? ScimFrozen { get => _explicitNullValueScimFrozen; set { _explicitNullValueScimFrozen = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scim_frozen"); else _explicitNullProperties?.Remove("scim_frozen"); } }
+        private bool? _explicitNullValueScimFrozen = default!;
         /// <summary>The scim_group property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ScimGroupResponseModel? ScimGroup { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ScimGroupResponseModel? ScimGroup { get => _explicitNullValueScimGroup; set { _explicitNullValueScimGroup = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scim_group"); else _explicitNullProperties?.Remove("scim_group"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ScimGroupResponseModel? _explicitNullValueScimGroup = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ScimGroupResponseModel ScimGroup { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ScimGroupResponseModel ScimGroup { get => _explicitNullValueScimGroup; set { _explicitNullValueScimGroup = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scim_group"); else _explicitNullProperties?.Remove("scim_group"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ScimGroupResponseModel _explicitNullValueScimGroup = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceGroupResponseModel"/> and sets the default values.
@@ -87,7 +125,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceGroupResponseModel CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceGroupResponseModel();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceGroupResponseModel(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -132,6 +170,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteCollectionOfEnumValues<global::Soenneker.ElevenLabs.OpenApiClient.Models.WorkspaceGroupPermission>("permissions", Permissions);
             writer.WriteBoolValue("scim_frozen", ScimFrozen);
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ScimGroupResponseModel>("scim_group", ScimGroup);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

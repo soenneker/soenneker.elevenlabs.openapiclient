@@ -83,6 +83,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item
             get => new global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.RunTests.RunTestsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The simulateConversation property</summary>
+        [Obsolete("")]
         public global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.SimulateConversation.SimulateConversationRequestBuilder SimulateConversation
         {
             get => new global::Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item.SimulateConversation.SimulateConversationRequestBuilder(PathParameters, RequestAdapter);
@@ -142,6 +143,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "422", global::Soenneker.ElevenLabs.OpenApiClient.Models.HttpValidationError.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -165,6 +168,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "422", global::Soenneker.ElevenLabs.OpenApiClient.Models.HttpValidationError.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetAgentResponseModel>(requestInfo, global::Soenneker.ElevenLabs.OpenApiClient.Models.GetAgentResponseModel.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -190,6 +195,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Convai.Agents.Item
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "422", global::Soenneker.ElevenLabs.OpenApiClient.Models.HttpValidationError.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.ElevenLabs.OpenApiClient.Models.GetAgentResponseModel>(requestInfo, global::Soenneker.ElevenLabs.OpenApiClient.Models.GetAgentResponseModel.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

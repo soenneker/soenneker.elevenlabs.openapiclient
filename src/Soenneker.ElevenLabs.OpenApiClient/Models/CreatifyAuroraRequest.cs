@@ -12,38 +12,62 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CreatifyAuroraRequest : IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("audio") is { } nullNodeAudio && nullNodeAudio.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Audio = null;
+            if (parseNode.GetChildNode("audio_guidance_scale") is { } nullNodeAudioGuidanceScale && nullNodeAudioGuidanceScale.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AudioGuidanceScale = null;
+            if (parseNode.GetChildNode("guidance_scale") is { } nullNodeGuidanceScale && nullNodeGuidanceScale.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GuidanceScale = null;
+            if (parseNode.GetChildNode("image") is { } nullNodeImage && nullNodeImage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Image = null;
+            if (parseNode.GetChildNode("model_id") is { } nullNodeModelId && nullNodeModelId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ModelId = null;
+            if (parseNode.GetChildNode("resolution") is { } nullNodeResolution && nullNodeResolution.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Resolution = null;
+            if (parseNode.GetChildNode("webhook") is { } nullNodeWebhook && nullNodeWebhook.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Webhook = null;
+        }
+
         /// <summary>The speech audio to drive the character&apos;s lip movements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AudioReference? Audio { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AudioReference? Audio { get => _explicitNullValueAudio; set { _explicitNullValueAudio = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("audio"); else _explicitNullProperties?.Remove("audio"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.AudioReference? _explicitNullValueAudio = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AudioReference Audio { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.AudioReference Audio { get => _explicitNullValueAudio; set { _explicitNullValueAudio = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("audio"); else _explicitNullProperties?.Remove("audio"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.AudioReference _explicitNullValueAudio = default!;
 #endif
         /// <summary>How strongly the lip movements adhere to the audio. Omit to use the model&apos;s default.</summary>
-        public double? AudioGuidanceScale { get; set; }
+        public double? AudioGuidanceScale { get => _explicitNullValueAudioGuidanceScale; set { _explicitNullValueAudioGuidanceScale = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("audio_guidance_scale"); else _explicitNullProperties?.Remove("audio_guidance_scale"); } }
+        private double? _explicitNullValueAudioGuidanceScale = default!;
         /// <summary>How strongly the generation adheres to the input image. Omit to use the model&apos;s default.</summary>
-        public double? GuidanceScale { get; set; }
+        public double? GuidanceScale { get => _explicitNullValueGuidanceScale; set { _explicitNullValueGuidanceScale = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("guidance_scale"); else _explicitNullProperties?.Remove("guidance_scale"); } }
+        private double? _explicitNullValueGuidanceScale = default!;
         /// <summary>The image of the character to animate.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ImageReference? Image { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ImageReference? Image { get => _explicitNullValueImage; set { _explicitNullValueImage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("image"); else _explicitNullProperties?.Remove("image"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ImageReference? _explicitNullValueImage = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ImageReference Image { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.ImageReference Image { get => _explicitNullValueImage; set { _explicitNullValueImage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("image"); else _explicitNullProperties?.Remove("image"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.ImageReference _explicitNullValueImage = default!;
 #endif
         /// <summary>The model to use for the generation.</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CreatifyAuroraModelId? ModelId { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CreatifyAuroraModelId? ModelId { get => _explicitNullValueModelId; set { _explicitNullValueModelId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("model_id"); else _explicitNullProperties?.Remove("model_id"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.CreatifyAuroraModelId? _explicitNullValueModelId = default!;
         /// <summary>The resolution of the output video.</summary>
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CreatifyAuroraRequestResolution? Resolution { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.CreatifyAuroraRequestResolution? Resolution { get => _explicitNullValueResolution; set { _explicitNullValueResolution = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resolution"); else _explicitNullProperties?.Remove("resolution"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.CreatifyAuroraRequestResolution? _explicitNullValueResolution = default!;
         /// <summary>Include to send the generation&apos;s result to the workspace&apos;s configured flows webhooks once it completes or fails. The webhook payload matches the terminal response of the corresponding GET endpoint.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookTarget? Webhook { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookTarget? Webhook { get => _explicitNullValueWebhook; set { _explicitNullValueWebhook = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("webhook"); else _explicitNullProperties?.Remove("webhook"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookTarget? _explicitNullValueWebhook = default!;
 #nullable restore
 #else
-        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookTarget Webhook { get; set; }
+        public global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookTarget Webhook { get => _explicitNullValueWebhook; set { _explicitNullValueWebhook = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("webhook"); else _explicitNullProperties?.Remove("webhook"); } }
+        private global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookTarget _explicitNullValueWebhook = default!;
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -53,7 +77,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.CreatifyAuroraRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.CreatifyAuroraRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.CreatifyAuroraRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -85,7 +109,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.ImageReference>("image", Image);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CreatifyAuroraModelId>("model_id", ModelId);
             writer.WriteEnumValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CreatifyAuroraRequestResolution>("resolution", Resolution);
-            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookTarget>("webhook", Webhook);
+            writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.WebhookTarget>("webhook", Webhook);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

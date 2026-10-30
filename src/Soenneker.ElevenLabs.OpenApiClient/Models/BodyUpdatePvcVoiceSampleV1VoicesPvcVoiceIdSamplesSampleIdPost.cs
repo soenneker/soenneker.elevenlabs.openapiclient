@@ -11,31 +11,50 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class BodyUpdatePvcVoiceSampleV1VoicesPvcVoiceIdSamplesSampleIdPost : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("file_name") is { } nullNodeFileName && nullNodeFileName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FileName = null;
+            if (parseNode.GetChildNode("remove_background_noise") is { } nullNodeRemoveBackgroundNoise && nullNodeRemoveBackgroundNoise.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RemoveBackgroundNoise = null;
+            if (parseNode.GetChildNode("selected_speaker_ids") is { } nullNodeSelectedSpeakerIds && nullNodeSelectedSpeakerIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SelectedSpeakerIds = null;
+            if (parseNode.GetChildNode("trim_end_time") is { } nullNodeTrimEndTime && nullNodeTrimEndTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TrimEndTime = null;
+            if (parseNode.GetChildNode("trim_start_time") is { } nullNodeTrimStartTime && nullNodeTrimStartTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TrimStartTime = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The name of the audio file to be used for PVC training.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FileName { get; set; }
+        public string? FileName { get => _explicitNullValueFileName; set { _explicitNullValueFileName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("file_name"); else _explicitNullProperties?.Remove("file_name"); } }
+        private string? _explicitNullValueFileName = default!;
 #nullable restore
 #else
-        public string FileName { get; set; }
+        public string FileName { get => _explicitNullValueFileName; set { _explicitNullValueFileName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("file_name"); else _explicitNullProperties?.Remove("file_name"); } }
+        private string _explicitNullValueFileName = default!;
 #endif
         /// <summary>If set will remove background noise for voice samples using our audio isolation model. If the samples do not include background noise, it can make the quality worse.</summary>
-        public bool? RemoveBackgroundNoise { get; set; }
+        public bool? RemoveBackgroundNoise { get => _explicitNullValueRemoveBackgroundNoise; set { _explicitNullValueRemoveBackgroundNoise = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("remove_background_noise"); else _explicitNullProperties?.Remove("remove_background_noise"); } }
+        private bool? _explicitNullValueRemoveBackgroundNoise = default!;
         /// <summary>Speaker IDs to be used for PVC training. Make sure you send all the speaker IDs you want to use for PVC training in one request because the last request will override the previous ones.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? SelectedSpeakerIds { get; set; }
+        public List<string>? SelectedSpeakerIds { get => _explicitNullValueSelectedSpeakerIds; set { _explicitNullValueSelectedSpeakerIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("selected_speaker_ids"); else _explicitNullProperties?.Remove("selected_speaker_ids"); } }
+        private List<string>? _explicitNullValueSelectedSpeakerIds = default!;
 #nullable restore
 #else
-        public List<string> SelectedSpeakerIds { get; set; }
+        public List<string> SelectedSpeakerIds { get => _explicitNullValueSelectedSpeakerIds; set { _explicitNullValueSelectedSpeakerIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("selected_speaker_ids"); else _explicitNullProperties?.Remove("selected_speaker_ids"); } }
+        private List<string> _explicitNullValueSelectedSpeakerIds = default!;
 #endif
         /// <summary>The end time of the audio to be used for PVC training. Time should be in milliseconds</summary>
-        public int? TrimEndTime { get; set; }
+        public int? TrimEndTime { get => _explicitNullValueTrimEndTime; set { _explicitNullValueTrimEndTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("trim_end_time"); else _explicitNullProperties?.Remove("trim_end_time"); } }
+        private int? _explicitNullValueTrimEndTime = default!;
         /// <summary>The start time of the audio to be used for PVC training. Time should be in milliseconds</summary>
-        public int? TrimStartTime { get; set; }
+        public int? TrimStartTime { get => _explicitNullValueTrimStartTime; set { _explicitNullValueTrimStartTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("trim_start_time"); else _explicitNullProperties?.Remove("trim_start_time"); } }
+        private int? _explicitNullValueTrimStartTime = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyUpdatePvcVoiceSampleV1VoicesPvcVoiceIdSamplesSampleIdPost"/> and sets the default values.
         /// </summary>
@@ -52,7 +71,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyUpdatePvcVoiceSampleV1VoicesPvcVoiceIdSamplesSampleIdPost CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyUpdatePvcVoiceSampleV1VoicesPvcVoiceIdSamplesSampleIdPost();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.BodyUpdatePvcVoiceSampleV1VoicesPvcVoiceIdSamplesSampleIdPost(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -81,6 +100,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("selected_speaker_ids", SelectedSpeakerIds);
             writer.WriteIntValue("trim_end_time", TrimEndTime);
             writer.WriteIntValue("trim_start_time", TrimStartTime);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

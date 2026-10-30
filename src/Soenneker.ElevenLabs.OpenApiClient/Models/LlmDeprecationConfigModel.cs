@@ -11,19 +11,36 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class LlmDeprecationConfigModel : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("fallback_complete_days") is { } nullNodeFallbackCompleteDays && nullNodeFallbackCompleteDays.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FallbackCompleteDays = null;
+            if (parseNode.GetChildNode("fallback_complete_percentage") is { } nullNodeFallbackCompletePercentage && nullNodeFallbackCompletePercentage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FallbackCompletePercentage = null;
+            if (parseNode.GetChildNode("fallback_start_days") is { } nullNodeFallbackStartDays && nullNodeFallbackStartDays.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FallbackStartDays = null;
+            if (parseNode.GetChildNode("fallback_start_percentage") is { } nullNodeFallbackStartPercentage && nullNodeFallbackStartPercentage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FallbackStartPercentage = null;
+            if (parseNode.GetChildNode("warning_start_days") is { } nullNodeWarningStartDays && nullNodeWarningStartDays.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WarningStartDays = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Number of days before the provider deprecation date when all traffic is routed to the replacement model.</summary>
-        public int? FallbackCompleteDays { get; set; }
+        public int? FallbackCompleteDays { get => _explicitNullValueFallbackCompleteDays; set { _explicitNullValueFallbackCompleteDays = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fallback_complete_days"); else _explicitNullProperties?.Remove("fallback_complete_days"); } }
+        private int? _explicitNullValueFallbackCompleteDays = default!;
         /// <summary>Percentage of traffic routed to the replacement model when fallback is complete.</summary>
-        public int? FallbackCompletePercentage { get; set; }
+        public int? FallbackCompletePercentage { get => _explicitNullValueFallbackCompletePercentage; set { _explicitNullValueFallbackCompletePercentage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fallback_complete_percentage"); else _explicitNullProperties?.Remove("fallback_complete_percentage"); } }
+        private int? _explicitNullValueFallbackCompletePercentage = default!;
         /// <summary>Number of days before the provider deprecation date when traffic starts being routed to the replacement model.</summary>
-        public int? FallbackStartDays { get; set; }
+        public int? FallbackStartDays { get => _explicitNullValueFallbackStartDays; set { _explicitNullValueFallbackStartDays = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fallback_start_days"); else _explicitNullProperties?.Remove("fallback_start_days"); } }
+        private int? _explicitNullValueFallbackStartDays = default!;
         /// <summary>Percentage of traffic routed to the replacement model when fallback begins.</summary>
-        public int? FallbackStartPercentage { get; set; }
+        public int? FallbackStartPercentage { get => _explicitNullValueFallbackStartPercentage; set { _explicitNullValueFallbackStartPercentage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fallback_start_percentage"); else _explicitNullProperties?.Remove("fallback_start_percentage"); } }
+        private int? _explicitNullValueFallbackStartPercentage = default!;
         /// <summary>Number of days before the provider deprecation date when warnings start being shown.</summary>
-        public int? WarningStartDays { get; set; }
+        public int? WarningStartDays { get => _explicitNullValueWarningStartDays; set { _explicitNullValueWarningStartDays = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("warning_start_days"); else _explicitNullProperties?.Remove("warning_start_days"); } }
+        private int? _explicitNullValueWarningStartDays = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmDeprecationConfigModel"/> and sets the default values.
         /// </summary>
@@ -39,7 +56,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmDeprecationConfigModel CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmDeprecationConfigModel();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.LlmDeprecationConfigModel(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -68,6 +85,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteIntValue("fallback_start_days", FallbackStartDays);
             writer.WriteIntValue("fallback_start_percentage", FallbackStartPercentage);
             writer.WriteIntValue("warning_start_days", WarningStartDays);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

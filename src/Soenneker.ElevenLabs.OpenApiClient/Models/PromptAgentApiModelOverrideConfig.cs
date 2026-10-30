@@ -11,21 +11,40 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class PromptAgentApiModelOverrideConfig : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("knowledge_base") is { } nullNodeKnowledgeBase && nullNodeKnowledgeBase.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) KnowledgeBase = null;
+            if (parseNode.GetChildNode("llm") is { } nullNodeLlm && nullNodeLlm.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Llm = null;
+            if (parseNode.GetChildNode("native_mcp_server_ids") is { } nullNodeNativeMcpServerIds && nullNodeNativeMcpServerIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NativeMcpServerIds = null;
+            if (parseNode.GetChildNode("prompt") is { } nullNodePrompt && nullNodePrompt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Prompt = null;
+            if (parseNode.GetChildNode("tool_ids") is { } nullNodeToolIds && nullNodeToolIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ToolIds = null;
+            if (parseNode.GetChildNode("tool_ids_strict") is { } nullNodeToolIdsStrict && nullNodeToolIdsStrict.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ToolIdsStrict = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Whether to allow overriding the knowledge_base field.</summary>
-        public bool? KnowledgeBase { get; set; }
+        public bool? KnowledgeBase { get => _explicitNullValueKnowledgeBase; set { _explicitNullValueKnowledgeBase = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("knowledge_base"); else _explicitNullProperties?.Remove("knowledge_base"); } }
+        private bool? _explicitNullValueKnowledgeBase = default!;
         /// <summary>Whether to allow overriding the llm field.</summary>
-        public bool? Llm { get; set; }
+        public bool? Llm { get => _explicitNullValueLlm; set { _explicitNullValueLlm = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("llm"); else _explicitNullProperties?.Remove("llm"); } }
+        private bool? _explicitNullValueLlm = default!;
         /// <summary>Whether to allow overriding the native_mcp_server_ids field.</summary>
-        public bool? NativeMcpServerIds { get; set; }
+        public bool? NativeMcpServerIds { get => _explicitNullValueNativeMcpServerIds; set { _explicitNullValueNativeMcpServerIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("native_mcp_server_ids"); else _explicitNullProperties?.Remove("native_mcp_server_ids"); } }
+        private bool? _explicitNullValueNativeMcpServerIds = default!;
         /// <summary>Whether to allow overriding the prompt field.</summary>
-        public bool? Prompt { get; set; }
+        public bool? Prompt { get => _explicitNullValuePrompt; set { _explicitNullValuePrompt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prompt"); else _explicitNullProperties?.Remove("prompt"); } }
+        private bool? _explicitNullValuePrompt = default!;
         /// <summary>Whether to allow overriding the tool_ids field.</summary>
-        public bool? ToolIds { get; set; }
+        public bool? ToolIds { get => _explicitNullValueToolIds; set { _explicitNullValueToolIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tool_ids"); else _explicitNullProperties?.Remove("tool_ids"); } }
+        private bool? _explicitNullValueToolIds = default!;
         /// <summary>Whether to allow overriding the tool_ids_strict field.</summary>
-        public bool? ToolIdsStrict { get; set; }
+        public bool? ToolIdsStrict { get => _explicitNullValueToolIdsStrict; set { _explicitNullValueToolIdsStrict = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tool_ids_strict"); else _explicitNullProperties?.Remove("tool_ids_strict"); } }
+        private bool? _explicitNullValueToolIdsStrict = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentApiModelOverrideConfig"/> and sets the default values.
         /// </summary>
@@ -47,7 +66,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentApiModelOverrideConfig CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentApiModelOverrideConfig();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.PromptAgentApiModelOverrideConfig(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -78,6 +97,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteBoolValue("prompt", Prompt);
             writer.WriteBoolValue("tool_ids", ToolIds);
             writer.WriteBoolValue("tool_ids_strict", ToolIdsStrict);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

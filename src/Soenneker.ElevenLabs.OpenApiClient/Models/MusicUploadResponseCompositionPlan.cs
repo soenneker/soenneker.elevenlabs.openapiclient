@@ -12,7 +12,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class MusicUploadResponseCompositionPlan : IComposedTypeWrapper, IParsable
-    {
+    , global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder {
+        // Preserve ambiguous union payloads without inventing a discriminator.
+        /// <summary>The complete payload when no unique typed union branch can be selected.</summary>
+        public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode UnrecognizedValue { get; set; } = null!;
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalData { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
         /// <summary>Composed type representation for type <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.CompositionPlan"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -46,10 +51,17 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var result = new global::Soenneker.ElevenLabs.OpenApiClient.Models.MusicUploadResponseCompositionPlan();
-            result.CompositionPlan = new global::Soenneker.ElevenLabs.OpenApiClient.Models.CompositionPlan();
-            result.MusicPrompt = new global::Soenneker.ElevenLabs.OpenApiClient.Models.MusicPrompt();
-            result.MusicUploadResponseCompositionPlanMember1 = new global::Soenneker.ElevenLabs.OpenApiClient.Models.MusicUploadResponseCompositionPlanMember1();
-            return result;
+            
+            
+            
+            
+            var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
+            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("positive_global_styles") != null && parseNode.GetChildNode("negative_global_styles") != null && parseNode.GetChildNode("sections") != null))();
+            bool matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("chunks") != null))();
+            if (result.CompositionPlan == null && result.MusicPrompt == null && result.MusicUploadResponseCompositionPlanMember1 == null && matchesUnionBranch0 && !matchesUnionBranch1) result.MusicPrompt = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.MusicPrompt(), parseNode);
+            if (result.CompositionPlan == null && result.MusicPrompt == null && result.MusicUploadResponseCompositionPlanMember1 == null && matchesUnionBranch1 && !matchesUnionBranch0) result.CompositionPlan = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.CompositionPlan(), parseNode);
+            if (result.CompositionPlan == null && result.MusicPrompt == null && result.MusicUploadResponseCompositionPlanMember1 == null) result.UnrecognizedValue = unionPayload;
+return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -69,6 +81,12 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
+            if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
+            if (CompositionPlan == null && MusicPrompt == null && MusicUploadResponseCompositionPlanMember1 == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
+            if (CompositionPlan != null && MusicPrompt == null && MusicUploadResponseCompositionPlanMember1 == null) { if (CompositionPlan is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, CompositionPlan); return; }
+            if (MusicPrompt != null && CompositionPlan == null && MusicUploadResponseCompositionPlanMember1 == null) { if (MusicPrompt is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, MusicPrompt); return; }
+            if (MusicUploadResponseCompositionPlanMember1 != null && CompositionPlan == null && MusicPrompt == null) { if (MusicUploadResponseCompositionPlanMember1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, MusicUploadResponseCompositionPlanMember1); return; }
+
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.ElevenLabs.OpenApiClient.Models.CompositionPlan>(null, CompositionPlan, MusicPrompt, MusicUploadResponseCompositionPlanMember1);
         }

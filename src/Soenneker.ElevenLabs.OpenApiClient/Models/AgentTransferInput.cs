@@ -11,58 +11,90 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class AgentTransferInput : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("agent_id") is { } nullNodeAgentId && nullNodeAgentId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AgentId = null;
+            if (parseNode.GetChildNode("branch_id") is { } nullNodeBranchId && nullNodeBranchId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BranchId = null;
+            if (parseNode.GetChildNode("condition") is { } nullNodeCondition && nullNodeCondition.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Condition = null;
+            if (parseNode.GetChildNode("delay_ms") is { } nullNodeDelayMs && nullNodeDelayMs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DelayMs = null;
+            if (parseNode.GetChildNode("enable_transferred_agent_first_message") is { } nullNodeEnableTransferredAgentFirstMessage && nullNodeEnableTransferredAgentFirstMessage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EnableTransferredAgentFirstMessage = null;
+            if (parseNode.GetChildNode("is_workflow_node_transfer") is { } nullNodeIsWorkflowNodeTransfer && nullNodeIsWorkflowNodeTransfer.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsWorkflowNodeTransfer = null;
+            if (parseNode.GetChildNode("node_id") is { } nullNodeNodeId && nullNodeNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NodeId = null;
+            if (parseNode.GetChildNode("preserve_client_tts_overrides") is { } nullNodePreserveClientTtsOverrides && nullNodePreserveClientTtsOverrides.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreserveClientTtsOverrides = null;
+            if (parseNode.GetChildNode("preserve_voice_settings") is { } nullNodePreserveVoiceSettings && nullNodePreserveVoiceSettings.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreserveVoiceSettings = null;
+            if (parseNode.GetChildNode("transfer_message") is { } nullNodeTransferMessage && nullNodeTransferMessage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TransferMessage = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The agent_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AgentId { get; set; }
+        public string? AgentId { get => _explicitNullValueAgentId; set { _explicitNullValueAgentId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agent_id"); else _explicitNullProperties?.Remove("agent_id"); } }
+        private string? _explicitNullValueAgentId = default!;
 #nullable restore
 #else
-        public string AgentId { get; set; }
+        public string AgentId { get => _explicitNullValueAgentId; set { _explicitNullValueAgentId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agent_id"); else _explicitNullProperties?.Remove("agent_id"); } }
+        private string _explicitNullValueAgentId = default!;
 #endif
         /// <summary>The branch_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BranchId { get; set; }
+        public string? BranchId { get => _explicitNullValueBranchId; set { _explicitNullValueBranchId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("branch_id"); else _explicitNullProperties?.Remove("branch_id"); } }
+        private string? _explicitNullValueBranchId = default!;
 #nullable restore
 #else
-        public string BranchId { get; set; }
+        public string BranchId { get => _explicitNullValueBranchId; set { _explicitNullValueBranchId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("branch_id"); else _explicitNullProperties?.Remove("branch_id"); } }
+        private string _explicitNullValueBranchId = default!;
 #endif
         /// <summary>The condition property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Condition { get; set; }
+        public string? Condition { get => _explicitNullValueCondition; set { _explicitNullValueCondition = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("condition"); else _explicitNullProperties?.Remove("condition"); } }
+        private string? _explicitNullValueCondition = default!;
 #nullable restore
 #else
-        public string Condition { get; set; }
+        public string Condition { get => _explicitNullValueCondition; set { _explicitNullValueCondition = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("condition"); else _explicitNullProperties?.Remove("condition"); } }
+        private string _explicitNullValueCondition = default!;
 #endif
         /// <summary>The delay_ms property</summary>
-        public int? DelayMs { get; set; }
+        public int? DelayMs { get => _explicitNullValueDelayMs; set { _explicitNullValueDelayMs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("delay_ms"); else _explicitNullProperties?.Remove("delay_ms"); } }
+        private int? _explicitNullValueDelayMs = default!;
         /// <summary>The enable_transferred_agent_first_message property</summary>
-        public bool? EnableTransferredAgentFirstMessage { get; set; }
+        public bool? EnableTransferredAgentFirstMessage { get => _explicitNullValueEnableTransferredAgentFirstMessage; set { _explicitNullValueEnableTransferredAgentFirstMessage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enable_transferred_agent_first_message"); else _explicitNullProperties?.Remove("enable_transferred_agent_first_message"); } }
+        private bool? _explicitNullValueEnableTransferredAgentFirstMessage = default!;
         /// <summary>The is_workflow_node_transfer property</summary>
-        public bool? IsWorkflowNodeTransfer { get; set; }
+        public bool? IsWorkflowNodeTransfer { get => _explicitNullValueIsWorkflowNodeTransfer; set { _explicitNullValueIsWorkflowNodeTransfer = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_workflow_node_transfer"); else _explicitNullProperties?.Remove("is_workflow_node_transfer"); } }
+        private bool? _explicitNullValueIsWorkflowNodeTransfer = default!;
         /// <summary>The node_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? NodeId { get; set; }
+        public string? NodeId { get => _explicitNullValueNodeId; set { _explicitNullValueNodeId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("node_id"); else _explicitNullProperties?.Remove("node_id"); } }
+        private string? _explicitNullValueNodeId = default!;
 #nullable restore
 #else
-        public string NodeId { get; set; }
+        public string NodeId { get => _explicitNullValueNodeId; set { _explicitNullValueNodeId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("node_id"); else _explicitNullProperties?.Remove("node_id"); } }
+        private string _explicitNullValueNodeId = default!;
 #endif
         /// <summary>Defines whether TTS client overrides should be carried over to the transferred agent.</summary>
-        public bool? PreserveClientTtsOverrides { get; set; }
+        public bool? PreserveClientTtsOverrides { get => _explicitNullValuePreserveClientTtsOverrides; set { _explicitNullValuePreserveClientTtsOverrides = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("preserve_client_tts_overrides"); else _explicitNullProperties?.Remove("preserve_client_tts_overrides"); } }
+        private bool? _explicitNullValuePreserveClientTtsOverrides = default!;
         /// <summary>Defines whether the base voice, TTS model and voice settings should be carried over to the transferred agent.</summary>
-        public bool? PreserveVoiceSettings { get; set; }
+        public bool? PreserveVoiceSettings { get => _explicitNullValuePreserveVoiceSettings; set { _explicitNullValuePreserveVoiceSettings = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("preserve_voice_settings"); else _explicitNullProperties?.Remove("preserve_voice_settings"); } }
+        private bool? _explicitNullValuePreserveVoiceSettings = default!;
         /// <summary>The transfer_message property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TransferMessage { get; set; }
+        public string? TransferMessage { get => _explicitNullValueTransferMessage; set { _explicitNullValueTransferMessage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transfer_message"); else _explicitNullProperties?.Remove("transfer_message"); } }
+        private string? _explicitNullValueTransferMessage = default!;
 #nullable restore
 #else
-        public string TransferMessage { get; set; }
+        public string TransferMessage { get => _explicitNullValueTransferMessage; set { _explicitNullValueTransferMessage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transfer_message"); else _explicitNullProperties?.Remove("transfer_message"); } }
+        private string _explicitNullValueTransferMessage = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentTransferInput"/> and sets the default values.
@@ -84,7 +116,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentTransferInput CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentTransferInput();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.AgentTransferInput(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -123,6 +155,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteBoolValue("preserve_client_tts_overrides", PreserveClientTtsOverrides);
             writer.WriteBoolValue("preserve_voice_settings", PreserveVoiceSettings);
             writer.WriteStringValue("transfer_message", TransferMessage);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

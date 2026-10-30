@@ -11,21 +11,40 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class CueOptionsRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("max_chars_per_line") is { } nullNodeMaxCharsPerLine && nullNodeMaxCharsPerLine.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxCharsPerLine = null;
+            if (parseNode.GetChildNode("max_chars_per_s") is { } nullNodeMaxCharsPerS && nullNodeMaxCharsPerS.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxCharsPerS = null;
+            if (parseNode.GetChildNode("max_duration_ms") is { } nullNodeMaxDurationMs && nullNodeMaxDurationMs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxDurationMs = null;
+            if (parseNode.GetChildNode("max_lines_per_cue") is { } nullNodeMaxLinesPerCue && nullNodeMaxLinesPerCue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxLinesPerCue = null;
+            if (parseNode.GetChildNode("min_duration_ms") is { } nullNodeMinDurationMs && nullNodeMinDurationMs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MinDurationMs = null;
+            if (parseNode.GetChildNode("min_gap_between_cues_frames") is { } nullNodeMinGapBetweenCuesFrames && nullNodeMinGapBetweenCuesFrames.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MinGapBetweenCuesFrames = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Maximum number of characters per line in a cue.</summary>
-        public int? MaxCharsPerLine { get; set; }
+        public int? MaxCharsPerLine { get => _explicitNullValueMaxCharsPerLine; set { _explicitNullValueMaxCharsPerLine = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_chars_per_line"); else _explicitNullProperties?.Remove("max_chars_per_line"); } }
+        private int? _explicitNullValueMaxCharsPerLine = default!;
         /// <summary>Maximum characters per second reading speed. If not set, no reading speed limit is applied.</summary>
-        public int? MaxCharsPerS { get; set; }
+        public int? MaxCharsPerS { get => _explicitNullValueMaxCharsPerS; set { _explicitNullValueMaxCharsPerS = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_chars_per_s"); else _explicitNullProperties?.Remove("max_chars_per_s"); } }
+        private int? _explicitNullValueMaxCharsPerS = default!;
         /// <summary>Maximum duration of each cue in milliseconds.</summary>
-        public int? MaxDurationMs { get; set; }
+        public int? MaxDurationMs { get => _explicitNullValueMaxDurationMs; set { _explicitNullValueMaxDurationMs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_duration_ms"); else _explicitNullProperties?.Remove("max_duration_ms"); } }
+        private int? _explicitNullValueMaxDurationMs = default!;
         /// <summary>Maximum number of lines per cue.</summary>
-        public int? MaxLinesPerCue { get; set; }
+        public int? MaxLinesPerCue { get => _explicitNullValueMaxLinesPerCue; set { _explicitNullValueMaxLinesPerCue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_lines_per_cue"); else _explicitNullProperties?.Remove("max_lines_per_cue"); } }
+        private int? _explicitNullValueMaxLinesPerCue = default!;
         /// <summary>Minimum duration of each cue in milliseconds.</summary>
-        public int? MinDurationMs { get; set; }
+        public int? MinDurationMs { get => _explicitNullValueMinDurationMs; set { _explicitNullValueMinDurationMs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("min_duration_ms"); else _explicitNullProperties?.Remove("min_duration_ms"); } }
+        private int? _explicitNullValueMinDurationMs = default!;
         /// <summary>Minimum gap between consecutive cues in frames. If not set, no minimum gap is enforced.</summary>
-        public int? MinGapBetweenCuesFrames { get; set; }
+        public int? MinGapBetweenCuesFrames { get => _explicitNullValueMinGapBetweenCuesFrames; set { _explicitNullValueMinGapBetweenCuesFrames = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("min_gap_between_cues_frames"); else _explicitNullProperties?.Remove("min_gap_between_cues_frames"); } }
+        private int? _explicitNullValueMinGapBetweenCuesFrames = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.ElevenLabs.OpenApiClient.Models.CueOptionsRequest"/> and sets the default values.
         /// </summary>
@@ -45,7 +64,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
         public static global::Soenneker.ElevenLabs.OpenApiClient.Models.CueOptionsRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.ElevenLabs.OpenApiClient.Models.CueOptionsRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.ElevenLabs.OpenApiClient.Models.CueOptionsRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -76,6 +95,7 @@ namespace Soenneker.ElevenLabs.OpenApiClient.Models
             writer.WriteIntValue("max_lines_per_cue", MaxLinesPerCue);
             writer.WriteIntValue("min_duration_ms", MinDurationMs);
             writer.WriteIntValue("min_gap_between_cues_frames", MinGapBetweenCuesFrames);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

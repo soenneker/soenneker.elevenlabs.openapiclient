@@ -21,19 +21,16 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Dubbing.Item
     public partial class WithDubbingItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The audio property</summary>
-        [Obsolete("")]
         public global::Soenneker.ElevenLabs.OpenApiClient.V1.Dubbing.Item.Audio.AudioRequestBuilder Audio
         {
             get => new global::Soenneker.ElevenLabs.OpenApiClient.V1.Dubbing.Item.Audio.AudioRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The transcript property</summary>
-        [Obsolete("")]
         public global::Soenneker.ElevenLabs.OpenApiClient.V1.Dubbing.Item.Transcript.TranscriptRequestBuilder Transcript
         {
             get => new global::Soenneker.ElevenLabs.OpenApiClient.V1.Dubbing.Item.Transcript.TranscriptRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The transcripts property</summary>
-        [Obsolete("")]
         public global::Soenneker.ElevenLabs.OpenApiClient.V1.Dubbing.Item.Transcripts.TranscriptsRequestBuilder Transcripts
         {
             get => new global::Soenneker.ElevenLabs.OpenApiClient.V1.Dubbing.Item.Transcripts.TranscriptsRequestBuilder(PathParameters, RequestAdapter);
@@ -75,6 +72,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Dubbing.Item
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "422", global::Soenneker.ElevenLabs.OpenApiClient.Models.HttpValidationError.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.ElevenLabs.OpenApiClient.Models.DeleteDubbingResponseModel>(requestInfo, global::Soenneker.ElevenLabs.OpenApiClient.Models.DeleteDubbingResponseModel.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -99,6 +98,8 @@ namespace Soenneker.ElevenLabs.OpenApiClient.V1.Dubbing.Item
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "422", global::Soenneker.ElevenLabs.OpenApiClient.Models.HttpValidationError.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingMetadataResponse>(requestInfo, global::Soenneker.ElevenLabs.OpenApiClient.Models.DubbingMetadataResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
